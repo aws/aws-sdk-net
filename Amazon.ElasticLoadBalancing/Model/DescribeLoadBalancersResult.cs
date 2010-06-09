@@ -16,11 +16,12 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -30,10 +31,11 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Returns detailed configuration information for the specified LoadBalancers, or if no LoadBalancers are specified, then the
     /// API returns configuration information for all LoadBalancers created by the caller.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class DescribeLoadBalancersResult
     {
         private List<LoadBalancerDescription> loadBalancerDescriptionsField;
+
         /// <summary>
         /// Gets and sets the LoadBalancerDescriptions property.
         /// List of LoadBalancer description structures.
@@ -53,20 +55,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Sets the LoadBalancerDescriptions property
-        /// </summary>
-        /// <param name="list">List of LoadBalancer description structures.</param>
-        /// <returns>this instance</returns>
-        public DescribeLoadBalancersResult WithLoadBalancerDescriptions(params LoadBalancerDescription[] list)
-        {
-            foreach (LoadBalancerDescription item in list)
-            {
-                LoadBalancerDescriptions.Add(item);
-            }
-            return this;
-        }
-
-        /// <summary>
         /// Checks if LoadBalancerDescriptions property is set
         /// </summary>
         /// <returns>true if LoadBalancerDescriptions property is set</returns>
@@ -75,5 +63,28 @@ namespace Amazon.ElasticLoadBalancing.Model
             return (LoadBalancerDescriptions.Count > 0);
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

@@ -95,11 +95,30 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets and sets the NextMarker property.
+        /// NextMarker is set by S3 only if a Delimiter was specified
+        /// in the original ListObjects request. If a delimiter was
+        /// not specified, the AWS SDK for .NET returns the last Key
+        /// of the List of Objects retrieved from S3 as the NextMarker.
         /// </summary>
         [XmlElementAttribute(ElementName = "NextMarker")]
         public string NextMarker
         {
-            get { return this.nextMarker; }
+            get
+            {
+                // If the list is truncated and there is at least
+                // one object in the list returned and nextMarker
+                // has not been populated with a value, use the
+                // last returned Key as the default value.
+                if (System.String.IsNullOrEmpty(nextMarker) &&
+                    fIsTruncated &&
+                    (objects.Count > 0))
+                {
+                    int lastObjIdx = objects.Count - 1;
+                    nextMarker = objects[lastObjIdx].Key;
+                }
+
+                return nextMarker;
+            }
             set { this.nextMarker = value; }
         }
 
@@ -185,7 +204,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        # region IsTruncated
+        #region IsTruncated
         /// <summary>
         /// Gets and Sets the IsTruncated property. 
         /// This property governs whether

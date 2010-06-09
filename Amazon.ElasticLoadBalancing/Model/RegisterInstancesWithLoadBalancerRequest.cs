@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -38,7 +38,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Completion of this API does not guarantee that operation has completed. Rather, it means that the request has been
     /// registered and the changes will happen shortly.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class RegisterInstancesWithLoadBalancerRequest
     {
         private string loadBalancerNameField;
@@ -74,6 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this.loadBalancerNameField != null;
         }
+
         /// <summary>
         /// Gets and sets the Instances property.
         /// List of instances IDs that should be registered with the LoadBalancer.

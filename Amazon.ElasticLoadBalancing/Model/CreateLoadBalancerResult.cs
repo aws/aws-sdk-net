@@ -16,11 +16,12 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -29,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Returns the DNS name for the new load balancer.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class CreateLoadBalancerResult
     {
         private string DNSNameField;
@@ -46,17 +47,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Sets the DNSName property
-        /// </summary>
-        /// <param name="DNSName">DNS name for the LoadBalancer.</param>
-        /// <returns>this instance</returns>
-        public CreateLoadBalancerResult WithDNSName(string DNSName)
-        {
-            this.DNSNameField = DNSName;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if DNSName property is set
         /// </summary>
         /// <returns>true if DNSName property is set</returns>
@@ -65,5 +55,28 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this.DNSNameField != null;
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

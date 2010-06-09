@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -32,7 +32,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// as those that were used to create the LoadBalancer. Once the instance is deregistered, it will stop receiving traffic
     /// from the LoadBalancer.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class DeregisterInstancesFromLoadBalancerRequest
     {
         private string loadBalancerNameField;
@@ -68,6 +68,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this.loadBalancerNameField != null;
         }
+
         /// <summary>
         /// Gets and sets the Instances property.
         /// List of instances associated with the LoadBalancer.

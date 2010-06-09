@@ -474,12 +474,19 @@
     <Compile Include="Amazon.ElasticLoadBalancing\AmazonElasticLoadBalancingClient.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\AmazonElasticLoadBalancingConfig.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\AmazonElasticLoadBalancingException.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\AppCookieStickinessPolicy.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\ConfigureHealthCheckRequest.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\ConfigureHealthCheckResponse.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\ConfigureHealthCheckResult.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\CreateAppCookieStickinessPolicyRequest.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\CreateAppCookieStickinessPolicyResponse.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\CreateLBCookieStickinessPolicyRequest.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\CreateLBCookieStickinessPolicyResponse.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\CreateLoadBalancerRequest.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\CreateLoadBalancerResponse.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\CreateLoadBalancerResult.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\DeleteLoadBalancerPolicyRequest.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\DeleteLoadBalancerPolicyResponse.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DeleteLoadBalancerRequest.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DeleteLoadBalancerResponse.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DeleteLoadBalancerResult.cs" />
@@ -503,12 +510,17 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\HealthCheck.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Instance.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\InstanceState.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\LBCookieStickinessPolicy.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Listener.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\ListenerDescription.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\LoadBalancerDescription.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Policies.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\RegisterInstancesWithLoadBalancerRequest.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\RegisterInstancesWithLoadBalancerResponse.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\RegisterInstancesWithLoadBalancerResult.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\ResponseMetadata.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\SetLoadBalancerPoliciesOfListenerRequest.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\SetLoadBalancerPoliciesOfListenerResponse.cs" />
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduce.cs" />
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduceClient.cs" />
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduceConfig.cs" />
@@ -729,6 +741,50 @@
     <Compile Include="Amazon.SimpleDB\Model\SelectResult.cs" />
     <Compile Include="Amazon.SimpleDB\Model\UpdateCondition.cs" />
     <Compile Include="Amazon.SimpleDB\Util\AmazonSimpleDBUtil.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\AmazonSimpleNotificationService.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\AmazonSimpleNotificationServiceClient.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\AmazonSimpleNotificationServiceConfig.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\AmazonSimpleNotificationServiceException.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\AddPermissionRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\AddPermissionResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ConfirmSubscriptionRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ConfirmSubscriptionResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ConfirmSubscriptionResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\CreateTopicRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\CreateTopicResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\CreateTopicResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\DeleteTopicRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\DeleteTopicResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Error.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ErrorResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\GetTopicAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\GetTopicAttributesResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\GetTopicAttributesResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListSubscriptionsByTopicRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListSubscriptionsByTopicResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListSubscriptionsByTopicResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListSubscriptionsRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListSubscriptionsResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListSubscriptionsResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListTopicsRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListTopicsResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ListTopicsResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\PublishRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\PublishResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\PublishResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\RemovePermissionRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\RemovePermissionResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\ResponseMetadata.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\SetTopicAttributesRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\SetTopicAttributesResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\SubscribeRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\SubscribeResponse.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\SubscribeResult.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Subscription.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\Topic.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\TopicAttribute.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\UnsubscribeRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\UnsubscribeResponse.cs" />
     <Compile Include="Amazon.SQS\AmazonSQS.cs" />
     <Compile Include="Amazon.SQS\AmazonSQSClient.cs" />
     <Compile Include="Amazon.SQS\AmazonSQSConfig.cs" />
@@ -937,6 +993,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="awssdk.dll.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.SimpleNotificationService\Model\ResponseTransformer.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

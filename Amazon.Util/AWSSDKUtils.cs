@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2009-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -51,7 +51,7 @@ namespace Amazon.Util
         /// <summary>
         /// The AWS SDK User Agent
         /// </summary>
-        public const string SDKUserAgent = "AWS SDK for .NET/1.0.6";
+        public const string SDKUserAgent = "AWS SDK for .NET/1.0.7";
 
         /// <summary>
         /// The Set of accepted and valid Url characters. 
@@ -78,14 +78,16 @@ namespace Amazon.Util
 
         #region Internal Methods
 
+        /*
+         * Determines the string to be signed based on the input parameters for
+         * AWS Signature Version 2
+         */
         internal static string CalculateStringToSignV2(IDictionary<string, string> parameters, string serviceUrl)
         {
-            StringBuilder data = new StringBuilder(512);
+            StringBuilder data = new StringBuilder("POST\n", 512);
             IDictionary<string, string> sorted =
                   new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
-            data.Append("POST");
-            data.Append("\n");
-            Uri endpoint = new Uri(serviceUrl.ToLower());
+            Uri endpoint = new Uri(serviceUrl);
 
             data.Append(endpoint.Host);
             data.Append("\n");

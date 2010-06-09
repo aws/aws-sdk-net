@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -263,6 +263,46 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<DescribeLoadBalancersResponse>(ConvertDescribeLoadBalancers(request));
         }
 
+        /// <summary>
+        /// Set Load Balancer Policies Of Listener
+        /// </summary>
+        /// <param name="request">Set Load Balancer Policies Of Listener  request</param>
+        /// <returns>Set Load Balancer Policies Of Listener  Response from the service</returns>
+        public SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request)
+        {
+            return Invoke<SetLoadBalancerPoliciesOfListenerResponse>(ConvertSetLoadBalancerPoliciesOfListener(request));
+        }
+
+        /// <summary>
+        /// Create App Cookie Stickiness Policy
+        /// </summary>
+        /// <param name="request">Create App Cookie Stickiness Policy  request</param>
+        /// <returns>Create App Cookie Stickiness Policy  Response from the service</returns>
+        public CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request)
+        {
+            return Invoke<CreateAppCookieStickinessPolicyResponse>(ConvertCreateAppCookieStickinessPolicy(request));
+        }
+
+        /// <summary>
+        /// Create LB Cookie Stickiness Policy
+        /// </summary>
+        /// <param name="request">Create LB Cookie Stickiness Policy  request</param>
+        /// <returns>Create LB Cookie Stickiness Policy  Response from the service</returns>
+        public CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request)
+        {
+            return Invoke<CreateLBCookieStickinessPolicyResponse>(ConvertCreateLBCookieStickinessPolicy(request));
+        }
+
+        /// <summary>
+        /// Delete Load Balancer Policy
+        /// </summary>
+        /// <param name="request">Delete Load Balancer Policy  request</param>
+        /// <returns>Delete Load Balancer Policy  Response from the service</returns>
+        public DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request)
+        {
+            return Invoke<DeleteLoadBalancerPolicyResponse>(ConvertDeleteLoadBalancerPolicy(request));
+        }
+
         #endregion
 
         #region Private API
@@ -386,7 +426,7 @@ namespace Amazon.ElasticLoadBalancing
                             using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
                             {
                                 XmlSerializer serializer = new XmlSerializer(typeof(ErrorResponse));
-                                ErrorResponse errorResponse = (ErrorResponse) serializer.Deserialize(sr);
+                                ErrorResponse errorResponse = (ErrorResponse)serializer.Deserialize(sr);
                                 Error error = errorResponse.Error[0];
 
                                 /* Throw formatted exception with information available from the error response */
@@ -760,6 +800,97 @@ namespace Amazon.ElasticLoadBalancing
             {
                 parameters[String.Concat("LoadBalancerNames", ".member.", describeLoadBalancersRequestLoadBalancerNamesListIndex)] = describeLoadBalancersRequestLoadBalancerNames;
                 describeLoadBalancersRequestLoadBalancerNamesListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateAppCookieStickinessPolicyRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateAppCookieStickinessPolicy";
+            if (request.IsSetLoadBalancerName())
+            {
+                parameters["LoadBalancerName"] = request.LoadBalancerName;
+            }
+            if (request.IsSetPolicyName())
+            {
+                parameters["PolicyName"] = request.PolicyName;
+            }
+            if (request.IsSetCookieName())
+            {
+                parameters["CookieName"] = request.CookieName;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateLBCookieStickinessPolicyRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateLBCookieStickinessPolicy";
+            if (request.IsSetLoadBalancerName())
+            {
+                parameters["LoadBalancerName"] = request.LoadBalancerName;
+            }
+            if (request.IsSetPolicyName())
+            {
+                parameters["PolicyName"] = request.PolicyName;
+            }
+            if (request.IsSetCookieExpirationPeriod())
+            {
+                parameters["CookieExpirationPeriod"] = request.CookieExpirationPeriod.ToString();
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteLoadBalancerPolicyRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeleteLoadBalancerPolicy";
+            if (request.IsSetLoadBalancerName())
+            {
+                parameters["LoadBalancerName"] = request.LoadBalancerName;
+            }
+            if (request.IsSetPolicyName())
+            {
+                parameters["PolicyName"] = request.PolicyName;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert SetLoadBalancerPoliciesOfListenerRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertSetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "SetLoadBalancerPoliciesOfListener";
+            if (request.IsSetLoadBalancerName())
+            {
+                parameters["LoadBalancerName"] = request.LoadBalancerName;
+            }
+            if (request.IsSetLoadBalancerPort())
+            {
+                parameters["LoadBalancerPort"] = request.LoadBalancerPort.ToString();
+            }
+            List<string> setLoadBalancerPoliciesOfListenerRequestPolicyNamesList = request.PolicyNames;
+            int setLoadBalancerPoliciesOfListenerRequestPolicyNamesListIndex = 1;
+            foreach (string setLoadBalancerPoliciesOfListenerRequestPolicyNames in setLoadBalancerPoliciesOfListenerRequestPolicyNamesList)
+            {
+                parameters[String.Concat("PolicyNames", ".member.", setLoadBalancerPoliciesOfListenerRequestPolicyNamesListIndex)] = setLoadBalancerPoliciesOfListenerRequestPolicyNames;
+                setLoadBalancerPoliciesOfListenerRequestPolicyNamesListIndex++;
             }
 
             return parameters;

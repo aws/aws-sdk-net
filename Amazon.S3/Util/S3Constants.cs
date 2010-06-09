@@ -61,13 +61,19 @@ namespace Amazon.S3.Util
         // Bucket Version strings
         internal static readonly string[] BucketVersions = { "", "V1", "V2" };
 
+        // Location Constraint strings
+        // These strings need to be ordered like the S3Region enumeration
+        internal static readonly string[] LocationConstraints = {"",
+                                                "EU",
+                                                "us-west-1"};
+
         // ACL related strings
-        internal static readonly string[] CannedAcls = { "", 
-                                                "private", 
-                                                "public-read", 
-                                                "public-read-write", 
-                                                "authenticated-read", 
-                                                "bucket-owner-read", 
+        internal static readonly string[] CannedAcls = {"",
+                                                "private",
+                                                "public-read",
+                                                "public-read-write",
+                                                "authenticated-read",
+                                                "bucket-owner-read",
                                                 "bucket-owner-full-control"};
 
         // Metadata Directives as strings

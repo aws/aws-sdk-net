@@ -78,8 +78,9 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets and sets the BucketRegion property.
-        /// Possible values are US, EU and SFO.
-        /// Default - S3Region.US
+        /// Refer <see cref="T:Amazon.S3.Model.S3Region"/>
+        /// for a list of possible values.
+        /// Default: S3Region.US
         /// <see cref="T:Amazon.S3.Model.S3Region" />
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketRegion")]
@@ -99,7 +100,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Sets the BucketRegion property for this request.
         /// When set, this will determine where your data will
-        /// reside in S3. Possible values are US, EU and SFO.
+        /// reside in S3. Refer <see cref="T:Amazon.S3.Model.S3Region"/>
+        /// for a list of possible values.
         /// </summary>
         /// <param name="bucketRegion">The value that BucketRegion is set to</param>
         /// <returns>the request with the BucketRegion set</returns>

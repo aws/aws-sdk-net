@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// This API enables you to define an application healthcheck for the instances.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class ConfigureHealthCheckRequest
     {
         private string loadBalancerNameField;

@@ -36,6 +36,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string jarField;
         private string mainClassField;
         private List<string> argsField;
+
         /// <summary>
         /// Gets and sets the Properties property.
         /// Container for KeyValueList.

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -39,7 +39,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// In order for this call to be successful, you must have created the LoadBalancer. In other words, in order to successfully call
     /// this API, you must provide the same account credentials as those that were used to create the LoadBalancer.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class DisableAvailabilityZonesForLoadBalancerRequest
     {
         private string loadBalancerNameField;

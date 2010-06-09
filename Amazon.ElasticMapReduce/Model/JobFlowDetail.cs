@@ -193,6 +193,7 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this.instancesField != null;
         }
+
         /// <summary>
         /// Gets and sets the Steps property.
         /// A list of steps associated with the job.

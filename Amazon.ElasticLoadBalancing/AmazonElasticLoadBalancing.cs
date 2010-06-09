@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -101,6 +101,34 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Describe Load Balancers  request</param>
         /// <returns>Describe Load Balancers  Response from the service</returns>
         DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request);
+
+        /// <summary>
+        /// Set Load Balancer Policies Of Listener
+        /// </summary>
+        /// <param name="request">Set Load Balancer Policies Of Listener  request</param>
+        /// <returns>Set Load Balancer Policies Of Listener  Response from the service</returns>
+        SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request);
+
+        /// <summary>
+        /// Create App Cookie Stickiness Policy
+        /// </summary>
+        /// <param name="request">Create App Cookie Stickiness Policy  request</param>
+        /// <returns>Create App Cookie Stickiness Policy  Response from the service</returns>
+        CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request);
+
+        /// <summary>
+        /// Create LB Cookie Stickiness Policy
+        /// </summary>
+        /// <param name="request">Create LB Cookie Stickiness Policy  request</param>
+        /// <returns>Create LB Cookie Stickiness Policy  Response from the service</returns>
+        CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request);
+
+        /// <summary>
+        /// Delete Load Balancer Policy
+        /// </summary>
+        /// <param name="request">Delete Load Balancer Policy  request</param>
+        /// <returns>Delete Load Balancer Policy  Response from the service</returns>
+        DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request);
 
     }
 }

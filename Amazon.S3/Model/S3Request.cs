@@ -90,7 +90,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        # region InputStream
+        #region InputStream
         /// <summary>
         /// Gets and sets the InputStream property.
         /// </summary>

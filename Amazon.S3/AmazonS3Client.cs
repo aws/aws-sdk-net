@@ -1283,21 +1283,19 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
             parameters[S3QueryParameter.Action] = "PutBucket";
 
-            if (request.BucketRegion == S3Region.EU)
+            if (request.BucketRegion > S3Region.US)
             {
-                string content = String.Format("<CreateBucketConstraint><LocationConstraint>{0}</LocationConstraint></CreateBucketConstraint>", request.BucketRegion.ToString());
-                parameters[S3QueryParameter.ContentBody] = content;
-            }
-            else if (request.BucketRegion == S3Region.SFO)
-            {
-                string content = String.Format("<CreateBucketConstraint><LocationConstraint>us-west-1</LocationConstraint></CreateBucketConstraint>");
+                string content = String.Format(
+                    "<CreateBucketConstraint><LocationConstraint>{0}</LocationConstraint></CreateBucketConstraint>",
+                    S3Constants.LocationConstraints[(int)request.BucketRegion]
+                    );
                 parameters[S3QueryParameter.ContentBody] = content;
             }
             AddS3QueryParameters(request, request.BucketName);
         }
 
         /**
-         *
+         * Convert DeleteBucketRequest to key/value pairs
          */
         private void ConvertDeleteBucket(DeleteBucketRequest request)
         {
@@ -1426,6 +1424,23 @@ namespace Amazon.S3
             {
                 parameters[S3QueryParameter.ContentType] = request.ContentType;
             }
+            else if (request.IsSetFilePath() ||
+                request.IsSetKey())
+            {
+                // Get the extension of the file from the path.
+                // Try the key as well.
+                string ext = Path.GetExtension(request.FilePath);
+                if (String.IsNullOrEmpty(ext) &&
+                    request.IsSetKey())
+                {
+                    ext = Path.GetExtension(request.Key);
+                }
+                // Use the extension to get the mime-type
+                if (!String.IsNullOrEmpty(ext))
+                {
+                    parameters[S3QueryParameter.ContentType] = AmazonS3Util.MimeTypeFromExtension(ext);
+                }
+            }
 
             // Set the Content Length based on whether there is a stream
             if (request.IsSetInputStream())
@@ -1473,18 +1488,24 @@ namespace Amazon.S3
 
             parameters[S3QueryParameter.Verb] = S3Constants.Verbs[(int)request.Verb];
             parameters[S3QueryParameter.Action] = "GetPreSignedUrl";
+            StringBuilder queryStr = new StringBuilder("?AWSAccessKeyId=", 512);
+            queryStr.Append(this.awsAccessKeyId);
+
             if (request.IsSetKey())
             {
                 parameters[S3QueryParameter.Key] = request.Key;
             }
-
-            StringBuilder queryStr = new StringBuilder("?AWSAccessKeyId=", 512);
-            queryStr.Append(this.awsAccessKeyId);
-
-            if (!request.IsSetKey() &&
-                request.Verb == HttpVerb.HEAD)
+            else if (request.Verb == HttpVerb.HEAD)
             {
                 queryStr.Append("&max-keys=0");
+            }
+            else
+            {
+                throw new ArgumentNullException(
+                    S3Constants.RequestParam,
+                    "The Key must be set for GET and PUT requests"
+             
+                    );
             }
 
             queryStr.Append("&Expires=");
@@ -1758,6 +1779,29 @@ namespace Amazon.S3
             AddUrlToParameters(request, config);
         }
 
+        private void WriteStreamToService(S3Request request, long reqDataLen, Stream inputStream, Stream requestStream)
+        {
+            PutObjectRequest putObjReq = request as PutObjectRequest;
+
+            if (inputStream != null)
+            {
+                long current = 0;
+                // Reset the file stream's position to the starting point
+                inputStream.Position = 0;
+                byte[] buffer = new byte[65536];
+                int bytesRead = 0;
+                while ((bytesRead = inputStream.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    current += bytesRead;
+                    requestStream.Write(buffer, 0, bytesRead);
+                    if (putObjReq != null)
+                    {
+                        putObjReq.OnRaiseProgressEvent(new PutObjectProgressArgs(current, reqDataLen));
+                    }
+                }
+            }
+        }
+
         /**
         * Invoke request and return response
         */
@@ -1858,25 +1902,13 @@ namespace Amazon.S3
                             {
                                 if (fStream != null)
                                 {
-                                    // Reset the file stream's position to the starting point
-                                    fStream.Position = 0;
-                                    byte[] buffer = new byte[65536];
-                                    int bytesRead = 0;
-                                    while ((bytesRead = fStream.Read(buffer, 0, buffer.Length)) > 0)
-                                    {
-                                        requestStream.Write(buffer, 0, bytesRead);
-                                    }
+                                    WriteStreamToService(userRequest, reqDataLen, fStream, requestStream);
                                 }
                                 else
                                 {
                                     using (MemoryStream ms = new MemoryStream(requestData))
                                     {
-                                        byte[] buffer = new byte[32768];
-                                        int count = 0;
-                                        while ((count = ms.Read(buffer, 0, buffer.Length)) > 0)
-                                        {
-                                            requestStream.Write(buffer, 0, count);
-                                        }
+                                        WriteStreamToService(userRequest, reqDataLen, ms, requestStream);
                                     }
                                 }
                             }

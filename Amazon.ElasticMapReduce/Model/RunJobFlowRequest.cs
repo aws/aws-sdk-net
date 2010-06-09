@@ -132,6 +132,7 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this.instancesField != null;
         }
+
         /// <summary>
         /// Gets and sets the Steps property.
         /// </summary>

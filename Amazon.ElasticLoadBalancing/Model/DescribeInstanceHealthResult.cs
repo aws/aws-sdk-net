@@ -16,11 +16,12 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -29,10 +30,11 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Returns the current state of the instances of the specified LoadBalancer.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class DescribeInstanceHealthResult
     {
         private List<InstanceState> instanceStatesField;
+
         /// <summary>
         /// Gets and sets the InstanceStates property.
         /// Structure containing instance Health information for the specified instances, such as InService or
@@ -53,21 +55,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Sets the InstanceStates property
-        /// </summary>
-        /// <param name="list">Structure containing instance Health information for the specified instances, such as InService or
-        /// OutOfService and any reasons associated with the OutOfService state.</param>
-        /// <returns>this instance</returns>
-        public DescribeInstanceHealthResult WithInstanceStates(params InstanceState[] list)
-        {
-            foreach (InstanceState item in list)
-            {
-                InstanceStates.Add(item);
-            }
-            return this;
-        }
-
-        /// <summary>
         /// Checks if InstanceStates property is set
         /// </summary>
         /// <returns>true if InstanceStates property is set</returns>
@@ -76,5 +63,28 @@ namespace Amazon.ElasticLoadBalancing.Model
             return (InstanceStates.Count > 0);
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

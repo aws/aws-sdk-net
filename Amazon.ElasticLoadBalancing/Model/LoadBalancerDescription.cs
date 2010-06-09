@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -31,12 +31,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///for your application should be directed. Each LoadBalancer can distribute requests to multiple application instances.
     ///LoadBalancers can span multiple Availability Zones within an EC2 region, but cannot span multiple regions.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class LoadBalancerDescription
     {
         private string loadBalancerNameField;
         private string DNSNameField;
-        private List<Listener> listenersField;
+        private Policies policiesField;
+        private List<ListenerDescription> listenerDescriptionsField;
         private List<string> availabilityZonesField;
         private List<Instance> instancesField;
         private HealthCheck healthCheckField;
@@ -103,45 +104,76 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this.DNSNameField != null;
         }
+
         /// <summary>
-        /// Gets and sets the Listeners property.
-        /// A listener is a set of protocol, load balancer port, and instance port to which requests are forwarded.
+        /// Gets and sets the Policies property.
+        /// A list of Policies associated with the LoadBalancer.
         /// </summary>
-        [XmlElementAttribute(ElementName = "Listeners")]
-        public List<Listener> Listeners
+        [XmlElementAttribute(ElementName = "Policies")]
+        public Policies Policies
         {
-            get
-            {
-                if (this.listenersField == null)
-                {
-                    this.listenersField = new List<Listener>();
-                }
-                return this.listenersField;
-            }
-            set { this.listenersField = value; }
+            get { return this.policiesField; }
+            set { this.policiesField = value; }
         }
 
         /// <summary>
-        /// Sets the Listeners property
+        /// Sets the Policies property
         /// </summary>
-        /// <param name="list">A listener is a set of protocol, load balancer port, and instance port to which requests are forwarded.</param>
+        /// <param name="policies">A list of Policies associated with the LoadBalancer.</param>
         /// <returns>this instance</returns>
-        public LoadBalancerDescription WithListeners(params Listener[] list)
+        public LoadBalancerDescription WithPolicies(Policies policies)
         {
-            foreach (Listener item in list)
+            this.policiesField = policies;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Policies property is set
+        /// </summary>
+        /// <returns>true if Policies property is set</returns>
+        public bool IsSetPolicies()
+        {
+            return this.policiesField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the ListenerDescriptions property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ListenerDescriptions")]
+        public List<ListenerDescription> ListenerDescriptions
+        {
+            get
             {
-                Listeners.Add(item);
+                if (this.listenerDescriptionsField == null)
+                {
+                    this.listenerDescriptionsField = new List<ListenerDescription>();
+                }
+                return this.listenerDescriptionsField;
+            }
+            set { this.listenerDescriptionsField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ListenerDescriptions property
+        /// </summary>
+        /// <param name="list">ListenerDescriptions property</param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithListenerDescriptions(params ListenerDescription[] list)
+        {
+            foreach (ListenerDescription item in list)
+            {
+                ListenerDescriptions.Add(item);
             }
             return this;
         }
 
         /// <summary>
-        /// Checks if Listeners property is set
+        /// Checks if ListenerDescriptions property is set
         /// </summary>
-        /// <returns>true if Listeners property is set</returns>
-        public bool IsSetListeners()
+        /// <returns>true if ListenerDescriptions property is set</returns>
+        public bool IsSetListenerDescriptions()
         {
-            return (Listeners.Count > 0);
+            return (ListenerDescriptions.Count > 0);
         }
 
         /// <summary>
@@ -184,6 +216,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return (AvailabilityZones.Count > 0);
         }
+
         /// <summary>
         /// Gets and sets the Instances property.
         /// List of instance IDs. EC2 instances comprise the instances for the LoadBalancer.

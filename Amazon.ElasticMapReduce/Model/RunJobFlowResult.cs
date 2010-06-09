@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -46,17 +47,6 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Sets the JobFlowId property
-        /// </summary>
-        /// <param name="jobFlowId">String, returned by RunJobFlow, which uniquely identifies the job flow created.</param>
-        /// <returns>this instance</returns>
-        public RunJobFlowResult WithJobFlowId(string jobFlowId)
-        {
-            this.jobFlowIdField = jobFlowId;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if JobFlowId property is set
         /// </summary>
         /// <returns>true if JobFlowId property is set</returns>
@@ -65,5 +55,28 @@ namespace Amazon.ElasticMapReduce.Model
             return this.jobFlowIdField != null;
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// You must have been the one who created in the LoadBalancer. In other words, in order to successfully call this API, you must
     /// provide the same account credentials as those that were used to create the LoadBalancer.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class DescribeInstanceHealthRequest
     {
         private string loadBalancerNameField;
@@ -69,6 +69,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             return this.loadBalancerNameField != null;
         }
+
         /// <summary>
         /// Gets and sets the Instances property.
         /// List of instances IDs whose state is being queried.

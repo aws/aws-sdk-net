@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -30,11 +30,12 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Returns any errors in the request.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class ErrorResponse
     {
         private List<Error> errorField;
         private string requestIdField;
+
         /// <summary>
         /// Gets and sets the Error property.
         /// Error associated with the request.
@@ -51,20 +52,6 @@ namespace Amazon.ElasticLoadBalancing.Model
                 return this.errorField;
             }
             set { this.errorField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Error property
-        /// </summary>
-        /// <param name="list">Error associated with the request.</param>
-        /// <returns>this instance</returns>
-        public ErrorResponse WithError(params Error[] list)
-        {
-            foreach (Error item in list)
-            {
-                Error.Add(item);
-            }
-            return this;
         }
 
         /// <summary>
@@ -88,17 +75,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Sets the RequestId property
-        /// </summary>
-        /// <param name="requestId">The ID associated with the request. Be sure to reference this ID when contacting AWS support.</param>
-        /// <returns>this instance</returns>
-        public ErrorResponse WithRequestId(string requestId)
-        {
-            this.requestIdField = requestId;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if RequestId property is set
         /// </summary>
         /// <returns>true if RequestId property is set</returns>
@@ -108,7 +84,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// XML Representation for this object
+        /// XML Representation of this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -120,6 +96,15 @@ namespace Amazon.ElasticLoadBalancing.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
         }
     }
 }

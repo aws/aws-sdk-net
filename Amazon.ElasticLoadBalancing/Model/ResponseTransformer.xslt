@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:aws="http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/" exclude-result-prefixes="aws">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:aws="http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/" exclude-result-prefixes="aws">
     <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"/>
-    <xsl:variable name="ns" select="'http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/'"/>
+    <xsl:variable name="ns" select="'http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/'"/>
 
-    <xsl:template   match="*[local-name(child::*)='member']">
+    <xsl:template match="*[local-name(child::*)='member']">
         <xsl:apply-templates select="child::node()"/>
     </xsl:template>
-    <xsl:template  match="*[local-name()='member']">
+    <xsl:template match="*[local-name()='member']">
         <xsl:variable name="nodeName">
             <xsl:value-of select="name(parent::node())"/>
         </xsl:variable>

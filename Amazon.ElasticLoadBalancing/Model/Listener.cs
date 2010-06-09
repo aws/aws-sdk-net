@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -27,9 +27,12 @@ using System.Text;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     ///<summary>
-    ///A listener is a set of protocol, load balancer port, and instance port to which requests are forwarded.
+    ///A Listener encapsulates the information needed to process load balancer requests; a Load Balancer can
+    ///support multiple listeners concurrently. To configure a new port to be served by a Load Balancer,
+    ///please create a new Listener with the Load Balancer Port, Instance Port and Protocol, and associate
+    ///this Listener with the Load Balancer.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class Listener
     {
         private string protocolField;

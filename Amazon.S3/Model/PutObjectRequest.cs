@@ -20,6 +20,7 @@
  *
  */
 
+using System;
 using System.Xml.Serialization;
 using System.Collections.Specialized;
 
@@ -27,6 +28,70 @@ using Amazon.S3.Util;
 
 namespace Amazon.S3.Model
 {
+    /// <summary>
+    /// Encapsulates the information needed to provide
+    /// transfer progress to subscribers of the Put Object
+    /// Event.
+    /// </summary>
+    public class PutObjectProgressArgs : EventArgs
+    {
+        private long total;
+        private long transferred;
+
+        /// <summary>
+        /// The constructor takes the number of
+        /// currently transferred bytes and the
+        /// total number of bytes to be transferred
+        /// </summary>
+        /// <param name="transferred">The number of bytes transferred</param>
+        /// <param name="total">The total number of bytes to be transferred</param>
+        public PutObjectProgressArgs(long transferred, long total)
+        {
+            this.transferred = transferred;
+            this.total = total;
+        }
+
+        /// <summary>
+        /// Gets the percentage of transfer completed
+        /// </summary>
+        public int PercentDone
+        {
+            get { return (int)((transferred * 100)/total); }
+        }
+
+        /// <summary>
+        /// Gets the number of bytes transferred
+        /// </summary>
+        public long TransferredBytes
+        {
+            get { return transferred; }
+        }
+
+        /// <summary>
+        /// Gets the total number of bytes to be transferred
+        /// </summary>
+        public long TotalBytes
+        {
+            get { return total; }
+        }
+
+        /// <summary>
+        /// Returns a string representation of this object
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return String.Concat(
+                "Put Object Statistics. Percentage completed: ",
+                PercentDone,
+                ", Bytes transferred: ",
+                transferred,
+                ", Total bytes to transfer: ",
+                total
+                );
+        }
+    }
+
     /// <summary>
     /// The PutObjectRequest contains the parameters used for the PutObject operation.
     /// <br />Must set only 1 of ContentBody, InputStream, or FilePath
@@ -51,7 +116,46 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        # region BucketName
+        #region Progress Event
+
+        /// <summary>
+        /// The event for Put Object progress notifications. All
+        /// subscribers will be notified when a new progress
+        /// event is raised.
+        /// </summary>
+        /// <remarks>
+        /// Subscribe to this event if you want to receive
+        /// put object progress notifications. Here is how:<br />
+        /// 1. Define a method with a signature similar to this one:
+        /// <code>
+        /// private void displayProgress(object sender, PutObjectProgressArgs args)
+        /// {
+        ///     Console.WriteLine(args);
+        /// }
+        /// </code>
+        /// 2. Add this method to the Put Object Progress Event delegate's invocation list
+        /// <code>
+        /// PutObjectRequest request = new PutObjectRequest();
+        /// request.PutObjectProgressEvent += displayProgress;
+        /// </code>
+        /// </remarks>
+        public event EventHandler<PutObjectProgressArgs> PutObjectProgressEvent;
+
+        /// <summary>
+        /// The "handler" will be notified every time a put
+        /// object progress event is raised.
+        /// </summary>
+        /// <param name="handler">A method that consumes the put object progress notification</param>
+        /// <returns>this instance of the PutObjectRequest</returns>
+        public PutObjectRequest WithSubscriber(EventHandler<PutObjectProgressArgs> handler)
+        {
+            this.PutObjectProgressEvent += handler;
+            return this;
+        }
+
+        #endregion
+
+        #region BucketName
 
         /// <summary>
         /// Gets and sets the BucketName property.
@@ -87,7 +191,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        # region Key
+        #region Key
         /// <summary>
         /// Gets and sets the Key property.
         /// </summary>
@@ -121,7 +225,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        # region FilePath
+        #region FilePath
         /// <summary>
         /// Gets and sets the FilePath property.
         /// </summary>
@@ -200,7 +304,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        # region MD5Digest
+        #region MD5Digest
         /// <summary>
         /// Gets and sets the MD5 Digest property.
         /// <remarks>
@@ -244,7 +348,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        # region GenerateMD5Digest
+        #region GenerateMD5Digest
         /// <summary>
         /// Gets and Sets the property that governs whether
         /// a md5Digest is generated for the object being
@@ -276,7 +380,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        # region ContentType
+        #region ContentType
         /// <summary>
         /// Gets and sets the ContentType property.
         /// </summary>
@@ -311,7 +415,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        # region ContentBody
+        #region ContentBody
         /// <summary>
         /// Gets and sets the ContentBody property.
         /// </summary>
@@ -472,5 +576,32 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        /// <summary>
+        /// This method is called by a producer of put object progress
+        /// notifications. When called, all the subscribers in the 
+        /// invocation list will be called sequentially.
+        /// </summary>
+        /// <param name="e"></param>
+        internal void OnRaiseProgressEvent(PutObjectProgressArgs e)
+        {
+            // Make a temporary copy of the event to avoid the possibility of
+            // a race condition if the last and only subscriber unsubscribes
+            // immediately after the null check and before the event is raised.
+            EventHandler<PutObjectProgressArgs> handler = PutObjectProgressEvent;
+            try
+            {
+                // Event will be null if there are no subscribers
+                if (handler != null)
+                {
+                    // This automatically calls all subscribers sequentially
+                    // http://msdn.microsoft.com/en-us/library/ms173172%28VS.80%29.aspx
+                    handler(this, e);
+                }
+            }
+            catch
+            {
+            }
+        }
     }
 }

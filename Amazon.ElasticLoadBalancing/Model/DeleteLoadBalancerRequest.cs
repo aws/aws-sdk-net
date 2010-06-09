@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -39,7 +39,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Because this API has been designed to be idempotent, even if the LoadBalancer does not exist or has been deleted,
     /// DeleteLoadBalancer still returns a success.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class DeleteLoadBalancerRequest
     {
         private string loadBalancerNameField;

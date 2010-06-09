@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Returns metadata about the request, including the request ID.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class DeleteLoadBalancerResponse
     {
         private DeleteLoadBalancerResult deleteLoadBalancerResultField;
@@ -45,17 +45,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             get { return this.deleteLoadBalancerResultField; }
             set { this.deleteLoadBalancerResultField = value; }
-        }
-
-        /// <summary>
-        /// Sets the DeleteLoadBalancerResult property
-        /// </summary>
-        /// <param name="deleteLoadBalancerResult">No data returned.</param>
-        /// <returns>this instance</returns>
-        public DeleteLoadBalancerResponse WithDeleteLoadBalancerResult(DeleteLoadBalancerResult deleteLoadBalancerResult)
-        {
-            this.deleteLoadBalancerResultField = deleteLoadBalancerResult;
-            return this;
         }
 
         /// <summary>
@@ -79,17 +68,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Sets the ResponseMetadata property
-        /// </summary>
-        /// <param name="responseMetadata">Metadata associated with the original request.</param>
-        /// <returns>this instance</returns>
-        public DeleteLoadBalancerResponse WithResponseMetadata(ResponseMetadata responseMetadata)
-        {
-            this.responseMetadataField = responseMetadata;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if ResponseMetadata property is set
         /// </summary>
         /// <returns>true if ResponseMetadata property is set</returns>
@@ -99,7 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// XML Representation for this object
+        /// XML Representation of this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -111,6 +89,15 @@ namespace Amazon.ElasticLoadBalancing.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
         }
     }
 }

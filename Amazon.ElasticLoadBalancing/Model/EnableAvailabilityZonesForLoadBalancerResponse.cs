@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Returns an updated list of Availability Zones for the LoadBalancer.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class EnableAvailabilityZonesForLoadBalancerResponse
     {
         private EnableAvailabilityZonesForLoadBalancerResult enableAvailabilityZonesForLoadBalancerResultField;
@@ -45,17 +45,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         {
             get { return this.enableAvailabilityZonesForLoadBalancerResultField; }
             set { this.enableAvailabilityZonesForLoadBalancerResultField = value; }
-        }
-
-        /// <summary>
-        /// Sets the EnableAvailabilityZonesForLoadBalancerResult property
-        /// </summary>
-        /// <param name="enableAvailabilityZonesForLoadBalancerResult">Returns an updated list of Availability Zones for the LoadBalancer.</param>
-        /// <returns>this instance</returns>
-        public EnableAvailabilityZonesForLoadBalancerResponse WithEnableAvailabilityZonesForLoadBalancerResult(EnableAvailabilityZonesForLoadBalancerResult enableAvailabilityZonesForLoadBalancerResult)
-        {
-            this.enableAvailabilityZonesForLoadBalancerResultField = enableAvailabilityZonesForLoadBalancerResult;
-            return this;
         }
 
         /// <summary>
@@ -79,17 +68,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Sets the ResponseMetadata property
-        /// </summary>
-        /// <param name="responseMetadata">Metadata associated with the original request.</param>
-        /// <returns>this instance</returns>
-        public EnableAvailabilityZonesForLoadBalancerResponse WithResponseMetadata(ResponseMetadata responseMetadata)
-        {
-            this.responseMetadataField = responseMetadata;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if ResponseMetadata property is set
         /// </summary>
         /// <returns>true if ResponseMetadata property is set</returns>
@@ -99,7 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// XML Representation for this object
+        /// XML Representation of this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -111,6 +89,15 @@ namespace Amazon.ElasticLoadBalancing.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
         }
     }
 }

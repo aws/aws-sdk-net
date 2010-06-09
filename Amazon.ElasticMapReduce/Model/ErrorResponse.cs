@@ -35,6 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private List<Error> errorField;
         private string requestIdField;
+
         /// <summary>
         /// Gets and sets the Error property.
         /// Specific error with the request.
@@ -51,20 +52,6 @@ namespace Amazon.ElasticMapReduce.Model
                 return this.errorField;
             }
             set { this.errorField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Error property
-        /// </summary>
-        /// <param name="list">Specific error with the request.</param>
-        /// <returns>this instance</returns>
-        public ErrorResponse WithError(params Error[] list)
-        {
-            foreach (Error item in list)
-            {
-                Error.Add(item);
-            }
-            return this;
         }
 
         /// <summary>
@@ -88,17 +75,6 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Sets the RequestId property
-        /// </summary>
-        /// <param name="requestId">ID that uniquely identifies a request. Amazon keeps track of request IDs. If you have a question about a request, include the request ID in your correspondence.</param>
-        /// <returns>this instance</returns>
-        public ErrorResponse WithRequestId(string requestId)
-        {
-            this.requestIdField = requestId;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if RequestId property is set
         /// </summary>
         /// <returns>true if RequestId property is set</returns>
@@ -108,7 +84,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// XML Representation for this object
+        /// XML Representation of this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -120,6 +96,15 @@ namespace Amazon.ElasticMapReduce.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
         }
     }
 }

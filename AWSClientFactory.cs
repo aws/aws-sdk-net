@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2009-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -27,6 +27,9 @@ using Amazon.CloudWatch;
 using Amazon.ElasticLoadBalancing;
 using Amazon.AutoScaling;
 using Amazon.S3;
+using Amazon.CloudFront;
+using Amazon.SimpleNotificationService;
+using Amazon.RDS;
 
 namespace Amazon
 {
@@ -319,6 +322,111 @@ namespace Amazon
             )
         {
             return new AmazonS3Client(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon RDS service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon RDS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRDS CreateAmazonRDSClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonRDSClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon RDS service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon RDS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRDS CreateAmazonRDSClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonRDSConfig config
+            )
+        {
+            return new AmazonRDSClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFront service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CloudFront client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFront CreateAmazonCloudFrontClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCloudFrontClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFront service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CloudFront client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFront CreateAmazonCloudFrontClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonCloudFrontConfig config
+            )
+        {
+            return new AmazonCloudFrontClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SNS service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon SNS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleNotificationService CreateAmazonSNSClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonSimpleNotificationServiceClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SNS service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon SNS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleNotificationService CreateAmazonSNSClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonSimpleNotificationServiceConfig config
+            )
+        {
+            return new AmazonSimpleNotificationServiceClient(awsAccessKey, awsSecretAccessKey, config);
         }
     }
 }

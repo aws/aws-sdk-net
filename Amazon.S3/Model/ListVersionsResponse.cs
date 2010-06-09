@@ -130,7 +130,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        # region IsTruncated
+        #region IsTruncated
         /// <summary>
         /// Gets and Sets the IsTruncated property. 
         /// This property governs whether

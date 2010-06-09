@@ -16,11 +16,12 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -29,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Updated healthcheck for the instances.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
     public class ConfigureHealthCheckResult
     {
         private HealthCheck healthCheckField;
@@ -50,21 +51,6 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Sets the HealthCheck property
-        /// </summary>
-        /// <param name="healthCheck">The LoadBalancer also monitors the health of your instances registered with your LoadBalancer.
-        /// When the LoadBalancer detects a problem with an instance, it stops distributing traffic to it. When the
-        /// instance is healthy again, the LoadBalancer restarts distributing traffic to it. This process allows your
-        /// application to automatically react to issues that might affect your customers without your having to be involved
-        /// beyond configuring the healthcheck.</param>
-        /// <returns>this instance</returns>
-        public ConfigureHealthCheckResult WithHealthCheck(HealthCheck healthCheck)
-        {
-            this.healthCheckField = healthCheck;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if HealthCheck property is set
         /// </summary>
         /// <returns>true if HealthCheck property is set</returns>
@@ -73,5 +59,28 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this.healthCheckField != null;
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
-  *  Copyright 2009-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -31,7 +31,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Amazon Web Services LLC")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
-[assembly: AssemblyCopyright("Copyright © Amazon Web Services 2009-2010")]
+[assembly: AssemblyCopyright("Copyright © Amazon Web Services 2008-2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -53,8 +53,8 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.6.0")]
-[assembly: AssemblyFileVersion("1.0.6.0")]
+[assembly: AssemblyVersion("1.0.7.0")]
+[assembly: AssemblyFileVersion("1.0.7.0")]
 
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Security.AllowPartiallyTrustedCallers]

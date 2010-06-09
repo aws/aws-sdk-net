@@ -65,6 +65,7 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return this.jobFlowIdField != null;
         }
+
         /// <summary>
         /// Gets and sets the Steps property.
         /// </summary>

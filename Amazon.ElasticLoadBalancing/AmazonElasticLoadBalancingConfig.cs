@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-05-15
+ *  API Version: 2009-11-25
  */
 
 namespace Amazon.ElasticLoadBalancing
@@ -26,7 +26,7 @@ namespace Amazon.ElasticLoadBalancing
     /// </summary>
     public class AmazonElasticLoadBalancingConfig
     {
-        private string serviceVersion = "2009-05-15";
+        private string serviceVersion = "2009-11-25";
         private string serviceURL = "https://elasticloadbalancing.amazonaws.com/";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
         private string signatureVersion = "2";

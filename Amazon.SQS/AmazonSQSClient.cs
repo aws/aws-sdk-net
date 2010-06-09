@@ -448,7 +448,7 @@ namespace Amazon.SQS
                             using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
                             {
                                 XmlSerializer serializer = new XmlSerializer(typeof(ErrorResponse));
-                                ErrorResponse errorResponse = (ErrorResponse) serializer.Deserialize(sr);
+                                ErrorResponse errorResponse = (ErrorResponse)serializer.Deserialize(sr);
                                 Error error = errorResponse.Error[0];
 
                                 /* Throw formatted exception with information available from the error response */
