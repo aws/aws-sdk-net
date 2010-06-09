@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ReservationId")]
         public string ReservationId
         {
-            get { return this.reservationIdField ; }
-            set { this.reservationIdField= value; }
+            get { return this.reservationIdField; }
+            set { this.reservationIdField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ReservationId property is set</returns>
         public bool IsSetReservationId()
         {
-            return  this.reservationIdField != null;
+            return this.reservationIdField != null;
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
         {
-            get { return this.ownerIdField ; }
-            set { this.ownerIdField= value; }
+            get { return this.ownerIdField; }
+            set { this.ownerIdField = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if OwnerId property is set</returns>
         public bool IsSetOwnerId()
         {
-            return  this.ownerIdField != null;
+            return this.ownerIdField != null;
         }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "RequesterId")]
         public string RequesterId
         {
-            get { return this.requesterIdField ; }
-            set { this.requesterIdField= value; }
+            get { return this.requesterIdField; }
+            set { this.requesterIdField = value; }
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if RequesterId property is set</returns>
         public bool IsSetRequesterId()
         {
-            return  this.requesterIdField != null;
+            return this.requesterIdField != null;
         }
 
         /// <summary>

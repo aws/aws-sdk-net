@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "EngineDefaults")]
         public EngineDefaults EngineDefaults
         {
-            get { return this.engineDefaultsField ; }
+            get { return this.engineDefaultsField; }
             set { this.engineDefaultsField = value; }
         }
 

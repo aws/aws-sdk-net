@@ -46,8 +46,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBParameterGroupName")]
         public string DBParameterGroupName
         {
-            get { return this.DBParameterGroupNameField ; }
-            set { this.DBParameterGroupNameField= value; }
+            get { return this.DBParameterGroupNameField; }
+            set { this.DBParameterGroupNameField = value; }
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBParameterGroupName property is set</returns>
         public bool IsSetDBParameterGroupName()
         {
-            return  this.DBParameterGroupNameField != null;
+            return this.DBParameterGroupNameField != null;
         }
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Engine")]
         public string Engine
         {
-            get { return this.engineField ; }
-            set { this.engineField= value; }
+            get { return this.engineField; }
+            set { this.engineField = value; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Engine property is set</returns>
         public bool IsSetEngine()
         {
-            return  this.engineField != null;
+            return this.engineField != null;
         }
 
         /// <summary>
@@ -113,8 +113,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField ; }
-            set { this.descriptionField= value; }
+            get { return this.descriptionField; }
+            set { this.descriptionField = value; }
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Description property is set</returns>
         public bool IsSetDescription()
         {
-            return  this.descriptionField != null;
+            return this.descriptionField != null;
         }
 
     }

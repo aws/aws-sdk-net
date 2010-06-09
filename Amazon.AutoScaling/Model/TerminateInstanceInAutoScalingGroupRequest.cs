@@ -45,8 +45,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "ShouldDecrementDesiredCapacity")]
         public bool ShouldDecrementDesiredCapacity
         {
-            get { return this.shouldDecrementDesiredCapacityField.GetValueOrDefault() ; }
-            set { this.shouldDecrementDesiredCapacityField= value; }
+            get { return this.shouldDecrementDesiredCapacityField.GetValueOrDefault(); }
+            set { this.shouldDecrementDesiredCapacityField = value; }
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if ShouldDecrementDesiredCapacity property is set</returns>
         public bool IsSetShouldDecrementDesiredCapacity()
         {
-            return  this.shouldDecrementDesiredCapacityField.HasValue;
+            return this.shouldDecrementDesiredCapacityField.HasValue;
         }
 
     }

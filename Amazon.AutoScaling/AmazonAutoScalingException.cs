@@ -128,7 +128,7 @@ namespace Amazon.AutoScaling
         {
             this.message = message;
             AmazonAutoScalingException ex = innerException as AmazonAutoScalingException;
-            if (ex != null )
+            if (ex != null)
             {
                 this.statusCode = ex.StatusCode;
                 this.errorCode = ex.ErrorCode;

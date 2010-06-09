@@ -42,8 +42,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "LoadBalancerName")]
         public string LoadBalancerName
         {
-            get { return this.loadBalancerNameField ; }
-            set { this.loadBalancerNameField= value; }
+            get { return this.loadBalancerNameField; }
+            set { this.loadBalancerNameField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if LoadBalancerName property is set</returns>
         public bool IsSetLoadBalancerName()
         {
-            return  this.loadBalancerNameField != null;
+            return this.loadBalancerNameField != null;
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "HealthCheck")]
         public HealthCheck HealthCheck
         {
-            get { return this.healthCheckField ; }
+            get { return this.healthCheckField; }
             set { this.healthCheckField = value; }
         }
 

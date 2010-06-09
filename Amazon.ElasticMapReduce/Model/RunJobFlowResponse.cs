@@ -43,7 +43,7 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "RunJobFlowResult")]
         public RunJobFlowResult RunJobFlowResult
         {
-            get { return this.runJobFlowResultField ; }
+            get { return this.runJobFlowResultField; }
             set { this.runJobFlowResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

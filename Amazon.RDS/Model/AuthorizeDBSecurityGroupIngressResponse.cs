@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "AuthorizeDBSecurityGroupIngressResult")]
         public AuthorizeDBSecurityGroupIngressResult AuthorizeDBSecurityGroupIngressResult
         {
-            get { return this.authorizeDBSecurityGroupIngressResultField ; }
+            get { return this.authorizeDBSecurityGroupIngressResultField; }
             set { this.authorizeDBSecurityGroupIngressResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

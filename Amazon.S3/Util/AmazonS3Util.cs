@@ -22,13 +22,13 @@
 
 using System;
 using System.Collections.Specialized;
-using System.Globalization;
 using System.IO;
-using System.Runtime.InteropServices;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
+using Amazon.S3.Model;
 using Amazon.Util;
 
 namespace Amazon.S3.Util
@@ -230,7 +230,7 @@ namespace Amazon.S3.Util
                 bucketName = bucketName.Substring(0, idx);
             }
 
-            if (bucketName.Length < S3Constants.MinBucketLength||
+            if (bucketName.Length < S3Constants.MinBucketLength ||
                  bucketName.Length > S3Constants.MaxBucketLength ||
                  bucketName.StartsWith(".") ||
                  bucketName.EndsWith("."))
@@ -256,6 +256,59 @@ namespace Amazon.S3.Util
                 }
             }
             return true;
+        }
+
+        /// <summary>
+        /// Determines whether an S3 bucket exists or not.
+        /// This is done by:
+        /// 1. Creating a PreSigned Url for the bucket (with an expiry date at the end of this decade)
+        /// 2. Making a HEAD request to the Url
+        /// </summary>
+        /// <param name="bucketName">The name of the bucket to check.</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <returns></returns>
+        public static bool DoesS3BucketExist(string bucketName, AmazonS3 s3Client)
+        {
+            if (s3Client == null)
+            {
+                throw new ArgumentNullException("s3Client", "The s3Client cannot be null!");
+            }
+
+            if (String.IsNullOrEmpty(bucketName))
+            {
+                throw new ArgumentNullException("bucketName", "The bucketName cannot be null or the empty string!");
+            }
+
+            GetPreSignedUrlRequest request = new GetPreSignedUrlRequest();
+            request.BucketName = bucketName;
+            request.Expires = new DateTime(2019, 12, 31);
+            request.Verb = HttpVerb.HEAD;
+            string url = s3Client.GetPreSignedURL(request);
+
+            HttpWebRequest httpRequest = WebRequest.Create(url) as HttpWebRequest;
+            httpRequest.Method = "HEAD";
+            try
+            {
+                HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse;
+                // If all went well, the bucket was found!
+                return true;
+            }
+            catch (WebException we)
+            {
+                using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
+                {
+                    if (errorResponse != null)
+                    {
+                        HttpStatusCode code = errorResponse.StatusCode;
+                        return code != HttpStatusCode.NotFound &&
+                            code != HttpStatusCode.BadRequest;
+                    }
+
+                    // The Error Response is null which is indicative of either
+                    // a bad request or some other problem
+                    return false;
+                }
+            }
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "TerminateInstanceInAutoScalingGroupResult")]
         public TerminateInstanceInAutoScalingGroupResult TerminateInstanceInAutoScalingGroupResult
         {
-            get { return this.terminateInstanceInAutoScalingGroupResultField ; }
+            get { return this.terminateInstanceInAutoScalingGroupResultField; }
             set { this.terminateInstanceInAutoScalingGroupResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

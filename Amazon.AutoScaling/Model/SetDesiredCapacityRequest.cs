@@ -45,8 +45,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "AutoScalingGroupName")]
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupNameField ; }
-            set { this.autoScalingGroupNameField= value; }
+            get { return this.autoScalingGroupNameField; }
+            set { this.autoScalingGroupNameField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if AutoScalingGroupName property is set</returns>
         public bool IsSetAutoScalingGroupName()
         {
-            return  this.autoScalingGroupNameField != null;
+            return this.autoScalingGroupNameField != null;
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "DesiredCapacity")]
         public Decimal DesiredCapacity
         {
-            get { return this.desiredCapacityField.GetValueOrDefault() ; }
-            set { this.desiredCapacityField= value; }
+            get { return this.desiredCapacityField.GetValueOrDefault(); }
+            set { this.desiredCapacityField = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if DesiredCapacity property is set</returns>
         public bool IsSetDesiredCapacity()
         {
-            return  this.desiredCapacityField.HasValue;
+            return this.desiredCapacityField.HasValue;
         }
 
     }

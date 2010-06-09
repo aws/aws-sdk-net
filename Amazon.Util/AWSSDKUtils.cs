@@ -20,6 +20,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -41,6 +42,7 @@ namespace Amazon.Util
         internal const string ContentLengthHeader = "Content-Length";
         internal const string ContentMD5Header = "Content-MD5";
         internal const string ETagHeader = "ETag";
+        internal const int DefaultMaxRetry = 3;
 
         #endregion
 
@@ -49,7 +51,7 @@ namespace Amazon.Util
         /// <summary>
         /// The AWS SDK User Agent
         /// </summary>
-        public const string SDKUserAgent = "AWS SDK for .NET/1.0.5";
+        public const string SDKUserAgent = "AWS SDK for .NET/1.0.6";
 
         /// <summary>
         /// The Set of accepted and valid Url characters. 
@@ -71,6 +73,65 @@ namespace Amazon.Util
         /// The ISO8601Date Format string. Used when parsing date objects
         /// </summary>
         public const string ISO8601DateFormat = "yyyy-MM-dd\\THH:mm:ss.fff\\Z";
+
+        #endregion
+
+        #region Internal Methods
+
+        internal static string CalculateStringToSignV2(IDictionary<string, string> parameters, string serviceUrl)
+        {
+            StringBuilder data = new StringBuilder(512);
+            IDictionary<string, string> sorted =
+                  new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
+            data.Append("POST");
+            data.Append("\n");
+            Uri endpoint = new Uri(serviceUrl.ToLower());
+
+            data.Append(endpoint.Host);
+            data.Append("\n");
+            string uri = endpoint.AbsolutePath;
+            if (uri == null || uri.Length == 0)
+            {
+                uri = "/";
+            }
+
+            data.Append(AWSSDKUtils.UrlEncode(uri, true));
+            data.Append("\n");
+            foreach (KeyValuePair<string, string> pair in sorted)
+            {
+                if (pair.Value != null)
+                {
+                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
+                    data.Append("=");
+                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
+                    data.Append("&");
+                }
+            }
+
+            string result = data.ToString();
+            return result.Remove(result.Length - 1);
+        }
+
+        /**
+         * Convert Dictionary of paremeters to Url encoded query string
+         */
+        internal static string GetParametersAsString(IDictionary<string, string> parameters)
+        {
+            StringBuilder data = new StringBuilder(512);
+            foreach (string key in (IEnumerable<string>)parameters.Keys)
+            {
+                string value = parameters[key];
+                if (value != null)
+                {
+                    data.Append(key);
+                    data.Append('=');
+                    data.Append(AWSSDKUtils.UrlEncode(value, false));
+                    data.Append('&');
+                }
+            }
+            string result = data.ToString();
+            return result.Remove(result.Length - 1);
+        }
 
         #endregion
 
@@ -114,22 +175,34 @@ namespace Amazon.Util
         {
             get
             {
-                DateTime dateTime = DateTime.UtcNow;
-                DateTime formatted = new DateTime(
-                    dateTime.Year,
-                    dateTime.Month,
-                    dateTime.Day,
-                    dateTime.Hour,
-                    dateTime.Minute,
-                    dateTime.Second,
-                    dateTime.Millisecond,
-                    DateTimeKind.Local
-                    );
-                return formatted.ToString(
-                    ISO8601DateFormat,
-                    CultureInfo.InvariantCulture
-                    );
+                return GetFormattedTimestampISO8601(0);
             }
+        }
+
+        /// <summary>
+        /// Gets the ISO8601 formatted timestamp that is minutesFromNow
+        /// in the future.
+        /// </summary>
+        /// <param name="minutesFromNow">The number of minutes from the current instant
+        /// for which the timestamp is needed.</param>
+        /// <returns>The ISO8601 formatted future timestamp.</returns>
+        public static string GetFormattedTimestampISO8601(int minutesFromNow)
+        {
+            DateTime dateTime = DateTime.UtcNow.AddMinutes(minutesFromNow);
+            DateTime formatted = new DateTime(
+                dateTime.Year,
+                dateTime.Month,
+                dateTime.Day,
+                dateTime.Hour,
+                dateTime.Minute,
+                dateTime.Second,
+                dateTime.Millisecond,
+                DateTimeKind.Local
+                );
+            return formatted.ToString(
+                AWSSDKUtils.ISO8601DateFormat,
+                CultureInfo.InvariantCulture
+                );
         }
 
         /// <summary>
@@ -176,6 +249,44 @@ namespace Amazon.Util
                 Marshal.ZeroFreeBSTR(bstr);
                 algorithm.Clear();
                 Array.Clear(charArray, 0, charArray.Length);
+            }
+        }
+
+        /// <summary>
+        /// Computes RFC 2104-compliant HMAC signature
+        /// </summary>
+        /// <param name="data">The data to be signed</param>
+        /// <param name="key">The secret signing key</param>
+        /// <param name="algorithm">The algorithm to sign the data with</param>
+        /// <exception cref="T:System.ArgumentNullException"/>
+        /// <returns>A string representing the HMAC signature</returns>
+        public static string HMACSign(string data, string key, KeyedHashAlgorithm algorithm)
+        {
+            if (String.IsNullOrEmpty(key))
+            {
+                throw new ArgumentNullException("key", "Please specify a Secret Signing Key.");
+            }
+
+            if (String.IsNullOrEmpty(data))
+            {
+                throw new ArgumentNullException("data", "Please specify data to sign.");
+            }
+
+            if (null == algorithm)
+            {
+                throw new ArgumentNullException("algorithm", "Please specify a KeyedHashAlgorithm to use.");
+            }
+
+            try
+            {
+                algorithm.Key = Encoding.UTF8.GetBytes(key);
+                return Convert.ToBase64String(algorithm.ComputeHash(
+                    Encoding.UTF8.GetBytes(data))
+                    );
+            }
+            finally
+            {
+                algorithm.Clear();
             }
         }
 

@@ -49,8 +49,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField ; }
-            set { this.DBInstanceIdentifierField= value; }
+            get { return this.DBInstanceIdentifierField; }
+            set { this.DBInstanceIdentifierField = value; }
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBInstanceIdentifier property is set</returns>
         public bool IsSetDBInstanceIdentifier()
         {
-            return  this.DBInstanceIdentifierField != null;
+            return this.DBInstanceIdentifierField != null;
         }
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBSnapshotIdentifier")]
         public string DBSnapshotIdentifier
         {
-            get { return this.DBSnapshotIdentifierField ; }
-            set { this.DBSnapshotIdentifierField= value; }
+            get { return this.DBSnapshotIdentifierField; }
+            set { this.DBSnapshotIdentifierField = value; }
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBSnapshotIdentifier property is set</returns>
         public bool IsSetDBSnapshotIdentifier()
         {
-            return  this.DBSnapshotIdentifierField != null;
+            return this.DBSnapshotIdentifierField != null;
         }
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBInstanceClass")]
         public string DBInstanceClass
         {
-            get { return this.DBInstanceClassField ; }
-            set { this.DBInstanceClassField= value; }
+            get { return this.DBInstanceClassField; }
+            set { this.DBInstanceClassField = value; }
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBInstanceClass property is set</returns>
         public bool IsSetDBInstanceClass()
         {
-            return  this.DBInstanceClassField != null;
+            return this.DBInstanceClassField != null;
         }
 
         /// <summary>
@@ -155,8 +155,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Port")]
         public Decimal Port
         {
-            get { return this.portField.GetValueOrDefault() ; }
-            set { this.portField= value; }
+            get { return this.portField.GetValueOrDefault(); }
+            set { this.portField = value; }
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Port property is set</returns>
         public bool IsSetPort()
         {
-            return  this.portField.HasValue;
+            return this.portField.HasValue;
         }
 
         /// <summary>
@@ -186,8 +186,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
 
     }

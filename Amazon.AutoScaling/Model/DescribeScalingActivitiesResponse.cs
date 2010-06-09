@@ -47,7 +47,7 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "DescribeScalingActivitiesResult")]
         public DescribeScalingActivitiesResult DescribeScalingActivitiesResult
         {
-            get { return this.describeScalingActivitiesResultField ; }
+            get { return this.describeScalingActivitiesResultField; }
             set { this.describeScalingActivitiesResultField = value; }
         }
 
@@ -80,7 +80,7 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

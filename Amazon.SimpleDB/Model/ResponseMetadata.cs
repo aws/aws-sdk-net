@@ -42,8 +42,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "RequestId")]
         public string RequestId
         {
-            get { return this.requestIdField ; }
-            set { this.requestIdField= value; }
+            get { return this.requestIdField; }
+            set { this.requestIdField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if RequestId property is set</returns>
         public bool IsSetRequestId()
         {
-            return  this.requestIdField != null;
+            return this.requestIdField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "BoxUsage")]
         public string BoxUsage
         {
-            get { return this.boxUsageField ; }
-            set { this.boxUsageField= value; }
+            get { return this.boxUsageField; }
+            set { this.boxUsageField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if BoxUsage property is set</returns>
         public bool IsSetBoxUsage()
         {
-            return  this.boxUsageField != null;
+            return this.boxUsageField != null;
         }
 
     }

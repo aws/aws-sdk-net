@@ -38,6 +38,7 @@ namespace Amazon.S3
         private int proxyPort = -1;
         private int maxErrorRetry = 3;
         private Protocol protocol = Protocol.HTTPS;
+        private bool fUseSecureString = true;
 
         #endregion
 
@@ -207,6 +208,56 @@ namespace Amazon.S3
         public AmazonS3Config WithCommunicationProtocol(Protocol protocol)
         {
             this.protocol = protocol;
+            return this;
+        }
+
+        /// <summary>
+        /// Gets and Sets the UseSecureString property. 
+        /// By default, the AWS Secret Access Key is stored
+        /// in a SecureString (true) - this is one of the secure
+        /// ways to store a secret provided by the .NET Framework.
+        /// But, the use of SecureStrings is not supported in Medium 
+        /// Trust Windows Hosting environments. If you are building an
+        /// ASP.NET application that needs to run with Medium Trust,
+        /// set this property to false, and the client will
+        /// not save your AWS Secret Key in a secure string. Changing
+        /// the default to false can result in the Secret Key being
+        /// vulnerable; please use this property judiciously.
+        /// </summary>
+        /// <remarks>Storing the AWS Secret Access Key is not
+        /// recommended unless absolutely necessary.
+        /// </remarks>
+        /// <seealso cref="T:System.Security.SecureString"/>
+        public bool UseSecureStringForAwsSecretKey
+        {
+            get { return this.fUseSecureString; }
+            set { this.fUseSecureString = value; }
+        }
+
+        /// <summary>
+        /// Sets the UseSecureString property. 
+        /// By default, the AWS Secret Access Key is stored
+        /// in a SecureString (true) - this is one of the secure
+        /// ways to store a secret provided by the .NET Framework.
+        /// But, the use of SecureStrings is not supported in Medium 
+        /// Trust Windows Hosting environments. If you are building an
+        /// ASP.NET application that needs to run with Medium Trust,
+        /// set this property to false, and the client will
+        /// not save your AWS Secret Key in a secure string. Changing
+        /// the default to false can result in the Secret Key being
+        /// vulnerable; please use this property judiciously.
+        /// </summary>
+        /// <param name="fSecure">
+        /// Whether a secure string should be used or not.
+        /// </param>
+        /// <returns>The Config object with the property set</returns>
+        /// <remarks>Storing the AWS Secret Access Key is not
+        /// recommended unless absolutely necessary.
+        /// </remarks>
+        /// <seealso cref="T:System.Security.SecureString"/>
+        public AmazonS3Config WithUseSecureStringForAwsSecretKey(bool fSecure)
+        {
+            fUseSecureString = fSecure;
             return this;
         }
     }

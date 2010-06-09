@@ -50,8 +50,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "AutoScalingGroupName")]
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupNameField ; }
-            set { this.autoScalingGroupNameField= value; }
+            get { return this.autoScalingGroupNameField; }
+            set { this.autoScalingGroupNameField = value; }
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if AutoScalingGroupName property is set</returns>
         public bool IsSetAutoScalingGroupName()
         {
-            return  this.autoScalingGroupNameField != null;
+            return this.autoScalingGroupNameField != null;
         }
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "LaunchConfigurationName")]
         public string LaunchConfigurationName
         {
-            get { return this.launchConfigurationNameField ; }
-            set { this.launchConfigurationNameField= value; }
+            get { return this.launchConfigurationNameField; }
+            set { this.launchConfigurationNameField = value; }
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if LaunchConfigurationName property is set</returns>
         public bool IsSetLaunchConfigurationName()
         {
-            return  this.launchConfigurationNameField != null;
+            return this.launchConfigurationNameField != null;
         }
 
         /// <summary>
@@ -112,8 +112,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "MinSize")]
         public Decimal MinSize
         {
-            get { return this.minSizeField.GetValueOrDefault() ; }
-            set { this.minSizeField= value; }
+            get { return this.minSizeField.GetValueOrDefault(); }
+            set { this.minSizeField = value; }
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if MinSize property is set</returns>
         public bool IsSetMinSize()
         {
-            return  this.minSizeField.HasValue;
+            return this.minSizeField.HasValue;
         }
 
         /// <summary>
@@ -143,8 +143,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "MaxSize")]
         public Decimal MaxSize
         {
-            get { return this.maxSizeField.GetValueOrDefault() ; }
-            set { this.maxSizeField= value; }
+            get { return this.maxSizeField.GetValueOrDefault(); }
+            set { this.maxSizeField = value; }
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if MaxSize property is set</returns>
         public bool IsSetMaxSize()
         {
-            return  this.maxSizeField.HasValue;
+            return this.maxSizeField.HasValue;
         }
 
         /// <summary>
@@ -174,8 +174,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "DesiredCapacity")]
         public Decimal DesiredCapacity
         {
-            get { return this.desiredCapacityField.GetValueOrDefault() ; }
-            set { this.desiredCapacityField= value; }
+            get { return this.desiredCapacityField.GetValueOrDefault(); }
+            set { this.desiredCapacityField = value; }
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if DesiredCapacity property is set</returns>
         public bool IsSetDesiredCapacity()
         {
-            return  this.desiredCapacityField.HasValue;
+            return this.desiredCapacityField.HasValue;
         }
 
         /// <summary>
@@ -206,8 +206,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "Cooldown")]
         public Decimal Cooldown
         {
-            get { return this.cooldownField.GetValueOrDefault() ; }
-            set { this.cooldownField= value; }
+            get { return this.cooldownField.GetValueOrDefault(); }
+            set { this.cooldownField = value; }
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if Cooldown property is set</returns>
         public bool IsSetCooldown()
         {
-            return  this.cooldownField.HasValue;
+            return this.cooldownField.HasValue;
         }
 
         /// <summary>
@@ -360,8 +360,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "CreatedTime")]
         public DateTime CreatedTime
         {
-            get { return this.createdTimeField.GetValueOrDefault() ; }
-            set { this.createdTimeField= value; }
+            get { return this.createdTimeField.GetValueOrDefault(); }
+            set { this.createdTimeField = value; }
         }
 
         /// <summary>
@@ -381,7 +381,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if CreatedTime property is set</returns>
         public bool IsSetCreatedTime()
         {
-            return  this.createdTimeField.HasValue;
+            return this.createdTimeField.HasValue;
         }
 
     }

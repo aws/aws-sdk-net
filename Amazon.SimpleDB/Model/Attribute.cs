@@ -45,8 +45,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField ; }
-            set { this.nameField= value; }
+            get { return this.nameField; }
+            set { this.nameField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if Name property is set</returns>
         public bool IsSetName()
         {
-            return  this.nameField != null;
+            return this.nameField != null;
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Value")]
         public string Value
         {
-            get { return this.valueField ; }
-            set { this.valueField= value; }
+            get { return this.valueField; }
+            set { this.valueField = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if Value property is set</returns>
         public bool IsSetValue()
         {
-            return  this.valueField != null;
+            return this.valueField != null;
         }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "NameEncoding")]
         public string NameEncoding
         {
-            get { return this.nameEncodingField ; }
-            set { this.nameEncodingField= value; }
+            get { return this.nameEncodingField; }
+            set { this.nameEncodingField = value; }
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if NameEncoding property is set</returns>
         public bool IsSetNameEncoding()
         {
-            return  this.nameEncodingField != null;
+            return this.nameEncodingField != null;
         }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "ValueEncoding")]
         public string ValueEncoding
         {
-            get { return this.valueEncodingField ; }
-            set { this.valueEncodingField= value; }
+            get { return this.valueEncodingField; }
+            set { this.valueEncodingField = value; }
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if ValueEncoding property is set</returns>
         public bool IsSetValueEncoding()
         {
-            return  this.valueEncodingField != null;
+            return this.valueEncodingField != null;
         }
 
     }

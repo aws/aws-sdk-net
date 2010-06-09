@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpcAttachment")]
         public VpcAttachment VpcAttachment
         {
-            get { return this.vpcAttachmentField ; }
+            get { return this.vpcAttachmentField; }
             set { this.vpcAttachmentField = value; }
         }
 

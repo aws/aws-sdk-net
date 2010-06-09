@@ -42,8 +42,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Address")]
         public string Address
         {
-            get { return this.addressField ; }
-            set { this.addressField= value; }
+            get { return this.addressField; }
+            set { this.addressField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Address property is set</returns>
         public bool IsSetAddress()
         {
-            return  this.addressField != null;
+            return this.addressField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Port")]
         public Decimal Port
         {
-            get { return this.portField.GetValueOrDefault() ; }
-            set { this.portField= value; }
+            get { return this.portField.GetValueOrDefault(); }
+            set { this.portField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Port property is set</returns>
         public bool IsSetPort()
         {
-            return  this.portField.HasValue;
+            return this.portField.HasValue;
         }
 
     }

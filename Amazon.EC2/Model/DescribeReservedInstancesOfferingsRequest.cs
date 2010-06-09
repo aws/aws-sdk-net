@@ -89,8 +89,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
         {
-            get { return this.instanceTypeField ; }
-            set { this.instanceTypeField= value; }
+            get { return this.instanceTypeField; }
+            set { this.instanceTypeField = value; }
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceType property is set</returns>
         public bool IsSetInstanceType()
         {
-            return  this.instanceTypeField != null;
+            return this.instanceTypeField != null;
         }
 
         /// <summary>
@@ -120,8 +120,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
 
         /// <summary>
@@ -151,8 +151,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ProductDescription")]
         public string ProductDescription
         {
-            get { return this.productDescriptionField ; }
-            set { this.productDescriptionField= value; }
+            get { return this.productDescriptionField; }
+            set { this.productDescriptionField = value; }
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ProductDescription property is set</returns>
         public bool IsSetProductDescription()
         {
-            return  this.productDescriptionField != null;
+            return this.productDescriptionField != null;
         }
 
     }

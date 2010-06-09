@@ -41,8 +41,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
 
     }

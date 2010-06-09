@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SubnetId")]
         public string SubnetId
         {
-            get { return this.subnetIdField ; }
-            set { this.subnetIdField= value; }
+            get { return this.subnetIdField; }
+            set { this.subnetIdField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SubnetId property is set</returns>
         public bool IsSetSubnetId()
         {
-            return  this.subnetIdField != null;
+            return this.subnetIdField != null;
         }
 
     }

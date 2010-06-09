@@ -82,8 +82,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Label")]
         public string Label
         {
-            get { return this.labelField ; }
-            set { this.labelField= value; }
+            get { return this.labelField; }
+            set { this.labelField = value; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Label property is set</returns>
         public bool IsSetLabel()
         {
-            return  this.labelField != null;
+            return this.labelField != null;
         }
 
     }

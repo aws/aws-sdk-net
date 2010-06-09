@@ -45,8 +45,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "MessageId")]
         public string MessageId
         {
-            get { return this.messageIdField ; }
-            set { this.messageIdField= value; }
+            get { return this.messageIdField; }
+            set { this.messageIdField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if MessageId property is set</returns>
         public bool IsSetMessageId()
         {
-            return  this.messageIdField != null;
+            return this.messageIdField != null;
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "ReceiptHandle")]
         public string ReceiptHandle
         {
-            get { return this.receiptHandleField ; }
-            set { this.receiptHandleField= value; }
+            get { return this.receiptHandleField; }
+            set { this.receiptHandleField = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if ReceiptHandle property is set</returns>
         public bool IsSetReceiptHandle()
         {
-            return  this.receiptHandleField != null;
+            return this.receiptHandleField != null;
         }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "MD5OfBody")]
         public string MD5OfBody
         {
-            get { return this.MD5OfBodyField ; }
-            set { this.MD5OfBodyField= value; }
+            get { return this.MD5OfBodyField; }
+            set { this.MD5OfBodyField = value; }
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if MD5OfBody property is set</returns>
         public bool IsSetMD5OfBody()
         {
-            return  this.MD5OfBodyField != null;
+            return this.MD5OfBodyField != null;
         }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "Body")]
         public string Body
         {
-            get { return this.bodyField ; }
-            set { this.bodyField= value; }
+            get { return this.bodyField; }
+            set { this.bodyField = value; }
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if Body property is set</returns>
         public bool IsSetBody()
         {
-            return  this.bodyField != null;
+            return this.bodyField != null;
         }
         /// <summary>
         /// Gets and sets the Attribute property.

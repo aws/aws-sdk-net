@@ -41,8 +41,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "BundleId")]
         public string BundleId
         {
-            get { return this.bundleIdField ; }
-            set { this.bundleIdField= value; }
+            get { return this.bundleIdField; }
+            set { this.bundleIdField = value; }
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if BundleId property is set</returns>
         public bool IsSetBundleId()
         {
-            return  this.bundleIdField != null;
+            return this.bundleIdField != null;
         }
 
     }

@@ -21,19 +21,15 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Xsl;
-using System.Xml.XPath;
 using System.Xml.Serialization;
 
 using Amazon.Util;
@@ -43,7 +39,14 @@ using Amazon.RDS.Model;
 namespace Amazon.RDS
 {
     /// <summary>
-    /// AmazonRDSClient is an implementation of AmazonRDS
+    /// AmazonRDSClient is an implementation of AmazonRDS;
+    /// the client allows you to manage your AmazonRDS resources.<br />
+    /// If you want to use the AmazonRDSClient from a Medium Trust
+    /// hosting environment, please create the client with an
+    /// AmazonRDSConfig object whose UseSecureStringForAwsSecretKey
+    /// property is false.
+    /// </summary>
+    /// <remarks>
     /// Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a relational
     /// database in the cloud. It provides cost-efficient, resizable capacity for an industry-standard relational database and manages common
     /// database administration tasks, freeing up developers to focus on what makes their applications and businesses unique.
@@ -52,13 +55,15 @@ namespace Amazon.RDS
     /// database and maintains the database software that powers your DB Instance. Amazon RDS is flexible: you can scale your database
     /// instance’s compute resources and storage capacity to meet your application’s demand. As with all Amazon Web Services, there are no
     /// up-front investments, and you pay only for the resources you use.
-    /// </summary>
+    /// </remarks>
+    /// <seealso cref="P:Amazon.RDS.AmazonRDSConfig.UseSecureStringForAwsSecretKey"/>
     public class AmazonRDSClient : AmazonRDS
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
         private AmazonRDSConfig config;
         private bool disposed;
+        private string clearAwsSecretAccessKey;
 
         #region Dispose Pattern Implementation
 
@@ -117,21 +122,31 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Constructs AmazonRDSClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonRDS Configuration object
+        /// AmazonRDS Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="config">The AmazonRDS Configuration Object</param>
         public AmazonRDSClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonRDSConfig config)
         {
-            if (awsSecretAccessKey != null)
+            if (!String.IsNullOrEmpty(awsSecretAccessKey))
             {
-                this.awsSecretAccessKey = new SecureString();
-                foreach (char ch in awsSecretAccessKey.ToCharArray())
+                if (config.UseSecureStringForAwsSecretKey)
                 {
-                    this.awsSecretAccessKey.AppendChar(ch);
+                    this.awsSecretAccessKey = new SecureString();
+                    foreach (char ch in awsSecretAccessKey.ToCharArray())
+                    {
+                        this.awsSecretAccessKey.AppendChar(ch);
+                    }
+                    this.awsSecretAccessKey.MakeReadOnly();
                 }
-                this.awsSecretAccessKey.MakeReadOnly();
+                else
+                {
+                    clearAwsSecretAccessKey = awsSecretAccessKey;
+                }
             }
             this.awsAccessKeyId = awsAccessKeyId;
             this.config = config;
@@ -502,16 +517,18 @@ namespace Amazon.RDS
         private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonRDSConfig config)
         {
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
-
-            if (config.IsSetProxyHost())
+            if (request != null)
             {
-                request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                if (config.IsSetProxyHost())
+                {
+                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                }
+                request.UserAgent = config.UserAgent;
+                request.Method = "POST";
+                request.Timeout = 50000;
+                request.ContentType = AWSSDKUtils.UrlEncodedContent;
+                request.ContentLength = contentLength;
             }
-            request.UserAgent = config.UserAgent;
-            request.Method = "POST";
-            request.Timeout = 50000;
-            request.ContentType = AWSSDKUtils.UrlEncodedContent;
-            request.ContentLength = contentLength;
 
             return request;
         }
@@ -523,19 +540,21 @@ namespace Amazon.RDS
         {
             string actionName = parameters["Action"];
             T response = default(T);
-            string responseBody = null;
             HttpStatusCode statusCode = default(HttpStatusCode);
 
             /* Add required request parameters */
             AddRequiredParameters(parameters);
 
-            string queryString = GetParametersAsString(parameters);
+            string queryString = AWSSDKUtils.GetParametersAsString(parameters);
 
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
             bool shouldRetry = true;
             int retries = 0;
+            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
+
             do
             {
+                string responseBody = null;
                 HttpWebRequest request = ConfigureWebRequest(requestData.Length, config);
                 /* Submit the request and read response body */
                 try
@@ -546,6 +565,14 @@ namespace Amazon.RDS
                     }
                     using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
                     {
+                        if (httpResponse == null)
+                        {
+                            throw new WebException(
+                                "The Web Response for a successful request is null!",
+                                WebExceptionStatus.ProtocolError
+                                );
+                        }
+
                         statusCode = httpResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                         {
@@ -554,8 +581,7 @@ namespace Amazon.RDS
                     }
 
                     /* Perform response transformation */
-                    if (responseBody != null &&
-                        responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
+                    if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
                     {
                         responseBody = Transform(responseBody, this.GetType());
                     }
@@ -577,7 +603,7 @@ namespace Amazon.RDS
                         {
                             // Abort the unsuccessful request
                             request.Abort();
-                            throw new AmazonRDSException(we);
+                            throw we;
                         }
                         statusCode = httpErrorResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpErrorResponse.GetResponseStream(), Encoding.UTF8))
@@ -589,10 +615,11 @@ namespace Amazon.RDS
                         request.Abort();
                     }
 
-                    if (statusCode == HttpStatusCode.InternalServerError || statusCode == HttpStatusCode.ServiceUnavailable)
+                    if (statusCode == HttpStatusCode.InternalServerError ||
+                        statusCode == HttpStatusCode.ServiceUnavailable)
                     {
                         shouldRetry = true;
-                        PauseOnRetry(++retries, config.MaxErrorRetry, statusCode);
+                        PauseOnRetry(++retries, maxRetries, statusCode);
                     }
                     else
                     {
@@ -625,13 +652,11 @@ namespace Amazon.RDS
                             }
                             else
                             {
-                                AmazonRDSException se = ReportAnyErrors(responseBody, statusCode);
-                                throw se;
+                                throw ReportAnyErrors(responseBody, statusCode);
                             }
                         }
                     }
                 }
-
                 /* Catch other exceptions, attempt to convert to formatted exception,
                  * else rethrow wrapped exception */
                 catch (Exception)
@@ -652,7 +677,8 @@ namespace Amazon.RDS
         {
             AmazonRDSException ex = null;
 
-            if (responseBody != null && responseBody.StartsWith("<"))
+            if (responseBody != null &&
+                responseBody.StartsWith("<"))
             {
                 Match errorMatcherOne = Regex.Match(
                     responseBody,
@@ -705,7 +731,10 @@ namespace Amazon.RDS
             }
             else
             {
-                throw new AmazonRDSException("Maximum number of retry attempts reached : " + (retries - 1), status);
+                throw new AmazonRDSException(
+                    "Maximum number of retry attempts reached : " + (retries - 1),
+                    status
+                    );
             }
         }
 
@@ -718,136 +747,30 @@ namespace Amazon.RDS
             {
                 throw new AmazonRDSException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
-            parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
-            parameters.Add("Version", config.ServiceVersion);
-            parameters.Add("SignatureVersion", config.SignatureVersion);
-            parameters.Add("Signature", SignParameters(parameters, this.awsSecretAccessKey, config));
-        }
 
-        /**
-         * Convert Dictionary of paremeters to Url encoded query string
-         */
-        private static string GetParametersAsString(IDictionary<string, string> parameters)
-        {
-            StringBuilder data = new StringBuilder(512);
-            foreach (string key in (IEnumerable<string>)parameters.Keys)
-            {
-                string value = parameters[key];
-                if (value != null)
-                {
-                    data.Append(key);
-                    data.Append('=');
-                    data.Append(AWSSDKUtils.UrlEncode(value, false));
-                    data.Append('&');
-                }
-            }
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /**
-         * Computes RFC 2104-compliant HMAC signature for request parameters
-         * Implements AWS Signature, as per following spec:
-         *
-         * If Signature Version is 0, it signs concatenated Action and Timestamp
-         *
-         * If Signature Version is 1, it performs the following:
-         *
-         * Sorts all  parameters (including SignatureVersion and excluding Signature,
-         * the value of which is being created), ignoring case.
-         *
-         * Iterate over the sorted list and append the parameter name (in original case)
-         * and then its value. It will not URL-encode the parameter values before
-         * constructing this string. There are no separators.
-         *
-         * If Signature Version is 2, string to sign is based on following:
-         *
-         *    1. The HTTP Request Method followed by an ASCII newline (%0A)
-         *    2. The HTTP Host header in the form of lowercase host, followed by an ASCII newline.
-         *    3. The URL encoded HTTP absolute path component of the URI
-         *       (up to but not including the query string parameters);
-         *       if this is empty use a forward '/'. This parameter is followed by an ASCII newline.
-         *    4. The concatenation of all query string components (names and values)
-         *       as UTF-8 characters which are URL encoded as per RFC 3986
-         *       (hex characters MUST be uppercase), sorted using lexicographic byte ordering.
-         *       Parameter names are separated from their values by the '=' character
-         *       (ASCII character 61), even if the value is empty.
-         *       Pairs of parameter and values are separated by the ampersand character (ASCII code 38).
-         *
-         */
-        private static string SignParameters(IDictionary<string, string> parameters, SecureString key, AmazonRDSConfig config)
-        {
-            string signatureVersion = parameters["SignatureVersion"];
-
-            KeyedHashAlgorithm algorithm = new HMACSHA1();
-
-            string stringToSign = null;
-            if ("2".Equals(signatureVersion))
-            {
-                string signatureMethod = config.SignatureMethod;
-                algorithm = KeyedHashAlgorithm.Create(signatureMethod.ToUpper());
-                parameters.Add("SignatureMethod", signatureMethod);
-                stringToSign = CalculateStringToSignV2(parameters, config);
-            }
-            else
+            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
+            parameters["SignatureVersion"] = config.SignatureVersion;
+            parameters["SignatureMethod"] = config.SignatureMethod;
+            parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
+            parameters["Version"] = config.ServiceVersion;
+            if (!config.SignatureVersion.Equals("2"))
             {
                 throw new AmazonRDSException("Invalid Signature Version specified");
             }
+            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
 
-            return Sign(stringToSign, key, algorithm);
-        }
+            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
+            string auth;
 
-        private static string CalculateStringToSignV2(IDictionary<string, string> parameters, AmazonRDSConfig config)
-        {
-            StringBuilder data = new StringBuilder(512);
-            IDictionary<string, string> sorted =
-                  new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
-            data.Append("POST");
-            data.Append("\n");
-            Uri endpoint = new Uri(config.ServiceURL.ToLower());
-
-            data.Append(endpoint.Host);
-            data.Append("\n");
-            string uri = endpoint.AbsolutePath;
-            if (uri == null || uri.Length == 0)
+            if (config.UseSecureStringForAwsSecretKey)
             {
-                uri = "/";
+                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
             }
-            data.Append(AWSSDKUtils.UrlEncode(uri, true));
-            data.Append("\n");
-            foreach (KeyValuePair<string, string> pair in sorted)
+            else
             {
-                if (pair.Value != null)
-                {
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-                    data.Append("=");
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-                    data.Append("&");
-                }
+                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
             }
-
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /// <summary>
-        /// Computes RFC 2104-compliant HMAC signature
-        /// </summary>
-        /// <param name="data">The data to be signed</param>
-        /// <param name="key">The secret signing key</param>
-        /// <param name="algorithm">The algorithm to sign the data with</param>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:Amazon.RDS.AmazonRDSException"></exception>
-        /// <returns>A string representing the HMAC signature</returns>
-        private static string Sign(string data, System.Security.SecureString key, KeyedHashAlgorithm algorithm)
-        {
-            if (key == null)
-            {
-                throw new AmazonRDSException("The AWS Secret Access Key specified is NULL");
-            }
-
-            return AWSSDKUtils.HMACSign(data, key, algorithm);
+            parameters["Signature"] = auth;
         }
 
         /**
@@ -856,10 +779,10 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDeleteDBSnapshot(DeleteDBSnapshotRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteDBSnapshot");
+            parameters["Action"] = "DeleteDBSnapshot";
             if (request.IsSetDBSnapshotIdentifier())
             {
-                parameters.Add("DBSnapshotIdentifier", request.DBSnapshotIdentifier);
+                parameters["DBSnapshotIdentifier"] = request.DBSnapshotIdentifier;
             }
 
             return parameters;
@@ -871,18 +794,18 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeDBParameterGroups");
+            parameters["Action"] = "DescribeDBParameterGroups";
             if (request.IsSetDBParameterGroupName())
             {
-                parameters.Add("DBParameterGroupName", request.DBParameterGroupName);
+                parameters["DBParameterGroupName"] = request.DBParameterGroupName;
             }
             if (request.IsSetMaxRecords())
             {
-                parameters.Add("MaxRecords", (request.MaxRecords + ""));
+                parameters["MaxRecords"] = request.MaxRecords.ToString();
             }
             if (request.IsSetMarker())
             {
-                parameters.Add("Marker", request.Marker);
+                parameters["Marker"] = request.Marker;
             }
 
             return parameters;
@@ -894,10 +817,10 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteDBSecurityGroup");
+            parameters["Action"] = "DeleteDBSecurityGroup";
             if (request.IsSetDBSecurityGroupName())
             {
-                parameters.Add("DBSecurityGroupName", request.DBSecurityGroupName);
+                parameters["DBSecurityGroupName"] = request.DBSecurityGroupName;
             }
 
             return parameters;
@@ -909,14 +832,14 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertCreateDBSecurityGroup(CreateDBSecurityGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateDBSecurityGroup");
+            parameters["Action"] = "CreateDBSecurityGroup";
             if (request.IsSetDBSecurityGroupName())
             {
-                parameters.Add("DBSecurityGroupName", request.DBSecurityGroupName);
+                parameters["DBSecurityGroupName"] = request.DBSecurityGroupName;
             }
             if (request.IsSetDBSecurityGroupDescription())
             {
-                parameters.Add("DBSecurityGroupDescription", request.DBSecurityGroupDescription);
+                parameters["DBSecurityGroupDescription"] = request.DBSecurityGroupDescription;
             }
 
             return parameters;
@@ -928,26 +851,26 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertRestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RestoreDBInstanceFromDBSnapshot");
+            parameters["Action"] = "RestoreDBInstanceFromDBSnapshot";
             if (request.IsSetDBInstanceIdentifier())
             {
-                parameters.Add("DBInstanceIdentifier", request.DBInstanceIdentifier);
+                parameters["DBInstanceIdentifier"] = request.DBInstanceIdentifier;
             }
             if (request.IsSetDBSnapshotIdentifier())
             {
-                parameters.Add("DBSnapshotIdentifier", request.DBSnapshotIdentifier);
+                parameters["DBSnapshotIdentifier"] = request.DBSnapshotIdentifier;
             }
             if (request.IsSetDBInstanceClass())
             {
-                parameters.Add("DBInstanceClass", request.DBInstanceClass);
+                parameters["DBInstanceClass"] = request.DBInstanceClass;
             }
             if (request.IsSetPort())
             {
-                parameters.Add("Port", (request.Port + ""));
+                parameters["Port"] = request.Port.ToString();
             }
             if (request.IsSetAvailabilityZone())
             {
-                parameters.Add("AvailabilityZone", request.AvailabilityZone);
+                parameters["AvailabilityZone"] = request.AvailabilityZone;
             }
 
             return parameters;
@@ -959,34 +882,34 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDescribeEvents(DescribeEventsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeEvents");
+            parameters["Action"] = "DescribeEvents";
             if (request.IsSetSourceIdentifier())
             {
-                parameters.Add("SourceIdentifier", request.SourceIdentifier);
+                parameters["SourceIdentifier"] = request.SourceIdentifier;
             }
             if (request.IsSetSourceType())
             {
-                parameters.Add("SourceType", request.SourceType);
+                parameters["SourceType"] = request.SourceType;
             }
             if (request.IsSetStartTime())
             {
-                parameters.Add("StartTime", (request.StartTime + ""));
+                parameters["StartTime"] = request.StartTime.ToString();
             }
             if (request.IsSetEndTime())
             {
-                parameters.Add("EndTime", (request.EndTime + ""));
+                parameters["EndTime"] = request.EndTime.ToString();
             }
             if (request.IsSetDuration())
             {
-                parameters.Add("Duration", (request.Duration + ""));
+                parameters["Duration"] = request.Duration.ToString();
             }
             if (request.IsSetMaxRecords())
             {
-                parameters.Add("MaxRecords", (request.MaxRecords + ""));
+                parameters["MaxRecords"] = request.MaxRecords.ToString();
             }
             if (request.IsSetMarker())
             {
-                parameters.Add("Marker", request.Marker);
+                parameters["Marker"] = request.Marker;
             }
 
             return parameters;
@@ -998,10 +921,10 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteDBParameterGroup");
+            parameters["Action"] = "DeleteDBParameterGroup";
             if (request.IsSetDBParameterGroupName())
             {
-                parameters.Add("DBParameterGroupName", request.DBParameterGroupName);
+                parameters["DBParameterGroupName"] = request.DBParameterGroupName;
             }
 
             return parameters;
@@ -1013,18 +936,18 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertCreateDBParameterGroup(CreateDBParameterGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateDBParameterGroup");
+            parameters["Action"] = "CreateDBParameterGroup";
             if (request.IsSetDBParameterGroupName())
             {
-                parameters.Add("DBParameterGroupName", request.DBParameterGroupName);
+                parameters["DBParameterGroupName"] = request.DBParameterGroupName;
             }
             if (request.IsSetEngine())
             {
-                parameters.Add("Engine", request.Engine);
+                parameters["Engine"] = request.Engine;
             }
             if (request.IsSetDescription())
             {
-                parameters.Add("Description", request.Description);
+                parameters["Description"] = request.Description;
             }
 
             return parameters;
@@ -1036,34 +959,34 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertRestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RestoreDBInstanceToPointInTime");
+            parameters["Action"] = "RestoreDBInstanceToPointInTime";
             if (request.IsSetSourceDBInstanceIdentifier())
             {
-                parameters.Add("SourceDBInstanceIdentifier", request.SourceDBInstanceIdentifier);
+                parameters["SourceDBInstanceIdentifier"] = request.SourceDBInstanceIdentifier;
             }
             if (request.IsSetTargetDBInstanceIdentifier())
             {
-                parameters.Add("TargetDBInstanceIdentifier", request.TargetDBInstanceIdentifier);
+                parameters["TargetDBInstanceIdentifier"] = request.TargetDBInstanceIdentifier;
             }
             if (request.IsSetRestoreTime())
             {
-                parameters.Add("RestoreTime", (request.RestoreTime + ""));
+                parameters["RestoreTime"] = request.RestoreTime.ToString();
             }
             if (request.IsSetUseLatestRestorableTime())
             {
-                parameters.Add("UseLatestRestorableTime", (request.UseLatestRestorableTime + "").ToLower());
+                parameters["UseLatestRestorableTime"] = request.UseLatestRestorableTime.ToString().ToLower();
             }
             if (request.IsSetDBInstanceClass())
             {
-                parameters.Add("DBInstanceClass", request.DBInstanceClass);
+                parameters["DBInstanceClass"] = request.DBInstanceClass;
             }
             if (request.IsSetPort())
             {
-                parameters.Add("Port", (request.Port + ""));
+                parameters["Port"] = request.Port.ToString();
             }
             if (request.IsSetAvailabilityZone())
             {
-                parameters.Add("AvailabilityZone", request.AvailabilityZone);
+                parameters["AvailabilityZone"] = request.AvailabilityZone;
             }
 
             return parameters;
@@ -1075,49 +998,49 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertModifyDBInstance(ModifyDBInstanceRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ModifyDBInstance");
+            parameters["Action"] = "ModifyDBInstance";
             if (request.IsSetDBInstanceIdentifier())
             {
-                parameters.Add("DBInstanceIdentifier", request.DBInstanceIdentifier);
+                parameters["DBInstanceIdentifier"] = request.DBInstanceIdentifier;
             }
             if (request.IsSetAllocatedStorage())
             {
-                parameters.Add("AllocatedStorage", (request.AllocatedStorage + ""));
+                parameters["AllocatedStorage"] = request.AllocatedStorage.ToString();
             }
             if (request.IsSetDBInstanceClass())
             {
-                parameters.Add("DBInstanceClass", request.DBInstanceClass);
+                parameters["DBInstanceClass"] = request.DBInstanceClass;
             }
-            List<string> modifyDBInstanceRequestDBSecurityGroupsList  =  request.DBSecurityGroups;
+            List<string> modifyDBInstanceRequestDBSecurityGroupsList = request.DBSecurityGroups;
             int modifyDBInstanceRequestDBSecurityGroupsListIndex = 1;
-            foreach  (string modifyDBInstanceRequestDBSecurityGroups in modifyDBInstanceRequestDBSecurityGroupsList)
+            foreach (string modifyDBInstanceRequestDBSecurityGroups in modifyDBInstanceRequestDBSecurityGroupsList)
             {
-                parameters.Add("DBSecurityGroups" + ".member."  + modifyDBInstanceRequestDBSecurityGroupsListIndex, modifyDBInstanceRequestDBSecurityGroups);
+                parameters[String.Concat("DBSecurityGroups", ".member.", modifyDBInstanceRequestDBSecurityGroupsListIndex)] = modifyDBInstanceRequestDBSecurityGroups;
                 modifyDBInstanceRequestDBSecurityGroupsListIndex++;
             }
             if (request.IsSetApplyImmediately())
             {
-                parameters.Add("ApplyImmediately", (request.ApplyImmediately + "").ToLower());
+                parameters["ApplyImmediately"] = request.ApplyImmediately.ToString().ToLower();
             }
             if (request.IsSetMasterUserPassword())
             {
-                parameters.Add("MasterUserPassword", request.MasterUserPassword);
+                parameters["MasterUserPassword"] = request.MasterUserPassword;
             }
             if (request.IsSetDBParameterGroupName())
             {
-                parameters.Add("DBParameterGroupName", request.DBParameterGroupName);
+                parameters["DBParameterGroupName"] = request.DBParameterGroupName;
             }
             if (request.IsSetBackupRetentionPeriod())
             {
-                parameters.Add("BackupRetentionPeriod", (request.BackupRetentionPeriod + ""));
+                parameters["BackupRetentionPeriod"] = request.BackupRetentionPeriod.ToString();
             }
             if (request.IsSetPreferredBackupWindow())
             {
-                parameters.Add("PreferredBackupWindow", request.PreferredBackupWindow);
+                parameters["PreferredBackupWindow"] = request.PreferredBackupWindow;
             }
             if (request.IsSetPreferredMaintenanceWindow())
             {
-                parameters.Add("PreferredMaintenanceWindow", request.PreferredMaintenanceWindow);
+                parameters["PreferredMaintenanceWindow"] = request.PreferredMaintenanceWindow;
             }
 
             return parameters;
@@ -1129,22 +1052,22 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertRevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RevokeDBSecurityGroupIngress");
+            parameters["Action"] = "RevokeDBSecurityGroupIngress";
             if (request.IsSetDBSecurityGroupName())
             {
-                parameters.Add("DBSecurityGroupName", request.DBSecurityGroupName);
+                parameters["DBSecurityGroupName"] = request.DBSecurityGroupName;
             }
             if (request.IsSetCIDRIP())
             {
-                parameters.Add("CIDRIP", request.CIDRIP);
+                parameters["CIDRIP"] = request.CIDRIP;
             }
             if (request.IsSetEC2SecurityGroupName())
             {
-                parameters.Add("EC2SecurityGroupName", request.EC2SecurityGroupName);
+                parameters["EC2SecurityGroupName"] = request.EC2SecurityGroupName;
             }
             if (request.IsSetEC2SecurityGroupOwnerId())
             {
-                parameters.Add("EC2SecurityGroupOwnerId", request.EC2SecurityGroupOwnerId);
+                parameters["EC2SecurityGroupOwnerId"] = request.EC2SecurityGroupOwnerId;
             }
 
             return parameters;
@@ -1156,22 +1079,22 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertAuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "AuthorizeDBSecurityGroupIngress");
+            parameters["Action"] = "AuthorizeDBSecurityGroupIngress";
             if (request.IsSetDBSecurityGroupName())
             {
-                parameters.Add("DBSecurityGroupName", request.DBSecurityGroupName);
+                parameters["DBSecurityGroupName"] = request.DBSecurityGroupName;
             }
             if (request.IsSetCIDRIP())
             {
-                parameters.Add("CIDRIP", request.CIDRIP);
+                parameters["CIDRIP"] = request.CIDRIP;
             }
             if (request.IsSetEC2SecurityGroupName())
             {
-                parameters.Add("EC2SecurityGroupName", request.EC2SecurityGroupName);
+                parameters["EC2SecurityGroupName"] = request.EC2SecurityGroupName;
             }
             if (request.IsSetEC2SecurityGroupOwnerId())
             {
-                parameters.Add("EC2SecurityGroupOwnerId", request.EC2SecurityGroupOwnerId);
+                parameters["EC2SecurityGroupOwnerId"] = request.EC2SecurityGroupOwnerId;
             }
 
             return parameters;
@@ -1183,14 +1106,14 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertCreateDBSnapshot(CreateDBSnapshotRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateDBSnapshot");
+            parameters["Action"] = "CreateDBSnapshot";
             if (request.IsSetDBSnapshotIdentifier())
             {
-                parameters.Add("DBSnapshotIdentifier", request.DBSnapshotIdentifier);
+                parameters["DBSnapshotIdentifier"] = request.DBSnapshotIdentifier;
             }
             if (request.IsSetDBInstanceIdentifier())
             {
-                parameters.Add("DBInstanceIdentifier", request.DBInstanceIdentifier);
+                parameters["DBInstanceIdentifier"] = request.DBInstanceIdentifier;
             }
 
             return parameters;
@@ -1202,22 +1125,22 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDescribeDBSnapshots(DescribeDBSnapshotsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeDBSnapshots");
+            parameters["Action"] = "DescribeDBSnapshots";
             if (request.IsSetDBInstanceIdentifier())
             {
-                parameters.Add("DBInstanceIdentifier", request.DBInstanceIdentifier);
+                parameters["DBInstanceIdentifier"] = request.DBInstanceIdentifier;
             }
             if (request.IsSetDBSnapshotIdentifier())
             {
-                parameters.Add("DBSnapshotIdentifier", request.DBSnapshotIdentifier);
+                parameters["DBSnapshotIdentifier"] = request.DBSnapshotIdentifier;
             }
             if (request.IsSetMaxRecords())
             {
-                parameters.Add("MaxRecords", (request.MaxRecords + ""));
+                parameters["MaxRecords"] = request.MaxRecords.ToString();
             }
             if (request.IsSetMarker())
             {
-                parameters.Add("Marker", request.Marker);
+                parameters["Marker"] = request.Marker;
             }
 
             return parameters;
@@ -1229,18 +1152,18 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDescribeDBInstances(DescribeDBInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeDBInstances");
+            parameters["Action"] = "DescribeDBInstances";
             if (request.IsSetDBInstanceIdentifier())
             {
-                parameters.Add("DBInstanceIdentifier", request.DBInstanceIdentifier);
+                parameters["DBInstanceIdentifier"] = request.DBInstanceIdentifier;
             }
             if (request.IsSetMaxRecords())
             {
-                parameters.Add("MaxRecords", (request.MaxRecords + ""));
+                parameters["MaxRecords"] = request.MaxRecords.ToString();
             }
             if (request.IsSetMarker())
             {
-                parameters.Add("Marker", request.Marker);
+                parameters["Marker"] = request.Marker;
             }
 
             return parameters;
@@ -1252,18 +1175,18 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeDBSecurityGroups");
+            parameters["Action"] = "DescribeDBSecurityGroups";
             if (request.IsSetDBSecurityGroupName())
             {
-                parameters.Add("DBSecurityGroupName", request.DBSecurityGroupName);
+                parameters["DBSecurityGroupName"] = request.DBSecurityGroupName;
             }
             if (request.IsSetMaxRecords())
             {
-                parameters.Add("MaxRecords", (request.MaxRecords + ""));
+                parameters["MaxRecords"] = request.MaxRecords.ToString();
             }
             if (request.IsSetMarker())
             {
-                parameters.Add("Marker", request.Marker);
+                parameters["Marker"] = request.Marker;
             }
 
             return parameters;
@@ -1275,14 +1198,14 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertResetDBParameterGroup(ResetDBParameterGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ResetDBParameterGroup");
+            parameters["Action"] = "ResetDBParameterGroup";
             if (request.IsSetDBParameterGroupName())
             {
-                parameters.Add("DBParameterGroupName", request.DBParameterGroupName);
+                parameters["DBParameterGroupName"] = request.DBParameterGroupName;
             }
             if (request.IsSetResetAllParameters())
             {
-                parameters.Add("ResetAllParameters", (request.ResetAllParameters + "").ToLower());
+                parameters["ResetAllParameters"] = request.ResetAllParameters.ToString().ToLower();
             }
             List<Parameter> resetDBParameterGroupRequestParametersList = request.Parameters;
             int resetDBParameterGroupRequestParametersListIndex = 1;
@@ -1290,39 +1213,39 @@ namespace Amazon.RDS
             {
                 if (resetDBParameterGroupRequestParameters.IsSetParameterName())
                 {
-                    parameters.Add("Parameters" + ".member."  + resetDBParameterGroupRequestParametersListIndex + "." + "ParameterName", resetDBParameterGroupRequestParameters.ParameterName);
+                    parameters[String.Concat("Parameters", ".member.", resetDBParameterGroupRequestParametersListIndex, ".", "ParameterName")] = resetDBParameterGroupRequestParameters.ParameterName;
                 }
                 if (resetDBParameterGroupRequestParameters.IsSetParameterValue())
                 {
-                    parameters.Add("Parameters" + ".member."  + resetDBParameterGroupRequestParametersListIndex + "." + "ParameterValue", resetDBParameterGroupRequestParameters.ParameterValue);
+                    parameters[String.Concat("Parameters", ".member.", resetDBParameterGroupRequestParametersListIndex, ".", "ParameterValue")] = resetDBParameterGroupRequestParameters.ParameterValue;
                 }
                 if (resetDBParameterGroupRequestParameters.IsSetDescription())
                 {
-                    parameters.Add("Parameters" + ".member."  + resetDBParameterGroupRequestParametersListIndex + "." + "Description", resetDBParameterGroupRequestParameters.Description);
+                    parameters[String.Concat("Parameters", ".member.", resetDBParameterGroupRequestParametersListIndex, ".", "Description")] = resetDBParameterGroupRequestParameters.Description;
                 }
                 if (resetDBParameterGroupRequestParameters.IsSetSource())
                 {
-                    parameters.Add("Parameters" + ".member."  + resetDBParameterGroupRequestParametersListIndex + "." + "Source", resetDBParameterGroupRequestParameters.Source);
+                    parameters[String.Concat("Parameters", ".member.", resetDBParameterGroupRequestParametersListIndex, ".", "Source")] = resetDBParameterGroupRequestParameters.Source;
                 }
                 if (resetDBParameterGroupRequestParameters.IsSetApplyType())
                 {
-                    parameters.Add("Parameters" + ".member."  + resetDBParameterGroupRequestParametersListIndex + "." + "ApplyType", resetDBParameterGroupRequestParameters.ApplyType);
+                    parameters[String.Concat("Parameters", ".member.", resetDBParameterGroupRequestParametersListIndex, ".", "ApplyType")] = resetDBParameterGroupRequestParameters.ApplyType;
                 }
                 if (resetDBParameterGroupRequestParameters.IsSetDataType())
                 {
-                    parameters.Add("Parameters" + ".member."  + resetDBParameterGroupRequestParametersListIndex + "." + "DataType", resetDBParameterGroupRequestParameters.DataType);
+                    parameters[String.Concat("Parameters", ".member.", resetDBParameterGroupRequestParametersListIndex, ".", "DataType")] = resetDBParameterGroupRequestParameters.DataType;
                 }
                 if (resetDBParameterGroupRequestParameters.IsSetAllowedValues())
                 {
-                    parameters.Add("Parameters" + ".member."  + resetDBParameterGroupRequestParametersListIndex + "." + "AllowedValues", resetDBParameterGroupRequestParameters.AllowedValues);
+                    parameters[String.Concat("Parameters", ".member.", resetDBParameterGroupRequestParametersListIndex, ".", "AllowedValues")] = resetDBParameterGroupRequestParameters.AllowedValues;
                 }
                 if (resetDBParameterGroupRequestParameters.IsSetIsModifiable())
                 {
-                    parameters.Add("Parameters" + ".member."  + resetDBParameterGroupRequestParametersListIndex + "." + "IsModifiable", (resetDBParameterGroupRequestParameters.IsModifiable + "").ToLower());
+                    parameters[String.Concat("Parameters", ".member.", resetDBParameterGroupRequestParametersListIndex, ".", "IsModifiable")] = resetDBParameterGroupRequestParameters.IsModifiable.ToString().ToLower();
                 }
                 if (resetDBParameterGroupRequestParameters.IsSetApplyMethod())
                 {
-                    parameters.Add("Parameters" + ".member."  + resetDBParameterGroupRequestParametersListIndex + "." + "ApplyMethod", resetDBParameterGroupRequestParameters.ApplyMethod);
+                    parameters[String.Concat("Parameters", ".member.", resetDBParameterGroupRequestParametersListIndex, ".", "ApplyMethod")] = resetDBParameterGroupRequestParameters.ApplyMethod;
                 }
 
                 resetDBParameterGroupRequestParametersListIndex++;
@@ -1337,18 +1260,18 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeEngineDefaultParameters");
+            parameters["Action"] = "DescribeEngineDefaultParameters";
             if (request.IsSetEngine())
             {
-                parameters.Add("Engine", request.Engine);
+                parameters["Engine"] = request.Engine;
             }
             if (request.IsSetMaxRecords())
             {
-                parameters.Add("MaxRecords", (request.MaxRecords + ""));
+                parameters["MaxRecords"] = request.MaxRecords.ToString();
             }
             if (request.IsSetMarker())
             {
-                parameters.Add("Marker", request.Marker);
+                parameters["Marker"] = request.Marker;
             }
 
             return parameters;
@@ -1360,10 +1283,10 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertRebootDBInstance(RebootDBInstanceRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RebootDBInstance");
+            parameters["Action"] = "RebootDBInstance";
             if (request.IsSetDBInstanceIdentifier())
             {
-                parameters.Add("DBInstanceIdentifier", request.DBInstanceIdentifier);
+                parameters["DBInstanceIdentifier"] = request.DBInstanceIdentifier;
             }
 
             return parameters;
@@ -1375,22 +1298,22 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDescribeDBParameters(DescribeDBParametersRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeDBParameters");
+            parameters["Action"] = "DescribeDBParameters";
             if (request.IsSetDBParameterGroupName())
             {
-                parameters.Add("DBParameterGroupName", request.DBParameterGroupName);
+                parameters["DBParameterGroupName"] = request.DBParameterGroupName;
             }
             if (request.IsSetSource())
             {
-                parameters.Add("Source", request.Source);
+                parameters["Source"] = request.Source;
             }
             if (request.IsSetMaxRecords())
             {
-                parameters.Add("MaxRecords", (request.MaxRecords + ""));
+                parameters["MaxRecords"] = request.MaxRecords.ToString();
             }
             if (request.IsSetMarker())
             {
-                parameters.Add("Marker", request.Marker);
+                parameters["Marker"] = request.Marker;
             }
 
             return parameters;
@@ -1402,18 +1325,18 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertDeleteDBInstance(DeleteDBInstanceRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteDBInstance");
+            parameters["Action"] = "DeleteDBInstance";
             if (request.IsSetDBInstanceIdentifier())
             {
-                parameters.Add("DBInstanceIdentifier", request.DBInstanceIdentifier);
+                parameters["DBInstanceIdentifier"] = request.DBInstanceIdentifier;
             }
             if (request.IsSetSkipFinalSnapshot())
             {
-                parameters.Add("SkipFinalSnapshot", (request.SkipFinalSnapshot + "").ToLower());
+                parameters["SkipFinalSnapshot"] = request.SkipFinalSnapshot.ToString().ToLower();
             }
             if (request.IsSetFinalDBSnapshotIdentifier())
             {
-                parameters.Add("FinalDBSnapshotIdentifier", request.FinalDBSnapshotIdentifier);
+                parameters["FinalDBSnapshotIdentifier"] = request.FinalDBSnapshotIdentifier;
             }
 
             return parameters;
@@ -1425,65 +1348,65 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertCreateDBInstance(CreateDBInstanceRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateDBInstance");
+            parameters["Action"] = "CreateDBInstance";
             if (request.IsSetDBName())
             {
-                parameters.Add("DBName", request.DBName);
+                parameters["DBName"] = request.DBName;
             }
             if (request.IsSetDBInstanceIdentifier())
             {
-                parameters.Add("DBInstanceIdentifier", request.DBInstanceIdentifier);
+                parameters["DBInstanceIdentifier"] = request.DBInstanceIdentifier;
             }
             if (request.IsSetAllocatedStorage())
             {
-                parameters.Add("AllocatedStorage", (request.AllocatedStorage + ""));
+                parameters["AllocatedStorage"] = request.AllocatedStorage.ToString();
             }
             if (request.IsSetDBInstanceClass())
             {
-                parameters.Add("DBInstanceClass", request.DBInstanceClass);
+                parameters["DBInstanceClass"] = request.DBInstanceClass;
             }
             if (request.IsSetEngine())
             {
-                parameters.Add("Engine", request.Engine);
+                parameters["Engine"] = request.Engine;
             }
             if (request.IsSetMasterUsername())
             {
-                parameters.Add("MasterUsername", request.MasterUsername);
+                parameters["MasterUsername"] = request.MasterUsername;
             }
             if (request.IsSetMasterUserPassword())
             {
-                parameters.Add("MasterUserPassword", request.MasterUserPassword);
+                parameters["MasterUserPassword"] = request.MasterUserPassword;
             }
-            List<string> createDBInstanceRequestDBSecurityGroupsList  =  request.DBSecurityGroups;
+            List<string> createDBInstanceRequestDBSecurityGroupsList = request.DBSecurityGroups;
             int createDBInstanceRequestDBSecurityGroupsListIndex = 1;
-            foreach  (string createDBInstanceRequestDBSecurityGroups in createDBInstanceRequestDBSecurityGroupsList)
+            foreach (string createDBInstanceRequestDBSecurityGroups in createDBInstanceRequestDBSecurityGroupsList)
             {
-                parameters.Add("DBSecurityGroups" + ".member."  + createDBInstanceRequestDBSecurityGroupsListIndex, createDBInstanceRequestDBSecurityGroups);
+                parameters[String.Concat("DBSecurityGroups", ".member.", createDBInstanceRequestDBSecurityGroupsListIndex)] = createDBInstanceRequestDBSecurityGroups;
                 createDBInstanceRequestDBSecurityGroupsListIndex++;
             }
             if (request.IsSetAvailabilityZone())
             {
-                parameters.Add("AvailabilityZone", request.AvailabilityZone);
+                parameters["AvailabilityZone"] = request.AvailabilityZone;
             }
             if (request.IsSetPreferredMaintenanceWindow())
             {
-                parameters.Add("PreferredMaintenanceWindow", request.PreferredMaintenanceWindow);
+                parameters["PreferredMaintenanceWindow"] = request.PreferredMaintenanceWindow;
             }
             if (request.IsSetDBParameterGroupName())
             {
-                parameters.Add("DBParameterGroupName", request.DBParameterGroupName);
+                parameters["DBParameterGroupName"] = request.DBParameterGroupName;
             }
             if (request.IsSetBackupRetentionPeriod())
             {
-                parameters.Add("BackupRetentionPeriod", (request.BackupRetentionPeriod + ""));
+                parameters["BackupRetentionPeriod"] = request.BackupRetentionPeriod.ToString();
             }
             if (request.IsSetPreferredBackupWindow())
             {
-                parameters.Add("PreferredBackupWindow", request.PreferredBackupWindow);
+                parameters["PreferredBackupWindow"] = request.PreferredBackupWindow;
             }
             if (request.IsSetPort())
             {
-                parameters.Add("Port", (request.Port + ""));
+                parameters["Port"] = request.Port.ToString();
             }
 
             return parameters;
@@ -1495,10 +1418,10 @@ namespace Amazon.RDS
         private static IDictionary<string, string> ConvertModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ModifyDBParameterGroup");
+            parameters["Action"] = "ModifyDBParameterGroup";
             if (request.IsSetDBParameterGroupName())
             {
-                parameters.Add("DBParameterGroupName", request.DBParameterGroupName);
+                parameters["DBParameterGroupName"] = request.DBParameterGroupName;
             }
             List<Parameter> modifyDBParameterGroupRequestParametersList = request.Parameters;
             int modifyDBParameterGroupRequestParametersListIndex = 1;
@@ -1506,39 +1429,39 @@ namespace Amazon.RDS
             {
                 if (modifyDBParameterGroupRequestParameters.IsSetParameterName())
                 {
-                    parameters.Add("Parameters" + ".member."  + modifyDBParameterGroupRequestParametersListIndex + "." + "ParameterName", modifyDBParameterGroupRequestParameters.ParameterName);
+                    parameters[String.Concat("Parameters", ".member.", modifyDBParameterGroupRequestParametersListIndex, ".", "ParameterName")] = modifyDBParameterGroupRequestParameters.ParameterName;
                 }
                 if (modifyDBParameterGroupRequestParameters.IsSetParameterValue())
                 {
-                    parameters.Add("Parameters" + ".member."  + modifyDBParameterGroupRequestParametersListIndex + "." + "ParameterValue", modifyDBParameterGroupRequestParameters.ParameterValue);
+                    parameters[String.Concat("Parameters", ".member.", modifyDBParameterGroupRequestParametersListIndex, ".", "ParameterValue")] = modifyDBParameterGroupRequestParameters.ParameterValue;
                 }
                 if (modifyDBParameterGroupRequestParameters.IsSetDescription())
                 {
-                    parameters.Add("Parameters" + ".member."  + modifyDBParameterGroupRequestParametersListIndex + "." + "Description", modifyDBParameterGroupRequestParameters.Description);
+                    parameters[String.Concat("Parameters", ".member.", modifyDBParameterGroupRequestParametersListIndex, ".", "Description")] = modifyDBParameterGroupRequestParameters.Description;
                 }
                 if (modifyDBParameterGroupRequestParameters.IsSetSource())
                 {
-                    parameters.Add("Parameters" + ".member."  + modifyDBParameterGroupRequestParametersListIndex + "." + "Source", modifyDBParameterGroupRequestParameters.Source);
+                    parameters[String.Concat("Parameters", ".member.", modifyDBParameterGroupRequestParametersListIndex, ".", "Source")] = modifyDBParameterGroupRequestParameters.Source;
                 }
                 if (modifyDBParameterGroupRequestParameters.IsSetApplyType())
                 {
-                    parameters.Add("Parameters" + ".member."  + modifyDBParameterGroupRequestParametersListIndex + "." + "ApplyType", modifyDBParameterGroupRequestParameters.ApplyType);
+                    parameters[String.Concat("Parameters", ".member.", modifyDBParameterGroupRequestParametersListIndex, ".", "ApplyType")] = modifyDBParameterGroupRequestParameters.ApplyType;
                 }
                 if (modifyDBParameterGroupRequestParameters.IsSetDataType())
                 {
-                    parameters.Add("Parameters" + ".member."  + modifyDBParameterGroupRequestParametersListIndex + "." + "DataType", modifyDBParameterGroupRequestParameters.DataType);
+                    parameters[String.Concat("Parameters", ".member.", modifyDBParameterGroupRequestParametersListIndex, ".", "DataType")] = modifyDBParameterGroupRequestParameters.DataType;
                 }
                 if (modifyDBParameterGroupRequestParameters.IsSetAllowedValues())
                 {
-                    parameters.Add("Parameters" + ".member."  + modifyDBParameterGroupRequestParametersListIndex + "." + "AllowedValues", modifyDBParameterGroupRequestParameters.AllowedValues);
+                    parameters[String.Concat("Parameters", ".member.", modifyDBParameterGroupRequestParametersListIndex, ".", "AllowedValues")] = modifyDBParameterGroupRequestParameters.AllowedValues;
                 }
                 if (modifyDBParameterGroupRequestParameters.IsSetIsModifiable())
                 {
-                    parameters.Add("Parameters" + ".member."  + modifyDBParameterGroupRequestParametersListIndex + "." + "IsModifiable", (modifyDBParameterGroupRequestParameters.IsModifiable + "").ToLower());
+                    parameters[String.Concat("Parameters", ".member.", modifyDBParameterGroupRequestParametersListIndex, ".", "IsModifiable")] = modifyDBParameterGroupRequestParameters.IsModifiable.ToString().ToLower();
                 }
                 if (modifyDBParameterGroupRequestParameters.IsSetApplyMethod())
                 {
-                    parameters.Add("Parameters" + ".member."  + modifyDBParameterGroupRequestParametersListIndex + "." + "ApplyMethod", modifyDBParameterGroupRequestParameters.ApplyMethod);
+                    parameters[String.Concat("Parameters", ".member.", modifyDBParameterGroupRequestParametersListIndex, ".", "ApplyMethod")] = modifyDBParameterGroupRequestParameters.ApplyMethod;
                 }
 
                 modifyDBParameterGroupRequestParametersListIndex++;
@@ -1584,6 +1507,7 @@ namespace Amazon.RDS
                 }
             }
         }
+
         #endregion
     }
 }

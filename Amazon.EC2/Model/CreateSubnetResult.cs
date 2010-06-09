@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Subnet")]
         public Subnet Subnet
         {
-            get { return this.subnetField ; }
+            get { return this.subnetField; }
             set { this.subnetField = value; }
         }
 

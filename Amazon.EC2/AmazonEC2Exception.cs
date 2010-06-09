@@ -128,7 +128,7 @@ namespace Amazon.EC2
         {
             this.message = message;
             AmazonEC2Exception ex = innerException as AmazonEC2Exception;
-            if (ex != null )
+            if (ex != null)
             {
                 this.statusCode = ex.StatusCode;
                 this.errorCode = ex.ErrorCode;

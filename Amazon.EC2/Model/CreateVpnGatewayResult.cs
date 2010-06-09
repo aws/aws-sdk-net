@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpnGateway")]
         public VpnGateway VpnGateway
         {
-            get { return this.vpnGatewayField ; }
+            get { return this.vpnGatewayField; }
             set { this.vpnGatewayField = value; }
         }
 

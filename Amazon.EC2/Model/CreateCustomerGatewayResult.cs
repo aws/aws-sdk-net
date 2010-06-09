@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CustomerGateway")]
         public CustomerGateway CustomerGateway
         {
-            get { return this.customerGatewayField ; }
+            get { return this.customerGatewayField; }
             set { this.customerGatewayField = value; }
         }
 

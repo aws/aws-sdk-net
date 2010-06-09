@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceAttribute")]
         public InstanceAttribute InstanceAttribute
         {
-            get { return this.instanceAttributeField ; }
+            get { return this.instanceAttributeField; }
             set { this.instanceAttributeField = value; }
         }
 

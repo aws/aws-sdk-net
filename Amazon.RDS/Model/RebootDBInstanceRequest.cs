@@ -42,8 +42,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField ; }
-            set { this.DBInstanceIdentifierField= value; }
+            get { return this.DBInstanceIdentifierField; }
+            set { this.DBInstanceIdentifierField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBInstanceIdentifier property is set</returns>
         public bool IsSetDBInstanceIdentifier()
         {
-            return  this.DBInstanceIdentifierField != null;
+            return this.DBInstanceIdentifierField != null;
         }
 
     }

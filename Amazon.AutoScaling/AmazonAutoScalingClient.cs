@@ -21,19 +21,15 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Xsl;
-using System.Xml.XPath;
 using System.Xml.Serialization;
 
 using Amazon.Util;
@@ -43,7 +39,14 @@ using Amazon.AutoScaling.Model;
 namespace Amazon.AutoScaling
 {
     /// <summary>
-    /// AmazonAutoScalingClient is an implementation of AmazonAutoScaling
+    /// AmazonAutoScalingClient is an implementation of AmazonAutoScaling;
+    /// the client allows you to manage your AmazonAutoScaling resources.<br />
+    /// If you want to use the AmazonAutoScalingClient from a Medium Trust
+    /// hosting environment, please create the client with an
+    /// AmazonAutoScalingConfig object whose UseSecureStringForAwsSecretKey
+    /// property is false.
+    /// </summary>
+    /// <remarks>
     /// Auto Scaling allows you to automatically scale your Amazon EC2 capacity up or down
     /// according to conditions you define. With Auto Scaling, you can ensure that the number
     /// of Amazon EC2 instances you’re using scales up seamlessly during demand spikes
@@ -51,13 +54,15 @@ namespace Amazon.AutoScaling
     /// Auto Scaling is particularly well suited for applications that experience hourly, daily,
     /// or weekly variability in usage. Auto Scaling is enabled by Amazon CloudWatch and available
     /// at no additional charge beyond Amazon CloudWatch fees.
-    /// </summary>
+    /// </remarks>
+    /// <seealso cref="P:Amazon.AutoScaling.AmazonAutoScalingConfig.UseSecureStringForAwsSecretKey"/>
     public class AmazonAutoScalingClient : AmazonAutoScaling
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
         private AmazonAutoScalingConfig config;
         private bool disposed;
+        private string clearAwsSecretAccessKey;
 
         #region Dispose Pattern Implementation
 
@@ -116,21 +121,31 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonAutoScaling Configuration object
+        /// AmazonAutoScaling Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="config">The AmazonAutoScaling Configuration Object</param>
         public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonAutoScalingConfig config)
         {
-            if (awsSecretAccessKey != null)
+            if (!String.IsNullOrEmpty(awsSecretAccessKey))
             {
-                this.awsSecretAccessKey = new SecureString();
-                foreach (char ch in awsSecretAccessKey.ToCharArray())
+                if (config.UseSecureStringForAwsSecretKey)
                 {
-                    this.awsSecretAccessKey.AppendChar(ch);
+                    this.awsSecretAccessKey = new SecureString();
+                    foreach (char ch in awsSecretAccessKey.ToCharArray())
+                    {
+                        this.awsSecretAccessKey.AppendChar(ch);
+                    }
+                    this.awsSecretAccessKey.MakeReadOnly();
                 }
-                this.awsSecretAccessKey.MakeReadOnly();
+                else
+                {
+                    clearAwsSecretAccessKey = awsSecretAccessKey;
+                }
             }
             this.awsAccessKeyId = awsAccessKeyId;
             this.config = config;
@@ -297,16 +312,18 @@ namespace Amazon.AutoScaling
         private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonAutoScalingConfig config)
         {
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
-
-            if (config.IsSetProxyHost())
+            if (request != null)
             {
-                request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                if (config.IsSetProxyHost())
+                {
+                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                }
+                request.UserAgent = config.UserAgent;
+                request.Method = "POST";
+                request.Timeout = 50000;
+                request.ContentType = AWSSDKUtils.UrlEncodedContent;
+                request.ContentLength = contentLength;
             }
-            request.UserAgent = config.UserAgent;
-            request.Method = "POST";
-            request.Timeout = 50000;
-            request.ContentType = AWSSDKUtils.UrlEncodedContent;
-            request.ContentLength = contentLength;
 
             return request;
         }
@@ -318,19 +335,21 @@ namespace Amazon.AutoScaling
         {
             string actionName = parameters["Action"];
             T response = default(T);
-            string responseBody = null;
             HttpStatusCode statusCode = default(HttpStatusCode);
 
             /* Add required request parameters */
             AddRequiredParameters(parameters);
 
-            string queryString = GetParametersAsString(parameters);
+            string queryString = AWSSDKUtils.GetParametersAsString(parameters);
 
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
             bool shouldRetry = true;
             int retries = 0;
+            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
+
             do
             {
+                string responseBody = null;
                 HttpWebRequest request = ConfigureWebRequest(requestData.Length, config);
                 /* Submit the request and read response body */
                 try
@@ -341,6 +360,14 @@ namespace Amazon.AutoScaling
                     }
                     using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
                     {
+                        if (httpResponse == null)
+                        {
+                            throw new WebException(
+                                "The Web Response for a successful request is null!",
+                                WebExceptionStatus.ProtocolError
+                                );
+                        }
+
                         statusCode = httpResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                         {
@@ -349,8 +376,7 @@ namespace Amazon.AutoScaling
                     }
 
                     /* Perform response transformation */
-                    if (responseBody != null &&
-                        responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
+                    if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
                     {
                         responseBody = Transform(responseBody, this.GetType());
                     }
@@ -372,7 +398,7 @@ namespace Amazon.AutoScaling
                         {
                             // Abort the unsuccessful request
                             request.Abort();
-                            throw new AmazonAutoScalingException(we);
+                            throw we;
                         }
                         statusCode = httpErrorResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpErrorResponse.GetResponseStream(), Encoding.UTF8))
@@ -384,10 +410,11 @@ namespace Amazon.AutoScaling
                         request.Abort();
                     }
 
-                    if (statusCode == HttpStatusCode.InternalServerError || statusCode == HttpStatusCode.ServiceUnavailable)
+                    if (statusCode == HttpStatusCode.InternalServerError ||
+                        statusCode == HttpStatusCode.ServiceUnavailable)
                     {
                         shouldRetry = true;
-                        PauseOnRetry(++retries, config.MaxErrorRetry, statusCode);
+                        PauseOnRetry(++retries, maxRetries, statusCode);
                     }
                     else
                     {
@@ -420,13 +447,11 @@ namespace Amazon.AutoScaling
                             }
                             else
                             {
-                                AmazonAutoScalingException se = ReportAnyErrors(responseBody, statusCode);
-                                throw se;
+                                throw ReportAnyErrors(responseBody, statusCode);
                             }
                         }
                     }
                 }
-
                 /* Catch other exceptions, attempt to convert to formatted exception,
                  * else rethrow wrapped exception */
                 catch (Exception)
@@ -447,7 +472,8 @@ namespace Amazon.AutoScaling
         {
             AmazonAutoScalingException ex = null;
 
-            if (responseBody != null && responseBody.StartsWith("<"))
+            if (responseBody != null &&
+                responseBody.StartsWith("<"))
             {
                 Match errorMatcherOne = Regex.Match(
                     responseBody,
@@ -500,7 +526,10 @@ namespace Amazon.AutoScaling
             }
             else
             {
-                throw new AmazonAutoScalingException("Maximum number of retry attempts reached : " + (retries - 1), status);
+                throw new AmazonAutoScalingException(
+                    "Maximum number of retry attempts reached : " + (retries - 1),
+                    status
+                    );
             }
         }
 
@@ -513,136 +542,30 @@ namespace Amazon.AutoScaling
             {
                 throw new AmazonAutoScalingException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
-            parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
-            parameters.Add("Version", config.ServiceVersion);
-            parameters.Add("SignatureVersion", config.SignatureVersion);
-            parameters.Add("Signature", SignParameters(parameters, this.awsSecretAccessKey, config));
-        }
 
-        /**
-         * Convert Dictionary of paremeters to Url encoded query string
-         */
-        private static string GetParametersAsString(IDictionary<string, string> parameters)
-        {
-            StringBuilder data = new StringBuilder(512);
-            foreach (string key in (IEnumerable<string>)parameters.Keys)
-            {
-                string value = parameters[key];
-                if (value != null)
-                {
-                    data.Append(key);
-                    data.Append('=');
-                    data.Append(AWSSDKUtils.UrlEncode(value, false));
-                    data.Append('&');
-                }
-            }
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /**
-         * Computes RFC 2104-compliant HMAC signature for request parameters
-         * Implements AWS Signature, as per following spec:
-         *
-         * If Signature Version is 0, it signs concatenated Action and Timestamp
-         *
-         * If Signature Version is 1, it performs the following:
-         *
-         * Sorts all  parameters (including SignatureVersion and excluding Signature,
-         * the value of which is being created), ignoring case.
-         *
-         * Iterate over the sorted list and append the parameter name (in original case)
-         * and then its value. It will not URL-encode the parameter values before
-         * constructing this string. There are no separators.
-         *
-         * If Signature Version is 2, string to sign is based on following:
-         *
-         *    1. The HTTP Request Method followed by an ASCII newline (%0A)
-         *    2. The HTTP Host header in the form of lowercase host, followed by an ASCII newline.
-         *    3. The URL encoded HTTP absolute path component of the URI
-         *       (up to but not including the query string parameters);
-         *       if this is empty use a forward '/'. This parameter is followed by an ASCII newline.
-         *    4. The concatenation of all query string components (names and values)
-         *       as UTF-8 characters which are URL encoded as per RFC 3986
-         *       (hex characters MUST be uppercase), sorted using lexicographic byte ordering.
-         *       Parameter names are separated from their values by the '=' character
-         *       (ASCII character 61), even if the value is empty.
-         *       Pairs of parameter and values are separated by the ampersand character (ASCII code 38).
-         *
-         */
-        private static string SignParameters(IDictionary<string, string> parameters, SecureString key, AmazonAutoScalingConfig config)
-        {
-            string signatureVersion = parameters["SignatureVersion"];
-
-            KeyedHashAlgorithm algorithm = new HMACSHA1();
-
-            string stringToSign = null;
-            if ("2".Equals(signatureVersion))
-            {
-                string signatureMethod = config.SignatureMethod;
-                algorithm = KeyedHashAlgorithm.Create(signatureMethod.ToUpper());
-                parameters.Add("SignatureMethod", signatureMethod);
-                stringToSign = CalculateStringToSignV2(parameters, config);
-            }
-            else
+            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
+            parameters["SignatureVersion"] = config.SignatureVersion;
+            parameters["SignatureMethod"] = config.SignatureMethod;
+            parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
+            parameters["Version"] = config.ServiceVersion;
+            if (!config.SignatureVersion.Equals("2"))
             {
                 throw new AmazonAutoScalingException("Invalid Signature Version specified");
             }
+            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
 
-            return Sign(stringToSign, key, algorithm);
-        }
+            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
+            string auth;
 
-        private static string CalculateStringToSignV2(IDictionary<string, string> parameters, AmazonAutoScalingConfig config)
-        {
-            StringBuilder data = new StringBuilder(512);
-            IDictionary<string, string> sorted =
-                  new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
-            data.Append("POST");
-            data.Append("\n");
-            Uri endpoint = new Uri(config.ServiceURL.ToLower());
-
-            data.Append(endpoint.Host);
-            data.Append("\n");
-            string uri = endpoint.AbsolutePath;
-            if (uri == null || uri.Length == 0)
+            if (config.UseSecureStringForAwsSecretKey)
             {
-                uri = "/";
+                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
             }
-            data.Append(AWSSDKUtils.UrlEncode(uri, true));
-            data.Append("\n");
-            foreach (KeyValuePair<string, string> pair in sorted)
+            else
             {
-                if (pair.Value != null)
-                {
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-                    data.Append("=");
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-                    data.Append("&");
-                }
+                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
             }
-
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /// <summary>
-        /// Computes RFC 2104-compliant HMAC signature
-        /// </summary>
-        /// <param name="data">The data to be signed</param>
-        /// <param name="key">The secret signing key</param>
-        /// <param name="algorithm">The algorithm to sign the data with</param>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:Amazon.AutoScaling.AmazonAutoScalingException"></exception>
-        /// <returns>A string representing the HMAC signature</returns>
-        private static string Sign(string data, System.Security.SecureString key, KeyedHashAlgorithm algorithm)
-        {
-            if (key == null)
-            {
-                throw new AmazonAutoScalingException("The AWS Secret Access Key specified is NULL");
-            }
-
-            return AWSSDKUtils.HMACSign(data, key, algorithm);
+            parameters["Signature"] = auth;
         }
 
         /**
@@ -651,10 +574,10 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertDeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteLaunchConfiguration");
+            parameters["Action"] = "DeleteLaunchConfiguration";
             if (request.IsSetLaunchConfigurationName())
             {
-                parameters.Add("LaunchConfigurationName", request.LaunchConfigurationName);
+                parameters["LaunchConfigurationName"] = request.LaunchConfigurationName;
             }
 
             return parameters;
@@ -666,10 +589,10 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertDescribeTriggers(DescribeTriggersRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeTriggers");
+            parameters["Action"] = "DescribeTriggers";
             if (request.IsSetAutoScalingGroupName())
             {
-                parameters.Add("AutoScalingGroupName", request.AutoScalingGroupName);
+                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
             }
 
             return parameters;
@@ -681,32 +604,32 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertUpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "UpdateAutoScalingGroup");
+            parameters["Action"] = "UpdateAutoScalingGroup";
             if (request.IsSetAutoScalingGroupName())
             {
-                parameters.Add("AutoScalingGroupName", request.AutoScalingGroupName);
+                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
             }
             if (request.IsSetLaunchConfigurationName())
             {
-                parameters.Add("LaunchConfigurationName", request.LaunchConfigurationName);
+                parameters["LaunchConfigurationName"] = request.LaunchConfigurationName;
             }
             if (request.IsSetMinSize())
             {
-                parameters.Add("MinSize", (request.MinSize + ""));
+                parameters["MinSize"] = request.MinSize.ToString();
             }
             if (request.IsSetMaxSize())
             {
-                parameters.Add("MaxSize", (request.MaxSize + ""));
+                parameters["MaxSize"] = request.MaxSize.ToString();
             }
             if (request.IsSetCooldown())
             {
-                parameters.Add("Cooldown", (request.Cooldown + ""));
+                parameters["Cooldown"] = request.Cooldown.ToString();
             }
-            List<string> updateAutoScalingGroupRequestAvailabilityZonesList  =  request.AvailabilityZones;
+            List<string> updateAutoScalingGroupRequestAvailabilityZonesList = request.AvailabilityZones;
             int updateAutoScalingGroupRequestAvailabilityZonesListIndex = 1;
-            foreach  (string updateAutoScalingGroupRequestAvailabilityZones in updateAutoScalingGroupRequestAvailabilityZonesList)
+            foreach (string updateAutoScalingGroupRequestAvailabilityZones in updateAutoScalingGroupRequestAvailabilityZonesList)
             {
-                parameters.Add("AvailabilityZones" + ".member."  + updateAutoScalingGroupRequestAvailabilityZonesListIndex, updateAutoScalingGroupRequestAvailabilityZones);
+                parameters[String.Concat("AvailabilityZones", ".member.", updateAutoScalingGroupRequestAvailabilityZonesListIndex)] = updateAutoScalingGroupRequestAvailabilityZones;
                 updateAutoScalingGroupRequestAvailabilityZonesListIndex++;
             }
 
@@ -719,39 +642,39 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertCreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateAutoScalingGroup");
+            parameters["Action"] = "CreateAutoScalingGroup";
             if (request.IsSetAutoScalingGroupName())
             {
-                parameters.Add("AutoScalingGroupName", request.AutoScalingGroupName);
+                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
             }
             if (request.IsSetLaunchConfigurationName())
             {
-                parameters.Add("LaunchConfigurationName", request.LaunchConfigurationName);
+                parameters["LaunchConfigurationName"] = request.LaunchConfigurationName;
             }
             if (request.IsSetMinSize())
             {
-                parameters.Add("MinSize", (request.MinSize + ""));
+                parameters["MinSize"] = request.MinSize.ToString();
             }
             if (request.IsSetMaxSize())
             {
-                parameters.Add("MaxSize", (request.MaxSize + ""));
+                parameters["MaxSize"] = request.MaxSize.ToString();
             }
             if (request.IsSetCooldown())
             {
-                parameters.Add("Cooldown", (request.Cooldown + ""));
+                parameters["Cooldown"] = request.Cooldown.ToString();
             }
-            List<string> createAutoScalingGroupRequestAvailabilityZonesList  =  request.AvailabilityZones;
+            List<string> createAutoScalingGroupRequestAvailabilityZonesList = request.AvailabilityZones;
             int createAutoScalingGroupRequestAvailabilityZonesListIndex = 1;
-            foreach  (string createAutoScalingGroupRequestAvailabilityZones in createAutoScalingGroupRequestAvailabilityZonesList)
+            foreach (string createAutoScalingGroupRequestAvailabilityZones in createAutoScalingGroupRequestAvailabilityZonesList)
             {
-                parameters.Add("AvailabilityZones" + ".member."  + createAutoScalingGroupRequestAvailabilityZonesListIndex, createAutoScalingGroupRequestAvailabilityZones);
+                parameters[String.Concat("AvailabilityZones", ".member.", createAutoScalingGroupRequestAvailabilityZonesListIndex)] = createAutoScalingGroupRequestAvailabilityZones;
                 createAutoScalingGroupRequestAvailabilityZonesListIndex++;
             }
-            List<string> createAutoScalingGroupRequestLoadBalancerNamesList  =  request.LoadBalancerNames;
+            List<string> createAutoScalingGroupRequestLoadBalancerNamesList = request.LoadBalancerNames;
             int createAutoScalingGroupRequestLoadBalancerNamesListIndex = 1;
-            foreach  (string createAutoScalingGroupRequestLoadBalancerNames in createAutoScalingGroupRequestLoadBalancerNamesList)
+            foreach (string createAutoScalingGroupRequestLoadBalancerNames in createAutoScalingGroupRequestLoadBalancerNamesList)
             {
-                parameters.Add("LoadBalancerNames" + ".member."  + createAutoScalingGroupRequestLoadBalancerNamesListIndex, createAutoScalingGroupRequestLoadBalancerNames);
+                parameters[String.Concat("LoadBalancerNames", ".member.", createAutoScalingGroupRequestLoadBalancerNamesListIndex)] = createAutoScalingGroupRequestLoadBalancerNames;
                 createAutoScalingGroupRequestLoadBalancerNamesListIndex++;
             }
 
@@ -764,14 +687,14 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertDeleteTrigger(DeleteTriggerRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteTrigger");
+            parameters["Action"] = "DeleteTrigger";
             if (request.IsSetAutoScalingGroupName())
             {
-                parameters.Add("AutoScalingGroupName", request.AutoScalingGroupName);
+                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
             }
             if (request.IsSetTriggerName())
             {
-                parameters.Add("TriggerName", request.TriggerName);
+                parameters["TriggerName"] = request.TriggerName;
             }
 
             return parameters;
@@ -783,14 +706,14 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertTerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "TerminateInstanceInAutoScalingGroup");
+            parameters["Action"] = "TerminateInstanceInAutoScalingGroup";
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
             if (request.IsSetShouldDecrementDesiredCapacity())
             {
-                parameters.Add("ShouldDecrementDesiredCapacity", (request.ShouldDecrementDesiredCapacity + "").ToLower());
+                parameters["ShouldDecrementDesiredCapacity"] = request.ShouldDecrementDesiredCapacity.ToString().ToLower();
             }
 
             return parameters;
@@ -802,22 +725,22 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertCreateOrUpdateScalingTrigger(CreateOrUpdateScalingTriggerRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateOrUpdateScalingTrigger");
+            parameters["Action"] = "CreateOrUpdateScalingTrigger";
             if (request.IsSetTriggerName())
             {
-                parameters.Add("TriggerName", request.TriggerName);
+                parameters["TriggerName"] = request.TriggerName;
             }
             if (request.IsSetAutoScalingGroupName())
             {
-                parameters.Add("AutoScalingGroupName", request.AutoScalingGroupName);
+                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
             }
             if (request.IsSetMeasureName())
             {
-                parameters.Add("MeasureName", request.MeasureName);
+                parameters["MeasureName"] = request.MeasureName;
             }
             if (request.IsSetStatistic())
             {
-                parameters.Add("Statistic", request.Statistic);
+                parameters["Statistic"] = request.Statistic;
             }
             List<Dimension> createOrUpdateScalingTriggerRequestDimensionsList = request.Dimensions;
             int createOrUpdateScalingTriggerRequestDimensionsListIndex = 1;
@@ -825,50 +748,50 @@ namespace Amazon.AutoScaling
             {
                 if (createOrUpdateScalingTriggerRequestDimensions.IsSetName())
                 {
-                    parameters.Add("Dimensions" + ".member."  + createOrUpdateScalingTriggerRequestDimensionsListIndex + "." + "Name", createOrUpdateScalingTriggerRequestDimensions.Name);
+                    parameters[String.Concat("Dimensions", ".member.", createOrUpdateScalingTriggerRequestDimensionsListIndex, ".", "Name")] = createOrUpdateScalingTriggerRequestDimensions.Name;
                 }
                 if (createOrUpdateScalingTriggerRequestDimensions.IsSetValue())
                 {
-                    parameters.Add("Dimensions" + ".member."  + createOrUpdateScalingTriggerRequestDimensionsListIndex + "." + "Value", createOrUpdateScalingTriggerRequestDimensions.Value);
+                    parameters[String.Concat("Dimensions", ".member.", createOrUpdateScalingTriggerRequestDimensionsListIndex, ".", "Value")] = createOrUpdateScalingTriggerRequestDimensions.Value;
                 }
 
                 createOrUpdateScalingTriggerRequestDimensionsListIndex++;
             }
             if (request.IsSetPeriod())
             {
-                parameters.Add("Period", (request.Period + ""));
+                parameters["Period"] = request.Period.ToString();
             }
             if (request.IsSetUnit())
             {
-                parameters.Add("Unit", request.Unit);
+                parameters["Unit"] = request.Unit;
             }
             if (request.IsSetCustomUnit())
             {
-                parameters.Add("CustomUnit", request.CustomUnit);
+                parameters["CustomUnit"] = request.CustomUnit;
             }
             if (request.IsSetNamespace())
             {
-                parameters.Add("Namespace", request.Namespace);
+                parameters["Namespace"] = request.Namespace;
             }
             if (request.IsSetLowerThreshold())
             {
-                parameters.Add("LowerThreshold", (request.LowerThreshold + ""));
+                parameters["LowerThreshold"] = request.LowerThreshold.ToString();
             }
             if (request.IsSetLowerBreachScaleIncrement())
             {
-                parameters.Add("LowerBreachScaleIncrement", request.LowerBreachScaleIncrement);
+                parameters["LowerBreachScaleIncrement"] = request.LowerBreachScaleIncrement;
             }
             if (request.IsSetUpperThreshold())
             {
-                parameters.Add("UpperThreshold", (request.UpperThreshold + ""));
+                parameters["UpperThreshold"] = request.UpperThreshold.ToString();
             }
             if (request.IsSetUpperBreachScaleIncrement())
             {
-                parameters.Add("UpperBreachScaleIncrement", request.UpperBreachScaleIncrement);
+                parameters["UpperBreachScaleIncrement"] = request.UpperBreachScaleIncrement;
             }
             if (request.IsSetBreachDuration())
             {
-                parameters.Add("BreachDuration", (request.BreachDuration + ""));
+                parameters["BreachDuration"] = request.BreachDuration.ToString();
             }
 
             return parameters;
@@ -880,12 +803,12 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertDescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeAutoScalingGroups");
-            List<string> describeAutoScalingGroupsRequestAutoScalingGroupNamesList  =  request.AutoScalingGroupNames;
+            parameters["Action"] = "DescribeAutoScalingGroups";
+            List<string> describeAutoScalingGroupsRequestAutoScalingGroupNamesList = request.AutoScalingGroupNames;
             int describeAutoScalingGroupsRequestAutoScalingGroupNamesListIndex = 1;
-            foreach  (string describeAutoScalingGroupsRequestAutoScalingGroupNames in describeAutoScalingGroupsRequestAutoScalingGroupNamesList)
+            foreach (string describeAutoScalingGroupsRequestAutoScalingGroupNames in describeAutoScalingGroupsRequestAutoScalingGroupNamesList)
             {
-                parameters.Add("AutoScalingGroupNames" + ".member."  + describeAutoScalingGroupsRequestAutoScalingGroupNamesListIndex, describeAutoScalingGroupsRequestAutoScalingGroupNames);
+                parameters[String.Concat("AutoScalingGroupNames", ".member.", describeAutoScalingGroupsRequestAutoScalingGroupNamesListIndex)] = describeAutoScalingGroupsRequestAutoScalingGroupNames;
                 describeAutoScalingGroupsRequestAutoScalingGroupNamesListIndex++;
             }
 
@@ -898,41 +821,41 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertCreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateLaunchConfiguration");
+            parameters["Action"] = "CreateLaunchConfiguration";
             if (request.IsSetLaunchConfigurationName())
             {
-                parameters.Add("LaunchConfigurationName", request.LaunchConfigurationName);
+                parameters["LaunchConfigurationName"] = request.LaunchConfigurationName;
             }
             if (request.IsSetImageId())
             {
-                parameters.Add("ImageId", request.ImageId);
+                parameters["ImageId"] = request.ImageId;
             }
             if (request.IsSetKeyName())
             {
-                parameters.Add("KeyName", request.KeyName);
+                parameters["KeyName"] = request.KeyName;
             }
-            List<string> createLaunchConfigurationRequestSecurityGroupsList  =  request.SecurityGroups;
+            List<string> createLaunchConfigurationRequestSecurityGroupsList = request.SecurityGroups;
             int createLaunchConfigurationRequestSecurityGroupsListIndex = 1;
-            foreach  (string createLaunchConfigurationRequestSecurityGroups in createLaunchConfigurationRequestSecurityGroupsList)
+            foreach (string createLaunchConfigurationRequestSecurityGroups in createLaunchConfigurationRequestSecurityGroupsList)
             {
-                parameters.Add("SecurityGroups" + ".member."  + createLaunchConfigurationRequestSecurityGroupsListIndex, createLaunchConfigurationRequestSecurityGroups);
+                parameters[String.Concat("SecurityGroups", ".member.", createLaunchConfigurationRequestSecurityGroupsListIndex)] = createLaunchConfigurationRequestSecurityGroups;
                 createLaunchConfigurationRequestSecurityGroupsListIndex++;
             }
             if (request.IsSetUserData())
             {
-                parameters.Add("UserData", request.UserData);
+                parameters["UserData"] = request.UserData;
             }
             if (request.IsSetInstanceType())
             {
-                parameters.Add("InstanceType", request.InstanceType);
+                parameters["InstanceType"] = request.InstanceType;
             }
             if (request.IsSetKernelId())
             {
-                parameters.Add("KernelId", request.KernelId);
+                parameters["KernelId"] = request.KernelId;
             }
             if (request.IsSetRamdiskId())
             {
-                parameters.Add("RamdiskId", request.RamdiskId);
+                parameters["RamdiskId"] = request.RamdiskId;
             }
             List<BlockDeviceMapping> createLaunchConfigurationRequestBlockDeviceMappingsList = request.BlockDeviceMappings;
             int createLaunchConfigurationRequestBlockDeviceMappingsListIndex = 1;
@@ -940,11 +863,11 @@ namespace Amazon.AutoScaling
             {
                 if (createLaunchConfigurationRequestBlockDeviceMappings.IsSetVirtualName())
                 {
-                    parameters.Add("BlockDeviceMappings" + ".member."  + createLaunchConfigurationRequestBlockDeviceMappingsListIndex + "." + "VirtualName", createLaunchConfigurationRequestBlockDeviceMappings.VirtualName);
+                    parameters[String.Concat("BlockDeviceMappings", ".member.", createLaunchConfigurationRequestBlockDeviceMappingsListIndex, ".", "VirtualName")] = createLaunchConfigurationRequestBlockDeviceMappings.VirtualName;
                 }
                 if (createLaunchConfigurationRequestBlockDeviceMappings.IsSetDeviceName())
                 {
-                    parameters.Add("BlockDeviceMappings" + ".member."  + createLaunchConfigurationRequestBlockDeviceMappingsListIndex + "." + "DeviceName", createLaunchConfigurationRequestBlockDeviceMappings.DeviceName);
+                    parameters[String.Concat("BlockDeviceMappings", ".member.", createLaunchConfigurationRequestBlockDeviceMappingsListIndex, ".", "DeviceName")] = createLaunchConfigurationRequestBlockDeviceMappings.DeviceName;
                 }
 
                 createLaunchConfigurationRequestBlockDeviceMappingsListIndex++;
@@ -959,21 +882,21 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertDescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeLaunchConfigurations");
-            List<string> describeLaunchConfigurationsRequestLaunchConfigurationNamesList  =  request.LaunchConfigurationNames;
+            parameters["Action"] = "DescribeLaunchConfigurations";
+            List<string> describeLaunchConfigurationsRequestLaunchConfigurationNamesList = request.LaunchConfigurationNames;
             int describeLaunchConfigurationsRequestLaunchConfigurationNamesListIndex = 1;
-            foreach  (string describeLaunchConfigurationsRequestLaunchConfigurationNames in describeLaunchConfigurationsRequestLaunchConfigurationNamesList)
+            foreach (string describeLaunchConfigurationsRequestLaunchConfigurationNames in describeLaunchConfigurationsRequestLaunchConfigurationNamesList)
             {
-                parameters.Add("LaunchConfigurationNames" + ".member."  + describeLaunchConfigurationsRequestLaunchConfigurationNamesListIndex, describeLaunchConfigurationsRequestLaunchConfigurationNames);
+                parameters[String.Concat("LaunchConfigurationNames", ".member.", describeLaunchConfigurationsRequestLaunchConfigurationNamesListIndex)] = describeLaunchConfigurationsRequestLaunchConfigurationNames;
                 describeLaunchConfigurationsRequestLaunchConfigurationNamesListIndex++;
             }
             if (request.IsSetNextToken())
             {
-                parameters.Add("NextToken", request.NextToken);
+                parameters["NextToken"] = request.NextToken;
             }
             if (request.IsSetMaxRecords())
             {
-                parameters.Add("MaxRecords", (request.MaxRecords + ""));
+                parameters["MaxRecords"] = request.MaxRecords.ToString();
             }
 
             return parameters;
@@ -985,25 +908,25 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertDescribeScalingActivities(DescribeScalingActivitiesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeScalingActivities");
-            List<string> describeScalingActivitiesRequestActivityIdsList  =  request.ActivityIds;
+            parameters["Action"] = "DescribeScalingActivities";
+            List<string> describeScalingActivitiesRequestActivityIdsList = request.ActivityIds;
             int describeScalingActivitiesRequestActivityIdsListIndex = 1;
-            foreach  (string describeScalingActivitiesRequestActivityIds in describeScalingActivitiesRequestActivityIdsList)
+            foreach (string describeScalingActivitiesRequestActivityIds in describeScalingActivitiesRequestActivityIdsList)
             {
-                parameters.Add("ActivityIds" + ".member."  + describeScalingActivitiesRequestActivityIdsListIndex, describeScalingActivitiesRequestActivityIds);
+                parameters[String.Concat("ActivityIds", ".member.", describeScalingActivitiesRequestActivityIdsListIndex)] = describeScalingActivitiesRequestActivityIds;
                 describeScalingActivitiesRequestActivityIdsListIndex++;
             }
             if (request.IsSetAutoScalingGroupName())
             {
-                parameters.Add("AutoScalingGroupName", request.AutoScalingGroupName);
+                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
             }
             if (request.IsSetMaxRecords())
             {
-                parameters.Add("MaxRecords", (request.MaxRecords + ""));
+                parameters["MaxRecords"] = request.MaxRecords.ToString();
             }
             if (request.IsSetNextToken())
             {
-                parameters.Add("NextToken", request.NextToken);
+                parameters["NextToken"] = request.NextToken;
             }
 
             return parameters;
@@ -1015,14 +938,14 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertSetDesiredCapacity(SetDesiredCapacityRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "SetDesiredCapacity");
+            parameters["Action"] = "SetDesiredCapacity";
             if (request.IsSetAutoScalingGroupName())
             {
-                parameters.Add("AutoScalingGroupName", request.AutoScalingGroupName);
+                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
             }
             if (request.IsSetDesiredCapacity())
             {
-                parameters.Add("DesiredCapacity", (request.DesiredCapacity + ""));
+                parameters["DesiredCapacity"] = request.DesiredCapacity.ToString();
             }
 
             return parameters;
@@ -1034,10 +957,10 @@ namespace Amazon.AutoScaling
         private static IDictionary<string, string> ConvertDeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteAutoScalingGroup");
+            parameters["Action"] = "DeleteAutoScalingGroup";
             if (request.IsSetAutoScalingGroupName())
             {
-                parameters.Add("AutoScalingGroupName", request.AutoScalingGroupName);
+                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
             }
 
             return parameters;
@@ -1080,6 +1003,7 @@ namespace Amazon.AutoScaling
                 }
             }
         }
+
         #endregion
     }
 }

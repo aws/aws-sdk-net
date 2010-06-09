@@ -44,8 +44,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
         {
-            get { return this.typeField ; }
-            set { this.typeField= value; }
+            get { return this.typeField; }
+            set { this.typeField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Type property is set</returns>
         public bool IsSetType()
         {
-            return  this.typeField != null;
+            return this.typeField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CustomerGatewayId")]
         public string CustomerGatewayId
         {
-            get { return this.customerGatewayIdField ; }
-            set { this.customerGatewayIdField= value; }
+            get { return this.customerGatewayIdField; }
+            set { this.customerGatewayIdField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if CustomerGatewayId property is set</returns>
         public bool IsSetCustomerGatewayId()
         {
-            return  this.customerGatewayIdField != null;
+            return this.customerGatewayIdField != null;
         }
 
         /// <summary>
@@ -106,8 +106,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
         public string VpnGatewayId
         {
-            get { return this.vpnGatewayIdField ; }
-            set { this.vpnGatewayIdField= value; }
+            get { return this.vpnGatewayIdField; }
+            set { this.vpnGatewayIdField = value; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpnGatewayId property is set</returns>
         public bool IsSetVpnGatewayId()
         {
-            return  this.vpnGatewayIdField != null;
+            return this.vpnGatewayIdField != null;
         }
 
     }

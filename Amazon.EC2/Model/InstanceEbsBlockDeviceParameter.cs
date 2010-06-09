@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
         {
-            get { return this.volumeIdField ; }
-            set { this.volumeIdField= value; }
+            get { return this.volumeIdField; }
+            set { this.volumeIdField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VolumeId property is set</returns>
         public bool IsSetVolumeId()
         {
-            return  this.volumeIdField != null;
+            return this.volumeIdField != null;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
         {
-            get { return this.deleteOnTerminationField.GetValueOrDefault() ; }
-            set { this.deleteOnTerminationField= value; }
+            get { return this.deleteOnTerminationField.GetValueOrDefault(); }
+            set { this.deleteOnTerminationField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if DeleteOnTermination property is set</returns>
         public bool IsSetDeleteOnTermination()
         {
-            return  this.deleteOnTerminationField.HasValue;
+            return this.deleteOnTerminationField.HasValue;
         }
 
     }

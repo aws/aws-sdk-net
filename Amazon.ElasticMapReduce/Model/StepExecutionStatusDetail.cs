@@ -45,8 +45,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "State")]
         public string State
         {
-            get { return this.stateField ; }
-            set { this.stateField= value; }
+            get { return this.stateField; }
+            set { this.stateField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if State property is set</returns>
         public bool IsSetState()
         {
-            return  this.stateField != null;
+            return this.stateField != null;
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "CreationDateTime")]
         public string CreationDateTime
         {
-            get { return this.creationDateTimeField ; }
-            set { this.creationDateTimeField= value; }
+            get { return this.creationDateTimeField; }
+            set { this.creationDateTimeField = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if CreationDateTime property is set</returns>
         public bool IsSetCreationDateTime()
         {
-            return  this.creationDateTimeField != null;
+            return this.creationDateTimeField != null;
         }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "StartDateTime")]
         public string StartDateTime
         {
-            get { return this.startDateTimeField ; }
-            set { this.startDateTimeField= value; }
+            get { return this.startDateTimeField; }
+            set { this.startDateTimeField = value; }
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if StartDateTime property is set</returns>
         public bool IsSetStartDateTime()
         {
-            return  this.startDateTimeField != null;
+            return this.startDateTimeField != null;
         }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "EndDateTime")]
         public string EndDateTime
         {
-            get { return this.endDateTimeField ; }
-            set { this.endDateTimeField= value; }
+            get { return this.endDateTimeField; }
+            set { this.endDateTimeField = value; }
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if EndDateTime property is set</returns>
         public bool IsSetEndDateTime()
         {
-            return  this.endDateTimeField != null;
+            return this.endDateTimeField != null;
         }
 
         /// <summary>
@@ -169,8 +169,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "LastStateChangeReason")]
         public string LastStateChangeReason
         {
-            get { return this.lastStateChangeReasonField ; }
-            set { this.lastStateChangeReasonField= value; }
+            get { return this.lastStateChangeReasonField; }
+            set { this.lastStateChangeReasonField = value; }
         }
 
         /// <summary>
@@ -190,7 +190,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if LastStateChangeReason property is set</returns>
         public bool IsSetLastStateChangeReason()
         {
-            return  this.lastStateChangeReasonField != null;
+            return this.lastStateChangeReasonField != null;
         }
 
     }

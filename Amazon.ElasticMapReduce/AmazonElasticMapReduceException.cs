@@ -128,7 +128,7 @@ namespace Amazon.ElasticMapReduce
         {
             this.message = message;
             AmazonElasticMapReduceException ex = innerException as AmazonElasticMapReduceException;
-            if (ex != null )
+            if (ex != null)
             {
                 this.statusCode = ex.StatusCode;
                 this.errorCode = ex.ErrorCode;

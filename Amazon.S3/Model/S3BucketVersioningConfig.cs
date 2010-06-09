@@ -29,9 +29,9 @@ using Amazon.S3.Util;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Represents an S3 Bucket. 
-    /// Contains a Bucket Name which is the name of the S3 Bucket. 
-    /// And a Creation Date which is the date that the S3 Bucket was created.
+    /// Represents an S3 Bucket Versioning Configuration.
+    /// Contains the buckets VersioningStatus - Off, Enabled, Suspended.
+    /// Whether an MFADelete has been enabled for the bucket.
     /// </summary>
     [Serializable()]
     public class S3BucketVersioningConfig
@@ -41,20 +41,25 @@ namespace Amazon.S3.Model
         // If Versioning has nver been turned on, S3 returns the empty string
         // which means Off.
         private string status = "Off";
+        private bool? enableMfaDelete;
 
         #endregion
 
         #region Public Members
 
         /// <summary>
-        /// Returns a System.String that represents the AccessControlList Object
+        /// Provides the XML representation of the S3BucketVersioningConfig
         /// </summary>
-        /// <returns>A System.String representation of the AccessControlList Object.</returns>
+        /// <returns>A String representation of the S3BucketVersioningConfig Object.</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<VersioningConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">");
             sb.Append(String.Concat("<Status>", this.Status, "</Status>"));
+            if (IsSetEnableMfaDelete())
+            {
+                sb.Append(String.Concat("<MfaDelete>", (this.EnableMfaDelete.Value ? "Enabled" : "Disabled"), "</MfaDelete>"));
+            }
             sb.Append("</VersioningConfiguration>");
             return sb.ToString();
         }
@@ -105,6 +110,47 @@ namespace Amazon.S3.Model
         internal bool IsSetStatus()
         {
             return !String.IsNullOrEmpty(this.status);
+        }
+
+        #endregion
+
+        #region EnableMfaDelete
+
+        /// <summary>
+        /// Gets and Sets the EnableMfaDelete property. 
+        /// Specifies whether MFA Delete is enabled on this S3 Bucket. 
+        /// If this property is set, please ensure that the 
+        /// SetBucketVersioningRequest's MfaCodes property is set with 
+        /// the Serial of and Token on the MFA device.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "EnableMfaDelete")]
+        public bool? EnableMfaDelete
+        {
+            get { return this.enableMfaDelete.GetValueOrDefault(); }
+            set { this.enableMfaDelete = value; }
+        }
+
+        /// <summary>
+        /// Sets the EnableMfaDelete property. If this property is set, 
+        /// please ensure that the SetBucketVersioningRequest's MfaCodes
+        /// property is set with the Serial of and Token on the MFA device.
+        /// </summary>
+        /// <param name="fEnabled">Whether MfaDelete will be enabled on the S3 Bucket</param>
+        /// <returns>The S3 Versioning Configuration object with EnableMfaDelete modified
+        /// </returns>
+        public S3BucketVersioningConfig WithEnableMfaDelete(bool fEnabled)
+        {
+            enableMfaDelete = fEnabled;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if EnableMfaDelete property is set.
+        /// </summary>
+        /// <returns>true if Status property is set</returns>
+        public bool IsSetEnableMfaDelete()
+        {
+            return this.enableMfaDelete.HasValue;
         }
 
         #endregion

@@ -58,8 +58,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "UserId")]
         public string UserId
         {
-            get { return this.userIdField ; }
-            set { this.userIdField= value; }
+            get { return this.userIdField; }
+            set { this.userIdField = value; }
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if UserId property is set</returns>
         public bool IsSetUserId()
         {
-            return  this.userIdField != null;
+            return this.userIdField != null;
         }
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
         {
-            get { return this.groupNameField ; }
-            set { this.groupNameField= value; }
+            get { return this.groupNameField; }
+            set { this.groupNameField = value; }
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if GroupName property is set</returns>
         public bool IsSetGroupName()
         {
-            return  this.groupNameField != null;
+            return this.groupNameField != null;
         }
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SourceSecurityGroupName")]
         public string SourceSecurityGroupName
         {
-            get { return this.sourceSecurityGroupNameField ; }
-            set { this.sourceSecurityGroupNameField= value; }
+            get { return this.sourceSecurityGroupNameField; }
+            set { this.sourceSecurityGroupNameField = value; }
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SourceSecurityGroupName property is set</returns>
         public bool IsSetSourceSecurityGroupName()
         {
-            return  this.sourceSecurityGroupNameField != null;
+            return this.sourceSecurityGroupNameField != null;
         }
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SourceSecurityGroupOwnerId")]
         public string SourceSecurityGroupOwnerId
         {
-            get { return this.sourceSecurityGroupOwnerIdField ; }
-            set { this.sourceSecurityGroupOwnerIdField= value; }
+            get { return this.sourceSecurityGroupOwnerIdField; }
+            set { this.sourceSecurityGroupOwnerIdField = value; }
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SourceSecurityGroupOwnerId property is set</returns>
         public bool IsSetSourceSecurityGroupOwnerId()
         {
-            return  this.sourceSecurityGroupOwnerIdField != null;
+            return this.sourceSecurityGroupOwnerIdField != null;
         }
 
         /// <summary>
@@ -186,8 +186,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "IpProtocol")]
         public string IpProtocol
         {
-            get { return this.ipProtocolField ; }
-            set { this.ipProtocolField= value; }
+            get { return this.ipProtocolField; }
+            set { this.ipProtocolField = value; }
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if IpProtocol property is set</returns>
         public bool IsSetIpProtocol()
         {
-            return  this.ipProtocolField != null;
+            return this.ipProtocolField != null;
         }
 
         /// <summary>
@@ -219,8 +219,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "FromPort")]
         public Decimal FromPort
         {
-            get { return this.fromPortField.GetValueOrDefault() ; }
-            set { this.fromPortField= value; }
+            get { return this.fromPortField.GetValueOrDefault(); }
+            set { this.fromPortField = value; }
         }
 
         /// <summary>
@@ -242,7 +242,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if FromPort property is set</returns>
         public bool IsSetFromPort()
         {
-            return  this.fromPortField.HasValue;
+            return this.fromPortField.HasValue;
         }
 
         /// <summary>
@@ -253,8 +253,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ToPort")]
         public Decimal ToPort
         {
-            get { return this.toPortField.GetValueOrDefault() ; }
-            set { this.toPortField= value; }
+            get { return this.toPortField.GetValueOrDefault(); }
+            set { this.toPortField = value; }
         }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ToPort property is set</returns>
         public bool IsSetToPort()
         {
-            return  this.toPortField.HasValue;
+            return this.toPortField.HasValue;
         }
 
         /// <summary>
@@ -285,8 +285,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CidrIp")]
         public string CidrIp
         {
-            get { return this.cidrIpField ; }
-            set { this.cidrIpField= value; }
+            get { return this.cidrIpField; }
+            set { this.cidrIpField = value; }
         }
 
         /// <summary>
@@ -306,7 +306,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if CidrIp property is set</returns>
         public bool IsSetCidrIp()
         {
-            return  this.cidrIpField != null;
+            return this.cidrIpField != null;
         }
 
     }

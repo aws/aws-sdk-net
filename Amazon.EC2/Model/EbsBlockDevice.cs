@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SnapshotId")]
         public string SnapshotId
         {
-            get { return this.snapshotIdField ; }
-            set { this.snapshotIdField= value; }
+            get { return this.snapshotIdField; }
+            set { this.snapshotIdField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SnapshotId property is set</returns>
         public bool IsSetSnapshotId()
         {
-            return  this.snapshotIdField != null;
+            return this.snapshotIdField != null;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VolumeSize")]
         public Decimal VolumeSize
         {
-            get { return this.volumeSizeField.GetValueOrDefault() ; }
-            set { this.volumeSizeField= value; }
+            get { return this.volumeSizeField.GetValueOrDefault(); }
+            set { this.volumeSizeField = value; }
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VolumeSize property is set</returns>
         public bool IsSetVolumeSize()
         {
-            return  this.volumeSizeField.HasValue;
+            return this.volumeSizeField.HasValue;
         }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
         {
-            get { return this.deleteOnTerminationField.GetValueOrDefault() ; }
-            set { this.deleteOnTerminationField= value; }
+            get { return this.deleteOnTerminationField.GetValueOrDefault(); }
+            set { this.deleteOnTerminationField = value; }
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if DeleteOnTermination property is set</returns>
         public bool IsSetDeleteOnTermination()
         {
-            return  this.deleteOnTerminationField.HasValue;
+            return this.deleteOnTerminationField.HasValue;
         }
 
     }

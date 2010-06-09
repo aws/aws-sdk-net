@@ -42,7 +42,7 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "StepConfig")]
         public StepConfig StepConfig
         {
-            get { return this.stepConfigField ; }
+            get { return this.stepConfigField; }
             set { this.stepConfigField = value; }
         }
 
@@ -73,7 +73,7 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "ExecutionStatusDetail")]
         public StepExecutionStatusDetail ExecutionStatusDetail
         {
-            get { return this.executionStatusDetailField ; }
+            get { return this.executionStatusDetailField; }
             set { this.executionStatusDetailField = value; }
         }
 

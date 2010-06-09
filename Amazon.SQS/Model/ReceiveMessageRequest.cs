@@ -48,8 +48,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "QueueUrl")]
         public string QueueUrl
         {
-            get { return this.queueUrlField ; }
-            set { this.queueUrlField= value; }
+            get { return this.queueUrlField; }
+            set { this.queueUrlField = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if QueueUrl property is set</returns>
         public bool IsSetQueueUrl()
         {
-            return  this.queueUrlField != null;
+            return this.queueUrlField != null;
         }
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "MaxNumberOfMessages")]
         public Decimal MaxNumberOfMessages
         {
-            get { return this.maxNumberOfMessagesField.GetValueOrDefault() ; }
-            set { this.maxNumberOfMessagesField= value; }
+            get { return this.maxNumberOfMessagesField.GetValueOrDefault(); }
+            set { this.maxNumberOfMessagesField = value; }
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if MaxNumberOfMessages property is set</returns>
         public bool IsSetMaxNumberOfMessages()
         {
-            return  this.maxNumberOfMessagesField.HasValue;
+            return this.maxNumberOfMessagesField.HasValue;
         }
 
         /// <summary>
@@ -115,8 +115,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "VisibilityTimeout")]
         public Decimal VisibilityTimeout
         {
-            get { return this.visibilityTimeoutField.GetValueOrDefault() ; }
-            set { this.visibilityTimeoutField= value; }
+            get { return this.visibilityTimeoutField.GetValueOrDefault(); }
+            set { this.visibilityTimeoutField = value; }
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if VisibilityTimeout property is set</returns>
         public bool IsSetVisibilityTimeout()
         {
-            return  this.visibilityTimeoutField.HasValue;
+            return this.visibilityTimeoutField.HasValue;
         }
 
         /// <summary>

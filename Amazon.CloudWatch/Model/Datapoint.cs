@@ -48,8 +48,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Timestamp")]
         public string Timestamp
         {
-            get { return this.timestampField ; }
-            set { this.timestampField= value; }
+            get { return this.timestampField; }
+            set { this.timestampField = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Timestamp property is set</returns>
         public bool IsSetTimestamp()
         {
-            return  this.timestampField != null;
+            return this.timestampField != null;
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Samples")]
         public Double Samples
         {
-            get { return this.samplesField.GetValueOrDefault() ; }
-            set { this.samplesField= value; }
+            get { return this.samplesField.GetValueOrDefault(); }
+            set { this.samplesField = value; }
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Samples property is set</returns>
         public bool IsSetSamples()
         {
-            return  this.samplesField.HasValue;
+            return this.samplesField.HasValue;
         }
 
         /// <summary>
@@ -110,8 +110,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Average")]
         public Double Average
         {
-            get { return this.averageField.GetValueOrDefault() ; }
-            set { this.averageField= value; }
+            get { return this.averageField.GetValueOrDefault(); }
+            set { this.averageField = value; }
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Average property is set</returns>
         public bool IsSetAverage()
         {
-            return  this.averageField.HasValue;
+            return this.averageField.HasValue;
         }
 
         /// <summary>
@@ -141,8 +141,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Sum")]
         public Double Sum
         {
-            get { return this.sumField.GetValueOrDefault() ; }
-            set { this.sumField= value; }
+            get { return this.sumField.GetValueOrDefault(); }
+            set { this.sumField = value; }
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Sum property is set</returns>
         public bool IsSetSum()
         {
-            return  this.sumField.HasValue;
+            return this.sumField.HasValue;
         }
 
         /// <summary>
@@ -172,8 +172,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Minimum")]
         public Double Minimum
         {
-            get { return this.minimumField.GetValueOrDefault() ; }
-            set { this.minimumField= value; }
+            get { return this.minimumField.GetValueOrDefault(); }
+            set { this.minimumField = value; }
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Minimum property is set</returns>
         public bool IsSetMinimum()
         {
-            return  this.minimumField.HasValue;
+            return this.minimumField.HasValue;
         }
 
         /// <summary>
@@ -203,8 +203,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Maximum")]
         public Double Maximum
         {
-            get { return this.maximumField.GetValueOrDefault() ; }
-            set { this.maximumField= value; }
+            get { return this.maximumField.GetValueOrDefault(); }
+            set { this.maximumField = value; }
         }
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Maximum property is set</returns>
         public bool IsSetMaximum()
         {
-            return  this.maximumField.HasValue;
+            return this.maximumField.HasValue;
         }
 
         /// <summary>
@@ -234,8 +234,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Unit")]
         public string Unit
         {
-            get { return this.unitField ; }
-            set { this.unitField= value; }
+            get { return this.unitField; }
+            set { this.unitField = value; }
         }
 
         /// <summary>
@@ -255,7 +255,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Unit property is set</returns>
         public bool IsSetUnit()
         {
-            return  this.unitField != null;
+            return this.unitField != null;
         }
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "CustomUnit")]
         public string CustomUnit
         {
-            get { return this.customUnitField ; }
-            set { this.customUnitField= value; }
+            get { return this.customUnitField; }
+            set { this.customUnitField = value; }
         }
 
         /// <summary>
@@ -286,7 +286,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if CustomUnit property is set</returns>
         public bool IsSetCustomUnit()
         {
-            return  this.customUnitField != null;
+            return this.customUnitField != null;
         }
 
     }

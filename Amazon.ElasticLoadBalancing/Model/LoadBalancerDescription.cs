@@ -49,8 +49,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "LoadBalancerName")]
         public string LoadBalancerName
         {
-            get { return this.loadBalancerNameField ; }
-            set { this.loadBalancerNameField= value; }
+            get { return this.loadBalancerNameField; }
+            set { this.loadBalancerNameField = value; }
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if LoadBalancerName property is set</returns>
         public bool IsSetLoadBalancerName()
         {
-            return  this.loadBalancerNameField != null;
+            return this.loadBalancerNameField != null;
         }
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "DNSName")]
         public string DNSName
         {
-            get { return this.DNSNameField ; }
-            set { this.DNSNameField= value; }
+            get { return this.DNSNameField; }
+            set { this.DNSNameField = value; }
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if DNSName property is set</returns>
         public bool IsSetDNSName()
         {
-            return  this.DNSNameField != null;
+            return this.DNSNameField != null;
         }
         /// <summary>
         /// Gets and sets the Listeners property.
@@ -232,7 +232,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "HealthCheck")]
         public HealthCheck HealthCheck
         {
-            get { return this.healthCheckField ; }
+            get { return this.healthCheckField; }
             set { this.healthCheckField = value; }
         }
 
@@ -263,8 +263,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "CreatedTime")]
         public string CreatedTime
         {
-            get { return this.createdTimeField ; }
-            set { this.createdTimeField= value; }
+            get { return this.createdTimeField; }
+            set { this.createdTimeField = value; }
         }
 
         /// <summary>
@@ -284,7 +284,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if CreatedTime property is set</returns>
         public bool IsSetCreatedTime()
         {
-            return  this.createdTimeField != null;
+            return this.createdTimeField != null;
         }
 
     }

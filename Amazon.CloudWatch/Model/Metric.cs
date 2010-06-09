@@ -43,8 +43,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "MeasureName")]
         public string MeasureName
         {
-            get { return this.measureNameField ; }
-            set { this.measureNameField= value; }
+            get { return this.measureNameField; }
+            set { this.measureNameField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if MeasureName property is set</returns>
         public bool IsSetMeasureName()
         {
-            return  this.measureNameField != null;
+            return this.measureNameField != null;
         }
         /// <summary>
         /// Gets and sets the Dimensions property.
@@ -116,8 +116,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Namespace")]
         public string Namespace
         {
-            get { return this.namespaceValueField ; }
-            set { this.namespaceValueField= value; }
+            get { return this.namespaceValueField; }
+            set { this.namespaceValueField = value; }
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Namespace property is set</returns>
         public bool IsSetNamespace()
         {
-            return  this.namespaceValueField != null;
+            return this.namespaceValueField != null;
         }
 
     }

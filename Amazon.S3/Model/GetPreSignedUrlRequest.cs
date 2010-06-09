@@ -29,8 +29,8 @@ namespace Amazon.S3.Model
     /// The GetPreSignedUrlRequest contains the parameters used to create
     /// a pre signed URL. For more information, refer: 
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/S3_QSAuth.html"/>
-    /// <br />Required Parameters: BucketName, Key, Expires
-    /// <br />Optional Parameters: Verb; default is GET
+    /// <br />Required Parameters: BucketName, Expires
+    /// <br />Optional Parameters: Key, VersionId, Verb: default is GET
     /// </summary>
     public class GetPreSignedUrlRequest : S3Request
     {
@@ -41,6 +41,7 @@ namespace Amazon.S3.Model
         private DateTime? expires;
         private Protocol protocol;
         private HttpVerb verb;
+        private string versionId;
 
         #endregion
 
@@ -206,6 +207,48 @@ namespace Amazon.S3.Model
             Verb = verb;
             return this;
         }
+        #endregion
+
+        #region VersionId
+
+        /// <summary>
+        /// Gets and sets the VersionId property.
+        /// This is the VersionId for the S3 Object you want to get
+        /// a PreSigned URL for. The VersionId property will be ignored
+        /// for PreSigned "PUT" requests and for requests that don't specify
+        /// the Key property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "VersionId")]
+        public string VersionId
+        {
+            get { return this.versionId; }
+            set { this.versionId = value; }
+        }
+
+        /// <summary>
+        /// Sets the VersionId property for this request.
+        /// This is the VersionId for the S3 Object you want to get
+        /// a PreSigned URL for. The VersionId property will be ignored
+        /// for PreSigned "PUT" requests and for requests that don't specify
+        /// the Key property.
+        /// </summary>
+        /// <param name="versionId">The value that VersionId is set to</param>
+        /// <returns>this instance</returns>
+        public GetPreSignedUrlRequest WithVersionId(string versionId)
+        {
+            this.versionId = versionId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if VersionId property is set.
+        /// </summary>
+        /// <returns>true if VersionId property is set.</returns>
+        internal bool IsSetVersionId()
+        {
+            return !System.String.IsNullOrEmpty(this.versionId);
+        }
+
         #endregion
     }
 }

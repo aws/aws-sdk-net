@@ -42,8 +42,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBSecurityGroupName")]
         public string DBSecurityGroupName
         {
-            get { return this.DBSecurityGroupNameField ; }
-            set { this.DBSecurityGroupNameField= value; }
+            get { return this.DBSecurityGroupNameField; }
+            set { this.DBSecurityGroupNameField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBSecurityGroupName property is set</returns>
         public bool IsSetDBSecurityGroupName()
         {
-            return  this.DBSecurityGroupNameField != null;
+            return this.DBSecurityGroupNameField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
         {
-            get { return this.statusField ; }
-            set { this.statusField= value; }
+            get { return this.statusField; }
+            set { this.statusField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Status property is set</returns>
         public bool IsSetStatus()
         {
-            return  this.statusField != null;
+            return this.statusField != null;
         }
 
     }

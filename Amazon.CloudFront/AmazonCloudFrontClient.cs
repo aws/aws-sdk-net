@@ -31,10 +31,8 @@ using System.Reflection;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Xml.XPath;
 using System.Xml.Xsl;
 
 using Amazon.Util;
@@ -44,12 +42,18 @@ using Amazon.CloudFront.Util;
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Amazon CloudFront is storage for the Internet. It is designed to make web-scale computing easier for developers.
+    /// AmazonCloudFrontClient is an implementation of AmazonCloudFront; the client allows you to manage your CloudFront 
+    /// distributions and origin access identities.<br />
+    /// If you want to use the AmazonCloudFrontClient from a Medium Trust hosting environment, please create the
+    /// client with an AmazonCloudFrontConfig object whose UseSecureStringForAwsSecretKey property is false.
+    /// </summary>
+    /// <remarks>
     /// Amazon CloudFront provides a simple web services interface that can be used to store and retrieve any amount of data,
     /// at any time, from anywhere on the web. It gives any developer access to the same highly scalable, reliable,
     /// fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of web sites.
     /// The service aims to maximize benefits of scale and to pass those benefits on to developers.
-    /// </summary>
+    /// </remarks>
+    /// <seealso cref="P:Amazon.CloudFront.AmazonCloudFrontConfig.UseSecureStringForAwsSecretKey"/>
     public class AmazonCloudFrontClient : AmazonCloudFront
     {
         #region Private Members
@@ -59,6 +63,7 @@ namespace Amazon.CloudFront
         private AmazonCloudFrontConfig config;
         private bool disposed;
         private static int defaultRetry = 3;
+        private string clearAwsSecretAccessKey;
 
         #endregion
 
@@ -120,24 +125,34 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCloudFront Configuration object
+        /// AmazonCloudFront Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
-        /// <param name="amazonCloudFrontConfig">The CloudFront Configuration Object</param>
-        public AmazonCloudFrontClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudFrontConfig amazonCloudFrontConfig)
+        /// <param name="config">The CloudFront Configuration Object</param>
+        public AmazonCloudFrontClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudFrontConfig config)
         {
-            if (awsSecretAccessKey != null)
+            if (!String.IsNullOrEmpty(awsSecretAccessKey))
             {
-                this.awsSecretAccessKey = new SecureString();
-                foreach (char ch in awsSecretAccessKey.ToCharArray())
+                if (config.UseSecureStringForAwsSecretKey)
                 {
-                    this.awsSecretAccessKey.AppendChar(ch);
+                    this.awsSecretAccessKey = new SecureString();
+                    foreach (char ch in awsSecretAccessKey.ToCharArray())
+                    {
+                        this.awsSecretAccessKey.AppendChar(ch);
+                    }
+                    this.awsSecretAccessKey.MakeReadOnly();
                 }
-                this.awsSecretAccessKey.MakeReadOnly();
+            }
+            else
+            {
+                clearAwsSecretAccessKey = awsSecretAccessKey;
             }
             this.awsAccessKeyId = awsAccessKeyId;
-            this.config = amazonCloudFrontConfig;
+            this.config = config;
         }
 
         /// <summary>
@@ -146,12 +161,12 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
-        /// <param name="amazonCloudFrontConfig">The CloudFront Configuration Object</param>
-        public AmazonCloudFrontClient(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonCloudFrontConfig amazonCloudFrontConfig)
+        /// <param name="config">The CloudFront Configuration Object</param>
+        public AmazonCloudFrontClient(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonCloudFrontConfig config)
         {
             this.awsAccessKeyId = awsAccessKeyId;
             this.awsSecretAccessKey = awsSecretAccessKey;
-            this.config = amazonCloudFrontConfig;
+            this.config = config;
         }
 
         #endregion
@@ -1166,10 +1181,16 @@ namespace Amazon.CloudFront
                 canonicalResource.ToString()
                 );
 
-            parameters.Add(
-                CloudFrontQueryParameter.Authorization,
-                BuildSigningString(webHeaders, this.awsSecretAccessKey)
-                );
+            string auth;
+            if (config.UseSecureStringForAwsSecretKey)
+            {
+                auth = BuildSigningString(webHeaders, awsSecretAccessKey);
+            }
+            else
+            {
+                auth = BuildSigningString(webHeaders, clearAwsSecretAccessKey);
+            }
+            parameters.Add(CloudFrontQueryParameter.Authorization, auth);
         }
 
         /**
@@ -1212,11 +1233,13 @@ namespace Amazon.CloudFront
             }
 
             bool shouldRetry = false;
+            string requestAddr;
+            HttpWebRequest request;
             int retries = 0;
-            string requestAddr = null;
+            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
             do
             {
-                HttpWebRequest request = ConfigureWebRequest(parameters, headers, reqDataLen);
+                request = ConfigureWebRequest(parameters, headers, reqDataLen);
                 requestAddr = request.Address.ToString();
                 // Submit the request and read response body
                 try
@@ -1278,6 +1301,14 @@ namespace Amazon.CloudFront
 
             using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
             {
+                if (httpResponse == null)
+                {
+                    throw new WebException(
+                        "The Web Response for a successful request is null!",
+                        WebExceptionStatus.ProtocolError
+                        );
+                }
+
                 WebHeaderCollection headerCollection = httpResponse.Headers;
                 string responseBody = null;
 
@@ -1341,7 +1372,7 @@ namespace Amazon.CloudFront
                 {
                     // Abort the unsuccessful request
                     request.Abort();
-                    throw new AmazonCloudFrontException(we);
+                    throw we;
                 }
 
                 // Set the response headers for future use
@@ -1415,32 +1446,35 @@ namespace Amazon.CloudFront
 
             HttpWebRequest httpRequest = WebRequest.Create(url) as HttpWebRequest;
 
-            if (config.IsSetProxyHost() && config.IsSetProxyPort())
+            if (httpRequest != null)
             {
-                httpRequest.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                if (config.IsSetProxyHost() && config.IsSetProxyPort())
+                {
+                    httpRequest.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                }
+
+                httpRequest.UserAgent = config.UserAgent;
+
+                // Add the AWS Authorization header.
+                httpRequest.Headers.Add(
+                    CloudFrontConstants.AuthorizationHeader,
+                    String.Concat("AWS ", this.awsAccessKeyId, ":", parameters[CloudFrontQueryParameter.Authorization])
+                    );
+
+                httpRequest.Headers.Add(headers);
+                httpRequest.Method = parameters[CloudFrontQueryParameter.Verb];
+
+                if (parameters.ContainsKey(CloudFrontQueryParameter.ContentType))
+                {
+                    httpRequest.ContentType = parameters[CloudFrontQueryParameter.ContentType];
+                }
+
+                httpRequest.ContentLength = contentLength;
+                httpRequest.KeepAlive = false;
+                httpRequest.AllowAutoRedirect = true;
+                httpRequest.MaximumAutomaticRedirections = 2;
+                httpRequest.AllowWriteStreamBuffering = false;
             }
-
-            httpRequest.UserAgent = config.UserAgent;
-
-            // Add the AWS Authorization header.
-            httpRequest.Headers.Add(
-                CloudFrontConstants.AuthorizationHeader,
-                String.Concat("AWS ", this.awsAccessKeyId, ":", parameters[CloudFrontQueryParameter.Authorization])
-                );
-
-            httpRequest.Headers.Add(headers);
-            httpRequest.Method = parameters[CloudFrontQueryParameter.Verb];
-
-            if (parameters.ContainsKey(CloudFrontQueryParameter.ContentType))
-            {
-                httpRequest.ContentType = parameters[CloudFrontQueryParameter.ContentType];
-            }
-
-            httpRequest.ContentLength = contentLength;
-            httpRequest.KeepAlive = false;
-            httpRequest.AllowAutoRedirect = true;
-            httpRequest.MaximumAutomaticRedirections = 2;
-            httpRequest.AllowWriteStreamBuffering = false;
 
             return httpRequest;
         }
@@ -1528,9 +1562,22 @@ namespace Amazon.CloudFront
          */
         private static string BuildSigningString(WebHeaderCollection headers, SecureString key)
         {
-            return AmazonCloudFrontUtil.Sign(
+            return AWSSDKUtils.HMACSign(
                 headers.Get(CloudFrontConstants.AmzDateHeader), 
-                key, 
+                key,
+                new HMACSHA1()
+                );
+        }
+
+        /**
+         * Creates a string based on the parameters and encrypts it using
+         * key. Returns the encrypted string.
+         */
+        private static string BuildSigningString(WebHeaderCollection headers, string key)
+        {
+            return AWSSDKUtils.HMACSign(
+                headers.Get(CloudFrontConstants.AmzDateHeader),
+                key,
                 new HMACSHA1()
                 );
         }

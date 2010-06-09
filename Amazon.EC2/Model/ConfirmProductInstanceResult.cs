@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
         {
-            get { return this.ownerIdField ; }
-            set { this.ownerIdField= value; }
+            get { return this.ownerIdField; }
+            set { this.ownerIdField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if OwnerId property is set</returns>
         public bool IsSetOwnerId()
         {
-            return  this.ownerIdField != null;
+            return this.ownerIdField != null;
         }
 
     }

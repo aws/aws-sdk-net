@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3819BA6B-60D5-4A2A-96B5-B8DE25C9CA7D}</ProjectGuid>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>AmazonCloudFront</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>AmazonCloudFront</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AmazonCloudFront.cs" />
+    <Compile Include="AmazonCloudFrontClient.cs" />
+    <Compile Include="AmazonCloudFrontConfig.cs" />
+    <Compile Include="AmazonCloudFrontException.cs" />
+    <Compile Include="Model\CloudFrontDistributionBase.cs" />
+    <Compile Include="Model\CloudFrontDistributionConfigBase.cs" />
+    <Compile Include="Model\CloudFrontError.cs" />
+    <Compile Include="Model\CloudFrontDistribution.cs" />
+    <Compile Include="Model\CloudFrontDistributionConfig.cs" />
+    <Compile Include="Model\CloudFrontEnumerations.cs" />
+    <Compile Include="Model\CloudFrontOriginAccessIdentity.cs" />
+    <Compile Include="Model\CloudFrontOriginAccessIdentityConfig.cs" />
+    <Compile Include="Model\CloudFrontRequest.cs" />
+    <Compile Include="Model\CloudFrontResponse.cs" />
+    <Compile Include="Model\CloudFrontStreamingDistribution.cs" />
+    <Compile Include="Model\CloudFrontStreamingDistributionConfig.cs" />
+    <Compile Include="Model\CreateDistributionRequest.cs" />
+    <Compile Include="Model\CreateDistributionResponse.cs" />
+    <Compile Include="Model\CreateOriginAccessIdentityRequest.cs" />
+    <Compile Include="Model\CreateOriginAccessIdentityResponse.cs" />
+    <Compile Include="Model\CreateStreamingDistributionRequest.cs" />
+    <Compile Include="Model\CreateStreamingDistributionResponse.cs" />
+    <Compile Include="Model\DeleteDistributionRequest.cs" />
+    <Compile Include="Model\DeleteDistributionResponse.cs" />
+    <Compile Include="Model\DeleteOriginAccessIdentityRequest.cs" />
+    <Compile Include="Model\DeleteOriginAccessIdentityResponse.cs" />
+    <Compile Include="Model\DeleteStreamingDistributionRequest.cs" />
+    <Compile Include="Model\DeleteStreamingDistributionResponse.cs" />
+    <Compile Include="Model\ErrorResponse.cs" />
+    <Compile Include="Model\GetDistributionConfigRequest.cs" />
+    <Compile Include="Model\GetDistributionConfigResponse.cs" />
+    <Compile Include="Model\GetDistributionInfoRequest.cs" />
+    <Compile Include="Model\GetDistributionInfoResponse.cs" />
+    <Compile Include="Model\GetOriginAccessIdentityConfigRequest.cs" />
+    <Compile Include="Model\GetOriginAccessIdentityConfigResponse.cs" />
+    <Compile Include="Model\GetOriginAccessIdentityInfoRequest.cs" />
+    <Compile Include="Model\GetOriginAccessIdentityInfoResponse.cs" />
+    <Compile Include="Model\GetStreamingDistributionConfigRequest.cs" />
+    <Compile Include="Model\GetStreamingDistributionConfigResponse.cs" />
+    <Compile Include="Model\GetStreamingDistributionInfoRequest.cs" />
+    <Compile Include="Model\GetStreamingDistributionInfoResponse.cs" />
+    <Compile Include="Model\ListDistributionsRequest.cs" />
+    <Compile Include="Model\ListDistributionsResponse.cs" />
+    <Compile Include="Model\ListOriginAccessIdentitiesRequest.cs" />
+    <Compile Include="Model\ListOriginAccessIdentitiesResponse.cs" />
+    <Compile Include="Model\ListStreamingDistributionsRequest.cs" />
+    <Compile Include="Model\ListStreamingDistributionsResponse.cs" />
+    <Compile Include="Model\SetDistributionConfigRequest.cs" />
+    <Compile Include="Model\SetDistributionConfigResponse.cs" />
+    <Compile Include="Model\SetOriginAccessIdentityConfigRequest.cs" />
+    <Compile Include="Model\SetOriginAccessIdentityConfigResponse.cs" />
+    <Compile Include="Model\SetStreamingDistributionConfigRequest.cs" />
+    <Compile Include="Model\SetStreamingDistributionConfigResponse.cs" />
+    <Compile Include="Model\Signer.cs" />
+    <Compile Include="Model\Tuple.cs" />
+    <Compile Include="Model\UrlTrustedSigners.cs" />
+    <Compile Include="Util\AmazonCloudFrontUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\DistributionCommon.xslt" />
+    <EmbeddedResource Include="Model\CreateDistributionResponse.xslt" />
+    <EmbeddedResource Include="Model\GetDistributionInfoResponse.xslt" />
+    <EmbeddedResource Include="Model\GetDistributionConfigResponse.xslt" />
+    <EmbeddedResource Include="Model\ListDistributionsResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\SetDistributionConfigResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\CreateOriginAccessIdentityResponse.xslt" />
+    <EmbeddedResource Include="Model\GetOriginAccessIdentityConfigResponse.xslt" />
+    <EmbeddedResource Include="Model\GetOriginAccessIdentityInfoResponse.xslt" />
+    <EmbeddedResource Include="Model\ListOriginAccessIdentitiesResponse.xslt" />
+    <EmbeddedResource Include="Model\SetOriginAccessIdentityConfigResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\ListStreamingDistributionsResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\CreateStreamingDistributionResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\GetStreamingDistributionConfigResponse.xslt" />
+    <EmbeddedResource Include="Model\GetStreamingDistributionInfoResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\SetStreamingDistributionConfigResponse.xslt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

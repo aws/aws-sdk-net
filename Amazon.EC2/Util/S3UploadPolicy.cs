@@ -20,8 +20,6 @@
  */
 
 using System;
-using System.Globalization;
-using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
@@ -39,6 +37,7 @@ namespace Amazon.EC2.Util
         private string policySignature;
         private string policyString;
         private SecureString awsSecretAccessKey;
+        private string clearAwsSecretAccessKey;
 
         /// <summary>
         /// S3 Upload policy to be used by EC2 API.
@@ -48,32 +47,60 @@ namespace Amazon.EC2.Util
         /// <param name="bucketName">Bucket name to upload</param>
         /// <param name="prefix">Prefix for the object keys</param>
         /// <param name="expireInMinutes">Expire, minutes from now</param>
-        ///
         public S3UploadPolicy(
-                string awsAccessKeyId,
-                System.Security.SecureString awsSecretAccessKey,
-                string bucketName,
-                string prefix,
-                int expireInMinutes)
+            string awsAccessKeyId,
+            SecureString awsSecretAccessKey,
+            string bucketName,
+            string prefix,
+            int expireInMinutes)
         {
-          string policy = String.Concat(
-              "{",
-              "\"expiration\": \"",
-              GetFormattedTimestamp(expireInMinutes),
-              "\",",
-              "\"conditions\": [",
-              "{\"bucket\": \"",
-              bucketName,
-              "\"},",
-              "{\"acl\": \"",
-              "ec2-bundle-read",
-              "\"},",
-              "[\"starts-with\", \"$key\", \"",
-              prefix,
-              "\"]",
-              "]}");
+            string policy = BuildPolicyString(bucketName, prefix, expireInMinutes);
             this.policyString = Convert.ToBase64String(Encoding.UTF8.GetBytes(policy.ToCharArray()));
             this.awsSecretAccessKey = awsSecretAccessKey;
+        }
+
+        /// <summary>
+        /// S3 Upload policy to be used by EC2 API.
+        /// </summary>
+        /// <param name="awsSecretAccessKey">Secret Key of the signer of the policy</param>
+        /// <param name="bucketName">Bucket name to upload</param>
+        /// <param name="prefix">Prefix for the object keys</param>
+        /// <param name="expireInMinutes">Expire, minutes from now</param>
+        public S3UploadPolicy(
+            string awsSecretAccessKey,
+            string bucketName,
+            string prefix,
+            int expireInMinutes)
+        {
+            string policy = BuildPolicyString(bucketName, prefix, expireInMinutes);
+            this.policyString = Convert.ToBase64String(Encoding.UTF8.GetBytes(policy.ToCharArray()));
+            this.clearAwsSecretAccessKey = awsSecretAccessKey;
+        }
+
+        /*
+         * Builds the policy string based on the input parameters
+         */
+        private static string BuildPolicyString(
+            string bucketName,
+            string prefix,
+            int expireInMinutes)
+        {
+            StringBuilder policy = new StringBuilder("{", 512);
+            policy.Append("\"expiration\": \"");
+            policy.Append(AWSSDKUtils.GetFormattedTimestampISO8601(expireInMinutes));
+            policy.Append("\",");
+            policy.Append("\"conditions\": [");
+            policy.Append("{\"bucket\": \"");
+            policy.Append(bucketName);
+            policy.Append("\"},");
+            policy.Append("{\"acl\": \"");
+            policy.Append("ec2-bundle-read");
+            policy.Append("\"},");
+            policy.Append("[\"starts-with\", \"$key\", \"");
+            policy.Append(prefix);
+            policy.Append("\"]");
+            policy.Append("]}");
+            return policy.ToString();
         }
 
         /// <summary>
@@ -102,43 +129,25 @@ namespace Amazon.EC2.Util
             {
                 if (this.policySignature == null)
                 {
-                    this.policySignature = Sign(PolicyString, this.awsSecretAccessKey, new HMACSHA1());
+                    if (awsSecretAccessKey != null)
+                    {
+                        this.policySignature = AWSSDKUtils.HMACSign(
+                            policyString,
+                            awsSecretAccessKey,
+                            new HMACSHA1()
+                           );
+                    }
+                    else
+                    {
+                        this.policySignature = AWSSDKUtils.HMACSign(
+                            policyString,
+                            clearAwsSecretAccessKey,
+                            new HMACSHA1()
+                            );
+                    }
                 }
                 return this.policySignature;
             }
-        }
-
-        /// <summary>
-        /// Computes RFC 2104-compliant HMAC signature
-        /// </summary>
-        /// <param name="data">The data to be signed</param>
-        /// <param name="key">The secret signing key</param>
-        /// <param name="algorithm">The algorithm to sign the data with</param>
-        /// <returns>A string representing the HMAC signature</returns>
-        internal static string Sign(string data, System.Security.SecureString key, KeyedHashAlgorithm algorithm)
-        {
-            if (key == null)
-            {
-                throw new AmazonEC2Exception("The AWS Secret Access Key specified is NULL");
-            }
-
-            return AWSSDKUtils.HMACSign(data, key, algorithm);
-        }
-
-        internal static string GetFormattedTimestamp(int minutesFromNow)
-        {
-            DateTime dateTime = DateTime.Now.AddMinutes(minutesFromNow);
-            return new DateTime(dateTime.Year,
-                                dateTime.Month,
-                                dateTime.Day,
-                                dateTime.Hour,
-                                dateTime.Minute,
-                                dateTime.Second,
-                                dateTime.Millisecond,
-                                DateTimeKind.Local)
-                               .ToUniversalTime()
-                               .ToString("yyyy-MM-dd\\THH:mm:ss.fff\\Z",
-                                CultureInfo.InvariantCulture);
         }
     }
 }

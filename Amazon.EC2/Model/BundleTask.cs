@@ -48,8 +48,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "BundleId")]
         public string BundleId
         {
-            get { return this.bundleIdField ; }
-            set { this.bundleIdField= value; }
+            get { return this.bundleIdField; }
+            set { this.bundleIdField = value; }
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if BundleId property is set</returns>
         public bool IsSetBundleId()
         {
-            return  this.bundleIdField != null;
+            return this.bundleIdField != null;
         }
 
         /// <summary>
@@ -113,8 +113,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "BundleState")]
         public string BundleState
         {
-            get { return this.bundleStateField ; }
-            set { this.bundleStateField= value; }
+            get { return this.bundleStateField; }
+            set { this.bundleStateField = value; }
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if BundleState property is set</returns>
         public bool IsSetBundleState()
         {
-            return  this.bundleStateField != null;
+            return this.bundleStateField != null;
         }
 
         /// <summary>
@@ -147,8 +147,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "StartTime")]
         public string StartTime
         {
-            get { return this.startTimeField ; }
-            set { this.startTimeField= value; }
+            get { return this.startTimeField; }
+            set { this.startTimeField = value; }
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if StartTime property is set</returns>
         public bool IsSetStartTime()
         {
-            return  this.startTimeField != null;
+            return this.startTimeField != null;
         }
 
         /// <summary>
@@ -178,8 +178,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "UpdateTime")]
         public string UpdateTime
         {
-            get { return this.updateTimeField ; }
-            set { this.updateTimeField= value; }
+            get { return this.updateTimeField; }
+            set { this.updateTimeField = value; }
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if UpdateTime property is set</returns>
         public bool IsSetUpdateTime()
         {
-            return  this.updateTimeField != null;
+            return this.updateTimeField != null;
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Storage")]
         public Storage Storage
         {
-            get { return this.storageField ; }
+            get { return this.storageField; }
             set { this.storageField = value; }
         }
 
@@ -240,8 +240,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Progress")]
         public string Progress
         {
-            get { return this.progressField ; }
-            set { this.progressField= value; }
+            get { return this.progressField; }
+            set { this.progressField = value; }
         }
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Progress property is set</returns>
         public bool IsSetProgress()
         {
-            return  this.progressField != null;
+            return this.progressField != null;
         }
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "BundleTaskError")]
         public BundleTaskError BundleTaskError
         {
-            get { return this.bundleTaskErrorField ; }
+            get { return this.bundleTaskErrorField; }
             set { this.bundleTaskErrorField = value; }
         }
 

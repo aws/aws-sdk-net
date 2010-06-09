@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CurrentState")]
         public InstanceState CurrentState
         {
-            get { return this.currentStateField ; }
+            get { return this.currentStateField; }
             set { this.currentStateField = value; }
         }
 
@@ -105,7 +105,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "PreviousState")]
         public InstanceState PreviousState
         {
-            get { return this.previousStateField ; }
+            get { return this.previousStateField; }
             set { this.previousStateField = value; }
         }
 

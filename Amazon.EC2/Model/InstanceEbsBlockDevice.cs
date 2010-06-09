@@ -44,8 +44,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
         {
-            get { return this.volumeIdField ; }
-            set { this.volumeIdField= value; }
+            get { return this.volumeIdField; }
+            set { this.volumeIdField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VolumeId property is set</returns>
         public bool IsSetVolumeId()
         {
-            return  this.volumeIdField != null;
+            return this.volumeIdField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
         {
-            get { return this.statusField ; }
-            set { this.statusField= value; }
+            get { return this.statusField; }
+            set { this.statusField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Status property is set</returns>
         public bool IsSetStatus()
         {
-            return  this.statusField != null;
+            return this.statusField != null;
         }
 
         /// <summary>
@@ -106,8 +106,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "AttachTime")]
         public string AttachTime
         {
-            get { return this.attachTimeField ; }
-            set { this.attachTimeField= value; }
+            get { return this.attachTimeField; }
+            set { this.attachTimeField = value; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if AttachTime property is set</returns>
         public bool IsSetAttachTime()
         {
-            return  this.attachTimeField != null;
+            return this.attachTimeField != null;
         }
 
         /// <summary>
@@ -137,8 +137,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
         {
-            get { return this.deleteOnTerminationField.GetValueOrDefault() ; }
-            set { this.deleteOnTerminationField= value; }
+            get { return this.deleteOnTerminationField.GetValueOrDefault(); }
+            set { this.deleteOnTerminationField = value; }
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if DeleteOnTermination property is set</returns>
         public bool IsSetDeleteOnTermination()
         {
-            return  this.deleteOnTerminationField.HasValue;
+            return this.deleteOnTerminationField.HasValue;
         }
 
     }

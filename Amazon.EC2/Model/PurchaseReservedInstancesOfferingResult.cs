@@ -41,8 +41,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ReservedInstancesId")]
         public string ReservedInstancesId
         {
-            get { return this.reservedInstancesIdField ; }
-            set { this.reservedInstancesIdField= value; }
+            get { return this.reservedInstancesIdField; }
+            set { this.reservedInstancesIdField = value; }
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ReservedInstancesId property is set</returns>
         public bool IsSetReservedInstancesId()
         {
-            return  this.reservedInstancesIdField != null;
+            return this.reservedInstancesIdField != null;
         }
 
     }

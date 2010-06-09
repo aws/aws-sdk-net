@@ -44,8 +44,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -77,8 +77,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
         {
-            get { return this.attributeField ; }
-            set { this.attributeField= value; }
+            get { return this.attributeField; }
+            set { this.attributeField = value; }
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Attribute property is set</returns>
         public bool IsSetAttribute()
         {
-            return  this.attributeField != null;
+            return this.attributeField != null;
         }
 
         /// <summary>
@@ -110,8 +110,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Value")]
         public string Value
         {
-            get { return this.valueField ; }
-            set { this.valueField= value; }
+            get { return this.valueField; }
+            set { this.valueField = value; }
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Value property is set</returns>
         public bool IsSetValue()
         {
-            return  this.valueField != null;
+            return this.valueField != null;
         }
         /// <summary>
         /// Gets and sets the BlockDeviceMapping property.

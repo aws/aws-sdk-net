@@ -47,8 +47,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ImageId")]
         public string ImageId
         {
-            get { return this.imageIdField ; }
-            set { this.imageIdField= value; }
+            get { return this.imageIdField; }
+            set { this.imageIdField = value; }
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ImageId property is set</returns>
         public bool IsSetImageId()
         {
-            return  this.imageIdField != null;
+            return this.imageIdField != null;
         }
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
         {
-            get { return this.attributeField ; }
-            set { this.attributeField= value; }
+            get { return this.attributeField; }
+            set { this.attributeField = value; }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Attribute property is set</returns>
         public bool IsSetAttribute()
         {
-            return  this.attributeField != null;
+            return this.attributeField != null;
         }
 
         /// <summary>
@@ -109,8 +109,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "OperationType")]
         public string OperationType
         {
-            get { return this.operationTypeField ; }
-            set { this.operationTypeField= value; }
+            get { return this.operationTypeField; }
+            set { this.operationTypeField = value; }
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if OperationType property is set</returns>
         public bool IsSetOperationType()
         {
-            return  this.operationTypeField != null;
+            return this.operationTypeField != null;
         }
 
         /// <summary>
@@ -262,8 +262,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField ; }
-            set { this.descriptionField= value; }
+            get { return this.descriptionField; }
+            set { this.descriptionField = value; }
         }
 
         /// <summary>
@@ -283,7 +283,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Description property is set</returns>
         public bool IsSetDescription()
         {
-            return  this.descriptionField != null;
+            return this.descriptionField != null;
         }
 
     }

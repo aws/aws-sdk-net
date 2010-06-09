@@ -27,6 +27,9 @@ namespace Amazon.S3.Model
     /// <summary>
     /// The DeleteObjectRequest contains the parameters used for the DeleteObject operation.
     /// <br />Required Parameters: BucketName, Key
+    /// <br />The MfaCodes property is required if the bucket containing this object has been
+    /// configured with the EnableMfaDelete property. For more information, please see:
+    /// <see cref="P:Amazon.S3.Model.S3BucketVersioningConfig.EnableMfaDelete"/>.
     /// </summary>
     public class DeleteObjectRequest : S3Request
     {
@@ -35,6 +38,7 @@ namespace Amazon.S3.Model
         private string bucketName;
         private string key;
         private string versionId;
+        private Tuple<string, string> mfaCodes;
 
         #endregion
 
@@ -140,5 +144,66 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        #region MfaCodes
+
+        /// <summary>
+        /// Gets and Sets the MfaCodes property.
+        /// The MfaCodes Tuple associates the Serial Number
+        /// and the current Token/Code displayed on the
+        /// Multi-Factor Authentication device associated with
+        /// your AWS Account. This is a required property for this
+        /// request if:<br />
+        /// 1. EnableMfaDelete was configured on the bucket
+        /// containing this object's version.<br />
+        /// 2. You are deleting an object's version
+        /// </summary>
+        [XmlIgnore]
+        public Tuple<string, string> MfaCodes
+        {
+            get
+            {
+                if (this.mfaCodes == null)
+                {
+                    this.mfaCodes = new Tuple<string, string>("", "");
+                }
+                return this.mfaCodes;
+            }
+            set { this.mfaCodes = value; }
+        }
+
+        /// <summary>
+        /// Sets the MfaCodes property.
+        /// The MfaCodes Tuple associates the Serial Number
+        /// and the current Token/Code displayed on the
+        /// Multi-Factor Authentication device associated with
+        /// your AWS Account. This is a required property for this
+        /// request if:<br />
+        /// 1. EnableMfaDelete was configured on the bucket
+        /// containing this object's version.<br />
+        /// 2. You are deleting an object's version
+        /// </summary>
+        /// <param name="serial">Serial number of the authentication device</param>
+        /// <param name="token">Token displayed on the authentication device</param>
+        /// <returns>this instance</returns>
+        public DeleteObjectRequest WithMfaCodes(string serial, string token)
+        {
+            mfaCodes = new Tuple<string, string>(serial, token);
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the MfaCodes property is set.
+        /// </summary>
+        /// <returns>true if the MfaCodes property is set.</returns>
+        internal bool IsSetMfaCodes()
+        {
+            return (this.mfaCodes != null) &&
+                (!System.String.IsNullOrEmpty(MfaCodes.First)) &&
+                (!System.String.IsNullOrEmpty(MfaCodes.Second));
+        }
+
+        #endregion
+
     }
 }

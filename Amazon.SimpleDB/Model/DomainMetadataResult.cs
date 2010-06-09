@@ -48,8 +48,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "ItemCount")]
         public string ItemCount
         {
-            get { return this.itemCountField ; }
-            set { this.itemCountField= value; }
+            get { return this.itemCountField; }
+            set { this.itemCountField = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if ItemCount property is set</returns>
         public bool IsSetItemCount()
         {
-            return  this.itemCountField != null;
+            return this.itemCountField != null;
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "ItemNamesSizeBytes")]
         public string ItemNamesSizeBytes
         {
-            get { return this.itemNamesSizeBytesField ; }
-            set { this.itemNamesSizeBytesField= value; }
+            get { return this.itemNamesSizeBytesField; }
+            set { this.itemNamesSizeBytesField = value; }
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if ItemNamesSizeBytes property is set</returns>
         public bool IsSetItemNamesSizeBytes()
         {
-            return  this.itemNamesSizeBytesField != null;
+            return this.itemNamesSizeBytesField != null;
         }
 
         /// <summary>
@@ -110,8 +110,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "AttributeNameCount")]
         public string AttributeNameCount
         {
-            get { return this.attributeNameCountField ; }
-            set { this.attributeNameCountField= value; }
+            get { return this.attributeNameCountField; }
+            set { this.attributeNameCountField = value; }
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if AttributeNameCount property is set</returns>
         public bool IsSetAttributeNameCount()
         {
-            return  this.attributeNameCountField != null;
+            return this.attributeNameCountField != null;
         }
 
         /// <summary>
@@ -141,8 +141,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "AttributeNamesSizeBytes")]
         public string AttributeNamesSizeBytes
         {
-            get { return this.attributeNamesSizeBytesField ; }
-            set { this.attributeNamesSizeBytesField= value; }
+            get { return this.attributeNamesSizeBytesField; }
+            set { this.attributeNamesSizeBytesField = value; }
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if AttributeNamesSizeBytes property is set</returns>
         public bool IsSetAttributeNamesSizeBytes()
         {
-            return  this.attributeNamesSizeBytesField != null;
+            return this.attributeNamesSizeBytesField != null;
         }
 
         /// <summary>
@@ -172,8 +172,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "AttributeValueCount")]
         public string AttributeValueCount
         {
-            get { return this.attributeValueCountField ; }
-            set { this.attributeValueCountField= value; }
+            get { return this.attributeValueCountField; }
+            set { this.attributeValueCountField = value; }
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if AttributeValueCount property is set</returns>
         public bool IsSetAttributeValueCount()
         {
-            return  this.attributeValueCountField != null;
+            return this.attributeValueCountField != null;
         }
 
         /// <summary>
@@ -203,8 +203,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "AttributeValuesSizeBytes")]
         public string AttributeValuesSizeBytes
         {
-            get { return this.attributeValuesSizeBytesField ; }
-            set { this.attributeValuesSizeBytesField= value; }
+            get { return this.attributeValuesSizeBytesField; }
+            set { this.attributeValuesSizeBytesField = value; }
         }
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if AttributeValuesSizeBytes property is set</returns>
         public bool IsSetAttributeValuesSizeBytes()
         {
-            return  this.attributeValuesSizeBytesField != null;
+            return this.attributeValuesSizeBytesField != null;
         }
 
         /// <summary>
@@ -234,8 +234,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Timestamp")]
         public string Timestamp
         {
-            get { return this.timestampField ; }
-            set { this.timestampField= value; }
+            get { return this.timestampField; }
+            set { this.timestampField = value; }
         }
 
         /// <summary>
@@ -255,7 +255,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if Timestamp property is set</returns>
         public bool IsSetTimestamp()
         {
-            return  this.timestampField != null;
+            return this.timestampField != null;
         }
 
     }

@@ -41,8 +41,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Enabled")]
         public bool Enabled
         {
-            get { return this.enabledField.GetValueOrDefault() ; }
-            set { this.enabledField= value; }
+            get { return this.enabledField.GetValueOrDefault(); }
+            set { this.enabledField = value; }
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Enabled property is set</returns>
         public bool IsSetEnabled()
         {
-            return  this.enabledField.HasValue;
+            return this.enabledField.HasValue;
         }
 
     }

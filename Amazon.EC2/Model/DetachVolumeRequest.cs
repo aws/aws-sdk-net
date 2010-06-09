@@ -51,8 +51,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
         {
-            get { return this.volumeIdField ; }
-            set { this.volumeIdField= value; }
+            get { return this.volumeIdField; }
+            set { this.volumeIdField = value; }
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VolumeId property is set</returns>
         public bool IsSetVolumeId()
         {
-            return  this.volumeIdField != null;
+            return this.volumeIdField != null;
         }
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -113,8 +113,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Device")]
         public string Device
         {
-            get { return this.deviceField ; }
-            set { this.deviceField= value; }
+            get { return this.deviceField; }
+            set { this.deviceField = value; }
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Device property is set</returns>
         public bool IsSetDevice()
         {
-            return  this.deviceField != null;
+            return this.deviceField != null;
         }
 
         /// <summary>
@@ -151,8 +151,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Force")]
         public bool Force
         {
-            get { return this.forceField.GetValueOrDefault() ; }
-            set { this.forceField= value; }
+            get { return this.forceField.GetValueOrDefault(); }
+            set { this.forceField = value; }
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Force property is set</returns>
         public bool IsSetForce()
         {
-            return  this.forceField.HasValue;
+            return this.forceField.HasValue;
         }
 
     }

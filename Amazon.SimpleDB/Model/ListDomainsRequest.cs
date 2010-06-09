@@ -44,8 +44,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "MaxNumberOfDomains")]
         public Decimal MaxNumberOfDomains
         {
-            get { return this.maxNumberOfDomainsField.GetValueOrDefault() ; }
-            set { this.maxNumberOfDomainsField= value; }
+            get { return this.maxNumberOfDomainsField.GetValueOrDefault(); }
+            set { this.maxNumberOfDomainsField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if MaxNumberOfDomains property is set</returns>
         public bool IsSetMaxNumberOfDomains()
         {
-            return  this.maxNumberOfDomainsField.HasValue;
+            return this.maxNumberOfDomainsField.HasValue;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "NextToken")]
         public string NextToken
         {
-            get { return this.nextTokenField ; }
-            set { this.nextTokenField= value; }
+            get { return this.nextTokenField; }
+            set { this.nextTokenField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if NextToken property is set</returns>
         public bool IsSetNextToken()
         {
-            return  this.nextTokenField != null;
+            return this.nextTokenField != null;
         }
 
     }

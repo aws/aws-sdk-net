@@ -28,8 +28,15 @@ using Amazon.S3.Util;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The SetBucketVersioningRequest contains the parameters used for the SetBucketVersioning operation.
+    /// The SetBucketVersioningRequest contains the parameters used for the 
+    /// SetBucketVersioning operation.
     /// <br />Required Parameters: BucketName, VersioningConfig
+    /// <br /> MfaCodes property is required if VersioningConfig.EnableMfaDelete = true
+    /// <para>If you want to enable the use of a multi-factor authentication device
+    /// on this bucket, please set the EnableMfaDelete property of VersioningConfig.
+    /// If EnableMfaDelete is set to true, the MfaCodes property needs to be set with the
+    /// Serial number and Current Token displayed on the MFA device.
+    /// </para>
     /// </summary>
     public class SetBucketVersioningRequest : S3Request
     {
@@ -37,6 +44,7 @@ namespace Amazon.S3.Model
 
         private string bucketName;
         private S3BucketVersioningConfig config;
+        private Tuple<string, string> mfaCodes;
 
         #endregion
 
@@ -80,7 +88,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the VersioningConfig property.
         /// Once Versioning has been "Enabled" on a bucket, it can be "Suspended" 
-        /// but cannot be switched "Off".
+        /// but cannot be switched "Off". If EnableMfaDelete is set,
+        /// the MfaCodes property needs to contain the Serial of and current Token
+        /// displayed on the MFA device.
         /// </summary>
         [XmlElementAttribute(ElementName = "VersioningConfig")]
         public S3BucketVersioningConfig VersioningConfig
@@ -134,5 +144,58 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        #region MfaCodes
+
+        /// <summary>
+        /// Gets and Sets the MfaCodes property.
+        /// The MfaCodes Tuple associates the Serial Number
+        /// and the current Token/Code displayed on the
+        /// Multi-Factor Authentication device associated with
+        /// your AWS Account
+        /// </summary>
+        [XmlIgnore]
+        public Tuple<string, string> MfaCodes
+        {
+            get
+            {
+                if (this.mfaCodes == null)
+                {
+                    this.mfaCodes = new Tuple<string, string>("", "");
+                }
+                return this.mfaCodes;
+            }
+            set { this.mfaCodes = value; }
+        }
+
+        /// <summary>
+        /// Sets the MfaCodes property.
+        /// The MfaCodes Tuple associates the Serial Number
+        /// and the current Token/Code displayed on the
+        /// Multi-Factor Authentication device associated with
+        /// your AWS Account
+        /// </summary>
+        /// <param name="serial">Serial number of the authentication device</param>
+        /// <param name="token">Token displayed on the authentication device</param>
+        /// <returns>this instance</returns>
+        public SetBucketVersioningRequest WithMfaCodes(string serial, string token)
+        {
+            mfaCodes = new Tuple<string, string>(serial, token);
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the MfaCodes property is set.
+        /// </summary>
+        /// <returns>true if the MfaCodes property is set.</returns>
+        internal bool IsSetMfaCodes()
+        {
+            return (this.mfaCodes != null) &&
+                (!System.String.IsNullOrEmpty(MfaCodes.First)) &&
+                (!System.String.IsNullOrEmpty(MfaCodes.Second));
+        }
+
+        #endregion
+
     }
 }

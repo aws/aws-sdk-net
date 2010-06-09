@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DescribeSpotPriceHistoryResult")]
         public DescribeSpotPriceHistoryResult DescribeSpotPriceHistoryResult
         {
-            get { return this.describeSpotPriceHistoryResultField ; }
+            get { return this.describeSpotPriceHistoryResultField; }
             set { this.describeSpotPriceHistoryResultField = value; }
         }
 

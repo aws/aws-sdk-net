@@ -42,8 +42,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "QueueUrl")]
         public string QueueUrl
         {
-            get { return this.queueUrlField ; }
-            set { this.queueUrlField= value; }
+            get { return this.queueUrlField; }
+            set { this.queueUrlField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if QueueUrl property is set</returns>
         public bool IsSetQueueUrl()
         {
-            return  this.queueUrlField != null;
+            return this.queueUrlField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "Label")]
         public string Label
         {
-            get { return this.labelField ; }
-            set { this.labelField= value; }
+            get { return this.labelField; }
+            set { this.labelField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if Label property is set</returns>
         public bool IsSetLabel()
         {
-            return  this.labelField != null;
+            return this.labelField != null;
         }
 
     }

@@ -47,8 +47,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField ; }
-            set { this.nameField= value; }
+            get { return this.nameField; }
+            set { this.nameField = value; }
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Name property is set</returns>
         public bool IsSetName()
         {
-            return  this.nameField != null;
+            return this.nameField != null;
         }
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField ; }
-            set { this.descriptionField= value; }
+            get { return this.descriptionField; }
+            set { this.descriptionField = value; }
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Description property is set</returns>
         public bool IsSetDescription()
         {
-            return  this.descriptionField != null;
+            return this.descriptionField != null;
         }
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "NoReboot")]
         public bool NoReboot
         {
-            get { return this.noRebootField.GetValueOrDefault() ; }
-            set { this.noRebootField= value; }
+            get { return this.noRebootField.GetValueOrDefault(); }
+            set { this.noRebootField = value; }
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if NoReboot property is set</returns>
         public bool IsSetNoReboot()
         {
-            return  this.noRebootField.HasValue;
+            return this.noRebootField.HasValue;
         }
 
     }

@@ -45,8 +45,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "QueueUrl")]
         public string QueueUrl
         {
-            get { return this.queueUrlField ; }
-            set { this.queueUrlField= value; }
+            get { return this.queueUrlField; }
+            set { this.queueUrlField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if QueueUrl property is set</returns>
         public bool IsSetQueueUrl()
         {
-            return  this.queueUrlField != null;
+            return this.queueUrlField != null;
         }
 
         /// <summary>
@@ -77,8 +77,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "ReceiptHandle")]
         public string ReceiptHandle
         {
-            get { return this.receiptHandleField ; }
-            set { this.receiptHandleField= value; }
+            get { return this.receiptHandleField; }
+            set { this.receiptHandleField = value; }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if ReceiptHandle property is set</returns>
         public bool IsSetReceiptHandle()
         {
-            return  this.receiptHandleField != null;
+            return this.receiptHandleField != null;
         }
 
         /// <summary>
@@ -109,8 +109,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "VisibilityTimeout")]
         public Decimal VisibilityTimeout
         {
-            get { return this.visibilityTimeoutField.GetValueOrDefault() ; }
-            set { this.visibilityTimeoutField= value; }
+            get { return this.visibilityTimeoutField.GetValueOrDefault(); }
+            set { this.visibilityTimeoutField = value; }
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if VisibilityTimeout property is set</returns>
         public bool IsSetVisibilityTimeout()
         {
-            return  this.visibilityTimeoutField.HasValue;
+            return this.visibilityTimeoutField.HasValue;
         }
         /// <summary>
         /// Gets and sets the Attribute property.

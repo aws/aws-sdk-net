@@ -97,8 +97,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Force")]
         public bool Force
         {
-            get { return this.forceField.GetValueOrDefault() ; }
-            set { this.forceField= value; }
+            get { return this.forceField.GetValueOrDefault(); }
+            set { this.forceField = value; }
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Force property is set</returns>
         public bool IsSetForce()
         {
-            return  this.forceField.HasValue;
+            return this.forceField.HasValue;
         }
 
     }

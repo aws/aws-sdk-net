@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBInstance")]
         public DBInstance DBInstance
         {
-            get { return this.DBInstanceField ; }
+            get { return this.DBInstanceField; }
             set { this.DBInstanceField = value; }
         }
 

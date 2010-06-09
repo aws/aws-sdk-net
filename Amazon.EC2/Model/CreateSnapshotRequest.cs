@@ -60,8 +60,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
         {
-            get { return this.volumeIdField ; }
-            set { this.volumeIdField= value; }
+            get { return this.volumeIdField; }
+            set { this.volumeIdField = value; }
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VolumeId property is set</returns>
         public bool IsSetVolumeId()
         {
-            return  this.volumeIdField != null;
+            return this.volumeIdField != null;
         }
 
         /// <summary>
@@ -91,8 +91,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField ; }
-            set { this.descriptionField= value; }
+            get { return this.descriptionField; }
+            set { this.descriptionField = value; }
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Description property is set</returns>
         public bool IsSetDescription()
         {
-            return  this.descriptionField != null;
+            return this.descriptionField != null;
         }
 
     }

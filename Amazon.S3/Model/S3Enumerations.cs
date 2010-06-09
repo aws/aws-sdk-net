@@ -83,6 +83,7 @@ namespace Amazon.S3.Model
         CanonicalizedResource,
         ContentBody,
         ContentLength,
+        ContentType,
         DestinationBucket,
         Expires,
         Key,

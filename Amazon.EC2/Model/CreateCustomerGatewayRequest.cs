@@ -58,8 +58,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
         {
-            get { return this.typeField ; }
-            set { this.typeField= value; }
+            get { return this.typeField; }
+            set { this.typeField = value; }
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Type property is set</returns>
         public bool IsSetType()
         {
-            return  this.typeField != null;
+            return this.typeField != null;
         }
 
         /// <summary>
@@ -90,8 +90,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "IpAddress")]
         public string IpAddress
         {
-            get { return this.ipAddressField ; }
-            set { this.ipAddressField= value; }
+            get { return this.ipAddressField; }
+            set { this.ipAddressField = value; }
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if IpAddress property is set</returns>
         public bool IsSetIpAddress()
         {
-            return  this.ipAddressField != null;
+            return this.ipAddressField != null;
         }
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "BgpAsn")]
         public Decimal BgpAsn
         {
-            get { return this.bgpAsnField.GetValueOrDefault() ; }
-            set { this.bgpAsnField= value; }
+            get { return this.bgpAsnField.GetValueOrDefault(); }
+            set { this.bgpAsnField = value; }
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if BgpAsn property is set</returns>
         public bool IsSetBgpAsn()
         {
-            return  this.bgpAsnField.HasValue;
+            return this.bgpAsnField.HasValue;
         }
 
     }

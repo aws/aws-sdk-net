@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CustomerGatewayId")]
         public string CustomerGatewayId
         {
-            get { return this.customerGatewayIdField ; }
-            set { this.customerGatewayIdField= value; }
+            get { return this.customerGatewayIdField; }
+            set { this.customerGatewayIdField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if CustomerGatewayId property is set</returns>
         public bool IsSetCustomerGatewayId()
         {
-            return  this.customerGatewayIdField != null;
+            return this.customerGatewayIdField != null;
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CustomerGatewayState")]
         public string CustomerGatewayState
         {
-            get { return this.customerGatewayStateField ; }
-            set { this.customerGatewayStateField= value; }
+            get { return this.customerGatewayStateField; }
+            set { this.customerGatewayStateField = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if CustomerGatewayState property is set</returns>
         public bool IsSetCustomerGatewayState()
         {
-            return  this.customerGatewayStateField != null;
+            return this.customerGatewayStateField != null;
         }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
         {
-            get { return this.typeField ; }
-            set { this.typeField= value; }
+            get { return this.typeField; }
+            set { this.typeField = value; }
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Type property is set</returns>
         public bool IsSetType()
         {
-            return  this.typeField != null;
+            return this.typeField != null;
         }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "IpAddress")]
         public string IpAddress
         {
-            get { return this.ipAddressField ; }
-            set { this.ipAddressField= value; }
+            get { return this.ipAddressField; }
+            set { this.ipAddressField = value; }
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if IpAddress property is set</returns>
         public bool IsSetIpAddress()
         {
-            return  this.ipAddressField != null;
+            return this.ipAddressField != null;
         }
 
         /// <summary>
@@ -170,8 +170,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "BgpAsn")]
         public string BgpAsn
         {
-            get { return this.bgpAsnField ; }
-            set { this.bgpAsnField= value; }
+            get { return this.bgpAsnField; }
+            set { this.bgpAsnField = value; }
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if BgpAsn property is set</returns>
         public bool IsSetBgpAsn()
         {
-            return  this.bgpAsnField != null;
+            return this.bgpAsnField != null;
         }
 
     }

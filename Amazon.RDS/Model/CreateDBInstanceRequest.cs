@@ -55,8 +55,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBName")]
         public string DBName
         {
-            get { return this.DBNameField ; }
-            set { this.DBNameField= value; }
+            get { return this.DBNameField; }
+            set { this.DBNameField = value; }
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBName property is set</returns>
         public bool IsSetDBName()
         {
-            return  this.DBNameField != null;
+            return this.DBNameField != null;
         }
 
         /// <summary>
@@ -90,8 +90,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField ; }
-            set { this.DBInstanceIdentifierField= value; }
+            get { return this.DBInstanceIdentifierField; }
+            set { this.DBInstanceIdentifierField = value; }
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBInstanceIdentifier property is set</returns>
         public bool IsSetDBInstanceIdentifier()
         {
-            return  this.DBInstanceIdentifierField != null;
+            return this.DBInstanceIdentifierField != null;
         }
 
         /// <summary>
@@ -125,8 +125,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "AllocatedStorage")]
         public Decimal AllocatedStorage
         {
-            get { return this.allocatedStorageField.GetValueOrDefault() ; }
-            set { this.allocatedStorageField= value; }
+            get { return this.allocatedStorageField.GetValueOrDefault(); }
+            set { this.allocatedStorageField = value; }
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if AllocatedStorage property is set</returns>
         public bool IsSetAllocatedStorage()
         {
-            return  this.allocatedStorageField.HasValue;
+            return this.allocatedStorageField.HasValue;
         }
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBInstanceClass")]
         public string DBInstanceClass
         {
-            get { return this.DBInstanceClassField ; }
-            set { this.DBInstanceClassField= value; }
+            get { return this.DBInstanceClassField; }
+            set { this.DBInstanceClassField = value; }
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBInstanceClass property is set</returns>
         public bool IsSetDBInstanceClass()
         {
-            return  this.DBInstanceClassField != null;
+            return this.DBInstanceClassField != null;
         }
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Engine")]
         public string Engine
         {
-            get { return this.engineField ; }
-            set { this.engineField= value; }
+            get { return this.engineField; }
+            set { this.engineField = value; }
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Engine property is set</returns>
         public bool IsSetEngine()
         {
-            return  this.engineField != null;
+            return this.engineField != null;
         }
 
         /// <summary>
@@ -226,8 +226,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "MasterUsername")]
         public string MasterUsername
         {
-            get { return this.masterUsernameField ; }
-            set { this.masterUsernameField= value; }
+            get { return this.masterUsernameField; }
+            set { this.masterUsernameField = value; }
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if MasterUsername property is set</returns>
         public bool IsSetMasterUsername()
         {
-            return  this.masterUsernameField != null;
+            return this.masterUsernameField != null;
         }
 
         /// <summary>
@@ -260,8 +260,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "MasterUserPassword")]
         public string MasterUserPassword
         {
-            get { return this.masterUserPasswordField ; }
-            set { this.masterUserPasswordField= value; }
+            get { return this.masterUserPasswordField; }
+            set { this.masterUserPasswordField = value; }
         }
 
         /// <summary>
@@ -281,7 +281,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if MasterUserPassword property is set</returns>
         public bool IsSetMasterUserPassword()
         {
-            return  this.masterUserPasswordField != null;
+            return this.masterUserPasswordField != null;
         }
 
         /// <summary>
@@ -335,8 +335,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -357,7 +357,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
 
         /// <summary>
@@ -371,8 +371,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "PreferredMaintenanceWindow")]
         public string PreferredMaintenanceWindow
         {
-            get { return this.preferredMaintenanceWindowField ; }
-            set { this.preferredMaintenanceWindowField= value; }
+            get { return this.preferredMaintenanceWindowField; }
+            set { this.preferredMaintenanceWindowField = value; }
         }
 
         /// <summary>
@@ -396,7 +396,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if PreferredMaintenanceWindow property is set</returns>
         public bool IsSetPreferredMaintenanceWindow()
         {
-            return  this.preferredMaintenanceWindowField != null;
+            return this.preferredMaintenanceWindowField != null;
         }
 
         /// <summary>
@@ -407,8 +407,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBParameterGroupName")]
         public string DBParameterGroupName
         {
-            get { return this.DBParameterGroupNameField ; }
-            set { this.DBParameterGroupNameField= value; }
+            get { return this.DBParameterGroupNameField; }
+            set { this.DBParameterGroupNameField = value; }
         }
 
         /// <summary>
@@ -429,7 +429,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBParameterGroupName property is set</returns>
         public bool IsSetDBParameterGroupName()
         {
-            return  this.DBParameterGroupNameField != null;
+            return this.DBParameterGroupNameField != null;
         }
 
         /// <summary>
@@ -440,8 +440,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "BackupRetentionPeriod")]
         public Decimal BackupRetentionPeriod
         {
-            get { return this.backupRetentionPeriodField.GetValueOrDefault() ; }
-            set { this.backupRetentionPeriodField= value; }
+            get { return this.backupRetentionPeriodField.GetValueOrDefault(); }
+            set { this.backupRetentionPeriodField = value; }
         }
 
         /// <summary>
@@ -462,7 +462,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if BackupRetentionPeriod property is set</returns>
         public bool IsSetBackupRetentionPeriod()
         {
-            return  this.backupRetentionPeriodField.HasValue;
+            return this.backupRetentionPeriodField.HasValue;
         }
 
         /// <summary>
@@ -472,8 +472,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "PreferredBackupWindow")]
         public string PreferredBackupWindow
         {
-            get { return this.preferredBackupWindowField ; }
-            set { this.preferredBackupWindowField= value; }
+            get { return this.preferredBackupWindowField; }
+            set { this.preferredBackupWindowField = value; }
         }
 
         /// <summary>
@@ -493,7 +493,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if PreferredBackupWindow property is set</returns>
         public bool IsSetPreferredBackupWindow()
         {
-            return  this.preferredBackupWindowField != null;
+            return this.preferredBackupWindowField != null;
         }
 
         /// <summary>
@@ -505,8 +505,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Port")]
         public Decimal Port
         {
-            get { return this.portField.GetValueOrDefault() ; }
-            set { this.portField= value; }
+            get { return this.portField.GetValueOrDefault(); }
+            set { this.portField = value; }
         }
 
         /// <summary>
@@ -528,7 +528,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Port property is set</returns>
         public bool IsSetPort()
         {
-            return  this.portField.HasValue;
+            return this.portField.HasValue;
         }
 
     }

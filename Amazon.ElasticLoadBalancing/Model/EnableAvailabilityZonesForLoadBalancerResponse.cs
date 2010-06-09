@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "EnableAvailabilityZonesForLoadBalancerResult")]
         public EnableAvailabilityZonesForLoadBalancerResult EnableAvailabilityZonesForLoadBalancerResult
         {
-            get { return this.enableAvailabilityZonesForLoadBalancerResultField ; }
+            get { return this.enableAvailabilityZonesForLoadBalancerResultField; }
             set { this.enableAvailabilityZonesForLoadBalancerResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

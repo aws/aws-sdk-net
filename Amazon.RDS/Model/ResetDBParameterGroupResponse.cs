@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResetDBParameterGroupResult")]
         public ResetDBParameterGroupResult ResetDBParameterGroupResult
         {
-            get { return this.resetDBParameterGroupResultField ; }
+            get { return this.resetDBParameterGroupResultField; }
             set { this.resetDBParameterGroupResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

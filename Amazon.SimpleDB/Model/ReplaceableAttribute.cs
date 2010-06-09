@@ -46,8 +46,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField ; }
-            set { this.nameField= value; }
+            get { return this.nameField; }
+            set { this.nameField = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if Name property is set</returns>
         public bool IsSetName()
         {
-            return  this.nameField != null;
+            return this.nameField != null;
         }
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Value")]
         public string Value
         {
-            get { return this.valueField ; }
-            set { this.valueField= value; }
+            get { return this.valueField; }
+            set { this.valueField = value; }
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if Value property is set</returns>
         public bool IsSetValue()
         {
-            return  this.valueField != null;
+            return this.valueField != null;
         }
 
         /// <summary>
@@ -115,8 +115,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Replace")]
         public bool Replace
         {
-            get { return this.replaceField.GetValueOrDefault() ; }
-            set { this.replaceField= value; }
+            get { return this.replaceField.GetValueOrDefault(); }
+            set { this.replaceField = value; }
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if Replace property is set</returns>
         public bool IsSetReplace()
         {
-            return  this.replaceField.HasValue;
+            return this.replaceField.HasValue;
         }
 
     }

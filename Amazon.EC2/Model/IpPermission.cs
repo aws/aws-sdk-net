@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "IpProtocol")]
         public string IpProtocol
         {
-            get { return this.ipProtocolField ; }
-            set { this.ipProtocolField= value; }
+            get { return this.ipProtocolField; }
+            set { this.ipProtocolField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if IpProtocol property is set</returns>
         public bool IsSetIpProtocol()
         {
-            return  this.ipProtocolField != null;
+            return this.ipProtocolField != null;
         }
 
         /// <summary>
@@ -77,8 +77,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "FromPort")]
         public Decimal FromPort
         {
-            get { return this.fromPortField.GetValueOrDefault() ; }
-            set { this.fromPortField= value; }
+            get { return this.fromPortField.GetValueOrDefault(); }
+            set { this.fromPortField = value; }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if FromPort property is set</returns>
         public bool IsSetFromPort()
         {
-            return  this.fromPortField.HasValue;
+            return this.fromPortField.HasValue;
         }
 
         /// <summary>
@@ -109,8 +109,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ToPort")]
         public Decimal ToPort
         {
-            get { return this.toPortField.GetValueOrDefault() ; }
-            set { this.toPortField= value; }
+            get { return this.toPortField.GetValueOrDefault(); }
+            set { this.toPortField = value; }
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ToPort property is set</returns>
         public bool IsSetToPort()
         {
-            return  this.toPortField.HasValue;
+            return this.toPortField.HasValue;
         }
         /// <summary>
         /// Gets and sets the UserIdGroupPair property.

@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DescribeEventsResult")]
         public DescribeEventsResult DescribeEventsResult
         {
-            get { return this.describeEventsResultField ; }
+            get { return this.describeEventsResultField; }
             set { this.describeEventsResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

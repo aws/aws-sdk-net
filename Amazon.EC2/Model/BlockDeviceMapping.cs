@@ -44,8 +44,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DeviceName")]
         public string DeviceName
         {
-            get { return this.deviceNameField ; }
-            set { this.deviceNameField= value; }
+            get { return this.deviceNameField; }
+            set { this.deviceNameField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if DeviceName property is set</returns>
         public bool IsSetDeviceName()
         {
-            return  this.deviceNameField != null;
+            return this.deviceNameField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VirtualName")]
         public string VirtualName
         {
-            get { return this.virtualNameField ; }
-            set { this.virtualNameField= value; }
+            get { return this.virtualNameField; }
+            set { this.virtualNameField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VirtualName property is set</returns>
         public bool IsSetVirtualName()
         {
-            return  this.virtualNameField != null;
+            return this.virtualNameField != null;
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Ebs")]
         public EbsBlockDevice Ebs
         {
-            get { return this.ebsField ; }
+            get { return this.ebsField; }
             set { this.ebsField = value; }
         }
 
@@ -139,8 +139,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "NoDevice")]
         public string NoDevice
         {
-            get { return this.noDeviceField ; }
-            set { this.noDeviceField= value; }
+            get { return this.noDeviceField; }
+            set { this.noDeviceField = value; }
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if NoDevice property is set</returns>
         public bool IsSetNoDevice()
         {
-            return  this.noDeviceField != null;
+            return this.noDeviceField != null;
         }
 
     }

@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
         {
-            get { return this.keyField ; }
-            set { this.keyField= value; }
+            get { return this.keyField; }
+            set { this.keyField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Key property is set</returns>
         public bool IsSetKey()
         {
-            return  this.keyField != null;
+            return this.keyField != null;
         }
 
         /// <summary>

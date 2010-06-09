@@ -42,8 +42,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField ; }
-            set { this.nameField= value; }
+            get { return this.nameField; }
+            set { this.nameField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if Name property is set</returns>
         public bool IsSetName()
         {
-            return  this.nameField != null;
+            return this.nameField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "Value")]
         public string Value
         {
-            get { return this.valueField ; }
-            set { this.valueField= value; }
+            get { return this.valueField; }
+            set { this.valueField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if Value property is set</returns>
         public bool IsSetValue()
         {
-            return  this.valueField != null;
+            return this.valueField != null;
         }
 
     }

@@ -44,8 +44,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBSecurityGroupName")]
         public string DBSecurityGroupName
         {
-            get { return this.DBSecurityGroupNameField ; }
-            set { this.DBSecurityGroupNameField= value; }
+            get { return this.DBSecurityGroupNameField; }
+            set { this.DBSecurityGroupNameField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBSecurityGroupName property is set</returns>
         public bool IsSetDBSecurityGroupName()
         {
-            return  this.DBSecurityGroupNameField != null;
+            return this.DBSecurityGroupNameField != null;
         }
 
         /// <summary>
@@ -77,8 +77,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "CIDRIP")]
         public string CIDRIP
         {
-            get { return this.CIDRIPField ; }
-            set { this.CIDRIPField= value; }
+            get { return this.CIDRIPField; }
+            set { this.CIDRIPField = value; }
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if CIDRIP property is set</returns>
         public bool IsSetCIDRIP()
         {
-            return  this.CIDRIPField != null;
+            return this.CIDRIPField != null;
         }
 
         /// <summary>
@@ -111,8 +111,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "EC2SecurityGroupName")]
         public string EC2SecurityGroupName
         {
-            get { return this.EC2SecurityGroupNameField ; }
-            set { this.EC2SecurityGroupNameField= value; }
+            get { return this.EC2SecurityGroupNameField; }
+            set { this.EC2SecurityGroupNameField = value; }
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if EC2SecurityGroupName property is set</returns>
         public bool IsSetEC2SecurityGroupName()
         {
-            return  this.EC2SecurityGroupNameField != null;
+            return this.EC2SecurityGroupNameField != null;
         }
 
         /// <summary>
@@ -144,8 +144,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "EC2SecurityGroupOwnerId")]
         public string EC2SecurityGroupOwnerId
         {
-            get { return this.EC2SecurityGroupOwnerIdField ; }
-            set { this.EC2SecurityGroupOwnerIdField= value; }
+            get { return this.EC2SecurityGroupOwnerIdField; }
+            set { this.EC2SecurityGroupOwnerIdField = value; }
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if EC2SecurityGroupOwnerId property is set</returns>
         public bool IsSetEC2SecurityGroupOwnerId()
         {
-            return  this.EC2SecurityGroupOwnerIdField != null;
+            return this.EC2SecurityGroupOwnerIdField != null;
         }
 
     }

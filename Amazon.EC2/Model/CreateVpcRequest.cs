@@ -56,8 +56,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CidrBlock")]
         public string CidrBlock
         {
-            get { return this.cidrBlockField ; }
-            set { this.cidrBlockField= value; }
+            get { return this.cidrBlockField; }
+            set { this.cidrBlockField = value; }
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if CidrBlock property is set</returns>
         public bool IsSetCidrBlock()
         {
-            return  this.cidrBlockField != null;
+            return this.cidrBlockField != null;
         }
 
     }

@@ -52,8 +52,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DhcpOptionsId")]
         public string DhcpOptionsId
         {
-            get { return this.dhcpOptionsIdField ; }
-            set { this.dhcpOptionsIdField= value; }
+            get { return this.dhcpOptionsIdField; }
+            set { this.dhcpOptionsIdField = value; }
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if DhcpOptionsId property is set</returns>
         public bool IsSetDhcpOptionsId()
         {
-            return  this.dhcpOptionsIdField != null;
+            return this.dhcpOptionsIdField != null;
         }
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
         {
-            get { return this.vpcIdField ; }
-            set { this.vpcIdField= value; }
+            get { return this.vpcIdField; }
+            set { this.vpcIdField = value; }
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpcId property is set</returns>
         public bool IsSetVpcId()
         {
-            return  this.vpcIdField != null;
+            return this.vpcIdField != null;
         }
 
     }

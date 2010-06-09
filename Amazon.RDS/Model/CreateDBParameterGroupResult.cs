@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBParameterGroup")]
         public DBParameterGroup DBParameterGroup
         {
-            get { return this.DBParameterGroupField ; }
+            get { return this.DBParameterGroupField; }
             set { this.DBParameterGroupField = value; }
         }
 

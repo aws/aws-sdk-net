@@ -43,8 +43,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField ; }
-            set { this.DBInstanceIdentifierField= value; }
+            get { return this.DBInstanceIdentifierField; }
+            set { this.DBInstanceIdentifierField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBInstanceIdentifier property is set</returns>
         public bool IsSetDBInstanceIdentifier()
         {
-            return  this.DBInstanceIdentifierField != null;
+            return this.DBInstanceIdentifierField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "SkipFinalSnapshot")]
         public bool SkipFinalSnapshot
         {
-            get { return this.skipFinalSnapshotField.GetValueOrDefault() ; }
-            set { this.skipFinalSnapshotField= value; }
+            get { return this.skipFinalSnapshotField.GetValueOrDefault(); }
+            set { this.skipFinalSnapshotField = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if SkipFinalSnapshot property is set</returns>
         public bool IsSetSkipFinalSnapshot()
         {
-            return  this.skipFinalSnapshotField.HasValue;
+            return this.skipFinalSnapshotField.HasValue;
         }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "FinalDBSnapshotIdentifier")]
         public string FinalDBSnapshotIdentifier
         {
-            get { return this.finalDBSnapshotIdentifierField ; }
-            set { this.finalDBSnapshotIdentifierField= value; }
+            get { return this.finalDBSnapshotIdentifierField; }
+            set { this.finalDBSnapshotIdentifierField = value; }
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if FinalDBSnapshotIdentifier property is set</returns>
         public bool IsSetFinalDBSnapshotIdentifier()
         {
-            return  this.finalDBSnapshotIdentifierField != null;
+            return this.finalDBSnapshotIdentifierField != null;
         }
 
     }

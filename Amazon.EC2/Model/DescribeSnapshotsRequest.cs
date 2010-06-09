@@ -126,8 +126,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Owner")]
         public string Owner
         {
-            get { return this.ownerField ; }
-            set { this.ownerField= value; }
+            get { return this.ownerField; }
+            set { this.ownerField = value; }
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Owner property is set</returns>
         public bool IsSetOwner()
         {
-            return  this.ownerField != null;
+            return this.ownerField != null;
         }
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "RestorableBy")]
         public string RestorableBy
         {
-            get { return this.restorableByField ; }
-            set { this.restorableByField= value; }
+            get { return this.restorableByField; }
+            set { this.restorableByField = value; }
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if RestorableBy property is set</returns>
         public bool IsSetRestorableBy()
         {
-            return  this.restorableByField != null;
+            return this.restorableByField != null;
         }
 
     }

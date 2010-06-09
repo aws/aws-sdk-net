@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "CreateLoadBalancerResult")]
         public CreateLoadBalancerResult CreateLoadBalancerResult
         {
-            get { return this.createLoadBalancerResultField ; }
+            get { return this.createLoadBalancerResultField; }
             set { this.createLoadBalancerResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

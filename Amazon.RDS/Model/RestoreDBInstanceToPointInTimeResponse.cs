@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "RestoreDBInstanceToPointInTimeResult")]
         public RestoreDBInstanceToPointInTimeResult RestoreDBInstanceToPointInTimeResult
         {
-            get { return this.restoreDBInstanceToPointInTimeResultField ; }
+            get { return this.restoreDBInstanceToPointInTimeResultField; }
             set { this.restoreDBInstanceToPointInTimeResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

@@ -43,8 +43,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField ; }
-            set { this.nameField= value; }
+            get { return this.nameField; }
+            set { this.nameField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if Name property is set</returns>
         public bool IsSetName()
         {
-            return  this.nameField != null;
+            return this.nameField != null;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "ActionOnFailure")]
         public string ActionOnFailure
         {
-            get { return this.actionOnFailureField ; }
-            set { this.actionOnFailureField= value; }
+            get { return this.actionOnFailureField; }
+            set { this.actionOnFailureField = value; }
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if ActionOnFailure property is set</returns>
         public bool IsSetActionOnFailure()
         {
-            return  this.actionOnFailureField != null;
+            return this.actionOnFailureField != null;
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "HadoopJarStep")]
         public HadoopJarStepConfig HadoopJarStep
         {
-            get { return this.hadoopJarStepField ; }
+            get { return this.hadoopJarStepField; }
             set { this.hadoopJarStepField = value; }
         }
 

@@ -42,8 +42,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBSecurityGroupName")]
         public string DBSecurityGroupName
         {
-            get { return this.DBSecurityGroupNameField ; }
-            set { this.DBSecurityGroupNameField= value; }
+            get { return this.DBSecurityGroupNameField; }
+            set { this.DBSecurityGroupNameField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBSecurityGroupName property is set</returns>
         public bool IsSetDBSecurityGroupName()
         {
-            return  this.DBSecurityGroupNameField != null;
+            return this.DBSecurityGroupNameField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBSecurityGroupDescription")]
         public string DBSecurityGroupDescription
         {
-            get { return this.DBSecurityGroupDescriptionField ; }
-            set { this.DBSecurityGroupDescriptionField= value; }
+            get { return this.DBSecurityGroupDescriptionField; }
+            set { this.DBSecurityGroupDescriptionField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBSecurityGroupDescription property is set</returns>
         public bool IsSetDBSecurityGroupDescription()
         {
-            return  this.DBSecurityGroupDescriptionField != null;
+            return this.DBSecurityGroupDescriptionField != null;
         }
 
     }

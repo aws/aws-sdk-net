@@ -42,8 +42,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
         {
-            get { return this.statusField ; }
-            set { this.statusField= value; }
+            get { return this.statusField; }
+            set { this.statusField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Status property is set</returns>
         public bool IsSetStatus()
         {
-            return  this.statusField != null;
+            return this.statusField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "CIDRIP")]
         public string CIDRIP
         {
-            get { return this.CIDRIPField ; }
-            set { this.CIDRIPField= value; }
+            get { return this.CIDRIPField; }
+            set { this.CIDRIPField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if CIDRIP property is set</returns>
         public bool IsSetCIDRIP()
         {
-            return  this.CIDRIPField != null;
+            return this.CIDRIPField != null;
         }
 
     }

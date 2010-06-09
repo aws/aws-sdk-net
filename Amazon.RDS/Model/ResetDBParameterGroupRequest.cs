@@ -48,8 +48,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBParameterGroupName")]
         public string DBParameterGroupName
         {
-            get { return this.DBParameterGroupNameField ; }
-            set { this.DBParameterGroupNameField= value; }
+            get { return this.DBParameterGroupNameField; }
+            set { this.DBParameterGroupNameField = value; }
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBParameterGroupName property is set</returns>
         public bool IsSetDBParameterGroupName()
         {
-            return  this.DBParameterGroupNameField != null;
+            return this.DBParameterGroupNameField != null;
         }
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResetAllParameters")]
         public bool ResetAllParameters
         {
-            get { return this.resetAllParametersField.GetValueOrDefault() ; }
-            set { this.resetAllParametersField= value; }
+            get { return this.resetAllParametersField.GetValueOrDefault(); }
+            set { this.resetAllParametersField = value; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if ResetAllParameters property is set</returns>
         public bool IsSetResetAllParameters()
         {
-            return  this.resetAllParametersField.HasValue;
+            return this.resetAllParametersField.HasValue;
         }
         /// <summary>
         /// Gets and sets the Parameters property.

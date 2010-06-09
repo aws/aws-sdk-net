@@ -44,8 +44,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "LaunchConfigurationName")]
         public string LaunchConfigurationName
         {
-            get { return this.launchConfigurationNameField ; }
-            set { this.launchConfigurationNameField= value; }
+            get { return this.launchConfigurationNameField; }
+            set { this.launchConfigurationNameField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if LaunchConfigurationName property is set</returns>
         public bool IsSetLaunchConfigurationName()
         {
-            return  this.launchConfigurationNameField != null;
+            return this.launchConfigurationNameField != null;
         }
 
     }

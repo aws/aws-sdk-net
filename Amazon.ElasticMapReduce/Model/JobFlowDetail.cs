@@ -46,8 +46,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "JobFlowId")]
         public string JobFlowId
         {
-            get { return this.jobFlowIdField ; }
-            set { this.jobFlowIdField= value; }
+            get { return this.jobFlowIdField; }
+            set { this.jobFlowIdField = value; }
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if JobFlowId property is set</returns>
         public bool IsSetJobFlowId()
         {
-            return  this.jobFlowIdField != null;
+            return this.jobFlowIdField != null;
         }
 
         /// <summary>
@@ -77,8 +77,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField ; }
-            set { this.nameField= value; }
+            get { return this.nameField; }
+            set { this.nameField = value; }
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if Name property is set</returns>
         public bool IsSetName()
         {
-            return  this.nameField != null;
+            return this.nameField != null;
         }
 
         /// <summary>
@@ -108,8 +108,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "LogUri")]
         public string LogUri
         {
-            get { return this.logUriField ; }
-            set { this.logUriField= value; }
+            get { return this.logUriField; }
+            set { this.logUriField = value; }
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if LogUri property is set</returns>
         public bool IsSetLogUri()
         {
-            return  this.logUriField != null;
+            return this.logUriField != null;
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "ExecutionStatusDetail")]
         public JobFlowExecutionStatusDetail ExecutionStatusDetail
         {
-            get { return this.executionStatusDetailField ; }
+            get { return this.executionStatusDetailField; }
             set { this.executionStatusDetailField = value; }
         }
 
@@ -170,7 +170,7 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "Instances")]
         public JobFlowInstancesDetail Instances
         {
-            get { return this.instancesField ; }
+            get { return this.instancesField; }
             set { this.instancesField = value; }
         }
 

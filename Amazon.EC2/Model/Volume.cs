@@ -47,8 +47,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
         {
-            get { return this.volumeIdField ; }
-            set { this.volumeIdField= value; }
+            get { return this.volumeIdField; }
+            set { this.volumeIdField = value; }
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VolumeId property is set</returns>
         public bool IsSetVolumeId()
         {
-            return  this.volumeIdField != null;
+            return this.volumeIdField != null;
         }
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Size")]
         public string Size
         {
-            get { return this.sizeField ; }
-            set { this.sizeField= value; }
+            get { return this.sizeField; }
+            set { this.sizeField = value; }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Size property is set</returns>
         public bool IsSetSize()
         {
-            return  this.sizeField != null;
+            return this.sizeField != null;
         }
 
         /// <summary>
@@ -109,8 +109,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SnapshotId")]
         public string SnapshotId
         {
-            get { return this.snapshotIdField ; }
-            set { this.snapshotIdField= value; }
+            get { return this.snapshotIdField; }
+            set { this.snapshotIdField = value; }
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SnapshotId property is set</returns>
         public bool IsSetSnapshotId()
         {
-            return  this.snapshotIdField != null;
+            return this.snapshotIdField != null;
         }
 
         /// <summary>
@@ -140,8 +140,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
 
         /// <summary>
@@ -171,8 +171,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
         {
-            get { return this.statusField ; }
-            set { this.statusField= value; }
+            get { return this.statusField; }
+            set { this.statusField = value; }
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Status property is set</returns>
         public bool IsSetStatus()
         {
-            return  this.statusField != null;
+            return this.statusField != null;
         }
 
         /// <summary>
@@ -202,8 +202,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CreateTime")]
         public string CreateTime
         {
-            get { return this.createTimeField ; }
-            set { this.createTimeField= value; }
+            get { return this.createTimeField; }
+            set { this.createTimeField = value; }
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if CreateTime property is set</returns>
         public bool IsSetCreateTime()
         {
-            return  this.createTimeField != null;
+            return this.createTimeField != null;
         }
         /// <summary>
         /// Gets and sets the Attachment property.

@@ -47,8 +47,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ReservedInstancesOfferingId")]
         public string ReservedInstancesOfferingId
         {
-            get { return this.reservedInstancesOfferingIdField ; }
-            set { this.reservedInstancesOfferingIdField= value; }
+            get { return this.reservedInstancesOfferingIdField; }
+            set { this.reservedInstancesOfferingIdField = value; }
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ReservedInstancesOfferingId property is set</returns>
         public bool IsSetReservedInstancesOfferingId()
         {
-            return  this.reservedInstancesOfferingIdField != null;
+            return this.reservedInstancesOfferingIdField != null;
         }
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
         {
-            get { return this.instanceTypeField ; }
-            set { this.instanceTypeField= value; }
+            get { return this.instanceTypeField; }
+            set { this.instanceTypeField = value; }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceType property is set</returns>
         public bool IsSetInstanceType()
         {
-            return  this.instanceTypeField != null;
+            return this.instanceTypeField != null;
         }
 
         /// <summary>
@@ -109,8 +109,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
 
         /// <summary>
@@ -140,8 +140,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Duration")]
         public Decimal Duration
         {
-            get { return this.durationField.GetValueOrDefault() ; }
-            set { this.durationField= value; }
+            get { return this.durationField.GetValueOrDefault(); }
+            set { this.durationField = value; }
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Duration property is set</returns>
         public bool IsSetDuration()
         {
-            return  this.durationField.HasValue;
+            return this.durationField.HasValue;
         }
 
         /// <summary>
@@ -171,8 +171,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "UsagePrice")]
         public string UsagePrice
         {
-            get { return this.usagePriceField ; }
-            set { this.usagePriceField= value; }
+            get { return this.usagePriceField; }
+            set { this.usagePriceField = value; }
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if UsagePrice property is set</returns>
         public bool IsSetUsagePrice()
         {
-            return  this.usagePriceField != null;
+            return this.usagePriceField != null;
         }
 
         /// <summary>
@@ -202,8 +202,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "FixedPrice")]
         public string FixedPrice
         {
-            get { return this.fixedPriceField ; }
-            set { this.fixedPriceField= value; }
+            get { return this.fixedPriceField; }
+            set { this.fixedPriceField = value; }
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if FixedPrice property is set</returns>
         public bool IsSetFixedPrice()
         {
-            return  this.fixedPriceField != null;
+            return this.fixedPriceField != null;
         }
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ProductDescription")]
         public string ProductDescription
         {
-            get { return this.productDescriptionField ; }
-            set { this.productDescriptionField= value; }
+            get { return this.productDescriptionField; }
+            set { this.productDescriptionField = value; }
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ProductDescription property is set</returns>
         public bool IsSetProductDescription()
         {
-            return  this.productDescriptionField != null;
+            return this.productDescriptionField != null;
         }
 
     }

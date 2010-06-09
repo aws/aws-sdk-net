@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ImageAttribute")]
         public ImageAttribute ImageAttribute
         {
-            get { return this.imageAttributeField ; }
+            get { return this.imageAttributeField; }
             set { this.imageAttributeField = value; }
         }
 

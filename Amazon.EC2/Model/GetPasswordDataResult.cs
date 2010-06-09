@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "PasswordData")]
         public PasswordData PasswordData
         {
-            get { return this.passwordDataField ; }
+            get { return this.passwordDataField; }
             set { this.passwordDataField = value; }
         }
 

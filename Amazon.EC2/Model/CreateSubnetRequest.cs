@@ -63,8 +63,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
         {
-            get { return this.vpcIdField ; }
-            set { this.vpcIdField= value; }
+            get { return this.vpcIdField; }
+            set { this.vpcIdField = value; }
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpcId property is set</returns>
         public bool IsSetVpcId()
         {
-            return  this.vpcIdField != null;
+            return this.vpcIdField != null;
         }
 
         /// <summary>
@@ -94,8 +94,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CidrBlock")]
         public string CidrBlock
         {
-            get { return this.cidrBlockField ; }
-            set { this.cidrBlockField= value; }
+            get { return this.cidrBlockField; }
+            set { this.cidrBlockField = value; }
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if CidrBlock property is set</returns>
         public bool IsSetCidrBlock()
         {
-            return  this.cidrBlockField != null;
+            return this.cidrBlockField != null;
         }
 
         /// <summary>
@@ -125,8 +125,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
 
     }

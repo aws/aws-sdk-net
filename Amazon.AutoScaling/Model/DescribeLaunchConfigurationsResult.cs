@@ -81,8 +81,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "NextToken")]
         public string NextToken
         {
-            get { return this.nextTokenField ; }
-            set { this.nextTokenField= value; }
+            get { return this.nextTokenField; }
+            set { this.nextTokenField = value; }
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if NextToken property is set</returns>
         public bool IsSetNextToken()
         {
-            return  this.nextTokenField != null;
+            return this.nextTokenField != null;
         }
 
     }

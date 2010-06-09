@@ -43,8 +43,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField ; }
-            set { this.nameField= value; }
+            get { return this.nameField; }
+            set { this.nameField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if Name property is set</returns>
         public bool IsSetName()
         {
-            return  this.nameField != null;
+            return this.nameField != null;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "NameEncoding")]
         public string NameEncoding
         {
-            get { return this.nameEncodingField ; }
-            set { this.nameEncodingField= value; }
+            get { return this.nameEncodingField; }
+            set { this.nameEncodingField = value; }
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if NameEncoding property is set</returns>
         public bool IsSetNameEncoding()
         {
-            return  this.nameEncodingField != null;
+            return this.nameEncodingField != null;
         }
         /// <summary>
         /// Gets and sets the Attribute property.

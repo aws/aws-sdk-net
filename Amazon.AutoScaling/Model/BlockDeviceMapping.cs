@@ -42,8 +42,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "VirtualName")]
         public string VirtualName
         {
-            get { return this.virtualNameField ; }
-            set { this.virtualNameField= value; }
+            get { return this.virtualNameField; }
+            set { this.virtualNameField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if VirtualName property is set</returns>
         public bool IsSetVirtualName()
         {
-            return  this.virtualNameField != null;
+            return this.virtualNameField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "DeviceName")]
         public string DeviceName
         {
-            get { return this.deviceNameField ; }
-            set { this.deviceNameField= value; }
+            get { return this.deviceNameField; }
+            set { this.deviceNameField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if DeviceName property is set</returns>
         public bool IsSetDeviceName()
         {
-            return  this.deviceNameField != null;
+            return this.deviceNameField != null;
         }
 
     }

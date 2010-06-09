@@ -45,8 +45,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
         {
-            get { return this.ownerIdField ; }
-            set { this.ownerIdField= value; }
+            get { return this.ownerIdField; }
+            set { this.ownerIdField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if OwnerId property is set</returns>
         public bool IsSetOwnerId()
         {
-            return  this.ownerIdField != null;
+            return this.ownerIdField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBSecurityGroupName")]
         public string DBSecurityGroupName
         {
-            get { return this.DBSecurityGroupNameField ; }
-            set { this.DBSecurityGroupNameField= value; }
+            get { return this.DBSecurityGroupNameField; }
+            set { this.DBSecurityGroupNameField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBSecurityGroupName property is set</returns>
         public bool IsSetDBSecurityGroupName()
         {
-            return  this.DBSecurityGroupNameField != null;
+            return this.DBSecurityGroupNameField != null;
         }
 
         /// <summary>
@@ -106,8 +106,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBSecurityGroupDescription")]
         public string DBSecurityGroupDescription
         {
-            get { return this.DBSecurityGroupDescriptionField ; }
-            set { this.DBSecurityGroupDescriptionField= value; }
+            get { return this.DBSecurityGroupDescriptionField; }
+            set { this.DBSecurityGroupDescriptionField = value; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBSecurityGroupDescription property is set</returns>
         public bool IsSetDBSecurityGroupDescription()
         {
-            return  this.DBSecurityGroupDescriptionField != null;
+            return this.DBSecurityGroupDescriptionField != null;
         }
         /// <summary>
         /// Gets and sets the EC2SecurityGroup property.

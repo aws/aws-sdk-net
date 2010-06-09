@@ -52,8 +52,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "SourceDBInstanceIdentifier")]
         public string SourceDBInstanceIdentifier
         {
-            get { return this.sourceDBInstanceIdentifierField ; }
-            set { this.sourceDBInstanceIdentifierField= value; }
+            get { return this.sourceDBInstanceIdentifierField; }
+            set { this.sourceDBInstanceIdentifierField = value; }
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if SourceDBInstanceIdentifier property is set</returns>
         public bool IsSetSourceDBInstanceIdentifier()
         {
-            return  this.sourceDBInstanceIdentifierField != null;
+            return this.sourceDBInstanceIdentifierField != null;
         }
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "TargetDBInstanceIdentifier")]
         public string TargetDBInstanceIdentifier
         {
-            get { return this.targetDBInstanceIdentifierField ; }
-            set { this.targetDBInstanceIdentifierField= value; }
+            get { return this.targetDBInstanceIdentifierField; }
+            set { this.targetDBInstanceIdentifierField = value; }
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if TargetDBInstanceIdentifier property is set</returns>
         public bool IsSetTargetDBInstanceIdentifier()
         {
-            return  this.targetDBInstanceIdentifierField != null;
+            return this.targetDBInstanceIdentifierField != null;
         }
 
         /// <summary>
@@ -126,8 +126,14 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "RestoreTime")]
         public DateTime RestoreTime
         {
-            get { return this.restoreTimeField.GetValueOrDefault() ; }
-            set { this.restoreTimeField= value; }
+            get { return this.restoreTimeField.GetValueOrDefault(); }
+            set
+            {
+                this.restoreTimeField = DateTime.ParseExact(
+                    value.ToString(),
+                    Amazon.Util.AWSSDKUtils.ISO8601DateFormat,
+                    System.Globalization.CultureInfo.InvariantCulture);
+            }
         }
 
         /// <summary>
@@ -150,7 +156,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if RestoreTime property is set</returns>
         public bool IsSetRestoreTime()
         {
-            return  this.restoreTimeField.HasValue;
+            return this.restoreTimeField.HasValue;
         }
 
         /// <summary>
@@ -160,8 +166,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "UseLatestRestorableTime")]
         public bool UseLatestRestorableTime
         {
-            get { return this.useLatestRestorableTimeField.GetValueOrDefault() ; }
-            set { this.useLatestRestorableTimeField= value; }
+            get { return this.useLatestRestorableTimeField.GetValueOrDefault(); }
+            set { this.useLatestRestorableTimeField = value; }
         }
 
         /// <summary>
@@ -181,7 +187,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if UseLatestRestorableTime property is set</returns>
         public bool IsSetUseLatestRestorableTime()
         {
-            return  this.useLatestRestorableTimeField.HasValue;
+            return this.useLatestRestorableTimeField.HasValue;
         }
 
         /// <summary>
@@ -192,8 +198,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBInstanceClass")]
         public string DBInstanceClass
         {
-            get { return this.DBInstanceClassField ; }
-            set { this.DBInstanceClassField= value; }
+            get { return this.DBInstanceClassField; }
+            set { this.DBInstanceClassField = value; }
         }
 
         /// <summary>
@@ -214,7 +220,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBInstanceClass property is set</returns>
         public bool IsSetDBInstanceClass()
         {
-            return  this.DBInstanceClassField != null;
+            return this.DBInstanceClassField != null;
         }
 
         /// <summary>
@@ -225,8 +231,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Port")]
         public Decimal Port
         {
-            get { return this.portField.GetValueOrDefault() ; }
-            set { this.portField= value; }
+            get { return this.portField.GetValueOrDefault(); }
+            set { this.portField = value; }
         }
 
         /// <summary>
@@ -247,7 +253,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Port property is set</returns>
         public bool IsSetPort()
         {
-            return  this.portField.HasValue;
+            return this.portField.HasValue;
         }
 
         /// <summary>
@@ -257,8 +263,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -278,7 +284,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "S3")]
         public S3Storage S3
         {
-            get { return this.s3Field ; }
+            get { return this.s3Field; }
             set { this.s3Field = value; }
         }
 

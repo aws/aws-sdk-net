@@ -51,8 +51,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "DomainName")]
         public string DomainName
         {
-            get { return this.domainNameField ; }
-            set { this.domainNameField= value; }
+            get { return this.domainNameField; }
+            set { this.domainNameField = value; }
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if DomainName property is set</returns>
         public bool IsSetDomainName()
         {
-            return  this.domainNameField != null;
+            return this.domainNameField != null;
         }
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "ItemName")]
         public string ItemName
         {
-            get { return this.itemNameField ; }
-            set { this.itemNameField= value; }
+            get { return this.itemNameField; }
+            set { this.itemNameField = value; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if ItemName property is set</returns>
         public bool IsSetItemName()
         {
-            return  this.itemNameField != null;
+            return this.itemNameField != null;
         }
 
         /// <summary>
@@ -155,8 +155,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "ConsistentRead")]
         public bool ConsistentRead
         {
-            get { return this.consistentReadField.GetValueOrDefault() ; }
-            set { this.consistentReadField= value; }
+            get { return this.consistentReadField.GetValueOrDefault(); }
+            set { this.consistentReadField = value; }
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if ConsistentRead property is set</returns>
         public bool IsSetConsistentRead()
         {
-            return  this.consistentReadField.HasValue;
+            return this.consistentReadField.HasValue;
         }
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "Activity")]
         public Activity Activity
         {
-            get { return this.activityField ; }
+            get { return this.activityField; }
             set { this.activityField = value; }
         }
 

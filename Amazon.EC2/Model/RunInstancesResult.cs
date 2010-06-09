@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Reservation")]
         public Reservation Reservation
         {
-            get { return this.reservationField ; }
+            get { return this.reservationField; }
             set { this.reservationField = value; }
         }
 

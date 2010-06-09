@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "RegionName")]
         public string RegionName
         {
-            get { return this.regionNameField ; }
-            set { this.regionNameField= value; }
+            get { return this.regionNameField; }
+            set { this.regionNameField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if RegionName property is set</returns>
         public bool IsSetRegionName()
         {
-            return  this.regionNameField != null;
+            return this.regionNameField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Endpoint")]
         public string Endpoint
         {
-            get { return this.endpointField ; }
-            set { this.endpointField= value; }
+            get { return this.endpointField; }
+            set { this.endpointField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Endpoint property is set</returns>
         public bool IsSetEndpoint()
         {
-            return  this.endpointField != null;
+            return this.endpointField != null;
         }
 
     }

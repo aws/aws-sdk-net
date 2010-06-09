@@ -41,8 +41,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBSnapshotIdentifier")]
         public string DBSnapshotIdentifier
         {
-            get { return this.DBSnapshotIdentifierField ; }
-            set { this.DBSnapshotIdentifierField= value; }
+            get { return this.DBSnapshotIdentifierField; }
+            set { this.DBSnapshotIdentifierField = value; }
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBSnapshotIdentifier property is set</returns>
         public bool IsSetDBSnapshotIdentifier()
         {
-            return  this.DBSnapshotIdentifierField != null;
+            return this.DBSnapshotIdentifierField != null;
         }
 
     }

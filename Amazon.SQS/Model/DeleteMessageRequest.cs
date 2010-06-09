@@ -44,8 +44,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "QueueUrl")]
         public string QueueUrl
         {
-            get { return this.queueUrlField ; }
-            set { this.queueUrlField= value; }
+            get { return this.queueUrlField; }
+            set { this.queueUrlField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if QueueUrl property is set</returns>
         public bool IsSetQueueUrl()
         {
-            return  this.queueUrlField != null;
+            return this.queueUrlField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "ReceiptHandle")]
         public string ReceiptHandle
         {
-            get { return this.receiptHandleField ; }
-            set { this.receiptHandleField= value; }
+            get { return this.receiptHandleField; }
+            set { this.receiptHandleField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if ReceiptHandle property is set</returns>
         public bool IsSetReceiptHandle()
         {
-            return  this.receiptHandleField != null;
+            return this.receiptHandleField != null;
         }
         /// <summary>
         /// Gets and sets the Attribute property.

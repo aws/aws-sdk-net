@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ModifyDBInstanceResult")]
         public ModifyDBInstanceResult ModifyDBInstanceResult
         {
-            get { return this.modifyDBInstanceResultField ; }
+            get { return this.modifyDBInstanceResultField; }
             set { this.modifyDBInstanceResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

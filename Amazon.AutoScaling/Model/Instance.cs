@@ -43,8 +43,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "LifecycleState")]
         public string LifecycleState
         {
-            get { return this.lifecycleStateField ; }
-            set { this.lifecycleStateField= value; }
+            get { return this.lifecycleStateField; }
+            set { this.lifecycleStateField = value; }
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if LifecycleState property is set</returns>
         public bool IsSetLifecycleState()
         {
-            return  this.lifecycleStateField != null;
+            return this.lifecycleStateField != null;
         }
 
     }

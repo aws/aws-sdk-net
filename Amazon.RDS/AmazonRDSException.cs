@@ -128,7 +128,7 @@ namespace Amazon.RDS
         {
             this.message = message;
             AmazonRDSException ex = innerException as AmazonRDSException;
-            if (ex != null )
+            if (ex != null)
             {
                 this.statusCode = ex.StatusCode;
                 this.errorCode = ex.ErrorCode;

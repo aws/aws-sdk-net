@@ -87,8 +87,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "NextToken")]
         public string NextToken
         {
-            get { return this.nextTokenField ; }
-            set { this.nextTokenField= value; }
+            get { return this.nextTokenField; }
+            set { this.nextTokenField = value; }
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if NextToken property is set</returns>
         public bool IsSetNextToken()
         {
-            return  this.nextTokenField != null;
+            return this.nextTokenField != null;
         }
 
         /// <summary>
@@ -119,8 +119,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "MaxRecords")]
         public Decimal MaxRecords
         {
-            get { return this.maxRecordsField.GetValueOrDefault() ; }
-            set { this.maxRecordsField= value; }
+            get { return this.maxRecordsField.GetValueOrDefault(); }
+            set { this.maxRecordsField = value; }
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if MaxRecords property is set</returns>
         public bool IsSetMaxRecords()
         {
-            return  this.maxRecordsField.HasValue;
+            return this.maxRecordsField.HasValue;
         }
 
     }

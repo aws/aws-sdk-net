@@ -51,8 +51,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "ActivityId")]
         public string ActivityId
         {
-            get { return this.activityIdField ; }
-            set { this.activityIdField= value; }
+            get { return this.activityIdField; }
+            set { this.activityIdField = value; }
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if ActivityId property is set</returns>
         public bool IsSetActivityId()
         {
-            return  this.activityIdField != null;
+            return this.activityIdField != null;
         }
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField ; }
-            set { this.descriptionField= value; }
+            get { return this.descriptionField; }
+            set { this.descriptionField = value; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if Description property is set</returns>
         public bool IsSetDescription()
         {
-            return  this.descriptionField != null;
+            return this.descriptionField != null;
         }
 
         /// <summary>
@@ -113,8 +113,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "Cause")]
         public string Cause
         {
-            get { return this.causeField ; }
-            set { this.causeField= value; }
+            get { return this.causeField; }
+            set { this.causeField = value; }
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if Cause property is set</returns>
         public bool IsSetCause()
         {
-            return  this.causeField != null;
+            return this.causeField != null;
         }
 
         /// <summary>
@@ -144,8 +144,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "StartTime")]
         public DateTime StartTime
         {
-            get { return this.startTimeField.GetValueOrDefault() ; }
-            set { this.startTimeField= value; }
+            get { return this.startTimeField.GetValueOrDefault(); }
+            set { this.startTimeField = value; }
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if StartTime property is set</returns>
         public bool IsSetStartTime()
         {
-            return  this.startTimeField.HasValue;
+            return this.startTimeField.HasValue;
         }
 
         /// <summary>
@@ -176,8 +176,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "EndTime")]
         public DateTime EndTime
         {
-            get { return this.endTimeField.GetValueOrDefault() ; }
-            set { this.endTimeField= value; }
+            get { return this.endTimeField.GetValueOrDefault(); }
+            set { this.endTimeField = value; }
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if EndTime property is set</returns>
         public bool IsSetEndTime()
         {
-            return  this.endTimeField.HasValue;
+            return this.endTimeField.HasValue;
         }
 
         /// <summary>
@@ -208,8 +208,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "StatusCode")]
         public string StatusCode
         {
-            get { return this.statusCodeField ; }
-            set { this.statusCodeField= value; }
+            get { return this.statusCodeField; }
+            set { this.statusCodeField = value; }
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if StatusCode property is set</returns>
         public bool IsSetStatusCode()
         {
-            return  this.statusCodeField != null;
+            return this.statusCodeField != null;
         }
 
         /// <summary>
@@ -239,8 +239,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "StatusMessage")]
         public string StatusMessage
         {
-            get { return this.statusMessageField ; }
-            set { this.statusMessageField= value; }
+            get { return this.statusMessageField; }
+            set { this.statusMessageField = value; }
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if StatusMessage property is set</returns>
         public bool IsSetStatusMessage()
         {
-            return  this.statusMessageField != null;
+            return this.statusMessageField != null;
         }
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "Progress")]
         public Decimal Progress
         {
-            get { return this.progressField.GetValueOrDefault() ; }
-            set { this.progressField= value; }
+            get { return this.progressField.GetValueOrDefault(); }
+            set { this.progressField = value; }
         }
 
         /// <summary>
@@ -291,7 +291,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if Progress property is set</returns>
         public bool IsSetProgress()
         {
-            return  this.progressField.HasValue;
+            return this.progressField.HasValue;
         }
 
     }

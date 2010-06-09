@@ -45,8 +45,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
         {
-            get { return this.typeField ; }
-            set { this.typeField= value; }
+            get { return this.typeField; }
+            set { this.typeField = value; }
         }
 
         /// <summary>
@@ -77,8 +77,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "Code")]
         public string Code
         {
-            get { return this.codeField ; }
-            set { this.codeField= value; }
+            get { return this.codeField; }
+            set { this.codeField = value; }
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if Code property is set</returns>
         public bool IsSetCode()
         {
-            return  this.codeField != null;
+            return this.codeField != null;
         }
 
         /// <summary>
@@ -108,8 +108,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "Message")]
         public string Message
         {
-            get { return this.messageField ; }
-            set { this.messageField= value; }
+            get { return this.messageField; }
+            set { this.messageField = value; }
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if Message property is set</returns>
         public bool IsSetMessage()
         {
-            return  this.messageField != null;
+            return this.messageField != null;
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "Detail")]
         public Object Detail
         {
-            get { return this.detailField ; }
+            get { return this.detailField; }
             set { this.detailField = value; }
         }
 

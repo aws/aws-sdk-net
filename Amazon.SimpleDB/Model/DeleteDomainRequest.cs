@@ -43,8 +43,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "DomainName")]
         public string DomainName
         {
-            get { return this.domainNameField ; }
-            set { this.domainNameField= value; }
+            get { return this.domainNameField; }
+            set { this.domainNameField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if DomainName property is set</returns>
         public bool IsSetDomainName()
         {
-            return  this.domainNameField != null;
+            return this.domainNameField != null;
         }
 
     }

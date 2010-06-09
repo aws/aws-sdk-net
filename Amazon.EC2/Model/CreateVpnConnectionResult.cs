@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpnConnection")]
         public VpnConnection VpnConnection
         {
-            get { return this.vpnConnectionField ; }
+            get { return this.vpnConnectionField; }
             set { this.vpnConnectionField = value; }
         }
 

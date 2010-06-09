@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SnapshotId")]
         public string SnapshotId
         {
-            get { return this.snapshotIdField ; }
-            set { this.snapshotIdField= value; }
+            get { return this.snapshotIdField; }
+            set { this.snapshotIdField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SnapshotId property is set</returns>
         public bool IsSetSnapshotId()
         {
-            return  this.snapshotIdField != null;
+            return this.snapshotIdField != null;
         }
 
     }

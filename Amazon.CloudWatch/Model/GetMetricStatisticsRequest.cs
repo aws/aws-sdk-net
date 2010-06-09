@@ -95,8 +95,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Period")]
         public Decimal Period
         {
-            get { return this.periodField.GetValueOrDefault() ; }
-            set { this.periodField= value; }
+            get { return this.periodField.GetValueOrDefault(); }
+            set { this.periodField = value; }
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Period property is set</returns>
         public bool IsSetPeriod()
         {
-            return  this.periodField.HasValue;
+            return this.periodField.HasValue;
         }
 
         /// <summary>
@@ -126,8 +126,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "MeasureName")]
         public string MeasureName
         {
-            get { return this.measureNameField ; }
-            set { this.measureNameField= value; }
+            get { return this.measureNameField; }
+            set { this.measureNameField = value; }
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if MeasureName property is set</returns>
         public bool IsSetMeasureName()
         {
-            return  this.measureNameField != null;
+            return this.measureNameField != null;
         }
         /// <summary>
         /// Gets and sets the Dimensions property.
@@ -220,8 +220,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "StartTime")]
         public string StartTime
         {
-            get { return this.startTimeField ; }
-            set { this.startTimeField= value; }
+            get { return this.startTimeField; }
+            set { this.startTimeField = value; }
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if StartTime property is set</returns>
         public bool IsSetStartTime()
         {
-            return  this.startTimeField != null;
+            return this.startTimeField != null;
         }
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "EndTime")]
         public string EndTime
         {
-            get { return this.endTimeField ; }
-            set { this.endTimeField= value; }
+            get { return this.endTimeField; }
+            set { this.endTimeField = value; }
         }
 
         /// <summary>
@@ -291,7 +291,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if EndTime property is set</returns>
         public bool IsSetEndTime()
         {
-            return  this.endTimeField != null;
+            return this.endTimeField != null;
         }
 
         /// <summary>
@@ -309,8 +309,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Unit")]
         public string Unit
         {
-            get { return this.unitField ; }
-            set { this.unitField= value; }
+            get { return this.unitField; }
+            set { this.unitField = value; }
         }
 
         /// <summary>
@@ -338,7 +338,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Unit property is set</returns>
         public bool IsSetUnit()
         {
-            return  this.unitField != null;
+            return this.unitField != null;
         }
 
         /// <summary>
@@ -348,8 +348,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "CustomUnit")]
         public string CustomUnit
         {
-            get { return this.customUnitField ; }
-            set { this.customUnitField= value; }
+            get { return this.customUnitField; }
+            set { this.customUnitField = value; }
         }
 
         /// <summary>
@@ -369,7 +369,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if CustomUnit property is set</returns>
         public bool IsSetCustomUnit()
         {
-            return  this.customUnitField != null;
+            return this.customUnitField != null;
         }
 
         /// <summary>
@@ -379,8 +379,8 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "Namespace")]
         public string Namespace
         {
-            get { return this.namespaceValueField ; }
-            set { this.namespaceValueField= value; }
+            get { return this.namespaceValueField; }
+            set { this.namespaceValueField = value; }
         }
 
         /// <summary>
@@ -400,7 +400,7 @@ namespace Amazon.CloudWatch.Model
         /// <returns>true if Namespace property is set</returns>
         public bool IsSetNamespace()
         {
-            return  this.namespaceValueField != null;
+            return this.namespaceValueField != null;
         }
 
     }

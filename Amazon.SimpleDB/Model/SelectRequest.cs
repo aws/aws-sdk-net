@@ -61,8 +61,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "SelectExpression")]
         public string SelectExpression
         {
-            get { return this.selectExpressionField ; }
-            set { this.selectExpressionField= value; }
+            get { return this.selectExpressionField; }
+            set { this.selectExpressionField = value; }
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if SelectExpression property is set</returns>
         public bool IsSetSelectExpression()
         {
-            return  this.selectExpressionField != null;
+            return this.selectExpressionField != null;
         }
 
         /// <summary>
@@ -94,8 +94,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "NextToken")]
         public string NextToken
         {
-            get { return this.nextTokenField ; }
-            set { this.nextTokenField= value; }
+            get { return this.nextTokenField; }
+            set { this.nextTokenField = value; }
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if NextToken property is set</returns>
         public bool IsSetNextToken()
         {
-            return  this.nextTokenField != null;
+            return this.nextTokenField != null;
         }
 
         /// <summary>
@@ -126,8 +126,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "ConsistentRead")]
         public bool ConsistentRead
         {
-            get { return this.consistentReadField.GetValueOrDefault() ; }
-            set { this.consistentReadField= value; }
+            get { return this.consistentReadField.GetValueOrDefault(); }
+            set { this.consistentReadField = value; }
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if ConsistentRead property is set</returns>
         public bool IsSetConsistentRead()
         {
-            return  this.consistentReadField.HasValue;
+            return this.consistentReadField.HasValue;
         }
 
     }

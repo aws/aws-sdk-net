@@ -34,6 +34,7 @@ namespace Amazon.EC2
         private string proxyHost = null;
         private int proxyPort = -1;
         private int maxErrorRetry = 3;
+        private bool fUseSecureString = true;
 
         /// <summary>
         /// Gets Service Version
@@ -75,7 +76,7 @@ namespace Amazon.EC2
         /// </summary>
         public string SignatureVersion
         {
-            get { return this.signatureVersion ; }
+            get { return this.signatureVersion; }
             set { this.signatureVersion = value; }
         }
 
@@ -104,7 +105,7 @@ namespace Amazon.EC2
         /// </summary>
         public string UserAgent
         {
-            get { return this.userAgent ; }
+            get { return this.userAgent; }
             set { this.userAgent = value; }
         }
 
@@ -130,10 +131,13 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Gets and sets of the ServiceURL property.
+        /// This is an optional property; change it
+        /// only if you want to try a different service
+        /// endpoint or want to switch between https and http.
         /// </summary>
         public string ServiceURL
         {
-            get { return this.serviceURL ; }
+            get { return this.serviceURL; }
             set { this.serviceURL = value; }
         }
 
@@ -242,6 +246,56 @@ namespace Amazon.EC2
         public bool IsSetMaxErrorRetry()
         {
             return this.maxErrorRetry >= 0;
+        }
+
+        /// <summary>
+        /// Gets and Sets the UseSecureStringForAwsSecretKey property.
+        /// By default, the AWS Secret Access Key is stored
+        /// in a SecureString (true) - this is one of the secure
+        /// ways to store a secret provided by the .NET Framework.
+        /// But, the use of SecureStrings is not supported in Medium
+        /// Trust Windows Hosting environments. If you are building an
+        /// ASP.NET application that needs to run with Medium Trust,
+        /// set this property to false, and the client will
+        /// not save your AWS Secret Key in a secure string. Changing
+        /// the default to false can result in the Secret Key being
+        /// vulnerable; please use this property judiciously.
+        /// </summary>
+        /// <remarks>Storing the AWS Secret Access Key is not
+        /// recommended unless absolutely necessary.
+        /// </remarks>
+        /// <seealso cref="T:System.Security.SecureString"/>
+        public bool UseSecureStringForAwsSecretKey
+        {
+            get { return this.fUseSecureString; }
+            set { this.fUseSecureString = value; }
+        }
+
+        /// <summary>
+        /// Sets the UseSecureString property.
+        /// By default, the AWS Secret Access Key is stored
+        /// in a SecureString (true) - this is one of the secure
+        /// ways to store a secret provided by the .NET Framework.
+        /// But, the use of SecureStrings is not supported in Medium
+        /// Trust Windows Hosting environments. If you are building an
+        /// ASP.NET application that needs to run with Medium Trust,
+        /// set this property to false, and the client will
+        /// not save your AWS Secret Key in a secure string. Changing
+        /// the default to false can result in the Secret Key being
+        /// vulnerable; please use this property judiciously.
+        /// </summary>
+        /// <param name="fSecure">
+        /// Whether a secure string should be used or not.
+        /// </param>
+        /// <returns>The Config object with the property set</returns>
+        /// <remarks>Storing the AWS Secret Access Key is not
+        /// recommended unless absolutely necessary.
+        /// </remarks>
+        /// <seealso cref="T:System.Security.SecureString"/>
+        public AmazonEC2Config WithUseSecureStringForAwsSecretKey(bool fSecure)
+        {
+            fUseSecureString = fSecure;
+            return this;
         }
     }
 }

@@ -45,8 +45,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "SourceIdentifier")]
         public string SourceIdentifier
         {
-            get { return this.sourceIdentifierField ; }
-            set { this.sourceIdentifierField= value; }
+            get { return this.sourceIdentifierField; }
+            set { this.sourceIdentifierField = value; }
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if SourceIdentifier property is set</returns>
         public bool IsSetSourceIdentifier()
         {
-            return  this.sourceIdentifierField != null;
+            return this.sourceIdentifierField != null;
         }
 
         /// <summary>
@@ -77,8 +77,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "SourceType")]
         public string SourceType
         {
-            get { return this.sourceTypeField ; }
-            set { this.sourceTypeField= value; }
+            get { return this.sourceTypeField; }
+            set { this.sourceTypeField = value; }
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if SourceType property is set</returns>
         public bool IsSetSourceType()
         {
-            return  this.sourceTypeField != null;
+            return this.sourceTypeField != null;
         }
 
         /// <summary>
@@ -108,8 +108,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Message")]
         public string Message
         {
-            get { return this.messageField ; }
-            set { this.messageField= value; }
+            get { return this.messageField; }
+            set { this.messageField = value; }
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Message property is set</returns>
         public bool IsSetMessage()
         {
-            return  this.messageField != null;
+            return this.messageField != null;
         }
 
         /// <summary>
@@ -139,8 +139,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Date")]
         public DateTime Date
         {
-            get { return this.dateField.GetValueOrDefault() ; }
-            set { this.dateField= value; }
+            get { return this.dateField.GetValueOrDefault(); }
+            set { this.dateField = value; }
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Date property is set</returns>
         public bool IsSetDate()
         {
-            return  this.dateField.HasValue;
+            return this.dateField.HasValue;
         }
 
     }

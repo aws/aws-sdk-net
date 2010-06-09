@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "StartTime")]
         public string StartTime
         {
-            get { return this.startTimeField ; }
-            set { this.startTimeField= value; }
+            get { return this.startTimeField; }
+            set { this.startTimeField = value; }
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if StartTime property is set</returns>
         public bool IsSetStartTime()
         {
-            return  this.startTimeField != null;
+            return this.startTimeField != null;
         }
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "EndTime")]
         public string EndTime
         {
-            get { return this.endTimeField ; }
-            set { this.endTimeField= value; }
+            get { return this.endTimeField; }
+            set { this.endTimeField = value; }
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if EndTime property is set</returns>
         public bool IsSetEndTime()
         {
-            return  this.endTimeField != null;
+            return this.endTimeField != null;
         }
 
         /// <summary>

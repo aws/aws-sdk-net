@@ -41,8 +41,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "DNSName")]
         public string DNSName
         {
-            get { return this.DNSNameField ; }
-            set { this.DNSNameField= value; }
+            get { return this.DNSNameField; }
+            set { this.DNSNameField = value; }
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if DNSName property is set</returns>
         public bool IsSetDNSName()
         {
-            return  this.DNSNameField != null;
+            return this.DNSNameField != null;
         }
 
     }

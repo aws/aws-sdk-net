@@ -128,7 +128,7 @@ namespace Amazon.CloudWatch
         {
             this.message = message;
             AmazonCloudWatchException ex = innerException as AmazonCloudWatchException;
-            if (ex != null )
+            if (ex != null)
             {
                 this.statusCode = ex.StatusCode;
                 this.errorCode = ex.ErrorCode;

@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Code")]
         public string Code
         {
-            get { return this.codeField ; }
-            set { this.codeField= value; }
+            get { return this.codeField; }
+            set { this.codeField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Code property is set</returns>
         public bool IsSetCode()
         {
-            return  this.codeField != null;
+            return this.codeField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Message")]
         public string Message
         {
-            get { return this.messageField ; }
-            set { this.messageField= value; }
+            get { return this.messageField; }
+            set { this.messageField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Message property is set</returns>
         public bool IsSetMessage()
         {
-            return  this.messageField != null;
+            return this.messageField != null;
         }
 
     }

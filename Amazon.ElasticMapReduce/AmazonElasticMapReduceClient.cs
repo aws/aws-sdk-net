@@ -21,19 +21,15 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Xsl;
-using System.Xml.XPath;
 using System.Xml.Serialization;
 
 using Amazon.Util;
@@ -43,18 +39,27 @@ using Amazon.ElasticMapReduce.Model;
 namespace Amazon.ElasticMapReduce
 {
     /// <summary>
-    /// AmazonElasticMapReduceClient is an implementation of AmazonElasticMapReduce
+    /// AmazonElasticMapReduceClient is an implementation of AmazonElasticMapReduce;
+    /// the client allows you to manage your AmazonElasticMapReduce resources.<br />
+    /// If you want to use the AmazonElasticMapReduceClient from a Medium Trust
+    /// hosting environment, please create the client with an
+    /// AmazonElasticMapReduceConfig object whose UseSecureStringForAwsSecretKey
+    /// property is false.
+    /// </summary>
+    /// <remarks>
     /// Amazon Elastic MapReduce is a web service that enables businesses, researchers,
     /// data analysts, and developers to easily and cost-effectively process vast amounts
     /// of data. It utilizes a hosted Hadoop framework running on the web-scale infrastructure
     /// of Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3).
-    /// </summary>
+    /// </remarks>
+    /// <seealso cref="P:Amazon.ElasticMapReduce.AmazonElasticMapReduceConfig.UseSecureStringForAwsSecretKey"/>
     public class AmazonElasticMapReduceClient : AmazonElasticMapReduce
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
         private AmazonElasticMapReduceConfig config;
         private bool disposed;
+        private string clearAwsSecretAccessKey;
 
         #region Dispose Pattern Implementation
 
@@ -113,21 +118,31 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonElasticMapReduce Configuration object
+        /// AmazonElasticMapReduce Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="config">The AmazonElasticMapReduce Configuration Object</param>
         public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElasticMapReduceConfig config)
         {
-            if (awsSecretAccessKey != null)
+            if (!String.IsNullOrEmpty(awsSecretAccessKey))
             {
-                this.awsSecretAccessKey = new SecureString();
-                foreach (char ch in awsSecretAccessKey.ToCharArray())
+                if (config.UseSecureStringForAwsSecretKey)
                 {
-                    this.awsSecretAccessKey.AppendChar(ch);
+                    this.awsSecretAccessKey = new SecureString();
+                    foreach (char ch in awsSecretAccessKey.ToCharArray())
+                    {
+                        this.awsSecretAccessKey.AppendChar(ch);
+                    }
+                    this.awsSecretAccessKey.MakeReadOnly();
                 }
-                this.awsSecretAccessKey.MakeReadOnly();
+                else
+                {
+                    clearAwsSecretAccessKey = awsSecretAccessKey;
+                }
             }
             this.awsAccessKeyId = awsAccessKeyId;
             this.config = config;
@@ -204,16 +219,18 @@ namespace Amazon.ElasticMapReduce
         private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonElasticMapReduceConfig config)
         {
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
-
-            if (config.IsSetProxyHost())
+            if (request != null)
             {
-                request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                if (config.IsSetProxyHost())
+                {
+                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                }
+                request.UserAgent = config.UserAgent;
+                request.Method = "POST";
+                request.Timeout = 50000;
+                request.ContentType = AWSSDKUtils.UrlEncodedContent;
+                request.ContentLength = contentLength;
             }
-            request.UserAgent = config.UserAgent;
-            request.Method = "POST";
-            request.Timeout = 50000;
-            request.ContentType = AWSSDKUtils.UrlEncodedContent;
-            request.ContentLength = contentLength;
 
             return request;
         }
@@ -225,19 +242,21 @@ namespace Amazon.ElasticMapReduce
         {
             string actionName = parameters["Action"];
             T response = default(T);
-            string responseBody = null;
             HttpStatusCode statusCode = default(HttpStatusCode);
 
             /* Add required request parameters */
             AddRequiredParameters(parameters);
 
-            string queryString = GetParametersAsString(parameters);
+            string queryString = AWSSDKUtils.GetParametersAsString(parameters);
 
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
             bool shouldRetry = true;
             int retries = 0;
+            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
+
             do
             {
+                string responseBody = null;
                 HttpWebRequest request = ConfigureWebRequest(requestData.Length, config);
                 /* Submit the request and read response body */
                 try
@@ -248,6 +267,14 @@ namespace Amazon.ElasticMapReduce
                     }
                     using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
                     {
+                        if (httpResponse == null)
+                        {
+                            throw new WebException(
+                                "The Web Response for a successful request is null!",
+                                WebExceptionStatus.ProtocolError
+                                );
+                        }
+
                         statusCode = httpResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                         {
@@ -256,8 +283,7 @@ namespace Amazon.ElasticMapReduce
                     }
 
                     /* Perform response transformation */
-                    if (responseBody != null &&
-                        responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
+                    if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
                     {
                         responseBody = Transform(responseBody, this.GetType());
                     }
@@ -279,7 +305,7 @@ namespace Amazon.ElasticMapReduce
                         {
                             // Abort the unsuccessful request
                             request.Abort();
-                            throw new AmazonElasticMapReduceException(we);
+                            throw we;
                         }
                         statusCode = httpErrorResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpErrorResponse.GetResponseStream(), Encoding.UTF8))
@@ -291,10 +317,11 @@ namespace Amazon.ElasticMapReduce
                         request.Abort();
                     }
 
-                    if (statusCode == HttpStatusCode.InternalServerError || statusCode == HttpStatusCode.ServiceUnavailable)
+                    if (statusCode == HttpStatusCode.InternalServerError ||
+                        statusCode == HttpStatusCode.ServiceUnavailable)
                     {
                         shouldRetry = true;
-                        PauseOnRetry(++retries, config.MaxErrorRetry, statusCode);
+                        PauseOnRetry(++retries, maxRetries, statusCode);
                     }
                     else
                     {
@@ -327,13 +354,11 @@ namespace Amazon.ElasticMapReduce
                             }
                             else
                             {
-                                AmazonElasticMapReduceException se = ReportAnyErrors(responseBody, statusCode);
-                                throw se;
+                                throw ReportAnyErrors(responseBody, statusCode);
                             }
                         }
                     }
                 }
-
                 /* Catch other exceptions, attempt to convert to formatted exception,
                  * else rethrow wrapped exception */
                 catch (Exception)
@@ -354,7 +379,8 @@ namespace Amazon.ElasticMapReduce
         {
             AmazonElasticMapReduceException ex = null;
 
-            if (responseBody != null && responseBody.StartsWith("<"))
+            if (responseBody != null &&
+                responseBody.StartsWith("<"))
             {
                 Match errorMatcherOne = Regex.Match(
                     responseBody,
@@ -407,7 +433,10 @@ namespace Amazon.ElasticMapReduce
             }
             else
             {
-                throw new AmazonElasticMapReduceException("Maximum number of retry attempts reached : " + (retries - 1), status);
+                throw new AmazonElasticMapReduceException(
+                    "Maximum number of retry attempts reached : " + (retries - 1),
+                    status
+                    );
             }
         }
 
@@ -420,136 +449,30 @@ namespace Amazon.ElasticMapReduce
             {
                 throw new AmazonElasticMapReduceException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
-            parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
-            parameters.Add("Version", config.ServiceVersion);
-            parameters.Add("SignatureVersion", config.SignatureVersion);
-            parameters.Add("Signature", SignParameters(parameters, this.awsSecretAccessKey, config));
-        }
 
-        /**
-         * Convert Dictionary of paremeters to Url encoded query string
-         */
-        private static string GetParametersAsString(IDictionary<string, string> parameters)
-        {
-            StringBuilder data = new StringBuilder(512);
-            foreach (string key in (IEnumerable<string>)parameters.Keys)
-            {
-                string value = parameters[key];
-                if (value != null)
-                {
-                    data.Append(key);
-                    data.Append('=');
-                    data.Append(AWSSDKUtils.UrlEncode(value, false));
-                    data.Append('&');
-                }
-            }
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /**
-         * Computes RFC 2104-compliant HMAC signature for request parameters
-         * Implements AWS Signature, as per following spec:
-         *
-         * If Signature Version is 0, it signs concatenated Action and Timestamp
-         *
-         * If Signature Version is 1, it performs the following:
-         *
-         * Sorts all  parameters (including SignatureVersion and excluding Signature,
-         * the value of which is being created), ignoring case.
-         *
-         * Iterate over the sorted list and append the parameter name (in original case)
-         * and then its value. It will not URL-encode the parameter values before
-         * constructing this string. There are no separators.
-         *
-         * If Signature Version is 2, string to sign is based on following:
-         *
-         *    1. The HTTP Request Method followed by an ASCII newline (%0A)
-         *    2. The HTTP Host header in the form of lowercase host, followed by an ASCII newline.
-         *    3. The URL encoded HTTP absolute path component of the URI
-         *       (up to but not including the query string parameters);
-         *       if this is empty use a forward '/'. This parameter is followed by an ASCII newline.
-         *    4. The concatenation of all query string components (names and values)
-         *       as UTF-8 characters which are URL encoded as per RFC 3986
-         *       (hex characters MUST be uppercase), sorted using lexicographic byte ordering.
-         *       Parameter names are separated from their values by the '=' character
-         *       (ASCII character 61), even if the value is empty.
-         *       Pairs of parameter and values are separated by the ampersand character (ASCII code 38).
-         *
-         */
-        private static string SignParameters(IDictionary<string, string> parameters, SecureString key, AmazonElasticMapReduceConfig config)
-        {
-            string signatureVersion = parameters["SignatureVersion"];
-
-            KeyedHashAlgorithm algorithm = new HMACSHA1();
-
-            string stringToSign = null;
-            if ("2".Equals(signatureVersion))
-            {
-                string signatureMethod = config.SignatureMethod;
-                algorithm = KeyedHashAlgorithm.Create(signatureMethod.ToUpper());
-                parameters.Add("SignatureMethod", signatureMethod);
-                stringToSign = CalculateStringToSignV2(parameters, config);
-            }
-            else
+            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
+            parameters["SignatureVersion"] = config.SignatureVersion;
+            parameters["SignatureMethod"] = config.SignatureMethod;
+            parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
+            parameters["Version"] = config.ServiceVersion;
+            if (!config.SignatureVersion.Equals("2"))
             {
                 throw new AmazonElasticMapReduceException("Invalid Signature Version specified");
             }
+            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
 
-            return Sign(stringToSign, key, algorithm);
-        }
+            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
+            string auth;
 
-        private static string CalculateStringToSignV2(IDictionary<string, string> parameters, AmazonElasticMapReduceConfig config)
-        {
-            StringBuilder data = new StringBuilder(512);
-            IDictionary<string, string> sorted =
-                  new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
-            data.Append("POST");
-            data.Append("\n");
-            Uri endpoint = new Uri(config.ServiceURL.ToLower());
-
-            data.Append(endpoint.Host);
-            data.Append("\n");
-            string uri = endpoint.AbsolutePath;
-            if (uri == null || uri.Length == 0)
+            if (config.UseSecureStringForAwsSecretKey)
             {
-                uri = "/";
+                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
             }
-            data.Append(AWSSDKUtils.UrlEncode(uri, true));
-            data.Append("\n");
-            foreach (KeyValuePair<string, string> pair in sorted)
+            else
             {
-                if (pair.Value != null)
-                {
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-                    data.Append("=");
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-                    data.Append("&");
-                }
+                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
             }
-
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /// <summary>
-        /// Computes RFC 2104-compliant HMAC signature
-        /// </summary>
-        /// <param name="data">The data to be signed</param>
-        /// <param name="key">The secret signing key</param>
-        /// <param name="algorithm">The algorithm to sign the data with</param>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:Amazon.ElasticMapReduce.AmazonElasticMapReduceException"></exception>
-        /// <returns>A string representing the HMAC signature</returns>
-        private static string Sign(string data, System.Security.SecureString key, KeyedHashAlgorithm algorithm)
-        {
-            if (key == null)
-            {
-                throw new AmazonElasticMapReduceException("The AWS Secret Access Key specified is NULL");
-            }
-
-            return AWSSDKUtils.HMACSign(data, key, algorithm);
+            parameters["Signature"] = auth;
         }
 
         /**
@@ -558,10 +481,10 @@ namespace Amazon.ElasticMapReduce
         private static IDictionary<string, string> ConvertAddJobFlowSteps(AddJobFlowStepsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "AddJobFlowSteps");
+            parameters["Action"] = "AddJobFlowSteps";
             if (request.IsSetJobFlowId())
             {
-                parameters.Add("JobFlowId", request.JobFlowId);
+                parameters["JobFlowId"] = request.JobFlowId;
             }
             List<StepConfig> addJobFlowStepsRequestStepsList = request.Steps;
             int addJobFlowStepsRequestStepsListIndex = 1;
@@ -569,43 +492,43 @@ namespace Amazon.ElasticMapReduce
             {
                 if (addJobFlowStepsRequestSteps.IsSetName())
                 {
-                    parameters.Add("Steps" + ".member."  + addJobFlowStepsRequestStepsListIndex + "." + "Name", addJobFlowStepsRequestSteps.Name);
+                    parameters[String.Concat("Steps", ".member.", addJobFlowStepsRequestStepsListIndex, ".", "Name")] = addJobFlowStepsRequestSteps.Name;
                 }
                 if (addJobFlowStepsRequestSteps.IsSetActionOnFailure())
                 {
-                    parameters.Add("Steps" + ".member."  + addJobFlowStepsRequestStepsListIndex + "." + "ActionOnFailure", addJobFlowStepsRequestSteps.ActionOnFailure);
+                    parameters[String.Concat("Steps", ".member.", addJobFlowStepsRequestStepsListIndex, ".", "ActionOnFailure")] = addJobFlowStepsRequestSteps.ActionOnFailure;
                 }
                 if (addJobFlowStepsRequestSteps.IsSetHadoopJarStep())
                 {
-                    HadoopJarStepConfig  stepsHadoopJarStep = addJobFlowStepsRequestSteps.HadoopJarStep;
+                    HadoopJarStepConfig stepsHadoopJarStep = addJobFlowStepsRequestSteps.HadoopJarStep;
                     List<KeyValue> hadoopJarStepPropertiesList = stepsHadoopJarStep.Properties;
                     int hadoopJarStepPropertiesListIndex = 1;
                     foreach (KeyValue hadoopJarStepProperties in hadoopJarStepPropertiesList)
                     {
                         if (hadoopJarStepProperties.IsSetKey())
                         {
-                            parameters.Add("Steps" + ".member."  + addJobFlowStepsRequestStepsListIndex + "." + "HadoopJarStep" + "." + "Properties" + ".member."  + hadoopJarStepPropertiesListIndex + "." + "Key", hadoopJarStepProperties.Key);
+                            parameters[String.Concat("Steps", ".member.", addJobFlowStepsRequestStepsListIndex, ".", "HadoopJarStep", ".", "Properties", ".member.", hadoopJarStepPropertiesListIndex, ".", "Key")] = hadoopJarStepProperties.Key;
                         }
                         if (hadoopJarStepProperties.IsSetValue())
                         {
-                            parameters.Add("Steps" + ".member."  + addJobFlowStepsRequestStepsListIndex + "." + "HadoopJarStep" + "." + "Properties" + ".member."  + hadoopJarStepPropertiesListIndex + "." + "Value", hadoopJarStepProperties.Value);
+                            parameters[String.Concat("Steps", ".member.", addJobFlowStepsRequestStepsListIndex, ".", "HadoopJarStep", ".", "Properties", ".member.", hadoopJarStepPropertiesListIndex, ".", "Value")] = hadoopJarStepProperties.Value;
                         }
 
                         hadoopJarStepPropertiesListIndex++;
                     }
                     if (stepsHadoopJarStep.IsSetJar())
                     {
-                        parameters.Add("Steps" + ".member."  + addJobFlowStepsRequestStepsListIndex + "." + "HadoopJarStep" + "." + "Jar", stepsHadoopJarStep.Jar);
+                        parameters[String.Concat("Steps", ".member.", addJobFlowStepsRequestStepsListIndex, ".", "HadoopJarStep", ".", "Jar")] = stepsHadoopJarStep.Jar;
                     }
                     if (stepsHadoopJarStep.IsSetMainClass())
                     {
-                        parameters.Add("Steps" + ".member."  + addJobFlowStepsRequestStepsListIndex + "." + "HadoopJarStep" + "." + "MainClass", stepsHadoopJarStep.MainClass);
+                        parameters[String.Concat("Steps", ".member.", addJobFlowStepsRequestStepsListIndex, ".", "HadoopJarStep", ".", "MainClass")] = stepsHadoopJarStep.MainClass;
                     }
-                    List<string> hadoopJarStepArgsList  =  stepsHadoopJarStep.Args;
+                    List<string> hadoopJarStepArgsList = stepsHadoopJarStep.Args;
                     int hadoopJarStepArgsListIndex = 1;
-                    foreach  (string hadoopJarStepArgs in hadoopJarStepArgsList)
+                    foreach (string hadoopJarStepArgs in hadoopJarStepArgsList)
                     {
-                        parameters.Add("Steps" + ".member."  + addJobFlowStepsRequestStepsListIndex + "." + "HadoopJarStep" + "." + "Args" + ".member."  + hadoopJarStepArgsListIndex, hadoopJarStepArgs);
+                        parameters[String.Concat("Steps", ".member.", addJobFlowStepsRequestStepsListIndex, ".", "HadoopJarStep", ".", "Args", ".member.", hadoopJarStepArgsListIndex)] = hadoopJarStepArgs;
                         hadoopJarStepArgsListIndex++;
                     }
                 }
@@ -622,12 +545,12 @@ namespace Amazon.ElasticMapReduce
         private static IDictionary<string, string> ConvertTerminateJobFlows(TerminateJobFlowsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "TerminateJobFlows");
-            List<string> terminateJobFlowsRequestJobFlowIdsList  =  request.JobFlowIds;
+            parameters["Action"] = "TerminateJobFlows";
+            List<string> terminateJobFlowsRequestJobFlowIdsList = request.JobFlowIds;
             int terminateJobFlowsRequestJobFlowIdsListIndex = 1;
-            foreach  (string terminateJobFlowsRequestJobFlowIds in terminateJobFlowsRequestJobFlowIdsList)
+            foreach (string terminateJobFlowsRequestJobFlowIds in terminateJobFlowsRequestJobFlowIdsList)
             {
-                parameters.Add("JobFlowIds" + ".member."  + terminateJobFlowsRequestJobFlowIdsListIndex, terminateJobFlowsRequestJobFlowIds);
+                parameters[String.Concat("JobFlowIds", ".member.", terminateJobFlowsRequestJobFlowIdsListIndex)] = terminateJobFlowsRequestJobFlowIds;
                 terminateJobFlowsRequestJobFlowIdsListIndex++;
             }
 
@@ -640,27 +563,27 @@ namespace Amazon.ElasticMapReduce
         private static IDictionary<string, string> ConvertDescribeJobFlows(DescribeJobFlowsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeJobFlows");
+            parameters["Action"] = "DescribeJobFlows";
             if (request.IsSetCreatedAfter())
             {
-                parameters.Add("CreatedAfter", request.CreatedAfter);
+                parameters["CreatedAfter"] = request.CreatedAfter;
             }
             if (request.IsSetCreatedBefore())
             {
-                parameters.Add("CreatedBefore", request.CreatedBefore);
+                parameters["CreatedBefore"] = request.CreatedBefore;
             }
-            List<string> describeJobFlowsRequestJobFlowIdsList  =  request.JobFlowIds;
+            List<string> describeJobFlowsRequestJobFlowIdsList = request.JobFlowIds;
             int describeJobFlowsRequestJobFlowIdsListIndex = 1;
-            foreach  (string describeJobFlowsRequestJobFlowIds in describeJobFlowsRequestJobFlowIdsList)
+            foreach (string describeJobFlowsRequestJobFlowIds in describeJobFlowsRequestJobFlowIdsList)
             {
-                parameters.Add("JobFlowIds" + ".member."  + describeJobFlowsRequestJobFlowIdsListIndex, describeJobFlowsRequestJobFlowIds);
+                parameters[String.Concat("JobFlowIds", ".member.", describeJobFlowsRequestJobFlowIdsListIndex)] = describeJobFlowsRequestJobFlowIds;
                 describeJobFlowsRequestJobFlowIdsListIndex++;
             }
-            List<string> describeJobFlowsRequestJobFlowStatesList  =  request.JobFlowStates;
+            List<string> describeJobFlowsRequestJobFlowStatesList = request.JobFlowStates;
             int describeJobFlowsRequestJobFlowStatesListIndex = 1;
-            foreach  (string describeJobFlowsRequestJobFlowStates in describeJobFlowsRequestJobFlowStatesList)
+            foreach (string describeJobFlowsRequestJobFlowStates in describeJobFlowsRequestJobFlowStatesList)
             {
-                parameters.Add("JobFlowStates" + ".member."  + describeJobFlowsRequestJobFlowStatesListIndex, describeJobFlowsRequestJobFlowStates);
+                parameters[String.Concat("JobFlowStates", ".member.", describeJobFlowsRequestJobFlowStatesListIndex)] = describeJobFlowsRequestJobFlowStates;
                 describeJobFlowsRequestJobFlowStatesListIndex++;
             }
 
@@ -673,45 +596,45 @@ namespace Amazon.ElasticMapReduce
         private static IDictionary<string, string> ConvertRunJobFlow(RunJobFlowRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RunJobFlow");
+            parameters["Action"] = "RunJobFlow";
             if (request.IsSetName())
             {
-                parameters.Add("Name", request.Name);
+                parameters["Name"] = request.Name;
             }
             if (request.IsSetLogUri())
             {
-                parameters.Add("LogUri", request.LogUri);
+                parameters["LogUri"] = request.LogUri;
             }
             if (request.IsSetInstances())
             {
-                JobFlowInstancesConfig  runJobFlowRequestInstances = request.Instances;
+                JobFlowInstancesConfig runJobFlowRequestInstances = request.Instances;
                 if (runJobFlowRequestInstances.IsSetMasterInstanceType())
                 {
-                    parameters.Add("Instances" + "." + "MasterInstanceType", runJobFlowRequestInstances.MasterInstanceType);
+                    parameters[String.Concat("Instances", ".", "MasterInstanceType")] = runJobFlowRequestInstances.MasterInstanceType;
                 }
                 if (runJobFlowRequestInstances.IsSetSlaveInstanceType())
                 {
-                    parameters.Add("Instances" + "." + "SlaveInstanceType", runJobFlowRequestInstances.SlaveInstanceType);
+                    parameters[String.Concat("Instances", ".", "SlaveInstanceType")] = runJobFlowRequestInstances.SlaveInstanceType;
                 }
                 if (runJobFlowRequestInstances.IsSetInstanceCount())
                 {
-                    parameters.Add("Instances" + "." + "InstanceCount", (runJobFlowRequestInstances.InstanceCount + ""));
+                    parameters[String.Concat("Instances", ".", "InstanceCount")] = runJobFlowRequestInstances.InstanceCount.ToString();
                 }
                 if (runJobFlowRequestInstances.IsSetEc2KeyName())
                 {
-                    parameters.Add("Instances" + "." + "Ec2KeyName", runJobFlowRequestInstances.Ec2KeyName);
+                    parameters[String.Concat("Instances", ".", "Ec2KeyName")] = runJobFlowRequestInstances.Ec2KeyName;
                 }
                 if (runJobFlowRequestInstances.IsSetPlacement())
                 {
-                    PlacementType  instancesPlacement = runJobFlowRequestInstances.Placement;
+                    PlacementType instancesPlacement = runJobFlowRequestInstances.Placement;
                     if (instancesPlacement.IsSetAvailabilityZone())
                     {
-                        parameters.Add("Instances" + "." + "Placement" + "." + "AvailabilityZone", instancesPlacement.AvailabilityZone);
+                        parameters[String.Concat("Instances", ".", "Placement", ".", "AvailabilityZone")] = instancesPlacement.AvailabilityZone;
                     }
                 }
                 if (runJobFlowRequestInstances.IsSetKeepJobFlowAliveWhenNoSteps())
                 {
-                    parameters.Add("Instances" + "." + "KeepJobFlowAliveWhenNoSteps", (runJobFlowRequestInstances.KeepJobFlowAliveWhenNoSteps + "").ToLower());
+                    parameters[String.Concat("Instances", ".", "KeepJobFlowAliveWhenNoSteps")] = runJobFlowRequestInstances.KeepJobFlowAliveWhenNoSteps.ToString().ToLower();
                 }
             }
             List<StepConfig> runJobFlowRequestStepsList = request.Steps;
@@ -720,43 +643,43 @@ namespace Amazon.ElasticMapReduce
             {
                 if (runJobFlowRequestSteps.IsSetName())
                 {
-                    parameters.Add("Steps" + ".member."  + runJobFlowRequestStepsListIndex + "." + "Name", runJobFlowRequestSteps.Name);
+                    parameters[String.Concat("Steps", ".member.", runJobFlowRequestStepsListIndex, ".", "Name")] = runJobFlowRequestSteps.Name;
                 }
                 if (runJobFlowRequestSteps.IsSetActionOnFailure())
                 {
-                    parameters.Add("Steps" + ".member."  + runJobFlowRequestStepsListIndex + "." + "ActionOnFailure", runJobFlowRequestSteps.ActionOnFailure);
+                    parameters[String.Concat("Steps", ".member.", runJobFlowRequestStepsListIndex, ".", "ActionOnFailure")] = runJobFlowRequestSteps.ActionOnFailure;
                 }
                 if (runJobFlowRequestSteps.IsSetHadoopJarStep())
                 {
-                    HadoopJarStepConfig  stepsHadoopJarStep = runJobFlowRequestSteps.HadoopJarStep;
+                    HadoopJarStepConfig stepsHadoopJarStep = runJobFlowRequestSteps.HadoopJarStep;
                     List<KeyValue> hadoopJarStepPropertiesList = stepsHadoopJarStep.Properties;
                     int hadoopJarStepPropertiesListIndex = 1;
                     foreach (KeyValue hadoopJarStepProperties in hadoopJarStepPropertiesList)
                     {
                         if (hadoopJarStepProperties.IsSetKey())
                         {
-                            parameters.Add("Steps" + ".member."  + runJobFlowRequestStepsListIndex + "." + "HadoopJarStep" + "." + "Properties" + ".member."  + hadoopJarStepPropertiesListIndex + "." + "Key", hadoopJarStepProperties.Key);
+                            parameters[String.Concat("Steps", ".member.", runJobFlowRequestStepsListIndex, ".", "HadoopJarStep", ".", "Properties", ".member.", hadoopJarStepPropertiesListIndex, ".", "Key")] = hadoopJarStepProperties.Key;
                         }
                         if (hadoopJarStepProperties.IsSetValue())
                         {
-                            parameters.Add("Steps" + ".member."  + runJobFlowRequestStepsListIndex + "." + "HadoopJarStep" + "." + "Properties" + ".member."  + hadoopJarStepPropertiesListIndex + "." + "Value", hadoopJarStepProperties.Value);
+                            parameters[String.Concat("Steps", ".member.", runJobFlowRequestStepsListIndex, ".", "HadoopJarStep", ".", "Properties", ".member.", hadoopJarStepPropertiesListIndex, ".", "Value")] = hadoopJarStepProperties.Value;
                         }
 
                         hadoopJarStepPropertiesListIndex++;
                     }
                     if (stepsHadoopJarStep.IsSetJar())
                     {
-                        parameters.Add("Steps" + ".member."  + runJobFlowRequestStepsListIndex + "." + "HadoopJarStep" + "." + "Jar", stepsHadoopJarStep.Jar);
+                        parameters[String.Concat("Steps", ".member.", runJobFlowRequestStepsListIndex, ".", "HadoopJarStep", ".", "Jar")] = stepsHadoopJarStep.Jar;
                     }
                     if (stepsHadoopJarStep.IsSetMainClass())
                     {
-                        parameters.Add("Steps" + ".member."  + runJobFlowRequestStepsListIndex + "." + "HadoopJarStep" + "." + "MainClass", stepsHadoopJarStep.MainClass);
+                        parameters[String.Concat("Steps", ".member.", runJobFlowRequestStepsListIndex, ".", "HadoopJarStep", ".", "MainClass")] = stepsHadoopJarStep.MainClass;
                     }
-                    List<string> hadoopJarStepArgsList  =  stepsHadoopJarStep.Args;
+                    List<string> hadoopJarStepArgsList = stepsHadoopJarStep.Args;
                     int hadoopJarStepArgsListIndex = 1;
-                    foreach  (string hadoopJarStepArgs in hadoopJarStepArgsList)
+                    foreach (string hadoopJarStepArgs in hadoopJarStepArgsList)
                     {
-                        parameters.Add("Steps" + ".member."  + runJobFlowRequestStepsListIndex + "." + "HadoopJarStep" + "." + "Args" + ".member."  + hadoopJarStepArgsListIndex, hadoopJarStepArgs);
+                        parameters[String.Concat("Steps", ".member.", runJobFlowRequestStepsListIndex, ".", "HadoopJarStep", ".", "Args", ".member.", hadoopJarStepArgsListIndex)] = hadoopJarStepArgs;
                         hadoopJarStepArgsListIndex++;
                     }
                 }
@@ -804,6 +727,7 @@ namespace Amazon.ElasticMapReduce
                 }
             }
         }
+
         #endregion
     }
 }

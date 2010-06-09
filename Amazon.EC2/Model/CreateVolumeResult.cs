@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Volume")]
         public Volume Volume
         {
-            get { return this.volumeField ; }
+            get { return this.volumeField; }
             set { this.volumeField = value; }
         }
 

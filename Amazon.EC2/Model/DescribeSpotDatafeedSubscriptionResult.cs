@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SpotDatafeedSubscription")]
         public SpotDatafeedSubscription SpotDatafeedSubscription
         {
-            get { return this.spotDatafeedSubscriptionField ; }
+            get { return this.spotDatafeedSubscriptionField; }
             set { this.spotDatafeedSubscriptionField = value; }
         }
 

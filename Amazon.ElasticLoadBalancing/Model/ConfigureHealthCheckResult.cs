@@ -45,7 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "HealthCheck")]
         public HealthCheck HealthCheck
         {
-            get { return this.healthCheckField ; }
+            get { return this.healthCheckField; }
             set { this.healthCheckField = value; }
         }
 

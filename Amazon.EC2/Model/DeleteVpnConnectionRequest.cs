@@ -51,8 +51,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpnConnectionId")]
         public string VpnConnectionId
         {
-            get { return this.vpnConnectionIdField ; }
-            set { this.vpnConnectionIdField= value; }
+            get { return this.vpnConnectionIdField; }
+            set { this.vpnConnectionIdField = value; }
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpnConnectionId property is set</returns>
         public bool IsSetVpnConnectionId()
         {
-            return  this.vpnConnectionIdField != null;
+            return this.vpnConnectionIdField != null;
         }
 
     }

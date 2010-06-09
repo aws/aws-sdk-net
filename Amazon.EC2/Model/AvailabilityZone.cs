@@ -44,8 +44,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ZoneName")]
         public string ZoneName
         {
-            get { return this.zoneNameField ; }
-            set { this.zoneNameField= value; }
+            get { return this.zoneNameField; }
+            set { this.zoneNameField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ZoneName property is set</returns>
         public bool IsSetZoneName()
         {
-            return  this.zoneNameField != null;
+            return this.zoneNameField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ZoneState")]
         public string ZoneState
         {
-            get { return this.zoneStateField ; }
-            set { this.zoneStateField= value; }
+            get { return this.zoneStateField; }
+            set { this.zoneStateField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ZoneState property is set</returns>
         public bool IsSetZoneState()
         {
-            return  this.zoneStateField != null;
+            return this.zoneStateField != null;
         }
 
         /// <summary>
@@ -106,8 +106,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "RegionName")]
         public string RegionName
         {
-            get { return this.regionNameField ; }
-            set { this.regionNameField= value; }
+            get { return this.regionNameField; }
+            set { this.regionNameField = value; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if RegionName property is set</returns>
         public bool IsSetRegionName()
         {
-            return  this.regionNameField != null;
+            return this.regionNameField != null;
         }
 
         /// <summary>

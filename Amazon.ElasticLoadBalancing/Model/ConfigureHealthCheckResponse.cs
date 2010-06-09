@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "ConfigureHealthCheckResult")]
         public ConfigureHealthCheckResult ConfigureHealthCheckResult
         {
-            get { return this.configureHealthCheckResultField ; }
+            get { return this.configureHealthCheckResultField; }
             set { this.configureHealthCheckResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

@@ -41,8 +41,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBParameterGroupName")]
         public string DBParameterGroupName
         {
-            get { return this.DBParameterGroupNameField ; }
-            set { this.DBParameterGroupNameField= value; }
+            get { return this.DBParameterGroupNameField; }
+            set { this.DBParameterGroupNameField = value; }
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBParameterGroupName property is set</returns>
         public bool IsSetDBParameterGroupName()
         {
-            return  this.DBParameterGroupNameField != null;
+            return this.DBParameterGroupNameField != null;
         }
 
     }

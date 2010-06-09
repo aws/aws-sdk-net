@@ -55,8 +55,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "Target")]
         public string Target
         {
-            get { return this.targetField ; }
-            set { this.targetField= value; }
+            get { return this.targetField; }
+            set { this.targetField = value; }
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if Target property is set</returns>
         public bool IsSetTarget()
         {
-            return  this.targetField != null;
+            return this.targetField != null;
         }
 
         /// <summary>
@@ -98,8 +98,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "Interval")]
         public Decimal Interval
         {
-            get { return this.intervalField.GetValueOrDefault() ; }
-            set { this.intervalField= value; }
+            get { return this.intervalField.GetValueOrDefault(); }
+            set { this.intervalField = value; }
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if Interval property is set</returns>
         public bool IsSetInterval()
         {
-            return  this.intervalField.HasValue;
+            return this.intervalField.HasValue;
         }
 
         /// <summary>
@@ -132,8 +132,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "Timeout")]
         public Decimal Timeout
         {
-            get { return this.timeoutField.GetValueOrDefault() ; }
-            set { this.timeoutField= value; }
+            get { return this.timeoutField.GetValueOrDefault(); }
+            set { this.timeoutField = value; }
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if Timeout property is set</returns>
         public bool IsSetTimeout()
         {
-            return  this.timeoutField.HasValue;
+            return this.timeoutField.HasValue;
         }
 
         /// <summary>
@@ -165,8 +165,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "UnhealthyThreshold")]
         public Decimal UnhealthyThreshold
         {
-            get { return this.unhealthyThresholdField.GetValueOrDefault() ; }
-            set { this.unhealthyThresholdField= value; }
+            get { return this.unhealthyThresholdField.GetValueOrDefault(); }
+            set { this.unhealthyThresholdField = value; }
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if UnhealthyThreshold property is set</returns>
         public bool IsSetUnhealthyThreshold()
         {
-            return  this.unhealthyThresholdField.HasValue;
+            return this.unhealthyThresholdField.HasValue;
         }
 
         /// <summary>
@@ -198,8 +198,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "HealthyThreshold")]
         public Decimal HealthyThreshold
         {
-            get { return this.healthyThresholdField.GetValueOrDefault() ; }
-            set { this.healthyThresholdField= value; }
+            get { return this.healthyThresholdField.GetValueOrDefault(); }
+            set { this.healthyThresholdField = value; }
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if HealthyThreshold property is set</returns>
         public bool IsSetHealthyThreshold()
         {
-            return  this.healthyThresholdField.HasValue;
+            return this.healthyThresholdField.HasValue;
         }
 
     }

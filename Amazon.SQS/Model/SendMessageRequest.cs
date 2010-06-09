@@ -43,8 +43,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "QueueUrl")]
         public string QueueUrl
         {
-            get { return this.queueUrlField ; }
-            set { this.queueUrlField= value; }
+            get { return this.queueUrlField; }
+            set { this.queueUrlField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if QueueUrl property is set</returns>
         public bool IsSetQueueUrl()
         {
-            return  this.queueUrlField != null;
+            return this.queueUrlField != null;
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "MessageBody")]
         public string MessageBody
         {
-            get { return this.messageBodyField ; }
-            set { this.messageBodyField= value; }
+            get { return this.messageBodyField; }
+            set { this.messageBodyField = value; }
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if MessageBody property is set</returns>
         public bool IsSetMessageBody()
         {
-            return  this.messageBodyField != null;
+            return this.messageBodyField != null;
         }
         /// <summary>
         /// Gets and sets the Attribute property.

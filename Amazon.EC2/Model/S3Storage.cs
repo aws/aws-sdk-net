@@ -47,8 +47,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Bucket")]
         public string Bucket
         {
-            get { return this.bucketField ; }
-            set { this.bucketField= value; }
+            get { return this.bucketField; }
+            set { this.bucketField = value; }
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Bucket property is set</returns>
         public bool IsSetBucket()
         {
-            return  this.bucketField != null;
+            return this.bucketField != null;
         }
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Prefix")]
         public string Prefix
         {
-            get { return this.prefixField ; }
-            set { this.prefixField= value; }
+            get { return this.prefixField; }
+            set { this.prefixField = value; }
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Prefix property is set</returns>
         public bool IsSetPrefix()
         {
-            return  this.prefixField != null;
+            return this.prefixField != null;
         }
 
         /// <summary>
@@ -111,8 +111,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "AWSAccessKeyId")]
         public string AWSAccessKeyId
         {
-            get { return this.AWSAccessKeyIdField ; }
-            set { this.AWSAccessKeyIdField= value; }
+            get { return this.AWSAccessKeyIdField; }
+            set { this.AWSAccessKeyIdField = value; }
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if AWSAccessKeyId property is set</returns>
         public bool IsSetAWSAccessKeyId()
         {
-            return  this.AWSAccessKeyIdField != null;
+            return this.AWSAccessKeyIdField != null;
         }
 
         /// <summary>
@@ -143,8 +143,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "UploadPolicy")]
         public string UploadPolicy
         {
-            get { return this.uploadPolicyField ; }
-            set { this.uploadPolicyField= value; }
+            get { return this.uploadPolicyField; }
+            set { this.uploadPolicyField = value; }
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if UploadPolicy property is set</returns>
         public bool IsSetUploadPolicy()
         {
-            return  this.uploadPolicyField != null;
+            return this.uploadPolicyField != null;
         }
 
         /// <summary>
@@ -175,8 +175,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "UploadPolicySignature")]
         public string UploadPolicySignature
         {
-            get { return this.uploadPolicySignatureField ; }
-            set { this.uploadPolicySignatureField= value; }
+            get { return this.uploadPolicySignatureField; }
+            set { this.uploadPolicySignatureField = value; }
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if UploadPolicySignature property is set</returns>
         public bool IsSetUploadPolicySignature()
         {
-            return  this.uploadPolicySignatureField != null;
+            return this.uploadPolicySignatureField != null;
         }
 
     }

@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Code")]
         public Decimal Code
         {
-            get { return this.codeField.GetValueOrDefault() ; }
-            set { this.codeField= value; }
+            get { return this.codeField.GetValueOrDefault(); }
+            set { this.codeField = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Code property is set</returns>
         public bool IsSetCode()
         {
-            return  this.codeField.HasValue;
+            return this.codeField.HasValue;
         }
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField ; }
-            set { this.nameField= value; }
+            get { return this.nameField; }
+            set { this.nameField = value; }
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Name property is set</returns>
         public bool IsSetName()
         {
-            return  this.nameField != null;
+            return this.nameField != null;
         }
 
     }

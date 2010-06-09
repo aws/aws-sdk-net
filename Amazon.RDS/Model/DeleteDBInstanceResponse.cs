@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DeleteDBInstanceResult")]
         public DeleteDBInstanceResult DeleteDBInstanceResult
         {
-            get { return this.deleteDBInstanceResultField ; }
+            get { return this.deleteDBInstanceResultField; }
             set { this.deleteDBInstanceResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

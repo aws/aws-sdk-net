@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DeleteDBSnapshotResult")]
         public DeleteDBSnapshotResult DeleteDBSnapshotResult
         {
-            get { return this.deleteDBSnapshotResultField ; }
+            get { return this.deleteDBSnapshotResultField; }
             set { this.deleteDBSnapshotResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

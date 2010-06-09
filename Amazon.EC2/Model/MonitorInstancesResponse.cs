@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "MonitorInstancesResult")]
         public MonitorInstancesResult MonitorInstancesResult
         {
-            get { return this.monitorInstancesResultField ; }
+            get { return this.monitorInstancesResultField; }
             set { this.monitorInstancesResultField = value; }
         }
 

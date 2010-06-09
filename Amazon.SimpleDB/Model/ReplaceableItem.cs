@@ -42,8 +42,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "ItemName")]
         public string ItemName
         {
-            get { return this.itemNameField ; }
-            set { this.itemNameField= value; }
+            get { return this.itemNameField; }
+            set { this.itemNameField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if ItemName property is set</returns>
         public bool IsSetItemName()
         {
-            return  this.itemNameField != null;
+            return this.itemNameField != null;
         }
         /// <summary>
         /// Gets and sets the Attribute property.

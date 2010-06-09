@@ -30,7 +30,6 @@ namespace Amazon.S3.Util
     {
         internal const int PutObjectDefaultTimeout = 20 * 60 * 1000;
         internal static readonly long MaxS3ObjectSize = 5 * (long)Math.Pow(2, 30);
-        internal const int DefaultMaxRetry = 3;
 
         internal const string S3DefaultEndpoint = "s3.amazonaws.com";
 
@@ -47,6 +46,7 @@ namespace Amazon.S3.Util
         internal const string AuthorizationHeader = "Authorization";
         internal const string AmzVersionIdHeader = "x-amz-version-id";
         internal const string AmzDeleteMarkerHeader = "x-amz-delete-marker";
+        internal const string AmzMfaHeader = "x-amz-mfa";
 
         // Accepted HTTP Verbs
         internal static readonly string[] Verbs = { "GET", "HEAD", "PUT", "DELETE" };

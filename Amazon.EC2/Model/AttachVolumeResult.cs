@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Attachment")]
         public Attachment Attachment
         {
-            get { return this.attachmentField ; }
+            get { return this.attachmentField; }
             set { this.attachmentField = value; }
         }
 

@@ -49,8 +49,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SnapshotId")]
         public string SnapshotId
         {
-            get { return this.snapshotIdField ; }
-            set { this.snapshotIdField= value; }
+            get { return this.snapshotIdField; }
+            set { this.snapshotIdField = value; }
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SnapshotId property is set</returns>
         public bool IsSetSnapshotId()
         {
-            return  this.snapshotIdField != null;
+            return this.snapshotIdField != null;
         }
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
         {
-            get { return this.volumeIdField ; }
-            set { this.volumeIdField= value; }
+            get { return this.volumeIdField; }
+            set { this.volumeIdField = value; }
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VolumeId property is set</returns>
         public bool IsSetVolumeId()
         {
-            return  this.volumeIdField != null;
+            return this.volumeIdField != null;
         }
 
         /// <summary>
@@ -111,8 +111,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
         {
-            get { return this.statusField ; }
-            set { this.statusField= value; }
+            get { return this.statusField; }
+            set { this.statusField = value; }
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Status property is set</returns>
         public bool IsSetStatus()
         {
-            return  this.statusField != null;
+            return this.statusField != null;
         }
 
         /// <summary>
@@ -142,8 +142,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "StartTime")]
         public string StartTime
         {
-            get { return this.startTimeField ; }
-            set { this.startTimeField= value; }
+            get { return this.startTimeField; }
+            set { this.startTimeField = value; }
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if StartTime property is set</returns>
         public bool IsSetStartTime()
         {
-            return  this.startTimeField != null;
+            return this.startTimeField != null;
         }
 
         /// <summary>
@@ -173,8 +173,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Progress")]
         public string Progress
         {
-            get { return this.progressField ; }
-            set { this.progressField= value; }
+            get { return this.progressField; }
+            set { this.progressField = value; }
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Progress property is set</returns>
         public bool IsSetProgress()
         {
-            return  this.progressField != null;
+            return this.progressField != null;
         }
 
         /// <summary>
@@ -204,8 +204,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
         {
-            get { return this.ownerIdField ; }
-            set { this.ownerIdField= value; }
+            get { return this.ownerIdField; }
+            set { this.ownerIdField = value; }
         }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if OwnerId property is set</returns>
         public bool IsSetOwnerId()
         {
-            return  this.ownerIdField != null;
+            return this.ownerIdField != null;
         }
 
         /// <summary>
@@ -235,8 +235,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VolumeSize")]
         public string VolumeSize
         {
-            get { return this.volumeSizeField ; }
-            set { this.volumeSizeField= value; }
+            get { return this.volumeSizeField; }
+            set { this.volumeSizeField = value; }
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VolumeSize property is set</returns>
         public bool IsSetVolumeSize()
         {
-            return  this.volumeSizeField != null;
+            return this.volumeSizeField != null;
         }
 
         /// <summary>
@@ -266,8 +266,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField ; }
-            set { this.descriptionField= value; }
+            get { return this.descriptionField; }
+            set { this.descriptionField = value; }
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Description property is set</returns>
         public bool IsSetDescription()
         {
-            return  this.descriptionField != null;
+            return this.descriptionField != null;
         }
 
         /// <summary>
@@ -296,8 +296,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "OwnerAlias")]
         public string OwnerAlias
         {
-            get { return this.ownerAliasField ; }
-            set { this.ownerAliasField= value; }
+            get { return this.ownerAliasField; }
+            set { this.ownerAliasField = value; }
         }
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if OwnerAlias property is set</returns>
         public bool IsSetOwnerAlias()
         {
-            return  this.ownerAliasField != null;
+            return this.ownerAliasField != null;
         }
 
     }

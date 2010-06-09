@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
         public string VpnGatewayId
         {
-            get { return this.vpnGatewayIdField ; }
-            set { this.vpnGatewayIdField= value; }
+            get { return this.vpnGatewayIdField; }
+            set { this.vpnGatewayIdField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpnGatewayId property is set</returns>
         public bool IsSetVpnGatewayId()
         {
-            return  this.vpnGatewayIdField != null;
+            return this.vpnGatewayIdField != null;
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
         {
-            get { return this.vpcIdField ; }
-            set { this.vpcIdField= value; }
+            get { return this.vpcIdField; }
+            set { this.vpcIdField = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpcId property is set</returns>
         public bool IsSetVpcId()
         {
-            return  this.vpcIdField != null;
+            return this.vpcIdField != null;
         }
 
     }

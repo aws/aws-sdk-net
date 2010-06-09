@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DescribeDBSecurityGroupsResult")]
         public DescribeDBSecurityGroupsResult DescribeDBSecurityGroupsResult
         {
-            get { return this.describeDBSecurityGroupsResultField ; }
+            get { return this.describeDBSecurityGroupsResultField; }
             set { this.describeDBSecurityGroupsResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

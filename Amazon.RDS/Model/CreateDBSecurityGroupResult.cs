@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBSecurityGroup")]
         public DBSecurityGroup DBSecurityGroup
         {
-            get { return this.DBSecurityGroupField ; }
+            get { return this.DBSecurityGroupField; }
             set { this.DBSecurityGroupField = value; }
         }
 

@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
         public string VpnGatewayId
         {
-            get { return this.vpnGatewayIdField ; }
-            set { this.vpnGatewayIdField= value; }
+            get { return this.vpnGatewayIdField; }
+            set { this.vpnGatewayIdField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpnGatewayId property is set</returns>
         public bool IsSetVpnGatewayId()
         {
-            return  this.vpnGatewayIdField != null;
+            return this.vpnGatewayIdField != null;
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpnGatewayState")]
         public string VpnGatewayState
         {
-            get { return this.vpnGatewayStateField ; }
-            set { this.vpnGatewayStateField= value; }
+            get { return this.vpnGatewayStateField; }
+            set { this.vpnGatewayStateField = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpnGatewayState property is set</returns>
         public bool IsSetVpnGatewayState()
         {
-            return  this.vpnGatewayStateField != null;
+            return this.vpnGatewayStateField != null;
         }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
         {
-            get { return this.typeField ; }
-            set { this.typeField= value; }
+            get { return this.typeField; }
+            set { this.typeField = value; }
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Type property is set</returns>
         public bool IsSetType()
         {
-            return  this.typeField != null;
+            return this.typeField != null;
         }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
         /// <summary>
         /// Gets and sets the VpcAttachment property.

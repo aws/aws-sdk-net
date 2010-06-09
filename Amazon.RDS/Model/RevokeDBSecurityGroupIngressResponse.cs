@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "RevokeDBSecurityGroupIngressResult")]
         public RevokeDBSecurityGroupIngressResult RevokeDBSecurityGroupIngressResult
         {
-            get { return this.revokeDBSecurityGroupIngressResultField ; }
+            get { return this.revokeDBSecurityGroupIngressResultField; }
             set { this.revokeDBSecurityGroupIngressResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

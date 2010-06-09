@@ -44,8 +44,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
         {
-            get { return this.instanceTypeField ; }
-            set { this.instanceTypeField= value; }
+            get { return this.instanceTypeField; }
+            set { this.instanceTypeField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceType property is set</returns>
         public bool IsSetInstanceType()
         {
-            return  this.instanceTypeField != null;
+            return this.instanceTypeField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ProductDescription")]
         public string ProductDescription
         {
-            get { return this.productDescriptionField ; }
-            set { this.productDescriptionField= value; }
+            get { return this.productDescriptionField; }
+            set { this.productDescriptionField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ProductDescription property is set</returns>
         public bool IsSetProductDescription()
         {
-            return  this.productDescriptionField != null;
+            return this.productDescriptionField != null;
         }
 
         /// <summary>
@@ -106,8 +106,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SpotPrice")]
         public string SpotPrice
         {
-            get { return this.spotPriceField ; }
-            set { this.spotPriceField= value; }
+            get { return this.spotPriceField; }
+            set { this.spotPriceField = value; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SpotPrice property is set</returns>
         public bool IsSetSpotPrice()
         {
-            return  this.spotPriceField != null;
+            return this.spotPriceField != null;
         }
 
         /// <summary>
@@ -137,8 +137,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Timestamp")]
         public string Timestamp
         {
-            get { return this.timestampField ; }
-            set { this.timestampField= value; }
+            get { return this.timestampField; }
+            set { this.timestampField = value; }
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Timestamp property is set</returns>
         public bool IsSetTimestamp()
         {
-            return  this.timestampField != null;
+            return this.timestampField != null;
         }
 
     }

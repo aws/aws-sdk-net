@@ -53,8 +53,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SpotInstanceRequestId")]
         public string SpotInstanceRequestId
         {
-            get { return this.spotInstanceRequestIdField ; }
-            set { this.spotInstanceRequestIdField= value; }
+            get { return this.spotInstanceRequestIdField; }
+            set { this.spotInstanceRequestIdField = value; }
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SpotInstanceRequestId property is set</returns>
         public bool IsSetSpotInstanceRequestId()
         {
-            return  this.spotInstanceRequestIdField != null;
+            return this.spotInstanceRequestIdField != null;
         }
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SpotPrice")]
         public string SpotPrice
         {
-            get { return this.spotPriceField ; }
-            set { this.spotPriceField= value; }
+            get { return this.spotPriceField; }
+            set { this.spotPriceField = value; }
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SpotPrice property is set</returns>
         public bool IsSetSpotPrice()
         {
-            return  this.spotPriceField != null;
+            return this.spotPriceField != null;
         }
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
         {
-            get { return this.typeField ; }
-            set { this.typeField= value; }
+            get { return this.typeField; }
+            set { this.typeField = value; }
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Type property is set</returns>
         public bool IsSetType()
         {
-            return  this.typeField != null;
+            return this.typeField != null;
         }
 
         /// <summary>
@@ -149,8 +149,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "State")]
         public string State
         {
-            get { return this.stateField ; }
-            set { this.stateField= value; }
+            get { return this.stateField; }
+            set { this.stateField = value; }
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if State property is set</returns>
         public bool IsSetState()
         {
-            return  this.stateField != null;
+            return this.stateField != null;
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Fault")]
         public SpotInstanceStateFault Fault
         {
-            get { return this.faultField ; }
+            get { return this.faultField; }
             set { this.faultField = value; }
         }
 
@@ -215,8 +215,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ValidFrom")]
         public string ValidFrom
         {
-            get { return this.validFromField ; }
-            set { this.validFromField= value; }
+            get { return this.validFromField; }
+            set { this.validFromField = value; }
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ValidFrom property is set</returns>
         public bool IsSetValidFrom()
         {
-            return  this.validFromField != null;
+            return this.validFromField != null;
         }
 
         /// <summary>
@@ -252,8 +252,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ValidUntil")]
         public string ValidUntil
         {
-            get { return this.validUntilField ; }
-            set { this.validUntilField= value; }
+            get { return this.validUntilField; }
+            set { this.validUntilField = value; }
         }
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ValidUntil property is set</returns>
         public bool IsSetValidUntil()
         {
-            return  this.validUntilField != null;
+            return this.validUntilField != null;
         }
 
         /// <summary>
@@ -287,8 +287,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "LaunchGroup")]
         public string LaunchGroup
         {
-            get { return this.launchGroupField ; }
-            set { this.launchGroupField= value; }
+            get { return this.launchGroupField; }
+            set { this.launchGroupField = value; }
         }
 
         /// <summary>
@@ -309,7 +309,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if LaunchGroup property is set</returns>
         public bool IsSetLaunchGroup()
         {
-            return  this.launchGroupField != null;
+            return this.launchGroupField != null;
         }
 
         /// <summary>
@@ -321,8 +321,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "AvailabilityZoneGroup")]
         public string AvailabilityZoneGroup
         {
-            get { return this.availabilityZoneGroupField ; }
-            set { this.availabilityZoneGroupField= value; }
+            get { return this.availabilityZoneGroupField; }
+            set { this.availabilityZoneGroupField = value; }
         }
 
         /// <summary>
@@ -344,7 +344,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if AvailabilityZoneGroup property is set</returns>
         public bool IsSetAvailabilityZoneGroup()
         {
-            return  this.availabilityZoneGroupField != null;
+            return this.availabilityZoneGroupField != null;
         }
 
         /// <summary>
@@ -354,7 +354,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "LaunchSpecification")]
         public LaunchSpecification LaunchSpecification
         {
-            get { return this.launchSpecificationField ; }
+            get { return this.launchSpecificationField; }
             set { this.launchSpecificationField = value; }
         }
 
@@ -385,8 +385,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -406,7 +406,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -416,8 +416,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CreateTime")]
         public string CreateTime
         {
-            get { return this.createTimeField ; }
-            set { this.createTimeField= value; }
+            get { return this.createTimeField; }
+            set { this.createTimeField = value; }
         }
 
         /// <summary>
@@ -437,7 +437,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if CreateTime property is set</returns>
         public bool IsSetCreateTime()
         {
-            return  this.createTimeField != null;
+            return this.createTimeField != null;
         }
 
         /// <summary>
@@ -447,8 +447,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ProductDescription")]
         public string ProductDescription
         {
-            get { return this.productDescriptionField ; }
-            set { this.productDescriptionField= value; }
+            get { return this.productDescriptionField; }
+            set { this.productDescriptionField = value; }
         }
 
         /// <summary>
@@ -468,7 +468,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ProductDescription property is set</returns>
         public bool IsSetProductDescription()
         {
-            return  this.productDescriptionField != null;
+            return this.productDescriptionField != null;
         }
 
     }

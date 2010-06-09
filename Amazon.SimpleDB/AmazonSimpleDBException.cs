@@ -131,7 +131,6 @@ namespace Amazon.SimpleDB
         {
             this.message = message;
             AmazonSimpleDBException ex = innerException as AmazonSimpleDBException;
-
             if (ex != null)
             {
                 this.statusCode = ex.StatusCode;

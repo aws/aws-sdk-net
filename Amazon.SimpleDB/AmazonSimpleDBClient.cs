@@ -21,32 +21,33 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Xml.XPath;
 using System.Xml.Xsl;
 
-using Amazon.Util;
-
-using Amazon.SimpleDB;
 using Amazon.SimpleDB.Model;
 using Amazon.SimpleDB.Util;
 using Attribute = Amazon.SimpleDB.Model.Attribute;
+using Amazon.Util;
 
 namespace Amazon.SimpleDB
 {
     /// <summary>
-    /// AmazonSimpleDBClient is an implementation of AmazonSimpleDB
+    /// AmazonSimpleDBClient is an implementation of AmazonSimpleD;
+    /// the client allows you to manage your AmazonSimpleDB resources.<br />
+    /// If you want to use the AmazonSimpleDBClient from a Medium Trust
+    /// hosting environment, please create the client with an
+    /// AmazonSimpleDBConfig object whose UseSecureStringForAwsSecretKey
+    /// property is false.
+    /// </summary>
+    /// <remarks>
     /// Amazon SimpleDB is a web service for running queries on structured
     /// data in real time. This service works in close conjunction with Amazon
     /// Simple Storage Service (Amazon S3) and Amazon Elastic Compute Cloud
@@ -65,13 +66,15 @@ namespace Amazon.SimpleDB
     /// maintenance, and performance tuning. Developers gain access to this
     /// functionality within Amazon's proven computing environment, are able
     /// to scale instantly, and pay only for what they use.
-    /// </summary>
+    /// </remarks>
+    /// <seealso cref="P:Amazon.SimpleDB.AmazonSimpleDBConfig.UseSecureStringForAwsSecretKey"/>
     public class AmazonSimpleDBClient : AmazonSimpleDB
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
         private AmazonSimpleDBConfig config;
         private bool disposed;
+        private string clearAwsSecretAccessKey;
 
         #region Dispose Pattern Implementation
 
@@ -130,21 +133,31 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// Constructs AmazonSimpleDBClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonSimpleDB Configuration object
+        /// AmazonSimpleDB Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="config">The AmazonSimpleDB Configuration Object</param>
         public AmazonSimpleDBClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonSimpleDBConfig config)
         {
-            if (awsSecretAccessKey != null)
+            if (!String.IsNullOrEmpty(awsSecretAccessKey))
             {
-                this.awsSecretAccessKey = new SecureString();
-                foreach (char ch in awsSecretAccessKey.ToCharArray())
+                if (config.UseSecureStringForAwsSecretKey)
                 {
-                    this.awsSecretAccessKey.AppendChar(ch);
+                    this.awsSecretAccessKey = new SecureString();
+                    foreach (char ch in awsSecretAccessKey.ToCharArray())
+                    {
+                        this.awsSecretAccessKey.AppendChar(ch);
+                    }
+                    this.awsSecretAccessKey.MakeReadOnly();
                 }
-                this.awsSecretAccessKey.MakeReadOnly();
+                else
+                {
+                    clearAwsSecretAccessKey = awsSecretAccessKey;
+                }
             }
             this.awsAccessKeyId = awsAccessKeyId;
             this.config = config;
@@ -339,16 +352,18 @@ namespace Amazon.SimpleDB
         private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonSimpleDBConfig config)
         {
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
-
-            if (config.IsSetProxyHost())
+            if (request != null)
             {
-                request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                if (config.IsSetProxyHost())
+                {
+                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                }
+                request.UserAgent = config.UserAgent;
+                request.Method = "POST";
+                request.Timeout = 50000;
+                request.ContentType = AWSSDKUtils.UrlEncodedContent;
+                request.ContentLength = contentLength;
             }
-            request.UserAgent = config.UserAgent;
-            request.Method = "POST";
-            request.Timeout = 50000;
-            request.ContentType = AWSSDKUtils.UrlEncodedContent;
-            request.ContentLength = contentLength;
 
             return request;
         }
@@ -360,19 +375,21 @@ namespace Amazon.SimpleDB
         {
             string actionName = parameters["Action"];
             T response = default(T);
-            string responseBody = null;
             HttpStatusCode statusCode = default(HttpStatusCode);
 
             /* Add required request parameters */
             AddRequiredParameters(parameters);
 
-            string queryString = GetParametersAsString(parameters);
+            string queryString = AWSSDKUtils.GetParametersAsString(parameters);
 
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
             bool shouldRetry = true;
             int retries = 0;
+            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
+
             do
             {
+                string responseBody = null;
                 HttpWebRequest request = ConfigureWebRequest(requestData.Length, config);
                 /* Submit the request and read response body */
                 try
@@ -383,6 +400,13 @@ namespace Amazon.SimpleDB
                     }
                     using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
                     {
+                        if (httpResponse == null)
+                        {
+                            throw new WebException(
+                                "The Web Response for a successful request is null!",
+                                WebExceptionStatus.ProtocolError
+                                );
+                        }
                         statusCode = httpResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                         {
@@ -394,8 +418,7 @@ namespace Amazon.SimpleDB
                     if (actionName.Equals("GetAttributes") ||
                         actionName.Equals("Select"))
                     {
-                        if (responseBody != null &&
-                            responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
+                        if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
                         {
                             responseBody = Transform(responseBody, actionName, this.GetType());
                         }
@@ -419,7 +442,7 @@ namespace Amazon.SimpleDB
                         {
                             // Abort the unsuccessful request
                             request.Abort();
-                            throw new AmazonSimpleDBException(we);
+                            throw we;
                         }
                         statusCode = httpErrorResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpErrorResponse.GetResponseStream(), Encoding.UTF8))
@@ -431,17 +454,19 @@ namespace Amazon.SimpleDB
                         request.Abort();
                     }
 
-                    if (statusCode == HttpStatusCode.InternalServerError || statusCode == HttpStatusCode.ServiceUnavailable)
+                    if (statusCode == HttpStatusCode.InternalServerError ||
+                        statusCode == HttpStatusCode.ServiceUnavailable)
                     {
                         shouldRetry = true;
-                        PauseOnRetry(++retries, statusCode);
+                        PauseOnRetry(++retries, maxRetries, statusCode);
                     }
                     else
                     {
-                        AmazonSimpleDBException se = ReportAnyErrors(responseBody, statusCode);
-                        throw se;
+                        throw ReportAnyErrors(responseBody, statusCode);
                     }
                 }
+                /* Catch other exceptions, attempt to convert to formatted exception,
+                 * else rethrow wrapped exception */
                 catch (Exception)
                 {
                     // Abort the unsuccessful request
@@ -517,16 +542,19 @@ namespace Amazon.SimpleDB
         /**
          * Exponential sleep on failed request
          */
-        private void PauseOnRetry(int retries, HttpStatusCode status)
+        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status)
         {
-            if (retries <= config.MaxErrorRetry)
+            if (retries <= maxRetries)
             {
                 int delay = (int)Math.Pow(4, retries) * 100;
                 System.Threading.Thread.Sleep(delay);
             }
             else
             {
-                throw new AmazonSimpleDBException("Maximum number of retry attempts reached : " + (retries - 1), status);
+                throw new AmazonSimpleDBException(
+                    "Maximum number of retry attempts reached : " + (retries - 1),
+                    status
+                    );
             }
         }
 
@@ -539,134 +567,30 @@ namespace Amazon.SimpleDB
             {
                 throw new AmazonSimpleDBException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
-            parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AmazonSimpleDBUtil.FormattedCurrentTimestamp);
-            parameters.Add("Version", config.ServiceVersion);
-            parameters.Add("SignatureVersion", config.SignatureVersion);
-            parameters.Add("Signature", SignParameters(parameters, this.awsSecretAccessKey, config));
-        }
 
-        /**
-         * Convert Dictionary of paremeters to Url encoded query string
-         */
-        private static string GetParametersAsString(IDictionary<string, string> parameters)
-        {
-            StringBuilder data = new StringBuilder(512);
-            foreach (string key in (IEnumerable<string>)parameters.Keys)
-            {
-                string value = parameters[key];
-                if (value != null)
-                {
-                    data.Append(key);
-                    data.Append('=');
-                    data.Append(AWSSDKUtils.UrlEncode(value, false));
-                    data.Append('&');
-                }
-            }
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /**
-         * Computes RFC 2104-compliant HMAC signature for request parameters
-         * Implements AWS Signature, as per following spec:
-         *
-         * If Signature Version is 0, it signs concatenated Action and Timestamp
-         *
-         * If Signature Version is 1, it performs the following:
-         *
-         * Sorts all  parameters (including SignatureVersion and excluding Signature,
-         * the value of which is being created), ignoring case.
-         *
-         * Iterate over the sorted list and append the parameter name (in original case)
-         * and then its value. It will not URL-encode the parameter values before
-         * constructing this string. There are no separators.
-         *
-         * If Signature Version is 2, string to sign is based on following:
-         *
-         *    1. The HTTP Request Method followed by an ASCII newline (%0A)
-         *    2. The HTTP Host header in the form of lowercase host, followed by an ASCII newline.
-         *    3. The URL encoded HTTP absolute path component of the URI
-         *       (up to but not including the query string parameters);
-         *       if this is empty use a forward '/'. This parameter is followed by an ASCII newline.
-         *    4. The concatenation of all query string components (names and values)
-         *       as UTF-8 characters which are URL encoded as per RFC 3986
-         *       (hex characters MUST be uppercase), sorted using lexicographic byte ordering.
-         *       Parameter names are separated from their values by the '=' character
-         *       (ASCII character 61), even if the value is empty.
-         *       Pairs of parameter and values are separated by the ampersand character (ASCII code 38).
-         *
-         */
-        private static string SignParameters(IDictionary<string, string> parameters, SecureString key, AmazonSimpleDBConfig config)
-        {
-            string signatureVersion = parameters["SignatureVersion"];
-
-            KeyedHashAlgorithm algorithm = new HMACSHA1();
-
-            string stringToSign = null;
-            if ("2".Equals(signatureVersion))
-            {
-                string signatureMethod = config.SignatureMethod;
-                algorithm = KeyedHashAlgorithm.Create(signatureMethod.ToUpper());
-                parameters.Add("SignatureMethod", signatureMethod);
-                stringToSign = CalculateStringToSignV2(parameters, config);
-            }
-            else
+            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
+            parameters["SignatureVersion"] = config.SignatureVersion;
+            parameters["SignatureMethod"] = config.SignatureMethod;
+            parameters["Timestamp"] = AmazonSimpleDBUtil.FormattedCurrentTimestamp;
+            parameters["Version"] = config.ServiceVersion;
+            if (!config.SignatureVersion.Equals("2"))
             {
                 throw new AmazonSimpleDBException("Invalid Signature Version specified");
             }
+            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
 
-            return Sign(stringToSign, key, algorithm);
-        }
+            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
+            string auth;
 
-        private static string CalculateStringToSignV2(IDictionary<string, string> parameters, AmazonSimpleDBConfig config)
-        {
-            StringBuilder data = new StringBuilder(512);
-            IDictionary<string, string> sorted =
-                  new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
-            data.Append("POST");
-            data.Append("\n");
-            Uri endpoint = new Uri(config.ServiceURL.ToLower());
-
-            data.Append(endpoint.Host);
-            data.Append("\n");
-            string uri = endpoint.AbsolutePath;
-            if (uri == null || uri.Length == 0)
+            if (config.UseSecureStringForAwsSecretKey)
             {
-                uri = "/";
+                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
             }
-            data.Append(AWSSDKUtils.UrlEncode(uri, true));
-            data.Append("\n");
-            foreach (KeyValuePair<string, string> pair in sorted)
+            else
             {
-                if (pair.Value != null)
-                {
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-                    data.Append("=");
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-                    data.Append("&");
-                }
+                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
             }
-
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /// <summary>
-        /// Computes RFC 2104-compliant HMAC signature
-        /// </summary>
-        /// <param name="data">The data to be signed</param>
-        /// <param name="key">The secret signing key</param>
-        /// <param name="algorithm">The algorithm to sign the data with</param>
-        /// <returns>A string representing the HMAC signature</returns>
-        private static string Sign(string data, System.Security.SecureString key, KeyedHashAlgorithm algorithm)
-        {
-            if (key == null)
-            {
-                throw new AmazonSimpleDBException("The AWS Secret Access Key specified is NULL");
-            }
-
-            return AWSSDKUtils.HMACSign(data, key, algorithm);
+            parameters["Signature"] = auth;
         }
 
         /*
@@ -714,10 +638,10 @@ namespace Amazon.SimpleDB
         private static IDictionary<string, string> ConvertCreateDomain(CreateDomainRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateDomain");
+            parameters["Action"] = "CreateDomain";
             if (request.IsSetDomainName())
             {
-                parameters.Add("DomainName", request.DomainName);
+                parameters["DomainName"] = request.DomainName;
             }
 
             return parameters;
@@ -729,14 +653,14 @@ namespace Amazon.SimpleDB
         private static IDictionary<string, string> ConvertListDomains(ListDomainsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ListDomains");
+            parameters["Action"] = "ListDomains";
             if (request.IsSetMaxNumberOfDomains())
             {
-                parameters.Add("MaxNumberOfDomains", (request.MaxNumberOfDomains + ""));
+                parameters["MaxNumberOfDomains"] = request.MaxNumberOfDomains.ToString();
             }
             if (request.IsSetNextToken())
             {
-                parameters.Add("NextToken", request.NextToken);
+                parameters["NextToken"] = request.NextToken;
             }
 
             return parameters;
@@ -748,10 +672,10 @@ namespace Amazon.SimpleDB
         private static IDictionary<string, string> ConvertDomainMetadata(DomainMetadataRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DomainMetadata");
+            parameters["Action"] = "DomainMetadata";
             if (request.IsSetDomainName())
             {
-                parameters.Add("DomainName", request.DomainName);
+                parameters["DomainName"] = request.DomainName;
             }
 
             return parameters;
@@ -763,10 +687,10 @@ namespace Amazon.SimpleDB
         private static IDictionary<string, string> ConvertDeleteDomain(DeleteDomainRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteDomain");
+            parameters["Action"] = "DeleteDomain";
             if (request.IsSetDomainName())
             {
-                parameters.Add("DomainName", request.DomainName);
+                parameters["DomainName"] = request.DomainName;
             }
 
             return parameters;
@@ -778,14 +702,14 @@ namespace Amazon.SimpleDB
         private static IDictionary<string, string> ConvertPutAttributes(PutAttributesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "PutAttributes");
+            parameters["Action"] = "PutAttributes";
             if (request.IsSetDomainName())
             {
-                parameters.Add("DomainName", request.DomainName);
+                parameters["DomainName"] = request.DomainName;
             }
             if (request.IsSetItemName())
             {
-                parameters.Add("ItemName", request.ItemName);
+                parameters["ItemName"] = request.ItemName;
             }
             List<ReplaceableAttribute> putAttributesRequestAttributeList = request.Attribute;
             int putAttributesRequestAttributeListIndex = 1;
@@ -793,33 +717,33 @@ namespace Amazon.SimpleDB
             {
                 if (putAttributesRequestAttribute.IsSetName())
                 {
-                    parameters.Add("Attribute" + "."  + putAttributesRequestAttributeListIndex + "." + "Name", putAttributesRequestAttribute.Name);
+                    parameters[String.Concat("Attribute", ".", putAttributesRequestAttributeListIndex, ".", "Name")] = putAttributesRequestAttribute.Name;
                 }
                 if (putAttributesRequestAttribute.IsSetValue())
                 {
-                    parameters.Add("Attribute" + "."  + putAttributesRequestAttributeListIndex + "." + "Value", putAttributesRequestAttribute.Value);
+                    parameters[String.Concat("Attribute", ".", putAttributesRequestAttributeListIndex, ".", "Value")] = putAttributesRequestAttribute.Value;
                 }
                 if (putAttributesRequestAttribute.IsSetReplace())
                 {
-                    parameters.Add("Attribute" + "."  + putAttributesRequestAttributeListIndex + "." + "Replace", (putAttributesRequestAttribute.Replace + "").ToLower());
+                    parameters[String.Concat("Attribute", ".", putAttributesRequestAttributeListIndex, ".", "Replace")] = putAttributesRequestAttribute.Replace.ToString().ToLower();
                 }
 
                 putAttributesRequestAttributeListIndex++;
             }
             if (request.IsSetExpected())
             {
-                UpdateCondition  putAttributesRequestExpected = request.Expected;
+                UpdateCondition putAttributesRequestExpected = request.Expected;
                 if (putAttributesRequestExpected.IsSetName())
                 {
-                    parameters.Add("Expected" + "." + "Name", putAttributesRequestExpected.Name);
+                    parameters[String.Concat("Expected", ".", "Name")] = putAttributesRequestExpected.Name;
                 }
                 if (putAttributesRequestExpected.IsSetValue())
                 {
-                    parameters.Add("Expected" + "." + "Value", putAttributesRequestExpected.Value);
+                    parameters[String.Concat("Expected", ".", "Value")] = putAttributesRequestExpected.Value;
                 }
                 if (putAttributesRequestExpected.IsSetExists())
                 {
-                    parameters.Add("Expected" + "." + "Exists", (putAttributesRequestExpected.Exists + "").ToLower());
+                    parameters[String.Concat("Expected", ".", "Exists")] = putAttributesRequestExpected.Exists.ToString().ToLower();
                 }
             }
 
@@ -832,10 +756,10 @@ namespace Amazon.SimpleDB
         private static IDictionary<string, string> ConvertBatchPutAttributes(BatchPutAttributesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "BatchPutAttributes");
+            parameters["Action"] = "BatchPutAttributes";
             if (request.IsSetDomainName())
             {
-                parameters.Add("DomainName", request.DomainName);
+                parameters["DomainName"] = request.DomainName;
             }
             List<ReplaceableItem> batchPutAttributesRequestItemList = request.Item;
             int batchPutAttributesRequestItemListIndex = 1;
@@ -843,7 +767,7 @@ namespace Amazon.SimpleDB
             {
                 if (batchPutAttributesRequestItem.IsSetItemName())
                 {
-                    parameters.Add("Item" + "."  + batchPutAttributesRequestItemListIndex + "." + "ItemName", batchPutAttributesRequestItem.ItemName);
+                    parameters[String.Concat("Item", ".", batchPutAttributesRequestItemListIndex, ".", "ItemName")] = batchPutAttributesRequestItem.ItemName;
                 }
                 List<ReplaceableAttribute> itemAttributeList = batchPutAttributesRequestItem.Attribute;
                 int itemAttributeListIndex = 1;
@@ -851,15 +775,15 @@ namespace Amazon.SimpleDB
                 {
                     if (itemAttribute.IsSetName())
                     {
-                        parameters.Add("Item" + "."  + batchPutAttributesRequestItemListIndex + "." + "Attribute" + "."  + itemAttributeListIndex + "." + "Name", itemAttribute.Name);
+                        parameters[String.Concat("Item", ".", batchPutAttributesRequestItemListIndex, ".", "Attribute", ".", itemAttributeListIndex, ".", "Name")] = itemAttribute.Name;
                     }
                     if (itemAttribute.IsSetValue())
                     {
-                        parameters.Add("Item" + "."  + batchPutAttributesRequestItemListIndex + "." + "Attribute" + "."  + itemAttributeListIndex + "." + "Value", itemAttribute.Value);
+                        parameters[String.Concat("Item", ".", batchPutAttributesRequestItemListIndex, ".", "Attribute", ".", itemAttributeListIndex, ".", "Value")] = itemAttribute.Value;
                     }
                     if (itemAttribute.IsSetReplace())
                     {
-                        parameters.Add("Item" + "."  + batchPutAttributesRequestItemListIndex + "." + "Attribute" + "."  + itemAttributeListIndex + "." + "Replace", (itemAttribute.Replace + "").ToLower());
+                        parameters[String.Concat("Item", ".", batchPutAttributesRequestItemListIndex, ".", "Attribute", ".", itemAttributeListIndex, ".", "Replace")] = itemAttribute.Replace.ToString().ToLower();
                     }
 
                     itemAttributeListIndex++;
@@ -877,25 +801,25 @@ namespace Amazon.SimpleDB
         private static IDictionary<string, string> ConvertGetAttributes(GetAttributesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "GetAttributes");
+            parameters["Action"] = "GetAttributes";
             if (request.IsSetDomainName())
             {
-                parameters.Add("DomainName", request.DomainName);
+                parameters["DomainName"] = request.DomainName;
             }
             if (request.IsSetItemName())
             {
-                parameters.Add("ItemName", request.ItemName);
+                parameters["ItemName"] = request.ItemName;
             }
-            List<string> getAttributesRequestAttributeNameList  =  request.AttributeName;
+            List<string> getAttributesRequestAttributeNameList = request.AttributeName;
             int getAttributesRequestAttributeNameListIndex = 1;
-            foreach  (string getAttributesRequestAttributeName in getAttributesRequestAttributeNameList)
+            foreach (string getAttributesRequestAttributeName in getAttributesRequestAttributeNameList)
             {
-                parameters.Add("AttributeName" + "."  + getAttributesRequestAttributeNameListIndex, getAttributesRequestAttributeName);
+                parameters[String.Concat("AttributeName", ".", getAttributesRequestAttributeNameListIndex)] = getAttributesRequestAttributeName;
                 getAttributesRequestAttributeNameListIndex++;
             }
             if (request.IsSetConsistentRead())
             {
-                parameters.Add("ConsistentRead", (request.ConsistentRead + "").ToLower());
+                parameters["ConsistentRead"] = request.ConsistentRead.ToString().ToLower();
             }
 
             return parameters;
@@ -907,14 +831,14 @@ namespace Amazon.SimpleDB
         private static IDictionary<string, string> ConvertDeleteAttributes(DeleteAttributesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteAttributes");
+            parameters["Action"] = "DeleteAttributes";
             if (request.IsSetDomainName())
             {
-                parameters.Add("DomainName", request.DomainName);
+                parameters["DomainName"] = request.DomainName;
             }
             if (request.IsSetItemName())
             {
-                parameters.Add("ItemName", request.ItemName);
+                parameters["ItemName"] = request.ItemName;
             }
             List<Attribute> deleteAttributesRequestAttributeList = request.Attribute;
             int deleteAttributesRequestAttributeListIndex = 1;
@@ -922,37 +846,37 @@ namespace Amazon.SimpleDB
             {
                 if (deleteAttributesRequestAttribute.IsSetName())
                 {
-                    parameters.Add("Attribute" + "."  + deleteAttributesRequestAttributeListIndex + "." + "Name", deleteAttributesRequestAttribute.Name);
+                    parameters[String.Concat("Attribute", ".", deleteAttributesRequestAttributeListIndex, ".", "Name")] = deleteAttributesRequestAttribute.Name;
                 }
                 if (deleteAttributesRequestAttribute.IsSetValue())
                 {
-                    parameters.Add("Attribute" + "."  + deleteAttributesRequestAttributeListIndex + "." + "Value", deleteAttributesRequestAttribute.Value);
+                    parameters[String.Concat("Attribute", ".", deleteAttributesRequestAttributeListIndex, ".", "Value")] = deleteAttributesRequestAttribute.Value;
                 }
                 if (deleteAttributesRequestAttribute.IsSetNameEncoding())
                 {
-                    parameters.Add("Attribute" + "."  + deleteAttributesRequestAttributeListIndex + "." + "NameEncoding", deleteAttributesRequestAttribute.NameEncoding);
+                    parameters[String.Concat("Attribute", ".", deleteAttributesRequestAttributeListIndex, ".", "NameEncoding")] = deleteAttributesRequestAttribute.NameEncoding;
                 }
                 if (deleteAttributesRequestAttribute.IsSetValueEncoding())
                 {
-                    parameters.Add("Attribute" + "."  + deleteAttributesRequestAttributeListIndex + "." + "ValueEncoding", deleteAttributesRequestAttribute.ValueEncoding);
+                    parameters[String.Concat("Attribute", ".", deleteAttributesRequestAttributeListIndex, ".", "ValueEncoding")] = deleteAttributesRequestAttribute.ValueEncoding;
                 }
 
                 deleteAttributesRequestAttributeListIndex++;
             }
             if (request.IsSetExpected())
             {
-                UpdateCondition  deleteAttributesRequestExpected = request.Expected;
+                UpdateCondition deleteAttributesRequestExpected = request.Expected;
                 if (deleteAttributesRequestExpected.IsSetName())
                 {
-                    parameters.Add("Expected" + "." + "Name", deleteAttributesRequestExpected.Name);
+                    parameters[String.Concat("Expected", ".", "Name")] = deleteAttributesRequestExpected.Name;
                 }
                 if (deleteAttributesRequestExpected.IsSetValue())
                 {
-                    parameters.Add("Expected" + "." + "Value", deleteAttributesRequestExpected.Value);
+                    parameters[String.Concat("Expected", ".", "Value")] = deleteAttributesRequestExpected.Value;
                 }
                 if (deleteAttributesRequestExpected.IsSetExists())
                 {
-                    parameters.Add("Expected" + "." + "Exists", (deleteAttributesRequestExpected.Exists + "").ToLower());
+                    parameters[String.Concat("Expected", ".", "Exists")] = deleteAttributesRequestExpected.Exists.ToString().ToLower();
                 }
             }
 
@@ -965,18 +889,18 @@ namespace Amazon.SimpleDB
         private static IDictionary<string, string> ConvertSelect(SelectRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "Select");
+            parameters["Action"] = "Select";
             if (request.IsSetSelectExpression())
             {
-                parameters.Add("SelectExpression", request.SelectExpression);
+                parameters["SelectExpression"] = request.SelectExpression;
             }
             if (request.IsSetNextToken())
             {
-                parameters.Add("NextToken", request.NextToken);
+                parameters["NextToken"] = request.NextToken;
             }
             if (request.IsSetConsistentRead())
             {
-                parameters.Add("ConsistentRead", (request.ConsistentRead + "").ToLower());
+                parameters["ConsistentRead"] = request.ConsistentRead.ToString().ToLower();
             }
 
             return parameters;

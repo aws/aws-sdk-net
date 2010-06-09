@@ -44,8 +44,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField ; }
-            set { this.nameField= value; }
+            get { return this.nameField; }
+            set { this.nameField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if Name property is set</returns>
         public bool IsSetName()
         {
-            return  this.nameField != null;
+            return this.nameField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Value")]
         public string Value
         {
-            get { return this.valueField ; }
-            set { this.valueField= value; }
+            get { return this.valueField; }
+            set { this.valueField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if Value property is set</returns>
         public bool IsSetValue()
         {
-            return  this.valueField != null;
+            return this.valueField != null;
         }
 
         /// <summary>
@@ -109,8 +109,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Exists")]
         public bool Exists
         {
-            get { return this.existsField.GetValueOrDefault() ; }
-            set { this.existsField= value; }
+            get { return this.existsField.GetValueOrDefault(); }
+            set { this.existsField = value; }
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if Exists property is set</returns>
         public bool IsSetExists()
         {
-            return  this.existsField.HasValue;
+            return this.existsField.HasValue;
         }
 
     }

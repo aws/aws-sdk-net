@@ -44,8 +44,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "QueueNamePrefix")]
         public string QueueNamePrefix
         {
-            get { return this.queueNamePrefixField ; }
-            set { this.queueNamePrefixField= value; }
+            get { return this.queueNamePrefixField; }
+            set { this.queueNamePrefixField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if QueueNamePrefix property is set</returns>
         public bool IsSetQueueNamePrefix()
         {
-            return  this.queueNamePrefixField != null;
+            return this.queueNamePrefixField != null;
         }
         /// <summary>
         /// Gets and sets the Attribute property.

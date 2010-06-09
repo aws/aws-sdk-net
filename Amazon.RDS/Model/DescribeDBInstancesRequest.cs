@@ -46,8 +46,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField ; }
-            set { this.DBInstanceIdentifierField= value; }
+            get { return this.DBInstanceIdentifierField; }
+            set { this.DBInstanceIdentifierField = value; }
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DBInstanceIdentifier property is set</returns>
         public bool IsSetDBInstanceIdentifier()
         {
-            return  this.DBInstanceIdentifierField != null;
+            return this.DBInstanceIdentifierField != null;
         }
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "MaxRecords")]
         public Decimal MaxRecords
         {
-            get { return this.maxRecordsField.GetValueOrDefault() ; }
-            set { this.maxRecordsField= value; }
+            get { return this.maxRecordsField.GetValueOrDefault(); }
+            set { this.maxRecordsField = value; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if MaxRecords property is set</returns>
         public bool IsSetMaxRecords()
         {
-            return  this.maxRecordsField.HasValue;
+            return this.maxRecordsField.HasValue;
         }
 
         /// <summary>
@@ -113,8 +113,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Marker")]
         public string Marker
         {
-            get { return this.markerField ; }
-            set { this.markerField= value; }
+            get { return this.markerField; }
+            set { this.markerField = value; }
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Marker property is set</returns>
         public bool IsSetMarker()
         {
-            return  this.markerField != null;
+            return this.markerField != null;
         }
 
     }

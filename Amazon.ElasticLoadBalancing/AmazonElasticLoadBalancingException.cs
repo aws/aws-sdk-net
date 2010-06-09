@@ -128,7 +128,7 @@ namespace Amazon.ElasticLoadBalancing
         {
             this.message = message;
             AmazonElasticLoadBalancingException ex = innerException as AmazonElasticLoadBalancingException;
-            if (ex != null )
+            if (ex != null)
             {
                 this.statusCode = ex.StatusCode;
                 this.errorCode = ex.ErrorCode;

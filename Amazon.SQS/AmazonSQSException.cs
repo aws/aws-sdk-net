@@ -128,7 +128,7 @@ namespace Amazon.SQS
         {
             this.message = message;
             AmazonSQSException ex = innerException as AmazonSQSException;
-            if (ex != null )
+            if (ex != null)
             {
                 this.statusCode = ex.StatusCode;
                 this.errorCode = ex.ErrorCode;

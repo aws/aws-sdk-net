@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "CreateDBParameterGroupResult")]
         public CreateDBParameterGroupResult CreateDBParameterGroupResult
         {
-            get { return this.createDBParameterGroupResultField ; }
+            get { return this.createDBParameterGroupResultField; }
             set { this.createDBParameterGroupResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

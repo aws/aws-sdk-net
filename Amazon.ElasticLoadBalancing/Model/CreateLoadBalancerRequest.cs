@@ -45,8 +45,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "LoadBalancerName")]
         public string LoadBalancerName
         {
-            get { return this.loadBalancerNameField ; }
-            set { this.loadBalancerNameField= value; }
+            get { return this.loadBalancerNameField; }
+            set { this.loadBalancerNameField = value; }
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if LoadBalancerName property is set</returns>
         public bool IsSetLoadBalancerName()
         {
-            return  this.loadBalancerNameField != null;
+            return this.loadBalancerNameField != null;
         }
         /// <summary>
         /// Gets and sets the Listeners property.

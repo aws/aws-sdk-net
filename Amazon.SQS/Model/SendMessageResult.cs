@@ -42,8 +42,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "MessageId")]
         public string MessageId
         {
-            get { return this.messageIdField ; }
-            set { this.messageIdField= value; }
+            get { return this.messageIdField; }
+            set { this.messageIdField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if MessageId property is set</returns>
         public bool IsSetMessageId()
         {
-            return  this.messageIdField != null;
+            return this.messageIdField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "MD5OfMessageBody")]
         public string MD5OfMessageBody
         {
-            get { return this.MD5OfMessageBodyField ; }
-            set { this.MD5OfMessageBodyField= value; }
+            get { return this.MD5OfMessageBodyField; }
+            set { this.MD5OfMessageBodyField = value; }
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if MD5OfMessageBody property is set</returns>
         public bool IsSetMD5OfMessageBody()
         {
-            return  this.MD5OfMessageBodyField != null;
+            return this.MD5OfMessageBodyField != null;
         }
 
     }

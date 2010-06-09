@@ -58,8 +58,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "SourceIdentifier")]
         public string SourceIdentifier
         {
-            get { return this.sourceIdentifierField ; }
-            set { this.sourceIdentifierField= value; }
+            get { return this.sourceIdentifierField; }
+            set { this.sourceIdentifierField = value; }
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if SourceIdentifier property is set</returns>
         public bool IsSetSourceIdentifier()
         {
-            return  this.sourceIdentifierField != null;
+            return this.sourceIdentifierField != null;
         }
 
         /// <summary>
@@ -102,8 +102,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "SourceType")]
         public string SourceType
         {
-            get { return this.sourceTypeField ; }
-            set { this.sourceTypeField= value; }
+            get { return this.sourceTypeField; }
+            set { this.sourceTypeField = value; }
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if SourceType property is set</returns>
         public bool IsSetSourceType()
         {
-            return  this.sourceTypeField != null;
+            return this.sourceTypeField != null;
         }
 
         /// <summary>
@@ -140,8 +140,14 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "StartTime")]
         public DateTime StartTime
         {
-            get { return this.startTimeField.GetValueOrDefault() ; }
-            set { this.startTimeField= value; }
+            get { return this.startTimeField.GetValueOrDefault(); }
+            set
+            {
+                this.startTimeField = DateTime.ParseExact(
+                    value.ToString(),
+                    Amazon.Util.AWSSDKUtils.ISO8601DateFormat,
+                    System.Globalization.CultureInfo.InvariantCulture);
+            }
         }
 
         /// <summary>
@@ -162,7 +168,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if StartTime property is set</returns>
         public bool IsSetStartTime()
         {
-            return  this.startTimeField.HasValue;
+            return this.startTimeField.HasValue;
         }
 
         /// <summary>
@@ -173,8 +179,14 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "EndTime")]
         public DateTime EndTime
         {
-            get { return this.endTimeField.GetValueOrDefault() ; }
-            set { this.endTimeField= value; }
+            get { return this.endTimeField.GetValueOrDefault(); }
+            set
+            {
+                this.endTimeField = DateTime.ParseExact(
+                    value.ToString(),
+                    Amazon.Util.AWSSDKUtils.ISO8601DateFormat,
+                    System.Globalization.CultureInfo.InvariantCulture);
+            }
         }
 
         /// <summary>
@@ -195,7 +207,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if EndTime property is set</returns>
         public bool IsSetEndTime()
         {
-            return  this.endTimeField.HasValue;
+            return this.endTimeField.HasValue;
         }
 
         /// <summary>
@@ -205,8 +217,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Duration")]
         public Decimal Duration
         {
-            get { return this.durationField.GetValueOrDefault() ; }
-            set { this.durationField= value; }
+            get { return this.durationField.GetValueOrDefault(); }
+            set { this.durationField = value; }
         }
 
         /// <summary>
@@ -226,7 +238,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Duration property is set</returns>
         public bool IsSetDuration()
         {
-            return  this.durationField.HasValue;
+            return this.durationField.HasValue;
         }
 
         /// <summary>
@@ -238,8 +250,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "MaxRecords")]
         public Decimal MaxRecords
         {
-            get { return this.maxRecordsField.GetValueOrDefault() ; }
-            set { this.maxRecordsField= value; }
+            get { return this.maxRecordsField.GetValueOrDefault(); }
+            set { this.maxRecordsField = value; }
         }
 
         /// <summary>
@@ -261,7 +273,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if MaxRecords property is set</returns>
         public bool IsSetMaxRecords()
         {
-            return  this.maxRecordsField.HasValue;
+            return this.maxRecordsField.HasValue;
         }
 
         /// <summary>
@@ -272,8 +284,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Marker")]
         public string Marker
         {
-            get { return this.markerField ; }
-            set { this.markerField= value; }
+            get { return this.markerField; }
+            set { this.markerField = value; }
         }
 
         /// <summary>
@@ -294,7 +306,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Marker property is set</returns>
         public bool IsSetMarker()
         {
-            return  this.markerField != null;
+            return this.markerField != null;
         }
 
     }

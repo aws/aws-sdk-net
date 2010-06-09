@@ -84,8 +84,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "Jar")]
         public string Jar
         {
-            get { return this.jarField ; }
-            set { this.jarField= value; }
+            get { return this.jarField; }
+            set { this.jarField = value; }
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if Jar property is set</returns>
         public bool IsSetJar()
         {
-            return  this.jarField != null;
+            return this.jarField != null;
         }
 
         /// <summary>
@@ -115,8 +115,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "MainClass")]
         public string MainClass
         {
-            get { return this.mainClassField ; }
-            set { this.mainClassField= value; }
+            get { return this.mainClassField; }
+            set { this.mainClassField = value; }
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if MainClass property is set</returns>
         public bool IsSetMainClass()
         {
-            return  this.mainClassField != null;
+            return this.mainClassField != null;
         }
 
         /// <summary>

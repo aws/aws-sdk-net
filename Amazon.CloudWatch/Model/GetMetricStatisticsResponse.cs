@@ -43,7 +43,7 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.CloudWatch.Model
         [XmlElementAttribute(ElementName = "GetMetricStatisticsResult")]
         public GetMetricStatisticsResult GetMetricStatisticsResult
         {
-            get { return this.getMetricStatisticsResultField ; }
+            get { return this.getMetricStatisticsResultField; }
             set { this.getMetricStatisticsResultField = value; }
         }
 

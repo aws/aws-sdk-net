@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Bucket")]
         public string Bucket
         {
-            get { return this.bucketField ; }
-            set { this.bucketField= value; }
+            get { return this.bucketField; }
+            set { this.bucketField = value; }
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Bucket property is set</returns>
         public bool IsSetBucket()
         {
-            return  this.bucketField != null;
+            return this.bucketField != null;
         }
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Prefix")]
         public string Prefix
         {
-            get { return this.prefixField ; }
-            set { this.prefixField= value; }
+            get { return this.prefixField; }
+            set { this.prefixField = value; }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Prefix property is set</returns>
         public bool IsSetPrefix()
         {
-            return  this.prefixField != null;
+            return this.prefixField != null;
         }
 
     }

@@ -42,8 +42,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
         {
-            get { return this.keyField ; }
-            set { this.keyField= value; }
+            get { return this.keyField; }
+            set { this.keyField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if Key property is set</returns>
         public bool IsSetKey()
         {
-            return  this.keyField != null;
+            return this.keyField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "Value")]
         public string Value
         {
-            get { return this.valueField ; }
-            set { this.valueField= value; }
+            get { return this.valueField; }
+            set { this.valueField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if Value property is set</returns>
         public bool IsSetValue()
         {
-            return  this.valueField != null;
+            return this.valueField != null;
         }
 
     }

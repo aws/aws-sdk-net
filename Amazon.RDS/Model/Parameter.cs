@@ -49,8 +49,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ParameterName")]
         public string ParameterName
         {
-            get { return this.parameterNameField ; }
-            set { this.parameterNameField= value; }
+            get { return this.parameterNameField; }
+            set { this.parameterNameField = value; }
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if ParameterName property is set</returns>
         public bool IsSetParameterName()
         {
-            return  this.parameterNameField != null;
+            return this.parameterNameField != null;
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ParameterValue")]
         public string ParameterValue
         {
-            get { return this.parameterValueField ; }
-            set { this.parameterValueField= value; }
+            get { return this.parameterValueField; }
+            set { this.parameterValueField = value; }
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if ParameterValue property is set</returns>
         public bool IsSetParameterValue()
         {
-            return  this.parameterValueField != null;
+            return this.parameterValueField != null;
         }
 
         /// <summary>
@@ -110,8 +110,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField ; }
-            set { this.descriptionField= value; }
+            get { return this.descriptionField; }
+            set { this.descriptionField = value; }
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Description property is set</returns>
         public bool IsSetDescription()
         {
-            return  this.descriptionField != null;
+            return this.descriptionField != null;
         }
 
         /// <summary>
@@ -143,8 +143,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Source")]
         public string Source
         {
-            get { return this.sourceField ; }
-            set { this.sourceField= value; }
+            get { return this.sourceField; }
+            set { this.sourceField = value; }
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Source property is set</returns>
         public bool IsSetSource()
         {
-            return  this.sourceField != null;
+            return this.sourceField != null;
         }
 
         /// <summary>
@@ -176,8 +176,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ApplyType")]
         public string ApplyType
         {
-            get { return this.applyTypeField ; }
-            set { this.applyTypeField= value; }
+            get { return this.applyTypeField; }
+            set { this.applyTypeField = value; }
         }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if ApplyType property is set</returns>
         public bool IsSetApplyType()
         {
-            return  this.applyTypeField != null;
+            return this.applyTypeField != null;
         }
 
         /// <summary>
@@ -207,8 +207,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DataType")]
         public string DataType
         {
-            get { return this.dataTypeField ; }
-            set { this.dataTypeField= value; }
+            get { return this.dataTypeField; }
+            set { this.dataTypeField = value; }
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if DataType property is set</returns>
         public bool IsSetDataType()
         {
-            return  this.dataTypeField != null;
+            return this.dataTypeField != null;
         }
 
         /// <summary>
@@ -238,8 +238,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "AllowedValues")]
         public string AllowedValues
         {
-            get { return this.allowedValuesField ; }
-            set { this.allowedValuesField= value; }
+            get { return this.allowedValuesField; }
+            set { this.allowedValuesField = value; }
         }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if AllowedValues property is set</returns>
         public bool IsSetAllowedValues()
         {
-            return  this.allowedValuesField != null;
+            return this.allowedValuesField != null;
         }
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "IsModifiable")]
         public bool IsModifiable
         {
-            get { return this.isModifiableField.GetValueOrDefault() ; }
-            set { this.isModifiableField= value; }
+            get { return this.isModifiableField.GetValueOrDefault(); }
+            set { this.isModifiableField = value; }
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if IsModifiable property is set</returns>
         public bool IsSetIsModifiable()
         {
-            return  this.isModifiableField.HasValue;
+            return this.isModifiableField.HasValue;
         }
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ApplyMethod")]
         public string ApplyMethod
         {
-            get { return this.applyMethodField ; }
-            set { this.applyMethodField= value; }
+            get { return this.applyMethodField; }
+            set { this.applyMethodField = value; }
         }
 
         /// <summary>
@@ -323,7 +323,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if ApplyMethod property is set</returns>
         public bool IsSetApplyMethod()
         {
-            return  this.applyMethodField != null;
+            return this.applyMethodField != null;
         }
 
     }

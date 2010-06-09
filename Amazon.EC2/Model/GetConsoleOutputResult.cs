@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ConsoleOutput")]
         public ConsoleOutput ConsoleOutput
         {
-            get { return this.consoleOutputField ; }
+            get { return this.consoleOutputField; }
             set { this.consoleOutputField = value; }
         }
 

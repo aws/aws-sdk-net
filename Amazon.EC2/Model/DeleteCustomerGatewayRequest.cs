@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CustomerGatewayId")]
         public string CustomerGatewayId
         {
-            get { return this.customerGatewayIdField ; }
-            set { this.customerGatewayIdField= value; }
+            get { return this.customerGatewayIdField; }
+            set { this.customerGatewayIdField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if CustomerGatewayId property is set</returns>
         public bool IsSetCustomerGatewayId()
         {
-            return  this.customerGatewayIdField != null;
+            return this.customerGatewayIdField != null;
         }
 
     }

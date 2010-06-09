@@ -44,8 +44,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ImageId")]
         public string ImageId
         {
-            get { return this.imageIdField ; }
-            set { this.imageIdField= value; }
+            get { return this.imageIdField; }
+            set { this.imageIdField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ImageId property is set</returns>
         public bool IsSetImageId()
         {
-            return  this.imageIdField != null;
+            return this.imageIdField != null;
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "DomainMetadataResult")]
         public DomainMetadataResult DomainMetadataResult
         {
-            get { return this.domainMetadataResultField ; }
+            get { return this.domainMetadataResultField; }
             set { this.domainMetadataResultField = value; }
         }
 
@@ -77,7 +77,7 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

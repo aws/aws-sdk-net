@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DhcpOptionsId")]
         public string DhcpOptionsId
         {
-            get { return this.dhcpOptionsIdField ; }
-            set { this.dhcpOptionsIdField= value; }
+            get { return this.dhcpOptionsIdField; }
+            set { this.dhcpOptionsIdField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if DhcpOptionsId property is set</returns>
         public bool IsSetDhcpOptionsId()
         {
-            return  this.dhcpOptionsIdField != null;
+            return this.dhcpOptionsIdField != null;
         }
         /// <summary>
         /// Gets and sets the Configuration property.

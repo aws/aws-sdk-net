@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "DescribeLaunchConfigurationsResult")]
         public DescribeLaunchConfigurationsResult DescribeLaunchConfigurationsResult
         {
-            get { return this.describeLaunchConfigurationsResultField ; }
+            get { return this.describeLaunchConfigurationsResultField; }
             set { this.describeLaunchConfigurationsResultField = value; }
         }
 
@@ -77,7 +77,7 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

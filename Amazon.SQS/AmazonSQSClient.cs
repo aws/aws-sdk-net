@@ -21,17 +21,15 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
-using System.Web;
 using System.Xml;
 using System.Xml.Serialization;
+
 using Amazon.SQS.Model;
 using Attribute = Amazon.SQS.Model.Attribute;
 
@@ -40,7 +38,14 @@ using Amazon.Util;
 namespace Amazon.SQS
 {
     /// <summary>
-    /// AmazonSQSClient is an implementation of AmazonSQS
+    /// AmazonSQSClient is an implementation of AmazonSQS;
+    /// the client allows you to manage your AmazonSQS resources.<br />
+    /// If you want to use the AmazonSQSClient from a Medium Trust
+    /// hosting environment, please create the client with an
+    /// AmazonSQSConfig object whose UseSecureStringForAwsSecretKey
+    /// property is false.
+    /// </summary>
+    /// <remarks>
     /// Amazon Simple Queue Service (Amazon SQS) offers a reliable, highly scalable hosted queue for storing
     /// messages as they travel between computers. By using Amazon SQS, developers can simply move data between
     /// distributed application components performing different tasks, without losing messages or requiring each
@@ -48,13 +53,15 @@ namespace Amazon.SQS
     /// as a web service. Any computer on the Internet can add or read messages without any installed software or
     /// special firewall configurations. Components of applications using Amazon SQS can run independently, and do
     /// not need to be on the same network, developed with the same technologies, or running at the same time.
-    /// </summary>
+    /// </remarks>
+    /// <seealso cref="P:Amazon.SQS.AmazonSQSConfig.UseSecureStringForAwsSecretKey"/>
     public class AmazonSQSClient : AmazonSQS
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
         private AmazonSQSConfig config;
         private bool disposed;
+        private string clearAwsSecretAccessKey;
 
         #region Dispose Pattern Implementation
 
@@ -113,21 +120,31 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Constructs AmazonSQSClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonSQS Configuration object
+        /// AmazonSQS Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="config">The AmazonSQS Configuration Object</param>
         public AmazonSQSClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonSQSConfig config)
         {
-            if (awsSecretAccessKey != null)
+            if (!String.IsNullOrEmpty(awsSecretAccessKey))
             {
-                this.awsSecretAccessKey = new SecureString();
-                foreach (char ch in awsSecretAccessKey.ToCharArray())
+                if (config.UseSecureStringForAwsSecretKey)
                 {
-                    this.awsSecretAccessKey.AppendChar(ch);
+                    this.awsSecretAccessKey = new SecureString();
+                    foreach (char ch in awsSecretAccessKey.ToCharArray())
+                    {
+                        this.awsSecretAccessKey.AppendChar(ch);
+                    }
+                    this.awsSecretAccessKey.MakeReadOnly();
                 }
-                this.awsSecretAccessKey.MakeReadOnly();
+                else
+                {
+                    clearAwsSecretAccessKey = awsSecretAccessKey;
+                }
             }
             this.awsAccessKeyId = awsAccessKeyId;
             this.config = config;
@@ -318,15 +335,18 @@ namespace Amazon.SQS
         private static HttpWebRequest ConfigureWebRequest(int contentLength, string queueUrl, AmazonSQSConfig config)
         {
             HttpWebRequest request = WebRequest.Create(queueUrl) as HttpWebRequest;
-            if (config.IsSetProxyHost())
+            if (request != null)
             {
-                request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                if (config.IsSetProxyHost())
+                {
+                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                }
+                request.UserAgent = config.UserAgent;
+                request.Method = "POST";
+                request.Timeout = 50000;
+                request.ContentType = AWSSDKUtils.UrlEncodedContent;
+                request.ContentLength = contentLength;
             }
-            request.UserAgent = config.UserAgent;
-            request.Method = "POST";
-            request.Timeout = 50000;
-            request.ContentType = AWSSDKUtils.UrlEncodedContent;
-            request.ContentLength = contentLength;
 
             return request;
         }
@@ -338,7 +358,6 @@ namespace Amazon.SQS
         {
             string actionName = parameters["Action"];
             T response = default(T);
-            string responseBody = null;
             string queueUrl = parameters.ContainsKey("QueueUrl") ? parameters["QueueUrl"] : config.ServiceURL;
 
             if (parameters.ContainsKey("QueueUrl"))
@@ -350,13 +369,15 @@ namespace Amazon.SQS
             /* Add required request parameters */
             AddRequiredParameters(parameters, queueUrl);
 
-            string queryString = GetParametersAsString(parameters);
+            string queryString = AWSSDKUtils.GetParametersAsString(parameters);
 
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
             bool shouldRetry = true;
             int retries = 0;
+            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
             do
             {
+                string responseBody = null;
                 HttpWebRequest request = ConfigureWebRequest(requestData.Length, queueUrl, config);
                 /* Submit the request and read response body */
                 try
@@ -365,8 +386,17 @@ namespace Amazon.SQS
                     {
                         requestStream.Write(requestData, 0, requestData.Length);
                     }
+
                     using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
                     {
+                        if (httpResponse == null)
+                        {
+                            throw new WebException(
+                                "The Web Response for a successful request is null!",
+                                WebExceptionStatus.ProtocolError
+                                );
+                        }
+
                         statusCode = httpResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                         {
@@ -392,7 +422,7 @@ namespace Amazon.SQS
                         {
                             // Abort the unsuccessful request
                             request.Abort();
-                            throw new AmazonSQSException(we);
+                            throw we;
                         }
                         statusCode = httpErrorResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpErrorResponse.GetResponseStream(), Encoding.UTF8))
@@ -404,10 +434,11 @@ namespace Amazon.SQS
                         request.Abort();
                     }
 
-                    if (statusCode == HttpStatusCode.InternalServerError || statusCode == HttpStatusCode.ServiceUnavailable)
+                    if (statusCode == HttpStatusCode.InternalServerError ||
+                        statusCode == HttpStatusCode.ServiceUnavailable)
                     {
                         shouldRetry = true;
-                        PauseOnRetry(++retries, config.MaxErrorRetry, statusCode);
+                        PauseOnRetry(++retries, maxRetries, statusCode);
                     }
                     else
                     {
@@ -440,12 +471,13 @@ namespace Amazon.SQS
                             }
                             else
                             {
-                                AmazonSQSException se = ReportAnyErrors(responseBody, statusCode);
-                                throw se;
+                                throw ReportAnyErrors(responseBody, statusCode);
                             }
                         }
                     }
                 }
+                /* Catch other exceptions, attempt to convert to formatted exception,
+                 * else rethrow wrapped exception */
                 catch (Exception)
                 {
                     // Abort the unsuccessful request
@@ -515,7 +547,10 @@ namespace Amazon.SQS
             }
             else
             {
-                throw new AmazonSQSException("Maximum number of retry attempts reached : " + (retries - 1), status);
+                throw new AmazonSQSException(
+                    "Maximum number of retry attempts reached : " + (retries - 1),
+                    status
+                    );
             }
         }
 
@@ -528,135 +563,30 @@ namespace Amazon.SQS
             {
                 throw new AmazonSQSException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
-            parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
-            parameters.Add("Version", config.ServiceVersion);
-            parameters.Add("SignatureVersion", config.SignatureVersion);
-            parameters.Add("Signature", SignParameters(parameters, queueUrl, this.awsSecretAccessKey, config));
-        }
 
-        /**
-         * Convert Dictionary of paremeters to Url encoded query string
-         */
-        private static string GetParametersAsString(IDictionary<string, string> parameters)
-        {
-            StringBuilder data = new StringBuilder(512);
-            foreach (string key in (IEnumerable<string>)parameters.Keys)
-            {
-                string value = parameters[key];
-                if (value != null)
-                {
-                    data.Append(key);
-                    data.Append('=');
-                    data.Append(AWSSDKUtils.UrlEncode(value, false));
-                    data.Append('&');
-                }
-            }
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /**
-         * Computes RFC 2104-compliant HMAC signature for request parameters
-         * Implements AWS Signature, as per following spec:
-         *
-         * If Signature Version is 0, it signs concatenated Action and Timestamp
-         *
-         * If Signature Version is 1, it performs the following:
-         *
-         * Sorts all  parameters (including SignatureVersion and excluding Signature,
-         * the value of which is being created), ignoring case.
-         *
-         * Iterate over the sorted list and append the parameter name (in original case)
-         * and then its value. It will not URL-encode the parameter values before
-         * constructing this string. There are no separators.
-         *
-         * If Signature Version is 2, string to sign is based on following:
-         *
-         *    1. The HTTP Request Method followed by an ASCII newline (%0A)
-         *    2. The HTTP Host header in the form of lowercase host, followed by an ASCII newline.
-         *    3. The URL encoded HTTP absolute path component of the URI
-         *       (up to but not including the query string parameters);
-         *       if this is empty use a forward '/'. This parameter is followed by an ASCII newline.
-         *    4. The concatenation of all query string components (names and values)
-         *       as UTF-8 characters which are URL encoded as per RFC 3986
-         *       (hex characters MUST be uppercase), sorted using lexicographic byte ordering.
-         *       Parameter names are separated from their values by the '=' character
-         *       (ASCII character 61), even if the value is empty.
-         *       Pairs of parameter and values are separated by the ampersand character (ASCII code 38).
-         *
-         */
-        private static string SignParameters(IDictionary<string, string> parameters, string queueUrl, SecureString key, AmazonSQSConfig config)
-        {
-            string signatureVersion = parameters["SignatureVersion"];
-
-            KeyedHashAlgorithm algorithm = new HMACSHA1();
-
-            string stringToSign = null;
-            if ("2".Equals(signatureVersion))
-            {
-                string signatureMethod = config.SignatureMethod;
-                algorithm = KeyedHashAlgorithm.Create(signatureMethod.ToUpper());
-                parameters.Add("SignatureMethod", signatureMethod);
-                stringToSign = CalculateStringToSignV2(parameters, queueUrl);
-            }
-            else
+            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
+            parameters["SignatureVersion"] = config.SignatureVersion;
+            parameters["SignatureMethod"] = config.SignatureMethod;
+            parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
+            parameters["Version"] = config.ServiceVersion;
+            if (!config.SignatureVersion.Equals("2"))
             {
                 throw new AmazonSQSException("Invalid Signature Version specified");
             }
+            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, queueUrl);
 
-            return Sign(stringToSign, key, algorithm);
-        }
+            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
+            string auth;
 
-        private static string CalculateStringToSignV2(IDictionary<string, string> parameters, string queueUrl)
-        {
-            StringBuilder data = new StringBuilder(512);
-            IDictionary<string, string> sorted =
-                  new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
-            data.Append("POST");
-            data.Append("\n");
-            Uri endpoint = new Uri(queueUrl);
-
-            data.Append(endpoint.Host);
-            data.Append("\n");
-            string path = endpoint.AbsolutePath;
-            if (String.IsNullOrEmpty(path))
+            if (config.UseSecureStringForAwsSecretKey)
             {
-                path = "/";
+                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
             }
-
-            data.Append(AWSSDKUtils.UrlEncode(path, true));
-            data.Append("\n");
-            foreach (KeyValuePair<string, string> pair in sorted)
+            else
             {
-                if (pair.Value != null)
-                {
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-                    data.Append("=");
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-                    data.Append("&");
-                }
+                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
             }
-
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /// <summary>
-        /// Computes RFC 2104-compliant HMAC signature
-        /// </summary>
-        /// <param name="data">The data to be signed</param>
-        /// <param name="key">The secret signing key</param>
-        /// <param name="algorithm">The algorithm to sign the data with</param>
-        /// <returns>A string representing the HMAC signature</returns>
-        private static string Sign(string data, System.Security.SecureString key, KeyedHashAlgorithm algorithm)
-        {
-            if (key == null)
-            {
-                throw new AmazonSQSException("The AWS Secret Access Key specified is NULL");
-            }
-
-            return AWSSDKUtils.HMACSign(data, key, algorithm);
+            parameters["Signature"] = auth;
         }
 
         /**
@@ -665,14 +595,14 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertCreateQueue(CreateQueueRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateQueue");
+            parameters["Action"] = "CreateQueue";
             if (request.IsSetQueueName())
             {
-                parameters.Add("QueueName", request.QueueName);
+                parameters["QueueName"] = request.QueueName;
             }
             if (request.IsSetDefaultVisibilityTimeout())
             {
-                parameters.Add("DefaultVisibilityTimeout", (request.DefaultVisibilityTimeout + ""));
+                parameters["DefaultVisibilityTimeout"] = request.DefaultVisibilityTimeout.ToString();
             }
             List<Attribute> createQueueRequestAttributeList = request.Attribute;
             int createQueueRequestAttributeListIndex = 1;
@@ -680,11 +610,11 @@ namespace Amazon.SQS
             {
                 if (createQueueRequestAttribute.IsSetName())
                 {
-                    parameters.Add("Attribute" + "."  + createQueueRequestAttributeListIndex + "." + "Name", createQueueRequestAttribute.Name);
+                    parameters[String.Concat("Attribute", ".", createQueueRequestAttributeListIndex, ".", "Name")] = createQueueRequestAttribute.Name;
                 }
                 if (createQueueRequestAttribute.IsSetValue())
                 {
-                    parameters.Add("Attribute" + "."  + createQueueRequestAttributeListIndex + "." + "Value", createQueueRequestAttribute.Value);
+                    parameters[String.Concat("Attribute", ".", createQueueRequestAttributeListIndex, ".", "Value")] = createQueueRequestAttribute.Value;
                 }
 
                 createQueueRequestAttributeListIndex++;
@@ -699,10 +629,10 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertListQueues(ListQueuesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ListQueues");
+            parameters["Action"] = "ListQueues";
             if (request.IsSetQueueNamePrefix())
             {
-                parameters.Add("QueueNamePrefix", request.QueueNamePrefix);
+                parameters["QueueNamePrefix"] = request.QueueNamePrefix;
             }
             List<Attribute> listQueuesRequestAttributeList = request.Attribute;
             int listQueuesRequestAttributeListIndex = 1;
@@ -710,11 +640,11 @@ namespace Amazon.SQS
             {
                 if (listQueuesRequestAttribute.IsSetName())
                 {
-                    parameters.Add("Attribute" + "."  + listQueuesRequestAttributeListIndex + "." + "Name", listQueuesRequestAttribute.Name);
+                    parameters[String.Concat("Attribute", ".", listQueuesRequestAttributeListIndex, ".", "Name")] = listQueuesRequestAttribute.Name;
                 }
                 if (listQueuesRequestAttribute.IsSetValue())
                 {
-                    parameters.Add("Attribute" + "."  + listQueuesRequestAttributeListIndex + "." + "Value", listQueuesRequestAttribute.Value);
+                    parameters[String.Concat("Attribute", ".", listQueuesRequestAttributeListIndex, ".", "Value")] = listQueuesRequestAttribute.Value;
                 }
 
                 listQueuesRequestAttributeListIndex++;
@@ -729,18 +659,18 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertChangeMessageVisibility(ChangeMessageVisibilityRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ChangeMessageVisibility");
+            parameters["Action"] = "ChangeMessageVisibility";
             if (request.IsSetQueueUrl())
             {
-                parameters.Add("QueueUrl", request.QueueUrl);
+                parameters["QueueUrl"] = request.QueueUrl;
             }
             if (request.IsSetReceiptHandle())
             {
-                parameters.Add("ReceiptHandle", request.ReceiptHandle);
+                parameters["ReceiptHandle"] = request.ReceiptHandle;
             }
             if (request.IsSetVisibilityTimeout())
             {
-                parameters.Add("VisibilityTimeout", (request.VisibilityTimeout + ""));
+                parameters["VisibilityTimeout"] = request.VisibilityTimeout.ToString();
             }
             List<Attribute> changeMessageVisibilityRequestAttributeList = request.Attribute;
             int changeMessageVisibilityRequestAttributeListIndex = 1;
@@ -748,11 +678,11 @@ namespace Amazon.SQS
             {
                 if (changeMessageVisibilityRequestAttribute.IsSetName())
                 {
-                    parameters.Add("Attribute" + "."  + changeMessageVisibilityRequestAttributeListIndex + "." + "Name", changeMessageVisibilityRequestAttribute.Name);
+                    parameters[String.Concat("Attribute", ".", changeMessageVisibilityRequestAttributeListIndex, ".", "Name")] = changeMessageVisibilityRequestAttribute.Name;
                 }
                 if (changeMessageVisibilityRequestAttribute.IsSetValue())
                 {
-                    parameters.Add("Attribute" + "."  + changeMessageVisibilityRequestAttributeListIndex + "." + "Value", changeMessageVisibilityRequestAttribute.Value);
+                    parameters[String.Concat("Attribute", ".", changeMessageVisibilityRequestAttributeListIndex, ".", "Value")] = changeMessageVisibilityRequestAttribute.Value;
                 }
 
                 changeMessageVisibilityRequestAttributeListIndex++;
@@ -767,14 +697,14 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertDeleteMessage(DeleteMessageRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteMessage");
+            parameters["Action"] = "DeleteMessage";
             if (request.IsSetQueueUrl())
             {
-                parameters.Add("QueueUrl", request.QueueUrl);
+                parameters["QueueUrl"] = request.QueueUrl;
             }
             if (request.IsSetReceiptHandle())
             {
-                parameters.Add("ReceiptHandle", request.ReceiptHandle);
+                parameters["ReceiptHandle"] = request.ReceiptHandle;
             }
             List<Attribute> deleteMessageRequestAttributeList = request.Attribute;
             int deleteMessageRequestAttributeListIndex = 1;
@@ -782,11 +712,11 @@ namespace Amazon.SQS
             {
                 if (deleteMessageRequestAttribute.IsSetName())
                 {
-                    parameters.Add("Attribute" + "."  + deleteMessageRequestAttributeListIndex + "." + "Name", deleteMessageRequestAttribute.Name);
+                    parameters[String.Concat("Attribute", ".", deleteMessageRequestAttributeListIndex, ".", "Name")] = deleteMessageRequestAttribute.Name;
                 }
                 if (deleteMessageRequestAttribute.IsSetValue())
                 {
-                    parameters.Add("Attribute" + "."  + deleteMessageRequestAttributeListIndex + "." + "Value", deleteMessageRequestAttribute.Value);
+                    parameters[String.Concat("Attribute", ".", deleteMessageRequestAttributeListIndex, ".", "Value")] = deleteMessageRequestAttribute.Value;
                 }
 
                 deleteMessageRequestAttributeListIndex++;
@@ -801,10 +731,10 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertDeleteQueue(DeleteQueueRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteQueue");
+            parameters["Action"] = "DeleteQueue";
             if (request.IsSetQueueUrl())
             {
-                parameters.Add("QueueUrl", request.QueueUrl);
+                parameters["QueueUrl"] = request.QueueUrl;
             }
             List<Attribute> deleteQueueRequestAttributeList = request.Attribute;
             int deleteQueueRequestAttributeListIndex = 1;
@@ -812,11 +742,11 @@ namespace Amazon.SQS
             {
                 if (deleteQueueRequestAttribute.IsSetName())
                 {
-                    parameters.Add("Attribute" + "."  + deleteQueueRequestAttributeListIndex + "." + "Name", deleteQueueRequestAttribute.Name);
+                    parameters[String.Concat("Attribute", ".", deleteQueueRequestAttributeListIndex, ".", "Name")] = deleteQueueRequestAttribute.Name;
                 }
                 if (deleteQueueRequestAttribute.IsSetValue())
                 {
-                    parameters.Add("Attribute" + "."  + deleteQueueRequestAttributeListIndex + "." + "Value", deleteQueueRequestAttribute.Value);
+                    parameters[String.Concat("Attribute", ".", deleteQueueRequestAttributeListIndex, ".", "Value")] = deleteQueueRequestAttribute.Value;
                 }
 
                 deleteQueueRequestAttributeListIndex++;
@@ -831,16 +761,16 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertGetQueueAttributes(GetQueueAttributesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "GetQueueAttributes");
+            parameters["Action"] = "GetQueueAttributes";
             if (request.IsSetQueueUrl())
             {
-                parameters.Add("QueueUrl", request.QueueUrl);
+                parameters["QueueUrl"] = request.QueueUrl;
             }
-            List<string> getQueueAttributesRequestAttributeNameList  =  request.AttributeName;
+            List<string> getQueueAttributesRequestAttributeNameList = request.AttributeName;
             int getQueueAttributesRequestAttributeNameListIndex = 1;
-            foreach  (string getQueueAttributesRequestAttributeName in getQueueAttributesRequestAttributeNameList)
+            foreach (string getQueueAttributesRequestAttributeName in getQueueAttributesRequestAttributeNameList)
             {
-                parameters.Add("AttributeName" + "."  + getQueueAttributesRequestAttributeNameListIndex, getQueueAttributesRequestAttributeName);
+                parameters[String.Concat("AttributeName", ".", getQueueAttributesRequestAttributeNameListIndex)] = getQueueAttributesRequestAttributeName;
                 getQueueAttributesRequestAttributeNameListIndex++;
             }
 
@@ -853,24 +783,24 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertReceiveMessage(ReceiveMessageRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ReceiveMessage");
+            parameters["Action"] = "ReceiveMessage";
             if (request.IsSetQueueUrl())
             {
-                parameters.Add("QueueUrl", request.QueueUrl);
+                parameters["QueueUrl"] = request.QueueUrl;
             }
             if (request.IsSetMaxNumberOfMessages())
             {
-                parameters.Add("MaxNumberOfMessages", (request.MaxNumberOfMessages + ""));
+                parameters["MaxNumberOfMessages"] = request.MaxNumberOfMessages.ToString();
             }
             if (request.IsSetVisibilityTimeout())
             {
-                parameters.Add("VisibilityTimeout", (request.VisibilityTimeout + ""));
+                parameters["VisibilityTimeout"] = request.VisibilityTimeout.ToString();
             }
-            List<string> receiveMessageRequestAttributeNameList  =  request.AttributeName;
+            List<string> receiveMessageRequestAttributeNameList = request.AttributeName;
             int receiveMessageRequestAttributeNameListIndex = 1;
-            foreach  (string receiveMessageRequestAttributeName in receiveMessageRequestAttributeNameList)
+            foreach (string receiveMessageRequestAttributeName in receiveMessageRequestAttributeNameList)
             {
-                parameters.Add("AttributeName" + "."  + receiveMessageRequestAttributeNameListIndex, receiveMessageRequestAttributeName);
+                parameters[String.Concat("AttributeName", ".", receiveMessageRequestAttributeNameListIndex)] = receiveMessageRequestAttributeName;
                 receiveMessageRequestAttributeNameListIndex++;
             }
 
@@ -883,14 +813,14 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertSendMessage(SendMessageRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "SendMessage");
+            parameters["Action"] = "SendMessage";
             if (request.IsSetQueueUrl())
             {
-                parameters.Add("QueueUrl", request.QueueUrl);
+                parameters["QueueUrl"] = request.QueueUrl;
             }
             if (request.IsSetMessageBody())
             {
-                parameters.Add("MessageBody", request.MessageBody);
+                parameters["MessageBody"] = request.MessageBody;
             }
             List<Attribute> sendMessageRequestAttributeList = request.Attribute;
             int sendMessageRequestAttributeListIndex = 1;
@@ -898,11 +828,11 @@ namespace Amazon.SQS
             {
                 if (sendMessageRequestAttribute.IsSetName())
                 {
-                    parameters.Add("Attribute" + "."  + sendMessageRequestAttributeListIndex + "." + "Name", sendMessageRequestAttribute.Name);
+                    parameters[String.Concat("Attribute", ".", sendMessageRequestAttributeListIndex, ".", "Name")] = sendMessageRequestAttribute.Name;
                 }
                 if (sendMessageRequestAttribute.IsSetValue())
                 {
-                    parameters.Add("Attribute" + "."  + sendMessageRequestAttributeListIndex + "." + "Value", sendMessageRequestAttribute.Value);
+                    parameters[String.Concat("Attribute", ".", sendMessageRequestAttributeListIndex, ".", "Value")] = sendMessageRequestAttribute.Value;
                 }
 
                 sendMessageRequestAttributeListIndex++;
@@ -917,10 +847,10 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertSetQueueAttributes(SetQueueAttributesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "SetQueueAttributes");
+            parameters["Action"] = "SetQueueAttributes";
             if (request.IsSetQueueUrl())
             {
-                parameters.Add("QueueUrl", request.QueueUrl);
+                parameters["QueueUrl"] = request.QueueUrl;
             }
             List<Attribute> setQueueAttributesRequestAttributeList = request.Attribute;
             int setQueueAttributesRequestAttributeListIndex = 1;
@@ -928,11 +858,11 @@ namespace Amazon.SQS
             {
                 if (setQueueAttributesRequestAttribute.IsSetName())
                 {
-                    parameters.Add("Attribute" + "."  + setQueueAttributesRequestAttributeListIndex + "." + "Name", setQueueAttributesRequestAttribute.Name);
+                    parameters[String.Concat("Attribute", ".", setQueueAttributesRequestAttributeListIndex, ".", "Name")] = setQueueAttributesRequestAttribute.Name;
                 }
                 if (setQueueAttributesRequestAttribute.IsSetValue())
                 {
-                    parameters.Add("Attribute" + "."  + setQueueAttributesRequestAttributeListIndex + "." + "Value", setQueueAttributesRequestAttribute.Value);
+                    parameters[String.Concat("Attribute", ".", setQueueAttributesRequestAttributeListIndex, ".", "Value")] = setQueueAttributesRequestAttribute.Value;
                 }
 
                 setQueueAttributesRequestAttributeListIndex++;
@@ -947,27 +877,27 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertAddPermission(AddPermissionRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "AddPermission");
+            parameters["Action"] = "AddPermission";
             if (request.IsSetQueueUrl())
             {
-                parameters.Add("QueueUrl", request.QueueUrl);
+                parameters["QueueUrl"] = request.QueueUrl;
             }
             if (request.IsSetLabel())
             {
-                parameters.Add("Label", request.Label);
+                parameters["Label"] = request.Label;
             }
-            List<string> addPermissionRequestAWSAccountIdList  =  request.AWSAccountId;
+            List<string> addPermissionRequestAWSAccountIdList = request.AWSAccountId;
             int addPermissionRequestAWSAccountIdListIndex = 1;
-            foreach  (string addPermissionRequestAWSAccountId in addPermissionRequestAWSAccountIdList)
+            foreach (string addPermissionRequestAWSAccountId in addPermissionRequestAWSAccountIdList)
             {
-                parameters.Add("AWSAccountId" + "."  + addPermissionRequestAWSAccountIdListIndex, addPermissionRequestAWSAccountId);
+                parameters[String.Concat("AWSAccountId", ".", addPermissionRequestAWSAccountIdListIndex)] = addPermissionRequestAWSAccountId;
                 addPermissionRequestAWSAccountIdListIndex++;
             }
-            List<string> addPermissionRequestActionNameList  =  request.ActionName;
+            List<string> addPermissionRequestActionNameList = request.ActionName;
             int addPermissionRequestActionNameListIndex = 1;
-            foreach  (string addPermissionRequestActionName in addPermissionRequestActionNameList)
+            foreach (string addPermissionRequestActionName in addPermissionRequestActionNameList)
             {
-                parameters.Add("ActionName" + "."  + addPermissionRequestActionNameListIndex, addPermissionRequestActionName);
+                parameters[String.Concat("ActionName", ".", addPermissionRequestActionNameListIndex)] = addPermissionRequestActionName;
                 addPermissionRequestActionNameListIndex++;
             }
 
@@ -980,14 +910,14 @@ namespace Amazon.SQS
         private static IDictionary<string, string> ConvertRemovePermission(RemovePermissionRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RemovePermission");
+            parameters["Action"] = "RemovePermission";
             if (request.IsSetQueueUrl())
             {
-                parameters.Add("QueueUrl", request.QueueUrl);
+                parameters["QueueUrl"] = request.QueueUrl;
             }
             if (request.IsSetLabel())
             {
-                parameters.Add("Label", request.Label);
+                parameters["Label"] = request.Label;
             }
 
             return parameters;

@@ -47,8 +47,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "CreatedAfter")]
         public string CreatedAfter
         {
-            get { return this.createdAfterField ; }
-            set { this.createdAfterField= value; }
+            get { return this.createdAfterField; }
+            set { this.createdAfterField = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if CreatedAfter property is set</returns>
         public bool IsSetCreatedAfter()
         {
-            return  this.createdAfterField != null;
+            return this.createdAfterField != null;
         }
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "CreatedBefore")]
         public string CreatedBefore
         {
-            get { return this.createdBeforeField ; }
-            set { this.createdBeforeField= value; }
+            get { return this.createdBeforeField; }
+            set { this.createdBeforeField = value; }
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if CreatedBefore property is set</returns>
         public bool IsSetCreatedBefore()
         {
-            return  this.createdBeforeField != null;
+            return this.createdBeforeField != null;
         }
 
         /// <summary>

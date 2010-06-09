@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "DBSnapshot")]
         public DBSnapshot DBSnapshot
         {
-            get { return this.DBSnapshotField ; }
+            get { return this.DBSnapshotField; }
             set { this.DBSnapshotField = value; }
         }
 

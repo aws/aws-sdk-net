@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "CreateDBSecurityGroupResult")]
         public CreateDBSecurityGroupResult CreateDBSecurityGroupResult
         {
-            get { return this.createDBSecurityGroupResultField ; }
+            get { return this.createDBSecurityGroupResultField; }
             set { this.createDBSecurityGroupResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

@@ -36,16 +36,16 @@ namespace Amazon.S3.Model
     /// For more information about S3 Objects refer:
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/UsingObjects.html"/>
     /// </summary>
-	public class S3Object
+    public class S3Object
     {
         #region Private Members
 
         private string key;
-		private DateTime? lastModified;
-		private string eTag;
-		private long size;
-		private Owner owner;
-		private string storageClass;
+        private DateTime? lastModified;
+        private string eTag;
+        private long size;
+        private Owner owner;
+        private string storageClass;
 
         #endregion
 
@@ -79,21 +79,21 @@ namespace Amazon.S3.Model
         #region Key
 
         /// <summary>
-		/// Gets and sets the Key property.
-		/// </summary>
-		[XmlElementAttribute(ElementName = "Key")]
-		public string Key
-		{
-			get { return this.key; }
-			set { this.key = value; }
-		}
+        /// Gets and sets the Key property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Key")]
+        public string Key
+        {
+            get { return this.key; }
+            set { this.key = value; }
+        }
 
-		/// <summary>
-		/// Checks if Key property is set.
-		/// </summary>
-		/// <returns>true if Key property is set.</returns>
-		internal bool IsSetKey()
-		{
+        /// <summary>
+        /// Checks if Key property is set.
+        /// </summary>
+        /// <returns>true if Key property is set.</returns>
+        internal bool IsSetKey()
+        {
             return !System.String.IsNullOrEmpty(this.key);
         }
 
@@ -102,13 +102,13 @@ namespace Amazon.S3.Model
         #region LastModified
 
         /// <summary>
-		/// Gets and sets the LastModified property.
+        /// Gets and sets the LastModified property.
         /// Date retrieved from S3 is in ISO8601 format.
         /// GMT formatted date is passed back to the user.
-		/// </summary>
-		[XmlElementAttribute(ElementName = "LastModified")]
-		public string LastModified
-		{
+        /// </summary>
+        [XmlElementAttribute(ElementName = "LastModified")]
+        public string LastModified
+        {
             get
             {
                 return this.lastModified.GetValueOrDefault().ToString(
@@ -123,15 +123,15 @@ namespace Amazon.S3.Model
                     CultureInfo.InvariantCulture
                     );
             }
-		}
+        }
 
-		/// <summary>
-		/// Checks if LastModified property is set.
-		/// </summary>
-		/// <returns>true if LastModified property is set.</returns>
-		internal bool IsSetLastModified()
-		{
-			return this.lastModified.HasValue;
+        /// <summary>
+        /// Checks if LastModified property is set.
+        /// </summary>
+        /// <returns>true if LastModified property is set.</returns>
+        internal bool IsSetLastModified()
+        {
+            return this.lastModified.HasValue;
         }
 
         #endregion
@@ -139,21 +139,21 @@ namespace Amazon.S3.Model
         #region ETag
 
         /// <summary>
-		/// Gets and sets the ETag property.
-		/// </summary>
-		[XmlElementAttribute(ElementName = "ETag")]
-		public string ETag
-		{
-			get { return this.eTag; }
-			set { this.eTag = value; }
-		}
+        /// Gets and sets the ETag property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ETag")]
+        public string ETag
+        {
+            get { return this.eTag; }
+            set { this.eTag = value; }
+        }
 
-		/// <summary>
-		/// Checks if ETag property is set.
-		/// </summary>
-		/// <returns>true if ETag property is set.</returns>
-		internal bool IsSetETag()
-		{
+        /// <summary>
+        /// Checks if ETag property is set.
+        /// </summary>
+        /// <returns>true if ETag property is set.</returns>
+        internal bool IsSetETag()
+        {
             return !System.String.IsNullOrEmpty(this.eTag);
         }
 
@@ -162,36 +162,36 @@ namespace Amazon.S3.Model
         #region Size
 
         /// <summary>
-		/// Gets and sets the Size property.
-		/// </summary>
-		[XmlElementAttribute(ElementName = "Size")]
-		public long Size
-		{
-			get { return this.size; }
-			set { this.size = value; }
-		}
+        /// Gets and sets the Size property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Size")]
+        public long Size
+        {
+            get { return this.size; }
+            set { this.size = value; }
+        }
 
         #endregion
 
         #region Owner
 
         /// <summary>
-		/// Gets and sets the Owner property.
-		/// </summary>
-		[XmlElementAttribute(ElementName = "Owner")]
-		public Owner Owner
-		{
-			get { return this.owner; }
-			set { this.owner = value; }
-		}
+        /// Gets and sets the Owner property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Owner")]
+        public Owner Owner
+        {
+            get { return this.owner; }
+            set { this.owner = value; }
+        }
 
-		/// <summary>
-		/// Checks if Owner property is set.
-		/// </summary>
-		/// <returns>true if Owner property is set.</returns>
-		internal bool IsSetOwner()
-		{
-			return this.owner != null;
+        /// <summary>
+        /// Checks if Owner property is set.
+        /// </summary>
+        /// <returns>true if Owner property is set.</returns>
+        internal bool IsSetOwner()
+        {
+            return this.owner != null;
         }
 
         #endregion
@@ -199,21 +199,21 @@ namespace Amazon.S3.Model
         #region StorageClass
 
         /// <summary>
-		/// Gets and sets the StorageClass property.
-		/// </summary>
-		[XmlElementAttribute(ElementName = "StorageClass")]
-		public string StorageClass
-		{
-			get { return this.storageClass; }
-			set { this.storageClass = value; }
-		}
+        /// Gets and sets the StorageClass property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "StorageClass")]
+        public string StorageClass
+        {
+            get { return this.storageClass; }
+            set { this.storageClass = value; }
+        }
 
-		/// <summary>
-		/// Checks if StorageClass property is set.
-		/// </summary>
-		/// <returns>true if StorageClass property is set.</returns>
-		internal bool IsSetStorageClass()
-		{
+        /// <summary>
+        /// Checks if StorageClass property is set.
+        /// </summary>
+        /// <returns>true if StorageClass property is set.</returns>
+        internal bool IsSetStorageClass()
+        {
             return !System.String.IsNullOrEmpty(this.storageClass);
         }
 

@@ -47,8 +47,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ImageId")]
         public string ImageId
         {
-            get { return this.imageIdField ; }
-            set { this.imageIdField= value; }
+            get { return this.imageIdField; }
+            set { this.imageIdField = value; }
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ImageId property is set</returns>
         public bool IsSetImageId()
         {
-            return  this.imageIdField != null;
+            return this.imageIdField != null;
         }
         /// <summary>
         /// Gets and sets the LaunchPermission property.
@@ -159,8 +159,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "KernelId")]
         public string KernelId
         {
-            get { return this.kernelIdField ; }
-            set { this.kernelIdField= value; }
+            get { return this.kernelIdField; }
+            set { this.kernelIdField = value; }
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if KernelId property is set</returns>
         public bool IsSetKernelId()
         {
-            return  this.kernelIdField != null;
+            return this.kernelIdField != null;
         }
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "RamdiskId")]
         public string RamdiskId
         {
-            get { return this.ramdiskIdField ; }
-            set { this.ramdiskIdField= value; }
+            get { return this.ramdiskIdField; }
+            set { this.ramdiskIdField = value; }
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if RamdiskId property is set</returns>
         public bool IsSetRamdiskId()
         {
-            return  this.ramdiskIdField != null;
+            return this.ramdiskIdField != null;
         }
 
         /// <summary>
@@ -220,8 +220,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField ; }
-            set { this.descriptionField= value; }
+            get { return this.descriptionField; }
+            set { this.descriptionField = value; }
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Description property is set</returns>
         public bool IsSetDescription()
         {
-            return  this.descriptionField != null;
+            return this.descriptionField != null;
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
         public BlockDeviceMapping BlockDeviceMapping
         {
-            get { return this.blockDeviceMappingField ; }
+            get { return this.blockDeviceMappingField; }
             set { this.blockDeviceMappingField = value; }
         }
 

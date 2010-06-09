@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SnapshotAttribute")]
         public SnapshotAttribute SnapshotAttribute
         {
-            get { return this.snapshotAttributeField ; }
+            get { return this.snapshotAttributeField; }
             set { this.snapshotAttributeField = value; }
         }
 

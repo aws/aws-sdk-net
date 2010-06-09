@@ -43,7 +43,7 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "GetQueueAttributesResult")]
         public GetQueueAttributesResult GetQueueAttributesResult
         {
-            get { return this.getQueueAttributesResultField ; }
+            get { return this.getQueueAttributesResultField; }
             set { this.getQueueAttributesResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

@@ -44,8 +44,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "State")]
         public string State
         {
-            get { return this.stateField ; }
-            set { this.stateField= value; }
+            get { return this.stateField; }
+            set { this.stateField = value; }
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if State property is set</returns>
         public bool IsSetState()
         {
-            return  this.stateField != null;
+            return this.stateField != null;
         }
 
         /// <summary>
@@ -109,8 +109,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "ReasonCode")]
         public string ReasonCode
         {
-            get { return this.reasonCodeField ; }
-            set { this.reasonCodeField= value; }
+            get { return this.reasonCodeField; }
+            set { this.reasonCodeField = value; }
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if ReasonCode property is set</returns>
         public bool IsSetReasonCode()
         {
-            return  this.reasonCodeField != null;
+            return this.reasonCodeField != null;
         }
 
         /// <summary>
@@ -147,8 +147,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField ; }
-            set { this.descriptionField= value; }
+            get { return this.descriptionField; }
+            set { this.descriptionField = value; }
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if Description property is set</returns>
         public bool IsSetDescription()
         {
-            return  this.descriptionField != null;
+            return this.descriptionField != null;
         }
 
     }

@@ -52,8 +52,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
         {
-            get { return this.groupNameField ; }
-            set { this.groupNameField= value; }
+            get { return this.groupNameField; }
+            set { this.groupNameField = value; }
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if GroupName property is set</returns>
         public bool IsSetGroupName()
         {
-            return  this.groupNameField != null;
+            return this.groupNameField != null;
         }
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "GroupDescription")]
         public string GroupDescription
         {
-            get { return this.groupDescriptionField ; }
-            set { this.groupDescriptionField= value; }
+            get { return this.groupDescriptionField; }
+            set { this.groupDescriptionField = value; }
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if GroupDescription property is set</returns>
         public bool IsSetGroupDescription()
         {
-            return  this.groupDescriptionField != null;
+            return this.groupDescriptionField != null;
         }
 
     }

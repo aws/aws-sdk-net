@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "BundleTask")]
         public BundleTask BundleTask
         {
-            get { return this.bundleTaskField ; }
+            get { return this.bundleTaskField; }
             set { this.bundleTaskField = value; }
         }
 

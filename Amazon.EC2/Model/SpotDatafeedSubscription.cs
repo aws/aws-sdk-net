@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
         {
-            get { return this.ownerIdField ; }
-            set { this.ownerIdField= value; }
+            get { return this.ownerIdField; }
+            set { this.ownerIdField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if OwnerId property is set</returns>
         public bool IsSetOwnerId()
         {
-            return  this.ownerIdField != null;
+            return this.ownerIdField != null;
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Bucket")]
         public string Bucket
         {
-            get { return this.bucketField ; }
-            set { this.bucketField= value; }
+            get { return this.bucketField; }
+            set { this.bucketField = value; }
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Bucket property is set</returns>
         public bool IsSetBucket()
         {
-            return  this.bucketField != null;
+            return this.bucketField != null;
         }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Prefix")]
         public string Prefix
         {
-            get { return this.prefixField ; }
-            set { this.prefixField= value; }
+            get { return this.prefixField; }
+            set { this.prefixField = value; }
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Prefix property is set</returns>
         public bool IsSetPrefix()
         {
-            return  this.prefixField != null;
+            return this.prefixField != null;
         }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "State")]
         public string State
         {
-            get { return this.stateField ; }
-            set { this.stateField= value; }
+            get { return this.stateField; }
+            set { this.stateField = value; }
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if State property is set</returns>
         public bool IsSetState()
         {
-            return  this.stateField != null;
+            return this.stateField != null;
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Fault")]
         public SpotInstanceStateFault Fault
         {
-            get { return this.faultField ; }
+            get { return this.faultField; }
             set { this.faultField = value; }
         }
 

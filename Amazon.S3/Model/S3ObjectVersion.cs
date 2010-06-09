@@ -35,7 +35,7 @@ namespace Amazon.S3.Model
     /// that also has a VersionId, whether this is the Latest version of the object 
     /// and if its a DeleteMarker or not.
     /// </summary>
-	public class S3ObjectVersion : S3Object
+    public class S3ObjectVersion : S3Object
     {
         #region Private Members
 
@@ -78,14 +78,14 @@ namespace Amazon.S3.Model
         #region VersionId
 
         /// <summary>
-		/// Gets and sets the VersionId property.
-		/// </summary>
-		[XmlElementAttribute(ElementName = "VersionId")]
-		public string VersionId
-		{
-			get { return this.versionId; }
-			set { this.versionId = value; }
-		}
+        /// Gets and sets the VersionId property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "VersionId")]
+        public string VersionId
+        {
+            get { return this.versionId; }
+            set { this.versionId = value; }
+        }
 
         #endregion
 

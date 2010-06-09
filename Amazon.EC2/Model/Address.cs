@@ -48,8 +48,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "PublicIp")]
         public string PublicIp
         {
-            get { return this.publicIpField ; }
-            set { this.publicIpField= value; }
+            get { return this.publicIpField; }
+            set { this.publicIpField = value; }
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if PublicIp property is set</returns>
         public bool IsSetPublicIp()
         {
-            return  this.publicIpField != null;
+            return this.publicIpField != null;
         }
 
     }

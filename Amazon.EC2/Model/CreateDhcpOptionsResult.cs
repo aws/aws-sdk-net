@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DhcpOptions")]
         public DhcpOptions DhcpOptions
         {
-            get { return this.dhcpOptionsField ; }
+            get { return this.dhcpOptionsField; }
             set { this.dhcpOptionsField = value; }
         }
 

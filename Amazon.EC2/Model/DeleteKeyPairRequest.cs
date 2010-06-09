@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "KeyName")]
         public string KeyName
         {
-            get { return this.keyNameField ; }
-            set { this.keyNameField= value; }
+            get { return this.keyNameField; }
+            set { this.keyNameField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if KeyName property is set</returns>
         public bool IsSetKeyName()
         {
-            return  this.keyNameField != null;
+            return this.keyNameField != null;
         }
 
     }

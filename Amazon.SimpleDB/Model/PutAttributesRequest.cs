@@ -65,8 +65,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "DomainName")]
         public string DomainName
         {
-            get { return this.domainNameField ; }
-            set { this.domainNameField= value; }
+            get { return this.domainNameField; }
+            set { this.domainNameField = value; }
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if DomainName property is set</returns>
         public bool IsSetDomainName()
         {
-            return  this.domainNameField != null;
+            return this.domainNameField != null;
         }
 
         /// <summary>
@@ -96,8 +96,8 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "ItemName")]
         public string ItemName
         {
-            get { return this.itemNameField ; }
-            set { this.itemNameField= value; }
+            get { return this.itemNameField; }
+            set { this.itemNameField = value; }
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.SimpleDB.Model
         /// <returns>true if ItemName property is set</returns>
         public bool IsSetItemName()
         {
-            return  this.itemNameField != null;
+            return this.itemNameField != null;
         }
         /// <summary>
         /// Gets and sets the Attribute property.
@@ -169,7 +169,7 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "Expected")]
         public UpdateCondition Expected
         {
-            get { return this.expectedField ; }
+            get { return this.expectedField; }
             set { this.expectedField = value; }
         }
 

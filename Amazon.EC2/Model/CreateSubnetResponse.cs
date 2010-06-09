@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CreateSubnetResult")]
         public CreateSubnetResult CreateSubnetResult
         {
-            get { return this.createSubnetResultField ; }
+            get { return this.createSubnetResultField; }
             set { this.createSubnetResultField = value; }
         }
 

@@ -50,8 +50,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Size")]
         public string Size
         {
-            get { return this.sizeField ; }
-            set { this.sizeField= value; }
+            get { return this.sizeField; }
+            set { this.sizeField = value; }
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Size property is set</returns>
         public bool IsSetSize()
         {
-            return  this.sizeField != null;
+            return this.sizeField != null;
         }
 
         /// <summary>
@@ -83,8 +83,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SnapshotId")]
         public string SnapshotId
         {
-            get { return this.snapshotIdField ; }
-            set { this.snapshotIdField= value; }
+            get { return this.snapshotIdField; }
+            set { this.snapshotIdField = value; }
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SnapshotId property is set</returns>
         public bool IsSetSnapshotId()
         {
-            return  this.snapshotIdField != null;
+            return this.snapshotIdField != null;
         }
 
         /// <summary>
@@ -114,8 +114,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField ; }
-            set { this.availabilityZoneField= value; }
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if AvailabilityZone property is set</returns>
         public bool IsSetAvailabilityZone()
         {
-            return  this.availabilityZoneField != null;
+            return this.availabilityZoneField != null;
         }
 
     }

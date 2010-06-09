@@ -48,8 +48,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "MasterInstanceType")]
         public string MasterInstanceType
         {
-            get { return this.masterInstanceTypeField ; }
-            set { this.masterInstanceTypeField= value; }
+            get { return this.masterInstanceTypeField; }
+            set { this.masterInstanceTypeField = value; }
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if MasterInstanceType property is set</returns>
         public bool IsSetMasterInstanceType()
         {
-            return  this.masterInstanceTypeField != null;
+            return this.masterInstanceTypeField != null;
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "MasterPublicDnsName")]
         public string MasterPublicDnsName
         {
-            get { return this.masterPublicDnsNameField ; }
-            set { this.masterPublicDnsNameField= value; }
+            get { return this.masterPublicDnsNameField; }
+            set { this.masterPublicDnsNameField = value; }
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if MasterPublicDnsName property is set</returns>
         public bool IsSetMasterPublicDnsName()
         {
-            return  this.masterPublicDnsNameField != null;
+            return this.masterPublicDnsNameField != null;
         }
 
         /// <summary>
@@ -110,8 +110,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "MasterInstanceId")]
         public string MasterInstanceId
         {
-            get { return this.masterInstanceIdField ; }
-            set { this.masterInstanceIdField= value; }
+            get { return this.masterInstanceIdField; }
+            set { this.masterInstanceIdField = value; }
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if MasterInstanceId property is set</returns>
         public bool IsSetMasterInstanceId()
         {
-            return  this.masterInstanceIdField != null;
+            return this.masterInstanceIdField != null;
         }
 
         /// <summary>
@@ -141,8 +141,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "SlaveInstanceType")]
         public string SlaveInstanceType
         {
-            get { return this.slaveInstanceTypeField ; }
-            set { this.slaveInstanceTypeField= value; }
+            get { return this.slaveInstanceTypeField; }
+            set { this.slaveInstanceTypeField = value; }
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if SlaveInstanceType property is set</returns>
         public bool IsSetSlaveInstanceType()
         {
-            return  this.slaveInstanceTypeField != null;
+            return this.slaveInstanceTypeField != null;
         }
 
         /// <summary>
@@ -173,8 +173,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "InstanceCount")]
         public Decimal InstanceCount
         {
-            get { return this.instanceCountField.GetValueOrDefault() ; }
-            set { this.instanceCountField= value; }
+            get { return this.instanceCountField.GetValueOrDefault(); }
+            set { this.instanceCountField = value; }
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if InstanceCount property is set</returns>
         public bool IsSetInstanceCount()
         {
-            return  this.instanceCountField.HasValue;
+            return this.instanceCountField.HasValue;
         }
 
         /// <summary>
@@ -207,8 +207,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "Ec2KeyName")]
         public string Ec2KeyName
         {
-            get { return this.ec2KeyNameField ; }
-            set { this.ec2KeyNameField= value; }
+            get { return this.ec2KeyNameField; }
+            set { this.ec2KeyNameField = value; }
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if Ec2KeyName property is set</returns>
         public bool IsSetEc2KeyName()
         {
-            return  this.ec2KeyNameField != null;
+            return this.ec2KeyNameField != null;
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "Placement")]
         public PlacementType Placement
         {
-            get { return this.placementField ; }
+            get { return this.placementField; }
             set { this.placementField = value; }
         }
 
@@ -271,8 +271,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "KeepJobFlowAliveWhenNoSteps")]
         public bool KeepJobFlowAliveWhenNoSteps
         {
-            get { return this.keepJobFlowAliveWhenNoStepsField.GetValueOrDefault() ; }
-            set { this.keepJobFlowAliveWhenNoStepsField= value; }
+            get { return this.keepJobFlowAliveWhenNoStepsField.GetValueOrDefault(); }
+            set { this.keepJobFlowAliveWhenNoStepsField = value; }
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if KeepJobFlowAliveWhenNoSteps property is set</returns>
         public bool IsSetKeepJobFlowAliveWhenNoSteps()
         {
-            return  this.keepJobFlowAliveWhenNoStepsField.HasValue;
+            return this.keepJobFlowAliveWhenNoStepsField.HasValue;
         }
 
     }

@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Timestamp")]
         public string Timestamp
         {
-            get { return this.timestampField ; }
-            set { this.timestampField= value; }
+            get { return this.timestampField; }
+            set { this.timestampField = value; }
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Timestamp property is set</returns>
         public bool IsSetTimestamp()
         {
-            return  this.timestampField != null;
+            return this.timestampField != null;
         }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Data")]
         public string Data
         {
-            get { return this.dataField ; }
-            set { this.dataField= value; }
+            get { return this.dataField; }
+            set { this.dataField = value; }
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if Data property is set</returns>
         public bool IsSetData()
         {
-            return  this.dataField != null;
+            return this.dataField != null;
         }
 
     }

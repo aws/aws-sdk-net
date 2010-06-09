@@ -154,7 +154,8 @@ namespace Amazon.SimpleDB.Util
         /// Decodes float value from the string representation that was created by using encodeRealNumberRange(..) function.
         /// </summary>
         /// <param name="value">string representation of the integer value</param>
-        /// <param name="maxDigitsRight">maximum number of digits left of the decimal point in the largest absolute value in the data set (must be the same as the one used for encoding).</param>
+        /// <param name="maxDigitsRight">maximum number of digits left of the decimal point in the largest absolute
+        /// value in the data set (must be the same as the one used for encoding).</param>
         /// <param name="offsetValue">offset value that was used in the original encoding</param>
         /// <returns>original float value</returns>
         public static float DecodeRealNumberRangeFloat(string value, int maxDigitsRight, int offsetValue)

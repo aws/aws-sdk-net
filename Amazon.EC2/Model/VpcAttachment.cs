@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
         {
-            get { return this.vpcIdField ; }
-            set { this.vpcIdField= value; }
+            get { return this.vpcIdField; }
+            set { this.vpcIdField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpcId property is set</returns>
         public bool IsSetVpcId()
         {
-            return  this.vpcIdField != null;
+            return this.vpcIdField != null;
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpcAttachmentState")]
         public string VpcAttachmentState
         {
-            get { return this.vpcAttachmentStateField ; }
-            set { this.vpcAttachmentStateField= value; }
+            get { return this.vpcAttachmentStateField; }
+            set { this.vpcAttachmentStateField = value; }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpcAttachmentState property is set</returns>
         public bool IsSetVpcAttachmentState()
         {
-            return  this.vpcAttachmentStateField != null;
+            return this.vpcAttachmentStateField != null;
         }
 
     }

@@ -47,8 +47,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ReservedInstancesOfferingId")]
         public string ReservedInstancesOfferingId
         {
-            get { return this.reservedInstancesOfferingIdField ; }
-            set { this.reservedInstancesOfferingIdField= value; }
+            get { return this.reservedInstancesOfferingIdField; }
+            set { this.reservedInstancesOfferingIdField = value; }
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if ReservedInstancesOfferingId property is set</returns>
         public bool IsSetReservedInstancesOfferingId()
         {
-            return  this.reservedInstancesOfferingIdField != null;
+            return this.reservedInstancesOfferingIdField != null;
         }
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceCount")]
         public string InstanceCount
         {
-            get { return this.instanceCountField ; }
-            set { this.instanceCountField= value; }
+            get { return this.instanceCountField; }
+            set { this.instanceCountField = value; }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceCount property is set</returns>
         public bool IsSetInstanceCount()
         {
-            return  this.instanceCountField != null;
+            return this.instanceCountField != null;
         }
 
     }

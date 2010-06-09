@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "MonitoringState")]
         public string MonitoringState
         {
-            get { return this.monitoringStateField ; }
-            set { this.monitoringStateField= value; }
+            get { return this.monitoringStateField; }
+            set { this.monitoringStateField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if MonitoringState property is set</returns>
         public bool IsSetMonitoringState()
         {
-            return  this.monitoringStateField != null;
+            return this.monitoringStateField != null;
         }
 
     }

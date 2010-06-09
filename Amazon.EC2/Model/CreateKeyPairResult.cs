@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "KeyPair")]
         public KeyPair KeyPair
         {
-            get { return this.keyPairField ; }
+            get { return this.keyPairField; }
             set { this.keyPairField = value; }
         }
 

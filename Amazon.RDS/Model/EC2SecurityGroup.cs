@@ -43,8 +43,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
         {
-            get { return this.statusField ; }
-            set { this.statusField= value; }
+            get { return this.statusField; }
+            set { this.statusField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if Status property is set</returns>
         public bool IsSetStatus()
         {
-            return  this.statusField != null;
+            return this.statusField != null;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "EC2SecurityGroupName")]
         public string EC2SecurityGroupName
         {
-            get { return this.EC2SecurityGroupNameField ; }
-            set { this.EC2SecurityGroupNameField= value; }
+            get { return this.EC2SecurityGroupNameField; }
+            set { this.EC2SecurityGroupNameField = value; }
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if EC2SecurityGroupName property is set</returns>
         public bool IsSetEC2SecurityGroupName()
         {
-            return  this.EC2SecurityGroupNameField != null;
+            return this.EC2SecurityGroupNameField != null;
         }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace Amazon.RDS.Model
         [XmlElementAttribute(ElementName = "EC2SecurityGroupOwnerId")]
         public string EC2SecurityGroupOwnerId
         {
-            get { return this.EC2SecurityGroupOwnerIdField ; }
-            set { this.EC2SecurityGroupOwnerIdField= value; }
+            get { return this.EC2SecurityGroupOwnerIdField; }
+            set { this.EC2SecurityGroupOwnerIdField = value; }
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.RDS.Model
         /// <returns>true if EC2SecurityGroupOwnerId property is set</returns>
         public bool IsSetEC2SecurityGroupOwnerId()
         {
-            return  this.EC2SecurityGroupOwnerIdField != null;
+            return this.EC2SecurityGroupOwnerIdField != null;
         }
 
     }

@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DescribeVolumesResult")]
         public DescribeVolumesResult DescribeVolumesResult
         {
-            get { return this.describeVolumesResultField ; }
+            get { return this.describeVolumesResultField; }
             set { this.describeVolumesResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

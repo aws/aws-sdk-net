@@ -43,7 +43,7 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "DescribeTriggersResult")]
         public DescribeTriggersResult DescribeTriggersResult
         {
-            get { return this.describeTriggersResultField ; }
+            get { return this.describeTriggersResultField; }
             set { this.describeTriggersResultField = value; }
         }
 
@@ -74,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

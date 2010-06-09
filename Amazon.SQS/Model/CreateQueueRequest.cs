@@ -50,8 +50,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "QueueName")]
         public string QueueName
         {
-            get { return this.queueNameField ; }
-            set { this.queueNameField= value; }
+            get { return this.queueNameField; }
+            set { this.queueNameField = value; }
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if QueueName property is set</returns>
         public bool IsSetQueueName()
         {
-            return  this.queueNameField != null;
+            return this.queueNameField != null;
         }
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "DefaultVisibilityTimeout")]
         public Decimal DefaultVisibilityTimeout
         {
-            get { return this.defaultVisibilityTimeoutField.GetValueOrDefault() ; }
-            set { this.defaultVisibilityTimeoutField= value; }
+            get { return this.defaultVisibilityTimeoutField.GetValueOrDefault(); }
+            set { this.defaultVisibilityTimeoutField = value; }
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.SQS.Model
         /// <returns>true if DefaultVisibilityTimeout property is set</returns>
         public bool IsSetDefaultVisibilityTimeout()
         {
-            return  this.defaultVisibilityTimeoutField.HasValue;
+            return this.defaultVisibilityTimeoutField.HasValue;
         }
         /// <summary>
         /// Gets and sets the Attribute property.

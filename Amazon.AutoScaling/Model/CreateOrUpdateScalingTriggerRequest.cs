@@ -57,8 +57,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "TriggerName")]
         public string TriggerName
         {
-            get { return this.triggerNameField ; }
-            set { this.triggerNameField= value; }
+            get { return this.triggerNameField; }
+            set { this.triggerNameField = value; }
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if TriggerName property is set</returns>
         public bool IsSetTriggerName()
         {
-            return  this.triggerNameField != null;
+            return this.triggerNameField != null;
         }
 
         /// <summary>
@@ -90,8 +90,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "AutoScalingGroupName")]
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupNameField ; }
-            set { this.autoScalingGroupNameField= value; }
+            get { return this.autoScalingGroupNameField; }
+            set { this.autoScalingGroupNameField = value; }
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if AutoScalingGroupName property is set</returns>
         public bool IsSetAutoScalingGroupName()
         {
-            return  this.autoScalingGroupNameField != null;
+            return this.autoScalingGroupNameField != null;
         }
 
         /// <summary>
@@ -127,8 +127,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "MeasureName")]
         public string MeasureName
         {
-            get { return this.measureNameField ; }
-            set { this.measureNameField= value; }
+            get { return this.measureNameField; }
+            set { this.measureNameField = value; }
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if MeasureName property is set</returns>
         public bool IsSetMeasureName()
         {
-            return  this.measureNameField != null;
+            return this.measureNameField != null;
         }
 
         /// <summary>
@@ -164,8 +164,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "Statistic")]
         public string Statistic
         {
-            get { return this.statisticField ; }
-            set { this.statisticField= value; }
+            get { return this.statisticField; }
+            set { this.statisticField = value; }
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if Statistic property is set</returns>
         public bool IsSetStatistic()
         {
-            return  this.statisticField != null;
+            return this.statisticField != null;
         }
         /// <summary>
         /// Gets and sets the Dimensions property.
@@ -238,8 +238,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "Period")]
         public Decimal Period
         {
-            get { return this.periodField.GetValueOrDefault() ; }
-            set { this.periodField= value; }
+            get { return this.periodField.GetValueOrDefault(); }
+            set { this.periodField = value; }
         }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if Period property is set</returns>
         public bool IsSetPeriod()
         {
-            return  this.periodField.HasValue;
+            return this.periodField.HasValue;
         }
 
         /// <summary>
@@ -272,8 +272,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "Unit")]
         public string Unit
         {
-            get { return this.unitField ; }
-            set { this.unitField= value; }
+            get { return this.unitField; }
+            set { this.unitField = value; }
         }
 
         /// <summary>
@@ -296,7 +296,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if Unit property is set</returns>
         public bool IsSetUnit()
         {
-            return  this.unitField != null;
+            return this.unitField != null;
         }
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "CustomUnit")]
         public string CustomUnit
         {
-            get { return this.customUnitField ; }
-            set { this.customUnitField= value; }
+            get { return this.customUnitField; }
+            set { this.customUnitField = value; }
         }
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if CustomUnit property is set</returns>
         public bool IsSetCustomUnit()
         {
-            return  this.customUnitField != null;
+            return this.customUnitField != null;
         }
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "Namespace")]
         public string Namespace
         {
-            get { return this.namespaceValueField ; }
-            set { this.namespaceValueField= value; }
+            get { return this.namespaceValueField; }
+            set { this.namespaceValueField = value; }
         }
 
         /// <summary>
@@ -360,7 +360,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if Namespace property is set</returns>
         public bool IsSetNamespace()
         {
-            return  this.namespaceValueField != null;
+            return this.namespaceValueField != null;
         }
 
         /// <summary>
@@ -371,8 +371,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "LowerThreshold")]
         public Double LowerThreshold
         {
-            get { return this.lowerThresholdField.GetValueOrDefault() ; }
-            set { this.lowerThresholdField= value; }
+            get { return this.lowerThresholdField.GetValueOrDefault(); }
+            set { this.lowerThresholdField = value; }
         }
 
         /// <summary>
@@ -393,7 +393,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if LowerThreshold property is set</returns>
         public bool IsSetLowerThreshold()
         {
-            return  this.lowerThresholdField.HasValue;
+            return this.lowerThresholdField.HasValue;
         }
 
         /// <summary>
@@ -407,8 +407,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "LowerBreachScaleIncrement")]
         public string LowerBreachScaleIncrement
         {
-            get { return this.lowerBreachScaleIncrementField ; }
-            set { this.lowerBreachScaleIncrementField= value; }
+            get { return this.lowerBreachScaleIncrementField; }
+            set { this.lowerBreachScaleIncrementField = value; }
         }
 
         /// <summary>
@@ -432,7 +432,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if LowerBreachScaleIncrement property is set</returns>
         public bool IsSetLowerBreachScaleIncrement()
         {
-            return  this.lowerBreachScaleIncrementField != null;
+            return this.lowerBreachScaleIncrementField != null;
         }
 
         /// <summary>
@@ -443,8 +443,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "UpperThreshold")]
         public Double UpperThreshold
         {
-            get { return this.upperThresholdField.GetValueOrDefault() ; }
-            set { this.upperThresholdField= value; }
+            get { return this.upperThresholdField.GetValueOrDefault(); }
+            set { this.upperThresholdField = value; }
         }
 
         /// <summary>
@@ -465,7 +465,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if UpperThreshold property is set</returns>
         public bool IsSetUpperThreshold()
         {
-            return  this.upperThresholdField.HasValue;
+            return this.upperThresholdField.HasValue;
         }
 
         /// <summary>
@@ -475,8 +475,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "UpperBreachScaleIncrement")]
         public string UpperBreachScaleIncrement
         {
-            get { return this.upperBreachScaleIncrementField ; }
-            set { this.upperBreachScaleIncrementField= value; }
+            get { return this.upperBreachScaleIncrementField; }
+            set { this.upperBreachScaleIncrementField = value; }
         }
 
         /// <summary>
@@ -496,7 +496,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if UpperBreachScaleIncrement property is set</returns>
         public bool IsSetUpperBreachScaleIncrement()
         {
-            return  this.upperBreachScaleIncrementField != null;
+            return this.upperBreachScaleIncrementField != null;
         }
 
         /// <summary>
@@ -508,8 +508,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "BreachDuration")]
         public Decimal BreachDuration
         {
-            get { return this.breachDurationField.GetValueOrDefault() ; }
-            set { this.breachDurationField= value; }
+            get { return this.breachDurationField.GetValueOrDefault(); }
+            set { this.breachDurationField = value; }
         }
 
         /// <summary>
@@ -531,7 +531,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if BreachDuration property is set</returns>
         public bool IsSetBreachDuration()
         {
-            return  this.breachDurationField.HasValue;
+            return this.breachDurationField.HasValue;
         }
 
     }

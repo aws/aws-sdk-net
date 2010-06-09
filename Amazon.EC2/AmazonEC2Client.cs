@@ -21,19 +21,15 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Xml.XPath;
 using System.Xml.Xsl;
 
 using Amazon.EC2.Model;
@@ -44,7 +40,14 @@ using Amazon.Util;
 namespace Amazon.EC2
 {
     /// <summary>
-    /// AmazonEC2Client is an implementation of AmazonEC2
+    /// AmazonEC2Client is an implementation of AmazonEC2;
+    /// the client allows you to manage your AmazonEC2 resources.<br />
+    /// If you want to use the AmazonEC2Client from a Medium Trust
+    /// hosting environment, please create the client with an
+    /// AmazonEC2Config object whose UseSecureStringForAwsSecretKey
+    /// property is false.
+    /// </summary>
+    /// <remarks>
     /// The Amazon Elastic Compute Cloud (Amazon EC2) web service provides you with
     /// the ability to execute your applications in Amazon's computing environment.
     /// To use Amazon EC2 you simply:
@@ -66,13 +69,15 @@ namespace Amazon.EC2
     /// provided by Amazon or shared by another user.
     /// While instances are running, you are billed for the computing and network
     /// resources that they consume.
-    /// </summary>
+    /// </remarks>
+    /// <seealso cref="P:Amazon.EC2.AmazonEC2Config.UseSecureStringForAwsSecretKey"/>
     public class AmazonEC2Client : AmazonEC2
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
         private AmazonEC2Config config;
         private bool disposed;
+        private string clearAwsSecretAccessKey;
 
         #region Dispose Pattern Implementation
 
@@ -131,21 +136,31 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Constructs AmazonEC2Client with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonEC2 Configuration object
+        /// AmazonEC2 Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="config">The AmazonEC2 Configuration Object</param>
         public AmazonEC2Client(string awsAccessKeyId, string awsSecretAccessKey, AmazonEC2Config config)
         {
-            if (awsSecretAccessKey != null)
+            if (!String.IsNullOrEmpty(awsSecretAccessKey))
             {
-                this.awsSecretAccessKey = new SecureString();
-                foreach (char ch in awsSecretAccessKey.ToCharArray())
+                if (config.UseSecureStringForAwsSecretKey)
                 {
-                    this.awsSecretAccessKey.AppendChar(ch);
+                    this.awsSecretAccessKey = new SecureString();
+                    foreach (char ch in awsSecretAccessKey.ToCharArray())
+                    {
+                        this.awsSecretAccessKey.AppendChar(ch);
+                    }
+                    this.awsSecretAccessKey.MakeReadOnly();
                 }
-                this.awsSecretAccessKey.MakeReadOnly();
+                else
+                {
+                    clearAwsSecretAccessKey = awsSecretAccessKey;
+                }
             }
             this.awsAccessKeyId = awsAccessKeyId;
             this.config = config;
@@ -260,13 +275,27 @@ namespace Amazon.EC2
             if (!s3.IsSetUploadPolicy())
             {
                 s3.AWSAccessKeyId = this.awsAccessKeyId;
-                S3UploadPolicy policy = new S3UploadPolicy(
-                    this.awsAccessKeyId,
-                    this.awsSecretAccessKey,
-                    s3.Bucket,
-                    s3.Prefix,
-                    1440
-                    );
+                S3UploadPolicy policy;
+                if (config.UseSecureStringForAwsSecretKey)
+                {
+                    policy = new S3UploadPolicy(
+                        this.awsAccessKeyId,
+                        this.awsSecretAccessKey,
+                        s3.Bucket,
+                        s3.Prefix,
+                        1440
+                        );
+                }
+                else
+                {
+                    policy = new S3UploadPolicy(
+                        this.clearAwsSecretAccessKey,
+                        s3.Bucket,
+                        s3.Prefix,
+                        1440
+                        );
+                }
+
                 s3.UploadPolicy = policy.PolicyString;
                 s3.UploadPolicySignature = policy.PolicySignature;
             }
@@ -1618,16 +1647,18 @@ namespace Amazon.EC2
         private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonEC2Config config)
         {
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
-
-            if (config.IsSetProxyHost())
+            if (request != null)
             {
-                request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                if (config.IsSetProxyHost())
+                {
+                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                }
+                request.UserAgent = config.UserAgent;
+                request.Method = "POST";
+                request.Timeout = 50000;
+                request.ContentType = AWSSDKUtils.UrlEncodedContent;
+                request.ContentLength = contentLength;
             }
-            request.UserAgent = config.UserAgent;
-            request.Method = "POST";
-            request.Timeout = 50000;
-            request.ContentType = AWSSDKUtils.UrlEncodedContent;
-            request.ContentLength = contentLength;
 
             return request;
         }
@@ -1639,19 +1670,21 @@ namespace Amazon.EC2
         {
             string actionName = parameters["Action"];
             T response = default(T);
-            string responseBody = null;
             HttpStatusCode statusCode = default(HttpStatusCode);
 
             /* Add required request parameters */
             AddRequiredParameters(parameters);
 
-            string queryString = GetParametersAsString(parameters);
+            string queryString = AWSSDKUtils.GetParametersAsString(parameters);
 
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
             bool shouldRetry = true;
             int retries = 0;
+            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
+
             do
             {
+                string responseBody = null;
                 HttpWebRequest request = ConfigureWebRequest(requestData.Length, config);
                 /* Submit the request and read response body */
                 try
@@ -1662,6 +1695,13 @@ namespace Amazon.EC2
                     }
                     using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
                     {
+                        if (httpResponse == null)
+                        {
+                            throw new WebException(
+                                "The Web Response for a successful request is null!",
+                                WebExceptionStatus.ProtocolError
+                                );
+                        }
                         statusCode = httpResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                         {
@@ -1670,8 +1710,7 @@ namespace Amazon.EC2
                     }
 
                     /* Perform response transformation */
-                    if (responseBody != null &&
-                        responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
+                    if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
                     {
                         responseBody = Transform(responseBody, actionName, this.GetType());
                     }
@@ -1694,7 +1733,7 @@ namespace Amazon.EC2
                         {
                             // Abort the unsuccessful request
                             request.Abort();
-                            throw new AmazonEC2Exception(we);
+                            throw we;
                         }
                         statusCode = httpErrorResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpErrorResponse.GetResponseStream(), Encoding.UTF8))
@@ -1706,10 +1745,11 @@ namespace Amazon.EC2
                         request.Abort();
                     }
 
-                    if (statusCode == HttpStatusCode.InternalServerError || statusCode == HttpStatusCode.ServiceUnavailable)
+                    if (statusCode == HttpStatusCode.InternalServerError ||
+                        statusCode == HttpStatusCode.ServiceUnavailable)
                     {
                         shouldRetry = true;
-                        PauseOnRetry(++retries, config.MaxErrorRetry, statusCode);
+                        PauseOnRetry(++retries, maxRetries, statusCode);
                     }
                     else
                     {
@@ -1742,12 +1782,13 @@ namespace Amazon.EC2
                             }
                             else
                             {
-                                AmazonEC2Exception se = ReportAnyErrors(responseBody, statusCode);
-                                throw se;
+                                throw ReportAnyErrors(responseBody, statusCode);
                             }
                         }
                     }
                 }
+                /* Catch other exceptions, attempt to convert to formatted exception,
+                 * else rethrow wrapped exception */
                 catch (Exception)
                 {
                     // Abort the unsuccessful request
@@ -1819,7 +1860,10 @@ namespace Amazon.EC2
             }
             else
             {
-                throw new AmazonEC2Exception("Maximum number of retry attempts reached : " + (retries - 1), status);
+                throw new AmazonEC2Exception(
+                    "Maximum number of retry attempts reached : " + (retries - 1),
+                    status
+                    );
             }
         }
 
@@ -1832,118 +1876,30 @@ namespace Amazon.EC2
             {
                 throw new AmazonEC2Exception("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
-            parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", S3UploadPolicy.GetFormattedTimestamp(0));
-            parameters.Add("Version", config.ServiceVersion);
-            parameters.Add("SignatureVersion", config.SignatureVersion);
-            parameters.Add("Signature", SignParameters(parameters, this.awsSecretAccessKey, config));
-        }
 
-        /**
-         * Convert Dictionary of paremeters to Url encoded query string
-         */
-        private static string GetParametersAsString(IDictionary<string, string> parameters)
-        {
-            StringBuilder data = new StringBuilder(512);
-            foreach (string key in (IEnumerable<string>)parameters.Keys)
-            {
-                string value = parameters[key];
-                if (value != null)
-                {
-                    data.Append(key);
-                    data.Append('=');
-                    data.Append(AWSSDKUtils.UrlEncode(value, false));
-                    data.Append('&');
-                }
-            }
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
-        }
-
-        /**
-         * Computes RFC 2104-compliant HMAC signature for request parameters
-         * Implements AWS Signature, as per following spec:
-         *
-         * If Signature Version is 0, it signs concatenated Action and Timestamp
-         *
-         * If Signature Version is 1, it performs the following:
-         *
-         * Sorts all  parameters (including SignatureVersion and excluding Signature,
-         * the value of which is being created), ignoring case.
-         *
-         * Iterate over the sorted list and append the parameter name (in original case)
-         * and then its value. It will not URL-encode the parameter values before
-         * constructing this string. There are no separators.
-         *
-         * If Signature Version is 2, string to sign is based on following:
-         *
-         *    1. The HTTP Request Method followed by an ASCII newline (%0A)
-         *    2. The HTTP Host header in the form of lowercase host, followed by an ASCII newline.
-         *    3. The URL encoded HTTP absolute path component of the URI
-         *       (up to but not including the query string parameters);
-         *       if this is empty use a forward '/'. This parameter is followed by an ASCII newline.
-         *    4. The concatenation of all query string components (names and values)
-         *       as UTF-8 characters which are URL encoded as per RFC 3986
-         *       (hex characters MUST be uppercase), sorted using lexicographic byte ordering.
-         *       Parameter names are separated from their values by the '=' character
-         *       (ASCII character 61), even if the value is empty.
-         *       Pairs of parameter and values are separated by the ampersand character (ASCII code 38).
-         *
-         */
-        private static string SignParameters(IDictionary<string, string> parameters, SecureString key, AmazonEC2Config config)
-        {
-            string signatureVersion = parameters["SignatureVersion"];
-
-            KeyedHashAlgorithm algorithm = new HMACSHA1();
-
-            string stringToSign = null;
-            if ("2".Equals(signatureVersion))
-            {
-                string signatureMethod = config.SignatureMethod;
-                algorithm = KeyedHashAlgorithm.Create(signatureMethod.ToUpper());
-                parameters.Add("SignatureMethod", signatureMethod);
-                stringToSign = CalculateStringToSignV2(parameters, config);
-            }
-            else
+            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
+            parameters["SignatureVersion"] = config.SignatureVersion;
+            parameters["SignatureMethod"] = config.SignatureMethod;
+            parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
+            parameters["Version"] = config.ServiceVersion;
+            if (!config.SignatureVersion.Equals("2"))
             {
                 throw new AmazonEC2Exception("Invalid Signature Version specified");
             }
+            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
 
-            return S3UploadPolicy.Sign(stringToSign, key, algorithm);
-        }
+            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
+            string auth;
 
-        private static string CalculateStringToSignV2(IDictionary<string, string> parameters, AmazonEC2Config config)
-        {
-            StringBuilder data = new StringBuilder(512);
-            IDictionary<string, string> sorted =
-                  new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
-            data.Append("POST");
-            data.Append("\n");
-            Uri endpoint = new Uri(config.ServiceURL.ToLower());
-
-            data.Append(endpoint.Host);
-            data.Append("\n");
-            string uri = endpoint.AbsolutePath;
-            if (uri == null || uri.Length == 0)
+            if (config.UseSecureStringForAwsSecretKey)
             {
-                uri = "/";
+                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
             }
-
-            data.Append(AWSSDKUtils.UrlEncode(uri, true));
-            data.Append("\n");
-            foreach (KeyValuePair<string, string> pair in sorted)
+            else
             {
-                if (pair.Value != null)
-                {
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-                    data.Append("=");
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-                    data.Append("&");
-                }
+                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
             }
-
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
+            parameters["Signature"] = auth;
         }
 
         /**
@@ -1952,7 +1908,7 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertAllocateAddress(AllocateAddressRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "AllocateAddress");
+            parameters["Action"] = "AllocateAddress";
 
             return parameters;
         }
@@ -1963,14 +1919,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertAttachVpnGateway(AttachVpnGatewayRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "AttachVpnGateway");
+            parameters["Action"] = "AttachVpnGateway";
             if (request.IsSetVpnGatewayId())
             {
-                parameters.Add("VpnGatewayId", request.VpnGatewayId);
+                parameters["VpnGatewayId"] = request.VpnGatewayId;
             }
             if (request.IsSetVpcId())
             {
-                parameters.Add("VpcId", request.VpcId);
+                parameters["VpcId"] = request.VpcId;
             }
 
             return parameters;
@@ -1982,14 +1938,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertAssociateDhcpOptions(AssociateDhcpOptionsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "AssociateDhcpOptions");
+            parameters["Action"] = "AssociateDhcpOptions";
             if (request.IsSetDhcpOptionsId())
             {
-                parameters.Add("DhcpOptionsId", request.DhcpOptionsId);
+                parameters["DhcpOptionsId"] = request.DhcpOptionsId;
             }
             if (request.IsSetVpcId())
             {
-                parameters.Add("VpcId", request.VpcId);
+                parameters["VpcId"] = request.VpcId;
             }
 
             return parameters;
@@ -2001,14 +1957,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertAssociateAddress(AssociateAddressRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "AssociateAddress");
+            parameters["Action"] = "AssociateAddress";
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
             if (request.IsSetPublicIp())
             {
-                parameters.Add("PublicIp", request.PublicIp);
+                parameters["PublicIp"] = request.PublicIp;
             }
 
             return parameters;
@@ -2020,38 +1976,38 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertAuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "AuthorizeSecurityGroupIngress");
+            parameters["Action"] = "AuthorizeSecurityGroupIngress";
             if (request.IsSetUserId())
             {
-                parameters.Add("UserId", request.UserId);
+                parameters["UserId"] = request.UserId;
             }
             if (request.IsSetGroupName())
             {
-                parameters.Add("GroupName", request.GroupName);
+                parameters["GroupName"] = request.GroupName;
             }
             if (request.IsSetSourceSecurityGroupName())
             {
-                parameters.Add("SourceSecurityGroupName", request.SourceSecurityGroupName);
+                parameters["SourceSecurityGroupName"] = request.SourceSecurityGroupName;
             }
             if (request.IsSetSourceSecurityGroupOwnerId())
             {
-                parameters.Add("SourceSecurityGroupOwnerId", request.SourceSecurityGroupOwnerId);
+                parameters["SourceSecurityGroupOwnerId"] = request.SourceSecurityGroupOwnerId;
             }
             if (request.IsSetIpProtocol())
             {
-                parameters.Add("IpProtocol", request.IpProtocol);
+                parameters["IpProtocol"] = request.IpProtocol;
             }
             if (request.IsSetFromPort())
             {
-                parameters.Add("FromPort", (request.FromPort + ""));
+                parameters["FromPort"] = request.FromPort.ToString();
             }
             if (request.IsSetToPort())
             {
-                parameters.Add("ToPort", (request.ToPort + ""));
+                parameters["ToPort"] = request.ToPort.ToString();
             }
             if (request.IsSetCidrIp())
             {
-                parameters.Add("CidrIp", request.CidrIp);
+                parameters["CidrIp"] = request.CidrIp;
             }
 
             return parameters;
@@ -2063,36 +2019,36 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertBundleInstance(BundleInstanceRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "BundleInstance");
+            parameters["Action"] = "BundleInstance";
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
             if (request.IsSetStorage())
             {
-                Storage  bundleInstanceRequestStorage = request.Storage;
+                Storage bundleInstanceRequestStorage = request.Storage;
                 if (bundleInstanceRequestStorage.IsSetS3())
                 {
-                    S3Storage  storageS3 = bundleInstanceRequestStorage.S3;
+                    S3Storage storageS3 = bundleInstanceRequestStorage.S3;
                     if (storageS3.IsSetBucket())
                     {
-                        parameters.Add("Storage" + "." + "S3" + "." + "Bucket", storageS3.Bucket);
+                        parameters[String.Concat("Storage", ".", "S3", ".", "Bucket")] = storageS3.Bucket;
                     }
                     if (storageS3.IsSetPrefix())
                     {
-                        parameters.Add("Storage" + "." + "S3" + "." + "Prefix", storageS3.Prefix);
+                        parameters[String.Concat("Storage", ".", "S3", ".", "Prefix")] = storageS3.Prefix;
                     }
                     if (storageS3.IsSetAWSAccessKeyId())
                     {
-                        parameters.Add("Storage" + "." + "S3" + "." + "AWSAccessKeyId", storageS3.AWSAccessKeyId);
+                        parameters[String.Concat("Storage", ".", "S3", ".", "AWSAccessKeyId")] = storageS3.AWSAccessKeyId;
                     }
                     if (storageS3.IsSetUploadPolicy())
                     {
-                        parameters.Add("Storage" + "." + "S3" + "." + "UploadPolicy", storageS3.UploadPolicy);
+                        parameters[String.Concat("Storage", ".", "S3", ".", "UploadPolicy")] = storageS3.UploadPolicy;
                     }
                     if (storageS3.IsSetUploadPolicySignature())
                     {
-                        parameters.Add("Storage" + "." + "S3" + "." + "UploadPolicySignature", storageS3.UploadPolicySignature);
+                        parameters[String.Concat("Storage", ".", "S3", ".", "UploadPolicySignature")] = storageS3.UploadPolicySignature;
                     }
                 }
             }
@@ -2106,10 +2062,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCancelBundleTask(CancelBundleTaskRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CancelBundleTask");
+            parameters["Action"] = "CancelBundleTask";
             if (request.IsSetBundleId())
             {
-                parameters.Add("BundleId", request.BundleId);
+                parameters["BundleId"] = request.BundleId;
             }
 
             return parameters;
@@ -2121,14 +2077,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertConfirmProductInstance(ConfirmProductInstanceRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ConfirmProductInstance");
+            parameters["Action"] = "ConfirmProductInstance";
             if (request.IsSetProductCode())
             {
-                parameters.Add("ProductCode", request.ProductCode);
+                parameters["ProductCode"] = request.ProductCode;
             }
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
 
             return parameters;
@@ -2140,22 +2096,22 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateImage(CreateImageRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateImage");
+            parameters["Action"] = "CreateImage";
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
             if (request.IsSetName())
             {
-                parameters.Add("Name", request.Name);
+                parameters["Name"] = request.Name;
             }
             if (request.IsSetDescription())
             {
-                parameters.Add("Description", request.Description);
+                parameters["Description"] = request.Description;
             }
             if (request.IsSetNoReboot())
             {
-                parameters.Add("NoReboot", (request.NoReboot + "").ToLower());
+                parameters["NoReboot"] = request.NoReboot.ToString().ToLower();
             }
 
             return parameters;
@@ -2167,10 +2123,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateKeyPair(CreateKeyPairRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateKeyPair");
+            parameters["Action"] = "CreateKeyPair";
             if (request.IsSetKeyName())
             {
-                parameters.Add("KeyName", request.KeyName);
+                parameters["KeyName"] = request.KeyName;
             }
 
             return parameters;
@@ -2182,18 +2138,18 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateSubnet(CreateSubnetRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateSubnet");
+            parameters["Action"] = "CreateSubnet";
             if (request.IsSetVpcId())
             {
-                parameters.Add("VpcId", request.VpcId);
+                parameters["VpcId"] = request.VpcId;
             }
             if (request.IsSetCidrBlock())
             {
-                parameters.Add("CidrBlock", request.CidrBlock);
+                parameters["CidrBlock"] = request.CidrBlock;
             }
             if (request.IsSetAvailabilityZone())
             {
-                parameters.Add("AvailabilityZone", request.AvailabilityZone);
+                parameters["AvailabilityZone"] = request.AvailabilityZone;
             }
 
             return parameters;
@@ -2205,18 +2161,18 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateVpnConnection(CreateVpnConnectionRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateVpnConnection");
+            parameters["Action"] = "CreateVpnConnection";
             if (request.IsSetType())
             {
-                parameters.Add("Type", request.Type);
+                parameters["Type"] = request.Type;
             }
             if (request.IsSetCustomerGatewayId())
             {
-                parameters.Add("CustomerGatewayId", request.CustomerGatewayId);
+                parameters["CustomerGatewayId"] = request.CustomerGatewayId;
             }
             if (request.IsSetVpnGatewayId())
             {
-                parameters.Add("VpnGatewayId", request.VpnGatewayId);
+                parameters["VpnGatewayId"] = request.VpnGatewayId;
             }
 
             return parameters;
@@ -2228,14 +2184,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateVpnGateway(CreateVpnGatewayRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateVpnGateway");
+            parameters["Action"] = "CreateVpnGateway";
             if (request.IsSetType())
             {
-                parameters.Add("Type", request.Type);
+                parameters["Type"] = request.Type;
             }
             if (request.IsSetAvailabilityZone())
             {
-                parameters.Add("AvailabilityZone", request.AvailabilityZone);
+                parameters["AvailabilityZone"] = request.AvailabilityZone;
             }
 
             return parameters;
@@ -2247,20 +2203,20 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateDhcpOptions(CreateDhcpOptionsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateDhcpOptions");
+            parameters["Action"] = "CreateDhcpOptions";
             List<DhcpConfiguration> createDhcpOptionsRequestDhcpConfigurationList = request.DhcpConfiguration;
             int createDhcpOptionsRequestDhcpConfigurationListIndex = 1;
             foreach (DhcpConfiguration createDhcpOptionsRequestDhcpConfiguration in createDhcpOptionsRequestDhcpConfigurationList)
             {
                 if (createDhcpOptionsRequestDhcpConfiguration.IsSetKey())
                 {
-                    parameters.Add("DhcpConfiguration" + "."  + createDhcpOptionsRequestDhcpConfigurationListIndex + "." + "Key", createDhcpOptionsRequestDhcpConfiguration.Key);
+                    parameters[String.Concat("DhcpConfiguration", ".", createDhcpOptionsRequestDhcpConfigurationListIndex, ".", "Key")] = createDhcpOptionsRequestDhcpConfiguration.Key;
                 }
-                List<string> dhcpConfigurationValueList  =  createDhcpOptionsRequestDhcpConfiguration.Value;
+                List<string> dhcpConfigurationValueList = createDhcpOptionsRequestDhcpConfiguration.Value;
                 int dhcpConfigurationValueListIndex = 1;
-                foreach  (string dhcpConfigurationValue in dhcpConfigurationValueList)
+                foreach (string dhcpConfigurationValue in dhcpConfigurationValueList)
                 {
-                    parameters.Add("DhcpConfiguration" + "."  + createDhcpOptionsRequestDhcpConfigurationListIndex + "." + "Value" + "."  + dhcpConfigurationValueListIndex, dhcpConfigurationValue);
+                    parameters[String.Concat("DhcpConfiguration", ".", createDhcpOptionsRequestDhcpConfigurationListIndex, ".", "Value", ".", dhcpConfigurationValueListIndex)] = dhcpConfigurationValue;
                     dhcpConfigurationValueListIndex++;
                 }
 
@@ -2276,10 +2232,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateVpc(CreateVpcRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateVpc");
+            parameters["Action"] = "CreateVpc";
             if (request.IsSetCidrBlock())
             {
-                parameters.Add("CidrBlock", request.CidrBlock);
+                parameters["CidrBlock"] = request.CidrBlock;
             }
 
             return parameters;
@@ -2291,18 +2247,18 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateCustomerGateway(CreateCustomerGatewayRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateCustomerGateway");
+            parameters["Action"] = "CreateCustomerGateway";
             if (request.IsSetType())
             {
-                parameters.Add("Type", request.Type);
+                parameters["Type"] = request.Type;
             }
             if (request.IsSetIpAddress())
             {
-                parameters.Add("IpAddress", request.IpAddress);
+                parameters["IpAddress"] = request.IpAddress;
             }
             if (request.IsSetBgpAsn())
             {
-                parameters.Add("BgpAsn", (request.BgpAsn + ""));
+                parameters["BgpAsn"] = request.BgpAsn.ToString();
             }
 
             return parameters;
@@ -2314,14 +2270,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateSecurityGroup(CreateSecurityGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateSecurityGroup");
+            parameters["Action"] = "CreateSecurityGroup";
             if (request.IsSetGroupName())
             {
-                parameters.Add("GroupName", request.GroupName);
+                parameters["GroupName"] = request.GroupName;
             }
             if (request.IsSetGroupDescription())
             {
-                parameters.Add("GroupDescription", request.GroupDescription);
+                parameters["GroupDescription"] = request.GroupDescription;
             }
 
             return parameters;
@@ -2333,10 +2289,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteKeyPair(DeleteKeyPairRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteKeyPair");
+            parameters["Action"] = "DeleteKeyPair";
             if (request.IsSetKeyName())
             {
-                parameters.Add("KeyName", request.KeyName);
+                parameters["KeyName"] = request.KeyName;
             }
 
             return parameters;
@@ -2348,10 +2304,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteVpc(DeleteVpcRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteVpc");
+            parameters["Action"] = "DeleteVpc";
             if (request.IsSetVpcId())
             {
-                parameters.Add("VpcId", request.VpcId);
+                parameters["VpcId"] = request.VpcId;
             }
 
             return parameters;
@@ -2363,10 +2319,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteVpnGateway(DeleteVpnGatewayRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteVpnGateway");
+            parameters["Action"] = "DeleteVpnGateway";
             if (request.IsSetVpnGatewayId())
             {
-                parameters.Add("VpnGatewayId", request.VpnGatewayId);
+                parameters["VpnGatewayId"] = request.VpnGatewayId;
             }
 
             return parameters;
@@ -2378,10 +2334,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteVpnConnection(DeleteVpnConnectionRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteVpnConnection");
+            parameters["Action"] = "DeleteVpnConnection";
             if (request.IsSetVpnConnectionId())
             {
-                parameters.Add("VpnConnectionId", request.VpnConnectionId);
+                parameters["VpnConnectionId"] = request.VpnConnectionId;
             }
 
             return parameters;
@@ -2393,10 +2349,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteDhcpOptions(DeleteDhcpOptionsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteDhcpOptions");
+            parameters["Action"] = "DeleteDhcpOptions";
             if (request.IsSetDhcpOptionsId())
             {
-                parameters.Add("DhcpOptionsId", request.DhcpOptionsId);
+                parameters["DhcpOptionsId"] = request.DhcpOptionsId;
             }
 
             return parameters;
@@ -2408,10 +2364,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteCustomerGateway(DeleteCustomerGatewayRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteCustomerGateway");
+            parameters["Action"] = "DeleteCustomerGateway";
             if (request.IsSetCustomerGatewayId())
             {
-                parameters.Add("CustomerGatewayId", request.CustomerGatewayId);
+                parameters["CustomerGatewayId"] = request.CustomerGatewayId;
             }
 
             return parameters;
@@ -2423,10 +2379,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteSecurityGroup(DeleteSecurityGroupRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteSecurityGroup");
+            parameters["Action"] = "DeleteSecurityGroup";
             if (request.IsSetGroupName())
             {
-                parameters.Add("GroupName", request.GroupName);
+                parameters["GroupName"] = request.GroupName;
             }
 
             return parameters;
@@ -2438,10 +2394,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteSubnet(DeleteSubnetRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteSubnet");
+            parameters["Action"] = "DeleteSubnet";
             if (request.IsSetSubnetId())
             {
-                parameters.Add("SubnetId", request.SubnetId);
+                parameters["SubnetId"] = request.SubnetId;
             }
 
             return parameters;
@@ -2453,12 +2409,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeVpcs(DescribeVpcsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeVpcs");
-            List<string> describeVpcsRequestVpcIdList  =  request.VpcId;
+            parameters["Action"] = "DescribeVpcs";
+            List<string> describeVpcsRequestVpcIdList = request.VpcId;
             int describeVpcsRequestVpcIdListIndex = 1;
-            foreach  (string describeVpcsRequestVpcId in describeVpcsRequestVpcIdList)
+            foreach (string describeVpcsRequestVpcId in describeVpcsRequestVpcIdList)
             {
-                parameters.Add("VpcId" + "."  + describeVpcsRequestVpcIdListIndex, describeVpcsRequestVpcId);
+                parameters[String.Concat("VpcId", ".", describeVpcsRequestVpcIdListIndex)] = describeVpcsRequestVpcId;
                 describeVpcsRequestVpcIdListIndex++;
             }
             List<Filter> describeVpcsRequestFilterList = request.Filter;
@@ -2467,13 +2423,13 @@ namespace Amazon.EC2
             {
                 if (describeVpcsRequestFilter.IsSetName())
                 {
-                    parameters.Add("Filter" + "."  + describeVpcsRequestFilterListIndex + "." + "Name", describeVpcsRequestFilter.Name);
+                    parameters[String.Concat("Filter", ".", describeVpcsRequestFilterListIndex, ".", "Name")] = describeVpcsRequestFilter.Name;
                 }
-                List<string> filterValueList  =  describeVpcsRequestFilter.Value;
+                List<string> filterValueList = describeVpcsRequestFilter.Value;
                 int filterValueListIndex = 1;
-                foreach  (string filterValue in filterValueList)
+                foreach (string filterValue in filterValueList)
                 {
-                    parameters.Add("Filter" + "."  + describeVpcsRequestFilterListIndex + "." + "Value" + "."  + filterValueListIndex, filterValue);
+                    parameters[String.Concat("Filter", ".", describeVpcsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
                     filterValueListIndex++;
                 }
 
@@ -2489,12 +2445,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeVpnGateways(DescribeVpnGatewaysRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeVpnGateways");
-            List<string> describeVpnGatewaysRequestVpnGatewayIdList  =  request.VpnGatewayId;
+            parameters["Action"] = "DescribeVpnGateways";
+            List<string> describeVpnGatewaysRequestVpnGatewayIdList = request.VpnGatewayId;
             int describeVpnGatewaysRequestVpnGatewayIdListIndex = 1;
-            foreach  (string describeVpnGatewaysRequestVpnGatewayId in describeVpnGatewaysRequestVpnGatewayIdList)
+            foreach (string describeVpnGatewaysRequestVpnGatewayId in describeVpnGatewaysRequestVpnGatewayIdList)
             {
-                parameters.Add("VpnGatewayId" + "."  + describeVpnGatewaysRequestVpnGatewayIdListIndex, describeVpnGatewaysRequestVpnGatewayId);
+                parameters[String.Concat("VpnGatewayId", ".", describeVpnGatewaysRequestVpnGatewayIdListIndex)] = describeVpnGatewaysRequestVpnGatewayId;
                 describeVpnGatewaysRequestVpnGatewayIdListIndex++;
             }
             List<Filter> describeVpnGatewaysRequestFilterList = request.Filter;
@@ -2503,13 +2459,13 @@ namespace Amazon.EC2
             {
                 if (describeVpnGatewaysRequestFilter.IsSetName())
                 {
-                    parameters.Add("Filter" + "."  + describeVpnGatewaysRequestFilterListIndex + "." + "Name", describeVpnGatewaysRequestFilter.Name);
+                    parameters[String.Concat("Filter", ".", describeVpnGatewaysRequestFilterListIndex, ".", "Name")] = describeVpnGatewaysRequestFilter.Name;
                 }
-                List<string> filterValueList  =  describeVpnGatewaysRequestFilter.Value;
+                List<string> filterValueList = describeVpnGatewaysRequestFilter.Value;
                 int filterValueListIndex = 1;
-                foreach  (string filterValue in filterValueList)
+                foreach (string filterValue in filterValueList)
                 {
-                    parameters.Add("Filter" + "."  + describeVpnGatewaysRequestFilterListIndex + "." + "Value" + "."  + filterValueListIndex, filterValue);
+                    parameters[String.Concat("Filter", ".", describeVpnGatewaysRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
                     filterValueListIndex++;
                 }
 
@@ -2525,12 +2481,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeDhcpOptions(DescribeDhcpOptionsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeDhcpOptions");
-            List<string> describeDhcpOptionsRequestDhcpOptionsIdList  =  request.DhcpOptionsId;
+            parameters["Action"] = "DescribeDhcpOptions";
+            List<string> describeDhcpOptionsRequestDhcpOptionsIdList = request.DhcpOptionsId;
             int describeDhcpOptionsRequestDhcpOptionsIdListIndex = 1;
-            foreach  (string describeDhcpOptionsRequestDhcpOptionsId in describeDhcpOptionsRequestDhcpOptionsIdList)
+            foreach (string describeDhcpOptionsRequestDhcpOptionsId in describeDhcpOptionsRequestDhcpOptionsIdList)
             {
-                parameters.Add("DhcpOptionsId" + "."  + describeDhcpOptionsRequestDhcpOptionsIdListIndex, describeDhcpOptionsRequestDhcpOptionsId);
+                parameters[String.Concat("DhcpOptionsId", ".", describeDhcpOptionsRequestDhcpOptionsIdListIndex)] = describeDhcpOptionsRequestDhcpOptionsId;
                 describeDhcpOptionsRequestDhcpOptionsIdListIndex++;
             }
 
@@ -2543,12 +2499,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeVpnConnections(DescribeVpnConnectionsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeVpnConnections");
-            List<string> describeVpnConnectionsRequestVpnConnectionIdList  =  request.VpnConnectionId;
+            parameters["Action"] = "DescribeVpnConnections";
+            List<string> describeVpnConnectionsRequestVpnConnectionIdList = request.VpnConnectionId;
             int describeVpnConnectionsRequestVpnConnectionIdListIndex = 1;
-            foreach  (string describeVpnConnectionsRequestVpnConnectionId in describeVpnConnectionsRequestVpnConnectionIdList)
+            foreach (string describeVpnConnectionsRequestVpnConnectionId in describeVpnConnectionsRequestVpnConnectionIdList)
             {
-                parameters.Add("VpnConnectionId" + "."  + describeVpnConnectionsRequestVpnConnectionIdListIndex, describeVpnConnectionsRequestVpnConnectionId);
+                parameters[String.Concat("VpnConnectionId", ".", describeVpnConnectionsRequestVpnConnectionIdListIndex)] = describeVpnConnectionsRequestVpnConnectionId;
                 describeVpnConnectionsRequestVpnConnectionIdListIndex++;
             }
             List<Filter> describeVpnConnectionsRequestFilterList = request.Filter;
@@ -2557,13 +2513,13 @@ namespace Amazon.EC2
             {
                 if (describeVpnConnectionsRequestFilter.IsSetName())
                 {
-                    parameters.Add("Filter" + "."  + describeVpnConnectionsRequestFilterListIndex + "." + "Name", describeVpnConnectionsRequestFilter.Name);
+                    parameters[String.Concat("Filter", ".", describeVpnConnectionsRequestFilterListIndex, ".", "Name")] = describeVpnConnectionsRequestFilter.Name;
                 }
-                List<string> filterValueList  =  describeVpnConnectionsRequestFilter.Value;
+                List<string> filterValueList = describeVpnConnectionsRequestFilter.Value;
                 int filterValueListIndex = 1;
-                foreach  (string filterValue in filterValueList)
+                foreach (string filterValue in filterValueList)
                 {
-                    parameters.Add("Filter" + "."  + describeVpnConnectionsRequestFilterListIndex + "." + "Value" + "."  + filterValueListIndex, filterValue);
+                    parameters[String.Concat("Filter", ".", describeVpnConnectionsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
                     filterValueListIndex++;
                 }
 
@@ -2579,12 +2535,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeCustomerGateways(DescribeCustomerGatewaysRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeCustomerGateways");
-            List<string> describeCustomerGatewaysRequestCustomerGatewayIdList  =  request.CustomerGatewayId;
+            parameters["Action"] = "DescribeCustomerGateways";
+            List<string> describeCustomerGatewaysRequestCustomerGatewayIdList = request.CustomerGatewayId;
             int describeCustomerGatewaysRequestCustomerGatewayIdListIndex = 1;
-            foreach  (string describeCustomerGatewaysRequestCustomerGatewayId in describeCustomerGatewaysRequestCustomerGatewayIdList)
+            foreach (string describeCustomerGatewaysRequestCustomerGatewayId in describeCustomerGatewaysRequestCustomerGatewayIdList)
             {
-                parameters.Add("CustomerGatewayId" + "."  + describeCustomerGatewaysRequestCustomerGatewayIdListIndex, describeCustomerGatewaysRequestCustomerGatewayId);
+                parameters[String.Concat("CustomerGatewayId", ".", describeCustomerGatewaysRequestCustomerGatewayIdListIndex)] = describeCustomerGatewaysRequestCustomerGatewayId;
                 describeCustomerGatewaysRequestCustomerGatewayIdListIndex++;
             }
             List<Filter> describeCustomerGatewaysRequestFilterList = request.Filter;
@@ -2593,13 +2549,13 @@ namespace Amazon.EC2
             {
                 if (describeCustomerGatewaysRequestFilter.IsSetName())
                 {
-                    parameters.Add("Filter" + "."  + describeCustomerGatewaysRequestFilterListIndex + "." + "Name", describeCustomerGatewaysRequestFilter.Name);
+                    parameters[String.Concat("Filter", ".", describeCustomerGatewaysRequestFilterListIndex, ".", "Name")] = describeCustomerGatewaysRequestFilter.Name;
                 }
-                List<string> filterValueList  =  describeCustomerGatewaysRequestFilter.Value;
+                List<string> filterValueList = describeCustomerGatewaysRequestFilter.Value;
                 int filterValueListIndex = 1;
-                foreach  (string filterValue in filterValueList)
+                foreach (string filterValue in filterValueList)
                 {
-                    parameters.Add("Filter" + "."  + describeCustomerGatewaysRequestFilterListIndex + "." + "Value" + "."  + filterValueListIndex, filterValue);
+                    parameters[String.Concat("Filter", ".", describeCustomerGatewaysRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
                     filterValueListIndex++;
                 }
 
@@ -2615,25 +2571,25 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeReservedInstancesOfferings");
-            List<string> describeReservedInstancesOfferingsRequestReservedInstancesIdList  =  request.ReservedInstancesId;
+            parameters["Action"] = "DescribeReservedInstancesOfferings";
+            List<string> describeReservedInstancesOfferingsRequestReservedInstancesIdList = request.ReservedInstancesId;
             int describeReservedInstancesOfferingsRequestReservedInstancesIdListIndex = 1;
-            foreach  (string describeReservedInstancesOfferingsRequestReservedInstancesId in describeReservedInstancesOfferingsRequestReservedInstancesIdList)
+            foreach (string describeReservedInstancesOfferingsRequestReservedInstancesId in describeReservedInstancesOfferingsRequestReservedInstancesIdList)
             {
-                parameters.Add("ReservedInstancesId" + "."  + describeReservedInstancesOfferingsRequestReservedInstancesIdListIndex, describeReservedInstancesOfferingsRequestReservedInstancesId);
+                parameters[String.Concat("ReservedInstancesId", ".", describeReservedInstancesOfferingsRequestReservedInstancesIdListIndex)] = describeReservedInstancesOfferingsRequestReservedInstancesId;
                 describeReservedInstancesOfferingsRequestReservedInstancesIdListIndex++;
             }
             if (request.IsSetInstanceType())
             {
-                parameters.Add("InstanceType", request.InstanceType);
+                parameters["InstanceType"] = request.InstanceType;
             }
             if (request.IsSetAvailabilityZone())
             {
-                parameters.Add("AvailabilityZone", request.AvailabilityZone);
+                parameters["AvailabilityZone"] = request.AvailabilityZone;
             }
             if (request.IsSetProductDescription())
             {
-                parameters.Add("ProductDescription", request.ProductDescription);
+                parameters["ProductDescription"] = request.ProductDescription;
             }
 
             return parameters;
@@ -2645,12 +2601,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeReservedInstances(DescribeReservedInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeReservedInstances");
-            List<string> describeReservedInstancesRequestReservedInstancesIdList  =  request.ReservedInstancesId;
+            parameters["Action"] = "DescribeReservedInstances";
+            List<string> describeReservedInstancesRequestReservedInstancesIdList = request.ReservedInstancesId;
             int describeReservedInstancesRequestReservedInstancesIdListIndex = 1;
-            foreach  (string describeReservedInstancesRequestReservedInstancesId in describeReservedInstancesRequestReservedInstancesIdList)
+            foreach (string describeReservedInstancesRequestReservedInstancesId in describeReservedInstancesRequestReservedInstancesIdList)
             {
-                parameters.Add("ReservedInstancesId" + "."  + describeReservedInstancesRequestReservedInstancesIdListIndex, describeReservedInstancesRequestReservedInstancesId);
+                parameters[String.Concat("ReservedInstancesId", ".", describeReservedInstancesRequestReservedInstancesIdListIndex)] = describeReservedInstancesRequestReservedInstancesId;
                 describeReservedInstancesRequestReservedInstancesIdListIndex++;
             }
 
@@ -2663,12 +2619,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeSubnets(DescribeSubnetsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeSubnets");
-            List<string> describeSubnetsRequestSubnetIdList  =  request.SubnetId;
+            parameters["Action"] = "DescribeSubnets";
+            List<string> describeSubnetsRequestSubnetIdList = request.SubnetId;
             int describeSubnetsRequestSubnetIdListIndex = 1;
-            foreach  (string describeSubnetsRequestSubnetId in describeSubnetsRequestSubnetIdList)
+            foreach (string describeSubnetsRequestSubnetId in describeSubnetsRequestSubnetIdList)
             {
-                parameters.Add("SubnetId" + "."  + describeSubnetsRequestSubnetIdListIndex, describeSubnetsRequestSubnetId);
+                parameters[String.Concat("SubnetId", ".", describeSubnetsRequestSubnetIdListIndex)] = describeSubnetsRequestSubnetId;
                 describeSubnetsRequestSubnetIdListIndex++;
             }
             List<Filter> describeSubnetsRequestFilterList = request.Filter;
@@ -2677,13 +2633,13 @@ namespace Amazon.EC2
             {
                 if (describeSubnetsRequestFilter.IsSetName())
                 {
-                    parameters.Add("Filter" + "."  + describeSubnetsRequestFilterListIndex + "." + "Name", describeSubnetsRequestFilter.Name);
+                    parameters[String.Concat("Filter", ".", describeSubnetsRequestFilterListIndex, ".", "Name")] = describeSubnetsRequestFilter.Name;
                 }
-                List<string> filterValueList  =  describeSubnetsRequestFilter.Value;
+                List<string> filterValueList = describeSubnetsRequestFilter.Value;
                 int filterValueListIndex = 1;
-                foreach  (string filterValue in filterValueList)
+                foreach (string filterValue in filterValueList)
                 {
-                    parameters.Add("Filter" + "."  + describeSubnetsRequestFilterListIndex + "." + "Value" + "."  + filterValueListIndex, filterValue);
+                    parameters[String.Concat("Filter", ".", describeSubnetsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
                     filterValueListIndex++;
                 }
 
@@ -2699,14 +2655,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertPurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "PurchaseReservedInstancesOffering");
+            parameters["Action"] = "PurchaseReservedInstancesOffering";
             if (request.IsSetReservedInstancesOfferingId())
             {
-                parameters.Add("ReservedInstancesOfferingId", request.ReservedInstancesOfferingId);
+                parameters["ReservedInstancesOfferingId"] = request.ReservedInstancesOfferingId;
             }
             if (request.IsSetInstanceCount())
             {
-                parameters.Add("InstanceCount", request.InstanceCount);
+                parameters["InstanceCount"] = request.InstanceCount;
             }
 
             return parameters;
@@ -2718,10 +2674,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeregisterImage(DeregisterImageRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeregisterImage");
+            parameters["Action"] = "DeregisterImage";
             if (request.IsSetImageId())
             {
-                parameters.Add("ImageId", request.ImageId);
+                parameters["ImageId"] = request.ImageId;
             }
 
             return parameters;
@@ -2733,12 +2689,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeAddresses(DescribeAddressesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeAddresses");
-            List<string> describeAddressesRequestPublicIpList  =  request.PublicIp;
+            parameters["Action"] = "DescribeAddresses";
+            List<string> describeAddressesRequestPublicIpList = request.PublicIp;
             int describeAddressesRequestPublicIpListIndex = 1;
-            foreach  (string describeAddressesRequestPublicIp in describeAddressesRequestPublicIpList)
+            foreach (string describeAddressesRequestPublicIp in describeAddressesRequestPublicIpList)
             {
-                parameters.Add("PublicIp" + "."  + describeAddressesRequestPublicIpListIndex, describeAddressesRequestPublicIp);
+                parameters[String.Concat("PublicIp", ".", describeAddressesRequestPublicIpListIndex)] = describeAddressesRequestPublicIp;
                 describeAddressesRequestPublicIpListIndex++;
             }
 
@@ -2751,12 +2707,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeAvailabilityZones(DescribeAvailabilityZonesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeAvailabilityZones");
-            List<string> describeAvailabilityZonesRequestZoneNameList  =  request.ZoneName;
+            parameters["Action"] = "DescribeAvailabilityZones";
+            List<string> describeAvailabilityZonesRequestZoneNameList = request.ZoneName;
             int describeAvailabilityZonesRequestZoneNameListIndex = 1;
-            foreach  (string describeAvailabilityZonesRequestZoneName in describeAvailabilityZonesRequestZoneNameList)
+            foreach (string describeAvailabilityZonesRequestZoneName in describeAvailabilityZonesRequestZoneNameList)
             {
-                parameters.Add("ZoneName" + "."  + describeAvailabilityZonesRequestZoneNameListIndex, describeAvailabilityZonesRequestZoneName);
+                parameters[String.Concat("ZoneName", ".", describeAvailabilityZonesRequestZoneNameListIndex)] = describeAvailabilityZonesRequestZoneName;
                 describeAvailabilityZonesRequestZoneNameListIndex++;
             }
 
@@ -2769,12 +2725,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeBundleTasks(DescribeBundleTasksRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeBundleTasks");
-            List<string> describeBundleTasksRequestBundleIdList  =  request.BundleId;
+            parameters["Action"] = "DescribeBundleTasks";
+            List<string> describeBundleTasksRequestBundleIdList = request.BundleId;
             int describeBundleTasksRequestBundleIdListIndex = 1;
-            foreach  (string describeBundleTasksRequestBundleId in describeBundleTasksRequestBundleIdList)
+            foreach (string describeBundleTasksRequestBundleId in describeBundleTasksRequestBundleIdList)
             {
-                parameters.Add("BundleId" + "."  + describeBundleTasksRequestBundleIdListIndex, describeBundleTasksRequestBundleId);
+                parameters[String.Concat("BundleId", ".", describeBundleTasksRequestBundleIdListIndex)] = describeBundleTasksRequestBundleId;
                 describeBundleTasksRequestBundleIdListIndex++;
             }
 
@@ -2787,14 +2743,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeImageAttribute(DescribeImageAttributeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeImageAttribute");
+            parameters["Action"] = "DescribeImageAttribute";
             if (request.IsSetImageId())
             {
-                parameters.Add("ImageId", request.ImageId);
+                parameters["ImageId"] = request.ImageId;
             }
             if (request.IsSetAttribute())
             {
-                parameters.Add("Attribute", request.Attribute);
+                parameters["Attribute"] = request.Attribute;
             }
 
             return parameters;
@@ -2806,14 +2762,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeInstanceAttribute");
+            parameters["Action"] = "DescribeInstanceAttribute";
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
             if (request.IsSetAttribute())
             {
-                parameters.Add("Attribute", request.Attribute);
+                parameters["Attribute"] = request.Attribute;
             }
 
             return parameters;
@@ -2825,14 +2781,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeSnapshotAttribute");
+            parameters["Action"] = "DescribeSnapshotAttribute";
             if (request.IsSetSnapshotId())
             {
-                parameters.Add("SnapshotId", request.SnapshotId);
+                parameters["SnapshotId"] = request.SnapshotId;
             }
             if (request.IsSetAttribute())
             {
-                parameters.Add("Attribute", request.Attribute);
+                parameters["Attribute"] = request.Attribute;
             }
 
             return parameters;
@@ -2844,26 +2800,26 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeImages(DescribeImagesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeImages");
-            List<string> describeImagesRequestImageIdList  =  request.ImageId;
+            parameters["Action"] = "DescribeImages";
+            List<string> describeImagesRequestImageIdList = request.ImageId;
             int describeImagesRequestImageIdListIndex = 1;
-            foreach  (string describeImagesRequestImageId in describeImagesRequestImageIdList)
+            foreach (string describeImagesRequestImageId in describeImagesRequestImageIdList)
             {
-                parameters.Add("ImageId" + "."  + describeImagesRequestImageIdListIndex, describeImagesRequestImageId);
+                parameters[String.Concat("ImageId", ".", describeImagesRequestImageIdListIndex)] = describeImagesRequestImageId;
                 describeImagesRequestImageIdListIndex++;
             }
-            List<string> describeImagesRequestOwnerList  =  request.Owner;
+            List<string> describeImagesRequestOwnerList = request.Owner;
             int describeImagesRequestOwnerListIndex = 1;
-            foreach  (string describeImagesRequestOwner in describeImagesRequestOwnerList)
+            foreach (string describeImagesRequestOwner in describeImagesRequestOwnerList)
             {
-                parameters.Add("Owner" + "."  + describeImagesRequestOwnerListIndex, describeImagesRequestOwner);
+                parameters[String.Concat("Owner", ".", describeImagesRequestOwnerListIndex)] = describeImagesRequestOwner;
                 describeImagesRequestOwnerListIndex++;
             }
-            List<string> describeImagesRequestExecutableByList  =  request.ExecutableBy;
+            List<string> describeImagesRequestExecutableByList = request.ExecutableBy;
             int describeImagesRequestExecutableByListIndex = 1;
-            foreach  (string describeImagesRequestExecutableBy in describeImagesRequestExecutableByList)
+            foreach (string describeImagesRequestExecutableBy in describeImagesRequestExecutableByList)
             {
-                parameters.Add("ExecutableBy" + "."  + describeImagesRequestExecutableByListIndex, describeImagesRequestExecutableBy);
+                parameters[String.Concat("ExecutableBy", ".", describeImagesRequestExecutableByListIndex)] = describeImagesRequestExecutableBy;
                 describeImagesRequestExecutableByListIndex++;
             }
 
@@ -2876,12 +2832,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeInstances(DescribeInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeInstances");
-            List<string> describeInstancesRequestInstanceIdList  =  request.InstanceId;
+            parameters["Action"] = "DescribeInstances";
+            List<string> describeInstancesRequestInstanceIdList = request.InstanceId;
             int describeInstancesRequestInstanceIdListIndex = 1;
-            foreach  (string describeInstancesRequestInstanceId in describeInstancesRequestInstanceIdList)
+            foreach (string describeInstancesRequestInstanceId in describeInstancesRequestInstanceIdList)
             {
-                parameters.Add("InstanceId" + "."  + describeInstancesRequestInstanceIdListIndex, describeInstancesRequestInstanceId);
+                parameters[String.Concat("InstanceId", ".", describeInstancesRequestInstanceIdListIndex)] = describeInstancesRequestInstanceId;
                 describeInstancesRequestInstanceIdListIndex++;
             }
 
@@ -2894,12 +2850,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeKeyPairs(DescribeKeyPairsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeKeyPairs");
-            List<string> describeKeyPairsRequestKeyNameList  =  request.KeyName;
+            parameters["Action"] = "DescribeKeyPairs";
+            List<string> describeKeyPairsRequestKeyNameList = request.KeyName;
             int describeKeyPairsRequestKeyNameListIndex = 1;
-            foreach  (string describeKeyPairsRequestKeyName in describeKeyPairsRequestKeyNameList)
+            foreach (string describeKeyPairsRequestKeyName in describeKeyPairsRequestKeyNameList)
             {
-                parameters.Add("KeyName" + "."  + describeKeyPairsRequestKeyNameListIndex, describeKeyPairsRequestKeyName);
+                parameters[String.Concat("KeyName", ".", describeKeyPairsRequestKeyNameListIndex)] = describeKeyPairsRequestKeyName;
                 describeKeyPairsRequestKeyNameListIndex++;
             }
 
@@ -2912,12 +2868,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeSecurityGroups(DescribeSecurityGroupsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeSecurityGroups");
-            List<string> describeSecurityGroupsRequestGroupNameList  =  request.GroupName;
+            parameters["Action"] = "DescribeSecurityGroups";
+            List<string> describeSecurityGroupsRequestGroupNameList = request.GroupName;
             int describeSecurityGroupsRequestGroupNameListIndex = 1;
-            foreach  (string describeSecurityGroupsRequestGroupName in describeSecurityGroupsRequestGroupNameList)
+            foreach (string describeSecurityGroupsRequestGroupName in describeSecurityGroupsRequestGroupNameList)
             {
-                parameters.Add("GroupName" + "."  + describeSecurityGroupsRequestGroupNameListIndex, describeSecurityGroupsRequestGroupName);
+                parameters[String.Concat("GroupName", ".", describeSecurityGroupsRequestGroupNameListIndex)] = describeSecurityGroupsRequestGroupName;
                 describeSecurityGroupsRequestGroupNameListIndex++;
             }
 
@@ -2930,10 +2886,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDisassociateAddress(DisassociateAddressRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DisassociateAddress");
+            parameters["Action"] = "DisassociateAddress";
             if (request.IsSetPublicIp())
             {
-                parameters.Add("PublicIp", request.PublicIp);
+                parameters["PublicIp"] = request.PublicIp;
             }
 
             return parameters;
@@ -2945,10 +2901,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertGetConsoleOutput(GetConsoleOutputRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "GetConsoleOutput");
+            parameters["Action"] = "GetConsoleOutput";
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
 
             return parameters;
@@ -2960,10 +2916,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertGetPasswordData(GetPasswordDataRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "GetPasswordData");
+            parameters["Action"] = "GetPasswordData";
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
 
             return parameters;
@@ -2975,43 +2931,43 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertModifyImageAttribute(ModifyImageAttributeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ModifyImageAttribute");
+            parameters["Action"] = "ModifyImageAttribute";
             if (request.IsSetImageId())
             {
-                parameters.Add("ImageId", request.ImageId);
+                parameters["ImageId"] = request.ImageId;
             }
             if (request.IsSetAttribute())
             {
-                parameters.Add("Attribute", request.Attribute);
+                parameters["Attribute"] = request.Attribute;
             }
             if (request.IsSetOperationType())
             {
-                parameters.Add("OperationType", request.OperationType);
+                parameters["OperationType"] = request.OperationType;
             }
-            List<string> modifyImageAttributeRequestUserIdList  =  request.UserId;
+            List<string> modifyImageAttributeRequestUserIdList = request.UserId;
             int modifyImageAttributeRequestUserIdListIndex = 1;
-            foreach  (string modifyImageAttributeRequestUserId in modifyImageAttributeRequestUserIdList)
+            foreach (string modifyImageAttributeRequestUserId in modifyImageAttributeRequestUserIdList)
             {
-                parameters.Add("UserId" + "."  + modifyImageAttributeRequestUserIdListIndex, modifyImageAttributeRequestUserId);
+                parameters[String.Concat("UserId", ".", modifyImageAttributeRequestUserIdListIndex)] = modifyImageAttributeRequestUserId;
                 modifyImageAttributeRequestUserIdListIndex++;
             }
-            List<string> modifyImageAttributeRequestUserGroupList  =  request.UserGroup;
+            List<string> modifyImageAttributeRequestUserGroupList = request.UserGroup;
             int modifyImageAttributeRequestUserGroupListIndex = 1;
-            foreach  (string modifyImageAttributeRequestUserGroup in modifyImageAttributeRequestUserGroupList)
+            foreach (string modifyImageAttributeRequestUserGroup in modifyImageAttributeRequestUserGroupList)
             {
-                parameters.Add("UserGroup" + "."  + modifyImageAttributeRequestUserGroupListIndex, modifyImageAttributeRequestUserGroup);
+                parameters[String.Concat("UserGroup", ".", modifyImageAttributeRequestUserGroupListIndex)] = modifyImageAttributeRequestUserGroup;
                 modifyImageAttributeRequestUserGroupListIndex++;
             }
-            List<string> modifyImageAttributeRequestProductCodeList  =  request.ProductCode;
+            List<string> modifyImageAttributeRequestProductCodeList = request.ProductCode;
             int modifyImageAttributeRequestProductCodeListIndex = 1;
-            foreach  (string modifyImageAttributeRequestProductCode in modifyImageAttributeRequestProductCodeList)
+            foreach (string modifyImageAttributeRequestProductCode in modifyImageAttributeRequestProductCodeList)
             {
-                parameters.Add("ProductCode" + "."  + modifyImageAttributeRequestProductCodeListIndex, modifyImageAttributeRequestProductCode);
+                parameters[String.Concat("ProductCode", ".", modifyImageAttributeRequestProductCodeListIndex)] = modifyImageAttributeRequestProductCode;
                 modifyImageAttributeRequestProductCodeListIndex++;
             }
             if (request.IsSetDescription())
             {
-                parameters.Add("Description", request.Description);
+                parameters["Description"] = request.Description;
             }
 
             return parameters;
@@ -3023,18 +2979,18 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertModifyInstanceAttribute(ModifyInstanceAttributeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ModifyInstanceAttribute");
+            parameters["Action"] = "ModifyInstanceAttribute";
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
             if (request.IsSetAttribute())
             {
-                parameters.Add("Attribute", request.Attribute);
+                parameters["Attribute"] = request.Attribute;
             }
             if (request.IsSetValue())
             {
-                parameters.Add("Value", request.Value);
+                parameters["Value"] = request.Value;
             }
             List<InstanceBlockDeviceMappingParameter> modifyInstanceAttributeRequestBlockDeviceMappingList = request.BlockDeviceMapping;
             int modifyInstanceAttributeRequestBlockDeviceMappingListIndex = 1;
@@ -3042,27 +2998,27 @@ namespace Amazon.EC2
             {
                 if (modifyInstanceAttributeRequestBlockDeviceMapping.IsSetDeviceName())
                 {
-                    parameters.Add("BlockDeviceMapping" + "."  + modifyInstanceAttributeRequestBlockDeviceMappingListIndex + "." + "DeviceName", modifyInstanceAttributeRequestBlockDeviceMapping.DeviceName);
+                    parameters[String.Concat("BlockDeviceMapping", ".", modifyInstanceAttributeRequestBlockDeviceMappingListIndex, ".", "DeviceName")] = modifyInstanceAttributeRequestBlockDeviceMapping.DeviceName;
                 }
                 if (modifyInstanceAttributeRequestBlockDeviceMapping.IsSetVirtualName())
                 {
-                    parameters.Add("BlockDeviceMapping" + "."  + modifyInstanceAttributeRequestBlockDeviceMappingListIndex + "." + "VirtualName", modifyInstanceAttributeRequestBlockDeviceMapping.VirtualName);
+                    parameters[String.Concat("BlockDeviceMapping", ".", modifyInstanceAttributeRequestBlockDeviceMappingListIndex, ".", "VirtualName")] = modifyInstanceAttributeRequestBlockDeviceMapping.VirtualName;
                 }
                 if (modifyInstanceAttributeRequestBlockDeviceMapping.IsSetEbs())
                 {
-                    InstanceEbsBlockDeviceParameter  blockDeviceMappingEbs = modifyInstanceAttributeRequestBlockDeviceMapping.Ebs;
+                    InstanceEbsBlockDeviceParameter blockDeviceMappingEbs = modifyInstanceAttributeRequestBlockDeviceMapping.Ebs;
                     if (blockDeviceMappingEbs.IsSetVolumeId())
                     {
-                        parameters.Add("BlockDeviceMapping" + "."  + modifyInstanceAttributeRequestBlockDeviceMappingListIndex + "." + "Ebs" + "." + "VolumeId", blockDeviceMappingEbs.VolumeId);
+                        parameters[String.Concat("BlockDeviceMapping", ".", modifyInstanceAttributeRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "VolumeId")] = blockDeviceMappingEbs.VolumeId;
                     }
                     if (blockDeviceMappingEbs.IsSetDeleteOnTermination())
                     {
-                        parameters.Add("BlockDeviceMapping" + "."  + modifyInstanceAttributeRequestBlockDeviceMappingListIndex + "." + "Ebs" + "." + "DeleteOnTermination", (blockDeviceMappingEbs.DeleteOnTermination + "").ToLower());
+                        parameters[String.Concat("BlockDeviceMapping", ".", modifyInstanceAttributeRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "DeleteOnTermination")] = blockDeviceMappingEbs.DeleteOnTermination.ToString().ToLower();
                     }
                 }
                 if (modifyInstanceAttributeRequestBlockDeviceMapping.IsSetNoDevice())
                 {
-                    parameters.Add("BlockDeviceMapping" + "."  + modifyInstanceAttributeRequestBlockDeviceMappingListIndex + "." + "NoDevice", modifyInstanceAttributeRequestBlockDeviceMapping.NoDevice);
+                    parameters[String.Concat("BlockDeviceMapping", ".", modifyInstanceAttributeRequestBlockDeviceMappingListIndex, ".", "NoDevice")] = modifyInstanceAttributeRequestBlockDeviceMapping.NoDevice;
                 }
 
                 modifyInstanceAttributeRequestBlockDeviceMappingListIndex++;
@@ -3077,31 +3033,31 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertModifySnapshotAttribute(ModifySnapshotAttributeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ModifySnapshotAttribute");
+            parameters["Action"] = "ModifySnapshotAttribute";
             if (request.IsSetSnapshotId())
             {
-                parameters.Add("SnapshotId", request.SnapshotId);
+                parameters["SnapshotId"] = request.SnapshotId;
             }
             if (request.IsSetAttribute())
             {
-                parameters.Add("Attribute", request.Attribute);
+                parameters["Attribute"] = request.Attribute;
             }
             if (request.IsSetOperationType())
             {
-                parameters.Add("OperationType", request.OperationType);
+                parameters["OperationType"] = request.OperationType;
             }
-            List<string> modifySnapshotAttributeRequestUserIdList  =  request.UserId;
+            List<string> modifySnapshotAttributeRequestUserIdList = request.UserId;
             int modifySnapshotAttributeRequestUserIdListIndex = 1;
-            foreach  (string modifySnapshotAttributeRequestUserId in modifySnapshotAttributeRequestUserIdList)
+            foreach (string modifySnapshotAttributeRequestUserId in modifySnapshotAttributeRequestUserIdList)
             {
-                parameters.Add("UserId" + "."  + modifySnapshotAttributeRequestUserIdListIndex, modifySnapshotAttributeRequestUserId);
+                parameters[String.Concat("UserId", ".", modifySnapshotAttributeRequestUserIdListIndex)] = modifySnapshotAttributeRequestUserId;
                 modifySnapshotAttributeRequestUserIdListIndex++;
             }
-            List<string> modifySnapshotAttributeRequestUserGroupList  =  request.UserGroup;
+            List<string> modifySnapshotAttributeRequestUserGroupList = request.UserGroup;
             int modifySnapshotAttributeRequestUserGroupListIndex = 1;
-            foreach  (string modifySnapshotAttributeRequestUserGroup in modifySnapshotAttributeRequestUserGroupList)
+            foreach (string modifySnapshotAttributeRequestUserGroup in modifySnapshotAttributeRequestUserGroupList)
             {
-                parameters.Add("UserGroup" + "."  + modifySnapshotAttributeRequestUserGroupListIndex, modifySnapshotAttributeRequestUserGroup);
+                parameters[String.Concat("UserGroup", ".", modifySnapshotAttributeRequestUserGroupListIndex)] = modifySnapshotAttributeRequestUserGroup;
                 modifySnapshotAttributeRequestUserGroupListIndex++;
             }
 
@@ -3114,12 +3070,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertMonitorInstances(MonitorInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "MonitorInstances");
-            List<string> monitorInstancesRequestInstanceIdList  =  request.InstanceId;
+            parameters["Action"] = "MonitorInstances";
+            List<string> monitorInstancesRequestInstanceIdList = request.InstanceId;
             int monitorInstancesRequestInstanceIdListIndex = 1;
-            foreach  (string monitorInstancesRequestInstanceId in monitorInstancesRequestInstanceIdList)
+            foreach (string monitorInstancesRequestInstanceId in monitorInstancesRequestInstanceIdList)
             {
-                parameters.Add("InstanceId" + "."  + monitorInstancesRequestInstanceIdListIndex, monitorInstancesRequestInstanceId);
+                parameters[String.Concat("InstanceId", ".", monitorInstancesRequestInstanceIdListIndex)] = monitorInstancesRequestInstanceId;
                 monitorInstancesRequestInstanceIdListIndex++;
             }
 
@@ -3132,12 +3088,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertUnmonitorInstances(UnmonitorInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "UnmonitorInstances");
-            List<string> unmonitorInstancesRequestInstanceIdList  =  request.InstanceId;
+            parameters["Action"] = "UnmonitorInstances";
+            List<string> unmonitorInstancesRequestInstanceIdList = request.InstanceId;
             int unmonitorInstancesRequestInstanceIdListIndex = 1;
-            foreach  (string unmonitorInstancesRequestInstanceId in unmonitorInstancesRequestInstanceIdList)
+            foreach (string unmonitorInstancesRequestInstanceId in unmonitorInstancesRequestInstanceIdList)
             {
-                parameters.Add("InstanceId" + "."  + unmonitorInstancesRequestInstanceIdListIndex, unmonitorInstancesRequestInstanceId);
+                parameters[String.Concat("InstanceId", ".", unmonitorInstancesRequestInstanceIdListIndex)] = unmonitorInstancesRequestInstanceId;
                 unmonitorInstancesRequestInstanceIdListIndex++;
             }
 
@@ -3150,12 +3106,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertRebootInstances(RebootInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RebootInstances");
-            List<string> rebootInstancesRequestInstanceIdList  =  request.InstanceId;
+            parameters["Action"] = "RebootInstances";
+            List<string> rebootInstancesRequestInstanceIdList = request.InstanceId;
             int rebootInstancesRequestInstanceIdListIndex = 1;
-            foreach  (string rebootInstancesRequestInstanceId in rebootInstancesRequestInstanceIdList)
+            foreach (string rebootInstancesRequestInstanceId in rebootInstancesRequestInstanceIdList)
             {
-                parameters.Add("InstanceId" + "."  + rebootInstancesRequestInstanceIdListIndex, rebootInstancesRequestInstanceId);
+                parameters[String.Concat("InstanceId", ".", rebootInstancesRequestInstanceIdListIndex)] = rebootInstancesRequestInstanceId;
                 rebootInstancesRequestInstanceIdListIndex++;
             }
 
@@ -3168,34 +3124,34 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertRegisterImage(RegisterImageRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RegisterImage");
+            parameters["Action"] = "RegisterImage";
             if (request.IsSetImageLocation())
             {
-                parameters.Add("ImageLocation", request.ImageLocation);
+                parameters["ImageLocation"] = request.ImageLocation;
             }
             if (request.IsSetName())
             {
-                parameters.Add("Name", request.Name);
+                parameters["Name"] = request.Name;
             }
             if (request.IsSetDescription())
             {
-                parameters.Add("Description", request.Description);
+                parameters["Description"] = request.Description;
             }
             if (request.IsSetArchitecture())
             {
-                parameters.Add("Architecture", request.Architecture);
+                parameters["Architecture"] = request.Architecture;
             }
             if (request.IsSetKernelId())
             {
-                parameters.Add("KernelId", request.KernelId);
+                parameters["KernelId"] = request.KernelId;
             }
             if (request.IsSetRamdiskId())
             {
-                parameters.Add("RamdiskId", request.RamdiskId);
+                parameters["RamdiskId"] = request.RamdiskId;
             }
             if (request.IsSetRootDeviceName())
             {
-                parameters.Add("RootDeviceName", request.RootDeviceName);
+                parameters["RootDeviceName"] = request.RootDeviceName;
             }
             List<BlockDeviceMapping> registerImageRequestBlockDeviceMappingList = request.BlockDeviceMapping;
             int registerImageRequestBlockDeviceMappingListIndex = 1;
@@ -3203,31 +3159,31 @@ namespace Amazon.EC2
             {
                 if (registerImageRequestBlockDeviceMapping.IsSetDeviceName())
                 {
-                    parameters.Add("BlockDeviceMapping" + "."  + registerImageRequestBlockDeviceMappingListIndex + "." + "DeviceName", registerImageRequestBlockDeviceMapping.DeviceName);
+                    parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "DeviceName")] = registerImageRequestBlockDeviceMapping.DeviceName;
                 }
                 if (registerImageRequestBlockDeviceMapping.IsSetVirtualName())
                 {
-                    parameters.Add("BlockDeviceMapping" + "."  + registerImageRequestBlockDeviceMappingListIndex + "." + "VirtualName", registerImageRequestBlockDeviceMapping.VirtualName);
+                    parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "VirtualName")] = registerImageRequestBlockDeviceMapping.VirtualName;
                 }
                 if (registerImageRequestBlockDeviceMapping.IsSetEbs())
                 {
-                    EbsBlockDevice  blockDeviceMappingEbs = registerImageRequestBlockDeviceMapping.Ebs;
+                    EbsBlockDevice blockDeviceMappingEbs = registerImageRequestBlockDeviceMapping.Ebs;
                     if (blockDeviceMappingEbs.IsSetSnapshotId())
                     {
-                        parameters.Add("BlockDeviceMapping" + "."  + registerImageRequestBlockDeviceMappingListIndex + "." + "Ebs" + "." + "SnapshotId", blockDeviceMappingEbs.SnapshotId);
+                        parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "SnapshotId")] = blockDeviceMappingEbs.SnapshotId;
                     }
                     if (blockDeviceMappingEbs.IsSetVolumeSize())
                     {
-                        parameters.Add("BlockDeviceMapping" + "."  + registerImageRequestBlockDeviceMappingListIndex + "." + "Ebs" + "." + "VolumeSize", (blockDeviceMappingEbs.VolumeSize + ""));
+                        parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "VolumeSize")] = blockDeviceMappingEbs.VolumeSize.ToString();
                     }
                     if (blockDeviceMappingEbs.IsSetDeleteOnTermination())
                     {
-                        parameters.Add("BlockDeviceMapping" + "."  + registerImageRequestBlockDeviceMappingListIndex + "." + "Ebs" + "." + "DeleteOnTermination", (blockDeviceMappingEbs.DeleteOnTermination + "").ToLower());
+                        parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "DeleteOnTermination")] = blockDeviceMappingEbs.DeleteOnTermination.ToString().ToLower();
                     }
                 }
                 if (registerImageRequestBlockDeviceMapping.IsSetNoDevice())
                 {
-                    parameters.Add("BlockDeviceMapping" + "."  + registerImageRequestBlockDeviceMappingListIndex + "." + "NoDevice", registerImageRequestBlockDeviceMapping.NoDevice);
+                    parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "NoDevice")] = registerImageRequestBlockDeviceMapping.NoDevice;
                 }
 
                 registerImageRequestBlockDeviceMappingListIndex++;
@@ -3242,10 +3198,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertReleaseAddress(ReleaseAddressRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ReleaseAddress");
+            parameters["Action"] = "ReleaseAddress";
             if (request.IsSetPublicIp())
             {
-                parameters.Add("PublicIp", request.PublicIp);
+                parameters["PublicIp"] = request.PublicIp;
             }
 
             return parameters;
@@ -3257,14 +3213,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertResetImageAttribute(ResetImageAttributeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ResetImageAttribute");
+            parameters["Action"] = "ResetImageAttribute";
             if (request.IsSetImageId())
             {
-                parameters.Add("ImageId", request.ImageId);
+                parameters["ImageId"] = request.ImageId;
             }
             if (request.IsSetAttribute())
             {
-                parameters.Add("Attribute", request.Attribute);
+                parameters["Attribute"] = request.Attribute;
             }
 
             return parameters;
@@ -3276,14 +3232,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertResetInstanceAttribute(ResetInstanceAttributeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ResetInstanceAttribute");
+            parameters["Action"] = "ResetInstanceAttribute";
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
             if (request.IsSetAttribute())
             {
-                parameters.Add("Attribute", request.Attribute);
+                parameters["Attribute"] = request.Attribute;
             }
 
             return parameters;
@@ -3295,14 +3251,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertResetSnapshotAttribute(ResetSnapshotAttributeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "ResetSnapshotAttribute");
+            parameters["Action"] = "ResetSnapshotAttribute";
             if (request.IsSetSnapshotId())
             {
-                parameters.Add("SnapshotId", request.SnapshotId);
+                parameters["SnapshotId"] = request.SnapshotId;
             }
             if (request.IsSetAttribute())
             {
-                parameters.Add("Attribute", request.Attribute);
+                parameters["Attribute"] = request.Attribute;
             }
 
             return parameters;
@@ -3314,38 +3270,38 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertRevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RevokeSecurityGroupIngress");
+            parameters["Action"] = "RevokeSecurityGroupIngress";
             if (request.IsSetUserId())
             {
-                parameters.Add("UserId", request.UserId);
+                parameters["UserId"] = request.UserId;
             }
             if (request.IsSetGroupName())
             {
-                parameters.Add("GroupName", request.GroupName);
+                parameters["GroupName"] = request.GroupName;
             }
             if (request.IsSetSourceSecurityGroupName())
             {
-                parameters.Add("SourceSecurityGroupName", request.SourceSecurityGroupName);
+                parameters["SourceSecurityGroupName"] = request.SourceSecurityGroupName;
             }
             if (request.IsSetSourceSecurityGroupOwnerId())
             {
-                parameters.Add("SourceSecurityGroupOwnerId", request.SourceSecurityGroupOwnerId);
+                parameters["SourceSecurityGroupOwnerId"] = request.SourceSecurityGroupOwnerId;
             }
             if (request.IsSetIpProtocol())
             {
-                parameters.Add("IpProtocol", request.IpProtocol);
+                parameters["IpProtocol"] = request.IpProtocol;
             }
             if (request.IsSetFromPort())
             {
-                parameters.Add("FromPort", (request.FromPort + ""));
+                parameters["FromPort"] = request.FromPort.ToString();
             }
             if (request.IsSetToPort())
             {
-                parameters.Add("ToPort", (request.ToPort + ""));
+                parameters["ToPort"] = request.ToPort.ToString();
             }
             if (request.IsSetCidrIp())
             {
-                parameters.Add("CidrIp", request.CidrIp);
+                parameters["CidrIp"] = request.CidrIp;
             }
 
             return parameters;
@@ -3357,53 +3313,53 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertRunInstances(RunInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RunInstances");
+            parameters["Action"] = "RunInstances";
             if (request.IsSetImageId())
             {
-                parameters.Add("ImageId", request.ImageId);
+                parameters["ImageId"] = request.ImageId;
             }
             if (request.IsSetMinCount())
             {
-                parameters.Add("MinCount", (request.MinCount + ""));
+                parameters["MinCount"] = request.MinCount.ToString();
             }
             if (request.IsSetMaxCount())
             {
-                parameters.Add("MaxCount", (request.MaxCount + ""));
+                parameters["MaxCount"] = request.MaxCount.ToString();
             }
             if (request.IsSetKeyName())
             {
-                parameters.Add("KeyName", request.KeyName);
+                parameters["KeyName"] = request.KeyName;
             }
-            List<string> runInstancesRequestSecurityGroupList  =  request.SecurityGroup;
+            List<string> runInstancesRequestSecurityGroupList = request.SecurityGroup;
             int runInstancesRequestSecurityGroupListIndex = 1;
-            foreach  (string runInstancesRequestSecurityGroup in runInstancesRequestSecurityGroupList)
+            foreach (string runInstancesRequestSecurityGroup in runInstancesRequestSecurityGroupList)
             {
-                parameters.Add("SecurityGroup" + "."  + runInstancesRequestSecurityGroupListIndex, runInstancesRequestSecurityGroup);
+                parameters[String.Concat("SecurityGroup", ".", runInstancesRequestSecurityGroupListIndex)] = runInstancesRequestSecurityGroup;
                 runInstancesRequestSecurityGroupListIndex++;
             }
             if (request.IsSetUserData())
             {
-                parameters.Add("UserData", request.UserData);
+                parameters["UserData"] = request.UserData;
             }
             if (request.IsSetInstanceType())
             {
-                parameters.Add("InstanceType", request.InstanceType);
+                parameters["InstanceType"] = request.InstanceType;
             }
             if (request.IsSetPlacement())
             {
-                Placement  runInstancesRequestPlacement = request.Placement;
+                Placement runInstancesRequestPlacement = request.Placement;
                 if (runInstancesRequestPlacement.IsSetAvailabilityZone())
                 {
-                    parameters.Add("Placement" + "." + "AvailabilityZone", runInstancesRequestPlacement.AvailabilityZone);
+                    parameters[String.Concat("Placement", ".", "AvailabilityZone")] = runInstancesRequestPlacement.AvailabilityZone;
                 }
             }
             if (request.IsSetKernelId())
             {
-                parameters.Add("KernelId", request.KernelId);
+                parameters["KernelId"] = request.KernelId;
             }
             if (request.IsSetRamdiskId())
             {
-                parameters.Add("RamdiskId", request.RamdiskId);
+                parameters["RamdiskId"] = request.RamdiskId;
             }
             List<BlockDeviceMapping> runInstancesRequestBlockDeviceMappingList = request.BlockDeviceMapping;
             int runInstancesRequestBlockDeviceMappingListIndex = 1;
@@ -3411,58 +3367,58 @@ namespace Amazon.EC2
             {
                 if (runInstancesRequestBlockDeviceMapping.IsSetDeviceName())
                 {
-                    parameters.Add("BlockDeviceMapping" + "."  + runInstancesRequestBlockDeviceMappingListIndex + "." + "DeviceName", runInstancesRequestBlockDeviceMapping.DeviceName);
+                    parameters[String.Concat("BlockDeviceMapping", ".", runInstancesRequestBlockDeviceMappingListIndex, ".", "DeviceName")] = runInstancesRequestBlockDeviceMapping.DeviceName;
                 }
                 if (runInstancesRequestBlockDeviceMapping.IsSetVirtualName())
                 {
-                    parameters.Add("BlockDeviceMapping" + "."  + runInstancesRequestBlockDeviceMappingListIndex + "." + "VirtualName", runInstancesRequestBlockDeviceMapping.VirtualName);
+                    parameters[String.Concat("BlockDeviceMapping", ".", runInstancesRequestBlockDeviceMappingListIndex, ".", "VirtualName")] = runInstancesRequestBlockDeviceMapping.VirtualName;
                 }
                 if (runInstancesRequestBlockDeviceMapping.IsSetEbs())
                 {
-                    EbsBlockDevice  blockDeviceMappingEbs = runInstancesRequestBlockDeviceMapping.Ebs;
+                    EbsBlockDevice blockDeviceMappingEbs = runInstancesRequestBlockDeviceMapping.Ebs;
                     if (blockDeviceMappingEbs.IsSetSnapshotId())
                     {
-                        parameters.Add("BlockDeviceMapping" + "."  + runInstancesRequestBlockDeviceMappingListIndex + "." + "Ebs" + "." + "SnapshotId", blockDeviceMappingEbs.SnapshotId);
+                        parameters[String.Concat("BlockDeviceMapping", ".", runInstancesRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "SnapshotId")] = blockDeviceMappingEbs.SnapshotId;
                     }
                     if (blockDeviceMappingEbs.IsSetVolumeSize())
                     {
-                        parameters.Add("BlockDeviceMapping" + "."  + runInstancesRequestBlockDeviceMappingListIndex + "." + "Ebs" + "." + "VolumeSize", (blockDeviceMappingEbs.VolumeSize + ""));
+                        parameters[String.Concat("BlockDeviceMapping", ".", runInstancesRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "VolumeSize")] = blockDeviceMappingEbs.VolumeSize.ToString();
                     }
                     if (blockDeviceMappingEbs.IsSetDeleteOnTermination())
                     {
-                        parameters.Add("BlockDeviceMapping" + "."  + runInstancesRequestBlockDeviceMappingListIndex + "." + "Ebs" + "." + "DeleteOnTermination", (blockDeviceMappingEbs.DeleteOnTermination + "").ToLower());
+                        parameters[String.Concat("BlockDeviceMapping", ".", runInstancesRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "DeleteOnTermination")] = blockDeviceMappingEbs.DeleteOnTermination.ToString().ToLower();
                     }
                 }
                 if (runInstancesRequestBlockDeviceMapping.IsSetNoDevice())
                 {
-                    parameters.Add("BlockDeviceMapping" + "."  + runInstancesRequestBlockDeviceMappingListIndex + "." + "NoDevice", runInstancesRequestBlockDeviceMapping.NoDevice);
+                    parameters[String.Concat("BlockDeviceMapping", ".", runInstancesRequestBlockDeviceMappingListIndex, ".", "NoDevice")] = runInstancesRequestBlockDeviceMapping.NoDevice;
                 }
 
                 runInstancesRequestBlockDeviceMappingListIndex++;
             }
             if (request.IsSetMonitoring())
             {
-                MonitoringSpecification  runInstancesRequestMonitoring = request.Monitoring;
+                MonitoringSpecification runInstancesRequestMonitoring = request.Monitoring;
                 if (runInstancesRequestMonitoring.IsSetEnabled())
                 {
-                    parameters.Add("Monitoring" + "." + "Enabled", (runInstancesRequestMonitoring.Enabled + "").ToLower());
+                    parameters[String.Concat("Monitoring", ".", "Enabled")] = runInstancesRequestMonitoring.Enabled.ToString().ToLower();
                 }
             }
             if (request.IsSetSubnetId())
             {
-                parameters.Add("SubnetId", request.SubnetId);
+                parameters["SubnetId"] = request.SubnetId;
             }
             if (request.IsSetAdditionalInfo())
             {
-                parameters.Add("AdditionalInfo", request.AdditionalInfo);
+                parameters["AdditionalInfo"] = request.AdditionalInfo;
             }
             if (request.IsSetDisableApiTermination())
             {
-                parameters.Add("DisableApiTermination", (request.DisableApiTermination + "").ToLower());
+                parameters["DisableApiTermination"] = request.DisableApiTermination.ToString().ToLower();
             }
             if (request.IsSetInstanceInitiatedShutdownBehavior())
             {
-                parameters.Add("InstanceInitiatedShutdownBehavior", request.InstanceInitiatedShutdownBehavior);
+                parameters["InstanceInitiatedShutdownBehavior"] = request.InstanceInitiatedShutdownBehavior;
             }
 
             return parameters;
@@ -3474,17 +3430,17 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertStopInstances(StopInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "StopInstances");
-            List<string> stopInstancesRequestInstanceIdList  =  request.InstanceId;
+            parameters["Action"] = "StopInstances";
+            List<string> stopInstancesRequestInstanceIdList = request.InstanceId;
             int stopInstancesRequestInstanceIdListIndex = 1;
-            foreach  (string stopInstancesRequestInstanceId in stopInstancesRequestInstanceIdList)
+            foreach (string stopInstancesRequestInstanceId in stopInstancesRequestInstanceIdList)
             {
-                parameters.Add("InstanceId" + "."  + stopInstancesRequestInstanceIdListIndex, stopInstancesRequestInstanceId);
+                parameters[String.Concat("InstanceId", ".", stopInstancesRequestInstanceIdListIndex)] = stopInstancesRequestInstanceId;
                 stopInstancesRequestInstanceIdListIndex++;
             }
             if (request.IsSetForce())
             {
-                parameters.Add("Force", (request.Force + "").ToLower());
+                parameters["Force"] = request.Force.ToString().ToLower();
             }
 
             return parameters;
@@ -3496,12 +3452,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertStartInstances(StartInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "StartInstances");
-            List<string> startInstancesRequestInstanceIdList  =  request.InstanceId;
+            parameters["Action"] = "StartInstances";
+            List<string> startInstancesRequestInstanceIdList = request.InstanceId;
             int startInstancesRequestInstanceIdListIndex = 1;
-            foreach  (string startInstancesRequestInstanceId in startInstancesRequestInstanceIdList)
+            foreach (string startInstancesRequestInstanceId in startInstancesRequestInstanceIdList)
             {
-                parameters.Add("InstanceId" + "."  + startInstancesRequestInstanceIdListIndex, startInstancesRequestInstanceId);
+                parameters[String.Concat("InstanceId", ".", startInstancesRequestInstanceIdListIndex)] = startInstancesRequestInstanceId;
                 startInstancesRequestInstanceIdListIndex++;
             }
 
@@ -3514,12 +3470,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertTerminateInstances(TerminateInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "TerminateInstances");
-            List<string> terminateInstancesRequestInstanceIdList  =  request.InstanceId;
+            parameters["Action"] = "TerminateInstances";
+            List<string> terminateInstancesRequestInstanceIdList = request.InstanceId;
             int terminateInstancesRequestInstanceIdListIndex = 1;
-            foreach  (string terminateInstancesRequestInstanceId in terminateInstancesRequestInstanceIdList)
+            foreach (string terminateInstancesRequestInstanceId in terminateInstancesRequestInstanceIdList)
             {
-                parameters.Add("InstanceId" + "."  + terminateInstancesRequestInstanceIdListIndex, terminateInstancesRequestInstanceId);
+                parameters[String.Concat("InstanceId", ".", terminateInstancesRequestInstanceIdListIndex)] = terminateInstancesRequestInstanceId;
                 terminateInstancesRequestInstanceIdListIndex++;
             }
 
@@ -3532,10 +3488,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteVolume(DeleteVolumeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteVolume");
+            parameters["Action"] = "DeleteVolume";
             if (request.IsSetVolumeId())
             {
-                parameters.Add("VolumeId", request.VolumeId);
+                parameters["VolumeId"] = request.VolumeId;
             }
 
             return parameters;
@@ -3547,18 +3503,18 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateVolume(CreateVolumeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateVolume");
+            parameters["Action"] = "CreateVolume";
             if (request.IsSetSize())
             {
-                parameters.Add("Size", request.Size);
+                parameters["Size"] = request.Size;
             }
             if (request.IsSetSnapshotId())
             {
-                parameters.Add("SnapshotId", request.SnapshotId);
+                parameters["SnapshotId"] = request.SnapshotId;
             }
             if (request.IsSetAvailabilityZone())
             {
-                parameters.Add("AvailabilityZone", request.AvailabilityZone);
+                parameters["AvailabilityZone"] = request.AvailabilityZone;
             }
 
             return parameters;
@@ -3570,12 +3526,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeVolumes(DescribeVolumesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeVolumes");
-            List<string> describeVolumesRequestVolumeIdList  =  request.VolumeId;
+            parameters["Action"] = "DescribeVolumes";
+            List<string> describeVolumesRequestVolumeIdList = request.VolumeId;
             int describeVolumesRequestVolumeIdListIndex = 1;
-            foreach  (string describeVolumesRequestVolumeId in describeVolumesRequestVolumeIdList)
+            foreach (string describeVolumesRequestVolumeId in describeVolumesRequestVolumeIdList)
             {
-                parameters.Add("VolumeId" + "."  + describeVolumesRequestVolumeIdListIndex, describeVolumesRequestVolumeId);
+                parameters[String.Concat("VolumeId", ".", describeVolumesRequestVolumeIdListIndex)] = describeVolumesRequestVolumeId;
                 describeVolumesRequestVolumeIdListIndex++;
             }
 
@@ -3588,22 +3544,22 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDetachVolume(DetachVolumeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DetachVolume");
+            parameters["Action"] = "DetachVolume";
             if (request.IsSetVolumeId())
             {
-                parameters.Add("VolumeId", request.VolumeId);
+                parameters["VolumeId"] = request.VolumeId;
             }
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
             if (request.IsSetDevice())
             {
-                parameters.Add("Device", request.Device);
+                parameters["Device"] = request.Device;
             }
             if (request.IsSetForce())
             {
-                parameters.Add("Force", (request.Force + "").ToLower());
+                parameters["Force"] = request.Force.ToString().ToLower();
             }
 
             return parameters;
@@ -3615,14 +3571,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDetachVpnGateway(DetachVpnGatewayRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DetachVpnGateway");
+            parameters["Action"] = "DetachVpnGateway";
             if (request.IsSetVpnGatewayId())
             {
-                parameters.Add("VpnGatewayId", request.VpnGatewayId);
+                parameters["VpnGatewayId"] = request.VpnGatewayId;
             }
             if (request.IsSetVpcId())
             {
-                parameters.Add("VpcId", request.VpcId);
+                parameters["VpcId"] = request.VpcId;
             }
 
             return parameters;
@@ -3634,21 +3590,21 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeSnapshots(DescribeSnapshotsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeSnapshots");
-            List<string> describeSnapshotsRequestSnapshotIdList  =  request.SnapshotId;
+            parameters["Action"] = "DescribeSnapshots";
+            List<string> describeSnapshotsRequestSnapshotIdList = request.SnapshotId;
             int describeSnapshotsRequestSnapshotIdListIndex = 1;
-            foreach  (string describeSnapshotsRequestSnapshotId in describeSnapshotsRequestSnapshotIdList)
+            foreach (string describeSnapshotsRequestSnapshotId in describeSnapshotsRequestSnapshotIdList)
             {
-                parameters.Add("SnapshotId" + "."  + describeSnapshotsRequestSnapshotIdListIndex, describeSnapshotsRequestSnapshotId);
+                parameters[String.Concat("SnapshotId", ".", describeSnapshotsRequestSnapshotIdListIndex)] = describeSnapshotsRequestSnapshotId;
                 describeSnapshotsRequestSnapshotIdListIndex++;
             }
             if (request.IsSetOwner())
             {
-                parameters.Add("Owner", request.Owner);
+                parameters["Owner"] = request.Owner;
             }
             if (request.IsSetRestorableBy())
             {
-                parameters.Add("RestorableBy", request.RestorableBy);
+                parameters["RestorableBy"] = request.RestorableBy;
             }
 
             return parameters;
@@ -3660,10 +3616,10 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteSnapshot(DeleteSnapshotRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteSnapshot");
+            parameters["Action"] = "DeleteSnapshot";
             if (request.IsSetSnapshotId())
             {
-                parameters.Add("SnapshotId", request.SnapshotId);
+                parameters["SnapshotId"] = request.SnapshotId;
             }
 
             return parameters;
@@ -3675,14 +3631,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateSnapshot(CreateSnapshotRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateSnapshot");
+            parameters["Action"] = "CreateSnapshot";
             if (request.IsSetVolumeId())
             {
-                parameters.Add("VolumeId", request.VolumeId);
+                parameters["VolumeId"] = request.VolumeId;
             }
             if (request.IsSetDescription())
             {
-                parameters.Add("Description", request.Description);
+                parameters["Description"] = request.Description;
             }
 
             return parameters;
@@ -3694,18 +3650,18 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertAttachVolume(AttachVolumeRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "AttachVolume");
+            parameters["Action"] = "AttachVolume";
             if (request.IsSetVolumeId())
             {
-                parameters.Add("VolumeId", request.VolumeId);
+                parameters["VolumeId"] = request.VolumeId;
             }
             if (request.IsSetInstanceId())
             {
-                parameters.Add("InstanceId", request.InstanceId);
+                parameters["InstanceId"] = request.InstanceId;
             }
             if (request.IsSetDevice())
             {
-                parameters.Add("Device", request.Device);
+                parameters["Device"] = request.Device;
             }
 
             return parameters;
@@ -3717,12 +3673,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeRegions(DescribeRegionsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeRegions");
-            List<string> describeRegionsRequestRegionNameList  =  request.RegionName;
+            parameters["Action"] = "DescribeRegions";
+            List<string> describeRegionsRequestRegionNameList = request.RegionName;
             int describeRegionsRequestRegionNameListIndex = 1;
-            foreach  (string describeRegionsRequestRegionName in describeRegionsRequestRegionNameList)
+            foreach (string describeRegionsRequestRegionName in describeRegionsRequestRegionNameList)
             {
-                parameters.Add("RegionName" + "."  + describeRegionsRequestRegionNameListIndex, describeRegionsRequestRegionName);
+                parameters[String.Concat("RegionName", ".", describeRegionsRequestRegionNameListIndex)] = describeRegionsRequestRegionName;
                 describeRegionsRequestRegionNameListIndex++;
             }
 
@@ -3735,80 +3691,80 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertRequestSpotInstances(RequestSpotInstancesRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "RequestSpotInstances");
+            parameters["Action"] = "RequestSpotInstances";
             if (request.IsSetSpotPrice())
             {
-                parameters.Add("SpotPrice", request.SpotPrice);
+                parameters["SpotPrice"] = request.SpotPrice;
             }
             if (request.IsSetInstanceCount())
             {
-                parameters.Add("InstanceCount", (request.InstanceCount + ""));
+                parameters["InstanceCount"] = request.InstanceCount.ToString();
             }
             if (request.IsSetType())
             {
-                parameters.Add("Type", request.Type);
+                parameters["Type"] = request.Type;
             }
             if (request.IsSetValidFrom())
             {
-                parameters.Add("ValidFrom", request.ValidFrom);
+                parameters["ValidFrom"] = request.ValidFrom;
             }
             if (request.IsSetValidUntil())
             {
-                parameters.Add("ValidUntil", request.ValidUntil);
+                parameters["ValidUntil"] = request.ValidUntil;
             }
             if (request.IsSetLaunchGroup())
             {
-                parameters.Add("LaunchGroup", request.LaunchGroup);
+                parameters["LaunchGroup"] = request.LaunchGroup;
             }
             if (request.IsSetAvailabilityZoneGroup())
             {
-                parameters.Add("AvailabilityZoneGroup", request.AvailabilityZoneGroup);
+                parameters["AvailabilityZoneGroup"] = request.AvailabilityZoneGroup;
             }
             if (request.IsSetLaunchSpecification())
             {
-                LaunchSpecification  requestSpotInstancesRequestLaunchSpecification = request.LaunchSpecification;
+                LaunchSpecification requestSpotInstancesRequestLaunchSpecification = request.LaunchSpecification;
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetImageId())
                 {
-                    parameters.Add("LaunchSpecification" + "." + "ImageId", requestSpotInstancesRequestLaunchSpecification.ImageId);
+                    parameters[String.Concat("LaunchSpecification", ".", "ImageId")] = requestSpotInstancesRequestLaunchSpecification.ImageId;
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetKeyName())
                 {
-                    parameters.Add("LaunchSpecification" + "." + "KeyName", requestSpotInstancesRequestLaunchSpecification.KeyName);
+                    parameters[String.Concat("LaunchSpecification", ".", "KeyName")] = requestSpotInstancesRequestLaunchSpecification.KeyName;
                 }
-                List<string> launchSpecificationSecurityGroupList  =  requestSpotInstancesRequestLaunchSpecification.SecurityGroup;
+                List<string> launchSpecificationSecurityGroupList = requestSpotInstancesRequestLaunchSpecification.SecurityGroup;
                 int launchSpecificationSecurityGroupListIndex = 1;
-                foreach  (string launchSpecificationSecurityGroup in launchSpecificationSecurityGroupList)
+                foreach (string launchSpecificationSecurityGroup in launchSpecificationSecurityGroupList)
                 {
-                    parameters.Add("LaunchSpecification" + "." + "SecurityGroup" + "."  + launchSpecificationSecurityGroupListIndex, launchSpecificationSecurityGroup);
+                    parameters[String.Concat("LaunchSpecification", ".", "SecurityGroup", ".", launchSpecificationSecurityGroupListIndex)] = launchSpecificationSecurityGroup;
                     launchSpecificationSecurityGroupListIndex++;
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetUserData())
                 {
-                    parameters.Add("LaunchSpecification" + "." + "UserData", requestSpotInstancesRequestLaunchSpecification.UserData);
+                    parameters[String.Concat("LaunchSpecification", ".", "UserData")] = requestSpotInstancesRequestLaunchSpecification.UserData;
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetAddressingType())
                 {
-                    parameters.Add("LaunchSpecification" + "." + "AddressingType", requestSpotInstancesRequestLaunchSpecification.AddressingType);
+                    parameters[String.Concat("LaunchSpecification", ".", "AddressingType")] = requestSpotInstancesRequestLaunchSpecification.AddressingType;
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetInstanceType())
                 {
-                    parameters.Add("LaunchSpecification" + "." + "InstanceType", requestSpotInstancesRequestLaunchSpecification.InstanceType);
+                    parameters[String.Concat("LaunchSpecification", ".", "InstanceType")] = requestSpotInstancesRequestLaunchSpecification.InstanceType;
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetPlacement())
                 {
-                    Placement  launchSpecificationPlacement = requestSpotInstancesRequestLaunchSpecification.Placement;
+                    Placement launchSpecificationPlacement = requestSpotInstancesRequestLaunchSpecification.Placement;
                     if (launchSpecificationPlacement.IsSetAvailabilityZone())
                     {
-                        parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "AvailabilityZone", launchSpecificationPlacement.AvailabilityZone);
+                        parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "AvailabilityZone")] = launchSpecificationPlacement.AvailabilityZone;
                     }
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetKernelId())
                 {
-                    parameters.Add("LaunchSpecification" + "." + "KernelId", requestSpotInstancesRequestLaunchSpecification.KernelId);
+                    parameters[String.Concat("LaunchSpecification", ".", "KernelId")] = requestSpotInstancesRequestLaunchSpecification.KernelId;
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetRamdiskId())
                 {
-                    parameters.Add("LaunchSpecification" + "." + "RamdiskId", requestSpotInstancesRequestLaunchSpecification.RamdiskId);
+                    parameters[String.Concat("LaunchSpecification", ".", "RamdiskId")] = requestSpotInstancesRequestLaunchSpecification.RamdiskId;
                 }
                 List<BlockDeviceMapping> launchSpecificationBlockDeviceMappingList = requestSpotInstancesRequestLaunchSpecification.BlockDeviceMapping;
                 int launchSpecificationBlockDeviceMappingListIndex = 1;
@@ -3816,46 +3772,46 @@ namespace Amazon.EC2
                 {
                     if (launchSpecificationBlockDeviceMapping.IsSetDeviceName())
                     {
-                        parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "."  + launchSpecificationBlockDeviceMappingListIndex + "." + "DeviceName", launchSpecificationBlockDeviceMapping.DeviceName);
+                        parameters[String.Concat("LaunchSpecification", ".", "BlockDeviceMapping", ".", launchSpecificationBlockDeviceMappingListIndex, ".", "DeviceName")] = launchSpecificationBlockDeviceMapping.DeviceName;
                     }
                     if (launchSpecificationBlockDeviceMapping.IsSetVirtualName())
                     {
-                        parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "."  + launchSpecificationBlockDeviceMappingListIndex + "." + "VirtualName", launchSpecificationBlockDeviceMapping.VirtualName);
+                        parameters[String.Concat("LaunchSpecification", ".", "BlockDeviceMapping", ".", launchSpecificationBlockDeviceMappingListIndex, ".", "VirtualName")] = launchSpecificationBlockDeviceMapping.VirtualName;
                     }
                     if (launchSpecificationBlockDeviceMapping.IsSetEbs())
                     {
-                        EbsBlockDevice  blockDeviceMappingEbs = launchSpecificationBlockDeviceMapping.Ebs;
+                        EbsBlockDevice blockDeviceMappingEbs = launchSpecificationBlockDeviceMapping.Ebs;
                         if (blockDeviceMappingEbs.IsSetSnapshotId())
                         {
-                            parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "."  + launchSpecificationBlockDeviceMappingListIndex + "." + "Ebs" + "." + "SnapshotId", blockDeviceMappingEbs.SnapshotId);
+                            parameters[String.Concat("LaunchSpecification", ".", "BlockDeviceMapping", ".", launchSpecificationBlockDeviceMappingListIndex, ".", "Ebs", ".", "SnapshotId")] = blockDeviceMappingEbs.SnapshotId;
                         }
                         if (blockDeviceMappingEbs.IsSetVolumeSize())
                         {
-                            parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "."  + launchSpecificationBlockDeviceMappingListIndex + "." + "Ebs" + "." + "VolumeSize", (blockDeviceMappingEbs.VolumeSize + ""));
+                            parameters[String.Concat("LaunchSpecification", ".", "BlockDeviceMapping", ".", launchSpecificationBlockDeviceMappingListIndex, ".", "Ebs", ".", "VolumeSize")] = blockDeviceMappingEbs.VolumeSize.ToString();
                         }
                         if (blockDeviceMappingEbs.IsSetDeleteOnTermination())
                         {
-                            parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "."  + launchSpecificationBlockDeviceMappingListIndex + "." + "Ebs" + "." + "DeleteOnTermination", (blockDeviceMappingEbs.DeleteOnTermination + "").ToLower());
+                            parameters[String.Concat("LaunchSpecification", ".", "BlockDeviceMapping", ".", launchSpecificationBlockDeviceMappingListIndex, ".", "Ebs", ".", "DeleteOnTermination")] = blockDeviceMappingEbs.DeleteOnTermination.ToString().ToLower();
                         }
                     }
                     if (launchSpecificationBlockDeviceMapping.IsSetNoDevice())
                     {
-                        parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "."  + launchSpecificationBlockDeviceMappingListIndex + "." + "NoDevice", launchSpecificationBlockDeviceMapping.NoDevice);
+                        parameters[String.Concat("LaunchSpecification", ".", "BlockDeviceMapping", ".", launchSpecificationBlockDeviceMappingListIndex, ".", "NoDevice")] = launchSpecificationBlockDeviceMapping.NoDevice;
                     }
 
                     launchSpecificationBlockDeviceMappingListIndex++;
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetMonitoring())
                 {
-                    MonitoringSpecification  launchSpecificationMonitoring = requestSpotInstancesRequestLaunchSpecification.Monitoring;
+                    MonitoringSpecification launchSpecificationMonitoring = requestSpotInstancesRequestLaunchSpecification.Monitoring;
                     if (launchSpecificationMonitoring.IsSetEnabled())
                     {
-                        parameters.Add("LaunchSpecification" + "." + "Monitoring" + "." + "Enabled", (launchSpecificationMonitoring.Enabled + "").ToLower());
+                        parameters[String.Concat("LaunchSpecification", ".", "Monitoring", ".", "Enabled")] = launchSpecificationMonitoring.Enabled.ToString().ToLower();
                     }
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetSubnetId())
                 {
-                    parameters.Add("LaunchSpecification" + "." + "SubnetId", requestSpotInstancesRequestLaunchSpecification.SubnetId);
+                    parameters[String.Concat("LaunchSpecification", ".", "SubnetId")] = requestSpotInstancesRequestLaunchSpecification.SubnetId;
                 }
             }
 
@@ -3868,12 +3824,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeSpotInstanceRequests");
-            List<string> describeSpotInstanceRequestsRequestSpotInstanceRequestIdList  =  request.SpotInstanceRequestId;
+            parameters["Action"] = "DescribeSpotInstanceRequests";
+            List<string> describeSpotInstanceRequestsRequestSpotInstanceRequestIdList = request.SpotInstanceRequestId;
             int describeSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex = 1;
-            foreach  (string describeSpotInstanceRequestsRequestSpotInstanceRequestId in describeSpotInstanceRequestsRequestSpotInstanceRequestIdList)
+            foreach (string describeSpotInstanceRequestsRequestSpotInstanceRequestId in describeSpotInstanceRequestsRequestSpotInstanceRequestIdList)
             {
-                parameters.Add("SpotInstanceRequestId" + "."  + describeSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex, describeSpotInstanceRequestsRequestSpotInstanceRequestId);
+                parameters[String.Concat("SpotInstanceRequestId", ".", describeSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex)] = describeSpotInstanceRequestsRequestSpotInstanceRequestId;
                 describeSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex++;
             }
 
@@ -3886,12 +3842,12 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CancelSpotInstanceRequests");
-            List<string> cancelSpotInstanceRequestsRequestSpotInstanceRequestIdList  =  request.SpotInstanceRequestId;
+            parameters["Action"] = "CancelSpotInstanceRequests";
+            List<string> cancelSpotInstanceRequestsRequestSpotInstanceRequestIdList = request.SpotInstanceRequestId;
             int cancelSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex = 1;
-            foreach  (string cancelSpotInstanceRequestsRequestSpotInstanceRequestId in cancelSpotInstanceRequestsRequestSpotInstanceRequestIdList)
+            foreach (string cancelSpotInstanceRequestsRequestSpotInstanceRequestId in cancelSpotInstanceRequestsRequestSpotInstanceRequestIdList)
             {
-                parameters.Add("SpotInstanceRequestId" + "."  + cancelSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex, cancelSpotInstanceRequestsRequestSpotInstanceRequestId);
+                parameters[String.Concat("SpotInstanceRequestId", ".", cancelSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex)] = cancelSpotInstanceRequestsRequestSpotInstanceRequestId;
                 cancelSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex++;
             }
 
@@ -3904,27 +3860,27 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeSpotPriceHistory");
+            parameters["Action"] = "DescribeSpotPriceHistory";
             if (request.IsSetStartTime())
             {
-                parameters.Add("StartTime", request.StartTime);
+                parameters["StartTime"] = request.StartTime;
             }
             if (request.IsSetEndTime())
             {
-                parameters.Add("EndTime", request.EndTime);
+                parameters["EndTime"] = request.EndTime;
             }
-            List<string> describeSpotPriceHistoryRequestInstanceTypeList  =  request.InstanceType;
+            List<string> describeSpotPriceHistoryRequestInstanceTypeList = request.InstanceType;
             int describeSpotPriceHistoryRequestInstanceTypeListIndex = 1;
-            foreach  (string describeSpotPriceHistoryRequestInstanceType in describeSpotPriceHistoryRequestInstanceTypeList)
+            foreach (string describeSpotPriceHistoryRequestInstanceType in describeSpotPriceHistoryRequestInstanceTypeList)
             {
-                parameters.Add("InstanceType" + "."  + describeSpotPriceHistoryRequestInstanceTypeListIndex, describeSpotPriceHistoryRequestInstanceType);
+                parameters[String.Concat("InstanceType", ".", describeSpotPriceHistoryRequestInstanceTypeListIndex)] = describeSpotPriceHistoryRequestInstanceType;
                 describeSpotPriceHistoryRequestInstanceTypeListIndex++;
             }
-            List<string> describeSpotPriceHistoryRequestProductDescriptionList  =  request.ProductDescription;
+            List<string> describeSpotPriceHistoryRequestProductDescriptionList = request.ProductDescription;
             int describeSpotPriceHistoryRequestProductDescriptionListIndex = 1;
-            foreach  (string describeSpotPriceHistoryRequestProductDescription in describeSpotPriceHistoryRequestProductDescriptionList)
+            foreach (string describeSpotPriceHistoryRequestProductDescription in describeSpotPriceHistoryRequestProductDescriptionList)
             {
-                parameters.Add("ProductDescription" + "."  + describeSpotPriceHistoryRequestProductDescriptionListIndex, describeSpotPriceHistoryRequestProductDescription);
+                parameters[String.Concat("ProductDescription", ".", describeSpotPriceHistoryRequestProductDescriptionListIndex)] = describeSpotPriceHistoryRequestProductDescription;
                 describeSpotPriceHistoryRequestProductDescriptionListIndex++;
             }
 
@@ -3937,14 +3893,14 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertCreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "CreateSpotDatafeedSubscription");
+            parameters["Action"] = "CreateSpotDatafeedSubscription";
             if (request.IsSetBucket())
             {
-                parameters.Add("Bucket", request.Bucket);
+                parameters["Bucket"] = request.Bucket;
             }
             if (request.IsSetPrefix())
             {
-                parameters.Add("Prefix", request.Prefix);
+                parameters["Prefix"] = request.Prefix;
             }
 
             return parameters;
@@ -3956,7 +3912,7 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DescribeSpotDatafeedSubscription");
+            parameters["Action"] = "DescribeSpotDatafeedSubscription";
 
             return parameters;
         }
@@ -3967,7 +3923,7 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request)
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("Action", "DeleteSpotDatafeedSubscription");
+            parameters["Action"] = "DeleteSpotDatafeedSubscription";
 
             return parameters;
         }

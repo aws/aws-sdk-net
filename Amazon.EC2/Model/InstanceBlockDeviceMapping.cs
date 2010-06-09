@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DeviceName")]
         public string DeviceName
         {
-            get { return this.deviceNameField ; }
-            set { this.deviceNameField= value; }
+            get { return this.deviceNameField; }
+            set { this.deviceNameField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if DeviceName property is set</returns>
         public bool IsSetDeviceName()
         {
-            return  this.deviceNameField != null;
+            return this.deviceNameField != null;
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Ebs")]
         public InstanceEbsBlockDevice Ebs
         {
-            get { return this.ebsField ; }
+            get { return this.ebsField; }
             set { this.ebsField = value; }
         }
 

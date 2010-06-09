@@ -44,8 +44,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "Protocol")]
         public string Protocol
         {
-            get { return this.protocolField ; }
-            set { this.protocolField= value; }
+            get { return this.protocolField; }
+            set { this.protocolField = value; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if Protocol property is set</returns>
         public bool IsSetProtocol()
         {
-            return  this.protocolField != null;
+            return this.protocolField != null;
         }
 
         /// <summary>
@@ -77,8 +77,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "LoadBalancerPort")]
         public Decimal LoadBalancerPort
         {
-            get { return this.loadBalancerPortField.GetValueOrDefault() ; }
-            set { this.loadBalancerPortField= value; }
+            get { return this.loadBalancerPortField.GetValueOrDefault(); }
+            set { this.loadBalancerPortField = value; }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if LoadBalancerPort property is set</returns>
         public bool IsSetLoadBalancerPort()
         {
-            return  this.loadBalancerPortField.HasValue;
+            return this.loadBalancerPortField.HasValue;
         }
 
         /// <summary>
@@ -111,8 +111,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         [XmlElementAttribute(ElementName = "InstancePort")]
         public Decimal InstancePort
         {
-            get { return this.instancePortField.GetValueOrDefault() ; }
-            set { this.instancePortField= value; }
+            get { return this.instancePortField.GetValueOrDefault(); }
+            set { this.instancePortField = value; }
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <returns>true if InstancePort property is set</returns>
         public bool IsSetInstancePort()
         {
-            return  this.instancePortField.HasValue;
+            return this.instancePortField.HasValue;
         }
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "Vpc")]
         public Vpc Vpc
         {
-            get { return this.vpcField ; }
+            get { return this.vpcField; }
             set { this.vpcField = value; }
         }
 

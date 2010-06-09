@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "SpotInstanceRequestId")]
         public string SpotInstanceRequestId
         {
-            get { return this.spotInstanceRequestIdField ; }
-            set { this.spotInstanceRequestIdField= value; }
+            get { return this.spotInstanceRequestIdField; }
+            set { this.spotInstanceRequestIdField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if SpotInstanceRequestId property is set</returns>
         public bool IsSetSpotInstanceRequestId()
         {
-            return  this.spotInstanceRequestIdField != null;
+            return this.spotInstanceRequestIdField != null;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "State")]
         public string State
         {
-            get { return this.stateField ; }
-            set { this.stateField= value; }
+            get { return this.stateField; }
+            set { this.stateField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if State property is set</returns>
         public bool IsSetState()
         {
-            return  this.stateField != null;
+            return this.stateField != null;
         }
 
     }

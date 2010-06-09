@@ -44,8 +44,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
         {
-            get { return this.vpcIdField ; }
-            set { this.vpcIdField= value; }
+            get { return this.vpcIdField; }
+            set { this.vpcIdField = value; }
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpcId property is set</returns>
         public bool IsSetVpcId()
         {
-            return  this.vpcIdField != null;
+            return this.vpcIdField != null;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "VpcState")]
         public string VpcState
         {
-            get { return this.vpcStateField ; }
-            set { this.vpcStateField= value; }
+            get { return this.vpcStateField; }
+            set { this.vpcStateField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if VpcState property is set</returns>
         public bool IsSetVpcState()
         {
-            return  this.vpcStateField != null;
+            return this.vpcStateField != null;
         }
 
         /// <summary>
@@ -106,8 +106,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "CidrBlock")]
         public string CidrBlock
         {
-            get { return this.cidrBlockField ; }
-            set { this.cidrBlockField= value; }
+            get { return this.cidrBlockField; }
+            set { this.cidrBlockField = value; }
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if CidrBlock property is set</returns>
         public bool IsSetCidrBlock()
         {
-            return  this.cidrBlockField != null;
+            return this.cidrBlockField != null;
         }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DhcpOptionsId")]
         public string DhcpOptionsId
         {
-            get { return this.dhcpOptionsIdField ; }
-            set { this.dhcpOptionsIdField= value; }
+            get { return this.dhcpOptionsIdField; }
+            set { this.dhcpOptionsIdField = value; }
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if DhcpOptionsId property is set</returns>
         public bool IsSetDhcpOptionsId()
         {
-            return  this.dhcpOptionsIdField != null;
+            return this.dhcpOptionsIdField != null;
         }
 
     }

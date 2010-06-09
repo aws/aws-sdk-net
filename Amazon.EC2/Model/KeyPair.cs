@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "KeyName")]
         public string KeyName
         {
-            get { return this.keyNameField ; }
-            set { this.keyNameField= value; }
+            get { return this.keyNameField; }
+            set { this.keyNameField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if KeyName property is set</returns>
         public bool IsSetKeyName()
         {
-            return  this.keyNameField != null;
+            return this.keyNameField != null;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "KeyFingerprint")]
         public string KeyFingerprint
         {
-            get { return this.keyFingerprintField ; }
-            set { this.keyFingerprintField= value; }
+            get { return this.keyFingerprintField; }
+            set { this.keyFingerprintField = value; }
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if KeyFingerprint property is set</returns>
         public bool IsSetKeyFingerprint()
         {
-            return  this.keyFingerprintField != null;
+            return this.keyFingerprintField != null;
         }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "KeyMaterial")]
         public string KeyMaterial
         {
-            get { return this.keyMaterialField ; }
-            set { this.keyMaterialField= value; }
+            get { return this.keyMaterialField; }
+            set { this.keyMaterialField = value; }
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if KeyMaterial property is set</returns>
         public bool IsSetKeyMaterial()
         {
-            return  this.keyMaterialField != null;
+            return this.keyMaterialField != null;
         }
 
     }

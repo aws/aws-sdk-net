@@ -42,8 +42,8 @@ namespace Amazon.ElasticMapReduce.Model
         [XmlElementAttribute(ElementName = "JobFlowId")]
         public string JobFlowId
         {
-            get { return this.jobFlowIdField ; }
-            set { this.jobFlowIdField= value; }
+            get { return this.jobFlowIdField; }
+            set { this.jobFlowIdField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>true if JobFlowId property is set</returns>
         public bool IsSetJobFlowId()
         {
-            return  this.jobFlowIdField != null;
+            return this.jobFlowIdField != null;
         }
         /// <summary>
         /// Gets and sets the Steps property.

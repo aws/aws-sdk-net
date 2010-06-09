@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "UserId")]
         public string UserId
         {
-            get { return this.userIdField ; }
-            set { this.userIdField= value; }
+            get { return this.userIdField; }
+            set { this.userIdField = value; }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if UserId property is set</returns>
         public bool IsSetUserId()
         {
-            return  this.userIdField != null;
+            return this.userIdField != null;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
         {
-            get { return this.groupNameField ; }
-            set { this.groupNameField= value; }
+            get { return this.groupNameField; }
+            set { this.groupNameField = value; }
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if GroupName property is set</returns>
         public bool IsSetGroupName()
         {
-            return  this.groupNameField != null;
+            return this.groupNameField != null;
         }
 
     }

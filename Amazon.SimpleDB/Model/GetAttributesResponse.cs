@@ -49,7 +49,7 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "GetAttributesResult")]
         public GetAttributesResult GetAttributesResult
         {
-            get { return this.getAttributesResultField ; }
+            get { return this.getAttributesResultField; }
             set { this.getAttributesResultField = value; }
         }
 
@@ -83,7 +83,7 @@ namespace Amazon.SimpleDB.Model
         [XmlElementAttribute(ElementName = "ResponseMetadata")]
         public ResponseMetadata ResponseMetadata
         {
-            get { return this.responseMetadataField ; }
+            get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
 

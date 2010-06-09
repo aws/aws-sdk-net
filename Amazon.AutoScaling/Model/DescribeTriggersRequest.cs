@@ -42,8 +42,8 @@ namespace Amazon.AutoScaling.Model
         [XmlElementAttribute(ElementName = "AutoScalingGroupName")]
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupNameField ; }
-            set { this.autoScalingGroupNameField= value; }
+            get { return this.autoScalingGroupNameField; }
+            set { this.autoScalingGroupNameField = value; }
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.AutoScaling.Model
         /// <returns>true if AutoScalingGroupName property is set</returns>
         public bool IsSetAutoScalingGroupName()
         {
-            return  this.autoScalingGroupNameField != null;
+            return this.autoScalingGroupNameField != null;
         }
 
     }

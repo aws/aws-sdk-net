@@ -49,8 +49,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField ; }
-            set { this.instanceIdField= value; }
+            get { return this.instanceIdField; }
+            set { this.instanceIdField = value; }
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceId property is set</returns>
         public bool IsSetInstanceId()
         {
-            return  this.instanceIdField != null;
+            return this.instanceIdField != null;
         }
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
         {
-            get { return this.instanceTypeField ; }
-            set { this.instanceTypeField= value; }
+            get { return this.instanceTypeField; }
+            set { this.instanceTypeField = value; }
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceType property is set</returns>
         public bool IsSetInstanceType()
         {
-            return  this.instanceTypeField != null;
+            return this.instanceTypeField != null;
         }
 
         /// <summary>
@@ -113,8 +113,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "KernelId")]
         public string KernelId
         {
-            get { return this.kernelIdField ; }
-            set { this.kernelIdField= value; }
+            get { return this.kernelIdField; }
+            set { this.kernelIdField = value; }
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if KernelId property is set</returns>
         public bool IsSetKernelId()
         {
-            return  this.kernelIdField != null;
+            return this.kernelIdField != null;
         }
 
         /// <summary>
@@ -144,8 +144,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "RamdiskId")]
         public string RamdiskId
         {
-            get { return this.ramdiskIdField ; }
-            set { this.ramdiskIdField= value; }
+            get { return this.ramdiskIdField; }
+            set { this.ramdiskIdField = value; }
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if RamdiskId property is set</returns>
         public bool IsSetRamdiskId()
         {
-            return  this.ramdiskIdField != null;
+            return this.ramdiskIdField != null;
         }
 
         /// <summary>
@@ -175,8 +175,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "UserData")]
         public string UserData
         {
-            get { return this.userDataField ; }
-            set { this.userDataField= value; }
+            get { return this.userDataField; }
+            set { this.userDataField = value; }
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if UserData property is set</returns>
         public bool IsSetUserData()
         {
-            return  this.userDataField != null;
+            return this.userDataField != null;
         }
 
         /// <summary>
@@ -208,8 +208,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "DisableApiTermination")]
         public bool DisableApiTermination
         {
-            get { return this.disableApiTerminationField.GetValueOrDefault() ; }
-            set { this.disableApiTerminationField= value; }
+            get { return this.disableApiTerminationField.GetValueOrDefault(); }
+            set { this.disableApiTerminationField = value; }
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if DisableApiTermination property is set</returns>
         public bool IsSetDisableApiTermination()
         {
-            return  this.disableApiTerminationField.HasValue;
+            return this.disableApiTerminationField.HasValue;
         }
 
         /// <summary>
@@ -243,8 +243,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "InstanceInitiatedShutdownBehavior")]
         public string InstanceInitiatedShutdownBehavior
         {
-            get { return this.instanceInitiatedShutdownBehaviorField ; }
-            set { this.instanceInitiatedShutdownBehaviorField= value; }
+            get { return this.instanceInitiatedShutdownBehaviorField; }
+            set { this.instanceInitiatedShutdownBehaviorField = value; }
         }
 
         /// <summary>
@@ -266,7 +266,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if InstanceInitiatedShutdownBehavior property is set</returns>
         public bool IsSetInstanceInitiatedShutdownBehavior()
         {
-            return  this.instanceInitiatedShutdownBehaviorField != null;
+            return this.instanceInitiatedShutdownBehaviorField != null;
         }
 
         /// <summary>
@@ -276,8 +276,8 @@ namespace Amazon.EC2.Model
         [XmlElementAttribute(ElementName = "RootDeviceName")]
         public string RootDeviceName
         {
-            get { return this.rootDeviceNameField ; }
-            set { this.rootDeviceNameField= value; }
+            get { return this.rootDeviceNameField; }
+            set { this.rootDeviceNameField = value; }
         }
 
         /// <summary>
@@ -297,7 +297,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if RootDeviceName property is set</returns>
         public bool IsSetRootDeviceName()
         {
-            return  this.rootDeviceNameField != null;
+            return this.rootDeviceNameField != null;
         }
         /// <summary>
         /// Gets and sets the BlockDeviceMapping property.
