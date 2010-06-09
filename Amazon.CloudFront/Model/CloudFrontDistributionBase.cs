@@ -1,0 +1,201 @@
+/*******************************************************************************
+ *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
+ *  this file except in compliance with the License. A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ *  or in the "license" file accompanying this file.
+ *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ *  specific language governing permissions and limitations under the License.
+ * *****************************************************************************
+ *    __  _    _  ___
+ *   (  )( \/\/ )/ __)
+ *   /__\ \    / \__ \
+ *  (_)(_) \/\/  (___/
+ *
+ *  AWS SDK for .NET
+ *  API Version: 2009-12-01
+ *
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Util;
+using Amazon.CloudFront.Util;
+
+namespace Amazon.CloudFront.Model
+{
+    /// <summary>
+    /// The DistributionBase contains the common elements of a CloudFront distribution.
+    /// <para>
+    /// The shared elements are:
+    /// <list type="number">
+    /// <item>Id</item>
+    /// <item>Status</item>
+    /// <item>Last Modified Timestamp</item>
+    /// <item>Domain Name</item>
+    /// <item>The Configuration for the Distribution</item>
+    /// </list>
+    /// </para>
+    /// For more information, please visit:
+    /// - <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/DistributionDatatype.html"/><br />
+    /// - <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/StreamingDistributionDatatype.html"/>
+    /// </summary>
+    [Serializable()]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2009-12-01/", IsNullable = false)]
+    public class CloudFrontDistributionBase
+    {
+        #region Private Members
+
+        private string id;
+        private string status;
+        private DateTime? lastModifiedTime;
+        private string domainName;
+        private string eTag;
+
+        #endregion
+
+        #region Id
+
+        /// <summary>
+        /// Gets and sets the Id property. This is the Id returned by CloudFront
+        /// when the distribution is created and is unique to the Distribution.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Id")]
+        public virtual string Id
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
+
+        /// <summary>
+        /// Checks if Id property is set.
+        /// </summary>
+        /// <returns>true if Id property is set.</returns>
+        internal virtual bool IsSetId()
+        {
+            return !String.IsNullOrEmpty(this.id);
+        }
+
+        #endregion
+
+        #region Status
+
+        /// <summary>
+        /// Gets and sets the Status property.
+        /// The current status of the Distribution can either be Deployed or In Progres
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Status")]
+        public virtual string Status
+        {
+            get { return this.status; }
+            set { this.status = value; }
+        }
+
+        /// <summary>
+        /// Checks if Status property is set.
+        /// </summary>
+        /// <returns>true if Status property is set.</returns>
+        internal virtual bool IsSetStatus()
+        {
+            return !String.IsNullOrEmpty(this.status);
+        }
+
+        #endregion
+
+        #region LastModifiedTime
+
+        /// <summary>
+        /// Gets and sets the LastModifiedTime property.
+        /// The date and time the distribution was last modified. The 
+        /// string returned is the GMT representation of DateTime.
+        /// The date is in the format YYYY-MM-DDThh:mm:ssZ, as specified in the 
+        /// ISO 8601 standard (e.g., 2008-07-24T19:37:58Z) 
+        /// </summary>
+        [XmlElementAttribute(ElementName = "LastModifiedTime")]
+        public virtual string LastModifiedTime
+        {
+            get
+            {
+                return this.lastModifiedTime.GetValueOrDefault().ToString(
+                    AWSSDKUtils.GMTDateFormat
+                    );
+            }
+            set
+            {
+                this.lastModifiedTime = DateTime.ParseExact(
+                    value,
+                    AWSSDKUtils.ISO8601DateFormat,
+                    CultureInfo.InvariantCulture
+                    );
+            }
+        }
+
+        /// <summary>
+        /// Checks if LastModifiedTime property is set.
+        /// </summary>
+        /// <returns>true if LastModifiedTime property is set.</returns>
+        internal virtual bool IsSetLastModifiedTime()
+        {
+            return lastModifiedTime.HasValue;
+        }
+
+        #endregion
+
+        #region DomainName
+
+        /// <summary>
+        /// Gets and sets the DomainName property.
+        /// The domain name corresponding to the distribution. For example, 
+        /// e604721fxaaqy9.cloudfront.net.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "DomainName")]
+        public virtual string DomainName
+        {
+            get { return this.domainName; }
+            set { this.domainName = value; }
+        }
+
+        /// <summary>
+        /// Checks if DomainName property is set
+        /// </summary>
+        /// <returns>true if DomainName property is set</returns>
+        internal virtual bool IsSetDomainName()
+        {
+            return !String.IsNullOrEmpty(this.domainName);
+        }
+
+        #endregion
+
+        #region ETag
+
+        /// <summary>
+        /// Gets and sets the ETag property of this 
+        /// Distribution's information.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ETag")]
+        public virtual string ETag
+        {
+            get { return this.eTag; }
+            set { this.eTag = value; }
+        }
+
+        /// <summary>
+        /// Checks if the ETag property is set.
+        /// </summary>
+        /// <returns>true if ETag property is set.</returns>
+        internal bool IsSetETag()
+        {
+            return !System.String.IsNullOrEmpty(this.eTag);
+        }
+
+        #endregion
+    }
+}

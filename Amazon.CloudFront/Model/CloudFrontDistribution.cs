@@ -1,0 +1,127 @@
+/*******************************************************************************
+ *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
+ *  this file except in compliance with the License. A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ *  or in the "license" file accompanying this file.
+ *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ *  specific language governing permissions and limitations under the License.
+ * *****************************************************************************
+ *    __  _    _  ___
+ *   (  )( \/\/ )/ __)
+ *   /__\ \    / \__ \
+ *  (_)(_) \/\/  (___/
+ *
+ *  AWS SDK for .NET
+ *  API Version: 2009-12-01
+ *
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.CloudFront.Util;
+
+namespace Amazon.CloudFront.Model
+{
+    /// <summary>
+    /// Describes a CloudFront Distribution.
+    /// It is used as a response element when Creating a Distribution and Getting a Distribution's Information.
+    /// <para>
+    /// A distribution consists of the following items:
+    /// <list type="number">
+    /// <item>Id</item>
+    /// <item>Status</item>
+    /// <item>Last Modified Timestamp</item>
+    /// <item>Domain Name</item>
+    /// <item>The Configuration for the Distribution</item>
+    /// </list>
+    /// </para>
+    /// For more information, please visit:
+    /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/DistributionDatatype.html"/>
+    /// </summary>
+    [Serializable()]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2009-12-01/", IsNullable = false)]
+    public class CloudFrontDistribution : CloudFrontDistributionBase
+    {
+        #region Private Members
+
+        private CloudFrontDistributionConfig config;
+        private List<Signer> activeTrustedSigners;
+
+        #endregion
+
+        #region DistributionConfig
+
+        /// <summary>
+        /// Gets and sets the current Distribution Configuration.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "DistributionConfig")]
+        public CloudFrontDistributionConfig DistributionConfig
+        {
+            get { return this.config; }
+            set { this.config = value; }
+        }
+
+        /// <summary>
+        /// Checks if DistributionConfig property is set
+        /// </summary>
+        /// <returns>true if DistributionConfig property is set</returns>
+        internal bool IsSetConfig()
+        {
+            return this.config != null;
+        }
+
+        #endregion
+
+        #region ActiveTrustedSigners
+
+        /// <summary>
+        /// Gets and sets the ActiveTrustedSigners property.
+        /// This specifies any AWS accounts you want to permit to create signed URLs for private content.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Signer")]
+        public List<Signer> ActiveTrustedSigners
+        {
+            get { return this.activeTrustedSigners; }
+            set { this.activeTrustedSigners = value; }
+        }
+
+        /// <summary>
+        /// Checks if ActiveTrustedSigners property is set.
+        /// </summary>
+        /// <returns>true if ActiveTrustedSigners property is set.</returns>
+        internal bool IsSetActiveTrustedSigners()
+        {
+            return this.ActiveTrustedSigners != null && 
+                this.ActiveTrustedSigners.Count > 0;
+        }
+
+        #endregion
+        
+        /// <summary>
+        /// Creates an XML representation of the CloudFront
+        /// distribution.
+        /// </summary>
+        /// <returns>
+        /// XML representation of the distribution
+        /// </returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder(1024);
+            XmlSerializer ser = new XmlSerializer(this.GetType());
+            using (System.IO.StringWriter sr = new System.IO.StringWriter(sb))
+            {
+                ser.Serialize(sr, this);
+            }
+            return sb.ToString();
+        }
+    }
+}
