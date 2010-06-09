@@ -32,7 +32,7 @@ namespace Amazon.CloudFront.Model
     /// <br />Required Parameters: Id
     /// <br />Required Parameters: StreamingDistributionConfig
     /// <br />Required Parameters: ETag of the Streaming Distribution. This value can
-    /// be retrieved via a call to GetStreamDistributionInfo.
+    /// be retrieved via a call to GetStreamingDistributionInfo.
     /// </summary>
     /// <remarks>
     /// If you want to serve private content, you need to:

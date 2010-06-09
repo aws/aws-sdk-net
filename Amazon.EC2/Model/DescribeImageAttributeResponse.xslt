@@ -77,11 +77,16 @@
       <xsl:element name="SnapshotId" namespace="{$ns}">
         <xsl:value-of select="ec2:snapshotId"/>
       </xsl:element>
-      <xsl:element name="VolumeSize" namespace="{$ns}">
-        <xsl:value-of select="ec2:volumeSize"/>
-      </xsl:element>
+      <!-- if a snapshot is specified, the volumeSize is optional -->
+      <xsl:if test="ec2:volumeSize">
+        <xsl:element name="VolumeSize" namespace="{$ns}">
+          <xsl:value-of select="ec2:volumeSize"/>
+        </xsl:element>
+      </xsl:if>
       <xsl:element name="DeleteOnTermination" namespace="{$ns}">
-        <xsl:if test="string-length(ec2:deleteOnTermination) = 0">false</xsl:if>
+        <xsl:if test="string-length(ec2:deleteOnTermination) = 0">
+          <xsl:text>false</xsl:text>
+        </xsl:if>
         <xsl:if test="string-length(ec2:deleteOnTermination) > 0">
           <xsl:value-of select="ec2:deleteOnTermination"/>
         </xsl:if>

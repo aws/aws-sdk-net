@@ -509,7 +509,7 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a ListObjectsResponse from S3 with a list of S3Objects,
         /// headers and request parameters used to filter the list.</returns>
-        /// <remarks><para>
+        /// <remarks>
         /// Since buckets can contain a virtually unlimited number of objects, the complete
         /// results of a list query can be extremely large. To manage large result sets,
         /// Amazon S3 uses pagination to split them into multiple responses. Callers should
@@ -517,7 +517,6 @@ namespace Amazon.S3
         /// to see if the returned listing
         /// is complete, or if callers need to make additional calls to get more results.
         /// The marker parameter allows callers to specify where to start the object listing.
-        /// </para>
         /// List performance is not substantially affected by the total number of keys in your
         /// bucket, nor by the presence or absence of any additional query parameters.
         /// </remarks>
@@ -556,7 +555,7 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a ListVersionsResponse from S3 that contains a list of
         /// versions along with metadata and the original request parameters.</returns>
-        /// <remarks><para>
+        /// <remarks>
         /// Since buckets can contain a virtually unlimited number of objects, the complete
         /// results of a list query can be extremely large. To manage large result sets,
         /// Amazon S3 uses pagination to split them into multiple responses. Callers should
@@ -564,13 +563,11 @@ namespace Amazon.S3
         /// to see if the returned listing
         /// is complete, or if callers need to make additional calls to get more results.
         /// The KeyMarker and VersionIdMarker parameters of the ListVersionsRequest object
-        /// allow callers to specify where to start the version listing.
-        /// </para>
-        /// <para>In order to enable versioning on a bucket, please refer to the
+        /// allow callers to specify where to start the version listing. In order to enable
+        /// versioning on a bucket, please refer to the
         /// <see cref="M:Amazon.S3.AmazonS3Client.SetBucketVersioning">SetBucketVersioning</see>
         /// operation's details.
-        /// </para>
-        /// List performance is not substantially affected by the total number of keys in your
+        /// <br />List performance is not substantially affected by the total number of keys in your
         /// bucket, nor by the presence or absence of any additional query parameters.
         /// </remarks>
         public ListVersionsResponse ListVersions(ListVersionsRequest request)
@@ -672,12 +669,12 @@ namespace Amazon.S3
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a PutBucketResponse from S3.</returns>
-        /// <remarks><para>
+        /// <remarks>
         /// Every object stored in Amazon S3 is contained in a bucket. Buckets
         /// partition the namespace of objects stored in Amazon S3 at the top level.
         /// Within a bucket, you can use any names for your objects, but bucket names
         /// must be unique across all of Amazon S3.
-        /// </para><para>
+        /// <para>
         /// Buckets are similar to Internet domain names. Just as Amazon is the only owner
         /// of the domain name Amazon.com, only one person or organization can own a bucket
         /// within Amazon S3. The similarities between buckets and domain names is not a
@@ -685,8 +682,7 @@ namespace Amazon.S3
         /// of s3.amazonaws.com. Objects stored in Amazon S3 are addressable using the REST API
         /// under the domain bucketname.s3.amazonaws.com. For example, the object homepage.html
         /// stored in the Amazon S3 bucket mybucket can be addressed as
-        /// http://mybucket.s3.amazonaws.com/homepage.html.
-        ///</para>
+        /// http://mybucket.s3.amazonaws.com/homepage.html.</para>
         /// To conform with DNS requirements, the following constraints apply:
         /// <list type="bullet">
         /// <item>Bucket names should not contain underscores (_)</item>
@@ -1277,7 +1273,7 @@ namespace Amazon.S3
         }
 
         /**
-         *
+         * Converts the PutBucketRequest to key/value pairs
          */
         private void ConvertPutBucket(PutBucketRequest request)
         {
@@ -1293,6 +1289,7 @@ namespace Amazon.S3
                     S3Constants.LocationConstraints[(int)request.BucketRegion]
                     );
                 parameters[S3QueryParameter.ContentBody] = content;
+                parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
             }
             AddS3QueryParameters(request, request.BucketName);
         }
@@ -1456,6 +1453,11 @@ namespace Amazon.S3
                 // The content length is determined based on the number of bytes
                 // needed to represent the content string - check Invoke<T>
                 parameters[S3QueryParameter.ContentBody] = request.ContentBody;
+                // Since a content body was set, let's determine whether a content type was set
+                if (!parameters.ContainsKey(S3QueryParameter.ContentType))
+                {
+                    parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
+                }
             }
 
             // Add the Timeout parameter
@@ -1477,6 +1479,9 @@ namespace Amazon.S3
                     webHeaders[String.Concat("x-amz-meta-", key)] = request.metaData[key];
                 }
             }
+
+            // Add the storage class header
+            webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
 
             // Finally, add the S3 specific parameters and headers
             AddS3QueryParameters(request, request.BucketName);
@@ -1683,6 +1688,9 @@ namespace Amazon.S3
             {
                 SetCannedACLHeader(webHeaders, request.CannedACL);
             }
+
+            // Add the storage class header
+            webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
 
             AddS3QueryParameters(request, request.DestinationBucket);
         }
@@ -2203,20 +2211,35 @@ namespace Amazon.S3
                     {
                         using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                         {
-                            responseBody = reader.ReadToEnd();
+                            responseBody = reader.ReadToEnd().Trim();
                         }
+
+#if TRACE
+                        DateTime streamRead = DateTime.UtcNow;
+#endif
 
                         // Perform response transformation
                         if (responseBody.EndsWith(">"))
                         {
                             string transformed = Transform(responseBody, actionName, t);
 
+#if TRACE
+                            DateTime streamParsed = DateTime.UtcNow;
+#endif
                             // Attempt to deserialize response into <Action> Response type
                             XmlSerializer serializer = new XmlSerializer(typeof(T));
                             using (XmlTextReader sr = new XmlTextReader(new StringReader(transformed)))
                             {
                                 response = (T)serializer.Deserialize(sr);
                             }
+#if TRACE
+                            DateTime objectCreated = DateTime.UtcNow;
+                            Trace.Write(
+                                String.Format("{0}, {1}, ",
+                                (streamParsed - streamRead).TotalMilliseconds,
+                                (objectCreated - streamParsed).TotalMilliseconds
+                                ));
+#endif
                         }
                         else
                         {

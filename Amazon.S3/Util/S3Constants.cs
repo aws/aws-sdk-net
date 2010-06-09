@@ -47,6 +47,7 @@ namespace Amazon.S3.Util
         internal const string AmzVersionIdHeader = "x-amz-version-id";
         internal const string AmzDeleteMarkerHeader = "x-amz-delete-marker";
         internal const string AmzMfaHeader = "x-amz-mfa";
+        internal const string AmzStorageClassHeader = "x-amz-storage-class";
 
         // Accepted HTTP Verbs
         internal static readonly string[] Verbs = { "GET", "HEAD", "PUT", "DELETE" };
@@ -84,5 +85,8 @@ namespace Amazon.S3.Util
         internal const string VersioningOff = "Off";
         internal const string VersioningSuspended = "Suspended";
         internal const string VersioningEnabled = "Enabled";
+
+        internal static readonly string[] StorageClasses = {"STANDARD",
+                                                "REDUCED_REDUNDANCY"};
     }
 }

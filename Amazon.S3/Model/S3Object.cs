@@ -46,6 +46,7 @@ namespace Amazon.S3.Model
         private long size;
         private Owner owner;
         private string storageClass;
+        private string bucketName;
 
         #endregion
 
@@ -62,6 +63,7 @@ namespace Amazon.S3.Model
             {
                 sb.Append(String.Concat("Key:", Key));
             }
+            sb.Append(String.Concat(", Bucket:", BucketName));
             sb.Append(String.Concat(", LastModified:", LastModified));
             sb.Append(String.Concat(", ETag:", ETag));
             sb.Append(String.Concat(", Size:", Size));
@@ -95,6 +97,31 @@ namespace Amazon.S3.Model
         internal bool IsSetKey()
         {
             return !System.String.IsNullOrEmpty(this.key);
+        }
+
+        #endregion
+
+        #region BucketName
+
+        /// <summary>
+        /// Gets and sets the BucketName property.
+        /// This is the name of the S3 Bucket in which the
+        /// key is stored.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "BucketName")]
+        public string BucketName
+        {
+            get { return this.bucketName; }
+            set { this.bucketName = value; }
+        }
+
+        /// <summary>
+        /// Checks if BucketName property is set.
+        /// </summary>
+        /// <returns>true if BucketName property is set.</returns>
+        internal bool IsSetBucketName()
+        {
+            return !System.String.IsNullOrEmpty(this.bucketName);
         }
 
         #endregion

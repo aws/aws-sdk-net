@@ -19,6 +19,10 @@
  *  API Version: 2009-04-15
  */
 
+#if TRACE
+using System.Diagnostics;
+#endif
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -354,9 +358,17 @@ namespace Amazon.SimpleDB
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
             if (request != null)
             {
-                if (config.IsSetProxyHost())
+                if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
-                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    if (config.IsSetProxyUsername())
+                    {
+                        proxy.Credentials = new NetworkCredential(
+                            config.ProxyUsername,
+                            config.ProxyPassword ?? String.Empty
+                            );
+                    }
+                    request.Proxy = proxy;
                 }
                 request.UserAgent = config.UserAgent;
                 request.Method = "POST";
@@ -376,6 +388,11 @@ namespace Amazon.SimpleDB
             string actionName = parameters["Action"];
             T response = default(T);
             HttpStatusCode statusCode = default(HttpStatusCode);
+
+#if TRACE
+            DateTime start = DateTime.UtcNow;
+            Trace.Write(String.Format("{0}, {1}, ", actionName, start));
+#endif
 
             /* Add required request parameters */
             AddRequiredParameters(parameters);
@@ -398,7 +415,19 @@ namespace Amazon.SimpleDB
                     {
                         requestStream.Write(requestData, 0, requestData.Length);
                     }
-                    using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
+#if TRACE
+                    DateTime requestSent = DateTime.UtcNow;
+                    Trace.Write(String.Format("{0}, ", (requestSent - start).TotalMilliseconds));
+#endif
+
+                    HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse;
+
+#if TRACE
+                    DateTime responseReceived = DateTime.UtcNow;
+                    Trace.Write(String.Format("{0}, ", (responseReceived - requestSent).TotalMilliseconds));
+#endif
+
+                    using (httpResponse)
                     {
                         if (httpResponse == null)
                         {
@@ -410,27 +439,50 @@ namespace Amazon.SimpleDB
                         statusCode = httpResponse.StatusCode;
                         using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                         {
-                            responseBody = reader.ReadToEnd();
+                            responseBody = reader.ReadToEnd().Trim();
                         }
                     }
+
+#if TRACE
+                    DateTime streamRead = DateTime.UtcNow;
+#endif
 
                     /* Perform response transformation for GetAttributes and Select operations */
                     if (actionName.Equals("GetAttributes") ||
                         actionName.Equals("Select"))
                     {
-                        if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
+                        if (responseBody.EndsWith(String.Concat(actionName, "Response>")))
                         {
                             responseBody = Transform(responseBody, actionName, this.GetType());
                         }
                     }
+
+#if TRACE
+                    DateTime streamParsed = DateTime.UtcNow;
+#endif
 
                     /* Attempt to deserialize response into <Action> Response type */
                     XmlSerializer serializer = new XmlSerializer(typeof(T));
                     using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
                     {
                         response = (T)serializer.Deserialize(sr);
+#if TRACE
+                        DateTime objectCreated = DateTime.UtcNow;
+                        Trace.Write(
+                            String.Format("{0}, {1}, ",
+                            (streamParsed - streamRead).TotalMilliseconds,
+                            (objectCreated - streamParsed).TotalMilliseconds
+                            ));
+#endif
                     }
                     shouldRetry = false;
+
+#if TRACE
+                    DateTime end = DateTime.UtcNow;
+                    Trace.Write(String.Format("{0}, ", end));
+                    Trace.WriteLine((end - start).TotalMilliseconds);
+                    Trace.Flush();
+#endif
                 }
                 /* Web exception is thrown on unsucessful responses */
                 catch (WebException we)

@@ -177,7 +177,7 @@ namespace Amazon.S3.Model
         /// <returns>this instance</returns>
         public ListVersionsRequest WithVersionIdMarker(string marker)
         {
-            this.keyMarker = marker;
+            this.versionIdMarker = marker;
             return this;
         }
 

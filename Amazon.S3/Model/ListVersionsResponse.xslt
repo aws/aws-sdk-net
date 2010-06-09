@@ -11,7 +11,10 @@
 
   <xsl:template match="s3:Version">
     <xsl:element name="Versions" namespace="{$ns}">
-      <xsl:apply-templates />
+      <xsl:element name="BucketName" namespace="{$ns}">
+        <xsl:value-of select="../s3:Name"/>
+      </xsl:element>
+      <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
 
@@ -22,12 +25,9 @@
     </xsl:element>
   </xsl:template>
 
-  <xsl:template match="s3:Owner">
-    <xsl:element name="Owner" namespace="{$ns}">
-      <xsl:element name="Id" namespace="{$ns}">
-        <xsl:value-of select="s3:ID"/>
-      </xsl:element>
-      <xsl:apply-templates />
+  <xsl:template match="s3:ID">
+    <xsl:element name="Id" namespace="{$ns}">
+      <xsl:value-of select="."/>
     </xsl:element>
   </xsl:template>
 

@@ -166,7 +166,7 @@ namespace Amazon.SimpleNotificationService
         #region Public API
 
         /// <summary>
-        /// Confirm Subscription 
+        /// Confirm Subscription
         /// </summary>
         /// <param name="request">Confirm Subscription  request</param>
         /// <returns>Confirm Subscription  Response from the service</returns>
@@ -182,7 +182,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// Get Topic Attributes 
+        /// Get Topic Attributes
         /// </summary>
         /// <param name="request">Get Topic Attributes  request</param>
         /// <returns>Get Topic Attributes  Response from the service</returns>
@@ -196,7 +196,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// Subscribe 
+        /// Subscribe
         /// </summary>
         /// <param name="request">Subscribe  request</param>
         /// <returns>Subscribe  Response from the service</returns>
@@ -212,7 +212,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// Set Topic Attributes 
+        /// Set Topic Attributes
         /// </summary>
         /// <param name="request">Set Topic Attributes  request</param>
         /// <returns>Set Topic Attributes  Response from the service</returns>
@@ -225,7 +225,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// Delete Topic 
+        /// Delete Topic
         /// </summary>
         /// <param name="request">Delete Topic  request</param>
         /// <returns>Delete Topic  Response from the service</returns>
@@ -241,7 +241,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// Remove Permission 
+        /// Remove Permission
         /// </summary>
         /// <param name="request">Remove Permission  request</param>
         /// <returns>Remove Permission  Response from the service</returns>
@@ -254,7 +254,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// List Subscriptions 
+        /// List Subscriptions
         /// </summary>
         /// <param name="request">List Subscriptions  request</param>
         /// <returns>List Subscriptions  Response from the service</returns>
@@ -269,7 +269,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// Add Permission 
+        /// Add Permission
         /// </summary>
         /// <param name="request">Add Permission  request</param>
         /// <returns>Add Permission  Response from the service</returns>
@@ -282,7 +282,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// Create Topic 
+        /// Create Topic
         /// </summary>
         /// <param name="request">Create Topic  request</param>
         /// <returns>Create Topic  Response from the service</returns>
@@ -298,7 +298,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// List Topics 
+        /// List Topics
         /// </summary>
         /// <param name="request">List Topics  request</param>
         /// <returns>List Topics  Response from the service</returns>
@@ -313,7 +313,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// Unsubscribe 
+        /// Unsubscribe
         /// </summary>
         /// <param name="request">Unsubscribe  request</param>
         /// <returns>Unsubscribe  Response from the service</returns>
@@ -332,7 +332,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// List Subscriptions By Topic 
+        /// List Subscriptions By Topic
         /// </summary>
         /// <param name="request">List Subscriptions By Topic  request</param>
         /// <returns>List Subscriptions By Topic  Response from the service</returns>
@@ -347,7 +347,7 @@ namespace Amazon.SimpleNotificationService
         }
 
         /// <summary>
-        /// Publish 
+        /// Publish
         /// </summary>
         /// <param name="request">Publish  request</param>
         /// <returns>Publish  Response from the service</returns>
@@ -375,9 +375,17 @@ namespace Amazon.SimpleNotificationService
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
             if (request != null)
             {
-                if (config.IsSetProxyHost())
+                if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
-                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    if (config.IsSetProxyUsername())
+                    {
+                        proxy.Credentials = new NetworkCredential(
+                            config.ProxyUsername,
+                            config.ProxyPassword ?? String.Empty
+                            );
+                    }
+                    request.Proxy = proxy;
                 }
                 request.UserAgent = config.UserAgent;
                 request.Method = "POST";

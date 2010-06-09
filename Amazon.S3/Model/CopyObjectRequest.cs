@@ -33,8 +33,9 @@ namespace Amazon.S3.Model
     /// For more information about the optional parameters, refer: 
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTObjectCOPY.html"/>
     /// <br />Required Parameters: SourceBucket, SourceKey, DestinationBucket 
-    /// <para>Optional Parameters: DestinationKey, ETagToMatch, ETagToNotMatch, ModifiedSinceDate, 
-    /// UnmodifiedSinceDate, Directive, Metadata, CannedACL, Timeout, SourceVersionId</para>
+    /// <br />Optional Parameters: DestinationKey, ETagToMatch, ETagToNotMatch, ModifiedSinceDate,
+    /// UnmodifiedSinceDate, Directive, Metadata, CannedACL, Timeout, SourceVersionId,
+    /// StorageClass
     /// </summary>
     public class CopyObjectRequest : S3Request
     {
@@ -54,6 +55,7 @@ namespace Amazon.S3.Model
         internal NameValueCollection metaData;
         private S3CannedACL cannedACL;
         private int timeout = S3Constants.PutObjectDefaultTimeout;
+        private S3StorageClass storageClass;
 
         #endregion
 
@@ -630,5 +632,47 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        #region StorageClass
+
+        /// <summary>
+        /// Gets and sets the StorageClass property.
+        /// Default: The S3StorageClass of the source object.
+        /// Set this property only if you want to change the storage 
+        /// class of the destination object. Please refer
+        /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
+        /// information on S3 Storage Classes.
+        /// </summary>
+        public S3StorageClass StorageClass
+        {
+            get { return this.storageClass; }
+            set
+            {
+                if (value >= S3StorageClass.Standard &&
+                    value <= S3StorageClass.ReducedRedundancy)
+                {
+                    this.storageClass = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets the StorageClass property for the destination object.
+        /// Default: The S3StorageClass of the source object.
+        /// Set this property only if you want to change the storage 
+        /// class of the destination object. Please refer
+        /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
+        /// information on S3 Storage Classes.
+        /// </summary>
+        /// <param name="sClass">The Storage Class to be set on the object</param>
+        /// <returns>The request with the StorageClass set</returns>
+        public CopyObjectRequest WithStorageClass(S3StorageClass sClass)
+        {
+            this.StorageClass = sClass;
+            return this;
+        }
+
+        #endregion
+
     }
 }

@@ -527,6 +527,8 @@
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduceException.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\AddJobFlowStepsRequest.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\AddJobFlowStepsResponse.cs" />
+    <Compile Include="Amazon.ElasticMapReduce\Model\BootstrapActionConfig.cs" />
+    <Compile Include="Amazon.ElasticMapReduce\Model\BootstrapActionDetail.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\DescribeJobFlowsRequest.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\DescribeJobFlowsResponse.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\DescribeJobFlowsResult.cs" />
@@ -543,6 +545,7 @@
     <Compile Include="Amazon.ElasticMapReduce\Model\RunJobFlowRequest.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\RunJobFlowResponse.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\RunJobFlowResult.cs" />
+    <Compile Include="Amazon.ElasticMapReduce\Model\ScriptBootstrapActionConfig.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\StepConfig.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\StepDetail.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\StepExecutionStatusDetail.cs" />

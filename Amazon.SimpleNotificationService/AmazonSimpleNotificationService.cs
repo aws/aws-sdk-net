@@ -32,7 +32,7 @@ namespace Amazon.SimpleNotificationService
     public interface AmazonSimpleNotificationService : IDisposable
     {
         /// <summary>
-        /// Confirm Subscription 
+        /// Confirm Subscription
         /// </summary>
         /// <param name="request">Confirm Subscription  request</param>
         /// <returns>Confirm Subscription  Response from the service</returns>
@@ -45,7 +45,7 @@ namespace Amazon.SimpleNotificationService
         ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request);
 
         /// <summary>
-        /// Get Topic Attributes 
+        /// Get Topic Attributes
         /// </summary>
         /// <param name="request">Get Topic Attributes  request</param>
         /// <returns>Get Topic Attributes  Response from the service</returns>
@@ -56,7 +56,7 @@ namespace Amazon.SimpleNotificationService
         GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request);
 
         /// <summary>
-        /// Subscribe 
+        /// Subscribe
         /// </summary>
         /// <param name="request">Subscribe  request</param>
         /// <returns>Subscribe  Response from the service</returns>
@@ -69,7 +69,7 @@ namespace Amazon.SimpleNotificationService
         SubscribeResponse Subscribe(SubscribeRequest request);
 
         /// <summary>
-        /// Set Topic Attributes 
+        /// Set Topic Attributes
         /// </summary>
         /// <param name="request">Set Topic Attributes  request</param>
         /// <returns>Set Topic Attributes  Response from the service</returns>
@@ -79,7 +79,7 @@ namespace Amazon.SimpleNotificationService
         SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request);
 
         /// <summary>
-        /// Delete Topic 
+        /// Delete Topic
         /// </summary>
         /// <param name="request">Delete Topic  request</param>
         /// <returns>Delete Topic  Response from the service</returns>
@@ -92,7 +92,7 @@ namespace Amazon.SimpleNotificationService
         DeleteTopicResponse DeleteTopic(DeleteTopicRequest request);
 
         /// <summary>
-        /// Remove Permission 
+        /// Remove Permission
         /// </summary>
         /// <param name="request">Remove Permission  request</param>
         /// <returns>Remove Permission  Response from the service</returns>
@@ -102,7 +102,7 @@ namespace Amazon.SimpleNotificationService
         RemovePermissionResponse RemovePermission(RemovePermissionRequest request);
 
         /// <summary>
-        /// List Subscriptions 
+        /// List Subscriptions
         /// </summary>
         /// <param name="request">List Subscriptions  request</param>
         /// <returns>List Subscriptions  Response from the service</returns>
@@ -114,7 +114,7 @@ namespace Amazon.SimpleNotificationService
         ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request);
 
         /// <summary>
-        /// Add Permission 
+        /// Add Permission
         /// </summary>
         /// <param name="request">Add Permission  request</param>
         /// <returns>Add Permission  Response from the service</returns>
@@ -124,7 +124,7 @@ namespace Amazon.SimpleNotificationService
         AddPermissionResponse AddPermission(AddPermissionRequest request);
 
         /// <summary>
-        /// Create Topic 
+        /// Create Topic
         /// </summary>
         /// <param name="request">Create Topic  request</param>
         /// <returns>Create Topic  Response from the service</returns>
@@ -137,7 +137,7 @@ namespace Amazon.SimpleNotificationService
         CreateTopicResponse CreateTopic(CreateTopicRequest request);
 
         /// <summary>
-        /// List Topics 
+        /// List Topics
         /// </summary>
         /// <param name="request">List Topics  request</param>
         /// <returns>List Topics  Response from the service</returns>
@@ -149,7 +149,7 @@ namespace Amazon.SimpleNotificationService
         ListTopicsResponse ListTopics(ListTopicsRequest request);
 
         /// <summary>
-        /// Unsubscribe 
+        /// Unsubscribe
         /// </summary>
         /// <param name="request">Unsubscribe  request</param>
         /// <returns>Unsubscribe  Response from the service</returns>
@@ -165,7 +165,7 @@ namespace Amazon.SimpleNotificationService
         UnsubscribeResponse Unsubscribe(UnsubscribeRequest request);
 
         /// <summary>
-        /// List Subscriptions By Topic 
+        /// List Subscriptions By Topic
         /// </summary>
         /// <param name="request">List Subscriptions By Topic  request</param>
         /// <returns>List Subscriptions By Topic  Response from the service</returns>
@@ -177,7 +177,7 @@ namespace Amazon.SimpleNotificationService
         ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request);
 
         /// <summary>
-        /// Publish 
+        /// Publish
         /// </summary>
         /// <param name="request">Publish  request</param>
         /// <returns>Publish  Response from the service</returns>

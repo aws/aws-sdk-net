@@ -68,6 +68,7 @@ namespace Amazon.ElasticMapReduce.Model
 
         /// <summary>
         /// Gets and sets the Steps property.
+        /// A list of StepConfig to be executed by the job flow.
         /// </summary>
         [XmlElementAttribute(ElementName = "Steps")]
         public List<StepConfig> Steps
@@ -86,7 +87,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Sets the Steps property
         /// </summary>
-        /// <param name="list">Steps property</param>
+        /// <param name="list">A list of StepConfig to be executed by the job flow.</param>
         /// <returns>this instance</returns>
         public AddJobFlowStepsRequest WithSteps(params StepConfig[] list)
         {

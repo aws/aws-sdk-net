@@ -495,5 +495,48 @@ namespace Amazon.S3.Util
                 return "application/octet-stream";
             }
         }
+
+        /// <summary>
+        /// Sets the storage class for the S3 Object to the value
+        /// specified.
+        /// </summary>
+        /// <param name="s3Object">The S3 Object whose storage class needs changing</param>
+        /// <param name="sClass">The new Storage Class for the object</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        public static void SetObjectStorageClass(S3Object s3Object, S3StorageClass sClass, AmazonS3 s3Client)
+        {
+            SetObjectStorageClass(s3Object.Key, s3Object.BucketName, sClass, s3Client);
+        }
+
+        /// <summary>
+        /// Sets the storage class for the S3 Object to the value
+        /// specified.
+        /// </summary>
+        /// <param name="bucketName">The name of the bucket in which the key is stored</param>
+        /// <param name="key">The key of S3 Object whose storage class needs changing</param>
+        /// <param name="sClass">The new Storage Class for the object</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        public static void SetObjectStorageClass(string bucketName, string key, S3StorageClass sClass, AmazonS3 s3Client)
+        {
+            if (sClass > S3StorageClass.ReducedRedundancy ||
+                sClass < S3StorageClass.Standard)
+            {
+                throw new ArgumentException("Invalid value specified for storage class.");
+            }
+
+            if (null == s3Client)
+            {
+                throw new ArgumentNullException("s3Client", "Please specify an S3 Client to make service requests.");
+            }
+
+            CopyObjectRequest copyRequest = new CopyObjectRequest();
+            copyRequest.SourceBucket = copyRequest.DestinationBucket = bucketName;
+            copyRequest.SourceKey = copyRequest.DestinationKey = key;
+            copyRequest.StorageClass = sClass;
+            // The copyRequest's Metadata directive is COPY by default
+            s3Client.CopyObject(copyRequest);
+        }
     }
 }

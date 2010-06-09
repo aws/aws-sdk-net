@@ -38,6 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
         private JobFlowExecutionStatusDetail executionStatusDetailField;
         private JobFlowInstancesDetail instancesField;
         private List<StepDetail> stepsField;
+        private List<BootstrapActionDetail> bootstrapActionsField;
 
         /// <summary>
         /// Gets and sets the JobFlowId property.
@@ -233,6 +234,47 @@ namespace Amazon.ElasticMapReduce.Model
         public bool IsSetSteps()
         {
             return (Steps.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the BootstrapActions property.
+        /// A list of the bootstrap actions run by the job flow.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "BootstrapActions")]
+        public List<BootstrapActionDetail> BootstrapActions
+        {
+            get
+            {
+                if (this.bootstrapActionsField == null)
+                {
+                    this.bootstrapActionsField = new List<BootstrapActionDetail>();
+                }
+                return this.bootstrapActionsField;
+            }
+            set { this.bootstrapActionsField = value; }
+        }
+
+        /// <summary>
+        /// Sets the BootstrapActions property
+        /// </summary>
+        /// <param name="list">A list of the bootstrap actions run by the job flow.</param>
+        /// <returns>this instance</returns>
+        public JobFlowDetail WithBootstrapActions(params BootstrapActionDetail[] list)
+        {
+            foreach (BootstrapActionDetail item in list)
+            {
+                BootstrapActions.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if BootstrapActions property is set
+        /// </summary>
+        /// <returns>true if BootstrapActions property is set</returns>
+        public bool IsSetBootstrapActions()
+        {
+            return (BootstrapActions.Count > 0);
         }
 
     }

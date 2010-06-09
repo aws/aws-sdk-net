@@ -314,9 +314,17 @@ namespace Amazon.AutoScaling
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
             if (request != null)
             {
-                if (config.IsSetProxyHost())
+                if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
-                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    if (config.IsSetProxyUsername())
+                    {
+                        proxy.Credentials = new NetworkCredential(
+                            config.ProxyUsername,
+                            config.ProxyPassword ?? String.Empty
+                            );
+                    }
+                    request.Proxy = proxy;
                 }
                 request.UserAgent = config.UserAgent;
                 request.Method = "POST";
@@ -424,7 +432,7 @@ namespace Amazon.AutoScaling
                             using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
                             {
                                 XmlSerializer serializer = new XmlSerializer(typeof(ErrorResponse));
-                                ErrorResponse errorResponse = (ErrorResponse) serializer.Deserialize(sr);
+                                ErrorResponse errorResponse = (ErrorResponse)serializer.Deserialize(sr);
                                 Error error = errorResponse.Error[0];
 
                                 /* Throw formatted exception with information available from the error response */

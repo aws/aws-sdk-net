@@ -11,6 +11,9 @@
 
   <xsl:template match="s3:Contents">
     <xsl:element name="S3Objects" namespace="{$ns}">
+      <xsl:element name="BucketName" namespace="{$ns}">
+        <xsl:value-of select="../s3:Name"/>
+      </xsl:element>
       <xsl:apply-templates />
     </xsl:element>
   </xsl:template>
@@ -23,7 +26,7 @@
 
   <xsl:template match="s3:CommonPrefixes">
     <xsl:element name="CommonPrefixes" namespace="{$ns}">
-      <xsl:value-of select="./s3:Prefix" />
+      <xsl:value-of select="./s3:Prefix"/>
     </xsl:element>
   </xsl:template>
 

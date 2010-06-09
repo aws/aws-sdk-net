@@ -35,6 +35,8 @@ namespace Amazon.SQS
         private int proxyPort = -1;
         private int maxErrorRetry = 3;
         private bool fUseSecureString = true;
+        private string proxyUsername;
+        private string proxyPassword;
 
         /// <summary>
         /// Gets Service Version
@@ -296,6 +298,83 @@ namespace Amazon.SQS
         {
             fUseSecureString = fSecure;
             return this;
+        }
+
+        /// <summary>
+        /// Gets and sets the ProxyUsername property.
+        /// Used in conjunction with the ProxyPassword
+        /// property to authenticate requests with the
+        /// specified Proxy server.
+        /// </summary>
+        public string ProxyUsername
+        {
+            get { return this.proxyUsername; }
+            set { this.proxyUsername = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProxyUsername property
+        /// </summary>
+        /// <param name="userName">Value for the ProxyUsername property</param>
+        /// <returns>this instance</returns>
+        public AmazonSQSConfig WithProxyUsername(string userName)
+        {
+            this.proxyUsername = userName;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ProxyUsername property is set
+        /// </summary>
+        /// <returns>true if ProxyUsername property is set</returns>
+        internal bool IsSetProxyUsername()
+        {
+            return !System.String.IsNullOrEmpty(this.proxyUsername);
+        }
+
+        /// <summary>
+        /// Gets and sets the ProxyPassword property.
+        /// Used in conjunction with the ProxyUsername
+        /// property to authenticate requests with the
+        /// specified Proxy server.
+        /// </summary>
+        /// <remarks>
+        /// If this property isn't set, String.Empty is used as
+        /// the proxy password. This property isn't
+        /// used if ProxyUsername is null or empty.
+        /// </remarks>
+        public string ProxyPassword
+        {
+            get { return this.proxyPassword; }
+            set { this.proxyPassword = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProxyPassword property.
+        /// Used in conjunction with the ProxyUsername
+        /// property to authenticate requests with the
+        /// specified Proxy server.
+        /// </summary>
+        /// <remarks>
+        /// If this property isn't set, String.Empty is used as
+        /// the proxy password. This property isn't
+        /// used if ProxyUsername is null or empty.
+        /// </remarks>
+        /// <param name="password">ProxyPassword property</param>
+        /// <returns>this instance</returns>
+        public AmazonSQSConfig WithProxyPassword(string password)
+        {
+            this.proxyPassword = password;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ProxyPassword property is set
+        /// </summary>
+        /// <returns>true if ProxyPassword property is set</returns>
+        internal bool IsSetProxyPassword()
+        {
+            return !System.String.IsNullOrEmpty(this.proxyPassword);
         }
     }
 }

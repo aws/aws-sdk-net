@@ -30,9 +30,11 @@
           <xsl:value-of select="ec2:imageOwnerId"/>
         </xsl:element>
         <xsl:element name="Visibility" namespace="{$ns}">
-          <xsl:if test="ec2:isPublic = 'true'">Public
+          <xsl:if test="ec2:isPublic = 'true'">
+            <xsl:text>Public</xsl:text>
           </xsl:if>
-          <xsl:if test="not(ec2:isPublic = 'true')">Private
+          <xsl:if test="not(ec2:isPublic = 'true')">
+            <xsl:text>Private</xsl:text>
           </xsl:if>
         </xsl:element>
         <xsl:apply-templates select="ec2:productCodes"/>
@@ -107,11 +109,16 @@
       <xsl:element name="SnapshotId" namespace="{$ns}">
         <xsl:value-of select="ec2:snapshotId"/>
       </xsl:element>
-      <xsl:element name="VolumeSize" namespace="{$ns}">
-        <xsl:value-of select="ec2:volumeSize"/>
-      </xsl:element>
+      <!-- if a snapshot is specified, the volumeSize is optional -->
+      <xsl:if test="ec2:volumeSize">
+        <xsl:element name="VolumeSize" namespace="{$ns}">
+          <xsl:value-of select="ec2:volumeSize"/>
+        </xsl:element>
+      </xsl:if>
       <xsl:element name="DeleteOnTermination" namespace="{$ns}">
-        <xsl:if test="string-length(ec2:deleteOnTermination) = 0">false</xsl:if>
+        <xsl:if test="string-length(ec2:deleteOnTermination) = 0">
+          <xsl:text>false</xsl:text>
+        </xsl:if>
         <xsl:if test="string-length(ec2:deleteOnTermination) > 0">
           <xsl:value-of select="ec2:deleteOnTermination"/>
         </xsl:if>

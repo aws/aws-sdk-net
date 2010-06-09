@@ -221,9 +221,17 @@ namespace Amazon.ElasticMapReduce
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
             if (request != null)
             {
-                if (config.IsSetProxyHost())
+                if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
-                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    if (config.IsSetProxyUsername())
+                    {
+                        proxy.Credentials = new NetworkCredential(
+                            config.ProxyUsername,
+                            config.ProxyPassword ?? String.Empty
+                            );
+                    }
+                    request.Proxy = proxy;
                 }
                 request.UserAgent = config.UserAgent;
                 request.Method = "POST";
@@ -605,6 +613,10 @@ namespace Amazon.ElasticMapReduce
             {
                 parameters["LogUri"] = request.LogUri;
             }
+            if (request.IsSetAdditionalInfo())
+            {
+                parameters["AdditionalInfo"] = request.AdditionalInfo;
+            }
             if (request.IsSetInstances())
             {
                 JobFlowInstancesConfig runJobFlowRequestInstances = request.Instances;
@@ -635,6 +647,10 @@ namespace Amazon.ElasticMapReduce
                 if (runJobFlowRequestInstances.IsSetKeepJobFlowAliveWhenNoSteps())
                 {
                     parameters[String.Concat("Instances", ".", "KeepJobFlowAliveWhenNoSteps")] = runJobFlowRequestInstances.KeepJobFlowAliveWhenNoSteps.ToString().ToLower();
+                }
+                if (runJobFlowRequestInstances.IsSetHadoopVersion())
+                {
+                    parameters[String.Concat("Instances", ".", "HadoopVersion")] = runJobFlowRequestInstances.HadoopVersion;
                 }
             }
             List<StepConfig> runJobFlowRequestStepsList = request.Steps;
@@ -685,6 +701,32 @@ namespace Amazon.ElasticMapReduce
                 }
 
                 runJobFlowRequestStepsListIndex++;
+            }
+            List<BootstrapActionConfig> runJobFlowRequestBootstrapActionsList = request.BootstrapActions;
+            int runJobFlowRequestBootstrapActionsListIndex = 1;
+            foreach (BootstrapActionConfig runJobFlowRequestBootstrapActions in runJobFlowRequestBootstrapActionsList)
+            {
+                if (runJobFlowRequestBootstrapActions.IsSetName())
+                {
+                    parameters[String.Concat("BootstrapActions", ".member.", runJobFlowRequestBootstrapActionsListIndex, ".", "Name")] = runJobFlowRequestBootstrapActions.Name;
+                }
+                if (runJobFlowRequestBootstrapActions.IsSetScriptBootstrapAction())
+                {
+                    ScriptBootstrapActionConfig bootstrapActionsScriptBootstrapAction = runJobFlowRequestBootstrapActions.ScriptBootstrapAction;
+                    if (bootstrapActionsScriptBootstrapAction.IsSetPath())
+                    {
+                        parameters[String.Concat("BootstrapActions", ".member.", runJobFlowRequestBootstrapActionsListIndex, ".", "ScriptBootstrapAction", ".", "Path")] = bootstrapActionsScriptBootstrapAction.Path;
+                    }
+                    List<string> scriptBootstrapActionArgsList = bootstrapActionsScriptBootstrapAction.Args;
+                    int scriptBootstrapActionArgsListIndex = 1;
+                    foreach (string scriptBootstrapActionArgs in scriptBootstrapActionArgsList)
+                    {
+                        parameters[String.Concat("BootstrapActions", ".member.", runJobFlowRequestBootstrapActionsListIndex, ".", "ScriptBootstrapAction", ".", "Args", ".member.", scriptBootstrapActionArgsListIndex)] = scriptBootstrapActionArgs;
+                        scriptBootstrapActionArgsListIndex++;
+                    }
+                }
+
+                runJobFlowRequestBootstrapActionsListIndex++;
             }
 
             return parameters;

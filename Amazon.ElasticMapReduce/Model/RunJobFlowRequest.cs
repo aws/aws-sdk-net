@@ -36,8 +36,10 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string nameField;
         private string logUriField;
+        private string additionalInfoField;
         private JobFlowInstancesConfig instancesField;
         private List<StepConfig> stepsField;
+        private List<BootstrapActionConfig> bootstrapActionsField;
 
         /// <summary>
         /// Gets and sets the Name property.
@@ -104,7 +106,39 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the AdditionalInfo property.
+        /// A JSON string for selecting additional features.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "AdditionalInfo")]
+        public string AdditionalInfo
+        {
+            get { return this.additionalInfoField; }
+            set { this.additionalInfoField = value; }
+        }
+
+        /// <summary>
+        /// Sets the AdditionalInfo property
+        /// </summary>
+        /// <param name="additionalInfo">A JSON string for selecting additional features.</param>
+        /// <returns>this instance</returns>
+        public RunJobFlowRequest WithAdditionalInfo(string additionalInfo)
+        {
+            this.additionalInfoField = additionalInfo;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if AdditionalInfo property is set
+        /// </summary>
+        /// <returns>true if AdditionalInfo property is set</returns>
+        public bool IsSetAdditionalInfo()
+        {
+            return this.additionalInfoField != null;
+        }
+
+        /// <summary>
         /// Gets and sets the Instances property.
+        /// A specification of the number and type of Amazon EC2 instances on which to run the job flow.
         /// </summary>
         [XmlElementAttribute(ElementName = "Instances")]
         public JobFlowInstancesConfig Instances
@@ -116,7 +150,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Sets the Instances property
         /// </summary>
-        /// <param name="instances">Instances property</param>
+        /// <param name="instances">A specification of the number and type of Amazon EC2 instances on which to run the job flow.</param>
         /// <returns>this instance</returns>
         public RunJobFlowRequest WithInstances(JobFlowInstancesConfig instances)
         {
@@ -135,6 +169,7 @@ namespace Amazon.ElasticMapReduce.Model
 
         /// <summary>
         /// Gets and sets the Steps property.
+        /// A list of steps to be executed by the job flow.
         /// </summary>
         [XmlElementAttribute(ElementName = "Steps")]
         public List<StepConfig> Steps
@@ -153,7 +188,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Sets the Steps property
         /// </summary>
-        /// <param name="list">Steps property</param>
+        /// <param name="list">A list of steps to be executed by the job flow.</param>
         /// <returns>this instance</returns>
         public RunJobFlowRequest WithSteps(params StepConfig[] list)
         {
@@ -171,6 +206,47 @@ namespace Amazon.ElasticMapReduce.Model
         public bool IsSetSteps()
         {
             return (Steps.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the BootstrapActions property.
+        /// A list of bootstrap actions that will be run before Hadoop is started on the job flow.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "BootstrapActions")]
+        public List<BootstrapActionConfig> BootstrapActions
+        {
+            get
+            {
+                if (this.bootstrapActionsField == null)
+                {
+                    this.bootstrapActionsField = new List<BootstrapActionConfig>();
+                }
+                return this.bootstrapActionsField;
+            }
+            set { this.bootstrapActionsField = value; }
+        }
+
+        /// <summary>
+        /// Sets the BootstrapActions property
+        /// </summary>
+        /// <param name="list">A list of bootstrap actions that will be run before Hadoop is started on the job flow.</param>
+        /// <returns>this instance</returns>
+        public RunJobFlowRequest WithBootstrapActions(params BootstrapActionConfig[] list)
+        {
+            foreach (BootstrapActionConfig item in list)
+            {
+                BootstrapActions.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if BootstrapActions property is set
+        /// </summary>
+        /// <returns>true if BootstrapActions property is set</returns>
+        public bool IsSetBootstrapActions()
+        {
+            return (BootstrapActions.Count > 0);
         }
 
     }

@@ -96,8 +96,8 @@ namespace Amazon.S3.Model
     /// The PutObjectRequest contains the parameters used for the PutObject operation.
     /// <br />Must set only 1 of ContentBody, InputStream, or FilePath
     /// <br />Required Parameters: BucketName, Key
-    /// <para>Optional Parameters: CannedACL, ACL, MD5Digest, GenerateMD5Digest, ContentType, 
-    /// Metadata, Timeout</para>
+    /// <br />Optional Parameters: CannedACL, ACL, MD5Digest, GenerateMD5Digest,
+    /// ContentType, Metadata, Timeout
     /// </summary>
     public class PutObjectRequest : S3Request
     {
@@ -113,6 +113,7 @@ namespace Amazon.S3.Model
         private string contentBody;
         internal NameValueCollection metaData;
         private int timeout = S3Constants.PutObjectDefaultTimeout;
+        private S3StorageClass storageClass;
 
         #endregion
 
@@ -265,6 +266,10 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets and sets the CannedACL property.
+        /// If set, the S3 Object will have this CannedACL
+        /// permission. Please refer
+        /// <see cref="T:Amazon.S3.Model.S3CannedACL"/> for
+        /// information on S3 Canned ACLs.
         /// </summary>
         public S3CannedACL CannedACL
         {
@@ -274,8 +279,10 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Sets the CannedACL property for this request.
-        /// If set the S3 Object will have this CannedACL
-        /// permission.
+        /// If set, the S3 Object will have this CannedACL
+        /// permission. Please refer
+        /// <see cref="T:Amazon.S3.Model.S3CannedACL"/> for
+        /// information on S3 Canned ACLs.
         /// </summary>
         /// <param name="acl">The Canned ACL to be set on the object</param>
         /// <returns>The request with the CannedACL set</returns>
@@ -286,16 +293,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if the S3CannedACL property is set.
+        /// Checks if the CannedACL property is set.
         /// </summary>
-        /// <returns>true if there is the S3CannedACL property is set.</returns>
+        /// <returns>true if there is the CannedACL property is set.</returns>
         internal bool IsSetCannedACL()
         {
             return (cannedACL != S3CannedACL.NoACL);
         }
 
         /// <summary>
-        /// Resets the S3CannedACL
+        /// Resets the CannedACL
         /// </summary>
         public void RemoveCannedACL()
         {
@@ -572,6 +579,47 @@ namespace Amazon.S3.Model
         public PutObjectRequest WithTimeout(int timeout)
         {
             Timeout = timeout;
+            return this;
+        }
+
+        #endregion
+
+        #region StorageClass
+
+        /// <summary>
+        /// Gets and sets the StorageClass property.
+        /// Default: S3StorageClass.Standard. Set this property
+        /// only if you want reduced redundancy for this object.
+        /// Please refer
+        /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
+        /// information on S3 Storage Classes.
+        /// </summary>
+        public S3StorageClass StorageClass
+        {
+            get { return this.storageClass; }
+            set
+            {
+                if (value >= S3StorageClass.Standard &&
+                    value <= S3StorageClass.ReducedRedundancy)
+                {
+                    this.storageClass = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets the StorageClass property for this request.
+        /// Default: S3StorageClass.Standard. Set this property
+        /// only if you want reduced redundancy for this object.
+        /// Please refer
+        /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
+        /// information on S3 Storage Classes.
+        /// </summary>
+        /// <param name="sClass">The Storage Class to be set on the object</param>
+        /// <returns>The request with the StorageClass set</returns>
+        public PutObjectRequest WithStorageClass(S3StorageClass sClass)
+        {
+            this.storageClass = sClass;
             return this;
         }
 

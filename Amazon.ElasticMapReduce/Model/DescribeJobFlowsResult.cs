@@ -37,6 +37,7 @@ namespace Amazon.ElasticMapReduce.Model
 
         /// <summary>
         /// Gets and sets the JobFlows property.
+        /// A list of job flows matching the parameters supplied.
         /// </summary>
         [XmlElementAttribute(ElementName = "JobFlows")]
         public List<JobFlowDetail> JobFlows

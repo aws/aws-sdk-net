@@ -172,7 +172,7 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a ListObjectsResponse from S3 with a list of S3Objects, 
         /// headers and request parameters used to filter the list.</returns>
-        /// <remarks><para>
+        /// <remarks>
         /// Since buckets can contain a virtually unlimited number of objects, the complete 
         /// results of a list query can be extremely large. To manage large result sets, 
         /// Amazon S3 uses pagination to split them into multiple responses. Callers should 
@@ -180,7 +180,7 @@ namespace Amazon.S3
         /// to see if the returned listing 
         /// is complete, or if callers need to make additional calls to get more results.
         /// The marker parameter allows callers to specify where to start the object listing. 
-        /// </para>
+        /// <br />
         /// List performance is not substantially affected by the total number of keys in your 
         /// bucket, nor by the presence or absence of any additional query parameters. 
         /// </remarks>
@@ -205,7 +205,7 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a ListVersionsResponse from S3 that contains a list of 
         /// versions along with metadata and the original request parameters.</returns>
-        /// <remarks><para>
+        /// <remarks>
         /// Since buckets can contain a virtually unlimited number of objects, the complete 
         /// results of a list query can be extremely large. To manage large result sets, 
         /// Amazon S3 uses pagination to split them into multiple responses. Callers should 
@@ -214,11 +214,9 @@ namespace Amazon.S3
         /// is complete, or if callers need to make additional calls to get more results.
         /// The KeyMarker and VersionIdMarker parameters of the ListVersionsRequest object
         /// allow callers to specify where to start the version listing. 
-        /// </para>
-        /// <para>In order to enable versioning on a bucket, please refer to the 
+        /// In order to enable versioning on a bucket, please refer to the 
         /// <see cref="M:Amazon.S3.AmazonS3Client.SetBucketVersioning">SetBucketVersioning</see>
         /// operation's details.
-        /// </para>
         /// List performance is not substantially affected by the total number of keys in your 
         /// bucket, nor by the presence or absence of any additional query parameters. 
         /// </remarks>
@@ -272,12 +270,12 @@ namespace Amazon.S3
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a PutBucketResponse from S3.</returns>
-        /// <remarks><para>
+        /// <remarks>
         /// Every object stored in Amazon S3 is contained in a bucket. Buckets 
         /// partition the namespace of objects stored in Amazon S3 at the top level. 
         /// Within a bucket, you can use any names for your objects, but bucket names 
         /// must be unique across all of Amazon S3.
-        /// </para><para>
+        /// <para>
         /// Buckets are similar to Internet domain names. Just as Amazon is the only owner 
         /// of the domain name Amazon.com, only one person or organization can own a bucket 
         /// within Amazon S3. The similarities between buckets and domain names is not a 
@@ -286,7 +284,6 @@ namespace Amazon.S3
         /// under the domain bucketname.s3.amazonaws.com. For example, the object homepage.html 
         /// stored in the Amazon S3 bucket mybucket can be addressed as 
         /// http://mybucket.s3.amazonaws.com/homepage.html.
-        ///</para><para>
         /// To conform with DNS requirements, the following constraints apply:
         /// <list type="bullet">
         /// <item>Bucket names should not contain underscores (_)</item>

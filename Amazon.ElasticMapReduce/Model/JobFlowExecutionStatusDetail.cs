@@ -35,6 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string stateField;
         private string creationDateTimeField;
         private string startDateTimeField;
+        private string readyDateTimeField;
         private string endDateTimeField;
         private string lastStateChangeReasonField;
 
@@ -129,6 +130,37 @@ namespace Amazon.ElasticMapReduce.Model
         public bool IsSetStartDateTime()
         {
             return this.startDateTimeField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the ReadyDateTime property.
+        /// The date and time when the job flow was ready to start running bootstrap actions.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ReadyDateTime")]
+        public string ReadyDateTime
+        {
+            get { return this.readyDateTimeField; }
+            set { this.readyDateTimeField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ReadyDateTime property
+        /// </summary>
+        /// <param name="readyDateTime">The date and time when the job flow was ready to start running bootstrap actions.</param>
+        /// <returns>this instance</returns>
+        public JobFlowExecutionStatusDetail WithReadyDateTime(string readyDateTime)
+        {
+            this.readyDateTimeField = readyDateTime;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ReadyDateTime property is set
+        /// </summary>
+        /// <returns>true if ReadyDateTime property is set</returns>
+        public bool IsSetReadyDateTime()
+        {
+            return this.readyDateTimeField != null;
         }
 
         /// <summary>

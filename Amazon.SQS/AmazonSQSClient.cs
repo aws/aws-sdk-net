@@ -337,9 +337,17 @@ namespace Amazon.SQS
             HttpWebRequest request = WebRequest.Create(queueUrl) as HttpWebRequest;
             if (request != null)
             {
-                if (config.IsSetProxyHost())
+                if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
-                    request.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    if (config.IsSetProxyUsername())
+                    {
+                        proxy.Credentials = new NetworkCredential(
+                            config.ProxyUsername,
+                            config.ProxyPassword ?? String.Empty
+                            );
+                    }
+                    request.Proxy = proxy;
                 }
                 request.UserAgent = config.UserAgent;
                 request.Method = "POST";

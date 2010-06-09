@@ -41,6 +41,10 @@ namespace Amazon.CloudFront.Model
     /// <item>Comment</item>
     /// <item>A list of CNAMEs for the distribution</item>
     /// <item>Enabled flag</item>
+    /// <item>CloudFront Origin Access Identity associated with the distribution.
+    /// This is a virtual identity you use to let CloudFront fetch private content 
+    /// from your bucket.</item>
+    /// <item>The AWS Accounts that have URL signing privileges for Private Content.</item>
     /// </list></para>
     /// For more information, please visit:
     /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/StreamingDistributionConfigDatatype.html"/>

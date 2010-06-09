@@ -40,6 +40,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string ec2KeyNameField;
         private PlacementType placementField;
         private bool? keepJobFlowAliveWhenNoStepsField;
+        private string hadoopVersionField;
 
         /// <summary>
         /// Gets and sets the MasterInstanceType property.
@@ -293,6 +294,37 @@ namespace Amazon.ElasticMapReduce.Model
         public bool IsSetKeepJobFlowAliveWhenNoSteps()
         {
             return this.keepJobFlowAliveWhenNoStepsField.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the HadoopVersion property.
+        /// Specifies the Hadoop version for the job flow.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "HadoopVersion")]
+        public string HadoopVersion
+        {
+            get { return this.hadoopVersionField; }
+            set { this.hadoopVersionField = value; }
+        }
+
+        /// <summary>
+        /// Sets the HadoopVersion property
+        /// </summary>
+        /// <param name="hadoopVersion">Specifies the Hadoop version for the job flow.</param>
+        /// <returns>this instance</returns>
+        public JobFlowInstancesDetail WithHadoopVersion(string hadoopVersion)
+        {
+            this.hadoopVersionField = hadoopVersion;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if HadoopVersion property is set
+        /// </summary>
+        /// <returns>true if HadoopVersion property is set</returns>
+        public bool IsSetHadoopVersion()
+        {
+            return this.hadoopVersionField != null;
         }
 
     }
