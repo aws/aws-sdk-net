@@ -49,7 +49,7 @@ namespace Amazon.SQS
     /// special firewall configurations. Components of applications using Amazon SQS can run independently, and do
     /// not need to be on the same network, developed with the same technologies, or running at the same time.
     /// </summary>
-    public class AmazonSQSClient : AmazonSQS, IDisposable
+    public class AmazonSQSClient : AmazonSQS
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
@@ -529,7 +529,7 @@ namespace Amazon.SQS
                 throw new AmazonSQSException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
             parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestamp);
+            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
             parameters.Add("Version", config.ServiceVersion);
             parameters.Add("SignatureVersion", config.SignatureVersion);
             parameters.Add("Signature", SignParameters(parameters, queueUrl, this.awsSecretAccessKey, config));

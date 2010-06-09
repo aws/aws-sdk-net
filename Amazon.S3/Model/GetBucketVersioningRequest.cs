@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// The GetBucketVersioningRequest contains the parameters used for the GetBucketVersioning operation.
-    /// <para>Required Parameters: BucketName</para>
+    /// <br />Required Parameters: BucketName
     /// </summary>
     public class GetBucketVersioningRequest : S3Request
     {

@@ -20,6 +20,8 @@
  *
  */
 
+using System;
+
 using Amazon.CloudFront.Model;
 
 namespace Amazon.CloudFront
@@ -28,7 +30,7 @@ namespace Amazon.CloudFront
     /// Interface for Amazon CloudFront Clients.
     /// For more information about Amazon CloudFront, <see href="http://aws.amazon.com/cloudfront"/>
     /// </summary>
-    public interface AmazonCloudFront
+    public interface AmazonCloudFront : IDisposable
     {
         #region Operations on Distributions
 

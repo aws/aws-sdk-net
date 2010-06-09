@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// The EnableBucketLoggingRequest contains the parameters used for the EnableBucketLogging operation.
-    /// <para>Required Parameters: BucketName, LoggingConfig</para>
+    /// <br />Required Parameters: BucketName, LoggingConfig
     /// </summary>
     public class EnableBucketLoggingRequest : S3Request
     {

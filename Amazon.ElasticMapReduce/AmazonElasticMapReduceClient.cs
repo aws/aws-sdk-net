@@ -49,7 +49,7 @@ namespace Amazon.ElasticMapReduce
     /// of data. It utilizes a hosted Hadoop framework running on the web-scale infrastructure
     /// of Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3).
     /// </summary>
-    public class AmazonElasticMapReduceClient : AmazonElasticMapReduce, IDisposable
+    public class AmazonElasticMapReduceClient : AmazonElasticMapReduce
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
@@ -421,7 +421,7 @@ namespace Amazon.ElasticMapReduce
                 throw new AmazonElasticMapReduceException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
             parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestamp);
+            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
             parameters.Add("Version", config.ServiceVersion);
             parameters.Add("SignatureVersion", config.SignatureVersion);
             parameters.Add("Signature", SignParameters(parameters, this.awsSecretAccessKey, config));

@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// The GetBucketLoggingRequest contains the parameters used for the GetBucketLogging operation.
-    /// <para>Required Parameters: BucketName</para>
+    /// <br />Required Parameters: BucketName
     /// </summary>
     public class GetBucketLoggingRequest : S3Request
     {

@@ -26,8 +26,8 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// The DeleteOriginAccessIdentityRequest contains the parameters used for the DeleteOriginAccessIdentity operation.
-    /// <para>Required Parameters: Id</para>
-    /// <para>Required Parameters: ETag</para>
+    /// <br />Required Parameters: Id
+    /// <br />Required Parameters: ETag
     /// </summary>
     public class DeleteOriginAccessIdentityRequest : CloudFrontRequest
     {

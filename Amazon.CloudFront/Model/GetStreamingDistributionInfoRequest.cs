@@ -26,7 +26,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// The GetStreamingDistributionInfoRequest contains the parameters used for the GetStreamingDistributionInfo operation.
-    /// <para>Required Parameter: Id</para>
+    /// <br />Required Parameter: Id
     /// </summary>
     public class GetStreamingDistributionInfoRequest : CloudFrontRequest
     {

@@ -53,7 +53,7 @@ namespace Amazon.RDS
     /// instance’s compute resources and storage capacity to meet your application’s demand. As with all Amazon Web Services, there are no
     /// up-front investments, and you pay only for the resources you use.
     /// </summary>
-    public class AmazonRDSClient : AmazonRDS, IDisposable
+    public class AmazonRDSClient : AmazonRDS
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
@@ -719,7 +719,7 @@ namespace Amazon.RDS
                 throw new AmazonRDSException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
             parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestamp);
+            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
             parameters.Add("Version", config.ServiceVersion);
             parameters.Add("SignatureVersion", config.SignatureVersion);
             parameters.Add("Signature", SignParameters(parameters, this.awsSecretAccessKey, config));

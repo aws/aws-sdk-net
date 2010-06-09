@@ -31,8 +31,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// The CloudFrontOriginAccessIdentityConfig complex type describes an origin access identity's configuration information.
-    /// <para>
-    /// An origin access identity configuration objects consists of the following items:
+    /// <para>An origin access identity configuration objects consists of the following items:
     /// <list type="number">
     /// <item>Caller Reference</item>
     /// <item>Comment</item>

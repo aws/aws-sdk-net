@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Distribution xmlns="http://cloudfront.amazonaws.com/doc/2009-12-01/">
+	<Id>EDFDVBD632BHDS5</Id>
+	<Status>Deployed</Status>
+	<LastModifiedTime>2009-11-19T19:37:58Z</LastModifiedTime>
+	<DomainName>d604721fxaaqy9.cloudfront.net</DomainName>
+	<ActiveTrustedSigners>
+		<Signer>
+			<Self/>
+			<KeyPairId>APKAI72T5DYBXZDKA7TA</KeyPairId>
+			<KeyPairId>APKAU72D8DYNXZDKA8DP</KeyPairId>
+		</Signer>
+		<Signer>
+			<AwsAccountNumber>123456789012</AwsAccountNumber>
+			<KeyPairId>APKA9ONS7QCOWWZU7BP6</KeyPairId>
+		</Signer>
+		<Signer>
+			<AwsAccountNumber>987654321111</AwsAccountNumber>
+		</Signer>
+	</ActiveTrustedSigners>
+	<DistributionConfig>
+		<Origin>mybucket.s3.amazonaws.com</Origin>
+		<CallerReference>20091130090000</CallerReference>
+		<CNAME>beagles.com</CNAME>
+		<Comment>My comments</Comment>
+		<Enabled>true</Enabled>
+		<Logging>
+			<Bucket>mylogs.s3.amazonaws.com</Bucket>
+			<Prefix>myprefix/</Prefix>
+		</Logging>
+		<OriginAccessIdentity>origin-access-identity/cloudfront/E74FTE3AJFJ256A</OriginAccessIdentity>
+		<TrustedSigners>
+			<Self/>
+			<AwsAccountNumber>123456789012</AwsAccountNumber>
+			<AwsAccountNumber>987654321111</AwsAccountNumber>
+		</TrustedSigners>
+	</DistributionConfig>
+</Distribution>

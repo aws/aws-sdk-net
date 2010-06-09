@@ -1,4 +1,5 @@
 ﻿/*******************************************************************************
+ *  Copyright 2009-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -48,7 +49,7 @@ namespace Amazon.Util
         /// <summary>
         /// The AWS SDK User Agent
         /// </summary>
-        public const string SDKUserAgent = "AWS SDK for .NET/1.0.4";
+        public const string SDKUserAgent = "AWS SDK for .NET/1.0.5";
 
         /// <summary>
         /// The Set of accepted and valid Url characters. 
@@ -76,12 +77,12 @@ namespace Amazon.Util
         #region Public Methods and Properties
 
         /// <summary>
-        /// Formats the current date as ISO 8601 timestamp
+        /// Formats the current date as a GMT timestamp
         /// </summary>
-        /// <returns>An ISO 8601 formatted string representation
+        /// <returns>A GMT formatted string representation
         /// of the current date and time
         /// </returns>
-        public static string FormattedCurrentTimestamp
+        public static string FormattedCurrentTimestampGMT
         {
             get
             {
@@ -98,6 +99,34 @@ namespace Amazon.Util
                     );
                 return formatted.ToString(
                     GMTDateFormat,
+                    CultureInfo.InvariantCulture
+                    );
+            }
+        }
+
+        /// <summary>
+        /// Formats the current date as ISO 8601 timestamp
+        /// </summary>
+        /// <returns>An ISO 8601 formatted string representation
+        /// of the current date and time
+        /// </returns>
+        public static string FormattedCurrentTimestampISO8601
+        {
+            get
+            {
+                DateTime dateTime = DateTime.UtcNow;
+                DateTime formatted = new DateTime(
+                    dateTime.Year,
+                    dateTime.Month,
+                    dateTime.Day,
+                    dateTime.Hour,
+                    dateTime.Minute,
+                    dateTime.Second,
+                    dateTime.Millisecond,
+                    DateTimeKind.Local
+                    );
+                return formatted.ToString(
+                    ISO8601DateFormat,
                     CultureInfo.InvariantCulture
                     );
             }

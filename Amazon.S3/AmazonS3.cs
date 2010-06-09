@@ -20,6 +20,8 @@
  *
  */
 
+using System;
+
 using Amazon.S3.Model;
 
 namespace Amazon.S3
@@ -28,7 +30,7 @@ namespace Amazon.S3
     /// Interface for Amazon S3 Clients.
     /// For more information about Amazon S3, go to <see href="http://aws.amazon.com/s3"/>
     /// </summary>
-    public interface AmazonS3
+    public interface AmazonS3 : IDisposable
     {
         /// <summary>
         /// The ListBuckets operation returns a list of all of the buckets

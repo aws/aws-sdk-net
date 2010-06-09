@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling
     /// or weekly variability in usage. Auto Scaling is enabled by Amazon CloudWatch and available
     /// at no additional charge beyond Amazon CloudWatch fees.
     /// </summary>
-    public interface AmazonAutoScaling
+    public interface AmazonAutoScaling : IDisposable
     {
         /// <summary>
         /// Delete Launch Configuration

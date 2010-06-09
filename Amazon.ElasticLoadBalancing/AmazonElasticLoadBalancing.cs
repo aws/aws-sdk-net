@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing
     /// operational metrics, such as request count and request latency, at no additional cost beyond Elastic
     /// Load Balancing fees.
     /// </summary>
-    public interface AmazonElasticLoadBalancing
+    public interface AmazonElasticLoadBalancing : IDisposable
     {
         /// <summary>
         /// Deregister Instances From Load Balancer

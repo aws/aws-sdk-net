@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// The GetBucketLocationRequest contains the parameters used for the GetBucketLocation operation.
-    /// <para>Required Parameters: BucketName</para>
+    /// <br />Required Parameters: BucketName
     /// </summary>
     public class GetBucketLocationRequest : S3Request
     {

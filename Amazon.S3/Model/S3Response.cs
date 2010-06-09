@@ -144,7 +144,11 @@ namespace Amazon.S3.Model
         #region ResponseStream
 
         /// <summary>
-        /// Gets and sets the ResponseStream property.
+        /// Gets and sets the ResponseStream property. This property
+        /// only has a valid value for GetObjectResponses. In order to
+        /// use this stream without leaking the underlying resource, please
+        /// wrap access to the stream within a using block.
+        /// <code></code>
         /// </summary>
         [XmlElementAttribute(ElementName = "ResponseStream")]
         public Stream ResponseStream

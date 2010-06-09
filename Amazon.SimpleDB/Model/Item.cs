@@ -33,6 +33,7 @@ namespace Amazon.SimpleDB.Model
     public class Item
     {
         private string nameField;
+        private string nameEncodingField;
         private List<Attribute> attributeField;
 
         /// <summary>
@@ -64,6 +65,37 @@ namespace Amazon.SimpleDB.Model
         public bool IsSetName()
         {
             return  this.nameField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the NameEncoding property.
+        /// The encoding for the item's name. For example: base64
+        /// </summary>
+        [XmlElementAttribute(ElementName = "NameEncoding")]
+        public string NameEncoding
+        {
+            get { return this.nameEncodingField ; }
+            set { this.nameEncodingField= value; }
+        }
+
+        /// <summary>
+        /// Sets the NameEncoding property
+        /// </summary>
+        /// <param name="nameEncoding">The encoding for the item's name. For example: base64</param>
+        /// <returns>this instance</returns>
+        public Item WithNameEncoding(string nameEncoding)
+        {
+            this.nameEncodingField = nameEncoding;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if NameEncoding property is set
+        /// </summary>
+        /// <returns>true if NameEncoding property is set</returns>
+        public bool IsSetNameEncoding()
+        {
+            return  this.nameEncodingField != null;
         }
         /// <summary>
         /// Gets and sets the Attribute property.

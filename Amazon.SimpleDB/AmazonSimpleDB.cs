@@ -46,7 +46,7 @@ namespace Amazon.SimpleDB
     /// functionality within Amazon's proven computing environment, are able
     /// to scale instantly, and pay only for what they use.
     /// </summary>
-    public interface AmazonSimpleDB
+    public interface AmazonSimpleDB : IDisposable
     {
         /// <summary>
         /// Create Domain

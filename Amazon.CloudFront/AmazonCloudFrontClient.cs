@@ -50,7 +50,7 @@ namespace Amazon.CloudFront
     /// fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of web sites.
     /// The service aims to maximize benefits of scale and to pass those benefits on to developers.
     /// </summary>
-    public class AmazonCloudFrontClient : AmazonCloudFront, IDisposable
+    public class AmazonCloudFrontClient : AmazonCloudFront
     {
         #region Private Members
 

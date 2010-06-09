@@ -49,7 +49,7 @@ namespace Amazon.EC2
     /// While instances are running, you are billed for the computing and network
     /// resources that they consume.
     /// </summary>
-    public interface AmazonEC2
+    public interface AmazonEC2 : IDisposable
     {
         /// <summary>
         /// Allocate Address

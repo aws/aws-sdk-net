@@ -32,7 +32,7 @@ namespace Amazon.ElasticMapReduce
     /// of data. It utilizes a hosted Hadoop framework running on the web-scale infrastructure
     /// of Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3).
     /// </summary>
-    public interface AmazonElasticMapReduce
+    public interface AmazonElasticMapReduce : IDisposable
     {
         /// <summary>
         /// Add Job Flow Steps

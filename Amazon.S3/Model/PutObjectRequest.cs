@@ -29,8 +29,8 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// The PutObjectRequest contains the parameters used for the PutObject operation.
-    /// <para>Must set only 1 of ContentBody, InputStream, or FilePath</para>
-    /// <para>Required Parameters: BucketName, Key</para>
+    /// <br />Must set only 1 of ContentBody, InputStream, or FilePath
+    /// <br />Required Parameters: BucketName, Key
     /// <para>Optional Parameters: CannedACL, ACL, MD5Digest, GenerateMD5Digest, ContentType, 
     /// Metadata, Timeout</para>
     /// </summary>

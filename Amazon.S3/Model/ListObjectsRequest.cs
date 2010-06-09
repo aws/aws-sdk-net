@@ -26,8 +26,8 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// The ListObjectsRequest contains the parameters used for the ListObjects operation.
-    /// <para>Required Parameters: BucketName</para>
-    /// <para>Optional Parameters: Prefix, Marker, MaxKeys, Delimiter</para>
+    /// <br />Required Parameters: BucketName
+    /// <br />Optional Parameters: Prefix, Marker, MaxKeys, Delimiter
     /// </summary>
     [XmlTypeAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/")]
     [XmlRootAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/", IsNullable = false)]

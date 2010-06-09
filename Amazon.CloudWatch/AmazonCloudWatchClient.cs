@@ -51,7 +51,7 @@ namespace Amazon.CloudWatch
     /// to monitor; within minutes, Amazon CloudWatch will begin aggregating and storing monitoring data
     /// that can be accessed using web service APIs or Command Line Tools.
     /// </summary>
-    public class AmazonCloudWatchClient : AmazonCloudWatch, IDisposable
+    public class AmazonCloudWatchClient : AmazonCloudWatch
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
@@ -403,7 +403,7 @@ namespace Amazon.CloudWatch
                 throw new AmazonCloudWatchException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
             parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestamp);
+            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
             parameters.Add("Version", config.ServiceVersion);
             parameters.Add("SignatureVersion", config.SignatureVersion);
             parameters.Add("Signature", SignParameters(parameters, this.awsSecretAccessKey, config));

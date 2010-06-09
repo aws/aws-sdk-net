@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// The DeleteBucketRequest contains the parameters used for the DeleteBucket operation.
-    /// <para>Required Parameters: BucketName</para>
+    /// <br />Required Parameters: BucketName
     /// </summary>
     public class DeleteBucketRequest : S3Request
     {

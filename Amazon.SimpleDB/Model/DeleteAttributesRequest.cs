@@ -36,6 +36,7 @@ namespace Amazon.SimpleDB.Model
         private string domainNameField;
         private string itemNameField;
         private List<Attribute> attributeField;
+        private UpdateCondition expectedField;
 
         /// <summary>
         /// Gets and sets the DomainName property.
@@ -137,6 +138,37 @@ namespace Amazon.SimpleDB.Model
         public bool IsSetAttribute()
         {
             return (Attribute.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the Expected property.
+        /// Performs the operation if the specified attribute name and value match.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Expected")]
+        public UpdateCondition Expected
+        {
+            get { return this.expectedField ; }
+            set { this.expectedField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Expected property
+        /// </summary>
+        /// <param name="expected">Performs the operation if the specified attribute name and value match.</param>
+        /// <returns>this instance</returns>
+        public DeleteAttributesRequest WithExpected(UpdateCondition expected)
+        {
+            this.expectedField = expected;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Expected property is set
+        /// </summary>
+        /// <returns>true if Expected property is set</returns>
+        public bool IsSetExpected()
+        {
+            return this.expectedField != null;
         }
 
     }

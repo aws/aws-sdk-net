@@ -30,8 +30,8 @@ namespace Amazon.S3.Model
     /// if you want the ACL for an object instead of a bucket.
     ///
     /// You can either set ACLs using CannedACLs or by providing an S3AccessControlList.
-    /// <para>Required Parameters: BucketName</para>
-    /// <para>Optional Parameters: Key, CannedACL, ACL</para>
+    /// <br />Required Parameters: BucketName
+    /// <br />Optional Parameters: Key, CannedACL, ACL
     /// </summary>
     public class SetACLRequest : S3Request
     {

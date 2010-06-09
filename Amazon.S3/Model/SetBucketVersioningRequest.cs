@@ -29,7 +29,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// The SetBucketVersioningRequest contains the parameters used for the SetBucketVersioning operation.
-    /// <para>Required Parameters: BucketName, VersioningConfig</para>
+    /// <br />Required Parameters: BucketName, VersioningConfig
     /// </summary>
     public class SetBucketVersioningRequest : S3Request
     {

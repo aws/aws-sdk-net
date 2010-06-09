@@ -42,6 +42,7 @@ namespace Amazon.SimpleDB.Model
         private string domainNameField;
         private string itemNameField;
         private List<string> attributeNameField;
+        private bool? consistentReadField;
 
         /// <summary>
         /// Gets and sets the DomainName property.
@@ -144,6 +145,39 @@ namespace Amazon.SimpleDB.Model
         public bool IsSetAttributeName()
         {
             return (AttributeName.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the ConsistentRead property.
+        /// If set to true, this flag ensures that the most recently written data is
+        /// returned.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ConsistentRead")]
+        public bool ConsistentRead
+        {
+            get { return this.consistentReadField.GetValueOrDefault() ; }
+            set { this.consistentReadField= value; }
+        }
+
+        /// <summary>
+        /// Sets the ConsistentRead property
+        /// </summary>
+        /// <param name="consistentRead">If set to true, this flag ensures that the most recently written data is
+        /// returned.</param>
+        /// <returns>this instance</returns>
+        public GetAttributesRequest WithConsistentRead(bool consistentRead)
+        {
+            this.consistentReadField = consistentRead;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ConsistentRead property is set
+        /// </summary>
+        /// <returns>true if ConsistentRead property is set</returns>
+        public bool IsSetConsistentRead()
+        {
+            return  this.consistentReadField.HasValue;
         }
 
     }

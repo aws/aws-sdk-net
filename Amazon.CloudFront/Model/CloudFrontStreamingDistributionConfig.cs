@@ -34,16 +34,14 @@ namespace Amazon.CloudFront.Model
     /// It is used as a request element in Create a Distribution and Set a Distribution's Configuration.
     /// It is used as a response element in Get a Distribution's Information and Get a Distribution's
     /// Configuration.
-    /// <para>
-    /// A streaming distribution configuration objects consists of the following items:
+    /// <para>A streaming distribution configuration objects consists of the following items:
     /// <list type="number">
     /// <item>Caller Reference</item>
     /// <item>Origin S3 Bucket</item>
     /// <item>Comment</item>
     /// <item>A list of CNAMEs for the distribution</item>
     /// <item>Enabled flag</item>
-    /// </list>
-    /// </para>
+    /// </list></para>
     /// For more information, please visit:
     /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/StreamingDistributionConfigDatatype.html"/>
     /// </summary>

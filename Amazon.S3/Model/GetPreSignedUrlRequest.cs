@@ -29,8 +29,8 @@ namespace Amazon.S3.Model
     /// The GetPreSignedUrlRequest contains the parameters used to create
     /// a pre signed URL. For more information, refer: 
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/S3_QSAuth.html"/>
-    /// <para>Required Parameters: BucketName, Key, Expires</para>
-    /// <para>Optional Parameters: Verb; default is GET</para>
+    /// <br />Required Parameters: BucketName, Key, Expires
+    /// <br />Optional Parameters: Verb; default is GET
     /// </summary>
     public class GetPreSignedUrlRequest : S3Request
     {

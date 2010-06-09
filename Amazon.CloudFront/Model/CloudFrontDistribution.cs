@@ -34,8 +34,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Describes a CloudFront Distribution.
     /// It is used as a response element when Creating a Distribution and Getting a Distribution's Information.
-    /// <para>
-    /// A distribution consists of the following items:
+    /// <para>A distribution consists of the following items:
     /// <list type="number">
     /// <item>Id</item>
     /// <item>Status</item>

@@ -66,7 +66,7 @@ namespace Amazon.SimpleDB
     /// functionality within Amazon's proven computing environment, are able
     /// to scale instantly, and pay only for what they use.
     /// </summary>
-    public class AmazonSimpleDBClient : AmazonSimpleDB, IDisposable
+    public class AmazonSimpleDBClient : AmazonSimpleDB
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
@@ -806,6 +806,22 @@ namespace Amazon.SimpleDB
 
                 putAttributesRequestAttributeListIndex++;
             }
+            if (request.IsSetExpected())
+            {
+                UpdateCondition  putAttributesRequestExpected = request.Expected;
+                if (putAttributesRequestExpected.IsSetName())
+                {
+                    parameters.Add("Expected" + "." + "Name", putAttributesRequestExpected.Name);
+                }
+                if (putAttributesRequestExpected.IsSetValue())
+                {
+                    parameters.Add("Expected" + "." + "Value", putAttributesRequestExpected.Value);
+                }
+                if (putAttributesRequestExpected.IsSetExists())
+                {
+                    parameters.Add("Expected" + "." + "Exists", (putAttributesRequestExpected.Exists + "").ToLower());
+                }
+            }
 
             return parameters;
         }
@@ -877,6 +893,10 @@ namespace Amazon.SimpleDB
                 parameters.Add("AttributeName" + "."  + getAttributesRequestAttributeNameListIndex, getAttributesRequestAttributeName);
                 getAttributesRequestAttributeNameListIndex++;
             }
+            if (request.IsSetConsistentRead())
+            {
+                parameters.Add("ConsistentRead", (request.ConsistentRead + "").ToLower());
+            }
 
             return parameters;
         }
@@ -908,8 +928,32 @@ namespace Amazon.SimpleDB
                 {
                     parameters.Add("Attribute" + "."  + deleteAttributesRequestAttributeListIndex + "." + "Value", deleteAttributesRequestAttribute.Value);
                 }
+                if (deleteAttributesRequestAttribute.IsSetNameEncoding())
+                {
+                    parameters.Add("Attribute" + "."  + deleteAttributesRequestAttributeListIndex + "." + "NameEncoding", deleteAttributesRequestAttribute.NameEncoding);
+                }
+                if (deleteAttributesRequestAttribute.IsSetValueEncoding())
+                {
+                    parameters.Add("Attribute" + "."  + deleteAttributesRequestAttributeListIndex + "." + "ValueEncoding", deleteAttributesRequestAttribute.ValueEncoding);
+                }
 
                 deleteAttributesRequestAttributeListIndex++;
+            }
+            if (request.IsSetExpected())
+            {
+                UpdateCondition  deleteAttributesRequestExpected = request.Expected;
+                if (deleteAttributesRequestExpected.IsSetName())
+                {
+                    parameters.Add("Expected" + "." + "Name", deleteAttributesRequestExpected.Name);
+                }
+                if (deleteAttributesRequestExpected.IsSetValue())
+                {
+                    parameters.Add("Expected" + "." + "Value", deleteAttributesRequestExpected.Value);
+                }
+                if (deleteAttributesRequestExpected.IsSetExists())
+                {
+                    parameters.Add("Expected" + "." + "Exists", (deleteAttributesRequestExpected.Exists + "").ToLower());
+                }
             }
 
             return parameters;
@@ -929,6 +973,10 @@ namespace Amazon.SimpleDB
             if (request.IsSetNextToken())
             {
                 parameters.Add("NextToken", request.NextToken);
+            }
+            if (request.IsSetConsistentRead())
+            {
+                parameters.Add("ConsistentRead", (request.ConsistentRead + "").ToLower());
             }
 
             return parameters;

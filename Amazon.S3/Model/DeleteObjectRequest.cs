@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// The DeleteObjectRequest contains the parameters used for the DeleteObject operation.
-    /// <para>Required Parameters: BucketName, Key</para>
+    /// <br />Required Parameters: BucketName, Key
     /// </summary>
     public class DeleteObjectRequest : S3Request
     {

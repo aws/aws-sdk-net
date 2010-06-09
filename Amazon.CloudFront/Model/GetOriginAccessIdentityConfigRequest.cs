@@ -26,7 +26,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// The GetOriginAccessIdentityConfigRequest contains the parameters used for the GetOriginAccessIdentityConfig operation.
-    /// <para>Required Parameters: Id</para>
+    /// <br />Required Parameters: Id
     /// </summary>
     public class GetOriginAccessIdentityConfigRequest : CloudFrontRequest
     {

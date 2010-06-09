@@ -35,7 +35,7 @@ namespace Amazon.SQS
     /// special firewall configurations. Components of applications using Amazon SQS can run independently, and do
     /// not need to be on the same network, developed with the same technologies, or running at the same time.
     /// </summary>
-    public interface AmazonSQS
+    public interface AmazonSQS : IDisposable
     {
         /// <summary>
         /// Create Queue

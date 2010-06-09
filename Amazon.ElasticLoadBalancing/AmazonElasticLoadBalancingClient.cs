@@ -54,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing
     /// operational metrics, such as request count and request latency, at no additional cost beyond Elastic
     /// Load Balancing fees.
     /// </summary>
-    public class AmazonElasticLoadBalancingClient : AmazonElasticLoadBalancing, IDisposable
+    public class AmazonElasticLoadBalancingClient : AmazonElasticLoadBalancing
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
@@ -476,7 +476,7 @@ namespace Amazon.ElasticLoadBalancing
                 throw new AmazonElasticLoadBalancingException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
             parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestamp);
+            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
             parameters.Add("Version", config.ServiceVersion);
             parameters.Add("SignatureVersion", config.SignatureVersion);
             parameters.Add("Signature", SignParameters(parameters, this.awsSecretAccessKey, config));

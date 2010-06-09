@@ -34,8 +34,7 @@ namespace Amazon.CloudFront.Model
     /// It is used as a request element in Create a Distribution and Set a Distribution's Configuration.
     /// It is used as a response element in Get a Distribution's Information and Get a Distribution's
     /// Configuration.
-    /// <para>
-    /// A distribution configuration objects consists of the following items:
+    /// <para>A distribution configuration objects consists of the following items:
     /// <list type="number">
     /// <item>Caller Reference</item>
     /// <item>Origin S3 Bucket</item>

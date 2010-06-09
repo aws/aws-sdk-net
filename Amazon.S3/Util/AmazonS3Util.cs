@@ -82,16 +82,16 @@ namespace Amazon.S3.Util
         }
 
         /// <summary>
-        /// Formats the current date as ISO 8601 timestamp
+        /// Formats the current date as a GMT timestamp
         /// </summary>
-        /// <returns>An ISO 8601 formatted string representation
+        /// <returns>A GMT formatted string representation
         /// of the current date and time
         /// </returns>
         public static string FormattedCurrentTimestamp
         {
             get
             {
-                return AWSSDKUtils.FormattedCurrentTimestamp;
+                return AWSSDKUtils.FormattedCurrentTimestampGMT;
             }
         }
 

@@ -34,8 +34,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// The DistributionBase contains the common elements of a CloudFront distribution.
-    /// <para>
-    /// The shared elements are:
+    /// <para>The shared elements are:
     /// <list type="number">
     /// <item>Id</item>
     /// <item>Status</item>

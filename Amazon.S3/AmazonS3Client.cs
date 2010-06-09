@@ -52,7 +52,7 @@ namespace Amazon.S3
     /// fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of web sites.
     /// The service aims to maximize benefits of scale and to pass those benefits on to developers.
     /// </summary>
-    public class AmazonS3Client : AmazonS3, IDisposable
+    public class AmazonS3Client : AmazonS3
     {
         #region Private Members
 

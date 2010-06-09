@@ -27,10 +27,10 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// The SetOriginAccessIdentityConfigRequest contains the parameters used for the
     /// SetOriginAccessIdentityConfig operation.
-    /// <para>Required Parameters: Id</para>
-    /// <para>Required Parameters: OriginAccessIdentityConfig</para>
-    /// <para>Required Parameters: ETag of the Origin Access Identity. 
-    /// This value can be retrieved via a call to GetOriginAccessIdentityInfo.</para>
+    /// <br />Required Parameters: Id
+    /// <br />Required Parameters: OriginAccessIdentityConfig
+    /// <br />Required Parameters: ETag of the Origin Access Identity. 
+    /// This value can be retrieved via a call to GetOriginAccessIdentityInfo.
     /// </summary>
     public class SetOriginAccessIdentityConfigRequest : CloudFrontRequest
     {

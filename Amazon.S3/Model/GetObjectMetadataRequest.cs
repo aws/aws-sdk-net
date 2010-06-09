@@ -29,8 +29,8 @@ namespace Amazon.S3.Model
     /// The GetObjectMetadataRequest contains the parameters used for the GetObjectMetadata operation.
     /// For more information about the optional parameters, 
     /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTObjectGET.html"/>
-    /// <para>Required Parameters: BucketName, Key</para>
-    /// <para>Optional Parameters: ModifiedSinceDate, UnmodifiedSinceDate, ETagToMatch, ETagToNotMatch</para>
+    /// <br />Required Parameters: BucketName, Key
+    /// <br />Optional Parameters: ModifiedSinceDate, UnmodifiedSinceDate, ETagToMatch, ETagToNotMatch
     /// </summary>
     public class GetObjectMetadataRequest : S3Request
     {

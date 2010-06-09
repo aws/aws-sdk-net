@@ -28,8 +28,8 @@ namespace Amazon.S3.Model
     /// The GetACLRequest contains the parameters used for the GetACL operation.
     /// The BucketName is always required, the Key is optional and is to be set
     /// if you want the ACL for an object instead of a bucket.
-    /// <para>Required Parameters: BucketName</para>
-    /// <para>Optional Parameters: Key, VersionId</para>
+    /// <br />Required Parameters: BucketName
+    /// <br />Optional Parameters: Key, VersionId
     /// </summary>
     public class GetACLRequest : S3Request
     {

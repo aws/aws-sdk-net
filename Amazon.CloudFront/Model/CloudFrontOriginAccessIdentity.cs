@@ -34,8 +34,7 @@ namespace Amazon.CloudFront.Model
     /// A CloudFrontOriginAccessIdentity describes the information about a CloudFront Origin
     /// Access Identity. It is used as a response element when Creating a new CloudFront Origin Access
     /// Identity and when an Origin Access Identity's details are retrieved.
-    /// <para>
-    /// An origin access identity consists of the following items:
+    /// <para>An origin access identity consists of the following items:
     /// <list type="number">
     /// <item>Id</item>
     /// <item>S3 Canonical User Id</item>

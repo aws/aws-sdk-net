@@ -31,8 +31,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Describes the elements shared by the various distribution configurations.
-    /// <para>
-    /// The elements shared between configuration objects are:
+    /// <para>The elements shared between configuration objects are:
     /// <list type="number">
     /// <item>Caller Reference</item>
     /// <item>Origin S3 Bucket</item>

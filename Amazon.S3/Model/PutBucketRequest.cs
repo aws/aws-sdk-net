@@ -27,8 +27,8 @@ namespace Amazon.S3.Model
     /// <summary>
     /// The PutBucketRequest contains the parameters used for the PutBucket operation.
     /// The BucketRegion parameter is used if you wish to specify the bucket locality.
-    /// <para>Required Parameters: BucketName</para>
-    /// <para>Optional Parameters: BucketRegion, Default - S3Region.US</para>
+    /// <br />Required Parameters: BucketName
+    /// <br />Optional Parameters: BucketRegion, Default - S3Region.US
     /// </summary>
     public class PutBucketRequest : S3Request
     {

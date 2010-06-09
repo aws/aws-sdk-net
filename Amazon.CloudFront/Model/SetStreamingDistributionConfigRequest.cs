@@ -29,10 +29,10 @@ namespace Amazon.CloudFront.Model
     /// SetStreamingDistributionConfig operation.
     /// The ETag parameter is used if you wish to specify the ETag to match with the
     /// ETag of the StreamingDistribution with the Id specified.
-    /// <para>Required Parameters: Id</para>
-    /// <para>Required Parameters: StreamingDistributionConfig</para>
-    /// <para>Required Parameters: ETag of the Streaming Distribution. This value can
-    /// be retrieved via a call to GetStreamDistributionInfo.</para>
+    /// <br />Required Parameters: Id
+    /// <br />Required Parameters: StreamingDistributionConfig
+    /// <br />Required Parameters: ETag of the Streaming Distribution. This value can
+    /// be retrieved via a call to GetStreamDistributionInfo.
     /// </summary>
     public class SetStreamingDistributionConfigRequest : CloudFrontRequest
     {

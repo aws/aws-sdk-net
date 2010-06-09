@@ -26,8 +26,8 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// The DeleteDistributionRequest contains the parameters used for the DeleteDistribution operation.
-    /// <para>Required Parameters: Id</para>
-    /// <para>Required Parameters: ETag</para>
+    /// <br />Required Parameters: Id
+    /// <br />Required Parameters: ETag
     /// </summary>
     public class DeleteDistributionRequest : CloudFrontRequest
     {

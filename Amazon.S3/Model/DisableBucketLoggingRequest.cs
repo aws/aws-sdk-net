@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// The DisableBucketLoggingRequest contains the parameters used for the DisableBucketLogging operation.
-    /// <para>Required Parameters: BucketName</para>
+    /// <br />Required Parameters: BucketName
     /// </summary>
     public class DisableBucketLoggingRequest : EnableBucketLoggingRequest
     {

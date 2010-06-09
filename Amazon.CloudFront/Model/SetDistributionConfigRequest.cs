@@ -29,10 +29,10 @@ namespace Amazon.CloudFront.Model
     /// SetDistributionConfig operation.
     /// The ETag parameter is used if you wish to specify the ETag to match with the
     /// ETag of the Distribution with the Id specified.
-    /// <para>Required Parameters: Id</para>
-    /// <para>Required Parameters: DistributionConfig</para>
-    /// <para>Required Parameters: ETag of the Distribution. This
-    /// can be retrieved via a call to GetDistibutionInfo</para>
+    /// <br />Required Parameters: Id
+    /// <br />Required Parameters: DistributionConfig
+    /// <br />Required Parameters: ETag of the Distribution. This
+    /// can be retrieved via a call to GetDistibutionInfo
     /// </summary>
     /// <remarks>
     /// If you want to serve private content, you need to:

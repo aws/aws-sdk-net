@@ -67,7 +67,7 @@ namespace Amazon.EC2
     /// While instances are running, you are billed for the computing and network
     /// resources that they consume.
     /// </summary>
-    public class AmazonEC2Client : AmazonEC2, IDisposable
+    public class AmazonEC2Client : AmazonEC2
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;

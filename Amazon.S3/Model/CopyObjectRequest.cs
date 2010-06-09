@@ -32,7 +32,7 @@ namespace Amazon.S3.Model
     /// The CopyObjectRequest contains the parameters used for the CopyObject operation.
     /// For more information about the optional parameters, refer: 
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTObjectCOPY.html"/>
-    /// <para>Required Parameters: SourceBucket, SourceKey, DestinationBucket </para>
+    /// <br />Required Parameters: SourceBucket, SourceKey, DestinationBucket 
     /// <para>Optional Parameters: DestinationKey, ETagToMatch, ETagToNotMatch, ModifiedSinceDate, 
     /// UnmodifiedSinceDate, Directive, Metadata, CannedACL, Timeout, SourceVersionId</para>
     /// </summary>

@@ -36,7 +36,7 @@ namespace Amazon.RDS
     /// instance’s compute resources and storage capacity to meet your application’s demand. As with all Amazon Web Services, there are no
     /// up-front investments, and you pay only for the resources you use.
     /// </summary>
-    public interface AmazonRDS
+    public interface AmazonRDS : IDisposable
     {
         /// <summary>
         /// Delete DB Snapshot

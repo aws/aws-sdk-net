@@ -52,7 +52,7 @@ namespace Amazon.AutoScaling
     /// or weekly variability in usage. Auto Scaling is enabled by Amazon CloudWatch and available
     /// at no additional charge beyond Amazon CloudWatch fees.
     /// </summary>
-    public class AmazonAutoScalingClient : AmazonAutoScaling, IDisposable
+    public class AmazonAutoScalingClient : AmazonAutoScaling
     {
         private string awsAccessKeyId;
         private SecureString awsSecretAccessKey;
@@ -514,7 +514,7 @@ namespace Amazon.AutoScaling
                 throw new AmazonAutoScalingException("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
             parameters.Add("AWSAccessKeyId", this.awsAccessKeyId);
-            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestamp);
+            parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
             parameters.Add("Version", config.ServiceVersion);
             parameters.Add("SignatureVersion", config.SignatureVersion);
             parameters.Add("Signature", SignParameters(parameters, this.awsSecretAccessKey, config));

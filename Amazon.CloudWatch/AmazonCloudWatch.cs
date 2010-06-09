@@ -34,7 +34,7 @@ namespace Amazon.CloudWatch
     /// to monitor; within minutes, Amazon CloudWatch will begin aggregating and storing monitoring data
     /// that can be accessed using web service APIs or Command Line Tools.
     /// </summary>
-    public interface AmazonCloudWatch
+    public interface AmazonCloudWatch : IDisposable
     {
         /// <summary>
         /// List Metrics

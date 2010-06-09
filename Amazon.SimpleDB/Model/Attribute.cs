@@ -35,6 +35,8 @@ namespace Amazon.SimpleDB.Model
     {
         private string nameField;
         private string valueField;
+        private string nameEncodingField;
+        private string valueEncodingField;
 
         /// <summary>
         /// Gets and sets the Name property.
@@ -96,6 +98,68 @@ namespace Amazon.SimpleDB.Model
         public bool IsSetValue()
         {
             return  this.valueField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the NameEncoding property.
+        /// The encoding for the attribute's name. For example: base64
+        /// </summary>
+        [XmlElementAttribute(ElementName = "NameEncoding")]
+        public string NameEncoding
+        {
+            get { return this.nameEncodingField ; }
+            set { this.nameEncodingField= value; }
+        }
+
+        /// <summary>
+        /// Sets the NameEncoding property
+        /// </summary>
+        /// <param name="nameEncoding">The encoding for the attribute's name. For example: base64</param>
+        /// <returns>this instance</returns>
+        public Attribute WithNameEncoding(string nameEncoding)
+        {
+            this.nameEncodingField = nameEncoding;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if NameEncoding property is set
+        /// </summary>
+        /// <returns>true if NameEncoding property is set</returns>
+        public bool IsSetNameEncoding()
+        {
+            return  this.nameEncodingField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the ValueEncoding property.
+        /// The encoding for the attribute's value. For example: base64
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ValueEncoding")]
+        public string ValueEncoding
+        {
+            get { return this.valueEncodingField ; }
+            set { this.valueEncodingField= value; }
+        }
+
+        /// <summary>
+        /// Sets the ValueEncoding property
+        /// </summary>
+        /// <param name="valueEncoding">The encoding for the attribute's value. For example: base64</param>
+        /// <returns>this instance</returns>
+        public Attribute WithValueEncoding(string valueEncoding)
+        {
+            this.valueEncodingField = valueEncoding;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ValueEncoding property is set
+        /// </summary>
+        /// <returns>true if ValueEncoding property is set</returns>
+        public bool IsSetValueEncoding()
+        {
+            return  this.valueEncodingField != null;
         }
 
     }

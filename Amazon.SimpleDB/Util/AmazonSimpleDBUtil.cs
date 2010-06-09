@@ -38,6 +38,7 @@ namespace Amazon.SimpleDB.Util
         /// Date format String, e.g. 2007-12-06T10:32:43.141-08:00
         /// </summary>
         private static string dateFormat = "yyyy-MM-ddTHH:mm:ss.fffzzzz";
+        private static string base64Str = "base64";
 
         /// <summary>
         /// Encodes positive integer value into a string by zero-padding it up to the specified number of digits.
@@ -189,8 +190,130 @@ namespace Amazon.SimpleDB.Util
         {
             get
             {
-                return Amazon.Util.AWSSDKUtils.FormattedCurrentTimestamp;
+                return Amazon.Util.AWSSDKUtils.FormattedCurrentTimestampISO8601;
             }
+        }
+
+        /// <summary>
+        /// Decodes the base64 encoded properties of the Attribute.
+        /// The Name and/or Value properties of an Attribute can be base64 encoded.
+        /// </summary>
+        /// <param name="inputAttribute">The properties of this Attribute will be decoded</param>
+        /// <seealso cref="P:Amazon.SimpleDB.Model.Attribute.NameEncoding" />
+        /// <seealso cref="P:Amazon.SimpleDB.Model.Attribute.ValueEncoding" />
+        public static void DecodeAttribute(Amazon.SimpleDB.Model.Attribute inputAttribute)
+        {
+            if (null == inputAttribute)
+            {
+                throw new ArgumentNullException("inputAttribute", "The Attribute passed in was null");
+            }
+
+            string encoding = inputAttribute.NameEncoding;
+            if (null != encoding)
+            {
+                if (String.Compare(encoding, base64Str, true) == 0)
+                {
+                    // The Name is base64 encoded
+                    inputAttribute.Name = AmazonSimpleDBUtil.DecodeBase64String(inputAttribute.Name);
+                    inputAttribute.NameEncoding = "";
+                }
+            }
+
+            encoding = inputAttribute.ValueEncoding;
+            if (null != encoding)
+            {
+                if (String.Compare(encoding, base64Str, true) == 0)
+                {
+                    // The Value is base64 encoded
+                    inputAttribute.Value = AmazonSimpleDBUtil.DecodeBase64String(inputAttribute.Value);
+                    inputAttribute.ValueEncoding = "";
+                }
+            }
+        }
+
+        /// <summary>
+        /// Decodes the base64 properties of every SimpleDB Attribute specified in
+        /// list of attributes specified as input.
+        /// </summary>
+        /// <param name="attributes">The Attributes in this list will be decoded</param>
+        /// <seealso cref="P:Amazon.SimpleDB.Model.Attribute.NameEncoding" />
+        /// <seealso cref="P:Amazon.SimpleDB.Model.Attribute.ValueEncoding" />
+        /// <seealso cref="P:Amazon.SimpleDB.Util.AmazonSimpleDBUtil.DecodeAttribute" />
+        public static void DecodeAttributes(List<Amazon.SimpleDB.Model.Attribute> attributes)
+        {
+            if (attributes != null &&
+                attributes.Count > 0)
+            {
+                foreach (Amazon.SimpleDB.Model.Attribute at in attributes)
+                {
+                    AmazonSimpleDBUtil.DecodeAttribute(at);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Decodes the base64 encoded members of the Item if necessary.
+        /// The Name property of an Item can be base64 encoded.
+        /// This method also decodes any encoded properties of the Attributes
+        /// associated with the Input Item.
+        /// </summary>
+        /// <param name="inputItem">The Item to be decoded</param>
+        /// <seealso cref="P:Amazon.SimpleDB.Model.Item.NameEncoding" />
+        /// <seealso cref="P:Amazon.SimpleDB.Util.AmazonSimpleDBUtil.DecodeAttributes" />
+        public static void DecodeItem(Amazon.SimpleDB.Model.Item inputItem)
+        {
+            if (null == inputItem)
+            {
+                throw new ArgumentNullException("inputItem", "The Item passed in was null");
+            }
+
+            string encoding = inputItem.NameEncoding;
+            if (null != encoding)
+            {
+                if (String.Compare(encoding, base64Str, true) == 0)
+                {
+                    // The Name is base64 encoded
+                    inputItem.Name = AmazonSimpleDBUtil.DecodeBase64String(inputItem.Name);
+                    inputItem.NameEncoding = "";
+                }
+            }
+
+            AmazonSimpleDBUtil.DecodeAttributes(inputItem.Attribute);
+        }
+
+        /// <summary>
+        /// Decodes the base64 encoded members of the Item List.
+        /// </summary>
+        /// <param name="inputItems">The Item List to be decoded</param>
+        /// <seealso cref="P:Amazon.SimpleDB.Model.Item.NameEncoding" />
+        /// <seealso cref="P:Amazon.SimpleDB.Util.AmazonSimpleDBUtil.DecodeAttributes" />
+        /// <seealso cref="P:Amazon.SimpleDB.Util.AmazonSimpleDBUtil.DecodeItem" />
+        public static void DecodeItems(List<Amazon.SimpleDB.Model.Item> inputItems)
+        {
+            if (inputItems != null &&
+                inputItems.Count > 0)
+            {
+                foreach (Amazon.SimpleDB.Model.Item it in inputItems)
+                {
+                    AmazonSimpleDBUtil.DecodeItem(it);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns the Base64 decoded version of the input string.
+        /// </summary>
+        /// <param name="encoded">The Base64 encoded string</param>
+        /// <returns>Decoded version of the Base64 input string</returns>
+        public static string DecodeBase64String(string encoded)
+        {
+            if (null == encoded)
+            {
+                throw new ArgumentNullException("encoded", "The Encoded String passed in was null");
+            }
+
+            byte[] encodedDataAsBytes = System.Convert.FromBase64String(encoded);
+            return System.Text.UTF8Encoding.UTF8.GetString(encodedDataAsBytes);
         }
     }
 }

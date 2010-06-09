@@ -25,13 +25,13 @@ using System.Xml.Serialization;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>*
+    /// <summary>
     /// The GetObjectRequest contains the parameters used for the GetObject operation.
     /// For more information about the optional parameters,
     /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTObjectGET.html"/>
-    /// <para>Required Parameters: BucketName, Key</para>
-    /// <para>Optional Parameters: VersionId, ModifiedSinceDate, UnmodifiedSinceDate, 
-    /// ETagToMatch, ETagToNotMatch, ByteRange</para>
+    /// <br />Required Parameters: BucketName, Key
+    /// <br />Optional Parameters: VersionId, ModifiedSinceDate, UnmodifiedSinceDate, 
+    /// ETagToMatch, ETagToNotMatch, ByteRange
     /// </summary>
     public class GetObjectRequest : S3Request
     {

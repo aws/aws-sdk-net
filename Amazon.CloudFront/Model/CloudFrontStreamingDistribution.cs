@@ -34,16 +34,14 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Describes a CloudFront Streaming Distribution.
     /// It is used as a response element when Creating a Distribution and Getting a Distribution's Information.
-    /// <para>
-    /// A distribution consists of the following items:
+    /// <para>A distribution consists of the following items:
     /// <list type="number">
     /// <item>Id</item>
     /// <item>Status</item>
     /// <item>Last Modified Timestamp</item>
     /// <item>Domain Name</item>
     /// <item>The Configuration for the Distribution</item>
-    /// </list>
-    /// </para>
+    /// </list></para>
     /// For more information, please visit:
     /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/StreamingDistributionDatatype.html"/>
     /// </summary>
