@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *
  */
 
 using System;
@@ -51,7 +50,7 @@ namespace Amazon.Util
         /// <summary>
         /// The AWS SDK User Agent
         /// </summary>
-        public const string SDKUserAgent = "AWS SDK for .NET/1.0.7";
+        public const string SDKUserAgent = "AWS SDK for .NET/1.0.8";
 
         /// <summary>
         /// The Set of accepted and valid Url characters. 

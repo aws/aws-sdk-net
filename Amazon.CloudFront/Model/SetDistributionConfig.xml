@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Distribution xmlns="http://cloudfront.amazonaws.com/doc/2009-12-01/">
+<Distribution xmlns="http://cloudfront.amazonaws.com/doc/2010-03-01/">
 	<Id>EDFDVBD632BHDS5</Id>
 	<Status>Deployed</Status>
 	<LastModifiedTime>2009-11-19T19:37:58Z</LastModifiedTime>

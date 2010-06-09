@@ -1,4 +1,4 @@
-/*******************************************************************************
+/* *****************************************************************************
  *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -18,8 +18,11 @@
  *  AWS SDK for .NET
  *  API Version: 2006-03-01
  *  Author(s): Manoj Mehta, Nathan Schnarr
- *
  */
+
+#if TRACE
+using System.Diagnostics;
+#endif
 
 using System;
 using System.Collections;
@@ -186,7 +189,7 @@ namespace Amazon.S3
         /// A PreSigned URL can be generated for GET, PUT and HEAD
         /// operations on your bucket, keys, and versions.
         /// </summary>
-        /// <param name="request">The GetPreSignedUrlRequest that defines the 
+        /// <param name="request">The GetPreSignedUrlRequest that defines the
         /// parameters of the operation.</param>
         /// <returns>A string that is the signed http request.</returns>
         /// <exception cref="T:System.ArgumentException" />
@@ -242,7 +245,7 @@ namespace Amazon.S3
         /// The ListBuckets operation returns a list of all of the buckets
         /// owned by the authenticated sender of the request.
         /// </summary>
-        /// <param name="request">The ListBucketsRequest that defines the parameters 
+        /// <param name="request">The ListBucketsRequest that defines the parameters
         /// of this operation</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
@@ -355,11 +358,11 @@ namespace Amazon.S3
                 throw new ArgumentNullException(S3Constants.RequestParam, "The LoggingConfig is null!");
             }
 
-             if (!config.IsSetGrants()) 
-             {
-                 throw new ArgumentNullException(S3Constants.RequestParam, "The Grants of the LoggingConfig is null!");
-             }
-            
+            if (!config.IsSetGrants())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The Grants of the LoggingConfig is null!");
+            }
+
             if (!config.IsSetTargetBucketName())
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName of the LoggingConfig is null or empty!");
@@ -436,8 +439,8 @@ namespace Amazon.S3
         /// <summary>
         /// The SetBucketVersioning operation takes in a bucket's name and the versioning
         /// status you want to set on the bucket.
-        /// <para>Valid values for the Versioning Status are Enabled and Suspended. 
-        /// Once Versioning has been "Enabled" on a bucket, it can be "Suspended" 
+        /// <para>Valid values for the Versioning Status are Enabled and Suspended.
+        /// Once Versioning has been "Enabled" on a bucket, it can be "Suspended"
         /// but cannot be switched "Off".</para>
         /// </summary>
         /// <param name="request">The SetBucketVersioningRequest that defines the parameters of the operation.</param>
@@ -464,7 +467,7 @@ namespace Amazon.S3
             if (!request.IsSetVersioningConfig())
             {
                 throw new ArgumentException(
-                    "Invalid Versioning Config specified", 
+                    "Invalid Versioning Config specified",
                     S3Constants.RequestParam
                     );
             }
@@ -504,19 +507,19 @@ namespace Amazon.S3
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>Returns a ListObjectsResponse from S3 with a list of S3Objects, 
+        /// <returns>Returns a ListObjectsResponse from S3 with a list of S3Objects,
         /// headers and request parameters used to filter the list.</returns>
         /// <remarks><para>
-        /// Since buckets can contain a virtually unlimited number of objects, the complete 
-        /// results of a list query can be extremely large. To manage large result sets, 
-        /// Amazon S3 uses pagination to split them into multiple responses. Callers should 
+        /// Since buckets can contain a virtually unlimited number of objects, the complete
+        /// results of a list query can be extremely large. To manage large result sets,
+        /// Amazon S3 uses pagination to split them into multiple responses. Callers should
         /// always check the <see cref="P:Amazon.S3.Model.ListObjectsResponse.IsTruncated" />
-        /// to see if the returned listing 
+        /// to see if the returned listing
         /// is complete, or if callers need to make additional calls to get more results.
-        /// The marker parameter allows callers to specify where to start the object listing. 
+        /// The marker parameter allows callers to specify where to start the object listing.
         /// </para>
-        /// List performance is not substantially affected by the total number of keys in your 
-        /// bucket, nor by the presence or absence of any additional query parameters. 
+        /// List performance is not substantially affected by the total number of keys in your
+        /// bucket, nor by the presence or absence of any additional query parameters.
         /// </remarks>
         public ListObjectsResponse ListObjects(ListObjectsRequest request)
         {
@@ -542,7 +545,7 @@ namespace Amazon.S3
         /// <para>
         /// In order to List Versions, you must have READ access to the bucket.
         /// When the list is not filtered by a specific key, only the metadata
-        /// associated with the latest version of objects in the bucket is returned. 
+        /// associated with the latest version of objects in the bucket is returned.
         /// The use of KeyMarker and VersionIdMarker allow you to filter results.</para>
         /// </summary>
         /// <param name="request">
@@ -551,24 +554,24 @@ namespace Amazon.S3
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>Returns a ListVersionsResponse from S3 that contains a list of 
+        /// <returns>Returns a ListVersionsResponse from S3 that contains a list of
         /// versions along with metadata and the original request parameters.</returns>
         /// <remarks><para>
-        /// Since buckets can contain a virtually unlimited number of objects, the complete 
-        /// results of a list query can be extremely large. To manage large result sets, 
-        /// Amazon S3 uses pagination to split them into multiple responses. Callers should 
+        /// Since buckets can contain a virtually unlimited number of objects, the complete
+        /// results of a list query can be extremely large. To manage large result sets,
+        /// Amazon S3 uses pagination to split them into multiple responses. Callers should
         /// always check the <see cref="P:Amazon.S3.Model.ListVersionsResonse.IsTruncated" />
-        /// to see if the returned listing 
+        /// to see if the returned listing
         /// is complete, or if callers need to make additional calls to get more results.
         /// The KeyMarker and VersionIdMarker parameters of the ListVersionsRequest object
-        /// allow callers to specify where to start the version listing. 
+        /// allow callers to specify where to start the version listing.
         /// </para>
-        /// <para>In order to enable versioning on a bucket, please refer to the 
+        /// <para>In order to enable versioning on a bucket, please refer to the
         /// <see cref="M:Amazon.S3.AmazonS3Client.SetBucketVersioning">SetBucketVersioning</see>
         /// operation's details.
         /// </para>
-        /// List performance is not substantially affected by the total number of keys in your 
-        /// bucket, nor by the presence or absence of any additional query parameters. 
+        /// List performance is not substantially affected by the total number of keys in your
+        /// bucket, nor by the presence or absence of any additional query parameters.
         /// </remarks>
         public ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
@@ -659,7 +662,7 @@ namespace Amazon.S3
         /// The PutBucket operation creates a new S3 Bucket.
         /// Depending on your latency and legal requirements, you can specify a location
         /// constraint that will affect where your data physically resides.
-        /// You can currently specify either a Europe (EU) or a SFO (US-WEST-1) 
+        /// You can currently specify either a Europe (EU) or a SFO (US-WEST-1)
         /// location constraint.
         /// </summary>
         /// <param name="request">
@@ -744,10 +747,10 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// The GetObject operation fetches the most recent version of an S3 object 
-        /// from the specified S3 bucket. You must have READ access to the object. 
-        /// If READ access is granted to an anonymous user, an object can be retrieved 
-        /// without an authorization header. Providing a version-id for the object will 
+        /// The GetObject operation fetches the most recent version of an S3 object
+        /// from the specified S3 bucket. You must have READ access to the object.
+        /// If READ access is granted to an anonymous user, an object can be retrieved
+        /// without an authorization header. Providing a version-id for the object will
         /// fetch the specific version from S3 instead of the most recent one.
         /// </summary>
         /// <param name="request">
@@ -765,11 +768,11 @@ namespace Amazon.S3
         /// <code>
         /// using (GetObjectResponse response = s3Client.GetObject(request))
         /// {
-        ///     ... Process the response: 
+        ///     ... Process the response:
         ///     Get the Stream, get the content-length, write contents to disk, etc
         /// }
         /// </code>
-        /// To see what resources are cleaned up at the end of the using block, please 
+        /// To see what resources are cleaned up at the end of the using block, please
         /// see <see cref="M:Amazon.S3.Model.S3Response.Dispose"/>
         /// </remarks>
         public GetObjectResponse GetObject(GetObjectRequest request)
@@ -871,7 +874,7 @@ namespace Amazon.S3
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "An S3 Bucket must be specified for S3 PUT object.");
             }
-                
+
             if (!(request.IsSetKey() || request.IsSetFilePath()))
             {
                 throw new ArgumentException(
@@ -995,9 +998,9 @@ namespace Amazon.S3
         /// However, the ACL is not preserved and is set to private for the user making the request.
         /// To override the default ACL setting, specify a new ACL when generating a copy request.
         /// If versioning has been enabled on the source bucket, and you want to copy a specific
-        /// version of an object, please use 
-        /// <see cref="P:Amazon.S3.Model.CopyObjectRequest.SourceVersionId" /> to specify the 
-        /// version. By default, the most recent version of an object is copied to the 
+        /// version of an object, please use
+        /// <see cref="P:Amazon.S3.Model.CopyObjectRequest.SourceVersionId" /> to specify the
+        /// version. By default, the most recent version of an object is copied to the
         /// destination bucket.
         /// </summary>
         /// <param name="request">
@@ -1009,12 +1012,12 @@ namespace Amazon.S3
         /// <returns>Returns a CopyObjectResponse from S3.</returns>
         /// <seealso cref="T:Amazon.S3.Model.S3AccessControlList"/>
         /// <remarks>
-        /// If Versioning has been enabled on the target bucket, S3 generates a 
-        /// unique version ID for the object being copied. This version ID is different 
-        /// from the version ID of the source object. Additionally, S3 returns the version 
+        /// If Versioning has been enabled on the target bucket, S3 generates a
+        /// unique version ID for the object being copied. This version ID is different
+        /// from the version ID of the source object. Additionally, S3 returns the version
         /// ID of the copied object in the x-amz-version-id response header in the response.
-        /// If you do not enable Versioning or suspend it on the target bucket, the version ID 
-        /// S3 generates is always the string literal - "null". 
+        /// If you do not enable Versioning or suspend it on the target bucket, the version ID
+        /// S3 generates is always the string literal - "null".
         /// </remarks>
         public CopyObjectResponse CopyObject(CopyObjectRequest request)
         {
@@ -1120,7 +1123,7 @@ namespace Amazon.S3
         private void ConvertListObjects(ListObjectsRequest request)
         {
             Map parameters = request.parameters;
-            
+
             //Create query string if any of the values are set.
             StringBuilder sb = new StringBuilder("?", 256);
             if (request.IsSetPrefix())
@@ -1147,8 +1150,8 @@ namespace Amazon.S3
             {
                 query = query.Remove(query.Length - 1);
             }
-            
-            // We initialized the query with a "?". If none of 
+
+            // We initialized the query with a "?". If none of
             // Prefix, Marker, Delimiter, MaxKeys is set, there
             // is no query
             if (query.Length > 1)
@@ -1170,7 +1173,7 @@ namespace Amazon.S3
 
             //Create query string if any of the values are set.
             StringBuilder sb = new StringBuilder("?versions", 256);
-            
+
             // This part of the query needs to be signed, the rest don't need to be
             parameters[S3QueryParameter.QueryToSign] = sb.ToString();
 
@@ -1217,7 +1220,7 @@ namespace Amazon.S3
             {
                 parameters[S3QueryParameter.Key] = request.Key;
 
-                // The queryStr needs to be changed from its default value only 
+                // The queryStr needs to be changed from its default value only
                 // if a version-id is specified
                 if (request.IsSetVersionId())
                 {
@@ -1247,7 +1250,7 @@ namespace Amazon.S3
 
             if (request.IsSetCannedACL())
             {
-                webHeaders.Add(GetCannedACLHeader(request.CannedACL));
+                SetCannedACLHeader(webHeaders, request.CannedACL);
             }
 
             parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
@@ -1259,7 +1262,7 @@ namespace Amazon.S3
             {
                 parameters[S3QueryParameter.Key] = request.Key;
 
-                // The queryStr needs to be changed from its default value only 
+                // The queryStr needs to be changed from its default value only
                 // if a version-id is specified
                 if (request.IsSetVersionId())
                 {
@@ -1321,8 +1324,8 @@ namespace Amazon.S3
             if (request.IsSetByteRange())
             {
                 parameters[S3QueryParameter.Range] = String.Concat(
-                    request.ByteRange.First, 
-                    ":", 
+                    request.ByteRange.First,
+                    ":",
                     request.ByteRange.Second
                     );
             }
@@ -1330,19 +1333,19 @@ namespace Amazon.S3
             // Add the necessary get object specific headers to the request.Headers object
             if (request.IsSetETagToMatch())
             {
-                webHeaders.Add(GetIfMatchHeader(request.ETagToMatch));
+                SetIfMatchHeader(webHeaders, request.ETagToMatch);
             }
             if (request.IsSetETagToNotMatch())
             {
-                webHeaders.Add(GetIfNoneMatchHeader(request.ETagToNotMatch));
+                SetIfNoneMatchHeader(webHeaders, request.ETagToNotMatch);
             }
             if (request.IsSetModifiedSinceDate())
             {
-                webHeaders.Add(GetIfModifiedSinceHeader(request.ModifiedSinceDate));
+                SetIfModifiedSinceHeader(webHeaders, request.ModifiedSinceDate);
             }
             if (request.IsSetUnmodifiedSinceDate())
             {
-                webHeaders.Add(GetIfUnmodifiedSinceHeader(request.UnmodifiedSinceDate));
+                SetIfUnmodifiedSinceHeader(webHeaders, request.UnmodifiedSinceDate);
             }
             if (request.IsSetVersionId())
             {
@@ -1368,15 +1371,15 @@ namespace Amazon.S3
 
             if (request.IsSetETagToNotMatch())
             {
-                webHeaders.Add(GetIfNoneMatchHeader(request.ETagToNotMatch));
+                SetIfNoneMatchHeader(webHeaders, request.ETagToNotMatch);
             }
             if (request.IsSetModifiedSinceDate())
             {
-                webHeaders.Add(GetIfModifiedSinceHeader(request.ModifiedSinceDate));
+                SetIfModifiedSinceHeader(webHeaders, request.ModifiedSinceDate);
             }
             if (request.IsSetUnmodifiedSinceDate())
             {
-                webHeaders.Add(GetIfUnmodifiedSinceHeader(request.UnmodifiedSinceDate));
+                SetIfUnmodifiedSinceHeader(webHeaders, request.UnmodifiedSinceDate);
             }
             if (request.IsSetVersionId())
             {
@@ -1462,7 +1465,7 @@ namespace Amazon.S3
             // 1. The Canned ACL
             if (request.IsSetCannedACL())
             {
-                webHeaders.Add(GetCannedACLHeader(request.CannedACL));
+                SetCannedACLHeader(webHeaders, request.CannedACL);
             }
 
             // 2. The MetaData
@@ -1504,7 +1507,6 @@ namespace Amazon.S3
                 throw new ArgumentNullException(
                     S3Constants.RequestParam,
                     "The Key must be set for GET and PUT requests"
-             
                     );
             }
 
@@ -1530,8 +1532,8 @@ namespace Amazon.S3
             // 2. The auth string is added to the url
             string url = request.parameters[S3QueryParameter.Url];
 
-            // the url's protocol prefix is generated using the config's 
-            // CommunicationProtocol property. If the request's 
+            // the url's protocol prefix is generated using the config's
+            // CommunicationProtocol property. If the request's
             // protocol differs from that set in the config, make the
             // necessary string replacements.
             if (request.Protocol != config.CommunicationProtocol)
@@ -1573,7 +1575,7 @@ namespace Amazon.S3
 
             if (request.IsSetMfaCodes())
             {
-                request.Headers.Add(GetMfaHeader(request.MfaCodes));
+                SetMfaHeader(request.Headers, request.MfaCodes);
             }
 
             AddS3QueryParameters(request, request.BucketName);
@@ -1590,8 +1592,8 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
             parameters[S3QueryParameter.Action] = "CopyObject";
 
-            // the name of the new key created in the destination bucket is the 
-            // DestinationKey parameter unless it isn't specified, in which case, 
+            // the name of the new key created in the destination bucket is the
+            // DestinationKey parameter unless it isn't specified, in which case,
             // use the SourceKey.
             if (request.IsSetDestinationKey())
             {
@@ -1608,19 +1610,19 @@ namespace Amazon.S3
             // Add the Copy Object specific headers to the request
             if (request.IsSetETagToMatch())
             {
-                webHeaders.Add(GetIfMatchCopyHeader(request.ETagToMatch));
+                SetIfMatchCopyHeader(webHeaders, request.ETagToMatch);
             }
             if (request.IsSetETagToNotMatch())
             {
-                webHeaders.Add(GetIfNoneMatchCopyHeader(request.ETagToNotMatch));
+                SetIfNoneMatchCopyHeader(webHeaders, request.ETagToNotMatch);
             }
             if (request.IsSetModifiedSinceDate())
             {
-                webHeaders.Add(GetIfModifiedSinceCopyHeader(request.ModifiedSinceDate));
+                SetIfModifiedSinceCopyHeader(webHeaders, request.ModifiedSinceDate);
             }
             if (request.IsSetUnmodifiedSinceDate())
             {
-                webHeaders.Add(GetIfUnmodifiedSinceCopyHeader(request.UnmodifiedSinceDate));
+                SetIfUnmodifiedSinceCopyHeader(webHeaders, request.UnmodifiedSinceDate);
             }
 
             // Add the Copy Source header which makes this a COPY request
@@ -1633,28 +1635,53 @@ namespace Amazon.S3
                     request.SourceVersionId
                     );
             }
-            webHeaders.Add(GetCopySourceHeader(request.SourceBucket, sourceKey));
+            SetCopySourceHeader(webHeaders, request.SourceBucket, sourceKey);
 
             // there is always a directive associated with the request
-            webHeaders.Add(GetMetadataDirectiveHeader(request.Directive));
+            SetMetadataDirectiveHeader(webHeaders, request.Directive);
 
             // if the user has specified the REPLACE directive
             // and specified new metadata for the copied object
-            // specify the metadata using the x-amz-meta header
-            if (request.Directive == S3MetadataDirective.REPLACE &&
-                request.IsSetMetaData())
+            // specify the metadata using the x-amz-meta header.
+            // also, pass the content type header.
+            if (request.Directive == S3MetadataDirective.REPLACE)
             {
-                // Add headers of type x-amz-meta-<key> to the request
-                foreach (string key in request.metaData)
+                if (request.IsSetMetaData())
                 {
-                    webHeaders[String.Concat("x-amz-meta-", key)] = request.metaData[key];
+                    // Add headers of type x-amz-meta-<key> to the request
+                    foreach (string key in request.metaData)
+                    {
+                        webHeaders[String.Concat("x-amz-meta-", key)] = request.metaData[key];
+                    }
+                }
+
+                // Add the Content Type, if it is specified
+                // or determine the content type from the extension
+                if (request.IsSetContentType())
+                {
+                    parameters[S3QueryParameter.ContentType] = request.ContentType;
+                }
+                else if (request.IsSetDestinationKey())
+                {
+                    // Get the extension of the file from the destination key.
+                    // Try the key as well.
+                    string ext = Path.GetExtension(request.DestinationKey);
+                    if (String.IsNullOrEmpty(ext))
+                    {
+                        ext = Path.GetExtension(request.SourceKey);
+                    }
+                    // Use the extension to get the mime-type
+                    if (!String.IsNullOrEmpty(ext))
+                    {
+                        parameters[S3QueryParameter.ContentType] = AmazonS3Util.MimeTypeFromExtension(ext);
+                    }
                 }
             }
 
             // The Canned ACL
             if (request.IsSetCannedACL())
             {
-                webHeaders.Add(GetCannedACLHeader(request.CannedACL));
+                SetCannedACLHeader(webHeaders, request.CannedACL);
             }
 
             AddS3QueryParameters(request, request.DestinationBucket);
@@ -1692,7 +1719,7 @@ namespace Amazon.S3
 
             if (request.VersioningConfig.IsSetEnableMfaDelete())
             {
-                webHeaders.Add(GetMfaHeader(request.MfaCodes));
+                SetMfaHeader(webHeaders, request.MfaCodes);
             }
 
             AddS3QueryParameters(request, request.BucketName);
@@ -1752,6 +1779,16 @@ namespace Amazon.S3
             }
 
             parameters[S3QueryParameter.CanonicalizedResource] = canonicalResource.ToString();
+
+            // Has the user added the Content-Type header to the request?
+            string value = webHeaders[AWSSDKUtils.ContentTypeHeader];
+            if (!String.IsNullOrEmpty(value))
+            {
+                // Remove the header from the webHeaders collection
+                // and add it to the parameters
+                parameters[S3QueryParameter.ContentType] = value;
+                webHeaders.Remove(AWSSDKUtils.ContentTypeHeader);
+            }
 
             string toSign = BuildSigningString(parameters, webHeaders);
             string auth;
@@ -1820,6 +1857,11 @@ namespace Amazon.S3
             T response = default(T);
             HttpStatusCode statusCode = default(HttpStatusCode);
             string verb = parameters[S3QueryParameter.Verb];
+
+#if TRACE
+            DateTime start = DateTime.UtcNow;
+            Trace.Write(String.Format("{0}, {1}, ", actionName, start));
+#endif
 
             // Variables that pertain to PUT requests
             byte[] requestData = Encoding.UTF8.GetBytes("");
@@ -1914,7 +1956,19 @@ namespace Amazon.S3
                             }
                         }
 
+#if TRACE
+                        DateTime requestSent = DateTime.UtcNow;
+                        Trace.Write(String.Format("{0}, {1}, ", requestSent, (requestSent - start).TotalMilliseconds));
+#endif
+
                         httpResponse = request.GetResponse() as HttpWebResponse;
+
+#if TRACE
+                        DateTime responseReceived = DateTime.UtcNow;
+                        Trace.Write(String.Format("{0}, ", responseReceived));
+                        Trace.Write(String.Format("{0}, ", (responseReceived - requestSent).TotalMilliseconds));
+#endif
+
                         if (httpResponse != null)
                         {
                             statusCode = httpResponse.StatusCode;
@@ -1940,6 +1994,13 @@ namespace Amazon.S3
                                 httpResponse = null;
                                 request.Abort();
                             }
+#if TRACE
+                            DateTime end = DateTime.UtcNow;
+                            Trace.Write(String.Format("{0}, ", end));
+                            Trace.Write(String.Format("{0}", (end - responseReceived).TotalMilliseconds));
+                            Trace.WriteLine(String.Format("{0}", (end - start).TotalMilliseconds));
+                            Trace.Flush();
+#endif
                         }
                     }
                     // Web exception is thrown on unsucessful responses
@@ -1981,7 +2042,7 @@ namespace Amazon.S3
                             httpResponse.Close();
                             httpResponse = null;
                         }
-                        // Abort the unsuccessful request 
+                        // Abort the unsuccessful request
                         request.Abort();
 
                         throw;
@@ -1998,7 +2059,7 @@ namespace Amazon.S3
             finally
             {
                 // Regardless of what happens, if a file stream
-                // was passed in by the user, it should be closed               
+                // was passed in by the user, it should be
                 if (fStream != null)
                 {
                     fStream.Close();
@@ -2027,7 +2088,7 @@ namespace Amazon.S3
                 userRequest.parameters[S3QueryParameter.Url] = value;
             }
         }
-        
+
         private static bool IsRedirect(HttpWebResponse httpResponse)
         {
             if (httpResponse == null)
@@ -2088,7 +2149,7 @@ namespace Amazon.S3
                         try
                         {
                             // The md5Digest needs to be verified
-                            string checksumFromS3 = headerCollection.Get(AWSSDKUtils.ETagHeader);
+                            string checksumFromS3 = headerCollection[AWSSDKUtils.ETagHeader];
                             checksumFromS3 = checksumFromS3.Replace("\"", String.Empty);
                             if (respStr.CanSeek)
                             {
@@ -2344,8 +2405,17 @@ namespace Amazon.S3
             {
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
-                    httpRequest.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    if (config.IsSetProxyUsername())
+                    {
+                        proxy.Credentials = new NetworkCredential(
+                            config.ProxyUsername,
+                            config.ProxyPassword ?? String.Empty
+                            );
+                    }
+                    httpRequest.Proxy = proxy;
                 }
+
                 httpRequest.UserAgent = config.UserAgent;
 
                 string value = headers[AWSSDKUtils.IfModifiedSinceHeader];
@@ -2355,6 +2425,18 @@ namespace Amazon.S3
                     httpRequest.IfModifiedSince = date;
                     headers.Remove(AWSSDKUtils.IfModifiedSinceHeader);
                     request.removedHeaders[AWSSDKUtils.IfModifiedSinceHeader] = value;
+                }
+
+                // The Content-Type header could have been specified using
+                // the S3Request.AddHeader method. If Content-Type was specified,
+                // it needs to be removed and set as an explicit property
+                // of the HttpWebRequest.
+                value = headers[AWSSDKUtils.ContentTypeHeader];
+                if (!String.IsNullOrEmpty(value))
+                {
+                    httpRequest.ContentType = value;
+                    headers.Remove(AWSSDKUtils.ContentTypeHeader);
+                    request.removedHeaders[AWSSDKUtils.ContentTypeHeader] = value;
                 }
 
                 if (parameters.ContainsKey(S3QueryParameter.ContentType))
@@ -2472,132 +2554,117 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// Gets the header information to use a S3CannedACL.
+        /// Sets the header information to use a S3CannedACL.
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="acl">Enum for the type of canned acl wanted</param>
-        /// <returns>A key/value to be used in a http header for the S3CannedACL parameter</returns>
-        private static NameValueCollection GetCannedACLHeader(S3CannedACL acl)
+        private static void SetCannedACLHeader(WebHeaderCollection headers, S3CannedACL acl)
         {
-            return AmazonS3Util.CreateHeaderEntry(
-                S3Constants.AmzAclHeader, 
-                S3Constants.CannedAcls[(int)acl]
-                );
+            headers[S3Constants.AmzAclHeader] = S3Constants.CannedAcls[(int)acl];
         }
 
         /// <summary>
-        /// Creates an If-Match Header.
+        /// Sets the If-Match Header in the specified header collection.
         ///
         /// Return the object only if its entity tag (ETag) is the same as the one
         /// specified, otherwise return a 412 (precondition failed).
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="eTag">The ETag to match against</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetIfMatchHeader(string eTag)
+        private static void SetIfMatchHeader(WebHeaderCollection headers, string eTag)
         {
-            return AmazonS3Util.CreateHeaderEntry(AWSSDKUtils.IfMatchHeader, eTag);
+            headers[AWSSDKUtils.IfMatchHeader] = eTag;
         }
 
         /// <summary>
-        /// Creates an If-None-Match Header.
+        /// Set the If-None-Match Header in the specified header collection.
         ///
         /// Return the object only if its entity tag (ETag) is different from the one
         /// specified, otherwise return a 304 (not modified).
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="eTag">The ETag to match against</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetIfNoneMatchHeader(string eTag)
+        private static void SetIfNoneMatchHeader(WebHeaderCollection headers, string eTag)
         {
-            return AmazonS3Util.CreateHeaderEntry("If-None-Match", eTag);
+            headers["If-None-Match"] = eTag;
         }
 
         /// <summary>
-        /// Creates an If-Modifed-Since Header.
+        /// Sets the If-Modifed-Since Header in the specified header collection.
         ///
         /// Return the object only if it has been modified since the specified time,
         /// otherwise return a 304 (not modified).
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="date">DateTime Object representing the date to use</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetIfModifiedSinceHeader(DateTime date)
+        private static void SetIfModifiedSinceHeader(WebHeaderCollection headers, DateTime date)
         {
-            return AmazonS3Util.CreateHeaderEntry(
-                AWSSDKUtils.IfModifiedSinceHeader,
-                date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat)
-                );
+            headers[AWSSDKUtils.IfModifiedSinceHeader] = date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat);
         }
 
         /// <summary>
-        /// Creates an If-Unmodifed-Since Header.
+        /// Sets the If-Unmodifed-Since Header in the specified header collection.
         ///
         /// Return the object only if it has not been modified since the specified time,
         /// otherwise return a 412 (precondition failed).
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="date">DateTime Object representing the date to use</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetIfUnmodifiedSinceHeader(DateTime date)
+        private static void SetIfUnmodifiedSinceHeader(WebHeaderCollection headers, DateTime date)
         {
-            return AmazonS3Util.CreateHeaderEntry(
-                "If-Unmodified-Since",
-                date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat)
-                );
+            headers["If-Unmodified-Since"] = date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat);
         }
 
         /// <summary>
-        /// Creates an If-Match Header for the CopyObject operation.
+        /// Sets the If-Match Header for the CopyObject operation in the specified header collection.
         ///
         /// Return the object only if its entity tag (ETag) is the same as the one
         /// specified, otherwise return a 412 (precondition failed).
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="eTag">The ETag to match against</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetIfMatchCopyHeader(string eTag)
+        private static void SetIfMatchCopyHeader(WebHeaderCollection headers, string eTag)
         {
-            return AmazonS3Util.CreateHeaderEntry("x-amz-copy-source-if-match", eTag);
+            headers["x-amz-copy-source-if-match"] = eTag;
         }
 
         /// <summary>
-        /// Creates an If-None-Match Header for the CopyObject operation.
+        /// Sets the If-None-Match Header for the CopyObject operation.
         ///
         /// Return the object only if its entity tag (ETag) is different from the one
         /// specified, otherwise return a 304 (not modified).
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="eTag">The ETag to match against</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetIfNoneMatchCopyHeader(string eTag)
+        private static void SetIfNoneMatchCopyHeader(WebHeaderCollection headers, string eTag)
         {
-            return AmazonS3Util.CreateHeaderEntry("x-amz-copy-source-if-none-match", eTag);
+            headers["x-amz-copy-source-if-none-match"] = eTag;
         }
 
         /// <summary>
-        /// Creates an If-Modifed-Since Header for the CopyObject operation.
+        /// Sets the If-Modifed-Since Header for the CopyObject operation.
         ///
         /// Return the object only if it has been modified since the specified time,
         /// otherwise return a 304 (not modified).
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="date">DateTime Object representing the date to use</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetIfModifiedSinceCopyHeader(DateTime date)
+        private static void SetIfModifiedSinceCopyHeader(WebHeaderCollection headers, DateTime date)
         {
-            return AmazonS3Util.CreateHeaderEntry(
-                "x-amz-copy-source-if-modified-since",
-                date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat)
-                );
+            headers["x-amz-copy-source-if-modified-since"] = date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat);
         }
 
         /// <summary>
-        /// Creates an If-Unmodifed-Since Header for the CopyObject operation.
+        /// Sets the If-Unmodifed-Since Header for the CopyObject operation.
         ///
         /// Return the object only if it has not been modified since the specified time,
         /// otherwise return a 412 (precondition failed).
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="date">DateTime Object representing the date to use</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetIfUnmodifiedSinceCopyHeader(DateTime date)
+        private static void SetIfUnmodifiedSinceCopyHeader(WebHeaderCollection headers, DateTime date)
         {
-            return AmazonS3Util.CreateHeaderEntry(
-                "x-amz-copy-source-if-unmodified-since",
-                date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat)
-                );
+            headers["x-amz-copy-source-if-unmodified-since"] = date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat);
         }
 
         /// <summary>
@@ -2606,57 +2673,48 @@ namespace Amazon.S3
         /// response. You cannot copy an object to itself unless the S3MetadataDirective header is
         /// specified and its value set to REPLACE.
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="directive">Either COPY or REPLACE</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetMetadataDirectiveHeader(S3MetadataDirective directive)
+        private static void SetMetadataDirectiveHeader(WebHeaderCollection headers, S3MetadataDirective directive)
         {
-            return AmazonS3Util.CreateHeaderEntry(
-                S3Constants.AmzMetadataDirectiveHeader, 
-                S3Constants.MetaDataDirectives[(int)directive]
-                );
+            headers[S3Constants.AmzMetadataDirectiveHeader] = S3Constants.MetaDataDirectives[(int)directive];
         }
 
         /// <summary>
-        /// Returns an x-amz-copy-source header based on the bucket and key passed
+        /// Sets the x-amz-copy-source header based on the bucket and key passed
         /// as input.
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="bucket">The source bucket</param>
         /// <param name="key">The source key</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetCopySourceHeader(string bucket, string key)
+        private static void SetCopySourceHeader(WebHeaderCollection headers, string bucket, string key)
         {
             string source = bucket;
             if (key != null)
             {
                 source = String.Concat("/", bucket, "/", key);
             }
-            return AmazonS3Util.CreateHeaderEntry("x-amz-copy-source", AmazonS3Util.UrlEncode(source, true));
+            headers["x-amz-copy-source"] = AmazonS3Util.UrlEncode(source, true);
         }
 
         /// <summary>
-        /// Returns an x-amz-version-id header based on the versionId passed as input
+        /// Sets the x-amz-version-id header based on the versionId passed as input
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="versionId">The versionId of the desired S3 object</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetVersionIdHeader(string versionId)
+        private static void SetVersionIdHeader(WebHeaderCollection headers, string versionId)
         {
-            return AmazonS3Util.CreateHeaderEntry(
-                S3Constants.AmzVersionIdHeader, 
-                versionId
-                );
+            headers[S3Constants.AmzVersionIdHeader] = versionId;
         }
 
         /// <summary>
-        /// Returns an x-amz-mfa based on the serial and token passed as input
+        /// Sets the x-amz-mfa based on the serial and token passed as input
         /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="mfaCodes">The tuple of the authentication device codes</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetMfaHeader(Tuple<string, string> mfaCodes)
+        private static void SetMfaHeader(WebHeaderCollection headers, Tuple<string, string> mfaCodes)
         {
-            return AmazonS3Util.CreateHeaderEntry(
-                S3Constants.AmzMfaHeader,
-                String.Concat(mfaCodes.First, " ", mfaCodes.Second)
-                );
+            headers[S3Constants.AmzMfaHeader] = String.Concat(mfaCodes.First, " ", mfaCodes.Second);
         }
 
         /**
@@ -2733,7 +2791,7 @@ namespace Amazon.S3
                     list.Add(lowerKey);
                 }
             }
-            // Using the recommendations from: 
+            // Using the recommendations from:
             // http://msdn.microsoft.com/en-us/library/ms973919.aspx
             list.Sort(StringComparer.Ordinal);
 

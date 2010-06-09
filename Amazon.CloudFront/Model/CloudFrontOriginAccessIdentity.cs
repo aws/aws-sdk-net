@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-12-01
+ *  API Version: 2010-03-01
  *
  */
 
@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
     /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/OAIConfigDatatype.html"/>
     /// </summary>
     [Serializable()]
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2009-12-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-03-01/", IsNullable = false)]
     public class CloudFrontOriginAccessIdentity
     {
         #region Private Members

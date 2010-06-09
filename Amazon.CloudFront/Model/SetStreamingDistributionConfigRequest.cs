@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-12-01
+ *  API Version: 2010-03-01
  *
  */
 
@@ -34,6 +34,18 @@ namespace Amazon.CloudFront.Model
     /// <br />Required Parameters: ETag of the Streaming Distribution. This value can
     /// be retrieved via a call to GetStreamDistributionInfo.
     /// </summary>
+    /// <remarks>
+    /// If you want to serve private content, you need to:
+    /// <list type="bullet">
+    /// <item>Associate an Origin Access Identity with the StreamingDistributionConfig</item>
+    /// <item>Associate TrustedSigners with the StreamingDistributionConfig if you want to 
+    /// serve content via Signed URLs</item>
+    /// </list>
+    /// </remarks>
+    /// <seealso cref="T:Amazon.CloudFront.Model.CloudFrontStreamingDistributionConfig"/>
+    /// <seealso cref="T:Amazon.CloudFront.Model.UrlTrustedSigners"/>
+    /// <seealso cref="P:Amazon.CloudFront.Model.CloudFrontStreamingDistributionConfig.OriginAccessIdentity"/>
+    /// <seealso cref="P:Amazon.CloudFront.Model.CloudFrontStreamingDistributionConfig.TrustedSigners"/>
     public class SetStreamingDistributionConfigRequest : CloudFrontRequest
     {
         #region Id

@@ -65,7 +65,8 @@ namespace Amazon.S3.Util
         // These strings need to be ordered like the S3Region enumeration
         internal static readonly string[] LocationConstraints = {"",
                                                 "EU",
-                                                "us-west-1"};
+                                                "us-west-1",
+                                                "ap-southeast-1"};
 
         // ACL related strings
         internal static readonly string[] CannedAcls = {"",

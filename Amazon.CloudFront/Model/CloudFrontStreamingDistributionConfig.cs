@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-12-01
+ *  API Version: 2010-03-01
  *
  */
 
@@ -63,7 +63,7 @@ namespace Amazon.CloudFront.Model
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?><StreamingDistributionConfig ");
-            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2009-12-01/\">");
+            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-03-01/\">");
 
             if (IsSetOrigin())
             {
@@ -88,12 +88,22 @@ namespace Amazon.CloudFront.Model
                 }
             }
 
+            sb.Append(String.Concat("<Enabled>", (this.Enabled) ? "true" : "false", "</Enabled>"));
+
             if (IsSetComment())
             {
                 sb.Append(String.Concat("<Comment>", Comment, "</Comment>"));
             }
 
-            sb.Append(String.Concat("<Enabled>", (this.Enabled) ? "true" : "false", "</Enabled>"));
+            if (IsSetOriginAccessIdentity())
+            {
+                sb.Append(String.Concat("<OriginAccessIdentity>", OriginAccessIdentity, "</OriginAccessIdentity>"));
+            }
+
+            if (IsSetTrustedSigners())
+            {
+                sb.Append(String.Concat("<TrustedSigners>", TrustedSigners, "</TrustedSigners>"));
+            }
 
             sb.Append("</StreamingDistributionConfig>");
             return sb.ToString();
@@ -155,6 +165,30 @@ namespace Amazon.CloudFront.Model
         public CloudFrontStreamingDistributionConfig WithEnabled(bool enabled)
         {
             this.Enabled = enabled;
+            return this;
+        }
+
+
+        /// <summary>
+        /// Sets the OriginAccessIdentity property.
+        /// </summary>
+        /// <param name="identity">OriginAccessIdentity property</param>
+        /// <returns>this instance</returns>
+        public CloudFrontStreamingDistributionConfig WithOriginAccessIdentity(CloudFrontOriginAccessIdentity identity)
+        {
+            this.OriginAccessIdentity = identity;
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the TrustedSigners property.
+        /// This specifies any AWS accounts you want to permit to create signed URLs for private content.
+        /// </summary>
+        /// <param name="signers">TrustedSigners property is set to this value</param>
+        /// <returns>this instance</returns>
+        public CloudFrontStreamingDistributionConfig WithTrustedSigners(UrlTrustedSigners signers)
+        {
+            this.TrustedSigners = signers;
             return this;
         }
 

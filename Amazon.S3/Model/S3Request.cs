@@ -45,9 +45,9 @@ namespace Amazon.S3.Model
         // This way, the Map.Add operation will be an O(1) operation
         internal Map parameters = new Dictionary<S3QueryParameter, string>(10);
 
-        // The maximum number of headers removed from an S3 Request is 
-        // just 1 - If-Modified-Since. No need to allocate capacity
-        // for 1 item if that's the most there will ever be.
+        // The maximum number of headers removed from an S3 Request is 2:
+        // If-Modified and Content-Type. Since this is such a small number, 
+        // we choose not to allocate memory for all requests.
         internal NameValueCollection removedHeaders = new NameValueCollection();
 
         #endregion

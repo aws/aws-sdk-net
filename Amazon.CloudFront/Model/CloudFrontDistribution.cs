@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-12-01
+ *  API Version: 2010-03-01
  *
  */
 
@@ -47,13 +47,12 @@ namespace Amazon.CloudFront.Model
     /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/DistributionDatatype.html"/>
     /// </summary>
     [Serializable()]
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2009-12-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-03-01/", IsNullable = false)]
     public class CloudFrontDistribution : CloudFrontDistributionBase
     {
         #region Private Members
 
         private CloudFrontDistributionConfig config;
-        private List<Signer> activeTrustedSigners;
 
         #endregion
 
@@ -80,31 +79,6 @@ namespace Amazon.CloudFront.Model
 
         #endregion
 
-        #region ActiveTrustedSigners
-
-        /// <summary>
-        /// Gets and sets the ActiveTrustedSigners property.
-        /// This specifies any AWS accounts you want to permit to create signed URLs for private content.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "Signer")]
-        public List<Signer> ActiveTrustedSigners
-        {
-            get { return this.activeTrustedSigners; }
-            set { this.activeTrustedSigners = value; }
-        }
-
-        /// <summary>
-        /// Checks if ActiveTrustedSigners property is set.
-        /// </summary>
-        /// <returns>true if ActiveTrustedSigners property is set.</returns>
-        internal bool IsSetActiveTrustedSigners()
-        {
-            return this.ActiveTrustedSigners != null && 
-                this.ActiveTrustedSigners.Count > 0;
-        }
-
-        #endregion
-        
         /// <summary>
         /// Creates an XML representation of the CloudFront
         /// distribution.

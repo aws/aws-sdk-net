@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-12-01
+ *  API Version: 2010-03-01
  *
  */
 
@@ -55,6 +55,8 @@ namespace Amazon.CloudFront.Model
         private string comment;
         private bool enabled;
         private string eTag;
+        private CloudFrontOriginAccessIdentity identity;
+        private UrlTrustedSigners trustedSigners;
 
         #endregion
 
@@ -229,6 +231,56 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetETag()
         {
             return !System.String.IsNullOrEmpty(this.eTag);
+        }
+
+        #endregion
+
+        #region OriginAccessIdentity
+
+        /// <summary>
+        /// Gets and sets the OriginAccessIdentity property.
+        /// The CloudFront origin access identity to associate with the distribution. 
+        /// If you want the distribution to serve private content, include this element; 
+        /// if you want the distribution to serve public content, remove this element.        
+        /// </summary>
+        [XmlElementAttribute(ElementName = "OriginAccessIdentity")]
+        public CloudFrontOriginAccessIdentity OriginAccessIdentity
+        {
+            get { return this.identity; }
+            set { this.identity = value; }
+        }
+
+        /// <summary>
+        /// Checks if OriginAccessIdentity property is set.
+        /// </summary>
+        /// <returns>true if OriginAccessIdentity property is set.</returns>
+        internal bool IsSetOriginAccessIdentity()
+        {
+            return this.identity != null;
+        }
+
+        #endregion
+
+        #region TrustedSigners
+
+        /// <summary>
+        /// Gets and sets the TrustedSigners property.
+        /// This specifies any AWS accounts you want to permit to create signed URLs for private content.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "TrustedSigners")]
+        public UrlTrustedSigners TrustedSigners
+        {
+            get { return this.trustedSigners; }
+            set { this.trustedSigners = value; }
+        }
+
+        /// <summary>
+        /// Checks if TrustedSigners property is set.
+        /// </summary>
+        /// <returns>true if TrustedSigners property is set.</returns>
+        internal bool IsSetTrustedSigners()
+        {
+            return this.trustedSigners != null;
         }
 
         #endregion

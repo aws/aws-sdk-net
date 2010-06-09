@@ -45,11 +45,12 @@ namespace Amazon.S3.Model
         private string srcVersionId;
         private string dstBucket;
         private string dstKey;
+        private string contentType;
         private string etagToMatch;
         private string etagToNotMatch;
         private DateTime? modifiedSinceDate;
         private DateTime? unmodifiedSinceDate;
-        private S3MetadataDirective directive = S3MetadataDirective.COPY;
+        private S3MetadataDirective directive;
         internal NameValueCollection metaData;
         private S3CannedACL cannedACL;
         private int timeout = S3Constants.PutObjectDefaultTimeout;
@@ -189,6 +190,52 @@ namespace Amazon.S3.Model
         internal bool IsSetDestinationKey()
         {
             return !System.String.IsNullOrEmpty(this.dstKey);
+        }
+
+        #endregion
+
+        #region ContentType
+
+        /// <summary>
+        /// Gets and sets the ContentType property.
+        /// </summary>
+        /// <remarks>
+        /// This property defaults to "binary/octet-stream",
+        /// but if you require something else you can set this property.
+        /// This property is passed on to S3 only if the metadata
+        /// directive is REPLACE.
+        /// </remarks>
+        [XmlElementAttribute(ElementName = "ContentType")]
+        public string ContentType
+        {
+            get { return this.contentType; }
+            set { this.contentType = value; }
+        }
+
+        /// <summary>
+        /// Sets the ContentType property for this request.
+        /// </summary>
+        /// <param name="contentType">the value the ContentType to be set to</param>
+        /// <returns>The request with the ContentType set</returns>
+        /// <remarks>
+        /// This property defaults to "binary/octet-stream",
+        /// but if you require something else you can set this property.
+        /// This property is passed on to S3 only if the metadata
+        /// directive is REPLACE.
+        /// </remarks>
+        public CopyObjectRequest WithContentType(string contentType)
+        {
+            this.contentType = contentType;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ContentType property is set.
+        /// </summary>
+        /// <returns>true if ContentType property is set.</returns>
+        internal bool IsSetContentType()
+        {
+            return !System.String.IsNullOrEmpty(this.contentType);
         }
 
         #endregion
@@ -346,8 +393,17 @@ namespace Amazon.S3.Model
         #region Directive
 
         /// <summary>
-        /// Gets and sets the Directive property.
+        /// Gets and sets the Directive property. Default is COPY.
         /// </summary>
+        /// <remarks>
+        /// Specifies whether the metadata is copied from
+        /// the source object or replaced with metadata
+        /// provided in the request. If COPY, the metadata remains
+        /// unchanged, otherwise, all original metadata is
+        /// replaced by the metadata you specify.
+        /// You cannot copy an object to itself unless the Directive
+        /// property is specified and its value set to REPLACE.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Directive")]
         public S3MetadataDirective Directive
         {
@@ -356,17 +412,20 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Directive property for this request.
-        /// Specifies whether the metadata is copied from
-        /// the source object or replaced with metadata
-        /// provided in the request. If copied, it remains
-        /// unchanged. Otherwise, all original metadata is
-        /// replaced by the metadata you specify.
-        /// You cannot copy an object to itself unless the Directive
-        /// property is specified and its value set to REPLACE.
+        /// Sets the Directive property for this request. The
+        /// default value for the directive is COPY.
         /// </summary>
         /// <param name="directive">The value that Directive is set to</param>
         /// <returns>the response with the Directive set</returns>
+        /// <remarks>
+        /// Specifies whether the metadata is copied from
+        /// the source object or replaced with metadata
+        /// provided in the request. If COPY, the metadata remains
+        /// unchanged, otherwise, all original metadata is
+        /// replaced by the metadata you specify.
+        /// You cannot copy an object to itself unless the Directive
+        /// property is specified and its value set to REPLACE.
+        /// </remarks>
         public CopyObjectRequest WithDirective(S3MetadataDirective directive)
         {
             this.directive = directive;

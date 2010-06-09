@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-12-01
+ *  API Version: 2010-03-01
  *
  */
 
@@ -58,8 +58,6 @@ namespace Amazon.CloudFront.Model
 
         [field:NonSerializedAttribute()]
         private Tuple<string, string> logging;
-        private CloudFrontOriginAccessIdentity identity;
-        private UrlTrustedSigners trustedSigners;
 
         #endregion
 
@@ -78,7 +76,7 @@ namespace Amazon.CloudFront.Model
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?><DistributionConfig ");
-            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2009-12-01/\">");
+            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-03-01/\">");
 
             if (IsSetOrigin())
             {
@@ -146,6 +144,8 @@ namespace Amazon.CloudFront.Model
 
         #endregion
 
+        #region Fluid API
+
         /// <summary>
         /// Sets the Origin property.
         /// </summary>
@@ -205,6 +205,31 @@ namespace Amazon.CloudFront.Model
             return this;
         }
 
+        /// <summary>
+        /// Sets the OriginAccessIdentity property.
+        /// </summary>
+        /// <param name="identity">OriginAccessIdentity property</param>
+        /// <returns>this instance</returns>
+        public CloudFrontDistributionConfig WithOriginAccessIdentity(CloudFrontOriginAccessIdentity identity)
+        {
+            this.OriginAccessIdentity = identity;
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the TrustedSigners property.
+        /// This specifies any AWS accounts you want to permit to create signed URLs for private content.
+        /// </summary>
+        /// <param name="signers">TrustedSigners property is set to this value</param>
+        /// <returns>this instance</returns>
+        public CloudFrontDistributionConfig WithTrustedSigners(UrlTrustedSigners signers)
+        {
+            this.TrustedSigners = signers;
+            return this;
+        }
+
+        #endregion
+
         #region Logging
         /// <summary>
         /// Gets and Sets the Logging property.
@@ -262,79 +287,6 @@ namespace Amazon.CloudFront.Model
             return (this.logging != null) &&
                 (!System.String.IsNullOrEmpty(Logging.First)) &&
                 (!System.String.IsNullOrEmpty(Logging.Second));
-        }
-
-        #endregion
-
-        #region OriginAccessIdentity
-
-        /// <summary>
-        /// Gets and sets the OriginAccessIdentity property.
-        /// The CloudFront origin access identity to associate with the distribution. 
-        /// If you want the distribution to serve private content, include this element; 
-        /// if you want the distribution to serve public content, remove this element.        
-        /// </summary>
-        [XmlElementAttribute(ElementName = "OriginAccessIdentity")]
-        public CloudFrontOriginAccessIdentity OriginAccessIdentity
-        {
-            get { return this.identity; }
-            set { this.identity = value; }
-        }
-
-        /// <summary>
-        /// Sets the OriginAccessIdentity property.
-        /// </summary>
-        /// <param name="identity">OriginAccessIdentity property</param>
-        /// <returns>this instance</returns>
-        public CloudFrontDistributionConfig WithOriginAccessIdentity(CloudFrontOriginAccessIdentity identity)
-        {
-            this.identity = identity;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if OriginAccessIdentity property is set.
-        /// </summary>
-        /// <returns>true if OriginAccessIdentity property is set.</returns>
-        internal bool IsSetOriginAccessIdentity()
-        {
-            return this.identity != null;
-        }
-
-        #endregion
-
-        #region TrustedSigners
-
-        /// <summary>
-        /// Gets and sets the TrustedSigners property.
-        /// This specifies any AWS accounts you want to permit to create signed URLs for private content.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "TrustedSigners")]
-        public UrlTrustedSigners TrustedSigners
-        {
-            get { return this.trustedSigners; }
-            set { this.trustedSigners = value; }
-        }
-
-        /// <summary>
-        /// Sets the TrustedSigners property.
-        /// This specifies any AWS accounts you want to permit to create signed URLs for private content.
-        /// </summary>
-        /// <param name="signers">TrustedSigners property is set to this value</param>
-        /// <returns>this instance</returns>
-        public CloudFrontDistributionConfig WithTrustedSigners(UrlTrustedSigners signers)
-        {
-            this.trustedSigners = signers;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if TrustedSigners property is set.
-        /// </summary>
-        /// <returns>true if TrustedSigners property is set.</returns>
-        internal bool IsSetTrustedSigners()
-        {
-            return this.trustedSigners != null;
         }
 
         #endregion

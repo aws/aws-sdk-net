@@ -90,7 +90,7 @@ namespace Amazon.S3.Model
             set
             {
                 if (value >= S3Region.US &&
-                    value <= S3Region.SFO)
+                    value <= S3Region.APS1)
                 {
                     this.bucketRegion = value;
                 }

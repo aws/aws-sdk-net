@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-12-01
+ *  API Version: 2010-03-01
  *
  */
 
@@ -41,7 +41,7 @@ namespace Amazon.CloudFront.Util
         internal static readonly string DeleteVerb = Verbs[3];
 
         // Often used strings
-        internal const string ServiceResource = "/2009-12-01/";
+        internal const string ServiceResource = "/2010-03-01/";
         internal const string ConfigQuery = "/config";
         internal const string RequestParam = "request";
     }

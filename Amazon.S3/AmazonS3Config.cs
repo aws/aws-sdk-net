@@ -36,6 +36,8 @@ namespace Amazon.S3
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
         private string proxyHost;
         private int proxyPort = -1;
+        private string proxyUsername;
+        private string proxyPassword;
         private int maxErrorRetry = 3;
         private Protocol protocol = Protocol.HTTPS;
         private bool fUseSecureString = true;
@@ -43,7 +45,7 @@ namespace Amazon.S3
         #endregion
 
         /// <summary>
-        /// Gets and sets of the ServiceURL property.
+        /// Gets and sets the ServiceURL property.
         /// </summary>
         public string ServiceURL
         {
@@ -72,7 +74,7 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// Gets and sets of the UserAgent property.
+        /// Gets and sets the UserAgent property.
         /// </summary>
         public string UserAgent
         {
@@ -101,7 +103,7 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// Gets and sets of the ProxyHost property.
+        /// Gets and sets the ProxyHost property.
         /// </summary>
         public string ProxyHost
         {
@@ -130,7 +132,7 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// Gets and sets of the ProxyPort property.
+        /// Gets and sets the ProxyPort property.
         /// </summary>
         public int ProxyPort
         {
@@ -159,7 +161,84 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// Gets and sets of the MaxErrorRetry property.
+        /// Gets and sets the ProxyUsername property.
+        /// Used in conjunction with the ProxyPassword
+        /// property to authenticate requests with the
+        /// specified Proxy server.
+        /// </summary>
+        public string ProxyUsername
+        {
+            get { return this.proxyUsername; }
+            set { this.proxyUsername = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProxyUsername property
+        /// </summary>
+        /// <param name="userName">Value for the ProxyUsername property</param>
+        /// <returns>this instance</returns>
+        public AmazonS3Config WithProxyUsername(string userName)
+        {
+            this.proxyUsername = userName;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ProxyUsername property is set
+        /// </summary>
+        /// <returns>true if ProxyUsername property is set</returns>
+        internal bool IsSetProxyUsername()
+        {
+            return !System.String.IsNullOrEmpty(this.proxyUsername);
+        }
+
+        /// <summary>
+        /// Gets and sets the ProxyPassword property.
+        /// Used in conjunction with the ProxyUsername
+        /// property to authenticate requests with the
+        /// specified Proxy server.
+        /// </summary>
+        /// <remarks>
+        /// If this property isn't set, String.Empty is used as
+        /// the proxy password. This property isn't
+        /// used if ProxyUsername is null or empty.
+        /// </remarks>
+        public string ProxyPassword
+        {
+            get { return this.proxyPassword; }
+            set { this.proxyPassword = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProxyPassword property.
+        /// Used in conjunction with the ProxyUsername
+        /// property to authenticate requests with the
+        /// specified Proxy server.
+        /// </summary>
+        /// <remarks>
+        /// If this property isn't set, String.Empty is used as
+        /// the proxy password. This property isn't
+        /// used if ProxyUsername is null or empty.
+        /// </remarks>
+        /// <param name="password">ProxyPassword property</param>
+        /// <returns>this instance</returns>
+        public AmazonS3Config WithProxyPassword(string password)
+        {
+            this.proxyPassword = password;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ProxyPassword property is set
+        /// </summary>
+        /// <returns>true if ProxyPassword property is set</returns>
+        internal bool IsSetProxyPassword()
+        {
+            return !System.String.IsNullOrEmpty(this.proxyPassword);
+        }
+
+        /// <summary>
+        /// Gets and sets the MaxErrorRetry property.
         /// </summary>
         public int MaxErrorRetry
         {

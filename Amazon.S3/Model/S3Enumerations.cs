@@ -116,7 +116,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Specifies that the S3 Bucket should use US-WEST-1 locality.
         /// </summary>
-        SFO
+        SFO,
+        /// <summary>
+        /// Specifies that the S3 Bucket should use the AP-SOUTHEAST-1 locality.
+        /// </summary>
+        APS1
     }
 
     /// <summary>

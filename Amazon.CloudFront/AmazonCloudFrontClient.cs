@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-12-01
+ *  API Version: 2010-03-01
  *  Author(s): Manoj Mehta
  *
  */
@@ -296,6 +296,8 @@ namespace Amazon.CloudFront
         /// <summary>
         /// The CreateDistribution operation creates a new CloudFront Distribution.
         /// </summary>
+        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-03-01/APIReference/CreateDistribution.html">
+        /// POST Distribution API Reference</seealso>
         /// <param name="request">
         /// The CreateDistributionRequest that defines the parameters of the operation.
         /// </param>
@@ -333,6 +335,8 @@ namespace Amazon.CloudFront
         /// <summary>
         /// The DeleteDistribution operation deletes the distribution specified in the request.
         /// </summary>
+        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">
+        /// Deleting a Distribution Developer Guide</seealso>
         /// <param name="request">
         /// The DeleteDistributionRequest that defines the parameters of the operation.
         /// </param>
@@ -676,6 +680,8 @@ namespace Amazon.CloudFront
         /// <summary>
         /// The CreateStreamingDistribution operation creates a new CloudFront StreamingDistribution.
         /// </summary>
+        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-03-01/APIReference/CreateStreamingDistribution.html">
+        /// POST Streaming Distribution API Reference</seealso>
         /// <param name="request">
         /// The CreateStreamingDistributionRequest that defines the parameters of the operation.
         /// </param>
@@ -826,7 +832,7 @@ namespace Amazon.CloudFront
             parameters.Add(CloudFrontQueryParameter.Id, request.Id);
 
             // A Distribution ETag is needed in order to get this far
-            request.Headers.Add(GetIfMatchHeader(request.ETag));
+            request.Headers[AWSSDKUtils.IfMatchHeader] = request.ETag;
 
             AddCloudFrontQueryParameters(parameters, request.Headers);
 
@@ -862,7 +868,7 @@ namespace Amazon.CloudFront
             parameters.Add(CloudFrontQueryParameter.Verb, CloudFrontConstants.DeleteVerb);
             parameters.Add(CloudFrontQueryParameter.Action, "DeleteDistribution");
             parameters.Add(CloudFrontQueryParameter.Id, request.Id);
-            request.Headers.Add(GetIfMatchHeader(request.ETag));
+            request.Headers[AWSSDKUtils.IfMatchHeader] = request.ETag;
 
             AddCloudFrontQueryParameters(parameters, request.Headers);
 
@@ -902,7 +908,7 @@ namespace Amazon.CloudFront
             parameters.Add(CloudFrontQueryParameter.Verb, CloudFrontConstants.DeleteVerb);
             parameters.Add(CloudFrontQueryParameter.Action, "DeleteOriginAccessIdentity");
             parameters.Add(CloudFrontQueryParameter.Id, request.Id);
-            request.Headers.Add(GetIfMatchHeader(request.ETag));
+            request.Headers[AWSSDKUtils.IfMatchHeader] = request.ETag;
 
             AddCloudFrontQueryParameters(parameters, request.Headers);
 
@@ -991,7 +997,7 @@ namespace Amazon.CloudFront
             parameters.Add(CloudFrontQueryParameter.Id, request.Id);
 
             // A OriginAccessIdentity ETag is needed in order to get this far
-            request.Headers.Add(GetIfMatchHeader(request.ETag));
+            request.Headers[AWSSDKUtils.IfMatchHeader] = request.ETag;
 
             AddCloudFrontQueryParameters(parameters, request.Headers);
 
@@ -1103,7 +1109,7 @@ namespace Amazon.CloudFront
             parameters.Add(CloudFrontQueryParameter.Id, request.Id);
 
             // A StreamingDistribution ETag is needed in order to get this far
-            request.Headers.Add(GetIfMatchHeader(request.ETag));
+            request.Headers[AWSSDKUtils.IfMatchHeader] = request.ETag;
 
             AddCloudFrontQueryParameters(parameters, request.Headers);
 
@@ -1120,7 +1126,7 @@ namespace Amazon.CloudFront
             parameters.Add(CloudFrontQueryParameter.Verb, CloudFrontConstants.DeleteVerb);
             parameters.Add(CloudFrontQueryParameter.Action, "DeleteStreamingDistribution");
             parameters.Add(CloudFrontQueryParameter.Id, request.Id);
-            request.Headers.Add(GetIfMatchHeader(request.ETag));
+            request.Headers[AWSSDKUtils.IfMatchHeader] = request.ETag;
 
             AddCloudFrontQueryParameters(parameters, request.Headers);
 
@@ -1138,10 +1144,7 @@ namespace Amazon.CloudFront
         {
             if (webHeaders != null)
             {
-                webHeaders.Add(
-                    CloudFrontConstants.AmzDateHeader, 
-                    AmazonCloudFrontUtil.FormattedCurrentTimestamp
-                    );
+                webHeaders[CloudFrontConstants.AmzDateHeader] = AmazonCloudFrontUtil.FormattedCurrentTimestamp;
             }
 
             string action = parameters[CloudFrontQueryParameter.Action];
@@ -1390,7 +1393,7 @@ namespace Amazon.CloudFront
                 request.Abort();
             }
 
-            if (statusCode == HttpStatusCode.InternalServerError || 
+            if (statusCode == HttpStatusCode.InternalServerError ||
                 statusCode == HttpStatusCode.ServiceUnavailable)
             {
                 shouldRetry = true;
@@ -1450,15 +1453,25 @@ namespace Amazon.CloudFront
             {
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
-                    httpRequest.Proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
+                    if (config.IsSetProxyUsername())
+                    {
+                        proxy.Credentials = new NetworkCredential(
+                            config.ProxyUsername,
+                            config.ProxyPassword ?? String.Empty
+                            );
+                    }
+                    httpRequest.Proxy = proxy;
                 }
 
                 httpRequest.UserAgent = config.UserAgent;
 
                 // Add the AWS Authorization header.
-                httpRequest.Headers.Add(
-                    CloudFrontConstants.AuthorizationHeader,
-                    String.Concat("AWS ", this.awsAccessKeyId, ":", parameters[CloudFrontQueryParameter.Authorization])
+                httpRequest.Headers[CloudFrontConstants.AuthorizationHeader] = String.Concat(
+                    "AWS ",
+                    this.awsAccessKeyId,
+                    ":",
+                    parameters[CloudFrontQueryParameter.Authorization]
                     );
 
                 httpRequest.Headers.Add(headers);
@@ -1543,19 +1556,6 @@ namespace Amazon.CloudFront
             }
         }
 
-        /// <summary>
-        /// Creates an If-Match Header.
-        ///
-        /// Return the object only if its entity tag (ETag) is the same as the one
-        /// specified, otherwise return a 412 (precondition failed).
-        /// </summary>
-        /// <param name="eTag">The ETag to match against</param>
-        /// <returns>A name value collection with the appropriate header information</returns>
-        private static NameValueCollection GetIfMatchHeader(string eTag)
-        {
-            return AmazonCloudFrontUtil.CreateHeaderEntry(AWSSDKUtils.IfMatchHeader, eTag);
-        }
-
         /**
          * Creates a string based on the parameters and encrypts it using
          * key. Returns the encrypted string.
@@ -1563,7 +1563,7 @@ namespace Amazon.CloudFront
         private static string BuildSigningString(WebHeaderCollection headers, SecureString key)
         {
             return AWSSDKUtils.HMACSign(
-                headers.Get(CloudFrontConstants.AmzDateHeader), 
+                headers.Get(CloudFrontConstants.AmzDateHeader),
                 key,
                 new HMACSHA1()
                 );
