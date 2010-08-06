@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,20 +27,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a customer gateway. You must delete the VPN connection before deleting the
-    /// customer gateway.
+    /// Deletes a customer gateway. You must delete the
+    /// VPN connection before deleting the customer gateway.
     ///
-    /// AWS might delete any customer gateway if you leave it inactive for an extended period of
-    /// time (inactive means that there's no VPN connection in use with the customer gateway).
+    /// AWS might delete any customer gateway if you leave it inactive for an
+    /// extended period of time (inactive means that there's no VPN connection in
+    /// use with the customer gateway).
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DeleteCustomerGatewayRequest
-    {
+    {    
         private string customerGatewayIdField;
 
         /// <summary>
         /// Gets and sets the CustomerGatewayId property.
-        /// The ID of the customer gateway you want to delete.
+        /// The ID of the customer gateway you want to
+        /// delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "CustomerGatewayId")]
         public string CustomerGatewayId
@@ -52,7 +54,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the CustomerGatewayId property
         /// </summary>
-        /// <param name="customerGatewayId">The ID of the customer gateway you want to delete.</param>
+        /// <param name="customerGatewayId">The ID of the customer gateway you want to
+        /// delete.</param>
         /// <returns>this instance</returns>
         public DeleteCustomerGatewayRequest WithCustomerGatewayId(string customerGatewayId)
         {

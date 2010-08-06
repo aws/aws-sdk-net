@@ -88,5 +88,8 @@ namespace Amazon.S3.Util
 
         internal static readonly string[] StorageClasses = {"STANDARD",
                                                 "REDUCED_REDUNDANCY"};
+
+        // Error Codes
+        internal const string NoSuchBucketPolicy = "NoSuchBucketPolicy";
     }
 }

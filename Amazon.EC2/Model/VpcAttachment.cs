@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///VPC Attachment
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class VpcAttachment
-    {
+    {    
         private string vpcIdField;
         private string vpcAttachmentStateField;
 
@@ -68,7 +68,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the VpcAttachmentState property.
-        /// The current state of the attachment (attaching, attached, detaching, detached)
+        /// The current state of the attachment (attaching,
+        /// attached,
+        /// detaching, detached)
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcAttachmentState")]
         public string VpcAttachmentState
@@ -80,7 +82,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the VpcAttachmentState property
         /// </summary>
-        /// <param name="vpcAttachmentState">The current state of the attachment (attaching, attached, detaching, detached)</param>
+        /// <param name="vpcAttachmentState">The current state of the attachment (attaching,
+        /// attached,
+        /// detaching, detached)</param>
         /// <returns>this instance</returns>
         public VpcAttachment WithVpcAttachmentState(string vpcAttachmentState)
         {

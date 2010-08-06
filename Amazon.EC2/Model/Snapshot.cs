@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///A Snapshot of an EBS volume.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class Snapshot
-    {
+    {    
         private string snapshotIdField;
         private string volumeIdField;
         private string statusField;
@@ -75,7 +75,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the VolumeId property.
-        /// The ID of the volume from which the snapshot was created.
+        /// The ID of the volume from which the snapshot
+        /// was created.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
@@ -87,7 +88,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the VolumeId property
         /// </summary>
-        /// <param name="volumeId">The ID of the volume from which the snapshot was created.</param>
+        /// <param name="volumeId">The ID of the volume from which the snapshot
+        /// was created.</param>
         /// <returns>this instance</returns>
         public Snapshot WithVolumeId(string volumeId)
         {
@@ -199,7 +201,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the OwnerId property.
-        /// AWS Access Key ID of the user who owns the snapshot.
+        /// AWS Access Key ID of the user who owns the
+        /// snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
@@ -211,7 +214,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the OwnerId property
         /// </summary>
-        /// <param name="ownerId">AWS Access Key ID of the user who owns the snapshot.</param>
+        /// <param name="ownerId">AWS Access Key ID of the user who owns the
+        /// snapshot.</param>
         /// <returns>this instance</returns>
         public Snapshot WithOwnerId(string ownerId)
         {

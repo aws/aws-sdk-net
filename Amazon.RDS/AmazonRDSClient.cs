@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -53,7 +53,7 @@ namespace Amazon.RDS
     /// Amazon RDS gives you access to the capabilities of a familiar MySQL database server. This means the code, applications, and tools you
     /// already use today with your existing MySQL databases work with Amazon RDS without modification. Amazon RDS automatically backs up your
     /// database and maintains the database software that powers your DB Instance. Amazon RDS is flexible: you can scale your database
-    /// instance’s compute resources and storage capacity to meet your application’s demand. As with all Amazon Web Services, there are no
+    /// instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web Services, there are no
     /// up-front investments, and you pay only for the resources you use.
     /// </remarks>
     /// <seealso cref="P:Amazon.RDS.AmazonRDSConfig.UseSecureStringForAwsSecretKey"/>
@@ -173,58 +173,17 @@ namespace Amazon.RDS
         #region Public API
 
         /// <summary>
-        /// Delete DB Snapshot
+        /// Describe DB Security Groups
         /// </summary>
-        /// <param name="request">Delete DB Snapshot  request</param>
-        /// <returns>Delete DB Snapshot  Response from the service</returns>
+        /// <param name="request">Describe DB Security Groups  request</param>
+        /// <returns>Describe DB Security Groups  Response from the service</returns>
         /// <remarks>
-        /// This API is used to delete a DBSnapshot. The DBSnapshot must be in the &quot;available&quot; state to be
-        /// deleted.
+        /// This API returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified,
+        /// the list will contain only the descriptions of the specified DBSecurityGroup.
         /// </remarks>
-        public DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest request)
+        public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request)
         {
-            return Invoke<DeleteDBSnapshotResponse>(ConvertDeleteDBSnapshot(request));
-        }
-
-        /// <summary>
-        /// Describe DB Parameter Groups
-        /// </summary>
-        /// <param name="request">Describe DB Parameter Groups  request</param>
-        /// <returns>Describe DB Parameter Groups  Response from the service</returns>
-        /// <remarks>
-        /// This API returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified,
-        /// the list will contain only the descriptions of the specified DBParameterGroup.
-        /// </remarks>
-        public DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
-        {
-            return Invoke<DescribeDBParameterGroupsResponse>(ConvertDescribeDBParameterGroups(request));
-        }
-
-        /// <summary>
-        /// Delete DB Security Group
-        /// </summary>
-        /// <param name="request">Delete DB Security Group  request</param>
-        /// <returns>Delete DB Security Group  Response from the service</returns>
-        /// <remarks>
-        /// This API deletes a database security group. Database security group must not be associated with any
-        /// RDS Instances.
-        /// </remarks>
-        public DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request)
-        {
-            return Invoke<DeleteDBSecurityGroupResponse>(ConvertDeleteDBSecurityGroup(request));
-        }
-
-        /// <summary>
-        /// Create DB Security Group
-        /// </summary>
-        /// <param name="request">Create DB Security Group  request</param>
-        /// <returns>Create DB Security Group  Response from the service</returns>
-        /// <remarks>
-        /// This API creates a new database security group. Database Security groups control access to a database instance.
-        /// </remarks>
-        public CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest request)
-        {
-            return Invoke<CreateDBSecurityGroupResponse>(ConvertCreateDBSecurityGroup(request));
+            return Invoke<DescribeDBSecurityGroupsResponse>(ConvertDescribeDBSecurityGroups(request));
         }
 
         /// <summary>
@@ -244,33 +203,18 @@ namespace Amazon.RDS
         }
 
         /// <summary>
-        /// Describe Events
+        /// Modify DB Instance
         /// </summary>
-        /// <param name="request">Describe Events  request</param>
-        /// <returns>Describe Events  Response from the service</returns>
+        /// <param name="request">Modify DB Instance  request</param>
+        /// <returns>Modify DB Instance  Response from the service</returns>
         /// <remarks>
-        /// This API returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter
-        /// Groups for the past 14 das. Events specific to a particular DB Instance, database security group,
-        /// database snapshot or database parameter group can be obtained by providing the name as a parameter.
-        /// By default, the past hour of events are returned.
+        /// This API is used to change RDS Instance settings. Users call the ModifyDBInstance API to change one
+        /// or more database configuration parameters by specifying these parameters and the new values in the
+        /// request.
         /// </remarks>
-        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        public ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
         {
-            return Invoke<DescribeEventsResponse>(ConvertDescribeEvents(request));
-        }
-
-        /// <summary>
-        /// Delete DB Parameter Group
-        /// </summary>
-        /// <param name="request">Delete DB Parameter Group  request</param>
-        /// <returns>Delete DB Parameter Group  Response from the service</returns>
-        /// <remarks>
-        /// This API deletes a particular DBParameterGroup. The DBParameterGroup cannot be associated with
-        /// any RDS instances to be deleted.
-        /// </remarks>
-        public DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
-        {
-            return Invoke<DeleteDBParameterGroupResponse>(ConvertDeleteDBParameterGroup(request));
+            return Invoke<ModifyDBInstanceResponse>(ConvertModifyDBInstance(request));
         }
 
         /// <summary>
@@ -287,48 +231,60 @@ namespace Amazon.RDS
         }
 
         /// <summary>
-        /// Restore DB Instance To Point In Time
+        /// Delete DB Security Group
         /// </summary>
-        /// <param name="request">Restore DB Instance To Point In Time  request</param>
-        /// <returns>Restore DB Instance To Point In Time  Response from the service</returns>
+        /// <param name="request">Delete DB Security Group  request</param>
+        /// <returns>Delete DB Security Group  Response from the service</returns>
         /// <remarks>
-        /// This API creates a new RDS instance from a point-in-time system snapshot. The target database is created
-        /// from the source database restore point with the same configuration as the original source database,
-        /// except that the new RDS instance is created with the default security group.
+        /// This API deletes a database security group. Database security group must not be associated with any
+        /// RDS Instances.
         /// </remarks>
-        public RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
+        public DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request)
         {
-            return Invoke<RestoreDBInstanceToPointInTimeResponse>(ConvertRestoreDBInstanceToPointInTime(request));
+            return Invoke<DeleteDBSecurityGroupResponse>(ConvertDeleteDBSecurityGroup(request));
         }
 
         /// <summary>
-        /// Modify DB Instance
+        /// Create DB Instance
         /// </summary>
-        /// <param name="request">Modify DB Instance  request</param>
-        /// <returns>Modify DB Instance  Response from the service</returns>
+        /// <param name="request">Create DB Instance  request</param>
+        /// <returns>Create DB Instance  Response from the service</returns>
         /// <remarks>
-        /// This API is used to change RDS Instance settings. Users call the ModifyDBInstance API to change one
-        /// or more database configuration parameters by specifying these parameters and the new values in the
-        /// request.
+        /// This API creates a new DB instance.
         /// </remarks>
-        public ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
+        public CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
         {
-            return Invoke<ModifyDBInstanceResponse>(ConvertModifyDBInstance(request));
+            return Invoke<CreateDBInstanceResponse>(ConvertCreateDBInstance(request));
         }
 
         /// <summary>
-        /// Revoke DB Security Group Ingress
+        /// Create DB Security Group
         /// </summary>
-        /// <param name="request">Revoke DB Security Group Ingress  request</param>
-        /// <returns>Revoke DB Security Group Ingress  Response from the service</returns>
+        /// <param name="request">Create DB Security Group  request</param>
+        /// <returns>Create DB Security Group  Response from the service</returns>
         /// <remarks>
-        /// This API revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 Security
-        /// Groups. Required parameters for this API are one of CIDRIP or (EC2SecurityGroupName AND
-        /// EC2SecurityGroupOwnerId).
+        /// This API creates a new database security group. Database Security groups control access to a database instance.
         /// </remarks>
-        public RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request)
+        public CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest request)
         {
-            return Invoke<RevokeDBSecurityGroupIngressResponse>(ConvertRevokeDBSecurityGroupIngress(request));
+            return Invoke<CreateDBSecurityGroupResponse>(ConvertCreateDBSecurityGroup(request));
+        }
+
+        /// <summary>
+        /// Reboot DB Instance
+        /// </summary>
+        /// <param name="request">Reboot DB Instance  request</param>
+        /// <returns>Reboot DB Instance  Response from the service</returns>
+        /// <remarks>
+        /// The RebootDBInstance API reboots a previously provisioned RDS instance. This API results in the
+        /// application of modified DBParameterGroup parameters with ApplyStatus of pending-reboot to the
+        /// RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS
+        /// instance during which the RDS instance status is set to rebooting. A DBInstance event is created
+        /// when the reboot is completed.
+        /// </remarks>
+        public RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
+        {
+            return Invoke<RebootDBInstanceResponse>(ConvertRebootDBInstance(request));
         }
 
         /// <summary>
@@ -349,29 +305,47 @@ namespace Amazon.RDS
         }
 
         /// <summary>
-        /// Create DB Snapshot
+        /// Delete DB Snapshot
         /// </summary>
-        /// <param name="request">Create DB Snapshot  request</param>
-        /// <returns>Create DB Snapshot  Response from the service</returns>
+        /// <param name="request">Delete DB Snapshot  request</param>
+        /// <returns>Delete DB Snapshot  Response from the service</returns>
         /// <remarks>
-        /// This API is used to create a DBSnapshot. The source DBInstance must be in &quot;available&quot; state.
+        /// This API is used to delete a DBSnapshot. The DBSnapshot must be in the &quot;available&quot; state to be
+        /// deleted.
         /// </remarks>
-        public CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest request)
+        public DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest request)
         {
-            return Invoke<CreateDBSnapshotResponse>(ConvertCreateDBSnapshot(request));
+            return Invoke<DeleteDBSnapshotResponse>(ConvertDeleteDBSnapshot(request));
         }
 
         /// <summary>
-        /// Describe DB Snapshots
+        /// Delete DB Parameter Group
         /// </summary>
-        /// <param name="request">Describe DB Snapshots  request</param>
-        /// <returns>Describe DB Snapshots  Response from the service</returns>
+        /// <param name="request">Delete DB Parameter Group  request</param>
+        /// <returns>Delete DB Parameter Group  Response from the service</returns>
         /// <remarks>
-        /// This API is used to retrieve information about DBSnapshots. This API supports pagination.
+        /// This API deletes a particular DBParameterGroup. The DBParameterGroup cannot be associated with
+        /// any RDS instances to be deleted.
         /// </remarks>
-        public DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest request)
+        public DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
         {
-            return Invoke<DescribeDBSnapshotsResponse>(ConvertDescribeDBSnapshots(request));
+            return Invoke<DeleteDBParameterGroupResponse>(ConvertDeleteDBParameterGroup(request));
+        }
+
+        /// <summary>
+        /// Describe Events
+        /// </summary>
+        /// <param name="request">Describe Events  request</param>
+        /// <returns>Describe Events  Response from the service</returns>
+        /// <remarks>
+        /// This API returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter
+        /// Groups for the past 14 das. Events specific to a particular DB Instance, database security group,
+        /// database snapshot or database parameter group can be obtained by providing the name as a parameter.
+        /// By default, the past hour of events are returned.
+        /// </remarks>
+        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        {
+            return Invoke<DescribeEventsResponse>(ConvertDescribeEvents(request));
         }
 
         /// <summary>
@@ -389,17 +363,58 @@ namespace Amazon.RDS
         }
 
         /// <summary>
-        /// Describe DB Security Groups
+        /// Describe DB Parameter Groups
         /// </summary>
-        /// <param name="request">Describe DB Security Groups  request</param>
-        /// <returns>Describe DB Security Groups  Response from the service</returns>
+        /// <param name="request">Describe DB Parameter Groups  request</param>
+        /// <returns>Describe DB Parameter Groups  Response from the service</returns>
         /// <remarks>
-        /// This API returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified,
-        /// the list will contain only the descriptions of the specified DBSecurityGroup.
+        /// This API returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified,
+        /// the list will contain only the descriptions of the specified DBParameterGroup.
         /// </remarks>
-        public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request)
+        public DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
         {
-            return Invoke<DescribeDBSecurityGroupsResponse>(ConvertDescribeDBSecurityGroups(request));
+            return Invoke<DescribeDBParameterGroupsResponse>(ConvertDescribeDBParameterGroups(request));
+        }
+
+        /// <summary>
+        /// Describe Engine Default Parameters
+        /// </summary>
+        /// <param name="request">Describe Engine Default Parameters  request</param>
+        /// <returns>Describe Engine Default Parameters  Response from the service</returns>
+        /// <remarks>
+        /// This API returns the default engine and system parameter information for the specified database engine.
+        /// </remarks>
+        public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
+        {
+            return Invoke<DescribeEngineDefaultParametersResponse>(ConvertDescribeEngineDefaultParameters(request));
+        }
+
+        /// <summary>
+        /// Modify DB Parameter Group
+        /// </summary>
+        /// <param name="request">Modify DB Parameter Group  request</param>
+        /// <returns>Modify DB Parameter Group  Response from the service</returns>
+        /// <remarks>
+        /// This API modifies the parameters of a DBParameterGroup. To modify more than one parameter
+        /// submit a list of the following: ParameterName, ParameterValue, and ApplyMethod. A maximum of 20
+        /// parameters can be modified in a single request.
+        /// </remarks>
+        public ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
+        {
+            return Invoke<ModifyDBParameterGroupResponse>(ConvertModifyDBParameterGroup(request));
+        }
+
+        /// <summary>
+        /// Describe DB Snapshots
+        /// </summary>
+        /// <param name="request">Describe DB Snapshots  request</param>
+        /// <returns>Describe DB Snapshots  Response from the service</returns>
+        /// <remarks>
+        /// This API is used to retrieve information about DBSnapshots. This API supports pagination.
+        /// </remarks>
+        public DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest request)
+        {
+            return Invoke<DescribeDBSnapshotsResponse>(ConvertDescribeDBSnapshots(request));
         }
 
         /// <summary>
@@ -417,36 +432,6 @@ namespace Amazon.RDS
         public ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request)
         {
             return Invoke<ResetDBParameterGroupResponse>(ConvertResetDBParameterGroup(request));
-        }
-
-        /// <summary>
-        /// Describe Engine Default Parameters
-        /// </summary>
-        /// <param name="request">Describe Engine Default Parameters  request</param>
-        /// <returns>Describe Engine Default Parameters  Response from the service</returns>
-        /// <remarks>
-        /// This API returns the default engine and system parameter information for the specified database engine.
-        /// </remarks>
-        public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
-        {
-            return Invoke<DescribeEngineDefaultParametersResponse>(ConvertDescribeEngineDefaultParameters(request));
-        }
-
-        /// <summary>
-        /// Reboot DB Instance
-        /// </summary>
-        /// <param name="request">Reboot DB Instance  request</param>
-        /// <returns>Reboot DB Instance  Response from the service</returns>
-        /// <remarks>
-        /// The RebootDBInstance API reboots a previously provisioned RDS instance. This API results in the
-        /// application of modified DBParameterGroup parameters with ApplyStatus of pending-reboot to the
-        /// RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS
-        /// instance during which the RDS instance status is set to rebooting. A DBInstance event is created
-        /// when the reboot is completed.
-        /// </remarks>
-        public RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
-        {
-            return Invoke<RebootDBInstanceResponse>(ConvertRebootDBInstance(request));
         }
 
         /// <summary>
@@ -479,31 +464,46 @@ namespace Amazon.RDS
         }
 
         /// <summary>
-        /// Create DB Instance
+        /// Restore DB Instance To Point In Time
         /// </summary>
-        /// <param name="request">Create DB Instance  request</param>
-        /// <returns>Create DB Instance  Response from the service</returns>
+        /// <param name="request">Restore DB Instance To Point In Time  request</param>
+        /// <returns>Restore DB Instance To Point In Time  Response from the service</returns>
         /// <remarks>
-        /// This API creates a new DB instance.
+        /// This API creates a new RDS instance from a point-in-time system snapshot. The target database is created
+        /// from the source database restore point with the same configuration as the original source database,
+        /// except that the new RDS instance is created with the default security group.
         /// </remarks>
-        public CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
+        public RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
         {
-            return Invoke<CreateDBInstanceResponse>(ConvertCreateDBInstance(request));
+            return Invoke<RestoreDBInstanceToPointInTimeResponse>(ConvertRestoreDBInstanceToPointInTime(request));
         }
 
         /// <summary>
-        /// Modify DB Parameter Group
+        /// Create DB Snapshot
         /// </summary>
-        /// <param name="request">Modify DB Parameter Group  request</param>
-        /// <returns>Modify DB Parameter Group  Response from the service</returns>
+        /// <param name="request">Create DB Snapshot  request</param>
+        /// <returns>Create DB Snapshot  Response from the service</returns>
         /// <remarks>
-        /// This API modifies the parameters of a DBParameterGroup. To modify more than one parameter
-        /// submit a list of the following: ParameterName, ParameterValue, and ApplyMethod. A maximum of 20
-        /// parameters can be modified in a single request.
+        /// This API is used to create a DBSnapshot. The source DBInstance must be in &quot;available&quot; state.
         /// </remarks>
-        public ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
+        public CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest request)
         {
-            return Invoke<ModifyDBParameterGroupResponse>(ConvertModifyDBParameterGroup(request));
+            return Invoke<CreateDBSnapshotResponse>(ConvertCreateDBSnapshot(request));
+        }
+
+        /// <summary>
+        /// Revoke DB Security Group Ingress
+        /// </summary>
+        /// <param name="request">Revoke DB Security Group Ingress  request</param>
+        /// <returns>Revoke DB Security Group Ingress  Response from the service</returns>
+        /// <remarks>
+        /// This API revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 Security
+        /// Groups. Required parameters for this API are one of CIDRIP or (EC2SecurityGroupName AND
+        /// EC2SecurityGroupOwnerId).
+        /// </remarks>
+        public RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request)
+        {
+            return Invoke<RevokeDBSecurityGroupIngressResponse>(ConvertRevokeDBSecurityGroupIngress(request));
         }
 
         #endregion
@@ -880,6 +880,10 @@ namespace Amazon.RDS
             {
                 parameters["AvailabilityZone"] = request.AvailabilityZone;
             }
+            if (request.IsSetMultiAZ())
+            {
+                parameters["MultiAZ"] = request.MultiAZ.ToString().ToLower();
+            }
 
             return parameters;
         }
@@ -996,6 +1000,10 @@ namespace Amazon.RDS
             {
                 parameters["AvailabilityZone"] = request.AvailabilityZone;
             }
+            if (request.IsSetMultiAZ())
+            {
+                parameters["MultiAZ"] = request.MultiAZ.ToString().ToLower();
+            }
 
             return parameters;
         }
@@ -1049,6 +1057,10 @@ namespace Amazon.RDS
             if (request.IsSetPreferredMaintenanceWindow())
             {
                 parameters["PreferredMaintenanceWindow"] = request.PreferredMaintenanceWindow;
+            }
+            if (request.IsSetMultiAZ())
+            {
+                parameters["MultiAZ"] = request.MultiAZ.ToString().ToLower();
             }
 
             return parameters;
@@ -1415,6 +1427,10 @@ namespace Amazon.RDS
             if (request.IsSetPort())
             {
                 parameters["Port"] = request.Port.ToString();
+            }
+            if (request.IsSetMultiAZ())
+            {
+                parameters["MultiAZ"] = request.MultiAZ.ToString().ToLower();
             }
 
             return parameters;

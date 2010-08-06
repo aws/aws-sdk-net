@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
     ///<summary>
     ///Information about the DB instance.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class DBInstance
     {
         private string DBInstanceIdentifierField;
@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private string preferredMaintenanceWindowField;
         private PendingModifiedValues pendingModifiedValuesField;
         private DateTime? latestRestorableTimeField;
+        private bool? multiAZField;
 
         /// <summary>
         /// Gets and sets the DBInstanceIdentifier property.
@@ -404,6 +405,7 @@ namespace Amazon.RDS.Model
         {
             return this.backupRetentionPeriodField.HasValue;
         }
+
         /// <summary>
         /// Gets and sets the DBSecurityGroup property.
         /// List of DB Security Group elements containing only DBSecurityGroup.Name and DBSecurityGroup.Status sub-elements.
@@ -444,6 +446,7 @@ namespace Amazon.RDS.Model
         {
             return (DBSecurityGroup.Count > 0);
         }
+
         /// <summary>
         /// Gets and sets the DBParameterGroup property.
         /// The list of DB Parameter Groups applied to this DB Instance.
@@ -611,6 +614,37 @@ namespace Amazon.RDS.Model
         public bool IsSetLatestRestorableTime()
         {
             return this.latestRestorableTimeField.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the MultiAZ property.
+        /// Specifies if the DB Instance is a Multi-AZ DB Instance.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "MultiAZ")]
+        public bool MultiAZ
+        {
+            get { return this.multiAZField.GetValueOrDefault(); }
+            set { this.multiAZField = value; }
+        }
+
+        /// <summary>
+        /// Sets the MultiAZ property
+        /// </summary>
+        /// <param name="multiAZ">Specifies if the DB Instance is a Multi-AZ DB Instance.</param>
+        /// <returns>this instance</returns>
+        public DBInstance WithMultiAZ(bool multiAZ)
+        {
+            this.multiAZField = multiAZ;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if MultiAZ property is set
+        /// </summary>
+        /// <returns>true if MultiAZ property is set</returns>
+        public bool IsSetMultiAZ()
+        {
+            return this.multiAZField.HasValue;
         }
 
     }

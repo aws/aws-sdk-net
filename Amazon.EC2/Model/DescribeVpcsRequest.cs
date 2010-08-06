@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,14 +27,14 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Gives you information about your VPCs. You can filter the results to return information
-    /// only about VPCs that match criteria you specify.
+    /// Gives you information about your VPCs. You can filter the results to
+    /// return information only about VPCs that match criteria you specify.
     ///
-    /// For example, you could ask to get information about a particular VPC or VPCs (or all your
-    /// VPCs) only if the VPC's state is available.
+    /// For example, you could ask to get information about a particular VPC
+    /// or VPCs (or all your VPCs) only if the VPC's state is available.
     ///
-    /// You can specify multiple filters (e.g., the VPC uses one of several sets of DHCP options,
-    /// and the VPC's state is available).
+    /// You can specify multiple filters (e.g., the VPC uses one of several
+    /// sets of DHCP options, and the VPC's state is available).
     ///
     /// The result includes information for a particular VPC only if the VPC matches all your filters.
     ///
@@ -42,15 +42,16 @@ namespace Amazon.EC2.Model
     ///
     /// The information returned consists of:
     /// a) The VPC ID.
-    /// b) The CIDR block you've assigned to the VPC.
+    /// b) The CIDR block
+    /// you've assigned to the VPC.
     /// c) The ID of the DHCP options you've associated with the VPC
     /// (or "default" if the default options are associated with the VPC)
     ///
     /// The current state of the VPC (pending or available)
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DescribeVpcsRequest
-    {
+    {    
         private List<string> vpcIdField;
         private List<Filter> filterField;
 
@@ -94,13 +95,17 @@ namespace Amazon.EC2.Model
         {
             return (VpcId.Count > 0);
         }
+
         /// <summary>
         /// Gets and sets the Filter property.
         /// The available filters are:
-        /// 1. state - The state of the VPC. Valid Values: pending, available.
-        /// 2. cidrBlock - The CIDR block of the VPC. The CIDR block you specify
-        /// must exactly match the VPC's CIDR block for information to be returned for the VPC.
-        /// Constraints: Must contain the slash followed by one or two digits (e.g., /28).
+        /// 1. state - The state of the VPC. Valid Values: pending,
+        /// available.
+        /// 2. cidrBlock - The CIDR block of the VPC. The CIDR block you
+        /// specify must exactly match the VPC's CIDR block for information to be
+        /// returned for the VPC.
+        /// Constraints: Must contain the slash followed by one or two 
+        /// digits (e.g., /28).
         /// 3. dhcpOptionsId - The IP of a set of DHCP options.
         /// </summary>
         [XmlElementAttribute(ElementName = "Filter")]
@@ -121,10 +126,13 @@ namespace Amazon.EC2.Model
         /// Sets the Filter property
         /// </summary>
         /// <param name="list">The available filters are:
-        /// 1. state - The state of the VPC. Valid Values: pending, available.
-        /// 2. cidrBlock - The CIDR block of the VPC. The CIDR block you specify
-        /// must exactly match the VPC's CIDR block for information to be returned for the VPC.
-        /// Constraints: Must contain the slash followed by one or two digits (e.g., /28).
+        /// 1. state - The state of the VPC. Valid Values: pending,
+        /// available.
+        /// 2. cidrBlock - The CIDR block of the VPC. The CIDR block you
+        /// specify must exactly match the VPC's CIDR block for information to be
+        /// returned for the VPC.
+        /// Constraints: Must contain the slash followed by one or two 
+        /// digits (e.g., /28).
         /// 3. dhcpOptionsId - The IP of a set of DHCP options.</param>
         /// <returns>this instance</returns>
         public DescribeVpcsRequest WithFilter(params Filter[] list)

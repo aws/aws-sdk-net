@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Returns all the DB Security Group details for a particular AWS account, or for a particular DB Security Group if a name is specified. You can call this operation recursively using the Marker parameter.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class DescribeDBSecurityGroupsRequest
     {
         private string DBSecurityGroupNameField;

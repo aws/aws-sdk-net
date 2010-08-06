@@ -457,5 +457,115 @@ namespace Amazon.S3
         /// <exception cref="T:System.ArgumentException" />
         /// <exception cref="T:System.ArgumentNullException" />
         string GetPreSignedURL(GetPreSignedUrlRequest request);
+
+        /// <summary>
+        /// <para>
+        /// Retrieves the policy for the specified bucket. Only the owner of the
+        /// bucket can retrieve the policy. If no policy has been set for the bucket,
+        /// then an error will be thrown.
+        /// </para>
+        /// <para>
+        /// Bucket policies provide access control management at the bucket level for
+        /// both the bucket resource and contained object resources. Only one policy
+        /// can be specified per-bucket.
+        /// </para>
+        /// <para>
+        /// For more information on forming bucket polices, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The GetBucketPolicyRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a GetBucketPolicyResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request);
+
+
+        /// <summary>
+        /// <para>
+        /// Sets the policy associated with the specified bucket. Only the owner of
+        /// the bucket can set a bucket policy. If a policy already exists for the
+        /// specified bucket, the new policy will replace the existing policy.
+        /// </para>
+        /// <para>
+        /// Bucket policies provide access control management at the bucket level for
+        /// both the bucket resource and contained object resources. Only one policy
+        /// may be specified per-bucket.
+        /// </para>
+        /// <para>
+        /// For more information on forming bucket polices, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The PutBucketPolicyRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a PutBucketPolicyResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request);
+
+        /// <summary>
+        /// <para>
+        /// Deletes the policy associated with the specified bucket. Only the owner
+        /// of the bucket can delete the bucket policy.
+        /// </para>
+        /// <para>
+        /// If you delete a policy that does not exist, Amazon S3 will return a
+        /// success (not an error message).
+        /// </para>
+        /// <para>
+        /// Bucket policies provide access control management at the bucket level for
+        /// both the bucket resource and contained object resources. Only one policy
+        /// may be specified per-bucket.
+        /// </para>
+        /// <para>
+        /// For more information on forming bucket polices, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The DeleteBucketPolicyRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a DeleteBucketPolicyResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request);
+
+        /// <summary>
+        /// <para>
+        /// Retrieves the notification configuration for the specified bucket. Only the owner of the
+        /// bucket can retrieve the notification configuration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">The GetNotificationConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a GetNotificationConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        GetNotificationConfigurationResponse GetNotificationConfiguration(GetNotificationConfigurationRequest request);
+
+        /// <summary>
+        /// <para>
+        /// The notification configuration of a bucket provides near realtime notifications
+        /// of events the user is interested in, using SNS as the delivery service.
+        /// Notification is turned on by enabling configuration on a bucket, specifying
+        /// the events and the SNS topic. This configuration can only be turned
+        /// on by the bucket owner. If a notification configuration already exists for the
+        /// specified bucket, the new notification configuration will replace the existing
+        /// notification configuration.  To remove the notification configuration pass in
+        /// an empty request.  Currently, buckets may only have a single event and topic
+        /// configuration.
+        /// </para>
+        /// <para>
+        /// S3 is eventually consistent. It may take time for the notification status
+        /// of a bucket to be propagated throughout the system.
+        /// </para>
+        /// </summary>
+        /// <param name="request">The SetNotificationConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a SetNotificationConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        SetNotificationConfigurationResponse SetNotificationConfiguration(SetNotificationConfigurationRequest request);
     }
 }

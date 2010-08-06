@@ -49,7 +49,7 @@ namespace Amazon.AutoScaling
     /// <remarks>
     /// Auto Scaling allows you to automatically scale your Amazon EC2 capacity up or down
     /// according to conditions you define. With Auto Scaling, you can ensure that the number
-    /// of Amazon EC2 instances you’re using scales up seamlessly during demand spikes
+    /// of Amazon EC2 instances you're using scales up seamlessly during demand spikes
     /// to maintain performance, and scales down automatically during demand lulls to minimize costs.
     /// Auto Scaling is particularly well suited for applications that experience hourly, daily,
     /// or weekly variability in usage. Auto Scaling is enabled by Amazon CloudWatch and available

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
@@ -38,6 +38,11 @@ namespace Amazon.CloudFront.Model
     /// <item>Comment</item>
     /// <item>A list of CNAMEs for the distribution</item>
     /// <item>Enabled flag</item>
+    /// <item>Bucket Logging details</item>
+    /// <item>CloudFront Origin Access Identity associated with the distribution.
+    /// This is a virtual identity you use to let CloudFront fetch private content 
+    /// from your bucket.</item>
+    /// <item>The AWS Accounts that have URL signing privileges for Private Content.</item>
     /// </list>
     /// </para>
     /// For more information, please visit:
@@ -51,12 +56,89 @@ namespace Amazon.CloudFront.Model
 
         private string origin;
         private string callerReference = System.DateTime.UtcNow.ToString();
-        private List<string> cnames = new List<string>();
+        private List<string> cnames;
         private string comment;
         private bool enabled;
         private string eTag;
         private CloudFrontOriginAccessIdentity identity;
         private UrlTrustedSigners trustedSigners;
+        private Tuple<string, string> logging;
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Returns the string representation of this object.
+        /// </summary>
+        /// <returns>
+        /// A string representing the configuration.
+        /// </returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder(1024);
+            if (IsSetOrigin())
+            {
+                sb.Append("<Origin>");
+                sb.Append((Origin.EndsWith(".s3.amazonaws.com")) ? Origin : String.Concat(Origin, ".s3.amazonaws.com"));
+                sb.Append("</Origin>");
+            }
+
+            if (IsSetCallerReference())
+            {
+                sb.Append(String.Concat("<CallerReference>", CallerReference, "</CallerReference>"));
+            }
+
+            if (IsSetCNames())
+            {
+                foreach (string cname in CNAME)
+                {
+                    if (!String.IsNullOrEmpty(cname))
+                    {
+                        sb.Append(String.Concat("<CNAME>", cname, "</CNAME>"));
+                    }
+                }
+            }
+
+            if (IsSetComment())
+            {
+                sb.Append(String.Concat("<Comment>", Comment, "</Comment>"));
+            }
+
+            sb.Append(String.Concat("<Enabled>", (this.Enabled) ? "true" : "false", "</Enabled>"));
+
+            if (IsSetLogging())
+            {
+                sb.Append("<Logging>");
+                if (!String.IsNullOrEmpty(Logging.First))
+                {
+                    sb.Append(String.Concat("<Bucket>", Logging.First, "</Bucket>"));
+                }
+
+                if (!String.IsNullOrEmpty(Logging.Second))
+                {
+                    sb.Append(String.Concat("<Prefix>", Logging.Second, "</Prefix>"));
+                }
+                else
+                {
+                    sb.Append("<Prefix/>");
+                }
+
+                sb.Append("</Logging>");
+            }
+
+            if (IsSetOriginAccessIdentity())
+            {
+                sb.Append(String.Concat("<OriginAccessIdentity>", OriginAccessIdentity, "</OriginAccessIdentity>"));
+            }
+
+            if (IsSetTrustedSigners())
+            {
+                sb.Append(String.Concat("<TrustedSigners>", TrustedSigners, "</TrustedSigners>"));
+            }
+
+            return sb.ToString();
+        }
 
         #endregion
 
@@ -159,7 +241,7 @@ namespace Amazon.CloudFront.Model
 
         #region CNAME
         /// <summary>
-        /// Gets the CNAME property.
+        /// Gets and Sets the CNAME property.
         /// A CNAME alias you want to associate with this distribution. You can have up to
         /// 10 CNAME aliases per distribution. For more information, refer:
         /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html"/>
@@ -180,6 +262,7 @@ namespace Amazon.CloudFront.Model
                 }
                 return this.cnames;
             }
+            set { this.cnames = value; }
         }
 
         /// <summary>
@@ -188,8 +271,7 @@ namespace Amazon.CloudFront.Model
         /// <returns>true if CNAME property is set</returns>
         internal virtual bool IsSetCNames()
         {
-            return (CNAME != null &&
-                CNAME.Count > 0);
+            return CNAME.Count > 0;
         }
 
         #endregion
@@ -281,6 +363,49 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetTrustedSigners()
         {
             return this.trustedSigners != null;
+        }
+
+        #endregion
+
+        #region Logging
+
+
+        /// <summary>
+        /// Gets and Sets the Logging property.
+        /// A complex type that controls whether access logs are written for the
+        /// distribution. For more information, refer:
+        /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html"/>
+        /// </summary>
+        /// <remarks>
+        /// The Bucket specifies where the CloudFront access logs will be stored. Maximum length is 128
+        /// characters and it must conform to Amazon S3 V2 bucket criteria.
+        /// <para>The Prefix is an optional string of your choice to prefix to the access log
+        /// filenames for this distribution. Maximum length is 256 characters and it can't
+        /// start with a '/'</para>
+        /// </remarks>
+        [XmlElementAttribute(ElementName = "Logging")]
+        public Tuple<string, string> Logging
+        {
+            get
+            {
+                if (this.logging == null)
+                {
+                    this.logging = new Tuple<string, string>();
+                }
+                return this.logging;
+            }
+            set { this.logging = value; }
+        }
+
+        /// <summary>
+        /// Checks if the Logging property is set.
+        /// </summary>
+        /// <returns>true if the Logging property is set.</returns>
+        internal bool IsSetLogging()
+        {
+            return (this.logging != null) &&
+                (!System.String.IsNullOrEmpty(Logging.First)) &&
+                (!System.String.IsNullOrEmpty(Logging.Second));
         }
 
         #endregion

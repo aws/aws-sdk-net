@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -31,22 +31,22 @@ namespace Amazon.EC2.Model
     /// customer gateway is the appliance at your end of the VPN connection
     /// (compared to the VPN gateway, which is the device at the AWS side of the
     /// VPN connection). AWS might delete any customer gateway that you create
-    /// with this operation if you leave it inactive for an extended period of time
-    /// (inactive means that there's no VPN connection in use with the customer
+    /// with this operation if you leave it inactive for an extended period of
+    /// time (inactive means that there's no VPN connection in use with the customer
     /// gateway).
     ///
-    /// You must provide the Internet-routable IP address of the customer gateway's
-    /// external interface. The IP address must be static and can't be behind a device
-    /// performing network address translation (NAT).
+    /// You must provide the Internet-routable IP address of the customer
+    /// gateway's external interface. The IP address must be static and can't be
+    /// behind a device performing network address translation (NAT).
     ///
     /// You must also provide the device's Border Gateway Protocol (BGP)
-    /// Autonomous System Number (ASN). You can use an existing ASN assigned to
-    /// your network. If you don't have an ASN already, you can use a private ASN
-    /// (in the 64512 - 65534 range)
+    /// Autonomous System Number (ASN). You can use an existing ASN
+    /// assigned to your network. If you don't have an ASN already, you can
+    /// use a private ASN (in the 64512 - 65534 range)
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class CreateCustomerGatewayRequest
-    {
+    {    
         private string typeField;
         private string ipAddressField;
         private Decimal? bgpAsnField;
@@ -84,8 +84,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the IpAddress property.
-        /// The Internet-routable IP address for the customer gateway's outside
-        /// interface. The address must be static.
+        /// The Internet-routable IP address for the customer gateway's
+        /// outside interface. The address must be static.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpAddress")]
         public string IpAddress
@@ -97,8 +97,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the IpAddress property
         /// </summary>
-        /// <param name="ipAddress">The Internet-routable IP address for the customer gateway's outside
-        /// interface. The address must be static.</param>
+        /// <param name="ipAddress">The Internet-routable IP address for the customer gateway's
+        /// outside interface. The address must be static.</param>
         /// <returns>this instance</returns>
         public CreateCustomerGatewayRequest WithIpAddress(string ipAddress)
         {
@@ -117,8 +117,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the BgpAsn property.
-        /// The customer gateway's Border Gateway Protocol (BGP) Autonomous System
-        /// Number (ASN).
+        /// The customer gateway's Border Gateway Protocol
+        /// (BGP) Autonomous System Number (ASN).
         /// </summary>
         [XmlElementAttribute(ElementName = "BgpAsn")]
         public Decimal BgpAsn
@@ -130,8 +130,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the BgpAsn property
         /// </summary>
-        /// <param name="bgpAsn">The customer gateway's Border Gateway Protocol (BGP) Autonomous System
-        /// Number (ASN).</param>
+        /// <param name="bgpAsn">The customer gateway's Border Gateway Protocol
+        /// (BGP) Autonomous System Number (ASN).</param>
         /// <returns>this instance</returns>
         public CreateCustomerGatewayRequest WithBgpAsn(Decimal bgpAsn)
         {

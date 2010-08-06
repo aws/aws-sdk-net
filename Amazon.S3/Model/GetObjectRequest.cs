@@ -45,6 +45,7 @@ namespace Amazon.S3.Model
         private string etagToMatch;
         private string etagToNotMatch;
         private Tuple<int, int> byteRange;
+        private int timeout = 0;
 
         #endregion
 
@@ -350,6 +351,50 @@ namespace Amazon.S3.Model
         internal bool IsSetByteRange()
         {
             return this.ByteRange != null;
+        }
+
+        #endregion
+
+        #region Timeout
+
+        /// <summary>
+        /// Gets and sets of the Timeout property (in milliseconds).
+        /// The value of this property is assigned to the
+        /// ReadWriteTimeout and Timeout properties of the
+        /// HTTPWebRequest object used for S3 GET Object requests.
+        /// </summary>
+        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        public int Timeout
+        {
+            get { return this.timeout; }
+            set
+            {
+                if (value > 0)
+                {
+                    this.timeout = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets the Timeout property (in milliseconds). 
+        /// The value of this property is assigned to the
+        /// ReadWriteTimeout and Timeout properties of the
+        /// Please specify a timeout value only if you are certain that
+        /// the file will not be retrieved within the default intervals
+        /// specified for an HttpWebRequest.
+        /// </summary>
+        /// <param name="timeout">Timeout property</param>
+        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <returns>this instance</returns>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        public GetObjectRequest WithTimeout(int timeout)
+        {
+            Timeout = timeout;
+            return this;
         }
 
         #endregion

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
@@ -60,7 +60,7 @@ namespace Amazon.CloudFront.Model
 
         #region KeyPairId
         /// <summary>
-        /// Gets the KeyPairId property.
+        /// Gets and Sets the KeyPairId property.
         /// A list of the KeyPairId for the AWS account
         /// that has URL signing authority.
         /// </summary>
@@ -75,6 +75,7 @@ namespace Amazon.CloudFront.Model
                 }
                 return this.keypairId;
             }
+            set { this.keypairId = value; }
         }
 
         /// <summary>
@@ -83,8 +84,7 @@ namespace Amazon.CloudFront.Model
         /// <returns>true if KeyPairId property is set</returns>
         internal bool IsSetKeypairId()
         {
-            return (this.KeyPairId != null &&
-                this.KeyPairId.Count > 0);
+            return KeyPairId.Count > 0;
         }
 
         #endregion

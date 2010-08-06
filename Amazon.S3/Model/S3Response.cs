@@ -24,6 +24,7 @@ using System;
 using System.Collections.Specialized;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Xml.Serialization;
 
 using Amazon.S3.Util;
@@ -236,6 +237,36 @@ namespace Amazon.S3.Model
             set { this.responseXml = value; }
         }
 
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            XmlSerializer serializer = new XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        #endregion
+
+        #region ProcessResponseBody
+        /// <summary>
+        /// A blank virtual method to allow sub classes to provide
+        /// custom response body parsing.
+        /// </summary>
+        /// <param name="responseBody">The response from a request to S3</param>
+        internal virtual void ProcessResponseBody(string responseBody)
+        {
+        }
         #endregion
     }
 }

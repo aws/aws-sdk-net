@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,13 +27,14 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about key pairs available to you. If you specify key pairs, information
-    /// about those key pairs is returned. Otherwise, information for all registered key pairs is
-    /// returned.
+    /// Returns information about key pairs available to
+    /// you. If you specify key pairs, information
+    /// about those key pairs is returned. Otherwise, information for all
+    /// registered key pairs is returned.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DescribeKeyPairsRequest
-    {
+    {    
         private List<string> keyNameField;
 
         /// <summary>

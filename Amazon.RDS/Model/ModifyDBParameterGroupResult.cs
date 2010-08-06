@@ -16,11 +16,12 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -29,7 +30,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Details for a particular DB Parameter Group.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class ModifyDBParameterGroupResult
     {
         private string DBParameterGroupNameField;
@@ -46,17 +47,6 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Sets the DBParameterGroupName property
-        /// </summary>
-        /// <param name="DBParameterGroupName">The name of the DB Parameter Group.</param>
-        /// <returns>this instance</returns>
-        public ModifyDBParameterGroupResult WithDBParameterGroupName(string DBParameterGroupName)
-        {
-            this.DBParameterGroupNameField = DBParameterGroupName;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if DBParameterGroupName property is set
         /// </summary>
         /// <returns>true if DBParameterGroupName property is set</returns>
@@ -65,5 +55,28 @@ namespace Amazon.RDS.Model
             return this.DBParameterGroupNameField != null;
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

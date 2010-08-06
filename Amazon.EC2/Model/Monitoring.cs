@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,15 +29,18 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Monitoring
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class Monitoring
-    {
+    {    
         private string monitoringStateField;
 
         /// <summary>
         /// Gets and sets the MonitoringState property.
-        /// State of monitoring for the instance. Valid Values: monitoring-enabled (enabled)
-        /// | monitoring-pending (pending) | monitoring-disabled (disabled)
+        /// State of monitoring for the instance. Valid
+        /// Values:
+        /// monitoring-enabled (enabled)
+        /// | monitoring-pending
+        /// (pending) | monitoring-disabled (disabled)
         /// </summary>
         [XmlElementAttribute(ElementName = "MonitoringState")]
         public string MonitoringState
@@ -49,8 +52,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the MonitoringState property
         /// </summary>
-        /// <param name="monitoringState">State of monitoring for the instance. Valid Values: monitoring-enabled (enabled)
-        /// | monitoring-pending (pending) | monitoring-disabled (disabled)</param>
+        /// <param name="monitoringState">State of monitoring for the instance. Valid
+        /// Values:
+        /// monitoring-enabled (enabled)
+        /// | monitoring-pending
+        /// (pending) | monitoring-disabled (disabled)</param>
         /// <returns>this instance</returns>
         public Monitoring WithMonitoringState(string monitoringState)
         {

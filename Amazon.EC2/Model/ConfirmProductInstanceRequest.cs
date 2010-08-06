@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -28,13 +28,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Verifies whether a Amazon DevPay product code is associated with an
-    /// instance. This can only be executed by the owner of the AMI and is useful
-    /// when an AMI owner wants to verify whether a user's instance is eligible for
-    /// support.
+    /// instance. This can only be executed by the owner of the AMI and is
+    /// useful when an AMI owner wants to verify whether a user's instance is
+    /// eligible for support.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class ConfirmProductInstanceRequest
-    {
+    {    
         private string productCodeField;
         private string instanceIdField;
 

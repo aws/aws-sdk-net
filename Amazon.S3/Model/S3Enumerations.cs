@@ -94,7 +94,7 @@ namespace Amazon.S3.Model
         RequestTimeout,
         Url,
         Verb,
-        VerifyChecksum,
+        VerifyChecksum
     }
 
     /// <summary>
@@ -250,5 +250,22 @@ namespace Amazon.S3.Model
         /// provides with the STANDARD storage class.
         /// </summary>
         ReducedRedundancy
+    }
+
+    /// <summary>
+    /// The constants for the known event names used by S3 notification. S3 might add new
+    /// events before the SDK is updated. In which case the names listed in the S3 documentation
+    /// will work as well as these constants.
+    /// </summary>
+    public sealed class NotificationEvents
+    {
+        /// <summary>
+        /// An event that says an object has been lost in the reduced redundancy storage.
+        /// </summary>
+        public static readonly string ReducedRedundancyLostObject = "s3:ReducedRedundancyLostObject";
+
+        private NotificationEvents()
+        {
+        }
     }
 }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// Returns information about all DB Parameter Groups for an account if no DB Parameter Group name is supplied, or displays
     /// information about a specific named DB Parameter Group. You can call this operation recursively using the Marker parameter.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class DescribeDBParameterGroupsRequest
     {
         private string DBParameterGroupNameField;

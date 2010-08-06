@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
@@ -28,7 +28,7 @@ namespace Amazon.CloudFront.Model
     /// The GetStreamingDistributionInfoResponse contains all the information about the
     /// GetStreamingDistributionInfo operation and any headers returned by CloudFront.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-03-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-06-01/", IsNullable = false)]
     public class GetStreamingDistributionInfoResponse : CloudFrontResponse
     {
         #region Private Members

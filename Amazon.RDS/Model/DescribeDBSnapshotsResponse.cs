@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Informationa bout the service request.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class DescribeDBSnapshotsResponse
     {
         private DescribeDBSnapshotsResult describeDBSnapshotsResultField;
@@ -45,17 +45,6 @@ namespace Amazon.RDS.Model
         {
             get { return this.describeDBSnapshotsResultField; }
             set { this.describeDBSnapshotsResultField = value; }
-        }
-
-        /// <summary>
-        /// Sets the DescribeDBSnapshotsResult property
-        /// </summary>
-        /// <param name="describeDBSnapshotsResult">A list of DB Snapshot data types.</param>
-        /// <returns>this instance</returns>
-        public DescribeDBSnapshotsResponse WithDescribeDBSnapshotsResult(DescribeDBSnapshotsResult describeDBSnapshotsResult)
-        {
-            this.describeDBSnapshotsResultField = describeDBSnapshotsResult;
-            return this;
         }
 
         /// <summary>
@@ -79,17 +68,6 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Sets the ResponseMetadata property
-        /// </summary>
-        /// <param name="responseMetadata">Information about the request.</param>
-        /// <returns>this instance</returns>
-        public DescribeDBSnapshotsResponse WithResponseMetadata(ResponseMetadata responseMetadata)
-        {
-            this.responseMetadataField = responseMetadata;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if ResponseMetadata property is set
         /// </summary>
         /// <returns>true if ResponseMetadata property is set</returns>
@@ -99,7 +77,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// XML Representation for this object
+        /// XML Representation of this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -111,6 +89,15 @@ namespace Amazon.RDS.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
         }
     }
 }

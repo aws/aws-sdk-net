@@ -66,6 +66,7 @@ namespace Amazon.CloudWatch.Model
         {
             return this.measureNameField != null;
         }
+
         /// <summary>
         /// Gets and sets the Dimensions property.
         /// Amazon CloudWatch organizes data into dimensions. Dimensions are name-value pairs that are

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// dynamic parameters are updated immediately, and static parameters are set to pending-reboot to take effect when the
     /// DB Instance reboots.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class ResetDBParameterGroupRequest
     {
         private string DBParameterGroupNameField;
@@ -105,6 +105,7 @@ namespace Amazon.RDS.Model
         {
             return this.resetAllParametersField.HasValue;
         }
+
         /// <summary>
         /// Gets and sets the Parameters property.
         /// </summary>

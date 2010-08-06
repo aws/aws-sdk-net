@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Revokes ingress to a DBSecurityGroup for previously authorized IP ranges or EC2 Security Groups.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class RevokeDBSecurityGroupIngressRequest
     {
         private string DBSecurityGroupNameField;

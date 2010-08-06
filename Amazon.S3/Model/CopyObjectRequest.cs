@@ -54,7 +54,7 @@ namespace Amazon.S3.Model
         private S3MetadataDirective directive;
         internal NameValueCollection metaData;
         private S3CannedACL cannedACL;
-        private int timeout = S3Constants.PutObjectDefaultTimeout;
+        private int timeout = 0;
         private S3StorageClass storageClass;
 
         #endregion
@@ -562,7 +562,6 @@ namespace Amazon.S3.Model
         /// The value of this property is assigned to the
         /// ReadWriteTimeout and Timeout properties of the
         /// HTTPWebRequest object used for S3 COPY requests.
-        /// The default value for this in the S3 Client is 20 minutes.
         /// </summary>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
@@ -572,7 +571,7 @@ namespace Amazon.S3.Model
             get { return this.timeout; }
             set
             {
-                if (timeout > 0)
+                if (value > 0)
                 {
                     this.timeout = value;
                 }
@@ -580,10 +579,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Timeout property (in milliseconds). Please
-        /// deviate from the default value of 20 minutes only if you are certain that
-        /// the file will be transferred within the interval you have
-        /// specified.
+        /// Sets the Timeout property (in milliseconds).
+        /// Please set the timeout only if you are certain that
+        /// the file will not be transferred within the default intervals
+        /// for an HttpWebRequest.
         /// </summary>
         /// <param name="timeout">Timeout property</param>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>

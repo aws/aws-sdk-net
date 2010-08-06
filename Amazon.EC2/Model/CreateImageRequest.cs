@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -28,13 +28,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Creates an AMI that uses an Amazon EBS root device from a "running" or
-    /// "stopped" instance. AMIs that use an Amazon EBS root device boot faster
-    /// than AMIs that use instance stores. They can be up to 1 TiB in size,
-    /// use storage that persists on instance failure, and can be stopped and started.
+    /// "stopped" instance. AMIs that use an Amazon EBS root device boot
+    /// faster than AMIs that use instance stores. They can be up to 1 TiB in size,
+    /// use storage that persists on instance failure, and can be stopped
+    /// and started.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class CreateImageRequest
-    {
+    {    
         private string instanceIdField;
         private string nameField;
         private string descriptionField;
@@ -110,7 +111,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Description property.
-        /// The description of the AMI that was provided during
+        /// The description of the AMI that was provided
+        /// during
         /// image creation. Can be up to 255 characters.
         /// </summary>
         [XmlElementAttribute(ElementName = "Description")]
@@ -123,7 +125,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Description property
         /// </summary>
-        /// <param name="description">The description of the AMI that was provided during
+        /// <param name="description">The description of the AMI that was provided
+        /// during
         /// image creation. Can be up to 255 characters.</param>
         /// <returns>this instance</returns>
         public CreateImageRequest WithDescription(string description)
@@ -146,10 +149,10 @@ namespace Amazon.EC2.Model
         /// By default this property is set to false, which means
         /// Amazon EC2 attempts to cleanly shut down the
         /// instance before image creation and reboots the instance
-        /// afterwards. When set to true, Amazon EC2 does not
-        /// shut down the instance before creating the image. When
-        /// this option is used, file system integrity on the created
-        /// image cannot be guaranteed. Default is FALSE.
+        /// afterwards. When set to true, Amazon EC2 does not shut down the
+        /// instance before creating the image. When this option is used,
+        /// file system integrity on the created image cannot be guaranteed.
+        /// Default is FALSE.
         /// </summary>
         [XmlElementAttribute(ElementName = "NoReboot")]
         public bool NoReboot
@@ -164,10 +167,10 @@ namespace Amazon.EC2.Model
         /// <param name="noReboot">By default this property is set to false, which means
         /// Amazon EC2 attempts to cleanly shut down the
         /// instance before image creation and reboots the instance
-        /// afterwards. When set to true, Amazon EC2 does not
-        /// shut down the instance before creating the image. When
-        /// this option is used, file system integrity on the created
-        /// image cannot be guaranteed. Default is FALSE.</param>
+        /// afterwards. When set to true, Amazon EC2 does not shut down the
+        /// instance before creating the image. When this option is used,
+        /// file system integrity on the created image cannot be guaranteed.
+        /// Default is FALSE.</param>
         /// <returns>this instance</returns>
         public CreateImageRequest WithNoReboot(bool noReboot)
         {

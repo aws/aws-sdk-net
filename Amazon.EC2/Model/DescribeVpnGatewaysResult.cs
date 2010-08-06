@@ -16,11 +16,12 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -29,10 +30,11 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Describe Vpn Gateways Result
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DescribeVpnGatewaysResult
-    {
+    {    
         private List<VpnGateway> vpnGatewayField;
+
         /// <summary>
         /// Gets and sets the VpnGateway property.
         /// List of VPN gateways
@@ -52,20 +54,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the VpnGateway property
-        /// </summary>
-        /// <param name="list">List of VPN gateways</param>
-        /// <returns>this instance</returns>
-        public DescribeVpnGatewaysResult WithVpnGateway(params VpnGateway[] list)
-        {
-            foreach (VpnGateway item in list)
-            {
-                VpnGateway.Add(item);
-            }
-            return this;
-        }
-
-        /// <summary>
         /// Checks if VpnGateway property is set
         /// </summary>
         /// <returns>true if VpnGateway property is set</returns>
@@ -74,5 +62,28 @@ namespace Amazon.EC2.Model
             return (VpnGateway.Count > 0);
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

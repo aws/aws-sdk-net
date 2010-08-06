@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
@@ -47,7 +47,7 @@ namespace Amazon.CloudFront.Model
     /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/DistributionDatatype.html"/>
     /// </summary>
     [Serializable()]
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-03-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-06-01/", IsNullable = false)]
     public class CloudFrontDistribution : CloudFrontDistributionBase
     {
         #region Private Members
@@ -78,23 +78,5 @@ namespace Amazon.CloudFront.Model
         }
 
         #endregion
-
-        /// <summary>
-        /// Creates an XML representation of the CloudFront
-        /// distribution.
-        /// </summary>
-        /// <returns>
-        /// XML representation of the distribution
-        /// </returns>
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder(1024);
-            XmlSerializer ser = new XmlSerializer(this.GetType());
-            using (System.IO.StringWriter sr = new System.IO.StringWriter(sb))
-            {
-                ser.Serialize(sr, this);
-            }
-            return sb.ToString();
-        }
     }
 }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// Modifies the parameters of a DB Parameter Group. To modify more than one parameter, submit a list of the following: ParameterName, ParameterValue, and ApplyMethod.
     /// You can modify a maximum of 20 parameters in a single request.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class ModifyDBParameterGroupRequest
     {
         private string DBParameterGroupNameField;
@@ -72,6 +72,7 @@ namespace Amazon.RDS.Model
         {
             return this.DBParameterGroupNameField != null;
         }
+
         /// <summary>
         /// Gets and sets the Parameters property.
         /// An array of parameter names, values, and the apply method for the parameter update. At least one parameter

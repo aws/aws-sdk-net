@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
@@ -115,5 +115,22 @@ namespace Amazon.CloudFront.Model
         }
 
         #endregion
+
+        /// <summary>
+        /// Returns the string representation of the response.
+        /// </summary>
+        /// <returns>
+        /// A string representing the response.
+        /// </returns>
+        public override string ToString()
+        {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder(1024);
+            XmlSerializer ser = new XmlSerializer(this.GetType());
+            using (System.IO.StringWriter sr = new System.IO.StringWriter(sb))
+            {
+                ser.Serialize(sr, this);
+            }
+            return sb.ToString();
+        }
     }
 }

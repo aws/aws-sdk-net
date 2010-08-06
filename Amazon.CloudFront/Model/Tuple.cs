@@ -16,11 +16,12 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
 using System;
+using System.Xml.Serialization;
 
 namespace Amazon.CloudFront.Model
 {
@@ -57,6 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         ///  Returns the key of this Tuple
         /// </summary>
+        [XmlElementAttribute(ElementName = "First")]
         public T First
         {
             get { return first; }
@@ -66,6 +68,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Returns the value of this Tuple
         /// </summary>
+        [XmlElementAttribute(ElementName = "Second")]
         public U Second
         {
             get { return second; }

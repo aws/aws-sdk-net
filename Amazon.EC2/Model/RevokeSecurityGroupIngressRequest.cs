@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,21 +27,29 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Revokes permissions from a security group. The permissions used to revoke
-    /// must be specified using the same values used to grant the permissions.
+    /// Revokes permissions from a security group. The
+    /// permissions used to revoke
+    /// must be specified using the same values
+    /// used to grant the
+    /// permissions.
     ///
-    /// Permissions are specified by IP protocol (TCP, UDP, or ICMP), the source of
-    /// the request (by IP range or an Amazon EC2 user-group pair), the source
-    /// and destination port ranges (for TCP and UDP), and the ICMP codes and
+    /// Permissions are specified by IP
+    /// protocol (TCP, UDP, or ICMP), the source of
+    /// the request (by IP
+    /// range or an Amazon EC2 user-group pair), the
+    /// source and destination
+    /// port ranges (for TCP and UDP), and the ICMP codes and
     /// types (for ICMP).
     ///
-    /// Permission changes are quickly propagated to instances within the security
-    /// group. However, depending on the number of instances in the group, a
+    /// Permission changes are quickly propagated to instances
+    /// within the security
+    /// group. However, depending on the number of
+    /// instances in the group, a
     /// small delay is might occur.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class RevokeSecurityGroupIngressRequest
-    {
+    {    
         private string userIdField;
         private string groupNameField;
         private string sourceSecurityGroupNameField;
@@ -115,8 +123,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SourceSecurityGroupName property.
-        /// Name of the security group. Cannot be used when specifying a CIDR IP
-        /// address.
+        /// Name of the security group. Cannot be used
+        /// when specifying a CIDR IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceSecurityGroupName")]
         public string SourceSecurityGroupName
@@ -128,8 +136,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SourceSecurityGroupName property
         /// </summary>
-        /// <param name="sourceSecurityGroupName">Name of the security group. Cannot be used when specifying a CIDR IP
-        /// address.</param>
+        /// <param name="sourceSecurityGroupName">Name of the security group. Cannot be used
+        /// when specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
         public RevokeSecurityGroupIngressRequest WithSourceSecurityGroupName(string sourceSecurityGroupName)
         {
@@ -148,8 +156,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SourceSecurityGroupOwnerId property.
-        /// AWS User ID of an account. Cannot be used when specifying a CIDR IP
-        /// address.
+        /// AWS User ID of an account. Cannot be used when
+        /// specifying a CIDR IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceSecurityGroupOwnerId")]
         public string SourceSecurityGroupOwnerId
@@ -161,8 +169,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SourceSecurityGroupOwnerId property
         /// </summary>
-        /// <param name="sourceSecurityGroupOwnerId">AWS User ID of an account. Cannot be used when specifying a CIDR IP
-        /// address.</param>
+        /// <param name="sourceSecurityGroupOwnerId">AWS User ID of an account. Cannot be used when
+        /// specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
         public RevokeSecurityGroupIngressRequest WithSourceSecurityGroupOwnerId(string sourceSecurityGroupOwnerId)
         {
@@ -212,9 +220,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the FromPort property.
-        /// Start of port range for the TCP and UDP protocols, or an ICMP type
-        /// number. An ICMP type number of -1 indicates a wildcard (i.e., any ICMP
-        /// type number).
+        /// Start of port range for the TCP and UDP
+        /// protocols, or an ICMP type
+        /// number. An ICMP type number of -1
+        /// indicates a wildcard (i.e.,
+        /// any ICMP type number).
         /// </summary>
         [XmlElementAttribute(ElementName = "FromPort")]
         public Decimal FromPort
@@ -226,9 +236,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the FromPort property
         /// </summary>
-        /// <param name="fromPort">Start of port range for the TCP and UDP protocols, or an ICMP type
-        /// number. An ICMP type number of -1 indicates a wildcard (i.e., any ICMP
-        /// type number).</param>
+        /// <param name="fromPort">Start of port range for the TCP and UDP
+        /// protocols, or an ICMP type
+        /// number. An ICMP type number of -1
+        /// indicates a wildcard (i.e.,
+        /// any ICMP type number).</param>
         /// <returns>this instance</returns>
         public RevokeSecurityGroupIngressRequest WithFromPort(Decimal fromPort)
         {
@@ -247,8 +259,10 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ToPort property.
-        /// End of port range for the TCP and UDP protocols, or an ICMP code. An
-        /// ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
+        /// End of port range for the TCP and UDP
+        /// protocols, or an ICMP code.
+        /// An ICMP code of -1 indicates a
+        /// wildcard (i.e., any ICMP code).
         /// </summary>
         [XmlElementAttribute(ElementName = "ToPort")]
         public Decimal ToPort
@@ -260,8 +274,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ToPort property
         /// </summary>
-        /// <param name="toPort">End of port range for the TCP and UDP protocols, or an ICMP code. An
-        /// ICMP code of -1 indicates a wildcard (i.e., any ICMP code).</param>
+        /// <param name="toPort">End of port range for the TCP and UDP
+        /// protocols, or an ICMP code.
+        /// An ICMP code of -1 indicates a
+        /// wildcard (i.e., any ICMP code).</param>
         /// <returns>this instance</returns>
         public RevokeSecurityGroupIngressRequest WithToPort(Decimal toPort)
         {

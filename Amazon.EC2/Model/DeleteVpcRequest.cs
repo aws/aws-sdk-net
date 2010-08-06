@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,15 +27,15 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a VPC. You must terminate all running instances and delete all subnets before
-    /// deleting the VPC, otherwise Amazon VPC returns an error.
+    /// Deletes a VPC. You must terminate all running instances and delete 
+    /// all subnets before deleting the VPC, otherwise Amazon VPC returns an error.
     ///
-    /// AWS might delete any VPC if you leave it inactive for an extended period of time
-    /// (inactive means that there are no running Amazon EC2 instances in the VPC).
+    /// AWS might delete any VPC if you leave it inactive for an extended
+    /// period of time (inactive means that there are no running Amazon EC2 instances in the VPC).
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DeleteVpcRequest
-    {
+    {    
         private string vpcIdField;
 
         /// <summary>

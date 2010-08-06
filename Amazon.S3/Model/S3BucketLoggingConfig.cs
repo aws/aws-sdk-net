@@ -39,7 +39,7 @@ namespace Amazon.S3.Model
 
         private string targetBucketName;
         private string targetPrefix = "";
-        private List<S3Grant> grantList = new List<S3Grant>();
+        private List<S3Grant> grantList;
 
         #endregion
 
@@ -133,7 +133,15 @@ namespace Amazon.S3.Model
         [XmlElementAttribute(ElementName = "Grants")]
         public List<S3Grant> Grants
         {
-            get { return this.grantList; }
+            get
+            {
+                if (this.grantList == null)
+                {
+                    this.grantList = new List<S3Grant>();
+                }
+                return this.grantList;
+            }
+            set { this.grantList = value; }
         }
 
         /// <summary>

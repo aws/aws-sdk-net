@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Creates a new Amazon RDS database instance.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class CreateDBInstanceRequest
     {
         private string DBNameField;
@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         private Decimal? backupRetentionPeriodField;
         private string preferredBackupWindowField;
         private Decimal? portField;
+        private bool? multiAZField;
 
         /// <summary>
         /// Gets and sets the DBName property.
@@ -529,6 +530,37 @@ namespace Amazon.RDS.Model
         public bool IsSetPort()
         {
             return this.portField.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the MultiAZ property.
+        /// Specifies if the DB Instance is a Multi-AZ DB Instance.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "MultiAZ")]
+        public bool MultiAZ
+        {
+            get { return this.multiAZField.GetValueOrDefault(); }
+            set { this.multiAZField = value; }
+        }
+
+        /// <summary>
+        /// Sets the MultiAZ property
+        /// </summary>
+        /// <param name="multiAZ">Specifies if the DB Instance is a Multi-AZ DB Instance.</param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceRequest WithMultiAZ(bool multiAZ)
+        {
+            this.multiAZField = multiAZ;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if MultiAZ property is set
+        /// </summary>
+        /// <returns>true if MultiAZ property is set</returns>
+        public bool IsSetMultiAZ()
+        {
+            return this.multiAZField.HasValue;
         }
 
     }

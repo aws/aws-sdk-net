@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// Authorizes network ingress for an Amazon EC2 security group or an IP address range. EC2 security groups can be added to
     /// the DBSecurityGroup if the application using the database is running on EC2 instances. IP ranges are available if the application accessing your database is running on the Internet.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class AuthorizeDBSecurityGroupIngressRequest
     {
         private string DBSecurityGroupNameField;

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 namespace Amazon.RDS
@@ -26,12 +26,12 @@ namespace Amazon.RDS
     /// </summary>
     public class AmazonRDSConfig
     {
-        private string serviceVersion = "2009-10-16";
-        private string serviceURL = "https://rds.amazonaws.com";
+        private string serviceVersion = "2010-01-01";
+        private string serviceURL = "https://rds.us-east-1.amazonaws.com";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
         private string signatureVersion = "2";
         private string signatureMethod = "HmacSHA256";
-        private string proxyHost = null;
+        private string proxyHost;
         private int proxyPort = -1;
         private int maxErrorRetry = 3;
         private bool fUseSecureString = true;

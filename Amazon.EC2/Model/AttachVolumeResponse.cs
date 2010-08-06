@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -30,9 +30,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Attach Volume Response
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class AttachVolumeResponse
-    {
+    {    
         private AttachVolumeResult attachVolumeResultField;
         private ResponseMetadata responseMetadataField;
 
@@ -45,17 +45,6 @@ namespace Amazon.EC2.Model
         {
             get { return this.attachVolumeResultField; }
             set { this.attachVolumeResultField = value; }
-        }
-
-        /// <summary>
-        /// Sets the AttachVolumeResult property
-        /// </summary>
-        /// <param name="attachVolumeResult">Attach Volume Result</param>
-        /// <returns>this instance</returns>
-        public AttachVolumeResponse WithAttachVolumeResult(AttachVolumeResult attachVolumeResult)
-        {
-            this.attachVolumeResultField = attachVolumeResult;
-            return this;
         }
 
         /// <summary>
@@ -79,17 +68,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ResponseMetadata property
-        /// </summary>
-        /// <param name="responseMetadata">Response Metadata</param>
-        /// <returns>this instance</returns>
-        public AttachVolumeResponse WithResponseMetadata(ResponseMetadata responseMetadata)
-        {
-            this.responseMetadataField = responseMetadata;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if ResponseMetadata property is set
         /// </summary>
         /// <returns>true if ResponseMetadata property is set</returns>
@@ -99,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// XML Representation for this object
+        /// XML Representation of this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -111,6 +89,15 @@ namespace Amazon.EC2.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
         }
     }
 }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
@@ -56,8 +56,7 @@ namespace Amazon.CloudFront.Model
     {
         #region Private Members
 
-        [field:NonSerializedAttribute()]
-        private Tuple<string, string> logging;
+        List<Protocol> requiredProtocols;
 
         #endregion
 
@@ -76,66 +75,18 @@ namespace Amazon.CloudFront.Model
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?><DistributionConfig ");
-            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-03-01/\">");
+            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-06-01/\">");
+            sb.Append(base.ToString());
 
-            if (IsSetOrigin())
+            // Represent RequiredProtocols in the xml
+            if (IsSetRequiredProtocols())
             {
-                sb.Append("<Origin>");
-                sb.Append((Origin.EndsWith(".s3.amazonaws.com")) ? Origin : String.Concat(Origin, ".s3.amazonaws.com"));
-                sb.Append("</Origin>");
-            }
-
-            if (IsSetCallerReference())
-            {
-                sb.Append(String.Concat("<CallerReference>", CallerReference, "</CallerReference>"));
-            }
-
-            if (IsSetCNames())
-            {
-                foreach (string cname in CNAME)
+                sb.Append("<RequiredProtocols>");
+                foreach (Protocol reqProt in RequiredProtocols)
                 {
-                    if (!String.IsNullOrEmpty(cname))
-                    {
-                        sb.Append(String.Concat("<CNAME>", cname, "</CNAME>"));
-                    }
+                    sb.Append(String.Concat("<Protocol>", reqProt, "</Protocol>"));
                 }
-            }
-
-            if (IsSetComment())
-            {
-                sb.Append(String.Concat("<Comment>", Comment, "</Comment>"));
-            }
-
-            sb.Append(String.Concat("<Enabled>", (this.Enabled) ? "true" : "false", "</Enabled>"));
-
-            if (IsSetLogging())
-            {
-                sb.Append("<Logging>");
-                if (!String.IsNullOrEmpty(Logging.First))
-                {
-                    sb.Append(String.Concat("<Bucket>", Logging.First, "</Bucket>"));
-                }
-
-                if (!String.IsNullOrEmpty(Logging.Second))
-                {
-                    sb.Append(String.Concat("<Prefix>", Logging.Second, "</Prefix>"));
-                }
-                else
-                {
-                    sb.Append("<Prefix/>");
-                }
-
-                sb.Append("</Logging>");
-            }
-
-            if (IsSetOriginAccessIdentity())
-            {
-                sb.Append(String.Concat("<OriginAccessIdentity>", OriginAccessIdentity, "</OriginAccessIdentity>"));
-            }
-
-            if (IsSetTrustedSigners())
-            {
-                sb.Append(String.Concat("<TrustedSigners>", TrustedSigners, "</TrustedSigners>"));
+                sb.Append("</RequiredProtocols>");
             }
 
             sb.Append("</DistributionConfig>");
@@ -231,32 +182,6 @@ namespace Amazon.CloudFront.Model
         #endregion
 
         #region Logging
-        /// <summary>
-        /// Gets and Sets the Logging property.
-        /// A complex type that controls whether access logs are written for the
-        /// distribution. For more information, refer:
-        /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html"/>
-        /// </summary>
-        /// <remarks>
-        /// The Bucket specifies where the CloudFront access logs will be stored. Maximum length is 128
-        /// characters and it must conform to Amazon S3 V2 bucket criteria.
-        /// <para>The Prefix is an optional string of your choice to prefix to the access log
-        /// filenames for this distribution. Maximum length is 256 characters and it can't
-        /// start with a '/'</para>
-        /// </remarks>
-        [XmlIgnore]
-        public Tuple<string, string> Logging
-        {
-            get
-            {
-                if (this.logging == null)
-                {
-                    this.logging = new Tuple<string, string>();
-                }
-                return this.logging;
-            }
-            set { this.logging = value; }
-        }
 
         /// <summary>
         /// Sets the Logging property.
@@ -274,19 +199,62 @@ namespace Amazon.CloudFront.Model
                     );
             }
 
-            logging = new Tuple<string, string>(bucket, prefix);
+            Logging = new Tuple<string, string>(bucket, prefix);
             return this;
         }
 
+        #endregion
+
+        #region RequiredProtocols
+
         /// <summary>
-        /// Checks if the Logging property is set.
+        /// Gets and sets the RequiredProtocols property.
+        /// Defines the protocols required for your distribution. Use this element to restrict 
+        /// access to your distribution solely to HTTPS requests. Without this element, 
+        /// CloudFront can use any available protocol to serve the request.
+        /// For a list of possible protocol values, refer
+        /// <see cref="T:Amazon.CloudFront.Model.Protocol"/>.
         /// </summary>
-        /// <returns>true if the Logging property is set.</returns>
-        internal bool IsSetLogging()
+        [XmlElementAttribute(ElementName = "Protocol")]
+        public List<Protocol> RequiredProtocols
         {
-            return (this.logging != null) &&
-                (!System.String.IsNullOrEmpty(Logging.First)) &&
-                (!System.String.IsNullOrEmpty(Logging.Second));
+            get
+            {
+                if (this.requiredProtocols == null)
+                {
+                    this.requiredProtocols = new List<Protocol>();
+                }
+                return this.requiredProtocols;
+            }
+            set { this.requiredProtocols = value; }
+        }
+
+        /// <summary>
+        /// Checks if RequiredProtocols property is set.
+        /// </summary>
+        /// <returns>true if RequiredProtocols property is set.</returns>
+        internal bool IsSetRequiredProtocols()
+        {
+            return (RequiredProtocols.Count > 0);
+        }
+
+        /// <summary>
+        /// Sets the RequiredProtocols property.
+        /// Defines the protocols required for your distribution. Use this element to restrict 
+        /// access to your distribution solely to HTTPS requests. Without this element, 
+        /// CloudFront can use any available protocol to serve the request.
+        /// For a list of possible protocol values, refer
+        /// <see cref="T:Amazon.CloudFront.Model.Protocol"/>.
+        /// </summary>
+        /// <param name="protocols">RequiredProtocols property is set to this value</param>
+        /// <returns>this instance</returns>
+        public CloudFrontDistributionConfig WithRequiredProtocols(params Protocol[] protocols)
+        {
+            foreach (Protocol prot in protocols)
+            {
+                RequiredProtocols.Add(prot);
+            }
+            return this;
         }
 
         #endregion

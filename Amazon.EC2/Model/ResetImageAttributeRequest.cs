@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,18 +27,20 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Resets an attribute of an AMI to its default value.
+    /// Resets an attribute of an AMI to its default
+    /// value.
     /// Note - The productCodes attribute cannot be reset.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class ResetImageAttributeRequest
-    {
+    {    
         private string imageIdField;
         private string attributeField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
-        /// ID of the AMI on which the attribute will be reset
+        /// ID of the AMI on which the attribute will be
+        /// reset
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
         public string ImageId
@@ -50,7 +52,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ImageId property
         /// </summary>
-        /// <param name="imageId">ID of the AMI on which the attribute will be reset</param>
+        /// <param name="imageId">ID of the AMI on which the attribute will be
+        /// reset</param>
         /// <returns>this instance</returns>
         public ResetImageAttributeRequest WithImageId(string imageId)
         {

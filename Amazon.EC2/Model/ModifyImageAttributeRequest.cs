@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Modifies an attribute of an AMI
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class ModifyImageAttributeRequest
-    {
+    {    
         private string imageIdField;
         private string attributeField;
         private string operationTypeField;
@@ -73,7 +73,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Attribute property.
-        /// Specifies the attribute to modify. Valid Values: launchPermission | productCodes
+        /// Specifies the attribute to modify. Valid
+        /// Values: launchPermission |
+        /// productCodes
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -85,7 +87,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Attribute property
         /// </summary>
-        /// <param name="attribute">Specifies the attribute to modify. Valid Values: launchPermission | productCodes</param>
+        /// <param name="attribute">Specifies the attribute to modify. Valid
+        /// Values: launchPermission |
+        /// productCodes</param>
         /// <returns>this instance</returns>
         public ModifyImageAttributeRequest WithAttribute(string attribute)
         {
@@ -104,7 +108,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the OperationType property.
-        /// Specifies the operation to perform on the attribute. Valid Values: add | remove
+        /// Specifies the operation to perform on the
+        /// attribute. Valid Values: add | remove
         /// </summary>
         [XmlElementAttribute(ElementName = "OperationType")]
         public string OperationType
@@ -116,7 +121,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the OperationType property
         /// </summary>
-        /// <param name="operationType">Specifies the operation to perform on the attribute. Valid Values: add | remove</param>
+        /// <param name="operationType">Specifies the operation to perform on the
+        /// attribute. Valid Values: add | remove</param>
         /// <returns>this instance</returns>
         public ModifyImageAttributeRequest WithOperationType(string operationType)
         {

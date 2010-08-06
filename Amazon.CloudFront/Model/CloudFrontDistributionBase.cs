@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
@@ -48,7 +48,7 @@ namespace Amazon.CloudFront.Model
     /// - <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/StreamingDistributionDatatype.html"/>
     /// </summary>
     [Serializable()]
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-03-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-06-01/", IsNullable = false)]
     public class CloudFrontDistributionBase
     {
         #region Private Members
@@ -207,7 +207,14 @@ namespace Amazon.CloudFront.Model
         [XmlElementAttribute(ElementName = "Signer")]
         public List<Signer> ActiveTrustedSigners
         {
-            get { return this.activeTrustedSigners; }
+            get
+            {
+                if (this.activeTrustedSigners == null)
+                {
+                    this.activeTrustedSigners = new List<Signer>();
+                }
+                return this.activeTrustedSigners;
+            }
             set { this.activeTrustedSigners = value; }
         }
 
@@ -217,10 +224,26 @@ namespace Amazon.CloudFront.Model
         /// <returns>true if ActiveTrustedSigners property is set.</returns>
         internal bool IsSetActiveTrustedSigners()
         {
-            return this.ActiveTrustedSigners != null &&
-                this.ActiveTrustedSigners.Count > 0;
+            return this.ActiveTrustedSigners.Count > 0;
         }
 
         #endregion
+
+        /// <summary>
+        /// Returns the string representation of the distribution.
+        /// </summary>
+        /// <returns>
+        /// A string representing the distribution
+        /// </returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder(1024);
+            XmlSerializer ser = new XmlSerializer(this.GetType());
+            using (System.IO.StringWriter sr = new System.IO.StringWriter(sb))
+            {
+                ser.Serialize(sr, this);
+            }
+            return sb.ToString();
+        }
     }
 }

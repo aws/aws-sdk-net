@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Information about the instance EBS block device.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class InstanceEbsBlockDevice
-    {
+    {    
         private string volumeIdField;
         private string statusField;
         private string attachTimeField;
@@ -132,7 +132,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the DeleteOnTermination property.
-        /// Whether the volume will be deleted on instance termination.
+        /// Whether the volume will be deleted on instance
+        /// termination.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
@@ -144,7 +145,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the DeleteOnTermination property
         /// </summary>
-        /// <param name="deleteOnTermination">Whether the volume will be deleted on instance termination.</param>
+        /// <param name="deleteOnTermination">Whether the volume will be deleted on instance
+        /// termination.</param>
         /// <returns>this instance</returns>
         public InstanceEbsBlockDevice WithDeleteOnTermination(bool deleteOnTermination)
         {

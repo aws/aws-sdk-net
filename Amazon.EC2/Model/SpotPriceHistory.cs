@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///A single Spot Price history data point.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class SpotPriceHistory
-    {
+    {    
         private string instanceTypeField;
         private string productDescriptionField;
         private string spotPriceField;
@@ -101,7 +101,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SpotPrice property.
-        /// Specifies the price paid to launch one or more instances.
+        /// Specifies the price paid to launch one or more
+        /// instances.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotPrice")]
         public string SpotPrice
@@ -113,7 +114,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SpotPrice property
         /// </summary>
-        /// <param name="spotPrice">Specifies the price paid to launch one or more instances.</param>
+        /// <param name="spotPrice">Specifies the price paid to launch one or more
+        /// instances.</param>
         /// <returns>this instance</returns>
         public SpotPriceHistory WithSpotPrice(string spotPrice)
         {
@@ -132,7 +134,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Timestamp property.
-        /// Specifies the creation timestamp of the request.
+        /// Specifies the creation timestamp of the
+        /// request.
         /// </summary>
         [XmlElementAttribute(ElementName = "Timestamp")]
         public string Timestamp
@@ -144,7 +147,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Timestamp property
         /// </summary>
-        /// <param name="timestamp">Specifies the creation timestamp of the request.</param>
+        /// <param name="timestamp">Specifies the creation timestamp of the
+        /// request.</param>
         /// <returns>this instance</returns>
         public SpotPriceHistory WithTimestamp(string timestamp)
         {

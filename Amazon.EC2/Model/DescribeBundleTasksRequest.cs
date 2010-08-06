@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,13 +27,16 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes current bundling tasks. For more information on bundling instances, go to the
-    /// Amazon Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
-    /// Getting Started Guide.
+    /// Describes current bundling tasks. For more
+    /// information on bundling
+    /// instances, go to the
+    /// Amazon Elastic Compute
+    /// Cloud Developer Guide or Amazon Elastic Compute
+    /// Cloud Getting Started Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DescribeBundleTasksRequest
-    {
+    {    
         private List<string> bundleIdField;
 
         /// <summary>

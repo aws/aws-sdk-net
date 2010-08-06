@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///VPN Connection
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class VpnConnection
-    {
+    {    
         private string vpnConnectionIdField;
         private string vpnConnectionStateField;
         private string customerGatewayConfigurationField;
@@ -72,7 +72,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the VpnConnectionState property.
-        /// The current state of the VPN connection (pending, available, deleting, deleted)
+        /// The current state of the VPN connection
+        /// (pending, available, deleting, deleted)
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnConnectionState")]
         public string VpnConnectionState
@@ -84,7 +85,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the VpnConnectionState property
         /// </summary>
-        /// <param name="vpnConnectionState">The current state of the VPN connection (pending, available, deleting, deleted)</param>
+        /// <param name="vpnConnectionState">The current state of the VPN connection
+        /// (pending, available, deleting, deleted)</param>
         /// <returns>this instance</returns>
         public VpnConnection WithVpnConnectionState(string vpnConnectionState)
         {
@@ -103,7 +105,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the CustomerGatewayConfiguration property.
-        /// Configuration information for the VPN connection's customer gateway (in the
+        /// Configuration information for the VPN
+        /// connection's customer gateway (in the
         /// native XML format).
         /// </summary>
         [XmlElementAttribute(ElementName = "CustomerGatewayConfiguration")]
@@ -116,7 +119,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the CustomerGatewayConfiguration property
         /// </summary>
-        /// <param name="customerGatewayConfiguration">Configuration information for the VPN connection's customer gateway (in the
+        /// <param name="customerGatewayConfiguration">Configuration information for the VPN
+        /// connection's customer gateway (in the
         /// native XML format).</param>
         /// <returns>this instance</returns>
         public VpnConnection WithCustomerGatewayConfiguration(string customerGatewayConfiguration)
@@ -167,7 +171,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the CustomerGatewayId property.
-        /// ID of the customer gateway at your end of the VPN connection
+        /// ID of the customer gateway at your end of the
+        /// VPN connection
         /// </summary>
         [XmlElementAttribute(ElementName = "CustomerGatewayId")]
         public string CustomerGatewayId
@@ -179,7 +184,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the CustomerGatewayId property
         /// </summary>
-        /// <param name="customerGatewayId">ID of the customer gateway at your end of the VPN connection</param>
+        /// <param name="customerGatewayId">ID of the customer gateway at your end of the
+        /// VPN connection</param>
         /// <returns>this instance</returns>
         public VpnConnection WithCustomerGatewayId(string customerGatewayId)
         {
@@ -198,7 +204,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the VpnGatewayId property.
-        /// ID of the VPN gateway at the VPC end of the VPN connection
+        /// ID of the VPN gateway at the VPC end of the VPN
+        /// connection
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnGatewayId")]
         public string VpnGatewayId
@@ -210,7 +217,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the VpnGatewayId property
         /// </summary>
-        /// <param name="vpnGatewayId">ID of the VPN gateway at the VPC end of the VPN connection</param>
+        /// <param name="vpnGatewayId">ID of the VPN gateway at the VPC end of the VPN
+        /// connection</param>
         /// <returns>this instance</returns>
         public VpnConnection WithVpnGatewayId(string vpnGatewayId)
         {

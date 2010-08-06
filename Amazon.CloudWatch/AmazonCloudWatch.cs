@@ -30,7 +30,7 @@ namespace Amazon.CloudWatch
     /// Amazon CloudWatch is a web service that provides monitoring for AWS cloud resources, starting
     /// with Amazon EC2. It provides you with visibility into resource utilization, operational performance,
     /// and overall demand patterns—including metrics such as CPU utilization, disk reads and writes, and
-    /// network traffic. To use Amazon CloudWatch, simply select the Amazon EC2 instances that you’d like
+    /// network traffic. To use Amazon CloudWatch, simply select the Amazon EC2 instances that you'd like
     /// to monitor; within minutes, Amazon CloudWatch will begin aggregating and storing monitoring data
     /// that can be accessed using web service APIs or Command Line Tools.
     /// </summary>

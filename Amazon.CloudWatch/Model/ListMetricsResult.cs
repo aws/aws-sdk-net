@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -34,6 +35,7 @@ namespace Amazon.CloudWatch.Model
     {
         private List<Metric> metricsField;
         private string nextTokenField;
+
         /// <summary>
         /// Gets and sets the Metrics property.
         /// A complete list of all of the metrics being used to generate statistics for this customer.
@@ -50,20 +52,6 @@ namespace Amazon.CloudWatch.Model
                 return this.metricsField;
             }
             set { this.metricsField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Metrics property
-        /// </summary>
-        /// <param name="list">A complete list of all of the metrics being used to generate statistics for this customer.</param>
-        /// <returns>this instance</returns>
-        public ListMetricsResult WithMetrics(params Metric[] list)
-        {
-            foreach (Metric item in list)
-            {
-                Metrics.Add(item);
-            }
-            return this;
         }
 
         /// <summary>
@@ -87,17 +75,6 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Sets the NextToken property
-        /// </summary>
-        /// <param name="nextToken">A string that can be used to query for the next set of results.</param>
-        /// <returns>this instance</returns>
-        public ListMetricsResult WithNextToken(string nextToken)
-        {
-            this.nextTokenField = nextToken;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if NextToken property is set
         /// </summary>
         /// <returns>true if NextToken property is set</returns>
@@ -106,5 +83,28 @@ namespace Amazon.CloudWatch.Model
             return this.nextTokenField != null;
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// can be modified using optional parameters. If these options are omitted, the new DB Instance defaults to the characteristics
     /// of the DB Instance from which the DB Snapshot was created.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class RestoreDBInstanceToPointInTimeRequest
     {
         private string sourceDBInstanceIdentifierField;
@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         private string DBInstanceClassField;
         private Decimal? portField;
         private string availabilityZoneField;
+        private bool? multiAZField;
 
         /// <summary>
         /// Gets and sets the SourceDBInstanceIdentifier property.
@@ -285,6 +286,37 @@ namespace Amazon.RDS.Model
         public bool IsSetAvailabilityZone()
         {
             return this.availabilityZoneField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the MultiAZ property.
+        /// Specifies if the DB Instance is a Multi-AZ DB Instance.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "MultiAZ")]
+        public bool MultiAZ
+        {
+            get { return this.multiAZField.GetValueOrDefault(); }
+            set { this.multiAZField = value; }
+        }
+
+        /// <summary>
+        /// Sets the MultiAZ property
+        /// </summary>
+        /// <param name="multiAZ">Specifies if the DB Instance is a Multi-AZ DB Instance.</param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceToPointInTimeRequest WithMultiAZ(bool multiAZ)
+        {
+            this.multiAZField = multiAZ;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if MultiAZ property is set
+        /// </summary>
+        /// <returns>true if MultiAZ property is set</returns>
+        public bool IsSetMultiAZ()
+        {
+            return this.multiAZField.HasValue;
         }
 
     }

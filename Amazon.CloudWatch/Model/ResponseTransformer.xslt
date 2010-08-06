@@ -3,10 +3,10 @@
     <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"/>
     <xsl:variable name="ns" select="'http://monitoring.amazonaws.com/doc/2009-05-15/'"/>
 
-    <xsl:template   match="*[local-name(child::*)='member']">
+    <xsl:template match="*[local-name(child::*)='member']">
         <xsl:apply-templates select="child::node()"/>
     </xsl:template>
-    <xsl:template  match="*[local-name()='member']">
+    <xsl:template match="*[local-name()='member']">
         <xsl:variable name="nodeName">
             <xsl:value-of select="name(parent::node())"/>
         </xsl:variable>

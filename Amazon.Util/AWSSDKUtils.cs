@@ -50,7 +50,7 @@ namespace Amazon.Util
         /// <summary>
         /// The AWS SDK User Agent
         /// </summary>
-        public const string SDKUserAgent = "AWS SDK for .NET/1.0.9";
+        public const string SDKUserAgent = "AWS SDK for .NET/1.0.11";
 
         /// <summary>
         /// The Set of accepted and valid Url characters. 
@@ -218,7 +218,7 @@ namespace Amazon.Util
         {
             if (null == key)
             {
-                throw new ArgumentNullException("key", "Please specify a Secret Signing Key.");
+                throw new ArgumentNullException("key", "The AWS Secret Access Key specified is NULL!");
             }
 
             if (String.IsNullOrEmpty(data))

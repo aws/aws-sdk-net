@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        xmlns:cf="http://cloudfront.amazonaws.com/doc/2010-03-01/" exclude-result-prefixes="xsl cf">
+        xmlns:cf="http://cloudfront.amazonaws.com/doc/2010-06-01/" exclude-result-prefixes="xsl cf">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-  <xsl:variable name="ns" select="'http://cloudfront.amazonaws.com/doc/2010-03-01/'"/>
+  <xsl:variable name="ns" select="'http://cloudfront.amazonaws.com/doc/2010-06-01/'"/>
 
   <xsl:template match="cf:Distribution">
     <xsl:element name="CreateDistributionResponse" namespace="{$ns}">
@@ -22,6 +22,10 @@
     <xsl:element name="Second" namespace="{$ns}">
       <xsl:value-of select="."/>
     </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="cf:RequiredProtocols">
+    <xsl:apply-templates/>
   </xsl:template>
 
   <xsl:template match="*">

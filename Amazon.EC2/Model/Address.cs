@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,17 +27,19 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     ///<summary>
-    ///A static public IP address designed for dynamic cloud computing.
-    ///Any elastic IP addresses that you associate with your account remains associated
-    ///with your account until you explicitly release them. Unlike traditional static IP
-    ///addresses, however, elastic IP addresses allow you to mask instance or Availability
-    ///Zone failures by rapidly remapping your public IP addresses to any instance in your
-    ///account. The Address type contains an Elastic IP associated with your account
-    ///and the InstanceId of the instance it is associated with.
+    ///A static public IP address designed for dynamic
+    ///						cloud computing. Any elastic IP addresses that you associate with
+    ///						your account remains associated with your account until you
+    ///						explicitly release them. Unlike traditional static IP
+    ///						addresses, however, elastic IP addresses allow you to mask instance or
+    ///						Availability Zone failures by rapidly remapping your public IP
+    ///						addresses to any instance in your account. The Address type contains
+    ///						an Elastic IP associated with your account
+    ///						and the InstanceId of the instance it is associated with.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class Address
-    {
+    {    
         private string instanceIdField;
         private string publicIpField;
 

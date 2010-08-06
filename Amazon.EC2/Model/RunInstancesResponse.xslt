@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2009-11-30/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2010-06-15/" exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2009-11-30/'"/>
+    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2010-06-15/'"/>
     <xsl:template match="ec2:RunInstancesResponse">
         <xsl:element name="RunInstancesResponse" namespace="{$ns}">
             <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -69,6 +69,9 @@
                     <xsl:element name="AvailabilityZone" namespace="{$ns}">
                         <xsl:value-of select="ec2:placement/ec2:availabilityZone"/>
                     </xsl:element>
+                    <xsl:element name="GroupName" namespace="{$ns}">
+                      <xsl:value-of select="ec2:placement/ec2:groupName"/>
+                    </xsl:element>
                 </xsl:element>
                 <xsl:element name="KernelId" namespace="{$ns}">
                     <xsl:value-of select="ec2:kernelId"/>
@@ -113,9 +116,20 @@
                 <xsl:element name="SpotInstanceRequestId" namespace="{$ns}">
                     <xsl:value-of select="ec2:spotInstanceRequestId"/>
                 </xsl:element>
+                <xsl:element name="VirtualizationType" namespace="{$ns}">
+                    <xsl:value-of select="ec2:virtualizationType"/>
+                </xsl:element>
+                <xsl:apply-templates select="ec2:license"/>
             </xsl:element>
         </xsl:for-each>
     </xsl:template>
+    <xsl:template match="ec2:license">
+        <xsl:element name="License" namespace="{$ns}">
+	         <xsl:element name="Pool" namespace="{$ns}">
+	             <xsl:value-of select="ec2:pool"/>
+	         </xsl:element>
+        </xsl:element>
+    </xsl:template>    
     <xsl:template match="ec2:productCodes">
         <xsl:for-each select="ec2:item">
             <xsl:element name="ProductCode" namespace="{$ns}">

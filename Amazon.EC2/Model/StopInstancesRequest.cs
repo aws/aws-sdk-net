@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -28,20 +28,27 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Stops an instance that uses an Amazon EBS volume as its root device.
-    /// Instances that use Amazon EBS volumes as their root devices can be quickly stopped and started.
-    /// When an instance is stopped, the compute resources are released and you are not billed for hourly
-    /// instance usage. However, your root partition Amazon EBS volume remains, continues to persist your
-    /// data, and you are charged for Amazon EBS volume usage. You can restart your instance at any time.
+    /// Instances that use Amazon EBS volumes as their root devices can be
+    /// quickly stopped and started. When an instance is
+    /// stopped, the compute resources are released and
+    /// you are not billed for hourly instance usage. However, 
+    /// your root partition Amazon EBS volume remains,
+    /// continues to persist your data, and you are charged
+    /// for Amazon EBS volume usage. You can restart
+    /// your instance at any time.
     ///
-    /// Before stopping an instance, make sure it is in a state from which it can be restarted. Stopping
-    /// an instance does not preserve data stored in RAM.
+    /// Before stopping an instance, make sure it is in a state from
+    /// which it can be restarted. Stopping an instance does not preserve
+    /// data stored in RAM.
     ///
-    /// Performing this operation on an instance that uses an instance store as its root device returns
+    /// Performing this operation on an instance that
+    /// uses an instance store as its
+    /// root device returns
     /// an error.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class StopInstancesRequest
-    {
+    {    
         private List<string> instanceIdField;
         private bool? forceField;
 
@@ -88,9 +95,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Force property.
-        /// Forces the instance to stop. The instance will not have
-        /// an opportunity to flush file system caches nor file system
-        /// meta data. If you use this option, you must perform file
+        /// Forces the instance to stop. The instance will
+        /// not have an opportunity to flush file system caches nor file
+        /// system meta data. If you use this option, you must perform file
         /// system check and repair procedures. This option is not
         /// recommended for Windows instances.
         /// </summary>
@@ -104,9 +111,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Force property
         /// </summary>
-        /// <param name="force">Forces the instance to stop. The instance will not have
-        /// an opportunity to flush file system caches nor file system
-        /// meta data. If you use this option, you must perform file
+        /// <param name="force">Forces the instance to stop. The instance will
+        /// not have an opportunity to flush file system caches nor file
+        /// system meta data. If you use this option, you must perform file
         /// system check and repair procedures. This option is not
         /// recommended for Windows instances.</param>
         /// <returns>this instance</returns>

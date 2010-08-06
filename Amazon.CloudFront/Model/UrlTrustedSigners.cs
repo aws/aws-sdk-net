@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
@@ -91,7 +91,7 @@ namespace Amazon.CloudFront.Model
 
         #region AwsAccountNumbers
         /// <summary>
-        /// Gets the AwsAccountNumbers property.
+        /// Gets and sets the AwsAccountNumbers property.
         /// A list of the AwsAccountNumbers for each AWS account (other than your own) 
         /// that you want to give URL signing authority to (limit of five).
         /// </summary>
@@ -106,6 +106,7 @@ namespace Amazon.CloudFront.Model
                 }
                 return this.awsAccounts;
             }
+            set { this.awsAccounts = value; }
         }
 
         /// <summary>
@@ -130,8 +131,7 @@ namespace Amazon.CloudFront.Model
         /// <returns>true if AwsAccountNumbers property is set</returns>
         internal bool IsSetAwsAccounts()
         {
-            return (AwsAccountNumbers != null &&
-                AwsAccountNumbers.Count > 0);
+            return AwsAccountNumbers.Count > 0;
         }
 
         #endregion

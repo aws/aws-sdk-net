@@ -496,6 +496,204 @@ namespace Amazon.S3
         }
 
         /// <summary>
+        /// <para>
+        /// Retrieves the policy for the specified bucket. Only the owner of the
+        /// bucket can retrieve the policy. If no policy has been set for the bucket,
+        /// then an error will be thrown.
+        /// </para>
+        /// <para>
+        /// Bucket policies provide access control management at the bucket level for
+        /// both the bucket resource and contained object resources. Only one policy
+        /// can be specified per-bucket.
+        /// </para>
+        /// <para>
+        /// For more information on forming bucket polices, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The GetBucketPolicyRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a GetBucketPolicyResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
+        {
+            try
+            {
+                if (request == null)
+                {
+                    throw new ArgumentNullException(S3Constants.RequestParam, "The GetBucketPolicyRequest specified is null!");
+                }
+
+                if (!request.IsSetBucketName())
+                {
+                    throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
+                }
+
+                ConvertGetBucketPolicy(request);
+                return this.Invoke<GetBucketPolicyResponse>(request);
+            }
+            catch (AmazonS3Exception e)
+            {
+                if (e.ErrorCode == S3Constants.NoSuchBucketPolicy)
+                {
+                    return new GetBucketPolicyResponse();
+                }
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// <para>
+        /// Sets the policy associated with the specified bucket. Only the owner of
+        /// the bucket can set a bucket policy. If a policy already exists for the
+        /// specified bucket, the new policy will replace the existing policy.
+        /// </para>
+        /// <para>
+        /// Bucket policies provide access control management at the bucket level for
+        /// both the bucket resource and contained object resources. Only one policy
+        /// may be specified per-bucket.
+        /// </para>
+        /// <para>
+        /// For more information on forming bucket polices, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The PutBucketPolicyRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a PutBucketPolicyResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The PutBucketPolicyRequest specified is null!");
+            }
+
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
+            }
+
+            if (!request.IsSetAspenPolicy())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The Aspen policy specified is null or empty!");
+            }
+
+            ConvertPutBucketPolicy(request);
+            return this.Invoke<PutBucketPolicyResponse>(request);
+        }
+
+        /// <summary>
+        /// <para>
+        /// Deletes the policy associated with the specified bucket. Only the owner
+        /// of the bucket can delete the bucket policy.
+        /// </para>
+        /// <para>
+        /// If you delete a policy that does not exist, Amazon S3 will return a
+        /// success (not an error message).
+        /// </para>
+        /// <para>
+        /// Bucket policies provide access control management at the bucket level for
+        /// both the bucket resource and contained object resources. Only one policy
+        /// may be specified per-bucket.
+        /// </para>
+        /// <para>
+        /// For more information on forming bucket polices, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The DeleteBucketPolicyRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a DeleteBucketPolicyResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
+        {            
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The DeleteBucketPolicyRequest specified is null!");
+            }
+
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
+            }
+
+            ConvertDeleteBucketPolicy(request);
+            return this.Invoke<DeleteBucketPolicyResponse>(request);
+        }
+
+        /// <summary>
+        /// <para>
+        /// The notification configuration of a bucket provides near realtime notifications
+        /// of events the user is interested in, using SNS as the delivery service.
+        /// Notification is turned on by enabling configuration on a bucket, specifying
+        /// the events and the SNS topic. This configuration can only be turned
+        /// on by the bucket owner. If a notification configuration already exists for the
+        /// specified bucket, the new notification configuration will replace the existing
+        /// notification configuration.  To remove the notification configuration pass in
+        /// an empty request.  Currently, buckets may only have a single event and topic
+        /// configuration.
+        /// </para>
+        /// <para>
+        /// S3 is eventually consistent. It may take time for the notification status
+        /// of a bucket to be propagated throughout the system.
+        /// </para>
+        /// </summary>
+        /// <param name="request">The SetNotificationConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a SetNotificationConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public SetNotificationConfigurationResponse SetNotificationConfiguration(SetNotificationConfigurationRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The SetNotificationConfigurationRequest specified is null!");
+            }
+
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
+            }
+
+
+            ConvertSetNotificationConfiguration(request);
+            return this.Invoke<SetNotificationConfigurationResponse>(request);
+        }
+
+        /// <summary>
+        /// <para>
+        /// Retrieves the notification configuration for the specified bucket. Only the owner of the
+        /// bucket can retrieve the notification configuration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">The GetNotificationConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a GetNotificationConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public GetNotificationConfigurationResponse GetNotificationConfiguration(GetNotificationConfigurationRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The GetNotificationConfigurationRequest specified is null!");
+            }
+
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
+            }
+
+
+            ConvertGetNotificationConfiguration(request);
+            return this.Invoke<GetNotificationConfigurationResponse>(request);
+        }
+
+        /// <summary>
         /// The ListObjects operation lists the objects/keys in a bucket ordered
         /// lexicographically (from a-Z). The list can be filtered via the Marker
         /// property of the ListObjectsRequest.
@@ -649,6 +847,11 @@ namespace Amazon.S3
                 !request.IsSetCannedACL())
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "No ACL or CannedACL specified!");
+            }
+
+            if (request.IsSetACL() && request.ACL.Owner == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "No owner for the ACL specified!");
             }
 
             ConvertSetACL(request);
@@ -1307,6 +1510,88 @@ namespace Amazon.S3
         }
 
         /**
+         * Convert GetBucketPolicyRequest to key/value pairs.
+         */
+        private void ConvertGetBucketPolicy(GetBucketPolicyRequest request)
+        {
+            Map parameters = request.parameters;
+            parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
+            parameters[S3QueryParameter.Action] = "GetBucketPolicy";
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?policy";
+
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert PutBucketPolicyRequest to key/value pairs.
+         */
+        private void ConvertPutBucketPolicy(PutBucketPolicyRequest request)
+        {
+            Map parameters = request.parameters;
+            parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
+            parameters[S3QueryParameter.Action] = "PutBucketPolicy";
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?policy";
+
+            parameters[S3QueryParameter.ContentBody] = request.AspenPolicy;
+            parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
+
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert DeleteBucketPolicyRequest to key/value pairs.
+         */
+        private void ConvertDeleteBucketPolicy(DeleteBucketPolicyRequest request)
+        {
+            Map parameters = request.parameters;
+            parameters[S3QueryParameter.Verb] = S3Constants.DeleteVerb;
+            parameters[S3QueryParameter.Action] = "DeleteBucketPolicy";
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?policy";
+
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert SetNotificationConfigurationRequest to key/value pairs.
+         */
+        private void ConvertSetNotificationConfiguration(SetNotificationConfigurationRequest request)
+        {
+            Map parameters = request.parameters;
+            parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
+            parameters[S3QueryParameter.Action] = "SetNotificationConfiguration";
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?notification";
+
+            parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
+
+            // If this is null then assume the configuration is intented to be removed which is
+            // done by sending an xml document without any topic configurations.
+            if (request.NotificationConfiguration == null)
+            {
+                parameters[S3QueryParameter.ContentBody] = new NotificationConfigurationList().ToXML();
+            }
+            else
+            {
+                parameters[S3QueryParameter.ContentBody] = request.NotificationConfiguration.ToXML();
+            }
+
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert GetNotificationConfigurationRequest to key/value pairs.
+         */
+        private void ConvertGetNotificationConfiguration(GetNotificationConfigurationRequest request)
+        {
+            Map parameters = request.parameters;
+            parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
+            parameters[S3QueryParameter.Action] = "GetNotificationConfiguration";
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?notification";
+
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+
+        /**
          * Convert GetObjectRequest to key/value pairs.
          */
         private void ConvertGetObject(GetObjectRequest request)
@@ -1350,6 +1635,9 @@ namespace Amazon.S3
                 parameters[S3QueryParameter.Query] = queryStr;
                 parameters[S3QueryParameter.QueryToSign] = queryStr;
             }
+
+            // Add the Timeout parameter
+            parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
 
             AddS3QueryParameters(request, request.BucketName);
         }
@@ -2247,6 +2535,7 @@ namespace Amazon.S3
                             // All responses have headers so at a future point,
                             // we "do" attach the headers to the response.
                             response = new T();
+                            response.ProcessResponseBody(responseBody);
                         }
                     }
 
@@ -2491,15 +2780,19 @@ namespace Amazon.S3
                 // Let's enable Expect100Continue only for PutObject requests
                 httpRequest.ServicePoint.Expect100Continue = value.Equals("PutObject");
 
-                // While checking the Action, for Put and Copy Object, set
+                // While checking the Action, for Get, Put and Copy Object, set
                 // the timeout to the value specified in the request.
-                if (value.Equals("PutObject") ||
+                if (value.Equals("GetObject") ||
+                    value.Equals("PutObject") ||
                     value.Equals("CopyObject"))
                 {
-                    int timeout = S3Constants.PutObjectDefaultTimeout;
+                    int timeout = 0;
                     Int32.TryParse(parameters[S3QueryParameter.RequestTimeout], out timeout);
-                    httpRequest.ReadWriteTimeout = timeout;
-                    httpRequest.Timeout = timeout;
+                    if (timeout > 0)
+                    {
+                        httpRequest.ReadWriteTimeout = timeout;
+                        httpRequest.Timeout = timeout;
+                    }
                 }
 
                 httpRequest.Headers.Add(headers);

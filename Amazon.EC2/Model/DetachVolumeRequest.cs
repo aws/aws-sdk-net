@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,18 +27,26 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Detaches an Amazon EBS volume from an instance. For more information about Amazon EBS, go
-    /// to the Amazon Elastic Compute Cloud Developer Guide.
+    /// Detaches an Amazon EBS volume from an instance.
+    /// For more information about
+    /// Amazon EBS, go
+    /// to the Amazon Elastic
+    /// Compute Cloud Developer Guide.
     ///
-    /// Important - make sure to unmount any file systems on the device within your operating system
-    /// before detaching the volume.
+    /// Important - make sure to unmount any
+    /// file systems on the device within your
+    /// operating system before
+    /// detaching the volume.
     ///
-    /// Failure to unmount file systems, or otherwise properly release the device from use, can result in
-    /// lost data and will corrupt the file system.
+    /// Failure to unmount file systems, or otherwise
+    /// properly release the device
+    /// from use, can result in
+    /// lost data and
+    /// will corrupt the file system.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DetachVolumeRequest
-    {
+    {    
         private string volumeIdField;
         private string instanceIdField;
         private string deviceField;
@@ -139,14 +147,17 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Force property.
-        /// Forces detachment if the previous detachment attempt did not occur cleanly (logging into an
-        /// instance, unmounting the volume, and detaching normally). This option can lead to data loss
-        /// or a corrupted file system.
+        /// Forces detachment if the previous detachment
+        /// attempt did not occur
+        /// cleanly (logging into an instance,
+        /// unmounting the volume, and detaching normally). This option
+        /// can lead to data loss or a corrupted file system.
         ///
-        /// Use this option only as a last resort to detach a volume from a failed instance.
-        /// The instance will not have an opportunity to flush file system caches nor file
-        /// system meta data. If you use this option, you must perform file system check and
-        /// repair procedures.
+        /// Use this option only as a last resort to detach a volume from a
+        /// failed instance. The instance will not have an opportunity 
+        /// to flush file system caches nor file
+        /// system meta data. If you use this option, you
+        /// must perform file system check and repair procedures.
         /// </summary>
         [XmlElementAttribute(ElementName = "Force")]
         public bool Force
@@ -158,14 +169,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Force property
         /// </summary>
-        /// <param name="force">Forces detachment if the previous detachment attempt did not occur cleanly (logging into an
-        /// instance, unmounting the volume, and detaching normally). This option can lead to data loss
-        /// or a corrupted file system.
+        /// <param name="force">Forces detachment if the previous detachment
+        /// attempt did not occur
+        /// cleanly (logging into an instance,
+        /// unmounting the volume, and detaching normally). This option
+        /// can lead to data loss or a corrupted file system.
         ///
-        /// Use this option only as a last resort to detach a volume from a failed instance.
-        /// The instance will not have an opportunity to flush file system caches nor file
-        /// system meta data. If you use this option, you must perform file system check and
-        /// repair procedures.</param>
+        /// Use this option only as a last resort to detach a volume from a
+        /// failed instance. The instance will not have an opportunity 
+        /// to flush file system caches nor file
+        /// system meta data. If you use this option, you
+        /// must perform file system check and repair procedures.</param>
         /// <returns>this instance</returns>
         public DetachVolumeRequest WithForce(bool force)
         {

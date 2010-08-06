@@ -48,17 +48,6 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Sets the ListMetricsResult property
-        /// </summary>
-        /// <param name="listMetricsResult">A complete list of all of the metrics being used to generate statistics for this customer.</param>
-        /// <returns>this instance</returns>
-        public ListMetricsResponse WithListMetricsResult(ListMetricsResult listMetricsResult)
-        {
-            this.listMetricsResultField = listMetricsResult;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if ListMetricsResult property is set
         /// </summary>
         /// <returns>true if ListMetricsResult property is set</returns>
@@ -79,17 +68,6 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Sets the ResponseMetadata property
-        /// </summary>
-        /// <param name="responseMetadata">Information about the request.</param>
-        /// <returns>this instance</returns>
-        public ListMetricsResponse WithResponseMetadata(ResponseMetadata responseMetadata)
-        {
-            this.responseMetadataField = responseMetadata;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if ResponseMetadata property is set
         /// </summary>
         /// <returns>true if ResponseMetadata property is set</returns>
@@ -99,7 +77,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// XML Representation for this object
+        /// XML Representation of this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -111,6 +89,15 @@ namespace Amazon.CloudWatch.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
         }
     }
 }

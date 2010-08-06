@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancing
     /// traffic. Elastic Load Balancing detects unhealthy instances within a pool and automatically reroutes
     /// traffic to healthy instances until the unhealthy instances have been restored. You can enable Elastic
     /// Load Balancing within a single Availability Zone or across multiple zones for even more consistent
-    /// application performance. Amazon CloudWatch can be used to capture a specific Elastic Load Balancer’s
+    /// application performance. Amazon CloudWatch can be used to capture a specific Elastic Load Balancer's
     /// operational metrics, such as request count and request latency, at no additional cost beyond Elastic
     /// Load Balancing fees.
     /// </summary>

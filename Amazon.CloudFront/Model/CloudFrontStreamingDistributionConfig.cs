@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
@@ -41,6 +41,7 @@ namespace Amazon.CloudFront.Model
     /// <item>Comment</item>
     /// <item>A list of CNAMEs for the distribution</item>
     /// <item>Enabled flag</item>
+    /// <item>Bucket Logging details</item>
     /// <item>CloudFront Origin Access Identity associated with the distribution.
     /// This is a virtual identity you use to let CloudFront fetch private content 
     /// from your bucket.</item>
@@ -67,48 +68,8 @@ namespace Amazon.CloudFront.Model
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?><StreamingDistributionConfig ");
-            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-03-01/\">");
-
-            if (IsSetOrigin())
-            {
-                sb.Append("<Origin>");
-                sb.Append((Origin.EndsWith(".s3.amazonaws.com")) ? Origin : String.Concat(Origin, ".s3.amazonaws.com"));
-                sb.Append("</Origin>");
-            }
-
-            if (IsSetCallerReference())
-            {
-                sb.Append(String.Concat("<CallerReference>", CallerReference, "</CallerReference>"));
-            }
-
-            if (IsSetCNames())
-            {
-                foreach (string cname in CNAME)
-                {
-                    if (!String.IsNullOrEmpty(cname))
-                    {
-                        sb.Append(String.Concat("<CNAME>", cname, "</CNAME>"));
-                    }
-                }
-            }
-
-            sb.Append(String.Concat("<Enabled>", (this.Enabled) ? "true" : "false", "</Enabled>"));
-
-            if (IsSetComment())
-            {
-                sb.Append(String.Concat("<Comment>", Comment, "</Comment>"));
-            }
-
-            if (IsSetOriginAccessIdentity())
-            {
-                sb.Append(String.Concat("<OriginAccessIdentity>", OriginAccessIdentity, "</OriginAccessIdentity>"));
-            }
-
-            if (IsSetTrustedSigners())
-            {
-                sb.Append(String.Concat("<TrustedSigners>", TrustedSigners, "</TrustedSigners>"));
-            }
-
+            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-06-01/\">");
+            sb.Append(base.ToString());
             sb.Append("</StreamingDistributionConfig>");
             return sb.ToString();
         }
@@ -193,6 +154,30 @@ namespace Amazon.CloudFront.Model
         public CloudFrontStreamingDistributionConfig WithTrustedSigners(UrlTrustedSigners signers)
         {
             this.TrustedSigners = signers;
+            return this;
+        }
+
+        #endregion
+
+        #region Logging
+
+        /// <summary>
+        /// Sets the Logging property.
+        /// </summary>
+        /// <param name="bucket">The bucket into which logs will be put</param>
+        /// <param name="prefix">The prefix for the log files</param>
+        /// <returns>this instance</returns>
+        public CloudFrontStreamingDistributionConfig WithLogging(string bucket, string prefix)
+        {
+            if (String.IsNullOrEmpty(bucket))
+            {
+                throw new ArgumentNullException(
+                    "bucket",
+                    "The bucket specified as part of the Logging Config is null or the empty string"
+                    );
+            }
+
+            Logging = new Tuple<string, string>(bucket, prefix);
             return this;
         }
 

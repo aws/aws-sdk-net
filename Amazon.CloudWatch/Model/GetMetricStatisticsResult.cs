@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -34,6 +35,7 @@ namespace Amazon.CloudWatch.Model
     {
         private List<Datapoint> datapointsField;
         private string labelField;
+
         /// <summary>
         /// Gets and sets the Datapoints property.
         /// A collection of Datapoint elements.
@@ -50,20 +52,6 @@ namespace Amazon.CloudWatch.Model
                 return this.datapointsField;
             }
             set { this.datapointsField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Datapoints property
-        /// </summary>
-        /// <param name="list">A collection of Datapoint elements.</param>
-        /// <returns>this instance</returns>
-        public GetMetricStatisticsResult WithDatapoints(params Datapoint[] list)
-        {
-            foreach (Datapoint item in list)
-            {
-                Datapoints.Add(item);
-            }
-            return this;
         }
 
         /// <summary>
@@ -87,17 +75,6 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Sets the Label property
-        /// </summary>
-        /// <param name="label">The statistic label.</param>
-        /// <returns>this instance</returns>
-        public GetMetricStatisticsResult WithLabel(string label)
-        {
-            this.labelField = label;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if Label property is set
         /// </summary>
         /// <returns>true if Label property is set</returns>
@@ -106,5 +83,28 @@ namespace Amazon.CloudWatch.Model
             return this.labelField != null;
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

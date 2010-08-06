@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:cf="http://cloudfront.amazonaws.com/doc/2010-03-01/" exclude-result-prefixes="xsl cf">
-  <xsl:variable name="ns" select="'http://cloudfront.amazonaws.com/doc/2010-03-01/'"/>
+  xmlns:cf="http://cloudfront.amazonaws.com/doc/2010-06-01/" exclude-result-prefixes="xsl cf">
+  <xsl:variable name="ns" select="'http://cloudfront.amazonaws.com/doc/2010-06-01/'"/>
   <xsl:output method="xml" indent="yes"/>
 
   <xsl:template match="cf:StreamingDistribution">
@@ -9,6 +9,18 @@
       <xsl:element name="StreamingDistribution" namespace="{$ns}">
         <xsl:apply-templates/>
       </xsl:element>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="cf:Bucket[local-name(..)='Logging']">
+    <xsl:element name="First" namespace="{$ns}">
+      <xsl:value-of select="."/>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="cf:Prefix[local-name(..)='Logging']">
+    <xsl:element name="Second" namespace="{$ns}">
+      <xsl:value-of select="."/>
     </xsl:element>
   </xsl:template>
 

@@ -149,6 +149,7 @@ namespace Amazon.CloudWatch.Model
         {
             return this.measureNameField != null;
         }
+
         /// <summary>
         /// Gets and sets the Dimensions property.
         /// Amazon CloudWatch allows you to specify one Dimension to further filter metric data on. If you don't specify a dimension,

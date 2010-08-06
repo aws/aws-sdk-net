@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -30,9 +30,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Register Image Response
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class RegisterImageResponse
-    {
+    {    
         private ResponseMetadata responseMetadataField;
         private RegisterImageResult registerImageResultField;
 
@@ -45,17 +45,6 @@ namespace Amazon.EC2.Model
         {
             get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
-        }
-
-        /// <summary>
-        /// Sets the ResponseMetadata property
-        /// </summary>
-        /// <param name="responseMetadata">Response Metadata</param>
-        /// <returns>this instance</returns>
-        public RegisterImageResponse WithResponseMetadata(ResponseMetadata responseMetadata)
-        {
-            this.responseMetadataField = responseMetadata;
-            return this;
         }
 
         /// <summary>
@@ -79,17 +68,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the RegisterImageResult property
-        /// </summary>
-        /// <param name="registerImageResult">Register Image Result</param>
-        /// <returns>this instance</returns>
-        public RegisterImageResponse WithRegisterImageResult(RegisterImageResult registerImageResult)
-        {
-            this.registerImageResultField = registerImageResult;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if RegisterImageResult property is set
         /// </summary>
         /// <returns>true if RegisterImageResult property is set</returns>
@@ -99,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// XML Representation for this object
+        /// XML Representation of this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -111,6 +89,15 @@ namespace Amazon.EC2.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
         }
     }
 }

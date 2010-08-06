@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-03-01
+ *  API Version: 2010-06-01
  *
  */
 
@@ -32,5 +32,17 @@ namespace Amazon.CloudFront.Model
         Id,
         Query,
         Verb
+    }
+
+    /// <summary>
+    /// The protocols allowed as a RequiredProtocol
+    /// by a CloudFront Distribution's configuration.
+    /// </summary>
+    public enum Protocol
+    {
+        /// <summary>
+        /// The HTTPS protocol
+        /// </summary>
+        https
     }
 }

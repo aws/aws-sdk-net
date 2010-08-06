@@ -16,11 +16,12 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-10-16
+ *  API Version: 2010-01-01
  */
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -29,7 +30,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// A list of DB Snapshot data types.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/admin/2009-10-16/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
     public class DescribeDBSnapshotsResult
     {
         private string markerField;
@@ -47,17 +48,6 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Sets the Marker property
-        /// </summary>
-        /// <param name="marker">Identifier returned to allow retrieval of paginated results.</param>
-        /// <returns>this instance</returns>
-        public DescribeDBSnapshotsResult WithMarker(string marker)
-        {
-            this.markerField = marker;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if Marker property is set
         /// </summary>
         /// <returns>true if Marker property is set</returns>
@@ -65,6 +55,7 @@ namespace Amazon.RDS.Model
         {
             return this.markerField != null;
         }
+
         /// <summary>
         /// Gets and sets the DBSnapshot property.
         /// </summary>
@@ -83,20 +74,6 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Sets the DBSnapshot property
-        /// </summary>
-        /// <param name="list">DBSnapshot property</param>
-        /// <returns>this instance</returns>
-        public DescribeDBSnapshotsResult WithDBSnapshot(params DBSnapshot[] list)
-        {
-            foreach (DBSnapshot item in list)
-            {
-                DBSnapshot.Add(item);
-            }
-            return this;
-        }
-
-        /// <summary>
         /// Checks if DBSnapshot property is set
         /// </summary>
         /// <returns>true if DBSnapshot property is set</returns>
@@ -105,5 +82,28 @@ namespace Amazon.RDS.Model
             return (DBSnapshot.Count > 0);
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }
