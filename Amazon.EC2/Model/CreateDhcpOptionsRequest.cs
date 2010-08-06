@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,13 +27,10 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a set of DHCP options that you can then
-    /// associate with one or more VPCs, causing all 
-    /// existing and new instances that you launch in those
-    /// VPCs to use the set of DHCP options. The following
-    /// table lists the individual DHCP options you
-    /// can specify. For more information about the options, go to
-    /// RFC
+    /// Creates a set of DHCP options that you can then associate with one or more
+    /// VPCs, causing all existing and new instances that you launch in those VPCs to
+    /// use the set of DHCP options. The following table lists the individual DHCP
+    /// options you can specify. For more information about the options, go to RFC
     /// 2132.
     ///
     /// Options:
@@ -45,24 +42,23 @@ namespace Amazon.EC2.Model
     /// You can specify up to four addresses.
     ///
     /// 3. ntp-servers
-    /// The IP address of a Network Time Protocol (NTP)
-    /// server (e.g., 10.4.6.1). You can specify up to four addresses.
+    /// The IP address of a Network Time Protocol (NTP) server (e.g., 10.4.6.1).
+    /// You can specify up to four addresses.
     ///
-    /// 4.
-    /// netbios-name-servers The IP address of a NetBIOS name server (e.g.,
-    /// 10.8.9.5). You can specify up to four addresses.
+    /// 4. netbios-name-servers
+    /// The IP address of a NetBIOS name server (e.g., 10.8.9.5).
+    /// You can specify up to four addresses.
     ///
-    /// 5.
-    /// netbios-node-type Value indicating the NetBIOS node type (1, 2, 4,
-    /// or 8). For more information about the values, go to RFC 2132.
+    /// 5. netbios-node-type
+    /// Value indicating the NetBIOS node type (1, 2, 4, or 8).
+    /// For more information about the values, go to RFC 2132.
     /// We recommend you only use 2 at this time (broadcast and multicast
     /// are currently not supported)
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class CreateDhcpOptionsRequest
-    {    
+    {
         private List<DhcpConfiguration> dhcpConfigurationField;
-
         /// <summary>
         /// Gets and sets the DhcpConfiguration property.
         /// DHCP Configuration

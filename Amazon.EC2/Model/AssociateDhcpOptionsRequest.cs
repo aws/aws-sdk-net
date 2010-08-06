@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -28,26 +28,26 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Associates a set of DHCP options (that you've previously created) with the
-    /// specified VPC. Or, associates the default DHCP options with the
-    /// VPC. The default set consists of the standard EC2 host name, no domain name, no
-    /// DNS server, no NTP server, and no NetBIOS server or node type.
+    /// specified VPC. Or, associates the default DHCP options with the VPC. The
+    /// default set consists of the standard EC2 host name, no domain name, no DNS
+    /// server, no NTP server, and no NetBIOS server or node type.
     ///
-    /// After you associate the options with the VPC, any existing instances
-    /// and all new instances that you launch in that VPC use the options. For more
-    /// information about the supported DHCP options and using them with
-    /// Amazon VPC, go to Using DHCP Options in the Amazon Virtual Private Cloud
-    /// Developer Guide.
+    /// After you associate the options with the VPC, any existing instances and all
+    /// new instances that you launch in that VPC use the options. For more
+    /// information about the supported DHCP options and using them with Amazon
+    /// VPC, go to Using DHCP Options in the Amazon Virtual Private Cloud Developer
+    /// Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class AssociateDhcpOptionsRequest
-    {    
+    {
         private string dhcpOptionsIdField;
         private string vpcIdField;
 
         /// <summary>
         /// Gets and sets the DhcpOptionsId property.
-        /// The ID of the DHCP options you want to associate with the VPC, or
-        /// "default" if you want to associate the default DHCP options with the VPC.
+        /// The ID of the DHCP options you want to associate with the VPC, or "default"
+        /// if you want to associate the default DHCP options with the VPC.
         /// </summary>
         [XmlElementAttribute(ElementName = "DhcpOptionsId")]
         public string DhcpOptionsId
@@ -59,8 +59,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the DhcpOptionsId property
         /// </summary>
-        /// <param name="dhcpOptionsId">The ID of the DHCP options you want to associate with the VPC, or
-        /// "default" if you want to associate the default DHCP options with the VPC.</param>
+        /// <param name="dhcpOptionsId">The ID of the DHCP options you want to associate with the VPC, or "default"
+        /// if you want to associate the default DHCP options with the VPC.</param>
         /// <returns>this instance</returns>
         public AssociateDhcpOptionsRequest WithDhcpOptionsId(string dhcpOptionsId)
         {

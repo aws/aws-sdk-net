@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Block device mapping.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class BlockDeviceMapping
-    {    
+    {
         private string deviceNameField;
         private string virtualNameField;
         private EbsBlockDevice ebsField;
@@ -101,8 +101,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Ebs property.
-        /// Specifies parameters used to automatically
-        /// setup Amazon EBS
+        /// Specifies parameters used to automatically setup Amazon EBS
         /// volumes when the instance is launched.
         /// </summary>
         [XmlElementAttribute(ElementName = "Ebs")]
@@ -115,8 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Ebs property
         /// </summary>
-        /// <param name="ebs">Specifies parameters used to automatically
-        /// setup Amazon EBS
+        /// <param name="ebs">Specifies parameters used to automatically setup Amazon EBS
         /// volumes when the instance is launched.</param>
         /// <returns>this instance</returns>
         public BlockDeviceMapping WithEbs(EbsBlockDevice ebs)
@@ -136,8 +134,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the NoDevice property.
-        /// Specifies the device name to suppress during
-        /// instance launch.
+        /// Specifies the device name to suppress during instance launch.
         /// </summary>
         [XmlElementAttribute(ElementName = "NoDevice")]
         public string NoDevice
@@ -149,8 +146,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the NoDevice property
         /// </summary>
-        /// <param name="noDevice">Specifies the device name to suppress during
-        /// instance launch.</param>
+        /// <param name="noDevice">Specifies the device name to suppress during instance launch.</param>
         /// <returns>this instance</returns>
         public BlockDeviceMapping WithNoDevice(string noDevice)
         {

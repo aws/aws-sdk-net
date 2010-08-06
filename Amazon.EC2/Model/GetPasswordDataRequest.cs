@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,27 +27,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Retrieves the encrypted administrator password
-    /// for the instances running
-    /// Windows.
+    /// Retrieves the encrypted administrator password for the instances running Windows.
     ///
-    /// Note - the Windows password is
-    /// only generated the first time an AMI is launched.
-    /// It is not generated for rebundled AMIs or after the password is
-    /// changed on an instance.
+    /// Note - the Windows password is only generated the first time an AMI is launched.
+    /// It is not generated for rebundled AMIs or after the password is changed on an
+    /// instance.
     ///
-    /// The password is encrypted using the key pair that you
-    /// provided.
+    /// The password is encrypted using the key pair that you provided.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class GetPasswordDataRequest
-    {    
+    {
         private string instanceIdField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
-        /// The ID of the instance for which to get the
-        /// password.
+        /// The ID of the instance for which to get the password.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -59,8 +54,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceId property
         /// </summary>
-        /// <param name="instanceId">The ID of the instance for which to get the
-        /// password.</param>
+        /// <param name="instanceId">The ID of the instance for which to get the password.</param>
         /// <returns>this instance</returns>
         public GetPasswordDataRequest WithInstanceId(string instanceId)
         {

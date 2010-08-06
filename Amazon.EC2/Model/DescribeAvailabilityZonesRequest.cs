@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,18 +27,15 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Displays Availability Zones that are currently
-    /// available to the account and their states.
+    /// Displays Availability Zones that are currently available to the account and their states.
     ///
-    /// Availability Zones are
-    /// not the same across accounts. The Availability Zone
-    /// us-east-1a for account A is not necessarily the 
-    /// same as us-east-1a for account B.
-    /// Zone assignments are mapped independently for each account.
+    /// Availability Zones are not the same across accounts. The Availability Zone us-east-1a
+    /// for account A is not necessarily the same as us-east-1a for account B. Zone
+    /// assignments are mapped independently for each account.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeAvailabilityZonesRequest
-    {    
+    {
         private List<string> zoneNameField;
 
         /// <summary>

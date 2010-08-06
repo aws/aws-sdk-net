@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Modifies an attribute of an instance.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class ModifyInstanceAttributeRequest
-    {    
+    {
         private string instanceIdField;
         private string attributeField;
         private string valueField;
@@ -70,11 +70,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Attribute property.
-        /// Name of the attribute to modify. Values are
-        /// "instanceType", "kernel", "ramdisk",
-        /// "userData", "disableApiTermination", 
-        /// "instanceInitiatedShutdownBehavior",
-        /// "rootDeviceName", and "blockDeviceMapping"
+        /// Name of the attribute to modify. Values are "instanceType", "kernel", "ramdisk",
+        /// "userData", "disableApiTermination", "instanceInitiatedShutdownBehavior", "rootDeviceName", and
+        /// "blockDeviceMapping"
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -86,11 +84,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Attribute property
         /// </summary>
-        /// <param name="attribute">Name of the attribute to modify. Values are
-        /// "instanceType", "kernel", "ramdisk",
-        /// "userData", "disableApiTermination", 
-        /// "instanceInitiatedShutdownBehavior",
-        /// "rootDeviceName", and "blockDeviceMapping"</param>
+        /// <param name="attribute">Name of the attribute to modify. Values are "instanceType", "kernel", "ramdisk",
+        /// "userData", "disableApiTermination", "instanceInitiatedShutdownBehavior", "rootDeviceName", and
+        /// "blockDeviceMapping"</param>
         /// <returns>this instance</returns>
         public ModifyInstanceAttributeRequest WithAttribute(string attribute)
         {
@@ -137,7 +133,6 @@ namespace Amazon.EC2.Model
         {
             return this.valueField != null;
         }
-
         /// <summary>
         /// Gets and sets the BlockDeviceMapping property.
         /// Modifies the mapping that defines native device names

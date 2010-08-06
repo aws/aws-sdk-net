@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,23 +27,15 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Starts an instance that uses an Amazon EBS volume
-    /// as its root device.
-    /// Instances that use Amazon EBS volumes as their
-    /// root devices can be quickly stopped and started.
-    /// When an instance is
-    /// stopped, the compute resources are released and
-    /// you are not billed for hourly
-    /// instance usage. However, your root partition Amazon EBS
-    /// volume remains, continues to persist your
-    /// data, and you are charged
-    /// for Amazon EBS volume usage. You can restart
-    /// your instance at any
-    /// time.
+    /// Starts an instance that uses an Amazon EBS volume as its root device.
+    /// Instances that use Amazon EBS volumes as their root devices can be quickly stopped and started.
+    /// When an instance is stopped, the compute resources are released and you are not billed for hourly
+    /// instance usage. However, your root partition Amazon EBS volume remains, continues to persist your
+    /// data, and you are charged for Amazon EBS volume usage. You can restart your instance at any time.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class StartInstancesRequest
-    {    
+    {
         private List<string> instanceIdField;
 
         /// <summary>

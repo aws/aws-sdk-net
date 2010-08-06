@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,22 +27,18 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Disassociates the specified elastic IP address
-    /// from the instance to which it is
-    /// assigned. This is an idempotent
-    /// operation. If you enter it more
-    /// than once, Amazon EC2 does not
-    /// return an error.
+    /// Disassociates the specified elastic IP address from the instance to which it is
+    /// assigned. This is an idempotent operation. If you enter it more than once,
+    /// Amazon EC2 does not return an error.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DisassociateAddressRequest
-    {    
+    {
         private string publicIpField;
 
         /// <summary>
         /// Gets and sets the PublicIp property.
-        /// IP address that you are disassociating from
-        /// the instance.
+        /// IP address that you are disassociating from the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "PublicIp")]
         public string PublicIp
@@ -54,8 +50,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the PublicIp property
         /// </summary>
-        /// <param name="publicIp">IP address that you are disassociating from
-        /// the instance.</param>
+        /// <param name="publicIp">IP address that you are disassociating from the instance.</param>
         /// <returns>this instance</returns>
         public DisassociateAddressRequest WithPublicIp(string publicIp)
         {

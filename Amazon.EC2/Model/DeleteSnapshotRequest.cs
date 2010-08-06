@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,15 +27,13 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a snapshot of an Amazon EBS volume that
-    /// you own.
+    /// Deletes a snapshot of an Amazon EBS volume that you own.
     ///
-    /// For more information, go to the Amazon Elastic Compute Cloud
-    /// Developer Guide
+    /// For more information, go to the Amazon Elastic Compute Cloud Developer Guide
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DeleteSnapshotRequest
-    {    
+    {
         private string snapshotIdField;
 
         /// <summary>

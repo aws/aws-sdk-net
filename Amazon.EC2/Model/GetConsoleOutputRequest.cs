@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,25 +27,20 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Retrieves console output for the specified
-    /// instance.
+    /// Retrieves console output for the specified instance.
     ///
-    /// Instance console output is buffered and posted shortly
-    /// after instance boot,
-    /// reboot, and termination. Amazon EC2 preserves
-    /// the most recent 64 KB output which
-    /// will be available for at least
-    /// one hour after the most recent post
+    /// Instance console output is buffered and posted shortly after instance boot,
+    /// reboot, and termination. Amazon EC2 preserves the most recent 64 KB output which
+    /// will be available for at least one hour after the most recent post
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class GetConsoleOutputRequest
-    {    
+    {
         private string instanceIdField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
-        /// ID of the instance for which you want console
-        /// output.
+        /// ID of the instance for which you want console output.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -57,8 +52,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceId property
         /// </summary>
-        /// <param name="instanceId">ID of the instance for which you want console
-        /// output.</param>
+        /// <param name="instanceId">ID of the instance for which you want console output.</param>
         /// <returns>this instance</returns>
         public GetConsoleOutputRequest WithInstanceId(string instanceId)
         {

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -28,12 +28,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The Response for the RequestSpotInstances
-    /// operation.
+    /// The Response for the RequestSpotInstances operation.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class RequestSpotInstancesResponse
-    {    
+    {
         private ResponseMetadata responseMetadataField;
         private RequestSpotInstancesResult requestSpotInstancesResultField;
 
@@ -46,6 +45,17 @@ namespace Amazon.EC2.Model
         {
             get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ResponseMetadata property
+        /// </summary>
+        /// <param name="responseMetadata">Response Metadata</param>
+        /// <returns>this instance</returns>
+        public RequestSpotInstancesResponse WithResponseMetadata(ResponseMetadata responseMetadata)
+        {
+            this.responseMetadataField = responseMetadata;
+            return this;
         }
 
         /// <summary>
@@ -69,6 +79,17 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Sets the RequestSpotInstancesResult property
+        /// </summary>
+        /// <param name="requestSpotInstancesResult">Result of the Request Spot Instances operation.</param>
+        /// <returns>this instance</returns>
+        public RequestSpotInstancesResponse WithRequestSpotInstancesResult(RequestSpotInstancesResult requestSpotInstancesResult)
+        {
+            this.requestSpotInstancesResultField = requestSpotInstancesResult;
+            return this;
+        }
+
+        /// <summary>
         /// Checks if RequestSpotInstancesResult property is set
         /// </summary>
         /// <returns>true if RequestSpotInstancesResult property is set</returns>
@@ -78,7 +99,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// XML Representation of this object
+        /// XML Representation for this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -90,15 +111,6 @@ namespace Amazon.EC2.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
-        }
-
-        /// <summary>
-        /// String Representation of this object. Overrides Object.ToString()
-        /// </summary>
-        /// <returns>This object as a string</returns>
-        public override string ToString()
-        {
-            return this.ToXML();
         }
     }
 }

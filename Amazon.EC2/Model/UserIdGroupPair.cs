@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,16 +29,15 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Security group and user ID pair.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class UserIdGroupPair
-    {    
+    {
         private string userIdField;
         private string groupNameField;
 
         /// <summary>
         /// Gets and sets the UserId property.
-        /// AWS User ID of an account. Cannot be used when
-        /// specifying a CIDR IP address.
+        /// AWS User ID of an account. Cannot be used when specifying a CIDR IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserId")]
         public string UserId
@@ -50,8 +49,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the UserId property
         /// </summary>
-        /// <param name="userId">AWS User ID of an account. Cannot be used when
-        /// specifying a CIDR IP address.</param>
+        /// <param name="userId">AWS User ID of an account. Cannot be used when specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
         public UserIdGroupPair WithUserId(string userId)
         {
@@ -70,8 +68,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the GroupName property.
-        /// Name of the security group. Cannot be used when
-        /// specifying a CIDR IP address.
+        /// Name of the security group. Cannot be used when specifying a CIDR IP address.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
@@ -83,8 +80,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the GroupName property
         /// </summary>
-        /// <param name="groupName">Name of the security group. Cannot be used when
-        /// specifying a CIDR IP address.</param>
+        /// <param name="groupName">Name of the security group. Cannot be used when specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
         public UserIdGroupPair WithGroupName(string groupName)
         {

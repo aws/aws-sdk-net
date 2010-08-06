@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,20 +27,15 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes Reserved Instance offerings that are
-    /// available for purchase. With Amazon EC2
-    /// Reserved Instances, you
-    /// purchase the right to launch Amazon EC2 instances
-    /// for a period of time (without getting 
-    /// insufficient capacity errors) and pay a
-    /// lower usage rate for the
-    /// actual time used. For more information
-    /// about Reserved Instances, go to the Amazon
+    /// Describes Reserved Instance offerings that are available for purchase. With Amazon EC2
+    /// Reserved Instances, you purchase the right to launch Amazon EC2 instances for a period
+    /// of time (without getting insufficient capacity errors) and pay a lower usage rate for the
+    /// actual time used. For more information about Reserved Instances, go to the Amazon
     /// Elastic Compute Cloud Developer Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeReservedInstancesOfferingsRequest
-    {    
+    {
         private List<string> reservedInstancesIdField;
         private string instanceTypeField;
         private string availabilityZoneField;
@@ -89,8 +84,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceType property.
-        /// The instance type on which the Reserved
-        /// Instance can be used.
+        /// The instance type on which the Reserved Instance can be used.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
@@ -102,8 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceType property
         /// </summary>
-        /// <param name="instanceType">The instance type on which the Reserved
-        /// Instance can be used.</param>
+        /// <param name="instanceType">The instance type on which the Reserved Instance can be used.</param>
         /// <returns>this instance</returns>
         public DescribeReservedInstancesOfferingsRequest WithInstanceType(string instanceType)
         {
@@ -122,8 +115,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the AvailabilityZone property.
-        /// The Availability Zone in which the Reserved
-        /// Instance can be used.
+        /// The Availability Zone in which the Reserved Instance can be used.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
@@ -135,8 +127,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the AvailabilityZone property
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone in which the Reserved
-        /// Instance can be used.</param>
+        /// <param name="availabilityZone">The Availability Zone in which the Reserved Instance can be used.</param>
         /// <returns>this instance</returns>
         public DescribeReservedInstancesOfferingsRequest WithAvailabilityZone(string availabilityZone)
         {

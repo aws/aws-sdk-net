@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,11 +29,10 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Specifies the placement constraints.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class Placement
-    {    
+    {
         private string availabilityZoneField;
-        private string groupNameField;
 
         /// <summary>
         /// Gets and sets the AvailabilityZone property.
@@ -64,37 +63,6 @@ namespace Amazon.EC2.Model
         public bool IsSetAvailabilityZone()
         {
             return this.availabilityZoneField != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the GroupName property.
-        /// The name of a PlacementGroup.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "GroupName")]
-        public string GroupName
-        {
-            get { return this.groupNameField; }
-            set { this.groupNameField = value; }
-        }
-
-        /// <summary>
-        /// Sets the GroupName property
-        /// </summary>
-        /// <param name="groupName">The name of a PlacementGroup.</param>
-        /// <returns>this instance</returns>
-        public Placement WithGroupName(string groupName)
-        {
-            this.groupNameField = groupName;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if GroupName property is set
-        /// </summary>
-        /// <returns>true if GroupName property is set</returns>
-        public bool IsSetGroupName()
-        {
-            return this.groupNameField != null;
         }
 
     }

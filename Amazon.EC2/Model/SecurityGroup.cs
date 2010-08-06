@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Security Group
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class SecurityGroup
-    {    
+    {
         private string ownerIdField;
         private string groupNameField;
         private string groupDescriptionField;
@@ -39,8 +39,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the OwnerId property.
-        /// AWS Access Key ID of the owner of the security
-        /// group.
+        /// AWS Access Key ID of the owner of the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
@@ -52,8 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the OwnerId property
         /// </summary>
-        /// <param name="ownerId">AWS Access Key ID of the owner of the security
-        /// group.</param>
+        /// <param name="ownerId">AWS Access Key ID of the owner of the security group.</param>
         /// <returns>this instance</returns>
         public SecurityGroup WithOwnerId(string ownerId)
         {
@@ -131,11 +129,9 @@ namespace Amazon.EC2.Model
         {
             return this.groupDescriptionField != null;
         }
-
         /// <summary>
         /// Gets and sets the IpPermission property.
-        /// Set of IP permissions associated with the
-        /// security group.
+        /// Set of IP permissions associated with the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "IpPermission")]
         public List<IpPermission> IpPermission
@@ -154,8 +150,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the IpPermission property
         /// </summary>
-        /// <param name="list">Set of IP permissions associated with the
-        /// security group.</param>
+        /// <param name="list">Set of IP permissions associated with the security group.</param>
         /// <returns>this instance</returns>
         public SecurityGroup WithIpPermission(params IpPermission[] list)
         {

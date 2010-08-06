@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///S3 Storage
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class S3Storage
-    {    
+    {
         private string bucketField;
         private string prefixField;
         private string AWSAccessKeyIdField;
@@ -40,13 +40,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Bucket property.
-        /// The bucket in which to store the AMI. You can
-        /// specify a bucket that you
-        /// already own or a new bucket that Amazon
-        /// EC2 creates on your behalf. If you
-        /// specify a bucket that belongs
-        /// to someone else, Amazon EC2 returns an
-        /// error.
+        /// The bucket in which to store the AMI. You can specify a bucket that you
+        /// already own or a new bucket that Amazon EC2 creates on your behalf. If you
+        /// specify a bucket that belongs to someone else, Amazon EC2 returns an error.
         /// </summary>
         [XmlElementAttribute(ElementName = "Bucket")]
         public string Bucket
@@ -58,13 +54,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Bucket property
         /// </summary>
-        /// <param name="bucket">The bucket in which to store the AMI. You can
-        /// specify a bucket that you
-        /// already own or a new bucket that Amazon
-        /// EC2 creates on your behalf. If you
-        /// specify a bucket that belongs
-        /// to someone else, Amazon EC2 returns an
-        /// error.</param>
+        /// <param name="bucket">The bucket in which to store the AMI. You can specify a bucket that you
+        /// already own or a new bucket that Amazon EC2 creates on your behalf. If you
+        /// specify a bucket that belongs to someone else, Amazon EC2 returns an error.</param>
         /// <returns>this instance</returns>
         public S3Storage WithBucket(string bucket)
         {
@@ -145,9 +137,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the UploadPolicy property.
-        /// A Base64-encoded Amazon S3 upload policy that
-        /// gives Amazon EC2 permission to upload items into 
-        /// Amazon S3 on the user's behalf
+        /// A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission
+        /// to upload items into Amazon S3 on the user's behalf
         /// </summary>
         [XmlElementAttribute(ElementName = "UploadPolicy")]
         public string UploadPolicy
@@ -159,9 +150,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the UploadPolicy property
         /// </summary>
-        /// <param name="uploadPolicy">A Base64-encoded Amazon S3 upload policy that
-        /// gives Amazon EC2 permission to upload items into 
-        /// Amazon S3 on the user's behalf</param>
+        /// <param name="uploadPolicy">A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission
+        /// to upload items into Amazon S3 on the user's behalf</param>
         /// <returns>this instance</returns>
         public S3Storage WithUploadPolicy(string uploadPolicy)
         {
@@ -180,8 +170,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the UploadPolicySignature property.
-        /// The signature of the Base64 encoded JSON
-        /// document.
+        /// The signature of the Base64 encoded JSON document.
         /// </summary>
         [XmlElementAttribute(ElementName = "UploadPolicySignature")]
         public string UploadPolicySignature
@@ -193,8 +182,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the UploadPolicySignature property
         /// </summary>
-        /// <param name="uploadPolicySignature">The signature of the Base64 encoded JSON
-        /// document.</param>
+        /// <param name="uploadPolicySignature">The signature of the Base64 encoded JSON document.</param>
         /// <returns>this instance</returns>
         public S3Storage WithUploadPolicySignature(string uploadPolicySignature)
         {

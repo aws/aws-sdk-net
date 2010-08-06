@@ -16,12 +16,11 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -30,9 +29,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Information about the instance attribute.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeInstanceAttributeResult
-    {    
+    {
         private InstanceAttribute instanceAttributeField;
 
         /// <summary>
@@ -47,6 +46,17 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Sets the InstanceAttribute property
+        /// </summary>
+        /// <param name="instanceAttribute">List of instance attributes.</param>
+        /// <returns>this instance</returns>
+        public DescribeInstanceAttributeResult WithInstanceAttribute(InstanceAttribute instanceAttribute)
+        {
+            this.instanceAttributeField = instanceAttribute;
+            return this;
+        }
+
+        /// <summary>
         /// Checks if InstanceAttribute property is set
         /// </summary>
         /// <returns>true if InstanceAttribute property is set</returns>
@@ -55,28 +65,5 @@ namespace Amazon.EC2.Model
             return this.instanceAttributeField != null;
         }
 
-        /// <summary>
-        /// XML Representation of this object
-        /// </summary>
-        /// <returns>XML String</returns>
-        public string ToXML()
-        {
-            StringBuilder xml = new StringBuilder(1024);
-            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
-            using (StringWriter sw = new StringWriter(xml))
-            {
-                serializer.Serialize(sw, this);
-            }
-            return xml.ToString();
-        }
-
-        /// <summary>
-        /// String Representation of this object. Overrides Object.ToString()
-        /// </summary>
-        /// <returns>This object as a string</returns>
-        public override string ToString()
-        {
-            return this.ToXML();
-        }
     }
 }

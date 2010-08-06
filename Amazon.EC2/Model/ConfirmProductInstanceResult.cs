@@ -16,12 +16,11 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -30,21 +29,33 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Confirm Product Instance Result
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class ConfirmProductInstanceResult
-    {    
+    {
         private string ownerIdField;
 
         /// <summary>
         /// Gets and sets the OwnerId property.
-        /// The instance owner's account ID. Only present
-        /// if the product code is attached to the instance.
+        /// The instance owner's account ID. Only present if the product code is attached to
+        /// the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
         {
             get { return this.ownerIdField; }
             set { this.ownerIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the OwnerId property
+        /// </summary>
+        /// <param name="ownerId">The instance owner's account ID. Only present if the product code is attached to
+        /// the instance.</param>
+        /// <returns>this instance</returns>
+        public ConfirmProductInstanceResult WithOwnerId(string ownerId)
+        {
+            this.ownerIdField = ownerId;
+            return this;
         }
 
         /// <summary>
@@ -56,28 +67,5 @@ namespace Amazon.EC2.Model
             return this.ownerIdField != null;
         }
 
-        /// <summary>
-        /// XML Representation of this object
-        /// </summary>
-        /// <returns>XML String</returns>
-        public string ToXML()
-        {
-            StringBuilder xml = new StringBuilder(1024);
-            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
-            using (StringWriter sw = new StringWriter(xml))
-            {
-                serializer.Serialize(sw, this);
-            }
-            return xml.ToString();
-        }
-
-        /// <summary>
-        /// String Representation of this object. Overrides Object.ToString()
-        /// </summary>
-        /// <returns>This object as a string</returns>
-        public override string ToString()
-        {
-            return this.ToXML();
-        }
     }
 }

@@ -197,9 +197,6 @@
     <Compile Include="Amazon.EC2\AmazonEC2Client.cs" />
     <Compile Include="Amazon.EC2\AmazonEC2Config.cs" />
     <Compile Include="Amazon.EC2\AmazonEC2Exception.cs" />
-    <Compile Include="Amazon.EC2\Model\ActivateLicense.cs" />
-    <Compile Include="Amazon.EC2\Model\ActivateLicenseRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\ActivateLicenseResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Address.cs" />
     <Compile Include="Amazon.EC2\Model\AllocateAddressRequest.cs" />
     <Compile Include="Amazon.EC2\Model\AllocateAddressResponse.cs" />
@@ -247,8 +244,6 @@
     <Compile Include="Amazon.EC2\Model\CreateKeyPairRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateKeyPairResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateKeyPairResult.cs" />
-    <Compile Include="Amazon.EC2\Model\CreatePlacementGroupRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\CreatePlacementGroupResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSecurityGroupRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSecurityGroupResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSnapshotRequest.cs" />
@@ -274,16 +269,12 @@
     <Compile Include="Amazon.EC2\Model\CreateVpnGatewayResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVpnGatewayResult.cs" />
     <Compile Include="Amazon.EC2\Model\CustomerGateway.cs" />
-    <Compile Include="Amazon.EC2\Model\DeactivateLicenseRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\DeactivateLicenseResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteCustomerGatewayRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteCustomerGatewayResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteDhcpOptionsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteDhcpOptionsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteKeyPairRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteKeyPairResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DeletePlacementGroupRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\DeletePlacementGroupResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteSecurityGroupRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteSecurityGroupResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteSnapshotRequest.cs" />
@@ -332,12 +323,6 @@
     <Compile Include="Amazon.EC2\Model\DescribeKeyPairsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeKeyPairsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeKeyPairsResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeLicensesRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeLicensesResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeLicensesResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribePlacementGroupsRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribePlacementGroupsResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribePlacementGroupsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeRegionsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeRegionsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeRegionsResult.cs" />
@@ -390,7 +375,6 @@
     <Compile Include="Amazon.EC2\Model\DisassociateAddressRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DisassociateAddressResponse.cs" />
     <Compile Include="Amazon.EC2\Model\EbsBlockDevice.cs" />
-    <Compile Include="Amazon.EC2\Model\EC2Contants.cs" />
     <Compile Include="Amazon.EC2\Model\Error.cs" />
     <Compile Include="Amazon.EC2\Model\ErrorResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Filter.cs" />
@@ -407,8 +391,6 @@
     <Compile Include="Amazon.EC2\Model\InstanceBlockDeviceMappingParameter.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceEbsBlockDevice.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceEbsBlockDeviceParameter.cs" />
-    <Compile Include="Amazon.EC2\Model\InstanceLicense.cs" />
-    <Compile Include="Amazon.EC2\Model\InstanceLicenseSpecification.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceMonitoring.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceState.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceStateChange.cs" />
@@ -416,8 +398,6 @@
     <Compile Include="Amazon.EC2\Model\KeyPair.cs" />
     <Compile Include="Amazon.EC2\Model\LaunchPermission.cs" />
     <Compile Include="Amazon.EC2\Model\LaunchSpecification.cs" />
-    <Compile Include="Amazon.EC2\Model\License.cs" />
-    <Compile Include="Amazon.EC2\Model\LicenseCapacity.cs" />
     <Compile Include="Amazon.EC2\Model\ModifyImageAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ModifyImageAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ModifyInstanceAttributeRequest.cs" />
@@ -431,7 +411,6 @@
     <Compile Include="Amazon.EC2\Model\MonitorInstancesResult.cs" />
     <Compile Include="Amazon.EC2\Model\PasswordData.cs" />
     <Compile Include="Amazon.EC2\Model\Placement.cs" />
-    <Compile Include="Amazon.EC2\Model\PlacementGroupInfo.cs" />
     <Compile Include="Amazon.EC2\Model\PurchaseReservedInstancesOfferingRequest.cs" />
     <Compile Include="Amazon.EC2\Model\PurchaseReservedInstancesOfferingResponse.cs" />
     <Compile Include="Amazon.EC2\Model\PurchaseReservedInstancesOfferingResult.cs" />
@@ -680,12 +659,9 @@
     <Compile Include="Amazon.S3\Model\GetBucketPolicyResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketVersioningRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketVersioningResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetNotificationConfigurationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetNotificationConfigurationResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetPreSignedUrlRequest.cs" />
     <Compile Include="Amazon.S3\Model\ListVersionsRequest.cs" />
     <Compile Include="Amazon.S3\Model\ListVersionsResponse.cs" />
-    <Compile Include="Amazon.S3\Model\NotificationConfigurationList.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs" />
     <Compile Include="Amazon.S3\Model\S3AccessControlList.cs" />
@@ -706,9 +682,6 @@
     <Compile Include="Amazon.S3\Model\S3BucketVersioningConfig.cs" />
     <Compile Include="Amazon.S3\Model\SetBucketVersioningRequest.cs" />
     <Compile Include="Amazon.S3\Model\SetBucketVersioningResponse.cs" />
-    <Compile Include="Amazon.S3\Model\SetNotificationConfigurationRequest.cs" />
-    <Compile Include="Amazon.S3\Model\SetNotificationConfigurationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\TopicConfiguration.cs" />
     <Compile Include="Amazon.S3\Model\Tuple.cs" />
     <Compile Include="Amazon.S3\Model\S3Enumerations.cs" />
     <Compile Include="Amazon.S3\Model\CopyObjectRequest.cs" />
@@ -1033,17 +1006,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.SimpleNotificationService\Model\ResponseTransformer.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Amazon.S3\Model\GetNotificationConfigurationResponse.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Amazon.EC2\Model\ActivateLicenseResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreatePlacementGroupResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeactivateLicenseResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeletePlacementGroupResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeLicensesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribePlacementGroupsResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,12 +27,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     ///<summary>
-    ///Information about the instance block device
-    ///						mapping.
+    ///Information about the instance block device mapping.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class InstanceBlockDeviceMappingParameter
-    {    
+    {
         private string deviceNameField;
         private string virtualNameField;
         private InstanceEbsBlockDeviceParameter ebsField;
@@ -102,8 +101,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Ebs property.
-        /// Specifies parameters used to automatically
-        /// setup Amazon EBS volumes when the instance is launched.
+        /// Specifies parameters used to automatically setup Amazon EBS
+        /// volumes when the instance is launched.
         /// </summary>
         [XmlElementAttribute(ElementName = "Ebs")]
         public InstanceEbsBlockDeviceParameter Ebs
@@ -115,8 +114,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Ebs property
         /// </summary>
-        /// <param name="ebs">Specifies parameters used to automatically
-        /// setup Amazon EBS volumes when the instance is launched.</param>
+        /// <param name="ebs">Specifies parameters used to automatically setup Amazon EBS
+        /// volumes when the instance is launched.</param>
         /// <returns>this instance</returns>
         public InstanceBlockDeviceMappingParameter WithEbs(InstanceEbsBlockDeviceParameter ebs)
         {
@@ -135,8 +134,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the NoDevice property.
-        /// Specifies the device name (e.g., /dev/sdb) to
-        /// suppress during instance launch.
+        /// Specifies the device name (e.g., /dev/sdb) to suppress during
+        /// instance launch.
         /// </summary>
         [XmlElementAttribute(ElementName = "NoDevice")]
         public string NoDevice
@@ -148,8 +147,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the NoDevice property
         /// </summary>
-        /// <param name="noDevice">Specifies the device name (e.g., /dev/sdb) to
-        /// suppress during instance launch.</param>
+        /// <param name="noDevice">Specifies the device name (e.g., /dev/sdb) to suppress during
+        /// instance launch.</param>
         /// <returns>this instance</returns>
         public InstanceBlockDeviceMappingParameter WithNoDevice(string noDevice)
         {

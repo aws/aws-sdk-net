@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,11 +27,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     ///<summary>
-    ///Describes the components of a Spot Instance request.
+    ///Describes the components of a Spot Instance rquest.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class SpotInstanceRequest
-    {    
+    {
         private string spotInstanceRequestIdField;
         private string spotPriceField;
         private string typeField;
@@ -79,8 +79,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SpotPrice property.
-        /// Specifies the maximum price you will pay to
-        /// launch one or more Spot Instances.
+        /// Specifies the maximum price you will pay to launch one or more
+        /// Spot Instances.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotPrice")]
         public string SpotPrice
@@ -92,8 +92,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SpotPrice property
         /// </summary>
-        /// <param name="spotPrice">Specifies the maximum price you will pay to
-        /// launch one or more Spot Instances.</param>
+        /// <param name="spotPrice">Specifies the maximum price you will pay to launch one or more
+        /// Spot Instances.</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithSpotPrice(string spotPrice)
         {
@@ -143,8 +143,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the State property.
-        /// The state of the Spot Instance request.
-        /// Possible values:
+        /// The state of the Spot Instance request. Possible values:
         /// open|closed|cancelled|failed
         /// </summary>
         [XmlElementAttribute(ElementName = "State")]
@@ -157,8 +156,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the State property
         /// </summary>
-        /// <param name="state">The state of the Spot Instance request.
-        /// Possible values:
+        /// <param name="state">The state of the Spot Instance request. Possible values:
         /// open|closed|cancelled|failed</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithState(string state)
@@ -209,14 +207,10 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ValidFrom property.
-        /// Start date of the request. If this is a
-        /// one-time request, the request
-        /// remains active until all instances
-        /// launch, the request expires, or
-        /// the request is canceled. If the
-        /// request is persistent, it remains
-        /// active until it expires or is
-        /// canceled.
+        /// Start date of the request. If this is a one-time request, the request
+        /// remains active until all instances launch, the request expires, or
+        /// the request is canceled. If the request is persistent, it remains
+        /// active until it expires or is canceled.
         /// </summary>
         [XmlElementAttribute(ElementName = "ValidFrom")]
         public string ValidFrom
@@ -228,14 +222,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ValidFrom property
         /// </summary>
-        /// <param name="validFrom">Start date of the request. If this is a
-        /// one-time request, the request
-        /// remains active until all instances
-        /// launch, the request expires, or
-        /// the request is canceled. If the
-        /// request is persistent, it remains
-        /// active until it expires or is
-        /// canceled.</param>
+        /// <param name="validFrom">Start date of the request. If this is a one-time request, the request
+        /// remains active until all instances launch, the request expires, or
+        /// the request is canceled. If the request is persistent, it remains
+        /// active until it expires or is canceled.</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithValidFrom(string validFrom)
         {
@@ -254,12 +244,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ValidUntil property.
-        /// End date of the request. If this is a one-time
-        /// request, the request
-        /// remains active until all instances launch,
-        /// the request expires, or
-        /// the request is canceled. If the request is
-        /// persistent, it remains
+        /// End date of the request. If this is a one-time request, the request
+        /// remains active until all instances launch, the request expires, or
+        /// the request is canceled. If the request is persistent, it remains
         /// active until it expires or is canceled.
         /// </summary>
         [XmlElementAttribute(ElementName = "ValidUntil")]
@@ -272,12 +259,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ValidUntil property
         /// </summary>
-        /// <param name="validUntil">End date of the request. If this is a one-time
-        /// request, the request
-        /// remains active until all instances launch,
-        /// the request expires, or
-        /// the request is canceled. If the request is
-        /// persistent, it remains
+        /// <param name="validUntil">End date of the request. If this is a one-time request, the request
+        /// remains active until all instances launch, the request expires, or
+        /// the request is canceled. If the request is persistent, it remains
         /// active until it expires or is canceled.</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithValidUntil(string validUntil)
@@ -297,10 +281,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the LaunchGroup property.
-        /// Specifies the instance launch group. Launch
-        /// groups are Spot
-        /// Instances that launch together and terminate
-        /// together.
+        /// Specifies the instance launch group. Launch groups are Spot
+        /// Instances that launch together and terminate together.
         /// </summary>
         [XmlElementAttribute(ElementName = "LaunchGroup")]
         public string LaunchGroup
@@ -312,10 +294,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the LaunchGroup property
         /// </summary>
-        /// <param name="launchGroup">Specifies the instance launch group. Launch
-        /// groups are Spot
-        /// Instances that launch together and terminate
-        /// together.</param>
+        /// <param name="launchGroup">Specifies the instance launch group. Launch groups are Spot
+        /// Instances that launch together and terminate together.</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithLaunchGroup(string launchGroup)
         {
@@ -334,11 +314,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the AvailabilityZoneGroup property.
-        /// Specifies the Availability Zone group. If you
-        /// specify the same Availability Zone group for
-        /// all Spot Instance requests, all Spot
-        /// Instances are launched in the same
-        /// Availability Zone.
+        /// Specifies the Availability Zone group. If you specify the same
+        /// Availability Zone group for all Spot Instance requests, all Spot
+        /// Instances are launched in the same Availability Zone.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZoneGroup")]
         public string AvailabilityZoneGroup
@@ -350,11 +328,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the AvailabilityZoneGroup property
         /// </summary>
-        /// <param name="availabilityZoneGroup">Specifies the Availability Zone group. If you
-        /// specify the same Availability Zone group for
-        /// all Spot Instance requests, all Spot
-        /// Instances are launched in the same
-        /// Availability Zone.</param>
+        /// <param name="availabilityZoneGroup">Specifies the Availability Zone group. If you specify the same
+        /// Availability Zone group for all Spot Instance requests, all Spot
+        /// Instances are launched in the same Availability Zone.</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithAvailabilityZoneGroup(string availabilityZoneGroup)
         {
@@ -373,8 +349,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the LaunchSpecification property.
-        /// Specifies additional launch instance
-        /// information.
+        /// Specifies additional launch instance information.
         /// </summary>
         [XmlElementAttribute(ElementName = "LaunchSpecification")]
         public LaunchSpecification LaunchSpecification
@@ -386,8 +361,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the LaunchSpecification property
         /// </summary>
-        /// <param name="launchSpecification">Specifies additional launch instance
-        /// information.</param>
+        /// <param name="launchSpecification">Specifies additional launch instance information.</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithLaunchSpecification(LaunchSpecification launchSpecification)
         {
@@ -406,8 +380,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceId property.
-        /// The instance associated with the Spot Instance
-        /// Request.
+        /// The instance associated with the Spot Instance Request.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -419,8 +392,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceId property
         /// </summary>
-        /// <param name="instanceId">The instance associated with the Spot Instance
-        /// Request.</param>
+        /// <param name="instanceId">The instance associated with the Spot Instance Request.</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithInstanceId(string instanceId)
         {
@@ -439,8 +411,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the CreateTime property.
-        /// Time stamp when the Spot Instance request was
-        /// fulfilled.
+        /// Time stamp when the Spot Instance request was fulfilled.
         /// </summary>
         [XmlElementAttribute(ElementName = "CreateTime")]
         public string CreateTime
@@ -452,8 +423,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the CreateTime property
         /// </summary>
-        /// <param name="createTime">Time stamp when the Spot Instance request was
-        /// fulfilled.</param>
+        /// <param name="createTime">Time stamp when the Spot Instance request was fulfilled.</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithCreateTime(string createTime)
         {
@@ -472,8 +442,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ProductDescription property.
-        /// The product description associated with the
-        /// Spot Instance.
+        /// The product description associated with the Spot Instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "ProductDescription")]
         public string ProductDescription
@@ -485,8 +454,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ProductDescription property
         /// </summary>
-        /// <param name="productDescription">The product description associated with the
-        /// Spot Instance.</param>
+        /// <param name="productDescription">The product description associated with the Spot Instance.</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithProductDescription(string productDescription)
         {

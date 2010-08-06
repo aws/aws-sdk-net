@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///IP Permission
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class IpPermission
-    {    
+    {
         private string ipProtocolField;
         private Decimal? fromPortField;
         private Decimal? toPortField;
@@ -71,11 +71,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the FromPort property.
-        /// Start of port range for the TCP and UDP
-        /// protocols, or an ICMP type
-        /// number. An ICMP type number of -1
-        /// indicates a wildcard (i.e., any ICMP type
-        /// number).
+        /// Start of port range for the TCP and UDP protocols, or an ICMP type number. An
+        /// ICMP type number of -1 indicates a wildcard (i.e., any ICMP type number).
         /// </summary>
         [XmlElementAttribute(ElementName = "FromPort")]
         public Decimal FromPort
@@ -87,11 +84,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the FromPort property
         /// </summary>
-        /// <param name="fromPort">Start of port range for the TCP and UDP
-        /// protocols, or an ICMP type
-        /// number. An ICMP type number of -1
-        /// indicates a wildcard (i.e., any ICMP type
-        /// number).</param>
+        /// <param name="fromPort">Start of port range for the TCP and UDP protocols, or an ICMP type number. An
+        /// ICMP type number of -1 indicates a wildcard (i.e., any ICMP type number).</param>
         /// <returns>this instance</returns>
         public IpPermission WithFromPort(Decimal fromPort)
         {
@@ -110,10 +104,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ToPort property.
-        /// End of port range for the TCP and UDP
-        /// protocols, or an ICMP code.
-        /// An ICMP code of -1 indicates a
-        /// wildcard (i.e., any ICMP code).
+        /// End of port range for the TCP and UDP protocols, or an ICMP code. An ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
         /// </summary>
         [XmlElementAttribute(ElementName = "ToPort")]
         public Decimal ToPort
@@ -125,10 +116,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ToPort property
         /// </summary>
-        /// <param name="toPort">End of port range for the TCP and UDP
-        /// protocols, or an ICMP code.
-        /// An ICMP code of -1 indicates a
-        /// wildcard (i.e., any ICMP code).</param>
+        /// <param name="toPort">End of port range for the TCP and UDP protocols, or an ICMP code. An ICMP code of -1 indicates a wildcard (i.e., any ICMP code).</param>
         /// <returns>this instance</returns>
         public IpPermission WithToPort(Decimal toPort)
         {
@@ -144,7 +132,6 @@ namespace Amazon.EC2.Model
         {
             return this.toPortField.HasValue;
         }
-
         /// <summary>
         /// Gets and sets the UserIdGroupPair property.
         /// List of security group and user ID pairs.

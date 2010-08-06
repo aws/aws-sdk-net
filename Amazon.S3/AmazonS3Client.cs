@@ -627,73 +627,6 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// <para>
-        /// The notification configuration of a bucket provides near realtime notifications
-        /// of events the user is interested in, using SNS as the delivery service.
-        /// Notification is turned on by enabling configuration on a bucket, specifying
-        /// the events and the SNS topic. This configuration can only be turned
-        /// on by the bucket owner. If a notification configuration already exists for the
-        /// specified bucket, the new notification configuration will replace the existing
-        /// notification configuration.  To remove the notification configuration pass in
-        /// an empty request.  Currently, buckets may only have a single event and topic
-        /// configuration.
-        /// </para>
-        /// <para>
-        /// S3 is eventually consistent. It may take time for the notification status
-        /// of a bucket to be propagated throughout the system.
-        /// </para>
-        /// </summary>
-        /// <param name="request">The SetNotificationConfigurationRequest that defines the parameters of the operation.</param>
-        /// <returns>Returns a SetNotificationConfigurationResponse from S3.</returns>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        public SetNotificationConfigurationResponse SetNotificationConfiguration(SetNotificationConfigurationRequest request)
-        {
-            if (request == null)
-            {
-                throw new ArgumentNullException(S3Constants.RequestParam, "The SetNotificationConfigurationRequest specified is null!");
-            }
-
-            if (!request.IsSetBucketName())
-            {
-                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
-            }
-
-
-            ConvertSetNotificationConfiguration(request);
-            return this.Invoke<SetNotificationConfigurationResponse>(request);
-        }
-
-        /// <summary>
-        /// <para>
-        /// Retrieves the notification configuration for the specified bucket. Only the owner of the
-        /// bucket can retrieve the notification configuration.
-        /// </para>
-        /// </summary>
-        /// <param name="request">The GetNotificationConfigurationRequest that defines the parameters of the operation.</param>
-        /// <returns>Returns a GetNotificationConfigurationResponse from S3.</returns>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        public GetNotificationConfigurationResponse GetNotificationConfiguration(GetNotificationConfigurationRequest request)
-        {
-            if (request == null)
-            {
-                throw new ArgumentNullException(S3Constants.RequestParam, "The GetNotificationConfigurationRequest specified is null!");
-            }
-
-            if (!request.IsSetBucketName())
-            {
-                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
-            }
-
-
-            ConvertGetNotificationConfiguration(request);
-            return this.Invoke<GetNotificationConfigurationResponse>(request);
-        }
-
-        /// <summary>
         /// The ListObjects operation lists the objects/keys in a bucket ordered
         /// lexicographically (from a-Z). The list can be filtered via the Marker
         /// property of the ListObjectsRequest.
@@ -1550,46 +1483,6 @@ namespace Amazon.S3
 
             AddS3QueryParameters(request, request.BucketName);
         }
-
-        /**
-         * Convert SetNotificationConfigurationRequest to key/value pairs.
-         */
-        private void ConvertSetNotificationConfiguration(SetNotificationConfigurationRequest request)
-        {
-            Map parameters = request.parameters;
-            parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
-            parameters[S3QueryParameter.Action] = "SetNotificationConfiguration";
-            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?notification";
-
-            parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
-
-            // If this is null then assume the configuration is intented to be removed which is
-            // done by sending an xml document without any topic configurations.
-            if (request.NotificationConfiguration == null)
-            {
-                parameters[S3QueryParameter.ContentBody] = new NotificationConfigurationList().ToXML();
-            }
-            else
-            {
-                parameters[S3QueryParameter.ContentBody] = request.NotificationConfiguration.ToXML();
-            }
-
-            AddS3QueryParameters(request, request.BucketName);
-        }
-
-        /**
-         * Convert GetNotificationConfigurationRequest to key/value pairs.
-         */
-        private void ConvertGetNotificationConfiguration(GetNotificationConfigurationRequest request)
-        {
-            Map parameters = request.parameters;
-            parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
-            parameters[S3QueryParameter.Action] = "GetNotificationConfiguration";
-            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?notification";
-
-            AddS3QueryParameters(request, request.BucketName);
-        }
-
 
         /**
          * Convert GetObjectRequest to key/value pairs.

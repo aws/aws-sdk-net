@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Reservation
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class Reservation
-    {    
+    {
         private string reservationIdField;
         private string ownerIdField;
         private string requesterIdField;
@@ -71,8 +71,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the OwnerId property.
-        /// AWS Access Key ID of the user who owns the
-        /// reservation
+        /// AWS Access Key ID of the user who owns the reservation
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
@@ -84,8 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the OwnerId property
         /// </summary>
-        /// <param name="ownerId">AWS Access Key ID of the user who owns the
-        /// reservation</param>
+        /// <param name="ownerId">AWS Access Key ID of the user who owns the reservation</param>
         /// <returns>this instance</returns>
         public Reservation WithOwnerId(string ownerId)
         {
@@ -173,7 +171,6 @@ namespace Amazon.EC2.Model
         {
             return (GroupName.Count > 0);
         }
-
         /// <summary>
         /// Gets and sets the RunningInstance property.
         /// Running instance

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,12 +27,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to describe historical pricing for Spot
-    /// Instances.
+    /// Request to describe historical pricing for Spot Instances.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeSpotPriceHistoryRequest
-    {    
+    {
         private string startTimeField;
         private string endTimeField;
         private List<string> instanceTypeField;
@@ -40,8 +39,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the StartTime property.
-        /// Start date and time of the Spot Instance price
-        /// history data.
+        /// Start date and time of the Spot Instance price history
+        /// data.
         /// </summary>
         [XmlElementAttribute(ElementName = "StartTime")]
         public string StartTime
@@ -53,8 +52,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the StartTime property
         /// </summary>
-        /// <param name="startTime">Start date and time of the Spot Instance price
-        /// history data.</param>
+        /// <param name="startTime">Start date and time of the Spot Instance price history
+        /// data.</param>
         /// <returns>this instance</returns>
         public DescribeSpotPriceHistoryRequest WithStartTime(string startTime)
         {
@@ -73,8 +72,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the EndTime property.
-        /// End date and time of the Spot Instance price
-        /// history data.
+        /// End date and time of the Spot Instance price history
+        /// data.
         /// </summary>
         [XmlElementAttribute(ElementName = "EndTime")]
         public string EndTime
@@ -86,8 +85,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the EndTime property
         /// </summary>
-        /// <param name="endTime">End date and time of the Spot Instance price
-        /// history data.</param>
+        /// <param name="endTime">End date and time of the Spot Instance price history
+        /// data.</param>
         /// <returns>this instance</returns>
         public DescribeSpotPriceHistoryRequest WithEndTime(string endTime)
         {

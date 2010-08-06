@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,22 +27,20 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to create the data feed for Spot
-    /// Instances, enabling you to view Spot Instance
+    /// Request to create the data feed for Spot Instances, enabling you to view Spot Instance
     /// usage logs. You can create one data feed per account.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class CreateSpotDatafeedSubscriptionRequest
-    {    
+    {
         private string bucketField;
         private string prefixField;
 
         /// <summary>
         /// Gets and sets the Bucket property.
-        /// The Amazon S3 bucket in which to store the
-        /// Spot Instance datafeed.
-        /// Constraints: Must be a valid bucket
-        /// assocaited with your account.
+        /// The Amazon S3 bucket in which to store the Spot Instance datafeed.
+        /// Constraints: Must be a valid bucket assocaited with your
+        /// account.
         /// </summary>
         [XmlElementAttribute(ElementName = "Bucket")]
         public string Bucket
@@ -54,10 +52,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Bucket property
         /// </summary>
-        /// <param name="bucket">The Amazon S3 bucket in which to store the
-        /// Spot Instance datafeed.
-        /// Constraints: Must be a valid bucket
-        /// assocaited with your account.</param>
+        /// <param name="bucket">The Amazon S3 bucket in which to store the Spot Instance datafeed.
+        /// Constraints: Must be a valid bucket assocaited with your
+        /// account.</param>
         /// <returns>this instance</returns>
         public CreateSpotDatafeedSubscriptionRequest WithBucket(string bucket)
         {

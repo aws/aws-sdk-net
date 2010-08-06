@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Request to create a Spot Instance request.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class RequestSpotInstancesRequest
-    {    
+    {
         private string spotPriceField;
         private Decimal? instanceCountField;
         private string typeField;
@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SpotPrice property.
-        /// Specifies the maximum price you will pay to
-        /// launch one or more Spot Instances.
+        /// Specifies the maximum price you will pay to launch one
+        /// or more Spot Instances.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotPrice")]
         public string SpotPrice
@@ -56,8 +56,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SpotPrice property
         /// </summary>
-        /// <param name="spotPrice">Specifies the maximum price you will pay to
-        /// launch one or more Spot Instances.</param>
+        /// <param name="spotPrice">Specifies the maximum price you will pay to launch one
+        /// or more Spot Instances.</param>
         /// <returns>this instance</returns>
         public RequestSpotInstancesRequest WithSpotPrice(string spotPrice)
         {
@@ -142,9 +142,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ValidFrom property.
-        /// Start date of the request. If this is a one-time request, 
-        /// the request remains active until all instances
-        /// launch, the request expires, or the request is canceled. If the
+        /// Start date of the request. If this is a one-time request,
+        /// the request remains active until all instances launch,
+        /// the request expires, or the request is canceled. If the
         /// request is persistent, it remains active until it expires or
         /// is canceled.
         /// Default: Request is effective immediately
@@ -159,9 +159,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ValidFrom property
         /// </summary>
-        /// <param name="validFrom">Start date of the request. If this is a one-time request, 
-        /// the request remains active until all instances
-        /// launch, the request expires, or the request is canceled. If the
+        /// <param name="validFrom">Start date of the request. If this is a one-time request,
+        /// the request remains active until all instances launch,
+        /// the request expires, or the request is canceled. If the
         /// request is persistent, it remains active until it expires or
         /// is canceled.
         /// Default: Request is effective immediately</param>
@@ -188,7 +188,8 @@ namespace Amazon.EC2.Model
         /// the request expires, or the request is canceled. If the
         /// request is persistent, it remains active until it expires or
         /// is canceled.
-        /// Default: Request remains open until criteria for closing are met
+        /// Default: Request remains open until criteria for closing
+        /// are met
         /// </summary>
         [XmlElementAttribute(ElementName = "ValidUntil")]
         public string ValidUntil
@@ -205,7 +206,8 @@ namespace Amazon.EC2.Model
         /// the request expires, or the request is canceled. If the
         /// request is persistent, it remains active until it expires or
         /// is canceled.
-        /// Default: Request remains open until criteria for closing are met</param>
+        /// Default: Request remains open until criteria for closing
+        /// are met</param>
         /// <returns>this instance</returns>
         public RequestSpotInstancesRequest WithValidUntil(string validUntil)
         {
@@ -224,10 +226,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the LaunchGroup property.
-        /// Specifies the instance launch group. Launch
-        /// groups are Spot Instances that launch together and terminate
+        /// Specifies the instance launch group. Launch groups
+        /// are Spot Instances that launch together and terminate
         /// together.
-        /// Default: Instances are launched and terminated individually
+        /// Default: Instances are launched and terminated
+        /// individually
         /// </summary>
         [XmlElementAttribute(ElementName = "LaunchGroup")]
         public string LaunchGroup
@@ -239,10 +242,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the LaunchGroup property
         /// </summary>
-        /// <param name="launchGroup">Specifies the instance launch group. Launch
-        /// groups are Spot Instances that launch together and terminate
+        /// <param name="launchGroup">Specifies the instance launch group. Launch groups
+        /// are Spot Instances that launch together and terminate
         /// together.
-        /// Default: Instances are launched and terminated individually</param>
+        /// Default: Instances are launched and terminated
+        /// individually</param>
         /// <returns>this instance</returns>
         public RequestSpotInstancesRequest WithLaunchGroup(string launchGroup)
         {
@@ -265,7 +269,8 @@ namespace Amazon.EC2.Model
         /// the same Availability Zone group for all Spot Instance
         /// requests, all Spot Instances are launched in the same
         /// Availability Zone.
-        /// Default: Instances are launched in any available Availability Zone.
+        /// Default: Instances are launched in any available
+        /// Availability Zone.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZoneGroup")]
         public string AvailabilityZoneGroup
@@ -281,7 +286,8 @@ namespace Amazon.EC2.Model
         /// the same Availability Zone group for all Spot Instance
         /// requests, all Spot Instances are launched in the same
         /// Availability Zone.
-        /// Default: Instances are launched in any available Availability Zone.</param>
+        /// Default: Instances are launched in any available
+        /// Availability Zone.</param>
         /// <returns>this instance</returns>
         public RequestSpotInstancesRequest WithAvailabilityZoneGroup(string availabilityZoneGroup)
         {

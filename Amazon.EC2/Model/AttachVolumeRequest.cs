@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,31 +27,28 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Attaches an Amazon EBS volume to a running
-    /// instance and exposes it as the
+    /// Attaches an Amazon EBS volume to a running instance and exposes it as the
     /// specified device.
     ///
     /// Windows instances currently support devices xvda through xvdp. Devices
-    /// xvda and xvdb are reserved by the operating system, xvdc is
-    /// assigned to drive C:\, and, depending on the instance type, devices xvdd through
-    /// xvde might be reserved by the instance stores. Any device that is not
-    /// reserved can be attached to an Amazon EBS volume. For a list of
-    /// devices that are reserved by the instance stores, go to the Amazon
-    /// Elastic Compute Cloud Developer Guide.
+    /// xvda and xvdb are reserved by the operating system, xvdc is assigned to
+    /// drive C:\, and, depending on the instance type, devices xvdd through xvde
+    /// might be reserved by the instance stores. Any device that is not reserved
+    /// can be attached to an Amazon EBS volume. For a list of devices that are
+    /// reserved by the instance stores, go to the Amazon Elastic Compute Cloud
+    /// Developer Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class AttachVolumeRequest
-    {    
+    {
         private string volumeIdField;
         private string instanceIdField;
         private string deviceField;
 
         /// <summary>
         /// Gets and sets the VolumeId property.
-        /// The ID of the Amazon EBS volume. The volume
-        /// and instance must be within
-        /// the same Availability Zone and the
-        /// instance must be running.
+        /// The ID of the Amazon EBS volume. The volume and instance must be within
+        /// the same Availability Zone and the instance must be running.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
@@ -63,10 +60,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the VolumeId property
         /// </summary>
-        /// <param name="volumeId">The ID of the Amazon EBS volume. The volume
-        /// and instance must be within
-        /// the same Availability Zone and the
-        /// instance must be running.</param>
+        /// <param name="volumeId">The ID of the Amazon EBS volume. The volume and instance must be within
+        /// the same Availability Zone and the instance must be running.</param>
         /// <returns>this instance</returns>
         public AttachVolumeRequest WithVolumeId(string volumeId)
         {
@@ -85,11 +80,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceId property.
-        /// The ID of the instance to which the volume
-        /// attaches. The volume and
-        /// instance must be within the same
-        /// Availability Zone and the instance
-        /// must be running.
+        /// The ID of the instance to which the volume attaches. The volume and
+        /// instance must be within the same Availability Zone and the instance must be
+        /// running.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -101,11 +94,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceId property
         /// </summary>
-        /// <param name="instanceId">The ID of the instance to which the volume
-        /// attaches. The volume and
-        /// instance must be within the same
-        /// Availability Zone and the instance
-        /// must be running.</param>
+        /// <param name="instanceId">The ID of the instance to which the volume attaches. The volume and
+        /// instance must be within the same Availability Zone and the instance must be
+        /// running.</param>
         /// <returns>this instance</returns>
         public AttachVolumeRequest WithInstanceId(string instanceId)
         {
@@ -124,8 +115,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Device property.
-        /// Specifies how the device is exposed to the
-        /// instance (e.g., /dev/sdh).
+        /// Specifies how the device is exposed to the instance (e.g., /dev/sdh).
         /// </summary>
         [XmlElementAttribute(ElementName = "Device")]
         public string Device
@@ -137,8 +127,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Device property
         /// </summary>
-        /// <param name="device">Specifies how the device is exposed to the
-        /// instance (e.g., /dev/sdh).</param>
+        /// <param name="device">Specifies how the device is exposed to the instance (e.g., /dev/sdh).</param>
         /// <returns>this instance</returns>
         public AttachVolumeRequest WithDevice(string device)
         {

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,53 +27,42 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about AMIs, AKIs, and ARIs.
-    /// This includes image type, product
-    /// codes, architecture, and kernel
-    /// and RAM disk IDs. Images available to
-    /// you include public images,
-    /// private images that you own, and private images owned by other
-    /// users for which you have explicit launch permissions.
+    /// Returns information about AMIs, AKIs, and ARIs. This includes image type, product
+    /// codes, architecture, and kernel and RAM disk IDs. Images available to you include public
+    /// images, private images that you own, and private images owned by other users for which
+    /// you have explicit launch permissions.
     ///
-    /// Launch
-    /// permissions fall into three categories:
+    /// Launch permissions fall into three categories:
     ///
     /// 1. public:
-    /// The owner of the AMI granted launch permissions for the AMI to the
-    /// all group. All users have launch permissions for these AMIs.
+    /// The owner of the AMI granted launch permissions for the AMI to the all group.
+    /// All users have launch permissions for these AMIs.
     ///
     /// explicit:
     /// The owner of the AMI granted launch permissions to a specific user.
     ///
     /// 3. implicit:
-    /// A user has implicit launch permissions for all AMIs he or she
-    /// owns.
+    /// A user has implicit launch permissions for all AMIs he or she owns.
     ///
-    /// The list of AMIs returned can be modified by specifying AMI IDs,
-    /// AMI owners, or users with launch permissions. If no options are
-    /// specified, Amazon EC2 returns all AMIs for
+    /// The list of AMIs returned can be modified by specifying AMI IDs, AMI owners, or users
+    /// with launch permissions. If no options are specified, Amazon EC2 returns all AMIs for
     /// which the user has launch permissions.
     ///
-    /// If you specify one or more AMI IDs, only AMIs that have the
-    /// specified IDs are returned. If you specify an invalid AMI
-    /// ID, a fault is returned. If you specify an AMI ID for which
-    /// you do not have access, it will not be included in the returned
-    /// results.
+    /// If you specify one or more AMI IDs, only AMIs that have the specified IDs are returned.
+    /// If you specify an invalid AMI ID, a fault is returned. If you specify an AMI ID for which
+    /// you do not have access, it will not be included in the returned results.
     ///
-    /// If you specify one or more AMI owners, only AMIs from the
-    /// specified owners and for which you have access are returned. The
-    /// results can include the account IDs of the
-    /// specified owners, amazon for AMIs owned by Amazon or self for AMIs that you
-    /// own.
+    /// If you specify one or more AMI owners, only AMIs from the specified owners and for
+    /// which you have access are returned. The results can include the account IDs of the
+    /// specified owners, amazon for AMIs owned by Amazon or self for AMIs that you own.
     ///
-    /// If you specify a list of executable users, only users that have
-    /// launch permissions for the AMIs are returned. You can specify account IDs
-    /// (if you own the AMI(s)), self for AMIs for which you own or have
-    /// explicit permissions, or all for public AMIs.
+    /// If you specify a list of executable users, only users that have launch permissions for the
+    /// AMIs are returned. You can specify account IDs (if you own the AMI(s)), self for AMIs for
+    /// which you own or have explicit permissions, or all for public AMIs.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeImagesRequest
-    {    
+    {
         private List<string> imageIdField;
         private List<string> ownerField;
         private List<string> executableByField;
@@ -121,8 +110,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Owner property.
-        /// Returns AMIs owned by the specified owner.
-        /// Multiple owners can be specified.
+        /// Returns AMIs owned by the specified owner. Multiple owners can be specified.
         /// </summary>
         [XmlElementAttribute(ElementName = "Owner")]
         public List<string> Owner
@@ -141,8 +129,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Owner property
         /// </summary>
-        /// <param name="list">Returns AMIs owned by the specified owner.
-        /// Multiple owners can be specified.</param>
+        /// <param name="list">Returns AMIs owned by the specified owner. Multiple owners can be specified.</param>
         /// <returns>this instance</returns>
         public DescribeImagesRequest WithOwner(params string[] list)
         {
@@ -164,8 +151,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ExecutableBy property.
-        /// Returns AMIs for which the specified user has
-        /// explicit launch permissions.
+        /// Returns AMIs for which the specified user has explicit launch permissions.
         /// </summary>
         [XmlElementAttribute(ElementName = "ExecutableBy")]
         public List<string> ExecutableBy
@@ -184,8 +170,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ExecutableBy property
         /// </summary>
-        /// <param name="list">Returns AMIs for which the specified user has
-        /// explicit launch permissions.</param>
+        /// <param name="list">Returns AMIs for which the specified user has explicit launch permissions.</param>
         /// <returns>this instance</returns>
         public DescribeImagesRequest WithExecutableBy(params string[] list)
         {

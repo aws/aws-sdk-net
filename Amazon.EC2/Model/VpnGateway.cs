@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///VPN Gateway
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class VpnGateway
-    {    
+    {
         private string vpnGatewayIdField;
         private string vpnGatewayStateField;
         private string typeField;
@@ -71,8 +71,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the VpnGatewayState property.
-        /// The current state of the VPN gateway (pending,
-        /// available, deleting, deleted)
+        /// The current state of the VPN gateway (pending, available, deleting, deleted)
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnGatewayState")]
         public string VpnGatewayState
@@ -84,8 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the VpnGatewayState property
         /// </summary>
-        /// <param name="vpnGatewayState">The current state of the VPN gateway (pending,
-        /// available, deleting, deleted)</param>
+        /// <param name="vpnGatewayState">The current state of the VPN gateway (pending, available, deleting, deleted)</param>
         /// <returns>this instance</returns>
         public VpnGateway WithVpnGatewayState(string vpnGatewayState)
         {
@@ -163,7 +161,6 @@ namespace Amazon.EC2.Model
         {
             return this.availabilityZoneField != null;
         }
-
         /// <summary>
         /// Gets and sets the VpcAttachment property.
         /// list of VPC attachments

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -39,14 +39,15 @@ namespace Amazon.EC2.Model
     /// security group as quickly as possible. However, depending on
     /// the number of instances, a small delay might occur.
     ///
-    /// When authorizing a user/group pair permission,
-    /// GroupName, SourceSecurityGroupName and SourceSecurityGroupOwnerId
+    /// When authorizing a user/group pair permission, GroupName,
+    /// SourceSecurityGroupName and SourceSecurityGroupOwnerId
     /// must be specified. When authorizing a CIDR IP permission,
-    /// GroupName, IpProtocol, FromPort, ToPort and CidrIp must be specified
+    /// GroupName, IpProtocol, FromPort, ToPort and CidrIp
+    /// must be specified
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class AuthorizeSecurityGroupIngressRequest
-    {    
+    {
         private string userIdField;
         private string groupNameField;
         private string sourceSecurityGroupNameField;
@@ -89,8 +90,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the GroupName property.
-        /// Name of the group to modify. The name must be
-        /// valid and belong to the account
+        /// Name of the group to modify. The name must be valid and belong to the
+        /// account
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
@@ -102,8 +103,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the GroupName property
         /// </summary>
-        /// <param name="groupName">Name of the group to modify. The name must be
-        /// valid and belong to the account</param>
+        /// <param name="groupName">Name of the group to modify. The name must be valid and belong to the
+        /// account</param>
         /// <returns>this instance</returns>
         public AuthorizeSecurityGroupIngressRequest WithGroupName(string groupName)
         {
@@ -122,8 +123,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SourceSecurityGroupName property.
-        /// Name of the security group. Cannot be used
-        /// when specifying a CIDR IP address.
+        /// Name of the security group. Cannot be used when specifying a CIDR IP
+        /// address.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceSecurityGroupName")]
         public string SourceSecurityGroupName
@@ -135,8 +136,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SourceSecurityGroupName property
         /// </summary>
-        /// <param name="sourceSecurityGroupName">Name of the security group. Cannot be used
-        /// when specifying a CIDR IP address.</param>
+        /// <param name="sourceSecurityGroupName">Name of the security group. Cannot be used when specifying a CIDR IP
+        /// address.</param>
         /// <returns>this instance</returns>
         public AuthorizeSecurityGroupIngressRequest WithSourceSecurityGroupName(string sourceSecurityGroupName)
         {
@@ -155,8 +156,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SourceSecurityGroupOwnerId property.
-        /// AWS User ID of an account. Cannot be used when
-        /// specifying a CIDR IP address.
+        /// AWS User ID of an account. Cannot be used when specifying a CIDR IP
+        /// address.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceSecurityGroupOwnerId")]
         public string SourceSecurityGroupOwnerId
@@ -168,8 +169,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SourceSecurityGroupOwnerId property
         /// </summary>
-        /// <param name="sourceSecurityGroupOwnerId">AWS User ID of an account. Cannot be used when
-        /// specifying a CIDR IP address.</param>
+        /// <param name="sourceSecurityGroupOwnerId">AWS User ID of an account. Cannot be used when specifying a CIDR IP
+        /// address.</param>
         /// <returns>this instance</returns>
         public AuthorizeSecurityGroupIngressRequest WithSourceSecurityGroupOwnerId(string sourceSecurityGroupOwnerId)
         {
@@ -252,8 +253,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ToPort property.
-        /// End of port range for the TCP and UDP protocols, or an ICMP code.
-        /// An ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
+        /// End of port range for the TCP and UDP protocols, or an ICMP code. An ICMP
+        /// code of -1 indicates a wildcard (i.e., any ICMP code).
         /// </summary>
         [XmlElementAttribute(ElementName = "ToPort")]
         public Decimal ToPort
@@ -265,8 +266,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ToPort property
         /// </summary>
-        /// <param name="toPort">End of port range for the TCP and UDP protocols, or an ICMP code.
-        /// An ICMP code of -1 indicates a wildcard (i.e., any ICMP code).</param>
+        /// <param name="toPort">End of port range for the TCP and UDP protocols, or an ICMP code. An ICMP
+        /// code of -1 indicates a wildcard (i.e., any ICMP code).</param>
         /// <returns>this instance</returns>
         public AuthorizeSecurityGroupIngressRequest WithToPort(Decimal toPort)
         {

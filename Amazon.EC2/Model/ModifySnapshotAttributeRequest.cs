@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,12 +27,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Adds or remove permission settings for the
-    /// specified snapshot
+    /// Adds or remove permission settings for the specified snapshot
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class ModifySnapshotAttributeRequest
-    {    
+    {
         private string snapshotIdField;
         private string attributeField;
         private string operationTypeField;
@@ -72,8 +71,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Attribute property.
-        /// Specifies the attribute to modify. Valid
-        /// Values: createVolumePermission
+        /// Specifies the attribute to modify. Valid Values: createVolumePermission
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -85,8 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Attribute property
         /// </summary>
-        /// <param name="attribute">Specifies the attribute to modify. Valid
-        /// Values: createVolumePermission</param>
+        /// <param name="attribute">Specifies the attribute to modify. Valid Values: createVolumePermission</param>
         /// <returns>this instance</returns>
         public ModifySnapshotAttributeRequest WithAttribute(string attribute)
         {
@@ -105,8 +102,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the OperationType property.
-        /// Specifies the operation to perform on the
-        /// attribute.
+        /// Specifies the operation to perform on the attribute.
         /// Valid Values: add | remove
         /// </summary>
         [XmlElementAttribute(ElementName = "OperationType")]
@@ -119,8 +115,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the OperationType property
         /// </summary>
-        /// <param name="operationType">Specifies the operation to perform on the
-        /// attribute.
+        /// <param name="operationType">Specifies the operation to perform on the attribute.
         /// Valid Values: add | remove</param>
         /// <returns>this instance</returns>
         public ModifySnapshotAttributeRequest WithOperationType(string operationType)
@@ -140,8 +135,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the UserId property.
-        /// User ID of a user that can create volumes from
-        /// the snapshot.
+        /// User ID of a user that can create volumes from the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserId")]
         public List<string> UserId
@@ -160,8 +154,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the UserId property
         /// </summary>
-        /// <param name="list">User ID of a user that can create volumes from
-        /// the snapshot.</param>
+        /// <param name="list">User ID of a user that can create volumes from the snapshot.</param>
         /// <returns>this instance</returns>
         public ModifySnapshotAttributeRequest WithUserId(params string[] list)
         {
@@ -183,8 +176,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the UserGroup property.
-        /// Group that is allowed to create volumes from
-        /// the snapshot (currently
+        /// Group that is allowed to create volumes from the snapshot (currently
         /// supports "all").
         /// </summary>
         [XmlElementAttribute(ElementName = "UserGroup")]
@@ -204,8 +196,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the UserGroup property
         /// </summary>
-        /// <param name="list">Group that is allowed to create volumes from
-        /// the snapshot (currently
+        /// <param name="list">Group that is allowed to create volumes from the snapshot (currently
         /// supports "all").</param>
         /// <returns>this instance</returns>
         public ModifySnapshotAttributeRequest WithUserGroup(params string[] list)

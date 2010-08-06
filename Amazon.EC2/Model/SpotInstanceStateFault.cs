@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,19 +27,17 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     ///<summary>
-    ///Fault details for the Spot Instance request, if
-    ///						any.
+    ///Fault details for the Spot Instance request, if any.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class SpotInstanceStateFault
-    {    
+    {
         private string codeField;
         private string messageField;
 
         /// <summary>
         /// Gets and sets the Code property.
-        /// The reason code for the Spot Instance request
-        /// fault
+        /// The reason code for the Spot Instance request fault
         /// </summary>
         [XmlElementAttribute(ElementName = "Code")]
         public string Code
@@ -51,8 +49,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Code property
         /// </summary>
-        /// <param name="code">The reason code for the Spot Instance request
-        /// fault</param>
+        /// <param name="code">The reason code for the Spot Instance request fault</param>
         /// <returns>this instance</returns>
         public SpotInstanceStateFault WithCode(string code)
         {
@@ -71,8 +68,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Message property.
-        /// The message for the Spot Instance request
-        /// fault.
+        /// The message for the Spot Instance request fault.
         /// </summary>
         [XmlElementAttribute(ElementName = "Message")]
         public string Message
@@ -84,8 +80,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Message property
         /// </summary>
-        /// <param name="message">The message for the Spot Instance request
-        /// fault.</param>
+        /// <param name="message">The message for the Spot Instance request fault.</param>
         /// <returns>this instance</returns>
         public SpotInstanceStateFault WithMessage(string message)
         {

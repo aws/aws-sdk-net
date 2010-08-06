@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,12 +27,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The response includes information that you need
-    /// to configure your customer gateway, in XML format.
+    /// The response includes information that you need to configure your customer gateway, in
+    /// XML format.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class CreateVpnConnectionRequest
-    {    
+    {
         private string typeField;
         private string customerGatewayIdField;
         private string vpnGatewayIdField;

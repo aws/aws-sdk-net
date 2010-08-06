@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Describes the Spot Datafeed subscription.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class SpotDatafeedSubscription
-    {    
+    {
         private string ownerIdField;
         private string bucketField;
         private string prefixField;
@@ -40,8 +40,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the OwnerId property.
-        /// The AWS account ID associated with the
-        /// subscription.
+        /// The AWS account ID associated with the subscription.
         /// </summary>
         [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
@@ -53,8 +52,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the OwnerId property
         /// </summary>
-        /// <param name="ownerId">The AWS account ID associated with the
-        /// subscription.</param>
+        /// <param name="ownerId">The AWS account ID associated with the subscription.</param>
         /// <returns>this instance</returns>
         public SpotDatafeedSubscription WithOwnerId(string ownerId)
         {
@@ -73,8 +71,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Bucket property.
-        /// The Amazon S3 bucket where the Spot Instance
-        /// datafeed is located.
+        /// The Amazon S3 bucket where the Spot Instance datafeed is located.
         /// </summary>
         [XmlElementAttribute(ElementName = "Bucket")]
         public string Bucket
@@ -86,8 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Bucket property
         /// </summary>
-        /// <param name="bucket">The Amazon S3 bucket where the Spot Instance
-        /// datafeed is located.</param>
+        /// <param name="bucket">The Amazon S3 bucket where the Spot Instance datafeed is located.</param>
         /// <returns>this instance</returns>
         public SpotDatafeedSubscription WithBucket(string bucket)
         {
@@ -168,8 +164,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Fault property.
-        /// Fault details for the Spot Instance request, if
-        /// any.
+        /// Fault details for the Spot Instance request, if any.
         /// </summary>
         [XmlElementAttribute(ElementName = "Fault")]
         public SpotInstanceStateFault Fault
@@ -181,8 +176,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Fault property
         /// </summary>
-        /// <param name="fault">Fault details for the Spot Instance request, if
-        /// any.</param>
+        /// <param name="fault">Fault details for the Spot Instance request, if any.</param>
         /// <returns>this instance</returns>
         public SpotDatafeedSubscription WithFault(SpotInstanceStateFault fault)
         {

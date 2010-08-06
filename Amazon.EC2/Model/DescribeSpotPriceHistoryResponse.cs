@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -30,9 +30,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// The list of cancelled Spot Instance requests.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeSpotPriceHistoryResponse
-    {    
+    {
         private ResponseMetadata responseMetadataField;
         private DescribeSpotPriceHistoryResult describeSpotPriceHistoryResultField;
 
@@ -45,6 +45,17 @@ namespace Amazon.EC2.Model
         {
             get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ResponseMetadata property
+        /// </summary>
+        /// <param name="responseMetadata">Response Metadata</param>
+        /// <returns>this instance</returns>
+        public DescribeSpotPriceHistoryResponse WithResponseMetadata(ResponseMetadata responseMetadata)
+        {
+            this.responseMetadataField = responseMetadata;
+            return this;
         }
 
         /// <summary>
@@ -68,6 +79,17 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Sets the DescribeSpotPriceHistoryResult property
+        /// </summary>
+        /// <param name="describeSpotPriceHistoryResult">The Result containing the Spot Price history data.</param>
+        /// <returns>this instance</returns>
+        public DescribeSpotPriceHistoryResponse WithDescribeSpotPriceHistoryResult(DescribeSpotPriceHistoryResult describeSpotPriceHistoryResult)
+        {
+            this.describeSpotPriceHistoryResultField = describeSpotPriceHistoryResult;
+            return this;
+        }
+
+        /// <summary>
         /// Checks if DescribeSpotPriceHistoryResult property is set
         /// </summary>
         /// <returns>true if DescribeSpotPriceHistoryResult property is set</returns>
@@ -77,7 +99,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// XML Representation of this object
+        /// XML Representation for this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -89,15 +111,6 @@ namespace Amazon.EC2.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
-        }
-
-        /// <summary>
-        /// String Representation of this object. Overrides Object.ToString()
-        /// </summary>
-        /// <returns>This object as a string</returns>
-        public override string ToString()
-        {
-            return this.ToXML();
         }
     }
 }

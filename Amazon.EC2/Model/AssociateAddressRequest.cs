@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -28,13 +28,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Associates an elastic IP address with an instance. If the IP address is
-    /// currently assigned to another instance, the IP address is assigned
-    /// to the new instance. This is an idempotent operation. If you enter it more than once,
+    /// currently assigned to another instance, the IP address is assigned to the new
+    /// instance. This is an idempotent operation. If you enter it more than once,
     /// Amazon EC2 does not return an error.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class AssociateAddressRequest
-    {    
+    {
         private string instanceIdField;
         private string publicIpField;
 
@@ -71,8 +71,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the PublicIp property.
-        /// IP address that you are assigning to the
-        /// instance.
+        /// IP address that you are assigning to the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "PublicIp")]
         public string PublicIp
@@ -84,8 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the PublicIp property
         /// </summary>
-        /// <param name="publicIp">IP address that you are assigning to the
-        /// instance.</param>
+        /// <param name="publicIp">IP address that you are assigning to the instance.</param>
         /// <returns>this instance</returns>
         public AssociateAddressRequest WithPublicIp(string publicIp)
         {

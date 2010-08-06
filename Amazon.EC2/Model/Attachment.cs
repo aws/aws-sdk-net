@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Volume Attachment
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class Attachment
-    {    
+    {
         private string volumeIdField;
         private string instanceIdField;
         private string deviceField;
@@ -134,8 +134,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Status property.
-        /// Attachment state. Valid Values: attaching |
-        /// attached | detaching | detached
+        /// Attachment state. Valid Values: attaching | attached | detaching | detached
         /// </summary>
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
@@ -147,8 +146,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Status property
         /// </summary>
-        /// <param name="status">Attachment state. Valid Values: attaching |
-        /// attached | detaching | detached</param>
+        /// <param name="status">Attachment state. Valid Values: attaching | attached | detaching | detached</param>
         /// <returns>this instance</returns>
         public Attachment WithStatus(string status)
         {
@@ -198,8 +196,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the DeleteOnTermination property.
-        /// Determines whether the EBS block device is
-        /// deleted on instance termination.
+        /// Determines whether the EBS block device is deleted on instance termination.
         /// </summary>
         [XmlElementAttribute(ElementName = "DeleteOnTermination")]
         public bool DeleteOnTermination
@@ -211,8 +208,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the DeleteOnTermination property
         /// </summary>
-        /// <param name="deleteOnTermination">Determines whether the EBS block device is
-        /// deleted on instance termination.</param>
+        /// <param name="deleteOnTermination">Determines whether the EBS block device is deleted on instance termination.</param>
         /// <returns>this instance</returns>
         public Attachment WithDeleteOnTermination(bool deleteOnTermination)
         {

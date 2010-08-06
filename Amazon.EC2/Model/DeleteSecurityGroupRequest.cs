@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,18 +29,15 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Deletes a security group that you own.
     ///
-    /// If you attempt to delete a security group that contains instances, a
-    /// fault is returned.
+    /// If you attempt to delete a security group that contains instances, a fault is returned.
     ///
-    /// If you attempt to delete a security group that is referenced by
-    /// another security group, a fault is returned. For example, 
-    /// if security group B has a rule that allows access from
-    /// security group A, security group A cannot be deleted until the
-    /// allow rule is removed.
+    /// If you attempt to delete a security group that is referenced by another security group,
+    /// a fault is returned. For example, if security group B has a rule that allows access from
+    /// security group A, security group A cannot be deleted until the allow rule is removed.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DeleteSecurityGroupRequest
-    {    
+    {
         private string groupNameField;
 
         /// <summary>

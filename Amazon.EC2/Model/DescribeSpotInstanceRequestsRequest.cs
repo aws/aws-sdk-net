@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,14 +27,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to describe Spot Instance requests. Spot
-    /// Instances are instances that automatically launch
-    /// when your request price exceeds that Spot Price
-    /// that Amazon EC2 periodically calculates.
+    /// Request to describe Spot Instance requests. Spot Instances are instances that automatically launch
+    /// when your request price exceeds that Spot Price that Amazon EC2 periodically calculates.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeSpotInstanceRequestsRequest
-    {    
+    {
         private List<string> spotInstanceRequestIdField;
 
         /// <summary>

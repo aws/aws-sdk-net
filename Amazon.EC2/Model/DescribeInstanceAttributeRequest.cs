@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,13 +27,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about an attribute of an
-    /// instance. Only one attribute
-    /// can be specified per call.
+    /// Returns information about an attribute of an instance. Only one attribute can be specified per call.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeInstanceAttributeRequest
-    {    
+    {
         private string instanceIdField;
         private string attributeField;
 
@@ -70,9 +68,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Attribute property.
-        /// Specifies the attribute to return. Values are
-        /// "instanceType", "kernel", "ramdisk", "userData",
-        /// "disableApiTermination", "instanceInitiatedShutdownBehavior",
+        /// Specifies the attribute to return. Values are "instanceType", "kernel", "ramdisk",
+        /// "userData", "disableApiTermination", "instanceInitiatedShutdownBehavior",
         /// "rootDeviceName", and "blockDeviceMapping"
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -85,9 +82,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Attribute property
         /// </summary>
-        /// <param name="attribute">Specifies the attribute to return. Values are
-        /// "instanceType", "kernel", "ramdisk", "userData",
-        /// "disableApiTermination", "instanceInitiatedShutdownBehavior",
+        /// <param name="attribute">Specifies the attribute to return. Values are "instanceType", "kernel", "ramdisk",
+        /// "userData", "disableApiTermination", "instanceInitiatedShutdownBehavior",
         /// "rootDeviceName", and "blockDeviceMapping"</param>
         /// <returns>this instance</returns>
         public DescribeInstanceAttributeRequest WithAttribute(string attribute)

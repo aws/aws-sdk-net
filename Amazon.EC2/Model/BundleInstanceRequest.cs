@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,13 +27,14 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Bundles the Windows instance. This procedure is not applicable for Linux
-    /// and UNIX instances. For more information, go to the Amazon Elastic Compute
-    /// Cloud Developer Guide or Amazon Elastic Compute Cloud Getting Started Guide.
+    /// Bundles the Windows instance. This procedure is not applicable for Linux and
+    /// UNIX instances. For more information, go to the Amazon Elastic Compute
+    /// Cloud Developer Guide or Amazon Elastic Compute Cloud Getting Started
+    /// Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class BundleInstanceRequest
-    {    
+    {
         private string instanceIdField;
         private Storage storageField;
 

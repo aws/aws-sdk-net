@@ -530,42 +530,5 @@ namespace Amazon.S3
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request);
-
-        /// <summary>
-        /// <para>
-        /// Retrieves the notification configuration for the specified bucket. Only the owner of the
-        /// bucket can retrieve the notification configuration.
-        /// </para>
-        /// </summary>
-        /// <param name="request">The GetNotificationConfigurationRequest that defines the parameters of the operation.</param>
-        /// <returns>Returns a GetNotificationConfigurationResponse from S3.</returns>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        GetNotificationConfigurationResponse GetNotificationConfiguration(GetNotificationConfigurationRequest request);
-
-        /// <summary>
-        /// <para>
-        /// The notification configuration of a bucket provides near realtime notifications
-        /// of events the user is interested in, using SNS as the delivery service.
-        /// Notification is turned on by enabling configuration on a bucket, specifying
-        /// the events and the SNS topic. This configuration can only be turned
-        /// on by the bucket owner. If a notification configuration already exists for the
-        /// specified bucket, the new notification configuration will replace the existing
-        /// notification configuration.  To remove the notification configuration pass in
-        /// an empty request.  Currently, buckets may only have a single event and topic
-        /// configuration.
-        /// </para>
-        /// <para>
-        /// S3 is eventually consistent. It may take time for the notification status
-        /// of a bucket to be propagated throughout the system.
-        /// </para>
-        /// </summary>
-        /// <param name="request">The SetNotificationConfigurationRequest that defines the parameters of the operation.</param>
-        /// <returns>Returns a SetNotificationConfigurationResponse from S3.</returns>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        SetNotificationConfigurationResponse SetNotificationConfiguration(SetNotificationConfigurationRequest request);
     }
 }

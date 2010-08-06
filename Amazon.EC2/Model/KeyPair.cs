@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,17 +29,16 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Key Pair
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class KeyPair
-    {    
+    {
         private string keyNameField;
         private string keyFingerprintField;
         private string keyMaterialField;
 
         /// <summary>
         /// Gets and sets the KeyName property.
-        /// The key pair name provided in the original
-        /// request.
+        /// The key pair name provided in the original request.
         /// </summary>
         [XmlElementAttribute(ElementName = "KeyName")]
         public string KeyName
@@ -51,8 +50,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the KeyName property
         /// </summary>
-        /// <param name="keyName">The key pair name provided in the original
-        /// request.</param>
+        /// <param name="keyName">The key pair name provided in the original request.</param>
         /// <returns>this instance</returns>
         public KeyPair WithKeyName(string keyName)
         {

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,16 +27,13 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Gives you information about your VPN gateways.
-    /// You can filter the results to return information
-    /// only about VPN gateways that match criteria you specify. For example,
-    /// you could ask to get information about a particular VPN gateway (or all) only
-    /// if the gateway's state is pending or available. You can specify
-    /// multiple filters (e.g., the VPN gateway is in a particular
-    /// Availability Zone and the gateway's state is pending or available).
-    /// The result includes information for a particular VPN gateway only if
-    /// the gateway matches all your filters. If there's no match, no
-    /// special message is returned; the response is simply empty.
+    /// Gives you information about your VPN gateways. You can filter the results to return information
+    /// only about VPN gateways that match criteria you specify. For example, you could ask to get
+    /// information about a particular VPN gateway (or all) only if the gateway's state is pending or
+    /// available. You can specify multiple filters (e.g., the VPN gateway is in a particular Availability Zone
+    /// and the gateway's state is pending or available). The result includes information for a particular
+    /// VPN gateway only if the gateway matches all your filters. If there's no match, no special message
+    /// is returned; the response is simply empty.
     ///
     /// The returned information consists of:
     ///
@@ -44,12 +41,12 @@ namespace Amazon.EC2.Model
     /// (pending, available, deleting, deleted)
     /// 2. The type of VPN connection the VPN gateway supports.
     /// 3. The Availability Zone where the VPN gateway was created.
-    /// 4. The VPCs the VPN gateway is attached to and the state of each
-    /// attachment (attaching, attached, detaching, detached)
+    /// 4. The VPCs the VPN gateway is attached to and the state of each attachment
+    /// (attaching, attached, detaching, detached)
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeVpnGatewaysRequest
-    {    
+    {
         private List<string> vpnGatewayIdField;
         private List<Filter> filterField;
 
@@ -93,11 +90,9 @@ namespace Amazon.EC2.Model
         {
             return (VpnGatewayId.Count > 0);
         }
-
         /// <summary>
         /// Gets and sets the Filter property.
-        /// The filter to apply on the results of DescribeVpnGateways. Filters
-        /// can be:
+        /// The filter to apply on the results of DescribeVpnGateways. Filters can be:
         /// a. state - The state of the VPN gateway. (pending, available, deleting, deleted).
         /// b. type - The type of VPN gateway. Currently the only supported type is ipsec.1.
         /// c. availabilityZone - The Availability Zone the VPN gateway is in.
@@ -119,8 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Filter property
         /// </summary>
-        /// <param name="list">The filter to apply on the results of DescribeVpnGateways. Filters
-        /// can be:
+        /// <param name="list">The filter to apply on the results of DescribeVpnGateways. Filters can be:
         /// a. state - The state of the VPN gateway. (pending, available, deleting, deleted).
         /// b. type - The type of VPN gateway. Currently the only supported type is ipsec.1.
         /// c. availabilityZone - The Availability Zone the VPN gateway is in.</param>

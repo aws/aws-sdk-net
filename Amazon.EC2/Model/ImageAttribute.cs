@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Image Attribute
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class ImageAttribute
-    {    
+    {
         private string imageIdField;
         private List<LaunchPermission> launchPermissionField;
         private List<string> productCodeField;
@@ -70,7 +70,6 @@ namespace Amazon.EC2.Model
         {
             return this.imageIdField != null;
         }
-
         /// <summary>
         /// Gets and sets the LaunchPermission property.
         /// Launch permissions.

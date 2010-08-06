@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Volume
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class Volume
-    {    
+    {
         private string volumeIdField;
         private string sizeField;
         private string snapshotIdField;
@@ -225,7 +225,6 @@ namespace Amazon.EC2.Model
         {
             return this.createTimeField != null;
         }
-
         /// <summary>
         /// Gets and sets the Attachment property.
         /// List of attachments

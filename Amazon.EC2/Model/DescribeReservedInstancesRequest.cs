@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,14 +27,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes Reserved Instances that you purchased.
-    /// For more information about Reserved
-    /// Instances, go to the Amazon
-    /// Elastic Compute Cloud Developer Guide.
+    /// Describes Reserved Instances that you purchased. For more information about Reserved
+    /// Instances, go to the Amazon Elastic Compute Cloud Developer Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeReservedInstancesRequest
-    {    
+    {
         private List<string> reservedInstancesIdField;
 
         /// <summary>

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,39 +29,35 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Gives you information about your VPN connections.
     ///
-    /// Important - we strongly recommend you use HTTPS when calling this
-    /// operation because the response contains sensitive cryptographic
-    /// information for configuring your customer gateway.
+    /// Important - we strongly recommend you use HTTPS when calling this operation because
+    /// the response contains sensitive cryptographic information for configuring your customer
+    /// gateway.
     ///
-    /// You can filter the results to return information only about VPN
-    /// connections that match criteria you specify.
+    /// You can filter the results to return information only about VPN connections that match criteria
+    /// you specify.
     ///
-    /// For example, you could ask to get information about a particular VPN
-    /// connection (or all) only if the VPN's state is pending or available.
+    /// For example, you could ask to get information about a particular VPN connection (or all)
+    /// only if the VPN's state is pending or available.
     ///
-    /// You can specify multiple filters (e.g., the VPN connection is
-    /// associated with a particular VPN gateway, and
-    /// the gateway's state is pending or available).
+    /// You can specify multiple filters (e.g., the VPN connection is associated with a
+    /// particular VPN gateway, and the gateway's state is pending or available).
     ///
-    /// The result includes information for a particular VPN connection
-    /// only if the VPN connection matches all your filters.
+    /// The result includes information for a particular VPN connection only if the VPN connection
+    /// matches all your filters.
     ///
-    /// If there's no match, no special message is returned; the response is
-    /// simply empty.
+    /// If there's no match, no special message is returned; the response is simply empty.
     ///
     /// The returned information consists of:
     /// 1. The VPN connection ID.
     /// 2. The type of connection.
     /// 3. Customer gateway ID.
     /// 4. VPN gateway ID.
-    /// 5. The current state of the VPN connection (pending, available,
-    /// deleting, deleted).
-    /// 6. The customer gateway configuration information in the
-    /// native XML format.
+    /// 5. The current state of the VPN connection (pending, available, deleting, deleted).
+    /// 6. The customer gateway configuration information in the native XML format.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeVpnConnectionsRequest
-    {    
+    {
         private List<string> vpnConnectionIdField;
         private List<Filter> filterField;
 
@@ -105,19 +101,13 @@ namespace Amazon.EC2.Model
         {
             return (VpnConnectionId.Count > 0);
         }
-
         /// <summary>
         /// Gets and sets the Filter property.
-        /// The filter to apply on the results of DescribeVpnConnections.
-        /// Filters can be:
-        /// a. state - The state of the VPN connection. (pending, available,
-        /// deleting, deleted).
-        /// b. type - The type of VPN connection. Currently the only
-        /// supported type is ipsec.1.
-        /// c. customerGatewayId - The ID of a customer gateway associated
-        /// with the VPN connection.
-        /// d. vpnGatewayId - The ID of a VPN gateway associated with the VPN
-        /// connection.
+        /// The filter to apply on the results of DescribeVpnConnections. Filters can be:
+        /// a. state - The state of the VPN connection. (pending, available, deleting, deleted).
+        /// b. type - The type of VPN connection. Currently the only supported type is ipsec.1.
+        /// c. customerGatewayId - The ID of a customer gateway associated with the VPN connection.
+        /// d. vpnGatewayId - The ID of a VPN gateway associated with the VPN connection.
         /// </summary>
         [XmlElementAttribute(ElementName = "Filter")]
         public List<Filter> Filter
@@ -136,16 +126,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Filter property
         /// </summary>
-        /// <param name="list">The filter to apply on the results of DescribeVpnConnections.
-        /// Filters can be:
-        /// a. state - The state of the VPN connection. (pending, available,
-        /// deleting, deleted).
-        /// b. type - The type of VPN connection. Currently the only
-        /// supported type is ipsec.1.
-        /// c. customerGatewayId - The ID of a customer gateway associated
-        /// with the VPN connection.
-        /// d. vpnGatewayId - The ID of a VPN gateway associated with the VPN
-        /// connection.</param>
+        /// <param name="list">The filter to apply on the results of DescribeVpnConnections. Filters can be:
+        /// a. state - The state of the VPN connection. (pending, available, deleting, deleted).
+        /// b. type - The type of VPN connection. Currently the only supported type is ipsec.1.
+        /// c. customerGatewayId - The ID of a customer gateway associated with the VPN connection.
+        /// d. vpnGatewayId - The ID of a VPN gateway associated with the VPN connection.</param>
         /// <returns>this instance</returns>
         public DescribeVpnConnectionsRequest WithFilter(params Filter[] list)
         {

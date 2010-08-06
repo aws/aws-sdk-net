@@ -16,30 +16,26 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The Result of the Describe Spot Instances
-    /// operation.
+    /// The Result of the Describe Spot Instances operation.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DescribeSpotInstanceRequestsResult
-    {    
+    {
         private List<SpotInstanceRequest> spotInstanceRequestField;
-
         /// <summary>
         /// Gets and sets the SpotInstanceRequest property.
-        /// A list of the SpotInstanceRequest objects
-        /// returned by the service.
+        /// A list of the SpotInstanceRequest objects returned by the service.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotInstanceRequest")]
         public List<SpotInstanceRequest> SpotInstanceRequest
@@ -56,6 +52,20 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Sets the SpotInstanceRequest property
+        /// </summary>
+        /// <param name="list">A list of the SpotInstanceRequest objects returned by the service.</param>
+        /// <returns>this instance</returns>
+        public DescribeSpotInstanceRequestsResult WithSpotInstanceRequest(params SpotInstanceRequest[] list)
+        {
+            foreach (SpotInstanceRequest item in list)
+            {
+                SpotInstanceRequest.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
         /// Checks if SpotInstanceRequest property is set
         /// </summary>
         /// <returns>true if SpotInstanceRequest property is set</returns>
@@ -64,28 +74,5 @@ namespace Amazon.EC2.Model
             return (SpotInstanceRequest.Count > 0);
         }
 
-        /// <summary>
-        /// XML Representation of this object
-        /// </summary>
-        /// <returns>XML String</returns>
-        public string ToXML()
-        {
-            StringBuilder xml = new StringBuilder(1024);
-            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
-            using (StringWriter sw = new StringWriter(xml))
-            {
-                serializer.Serialize(sw, this);
-            }
-            return xml.ToString();
-        }
-
-        /// <summary>
-        /// String Representation of this object. Overrides Object.ToString()
-        /// </summary>
-        /// <returns>This object as a string</returns>
-        public override string ToString()
-        {
-            return this.ToXML();
-        }
     }
 }

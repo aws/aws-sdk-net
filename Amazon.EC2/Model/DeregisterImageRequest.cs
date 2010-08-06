@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,21 +27,19 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deregisters the specified AMI. Once deregistered,
-    /// the AMI cannot be used to launch new instances.
+    /// Deregisters the specified AMI. Once deregistered, the AMI cannot be used to launch
+    /// new instances.
     ///
-    /// This command does not
-    /// delete the AMI from Amazon S3.
+    /// This command does not delete the AMI from Amazon S3.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class DeregisterImageRequest
-    {    
+    {
         private string imageIdField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
-        /// Unique ID of the AMI which was assigned during
-        /// registration.
+        /// Unique ID of the AMI which was assigned during registration.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
         public string ImageId
@@ -53,8 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ImageId property
         /// </summary>
-        /// <param name="imageId">Unique ID of the AMI which was assigned during
-        /// registration.</param>
+        /// <param name="imageId">Unique ID of the AMI which was assigned during registration.</param>
         /// <returns>this instance</returns>
         public DeregisterImageRequest WithImageId(string imageId)
         {

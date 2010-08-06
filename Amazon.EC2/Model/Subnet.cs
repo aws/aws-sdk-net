@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Subnet
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class Subnet
-    {    
+    {
         private string subnetIdField;
         private string subnetStateField;
         private string vpcIdField;
@@ -72,8 +72,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SubnetState property.
-        /// The current state of the subnet (pending or
-        /// available).
+        /// The current state of the subnet (pending or available).
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetState")]
         public string SubnetState
@@ -85,8 +84,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SubnetState property
         /// </summary>
-        /// <param name="subnetState">The current state of the subnet (pending or
-        /// available).</param>
+        /// <param name="subnetState">The current state of the subnet (pending or available).</param>
         /// <returns>this instance</returns>
         public Subnet WithSubnetState(string subnetState)
         {
@@ -167,8 +165,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the AvailableIpAddressCount property.
-        /// The number of unused IP addresses in the
-        /// subnet.
+        /// The number of unused IP addresses in the subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailableIpAddressCount")]
         public Decimal AvailableIpAddressCount
@@ -180,8 +177,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the AvailableIpAddressCount property
         /// </summary>
-        /// <param name="availableIpAddressCount">The number of unused IP addresses in the
-        /// subnet.</param>
+        /// <param name="availableIpAddressCount">The number of unused IP addresses in the subnet.</param>
         /// <returns>this instance</returns>
         public Subnet WithAvailableIpAddressCount(Decimal availableIpAddressCount)
         {

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,17 +27,15 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Shuts down one or more instances. This operation
-    /// is idempotent; if you
-    /// terminate an instance more than once, each
-    /// call will succeed.
+    /// Shuts down one or more instances. This operation is idempotent; if you
+    /// terminate an instance more than once, each call will succeed.
     ///
-    /// Terminated instances will remain visible after
-    /// termination (approximately one hour).
+    /// Terminated instances will remain visible after termination (approximately one
+    /// hour).
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class TerminateInstancesRequest
-    {    
+    {
         private List<string> instanceIdField;
 
         /// <summary>

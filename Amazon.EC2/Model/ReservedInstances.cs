@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Reserved Instances
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class ReservedInstances
-    {    
+    {
         private string reservedInstancesIdField;
         private string instanceTypeField;
         private string availabilityZoneField;
@@ -76,8 +76,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceType property.
-        /// The instance type on which the Reserved
-        /// Instance can be used.
+        /// The instance type on which the Reserved Instance can be used.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
@@ -89,8 +88,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceType property
         /// </summary>
-        /// <param name="instanceType">The instance type on which the Reserved
-        /// Instance can be used.</param>
+        /// <param name="instanceType">The instance type on which the Reserved Instance can be used.</param>
         /// <returns>this instance</returns>
         public ReservedInstances WithInstanceType(string instanceType)
         {
@@ -109,8 +107,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the AvailabilityZone property.
-        /// The Availability Zone in which the Reserved
-        /// Instance can be used.
+        /// The Availability Zone in which the Reserved Instance can be used.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
@@ -122,8 +119,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the AvailabilityZone property
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone in which the Reserved
-        /// Instance can be used.</param>
+        /// <param name="availabilityZone">The Availability Zone in which the Reserved Instance can be used.</param>
         /// <returns>this instance</returns>
         public ReservedInstances WithAvailabilityZone(string availabilityZone)
         {
@@ -142,8 +138,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Duration property.
-        /// The duration of the Reserved Instance, in
-        /// seconds.
+        /// The duration of the Reserved Instance, in seconds.
         /// </summary>
         [XmlElementAttribute(ElementName = "Duration")]
         public Decimal Duration
@@ -155,8 +150,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Duration property
         /// </summary>
-        /// <param name="duration">The duration of the Reserved Instance, in
-        /// seconds.</param>
+        /// <param name="duration">The duration of the Reserved Instance, in seconds.</param>
         /// <returns>this instance</returns>
         public ReservedInstances WithDuration(Decimal duration)
         {
@@ -175,8 +169,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the UsagePrice property.
-        /// The usage price of the Reserved Instance, per
-        /// hour.
+        /// The usage price of the Reserved Instance, per hour.
         /// </summary>
         [XmlElementAttribute(ElementName = "UsagePrice")]
         public string UsagePrice
@@ -188,8 +181,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the UsagePrice property
         /// </summary>
-        /// <param name="usagePrice">The usage price of the Reserved Instance, per
-        /// hour.</param>
+        /// <param name="usagePrice">The usage price of the Reserved Instance, per hour.</param>
         /// <returns>this instance</returns>
         public ReservedInstances WithUsagePrice(string usagePrice)
         {
@@ -301,9 +293,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the PurchaseState property.
-        /// The state of the Reserved Instance purchase.
-        /// Valid Values:
-        /// pending-payment | active | payment-failed | retired
+        /// The state of the Reserved Instance purchase. Valid Values: pending-payment
+        /// | active | payment-failed | retired
         /// </summary>
         [XmlElementAttribute(ElementName = "PurchaseState")]
         public string PurchaseState
@@ -315,9 +306,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the PurchaseState property
         /// </summary>
-        /// <param name="purchaseState">The state of the Reserved Instance purchase.
-        /// Valid Values:
-        /// pending-payment | active | payment-failed | retired</param>
+        /// <param name="purchaseState">The state of the Reserved Instance purchase. Valid Values: pending-payment
+        /// | active | payment-failed | retired</param>
         /// <returns>this instance</returns>
         public ReservedInstances WithPurchaseState(string purchaseState)
         {
@@ -336,8 +326,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the StartTime property.
-        /// The date and time the Reserved Instance
-        /// started.
+        /// The date and time the Reserved Instance started.
         /// </summary>
         [XmlElementAttribute(ElementName = "StartTime")]
         public string StartTime
@@ -349,8 +338,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the StartTime property
         /// </summary>
-        /// <param name="startTime">The date and time the Reserved Instance
-        /// started.</param>
+        /// <param name="startTime">The date and time the Reserved Instance started.</param>
         /// <returns>this instance</returns>
         public ReservedInstances WithStartTime(string startTime)
         {

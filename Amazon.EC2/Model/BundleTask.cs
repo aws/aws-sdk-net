@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Bundle Task
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class BundleTask
-    {    
+    {
         private string instanceIdField;
         private string bundleIdField;
         private string bundleStateField;
@@ -107,9 +107,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the BundleState property.
         /// The state of the task.
         ///
-        /// Valid Values: pending |
-        /// waiting-for-shutdown | storing | canceling |
-        /// complete | failed
+        /// Valid Values: pending | waiting-for-shutdown | storing | canceling | complete
+        /// | failed
         /// </summary>
         [XmlElementAttribute(ElementName = "BundleState")]
         public string BundleState
@@ -123,9 +122,8 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="bundleState">The state of the task.
         ///
-        /// Valid Values: pending |
-        /// waiting-for-shutdown | storing | canceling |
-        /// complete | failed</param>
+        /// Valid Values: pending | waiting-for-shutdown | storing | canceling | complete
+        /// | failed</param>
         /// <returns>this instance</returns>
         public BundleTask WithBundleState(string bundleState)
         {
@@ -175,8 +173,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the UpdateTime property.
-        /// The time of the most recent update for the
-        /// task.
+        /// The time of the most recent update for the task.
         /// </summary>
         [XmlElementAttribute(ElementName = "UpdateTime")]
         public string UpdateTime
@@ -188,8 +185,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the UpdateTime property
         /// </summary>
-        /// <param name="updateTime">The time of the most recent update for the
-        /// task.</param>
+        /// <param name="updateTime">The time of the most recent update for the task.</param>
         /// <returns>this instance</returns>
         public BundleTask WithUpdateTime(string updateTime)
         {
@@ -239,8 +235,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Progress property.
-        /// The level of task completion, in percent
-        /// (e.g., 20%).
+        /// The level of task completion, in percent (e.g., 20%).
         /// </summary>
         [XmlElementAttribute(ElementName = "Progress")]
         public string Progress
@@ -252,8 +247,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Progress property
         /// </summary>
-        /// <param name="progress">The level of task completion, in percent
-        /// (e.g., 20%).</param>
+        /// <param name="progress">The level of task completion, in percent (e.g., 20%).</param>
         /// <returns>this instance</returns>
         public BundleTask WithProgress(string progress)
         {

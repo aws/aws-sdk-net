@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -49,17 +49,16 @@ namespace Amazon.EC2.Model
     /// for an extended period of time (inactive means that there are no running Amazon
     /// EC2 instances in the subnet).
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class CreateSubnetRequest
-    {    
+    {
         private string vpcIdField;
         private string cidrBlockField;
         private string availabilityZoneField;
 
         /// <summary>
         /// Gets and sets the VpcId property.
-        /// The ID of the VPC where you want to create the
-        /// subnet.
+        /// The ID of the VPC where you want to create the subnet.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpcId")]
         public string VpcId
@@ -71,8 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the VpcId property
         /// </summary>
-        /// <param name="vpcId">The ID of the VPC where you want to create the
-        /// subnet.</param>
+        /// <param name="vpcId">The ID of the VPC where you want to create the subnet.</param>
         /// <returns>this instance</returns>
         public CreateSubnetRequest WithVpcId(string vpcId)
         {

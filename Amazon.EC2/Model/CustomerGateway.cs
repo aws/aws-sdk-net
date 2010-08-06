@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Customer Gateway
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class CustomerGateway
-    {    
+    {
         private string customerGatewayIdField;
         private string customerGatewayStateField;
         private string typeField;
@@ -71,8 +71,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the CustomerGatewayState property.
-        /// The current state of the customer gateway
-        /// (pending, available, deleting, deleted)
+        /// The current state of the customer gateway (pending, available, deleting, deleted)
         /// </summary>
         [XmlElementAttribute(ElementName = "CustomerGatewayState")]
         public string CustomerGatewayState
@@ -84,8 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the CustomerGatewayState property
         /// </summary>
-        /// <param name="customerGatewayState">The current state of the customer gateway
-        /// (pending, available, deleting, deleted)</param>
+        /// <param name="customerGatewayState">The current state of the customer gateway (pending, available, deleting, deleted)</param>
         /// <returns>this instance</returns>
         public CustomerGateway WithCustomerGatewayState(string customerGatewayState)
         {
@@ -104,8 +102,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Type property.
-        /// The type of VPN connection the customer gateway
-        /// supports (ipsec.1).
+        /// The type of VPN connection the customer gateway supports (ipsec.1).
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
@@ -117,8 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Type property
         /// </summary>
-        /// <param name="type">The type of VPN connection the customer gateway
-        /// supports (ipsec.1).</param>
+        /// <param name="type">The type of VPN connection the customer gateway supports (ipsec.1).</param>
         /// <returns>this instance</returns>
         public CustomerGateway WithType(string type)
         {
@@ -137,9 +133,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the IpAddress property.
-        /// The Internet-routable IP address of the
-        /// customer gateway's outside
-        /// interface
+        /// The Internet-routable IP address of the customer gateway's outside interface
         /// </summary>
         [XmlElementAttribute(ElementName = "IpAddress")]
         public string IpAddress
@@ -151,9 +145,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the IpAddress property
         /// </summary>
-        /// <param name="ipAddress">The Internet-routable IP address of the
-        /// customer gateway's outside
-        /// interface</param>
+        /// <param name="ipAddress">The Internet-routable IP address of the customer gateway's outside interface</param>
         /// <returns>this instance</returns>
         public CustomerGateway WithIpAddress(string ipAddress)
         {
@@ -172,8 +164,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the BgpAsn property.
-        /// The customer gateway's Border Gateway Protocol
-        /// (BGP) Autonomous System Number (ASN).
+        /// The customer gateway's Border Gateway Protocol (BGP) Autonomous System
+        /// Number (ASN).
         /// </summary>
         [XmlElementAttribute(ElementName = "BgpAsn")]
         public string BgpAsn
@@ -185,8 +177,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the BgpAsn property
         /// </summary>
-        /// <param name="bgpAsn">The customer gateway's Border Gateway Protocol
-        /// (BGP) Autonomous System Number (ASN).</param>
+        /// <param name="bgpAsn">The customer gateway's Border Gateway Protocol (BGP) Autonomous System
+        /// Number (ASN).</param>
         /// <returns>this instance</returns>
         public CustomerGateway WithBgpAsn(string bgpAsn)
         {

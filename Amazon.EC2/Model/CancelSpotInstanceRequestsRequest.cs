@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,18 +27,16 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Request to cancel existing Spot Instance
-    /// requests.
+    /// Request to cancel existing Spot Instance requests.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class CancelSpotInstanceRequestsRequest
-    {    
+    {
         private List<string> spotInstanceRequestIdField;
 
         /// <summary>
         /// Gets and sets the SpotInstanceRequestId property.
-        /// The list of Spot Instance requests that you
-        /// want to cancel.
+        /// The list of Spot Instance requests that you want to cancel.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotInstanceRequestId")]
         public List<string> SpotInstanceRequestId
@@ -57,8 +55,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SpotInstanceRequestId property
         /// </summary>
-        /// <param name="list">The list of Spot Instance requests that you
-        /// want to cancel.</param>
+        /// <param name="list">The list of Spot Instance requests that you want to cancel.</param>
         /// <returns>this instance</returns>
         public CancelSpotInstanceRequestsRequest WithSpotInstanceRequestId(params string[] list)
         {

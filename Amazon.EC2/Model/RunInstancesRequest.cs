@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2009-11-30
  */
 
 using System;
@@ -27,99 +27,72 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Launches a specified number of instances of an
-    /// AMI for which you have
+    /// Launches a specified number of instances of an AMI for which you have
     /// permissions.
     ///
-    /// If Amazon EC2 cannot launch the
-    /// minimum number AMIs you request, no
-    /// instances will be launched. If
-    /// there is insufficient capacity to
-    /// launch the
-    /// maximum number of AMIs
-    /// you request, Amazon EC2 launches the minimum
-    /// number specified for
-    /// each AMI and allocate the remaining available
-    /// instances using round robin.
+    /// If Amazon EC2 cannot launch the minimum number AMIs you request, no
+    /// instances will be launched. If there is insufficient capacity to launch the
+    /// maximum number of AMIs you request, Amazon EC2 launches the minimum
+    /// number specified for each AMI and allocate the remaining available instances
+    /// using round robin.
     ///
-    /// In the following example, Libby generates a request to
-    /// launch two images (database and web_server):
+    /// In the following example, Libby generates a request to launch two images
+    /// (database and web_server):
     ///
-    /// Libby runs the RunInstances operation to launch database instances
-    /// (min. 10, max. 15) and web_server instances (min. 30, max. 40).
+    /// Libby runs the RunInstances operation to launch database instances (min.
+    /// 10, max. 15) and web_server instances (min. 30, max. 40).
     ///
     /// Because there are currently 30 instances available and Libby needs a
     /// minimum of 40, no instances are launched.
     ///
-    /// Libby adjusts the number of instances she needs and runs the
-    /// RunInstances operation to launch database
-    /// instances (min. 5, max. 10) and web_server
+    /// Libby adjusts the number of instances she needs and runs the RunInstances
+    /// operation to launch database instances (min. 5, max. 10) and web_server
     /// instances (min. 20, max. 40).
     ///
-    /// Amazon EC2 launches the minimum number of instances for each
-    /// AMI (5 database, 20 web_server).
+    /// Amazon EC2 launches the minimum number of instances for each AMI (5
+    /// database, 20 web_server).
     ///
-    /// The remaining 5 instances are
-    /// allocated using round robin.
+    /// The remaining 5 instances are allocated using round robin.
     ///
-    /// Libby adjusts the number of instances
-    /// she needs and runs the RunInstances
-    /// operation again to launch
-    /// database instances (min. 5, max. 10) and
-    /// web_server instances (min.
-    /// 20, max. 40).
+    /// Libby adjusts the number of instances she needs and runs the RunInstances
+    /// operation again to launch database instances (min. 5, max. 10) and
+    /// web_server instances (min. 20, max. 40).
     ///
     /// Note - every instance is launched in a security group
     /// (created using the CreateSecurityGroup operation.)
     ///
-    /// You can provide
-    /// an optional key pair ID for each image in the launch request
-    /// (created using the CreateKeyPair operation). All instances that
-    /// are created from images that use this key pair will have access to
-    /// the associated public key at boot. You can use this key to provide
-    /// secure access to an instance of
-    /// an image on a per-instance basis.
-    /// Amazon EC2 public images use this
-    /// feature to provide secure access
-    /// without passwords.
+    /// You can provide an optional key pair ID for each image in the launch request
+    /// (created using the CreateKeyPair operation). All instances that are created
+    /// from images that use this key pair will have access to the associated public
+    /// key at boot. You can use this key to provide secure access to an instance of
+    /// an image on a per-instance basis. Amazon EC2 public images use this feature
+    /// to provide secure access without passwords.
     ///
-    /// Important - launching public images without a
-    /// key pair ID will leave them
-    /// inaccessible.
+    /// Important - launching public images without a key pair ID will leave them inaccessible.
     ///
-    /// The public key material is
-    /// made available to the instance at boot
-    /// time by placing it in the
-    /// openssh_id.pub file on a logical device that is exposed
-    /// to the instance as /dev/sda2 (the instance store). The format of this
-    /// file is suitable
-    /// for use as an entry within ~/.ssh/authorized_keys
-    /// (the OpenSSH format).
-    /// This can be done at boot (e.g., as part of
-    /// rc.local) allowing for secure access
+    /// The public key material is made available to the instance at boot time by
+    /// placing it in the openssh_id.pub file on a logical device that is exposed to the
+    /// instance as /dev/sda2 (the instance store). The format of this file is suitable
+    /// for use as an entry within ~/.ssh/authorized_keys (the OpenSSH format).
+    /// This can be done at boot (e.g., as part of rc.local) allowing for secure access
     /// without passwords.
     ///
     /// Optional user data can be provided in the launch request. All instances that
-    /// collectively comprise the launch request have access to this data.
-    /// For more information, go the Amazon Elastic Compute Cloud Developer
-    /// Guide.
+    /// collectively comprise the launch request have access to this data. For more
+    /// information, go the Amazon Elastic Compute Cloud Developer Guide.
     ///
-    /// Note - if any of the AMIs have a product code attached for
-    /// which the user has not subscribed, the RunInstances call will fail.
+    /// Note - if any of the AMIs have a product code attached for which the user has
+    /// not subscribed, the RunInstances call will fail.
     ///
-    /// Important - we strongly recommend using the 2.6.18 Xen stock
-    /// kernel with High-CPU and High-Memory instances. Although the
-    /// default Amazon EC2
-    /// kernels will work, the new kernels provide
-    /// greater stability and performance
-    /// for these instance types. For more
-    /// information about kernels, go the Amazon
-    /// Elastic Compute Cloud
-    /// Developer Guide
+    /// Important - we strongly recommend using the 2.6.18 Xen stock kernel with
+    /// High-CPU and High-Memory instances. Although the default Amazon EC2
+    /// kernels will work, the new kernels provide greater stability and performance
+    /// for these instance types. For more information about kernels, go the Amazon
+    /// Elastic Compute Cloud Developer Guide
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
     public class RunInstancesRequest
-    {    
+    {
         private string imageIdField;
         private Decimal? minCountField;
         private Decimal? maxCountField;
@@ -136,8 +109,6 @@ namespace Amazon.EC2.Model
         private string additionalInfoField;
         private bool? disableApiTerminationField;
         private string instanceInitiatedShutdownBehaviorField;
-        private InstanceLicenseSpecification licenseField;
-        private string privateIpAddressField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
@@ -172,12 +143,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the MinCount property.
-        /// Minimum number of instances to launch. If the
-        /// value is more than Amazon
+        /// Minimum number of instances to launch. If the value is more than Amazon
         /// EC2 can launch, no instances are launched at all.
         ///
-        /// Constraints: Between 1 and the maximum number
-        /// allowed for your account (default: 20).
+        /// Constraints: Between 1 and the maximum number allowed for your account
+        /// (default: 20).
         /// </summary>
         [XmlElementAttribute(ElementName = "MinCount")]
         public Decimal MinCount
@@ -189,12 +159,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the MinCount property
         /// </summary>
-        /// <param name="minCount">Minimum number of instances to launch. If the
-        /// value is more than Amazon
+        /// <param name="minCount">Minimum number of instances to launch. If the value is more than Amazon
         /// EC2 can launch, no instances are launched at all.
         ///
-        /// Constraints: Between 1 and the maximum number
-        /// allowed for your account (default: 20).</param>
+        /// Constraints: Between 1 and the maximum number allowed for your account
+        /// (default: 20).</param>
         /// <returns>this instance</returns>
         public RunInstancesRequest WithMinCount(Decimal minCount)
         {
@@ -213,13 +182,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the MaxCount property.
-        /// Maximum number of instances to launch. If the
-        /// value is more than Amazon
-        /// EC2 can launch, the largest possible
-        /// number above minCount will be launched instead.
+        /// Maximum number of instances to launch. If the value is more than Amazon
+        /// EC2 can launch, the largest possible number above minCount will be launched
+        /// instead.
         ///
-        /// Constraints:
-        /// Between 1 and the maximum number allowed for your account
+        /// Constraints: Between 1 and the maximum number allowed for your account
         /// (default: 20).
         /// </summary>
         [XmlElementAttribute(ElementName = "MaxCount")]
@@ -232,13 +199,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the MaxCount property
         /// </summary>
-        /// <param name="maxCount">Maximum number of instances to launch. If the
-        /// value is more than Amazon
-        /// EC2 can launch, the largest possible
-        /// number above minCount will be launched instead.
+        /// <param name="maxCount">Maximum number of instances to launch. If the value is more than Amazon
+        /// EC2 can launch, the largest possible number above minCount will be launched
+        /// instead.
         ///
-        /// Constraints:
-        /// Between 1 and the maximum number allowed for your account
+        /// Constraints: Between 1 and the maximum number allowed for your account
         /// (default: 20).</param>
         /// <returns>this instance</returns>
         public RunInstancesRequest WithMaxCount(Decimal maxCount)
@@ -363,9 +328,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the InstanceType property.
         /// Specifies the instance type.
         ///
-        /// Valid Values:
-        /// m1.small | m1.large | m1.xlarge | c1.medium |
-        /// c1.xlarge |
+        /// Valid Values: m1.small | m1.large | m1.xlarge | c1.medium | c1.xlarge |
         /// m2.2xlarge | m2.4xlarge
         ///
         /// Default: m1.small
@@ -382,9 +345,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceType">Specifies the instance type.
         ///
-        /// Valid Values:
-        /// m1.small | m1.large | m1.xlarge | c1.medium |
-        /// c1.xlarge |
+        /// Valid Values: m1.small | m1.large | m1.xlarge | c1.medium | c1.xlarge |
         /// m2.2xlarge | m2.4xlarge
         ///
         /// Default: m1.small</param>
@@ -437,8 +398,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the KernelId property.
-        /// The ID of the kernel with which to launch the
-        /// instance.
+        /// The ID of the kernel with which to launch the instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "KernelId")]
         public string KernelId
@@ -450,8 +410,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the KernelId property
         /// </summary>
-        /// <param name="kernelId">The ID of the kernel with which to launch the
-        /// instance.</param>
+        /// <param name="kernelId">The ID of the kernel with which to launch the instance.</param>
         /// <returns>this instance</returns>
         public RunInstancesRequest WithKernelId(string kernelId)
         {
@@ -470,15 +429,10 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the RamdiskId property.
-        /// The ID of the RAM disk with which to launch
-        /// the instance. Some kernels
-        /// require additional drivers at launch.
-        /// Check the kernel requirements for
-        /// information on whether you need
-        /// to specify a RAM disk. To find kernel
-        /// requirements, go to the
-        /// Resource Center and search for the
-        /// kernel ID.
+        /// The ID of the RAM disk with which to launch the instance. Some kernels
+        /// require additional drivers at launch. Check the kernel requirements for
+        /// information on whether you need to specify a RAM disk. To find kernel
+        /// requirements, go to the Resource Center and search for the kernel ID.
         /// </summary>
         [XmlElementAttribute(ElementName = "RamdiskId")]
         public string RamdiskId
@@ -490,15 +444,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the RamdiskId property
         /// </summary>
-        /// <param name="ramdiskId">The ID of the RAM disk with which to launch
-        /// the instance. Some kernels
-        /// require additional drivers at launch.
-        /// Check the kernel requirements for
-        /// information on whether you need
-        /// to specify a RAM disk. To find kernel
-        /// requirements, go to the
-        /// Resource Center and search for the
-        /// kernel ID.</param>
+        /// <param name="ramdiskId">The ID of the RAM disk with which to launch the instance. Some kernels
+        /// require additional drivers at launch. Check the kernel requirements for
+        /// information on whether you need to specify a RAM disk. To find kernel
+        /// requirements, go to the Resource Center and search for the kernel ID.</param>
         /// <returns>this instance</returns>
         public RunInstancesRequest WithRamdiskId(string ramdiskId)
         {
@@ -514,7 +463,6 @@ namespace Amazon.EC2.Model
         {
             return this.ramdiskIdField != null;
         }
-
         /// <summary>
         /// Gets and sets the BlockDeviceMapping property.
         /// Block device mapping.
@@ -589,9 +537,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SubnetId property.
-        /// Specifies the subnet ID within which to launch
-        /// the instance(s) for
-        /// Amazon Virtual Private Cloud.
+        /// Specifies the subnet ID within which to launch the instance(s) for Amazon Virtual Private Cloud.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubnetId")]
         public string SubnetId
@@ -603,9 +549,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SubnetId property
         /// </summary>
-        /// <param name="subnetId">Specifies the subnet ID within which to launch
-        /// the instance(s) for
-        /// Amazon Virtual Private Cloud.</param>
+        /// <param name="subnetId">Specifies the subnet ID within which to launch the instance(s) for Amazon Virtual Private Cloud.</param>
         /// <returns>this instance</returns>
         public RunInstancesRequest WithSubnetId(string subnetId)
         {
@@ -624,8 +568,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the AdditionalInfo property.
-        /// Specifies additional information to make
-        /// available to the instance(s)
+        /// Specifies additional information to make available to the instance(s)
         /// </summary>
         [XmlElementAttribute(ElementName = "AdditionalInfo")]
         public string AdditionalInfo
@@ -637,8 +580,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the AdditionalInfo property
         /// </summary>
-        /// <param name="additionalInfo">Specifies additional information to make
-        /// available to the instance(s)</param>
+        /// <param name="additionalInfo">Specifies additional information to make available to the instance(s)</param>
         /// <returns>this instance</returns>
         public RunInstancesRequest WithAdditionalInfo(string additionalInfo)
         {
@@ -657,9 +599,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the DisableApiTermination property.
-        /// Specifies whether the instance can be
-        /// terminated using the APIs. You must modify this attribute before
-        /// you can terminate any "locked" instances from the APIs.
+        /// Specifies whether the instance can be terminated using
+        /// the APIs. You must modify this attribute before you can
+        /// terminate any "locked" instances from the APIs.
         /// </summary>
         [XmlElementAttribute(ElementName = "DisableApiTermination")]
         public bool DisableApiTermination
@@ -671,9 +613,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the DisableApiTermination property
         /// </summary>
-        /// <param name="disableApiTermination">Specifies whether the instance can be
-        /// terminated using the APIs. You must modify this attribute before
-        /// you can terminate any "locked" instances from the APIs.</param>
+        /// <param name="disableApiTermination">Specifies whether the instance can be terminated using
+        /// the APIs. You must modify this attribute before you can
+        /// terminate any "locked" instances from the APIs.</param>
         /// <returns>this instance</returns>
         public RunInstancesRequest WithDisableApiTermination(bool disableApiTermination)
         {
@@ -692,8 +634,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceInitiatedShutdownBehavior property.
-        /// Specifies whether the instance's Amazon EBS
-        /// volumes are stopped or terminated when the instance is shut
+        /// Specifies whether the instance's Amazon EBS volumes
+        /// are stopped or terminated when the instance is shut
         /// down.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceInitiatedShutdownBehavior")]
@@ -706,8 +648,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceInitiatedShutdownBehavior property
         /// </summary>
-        /// <param name="instanceInitiatedShutdownBehavior">Specifies whether the instance's Amazon EBS
-        /// volumes are stopped or terminated when the instance is shut
+        /// <param name="instanceInitiatedShutdownBehavior">Specifies whether the instance's Amazon EBS volumes
+        /// are stopped or terminated when the instance is shut
         /// down.</param>
         /// <returns>this instance</returns>
         public RunInstancesRequest WithInstanceInitiatedShutdownBehavior(string instanceInitiatedShutdownBehavior)
@@ -723,78 +665,6 @@ namespace Amazon.EC2.Model
         public bool IsSetInstanceInitiatedShutdownBehavior()
         {
             return this.instanceInitiatedShutdownBehaviorField != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the License property.
-        /// Specifies active licenses in use and attached
-        /// to an Amazon EC2 instance.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "License")]
-        public InstanceLicenseSpecification License
-        {
-            get { return this.licenseField; }
-            set { this.licenseField = value; }
-        }
-
-        /// <summary>
-        /// Sets the License property
-        /// </summary>
-        /// <param name="license">Specifies active licenses in use and attached
-        /// to an Amazon EC2 instance.</param>
-        /// <returns>this instance</returns>
-        public RunInstancesRequest WithLicense(InstanceLicenseSpecification license)
-        {
-            this.licenseField = license;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if License property is set
-        /// </summary>
-        /// <returns>true if License property is set</returns>
-        public bool IsSetLicense()
-        {
-            return this.licenseField != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the PrivateIpAddress property.
-        /// If you're using Amazon Virtual Private Cloud,
-        /// you can optionally use this
-        /// parameter to assign the instance a
-        /// specific available IP address from the
-        /// subnet.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "PrivateIpAddress")]
-        public string PrivateIpAddress
-        {
-            get { return this.privateIpAddressField; }
-            set { this.privateIpAddressField = value; }
-        }
-
-        /// <summary>
-        /// Sets the PrivateIpAddress property
-        /// </summary>
-        /// <param name="privateIpAddress">If you're using Amazon Virtual Private Cloud,
-        /// you can optionally use this
-        /// parameter to assign the instance a
-        /// specific available IP address from the
-        /// subnet.</param>
-        /// <returns>this instance</returns>
-        public RunInstancesRequest WithPrivateIpAddress(string privateIpAddress)
-        {
-            this.privateIpAddressField = privateIpAddress;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if PrivateIpAddress property is set
-        /// </summary>
-        /// <returns>true if PrivateIpAddress property is set</returns>
-        public bool IsSetPrivateIpAddress()
-        {
-            return this.privateIpAddressField != null;
         }
 
     }
