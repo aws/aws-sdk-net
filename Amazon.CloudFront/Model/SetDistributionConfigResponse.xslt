@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:cf="http://cloudfront.amazonaws.com/doc/2010-07-15/" exclude-result-prefixes="xsl cf">
-  <xsl:variable name="ns" select="'http://cloudfront.amazonaws.com/doc/2010-07-15/'"/>
+  xmlns:cf="http://cloudfront.amazonaws.com/doc/2010-08-01/" exclude-result-prefixes="xsl cf">
+  <xsl:variable name="ns" select="'http://cloudfront.amazonaws.com/doc/2010-08-01/'"/>
   <xsl:output method="xml" indent="yes"/>
 
   <xsl:template match="cf:Distribution">

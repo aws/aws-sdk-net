@@ -1,2 +1,9 @@
 AWS SDK for .NET
 Copyright 2009-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved. 
+
+**********************
+THIRD PARTY COMPONENTS
+**********************
+This software includes third party software subject to the following copyrights:
+
+-Json processing from Json.Net – Copyright 2007 James Newton-King, the license for this component is included in "bin\Newtonsoft.Json.Net20 License.txt".

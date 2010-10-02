@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;

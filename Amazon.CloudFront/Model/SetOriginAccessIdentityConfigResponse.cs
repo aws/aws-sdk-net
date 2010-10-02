@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-07-15
+ *  API Version: 2010-08-01
  *
  */
 
@@ -29,7 +29,7 @@ namespace Amazon.CloudFront.Model
     /// information structure along with any other headers returned by 
     /// CloudFront.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-07-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-08-01/", IsNullable = false)]
     public class SetOriginAccessIdentityConfigResponse : GetOriginAccessIdentityInfoResponse
     {
         #region ETag

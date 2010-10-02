@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
     ///
     /// The current state of the VPC (pending or available)
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class DescribeVpcsRequest
     {    
         private List<string> vpcIdField;
@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model
         /// 2. cidrBlock - The CIDR block of the VPC. The CIDR block you
         /// specify must exactly match the VPC's CIDR block for information to be
         /// returned for the VPC.
-        /// Constraints: Must contain the slash followed by one or two 
+        /// Constraints: Must contain the slash followed by one or two
         /// digits (e.g., /28).
         /// 3. dhcpOptionsId - The IP of a set of DHCP options.
         /// </summary>
@@ -131,7 +131,7 @@ namespace Amazon.EC2.Model
         /// 2. cidrBlock - The CIDR block of the VPC. The CIDR block you
         /// specify must exactly match the VPC's CIDR block for information to be
         /// returned for the VPC.
-        /// Constraints: Must contain the slash followed by one or two 
+        /// Constraints: Must contain the slash followed by one or two
         /// digits (e.g., /28).
         /// 3. dhcpOptionsId - The IP of a set of DHCP options.</param>
         /// <returns>this instance</returns>

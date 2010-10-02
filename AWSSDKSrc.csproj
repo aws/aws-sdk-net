@@ -140,6 +140,7 @@
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontClient.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontConfig.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\BaseRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\CloudFrontDistribution.cs" />
     <Compile Include="Amazon.CloudFront\Model\CloudFrontDistributionBase.cs" />
     <Compile Include="Amazon.CloudFront\Model\CloudFrontDistributionConfig.cs" />
@@ -169,6 +170,10 @@
     <Compile Include="Amazon.CloudFront\Model\GetDistributionConfigResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetDistributionInfoRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetDistributionInfoResponse.cs" />
+    <Compile Include="Amazon.CloudFront\Model\GetInvalidationListRequest.cs" />
+    <Compile Include="Amazon.CloudFront\Model\GetInvalidationListResponse.cs" />
+    <Compile Include="Amazon.CloudFront\Model\GetInvalidationRequest.cs" />
+    <Compile Include="Amazon.CloudFront\Model\GetInvalidationResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetOriginAccessIdentityConfigRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetOriginAccessIdentityConfigResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetOriginAccessIdentityInfoRequest.cs" />
@@ -177,12 +182,16 @@
     <Compile Include="Amazon.CloudFront\Model\GetStreamingDistributionConfigResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetStreamingDistributionInfoRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetStreamingDistributionInfoResponse.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidationBatch.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidationSummary.cs" />
     <Compile Include="Amazon.CloudFront\Model\ListDistributionsRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\ListDistributionsResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\ListOriginAccessIdentitiesRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\ListOriginAccessIdentitiesResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\ListStreamingDistributionsRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\ListStreamingDistributionsResponse.cs" />
+    <Compile Include="Amazon.CloudFront\Model\PostInvalidationRequest.cs" />
+    <Compile Include="Amazon.CloudFront\Model\PostInvalidationResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\SetDistributionConfigRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\SetDistributionConfigResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\SetOriginAccessIdentityConfigRequest.cs" />
@@ -277,6 +286,8 @@
     <Compile Include="Amazon.EC2\Model\CreateSubnetRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSubnetResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSubnetResult.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateTagsRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateTagsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVolumePermission.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVolumeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVolumeResponse.cs" />
@@ -309,6 +320,9 @@
     <Compile Include="Amazon.EC2\Model\DeleteSpotDatafeedSubscriptionResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteSubnetRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteSubnetResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DeleteTags.cs" />
+    <Compile Include="Amazon.EC2\Model\DeleteTagsRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DeleteTagsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteVolumeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteVolumeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteVpcRequest.cs" />
@@ -385,6 +399,9 @@
     <Compile Include="Amazon.EC2\Model\DescribeSubnetsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSubnetsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSubnetsResult.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeTagsRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeTagsResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeTagsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVolumesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVolumesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVolumesResult.cs" />
@@ -419,6 +436,9 @@
     <Compile Include="Amazon.EC2\Model\GetPasswordDataResult.cs" />
     <Compile Include="Amazon.EC2\Model\Image.cs" />
     <Compile Include="Amazon.EC2\Model\ImageAttribute.cs" />
+    <Compile Include="Amazon.EC2\Model\ImportKeyPairRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\ImportKeyPairResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\ImportKeyPairResult.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceAttribute.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceBlockDeviceMapping.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceBlockDeviceMappingParameter.cs" />
@@ -430,6 +450,7 @@
     <Compile Include="Amazon.EC2\Model\InstanceState.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceStateChange.cs" />
     <Compile Include="Amazon.EC2\Model\IpPermission.cs" />
+    <Compile Include="Amazon.EC2\Model\IpPermissionSpecification.cs" />
     <Compile Include="Amazon.EC2\Model\KeyPair.cs" />
     <Compile Include="Amazon.EC2\Model\LaunchPermission.cs" />
     <Compile Include="Amazon.EC2\Model\LaunchSpecification.cs" />
@@ -472,6 +493,7 @@
     <Compile Include="Amazon.EC2\Model\ResetInstanceAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ResetSnapshotAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ResetSnapshotAttributeResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\ResourceTag.cs" />
     <Compile Include="Amazon.EC2\Model\ResponseMetadata.cs" />
     <Compile Include="Amazon.EC2\Model\RevokeSecurityGroupIngressRequest.cs" />
     <Compile Include="Amazon.EC2\Model\RevokeSecurityGroupIngressResponse.cs" />
@@ -496,6 +518,8 @@
     <Compile Include="Amazon.EC2\Model\StopInstancesResult.cs" />
     <Compile Include="Amazon.EC2\Model\Storage.cs" />
     <Compile Include="Amazon.EC2\Model\Subnet.cs" />
+    <Compile Include="Amazon.EC2\Model\Tag.cs" />
+    <Compile Include="Amazon.EC2\Model\TagType.cs" />
     <Compile Include="Amazon.EC2\Model\TerminateInstancesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\TerminateInstancesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\TerminateInstancesResult.cs" />
@@ -1300,6 +1324,13 @@
     <EmbeddedResource Include="Amazon.EC2\Model\DescribePlacementGroupsResponse.xslt" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Amazon.CloudFront\Model\PostInvalidationResponse.xslt" />
+    <EmbeddedResource Include="Amazon.CloudFront\Model\GetInvalidationListResponse.xslt" />
+    <EmbeddedResource Include="Amazon.CloudFront\Model\GetInvalidationResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateTagsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteTagsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeTagsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ImportKeyPairResponse.xslt" />
     <Content Include="ThirdParty\Newtonsoft.Json.Net20.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

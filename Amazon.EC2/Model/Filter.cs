@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -27,10 +27,19 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     ///<summary>
-    ///Used to filter the results of Virtual Private Cloud related
-    ///						Describe operations.
+    ///A filter used to limit results when describing tags.
+    ///Multiple values can be specified per filter. 
+    ///A tag must match at least one of the specified values for it to be
+    ///returned from an operation.
+    ///
+    ///Wildcards can be included in filter values; 
+    ///* specifies that zero or more characters
+    ///must match, and ? specifies that exactly one
+    ///character must match.Use a backslash to escape special characters.
+    ///For example, a filter value of \*amazon\?\\
+    ///specifies the literal string *amazon?\.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class Filter
     {    
         private string nameField;
@@ -38,7 +47,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Name property.
-        /// Name of a filter.
+        /// Specifies the name of the filter.
         /// </summary>
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
@@ -50,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Name property
         /// </summary>
-        /// <param name="name">Name of a filter.</param>
+        /// <param name="name">Specifies the name of the filter.</param>
         /// <returns>this instance</returns>
         public Filter WithName(string name)
         {
@@ -69,7 +78,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Value property.
-        /// A value for the filter.
+        /// Contains one or more values for the filter.
         /// </summary>
         [XmlElementAttribute(ElementName = "Value")]
         public List<string> Value
@@ -88,7 +97,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Value property
         /// </summary>
-        /// <param name="list">A value for the filter.</param>
+        /// <param name="list">Contains one or more values for the filter.</param>
         /// <returns>this instance</returns>
         public Filter WithValue(params string[] list)
         {

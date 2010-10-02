@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// lost data and
     /// will corrupt the file system.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class DetachVolumeRequest
     {    
         private string volumeIdField;
@@ -154,7 +154,7 @@ namespace Amazon.EC2.Model
         /// can lead to data loss or a corrupted file system.
         ///
         /// Use this option only as a last resort to detach a volume from a
-        /// failed instance. The instance will not have an opportunity 
+        /// failed instance. The instance will not have an opportunity
         /// to flush file system caches nor file
         /// system meta data. If you use this option, you
         /// must perform file system check and repair procedures.
@@ -176,7 +176,7 @@ namespace Amazon.EC2.Model
         /// can lead to data loss or a corrupted file system.
         ///
         /// Use this option only as a last resort to detach a volume from a
-        /// failed instance. The instance will not have an opportunity 
+        /// failed instance. The instance will not have an opportunity
         /// to flush file system caches nor file
         /// system meta data. If you use this option, you
         /// must perform file system check and repair procedures.</param>

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -27,13 +27,13 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Attaches a VPN gateway to a VPC. This is the last step 
+    /// Attaches a VPN gateway to a VPC. This is the last step
     /// required to get your VPC fully connected to your data center
     /// before launching instances in it. For more information, go to
     /// Process for Using Amazon VPC in the Amazon Virtual Private Cloud
     /// Developer Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class AttachVpnGatewayRequest
     {    
         private string vpnGatewayIdField;

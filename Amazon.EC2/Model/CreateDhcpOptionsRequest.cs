@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Creates a set of DHCP options that you can then
-    /// associate with one or more VPCs, causing all 
+    /// associate with one or more VPCs, causing all
     /// existing and new instances that you launch in those
     /// VPCs to use the set of DHCP options. The following
     /// table lists the individual DHCP options you
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
     /// We recommend you only use 2 at this time (broadcast and multicast
     /// are currently not supported)
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class CreateDhcpOptionsRequest
     {    
         private List<DhcpConfiguration> dhcpConfigurationField;

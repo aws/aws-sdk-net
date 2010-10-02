@@ -41,7 +41,7 @@ namespace Amazon.CloudFront.Util
         internal static readonly string DeleteVerb = Verbs[3];
 
         // Often used strings
-        internal const string ServiceResource = "/2010-07-15/";
+        internal const string ServiceResource = "/2010-08-01/";
         internal const string ConfigQuery = "/config";
         internal const string RequestParam = "request";
     }

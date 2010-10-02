@@ -79,9 +79,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
         public HadoopJarStepConfig NewScriptRunnerStep(string script, params string[] args)
         {
+            string[] appendedArgs = new string[args.Length + 1];
+            appendedArgs[0] = script;
+            Array.Copy(args, 0, appendedArgs, 1, args.Length);
+
             return new HadoopJarStepConfig()
                 .WithJar(String.Format("s3://{0}/libs/script-runner/script-runner.jar", bucket))
-                .WithArgs(args);
+                .WithArgs(appendedArgs);
         }
 
         /// <summary>

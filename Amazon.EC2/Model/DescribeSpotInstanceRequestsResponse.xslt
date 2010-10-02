@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2010-06-15/"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2010-08-31/"
   exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
   <xsl:variable name="ns"
-    select="'http://ec2.amazonaws.com/doc/2010-06-15/'" />
+    select="'http://ec2.amazonaws.com/doc/2010-08-31/'" />
   <xsl:template match="ec2:DescribeSpotInstanceRequestsResponse">
     <xsl:element name="DescribeSpotInstanceRequestsResponse" namespace="{$ns}">
       <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -55,6 +55,7 @@
         <xsl:element name="ProductDescription" namespace="{$ns}">
           <xsl:value-of select="ec2:productDescription"/>
         </xsl:element>
+        <xsl:apply-templates select="ec2:tagSet" />
       </xsl:element>
     </xsl:for-each>
   </xsl:template>
@@ -143,5 +144,17 @@
         </xsl:if>
       </xsl:element>
     </xsl:element>
+  </xsl:template>
+  <xsl:template match="ec2:tagSet">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="Tag" namespace="{$ns}">
+        <xsl:element name="Key" namespace="{$ns}">
+          <xsl:value-of select="ec2:key" />
+        </xsl:element>
+        <xsl:element name="Value" namespace="{$ns}">
+          <xsl:value-of select="ec2:value" />
+        </xsl:element>
+      </xsl:element>
+    </xsl:for-each>
   </xsl:template>
 </xsl:stylesheet>

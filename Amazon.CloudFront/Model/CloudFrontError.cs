@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-07-15
+ *  API Version: 2010-08-01
  *
  */
 
@@ -29,7 +29,7 @@ namespace Amazon.CloudFront.Model
     /// an error code, a message, a host ID and a request ID for
     /// debugging purposes.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-07-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-08-01/", IsNullable = false)]
     public class CloudFrontError
     {
         #region Private Members

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -484,6 +484,32 @@ namespace Amazon.EC2
         }
 
         /// <summary>
+        /// Create Tags 
+        /// </summary>
+        /// <param name="request">Create Tags  request</param>
+        /// <returns>Create Tags  Response from the service</returns>
+        /// <remarks>
+        /// Create a snapshot of the volume identified by
+        /// volume ID. A volume does not have to be detached
+        /// at the time the snapshot is taken.
+        /// Important Note:
+        /// Snapshot creation requires that the
+        /// system is in a consistent state.
+        /// For instance, this means that if
+        /// taking a snapshot of a database, the
+        /// tables must be read-only locked
+        /// to ensure that the snapshot will not contain a
+        /// corrupted version of the database. Therefore,
+        /// be careful when using this API to ensure that
+        /// the system remains in the consistent state until the create
+        /// snapshot status has returned.
+        /// </remarks>
+        public CreateTagsResponse CreateTags(CreateTagsRequest request)
+        {
+            return Invoke<CreateTagsResponse>(ConvertCreateTags(request));
+        }
+
+        /// <summary>
         /// Create Volume 
         /// </summary>
         /// <param name="request">Create Volume  request</param>
@@ -571,6 +597,19 @@ namespace Amazon.EC2
         public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
             return Invoke<DeleteSnapshotResponse>(ConvertDeleteSnapshot(request));
+        }
+
+        /// <summary>
+        /// Delete Tags 
+        /// </summary>
+        /// <param name="request">Delete Tags  request</param>
+        /// <returns>Delete Tags  Response from the service</returns>
+        /// <remarks>
+        /// Deletes the snapshot identitied by snapshotId.
+        /// </remarks>
+        public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
+        {
+            return Invoke<DeleteTagsResponse>(ConvertDeleteTags(request));
         }
 
         /// <summary>
@@ -895,6 +934,20 @@ namespace Amazon.EC2
         }
 
         /// <summary>
+        /// Describe Tags 
+        /// </summary>
+        /// <param name="request">Describe Tags  request</param>
+        /// <returns>Describe Tags  Response from the service</returns>
+        /// <remarks>
+        /// Describes the indicated snapshots, or in lieu of
+        /// that, all snapshots owned by the caller.
+        /// </remarks>
+        public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        {
+            return Invoke<DescribeTagsResponse>(ConvertDescribeTags(request));
+        }
+
+        /// <summary>
         /// Describe Volumes 
         /// </summary>
         /// <param name="request">Describe Volumes  request</param>
@@ -976,6 +1029,25 @@ namespace Amazon.EC2
         public GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request)
         {
             return Invoke<GetConsoleOutputResponse>(ConvertGetConsoleOutput(request));
+        }
+
+        /// <summary>
+        /// Import Key Pair 
+        /// </summary>
+        /// <param name="request">Import Key Pair  request</param>
+        /// <returns>Import Key Pair  Response from the service</returns>
+        /// <remarks>
+        /// The GetConsoleOutput operation retrieves console
+        /// output for the specified instance.
+        /// Instance console output is buffered
+        /// and posted shortly after instance boot,
+        /// reboot, and termination. Amazon EC2 preserves the
+        /// most recent 64 KB output which will be
+        /// available for at least one hour after the most recent post.
+        /// </remarks>
+        public ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request)
+        {
+            return Invoke<ImportKeyPairResponse>(ConvertImportKeyPair(request));
         }
 
         /// <summary>
@@ -2267,6 +2339,47 @@ namespace Amazon.EC2
             {
                 parameters["CidrIp"] = request.CidrIp;
             }
+            List<IpPermissionSpecification> authorizeSecurityGroupIngressRequestIpPermissionsList = request.IpPermissions;
+            int authorizeSecurityGroupIngressRequestIpPermissionsListIndex = 1;
+            foreach (IpPermissionSpecification authorizeSecurityGroupIngressRequestIpPermissions in authorizeSecurityGroupIngressRequestIpPermissionsList)
+            {
+                if (authorizeSecurityGroupIngressRequestIpPermissions.IsSetIpProtocol())
+                {
+                    parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "IpProtocol")] = authorizeSecurityGroupIngressRequestIpPermissions.IpProtocol;
+                }
+                if (authorizeSecurityGroupIngressRequestIpPermissions.IsSetFromPort())
+                {
+                    parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "FromPort")] = authorizeSecurityGroupIngressRequestIpPermissions.FromPort.ToString();
+                }
+                if (authorizeSecurityGroupIngressRequestIpPermissions.IsSetToPort())
+                {
+                    parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "ToPort")] = authorizeSecurityGroupIngressRequestIpPermissions.ToPort.ToString();
+                }
+                List<UserIdGroupPair> ipPermissionsGroupsList = authorizeSecurityGroupIngressRequestIpPermissions.Groups;
+                int ipPermissionsGroupsListIndex = 1;
+                foreach (UserIdGroupPair ipPermissionsGroups in ipPermissionsGroupsList)
+                {
+                    if (ipPermissionsGroups.IsSetUserId())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "UserId")] = ipPermissionsGroups.UserId;
+                    }
+                    if (ipPermissionsGroups.IsSetGroupName())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "GroupName")] = ipPermissionsGroups.GroupName;
+                    }
+
+                    ipPermissionsGroupsListIndex++;
+                }
+                List<string> ipPermissionsIpRangesList = authorizeSecurityGroupIngressRequestIpPermissions.IpRanges;
+                int ipPermissionsIpRangesListIndex = 1;
+                foreach (string ipPermissionsIpRanges in ipPermissionsIpRangesList)
+                {
+                    parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "IpRanges", ".", ipPermissionsIpRangesListIndex)] = ipPermissionsIpRanges;
+                    ipPermissionsIpRangesListIndex++;
+                }
+
+                authorizeSecurityGroupIngressRequestIpPermissionsListIndex++;
+            }
 
             return parameters;
         }
@@ -2404,6 +2517,120 @@ namespace Amazon.EC2
             if (request.IsSetKeyName())
             {
                 parameters["KeyName"] = request.KeyName;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert ImportKeyPairRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertImportKeyPair(ImportKeyPairRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ImportKeyPair";
+            if (request.IsSetKeyName())
+            {
+                parameters["KeyName"] = request.KeyName;
+            }
+            if (request.IsSetPublicKeyMaterial())
+            {
+                parameters["PublicKeyMaterial"] = request.PublicKeyMaterial;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateTagsRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateTags(CreateTagsRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateTags";
+            List<string> createTagsRequestResourceIdList = request.ResourceId;
+            int createTagsRequestResourceIdListIndex = 1;
+            foreach (string createTagsRequestResourceId in createTagsRequestResourceIdList)
+            {
+                parameters[String.Concat("ResourceId", ".", createTagsRequestResourceIdListIndex)] = createTagsRequestResourceId;
+                createTagsRequestResourceIdListIndex++;
+            }
+            List<Tag> createTagsRequestTagList = request.Tag;
+            int createTagsRequestTagListIndex = 1;
+            foreach (Tag createTagsRequestTag in createTagsRequestTagList)
+            {
+                if (createTagsRequestTag.IsSetKey())
+                {
+                    parameters[String.Concat("Tag", ".", createTagsRequestTagListIndex, ".", "Key")] = createTagsRequestTag.Key;
+                }
+                if (createTagsRequestTag.IsSetValue())
+                {
+                    parameters[String.Concat("Tag", ".", createTagsRequestTagListIndex, ".", "Value")] = createTagsRequestTag.Value;
+                }
+
+                createTagsRequestTagListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeTagsRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeTags(DescribeTagsRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeTags";
+            List<Filter> describeTagsRequestFilterList = request.Filter;
+            int describeTagsRequestFilterListIndex = 1;
+            foreach (Filter describeTagsRequestFilter in describeTagsRequestFilterList)
+            {
+                if (describeTagsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeTagsRequestFilterListIndex, ".", "Name")] = describeTagsRequestFilter.Name;
+                }
+                List<string> filterValueList = describeTagsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeTagsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeTagsRequestFilterListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteTagsRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeleteTags(DeleteTagsRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeleteTags";
+            List<string> deleteTagsRequestResourceIdList = request.ResourceId;
+            int deleteTagsRequestResourceIdListIndex = 1;
+            foreach (string deleteTagsRequestResourceId in deleteTagsRequestResourceIdList)
+            {
+                parameters[String.Concat("ResourceId", ".", deleteTagsRequestResourceIdListIndex)] = deleteTagsRequestResourceId;
+                deleteTagsRequestResourceIdListIndex++;
+            }
+            List<DeleteTags> deleteTagsRequestTagList = request.Tag;
+            int deleteTagsRequestTagListIndex = 1;
+            foreach (DeleteTags deleteTagsRequestTag in deleteTagsRequestTagList)
+            {
+                if (deleteTagsRequestTag.IsSetKey())
+                {
+                    parameters[String.Concat("Tag", ".", deleteTagsRequestTagListIndex, ".", "Key")] = deleteTagsRequestTag.Key;
+                }
+                if (deleteTagsRequestTag.IsSetValue())
+                {
+                    parameters[String.Concat("Tag", ".", deleteTagsRequestTagListIndex, ".", "Value")] = deleteTagsRequestTag.Value;
+                }
+
+                deleteTagsRequestTagListIndex++;
             }
 
             return parameters;
@@ -2800,6 +3027,24 @@ namespace Amazon.EC2
                 parameters[String.Concat("DhcpOptionsId", ".", describeDhcpOptionsRequestDhcpOptionsIdListIndex)] = describeDhcpOptionsRequestDhcpOptionsId;
                 describeDhcpOptionsRequestDhcpOptionsIdListIndex++;
             }
+            List<Filter> describeDhcpOptionsRequestFilterList = request.Filter;
+            int describeDhcpOptionsRequestFilterListIndex = 1;
+            foreach (Filter describeDhcpOptionsRequestFilter in describeDhcpOptionsRequestFilterList)
+            {
+                if (describeDhcpOptionsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeDhcpOptionsRequestFilterListIndex, ".", "Name")] = describeDhcpOptionsRequestFilter.Name;
+                }
+                List<string> filterValueList = describeDhcpOptionsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeDhcpOptionsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeDhcpOptionsRequestFilterListIndex++;
+            }
 
             return parameters;
         }
@@ -2902,6 +3147,24 @@ namespace Amazon.EC2
             {
                 parameters["ProductDescription"] = request.ProductDescription;
             }
+            List<Filter> describeReservedInstancesOfferingsRequestFilterList = request.Filter;
+            int describeReservedInstancesOfferingsRequestFilterListIndex = 1;
+            foreach (Filter describeReservedInstancesOfferingsRequestFilter in describeReservedInstancesOfferingsRequestFilterList)
+            {
+                if (describeReservedInstancesOfferingsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeReservedInstancesOfferingsRequestFilterListIndex, ".", "Name")] = describeReservedInstancesOfferingsRequestFilter.Name;
+                }
+                List<string> filterValueList = describeReservedInstancesOfferingsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeReservedInstancesOfferingsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeReservedInstancesOfferingsRequestFilterListIndex++;
+            }
 
             return parameters;
         }
@@ -2919,6 +3182,24 @@ namespace Amazon.EC2
             {
                 parameters[String.Concat("ReservedInstancesId", ".", describeReservedInstancesRequestReservedInstancesIdListIndex)] = describeReservedInstancesRequestReservedInstancesId;
                 describeReservedInstancesRequestReservedInstancesIdListIndex++;
+            }
+            List<Filter> describeReservedInstancesRequestFilterList = request.Filter;
+            int describeReservedInstancesRequestFilterListIndex = 1;
+            foreach (Filter describeReservedInstancesRequestFilter in describeReservedInstancesRequestFilterList)
+            {
+                if (describeReservedInstancesRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeReservedInstancesRequestFilterListIndex, ".", "Name")] = describeReservedInstancesRequestFilter.Name;
+                }
+                List<string> filterValueList = describeReservedInstancesRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeReservedInstancesRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeReservedInstancesRequestFilterListIndex++;
             }
 
             return parameters;
@@ -3008,6 +3289,24 @@ namespace Amazon.EC2
                 parameters[String.Concat("PublicIp", ".", describeAddressesRequestPublicIpListIndex)] = describeAddressesRequestPublicIp;
                 describeAddressesRequestPublicIpListIndex++;
             }
+            List<Filter> describeAddressesRequestFilterList = request.Filter;
+            int describeAddressesRequestFilterListIndex = 1;
+            foreach (Filter describeAddressesRequestFilter in describeAddressesRequestFilterList)
+            {
+                if (describeAddressesRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeAddressesRequestFilterListIndex, ".", "Name")] = describeAddressesRequestFilter.Name;
+                }
+                List<string> filterValueList = describeAddressesRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeAddressesRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeAddressesRequestFilterListIndex++;
+            }
 
             return parameters;
         }
@@ -3026,6 +3325,24 @@ namespace Amazon.EC2
                 parameters[String.Concat("ZoneName", ".", describeAvailabilityZonesRequestZoneNameListIndex)] = describeAvailabilityZonesRequestZoneName;
                 describeAvailabilityZonesRequestZoneNameListIndex++;
             }
+            List<Filter> describeAvailabilityZonesRequestFilterList = request.Filter;
+            int describeAvailabilityZonesRequestFilterListIndex = 1;
+            foreach (Filter describeAvailabilityZonesRequestFilter in describeAvailabilityZonesRequestFilterList)
+            {
+                if (describeAvailabilityZonesRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeAvailabilityZonesRequestFilterListIndex, ".", "Name")] = describeAvailabilityZonesRequestFilter.Name;
+                }
+                List<string> filterValueList = describeAvailabilityZonesRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeAvailabilityZonesRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeAvailabilityZonesRequestFilterListIndex++;
+            }
 
             return parameters;
         }
@@ -3043,6 +3360,24 @@ namespace Amazon.EC2
             {
                 parameters[String.Concat("BundleId", ".", describeBundleTasksRequestBundleIdListIndex)] = describeBundleTasksRequestBundleId;
                 describeBundleTasksRequestBundleIdListIndex++;
+            }
+            List<Filter> describeBundleTasksRequestFilterList = request.Filter;
+            int describeBundleTasksRequestFilterListIndex = 1;
+            foreach (Filter describeBundleTasksRequestFilter in describeBundleTasksRequestFilterList)
+            {
+                if (describeBundleTasksRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeBundleTasksRequestFilterListIndex, ".", "Name")] = describeBundleTasksRequestFilter.Name;
+                }
+                List<string> filterValueList = describeBundleTasksRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeBundleTasksRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeBundleTasksRequestFilterListIndex++;
             }
 
             return parameters;
@@ -3133,6 +3468,24 @@ namespace Amazon.EC2
                 parameters[String.Concat("ExecutableBy", ".", describeImagesRequestExecutableByListIndex)] = describeImagesRequestExecutableBy;
                 describeImagesRequestExecutableByListIndex++;
             }
+            List<Filter> describeImagesRequestFilterList = request.Filter;
+            int describeImagesRequestFilterListIndex = 1;
+            foreach (Filter describeImagesRequestFilter in describeImagesRequestFilterList)
+            {
+                if (describeImagesRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeImagesRequestFilterListIndex, ".", "Name")] = describeImagesRequestFilter.Name;
+                }
+                List<string> filterValueList = describeImagesRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeImagesRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeImagesRequestFilterListIndex++;
+            }
 
             return parameters;
         }
@@ -3150,6 +3503,24 @@ namespace Amazon.EC2
             {
                 parameters[String.Concat("InstanceId", ".", describeInstancesRequestInstanceIdListIndex)] = describeInstancesRequestInstanceId;
                 describeInstancesRequestInstanceIdListIndex++;
+            }
+            List<Filter> describeInstancesRequestFilterList = request.Filter;
+            int describeInstancesRequestFilterListIndex = 1;
+            foreach (Filter describeInstancesRequestFilter in describeInstancesRequestFilterList)
+            {
+                if (describeInstancesRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeInstancesRequestFilterListIndex, ".", "Name")] = describeInstancesRequestFilter.Name;
+                }
+                List<string> filterValueList = describeInstancesRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeInstancesRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeInstancesRequestFilterListIndex++;
             }
 
             return parameters;
@@ -3169,6 +3540,24 @@ namespace Amazon.EC2
                 parameters[String.Concat("KeyName", ".", describeKeyPairsRequestKeyNameListIndex)] = describeKeyPairsRequestKeyName;
                 describeKeyPairsRequestKeyNameListIndex++;
             }
+            List<Filter> describeKeyPairsRequestFilterList = request.Filter;
+            int describeKeyPairsRequestFilterListIndex = 1;
+            foreach (Filter describeKeyPairsRequestFilter in describeKeyPairsRequestFilterList)
+            {
+                if (describeKeyPairsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeKeyPairsRequestFilterListIndex, ".", "Name")] = describeKeyPairsRequestFilter.Name;
+                }
+                List<string> filterValueList = describeKeyPairsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeKeyPairsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeKeyPairsRequestFilterListIndex++;
+            }
 
             return parameters;
         }
@@ -3186,6 +3575,24 @@ namespace Amazon.EC2
             {
                 parameters[String.Concat("LicenseId", ".", describeLicensesRequestLicenseIdListIndex)] = describeLicensesRequestLicenseId;
                 describeLicensesRequestLicenseIdListIndex++;
+            }
+            List<Filter> describeLicensesRequestFilterList = request.Filter;
+            int describeLicensesRequestFilterListIndex = 1;
+            foreach (Filter describeLicensesRequestFilter in describeLicensesRequestFilterList)
+            {
+                if (describeLicensesRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeLicensesRequestFilterListIndex, ".", "Name")] = describeLicensesRequestFilter.Name;
+                }
+                List<string> filterValueList = describeLicensesRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeLicensesRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeLicensesRequestFilterListIndex++;
             }
 
             return parameters;
@@ -3205,6 +3612,24 @@ namespace Amazon.EC2
                 parameters[String.Concat("GroupName", ".", describePlacementGroupsRequestGroupNameListIndex)] = describePlacementGroupsRequestGroupName;
                 describePlacementGroupsRequestGroupNameListIndex++;
             }
+            List<Filter> describePlacementGroupsRequestFilterList = request.Filter;
+            int describePlacementGroupsRequestFilterListIndex = 1;
+            foreach (Filter describePlacementGroupsRequestFilter in describePlacementGroupsRequestFilterList)
+            {
+                if (describePlacementGroupsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describePlacementGroupsRequestFilterListIndex, ".", "Name")] = describePlacementGroupsRequestFilter.Name;
+                }
+                List<string> filterValueList = describePlacementGroupsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describePlacementGroupsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describePlacementGroupsRequestFilterListIndex++;
+            }
 
             return parameters;
         }
@@ -3222,6 +3647,24 @@ namespace Amazon.EC2
             {
                 parameters[String.Concat("GroupName", ".", describeSecurityGroupsRequestGroupNameListIndex)] = describeSecurityGroupsRequestGroupName;
                 describeSecurityGroupsRequestGroupNameListIndex++;
+            }
+            List<Filter> describeSecurityGroupsRequestFilterList = request.Filter;
+            int describeSecurityGroupsRequestFilterListIndex = 1;
+            foreach (Filter describeSecurityGroupsRequestFilter in describeSecurityGroupsRequestFilterList)
+            {
+                if (describeSecurityGroupsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeSecurityGroupsRequestFilterListIndex, ".", "Name")] = describeSecurityGroupsRequestFilter.Name;
+                }
+                List<string> filterValueList = describeSecurityGroupsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeSecurityGroupsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeSecurityGroupsRequestFilterListIndex++;
             }
 
             return parameters;
@@ -3650,6 +4093,47 @@ namespace Amazon.EC2
             {
                 parameters["CidrIp"] = request.CidrIp;
             }
+            List<IpPermissionSpecification> revokeSecurityGroupIngressRequestIpPermissionsList = request.IpPermissions;
+            int revokeSecurityGroupIngressRequestIpPermissionsListIndex = 1;
+            foreach (IpPermissionSpecification revokeSecurityGroupIngressRequestIpPermissions in revokeSecurityGroupIngressRequestIpPermissionsList)
+            {
+                if (revokeSecurityGroupIngressRequestIpPermissions.IsSetIpProtocol())
+                {
+                    parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "IpProtocol")] = revokeSecurityGroupIngressRequestIpPermissions.IpProtocol;
+                }
+                if (revokeSecurityGroupIngressRequestIpPermissions.IsSetFromPort())
+                {
+                    parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "FromPort")] = revokeSecurityGroupIngressRequestIpPermissions.FromPort.ToString();
+                }
+                if (revokeSecurityGroupIngressRequestIpPermissions.IsSetToPort())
+                {
+                    parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "ToPort")] = revokeSecurityGroupIngressRequestIpPermissions.ToPort.ToString();
+                }
+                List<UserIdGroupPair> ipPermissionsGroupsList = revokeSecurityGroupIngressRequestIpPermissions.Groups;
+                int ipPermissionsGroupsListIndex = 1;
+                foreach (UserIdGroupPair ipPermissionsGroups in ipPermissionsGroupsList)
+                {
+                    if (ipPermissionsGroups.IsSetUserId())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "UserId")] = ipPermissionsGroups.UserId;
+                    }
+                    if (ipPermissionsGroups.IsSetGroupName())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "GroupName")] = ipPermissionsGroups.GroupName;
+                    }
+
+                    ipPermissionsGroupsListIndex++;
+                }
+                List<string> ipPermissionsIpRangesList = revokeSecurityGroupIngressRequestIpPermissions.IpRanges;
+                int ipPermissionsIpRangesListIndex = 1;
+                foreach (string ipPermissionsIpRanges in ipPermissionsIpRangesList)
+                {
+                    parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "IpRanges", ".", ipPermissionsIpRangesListIndex)] = ipPermissionsIpRanges;
+                    ipPermissionsIpRangesListIndex++;
+                }
+
+                revokeSecurityGroupIngressRequestIpPermissionsListIndex++;
+            }
 
             return parameters;
         }
@@ -3783,6 +4267,10 @@ namespace Amazon.EC2
             {
                 parameters["PrivateIpAddress"] = request.PrivateIpAddress;
             }
+            if (request.IsSetClientToken())
+            {
+                parameters["ClientToken"] = request.ClientToken;
+            }
 
             return parameters;
         }
@@ -3897,6 +4385,24 @@ namespace Amazon.EC2
                 parameters[String.Concat("VolumeId", ".", describeVolumesRequestVolumeIdListIndex)] = describeVolumesRequestVolumeId;
                 describeVolumesRequestVolumeIdListIndex++;
             }
+            List<Filter> describeVolumesRequestFilterList = request.Filter;
+            int describeVolumesRequestFilterListIndex = 1;
+            foreach (Filter describeVolumesRequestFilter in describeVolumesRequestFilterList)
+            {
+                if (describeVolumesRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeVolumesRequestFilterListIndex, ".", "Name")] = describeVolumesRequestFilter.Name;
+                }
+                List<string> filterValueList = describeVolumesRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeVolumesRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeVolumesRequestFilterListIndex++;
+            }
 
             return parameters;
         }
@@ -3968,6 +4474,24 @@ namespace Amazon.EC2
             if (request.IsSetRestorableBy())
             {
                 parameters["RestorableBy"] = request.RestorableBy;
+            }
+            List<Filter> describeSnapshotsRequestFilterList = request.Filter;
+            int describeSnapshotsRequestFilterListIndex = 1;
+            foreach (Filter describeSnapshotsRequestFilter in describeSnapshotsRequestFilterList)
+            {
+                if (describeSnapshotsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeSnapshotsRequestFilterListIndex, ".", "Name")] = describeSnapshotsRequestFilter.Name;
+                }
+                List<string> filterValueList = describeSnapshotsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeSnapshotsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeSnapshotsRequestFilterListIndex++;
             }
 
             return parameters;
@@ -4043,6 +4567,24 @@ namespace Amazon.EC2
             {
                 parameters[String.Concat("RegionName", ".", describeRegionsRequestRegionNameListIndex)] = describeRegionsRequestRegionName;
                 describeRegionsRequestRegionNameListIndex++;
+            }
+            List<Filter> describeRegionsRequestFilterList = request.Filter;
+            int describeRegionsRequestFilterListIndex = 1;
+            foreach (Filter describeRegionsRequestFilter in describeRegionsRequestFilterList)
+            {
+                if (describeRegionsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeRegionsRequestFilterListIndex, ".", "Name")] = describeRegionsRequestFilter.Name;
+                }
+                List<string> filterValueList = describeRegionsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeRegionsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeRegionsRequestFilterListIndex++;
             }
 
             return parameters;
@@ -4199,6 +4741,24 @@ namespace Amazon.EC2
                 parameters[String.Concat("SpotInstanceRequestId", ".", describeSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex)] = describeSpotInstanceRequestsRequestSpotInstanceRequestId;
                 describeSpotInstanceRequestsRequestSpotInstanceRequestIdListIndex++;
             }
+            List<Filter> describeSpotInstanceRequestsRequestFilterList = request.Filter;
+            int describeSpotInstanceRequestsRequestFilterListIndex = 1;
+            foreach (Filter describeSpotInstanceRequestsRequestFilter in describeSpotInstanceRequestsRequestFilterList)
+            {
+                if (describeSpotInstanceRequestsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeSpotInstanceRequestsRequestFilterListIndex, ".", "Name")] = describeSpotInstanceRequestsRequestFilter.Name;
+                }
+                List<string> filterValueList = describeSpotInstanceRequestsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeSpotInstanceRequestsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeSpotInstanceRequestsRequestFilterListIndex++;
+            }
 
             return parameters;
         }
@@ -4249,6 +4809,24 @@ namespace Amazon.EC2
             {
                 parameters[String.Concat("ProductDescription", ".", describeSpotPriceHistoryRequestProductDescriptionListIndex)] = describeSpotPriceHistoryRequestProductDescription;
                 describeSpotPriceHistoryRequestProductDescriptionListIndex++;
+            }
+            List<Filter> describeSpotPriceHistoryRequestFilterList = request.Filter;
+            int describeSpotPriceHistoryRequestFilterListIndex = 1;
+            foreach (Filter describeSpotPriceHistoryRequestFilter in describeSpotPriceHistoryRequestFilterList)
+            {
+                if (describeSpotPriceHistoryRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeSpotPriceHistoryRequestFilterListIndex, ".", "Name")] = describeSpotPriceHistoryRequestFilter.Name;
+                }
+                List<string> filterValueList = describeSpotPriceHistoryRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeSpotPriceHistoryRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeSpotPriceHistoryRequestFilterListIndex++;
             }
 
             return parameters;

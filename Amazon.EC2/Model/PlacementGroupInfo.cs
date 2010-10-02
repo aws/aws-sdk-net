@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -28,12 +28,12 @@ namespace Amazon.EC2.Model
 {
     ///<summary>
     ///Represents a placement group into which multiple Amazon EC2
-    ///						instances can be launched. A placement group ensures that
-    ///						Amazon EC2 instances are physically located close enough to
-    ///						support HPC features, such as higher IO network connections between
-    ///						instances in the group.
+    ///instances can be launched. A placement group ensures that
+    ///Amazon EC2 instances are physically located close enough to
+    ///support HPC features, such as higher IO network connections between
+    ///instances in the group.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class PlacementGroupInfo
     {    
         private string groupNameField;

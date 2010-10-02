@@ -16,8 +16,8 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-07-15
- *  Author(s): Manoj Mehta
+ *  API Version: 2010-08-01
+ *  Author(s): Manoj Mehta, Norm Johanson
  *
  */
 
@@ -171,6 +171,112 @@ namespace Amazon.CloudFront
 
         #endregion
 
+        #region Invalidation
+
+        /// <summary>
+        /// The PostInvalidation operation invalidates objects specified in the PostInvalidationRequest which will
+        /// cause Cloudfront to go back to the origin to get a new copy.
+        /// 
+        /// <code>
+        /// PostInvalidationRequest request = new PostInvalidationRequest();
+        /// request.DistributionId = distributionId;
+        /// request.InvalidationBatch.CallerReference = callerReference;
+        /// request.InvalidationBatch.WithPaths("/image1.jpg", "/image2.jpg");
+        /// PostInvalidationResponse response = cfcClient.PostInvalidation(request);
+        /// </code>
+        /// </summary>
+        /// <param name="request">The PostInvalidationRequest that defines the parameters of the operation.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.CloudFront.AmazonCloudFrontException"></exception>
+        /// <returns>Returns a PostInvalidationResponse from CloudFront.</returns>
+        public PostInvalidationResponse PostInvalidation(PostInvalidationRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The PostInvalidationRequest specified is null!");
+            }
+            if (request.DistributionId == null)
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The Distribution Id specified is null or empty!");
+            }
+            if (request.InvalidationBatch == null)
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The InvalidationBatch specified is null or empty!");
+            }
+            if (request.InvalidationBatch.CallerReference == null)
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The InvalidationBatch.CallerReference specified is null or empty!");
+            }
+
+            return Invoke<PostInvalidationResponse>(ConvertPostInvalidation(request), request.Headers);
+        }
+
+        /// <summary>
+        /// The GetInvalidationList operation will return back a list of all the invalidations done for a distribution for the
+        /// current and previous billing period. If the list is long, you can paginate it using the MaxItems
+        /// and Marker parameters
+        /// 
+        /// <code>
+        /// GetInvalidationListRequest request = new GetInvalidationListRequest();
+        /// request.DistributionId = distributionId;
+        /// GetInvalidationListResponse response = cfcClient.GetInvalidationList(request);
+        /// </code>
+        /// </summary>
+        /// <param name="request">The GetInvalidationListRequest that defines the parameters of the operation. Distribution id is a required parameter.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.CloudFront.AmazonCloudFrontException"></exception>
+        /// <returns>Returns a GetInvalidationListResponse from CloudFront.</returns>
+        public GetInvalidationListResponse GetInvalidationList(GetInvalidationListRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The GetInvalidationListRequest specified is null!");
+            }
+            if (request.DistributionId == null)
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The Distribution Id specified is null or empty!");
+            }
+
+            return Invoke<GetInvalidationListResponse>(ConvertGetInvalidationList(request), request.Headers);
+        }
+
+        /// <summary>
+        /// The GetInvalidation operation returns back the details for a specific invalidation.
+        /// 
+        /// <code>
+        /// GetInvalidationRequest request = new GetInvalidationRequest()
+        ///     .WithDistribtionId(distributionId)
+        ///     .WithInvalidationId(invalidationId);
+        /// GetInvalidationResponse response = cfcClient.GetInvalidation(request);
+        /// </code>
+        /// </summary>
+        /// <param name="request">The GetInvalidationRequest that defines the parameters of the operation.  Distribution id and Invalidation id are required parameters.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.CloudFront.AmazonCloudFrontException"></exception>
+        /// <returns>Returns a GetInvalidationResponse from CloudFront.</returns>
+        public GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The GetInvalidationRequest specified is null!");
+            }
+            if (request.DistributionId == null)
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The Distribution Id specified is null or empty!");
+            }
+            if (request.InvalidationId == null)
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The Invalidation Id specified is null or empty!");
+            }
+
+            return Invoke<GetInvalidationResponse>(ConvertGetInvalidation(request), request.Headers);
+        }
+
+        #endregion
+
         #region Distribution Operations
 
         /// <summary>
@@ -296,7 +402,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// The CreateDistribution operation creates a new CloudFront Distribution.
         /// </summary>
-        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-07-15/APIReference/CreateDistribution.html">
+        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-08-01/APIReference/CreateDistribution.html">
         /// POST Distribution API Reference</seealso>
         /// <param name="request">
         /// The CreateDistributionRequest that defines the parameters of the operation.
@@ -680,7 +786,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// The CreateStreamingDistribution operation creates a new CloudFront StreamingDistribution.
         /// </summary>
-        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-07-15/APIReference/CreateStreamingDistribution.html">
+        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-08-01/APIReference/CreateStreamingDistribution.html">
         /// POST Streaming Distribution API Reference</seealso>
         /// <param name="request">
         /// The CreateStreamingDistributionRequest that defines the parameters of the operation.
@@ -1135,6 +1241,74 @@ namespace Amazon.CloudFront
 
         #endregion
 
+        #region Convert Methods for Invalidation
+
+        private IDictionary<CloudFrontQueryParameter, string> ConvertPostInvalidation(PostInvalidationRequest request)
+        {
+            IDictionary<CloudFrontQueryParameter, string> parameters = new Dictionary<CloudFrontQueryParameter, string>();
+
+            parameters.Add(CloudFrontQueryParameter.Verb, CloudFrontConstants.PostVerb);
+            parameters.Add(CloudFrontQueryParameter.Action, "PostInvalidation");
+            parameters.Add(CloudFrontQueryParameter.ContentBody, request.InvalidationBatch.ToString());
+            parameters.Add(CloudFrontQueryParameter.ContentType, AWSSDKUtils.UrlEncodedContent);
+
+            parameters.Add(CloudFrontQueryParameter.DistributionId, request.DistributionId);
+
+            AddCloudFrontQueryParameters(parameters, request.Headers);
+
+            return parameters;
+        }
+
+        private IDictionary<CloudFrontQueryParameter, string> ConvertGetInvalidationList(GetInvalidationListRequest request)
+        {
+            IDictionary<CloudFrontQueryParameter, string> parameters = new Dictionary<CloudFrontQueryParameter, string>();
+
+            parameters.Add(CloudFrontQueryParameter.Verb, CloudFrontConstants.GetVerb);
+            parameters.Add(CloudFrontQueryParameter.Action, "GetInvalidationList");
+
+            parameters.Add(CloudFrontQueryParameter.DistributionId, request.DistributionId);
+
+            StringBuilder queryStr = new StringBuilder(128);
+            string delimiter = "?";
+            if (request.Marker != null)
+            {
+                queryStr.Append(delimiter).Append("Marker=").Append(request.Marker);
+                delimiter = "&";
+            }
+
+            if (request.MaxItems > 0)
+            {
+                queryStr.Append(delimiter).Append("MaxItems=").Append(request.MaxItems);
+                delimiter = "&";
+            }
+
+            if (queryStr.Length > 0)
+            {
+                parameters.Add(CloudFrontQueryParameter.Query, queryStr.ToString());
+            }
+
+            AddCloudFrontQueryParameters(parameters, request.Headers);
+
+            return parameters;
+        }
+
+        private IDictionary<CloudFrontQueryParameter, string> ConvertGetInvalidation(GetInvalidationRequest request)
+        {
+            IDictionary<CloudFrontQueryParameter, string> parameters = new Dictionary<CloudFrontQueryParameter, string>();
+
+            parameters.Add(CloudFrontQueryParameter.Verb, CloudFrontConstants.GetVerb);
+            parameters.Add(CloudFrontQueryParameter.Action, "GetInvalidation");
+
+            parameters.Add(CloudFrontQueryParameter.DistributionId, request.DistributionId);
+            parameters.Add(CloudFrontQueryParameter.InvalidationId, request.InvalidationId);
+
+            AddCloudFrontQueryParameters(parameters, request.Headers);
+
+            return parameters;
+        }
+
+        #endregion
+
         #region Private Methods
 
         /**
@@ -1166,6 +1340,19 @@ namespace Amazon.CloudFront
             else if (action.Contains("OriginAccessIdentit"))
             {
                 canonicalResource.Append("origin-access-identity/cloudfront");
+            }
+            else if(action.Equals("PostInvalidation"))
+            {
+                canonicalResource.AppendFormat("distribution/{0}/invalidation", parameters[CloudFrontQueryParameter.DistributionId]);
+            }
+            else if (action.Equals("GetInvalidationList"))
+            {
+                canonicalResource.AppendFormat("distribution/{0}/invalidation", parameters[CloudFrontQueryParameter.DistributionId]);
+            }
+            else if (action.Equals("GetInvalidation"))
+            {
+                canonicalResource.AppendFormat("distribution/{0}/invalidation/{1}", 
+                    parameters[CloudFrontQueryParameter.DistributionId], parameters[CloudFrontQueryParameter.InvalidationId]);
             }
 
             if (parameters.ContainsKey(CloudFrontQueryParameter.Id))

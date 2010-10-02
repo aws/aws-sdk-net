@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -36,10 +36,11 @@ namespace Amazon.EC2.Model
     /// Amazon EBS, go to the Amazon Elastic Compute Cloud Developer
     /// Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class DescribeVolumesRequest
     {    
         private List<string> volumeIdField;
+        private List<Filter> filterField;
 
         /// <summary>
         /// Gets and sets the VolumeId property.
@@ -80,6 +81,53 @@ namespace Amazon.EC2.Model
         public bool IsSetVolumeId()
         {
             return (VolumeId.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the Filter property.
+        /// A list of filters used to match system-defined properties and user-defined tags associated 
+        /// with the specified Volumes.
+        /// For a complete reference to the available filter keys for this operation, see the
+        /// Amazon EC2 API reference.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Filter")]
+        public List<Filter> Filter
+        {
+            get
+            {
+                if (this.filterField == null)
+                {
+                    this.filterField = new List<Filter>();
+                }
+                return this.filterField;
+            }
+            set { this.filterField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Filter property
+        /// </summary>
+        /// <param name="list">A list of filters used to match system-defined properties and user-defined tags associated 
+        /// with the specified Volumes.
+        /// For a complete reference to the available filter keys for this operation, see the
+        /// Amazon EC2 API reference.</param>
+        /// <returns>this instance</returns>
+        public DescribeVolumesRequest WithFilter(params Filter[] list)
+        {
+            foreach (Filter item in list)
+            {
+                Filter.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Filter property is set
+        /// </summary>
+        /// <returns>true if Filter property is set</returns>
+        public bool IsSetFilter()
+        {
+            return (Filter.Count > 0);
         }
 
     }

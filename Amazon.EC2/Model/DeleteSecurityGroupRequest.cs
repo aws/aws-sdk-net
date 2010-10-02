@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -33,12 +33,12 @@ namespace Amazon.EC2.Model
     /// fault is returned.
     ///
     /// If you attempt to delete a security group that is referenced by
-    /// another security group, a fault is returned. For example, 
+    /// another security group, a fault is returned. For example,
     /// if security group B has a rule that allows access from
     /// security group A, security group A cannot be deleted until the
     /// allow rule is removed.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class DeleteSecurityGroupRequest
     {    
         private string groupNameField;

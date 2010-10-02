@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// unique per account.
     ///
     /// Every instance is launched in a security group.
-    /// If no security group is specified during launch, 
+    /// If no security group is specified during launch,
     /// the instances are launched in the default security group.
     /// Instances within the same security group have unrestricted network
     /// access to each other. Instances will reject network access attempts from
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     /// AuthorizeSecurityGroupIngress and RevokeSecurityGroupIngress
     /// operations
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class CreateSecurityGroupRequest
     {    
         private string groupNameField;

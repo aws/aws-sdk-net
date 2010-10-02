@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Properties of a Launched EC2 Instance
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class RunningInstance
     {    
         private string instanceIdField;
@@ -61,6 +61,8 @@ namespace Amazon.EC2.Model
         private string spotInstanceRequestIdField;
         private InstanceLicense licenseField;
         private string virtualizationTypeField;
+        private string clientTokenField;
+        private List<Tag> tagField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -1026,6 +1028,77 @@ namespace Amazon.EC2.Model
         public bool IsSetVirtualizationType()
         {
             return this.virtualizationTypeField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the ClientToken property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ClientToken")]
+        public string ClientToken
+        {
+            get { return this.clientTokenField; }
+            set { this.clientTokenField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ClientToken property
+        /// </summary>
+        /// <param name="clientToken">ClientToken property</param>
+        /// <returns>this instance</returns>
+        public RunningInstance WithClientToken(string clientToken)
+        {
+            this.clientTokenField = clientToken;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ClientToken property is set
+        /// </summary>
+        /// <returns>true if ClientToken property is set</returns>
+        public bool IsSetClientToken()
+        {
+            return this.clientTokenField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the Tag property.
+        /// A list of tags for the RunningInstance.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Tag")]
+        public List<Tag> Tag
+        {
+            get
+            {
+                if (this.tagField == null)
+                {
+                    this.tagField = new List<Tag>();
+                }
+                return this.tagField;
+            }
+            set { this.tagField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Tag property
+        /// </summary>
+        /// <param name="list">A list of tags for the RunningInstance.</param>
+        /// <returns>this instance</returns>
+        public RunningInstance WithTag(params Tag[] list)
+        {
+            foreach (Tag item in list)
+            {
+                Tag.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Tag property is set
+        /// </summary>
+        /// <returns>true if Tag property is set</returns>
+        public bool IsSetTag()
+        {
+            return (Tag.Count > 0);
         }
 
     }

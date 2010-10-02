@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
     /// Elastic Compute Cloud
     /// Developer Guide
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class RunInstancesRequest
     {    
         private string imageIdField;
@@ -138,6 +138,7 @@ namespace Amazon.EC2.Model
         private string instanceInitiatedShutdownBehaviorField;
         private InstanceLicenseSpecification licenseField;
         private string privateIpAddressField;
+        private string clientTokenField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
@@ -795,6 +796,36 @@ namespace Amazon.EC2.Model
         public bool IsSetPrivateIpAddress()
         {
             return this.privateIpAddressField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the ClientToken property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ClientToken")]
+        public string ClientToken
+        {
+            get { return this.clientTokenField; }
+            set { this.clientTokenField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ClientToken property
+        /// </summary>
+        /// <param name="clientToken">ClientToken property</param>
+        /// <returns>this instance</returns>
+        public RunInstancesRequest WithClientToken(string clientToken)
+        {
+            this.clientTokenField = clientToken;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ClientToken property is set
+        /// </summary>
+        /// <returns>true if ClientToken property is set</returns>
+        public bool IsSetClientToken()
+        {
+            return this.clientTokenField != null;
         }
 
     }

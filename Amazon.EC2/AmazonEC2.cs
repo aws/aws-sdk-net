@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -280,6 +280,29 @@ namespace Amazon.EC2
         CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
 
         /// <summary>
+        /// Create Tags 
+        /// </summary>
+        /// <param name="request">Create Tags  request</param>
+        /// <returns>Create Tags  Response from the service</returns>
+        /// <remarks>
+        /// Create a snapshot of the volume identified by
+        /// volume ID. A volume does not have to be detached
+        /// at the time the snapshot is taken.
+        /// Important Note:
+        /// Snapshot creation requires that the
+        /// system is in a consistent state.
+        /// For instance, this means that if
+        /// taking a snapshot of a database, the
+        /// tables must be read-only locked
+        /// to ensure that the snapshot will not contain a
+        /// corrupted version of the database. Therefore,
+        /// be careful when using this API to ensure that
+        /// the system remains in the consistent state until the create
+        /// snapshot status has returned.
+        /// </remarks>
+        CreateTagsResponse CreateTags(CreateTagsRequest request);
+
+        /// <summary>
         /// Create Volume 
         /// </summary>
         /// <param name="request">Create Volume  request</param>
@@ -350,6 +373,16 @@ namespace Amazon.EC2
         /// Deletes the snapshot identitied by snapshotId.
         /// </remarks>
         DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request);
+
+        /// <summary>
+        /// Delete Tags 
+        /// </summary>
+        /// <param name="request">Delete Tags  request</param>
+        /// <returns>Delete Tags  Response from the service</returns>
+        /// <remarks>
+        /// Deletes the snapshot identitied by snapshotId.
+        /// </remarks>
+        DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
 
         /// <summary>
         /// Delete Volume 
@@ -622,6 +655,17 @@ namespace Amazon.EC2
         DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request);
 
         /// <summary>
+        /// Describe Tags 
+        /// </summary>
+        /// <param name="request">Describe Tags  request</param>
+        /// <returns>Describe Tags  Response from the service</returns>
+        /// <remarks>
+        /// Describes the indicated snapshots, or in lieu of
+        /// that, all snapshots owned by the caller.
+        /// </remarks>
+        DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+
+        /// <summary>
         /// Describe Volumes 
         /// </summary>
         /// <param name="request">Describe Volumes  request</param>
@@ -689,6 +733,22 @@ namespace Amazon.EC2
         /// available for at least one hour after the most recent post.
         /// </remarks>
         GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request);
+
+        /// <summary>
+        /// Import Key Pair 
+        /// </summary>
+        /// <param name="request">Import Key Pair  request</param>
+        /// <returns>Import Key Pair  Response from the service</returns>
+        /// <remarks>
+        /// The GetConsoleOutput operation retrieves console
+        /// output for the specified instance.
+        /// Instance console output is buffered
+        /// and posted shortly after instance boot,
+        /// reboot, and termination. Amazon EC2 preserves the
+        /// most recent 64 KB output which will be
+        /// available for at least one hour after the most recent post.
+        /// </remarks>
+        ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request);
 
         /// <summary>
         /// Modify Snapshot Attribute 

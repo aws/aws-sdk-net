@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///S3 Storage
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class S3Storage
     {    
         private string bucketField;
@@ -146,7 +146,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the UploadPolicy property.
         /// A Base64-encoded Amazon S3 upload policy that
-        /// gives Amazon EC2 permission to upload items into 
+        /// gives Amazon EC2 permission to upload items into
         /// Amazon S3 on the user's behalf
         /// </summary>
         [XmlElementAttribute(ElementName = "UploadPolicy")]
@@ -160,7 +160,7 @@ namespace Amazon.EC2.Model
         /// Sets the UploadPolicy property
         /// </summary>
         /// <param name="uploadPolicy">A Base64-encoded Amazon S3 upload policy that
-        /// gives Amazon EC2 permission to upload items into 
+        /// gives Amazon EC2 permission to upload items into
         /// Amazon S3 on the user's behalf</param>
         /// <returns>this instance</returns>
         public S3Storage WithUploadPolicy(string uploadPolicy)

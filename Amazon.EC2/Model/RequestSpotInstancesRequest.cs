@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Request to create a Spot Instance request.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class RequestSpotInstancesRequest
     {    
         private string spotPriceField;
@@ -142,7 +142,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ValidFrom property.
-        /// Start date of the request. If this is a one-time request, 
+        /// Start date of the request. If this is a one-time request,
         /// the request remains active until all instances
         /// launch, the request expires, or the request is canceled. If the
         /// request is persistent, it remains active until it expires or
@@ -159,7 +159,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ValidFrom property
         /// </summary>
-        /// <param name="validFrom">Start date of the request. If this is a one-time request, 
+        /// <param name="validFrom">Start date of the request. If this is a one-time request,
         /// the request remains active until all instances
         /// launch, the request expires, or the request is canceled. If the
         /// request is persistent, it remains active until it expires or

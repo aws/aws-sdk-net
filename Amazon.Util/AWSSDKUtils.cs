@@ -50,7 +50,7 @@ namespace Amazon.Util
         /// <summary>
         /// The AWS SDK User Agent
         /// </summary>
-        public const string SDKUserAgent = "AWS SDK for .NET/1.0.12";
+        public const string SDKUserAgent = "AWS SDK for .NET/1.0.14.1";
 
         /// <summary>
         /// The Set of accepted and valid Url characters. 
@@ -72,6 +72,11 @@ namespace Amazon.Util
         /// The ISO8601Date Format string. Used when parsing date objects
         /// </summary>
         public const string ISO8601DateFormat = "yyyy-MM-dd\\THH:mm:ss.fff\\Z";
+
+        /// <summary>
+        /// The ISO8601Date Format string. Used when parsing date objects
+        /// </summary>
+        public const string ISO8601DateFormatNoMS = "yyyy-MM-dd\\THH:mm:ss\\Z";
 
         /// <summary>
         /// The RFC822Date Format string. Used when parsing date objects

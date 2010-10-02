@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// must be specified. When authorizing a CIDR IP permission,
     /// GroupName, IpProtocol, FromPort, ToPort and CidrIp must be specified
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class AuthorizeSecurityGroupIngressRequest
     {    
         private string userIdField;
@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         private Decimal? fromPortField;
         private Decimal? toPortField;
         private string cidrIpField;
+        private List<IpPermissionSpecification> ipPermissionsField;
 
         /// <summary>
         /// Gets and sets the UserId property.
@@ -312,6 +313,49 @@ namespace Amazon.EC2.Model
         public bool IsSetCidrIp()
         {
             return this.cidrIpField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the IpPermissions property.
+        /// Set of IP permissions associated with the
+        /// security group.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "IpPermissions")]
+        public List<IpPermissionSpecification> IpPermissions
+        {
+            get
+            {
+                if (this.ipPermissionsField == null)
+                {
+                    this.ipPermissionsField = new List<IpPermissionSpecification>();
+                }
+                return this.ipPermissionsField;
+            }
+            set { this.ipPermissionsField = value; }
+        }
+
+        /// <summary>
+        /// Sets the IpPermissions property
+        /// </summary>
+        /// <param name="list">Set of IP permissions associated with the
+        /// security group.</param>
+        /// <returns>this instance</returns>
+        public AuthorizeSecurityGroupIngressRequest WithIpPermissions(params IpPermissionSpecification[] list)
+        {
+            foreach (IpPermissionSpecification item in list)
+            {
+                IpPermissions.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if IpPermissions property is set
+        /// </summary>
+        /// <returns>true if IpPermissions property is set</returns>
+        public bool IsSetIpPermissions()
+        {
+            return (IpPermissions.Count > 0);
         }
 
     }

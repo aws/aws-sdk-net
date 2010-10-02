@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-07-15
+ *  API Version: 2010-08-01
  *
  */
 
@@ -30,6 +30,8 @@ namespace Amazon.CloudFront.Model
         ContentBody,
         ContentType,
         Id,
+        DistributionId,
+        InvalidationId,
         Query,
         Verb
     }

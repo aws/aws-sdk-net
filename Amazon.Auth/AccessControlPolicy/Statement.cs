@@ -97,7 +97,7 @@ namespace Amazon.Auth.AccessControlPolicy
         public Statement(StatementEffect effect) 
         {
             this.effect = effect;
-            this.id = Guid.NewGuid().ToString();
+            this.id = Guid.NewGuid().ToString().Replace("-", "");
         }
 
         /// <summary>

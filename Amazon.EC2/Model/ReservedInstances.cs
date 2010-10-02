@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Reserved Instances
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class ReservedInstances
     {    
         private string reservedInstancesIdField;
@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string productDescriptionField;
         private string purchaseStateField;
         private string startTimeField;
+        private List<Tag> tagField;
 
         /// <summary>
         /// Gets and sets the ReservedInstancesId property.
@@ -365,6 +366,47 @@ namespace Amazon.EC2.Model
         public bool IsSetStartTime()
         {
             return this.startTimeField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the Tag property.
+        /// A list of tags for the ReservedInstances.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Tag")]
+        public List<Tag> Tag
+        {
+            get
+            {
+                if (this.tagField == null)
+                {
+                    this.tagField = new List<Tag>();
+                }
+                return this.tagField;
+            }
+            set { this.tagField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Tag property
+        /// </summary>
+        /// <param name="list">A list of tags for the ReservedInstances.</param>
+        /// <returns>this instance</returns>
+        public ReservedInstances WithTag(params Tag[] list)
+        {
+            foreach (Tag item in list)
+            {
+                Tag.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Tag property is set
+        /// </summary>
+        /// <returns>true if Tag property is set</returns>
+        public bool IsSetTag()
+        {
+            return (Tag.Count > 0);
         }
 
     }

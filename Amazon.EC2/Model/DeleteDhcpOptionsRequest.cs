@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -28,11 +28,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Deletes a set of DHCP options that you specify. Amazon VPC returns an
-    /// error if the set of options you specify is currently associated with 
-    /// a VPC. You can disassociate the set of options by associating 
+    /// error if the set of options you specify is currently associated with
+    /// a VPC. You can disassociate the set of options by associating
     /// either a new set of options or the default options with the VPC.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class DeleteDhcpOptionsRequest
     {    
         private string dhcpOptionsIdField;

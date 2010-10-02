@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-07-15
+ *  API Version: 2010-08-01
  *
  */
 
@@ -27,20 +27,12 @@ using System.Xml.Serialization;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Base class for all CloudFront operation requests.
+    /// Base class for CloudFront operation requests.
     /// Provides a header collection which can is used to store the request headers.
     /// </summary>
-    public abstract class CloudFrontRequest
+    public abstract class CloudFrontRequest : BaseRequest
     {
         #region Protected Members
-
-        /// <summary>
-        /// The protected member that holds the service specific headers with which 
-        /// the HTTP Request is configured.
-        /// 
-        /// This is used by all derived Requests 
-        /// </summary>
-        protected WebHeaderCollection headers;
 
         /// <summary>
         /// The ID of the CloudFront distribution
@@ -142,44 +134,6 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetETag()
         {
             return !System.String.IsNullOrEmpty(this.etagHeader);
-        }
-
-        #endregion
-
-        #region Headers
-
-        /// <summary>
-        /// Gets the Headers property.
-        /// </summary>
-        internal WebHeaderCollection Headers
-        {
-            get
-            {
-                if (this.headers == null)
-                {
-                    this.headers = new WebHeaderCollection();
-                }
-                return this.headers;
-            }
-        }
-
-        /// <summary>
-        /// Checks if Headers property is set
-        /// </summary>
-        /// <returns>true if Headers property is set</returns>
-        internal bool IsSetHeaders()
-        {
-            return (this.headers != null) && 
-                (this.headers.Count > 0);
-        }
-
-        /// <summary>
-        /// Adds all of the key/value pairs from collection into our request header.
-        /// </summary>
-        /// <param name="collection">A collection of key/value headers</param>
-        public void AddHeaders(NameValueCollection collection)
-        {
-            this.Headers.Add(collection);
         }
 
         #endregion

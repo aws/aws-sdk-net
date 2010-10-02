@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-07-15
+ *  API Version: 2010-08-01
  *
  */
 
@@ -305,6 +305,64 @@ namespace Amazon.CloudFront
         /// <exception cref="T:Amazon.CloudFront.AmazonCloudFrontException"></exception>
         /// <returns>Returns a DeleteStreamingDistributionResponse from CloudFront.</returns>
         DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request);
+
+        #endregion
+
+        #region Operations for Invalidations
+
+        /// <summary>
+        /// The PostInvalidation operation invalidates objects specified in the PostInvalidationRequest which will
+        /// cause Cloudfront to go back to the origin to get a new copy.
+        /// 
+        /// <code>
+        /// PostInvalidationRequest request = new PostInvalidationRequest();
+        /// request.DistributionId = distributionId;
+        /// request.InvalidationBatch.CallerReference = callerReference;
+        /// request.InvalidationBatch.WithPaths("/image1.jpg", "/image2.jpg");
+        /// PostInvalidationResponse response = cfcClient.PostInvalidation(request);
+        /// </code>
+        /// </summary>
+        /// <param name="request">The PostInvalidationRequest that defines the parameters of the operation.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.CloudFront.AmazonCloudFrontException"></exception>
+        /// <returns>Returns a PostInvalidationResponse from CloudFront.</returns>
+        PostInvalidationResponse PostInvalidation(PostInvalidationRequest request);
+
+        /// <summary>
+        /// The GetInvalidationList operation will return back a list of all the invalidations done for a distribution for the
+        /// current and previous billing period. If the list is long, you can paginate it using the MaxItems
+        /// and Marker parameters
+        /// 
+        /// <code>
+        /// GetInvalidationListRequest request = new GetInvalidationListRequest();
+        /// request.DistributionId = distributionId;
+        /// GetInvalidationListResponse response = cfcClient.GetInvalidationList(request);
+        /// </code>
+        /// </summary>
+        /// <param name="request">The GetInvalidationListRequest that defines the parameters of the operation. Distribution id is a required parameter.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.CloudFront.AmazonCloudFrontException"></exception>
+        /// <returns>Returns a GetInvalidationListResponse from CloudFront.</returns>
+        GetInvalidationListResponse GetInvalidationList(GetInvalidationListRequest request);
+
+        /// <summary>
+        /// The GetInvalidation operation returns back the details for a specific invalidation.
+        /// 
+        /// <code>
+        /// GetInvalidationRequest request = new GetInvalidationRequest()
+        ///     .WithDistribtionId(distributionId)
+        ///     .WithInvalidationId(invalidationId);
+        /// GetInvalidationResponse response = cfcClient.GetInvalidation(request);
+        /// </code>
+        /// </summary>
+        /// <param name="request">The GetInvalidationRequest that defines the parameters of the operation.  Distribution id and Invalidation id are required parameters.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.CloudFront.AmazonCloudFrontException"></exception>
+        /// <returns>Returns a GetInvalidationResponse from CloudFront.</returns>
+        GetInvalidationResponse GetInvalidation(GetInvalidationRequest request);
 
         #endregion
     }

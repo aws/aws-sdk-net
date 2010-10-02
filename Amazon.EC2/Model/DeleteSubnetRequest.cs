@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-15
+ *  API Version: 2010-08-31
  */
 
 using System;
@@ -31,10 +31,10 @@ namespace Amazon.EC2.Model
     /// the subnet before deleting it, otherwise Amazon VPC returns an error.
     ///
     /// AWS might delete any subnet if you leave it inactive for an extended
-    /// period of time (inactive means that there are no running 
+    /// period of time (inactive means that there are no running
     /// Amazon EC2 instances in the subnet).
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
     public class DeleteSubnetRequest
     {    
         private string subnetIdField;

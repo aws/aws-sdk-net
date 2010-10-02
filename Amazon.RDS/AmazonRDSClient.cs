@@ -982,7 +982,7 @@ namespace Amazon.RDS
             }
             if (request.IsSetRestoreTime())
             {
-                parameters["RestoreTime"] = request.RestoreTime.ToString();
+                parameters["RestoreTime"] = request.RestoreTime.ToString(AWSSDKUtils.ISO8601DateFormat);
             }
             if (request.IsSetUseLatestRestorableTime())
             {
