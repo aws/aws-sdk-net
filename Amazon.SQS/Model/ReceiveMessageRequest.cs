@@ -35,7 +35,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class ReceiveMessageRequest
-    {
+    {    
         private string queueUrlField;
         private Decimal? maxNumberOfMessagesField;
         private Decimal? visibilityTimeoutField;

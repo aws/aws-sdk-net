@@ -32,7 +32,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class GetQueueAttributesResponse
-    {
+    {    
         private GetQueueAttributesResult getQueueAttributesResultField;
         private ResponseMetadata responseMetadataField;
 
@@ -45,17 +45,6 @@ namespace Amazon.SQS.Model
         {
             get { return this.getQueueAttributesResultField; }
             set { this.getQueueAttributesResultField = value; }
-        }
-
-        /// <summary>
-        /// Sets the GetQueueAttributesResult property
-        /// </summary>
-        /// <param name="getQueueAttributesResult">A list of attributes returned by the GetQueueAttributesRequest.</param>
-        /// <returns>this instance</returns>
-        public GetQueueAttributesResponse WithGetQueueAttributesResult(GetQueueAttributesResult getQueueAttributesResult)
-        {
-            this.getQueueAttributesResultField = getQueueAttributesResult;
-            return this;
         }
 
         /// <summary>
@@ -79,17 +68,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the ResponseMetadata property
-        /// </summary>
-        /// <param name="responseMetadata">Information about the request provided by Amazon SQS.</param>
-        /// <returns>this instance</returns>
-        public GetQueueAttributesResponse WithResponseMetadata(ResponseMetadata responseMetadata)
-        {
-            this.responseMetadataField = responseMetadata;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if ResponseMetadata property is set
         /// </summary>
         /// <returns>true if ResponseMetadata property is set</returns>
@@ -99,7 +77,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// XML Representation for this object
+        /// XML Representation of this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -111,6 +89,15 @@ namespace Amazon.SQS.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
         }
     }
 }

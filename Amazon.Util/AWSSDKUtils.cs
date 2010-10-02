@@ -50,7 +50,7 @@ namespace Amazon.Util
         /// <summary>
         /// The AWS SDK User Agent
         /// </summary>
-        public const string SDKUserAgent = "AWS SDK for .NET/1.0.10.1";
+        public const string SDKUserAgent = "AWS SDK for .NET/1.0.12";
 
         /// <summary>
         /// The Set of accepted and valid Url characters. 
@@ -72,6 +72,11 @@ namespace Amazon.Util
         /// The ISO8601Date Format string. Used when parsing date objects
         /// </summary>
         public const string ISO8601DateFormat = "yyyy-MM-dd\\THH:mm:ss.fff\\Z";
+
+        /// <summary>
+        /// The RFC822Date Format string. Used when parsing date objects
+        /// </summary>
+        public const string RFC822DateFormat = "ddd, dd MMM yyyy HH:mm:ss \\G\\M\\T";
 
         #endregion
 
@@ -207,6 +212,46 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Formats the current date as ISO 8601 timestamp
+        /// </summary>
+        /// <returns>An ISO 8601 formatted string representation
+        /// of the current date and time
+        /// </returns>
+        public static string FormattedCurrentTimestampRFC822
+        {
+            get
+            {
+                return GetFormattedTimestampRFC822(0);
+            }
+        }
+
+        /// <summary>
+        /// Gets the RFC822 formatted timestamp that is minutesFromNow
+        /// in the future.
+        /// </summary>
+        /// <param name="minutesFromNow">The number of minutes from the current instant
+        /// for which the timestamp is needed.</param>
+        /// <returns>The ISO8601 formatted future timestamp.</returns>
+        public static string GetFormattedTimestampRFC822(int minutesFromNow)
+        {
+            DateTime dateTime = DateTime.UtcNow.AddMinutes(minutesFromNow);
+            DateTime formatted = new DateTime(
+                dateTime.Year,
+                dateTime.Month,
+                dateTime.Day,
+                dateTime.Hour,
+                dateTime.Minute,
+                dateTime.Second,
+                dateTime.Millisecond,
+                DateTimeKind.Local
+                );
+            return formatted.ToString(
+                AWSSDKUtils.RFC822DateFormat,
+                CultureInfo.InvariantCulture
+                );
+        }
+
+        /// <summary>
         /// Computes RFC 2104-compliant HMAC signature
         /// </summary>
         /// <param name="data">The data to be signed</param>
@@ -303,7 +348,7 @@ namespace Amazon.Util
             StringBuilder encoded = new StringBuilder(data.Length * 2);
             string unreservedChars = String.Concat(
                 AWSSDKUtils.ValidUrlCharacters,
-                (path ? "/:+" : "")
+                (path ? "/:" : "")
                 );
 
             foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(data))

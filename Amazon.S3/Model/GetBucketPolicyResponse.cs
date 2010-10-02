@@ -27,40 +27,57 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The GetBucketPolicyResponse contains the JSON string representation of the Aspen policy
+    /// The GetBucketPolicyResponse contains the JSON string representation of the policy
     /// any headers returned by S3.
     /// </summary>
     public class GetBucketPolicyResponse : S3Response
     {
         #region Private Members
 
-        private string aspenPolicy;
+        private string policy;
 
         #endregion
 
         /// <summary>
         /// Gets and sets the AspenPolicy property.
         /// </summary>
+        [Obsolete("Use the Policy property instead.")]
         public String AspenPolicy
         {
             get
             {
-                return this.aspenPolicy;
+                return this.policy;
             }
             set
             {
-                this.aspenPolicy = value;
+                this.policy = value;
             }
         }
 
         /// <summary>
-        /// The request to get the Aspen policy is return as the content
+        /// Gets and sets the Policy property.
+        /// </summary>
+        public String Policy
+        {
+            get
+            {
+                return this.policy;
+            }
+            set
+            {
+                this.policy = value;
+            }
+        }
+
+
+        /// <summary>
+        /// The request to get the policy is return as the content
         /// body of the response.
         /// </summary>
-        /// <param name="responseBody">The Aspen policy</param>
+        /// <param name="responseBody">The policy</param>
         internal override void ProcessResponseBody(string responseBody)
         {
-            this.AspenPolicy = responseBody;
+            this.Policy = responseBody;
         }
     }
 }

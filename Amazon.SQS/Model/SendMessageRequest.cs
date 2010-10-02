@@ -31,10 +31,9 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class SendMessageRequest
-    {
+    {    
         private string queueUrlField;
         private string messageBodyField;
-        private List<Attribute> attributeField;
 
         /// <summary>
         /// Gets and sets the QueueUrl property.
@@ -106,46 +105,6 @@ namespace Amazon.SQS.Model
         public bool IsSetMessageBody()
         {
             return this.messageBodyField != null;
-        }
-        /// <summary>
-        /// Gets and sets the Attribute property.
-        /// Name and value pair of an attribute associated with the queue.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "Attribute")]
-        public List<Attribute> Attribute
-        {
-            get
-            {
-                if (this.attributeField == null)
-                {
-                    this.attributeField = new List<Attribute>();
-                }
-                return this.attributeField;
-            }
-            set { this.attributeField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Attribute property
-        /// </summary>
-        /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
-        /// <returns>this instance</returns>
-        public SendMessageRequest WithAttribute(params Attribute[] list)
-        {
-            foreach (Attribute item in list)
-            {
-                Attribute.Add(item);
-            }
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if Attribute property is set
-        /// </summary>
-        /// <returns>true if Attribute property is set</returns>
-        public bool IsSetAttribute()
-        {
-            return (Attribute.Count > 0);
         }
 
     }

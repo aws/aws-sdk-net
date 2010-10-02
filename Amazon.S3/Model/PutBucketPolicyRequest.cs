@@ -25,18 +25,20 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
+using Amazon.Auth.AccessControlPolicy;
+
 namespace Amazon.S3.Model
 {
     /// <summary>
     /// The PutBucketPolicyRequest contains the parameters used for the PutBucketPolicy operation.
-    /// <br />Required Parameters: BucketName, AspenPolicy
+    /// <br />Required Parameters: BucketName, Policy
     /// </summary>
     public class PutBucketPolicyRequest : S3Request
     {
         #region Private Members
 
         private string bucketName;
-        private string aspenPolicy;
+        private string policy;
 
         #endregion
 
@@ -82,37 +84,67 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the AspenPolicy property.
         /// </summary>
+        [Obsolete("Use the Policy property instead.")]
         public String AspenPolicy
         {
             get
             {
-                return this.aspenPolicy;
+                return this.policy;
             }
             set
             {
-                this.aspenPolicy = value;
+                this.policy = value;
             }
         }
 
         /// <summary>
         /// Sets the AspenPolicy property for this request.
-        /// This is the JSON string representing the Aspen policy that will be applied to the S3 Bucket.
+        /// This is the JSON string representing the policy that will be applied to the S3 Bucket.
         /// </summary>
-        /// <param name="aspenPolicy">The JSON string for the Aspen policy</param>
+        /// <param name="policy">The JSON string for the policy</param>
         /// <returns>this instance</returns>
-        public PutBucketPolicyRequest WithAspenPolicy(string aspenPolicy)
+        [Obsolete("Use the WithPolicy method instead.")]
+        public PutBucketPolicyRequest WithAspenPolicy(string policy)
         {
-            this.AspenPolicy = aspenPolicy;
+            this.Policy = policy;
+            return this;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the Policy property.
+        /// </summary>
+        public String Policy
+        {
+            get
+            {
+                return this.policy;
+            }
+            set
+            {
+                this.policy = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets the Policy property for this request.
+        /// This is the JSON string representing the policy that will be applied to the S3 Bucket.
+        /// </summary>
+        /// <param name="policy">The JSON string for the policy</param>
+        /// <returns>this instance</returns>
+        public PutBucketPolicyRequest WithPolicy(string policy)
+        {
+            this.Policy = policy;
             return this;
         }
 
         /// <summary>
-        /// Checks if Aspen policy property is set.
+        /// Checks if policy property is set.
         /// </summary>
-        /// <returns>true if AspenPolicy property is set.</returns>
-        internal bool IsSetAspenPolicy()
+        /// <returns>true if Policy property is set.</returns>
+        internal bool IsSetPolicy()
         {
-            return !System.String.IsNullOrEmpty(this.AspenPolicy);
+            return !System.String.IsNullOrEmpty(this.Policy);
         }
 
         #endregion

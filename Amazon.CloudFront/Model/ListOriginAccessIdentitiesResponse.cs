@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-01
+ *  API Version: 2010-07-15
  *
  */
 
@@ -31,7 +31,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/ListOAIs.html">
     /// Amazon CloudFront Get Origin Access Identity List</seealso>
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-06-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-07-15/", IsNullable = false)]
     public class ListOriginAccessIdentitiesResponse : CloudFrontResponse
     {
         #region Private Members

@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -31,7 +32,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class ListQueuesResult
-    {
+    {    
         private List<string> queueUrlField;
 
         /// <summary>
@@ -53,20 +54,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
-        /// </summary>
-        /// <param name="list">The URL associated with the Amazon SQS queue.</param>
-        /// <returns>this instance</returns>
-        public ListQueuesResult WithQueueUrl(params string[] list)
-        {
-            foreach (string item in list)
-            {
-                QueueUrl.Add(item);
-            }
-            return this;
-        }
-
-        /// <summary>
         /// Checks if QueueUrl property is set
         /// </summary>
         /// <returns>true if QueueUrl property is set</returns>
@@ -75,5 +62,28 @@ namespace Amazon.SQS.Model
             return (QueueUrl.Count > 0);
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,19 +27,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new security group. Group names must be unique per account.
+    /// Creates a new security group. Group names must be
+    /// unique per account.
     ///
-    /// Every instance is launched in a security group. If no security group is specified
-    /// during launch, the instances are launched in the default security group.
-    /// Instances within the same security group have unrestricted network access
-    /// to each other. Instances will reject network access attempts from other
-    /// instances in a different security group. As the owner of instances you
+    /// Every instance is launched in a security group.
+    /// If no security group is specified during launch, 
+    /// the instances are launched in the default security group.
+    /// Instances within the same security group have unrestricted network
+    /// access to each other. Instances will reject network access attempts from
+    /// other instances in a different security group. As the owner of instances you
     /// can grant or revoke specific permissions using the
-    /// AuthorizeSecurityGroupIngress and RevokeSecurityGroupIngress operations
+    /// AuthorizeSecurityGroupIngress and RevokeSecurityGroupIngress
+    /// operations
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class CreateSecurityGroupRequest
-    {
+    {    
         private string groupNameField;
         private string groupDescriptionField;
 
@@ -47,7 +50,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the GroupName property.
         /// Name of the security group.
         ///
-        /// Constraints: Accepts alphanumeric characters, spaces, dashes, and underscores.
+        /// Constraints:
+        /// Accepts alphanumeric characters, spaces, dashes, and
+        /// underscores.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
@@ -61,7 +66,9 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupName">Name of the security group.
         ///
-        /// Constraints: Accepts alphanumeric characters, spaces, dashes, and underscores.</param>
+        /// Constraints:
+        /// Accepts alphanumeric characters, spaces, dashes, and
+        /// underscores.</param>
         /// <returns>this instance</returns>
         public CreateSecurityGroupRequest WithGroupName(string groupName)
         {
@@ -82,7 +89,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the GroupDescription property.
         /// Description of the group.
         ///
-        /// Constraints: Accepts alphanumeric characters, spaces, dashes, and underscores.
+        /// Constraints: Accepts
+        /// alphanumeric characters, spaces, dashes, and
+        /// underscores.
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupDescription")]
         public string GroupDescription
@@ -96,7 +105,9 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupDescription">Description of the group.
         ///
-        /// Constraints: Accepts alphanumeric characters, spaces, dashes, and underscores.</param>
+        /// Constraints: Accepts
+        /// alphanumeric characters, spaces, dashes, and
+        /// underscores.</param>
         /// <returns>this instance</returns>
         public CreateSecurityGroupRequest WithGroupDescription(string groupDescription)
         {

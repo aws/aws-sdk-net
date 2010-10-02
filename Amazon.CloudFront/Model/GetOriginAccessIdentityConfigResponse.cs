@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-01
+ *  API Version: 2010-07-15
  *
  */
 
@@ -28,7 +28,7 @@ namespace Amazon.CloudFront.Model
     /// The GetOriginAccessIdentityConfigResponse contains the Origin Access Identity's configuration
     /// and any headers returned by CloudFront.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-06-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-07-15/", IsNullable = false)]
     public class GetOriginAccessIdentityConfigResponse : CloudFrontResponse
     {
         #region Private Members

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,15 +29,16 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Creat Volume Permission
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class CreateVolumePermission
-    {
+    {    
         private string userIdField;
         private string groupNameField;
 
         /// <summary>
         /// Gets and sets the UserId property.
-        /// User ID of a user that can create volumes from the snapshot.
+        /// User ID of a user that can create volumes from
+        /// the snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "UserId")]
         public string UserId
@@ -49,7 +50,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the UserId property
         /// </summary>
-        /// <param name="userId">User ID of a user that can create volumes from the snapshot.</param>
+        /// <param name="userId">User ID of a user that can create volumes from
+        /// the snapshot.</param>
         /// <returns>this instance</returns>
         public CreateVolumePermission WithUserId(string userId)
         {
@@ -68,8 +70,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the GroupName property.
-        /// Group that is allowed to create volumes from the snapshot (currently supports
-        /// "all").
+        /// Group that is allowed to create volumes from
+        /// the snapshot (currently supports "all").
         /// </summary>
         [XmlElementAttribute(ElementName = "GroupName")]
         public string GroupName
@@ -81,8 +83,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the GroupName property
         /// </summary>
-        /// <param name="groupName">Group that is allowed to create volumes from the snapshot (currently supports
-        /// "all").</param>
+        /// <param name="groupName">Group that is allowed to create volumes from
+        /// the snapshot (currently supports "all").</param>
         /// <returns>this instance</returns>
         public CreateVolumePermission WithGroupName(string groupName)
         {

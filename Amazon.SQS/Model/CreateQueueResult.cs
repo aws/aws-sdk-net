@@ -31,7 +31,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class CreateQueueResult
-    {
+    {    
         private string queueUrlField;
 
         /// <summary>
@@ -43,17 +43,6 @@ namespace Amazon.SQS.Model
         {
             get { return this.queueUrlField; }
             set { this.queueUrlField = value; }
-        }
-
-        /// <summary>
-        /// Sets the QueueUrl property
-        /// </summary>
-        /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
-        /// <returns>this instance</returns>
-        public CreateQueueResult WithQueueUrl(string queueUrl)
-        {
-            this.queueUrlField = queueUrl;
-            return this;
         }
 
         /// <summary>

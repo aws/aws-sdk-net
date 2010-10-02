@@ -32,7 +32,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class ChangeMessageVisibilityRequest
-    {
+    {    
         private string queueUrlField;
         private string receiptHandleField;
         private Decimal? visibilityTimeoutField;
@@ -132,6 +132,7 @@ namespace Amazon.SQS.Model
         {
             return this.visibilityTimeoutField.HasValue;
         }
+
         /// <summary>
         /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.

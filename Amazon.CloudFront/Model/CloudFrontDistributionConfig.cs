@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-01
+ *  API Version: 2010-07-15
  *
  */
 
@@ -57,6 +57,7 @@ namespace Amazon.CloudFront.Model
         #region Private Members
 
         List<Protocol> requiredProtocols;
+        string defaultRootObject;
 
         #endregion
 
@@ -75,7 +76,7 @@ namespace Amazon.CloudFront.Model
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?><DistributionConfig ");
-            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-06-01/\">");
+            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-07-15/\">");
             sb.Append(base.ToString());
 
             // Represent RequiredProtocols in the xml
@@ -87,6 +88,10 @@ namespace Amazon.CloudFront.Model
                     sb.Append(String.Concat("<Protocol>", reqProt, "</Protocol>"));
                 }
                 sb.Append("</RequiredProtocols>");
+            }
+            if (IsDefaultRootObjectSet())
+            {
+                sb.Append(String.Concat("<DefaultRootObject>", this.DefaultRootObject, "</DefaultRootObject>"));
             }
 
             sb.Append("</DistributionConfig>");
@@ -255,6 +260,47 @@ namespace Amazon.CloudFront.Model
                 RequiredProtocols.Add(prot);
             }
             return this;
+        }
+
+        #endregion
+
+        #region DefaultRootObject
+
+        /// <summary>
+        /// Gets and sets the DefaultRootObject property.
+        /// Defines the object that will be returned for requests made to the root URL of 
+        /// the distribution.
+        /// </summary>
+        public string DefaultRootObject
+        {
+            get
+            {
+                return this.defaultRootObject;
+            }
+            set
+            {
+                this.defaultRootObject = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets the DefaultRootObject property.
+        /// </summary>
+        /// <param name="rootObject">The name of the default root object.</param>
+        /// <returns>This instance.</returns>
+        public CloudFrontDistributionConfig WithDefaultRootObject(string rootObject)
+        {
+            this.defaultRootObject = rootObject;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks to see if the DefaultRootObject property is set.
+        /// </summary>
+        /// <returns>True if DefaultRootObject is set. False otherwise.</returns>
+        internal bool IsDefaultRootObjectSet()
+        {
+            return this.defaultRootObject != null;
         }
 
         #endregion

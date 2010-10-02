@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-01
+ *  API Version: 2010-07-15
  *
  */
 
@@ -67,7 +67,7 @@ namespace Amazon.CloudFront.Model
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?><CloudFrontOriginAccessIdentityConfig ");
-            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-06-01/\">");
+            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-07-15/\">");
 
             if (IsSetCallerReference())
             {

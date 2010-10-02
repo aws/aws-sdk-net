@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -28,16 +28,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Requests a reboot of one or more instances. This operation is
-    /// asynchronous; it only queues a request to reboot the specified instance(s).
-    /// The operation will succeed if the instances are valid and belong to you.
-    /// Requests to reboot terminated instances are ignored.
+    /// asynchronous; it only queues a request to reboot the specified
+    /// instance(s). The operation will succeed if the instances
+    /// are valid and belong to you. Requests to reboot terminated instances
+    /// are ignored.
     ///
-    /// Note - if a Linux/UNIX instance does not cleanly shut down within four
+    /// Note - if a Linux/UNIX instance does not cleanly shut
+    /// down within four
     /// minutes, Amazon EC2 will perform a hard reboot.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class RebootInstancesRequest
-    {
+    {    
         private List<string> instanceIdField;
 
         /// <summary>

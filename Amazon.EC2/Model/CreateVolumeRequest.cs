@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,25 +27,32 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new Amazon EBS volume to which any Amazon EC2 instance can attach
-    /// within the same Availability Zone. For more information about Amazon EBS, go to
-    /// the Amazon Elastic Compute Cloud Developer Guide.
+    /// Creates a new Amazon EBS volume to which any
+    /// Amazon EC2 instance can attach
+    /// within the same Availability Zone.
+    /// For more information about Amazon
+    /// EBS, go to the Amazon Elastic
+    /// Compute Cloud Developer Guide.
     ///
-    /// You must specify an Availability Zone when creating a volume. The volume and the
-    /// instance to which it attaches must be in the same Availability Zone.
+    /// You must specify an Availability
+    /// Zone when creating a volume. The
+    /// volume and the instance to which it
+    /// attaches must be in the same Availability Zone.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class CreateVolumeRequest
-    {
+    {    
         private string sizeField;
         private string snapshotIdField;
         private string availabilityZoneField;
 
         /// <summary>
         /// Gets and sets the Size property.
-        /// The size of the volume, in GiBs. Required if you are not creating a volume from a snapshot.
+        /// The size of the volume, in GiBs. Required if
+        /// you are not creating
+        /// a volume from a snapshot.
         ///
-        /// Valid Values: 1 -1024
+        /// Valid Values: 1-1024
         /// </summary>
         [XmlElementAttribute(ElementName = "Size")]
         public string Size
@@ -57,9 +64,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Size property
         /// </summary>
-        /// <param name="size">The size of the volume, in GiBs. Required if you are not creating a volume from a snapshot.
+        /// <param name="size">The size of the volume, in GiBs. Required if
+        /// you are not creating
+        /// a volume from a snapshot.
         ///
-        /// Valid Values: 1 -1024</param>
+        /// Valid Values: 1-1024</param>
         /// <returns>this instance</returns>
         public CreateVolumeRequest WithSize(string size)
         {
@@ -78,7 +87,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SnapshotId property.
-        /// The snapshot from which to create the new volume.
+        /// The snapshot from which to create the new
+        /// volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "SnapshotId")]
         public string SnapshotId
@@ -90,7 +100,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SnapshotId property
         /// </summary>
-        /// <param name="snapshotId">The snapshot from which to create the new volume.</param>
+        /// <param name="snapshotId">The snapshot from which to create the new
+        /// volume.</param>
         /// <returns>this instance</returns>
         public CreateVolumeRequest WithSnapshotId(string snapshotId)
         {
@@ -109,7 +120,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the AvailabilityZone property.
-        /// The Availability Zone in which to create the new volume.
+        /// The Availability Zone in which to create the
+        /// new volume.
         /// </summary>
         [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
@@ -121,7 +133,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the AvailabilityZone property
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone in which to create the new volume.</param>
+        /// <param name="availabilityZone">The Availability Zone in which to create the
+        /// new volume.</param>
         /// <returns>this instance</returns>
         public CreateVolumeRequest WithAvailabilityZone(string availabilityZone)
         {

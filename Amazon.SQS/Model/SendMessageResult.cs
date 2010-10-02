@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using System.Text;
 
@@ -31,7 +32,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class SendMessageResult
-    {
+    {    
         private string messageIdField;
         private string MD5OfMessageBodyField;
 
@@ -44,17 +45,6 @@ namespace Amazon.SQS.Model
         {
             get { return this.messageIdField; }
             set { this.messageIdField = value; }
-        }
-
-        /// <summary>
-        /// Sets the MessageId property
-        /// </summary>
-        /// <param name="messageId">An element containing the message ID of the message sent to the queue.</param>
-        /// <returns>this instance</returns>
-        public SendMessageResult WithMessageId(string messageId)
-        {
-            this.messageIdField = messageId;
-            return this;
         }
 
         /// <summary>
@@ -80,19 +70,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the MD5OfMessageBody property
-        /// </summary>
-        /// <param name="MD5OfMessageBody">An MD5 digest of the non-URL-encoded message body string. You can use this to verify that SQS received the message
-        /// correctly. SQS first URL decodes the message before creating the MD5 digest. For information about MD5, go to
-        /// http://faqs.org/rfcs/rfc1321.html.</param>
-        /// <returns>this instance</returns>
-        public SendMessageResult WithMD5OfMessageBody(string MD5OfMessageBody)
-        {
-            this.MD5OfMessageBodyField = MD5OfMessageBody;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if MD5OfMessageBody property is set
         /// </summary>
         /// <returns>true if MD5OfMessageBody property is set</returns>
@@ -101,5 +78,28 @@ namespace Amazon.SQS.Model
             return this.MD5OfMessageBodyField != null;
         }
 
+        /// <summary>
+        /// XML Representation of this object
+        /// </summary>
+        /// <returns>XML String</returns>
+        public string ToXML()
+        {
+            StringBuilder xml = new StringBuilder(1024);
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
+            using (StringWriter sw = new StringWriter(xml))
+            {
+                serializer.Serialize(sw, this);
+            }
+            return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
+        }
     }
 }

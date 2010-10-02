@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,22 +27,28 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Purchases a Reserved Instance for use with your account. With Amazon
-    /// EC2 Reserved Instances, you purchase the right to launch Amazon EC2
-    /// instances for a period of time (without getting insufficient capacity errors)
-    /// and pay a lower usage rate for the actual time used. For more information
-    /// about Reserved Instances, go to the Amazon Elastic Compute Cloud
+    /// Purchases a Reserved Instance for use with your
+    /// account. With Amazon
+    /// EC2 Reserved Instances, you purchase the right
+    /// to launch Amazon EC2
+    /// instances for a period of time (without
+    /// getting insufficient capacity errors)
+    /// and pay a lower usage rate for
+    /// the actual time used. For more information
+    /// about Reserved Instances,
+    /// go to the Amazon Elastic Compute Cloud
     /// Developer Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class PurchaseReservedInstancesOfferingRequest
-    {
+    {    
         private string reservedInstancesOfferingIdField;
         private string instanceCountField;
 
         /// <summary>
         /// Gets and sets the ReservedInstancesOfferingId property.
-        /// The offering ID of the Reserved Instance to purchase.
+        /// The offering ID of the Reserved Instance to
+        /// purchase.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReservedInstancesOfferingId")]
         public string ReservedInstancesOfferingId
@@ -54,7 +60,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ReservedInstancesOfferingId property
         /// </summary>
-        /// <param name="reservedInstancesOfferingId">The offering ID of the Reserved Instance to purchase.</param>
+        /// <param name="reservedInstancesOfferingId">The offering ID of the Reserved Instance to
+        /// purchase.</param>
         /// <returns>this instance</returns>
         public PurchaseReservedInstancesOfferingRequest WithReservedInstancesOfferingId(string reservedInstancesOfferingId)
         {
@@ -73,7 +80,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceCount property.
-        /// The number of Reserved Instances to purchase. Default: 1
+        /// The number of Reserved Instances to purchase.
+        /// Default: 1
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceCount")]
         public string InstanceCount
@@ -85,7 +93,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceCount property
         /// </summary>
-        /// <param name="instanceCount">The number of Reserved Instances to purchase. Default: 1</param>
+        /// <param name="instanceCount">The number of Reserved Instances to purchase.
+        /// Default: 1</param>
         /// <returns>this instance</returns>
         public PurchaseReservedInstancesOfferingRequest WithInstanceCount(string instanceCount)
         {

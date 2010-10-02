@@ -42,6 +42,8 @@ using Amazon.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 
+using Amazon.Runtime.Internal.Util;
+
 namespace Amazon.S3
 {
     using Map = System.Collections.Generic.IDictionary<Amazon.S3.Model.S3QueryParameter, string>;
@@ -72,6 +74,8 @@ namespace Amazon.S3
         private readonly string clearAwsSecretAccessKey;
 
         #endregion
+
+        Logger logger = new Logger(typeof(AmazonS3));
 
         #region Dispose Pattern
 
@@ -577,9 +581,9 @@ namespace Amazon.S3
                 throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
             }
 
-            if (!request.IsSetAspenPolicy())
+            if (!request.IsSetPolicy())
             {
-                throw new ArgumentNullException(S3Constants.RequestParam, "The Aspen policy specified is null or empty!");
+                throw new ArgumentNullException(S3Constants.RequestParam, "The policy specified is null or empty!");
             }
 
             ConvertPutBucketPolicy(request);
@@ -624,6 +628,73 @@ namespace Amazon.S3
 
             ConvertDeleteBucketPolicy(request);
             return this.Invoke<DeleteBucketPolicyResponse>(request);
+        }
+
+        /// <summary>
+        /// <para>
+        /// The notification configuration of a bucket provides near realtime notifications
+        /// of events the user is interested in, using SNS as the delivery service.
+        /// Notification is turned on by enabling configuration on a bucket, specifying
+        /// the events and the SNS topic. This configuration can only be turned
+        /// on by the bucket owner. If a notification configuration already exists for the
+        /// specified bucket, the new notification configuration will replace the existing
+        /// notification configuration.  To remove the notification configuration pass in
+        /// an empty request.  Currently, buckets may only have a single event and topic
+        /// configuration.
+        /// </para>
+        /// <para>
+        /// S3 is eventually consistent. It may take time for the notification status
+        /// of a bucket to be propagated throughout the system.
+        /// </para>
+        /// </summary>
+        /// <param name="request">The SetNotificationConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a SetNotificationConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public SetNotificationConfigurationResponse SetNotificationConfiguration(SetNotificationConfigurationRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The SetNotificationConfigurationRequest specified is null!");
+            }
+
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
+            }
+
+
+            ConvertSetNotificationConfiguration(request);
+            return this.Invoke<SetNotificationConfigurationResponse>(request);
+        }
+
+        /// <summary>
+        /// <para>
+        /// Retrieves the notification configuration for the specified bucket. Only the owner of the
+        /// bucket can retrieve the notification configuration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">The GetNotificationConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a GetNotificationConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public GetNotificationConfigurationResponse GetNotificationConfiguration(GetNotificationConfigurationRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The GetNotificationConfigurationRequest specified is null!");
+            }
+
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
+            }
+
+
+            ConvertGetNotificationConfiguration(request);
+            return this.Invoke<GetNotificationConfigurationResponse>(request);
         }
 
         /// <summary>
@@ -1004,15 +1075,13 @@ namespace Amazon.S3
             // The BucketName and one of either the Key or the FilePath needs to be set
             if (!request.IsSetBucketName())
             {
-                throw new ArgumentNullException(S3Constants.RequestParam, "An S3 Bucket must be specified for S3 PUT object.");
+                throw new ArgumentException("An S3 Bucket must be specified for S3 PUT object.");
             }
 
             if (!(request.IsSetKey() || request.IsSetFilePath()))
             {
                 throw new ArgumentException(
-                    "Either a Key or a Filename need to be specified for S3 PUT object.",
-                    S3Constants.RequestParam
-                    );
+                    "Either a Key or a Filename need to be specified for S3 PUT object.");
             }
 
             // Either:
@@ -1023,33 +1092,25 @@ namespace Amazon.S3
                 !request.IsSetContentBody())
             {
                 throw new ArgumentException(
-                    "Please specify either a Filename, provide a FileStream or provide a ContentBody to PUT an object into S3.",
-                    S3Constants.RequestParam
-                    );
+                    "Please specify either a Filename, provide a FileStream or provide a ContentBody to PUT an object into S3.");
             }
 
             if (request.IsSetInputStream() && request.IsSetContentBody())
             {
                 throw new ArgumentException(
-                    "Please specify one of either an Input FileStream or the ContentBody to be PUT as an S3 object.",
-                    S3Constants.RequestParam
-                    );
+                    "Please specify one of either an Input FileStream or the ContentBody to be PUT as an S3 object.");
             }
 
             if (request.IsSetInputStream() && request.IsSetFilePath())
             {
                 throw new ArgumentException(
-                    "Please specify one of either an Input FileStream or a Filename to be PUT as an S3 object.",
-                    S3Constants.RequestParam
-                    );
+                    "Please specify one of either an Input FileStream or a Filename to be PUT as an S3 object.");
             }
 
             if (request.IsSetFilePath() && request.IsSetContentBody())
             {
                 throw new ArgumentException(
-                    "Please specify one of either a Filename or the ContentBody to be PUT as an S3 object.",
-                    S3Constants.RequestParam
-                    );
+                    "Please specify one of either a Filename or the ContentBody to be PUT as an S3 object.");
             }
 
             if (request.IsSetFilePath())
@@ -1465,7 +1526,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "PutBucketPolicy";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?policy";
 
-            parameters[S3QueryParameter.ContentBody] = request.AspenPolicy;
+            parameters[S3QueryParameter.ContentBody] = request.Policy;
             parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
 
             AddS3QueryParameters(request, request.BucketName);
@@ -1483,6 +1544,46 @@ namespace Amazon.S3
 
             AddS3QueryParameters(request, request.BucketName);
         }
+
+        /**
+         * Convert SetNotificationConfigurationRequest to key/value pairs.
+         */
+        private void ConvertSetNotificationConfiguration(SetNotificationConfigurationRequest request)
+        {
+            Map parameters = request.parameters;
+            parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
+            parameters[S3QueryParameter.Action] = "SetNotificationConfiguration";
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?notification";
+
+            parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
+
+            // If this is null then assume the configuration is intented to be removed which is
+            // done by sending an xml document without any topic configurations.
+            if (request.NotificationConfiguration == null)
+            {
+                parameters[S3QueryParameter.ContentBody] = new NotificationConfigurationList().ToXML();
+            }
+            else
+            {
+                parameters[S3QueryParameter.ContentBody] = request.NotificationConfiguration.ToXML();
+            }
+
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert GetNotificationConfigurationRequest to key/value pairs.
+         */
+        private void ConvertGetNotificationConfiguration(GetNotificationConfigurationRequest request)
+        {
+            Map parameters = request.parameters;
+            parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
+            parameters[S3QueryParameter.Action] = "GetNotificationConfiguration";
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?notification";
+
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
 
         /**
          * Convert GetObjectRequest to key/value pairs.
@@ -2047,10 +2148,7 @@ namespace Amazon.S3
             HttpStatusCode statusCode = default(HttpStatusCode);
             string verb = parameters[S3QueryParameter.Verb];
 
-#if TRACE
-            DateTime start = DateTime.UtcNow;
-            Trace.Write(String.Format("{0}, {1}, ", actionName, start));
-#endif
+            this.logger.DebugFormat("Starting request for {0}", actionName);
 
             // Variables that pertain to PUT requests
             byte[] requestData = Encoding.UTF8.GetBytes("");
@@ -2076,6 +2174,7 @@ namespace Amazon.S3
                 if (parameters.ContainsKey(S3QueryParameter.ContentBody))
                 {
                     string reqBody = parameters[S3QueryParameter.ContentBody];
+                    this.logger.DebugFormat("Request body's content [{0}]", reqBody);
                     requestData = Encoding.UTF8.GetBytes(reqBody);
 
                     // Since there is a request body, determine the length of the
@@ -2143,23 +2242,21 @@ namespace Amazon.S3
                                     }
                                 }
                             }
+                            this.logger.DebugFormat("Processed parameters and making request for {0} with {1} of bytes in request to {2}.", actionName, reqDataLen, request.RequestUri);
+                        }
+                        else
+                        {
+                            this.logger.DebugFormat("Processed parameters and making request for {0} to {1}.", actionName, request.RequestUri);
                         }
 
-#if TRACE
                         DateTime requestSent = DateTime.UtcNow;
-                        Trace.Write(String.Format("{0}, {1}, ", requestSent, (requestSent - start).TotalMilliseconds));
-#endif
-
                         httpResponse = request.GetResponse() as HttpWebResponse;
-
-#if TRACE
                         DateTime responseReceived = DateTime.UtcNow;
-                        Trace.Write(String.Format("{0}, ", responseReceived));
-                        Trace.Write(String.Format("{0}, ", (responseReceived - requestSent).TotalMilliseconds));
-#endif
 
                         if (httpResponse != null)
                         {
+                            this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", actionName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
+
                             statusCode = httpResponse.StatusCode;
                             if (!IsRedirect(httpResponse))
                             {
@@ -2171,6 +2268,7 @@ namespace Amazon.S3
                                 shouldRetry = true;
 
                                 ProcessRedirect(userRequest, httpResponse);
+                                this.logger.InfoFormat("Request for {0} is being redirect to {1}.", actionName, userRequest.parameters[S3QueryParameter.Url]);
 
                                 PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, httpResponse.Headers);
 
@@ -2183,23 +2281,17 @@ namespace Amazon.S3
                                 httpResponse = null;
                                 request.Abort();
                             }
-#if TRACE
-                            DateTime end = DateTime.UtcNow;
-                            Trace.Write(String.Format("{0}, ", end));
-                            Trace.Write(String.Format("{0}", (end - responseReceived).TotalMilliseconds));
-                            Trace.WriteLine(String.Format("{0}", (end - start).TotalMilliseconds));
-                            Trace.Flush();
-#endif
                         }
                     }
                     // Web exception is thrown on unsucessful responses
                     catch (WebException we)
                     {
+                        this.logger.Debug(string.Format("Error making request {0}.", actionName), we);
                         WebHeaderCollection respHdrs;
 
                         using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
                         {
-                            shouldRetry = ProcessRequestError(request, we, errorResponse, requestAddr, out respHdrs, myType);
+                            shouldRetry = ProcessRequestError(actionName, request, we, errorResponse, requestAddr, out respHdrs, myType);
 
                             if (httpResponse != null)
                             {
@@ -2224,8 +2316,9 @@ namespace Amazon.S3
                             }
                         }
                     }
-                    catch (IOException)
+                    catch (IOException e)
                     {
+                        this.logger.Error(string.Format("Error making request {0}.", actionName), e);
                         if (httpResponse != null)
                         {
                             httpResponse.Close();
@@ -2239,6 +2332,10 @@ namespace Amazon.S3
 
                     if (shouldRetry)
                     {
+                        if (retries <= maxRetries)
+                        {
+                            this.logger.InfoFormat("Retry number {0} for request {1}.", retries, actionName);
+                        }
                         // Reset the request so that streams are recreated,
                         // removed headers are added back, etc
                         PrepareRequestForRetry(userRequest);
@@ -2464,7 +2561,7 @@ namespace Amazon.S3
             return response;
         }
 
-        private static bool ProcessRequestError(HttpWebRequest request, WebException we, HttpWebResponse errorResponse, string requestAddr, out WebHeaderCollection respHdrs, Type t)
+        private bool ProcessRequestError(string actionName, HttpWebRequest request, WebException we, HttpWebResponse errorResponse, string requestAddr, out WebHeaderCollection respHdrs, Type t)
         {
             bool shouldRetry = false;
             HttpStatusCode statusCode = default(HttpStatusCode);
@@ -2476,6 +2573,7 @@ namespace Amazon.S3
 
             if (errorResponse == null)
             {
+                this.logger.Error(string.Format("Error making request {0}.", actionName), we);
                 throw we;
             }
 
@@ -2493,7 +2591,7 @@ namespace Amazon.S3
             if (request.Method.Equals("HEAD") &&
                 statusCode == HttpStatusCode.NotFound)
             {
-                throw new AmazonS3Exception(
+                AmazonS3Exception excep = new AmazonS3Exception(
                     we.Message,
                     statusCode,
                     "NoSuchKey",
@@ -2503,6 +2601,9 @@ namespace Amazon.S3
                     requestAddr,
                     respHdrs
                     );
+
+                this.logger.Error(string.Format("Error making request {0}.", actionName), excep);
+                throw excep;
             }
 
             if (statusCode == HttpStatusCode.InternalServerError ||
@@ -2519,7 +2620,7 @@ namespace Amazon.S3
                     S3Error error = (S3Error)serializer.Deserialize(sr);
 
                     // Throw formatted exception with information available from the error response
-                    throw new AmazonS3Exception(
+                    AmazonS3Exception excep = new AmazonS3Exception(
                         error.Message,
                         statusCode,
                         error.Code,
@@ -2529,6 +2630,9 @@ namespace Amazon.S3
                         requestAddr,
                         respHdrs
                         );
+
+                    this.logger.Error(string.Format("Error making request {0}.", actionName), excep);
+                    throw excep;
                 }
             }
 
@@ -2617,6 +2721,11 @@ namespace Amazon.S3
                             config.ProxyUsername,
                             config.ProxyPassword ?? String.Empty
                             );
+                        this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1} for user {2}.", config.ProxyHost, config.ProxyPort, config.ProxyUsername); 
+                    }
+                    else
+                    {
+                        this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
                     }
                     httpRequest.Proxy = proxy;
                 }

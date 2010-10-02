@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,17 +27,19 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Resets an attribute of an instance to its default value.
+    /// Resets an attribute of an instance to its default
+    /// value.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class ResetInstanceAttributeRequest
-    {
+    {    
         private string instanceIdField;
         private string attributeField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
-        /// ID of the instance on which the attribute will be reset.
+        /// ID of the instance on which the attribute will
+        /// be reset.
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
@@ -49,7 +51,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceId property
         /// </summary>
-        /// <param name="instanceId">ID of the instance on which the attribute will be reset.</param>
+        /// <param name="instanceId">ID of the instance on which the attribute will
+        /// be reset.</param>
         /// <returns>this instance</returns>
         public ResetInstanceAttributeRequest WithInstanceId(string instanceId)
         {
@@ -68,7 +71,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Attribute property.
-        /// Name of the attribute to reset. Values are "kernel" and "ramdisk".
+        /// Name of the attribute to reset. Values are
+        /// "kernel" and "ramdisk".
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -80,7 +84,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Attribute property
         /// </summary>
-        /// <param name="attribute">Name of the attribute to reset. Values are "kernel" and "ramdisk".</param>
+        /// <param name="attribute">Name of the attribute to reset. Values are
+        /// "kernel" and "ramdisk".</param>
         /// <returns>this instance</returns>
         public ResetInstanceAttributeRequest WithAttribute(string attribute)
         {

@@ -31,7 +31,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class SetQueueAttributesRequest
-    {
+    {    
         private string queueUrlField;
         private List<Attribute> attributeField;
 
@@ -65,6 +65,7 @@ namespace Amazon.SQS.Model
         {
             return this.queueUrlField != null;
         }
+
         /// <summary>
         /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.

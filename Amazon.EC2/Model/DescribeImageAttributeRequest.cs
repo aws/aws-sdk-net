@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,18 +27,19 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Returns information about an attribute of an AMI. Only one attribute can be specified
-    /// per call.
+    /// Returns information about an attribute of an AMI.
+    /// Only one attribute can be specified per call.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DescribeImageAttributeRequest
-    {
+    {    
         private string imageIdField;
         private string attributeField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
-        /// The ID of the AMI for which an attribute will be described.
+        /// The ID of the AMI for which an attribute will
+        /// be described.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageId")]
         public string ImageId
@@ -50,7 +51,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ImageId property
         /// </summary>
-        /// <param name="imageId">The ID of the AMI for which an attribute will be described.</param>
+        /// <param name="imageId">The ID of the AMI for which an attribute will
+        /// be described.</param>
         /// <returns>this instance</returns>
         public DescribeImageAttributeRequest WithImageId(string imageId)
         {
@@ -69,7 +71,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Attribute property.
-        /// Attribute name to be described.Valid values: launchPermission | productCodes | kernel
+        /// Attribute name to be described.Valid values:
+        /// launchPermission | productCodes | kernel
         /// | ramdisk | blockDeviceMapping | platform
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -82,7 +85,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Attribute property
         /// </summary>
-        /// <param name="attribute">Attribute name to be described.Valid values: launchPermission | productCodes | kernel
+        /// <param name="attribute">Attribute name to be described.Valid values:
+        /// launchPermission | productCodes | kernel
         /// | ramdisk | blockDeviceMapping | platform</param>
         /// <returns>this instance</returns>
         public DescribeImageAttributeRequest WithAttribute(string attribute)

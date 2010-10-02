@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///VPC
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class Vpc
-    {
+    {    
         private string vpcIdField;
         private string vpcStateField;
         private string cidrBlockField;
@@ -132,8 +132,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the DhcpOptionsId property.
-        /// The ID of the set of DHCP options you've associated with the VPC (or "default" if
-        /// the default options are associated with the VPC).
+        /// The ID of the set of DHCP options you've
+        /// associated with the VPC
+        /// (or "default" if
+        /// the default options are
+        /// associated with the VPC).
         /// </summary>
         [XmlElementAttribute(ElementName = "DhcpOptionsId")]
         public string DhcpOptionsId
@@ -145,8 +148,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the DhcpOptionsId property
         /// </summary>
-        /// <param name="dhcpOptionsId">The ID of the set of DHCP options you've associated with the VPC (or "default" if
-        /// the default options are associated with the VPC).</param>
+        /// <param name="dhcpOptionsId">The ID of the set of DHCP options you've
+        /// associated with the VPC
+        /// (or "default" if
+        /// the default options are
+        /// associated with the VPC).</param>
         /// <returns>this instance</returns>
         public Vpc WithDhcpOptionsId(string dhcpOptionsId)
         {

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,11 +27,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Resets permission settings for the specified snapshot
+    /// Resets permission settings for the specified
+    /// snapshot
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class ResetSnapshotAttributeRequest
-    {
+    {    
         private string snapshotIdField;
         private string attributeField;
 
@@ -68,7 +69,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Attribute property.
-        /// Resets the create volume permissions of the snapshot.
+        /// Resets the create volume permissions of the
+        /// snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -80,7 +82,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Attribute property
         /// </summary>
-        /// <param name="attribute">Resets the create volume permissions of the snapshot.</param>
+        /// <param name="attribute">Resets the create volume permissions of the
+        /// snapshot.</param>
         /// <returns>this instance</returns>
         public ResetSnapshotAttributeRequest WithAttribute(string attribute)
         {

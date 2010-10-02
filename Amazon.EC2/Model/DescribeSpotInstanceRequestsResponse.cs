@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -28,11 +28,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The Response for the DescribeSpotInstanceRequests operation.
+    /// The Response for the DescribeSpotInstanceRequests
+    /// operation.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DescribeSpotInstanceRequestsResponse
-    {
+    {    
         private ResponseMetadata responseMetadataField;
         private DescribeSpotInstanceRequestsResult describeSpotInstanceRequestsResultField;
 
@@ -48,17 +49,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the ResponseMetadata property
-        /// </summary>
-        /// <param name="responseMetadata">Response Metadata</param>
-        /// <returns>this instance</returns>
-        public DescribeSpotInstanceRequestsResponse WithResponseMetadata(ResponseMetadata responseMetadata)
-        {
-            this.responseMetadataField = responseMetadata;
-            return this;
-        }
-
-        /// <summary>
         /// Checks if ResponseMetadata property is set
         /// </summary>
         /// <returns>true if ResponseMetadata property is set</returns>
@@ -69,24 +59,14 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the DescribeSpotInstanceRequestsResult property.
-        /// The Result of the Describe Spot Instances operation.
+        /// The Result of the Describe Spot Instances
+        /// operation.
         /// </summary>
         [XmlElementAttribute(ElementName = "DescribeSpotInstanceRequestsResult")]
         public DescribeSpotInstanceRequestsResult DescribeSpotInstanceRequestsResult
         {
             get { return this.describeSpotInstanceRequestsResultField; }
             set { this.describeSpotInstanceRequestsResultField = value; }
-        }
-
-        /// <summary>
-        /// Sets the DescribeSpotInstanceRequestsResult property
-        /// </summary>
-        /// <param name="describeSpotInstanceRequestsResult">The Result of the Describe Spot Instances operation.</param>
-        /// <returns>this instance</returns>
-        public DescribeSpotInstanceRequestsResponse WithDescribeSpotInstanceRequestsResult(DescribeSpotInstanceRequestsResult describeSpotInstanceRequestsResult)
-        {
-            this.describeSpotInstanceRequestsResultField = describeSpotInstanceRequestsResult;
-            return this;
         }
 
         /// <summary>
@@ -99,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// XML Representation for this object
+        /// XML Representation of this object
         /// </summary>
         /// <returns>XML String</returns>
         public string ToXML()
@@ -111,6 +91,15 @@ namespace Amazon.EC2.Model
                 serializer.Serialize(sw, this);
             }
             return xml.ToString();
+        }
+
+        /// <summary>
+        /// String Representation of this object. Overrides Object.ToString()
+        /// </summary>
+        /// <returns>This object as a string</returns>
+        public override string ToString()
+        {
+            return this.ToXML();
         }
     }
 }

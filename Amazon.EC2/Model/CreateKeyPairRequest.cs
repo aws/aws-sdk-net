@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,22 +27,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new 2048-bit RSA key pair with the specified name. The public key is
-    /// stored by Amazon EC2 and the private key is displayed on the console. The
-    /// private key is returned as an unencrypted PEM encoded PKCS#8 private key.
+    /// Creates a new 2048-bit RSA key pair with the specified name. The public
+    /// key is stored by Amazon EC2 and the private key is displayed on the console.
+    /// The private key is returned as an unencrypted PEM encoded PKCS#8 private key.
     /// If a key with the specified name already exists, Amazon EC2 returns an error.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class CreateKeyPairRequest
-    {
+    {    
         private string keyNameField;
 
         /// <summary>
         /// Gets and sets the KeyName property.
         /// A unique name for the key pair.
         ///
-        /// Constraints: Accepts alphanumeric characters, spaces, dashes, and
-        /// underscores.
+        /// Constraints:
+        /// Accepts alphanumeric characters, spaces, dashes, and underscores.
         /// </summary>
         [XmlElementAttribute(ElementName = "KeyName")]
         public string KeyName
@@ -56,8 +56,8 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="keyName">A unique name for the key pair.
         ///
-        /// Constraints: Accepts alphanumeric characters, spaces, dashes, and
-        /// underscores.</param>
+        /// Constraints:
+        /// Accepts alphanumeric characters, spaces, dashes, and underscores.</param>
         /// <returns>this instance</returns>
         public CreateKeyPairRequest WithKeyName(string keyName)
         {

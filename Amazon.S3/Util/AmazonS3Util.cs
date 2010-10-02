@@ -206,6 +206,9 @@ namespace Amazon.S3.Util
             extensionToMime[".xwd"] = "image/x-xwindowdump";
             extensionToMime[".xyz"] = "chemical/x-pdb";
             extensionToMime[".zip"] = "application/zip";
+            extensionToMime[".m4v"] = "video/x-m4v";
+            extensionToMime[".webm"] = "video/webm";
+            extensionToMime[".ogv"] = "video/ogv";
         }
 
         /// <summary>
@@ -507,7 +510,7 @@ namespace Amazon.S3.Util
         /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
         public static void SetObjectStorageClass(S3Object s3Object, S3StorageClass sClass, AmazonS3 s3Client)
         {
-            SetObjectStorageClass(s3Object.Key, s3Object.BucketName, sClass, s3Client);
+            SetObjectStorageClass(s3Object.BucketName, s3Object.Key, sClass, s3Client);
         }
 
         /// <summary>
@@ -515,11 +518,39 @@ namespace Amazon.S3.Util
         /// specified.
         /// </summary>
         /// <param name="bucketName">The name of the bucket in which the key is stored</param>
-        /// <param name="key">The key of S3 Object whose storage class needs changing</param>
+        /// <param name="key">The key of the S3 Object whose storage class needs changing</param>
         /// <param name="sClass">The new Storage Class for the object</param>
         /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
         /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
         public static void SetObjectStorageClass(string bucketName, string key, S3StorageClass sClass, AmazonS3 s3Client)
+        {
+            SetObjectStorageClass(bucketName, key, null, sClass, s3Client);
+        }
+
+        /// <summary>
+        /// Sets the storage class for the S3 Object Version to the value
+        /// specified.
+        /// </summary>
+        /// <param name="s3ObjectVer">The S3 Object Version whose storage class needs changing</param>
+        /// <param name="sClass">The new Storage Class for the object</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        public static void SetObjectStorageClass(S3ObjectVersion s3ObjectVer, S3StorageClass sClass, AmazonS3 s3Client)
+        {
+            SetObjectStorageClass(s3ObjectVer.BucketName, s3ObjectVer.Key, s3ObjectVer.VersionId, sClass, s3Client);
+        }
+
+        /// <summary>
+        /// Sets the storage class for the S3 Object's Version to the value
+        /// specified.
+        /// </summary>
+        /// <param name="bucketName">The name of the bucket in which the key is stored</param>
+        /// <param name="key">The key of the S3 Object whose storage class needs changing</param>
+        /// <param name="version">The version of the S3 Object whose storage class needs changing</param>
+        /// <param name="sClass">The new Storage Class for the object</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        public static void SetObjectStorageClass(string bucketName, string key, string version, S3StorageClass sClass, AmazonS3 s3Client)
         {
             if (sClass > S3StorageClass.ReducedRedundancy ||
                 sClass < S3StorageClass.Standard)
@@ -532,12 +563,33 @@ namespace Amazon.S3.Util
                 throw new ArgumentNullException("s3Client", "Please specify an S3 Client to make service requests.");
             }
 
+            // Get the existing ACL of the object
+            GetACLRequest getACLRequest = new GetACLRequest();
+            getACLRequest.BucketName = bucketName;
+            getACLRequest.Key = key;
+            if(version != null)
+                getACLRequest.VersionId = version;
+            GetACLResponse getACLResponse = s3Client.GetACL(getACLRequest);
+
+            // Set the storage class on the object
             CopyObjectRequest copyRequest = new CopyObjectRequest();
             copyRequest.SourceBucket = copyRequest.DestinationBucket = bucketName;
             copyRequest.SourceKey = copyRequest.DestinationKey = key;
+            if (version != null)
+                copyRequest.SourceVersionId = version;
             copyRequest.StorageClass = sClass;
             // The copyRequest's Metadata directive is COPY by default
-            s3Client.CopyObject(copyRequest);
+            CopyObjectResponse copyResponse = s3Client.CopyObject(copyRequest);
+
+            // Set the object's original ACL back onto it because a COPY
+            // operation resets the ACL on the destination object.
+            SetACLRequest setACLRequest = new SetACLRequest();
+            setACLRequest.BucketName = bucketName;
+            setACLRequest.Key = key;
+            if (version != null)
+                setACLRequest.VersionId = copyResponse.VersionId;
+            setACLRequest.ACL = getACLResponse.AccessControlList;
+            s3Client.SetACL(setACLRequest);
         }
     }
 }

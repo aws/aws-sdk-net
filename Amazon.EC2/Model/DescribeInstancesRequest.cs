@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,21 +29,22 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Returns information about instances that you own.
     ///
-    /// If you specify one or more instance IDs, Amazon EC2 returns information for those
-    /// instances.
+    /// If you specify one or more instance IDs, Amazon EC2 returns
+    /// information for those instances.
     ///
-    /// If you do not specify instance IDs, Amazon EC2 returns information for all relevant
-    /// instances. If you specify an invalid instance ID, a fault is returned.
+    /// If you do not specify instance IDs, Amazon EC2 returns information
+    /// for all relevant instances. If you
+    /// specify an invalid instance ID, a fault is returned.
     ///
-    /// If you specify an instance that you do not own, it will not be included in the returned
-    /// results.
+    /// If you specify an instance that you do not own, it will not be
+    /// included in the returned results.
     ///
-    /// Recently terminated instances might appear in the returned results.This interval is usually
-    /// less than one hour.
+    /// Recently terminated instances might appear in the returned results.This
+    /// interval is usually less than one hour.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DescribeInstancesRequest
-    {
+    {    
         private List<string> instanceIdField;
 
         /// <summary>

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-06-01
+ *  API Version: 2010-07-15
  *  Author(s): Manoj Mehta
  *
  */
@@ -296,7 +296,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// The CreateDistribution operation creates a new CloudFront Distribution.
         /// </summary>
-        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-06-01/APIReference/CreateDistribution.html">
+        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-07-15/APIReference/CreateDistribution.html">
         /// POST Distribution API Reference</seealso>
         /// <param name="request">
         /// The CreateDistributionRequest that defines the parameters of the operation.
@@ -680,7 +680,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// The CreateStreamingDistribution operation creates a new CloudFront StreamingDistribution.
         /// </summary>
-        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-06-01/APIReference/CreateStreamingDistribution.html">
+        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-07-15/APIReference/CreateStreamingDistribution.html">
         /// POST Streaming Distribution API Reference</seealso>
         /// <param name="request">
         /// The CreateStreamingDistributionRequest that defines the parameters of the operation.

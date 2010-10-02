@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///A list of instance attributes.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class InstanceAttribute
-    {
+    {    
         private string instanceIdField;
         private string instanceTypeField;
         private string kernelIdField;
@@ -75,7 +75,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceType property.
-        /// The instance type (e.g., m1.small, c1.medium, m2.2xlarge, and so
+        /// The instance type (e.g., m1.small, c1.medium,
+        /// m2.2xlarge, and so
         /// on).
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
@@ -88,7 +89,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceType property
         /// </summary>
-        /// <param name="instanceType">The instance type (e.g., m1.small, c1.medium, m2.2xlarge, and so
+        /// <param name="instanceType">The instance type (e.g., m1.small, c1.medium,
+        /// m2.2xlarge, and so
         /// on).</param>
         /// <returns>this instance</returns>
         public InstanceAttribute WithInstanceType(string instanceType)
@@ -201,9 +203,10 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the DisableApiTermination property.
-        /// Specifies whether the instance can be terminated. You must
-        /// modify this attribute before you can terminate any "locked"
-        /// instances.
+        /// Specifies whether the instance can be
+        /// terminated. You must
+        /// modify this attribute before you can
+        /// terminate any "locked" instances.
         /// </summary>
         [XmlElementAttribute(ElementName = "DisableApiTermination")]
         public bool DisableApiTermination
@@ -215,9 +218,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the DisableApiTermination property
         /// </summary>
-        /// <param name="disableApiTermination">Specifies whether the instance can be terminated. You must
-        /// modify this attribute before you can terminate any "locked"
-        /// instances.</param>
+        /// <param name="disableApiTermination">Specifies whether the instance can be
+        /// terminated. You must
+        /// modify this attribute before you can
+        /// terminate any "locked" instances.</param>
         /// <returns>this instance</returns>
         public InstanceAttribute WithDisableApiTermination(bool disableApiTermination)
         {
@@ -236,9 +240,10 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceInitiatedShutdownBehavior property.
-        /// Specifies whether the instance's Amazon EBS volumes are
-        /// deleted when the instance is shut down.
-        /// Type: NullableAttributeBooleanValueType
+        /// Specifies whether the instance's Amazon EBS
+        /// volumes are deleted when the instance is shut down.
+        /// Type:
+        /// NullableAttributeBooleanValueType
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceInitiatedShutdownBehavior")]
         public string InstanceInitiatedShutdownBehavior
@@ -250,9 +255,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the InstanceInitiatedShutdownBehavior property
         /// </summary>
-        /// <param name="instanceInitiatedShutdownBehavior">Specifies whether the instance's Amazon EBS volumes are
-        /// deleted when the instance is shut down.
-        /// Type: NullableAttributeBooleanValueType</param>
+        /// <param name="instanceInitiatedShutdownBehavior">Specifies whether the instance's Amazon EBS
+        /// volumes are deleted when the instance is shut down.
+        /// Type:
+        /// NullableAttributeBooleanValueType</param>
         /// <returns>this instance</returns>
         public InstanceAttribute WithInstanceInitiatedShutdownBehavior(string instanceInitiatedShutdownBehavior)
         {
@@ -299,6 +305,7 @@ namespace Amazon.EC2.Model
         {
             return this.rootDeviceNameField != null;
         }
+
         /// <summary>
         /// Gets and sets the BlockDeviceMapping property.
         /// Block device mapping set.

@@ -171,7 +171,7 @@ namespace Amazon.SQS
         #region Public API
 
         /// <summary>
-        /// Create Queue
+        /// Create Queue 
         /// </summary>
         /// <param name="request">Create Queue  request</param>
         /// <returns>Create Queue  Response from the service</returns>
@@ -190,7 +190,7 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// List Queues
+        /// List Queues 
         /// </summary>
         /// <param name="request">List Queues  request</param>
         /// <returns>List Queues  Response from the service</returns>
@@ -203,7 +203,7 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Add Permission
+        /// Add Permission 
         /// </summary>
         /// <param name="request">Add Permission  request</param>
         /// <returns>Add Permission  Response from the service</returns>
@@ -216,7 +216,7 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Change Message Visibility
+        /// Change Message Visibility 
         /// </summary>
         /// <param name="request">Change Message Visibility  request</param>
         /// <returns>Change Message Visibility  Response from the service</returns>
@@ -229,7 +229,7 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Delete Message
+        /// Delete Message 
         /// </summary>
         /// <param name="request">Delete Message  request</param>
         /// <returns>Delete Message  Response from the service</returns>
@@ -242,7 +242,7 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Delete Queue
+        /// Delete Queue 
         /// </summary>
         /// <param name="request">Delete Queue  request</param>
         /// <returns>Delete Queue  Response from the service</returns>
@@ -255,7 +255,7 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Get Queue Attributes
+        /// Get Queue Attributes 
         /// </summary>
         /// <param name="request">Get Queue Attributes  request</param>
         /// <returns>Get Queue Attributes  Response from the service</returns>
@@ -268,7 +268,7 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Remove Permission
+        /// Remove Permission 
         /// </summary>
         /// <param name="request">Remove Permission  request</param>
         /// <returns>Remove Permission  Response from the service</returns>
@@ -281,7 +281,7 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Receive Message
+        /// Receive Message 
         /// </summary>
         /// <param name="request">Receive Message  request</param>
         /// <returns>Receive Message  Response from the service</returns>
@@ -299,7 +299,7 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Send Message
+        /// Send Message 
         /// </summary>
         /// <param name="request">Send Message  request</param>
         /// <returns>Send Message  Response from the service</returns>
@@ -312,7 +312,7 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Set Queue Attributes
+        /// Set Queue Attributes 
         /// </summary>
         /// <param name="request">Set Queue Attributes  request</param>
         /// <returns>Set Queue Attributes  Response from the service</returns>
@@ -829,21 +829,6 @@ namespace Amazon.SQS
             if (request.IsSetMessageBody())
             {
                 parameters["MessageBody"] = request.MessageBody;
-            }
-            List<Attribute> sendMessageRequestAttributeList = request.Attribute;
-            int sendMessageRequestAttributeListIndex = 1;
-            foreach (Attribute sendMessageRequestAttribute in sendMessageRequestAttributeList)
-            {
-                if (sendMessageRequestAttribute.IsSetName())
-                {
-                    parameters[String.Concat("Attribute", ".", sendMessageRequestAttributeListIndex, ".", "Name")] = sendMessageRequestAttribute.Name;
-                }
-                if (sendMessageRequestAttribute.IsSetValue())
-                {
-                    parameters[String.Concat("Attribute", ".", sendMessageRequestAttributeListIndex, ".", "Value")] = sendMessageRequestAttribute.Value;
-                }
-
-                sendMessageRequestAttributeListIndex++;
             }
 
             return parameters;

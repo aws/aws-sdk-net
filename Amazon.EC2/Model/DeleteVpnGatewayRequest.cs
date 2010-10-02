@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,18 +27,20 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a VPN gateway. Use this when you want to delete a VPC and all its associated
-    /// components because you no longer need them. We recommend that before you delete
-    /// a VPN gateway, you detach it from the VPC and delete the VPN connection. Note that
-    /// you don't need to delete the VPN gateway if you just want to delete and re-create the
-    /// VPN connection between your VPC and data center.
+    /// Deletes a VPN gateway. Use this when you want to delete a VPC and all its
+    /// associated components because you no longer need them. We recommend that before you
+    /// delete a VPN gateway, you detach it from the VPC and delete the VPN
+    /// connection. Note that you don't need to delete the VPN gateway 
+    /// if you just want to delete and re-create the VPN connection between your 
+    /// VPC and data center.
     ///
-    /// AWS might delete any VPN gateway if you leave it inactive for an extended period of
-    /// time (inactive means that there's no VPN connection in use with the VPN gateway).
+    /// AWS might delete any VPN gateway if you leave it inactive for an
+    /// extended period of time (inactive means that there's no VPN
+    /// connection in use with the VPN gateway).
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DeleteVpnGatewayRequest
-    {
+    {    
         private string vpnGatewayIdField;
 
         /// <summary>

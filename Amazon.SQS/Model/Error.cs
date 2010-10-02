@@ -31,7 +31,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class Error
-    {
+    {    
         private string typeField;
         private string codeField;
         private string messageField;

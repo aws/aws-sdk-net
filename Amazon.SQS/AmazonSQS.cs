@@ -38,7 +38,7 @@ namespace Amazon.SQS
     public interface AmazonSQS : IDisposable
     {
         /// <summary>
-        /// Create Queue
+        /// Create Queue 
         /// </summary>
         /// <param name="request">Create Queue  request</param>
         /// <returns>Create Queue  Response from the service</returns>
@@ -54,7 +54,7 @@ namespace Amazon.SQS
         CreateQueueResponse CreateQueue(CreateQueueRequest request);
 
         /// <summary>
-        /// List Queues
+        /// List Queues 
         /// </summary>
         /// <param name="request">List Queues  request</param>
         /// <returns>List Queues  Response from the service</returns>
@@ -64,7 +64,7 @@ namespace Amazon.SQS
         ListQueuesResponse ListQueues(ListQueuesRequest request);
 
         /// <summary>
-        /// Add Permission
+        /// Add Permission 
         /// </summary>
         /// <param name="request">Add Permission  request</param>
         /// <returns>Add Permission  Response from the service</returns>
@@ -74,7 +74,7 @@ namespace Amazon.SQS
         AddPermissionResponse AddPermission(AddPermissionRequest request);
 
         /// <summary>
-        /// Change Message Visibility
+        /// Change Message Visibility 
         /// </summary>
         /// <param name="request">Change Message Visibility  request</param>
         /// <returns>Change Message Visibility  Response from the service</returns>
@@ -84,7 +84,7 @@ namespace Amazon.SQS
         ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request);
 
         /// <summary>
-        /// Delete Message
+        /// Delete Message 
         /// </summary>
         /// <param name="request">Delete Message  request</param>
         /// <returns>Delete Message  Response from the service</returns>
@@ -94,7 +94,7 @@ namespace Amazon.SQS
         DeleteMessageResponse DeleteMessage(DeleteMessageRequest request);
 
         /// <summary>
-        /// Delete Queue
+        /// Delete Queue 
         /// </summary>
         /// <param name="request">Delete Queue  request</param>
         /// <returns>Delete Queue  Response from the service</returns>
@@ -104,7 +104,7 @@ namespace Amazon.SQS
         DeleteQueueResponse DeleteQueue(DeleteQueueRequest request);
 
         /// <summary>
-        /// Get Queue Attributes
+        /// Get Queue Attributes 
         /// </summary>
         /// <param name="request">Get Queue Attributes  request</param>
         /// <returns>Get Queue Attributes  Response from the service</returns>
@@ -114,7 +114,7 @@ namespace Amazon.SQS
         GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request);
 
         /// <summary>
-        /// Remove Permission
+        /// Remove Permission 
         /// </summary>
         /// <param name="request">Remove Permission  request</param>
         /// <returns>Remove Permission  Response from the service</returns>
@@ -124,7 +124,7 @@ namespace Amazon.SQS
         RemovePermissionResponse RemovePermission(RemovePermissionRequest request);
 
         /// <summary>
-        /// Receive Message
+        /// Receive Message 
         /// </summary>
         /// <param name="request">Receive Message  request</param>
         /// <returns>Receive Message  Response from the service</returns>
@@ -139,7 +139,7 @@ namespace Amazon.SQS
         ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request);
 
         /// <summary>
-        /// Send Message
+        /// Send Message 
         /// </summary>
         /// <param name="request">Send Message  request</param>
         /// <returns>Send Message  Response from the service</returns>
@@ -149,7 +149,7 @@ namespace Amazon.SQS
         SendMessageResponse SendMessage(SendMessageRequest request);
 
         /// <summary>
-        /// Set Queue Attributes
+        /// Set Queue Attributes 
         /// </summary>
         /// <param name="request">Set Queue Attributes  request</param>
         /// <returns>Set Queue Attributes  Response from the service</returns>

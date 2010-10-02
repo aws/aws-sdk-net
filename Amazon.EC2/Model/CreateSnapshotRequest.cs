@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,35 +27,41 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3. You can
-    /// use snapshots for backups, to make identical copies of instance devices, and to
-    /// save data before shutting down an instance. For more information about Amazon
-    /// EBS, go to the Amazon Elastic Compute Cloud Developer Guide.
+    /// Creates a snapshot of an Amazon EBS volume and
+    /// stores it in Amazon S3. You can
+    /// use snapshots for backups, to make
+    /// identical copies of instance
+    /// devices, and to save data before
+    /// shutting down an instance. For more information about
+    /// Amazon EBS, go to the Amazon Elastic Compute Cloud Developer Guide.
     ///
-    /// When taking a snapshot of a file system, we recommend unmounting it first.
-    /// This ensures the file system metadata is in a consistent state,
-    /// that the 'mounted indicator' is cleared, and that all applications using
-    /// that file system are stopped and in a consistent state. Some file systems,
-    /// such as xfs, can freeze and unfreeze activity so a snapshot
-    /// can be made without unmounting.
+    /// When taking a snapshot of a file system, we recommend unmounting it
+    /// first. This ensures the file system metadata is in a consistent state,
+    /// that the 'mounted indicator' is cleared, and that all applications
+    /// using that file system are stopped and in a consistent state. Some file
+    /// systems, such as xfs, can freeze and unfreeze activity so a
+    /// snapshot can be made without unmounting.
     ///
-    /// For Linux/UNIX, enter the following command from the command line.
+    /// For Linux/UNIX, enter the
+    /// following command from the command line.
     ///
     /// umount -d /dev/sdh
     ///
     /// For Windows, open Disk Management, right-click the volume to unmount,
-    /// and select Change Drive Letter and Path. Then, select the mount point to remove
+    /// and select Change Drive Letter and Path. Then, select the mount
+    /// point to remove
     /// and click Remove.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class CreateSnapshotRequest
-    {
+    {    
         private string volumeIdField;
         private string descriptionField;
 
         /// <summary>
         /// Gets and sets the VolumeId property.
-        /// The ID of the Amazon EBS volume of which to take a snapshot.
+        /// The ID of the Amazon EBS volume of which to
+        /// take a snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeId")]
         public string VolumeId
@@ -67,7 +73,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the VolumeId property
         /// </summary>
-        /// <param name="volumeId">The ID of the Amazon EBS volume of which to take a snapshot.</param>
+        /// <param name="volumeId">The ID of the Amazon EBS volume of which to
+        /// take a snapshot.</param>
         /// <returns>this instance</returns>
         public CreateSnapshotRequest WithVolumeId(string volumeId)
         {

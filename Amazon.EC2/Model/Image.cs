@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///AMI
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class Image
-    {
+    {    
         private string imageIdField;
         private string imageLocationField;
         private string imageStateField;
@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         private string rootDeviceTypeField;
         private string rootDeviceNameField;
         private List<BlockDeviceMapping> blockDeviceMappingField;
+        private string virtualizationTypeField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
@@ -115,7 +116,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ImageState property.
-        /// Current state of the AMI. If the operation return
+        /// Current state of the AMI. If the operation
+        /// return
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageState")]
         public string ImageState
@@ -127,7 +129,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ImageState property
         /// </summary>
-        /// <param name="imageState">Current state of the AMI. If the operation return</param>
+        /// <param name="imageState">Current state of the AMI. If the operation
+        /// return</param>
         /// <returns>this instance</returns>
         public Image WithImageState(string imageState)
         {
@@ -311,7 +314,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the KernelId property.
-        /// The kernel associated with the image, if any. Only applicable for machine images.
+        /// The kernel associated with the image, if any.
+        /// Only applicable for machine images.
         /// </summary>
         [XmlElementAttribute(ElementName = "KernelId")]
         public string KernelId
@@ -323,7 +327,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the KernelId property
         /// </summary>
-        /// <param name="kernelId">The kernel associated with the image, if any. Only applicable for machine images.</param>
+        /// <param name="kernelId">The kernel associated with the image, if any.
+        /// Only applicable for machine images.</param>
         /// <returns>this instance</returns>
         public Image WithKernelId(string kernelId)
         {
@@ -342,7 +347,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the RamdiskId property.
-        /// The RAM disk associated with the image, if any. Only applicable for machine images.
+        /// The RAM disk associated with the image, if any.
+        /// Only applicable for machine images.
         /// </summary>
         [XmlElementAttribute(ElementName = "RamdiskId")]
         public string RamdiskId
@@ -354,7 +360,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the RamdiskId property
         /// </summary>
-        /// <param name="ramdiskId">The RAM disk associated with the image, if any. Only applicable for machine images.</param>
+        /// <param name="ramdiskId">The RAM disk associated with the image, if any.
+        /// Only applicable for machine images.</param>
         /// <returns>this instance</returns>
         public Image WithRamdiskId(string ramdiskId)
         {
@@ -435,8 +442,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ImageOwnerAlias property.
-        /// The AWS account alias (e.g., "amazon") or AWS account ID that
-        /// owns the AMI.
+        /// The AWS account alias (e.g., "amazon") or AWS
+        /// account ID that owns the AMI.
         /// </summary>
         [XmlElementAttribute(ElementName = "ImageOwnerAlias")]
         public string ImageOwnerAlias
@@ -448,8 +455,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ImageOwnerAlias property
         /// </summary>
-        /// <param name="imageOwnerAlias">The AWS account alias (e.g., "amazon") or AWS account ID that
-        /// owns the AMI.</param>
+        /// <param name="imageOwnerAlias">The AWS account alias (e.g., "amazon") or AWS
+        /// account ID that owns the AMI.</param>
         /// <returns>this instance</returns>
         public Image WithImageOwnerAlias(string imageOwnerAlias)
         {
@@ -530,8 +537,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the RootDeviceType property.
-        /// The root device type used by the AMI. The AMI can use an
-        /// Amazon EBS or instance store root device.
+        /// The root device type used by the AMI. The AMI
+        /// can use an Amazon EBS or instance store root device.
         /// </summary>
         [XmlElementAttribute(ElementName = "RootDeviceType")]
         public string RootDeviceType
@@ -543,8 +550,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the RootDeviceType property
         /// </summary>
-        /// <param name="rootDeviceType">The root device type used by the AMI. The AMI can use an
-        /// Amazon EBS or instance store root device.</param>
+        /// <param name="rootDeviceType">The root device type used by the AMI. The AMI
+        /// can use an Amazon EBS or instance store root device.</param>
         /// <returns>this instance</returns>
         public Image WithRootDeviceType(string rootDeviceType)
         {
@@ -591,9 +598,11 @@ namespace Amazon.EC2.Model
         {
             return this.rootDeviceNameField != null;
         }
+
         /// <summary>
         /// Gets and sets the BlockDeviceMapping property.
-        /// Specifies how block devices are exposed to the instance.
+        /// Specifies how block devices are exposed to the
+        /// instance.
         /// </summary>
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
         public List<BlockDeviceMapping> BlockDeviceMapping
@@ -612,7 +621,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the BlockDeviceMapping property
         /// </summary>
-        /// <param name="list">Specifies how block devices are exposed to the instance.</param>
+        /// <param name="list">Specifies how block devices are exposed to the
+        /// instance.</param>
         /// <returns>this instance</returns>
         public Image WithBlockDeviceMapping(params BlockDeviceMapping[] list)
         {
@@ -630,6 +640,41 @@ namespace Amazon.EC2.Model
         public bool IsSetBlockDeviceMapping()
         {
             return (BlockDeviceMapping.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the VirtualizationType property.
+        /// Specifies whether the Amazon EC2 instance is a
+        /// hardware virtual machine
+        /// (HVM) or a para-virtual machine (PVM).
+        /// </summary>
+        [XmlElementAttribute(ElementName = "VirtualizationType")]
+        public string VirtualizationType
+        {
+            get { return this.virtualizationTypeField; }
+            set { this.virtualizationTypeField = value; }
+        }
+
+        /// <summary>
+        /// Sets the VirtualizationType property
+        /// </summary>
+        /// <param name="virtualizationType">Specifies whether the Amazon EC2 instance is a
+        /// hardware virtual machine
+        /// (HVM) or a para-virtual machine (PVM).</param>
+        /// <returns>this instance</returns>
+        public Image WithVirtualizationType(string virtualizationType)
+        {
+            this.virtualizationTypeField = virtualizationType;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if VirtualizationType property is set
+        /// </summary>
+        /// <returns>true if VirtualizationType property is set</returns>
+        public bool IsSetVirtualizationType()
+        {
+            return this.virtualizationTypeField != null;
         }
 
     }

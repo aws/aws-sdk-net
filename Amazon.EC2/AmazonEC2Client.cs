@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -48,26 +48,36 @@ namespace Amazon.EC2
     /// property is false.
     /// </summary>
     /// <remarks>
-    /// The Amazon Elastic Compute Cloud (Amazon EC2) web service provides you with
-    /// the ability to execute your applications in Amazon's computing environment.
+    /// The Amazon Elastic Compute Cloud (Amazon EC2) web
+    /// service provides you with
+    /// the ability to execute your applications in
+    /// Amazon's computing environment.
     /// To use Amazon EC2 you simply:
-    /// 1. Create an Amazon Machine Image (AMI) containing all your software, including
-    /// your operating system and associated configuration settings, applications,
-    /// libraries, etc. Think of this as zipping up the contents of your hard drive. We
-    /// provide all the necessary tools to create and package your AMI.
-    /// 2. Upload this AMI to the Amazon S3 (Amazon Simple Storage Service) service. This
-    /// gives us reliable, secure access to your AMI.
-    /// 3. Register your AMI with Amazon EC2. This allows us to verify that your AMI has
-    /// been uploaded correctly and to allocate a unique identifier for it.
-    /// 4. Use this AMI ID and the Amazon EC2 web service APIs to run, monitor, and
-    /// terminate as many instances of this AMI as required.
-    /// You can also skip the first three steps and choose to launch an AMI that is
-    /// provided by Amazon or shared by another user.
-    /// While instances are running, you are billed for the computing and network
-    /// resources that they consume.
-    /// You can also skip the first three steps and choose to launch an AMI that is
-    /// provided by Amazon or shared by another user.
-    /// While instances are running, you are billed for the computing and network
+    /// 1. Create an Amazon Machine Image (AMI) containing all your software,
+    /// including your operating system and associated configuration settings,
+    /// applications, libraries, etc. Think of this as zipping up the contents
+    /// of your hard drive. We provide all the necessary tools to create and
+    /// package your AMI.
+    /// 2. Upload this AMI to the Amazon S3 (Amazon Simple
+    /// Storage Service) service. This gives us reliable,
+    /// secure access to your AMI.
+    /// 3. Register your AMI with Amazon EC2. This allows us to verify
+    /// that your AMI has been uploaded correctly and to allocate a unique
+    /// identifier for it.
+    /// 4. Use this AMI ID and the Amazon EC2 web service
+    /// APIs to run, monitor, and
+    /// terminate as many instances of this AMI as
+    /// required.
+    /// You can also skip the first three steps and choose to launch
+    /// an AMI that is provided by Amazon or shared by another user.
+    /// While instances are running, you are billed for the computing
+    /// and network resources that they consume.
+    /// You can also skip the first three steps
+    /// and choose to launch an AMI that is
+    /// provided by Amazon or shared by
+    /// another user.
+    /// While instances are running, you are billed for the
+    /// computing and network
     /// resources that they consume.
     /// </remarks>
     /// <seealso cref="P:Amazon.EC2.AmazonEC2Config.UseSecureStringForAwsSecretKey"/>
@@ -187,13 +197,27 @@ namespace Amazon.EC2
         #region Public API
 
         /// <summary>
-        /// Allocate Address
+        /// Activate License 
+        /// </summary>
+        /// <param name="request">Activate License  request</param>
+        /// <returns>Activate License  Response from the service</returns>
+        /// <remarks>
+        /// Activates a specific number of licenses for a 90-day period.
+        /// Activations can be done against a specific license ID.
+        /// </remarks>
+        public ActivateLicenseResponse ActivateLicense(ActivateLicenseRequest request)
+        {
+            return Invoke<ActivateLicenseResponse>(ConvertActivateLicense(request));
+        }
+
+        /// <summary>
+        /// Allocate Address 
         /// </summary>
         /// <param name="request">Allocate Address  request</param>
         /// <returns>Allocate Address  Response from the service</returns>
         /// <remarks>
-        /// The AllocateAddress operation acquires an elastic IP address for use with your
-        /// account.
+        /// The AllocateAddress operation acquires an elastic
+        /// IP address for use with your account.
         /// </remarks>
         public AllocateAddressResponse AllocateAddress(AllocateAddressRequest request)
         {
@@ -201,16 +225,18 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Associate Address
+        /// Associate Address 
         /// </summary>
         /// <param name="request">Associate Address  request</param>
         /// <returns>Associate Address  Response from the service</returns>
         /// <remarks>
-        /// The AssociateAddress operation associates an elastic IP address with an
-        /// instance.
-        /// If the IP address is currently assigned to another instance, the IP address is
-        /// assigned to the new instance. This is an idempotent operation. If you enter it
-        /// more than once, Amazon EC2 does not return an error.
+        /// The AssociateAddress operation associates an
+        /// elastic IP address with an instance.
+        /// If the IP address is currently
+        /// assigned to another instance, the IP
+        /// address is assigned to the new
+        /// instance. This is an idempotent operation. If you enter
+        /// it more than once, Amazon EC2 does not return an error.
         /// </remarks>
         public AssociateAddressResponse AssociateAddress(AssociateAddressRequest request)
         {
@@ -218,12 +244,13 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Attach Volume
+        /// Attach Volume 
         /// </summary>
         /// <param name="request">Attach Volume  request</param>
         /// <returns>Attach Volume  Response from the service</returns>
         /// <remarks>
-        /// Attach a previously created volume to a running instance.
+        /// Attach a previously created volume to a running
+        /// instance.
         /// </remarks>
         public AttachVolumeResponse AttachVolume(AttachVolumeRequest request)
         {
@@ -231,25 +258,32 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Authorize Security Group Ingress
+        /// Authorize Security Group Ingress 
         /// </summary>
         /// <param name="request">Authorize Security Group Ingress  request</param>
         /// <returns>Authorize Security Group Ingress  Response from the service</returns>
         /// <remarks>
-        /// The AuthorizeSecurityGroupIngress operation adds permissions to a security
-        /// group.
-        /// Permissions are specified by the IP protocol (TCP, UDP or ICMP), the source of
-        /// the request (by IP range or an Amazon EC2 user-group pair), the source and
-        /// destination port ranges (for TCP and UDP), and the ICMP codes and types (for
-        /// ICMP). When authorizing ICMP, -1 can be used as a wildcard in the type and code
-        /// fields.
-        /// Permission changes are propagated to instances within the security group as
-        /// quickly as possible. However, depending on the number of instances, a small
+        /// The AuthorizeSecurityGroupIngress operation adds
+        /// permissions to a security group.
+        /// Permissions are specified by the IP
+        /// protocol (TCP, UDP or ICMP), the source of
+        /// the request (by IP range
+        /// or an Amazon EC2 user-group pair), the
+        /// source and destination port ranges (for TCP and UDP),
+        /// and the ICMP codes and types (for ICMP).
+        /// When authorizing ICMP, -1 can be used as a wildcard in the
+        /// type and code fields.
+        /// Permission changes are propagated to instances within the
+        /// security group as quickly as possible. However, depending on the
+        /// number of instances, a small
         /// delay might occur.
         /// When authorizing a user/group pair permission, GroupName,
-        /// SourceSecurityGroupName and SourceSecurityGroupOwnerId must be specified. When
-        /// authorizing a CIDR IP permission, GroupName, IpProtocol, FromPort, ToPort and
-        /// CidrIp must be specified. Mixing these two types of parameters is not allowed.
+        /// SourceSecurityGroupName and
+        /// SourceSecurityGroupOwnerId must be
+        /// specified. When authorizing a CIDR
+        /// IP permission, GroupName, IpProtocol, FromPort, ToPort and
+        /// CidrIp must be specified. Mixing these two types of parameters is
+        /// not allowed.
         /// </remarks>
         public AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request)
         {
@@ -257,15 +291,16 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Bundle Instance
+        /// Bundle Instance 
         /// </summary>
         /// <param name="request">Bundle Instance  request</param>
         /// <returns>Bundle Instance  Response from the service</returns>
         /// <remarks>
-        /// The BundleInstance operation request that an instance is bundled the next time it boots.
-        /// The bundling process creates a new image from a running instance and stores
-        /// the AMI data in S3. Once bundled, the image must be registered in the normal
-        /// way using the RegisterImage API.
+        /// The BundleInstance operation request that an
+        /// instance is bundled the next time it boots.
+        /// The bundling process creates a new image from a running instance and
+        /// stores the AMI data in S3. Once bundled, the image must be registered in the
+        /// normal way using the RegisterImage API.
         /// </remarks>
         public BundleInstanceResponse BundleInstance(BundleInstanceRequest request)
         {
@@ -303,16 +338,19 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Cancel Bundle Task
+        /// Cancel Bundle Task 
         /// </summary>
         /// <param name="request">Cancel Bundle Task  request</param>
         /// <returns>Cancel Bundle Task  Response from the service</returns>
         /// <remarks>
         /// CancelBundleTask operation cancels a pending or
         /// in-progress bundling task. This is an asynchronous
-        /// call and it make take a while for the task to be cancelled.
-        /// If a task is cancelled while it is storing items,
-        /// there may be parts of the incomplete AMI stored in S3.
+        /// call and it make
+        /// take a while for the task to be cancelled.
+        /// If a task is cancelled
+        /// while it is storing items,
+        /// there may be parts of the incomplete AMI
+        /// stored in S3.
         /// It is up to the caller to clean up these parts from S3.
         /// </remarks>
         public CancelBundleTaskResponse CancelBundleTask(CancelBundleTaskRequest request)
@@ -321,16 +359,21 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Confirm Product Instance
+        /// Confirm Product Instance 
         /// </summary>
         /// <param name="request">Confirm Product Instance  request</param>
         /// <returns>Confirm Product Instance  Response from the service</returns>
         /// <remarks>
-        /// The ConfirmProductInstance operation returns true if the specified product code
-        /// is attached to the specified instance. The operation returns false if the
-        /// product code is not attached to the instance.
-        /// The ConfirmProductInstance operation can only be executed by the owner of the
-        /// AMI. This feature is useful when an AMI owner is providing support and wants to
+        /// The ConfirmProductInstance operation returns true
+        /// if the specified product code
+        /// is attached to the specified instance.
+        /// The operation returns false if the
+        /// product code is not attached to the
+        /// instance.
+        /// The ConfirmProductInstance operation can only be executed
+        /// by the owner of the
+        /// AMI. This feature is useful when an AMI owner is
+        /// providing support and wants to
         /// verify whether a user's instance is eligible.
         /// </remarks>
         public ConfirmProductInstanceResponse ConfirmProductInstance(ConfirmProductInstanceRequest request)
@@ -339,14 +382,17 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Image
+        /// Create Image 
         /// </summary>
         /// <param name="request">Create Image  request</param>
         /// <returns>Create Image  Response from the service</returns>
         /// <remarks>
-        /// Creates an AMI that uses an Amazon EBS root device from a "running" or "stopped" instance.
-        /// AMIs that use an Amazon EBS root device boot faster than AMIs that use instance stores. They can be
-        /// up to 1 TiB in size, use storage that persists on instance failure, and can be stopped and started.
+        /// Creates an AMI that uses an Amazon EBS root
+        /// device from a "running" or "stopped" instance.
+        /// AMIs that use an Amazon EBS root device boot
+        /// faster than AMIs that use instance stores. They
+        /// can be up to 1 TiB in size, use storage that
+        /// persists on instance failure, and can be stopped and started.
         /// </remarks>
         public CreateImageResponse CreateImage(CreateImageRequest request)
         {
@@ -354,14 +400,17 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Key Pair
+        /// Create Key Pair 
         /// </summary>
         /// <param name="request">Create Key Pair  request</param>
         /// <returns>Create Key Pair  Response from the service</returns>
         /// <remarks>
-        /// The CreateKeyPair operation creates a new 2048 bit RSA key pair and returns a
-        /// unique ID that can be used to reference this key pair when launching new
-        /// instances. For more information, see RunInstances.
+        /// The CreateKeyPair operation creates a new 2048
+        /// bit RSA key pair and returns a
+        /// unique ID that can be used to reference
+        /// this key pair when launching new
+        /// instances. For more information, see
+        /// RunInstances.
         /// </remarks>
         public CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
         {
@@ -369,18 +418,38 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Security Group
+        /// Create Placement Group 
+        /// </summary>
+        /// <param name="request">Create Placement Group  request</param>
+        /// <returns>Create Placement Group  Response from the service</returns>
+        /// <remarks>
+        /// The CreateKeyPair operation creates a new 2048
+        /// bit RSA key pair and returns a
+        /// unique ID that can be used to reference
+        /// this key pair when launching new
+        /// instances. For more information, see
+        /// RunInstances.
+        /// </remarks>
+        public CreatePlacementGroupResponse CreatePlacementGroup(CreatePlacementGroupRequest request)
+        {
+            return Invoke<CreatePlacementGroupResponse>(ConvertCreatePlacementGroup(request));
+        }
+
+        /// <summary>
+        /// Create Security Group 
         /// </summary>
         /// <param name="request">Create Security Group  request</param>
         /// <returns>Create Security Group  Response from the service</returns>
         /// <remarks>
-        /// The CreateSecurityGroup operation creates a new security group.
+        /// The CreateSecurityGroup operation creates a new
+        /// security group.
         /// Every instance is launched in a security group. If no security group is
-        /// specified during launch, the instances are launched in the default security
-        /// group. Instances within the same security group have unrestricted network
-        /// access to each other. Instances will reject network access attempts from other
-        /// instances in a different security group. As the owner of instances you can
-        /// grant or revoke specific permissions using the AuthorizeSecurityGroupIngress
+        /// specified during launch, the instances are launched in the default
+        /// security group. Instances within the same security
+        /// group have unrestricted network access to each other. Instances will
+        /// reject network access attempts from other instances in a different
+        /// security group. As the owner of instances you can grant or revoke
+        /// specific permissions using the AuthorizeSecurityGroupIngress
         /// and RevokeSecurityGroupIngress operations.
         /// </remarks>
         public CreateSecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request)
@@ -389,20 +458,25 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Snapshot
+        /// Create Snapshot 
         /// </summary>
         /// <param name="request">Create Snapshot  request</param>
         /// <returns>Create Snapshot  Response from the service</returns>
         /// <remarks>
-        /// Create a snapshot of the volume identified by volume ID. A volume does not have to be detached
+        /// Create a snapshot of the volume identified by
+        /// volume ID. A volume does not have to be detached
         /// at the time the snapshot is taken.
         /// Important Note:
-        /// Snapshot creation requires that the system is in a consistent state.
-        /// For instance, this means that if taking a snapshot of a database, the tables must
-        /// be read-only locked to ensure that the snapshot will not contain a corrupted
-        /// version of the database.  Therefore, be careful when using this API to ensure that
-        /// the system remains in the consistent state until the create snapshot status
-        /// has returned.
+        /// Snapshot creation requires that the
+        /// system is in a consistent state.
+        /// For instance, this means that if
+        /// taking a snapshot of a database, the
+        /// tables must be read-only locked
+        /// to ensure that the snapshot will not contain a
+        /// corrupted version of the database. Therefore,
+        /// be careful when using this API to ensure that
+        /// the system remains in the consistent state until the create
+        /// snapshot status has returned.
         /// </remarks>
         public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
@@ -410,7 +484,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Volume
+        /// Create Volume 
         /// </summary>
         /// <param name="request">Create Volume  request</param>
         /// <returns>Create Volume  Response from the service</returns>
@@ -423,7 +497,22 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Key Pair
+        /// Deactivate License 
+        /// </summary>
+        /// <param name="request">Deactivate License  request</param>
+        /// <returns>Deactivate License  Response from the service</returns>
+        /// <remarks>
+        /// Deactivates a specific number of licenses.
+        /// Deactivations can be done against a specific license ID
+        /// after they have persisted for at least a 90-day period.
+        /// </remarks>
+        public DeactivateLicenseResponse DeactivateLicense(DeactivateLicenseRequest request)
+        {
+            return Invoke<DeactivateLicenseResponse>(ConvertDeactivateLicense(request));
+        }
+
+        /// <summary>
+        /// Delete Key Pair 
         /// </summary>
         /// <param name="request">Delete Key Pair  request</param>
         /// <returns>Delete Key Pair  Response from the service</returns>
@@ -436,19 +525,35 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Security Group
+        /// Delete Placement Group 
+        /// </summary>
+        /// <param name="request">Delete Placement Group  request</param>
+        /// <returns>Delete Placement Group  Response from the service</returns>
+        /// <remarks>
+        /// The DeletePlacementGroup operation deletes a placement group.
+        /// </remarks>
+        public DeletePlacementGroupResponse DeletePlacementGroup(DeletePlacementGroupRequest request)
+        {
+            return Invoke<DeletePlacementGroupResponse>(ConvertDeletePlacementGroup(request));
+        }
+
+        /// <summary>
+        /// Delete Security Group 
         /// </summary>
         /// <param name="request">Delete Security Group  request</param>
         /// <returns>Delete Security Group  Response from the service</returns>
         /// <remarks>
-        /// The DeleteSecurityGroup operation deletes a security group.
+        /// The DeleteSecurityGroup operation deletes a
+        /// security group.
         /// Note:
-        /// If you attempt to delete a security group that contains instances, a fault is
-        /// returned.
-        /// If you attempt to delete a security group that is referenced by another
-        /// security group, a fault is returned. For example, if security group B has a
-        /// rule that allows access from security group A, security group A cannot be
-        /// deleted until the allow rule is removed.
+        /// If you attempt to delete a security group that
+        /// contains instances, a fault is returned.
+        /// If you attempt to delete a
+        /// security group that is referenced by
+        /// another security group, a fault
+        /// is returned. For example, if security group B has a
+        /// rule that allows access from security group A, security group A
+        /// cannot be deleted until the allow rule is removed.
         /// </remarks>
         public DeleteSecurityGroupResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request)
         {
@@ -456,7 +561,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Snapshot
+        /// Delete Snapshot 
         /// </summary>
         /// <param name="request">Delete Snapshot  request</param>
         /// <returns>Delete Snapshot  Response from the service</returns>
@@ -469,12 +574,14 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Volume
+        /// Delete Volume 
         /// </summary>
         /// <param name="request">Delete Volume  request</param>
         /// <returns>Delete Volume  Response from the service</returns>
         /// <remarks>
-        /// Deletes a  previously created volume. Once successfully deleted, a new volume  can be created with the same name.
+        /// Deletes a previously created volume. Once
+        /// successfully deleted, a new
+        /// volume can be created with the same name.
         /// </remarks>
         public DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
         {
@@ -482,12 +589,13 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Deregister Image
+        /// Deregister Image 
         /// </summary>
         /// <param name="request">Deregister Image  request</param>
         /// <returns>Deregister Image  Response from the service</returns>
         /// <remarks>
-        /// The DeregisterImage operation deregisters an AMI. Once deregistered, instances
+        /// The DeregisterImage operation deregisters an AMI.
+        /// Once deregistered, instances
         /// of the AMI can no longer be launched.
         /// </remarks>
         public DeregisterImageResponse DeregisterImage(DeregisterImageRequest request)
@@ -496,13 +604,13 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Addresses
+        /// Describe Addresses 
         /// </summary>
         /// <param name="request">Describe Addresses  request</param>
         /// <returns>Describe Addresses  Response from the service</returns>
         /// <remarks>
-        /// The DescribeAddresses operation lists elastic IP addresses assigned to your
-        /// account.
+        /// The DescribeAddresses operation lists elastic IP
+        /// addresses assigned to your account.
         /// </remarks>
         public DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request)
         {
@@ -510,16 +618,21 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Availability Zones
+        /// Describe Availability Zones 
         /// </summary>
         /// <param name="request">Describe Availability Zones  request</param>
         /// <returns>Describe Availability Zones  Response from the service</returns>
         /// <remarks>
-        /// The DescribeAvailabilityZones operation describes availability zones that are
-        /// currently available to the account and their states.
-        /// Availability zones are not the same across accounts. The availability zone
-        /// us-east-1a for account A is not necessarily the same as us-east-1a for account
-        /// B. Zone assignments are mapped independently for each account.
+        /// The DescribeAvailabilityZones operation describes
+        /// availability zones that are
+        /// currently available to the account and
+        /// their states.
+        /// Availability zones are not the same across accounts.
+        /// The availability zone
+        /// us-east-1a for account A is not necessarily the
+        /// same as us-east-1a for account
+        /// B. Zone assignments are mapped
+        /// independently for each account.
         /// </remarks>
         public DescribeAvailabilityZonesResponse DescribeAvailabilityZones(DescribeAvailabilityZonesRequest request)
         {
@@ -527,7 +640,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Bundle Tasks
+        /// Describe Bundle Tasks 
         /// </summary>
         /// <param name="request">Describe Bundle Tasks  request</param>
         /// <returns>Describe Bundle Tasks  Response from the service</returns>
@@ -543,7 +656,36 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Snapshot Attribute
+        /// Describe Licenses 
+        /// </summary>
+        /// <param name="request">Describe Licenses  request</param>
+        /// <returns>Describe Licenses  Response from the service</returns>
+        /// <remarks>
+        /// Provides details of a user's registered licenses. Zero or more IDs
+        /// may be specified on the call. When one or more license IDs are
+        /// specified, only data for the specified IDs are returned.
+        /// </remarks>
+        public DescribeLicensesResponse DescribeLicenses(DescribeLicensesRequest request)
+        {
+            return Invoke<DescribeLicensesResponse>(ConvertDescribeLicenses(request));
+        }
+
+        /// <summary>
+        /// Describe Placement Groups 
+        /// </summary>
+        /// <param name="request">Describe Placement Groups  request</param>
+        /// <returns>Describe Placement Groups  Response from the service</returns>
+        /// <remarks>
+        /// Returns information about one or more PlacementGroup instances in a
+        /// user's account.
+        /// </remarks>
+        public DescribePlacementGroupsResponse DescribePlacementGroups(DescribePlacementGroupsRequest request)
+        {
+            return Invoke<DescribePlacementGroupsResponse>(ConvertDescribePlacementGroups(request));
+        }
+
+        /// <summary>
+        /// Describe Snapshot Attribute 
         /// </summary>
         /// <param name="request">Describe Snapshot Attribute  request</param>
         /// <returns>Describe Snapshot Attribute  Response from the service</returns>
@@ -557,13 +699,15 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Image Attribute
+        /// Describe Image Attribute 
         /// </summary>
         /// <param name="request">Describe Image Attribute  request</param>
         /// <returns>Describe Image Attribute  Response from the service</returns>
         /// <remarks>
-        /// The DescribeImageAttribute operation returns information about an attribute of
-        /// an AMI. Only one attribute can be specified per call.
+        /// The DescribeImageAttribute operation returns
+        /// information about an attribute of
+        /// an AMI. Only one attribute can be
+        /// specified per call.
         /// </remarks>
         public DescribeImageAttributeResponse DescribeImageAttribute(DescribeImageAttributeRequest request)
         {
@@ -571,42 +715,55 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Images
+        /// Describe Images 
         /// </summary>
         /// <param name="request">Describe Images  request</param>
         /// <returns>Describe Images  Response from the service</returns>
         /// <remarks>
-        /// The DescribeImages operation returns information about AMIs, AKIs, and ARIs
-        /// available to the user. Information returned includes image type, product codes,
-        /// architecture, and kernel and RAM disk IDs. Images available to the user include
-        /// public images available for any user to launch, private images owned by the
-        /// user making the request, and private images owned by other users for which the
+        /// The DescribeImages operation returns information
+        /// about AMIs, AKIs, and ARIs
+        /// available to the user. Information returned
+        /// includes image type, product codes,
+        /// architecture, and kernel and RAM
+        /// disk IDs. Images available to the user include
+        /// public images
+        /// available for any user to launch, private images owned
+        /// by the user making the request, and private images
+        /// owned by other users for which the
         /// user has explicit launch permissions.
         /// Launch permissions fall into three categories:
         /// Public:
-        /// The owner of the AMI granted launch permissions for the AMI to the all group.
-        /// All users have launch permissions for these AMIs.
+        /// The owner of the AMI granted launch permissions for the AMI to the all
+        /// group. All users have launch permissions for these AMIs.
         /// Explicit:
         /// The owner of the AMI granted launch permissions to a specific user.
         /// Implicit:
         /// A user has implicit launch permissions for all AMIs he or she owns.
-        /// The list of AMIs returned can be modified by specifying AMI IDs, AMI owners, or
-        /// users with launch permissions. If no options are specified, Amazon EC2 returns
-        /// all AMIs for which the user has launch permissions.
-        /// If you specify one or more AMI IDs, only AMIs that have the specified IDs are
-        /// returned. If you specify an invalid AMI ID, a fault is returned. If you specify
-        /// an AMI ID for which you do not have access, it will not be included in the
-        /// returned results.
-        /// If you specify one or more AMI owners, only AMIs from the specified owners and
-        /// for which you have access are returned. The results can include the account IDs
-        /// of the specified owners, amazon for AMIs owned by Amazon or self for AMIs that
-        /// you own.
-        /// If you specify a list of executable users, only users that have launch
-        /// permissions for the AMIs are returned. You can specify account IDs (if you own
-        /// the AMI(s)), self for AMIs for which you own or have explicit permissions, or
+        /// The list of AMIs returned can be modified by specifying AMI IDs, AMI
+        /// owners, or users with launch permissions. If no options are specified,
+        /// Amazon EC2 returns all AMIs for which the user has launch permissions.
+        /// If you specify one or more AMI IDs, only AMIs that have the specified
+        /// IDs are returned. If you specify an invalid AMI ID, a fault is returned.
+        /// If you specify an AMI ID for which you do not have access, it will not
+        /// be included in the returned results.
+        /// If you specify one or more AMI
+        /// owners, only AMIs from the specified
+        /// owners and for which you have
+        /// access are returned. The results can include the
+        /// account IDs of the specified owners, amazon for
+        /// AMIs owned by Amazon or self for AMIs that you own.
+        /// If you specify a list of executable users, only users
+        /// that have launch
+        /// permissions for the AMIs are returned. You can
+        /// specify account IDs
+        /// (if you own
+        /// the AMI(s)), self for AMIs for which
+        /// you own or have explicit
+        /// permissions, or
         /// all for public AMIs.
         /// Note:
-        /// Deregistered images are included in the returned results for an unspecified
+        /// Deregistered images are included in the returned results for an
+        /// unspecified
         /// interval after deregistration.
         /// </remarks>
         public DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
@@ -615,20 +772,22 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Instances
+        /// Describe Instances 
         /// </summary>
         /// <param name="request">Describe Instances  request</param>
         /// <returns>Describe Instances  Response from the service</returns>
         /// <remarks>
-        /// The DescribeInstances operation returns information about instances that you
-        /// own.
-        /// If you specify one or more instance IDs, Amazon EC2 returns information for
-        /// those instances. If you do not specify instance IDs, Amazon EC2 returns
-        /// information for all relevant instances. If you specify an invalid instance ID,
-        /// a fault is returned. If you specify an instance that you do not own, it will
+        /// The DescribeInstances operation returns
+        /// information about instances that you own.
+        /// If you specify one or more instance IDs, Amazon EC2 returns
+        /// information for those instances. If you do not specify
+        /// instance IDs, Amazon EC2 returns information for
+        /// all relevant instances. If you specify an invalid
+        /// instance ID, a fault is returned. If you specify an instance
+        /// that you do not own, it will
         /// not be included in the returned results.
-        /// Recently terminated instances might appear in the returned results. This
-        /// interval is usually less than one hour.
+        /// Recently terminated instances might appear in the
+        /// returned results. This interval is usually less than one hour.
         /// </remarks>
         public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
@@ -636,12 +795,14 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Regions
+        /// Describe Regions 
         /// </summary>
         /// <param name="request">Describe Regions  request</param>
         /// <returns>Describe Regions  Response from the service</returns>
         /// <remarks>
-        /// The DescribeRegions operation describes regions zones that are currently available to the account.
+        /// The DescribeRegions operation describes regions
+        /// zones that are
+        /// currently available to the account.
         /// </remarks>
         public DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request)
         {
@@ -649,12 +810,14 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Reserved Instances
+        /// Describe Reserved Instances 
         /// </summary>
         /// <param name="request">Describe Reserved Instances  request</param>
         /// <returns>Describe Reserved Instances  Response from the service</returns>
         /// <remarks>
-        /// The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account.
+        /// The DescribeReservedInstances operation describes
+        /// Reserved Instances
+        /// that were purchased for use with your account.
         /// </remarks>
         public DescribeReservedInstancesResponse DescribeReservedInstances(DescribeReservedInstancesRequest request)
         {
@@ -662,16 +825,21 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Reserved Instances Offerings
+        /// Describe Reserved Instances Offerings 
         /// </summary>
         /// <param name="request">Describe Reserved Instances Offerings  request</param>
         /// <returns>Describe Reserved Instances Offerings  Response from the service</returns>
         /// <remarks>
-        /// The DescribeReservedInstancesOfferings operation describes Reserved
-        /// Instance offerings that are available for purchase. With Amazon EC2
-        /// Reserved Instances, you purchase the right to launch Amazon EC2 instances
-        /// for a period of time (without getting insufficient capacity errors) and
-        /// pay a lower usage rate for the actual time used.
+        /// The DescribeReservedInstancesOfferings operation
+        /// describes Reserved
+        /// Instance offerings that are available for
+        /// purchase. With Amazon EC2
+        /// Reserved Instances, you purchase the right
+        /// to launch Amazon EC2 instances
+        /// for a period of time (without getting
+        /// insufficient capacity errors) and
+        /// pay a lower usage rate for the
+        /// actual time used.
         /// </remarks>
         public DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request)
         {
@@ -679,14 +847,15 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Key Pairs
+        /// Describe Key Pairs 
         /// </summary>
         /// <param name="request">Describe Key Pairs  request</param>
         /// <returns>Describe Key Pairs  Response from the service</returns>
         /// <remarks>
-        /// The DescribeKeyPairs operation returns information about key pairs available to
-        /// you. If you specify key pairs, information about those key pairs is returned.
-        /// Otherwise, information for all registered key pairs is returned.
+        /// The DescribeKeyPairs operation returns information about key pairs
+        /// available to you. If you specify key pairs, information about
+        /// those key pairs is returned. Otherwise,
+        /// information for all registered key pairs is returned.
         /// </remarks>
         public DescribeKeyPairsResponse DescribeKeyPairs(DescribeKeyPairsRequest request)
         {
@@ -694,16 +863,17 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Security Groups
+        /// Describe Security Groups 
         /// </summary>
         /// <param name="request">Describe Security Groups  request</param>
         /// <returns>Describe Security Groups  Response from the service</returns>
         /// <remarks>
-        /// The DescribeSecurityGroups operation returns information about security groups
+        /// The DescribeSecurityGroups operation returns
+        /// information about security groups
         /// that you own.
-        /// If you specify security group names, information about those security group is
-        /// returned. Otherwise, information for all security group is returned. If you
-        /// specify a group that does not exist, a fault is returned.
+        /// If you specify security group names, information about those security
+        /// group is returned. Otherwise, information for all security group is
+        /// returned. If you specify a group that does not exist, a fault is returned.
         /// </remarks>
         public DescribeSecurityGroupsResponse DescribeSecurityGroups(DescribeSecurityGroupsRequest request)
         {
@@ -711,12 +881,13 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Snapshots
+        /// Describe Snapshots 
         /// </summary>
         /// <param name="request">Describe Snapshots  request</param>
         /// <returns>Describe Snapshots  Response from the service</returns>
         /// <remarks>
-        /// Describes the indicated snapshots, or in lieu of that, all snapshots owned by the caller.
+        /// Describes the indicated snapshots, or in lieu of
+        /// that, all snapshots owned by the caller.
         /// </remarks>
         public DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
@@ -724,13 +895,16 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Volumes
+        /// Describe Volumes 
         /// </summary>
         /// <param name="request">Describe Volumes  request</param>
         /// <returns>Describe Volumes  Response from the service</returns>
         /// <remarks>
-        /// Describes the status of the indicated or, in lieu of any specified,  all volumes belonging to the caller.
-        /// Volumes that have been deleted are not described.
+        /// Describes the status of the indicated or, in lieu
+        /// of any specified, all
+        /// volumes belonging to the caller.
+        /// Volumes that
+        /// have been deleted are not described.
         /// </remarks>
         public DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
         {
@@ -738,12 +912,13 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Detach Volume
+        /// Detach Volume 
         /// </summary>
         /// <param name="request">Detach Volume  request</param>
         /// <returns>Detach Volume  Response from the service</returns>
         /// <remarks>
-        /// Detach a previously attached volume from a running instance.
+        /// Detach a previously attached volume from a
+        /// running instance.
         /// </remarks>
         public DetachVolumeResponse DetachVolume(DetachVolumeRequest request)
         {
@@ -751,14 +926,18 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Disassociate Address
+        /// Disassociate Address 
         /// </summary>
         /// <param name="request">Disassociate Address  request</param>
         /// <returns>Disassociate Address  Response from the service</returns>
         /// <remarks>
-        /// The DisassociateAddress operation disassociates the specified elastic IP
-        /// address from the instance to which it is assigned. This is an idempotent
-        /// operation. If you enter it more than once, Amazon EC2 does not return an error.
+        /// The DisassociateAddress operation disassociates
+        /// the specified elastic IP
+        /// address from the instance to which it is
+        /// assigned. This is an idempotent
+        /// operation. If you enter it more than
+        /// once, Amazon EC2 does not
+        /// return an error.
         /// </remarks>
         public DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request)
         {
@@ -766,12 +945,14 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Get Password Data
+        /// Get Password Data 
         /// </summary>
         /// <param name="request">Get Password Data  request</param>
         /// <returns>Get Password Data  Response from the service</returns>
         /// <remarks>
-        /// Retrieves the encrypted administrator password for the instances running Windows.
+        /// Retrieves the encrypted administrator password
+        /// for the instances running
+        /// Windows.
         /// </remarks>
         public GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request)
         {
@@ -779,16 +960,18 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Get Console Output
+        /// Get Console Output 
         /// </summary>
         /// <param name="request">Get Console Output  request</param>
         /// <returns>Get Console Output  Response from the service</returns>
         /// <remarks>
-        /// The GetConsoleOutput operation retrieves console output for the specified
-        /// instance.
-        /// Instance console output is buffered and posted shortly after instance boot,
-        /// reboot, and termination. Amazon EC2 preserves the most recent 64 KB output
-        /// which will be available for at least one hour after the most recent post.
+        /// The GetConsoleOutput operation retrieves console
+        /// output for the specified instance.
+        /// Instance console output is buffered
+        /// and posted shortly after instance boot,
+        /// reboot, and termination. Amazon EC2 preserves the
+        /// most recent 64 KB output which will be
+        /// available for at least one hour after the most recent post.
         /// </remarks>
         public GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request)
         {
@@ -796,12 +979,13 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Modify Snapshot Attribute
+        /// Modify Snapshot Attribute 
         /// </summary>
         /// <param name="request">Modify Snapshot Attribute  request</param>
         /// <returns>Modify Snapshot Attribute  Response from the service</returns>
         /// <remarks>
-        /// Adds or remove permission settings for the specified snapshot.
+        /// Adds or remove permission settings for the
+        /// specified snapshot.
         /// </remarks>
         public ModifySnapshotAttributeResponse ModifySnapshotAttribute(ModifySnapshotAttributeRequest request)
         {
@@ -809,12 +993,13 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Modify Image Attribute
+        /// Modify Image Attribute 
         /// </summary>
         /// <param name="request">Modify Image Attribute  request</param>
         /// <returns>Modify Image Attribute  Response from the service</returns>
         /// <remarks>
-        /// The ModifyImageAttribute operation modifies an attribute of an AMI.
+        /// The ModifyImageAttribute operation modifies an
+        /// attribute of an AMI.
         /// </remarks>
         public ModifyImageAttributeResponse ModifyImageAttribute(ModifyImageAttributeRequest request)
         {
@@ -822,17 +1007,17 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Purchase Reserved Instances Offering
+        /// Purchase Reserved Instances Offering 
         /// </summary>
         /// <param name="request">Purchase Reserved Instances Offering  request</param>
         /// <returns>Purchase Reserved Instances Offering  Response from the service</returns>
         /// <remarks>
-        /// The PurchaseReservedInstancesOffering operation purchases a
-        /// Reserved Instance for use with your account. With Amazon EC2
-        /// Reserved Instances, you purchase the right to launch Amazon EC2
-        /// instances for a period of time (without getting insufficient
-        /// capacity errors) and pay a lower usage rate for the
-        /// actual time used.
+        /// The PurchaseReservedInstancesOffering operation
+        /// purchases a Reserved Instance for use with your account.
+        /// With Amazon EC2 Reserved Instances, you purchase the
+        /// right to launch Amazon EC2 instances for a period of time
+        /// (without getting insufficient capacity errors) and pay a
+        /// lower usage rate for the actual time used.
         /// </remarks>
         public PurchaseReservedInstancesOfferingResponse PurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request)
         {
@@ -840,15 +1025,19 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Reboot Instances
+        /// Reboot Instances 
         /// </summary>
         /// <param name="request">Reboot Instances  request</param>
         /// <returns>Reboot Instances  Response from the service</returns>
         /// <remarks>
-        /// The RebootInstances operation requests a reboot of one or more instances. This
-        /// operation is asynchronous; it only queues a request to reboot the specified
-        /// instance(s). The operation will succeed if the instances are valid and belong
-        /// to the user. Requests to reboot terminated instances are ignored.
+        /// The RebootInstances operation requests a reboot
+        /// of one or more instances. This
+        /// operation is asynchronous; it only
+        /// queues a request to reboot the specified
+        /// instance(s). The operation
+        /// will succeed if the instances are valid
+        /// and belong to the user.
+        /// Requests to reboot terminated instances are ignored.
         /// </remarks>
         public RebootInstancesResponse RebootInstances(RebootInstancesRequest request)
         {
@@ -856,20 +1045,26 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Register Image
+        /// Register Image 
         /// </summary>
         /// <param name="request">Register Image  request</param>
         /// <returns>Register Image  Response from the service</returns>
         /// <remarks>
-        /// The RegisterImage operation registers an AMI with Amazon EC2. Images must be
-        /// registered before they can be launched. For more information, see RunInstances.
-        /// Each AMI is associated with an unique ID which is provided by the Amazon EC2
-        /// service through the RegisterImage operation. During registration, Amazon EC2
-        /// retrieves the specified image manifest from Amazon S3 and verifies that the
-        /// image is owned by the user registering the image.
-        /// The image manifest is retrieved once and stored within the Amazon EC2. Any
-        /// modifications to an image in Amazon S3 invalidates this registration. If you
-        /// make changes to an image, deregister the previous image and register the new
+        /// The RegisterImage operation registers an AMI with
+        /// Amazon EC2. Images must be
+        /// registered before they can be launched. For
+        /// more information, see RunInstances.
+        /// Each AMI is associated with an
+        /// unique ID which is provided by the Amazon EC2
+        /// service through the RegisterImage operation.
+        /// During registration, Amazon EC2
+        /// retrieves the specified image manifest from
+        /// Amazon S3 and verifies that the image
+        /// is owned by the user registering the image.
+        /// The image manifest is retrieved once and stored within the Amazon EC2.
+        /// Any modifications to an image in Amazon S3 invalidates this
+        /// registration. If you make changes to an image, deregister the
+        /// previous image and register the new
         /// image. For more information, see DeregisterImage.
         /// </remarks>
         public RegisterImageResponse RegisterImage(RegisterImageRequest request)
@@ -878,23 +1073,28 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Release Address
+        /// Release Address 
         /// </summary>
         /// <param name="request">Release Address  request</param>
         /// <returns>Release Address  Response from the service</returns>
         /// <remarks>
-        /// The ReleaseAddress operation releases an elastic IP address associated with
-        /// your account.
+        /// The ReleaseAddress operation releases an elastic
+        /// IP address associated with your account.
         /// Note:
-        /// Releasing an IP address automatically disassociates it from any instance with
-        /// which it is associated. For more information, see DisassociateAddress.
+        /// Releasing an IP address
+        /// automatically disassociates it from any instance with
+        /// which it is associated. For more information, see
+        /// DisassociateAddress.
         /// Important:
-        /// After releasing an elastic IP address, it is released to the IP address pool
-        /// and might no longer be available to your account. Make sure to update your DNS
-        /// records and any servers or devices that communicate with the address.
-        /// If you run this operation on an elastic IP address that is already released,
-        /// the address might be assigned to another account which will cause Amazon EC2 to
-        /// return an error.
+        /// After releasing an elastic IP address, it is released to the IP
+        /// address pool and might no longer be available to your account. Make
+        /// sure to update your DNS records and any servers or devices that
+        /// communicate with the address.
+        /// If you run this operation on an elastic
+        /// IP address that is already released,
+        /// the address might be assigned to
+        /// another account which will cause
+        /// Amazon EC2 to return an error.
         /// </remarks>
         public ReleaseAddressResponse ReleaseAddress(ReleaseAddressRequest request)
         {
@@ -902,12 +1102,13 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Reset Snapshot Attribute
+        /// Reset Snapshot Attribute 
         /// </summary>
         /// <param name="request">Reset Snapshot Attribute  request</param>
         /// <returns>Reset Snapshot Attribute  Response from the service</returns>
         /// <remarks>
-        /// Resets permission settings for the specified snapshot.
+        /// Resets permission settings for the specified
+        /// snapshot.
         /// </remarks>
         public ResetSnapshotAttributeResponse ResetSnapshotAttribute(ResetSnapshotAttributeRequest request)
         {
@@ -915,15 +1116,16 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Reset Image Attribute
+        /// Reset Image Attribute 
         /// </summary>
         /// <param name="request">Reset Image Attribute  request</param>
         /// <returns>Reset Image Attribute  Response from the service</returns>
         /// <remarks>
-        /// The ResetImageAttribute operation resets an attribute of an AMI to its default
-        /// value.
+        /// The ResetImageAttribute operation resets an
+        /// attribute of an AMI to its default value.
         /// Note:
-        /// The productCodes attribute cannot be reset.
+        /// The productCodes
+        /// attribute cannot be reset.
         /// </remarks>
         public ResetImageAttributeResponse ResetImageAttribute(ResetImageAttributeRequest request)
         {
@@ -931,24 +1133,31 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Revoke Security Group Ingress
+        /// Revoke Security Group Ingress 
         /// </summary>
         /// <param name="request">Revoke Security Group Ingress  request</param>
         /// <returns>Revoke Security Group Ingress  Response from the service</returns>
         /// <remarks>
-        /// The RevokeSecurityGroupIngress operation revokes permissions from a security
-        /// group. The permissions used to revoke must be specified using the same values
+        /// The RevokeSecurityGroupIngress operation revokes
+        /// permissions from a security
+        /// group. The permissions used to revoke must
+        /// be specified using the same values
         /// used to grant the permissions.
-        /// Permissions are specified by IP protocol (TCP, UDP, or ICMP), the source of the
-        /// request (by IP range or an Amazon EC2 user-group pair), the source and
-        /// destination port ranges (for TCP and UDP), and the ICMP codes and types (for
-        /// ICMP).
-        /// Permission changes are quickly propagated to instances within the security
-        /// group. However, depending on the number of instances in the group, a small
-        /// delay is might occur, .
-        /// When revoking a user/group pair permission, GroupName, SourceSecurityGroupName
-        /// and SourceSecurityGroupOwnerId must be specified. When authorizing a CIDR IP
-        /// permission, GroupName, IpProtocol, FromPort, ToPort and CidrIp must be
+        /// Permissions are specified by IP protocol (TCP, UDP, or ICMP), the
+        /// source of the request (by IP range or an Amazon EC2 user-group pair),
+        /// the source and destination port ranges (for TCP and UDP), and the ICMP
+        /// codes and types (for ICMP).
+        /// Permission changes are quickly propagated
+        /// to instances within the security
+        /// group. However, depending on the
+        /// number of instances in the group, a
+        /// small delay is might occur, .
+        /// When revoking a user/group pair permission, GroupName,
+        /// SourceSecurityGroupName
+        /// and SourceSecurityGroupOwnerId must be
+        /// specified. When authorizing a
+        /// CIDR IP permission, GroupName,
+        /// IpProtocol, FromPort, ToPort and CidrIp must be
         /// specified. Mixing these two types of parameters is not allowed.
         /// </remarks>
         public RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request)
@@ -957,47 +1166,55 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Run Instances
+        /// Run Instances 
         /// </summary>
         /// <param name="request">Run Instances  request</param>
         /// <returns>Run Instances  Response from the service</returns>
         /// <remarks>
-        /// The RunInstances operation launches a specified number of instances.
-        /// If Amazon EC2 cannot launch the minimum number AMIs you request, no instances
-        /// launch. If there is insufficient capacity to launch the maximum number of AMIs
-        /// you request, Amazon EC2 launches as many as possible to satisfy the requested
-        /// maximum values.
-        /// Every instance is launched in a security group. If you do not specify a
-        /// security group at launch, the instances start in your default security group.
-        /// For more information on creating security groups, see CreateSecurityGroup.
-        /// An optional instance type can be specified. For information about instance
-        /// types, see Instance Types.
-        /// You can provide an optional key pair ID for each image in the launch request
-        /// (for more information, see CreateKeyPair). All instances that are created from
-        /// images that use this key pair will have access to the associated public key at
-        /// boot. You can use this key to provide secure access to an instance of an image
-        /// on a per-instance basis. Amazon EC2 public images use this feature to provide
-        /// secure access without passwords.
+        /// The RunInstances operation launches a specified
+        /// number of instances.
+        /// If Amazon EC2 cannot launch the minimum number
+        /// AMIs you request, no instances
+        /// launch. If there is insufficient
+        /// capacity to launch the maximum number of AMIs
+        /// you request, Amazon EC2
+        /// launches as many as possible to satisfy the
+        /// requested maximum values.
+        /// Every instance is launched in a security group. If you do not
+        /// specify a security group at launch, the instances start in your
+        /// default security group. For more information on creating security
+        /// groups, see CreateSecurityGroup.
+        /// An optional instance type can be
+        /// specified. For information about
+        /// instance types, see Instance Types.
+        /// You can provide an optional key pair ID for each image in the launch
+        /// request (for more information, see CreateKeyPair). All instances that
+        /// are created from images that use this key pair will have access to the
+        /// associated public key at boot. You can use this key to provide secure
+        /// access to an instance of an image on a per-instance basis. Amazon EC2
+        /// public images use this feature to provide secure access without passwords.
         /// Important:
         /// Launching public images without a key pair ID will leave them inaccessible.
-        /// The public key material is made available to the instance at boot time by
-        /// placing it in the openssh_id.pub file on a logical device that is exposed to
-        /// the instance as /dev/sda2 (the ephemeral store). The format of this file is
-        /// suitable for use as an entry within ~/.ssh/authorized_keys (the OpenSSH
-        /// format). This can be done at boot (e.g., as part of rc.local) allowing for
-        /// secure access without passwords.
+        /// The public key material is made available to the instance at boot
+        /// time by placing it in the openssh_id.pub file on a logical device that is exposed
+        /// to the instance as /dev/sda2 (the ephemeral store). The format of this
+        /// file is suitable for use as an entry within ~/.ssh/authorized_keys (the
+        /// OpenSSH format). This can be done at boot (e.g., as part of rc.local)
+        /// allowing for secure access without passwords.
         /// Optional user data can be provided in the launch request. All instances that
-        /// collectively comprise the launch request have access to this data For more
-        /// information, see Instance Metadata.
+        /// collectively comprise the launch request have access to this data
+        /// For more information, see Instance Metadata.
         /// Note:
-        /// If any of the AMIs have a product code attached for which the user has not
-        /// subscribed, the RunInstances call will fail.
+        /// If any of the AMIs have a product code attached for which the user has
+        /// not subscribed, the RunInstances call will fail.
         /// Important:
-        /// We strongly recommend using the 2.6.18 Xen stock kernel with the c1.medium and
-        /// c1.xlarge instances. Although the default Amazon EC2 kernels will work, the new
-        /// kernels provide greater stability and performance for these instance types. For
-        /// more information about kernels, see Kernels, RAM Disks, and Block Device
-        /// Mappings.
+        /// We strongly recommend using
+        /// the 2.6.18 Xen stock kernel with the
+        /// c1.medium and c1.xlarge
+        /// instances. Although the default Amazon EC2 kernels will work, the
+        /// new kernels provide greater stability and performance for these
+        /// instance types. For more information about kernels, see Kernels, RAM
+        /// Disks, and Block Device Mappings.
         /// </remarks>
         public RunInstancesResponse RunInstances(RunInstancesRequest request)
         {
@@ -1005,16 +1222,20 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Stop Instances
+        /// Stop Instances 
         /// </summary>
         /// <param name="request">Stop Instances  request</param>
         /// <returns>Stop Instances  Response from the service</returns>
         /// <remarks>
-        /// Stops an instance that uses an Amazon EBS volume as its root device.
-        /// Instances that use Amazon EBS volumes as their root devices can be quickly stopped and started.
-        /// When an instance is stopped, the compute resources are released and you are not billed for hourly
-        /// instance usage. However, your root partition Amazon EBS volume remains, continues to persist your
-        /// data, and you are charged for Amazon EBS volume usage. You can restart your instance at any time.
+        /// Stops an instance that uses an Amazon EBS volume
+        /// as its root device. Instances that use Amazon EBS volumes as their
+        /// root devices can be quickly stopped and started.
+        /// When an instance is stopped, the compute resources are released and you
+        /// are not billed for hourly
+        /// instance usage. However, your root partition Amazon EBS
+        /// volume remains, continues to persist your
+        /// data, and you are charged for Amazon EBS volume usage. You can restart
+        /// your instance at any time.
         /// </remarks>
         public StopInstancesResponse StopInstances(StopInstancesRequest request)
         {
@@ -1022,16 +1243,19 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Start Instances
+        /// Start Instances 
         /// </summary>
         /// <param name="request">Start Instances  request</param>
         /// <returns>Start Instances  Response from the service</returns>
         /// <remarks>
         /// Starts an instance that uses an Amazon EBS volume as its root device.
-        /// Instances that use Amazon EBS volumes as their root devices can be quickly stopped and started.
-        /// When an instance is stopped, the compute resources are released and you are not billed for hourly
-        /// instance usage. However, your root partition Amazon EBS volume remains, continues to persist your
-        /// data, and you are charged for Amazon EBS volume usage. You can restart your instance at any time.
+        /// Instances that use Amazon EBS volumes as their root devices can be
+        /// quickly stopped and started. When an instance is
+        /// stopped, the compute resources are released and you
+        /// are not billed for hourly instance usage. However, your root
+        /// partition Amazon EBS volume remains, continues to persist your
+        /// data, and you are charged for Amazon EBS volume usage. You can restart
+        /// your instance at any time.
         /// </remarks>
         public StartInstancesResponse StartInstances(StartInstancesRequest request)
         {
@@ -1039,7 +1263,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Modify Instance Attribute
+        /// Modify Instance Attribute 
         /// </summary>
         /// <param name="request">Modify Instance Attribute  request</param>
         /// <returns>Modify Instance Attribute  Response from the service</returns>
@@ -1052,12 +1276,13 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Reset Instance Attribute
+        /// Reset Instance Attribute 
         /// </summary>
         /// <param name="request">Reset Instance Attribute  request</param>
         /// <returns>Reset Instance Attribute  Response from the service</returns>
         /// <remarks>
-        /// Resets an attribute of an instance to its default value.
+        /// Resets an attribute of an instance to its default
+        /// value.
         /// </remarks>
         public ResetInstanceAttributeResponse ResetInstanceAttribute(ResetInstanceAttributeRequest request)
         {
@@ -1065,12 +1290,14 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Instance Attribute
+        /// Describe Instance Attribute 
         /// </summary>
         /// <param name="request">Describe Instance Attribute  request</param>
         /// <returns>Describe Instance Attribute  Response from the service</returns>
         /// <remarks>
-        /// Returns information about an attribute of an instance. Only one attribute can be specified per call.
+        /// Returns information about an attribute of an
+        /// instance. Only one attribute
+        /// can be specified per call.
         /// </remarks>
         public DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
         {
@@ -1078,16 +1305,19 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Terminate Instances
+        /// Terminate Instances 
         /// </summary>
         /// <param name="request">Terminate Instances  request</param>
         /// <returns>Terminate Instances  Response from the service</returns>
         /// <remarks>
-        /// The TerminateInstances operation shuts down one or more instances. This
-        /// operation is idempotent; if you terminate an instance more than once, each call
+        /// The TerminateInstances operation shuts down one
+        /// or more instances. This
+        /// operation is idempotent; if you terminate an
+        /// instance more than
+        /// once, each call
         /// will succeed.
-        /// Terminated instances will remain visible after termination (approximately one
-        /// hour).
+        /// Terminated instances
+        /// will remain visible after termination (approximately one hour).
         /// </remarks>
         public TerminateInstancesResponse TerminateInstances(TerminateInstancesRequest request)
         {
@@ -1095,7 +1325,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Monitor Instances
+        /// Monitor Instances 
         /// </summary>
         /// <param name="request">Monitor Instances  request</param>
         /// <returns>Monitor Instances  Response from the service</returns>
@@ -1108,7 +1338,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Unmonitor Instances
+        /// Unmonitor Instances 
         /// </summary>
         /// <param name="request">Unmonitor Instances  request</param>
         /// <returns>Unmonitor Instances  Response from the service</returns>
@@ -1121,7 +1351,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Vpn Connections
+        /// Describe Vpn Connections 
         /// </summary>
         /// <param name="request">Describe Vpn Connections  request</param>
         /// <returns>Describe Vpn Connections  Response from the service</returns>
@@ -1146,7 +1376,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Subnets
+        /// Describe Subnets 
         /// </summary>
         /// <param name="request">Describe Subnets  request</param>
         /// <returns>Describe Subnets  Response from the service</returns>
@@ -1167,7 +1397,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Detach Vpn Gateway
+        /// Detach Vpn Gateway 
         /// </summary>
         /// <param name="request">Detach Vpn Gateway  request</param>
         /// <returns>Detach Vpn Gateway  Response from the service</returns>
@@ -1185,7 +1415,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Vpcs
+        /// Describe Vpcs 
         /// </summary>
         /// <param name="request">Describe Vpcs  request</param>
         /// <returns>Describe Vpcs  Response from the service</returns>
@@ -1205,7 +1435,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Customer Gateway
+        /// Delete Customer Gateway 
         /// </summary>
         /// <param name="request">Delete Customer Gateway  request</param>
         /// <returns>Delete Customer Gateway  Response from the service</returns>
@@ -1222,7 +1452,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Attach Vpn Gateway
+        /// Attach Vpn Gateway 
         /// </summary>
         /// <param name="request">Attach Vpn Gateway  request</param>
         /// <returns>Attach Vpn Gateway  Response from the service</returns>
@@ -1238,7 +1468,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Dhcp Options
+        /// Delete Dhcp Options 
         /// </summary>
         /// <param name="request">Delete Dhcp Options  request</param>
         /// <returns>Delete Dhcp Options  Response from the service</returns>
@@ -1253,7 +1483,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Subnet
+        /// Delete Subnet 
         /// </summary>
         /// <param name="request">Delete Subnet  request</param>
         /// <returns>Delete Subnet  Response from the service</returns>
@@ -1269,7 +1499,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Vpc
+        /// Create Vpc 
         /// </summary>
         /// <param name="request">Create Vpc  request</param>
         /// <returns>Create Vpc  Response from the service</returns>
@@ -1292,7 +1522,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Customer Gateway
+        /// Create Customer Gateway 
         /// </summary>
         /// <param name="request">Create Customer Gateway  request</param>
         /// <returns>Create Customer Gateway  Response from the service</returns>
@@ -1318,7 +1548,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Vpn Gateway
+        /// Create Vpn Gateway 
         /// </summary>
         /// <param name="request">Create Vpn Gateway  request</param>
         /// <returns>Create Vpn Gateway  Response from the service</returns>
@@ -1335,7 +1565,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Vpc
+        /// Delete Vpc 
         /// </summary>
         /// <param name="request">Delete Vpc  request</param>
         /// <returns>Delete Vpc  Response from the service</returns>
@@ -1351,7 +1581,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Associate Dhcp Options
+        /// Associate Dhcp Options 
         /// </summary>
         /// <param name="request">Associate Dhcp Options  request</param>
         /// <returns>Associate Dhcp Options  Response from the service</returns>
@@ -1370,7 +1600,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Vpn Gateways
+        /// Describe Vpn Gateways 
         /// </summary>
         /// <param name="request">Describe Vpn Gateways  request</param>
         /// <returns>Describe Vpn Gateways  Response from the service</returns>
@@ -1390,7 +1620,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Subnet
+        /// Create Subnet 
         /// </summary>
         /// <param name="request">Create Subnet  request</param>
         /// <returns>Create Subnet  Response from the service</returns>
@@ -1419,7 +1649,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Vpn Connection
+        /// Delete Vpn Connection 
         /// </summary>
         /// <param name="request">Delete Vpn Connection  request</param>
         /// <returns>Delete Vpn Connection  Response from the service</returns>
@@ -1442,7 +1672,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Vpn Gateway
+        /// Delete Vpn Gateway 
         /// </summary>
         /// <param name="request">Delete Vpn Gateway  request</param>
         /// <returns>Delete Vpn Gateway  Response from the service</returns>
@@ -1462,7 +1692,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Customer Gateways
+        /// Describe Customer Gateways 
         /// </summary>
         /// <param name="request">Describe Customer Gateways  request</param>
         /// <returns>Describe Customer Gateways  Response from the service</returns>
@@ -1482,7 +1712,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Vpn Connection
+        /// Create Vpn Connection 
         /// </summary>
         /// <param name="request">Create Vpn Connection  request</param>
         /// <returns>Create Vpn Connection  Response from the service</returns>
@@ -1508,7 +1738,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Dhcp Options
+        /// Describe Dhcp Options 
         /// </summary>
         /// <param name="request">Describe Dhcp Options  request</param>
         /// <returns>Describe Dhcp Options  Response from the service</returns>
@@ -1525,7 +1755,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Dhcp Options
+        /// Create Dhcp Options 
         /// </summary>
         /// <param name="request">Create Dhcp Options  request</param>
         /// <returns>Create Dhcp Options  Response from the service</returns>
@@ -1541,7 +1771,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Request Spot Instances
+        /// Request Spot Instances 
         /// </summary>
         /// <param name="request">Request Spot Instances  request</param>
         /// <returns>Request Spot Instances  Response from the service</returns>
@@ -1555,7 +1785,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Spot Instance Requests
+        /// Describe Spot Instance Requests 
         /// </summary>
         /// <param name="request">Describe Spot Instance Requests  request</param>
         /// <returns>Describe Spot Instance Requests  Response from the service</returns>
@@ -1569,7 +1799,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Cancel Spot Instance Requests
+        /// Cancel Spot Instance Requests 
         /// </summary>
         /// <param name="request">Cancel Spot Instance Requests  request</param>
         /// <returns>Cancel Spot Instance Requests  Response from the service</returns>
@@ -1583,7 +1813,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Spot Price History
+        /// Describe Spot Price History 
         /// </summary>
         /// <param name="request">Describe Spot Price History  request</param>
         /// <returns>Describe Spot Price History  Response from the service</returns>
@@ -1597,7 +1827,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Create Spot Datafeed Subscription
+        /// Create Spot Datafeed Subscription 
         /// </summary>
         /// <param name="request">Create Spot Datafeed Subscription  request</param>
         /// <returns>Create Spot Datafeed Subscription  Response from the service</returns>
@@ -1611,7 +1841,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describe Spot Datafeed Subscription
+        /// Describe Spot Datafeed Subscription 
         /// </summary>
         /// <param name="request">Describe Spot Datafeed Subscription  request</param>
         /// <returns>Describe Spot Datafeed Subscription  Response from the service</returns>
@@ -1624,7 +1854,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Delete Spot Datafeed Subscription
+        /// Delete Spot Datafeed Subscription 
         /// </summary>
         /// <param name="request">Delete Spot Datafeed Subscription  request</param>
         /// <returns>Delete Spot Datafeed Subscription  Response from the service</returns>
@@ -1912,6 +2142,25 @@ namespace Amazon.EC2
         }
 
         /**
+         * Convert ActivateLicenseRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertActivateLicense(ActivateLicenseRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ActivateLicense";
+            if (request.IsSetLicenseId())
+            {
+                parameters["LicenseId"] = request.LicenseId;
+            }
+            if (request.IsSetCapacity())
+            {
+                parameters["Capacity"] = request.Capacity.ToString();
+            }
+
+            return parameters;
+        }
+
+        /**
          * Convert AllocateAddressRequest to name value pairs
          */
         private static IDictionary<string, string> ConvertAllocateAddress(AllocateAddressRequest request)
@@ -2094,6 +2343,25 @@ namespace Amazon.EC2
             if (request.IsSetInstanceId())
             {
                 parameters["InstanceId"] = request.InstanceId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreatePlacementGroupRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreatePlacementGroup(CreatePlacementGroupRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreatePlacementGroup";
+            if (request.IsSetGroupName())
+            {
+                parameters["GroupName"] = request.GroupName;
+            }
+            if (request.IsSetStrategy())
+            {
+                parameters["Strategy"] = request.Strategy;
             }
 
             return parameters;
@@ -2293,6 +2561,25 @@ namespace Amazon.EC2
         }
 
         /**
+         * Convert DeactivateLicenseRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeactivateLicense(DeactivateLicenseRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeactivateLicense";
+            if (request.IsSetLicenseId())
+            {
+                parameters["LicenseId"] = request.LicenseId;
+            }
+            if (request.IsSetCapacity())
+            {
+                parameters["Capacity"] = request.Capacity.ToString();
+            }
+
+            return parameters;
+        }
+
+        /**
          * Convert DeleteKeyPairRequest to name value pairs
          */
         private static IDictionary<string, string> ConvertDeleteKeyPair(DeleteKeyPairRequest request)
@@ -2302,6 +2589,21 @@ namespace Amazon.EC2
             if (request.IsSetKeyName())
             {
                 parameters["KeyName"] = request.KeyName;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeletePlacementGroupRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeletePlacementGroup(DeletePlacementGroupRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeletePlacementGroup";
+            if (request.IsSetGroupName())
+            {
+                parameters["GroupName"] = request.GroupName;
             }
 
             return parameters;
@@ -2872,6 +3174,42 @@ namespace Amazon.EC2
         }
 
         /**
+         * Convert DescribeLicensesRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeLicenses(DescribeLicensesRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeLicenses";
+            List<string> describeLicensesRequestLicenseIdList = request.LicenseId;
+            int describeLicensesRequestLicenseIdListIndex = 1;
+            foreach (string describeLicensesRequestLicenseId in describeLicensesRequestLicenseIdList)
+            {
+                parameters[String.Concat("LicenseId", ".", describeLicensesRequestLicenseIdListIndex)] = describeLicensesRequestLicenseId;
+                describeLicensesRequestLicenseIdListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribePlacementGroupsRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribePlacementGroups(DescribePlacementGroupsRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribePlacementGroups";
+            List<string> describePlacementGroupsRequestGroupNameList = request.GroupName;
+            int describePlacementGroupsRequestGroupNameListIndex = 1;
+            foreach (string describePlacementGroupsRequestGroupName in describePlacementGroupsRequestGroupNameList)
+            {
+                parameters[String.Concat("GroupName", ".", describePlacementGroupsRequestGroupNameListIndex)] = describePlacementGroupsRequestGroupName;
+                describePlacementGroupsRequestGroupNameListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
          * Convert DescribeSecurityGroupsRequest to name value pairs
          */
         private static IDictionary<string, string> ConvertDescribeSecurityGroups(DescribeSecurityGroupsRequest request)
@@ -3361,6 +3699,10 @@ namespace Amazon.EC2
                 {
                     parameters[String.Concat("Placement", ".", "AvailabilityZone")] = runInstancesRequestPlacement.AvailabilityZone;
                 }
+                if (runInstancesRequestPlacement.IsSetGroupName())
+                {
+                    parameters[String.Concat("Placement", ".", "GroupName")] = runInstancesRequestPlacement.GroupName;
+                }
             }
             if (request.IsSetKernelId())
             {
@@ -3428,6 +3770,18 @@ namespace Amazon.EC2
             if (request.IsSetInstanceInitiatedShutdownBehavior())
             {
                 parameters["InstanceInitiatedShutdownBehavior"] = request.InstanceInitiatedShutdownBehavior;
+            }
+            if (request.IsSetLicense())
+            {
+                InstanceLicenseSpecification runInstancesRequestLicense = request.License;
+                if (runInstancesRequestLicense.IsSetPool())
+                {
+                    parameters[String.Concat("License", ".", "Pool")] = runInstancesRequestLicense.Pool;
+                }
+            }
+            if (request.IsSetPrivateIpAddress())
+            {
+                parameters["PrivateIpAddress"] = request.PrivateIpAddress;
             }
 
             return parameters;
@@ -3765,6 +4119,10 @@ namespace Amazon.EC2
                     if (launchSpecificationPlacement.IsSetAvailabilityZone())
                     {
                         parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "AvailabilityZone")] = launchSpecificationPlacement.AvailabilityZone;
+                    }
+                    if (launchSpecificationPlacement.IsSetGroupName())
+                    {
+                        parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "GroupName")] = launchSpecificationPlacement.GroupName;
                     }
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetKernelId())

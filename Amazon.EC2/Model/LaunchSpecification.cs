@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Specifies additional launch instance information.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class LaunchSpecification
-    {
+    {    
         private string imageIdField;
         private string keyNameField;
         private List<string> securityGroupField;
@@ -109,7 +109,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SecurityGroup property.
-        /// The Security Groups to associate the launched instance with.
+        /// The Security Groups to associate the launched
+        /// instance with.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecurityGroup")]
         public List<string> SecurityGroup
@@ -128,7 +129,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SecurityGroup property
         /// </summary>
-        /// <param name="list">The Security Groups to associate the launched instance with.</param>
+        /// <param name="list">The Security Groups to associate the launched
+        /// instance with.</param>
         /// <returns>this instance</returns>
         public LaunchSpecification WithSecurityGroup(params string[] list)
         {
@@ -214,7 +216,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the InstanceType property.
         /// Specifies the instance type. Valid values are:
         /// m1.small | m1.large | m1.xlarge |
-        /// c1.medium | c1.xlarge | m2.2xlarge | m2.4xlarge.
+        /// c1.medium | c1.xlarge |
+        /// m2.2xlarge | m2.4xlarge.
         /// Default: m1.small
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
@@ -229,7 +232,8 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceType">Specifies the instance type. Valid values are:
         /// m1.small | m1.large | m1.xlarge |
-        /// c1.medium | c1.xlarge | m2.2xlarge | m2.4xlarge.
+        /// c1.medium | c1.xlarge |
+        /// m2.2xlarge | m2.4xlarge.
         /// Default: m1.small</param>
         /// <returns>this instance</returns>
         public LaunchSpecification WithInstanceType(string instanceType)
@@ -314,7 +318,8 @@ namespace Amazon.EC2.Model
         /// The ID of the RAM disk to select. Some kernels
         /// require additional drivers at launch. Check the kernel
         /// requirements for information on whether you need to
-        /// specify a RAM disk.
+        /// specify a RAM
+        /// disk.
         /// </summary>
         [XmlElementAttribute(ElementName = "RamdiskId")]
         public string RamdiskId
@@ -329,7 +334,8 @@ namespace Amazon.EC2.Model
         /// <param name="ramdiskId">The ID of the RAM disk to select. Some kernels
         /// require additional drivers at launch. Check the kernel
         /// requirements for information on whether you need to
-        /// specify a RAM disk.</param>
+        /// specify a RAM
+        /// disk.</param>
         /// <returns>this instance</returns>
         public LaunchSpecification WithRamdiskId(string ramdiskId)
         {
@@ -345,6 +351,7 @@ namespace Amazon.EC2.Model
         {
             return this.ramdiskIdField != null;
         }
+
         /// <summary>
         /// Gets and sets the BlockDeviceMapping property.
         /// Specifies how block devices are exposed to the

@@ -32,7 +32,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class DeleteMessageRequest
-    {
+    {    
         private string queueUrlField;
         private string receiptHandleField;
         private List<Attribute> attributeField;
@@ -98,6 +98,7 @@ namespace Amazon.SQS.Model
         {
             return this.receiptHandleField != null;
         }
+
         /// <summary>
         /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.

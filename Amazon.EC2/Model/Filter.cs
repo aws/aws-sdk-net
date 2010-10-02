@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -28,11 +28,11 @@ namespace Amazon.EC2.Model
 {
     ///<summary>
     ///Used to filter the results of Virtual Private Cloud related
-    ///Describe operations.
+    ///						Describe operations.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class Filter
-    {
+    {    
         private string nameField;
         private List<string> valueField;
 

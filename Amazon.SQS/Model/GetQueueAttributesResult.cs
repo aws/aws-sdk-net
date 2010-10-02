@@ -31,8 +31,9 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class GetQueueAttributesResult
-    {
+    {    
         private List<Attribute> attributeField;
+
         /// <summary>
         /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.
@@ -49,20 +50,6 @@ namespace Amazon.SQS.Model
                 return this.attributeField;
             }
             set { this.attributeField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Attribute property
-        /// </summary>
-        /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
-        /// <returns>this instance</returns>
-        public GetQueueAttributesResult WithAttribute(params Attribute[] list)
-        {
-            foreach (Attribute item in list)
-            {
-                Attribute.Add(item);
-            }
-            return this;
         }
 
         /// <summary>

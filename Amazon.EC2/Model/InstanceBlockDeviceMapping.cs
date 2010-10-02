@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,11 +27,12 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     ///<summary>
-    ///Information about the instance block device mapping set.
+    ///Information about the instance block device
+    ///						mapping set.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class InstanceBlockDeviceMapping
-    {
+    {    
         private string deviceNameField;
         private InstanceEbsBlockDevice ebsField;
 

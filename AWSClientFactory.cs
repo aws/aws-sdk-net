@@ -30,6 +30,7 @@ using Amazon.S3;
 using Amazon.CloudFront;
 using Amazon.SimpleNotificationService;
 using Amazon.RDS;
+using Amazon.IdentityManagement;
 
 namespace Amazon
 {
@@ -428,5 +429,37 @@ namespace Amazon
         {
             return new AmazonSimpleNotificationServiceClient(awsAccessKey, awsSecretAccessKey, config);
         }
+
+         /// <summary>
+         /// Create a client for the Amazon Identity Management service with the default configuration
+         /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+         /// <returns>An Amazon Identity Management client</returns>
+        public static AmazonIdentityManagementService CreateAmazonIdentityManagementClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonIdentityManagementServiceClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Identity Management service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service</param>
+        /// <returns>An Amazon Identity Management client</returns>
+        public static AmazonIdentityManagementService CreateAmazonIdentityManagementClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonIdentityManagementServiceConfig config
+            )
+        {
+            return new AmazonIdentityManagementServiceClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        
     }
 }

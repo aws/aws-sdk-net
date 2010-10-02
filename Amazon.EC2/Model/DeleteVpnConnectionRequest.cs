@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-11-30
+ *  API Version: 2010-06-15
  */
 
 using System;
@@ -27,26 +27,32 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Deletes a VPN connection. Use this if you want to delete a VPC and all its associated
-    /// components. Another reason to use this operation is if you believe the tunnel
-    /// credentials for your VPN connection have been compromised.
+    /// Deletes a VPN connection. Use this if you want to delete a VPC and all 
+    /// its associated components. Another reason to use this operation is 
+    /// if you believe the tunnel credentials for your VPN connection 
+    /// have been compromised.
     ///
-    /// In that situation, you can delete the VPN connection and create a new one that has
-    /// new keys, without needing to delete the VPC or VPN gateway. If you create a new VPN
-    /// connection, you must reconfigure the customer gateway using the new configuration
-    /// information returned with the new VPN connection ID.
+    /// In that situation, you can delete the VPN connection and create a
+    /// new one that has new keys, without needing to delete 
+    /// the VPC or VPN gateway. If you create a new VPN
+    /// connection, you must reconfigure the customer
+    /// gateway using the new configuration information returned 
+    /// with the new VPN connection ID.
     ///
-    /// If you're deleting the VPC and all its associated parts, we recommend you detach the
-    /// VPN gateway from the VPC and delete the VPC before deleting the VPN connection.
+    /// If you're deleting the VPC and all its associated parts, we
+    /// recommend you detach the VPN gateway from the
+    /// VPC and delete the VPC before deleting the VPN
+    /// connection.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2009-11-30/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-06-15/", IsNullable = false)]
     public class DeleteVpnConnectionRequest
-    {
+    {    
         private string vpnConnectionIdField;
 
         /// <summary>
         /// Gets and sets the VpnConnectionId property.
-        /// The ID of the VPN connection you want to delete.
+        /// The ID of the VPN connection you want to
+        /// delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "VpnConnectionId")]
         public string VpnConnectionId
@@ -58,7 +64,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the VpnConnectionId property
         /// </summary>
-        /// <param name="vpnConnectionId">The ID of the VPN connection you want to delete.</param>
+        /// <param name="vpnConnectionId">The ID of the VPN connection you want to
+        /// delete.</param>
         /// <returns>this instance</returns>
         public DeleteVpnConnectionRequest WithVpnConnectionId(string vpnConnectionId)
         {

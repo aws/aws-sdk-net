@@ -31,8 +31,9 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class ReceiveMessageResult
-    {
+    {    
         private List<Message> messageField;
+
         /// <summary>
         /// Gets and sets the Message property.
         /// An element containing the information about the message.
@@ -49,20 +50,6 @@ namespace Amazon.SQS.Model
                 return this.messageField;
             }
             set { this.messageField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Message property
-        /// </summary>
-        /// <param name="list">An element containing the information about the message.</param>
-        /// <returns>this instance</returns>
-        public ReceiveMessageResult WithMessage(params Message[] list)
-        {
-            foreach (Message item in list)
-            {
-                Message.Add(item);
-            }
-            return this;
         }
 
         /// <summary>

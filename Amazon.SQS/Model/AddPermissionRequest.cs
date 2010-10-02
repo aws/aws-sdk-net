@@ -31,7 +31,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
     public class AddPermissionRequest
-    {
+    {    
         private string queueUrlField;
         private string labelField;
         private List<string> AWSAccountIdField;
