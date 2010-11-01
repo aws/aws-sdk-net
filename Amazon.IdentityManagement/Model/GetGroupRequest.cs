@@ -25,7 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGroup operation.
-    /// <para>Returns a list of users that are in the specified group. You can
+    /// <para>Returns a list of Users that are in the specified group. You can
     /// paginate the results using the <c>MaxItems</c> and <c>Marker</c>
     /// parameters.</para>
     /// </summary>
@@ -77,10 +77,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Use this only when paginating results, and only in a follow-up request
-        /// after you've received a response where the results are truncated. Set
-        /// this to the value of the <c>Marker</c> element in the response you
-        /// just received.
+        /// Use this only when paginating results, and only in a subsequent
+        /// request after you've received a response where the results are
+        /// truncated. Set it to the value of the <c>Marker</c> element in the
+        /// response you just received.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -121,8 +121,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Use this only when paginating results to indicate the maximum number
-        /// of users you want in the response. If there are additional users
-        /// beyond the maximum you specify, the <c>IsTruncated</c> response
+        /// of User names you want in the response. If there are additional User
+        /// names beyond the maximum you specify, the <c>IsTruncated</c> response
         /// element is <c>true</c>.
         ///  
         /// <para>

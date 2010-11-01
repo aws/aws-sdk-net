@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement.Model
         private string policyDocument;
 
         /// <summary>
-        /// The user the policy is associated with.
+        /// The User the policy is associated with.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -52,6 +52,23 @@ namespace Amazon.IdentityManagement.Model
         {
             get { return this.userName; }
             set { this.userName = value; }
+        }
+
+        /// <summary>
+        /// Sets the UserName property
+        /// </summary>
+        /// <param name="userName">The value to set for the UserName property </param>
+        /// <returns>this instance</returns>
+        public GetUserPolicyResult WithUserName(string userName)
+        {
+            this.userName = userName;
+            return this;
+        }
+            
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this.userName != null;       
         }
 
         /// <summary>
@@ -78,11 +95,32 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Sets the PolicyName property
+        /// </summary>
+        /// <param name="policyName">The value to set for the PolicyName property </param>
+        /// <returns>this instance</returns>
+        public GetUserPolicyResult WithPolicyName(string policyName)
+        {
+            this.policyName = policyName;
+            return this;
+        }
+            
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
+        {
+            return this.policyName != null;         
+        }
+
+        /// <summary>
         /// The policy document.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 131072</description>
+        ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
         ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
@@ -94,6 +132,23 @@ namespace Amazon.IdentityManagement.Model
         {
             get { return this.policyDocument; }
             set { this.policyDocument = value; }
+        }
+
+        /// <summary>
+        /// Sets the PolicyDocument property
+        /// </summary>
+        /// <param name="policyDocument">The value to set for the PolicyDocument property </param>
+        /// <returns>this instance</returns>
+        public GetUserPolicyResult WithPolicyDocument(string policyDocument)
+        {
+            this.policyDocument = policyDocument;
+            return this;
+        }
+            
+        // Check to see if PolicyDocument property is set
+        internal bool IsSetPolicyDocument()
+        {
+            return this.policyDocument != null;         
         }
     }
 }

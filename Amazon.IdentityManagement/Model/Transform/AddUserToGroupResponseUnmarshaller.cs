@@ -27,13 +27,15 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// </summary>
     internal class AddUserToGroupResponseUnmarshaller : IResponseUnmarshaller<AddUserToGroupResponse, UnmarshallerContext> {
 
-        public AddUserToGroupResponse Unmarshall(UnmarshallerContext context) {
+        public AddUserToGroupResponse Unmarshall(UnmarshallerContext context) 
+        {
             AddUserToGroupResponse response = new AddUserToGroupResponse();
 
             while (context.Read())
             {
                 if (context.IsStartElement)
                 {
+                    
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
                         response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
@@ -44,16 +46,17 @@ namespace Amazon.IdentityManagement.Model.Transform
             return response;
         }
         
+        
         public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
-            if (errorResponse.Code.Equals("NoSuchEntity"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchEntity"))
             {
                 return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code.Equals("LimitExceeded"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
@@ -71,6 +74,7 @@ namespace Amazon.IdentityManagement.Model.Transform
             }
             return instance;
         }
+    
     }
 }
     

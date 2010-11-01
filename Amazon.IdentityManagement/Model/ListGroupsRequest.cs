@@ -40,8 +40,8 @@ namespace Amazon.IdentityManagement.Model
         /// The path prefix for filtering the results. For example:
         /// <c>/division_abc/subdivision_xyz/</c>, which would get all groups
         /// whose path starts with <c>/division_abc/subdivision_xyz/</c>. This
-        /// parameter is optional. If it is not included, it defaults to /,
-        /// listing all groups.
+        /// parameter is optional. If it is not included, it defaults to a slash
+        /// (/), listing all groups.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -81,10 +81,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Use this only when paginating results, and only in a follow-up request
-        /// after you've received a response where the results are truncated. Set
-        /// this to the value of the <c>Marker</c> element in the response you
-        /// just received.
+        /// Use this only when paginating results, and only in a subsequent
+        /// request after you've received a response where the results are
+        /// truncated. Set it to the value of the <c>Marker</c> element in the
+        /// response you just received.
         ///  
         /// <para>
         /// <b>Constraints:</b>

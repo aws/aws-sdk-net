@@ -70,7 +70,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Sets the DistributionId property of this request to the value passed in.
         /// </summary>
-        /// <param name="id">The distribution's id</param>
+        /// <param name="distributionId">The distribution's id</param>
         /// <returns>The request with the DistributionId property set</returns>
         public PostInvalidationRequest WithDistribtionId(string distributionId)
         {
@@ -103,7 +103,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Sets the InvalidationBatch property of this request to the value passed in.
         /// </summary>
-        /// <param name="id">The distribution's id</param>
+        /// <param name="invalidationBatch">An InvalidationBatch object that lists all the paths of objects to be invalidated.</param>
         /// <returns>The request with the InvalidationBatch property set</returns>
         public PostInvalidationRequest WithInvalidationBatch(InvalidationBatch invalidationBatch)
         {

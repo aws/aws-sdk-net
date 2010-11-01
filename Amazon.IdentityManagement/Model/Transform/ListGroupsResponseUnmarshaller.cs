@@ -27,7 +27,8 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// </summary>
     internal class ListGroupsResponseUnmarshaller : IResponseUnmarshaller<ListGroupsResponse, UnmarshallerContext> {
 
-        public ListGroupsResponse Unmarshall(UnmarshallerContext context) {
+        public ListGroupsResponse Unmarshall(UnmarshallerContext context) 
+        {
             ListGroupsResponse response = new ListGroupsResponse();
 
             while (context.Read())
@@ -49,6 +50,7 @@ namespace Amazon.IdentityManagement.Model.Transform
             return response;
         }
         
+        
         public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
@@ -66,6 +68,7 @@ namespace Amazon.IdentityManagement.Model.Transform
             }
             return instance;
         }
+    
     }
 }
     

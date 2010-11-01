@@ -1,111 +1,88 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// List of events related to instances and security groups.
+    /// <para> </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class DescribeEventsResult
+    public class DescribeEventsResult  
     {
-        private string markerField;
-        private List<Event> eventField;
+        
+        private string marker;
+        private List<Event> events = new List<Event>();
 
         /// <summary>
-        /// Gets and sets the Marker property.
-        /// Identifier returned to allow retrieval of paginated results.
+        /// The marker obtained from a previous operation response.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Marker")]
         public string Marker
         {
-            get { return this.markerField; }
-            set { this.markerField = value; }
+            get { return this.marker; }
+            set { this.marker = value; }
         }
 
         /// <summary>
-        /// Checks if Marker property is set
+        /// Sets the Marker property
         /// </summary>
-        /// <returns>true if Marker property is set</returns>
-        public bool IsSetMarker()
+        /// <param name="marker">The value to set for the Marker property </param>
+        /// <returns>this instance</returns>
+        public DescribeEventsResult WithMarker(string marker)
         {
-            return this.markerField != null;
+            this.marker = marker;
+            return this;
+        }
+            
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this.marker != null;         
         }
 
         /// <summary>
-        /// Gets and sets the Event property.
-        /// Amazon RDS logs events that relate to your DB Instances, DB Snapshots, DB Security Groups, and DB Parameter Groups.
-        /// This information includes the date and time of the event, the source name and source type of the event, and a message associated with the event.
+        /// A list of <a>Event</a> instances.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Event")]
-        public List<Event> Event
+        public List<Event> Events
         {
-            get
+            get { return this.events; }
+            set { this.events = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Events collection
+        /// </summary>
+        /// <param name="events">The values to add to the Events collection </param>
+        /// <returns>this instance</returns>
+        public DescribeEventsResult WithEvents(params Event[] events)
+        {
+            foreach (Event element in events)
             {
-                if (this.eventField == null)
-                {
-                    this.eventField = new List<Event>();
-                }
-                return this.eventField;
+                this.events.Add(element);
             }
-            set { this.eventField = value; }
-        }
 
-        /// <summary>
-        /// Checks if Event property is set
-        /// </summary>
-        /// <returns>true if Event property is set</returns>
-        public bool IsSetEvent()
-        {
-            return (Event.Count > 0);
+            return this;
         }
-
-        /// <summary>
-        /// XML Representation of this object
-        /// </summary>
-        /// <returns>XML String</returns>
-        public string ToXML()
+        // Check to see if Events property is set
+        internal bool IsSetEvents()
         {
-            StringBuilder xml = new StringBuilder(1024);
-            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
-            using (StringWriter sw = new StringWriter(xml))
-            {
-                serializer.Serialize(sw, this);
-            }
-            return xml.ToString();
-        }
-
-        /// <summary>
-        /// String Representation of this object. Overrides Object.ToString()
-        /// </summary>
-        /// <returns>This object as a string</returns>
-        public override string ToString()
-        {
-            return this.ToXML();
+            return this.events.Count > 0;       
         }
     }
 }

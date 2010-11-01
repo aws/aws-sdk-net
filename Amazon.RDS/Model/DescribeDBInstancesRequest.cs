@@ -1,141 +1,128 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Retrieves information about one or all DB Instances for an AWS account. You can call this operation recursively using the Marker parameter.
+    /// Container for the parameters to the DescribeDBInstances operation.
+    /// <para> This API is used to retrieve information about provisioned RDS
+    /// instances. DescribeDBInstances supports pagination. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class DescribeDBInstancesRequest
+    /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeDBInstances"/>
+    public class DescribeDBInstancesRequest : AmazonWebServiceRequest
     {
-        private string DBInstanceIdentifierField;
-        private Decimal? maxRecordsField;
-        private string markerField;
+        private string dBInstanceIdentifier;
+        private int? maxRecords;
+        private string marker;
 
         /// <summary>
-        /// Gets and sets the DBInstanceIdentifier property.
-        /// User supplied instance identifier. If this parameter is specified, information from only the specific DB Instance is returned. The input isn't case sensitive.
-        /// Must contain 1 to 63 alphanumeric characters or hyphens.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.
+        /// The user-supplied instance identifier. If this parameter is specified,
+        /// information from only the specific DB Instance is returned. This
+        /// parameter isn't case sensitive.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField; }
-            set { this.DBInstanceIdentifierField = value; }
+            get { return this.dBInstanceIdentifier; }
+            set { this.dBInstanceIdentifier = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceIdentifier property
         /// </summary>
-        /// <param name="DBInstanceIdentifier">User supplied instance identifier. If this parameter is specified, information from only the specific DB Instance is returned. The input isn't case sensitive.
-        /// Must contain 1 to 63 alphanumeric characters or hyphens.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.</param>
+        /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
-        public DescribeDBInstancesRequest WithDBInstanceIdentifier(string DBInstanceIdentifier)
+        public DescribeDBInstancesRequest WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
-            this.DBInstanceIdentifierField = DBInstanceIdentifier;
+            this.dBInstanceIdentifier = dBInstanceIdentifier;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceIdentifier property is set
-        /// </summary>
-        /// <returns>true if DBInstanceIdentifier property is set</returns>
-        public bool IsSetDBInstanceIdentifier()
+            
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
         {
-            return this.DBInstanceIdentifierField != null;
+            return this.dBInstanceIdentifier != null;       
         }
 
         /// <summary>
-        /// Gets and sets the MaxRecords property.
-        /// The maximum number of records to include in the response. If more than the MaxRecords value, a marker is included in the response so that the following
-        /// results can be retrieved.
+        /// The maximum number of records to include in the response. If more
+        /// records exist than the specified <i>MaxRecords</i> value, a marker is
+        /// included in the response so that the remaining results may be
+        /// retrieved.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "MaxRecords")]
-        public Decimal MaxRecords
+        public int MaxRecords
         {
-            get { return this.maxRecordsField.GetValueOrDefault(); }
-            set { this.maxRecordsField = value; }
+            get { return this.maxRecords ?? default(int); }
+            set { this.maxRecords = value; }
         }
 
         /// <summary>
         /// Sets the MaxRecords property
         /// </summary>
-        /// <param name="maxRecords">The maximum number of records to include in the response. If more than the MaxRecords value, a marker is included in the response so that the following
-        /// results can be retrieved.</param>
+        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
-        public DescribeDBInstancesRequest WithMaxRecords(Decimal maxRecords)
+        public DescribeDBInstancesRequest WithMaxRecords(int maxRecords)
         {
-            this.maxRecordsField = maxRecords;
+            this.maxRecords = maxRecords;
             return this;
         }
-
-        /// <summary>
-        /// Checks if MaxRecords property is set
-        /// </summary>
-        /// <returns>true if MaxRecords property is set</returns>
-        public bool IsSetMaxRecords()
+            
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
         {
-            return this.maxRecordsField.HasValue;
+            return this.maxRecords.HasValue;        
         }
 
         /// <summary>
-        /// Gets and sets the Marker property.
-        /// The marker provided in the previous request. If this parameter is specified, the response includes only records beyond the marker, up to MaxRecords.
+        /// An optional marker provided in the previous DescribeDBInstances
+        /// request. If this parameter is specified, the response includes only
+        /// records beyond the marker, up to the value specified by
+        /// <i>MaxRecords</i>.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Marker")]
         public string Marker
         {
-            get { return this.markerField; }
-            set { this.markerField = value; }
+            get { return this.marker; }
+            set { this.marker = value; }
         }
 
         /// <summary>
         /// Sets the Marker property
         /// </summary>
-        /// <param name="marker">The marker provided in the previous request. If this parameter is specified, the response includes only records beyond the marker, up to MaxRecords.</param>
+        /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
         public DescribeDBInstancesRequest WithMarker(string marker)
         {
-            this.markerField = marker;
+            this.marker = marker;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Marker property is set
-        /// </summary>
-        /// <returns>true if Marker property is set</returns>
-        public bool IsSetMarker()
+            
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
         {
-            return this.markerField != null;
+            return this.marker != null;         
         }
-
     }
 }
+    

@@ -1136,9 +1136,18 @@ namespace Amazon.S3
             // from the checks made, it is guaranteed that if a filename is not specified
             // and the flow of execution gets this far, there has to be either an InputStream
             // or a ContentBody with a Key
-
-            ConvertPutObject(request);
-            return Invoke<PutObjectResponse>(request);
+            try
+            {
+                ConvertPutObject(request);
+                return Invoke<PutObjectResponse>(request);
+            }
+            finally
+            {
+                if (request.InputStream != null && (request.IsSetFilePath() || request.AutoCloseStream))
+                {
+                    request.InputStream.Close();
+                }
+            }
         }
 
         /// <summary>
@@ -2206,151 +2215,139 @@ namespace Amazon.S3
             int retries = 0;
             int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
 
-            try
+            HttpWebRequest request;
+            HttpWebResponse httpResponse = null;
+            string requestAddr;
+            do
             {
-                HttpWebRequest request;
-                HttpWebResponse httpResponse = null;
-                string requestAddr;
-                do
+                shouldRetry = false;
+                request = ConfigureWebRequest(userRequest, reqDataLen);
+
+                // Determine the Request Address and add it to our properties bag
+                requestAddr = request.Address.ToString();
+                parameters[S3QueryParameter.RequestAddress] = requestAddr;
+
+                // Submit the request and read response body
+                try
                 {
-                    shouldRetry = false;
-                    request = ConfigureWebRequest(userRequest, reqDataLen);
-
-                    // Determine the Request Address and add it to our properties bag
-                    requestAddr = request.Address.ToString();
-                    parameters[S3QueryParameter.RequestAddress] = requestAddr;
-
-                    // Submit the request and read response body
-                    try
+                    // Accessing the Request Stream for operations other than PUT results
+                    // is a ProtocolViolationException. Good thing to test is whether
+                    // the request data length > 0 or the HTTP Verb is "PUT"
+                    if (reqDataLen > 0)
                     {
-                        // Accessing the Request Stream for operations other than PUT results
-                        // is a ProtocolViolationException. Good thing to test is whether
-                        // the request data length > 0 or the HTTP Verb is "PUT"
-                        if (reqDataLen > 0)
+                        using (Stream requestStream = request.GetRequestStream())
                         {
-                            using (Stream requestStream = request.GetRequestStream())
+                            if (fStream != null)
                             {
-                                if (fStream != null)
+                                WriteStreamToService(userRequest, reqDataLen, fStream, requestStream);
+                            }
+                            else
+                            {
+                                using (MemoryStream ms = new MemoryStream(requestData))
                                 {
-                                    WriteStreamToService(userRequest, reqDataLen, fStream, requestStream);
-                                }
-                                else
-                                {
-                                    using (MemoryStream ms = new MemoryStream(requestData))
-                                    {
-                                        WriteStreamToService(userRequest, reqDataLen, ms, requestStream);
-                                    }
+                                    WriteStreamToService(userRequest, reqDataLen, ms, requestStream);
                                 }
                             }
-                            this.logger.DebugFormat("Processed parameters and making request for {0} with {1} of bytes in request to {2}.", actionName, reqDataLen, request.RequestUri);
+                        }
+                        this.logger.DebugFormat("Processed parameters and making request for {0} with {1} of bytes in request to {2}.", actionName, reqDataLen, request.RequestUri);
+                    }
+                    else
+                    {
+                        this.logger.DebugFormat("Processed parameters and making request for {0} to {1}.", actionName, request.RequestUri);
+                    }
+
+                    DateTime requestSent = DateTime.UtcNow;
+                    httpResponse = request.GetResponse() as HttpWebResponse;
+                    DateTime responseReceived = DateTime.UtcNow;
+
+                    if (httpResponse != null)
+                    {
+                        this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", actionName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
+
+                        statusCode = httpResponse.StatusCode;
+                        if (!IsRedirect(httpResponse))
+                        {
+                            // The request submission has completed. Retrieve the response.
+                            response = ProcessRequestResponse<T>(httpResponse, parameters, myType);
                         }
                         else
                         {
-                            this.logger.DebugFormat("Processed parameters and making request for {0} to {1}.", actionName, request.RequestUri);
-                        }
+                            shouldRetry = true;
 
-                        DateTime requestSent = DateTime.UtcNow;
-                        httpResponse = request.GetResponse() as HttpWebResponse;
-                        DateTime responseReceived = DateTime.UtcNow;
+                            ProcessRedirect(userRequest, httpResponse);
+                            this.logger.InfoFormat("Request for {0} is being redirect to {1}.", actionName, userRequest.parameters[S3QueryParameter.Url]);
 
-                        if (httpResponse != null)
-                        {
-                            this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", actionName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
+                            PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, httpResponse.Headers);
 
-                            statusCode = httpResponse.StatusCode;
-                            if (!IsRedirect(httpResponse))
-                            {
-                                // The request submission has completed. Retrieve the response.
-                                response = ProcessRequestResponse<T>(httpResponse, parameters, myType);
-                            }
-                            else
-                            {
-                                shouldRetry = true;
-
-                                ProcessRedirect(userRequest, httpResponse);
-                                this.logger.InfoFormat("Request for {0} is being redirect to {1}.", actionName, userRequest.parameters[S3QueryParameter.Url]);
-
-                                PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, httpResponse.Headers);
-
-                                // The HTTPResponse object needs to be closed. Once this is done, the request
-                                // is gracefully terminated. Mind you, if this response object is not closed,
-                                // the client will start getting timeout errors.
-                                // P.S. This sequence of close-response followed by abort-request
-                                // will be repeated through the exception handlers for this try block
-                                httpResponse.Close();
-                                httpResponse = null;
-                                request.Abort();
-                            }
-                        }
-                    }
-                    // Web exception is thrown on unsucessful responses
-                    catch (WebException we)
-                    {
-                        this.logger.Debug(string.Format("Error making request {0}.", actionName), we);
-                        WebHeaderCollection respHdrs;
-
-                        using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
-                        {
-                            shouldRetry = ProcessRequestError(actionName, request, we, errorResponse, requestAddr, out respHdrs, myType);
-
-                            if (httpResponse != null)
-                            {
-                                httpResponse.Close();
-                                httpResponse = null;
-                            }
-                            // Abort the unsuccessful request regardless of whether we should
-                            // or shouldn't retry.
+                            // The HTTPResponse object needs to be closed. Once this is done, the request
+                            // is gracefully terminated. Mind you, if this response object is not closed,
+                            // the client will start getting timeout errors.
+                            // P.S. This sequence of close-response followed by abort-request
+                            // will be repeated through the exception handlers for this try block
+                            httpResponse.Close();
+                            httpResponse = null;
                             request.Abort();
-
-                            if (errorResponse != null)
-                            {
-                                statusCode = errorResponse.StatusCode;
-                            }
-                            else
-                            {
-                                statusCode = HttpStatusCode.BadRequest;
-                            }
-                            if (shouldRetry)
-                            {
-                                PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, respHdrs);
-                            }
                         }
                     }
-                    catch (IOException e)
+                }
+                // Web exception is thrown on unsucessful responses
+                catch (WebException we)
+                {
+                    this.logger.Debug(string.Format("Error making request {0}.", actionName), we);
+                    WebHeaderCollection respHdrs;
+
+                    using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
                     {
-                        this.logger.Error(string.Format("Error making request {0}.", actionName), e);
+                        shouldRetry = ProcessRequestError(actionName, request, we, errorResponse, requestAddr, out respHdrs, myType);
+
                         if (httpResponse != null)
                         {
                             httpResponse.Close();
                             httpResponse = null;
                         }
-                        // Abort the unsuccessful request
+                        // Abort the unsuccessful request regardless of whether we should
+                        // or shouldn't retry.
                         request.Abort();
 
-                        throw;
-                    }
-
-                    if (shouldRetry)
-                    {
-                        if (retries <= maxRetries)
+                        if (errorResponse != null)
                         {
-                            this.logger.InfoFormat("Retry number {0} for request {1}.", retries, actionName);
+                            statusCode = errorResponse.StatusCode;
                         }
-                        // Reset the request so that streams are recreated,
-                        // removed headers are added back, etc
-                        PrepareRequestForRetry(userRequest);
+                        else
+                        {
+                            statusCode = HttpStatusCode.BadRequest;
+                        }
+                        if (shouldRetry)
+                        {
+                            PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, respHdrs);
+                        }
                     }
-                } while (shouldRetry && retries <= maxRetries);
-            }
-            finally
-            {
-                // Regardless of what happens, if a file stream
-                // was passed in by the user, it should be
-                if (fStream != null)
-                {
-                    fStream.Close();
                 }
-            }
+                catch (IOException e)
+                {
+                    this.logger.Error(string.Format("Error making request {0}.", actionName), e);
+                    if (httpResponse != null)
+                    {
+                        httpResponse.Close();
+                        httpResponse = null;
+                    }
+                    // Abort the unsuccessful request
+                    request.Abort();
+
+                    throw;
+                }
+
+                if (shouldRetry)
+                {
+                    if (retries <= maxRetries)
+                    {
+                        this.logger.InfoFormat("Retry number {0} for request {1}.", retries, actionName);
+                    }
+                    // Reset the request so that streams are recreated,
+                    // removed headers are added back, etc
+                    PrepareRequestForRetry(userRequest);
+                }
+            } while (shouldRetry && retries <= maxRetries);
 
             return response;
         }
@@ -2588,13 +2585,20 @@ namespace Amazon.S3
                 responseBody = reader.ReadToEnd();
             }
 
-            if (request.Method.Equals("HEAD") &&
-                statusCode == HttpStatusCode.NotFound)
+            if (request.Method.Equals("HEAD"))
             {
+                string message = we.Message;
+                string errorCode = statusCode.ToString();
+                if (statusCode == HttpStatusCode.NotFound)
+                {
+                    message = "The specified key does not exist";
+                    errorCode = "NoSuchKey";
+                }
+
                 AmazonS3Exception excep = new AmazonS3Exception(
-                    we.Message,
+                    message,
                     statusCode,
-                    "NoSuchKey",
+                    errorCode,
                     respHdrs[S3Constants.AmzRequestIdHeader],
                     "",
                     "",

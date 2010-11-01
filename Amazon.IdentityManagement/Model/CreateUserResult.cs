@@ -30,13 +30,30 @@ namespace Amazon.IdentityManagement.Model
         private User user;
 
         /// <summary>
-        /// Information about the user.
+        /// Information about the User.
         ///  
         /// </summary>
         public User User
         {
             get { return this.user; }
             set { this.user = value; }
+        }
+
+        /// <summary>
+        /// Sets the User property
+        /// </summary>
+        /// <param name="user">The value to set for the User property </param>
+        /// <returns>this instance</returns>
+        public CreateUserResult WithUser(User user)
+        {
+            this.user = user;
+            return this;
+        }
+            
+        // Check to see if User property is set
+        internal bool IsSetUser()
+        {
+            return this.user != null;       
         }
     }
 }

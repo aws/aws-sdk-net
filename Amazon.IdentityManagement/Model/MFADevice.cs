@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement.Model
         private string serialNumber;
 
         /// <summary>
-        /// The user with whom the MFA device is associated.
+        /// The User with whom the MFA device is associated.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -64,9 +64,15 @@ namespace Amazon.IdentityManagement.Model
             this.userName = userName;
             return this;
         }
+            
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this.userName != null;       
+        }
 
         /// <summary>
-        /// Serial number which uniquely identifies the MFA device.
+        /// Serial number that uniquely identifies the MFA device.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -97,6 +103,12 @@ namespace Amazon.IdentityManagement.Model
         {
             this.serialNumber = serialNumber;
             return this;
+        }
+            
+        // Check to see if SerialNumber property is set
+        internal bool IsSetSerialNumber()
+        {
+            return this.serialNumber != null;       
         }
     }
 }

@@ -41,8 +41,9 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Path to the group. For more information about paths, see Identifiers
-        /// for Users and Groups in the AWS Identity and Access Management User
-        /// Guide.
+        /// for Users and Groups in <a
+        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
+        /// target="_blank">Using AWS Identity and Access Management</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -73,6 +74,12 @@ namespace Amazon.IdentityManagement.Model
         {
             this.path = path;
             return this;
+        }
+            
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this.path != null;       
         }
 
         /// <summary>
@@ -108,11 +115,18 @@ namespace Amazon.IdentityManagement.Model
             this.groupName = groupName;
             return this;
         }
+            
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this.groupName != null;      
+        }
 
         /// <summary>
         /// The stable and unique string identifying the group. For more
-        /// information about IDs, see Identifiers for Users and Groups in the AWS
-        /// Identity and Access Management User Guide.
+        /// information about IDs, see Identifiers for Users and Groups in <a
+        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
+        /// target="_blank">Using AWS Identity and Access Management</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -144,13 +158,19 @@ namespace Amazon.IdentityManagement.Model
             this.groupId = groupId;
             return this;
         }
+            
+        // Check to see if GroupId property is set
+        internal bool IsSetGroupId()
+        {
+            return this.groupId != null;        
+        }
 
         /// <summary>
         /// The Amazon Resource Name (ARN) specifying the group. For more
         /// information about ARNs and how to use them in policies, see
-        /// Identifiers for Users and Groups in the <a
-        /// href="http://aws.amazon.com/documentation/" target="_blank">AWS
-        /// Identity and Access Management User Guide</a>.
+        /// Identifiers for Users and Groups in <a
+        /// href="http://aws.amazon.com/documentation/iam/" target="_blank">Using
+        /// AWS Identity and Access Management</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -177,6 +197,12 @@ namespace Amazon.IdentityManagement.Model
         {
             this.arn = arn;
             return this;
+        }
+            
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this.arn != null;        
         }
     }
 }

@@ -248,4 +248,46 @@ namespace Amazon.Runtime.Internal.Transform
         }
     }
 
+    public class KeyValueUnmarshaller<K, V, KUnmarshaller, VUnmarshaller> :
+    IUnmarshaller<KeyValuePair<K, V>, UnmarshallerContext>
+        where KUnmarshaller : IUnmarshaller<K, UnmarshallerContext>
+        where VUnmarshaller : IUnmarshaller<V, UnmarshallerContext>
+    {
+        KUnmarshaller keyUnmarshaller;
+        VUnmarshaller valueUnmarshaller;
+
+        public KeyValueUnmarshaller(KUnmarshaller keyUnmarshaller, VUnmarshaller valueUnmarshaller)
+        {
+            this.keyUnmarshaller = keyUnmarshaller;
+            this.valueUnmarshaller = valueUnmarshaller;
+        }
+
+        public KeyValuePair<K, V> Unmarshall(UnmarshallerContext context)
+        {
+            K key = default(K);
+            V value = default(V);
+
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+
+            while (context.Read())
+            {
+                if (context.TestExpression("key", targetDepth))
+                {
+                    key = this.keyUnmarshaller.Unmarshall(context);
+                }
+                else if (context.TestExpression("value", targetDepth))
+                {
+                    value = this.valueUnmarshaller.Unmarshall(context);
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    break;
+                }
+            }
+
+            return new KeyValuePair<K, V>(key, value);
+        }
+    }
+
 }

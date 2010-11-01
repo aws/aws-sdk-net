@@ -1,313 +1,255 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Returns information about events related to your DB Instances, DB Security Groups, and DB Parameter Groups for up to the
-    /// past 14 days. You can get events specific to a particular DB Instance or DB Security Group by providing the name as a
-    /// parameter. By default, the past hour of events are returned.
-    ///
-    /// If neither DBInstanceIdentifier or DBSecurityGroupName are provided, all events are be retrieved for DB Instances and DB Security Groups.
+    /// Container for the parameters to the DescribeEvents operation.
+    /// <para> This API returns events related to DB Instances, DB Security
+    /// Groups, DB Snapshots and DB Parameter Groups for the past 14 das.
+    /// Events specific to a particular DB Instance, database security group,
+    /// database snapshot or database parameter group can be obtained by
+    /// providing the name as a parameter. By default, the past hour of events
+    /// are returned. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class DescribeEventsRequest
+    /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeEvents"/>
+    public class DescribeEventsRequest : AmazonWebServiceRequest
     {
-        private string sourceIdentifierField;
-        private string sourceTypeField;
-        private DateTime? startTimeField;
-        private DateTime? endTimeField;
-        private Decimal? durationField;
-        private Decimal? maxRecordsField;
-        private string markerField;
+        private string sourceIdentifier;
+        private string sourceType;
+        private DateTime? startTime;
+        private DateTime? endTime;
+        private int? duration;
+        private int? maxRecords;
+        private string marker;
 
         /// <summary>
-        /// Gets and sets the SourceIdentifier property.
-        /// Identifier of the event source for which events will be returned. If the source identifier is not specified then
-        /// all sources are included in the response.
-        /// If SourceIdentifier is supplied, SourceType must also be provided.
-        /// If the source type is DBInstance, then a DBInstanceIdentifier must be supplied.
-        /// If the source type is DBSecurityGroup, a DBSecurityGroupName must be supplied.
-        /// If the source type is DBParameterGroup, a DBParameterGroupName must be supplied.
-        /// If the source type is DBSnapshot, a DBSnapshotIdentifier must be supplied.
-        /// May not end with a hyphen or contain two consecutive hyphens.
+        /// The identifier of the event source for which events will be returned.
+        /// If not specified, then all sources are included in the response.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "SourceIdentifier")]
         public string SourceIdentifier
         {
-            get { return this.sourceIdentifierField; }
-            set { this.sourceIdentifierField = value; }
+            get { return this.sourceIdentifier; }
+            set { this.sourceIdentifier = value; }
         }
 
         /// <summary>
         /// Sets the SourceIdentifier property
         /// </summary>
-        /// <param name="sourceIdentifier">Identifier of the event source for which events will be returned. If the source identifier is not specified then
-        /// all sources are included in the response.
-        /// If SourceIdentifier is supplied, SourceType must also be provided.
-        /// If the source type is DBInstance, then a DBInstanceIdentifier must be supplied.
-        /// If the source type is DBSecurityGroup, a DBSecurityGroupName must be supplied.
-        /// If the source type is DBParameterGroup, a DBParameterGroupName must be supplied.
-        /// If the source type is DBSnapshot, a DBSnapshotIdentifier must be supplied.
-        /// May not end with a hyphen or contain two consecutive hyphens.</param>
+        /// <param name="sourceIdentifier">The value to set for the SourceIdentifier property </param>
         /// <returns>this instance</returns>
         public DescribeEventsRequest WithSourceIdentifier(string sourceIdentifier)
         {
-            this.sourceIdentifierField = sourceIdentifier;
+            this.sourceIdentifier = sourceIdentifier;
             return this;
         }
-
-        /// <summary>
-        /// Checks if SourceIdentifier property is set
-        /// </summary>
-        /// <returns>true if SourceIdentifier property is set</returns>
-        public bool IsSetSourceIdentifier()
+            
+        // Check to see if SourceIdentifier property is set
+        internal bool IsSetSourceIdentifier()
         {
-            return this.sourceIdentifierField != null;
+            return this.sourceIdentifier != null;       
         }
 
         /// <summary>
-        /// Gets and sets the SourceType property.
-        /// Specifies the event source to retrieve events for. If no value is specified, all events are returned.
-        /// If SourceIdentifier is supplied, SourceType must also be provided.
-        /// If the source type is DBInstance, then a DBInstanceIdentifier must be supplied.
-        /// If the source type is DBSecurityGroup, a DBSecurityGroupName must be supplied.
-        /// If the source type is DBParameterGroup, a DBParameterGroupName must be supplied.
-        /// If the source type is DBSnapshot, a DBSnapshotIdentifier must be supplied.
-        /// May not end with a hyphen or contain two consecutive hyphens.
+        /// The event source to retrieve events for. If no value is specified, all
+        /// events are returned.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>db-instance, db-parameter-group, db-security-group, db-snapshot</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "SourceType")]
         public string SourceType
         {
-            get { return this.sourceTypeField; }
-            set { this.sourceTypeField = value; }
+            get { return this.sourceType; }
+            set { this.sourceType = value; }
         }
 
         /// <summary>
         /// Sets the SourceType property
         /// </summary>
-        /// <param name="sourceType">Specifies the event source to retrieve events for. If no value is specified, all events are returned.
-        /// If SourceIdentifier is supplied, SourceType must also be provided.
-        /// If the source type is DBInstance, then a DBInstanceIdentifier must be supplied.
-        /// If the source type is DBSecurityGroup, a DBSecurityGroupName must be supplied.
-        /// If the source type is DBParameterGroup, a DBParameterGroupName must be supplied.
-        /// If the source type is DBSnapshot, a DBSnapshotIdentifier must be supplied.
-        /// May not end with a hyphen or contain two consecutive hyphens.</param>
+        /// <param name="sourceType">The value to set for the SourceType property </param>
         /// <returns>this instance</returns>
         public DescribeEventsRequest WithSourceType(string sourceType)
         {
-            this.sourceTypeField = sourceType;
+            this.sourceType = sourceType;
             return this;
         }
-
-        /// <summary>
-        /// Checks if SourceType property is set
-        /// </summary>
-        /// <returns>true if SourceType property is set</returns>
-        public bool IsSetSourceType()
+            
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
         {
-            return this.sourceTypeField != null;
+            return this.sourceType != null;         
         }
 
         /// <summary>
-        /// Gets and sets the StartTime property.
-        /// The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the ISO8601
-        /// Wikipedia page. Example: 2009-07-08T18:00Z.
+        /// The beginning of the time interval to retrieve events for, specified
+        /// in ISO 8601 format.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "StartTime")]
         public DateTime StartTime
         {
-            get { return this.startTimeField.GetValueOrDefault(); }
-            set
-            {
-                this.startTimeField = DateTime.ParseExact(
-                    value.ToString(),
-                    Amazon.Util.AWSSDKUtils.ISO8601DateFormat,
-                    System.Globalization.CultureInfo.InvariantCulture);
-            }
+            get { return this.startTime ?? default(DateTime); }
+            set { this.startTime = value; }
         }
 
         /// <summary>
         /// Sets the StartTime property
         /// </summary>
-        /// <param name="startTime">The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the ISO8601
-        /// Wikipedia page. Example: 2009-07-08T18:00Z.</param>
+        /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
         public DescribeEventsRequest WithStartTime(DateTime startTime)
         {
-            this.startTimeField = startTime;
+            this.startTime = startTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if StartTime property is set
-        /// </summary>
-        /// <returns>true if StartTime property is set</returns>
-        public bool IsSetStartTime()
+            
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this.startTimeField.HasValue;
+            return this.startTime.HasValue;         
         }
 
         /// <summary>
-        /// Gets and sets the EndTime property.
-        /// The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the ISO8601 Wikipedia page.
-        /// Example: 2009-07-08T18:30Z.
+        /// The end of the time interval for which to retrieve events, specified
+        /// in ISO 8601 format.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "EndTime")]
         public DateTime EndTime
         {
-            get { return this.endTimeField.GetValueOrDefault(); }
-            set
-            {
-                this.endTimeField = DateTime.ParseExact(
-                    value.ToString(),
-                    Amazon.Util.AWSSDKUtils.ISO8601DateFormat,
-                    System.Globalization.CultureInfo.InvariantCulture);
-            }
+            get { return this.endTime ?? default(DateTime); }
+            set { this.endTime = value; }
         }
 
         /// <summary>
         /// Sets the EndTime property
         /// </summary>
-        /// <param name="endTime">The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the ISO8601 Wikipedia page.
-        /// Example: 2009-07-08T18:30Z.</param>
+        /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
         public DescribeEventsRequest WithEndTime(DateTime endTime)
         {
-            this.endTimeField = endTime;
+            this.endTime = endTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if EndTime property is set
-        /// </summary>
-        /// <returns>true if EndTime property is set</returns>
-        public bool IsSetEndTime()
+            
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this.endTimeField.HasValue;
+            return this.endTime.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the Duration property.
-        /// The number of minutes to retrieve events for. Default: 60.
+        /// The number of minutes to retrieve events for.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Duration")]
-        public Decimal Duration
+        public int Duration
         {
-            get { return this.durationField.GetValueOrDefault(); }
-            set { this.durationField = value; }
+            get { return this.duration ?? default(int); }
+            set { this.duration = value; }
         }
 
         /// <summary>
         /// Sets the Duration property
         /// </summary>
-        /// <param name="duration">The number of minutes to retrieve events for. Default: 60.</param>
+        /// <param name="duration">The value to set for the Duration property </param>
         /// <returns>this instance</returns>
-        public DescribeEventsRequest WithDuration(Decimal duration)
+        public DescribeEventsRequest WithDuration(int duration)
         {
-            this.durationField = duration;
+            this.duration = duration;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Duration property is set
-        /// </summary>
-        /// <returns>true if Duration property is set</returns>
-        public bool IsSetDuration()
+            
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
         {
-            return this.durationField.HasValue;
+            return this.duration.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the MaxRecords property.
-        /// The maximum number of records to include in the response. If more than the MaxRecords value is available, a
-        /// marker is included in the response so that the following results can be retrieved.
-        /// Default: 100. Constraints: Minimum 20, maximum 100
+        /// The maximum number of records to include in the response. If more
+        /// records exist than the specified <i>MaxRecords</i> value, a marker is
+        /// included in the response so that the remaining results may be
+        /// retrieved.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "MaxRecords")]
-        public Decimal MaxRecords
+        public int MaxRecords
         {
-            get { return this.maxRecordsField.GetValueOrDefault(); }
-            set { this.maxRecordsField = value; }
+            get { return this.maxRecords ?? default(int); }
+            set { this.maxRecords = value; }
         }
 
         /// <summary>
         /// Sets the MaxRecords property
         /// </summary>
-        /// <param name="maxRecords">The maximum number of records to include in the response. If more than the MaxRecords value is available, a
-        /// marker is included in the response so that the following results can be retrieved.
-        /// Default: 100. Constraints: Minimum 20, maximum 100</param>
+        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
-        public DescribeEventsRequest WithMaxRecords(Decimal maxRecords)
+        public DescribeEventsRequest WithMaxRecords(int maxRecords)
         {
-            this.maxRecordsField = maxRecords;
+            this.maxRecords = maxRecords;
             return this;
         }
-
-        /// <summary>
-        /// Checks if MaxRecords property is set
-        /// </summary>
-        /// <returns>true if MaxRecords property is set</returns>
-        public bool IsSetMaxRecords()
+            
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
         {
-            return this.maxRecordsField.HasValue;
+            return this.maxRecords.HasValue;        
         }
 
         /// <summary>
-        /// Gets and sets the Marker property.
-        /// The marker provided in the previous request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to MaxRecords.
+        /// An optional marker provided in the previous DescribeDBInstances
+        /// request. If this parameter is specified, the response includes only
+        /// records beyond the marker, up to the value specified by
+        /// <i>MaxRecords</i>.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Marker")]
         public string Marker
         {
-            get { return this.markerField; }
-            set { this.markerField = value; }
+            get { return this.marker; }
+            set { this.marker = value; }
         }
 
         /// <summary>
         /// Sets the Marker property
         /// </summary>
-        /// <param name="marker">The marker provided in the previous request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to MaxRecords.</param>
+        /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
         public DescribeEventsRequest WithMarker(string marker)
         {
-            this.markerField = marker;
+            this.marker = marker;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Marker property is set
-        /// </summary>
-        /// <returns>true if Marker property is set</returns>
-        public bool IsSetMarker()
+            
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
         {
-            return this.markerField != null;
+            return this.marker != null;         
         }
-
     }
 }
+    

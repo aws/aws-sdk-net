@@ -33,10 +33,10 @@ namespace Amazon.IdentityManagement.Model
         private string certificateId;
         private string certificateBody;
         private string status;
-        private DateTime uploadDate;
+        private DateTime? uploadDate;
 
         /// <summary>
-        /// Name of the user the signing certificate is associated with.
+        /// Name of the User the signing certificate is associated with.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -67,6 +67,12 @@ namespace Amazon.IdentityManagement.Model
         {
             this.userName = userName;
             return this;
+        }
+            
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this.userName != null;       
         }
 
         /// <summary>
@@ -102,6 +108,12 @@ namespace Amazon.IdentityManagement.Model
             this.certificateId = certificateId;
             return this;
         }
+            
+        // Check to see if CertificateId property is set
+        internal bool IsSetCertificateId()
+        {
+            return this.certificateId != null;      
+        }
 
         /// <summary>
         /// The contents of the signing certificate.
@@ -136,6 +148,12 @@ namespace Amazon.IdentityManagement.Model
             this.certificateBody = certificateBody;
             return this;
         }
+            
+        // Check to see if CertificateBody property is set
+        internal bool IsSetCertificateBody()
+        {
+            return this.certificateBody != null;        
+        }
 
         /// <summary>
         /// The status of the signing certificate. <c>Active</c> means the key is
@@ -167,6 +185,12 @@ namespace Amazon.IdentityManagement.Model
             this.status = status;
             return this;
         }
+            
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this.status != null;         
+        }
 
         /// <summary>
         /// The date when the signing certificate was uploaded.
@@ -174,7 +198,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public DateTime UploadDate
         {
-            get { return this.uploadDate; }
+            get { return this.uploadDate ?? default(DateTime); }
             set { this.uploadDate = value; }
         }
 
@@ -187,6 +211,12 @@ namespace Amazon.IdentityManagement.Model
         {
             this.uploadDate = uploadDate;
             return this;
+        }
+            
+        // Check to see if UploadDate property is set
+        internal bool IsSetUploadDate()
+        {
+            return this.uploadDate.HasValue;        
         }
     }
 }

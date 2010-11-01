@@ -1,651 +1,642 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    ///<summary>
-    ///Information about the DB instance.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class DBInstance
+    /// <summary>
+    /// <para> </para>
+    /// </summary>
+    public class DBInstance  
     {
-        private string DBInstanceIdentifierField;
-        private string DBInstanceClassField;
-        private string engineField;
-        private string DBInstanceStatusField;
-        private string masterUsernameField;
-        private string DBNameField;
-        private Endpoint endpointField;
-        private Decimal? allocatedStorageField;
-        private DateTime? instanceCreateTimeField;
-        private string preferredBackupWindowField;
-        private Decimal? backupRetentionPeriodField;
-        private List<DBSecurityGroupMembership> DBSecurityGroupField;
-        private List<DBParameterGroupStatus> DBParameterGroupField;
-        private string availabilityZoneField;
-        private string preferredMaintenanceWindowField;
-        private PendingModifiedValues pendingModifiedValuesField;
-        private DateTime? latestRestorableTimeField;
-        private bool? multiAZField;
+        
+        private string dBInstanceIdentifier;
+        private string dBInstanceClass;
+        private string engine;
+        private string dBInstanceStatus;
+        private string masterUsername;
+        private string dBName;
+        private Endpoint endpoint;
+        private int? allocatedStorage;
+        private DateTime? instanceCreateTime;
+        private string preferredBackupWindow;
+        private int? backupRetentionPeriod;
+        private List<DBSecurityGroupMembership> dBSecurityGroups = new List<DBSecurityGroupMembership>();
+        private List<DBParameterGroupStatus> dBParameterGroups = new List<DBParameterGroupStatus>();
+        private string availabilityZone;
+        private string preferredMaintenanceWindow;
+        private PendingModifiedValues pendingModifiedValues;
+        private DateTime? latestRestorableTime;
+        private bool? multiAZ;
+        private string engineVersion;
+        private bool? autoMinorVersionUpgrade;
+        private string readReplicaSourceDBInstanceIdentifier;
+        private List<string> readReplicaDBInstanceIdentifiers = new List<string>();
 
         /// <summary>
-        /// Gets and sets the DBInstanceIdentifier property.
-        /// User-supplied database identifier, this is the unique key that identifies a DB Instance.
+        /// Specifies a user-supplied database identifier. This is the unique key
+        /// that identifies a DB Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField; }
-            set { this.DBInstanceIdentifierField = value; }
+            get { return this.dBInstanceIdentifier; }
+            set { this.dBInstanceIdentifier = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceIdentifier property
         /// </summary>
-        /// <param name="DBInstanceIdentifier">User-supplied database identifier, this is the unique key that identifies a DB Instance.</param>
+        /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
-        public DBInstance WithDBInstanceIdentifier(string DBInstanceIdentifier)
+        public DBInstance WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
-            this.DBInstanceIdentifierField = DBInstanceIdentifier;
+            this.dBInstanceIdentifier = dBInstanceIdentifier;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceIdentifier property is set
-        /// </summary>
-        /// <returns>true if DBInstanceIdentifier property is set</returns>
-        public bool IsSetDBInstanceIdentifier()
+            
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
         {
-            return this.DBInstanceIdentifierField != null;
+            return this.dBInstanceIdentifier != null;       
         }
 
         /// <summary>
-        /// Gets and sets the DBInstanceClass property.
-        /// A value containing the name of the compute and memory capacity class of the DB Instance.
-        /// Valid values: db.m1.small | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge
+        /// Specifies the name of the compute and memory capacity class of the DB
+        /// Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceClass")]
         public string DBInstanceClass
         {
-            get { return this.DBInstanceClassField; }
-            set { this.DBInstanceClassField = value; }
+            get { return this.dBInstanceClass; }
+            set { this.dBInstanceClass = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceClass property
         /// </summary>
-        /// <param name="DBInstanceClass">A value containing the name of the compute and memory capacity class of the DB Instance.
-        /// Valid values: db.m1.small | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</param>
+        /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
-        public DBInstance WithDBInstanceClass(string DBInstanceClass)
+        public DBInstance WithDBInstanceClass(string dBInstanceClass)
         {
-            this.DBInstanceClassField = DBInstanceClass;
+            this.dBInstanceClass = dBInstanceClass;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceClass property is set
-        /// </summary>
-        /// <returns>true if DBInstanceClass property is set</returns>
-        public bool IsSetDBInstanceClass()
+            
+        // Check to see if DBInstanceClass property is set
+        internal bool IsSetDBInstanceClass()
         {
-            return this.DBInstanceClassField != null;
+            return this.dBInstanceClass != null;        
         }
 
         /// <summary>
-        /// Gets and sets the Engine property.
-        /// Name of the database engine to be used for this DB Instance.
+        /// Provides the name of the database engine to be used for this DB
+        /// Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Engine")]
         public string Engine
         {
-            get { return this.engineField; }
-            set { this.engineField = value; }
+            get { return this.engine; }
+            set { this.engine = value; }
         }
 
         /// <summary>
         /// Sets the Engine property
         /// </summary>
-        /// <param name="engine">Name of the database engine to be used for this DB Instance.</param>
+        /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
         public DBInstance WithEngine(string engine)
         {
-            this.engineField = engine;
+            this.engine = engine;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Engine property is set
-        /// </summary>
-        /// <returns>true if Engine property is set</returns>
-        public bool IsSetEngine()
+            
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
         {
-            return this.engineField != null;
+            return this.engine != null;         
         }
 
         /// <summary>
-        /// Gets and sets the DBInstanceStatus property.
-        /// Current state of this database.
-        /// Values: available | backing-up | creating | deleted | deleting | failed | modifying | rebooting | resetting-mastercredentials
+        /// Specifies the current state of this database.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceStatus")]
         public string DBInstanceStatus
         {
-            get { return this.DBInstanceStatusField; }
-            set { this.DBInstanceStatusField = value; }
+            get { return this.dBInstanceStatus; }
+            set { this.dBInstanceStatus = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceStatus property
         /// </summary>
-        /// <param name="DBInstanceStatus">Current state of this database.
-        /// Values: available | backing-up | creating | deleted | deleting | failed | modifying | rebooting | resetting-mastercredentials</param>
+        /// <param name="dBInstanceStatus">The value to set for the DBInstanceStatus property </param>
         /// <returns>this instance</returns>
-        public DBInstance WithDBInstanceStatus(string DBInstanceStatus)
+        public DBInstance WithDBInstanceStatus(string dBInstanceStatus)
         {
-            this.DBInstanceStatusField = DBInstanceStatus;
+            this.dBInstanceStatus = dBInstanceStatus;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceStatus property is set
-        /// </summary>
-        /// <returns>true if DBInstanceStatus property is set</returns>
-        public bool IsSetDBInstanceStatus()
+            
+        // Check to see if DBInstanceStatus property is set
+        internal bool IsSetDBInstanceStatus()
         {
-            return this.DBInstanceStatusField != null;
+            return this.dBInstanceStatus != null;       
         }
 
         /// <summary>
-        /// Gets and sets the MasterUsername property.
-        /// The master username for the DB Instance.
+        /// Contains the master username for the DB Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "MasterUsername")]
         public string MasterUsername
         {
-            get { return this.masterUsernameField; }
-            set { this.masterUsernameField = value; }
+            get { return this.masterUsername; }
+            set { this.masterUsername = value; }
         }
 
         /// <summary>
         /// Sets the MasterUsername property
         /// </summary>
-        /// <param name="masterUsername">The master username for the DB Instance.</param>
+        /// <param name="masterUsername">The value to set for the MasterUsername property </param>
         /// <returns>this instance</returns>
         public DBInstance WithMasterUsername(string masterUsername)
         {
-            this.masterUsernameField = masterUsername;
+            this.masterUsername = masterUsername;
             return this;
         }
-
-        /// <summary>
-        /// Checks if MasterUsername property is set
-        /// </summary>
-        /// <returns>true if MasterUsername property is set</returns>
-        public bool IsSetMasterUsername()
+            
+        // Check to see if MasterUsername property is set
+        internal bool IsSetMasterUsername()
         {
-            return this.masterUsernameField != null;
+            return this.masterUsername != null;         
         }
 
         /// <summary>
-        /// Gets and sets the DBName property.
-        /// Name of the initial database on this instance that was specified at create time, if one was specified when the DB
-        /// Instance was created. This same name is returned for the life of the DB Instance.
+        /// Specifies the name of the initial database of this instance that was
+        /// provided at create time, if one was specified when the DB Instance was
+        /// created. This same name is returned for the life of the DB Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBName")]
         public string DBName
         {
-            get { return this.DBNameField; }
-            set { this.DBNameField = value; }
+            get { return this.dBName; }
+            set { this.dBName = value; }
         }
 
         /// <summary>
         /// Sets the DBName property
         /// </summary>
-        /// <param name="DBName">Name of the initial database on this instance that was specified at create time, if one was specified when the DB
-        /// Instance was created. This same name is returned for the life of the DB Instance.</param>
+        /// <param name="dBName">The value to set for the DBName property </param>
         /// <returns>this instance</returns>
-        public DBInstance WithDBName(string DBName)
+        public DBInstance WithDBName(string dBName)
         {
-            this.DBNameField = DBName;
+            this.dBName = dBName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBName property is set
-        /// </summary>
-        /// <returns>true if DBName property is set</returns>
-        public bool IsSetDBName()
+            
+        // Check to see if DBName property is set
+        internal bool IsSetDBName()
         {
-            return this.DBNameField != null;
+            return this.dBName != null;         
         }
 
         /// <summary>
-        /// Gets and sets the Endpoint property.
-        /// The Endpoint type.
+        /// Specifies the endpoint type.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Endpoint")]
         public Endpoint Endpoint
         {
-            get { return this.endpointField; }
-            set { this.endpointField = value; }
+            get { return this.endpoint; }
+            set { this.endpoint = value; }
         }
 
         /// <summary>
         /// Sets the Endpoint property
         /// </summary>
-        /// <param name="endpoint">The Endpoint type.</param>
+        /// <param name="endpoint">The value to set for the Endpoint property </param>
         /// <returns>this instance</returns>
         public DBInstance WithEndpoint(Endpoint endpoint)
         {
-            this.endpointField = endpoint;
+            this.endpoint = endpoint;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Endpoint property is set
-        /// </summary>
-        /// <returns>true if Endpoint property is set</returns>
-        public bool IsSetEndpoint()
+            
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
         {
-            return this.endpointField != null;
+            return this.endpoint != null;       
         }
 
         /// <summary>
-        /// Gets and sets the AllocatedStorage property.
-        /// Allocated storage size specified in gigabytes.
+        /// Specifies the allocated storage size specified in gigabytes.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "AllocatedStorage")]
-        public Decimal AllocatedStorage
+        public int AllocatedStorage
         {
-            get { return this.allocatedStorageField.GetValueOrDefault(); }
-            set { this.allocatedStorageField = value; }
+            get { return this.allocatedStorage ?? default(int); }
+            set { this.allocatedStorage = value; }
         }
 
         /// <summary>
         /// Sets the AllocatedStorage property
         /// </summary>
-        /// <param name="allocatedStorage">Allocated storage size specified in gigabytes.</param>
+        /// <param name="allocatedStorage">The value to set for the AllocatedStorage property </param>
         /// <returns>this instance</returns>
-        public DBInstance WithAllocatedStorage(Decimal allocatedStorage)
+        public DBInstance WithAllocatedStorage(int allocatedStorage)
         {
-            this.allocatedStorageField = allocatedStorage;
+            this.allocatedStorage = allocatedStorage;
             return this;
         }
-
-        /// <summary>
-        /// Checks if AllocatedStorage property is set
-        /// </summary>
-        /// <returns>true if AllocatedStorage property is set</returns>
-        public bool IsSetAllocatedStorage()
+            
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorageField.HasValue;
+            return this.allocatedStorage.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the InstanceCreateTime property.
-        /// Date and time the DB Instance was created. Example: 2009-10-07T21:16:46.000Z.
+        /// Provides the date and time the DB Instance was created.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "InstanceCreateTime")]
         public DateTime InstanceCreateTime
         {
-            get { return this.instanceCreateTimeField.GetValueOrDefault(); }
-            set { this.instanceCreateTimeField = value; }
+            get { return this.instanceCreateTime ?? default(DateTime); }
+            set { this.instanceCreateTime = value; }
         }
 
         /// <summary>
         /// Sets the InstanceCreateTime property
         /// </summary>
-        /// <param name="instanceCreateTime">Date and time the DB Instance was created. Example: 2009-10-07T21:16:46.000Z.</param>
+        /// <param name="instanceCreateTime">The value to set for the InstanceCreateTime property </param>
         /// <returns>this instance</returns>
         public DBInstance WithInstanceCreateTime(DateTime instanceCreateTime)
         {
-            this.instanceCreateTimeField = instanceCreateTime;
+            this.instanceCreateTime = instanceCreateTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if InstanceCreateTime property is set
-        /// </summary>
-        /// <returns>true if InstanceCreateTime property is set</returns>
-        public bool IsSetInstanceCreateTime()
+            
+        // Check to see if InstanceCreateTime property is set
+        internal bool IsSetInstanceCreateTime()
         {
-            return this.instanceCreateTimeField.HasValue;
+            return this.instanceCreateTime.HasValue;        
         }
 
         /// <summary>
-        /// Gets and sets the PreferredBackupWindow property.
-        /// The daily time range during which automated backups are created if automated backups are
-        /// enabled (as determined by the BackupRetentionPeriod.
+        /// Specifies the daily time range during which automated backups are
+        /// created if automated backups are enabled, as determined by the
+        /// <i>BackupRetentionPeriod</i>.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PreferredBackupWindow")]
         public string PreferredBackupWindow
         {
-            get { return this.preferredBackupWindowField; }
-            set { this.preferredBackupWindowField = value; }
+            get { return this.preferredBackupWindow; }
+            set { this.preferredBackupWindow = value; }
         }
 
         /// <summary>
         /// Sets the PreferredBackupWindow property
         /// </summary>
-        /// <param name="preferredBackupWindow">The daily time range during which automated backups are created if automated backups are
-        /// enabled (as determined by the BackupRetentionPeriod.</param>
+        /// <param name="preferredBackupWindow">The value to set for the PreferredBackupWindow property </param>
         /// <returns>this instance</returns>
         public DBInstance WithPreferredBackupWindow(string preferredBackupWindow)
         {
-            this.preferredBackupWindowField = preferredBackupWindow;
+            this.preferredBackupWindow = preferredBackupWindow;
             return this;
         }
-
-        /// <summary>
-        /// Checks if PreferredBackupWindow property is set
-        /// </summary>
-        /// <returns>true if PreferredBackupWindow property is set</returns>
-        public bool IsSetPreferredBackupWindow()
+            
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
         {
-            return this.preferredBackupWindowField != null;
+            return this.preferredBackupWindow != null;      
         }
 
         /// <summary>
-        /// Gets and sets the BackupRetentionPeriod property.
-        /// The number of days for which automatic DB Snapshots are retained. Setting this parameter to a positive number
-        /// enables backups. Setting this parameter to 0 disables automatic backups.
-        /// Default: 1
-        /// Constraints: Can be from 0 to 8.
+        /// Specifies the number of days for which automatic DB Snapshots are
+        /// retained.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "BackupRetentionPeriod")]
-        public Decimal BackupRetentionPeriod
+        public int BackupRetentionPeriod
         {
-            get { return this.backupRetentionPeriodField.GetValueOrDefault(); }
-            set { this.backupRetentionPeriodField = value; }
+            get { return this.backupRetentionPeriod ?? default(int); }
+            set { this.backupRetentionPeriod = value; }
         }
 
         /// <summary>
         /// Sets the BackupRetentionPeriod property
         /// </summary>
-        /// <param name="backupRetentionPeriod">The number of days for which automatic DB Snapshots are retained. Setting this parameter to a positive number
-        /// enables backups. Setting this parameter to 0 disables automatic backups.
-        /// Default: 1
-        /// Constraints: Can be from 0 to 8.</param>
+        /// <param name="backupRetentionPeriod">The value to set for the BackupRetentionPeriod property </param>
         /// <returns>this instance</returns>
-        public DBInstance WithBackupRetentionPeriod(Decimal backupRetentionPeriod)
+        public DBInstance WithBackupRetentionPeriod(int backupRetentionPeriod)
         {
-            this.backupRetentionPeriodField = backupRetentionPeriod;
+            this.backupRetentionPeriod = backupRetentionPeriod;
             return this;
         }
-
-        /// <summary>
-        /// Checks if BackupRetentionPeriod property is set
-        /// </summary>
-        /// <returns>true if BackupRetentionPeriod property is set</returns>
-        public bool IsSetBackupRetentionPeriod()
+            
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
         {
-            return this.backupRetentionPeriodField.HasValue;
+            return this.backupRetentionPeriod.HasValue;         
         }
 
         /// <summary>
-        /// Gets and sets the DBSecurityGroup property.
-        /// List of DB Security Group elements containing only DBSecurityGroup.Name and DBSecurityGroup.Status sub-elements.
+        /// Provides List of DB Security Group elements containing only
+        /// <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
+        /// sub-elements.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBSecurityGroup")]
-        public List<DBSecurityGroupMembership> DBSecurityGroup
+        public List<DBSecurityGroupMembership> DBSecurityGroups
         {
-            get
-            {
-                if (this.DBSecurityGroupField == null)
-                {
-                    this.DBSecurityGroupField = new List<DBSecurityGroupMembership>();
-                }
-                return this.DBSecurityGroupField;
-            }
-            set { this.DBSecurityGroupField = value; }
+            get { return this.dBSecurityGroups; }
+            set { this.dBSecurityGroups = value; }
         }
-
         /// <summary>
-        /// Sets the DBSecurityGroup property
+        /// Adds elements to the DBSecurityGroups collection
         /// </summary>
-        /// <param name="list">List of DB Security Group elements containing only DBSecurityGroup.Name and DBSecurityGroup.Status sub-elements.</param>
+        /// <param name="dBSecurityGroups">The values to add to the DBSecurityGroups collection </param>
         /// <returns>this instance</returns>
-        public DBInstance WithDBSecurityGroup(params DBSecurityGroupMembership[] list)
+        public DBInstance WithDBSecurityGroups(params DBSecurityGroupMembership[] dBSecurityGroups)
         {
-            foreach (DBSecurityGroupMembership item in list)
+            foreach (DBSecurityGroupMembership element in dBSecurityGroups)
             {
-                DBSecurityGroup.Add(item);
+                this.dBSecurityGroups.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBSecurityGroup property is set
-        /// </summary>
-        /// <returns>true if DBSecurityGroup property is set</returns>
-        public bool IsSetDBSecurityGroup()
+        // Check to see if DBSecurityGroups property is set
+        internal bool IsSetDBSecurityGroups()
         {
-            return (DBSecurityGroup.Count > 0);
+            return this.dBSecurityGroups.Count > 0;         
         }
 
         /// <summary>
-        /// Gets and sets the DBParameterGroup property.
-        /// The list of DB Parameter Groups applied to this DB Instance.
+        /// Provides the list of DB Parameter Groups applied to this DB Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBParameterGroup")]
-        public List<DBParameterGroupStatus> DBParameterGroup
+        public List<DBParameterGroupStatus> DBParameterGroups
         {
-            get
-            {
-                if (this.DBParameterGroupField == null)
-                {
-                    this.DBParameterGroupField = new List<DBParameterGroupStatus>();
-                }
-                return this.DBParameterGroupField;
-            }
-            set { this.DBParameterGroupField = value; }
+            get { return this.dBParameterGroups; }
+            set { this.dBParameterGroups = value; }
         }
-
         /// <summary>
-        /// Sets the DBParameterGroup property
+        /// Adds elements to the DBParameterGroups collection
         /// </summary>
-        /// <param name="list">The list of DB Parameter Groups applied to this DB Instance.</param>
+        /// <param name="dBParameterGroups">The values to add to the DBParameterGroups collection </param>
         /// <returns>this instance</returns>
-        public DBInstance WithDBParameterGroup(params DBParameterGroupStatus[] list)
+        public DBInstance WithDBParameterGroups(params DBParameterGroupStatus[] dBParameterGroups)
         {
-            foreach (DBParameterGroupStatus item in list)
+            foreach (DBParameterGroupStatus element in dBParameterGroups)
             {
-                DBParameterGroup.Add(item);
+                this.dBParameterGroups.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBParameterGroup property is set
-        /// </summary>
-        /// <returns>true if DBParameterGroup property is set</returns>
-        public bool IsSetDBParameterGroup()
+        // Check to see if DBParameterGroups property is set
+        internal bool IsSetDBParameterGroups()
         {
-            return (DBParameterGroup.Count > 0);
+            return this.dBParameterGroups.Count > 0;        
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
-        /// The name of the Availability Zone the DB Instance is located in.
+        /// Specifies the name of the Availability Zone the DB Instance is located
+        /// in.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField; }
-            set { this.availabilityZoneField = value; }
+            get { return this.availabilityZone; }
+            set { this.availabilityZone = value; }
         }
 
         /// <summary>
         /// Sets the AvailabilityZone property
         /// </summary>
-        /// <param name="availabilityZone">The name of the Availability Zone the DB Instance is located in.</param>
+        /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
         public DBInstance WithAvailabilityZone(string availabilityZone)
         {
-            this.availabilityZoneField = availabilityZone;
+            this.availabilityZone = availabilityZone;
             return this;
         }
-
-        /// <summary>
-        /// Checks if AvailabilityZone property is set
-        /// </summary>
-        /// <returns>true if AvailabilityZone property is set</returns>
-        public bool IsSetAvailabilityZone()
+            
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZoneField != null;
+            return this.availabilityZone != null;       
         }
 
         /// <summary>
-        /// Gets and sets the PreferredMaintenanceWindow property.
-        /// The weekly time range (in UTC) during which system maintenance can occur.
-        /// Example: Sun:05:00-Sun:09:00.
+        /// Specifies the weekly time range (in UTC) during which system
+        /// maintenance can occur.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PreferredMaintenanceWindow")]
         public string PreferredMaintenanceWindow
         {
-            get { return this.preferredMaintenanceWindowField; }
-            set { this.preferredMaintenanceWindowField = value; }
+            get { return this.preferredMaintenanceWindow; }
+            set { this.preferredMaintenanceWindow = value; }
         }
 
         /// <summary>
         /// Sets the PreferredMaintenanceWindow property
         /// </summary>
-        /// <param name="preferredMaintenanceWindow">The weekly time range (in UTC) during which system maintenance can occur.
-        /// Example: Sun:05:00-Sun:09:00.</param>
+        /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
         public DBInstance WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
-            this.preferredMaintenanceWindowField = preferredMaintenanceWindow;
+            this.preferredMaintenanceWindow = preferredMaintenanceWindow;
             return this;
         }
-
-        /// <summary>
-        /// Checks if PreferredMaintenanceWindow property is set
-        /// </summary>
-        /// <returns>true if PreferredMaintenanceWindow property is set</returns>
-        public bool IsSetPreferredMaintenanceWindow()
+            
+        // Check to see if PreferredMaintenanceWindow property is set
+        internal bool IsSetPreferredMaintenanceWindow()
         {
-            return this.preferredMaintenanceWindowField != null;
+            return this.preferredMaintenanceWindow != null;         
         }
 
         /// <summary>
-        /// Gets and sets the PendingModifiedValues property.
-        /// Element that identifies changes to the DB Instance that are pending. This element is only included when changes are pending.
-        /// Specific changes are identified by sub-elements.
+        /// Specifies that changes to the DB Instance are pending. This element is
+        /// only included when changes are pending. Specific changes are
+        /// identified by sub-elements.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PendingModifiedValues")]
         public PendingModifiedValues PendingModifiedValues
         {
-            get { return this.pendingModifiedValuesField; }
-            set { this.pendingModifiedValuesField = value; }
+            get { return this.pendingModifiedValues; }
+            set { this.pendingModifiedValues = value; }
         }
 
         /// <summary>
         /// Sets the PendingModifiedValues property
         /// </summary>
-        /// <param name="pendingModifiedValues">Element that identifies changes to the DB Instance that are pending. This element is only included when changes are pending.
-        /// Specific changes are identified by sub-elements.</param>
+        /// <param name="pendingModifiedValues">The value to set for the PendingModifiedValues property </param>
         /// <returns>this instance</returns>
         public DBInstance WithPendingModifiedValues(PendingModifiedValues pendingModifiedValues)
         {
-            this.pendingModifiedValuesField = pendingModifiedValues;
+            this.pendingModifiedValues = pendingModifiedValues;
             return this;
         }
-
-        /// <summary>
-        /// Checks if PendingModifiedValues property is set
-        /// </summary>
-        /// <returns>true if PendingModifiedValues property is set</returns>
-        public bool IsSetPendingModifiedValues()
+            
+        // Check to see if PendingModifiedValues property is set
+        internal bool IsSetPendingModifiedValues()
         {
-            return this.pendingModifiedValuesField != null;
+            return this.pendingModifiedValues != null;      
         }
 
         /// <summary>
-        /// Gets and sets the LatestRestorableTime property.
-        /// The latest restorable time.
+        /// Specifies the latest time to which a database can be restored with
+        /// point-in-time restore.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "LatestRestorableTime")]
         public DateTime LatestRestorableTime
         {
-            get { return this.latestRestorableTimeField.GetValueOrDefault(); }
-            set { this.latestRestorableTimeField = value; }
+            get { return this.latestRestorableTime ?? default(DateTime); }
+            set { this.latestRestorableTime = value; }
         }
 
         /// <summary>
         /// Sets the LatestRestorableTime property
         /// </summary>
-        /// <param name="latestRestorableTime">The latest restorable time.</param>
+        /// <param name="latestRestorableTime">The value to set for the LatestRestorableTime property </param>
         /// <returns>this instance</returns>
         public DBInstance WithLatestRestorableTime(DateTime latestRestorableTime)
         {
-            this.latestRestorableTimeField = latestRestorableTime;
+            this.latestRestorableTime = latestRestorableTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if LatestRestorableTime property is set
-        /// </summary>
-        /// <returns>true if LatestRestorableTime property is set</returns>
-        public bool IsSetLatestRestorableTime()
+            
+        // Check to see if LatestRestorableTime property is set
+        internal bool IsSetLatestRestorableTime()
         {
-            return this.latestRestorableTimeField.HasValue;
+            return this.latestRestorableTime.HasValue;      
         }
-
-        /// <summary>
-        /// Gets and sets the MultiAZ property.
-        /// Specifies if the DB Instance is a Multi-AZ DB Instance.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "MultiAZ")]
         public bool MultiAZ
         {
-            get { return this.multiAZField.GetValueOrDefault(); }
-            set { this.multiAZField = value; }
+            get { return this.multiAZ ?? default(bool); }
+            set { this.multiAZ = value; }
         }
 
         /// <summary>
         /// Sets the MultiAZ property
         /// </summary>
-        /// <param name="multiAZ">Specifies if the DB Instance is a Multi-AZ DB Instance.</param>
+        /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
         public DBInstance WithMultiAZ(bool multiAZ)
         {
-            this.multiAZField = multiAZ;
+            this.multiAZ = multiAZ;
             return this;
+        }
+            
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this.multiAZ.HasValue;       
+        }
+        public string EngineVersion
+        {
+            get { return this.engineVersion; }
+            set { this.engineVersion = value; }
         }
 
         /// <summary>
-        /// Checks if MultiAZ property is set
+        /// Sets the EngineVersion property
         /// </summary>
-        /// <returns>true if MultiAZ property is set</returns>
-        public bool IsSetMultiAZ()
+        /// <param name="engineVersion">The value to set for the EngineVersion property </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithEngineVersion(string engineVersion)
         {
-            return this.multiAZField.HasValue;
+            this.engineVersion = engineVersion;
+            return this;
+        }
+            
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this.engineVersion != null;      
+        }
+        public bool AutoMinorVersionUpgrade
+        {
+            get { return this.autoMinorVersionUpgrade ?? default(bool); }
+            set { this.autoMinorVersionUpgrade = value; }
         }
 
+        /// <summary>
+        /// Sets the AutoMinorVersionUpgrade property
+        /// </summary>
+        /// <param name="autoMinorVersionUpgrade">The value to set for the AutoMinorVersionUpgrade property </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithAutoMinorVersionUpgrade(bool autoMinorVersionUpgrade)
+        {
+            this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+            return this;
+        }
+            
+        // Check to see if AutoMinorVersionUpgrade property is set
+        internal bool IsSetAutoMinorVersionUpgrade()
+        {
+            return this.autoMinorVersionUpgrade.HasValue;       
+        }
+        public string ReadReplicaSourceDBInstanceIdentifier
+        {
+            get { return this.readReplicaSourceDBInstanceIdentifier; }
+            set { this.readReplicaSourceDBInstanceIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the ReadReplicaSourceDBInstanceIdentifier property
+        /// </summary>
+        /// <param name="readReplicaSourceDBInstanceIdentifier">The value to set for the ReadReplicaSourceDBInstanceIdentifier property </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithReadReplicaSourceDBInstanceIdentifier(string readReplicaSourceDBInstanceIdentifier)
+        {
+            this.readReplicaSourceDBInstanceIdentifier = readReplicaSourceDBInstanceIdentifier;
+            return this;
+        }
+            
+        // Check to see if ReadReplicaSourceDBInstanceIdentifier property is set
+        internal bool IsSetReadReplicaSourceDBInstanceIdentifier()
+        {
+            return this.readReplicaSourceDBInstanceIdentifier != null;      
+        }
+        public List<string> ReadReplicaDBInstanceIdentifiers
+        {
+            get { return this.readReplicaDBInstanceIdentifiers; }
+            set { this.readReplicaDBInstanceIdentifiers = value; }
+        }
+        /// <summary>
+        /// Adds elements to the ReadReplicaDBInstanceIdentifiers collection
+        /// </summary>
+        /// <param name="readReplicaDBInstanceIdentifiers">The values to add to the ReadReplicaDBInstanceIdentifiers collection </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithReadReplicaDBInstanceIdentifiers(params string[] readReplicaDBInstanceIdentifiers)
+        {
+            foreach (string element in readReplicaDBInstanceIdentifiers)
+            {
+                this.readReplicaDBInstanceIdentifiers.Add(element);
+            }
+
+            return this;
+        }
+        // Check to see if ReadReplicaDBInstanceIdentifiers property is set
+        internal bool IsSetReadReplicaDBInstanceIdentifiers()
+        {
+            return this.readReplicaDBInstanceIdentifiers.Count > 0;         
+        }
     }
 }

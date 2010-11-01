@@ -38,5 +38,22 @@ namespace Amazon.IdentityManagement.Model
             get { return this.group; }
             set { this.group = value; }
         }
+
+        /// <summary>
+        /// Sets the Group property
+        /// </summary>
+        /// <param name="group">The value to set for the Group property </param>
+        /// <returns>this instance</returns>
+        public CreateGroupResult WithGroup(Group group)
+        {
+            this.group = group;
+            return this;
+        }
+            
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this.group != null;      
+        }
     }
 }

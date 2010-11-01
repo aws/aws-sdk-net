@@ -26,11 +26,11 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the DeleteSigningCertificate operation.
     /// <para>Deletes the specified signing certificate associated with the
-    /// specified user.</para> <para>If the <c>UserName</c> field is not
-    /// specified, the UserName is determined implicitly based on the AWS
-    /// Access Key ID used to sign the request. Because this action works for
-    /// access keys under the account, this API can be used to manage root
-    /// credentials even if the account has no associated users.</para>
+    /// specified User.</para> <para>If you do not specify a User name, IAM
+    /// determines the User name implicitly based on the AWS Access Key ID
+    /// signing the request. Because this action works for access keys under
+    /// the AWS Account, you can use this API to manage root credentials even
+    /// if the AWS Account has no associated Users.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteSigningCertificate"/>
     public class DeleteSigningCertificateRequest : AmazonWebServiceRequest
@@ -39,7 +39,7 @@ namespace Amazon.IdentityManagement.Model
         private string certificateId;
 
         /// <summary>
-        /// Name of the user the signing certificate belongs to.
+        /// Name of the User the signing certificate belongs to.
         ///  
         /// <para>
         /// <b>Constraints:</b>

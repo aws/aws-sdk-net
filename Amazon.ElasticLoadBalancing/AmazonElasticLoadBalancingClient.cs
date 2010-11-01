@@ -1,115 +1,44 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-11-25
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Security;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Reflection;
-using System.Xml;
-using System.Xml.Xsl;
-using System.Xml.Serialization;
-
-using Amazon.Util;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.ElasticLoadBalancing.Model.Transform;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+
 
 namespace Amazon.ElasticLoadBalancing
 {
     /// <summary>
-    /// AmazonElasticLoadBalancingClient is an implementation of AmazonElasticLoadBalancing;
-    /// the client allows you to manage your AmazonElasticLoadBalancing resources.<br />
-    /// If you want to use the AmazonElasticLoadBalancingClient from a Medium Trust
-    /// hosting environment, please create the client with an
-    /// AmazonElasticLoadBalancingConfig object whose UseSecureStringForAwsSecretKey
-    /// property is false.
+    /// Implemenation for accessing AmazonElasticLoadBalancing.
+    ///  
+    /// <para> Elastic Load Balancing is a cost-effective and easy to use web
+    /// service to help you improve availability and scalability of your
+    /// application. It makes it easy for you to distribute application loads
+    /// between two or more EC2 instances. Elastic Load Balancing enables
+    /// availability through redundancy and supports traffic growth of your
+    /// application. </para>
     /// </summary>
-    /// <remarks>
-    /// Elastic Load Balancing automatically distributes incoming application traffic across multiple
-    /// Amazon EC2 instances. It enables you to achieve even greater fault tolerance in your applications,
-    /// seamlessly providing the amount of load balancing capacity needed in response to incoming application
-    /// traffic. Elastic Load Balancing detects unhealthy instances within a pool and automatically reroutes
-    /// traffic to healthy instances until the unhealthy instances have been restored. You can enable Elastic
-    /// Load Balancing within a single Availability Zone or across multiple zones for even more consistent
-    /// application performance. Amazon CloudWatch can be used to capture a specific Elastic Load Balancer's
-    /// operational metrics, such as request count and request latency, at no additional cost beyond Elastic
-    /// Load Balancing fees.
-    /// </remarks>
-    /// <seealso cref="P:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingConfig.UseSecureStringForAwsSecretKey"/>
-    public class AmazonElasticLoadBalancingClient : AmazonElasticLoadBalancing
+    public class AmazonElasticLoadBalancingClient : AmazonWebServiceClient, AmazonElasticLoadBalancing
     {
-        private string awsAccessKeyId;
-        private SecureString awsSecretAccessKey;
-        private AmazonElasticLoadBalancingConfig config;
-        private bool disposed;
-        private string clearAwsSecretAccessKey;
-
-        #region Dispose Pattern Implementation
-
-        /// <summary>
-        /// Implements the Dispose pattern for the AmazonElasticLoadBalancingClient
-        /// </summary>
-        /// <param name="fDisposing">Whether this object is being disposed via a call to Dispose
-        /// or garbage collected.</param>
-        protected virtual void Dispose(bool fDisposing)
-        {
-            if (!this.disposed)
-            {
-                if (fDisposing)
-                {
-                    //Remove Unmanaged Resources
-                    // I.O.W. remove resources that have to be explicitly
-                    // "Dispose"d or Closed
-                    if (awsSecretAccessKey != null)
-                    {
-                        awsSecretAccessKey.Dispose();
-                        awsSecretAccessKey = null;
-                    }
-                }
-                this.disposed = true;
-            }
-        }
-
-        /// <summary>
-        /// Disposes of all managed and unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        /// The destructor for the client class.
-        /// </summary>
-        ~AmazonElasticLoadBalancingClient()
-        {
-            this.Dispose(false);
-        }
-
-        #endregion
+    
+    
+        AbstractAWSSigner signer = new QueryStringSigner();
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with AWS Access Key ID and AWS Secret Key
@@ -123,825 +52,474 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonElasticLoadBalancing Configuration object. If the config object's
+        /// AmazonS3 Configuration object. If the config object's
         /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
         /// is stored as a clear-text string. Please use this option only
         /// if the application environment doesn't allow the use of SecureStrings.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
-        /// <param name="config">The AmazonElasticLoadBalancing Configuration Object</param>
-        public AmazonElasticLoadBalancingClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElasticLoadBalancingConfig config)
+        /// <param name="clientConfig">The AmazonElasticLoadBalancingClient Configuration Object</param>
+        public AmazonElasticLoadBalancingClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElasticLoadBalancingConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
-            if (!String.IsNullOrEmpty(awsSecretAccessKey))
-            {
-                if (config.UseSecureStringForAwsSecretKey)
-                {
-                    this.awsSecretAccessKey = new SecureString();
-                    foreach (char ch in awsSecretAccessKey.ToCharArray())
-                    {
-                        this.awsSecretAccessKey.AppendChar(ch);
-                    }
-                    this.awsSecretAccessKey.MakeReadOnly();
-                }
-                else
-                {
-                    clearAwsSecretAccessKey = awsSecretAccessKey;
-                }
-            }
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.config = config;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
         }
+        
+   
 
-        /// <summary>
-        /// Constructs an AmazonElasticLoadBalancingClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonElasticLoadBalancing Configuration object
-        /// </summary>
-        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
-        /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
-        /// <param name="config">The AmazonElasticLoadBalancing Configuration Object</param>
-        public AmazonElasticLoadBalancingClient(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonElasticLoadBalancingConfig config)
-        {
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.awsSecretAccessKey = awsSecretAccessKey;
-            this.config = config;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
-        }
-
-        #region Public API
-
-        /// <summary>
-        /// Deregister Instances From Load Balancer
-        /// </summary>
-        /// <param name="request">Deregister Instances From Load Balancer  request</param>
-        /// <returns>Deregister Instances From Load Balancer  Response from the service</returns>
-        public DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request)
-        {
-            return Invoke<DeregisterInstancesFromLoadBalancerResponse>(ConvertDeregisterInstancesFromLoadBalancer(request));
-        }
-
-        /// <summary>
-        /// Configure Health Check
-        /// </summary>
-        /// <param name="request">Configure Health Check  request</param>
-        /// <returns>Configure Health Check  Response from the service</returns>
-        public ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request)
-        {
-            return Invoke<ConfigureHealthCheckResponse>(ConvertConfigureHealthCheck(request));
-        }
-
-        /// <summary>
-        /// Delete Load Balancer
-        /// </summary>
-        /// <param name="request">Delete Load Balancer  request</param>
-        /// <returns>Delete Load Balancer  Response from the service</returns>
-        public DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request)
-        {
-            return Invoke<DeleteLoadBalancerResponse>(ConvertDeleteLoadBalancer(request));
-        }
-
-        /// <summary>
-        /// Register Instances With Load Balancer
-        /// </summary>
-        /// <param name="request">Register Instances With Load Balancer  request</param>
-        /// <returns>Register Instances With Load Balancer  Response from the service</returns>
-        public RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request)
-        {
-            return Invoke<RegisterInstancesWithLoadBalancerResponse>(ConvertRegisterInstancesWithLoadBalancer(request));
-        }
-
-        /// <summary>
-        /// Create Load Balancer
-        /// </summary>
-        /// <param name="request">Create Load Balancer  request</param>
-        /// <returns>Create Load Balancer  Response from the service</returns>
-        public CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request)
-        {
-            return Invoke<CreateLoadBalancerResponse>(ConvertCreateLoadBalancer(request));
-        }
-
-        /// <summary>
-        /// Enable Availability Zones For Load Balancer
-        /// </summary>
-        /// <param name="request">Enable Availability Zones For Load Balancer  request</param>
-        /// <returns>Enable Availability Zones For Load Balancer  Response from the service</returns>
-        public EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request)
-        {
-            return Invoke<EnableAvailabilityZonesForLoadBalancerResponse>(ConvertEnableAvailabilityZonesForLoadBalancer(request));
-        }
-
-        /// <summary>
-        /// Disable Availability Zones For Load Balancer
-        /// </summary>
-        /// <param name="request">Disable Availability Zones For Load Balancer  request</param>
-        /// <returns>Disable Availability Zones For Load Balancer  Response from the service</returns>
-        public DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request)
-        {
-            return Invoke<DisableAvailabilityZonesForLoadBalancerResponse>(ConvertDisableAvailabilityZonesForLoadBalancer(request));
-        }
-
-        /// <summary>
-        /// Describe Instance Health
-        /// </summary>
-        /// <param name="request">Describe Instance Health  request</param>
-        /// <returns>Describe Instance Health  Response from the service</returns>
-        public DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request)
-        {
-            return Invoke<DescribeInstanceHealthResponse>(ConvertDescribeInstanceHealth(request));
-        }
-
-        /// <summary>
-        /// Describe Load Balancers
-        /// </summary>
-        /// <param name="request">Describe Load Balancers  request</param>
-        /// <returns>Describe Load Balancers  Response from the service</returns>
-        public DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
-        {
-            return Invoke<DescribeLoadBalancersResponse>(ConvertDescribeLoadBalancers(request));
-        }
-
-        /// <summary>
-        /// Set Load Balancer Policies Of Listener
-        /// </summary>
-        /// <param name="request">Set Load Balancer Policies Of Listener  request</param>
-        /// <returns>Set Load Balancer Policies Of Listener  Response from the service</returns>
-        public SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request)
-        {
-            return Invoke<SetLoadBalancerPoliciesOfListenerResponse>(ConvertSetLoadBalancerPoliciesOfListener(request));
-        }
-
-        /// <summary>
-        /// Create App Cookie Stickiness Policy
-        /// </summary>
-        /// <param name="request">Create App Cookie Stickiness Policy  request</param>
-        /// <returns>Create App Cookie Stickiness Policy  Response from the service</returns>
-        public CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request)
-        {
-            return Invoke<CreateAppCookieStickinessPolicyResponse>(ConvertCreateAppCookieStickinessPolicy(request));
-        }
-
-        /// <summary>
-        /// Create LB Cookie Stickiness Policy
-        /// </summary>
-        /// <param name="request">Create LB Cookie Stickiness Policy  request</param>
-        /// <returns>Create LB Cookie Stickiness Policy  Response from the service</returns>
-        public CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request)
-        {
-            return Invoke<CreateLBCookieStickinessPolicyResponse>(ConvertCreateLBCookieStickinessPolicy(request));
-        }
-
-        /// <summary>
-        /// Delete Load Balancer Policy
-        /// </summary>
-        /// <param name="request">Delete Load Balancer Policy  request</param>
-        /// <returns>Delete Load Balancer Policy  Response from the service</returns>
-        public DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request)
-        {
-            return Invoke<DeleteLoadBalancerPolicyResponse>(ConvertDeleteLoadBalancerPolicy(request));
-        }
-
-        #endregion
-
-        #region Private API
-
-        /**
-         * Configure HttpClient with set of defaults as well as configuration
-         * from AmazonElasticLoadBalancingConfig instance
-         */
-        private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonElasticLoadBalancingConfig config)
-        {
-            HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
-            if (request != null)
-            {
-                if (config.IsSetProxyHost() && config.IsSetProxyPort())
-                {
-                    WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
-                    if (config.IsSetProxyUsername())
-                    {
-                        proxy.Credentials = new NetworkCredential(
-                            config.ProxyUsername,
-                            config.ProxyPassword ?? String.Empty
-                            );
-                    }
-                    request.Proxy = proxy;
-                }
-                request.UserAgent = config.UserAgent;
-                request.Method = "POST";
-                request.Timeout = 50000;
-                request.ContentType = AWSSDKUtils.UrlEncodedContent;
-                request.ContentLength = contentLength;
-            }
-
-            return request;
-        }
-
-        /**
-         * Invoke request and return response
-         */
-        private T Invoke<T>(IDictionary<string, string> parameters)
-        {
-            string actionName = parameters["Action"];
-            T response = default(T);
-            HttpStatusCode statusCode = default(HttpStatusCode);
-
-            /* Add required request parameters */
-            AddRequiredParameters(parameters);
-
-            string queryString = AWSSDKUtils.GetParametersAsString(parameters);
-
-            byte[] requestData = Encoding.UTF8.GetBytes(queryString);
-            bool shouldRetry = true;
-            int retries = 0;
-            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
-
-            do
-            {
-                string responseBody = null;
-                HttpWebRequest request = ConfigureWebRequest(requestData.Length, config);
-                /* Submit the request and read response body */
-                try
-                {
-                    using (Stream requestStream = request.GetRequestStream())
-                    {
-                        requestStream.Write(requestData, 0, requestData.Length);
-                    }
-                    using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
-                    {
-                        if (httpResponse == null)
-                        {
-                            throw new WebException(
-                                "The Web Response for a successful request is null!",
-                                WebExceptionStatus.ProtocolError
-                                );
-                        }
-
-                        statusCode = httpResponse.StatusCode;
-                        using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
-                        {
-                            responseBody = reader.ReadToEnd();
-                        }
-                    }
-
-                    /* Perform response transformation */
-                    if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
-                    {
-                        responseBody = Transform(responseBody, this.GetType());
-                    }
-                    /* Attempt to deserialize response into <Action> Response type */
-                    XmlSerializer serializer = new XmlSerializer(typeof(T));
-                    using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
-                    {
-                        response = (T)serializer.Deserialize(sr);
-                    }
-                    shouldRetry = false;
-                }
-                /* Web exception is thrown on unsucessful responses */
-                catch (WebException we)
-                {
-                    shouldRetry = false;
-                    using (HttpWebResponse httpErrorResponse = we.Response as HttpWebResponse)
-                    {
-                        if (httpErrorResponse == null)
-                        {
-                            // Abort the unsuccessful request
-                            request.Abort();
-                            throw we;
-                        }
-                        statusCode = httpErrorResponse.StatusCode;
-                        using (StreamReader reader = new StreamReader(httpErrorResponse.GetResponseStream(), Encoding.UTF8))
-                        {
-                            responseBody = reader.ReadToEnd();
-                        }
-
-                        // Abort the unsuccessful request
-                        request.Abort();
-                    }
-
-                    if (statusCode == HttpStatusCode.InternalServerError ||
-                        statusCode == HttpStatusCode.ServiceUnavailable)
-                    {
-                        shouldRetry = true;
-                        PauseOnRetry(++retries, maxRetries, statusCode);
-                    }
-                    else
-                    {
-                        /* Attempt to deserialize response into ErrorResponse type */
-                        try
-                        {
-                            using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
-                            {
-                                XmlSerializer serializer = new XmlSerializer(typeof(ErrorResponse));
-                                ErrorResponse errorResponse = (ErrorResponse)serializer.Deserialize(sr);
-                                Error error = errorResponse.Error[0];
-
-                                /* Throw formatted exception with information available from the error response */
-                                throw new AmazonElasticLoadBalancingException(
-                                    error.Message,
-                                    statusCode,
-                                    error.Code,
-                                    error.Type,
-                                    errorResponse.RequestId,
-                                    errorResponse.ToXML()
-                                    );
-                            }
-                        }
-                        /* Rethrow on deserializer error */
-                        catch (Exception e)
-                        {
-                            if (e is AmazonElasticLoadBalancingException)
-                            {
-                                throw;
-                            }
-                            else
-                            {
-                                throw ReportAnyErrors(responseBody, statusCode);
-                            }
-                        }
-                    }
-                }
-                /* Catch other exceptions, attempt to convert to formatted exception,
-                 * else rethrow wrapped exception */
-                catch (Exception)
-                {
-                    // Abort the unsuccessful request
-                    request.Abort();
-                    throw;
-                }
-            } while (shouldRetry);
-
+         /// <summary>
+         /// <para> Creates one or more listeners on a LoadBalancer for the
+         /// specified port. If a listener with the given port does not already
+         /// exist, it will be created; otherwise, the properties of the new
+         /// listener must match the properties of the existing listener. </para>
+         /// </summary>
+         /// 
+         /// <param name="createLoadBalancerListenersRequest">Container for the
+         ///           necessary parameters to execute the CreateLoadBalancerListeners
+         ///           service method on AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the CreateLoadBalancerListeners service
+         ///         method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="DuplicateListenerException"/>
+         /// <exception cref="CertificateNotFoundException"/>
+         /// <exception cref="LoadBalancerNotFoundException"/>
+         /// <exception cref="InvalidConfigurationRequestException"/>
+        public CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest) 
+        {           
+            IRequest<CreateLoadBalancerListenersRequest> request = new CreateLoadBalancerListenersRequestMarshaller().Marshall(createLoadBalancerListenersRequest);
+            CreateLoadBalancerListenersResponse response = Invoke<CreateLoadBalancerListenersRequest, CreateLoadBalancerListenersResponse> (request, this.signer, CreateLoadBalancerListenersResponseUnmarshaller.GetInstance());
             return response;
         }
+    
 
-        /**
-         * Look for additional error strings in the response and return formatted exception
-         */
-        private static AmazonElasticLoadBalancingException ReportAnyErrors(string responseBody, HttpStatusCode status)
-        {
-            AmazonElasticLoadBalancingException ex = null;
-
-            if (responseBody != null &&
-                responseBody.StartsWith("<"))
-            {
-                Match errorMatcherOne = Regex.Match(
-                    responseBody,
-                    "<RequestId>(.*)</RequestId>.*<Error><Code>(.*)</Code><Message>(.*)</Message></Error>.*(<Error>)?",
-                    RegexOptions.Multiline
-                    );
-                Match errorMatcherTwo = Regex.Match(
-                    responseBody,
-                    "<Error><Code>(.*)</Code><Message>(.*)</Message></Error>.*(<Error>)?.*<RequestID>(.*)</RequestID>",
-                    RegexOptions.Multiline
-                    );
-
-                if (errorMatcherOne.Success)
-                {
-                    string requestId = errorMatcherOne.Groups[1].Value;
-                    string code = errorMatcherOne.Groups[2].Value;
-                    string message = errorMatcherOne.Groups[3].Value;
-
-                    ex = new AmazonElasticLoadBalancingException(message, status, code, "Unknown", requestId, responseBody);
-                }
-                else if (errorMatcherTwo.Success)
-                {
-                    string code = errorMatcherTwo.Groups[1].Value;
-                    string message = errorMatcherTwo.Groups[2].Value;
-                    string requestId = errorMatcherTwo.Groups[4].Value;
-
-                    ex = new AmazonElasticLoadBalancingException(message, status, code, "Unknown", requestId, responseBody);
-                }
-                else
-                {
-                    ex = new AmazonElasticLoadBalancingException("Internal Error", status);
-                }
-            }
-            else
-            {
-                ex = new AmazonElasticLoadBalancingException("Internal Error", status);
-            }
-            return ex;
+         /// <summary>
+         /// <para> Generates a stickiness policy with sticky session lifetimes
+         /// controlled by the lifetime of the browser (user-agent) or a specified
+         /// expiration period. This policy can only be associated only with HTTP
+         /// listeners. </para> <para> When a load balancer implements this policy,
+         /// the load balancer uses a special cookie to track the backend server
+         /// instance for each request. When the load balancer receives a request,
+         /// it first checks to see if this cookie is present in the request. If
+         /// so, the load balancer sends the request to the application server
+         /// specified in the cookie. If not, the load balancer sends the request
+         /// to a server that is chosen based on the existing load balancing
+         /// algorithm. </para> <para> A cookie is inserted into the response for
+         /// binding subsequent requests from the same user to that server. The
+         /// validity of the cookie is based on the cookie expiration time, which
+         /// is specified in the policy configuration. </para>
+         /// </summary>
+         /// 
+         /// <param name="createLBCookieStickinessPolicyRequest">Container for the
+         ///           necessary parameters to execute the CreateLBCookieStickinessPolicy
+         ///           service method on AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the CreateLBCookieStickinessPolicy service
+         ///         method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="TooManyPoliciesException"/>
+         /// <exception cref="DuplicatePolicyNameException"/>
+         /// <exception cref="LoadBalancerNotFoundException"/>
+         /// <exception cref="InvalidConfigurationRequestException"/>
+        public CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest) 
+        {           
+            IRequest<CreateLBCookieStickinessPolicyRequest> request = new CreateLBCookieStickinessPolicyRequestMarshaller().Marshall(createLBCookieStickinessPolicyRequest);
+            CreateLBCookieStickinessPolicyResponse response = Invoke<CreateLBCookieStickinessPolicyRequest, CreateLBCookieStickinessPolicyResponse> (request, this.signer, CreateLBCookieStickinessPolicyResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Exponential sleep on failed request
-         */
-        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status)
-        {
-            if (retries <= maxRetries)
-            {
-                int delay = (int)Math.Pow(4, retries) * 100;
-                System.Threading.Thread.Sleep(delay);
-            }
-            else
-            {
-                throw new AmazonElasticLoadBalancingException(
-                    "Maximum number of retry attempts reached : " + (retries - 1),
-                    status
-                    );
-            }
+         /// <summary>
+         /// <para> Enables the client to define an application healthcheck for the
+         /// instances. </para>
+         /// </summary>
+         /// 
+         /// <param name="configureHealthCheckRequest">Container for the necessary
+         ///           parameters to execute the ConfigureHealthCheck service method on
+         ///           AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the ConfigureHealthCheck service method, as
+         ///         returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="LoadBalancerNotFoundException"/>
+        public ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest configureHealthCheckRequest) 
+        {           
+            IRequest<ConfigureHealthCheckRequest> request = new ConfigureHealthCheckRequestMarshaller().Marshall(configureHealthCheckRequest);
+            ConfigureHealthCheckResponse response = Invoke<ConfigureHealthCheckRequest, ConfigureHealthCheckResponse> (request, this.signer, ConfigureHealthCheckResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Add authentication related and version parameters
-         */
-        private void AddRequiredParameters(IDictionary<string, string> parameters)
-        {
-            if (String.IsNullOrEmpty(this.awsAccessKeyId))
-            {
-                throw new AmazonElasticLoadBalancingException("The AWS Access Key ID cannot be NULL or a Zero length string");
-            }
-
-            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
-            parameters["SignatureVersion"] = config.SignatureVersion;
-            parameters["SignatureMethod"] = config.SignatureMethod;
-            parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
-            parameters["Version"] = config.ServiceVersion;
-            if (!config.SignatureVersion.Equals("2"))
-            {
-                throw new AmazonElasticLoadBalancingException("Invalid Signature Version specified");
-            }
-            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
-
-            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
-            string auth;
-
-            if (config.UseSecureStringForAwsSecretKey)
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
-            }
-            else
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
-            }
-            parameters["Signature"] = auth;
+         /// <summary>
+         /// <para> Returns detailed configuration information for the specified
+         /// LoadBalancers. If no LoadBalancers are specified, the operation
+         /// returns configuration information for all LoadBalancers created by the
+         /// caller. </para> <para><b>NOTE:</b> The client must have created the
+         /// specified input LoadBalancers in order to retrieve this information;
+         /// the client must provide the same account credentials as those that
+         /// were used to create the LoadBalancer. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeLoadBalancersRequest">Container for the necessary
+         ///           parameters to execute the DescribeLoadBalancers service method on
+         ///           AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the DescribeLoadBalancers service method,
+         ///         as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="LoadBalancerNotFoundException"/>
+        public DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) 
+        {           
+            IRequest<DescribeLoadBalancersRequest> request = new DescribeLoadBalancersRequestMarshaller().Marshall(describeLoadBalancersRequest);
+            DescribeLoadBalancersResponse response = Invoke<DescribeLoadBalancersRequest, DescribeLoadBalancersResponse> (request, this.signer, DescribeLoadBalancersResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DeregisterInstancesFromLoadBalancerRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DeregisterInstancesFromLoadBalancer";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            List<Instance> deregisterInstancesFromLoadBalancerRequestInstancesList = request.Instances;
-            int deregisterInstancesFromLoadBalancerRequestInstancesListIndex = 1;
-            foreach (Instance deregisterInstancesFromLoadBalancerRequestInstances in deregisterInstancesFromLoadBalancerRequestInstancesList)
-            {
-                if (deregisterInstancesFromLoadBalancerRequestInstances.IsSetInstanceId())
-                {
-                    parameters[String.Concat("Instances", ".member.", deregisterInstancesFromLoadBalancerRequestInstancesListIndex, ".", "InstanceId")] = deregisterInstancesFromLoadBalancerRequestInstances.InstanceId;
-                }
-
-                deregisterInstancesFromLoadBalancerRequestInstancesListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Sets the certificate that terminates the specified listener's
+         /// SSL connections. The specified certificate replaces any prior
+         /// certificate that was used on the same LoadBalancer and port. </para>
+         /// </summary>
+         /// 
+         /// <param name="setLoadBalancerListenerSSLCertificateRequest">Container
+         ///           for the necessary parameters to execute the
+         ///           SetLoadBalancerListenerSSLCertificate service method on
+         ///           AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the SetLoadBalancerListenerSSLCertificate
+         ///         service method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="CertificateNotFoundException"/>
+         /// <exception cref="ListenerNotFoundException"/>
+         /// <exception cref="LoadBalancerNotFoundException"/>
+         /// <exception cref="InvalidConfigurationRequestException"/>
+        public SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest setLoadBalancerListenerSSLCertificateRequest) 
+        {           
+            IRequest<SetLoadBalancerListenerSSLCertificateRequest> request = new SetLoadBalancerListenerSSLCertificateRequestMarshaller().Marshall(setLoadBalancerListenerSSLCertificateRequest);
+            SetLoadBalancerListenerSSLCertificateResponse response = Invoke<SetLoadBalancerListenerSSLCertificateRequest, SetLoadBalancerListenerSSLCertificateResponse> (request, this.signer, SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert ConfigureHealthCheckRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertConfigureHealthCheck(ConfigureHealthCheckRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "ConfigureHealthCheck";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            if (request.IsSetHealthCheck())
-            {
-                HealthCheck configureHealthCheckRequestHealthCheck = request.HealthCheck;
-                if (configureHealthCheckRequestHealthCheck.IsSetTarget())
-                {
-                    parameters[String.Concat("HealthCheck", ".", "Target")] = configureHealthCheckRequestHealthCheck.Target;
-                }
-                if (configureHealthCheckRequestHealthCheck.IsSetInterval())
-                {
-                    parameters[String.Concat("HealthCheck", ".", "Interval")] = configureHealthCheckRequestHealthCheck.Interval.ToString();
-                }
-                if (configureHealthCheckRequestHealthCheck.IsSetTimeout())
-                {
-                    parameters[String.Concat("HealthCheck", ".", "Timeout")] = configureHealthCheckRequestHealthCheck.Timeout.ToString();
-                }
-                if (configureHealthCheckRequestHealthCheck.IsSetUnhealthyThreshold())
-                {
-                    parameters[String.Concat("HealthCheck", ".", "UnhealthyThreshold")] = configureHealthCheckRequestHealthCheck.UnhealthyThreshold.ToString();
-                }
-                if (configureHealthCheckRequestHealthCheck.IsSetHealthyThreshold())
-                {
-                    parameters[String.Concat("HealthCheck", ".", "HealthyThreshold")] = configureHealthCheckRequestHealthCheck.HealthyThreshold.ToString();
-                }
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Creates a new LoadBalancer. </para> <para> Once the call has
+         /// completed successfully, a new LoadBalancer is created; however, it
+         /// will not be usable until at least one instance has been registered.
+         /// When the LoadBalancer creation is completed, the client can check
+         /// whether or not it is usable by using the DescribeInstanceHealth API.
+         /// The LoadBalancer is usable as soon as any registered instance is
+         /// <i>InService</i> .
+         /// </para> <para><b>NOTE:</b> Currently, the client's quota of
+         /// LoadBalancers is limited to five per Region. </para>
+         /// <para><b>NOTE:</b> Load balancer DNS names vary depending on the
+         /// Region they're created in. For load balancers created in the United
+         /// States, the DNS name ends with: us-east-1.elb.amazonaws.com (for the
+         /// US Standard Region) us-west-1.elb.amazonaws.com (for the Northern
+         /// California Region) For load balancers created in the EU (Ireland)
+         /// Region, the DNS name ends with: eu-west-1.elb.amazonaws.com </para>
+         /// </summary>
+         /// 
+         /// <param name="createLoadBalancerRequest">Container for the necessary
+         ///           parameters to execute the CreateLoadBalancer service method on
+         ///           AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the CreateLoadBalancer service method, as
+         ///         returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="TooManyLoadBalancersException"/>
+         /// <exception cref="DuplicateLoadBalancerNameException"/>
+         /// <exception cref="CertificateNotFoundException"/>
+         /// <exception cref="InvalidConfigurationRequestException"/>
+        public CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest createLoadBalancerRequest) 
+        {           
+            IRequest<CreateLoadBalancerRequest> request = new CreateLoadBalancerRequestMarshaller().Marshall(createLoadBalancerRequest);
+            CreateLoadBalancerResponse response = Invoke<CreateLoadBalancerRequest, CreateLoadBalancerResponse> (request, this.signer, CreateLoadBalancerResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DeleteLoadBalancerRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDeleteLoadBalancer(DeleteLoadBalancerRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DeleteLoadBalancer";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Adds one or more EC2 Availability Zones to the LoadBalancer.
+         /// </para> <para> The LoadBalancer evenly distributes requests across all
+         /// its registered Availability Zones that contain instances. As a result,
+         /// the client must ensure that its LoadBalancer is appropriately scaled
+         /// for each registered Availability Zone. </para> <para><b>NOTE:</b> The
+         /// new EC2 Availability Zones to be added must be in the same EC2 Region
+         /// as the Availability Zones for which the LoadBalancer was created.
+         /// </para>
+         /// </summary>
+         /// 
+         /// <param name="enableAvailabilityZonesForLoadBalancerRequest">Container
+         ///           for the necessary parameters to execute the
+         ///           EnableAvailabilityZonesForLoadBalancer service method on
+         ///           AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the EnableAvailabilityZonesForLoadBalancer
+         ///         service method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="LoadBalancerNotFoundException"/>
+        public EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest) 
+        {           
+            IRequest<EnableAvailabilityZonesForLoadBalancerRequest> request = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller().Marshall(enableAvailabilityZonesForLoadBalancerRequest);
+            EnableAvailabilityZonesForLoadBalancerResponse response = Invoke<EnableAvailabilityZonesForLoadBalancerRequest, EnableAvailabilityZonesForLoadBalancerResponse> (request, this.signer, EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert RegisterInstancesWithLoadBalancerRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertRegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "RegisterInstancesWithLoadBalancer";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            List<Instance> registerInstancesWithLoadBalancerRequestInstancesList = request.Instances;
-            int registerInstancesWithLoadBalancerRequestInstancesListIndex = 1;
-            foreach (Instance registerInstancesWithLoadBalancerRequestInstances in registerInstancesWithLoadBalancerRequestInstancesList)
-            {
-                if (registerInstancesWithLoadBalancerRequestInstances.IsSetInstanceId())
-                {
-                    parameters[String.Concat("Instances", ".member.", registerInstancesWithLoadBalancerRequestInstancesListIndex, ".", "InstanceId")] = registerInstancesWithLoadBalancerRequestInstances.InstanceId;
-                }
-
-                registerInstancesWithLoadBalancerRequestInstancesListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Returns the current state of the instances of the specified
+         /// LoadBalancer. If no instances are specified, the state of all the
+         /// instances for the LoadBalancer is returned. </para> <para><b>NOTE:</b>
+         /// The client must have created the specified input LoadBalancer in order
+         /// to retrieve this information; the client must provide the same account
+         /// credentials as those that were used to create the LoadBalancer.
+         /// </para>
+         /// </summary>
+         /// 
+         /// <param name="describeInstanceHealthRequest">Container for the
+         ///           necessary parameters to execute the DescribeInstanceHealth service
+         ///           method on AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the DescribeInstanceHealth service method,
+         ///         as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="InvalidInstanceException"/>
+         /// <exception cref="LoadBalancerNotFoundException"/>
+        public DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest describeInstanceHealthRequest) 
+        {           
+            IRequest<DescribeInstanceHealthRequest> request = new DescribeInstanceHealthRequestMarshaller().Marshall(describeInstanceHealthRequest);
+            DescribeInstanceHealthResponse response = Invoke<DescribeInstanceHealthRequest, DescribeInstanceHealthResponse> (request, this.signer, DescribeInstanceHealthResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert CreateLoadBalancerRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertCreateLoadBalancer(CreateLoadBalancerRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "CreateLoadBalancer";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            List<Listener> createLoadBalancerRequestListenersList = request.Listeners;
-            int createLoadBalancerRequestListenersListIndex = 1;
-            foreach (Listener createLoadBalancerRequestListeners in createLoadBalancerRequestListenersList)
-            {
-                if (createLoadBalancerRequestListeners.IsSetProtocol())
-                {
-                    parameters[String.Concat("Listeners", ".member.", createLoadBalancerRequestListenersListIndex, ".", "Protocol")] = createLoadBalancerRequestListeners.Protocol;
-                }
-                if (createLoadBalancerRequestListeners.IsSetLoadBalancerPort())
-                {
-                    parameters[String.Concat("Listeners", ".member.", createLoadBalancerRequestListenersListIndex, ".", "LoadBalancerPort")] = createLoadBalancerRequestListeners.LoadBalancerPort.ToString();
-                }
-                if (createLoadBalancerRequestListeners.IsSetInstancePort())
-                {
-                    parameters[String.Concat("Listeners", ".member.", createLoadBalancerRequestListenersListIndex, ".", "InstancePort")] = createLoadBalancerRequestListeners.InstancePort.ToString();
-                }
-
-                createLoadBalancerRequestListenersListIndex++;
-            }
-            List<string> createLoadBalancerRequestAvailabilityZonesList = request.AvailabilityZones;
-            int createLoadBalancerRequestAvailabilityZonesListIndex = 1;
-            foreach (string createLoadBalancerRequestAvailabilityZones in createLoadBalancerRequestAvailabilityZonesList)
-            {
-                parameters[String.Concat("AvailabilityZones", ".member.", createLoadBalancerRequestAvailabilityZonesListIndex)] = createLoadBalancerRequestAvailabilityZones;
-                createLoadBalancerRequestAvailabilityZonesListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Deletes a policy from the LoadBalancer. The specified policy
+         /// must not be enabled for any listeners. </para>
+         /// </summary>
+         /// 
+         /// <param name="deleteLoadBalancerPolicyRequest">Container for the
+         ///           necessary parameters to execute the DeleteLoadBalancerPolicy service
+         ///           method on AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the DeleteLoadBalancerPolicy service
+         ///         method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="LoadBalancerNotFoundException"/>
+         /// <exception cref="InvalidConfigurationRequestException"/>
+        public DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest) 
+        {           
+            IRequest<DeleteLoadBalancerPolicyRequest> request = new DeleteLoadBalancerPolicyRequestMarshaller().Marshall(deleteLoadBalancerPolicyRequest);
+            DeleteLoadBalancerPolicyResponse response = Invoke<DeleteLoadBalancerPolicyRequest, DeleteLoadBalancerPolicyResponse> (request, this.signer, DeleteLoadBalancerPolicyResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert EnableAvailabilityZonesForLoadBalancerRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertEnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "EnableAvailabilityZonesForLoadBalancer";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            List<string> enableAvailabilityZonesForLoadBalancerRequestAvailabilityZonesList = request.AvailabilityZones;
-            int enableAvailabilityZonesForLoadBalancerRequestAvailabilityZonesListIndex = 1;
-            foreach (string enableAvailabilityZonesForLoadBalancerRequestAvailabilityZones in enableAvailabilityZonesForLoadBalancerRequestAvailabilityZonesList)
-            {
-                parameters[String.Concat("AvailabilityZones", ".member.", enableAvailabilityZonesForLoadBalancerRequestAvailabilityZonesListIndex)] = enableAvailabilityZonesForLoadBalancerRequestAvailabilityZones;
-                enableAvailabilityZonesForLoadBalancerRequestAvailabilityZonesListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Removes the specified EC2 Availability Zones from the set of
+         /// configured Availability Zones for the LoadBalancer. </para> <para>
+         /// There must be at least one Availability Zone registered with a
+         /// LoadBalancer at all times. A client cannot remove all the Availability
+         /// Zones from a LoadBalancer. Once an Availability Zone is removed, all
+         /// the instances registered with the LoadBalancer that are in the removed
+         /// Availability Zone go into the OutOfService state. Upon Availability
+         /// Zone removal, the LoadBalancer attempts to equally balance the traffic
+         /// among its remaining usable Availability Zones. Trying to remove an
+         /// Availability Zone that was not associated with the LoadBalancer does
+         /// nothing. </para> <para><b>NOTE:</b> In order for this call to be
+         /// successful, the client must have created the LoadBalancer. The client
+         /// must provide the same account credentials as those that were used to
+         /// create the LoadBalancer. </para>
+         /// </summary>
+         /// 
+         /// <param name="disableAvailabilityZonesForLoadBalancerRequest">Container
+         ///           for the necessary parameters to execute the
+         ///           DisableAvailabilityZonesForLoadBalancer service method on
+         ///           AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the DisableAvailabilityZonesForLoadBalancer
+         ///         service method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="LoadBalancerNotFoundException"/>
+         /// <exception cref="InvalidConfigurationRequestException"/>
+        public DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest disableAvailabilityZonesForLoadBalancerRequest) 
+        {           
+            IRequest<DisableAvailabilityZonesForLoadBalancerRequest> request = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller().Marshall(disableAvailabilityZonesForLoadBalancerRequest);
+            DisableAvailabilityZonesForLoadBalancerResponse response = Invoke<DisableAvailabilityZonesForLoadBalancerRequest, DisableAvailabilityZonesForLoadBalancerResponse> (request, this.signer, DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DisableAvailabilityZonesForLoadBalancerRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DisableAvailabilityZonesForLoadBalancer";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            List<string> disableAvailabilityZonesForLoadBalancerRequestAvailabilityZonesList = request.AvailabilityZones;
-            int disableAvailabilityZonesForLoadBalancerRequestAvailabilityZonesListIndex = 1;
-            foreach (string disableAvailabilityZonesForLoadBalancerRequestAvailabilityZones in disableAvailabilityZonesForLoadBalancerRequestAvailabilityZonesList)
-            {
-                parameters[String.Concat("AvailabilityZones", ".member.", disableAvailabilityZonesForLoadBalancerRequestAvailabilityZonesListIndex)] = disableAvailabilityZonesForLoadBalancerRequestAvailabilityZones;
-                disableAvailabilityZonesForLoadBalancerRequestAvailabilityZonesListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Deregisters instances from the LoadBalancer. Once the instance
+         /// is deregistered, it will stop receiving traffic from the LoadBalancer.
+         /// </para> <para> In order to successfully call this API, the same
+         /// account credentials as those used to create the LoadBalancer must be
+         /// provided. </para>
+         /// </summary>
+         /// 
+         /// <param name="deregisterInstancesFromLoadBalancerRequest">Container for
+         ///           the necessary parameters to execute the
+         ///           DeregisterInstancesFromLoadBalancer service method on
+         ///           AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the DeregisterInstancesFromLoadBalancer
+         ///         service method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="InvalidInstanceException"/>
+         /// <exception cref="LoadBalancerNotFoundException"/>
+        public DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest) 
+        {           
+            IRequest<DeregisterInstancesFromLoadBalancerRequest> request = new DeregisterInstancesFromLoadBalancerRequestMarshaller().Marshall(deregisterInstancesFromLoadBalancerRequest);
+            DeregisterInstancesFromLoadBalancerResponse response = Invoke<DeregisterInstancesFromLoadBalancerRequest, DeregisterInstancesFromLoadBalancerResponse> (request, this.signer, DeregisterInstancesFromLoadBalancerResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DescribeInstanceHealthRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDescribeInstanceHealth(DescribeInstanceHealthRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DescribeInstanceHealth";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            List<Instance> describeInstanceHealthRequestInstancesList = request.Instances;
-            int describeInstanceHealthRequestInstancesListIndex = 1;
-            foreach (Instance describeInstanceHealthRequestInstances in describeInstanceHealthRequestInstancesList)
-            {
-                if (describeInstanceHealthRequestInstances.IsSetInstanceId())
-                {
-                    parameters[String.Concat("Instances", ".member.", describeInstanceHealthRequestInstancesListIndex, ".", "InstanceId")] = describeInstanceHealthRequestInstances.InstanceId;
-                }
-
-                describeInstanceHealthRequestInstancesListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Deletes listeners from the LoadBalancer for the specified port.
+         /// </para>
+         /// </summary>
+         /// 
+         /// <param name="deleteLoadBalancerListenersRequest">Container for the
+         ///           necessary parameters to execute the DeleteLoadBalancerListeners
+         ///           service method on AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the DeleteLoadBalancerListeners service
+         ///         method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="LoadBalancerNotFoundException"/>
+        public DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest) 
+        {           
+            IRequest<DeleteLoadBalancerListenersRequest> request = new DeleteLoadBalancerListenersRequestMarshaller().Marshall(deleteLoadBalancerListenersRequest);
+            DeleteLoadBalancerListenersResponse response = Invoke<DeleteLoadBalancerListenersRequest, DeleteLoadBalancerListenersResponse> (request, this.signer, DeleteLoadBalancerListenersResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DescribeLoadBalancersRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDescribeLoadBalancers(DescribeLoadBalancersRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DescribeLoadBalancers";
-            List<string> describeLoadBalancersRequestLoadBalancerNamesList = request.LoadBalancerNames;
-            int describeLoadBalancersRequestLoadBalancerNamesListIndex = 1;
-            foreach (string describeLoadBalancersRequestLoadBalancerNames in describeLoadBalancersRequestLoadBalancerNamesList)
-            {
-                parameters[String.Concat("LoadBalancerNames", ".member.", describeLoadBalancersRequestLoadBalancerNamesListIndex)] = describeLoadBalancersRequestLoadBalancerNames;
-                describeLoadBalancersRequestLoadBalancerNamesListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Deletes the specified LoadBalancer. </para> <para> If
+         /// attempting to recreate the LoadBalancer, the client must reconfigure
+         /// all the settings. The DNS name associated with a deleted LoadBalancer
+         /// will no longer be usable. Once deleted, the name and associated DNS
+         /// record of the LoadBalancer no longer exist and traffic sent to any of
+         /// its IP addresses will no longer be delivered to client instances. The
+         /// client will not receive the same DNS name even if a new LoadBalancer
+         /// with same LoadBalancerName is created. </para> <para> To successfully
+         /// call this API, the client must provide the same account credentials as
+         /// were used to create the LoadBalancer. </para> <para><b>NOTE:</b> By
+         /// design, if the LoadBalancer does not exist or has already been
+         /// deleted, DeleteLoadBalancer still succeeds. </para>
+         /// </summary>
+         /// 
+         /// <param name="deleteLoadBalancerRequest">Container for the necessary
+         ///           parameters to execute the DeleteLoadBalancer service method on
+         ///           AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the DeleteLoadBalancer service method, as
+         ///         returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+        public DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest) 
+        {           
+            IRequest<DeleteLoadBalancerRequest> request = new DeleteLoadBalancerRequestMarshaller().Marshall(deleteLoadBalancerRequest);
+            DeleteLoadBalancerResponse response = Invoke<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse> (request, this.signer, DeleteLoadBalancerResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert CreateAppCookieStickinessPolicyRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertCreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "CreateAppCookieStickinessPolicy";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            if (request.IsSetPolicyName())
-            {
-                parameters["PolicyName"] = request.PolicyName;
-            }
-            if (request.IsSetCookieName())
-            {
-                parameters["CookieName"] = request.CookieName;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Generates a stickiness policy with sticky session lifetimes
+         /// that follow that of an application-generated cookie. This policy can
+         /// only be associated with HTTP listeners. </para> <para> This policy is
+         /// similar to the policy created by CreateLBCookieStickinessPolicy,
+         /// except that the lifetime of the special Elastic Load Balancing cookie
+         /// follows the lifetime of the application-generated cookie specified in
+         /// the policy configuration. The load balancer only inserts a new
+         /// stickiness cookie when the application response includes a new
+         /// application cookie. </para> <para> If the application cookie is
+         /// explicitly removed or expires, the session stops being sticky until a
+         /// new application cookie is issued. </para>
+         /// </summary>
+         /// 
+         /// <param name="createAppCookieStickinessPolicyRequest">Container for the
+         ///           necessary parameters to execute the CreateAppCookieStickinessPolicy
+         ///           service method on AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the CreateAppCookieStickinessPolicy service
+         ///         method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="TooManyPoliciesException"/>
+         /// <exception cref="DuplicatePolicyNameException"/>
+         /// <exception cref="LoadBalancerNotFoundException"/>
+         /// <exception cref="InvalidConfigurationRequestException"/>
+        public CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest) 
+        {           
+            IRequest<CreateAppCookieStickinessPolicyRequest> request = new CreateAppCookieStickinessPolicyRequestMarshaller().Marshall(createAppCookieStickinessPolicyRequest);
+            CreateAppCookieStickinessPolicyResponse response = Invoke<CreateAppCookieStickinessPolicyRequest, CreateAppCookieStickinessPolicyResponse> (request, this.signer, CreateAppCookieStickinessPolicyResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert CreateLBCookieStickinessPolicyRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertCreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "CreateLBCookieStickinessPolicy";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            if (request.IsSetPolicyName())
-            {
-                parameters["PolicyName"] = request.PolicyName;
-            }
-            if (request.IsSetCookieExpirationPeriod())
-            {
-                parameters["CookieExpirationPeriod"] = request.CookieExpirationPeriod.ToString();
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Adds new instances to the LoadBalancer. </para> <para> Once the
+         /// instance is registered, it starts receiving traffic and requests from
+         /// the LoadBalancer. Any instance that is not in any of the Availability
+         /// Zones registered for the LoadBalancer will be moved to the
+         /// <i>OutOfService</i> state. It will move to the <i>InService</i> state
+         /// when the Availability Zone is added to the LoadBalancer. </para>
+         /// <para><b>NOTE:</b> In order for this call to be successful, the client
+         /// must have created the LoadBalancer. The client must provide the same
+         /// account credentials as those that were used to create the
+         /// LoadBalancer. </para> <para><b>NOTE:</b> Completion of this API does
+         /// not guarantee that operation has completed. Rather, it means that the
+         /// request has been registered and the changes will happen shortly.
+         /// </para>
+         /// </summary>
+         /// 
+         /// <param name="registerInstancesWithLoadBalancerRequest">Container for
+         ///           the necessary parameters to execute the
+         ///           RegisterInstancesWithLoadBalancer service method on
+         ///           AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the RegisterInstancesWithLoadBalancer
+         ///         service method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="InvalidInstanceException"/>
+         /// <exception cref="LoadBalancerNotFoundException"/>
+        public RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest) 
+        {           
+            IRequest<RegisterInstancesWithLoadBalancerRequest> request = new RegisterInstancesWithLoadBalancerRequestMarshaller().Marshall(registerInstancesWithLoadBalancerRequest);
+            RegisterInstancesWithLoadBalancerResponse response = Invoke<RegisterInstancesWithLoadBalancerRequest, RegisterInstancesWithLoadBalancerResponse> (request, this.signer, RegisterInstancesWithLoadBalancerResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DeleteLoadBalancerPolicyRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DeleteLoadBalancerPolicy";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            if (request.IsSetPolicyName())
-            {
-                parameters["PolicyName"] = request.PolicyName;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Associates, updates, or disables a policy with a listener on
+         /// the load balancer. Currently only zero (0) or one (1) policy can be
+         /// associated with a listener. </para>
+         /// </summary>
+         /// 
+         /// <param name="setLoadBalancerPoliciesOfListenerRequest">Container for
+         ///           the necessary parameters to execute the
+         ///           SetLoadBalancerPoliciesOfListener service method on
+         ///           AmazonElasticLoadBalancing.</param>
+         /// 
+         /// <returns>The response from the SetLoadBalancerPoliciesOfListener
+         ///         service method, as returned by AmazonElasticLoadBalancing.</returns>
+         /// 
+         /// <exception cref="PolicyNotFoundException"/>
+         /// <exception cref="ListenerNotFoundException"/>
+         /// <exception cref="LoadBalancerNotFoundException"/>
+         /// <exception cref="InvalidConfigurationRequestException"/>
+        public SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest) 
+        {           
+            IRequest<SetLoadBalancerPoliciesOfListenerRequest> request = new SetLoadBalancerPoliciesOfListenerRequestMarshaller().Marshall(setLoadBalancerPoliciesOfListenerRequest);
+            SetLoadBalancerPoliciesOfListenerResponse response = Invoke<SetLoadBalancerPoliciesOfListenerRequest, SetLoadBalancerPoliciesOfListenerResponse> (request, this.signer, SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.GetInstance());
+            return response;
         }
-
-        /**
-         * Convert SetLoadBalancerPoliciesOfListenerRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertSetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "SetLoadBalancerPoliciesOfListener";
-            if (request.IsSetLoadBalancerName())
-            {
-                parameters["LoadBalancerName"] = request.LoadBalancerName;
-            }
-            if (request.IsSetLoadBalancerPort())
-            {
-                parameters["LoadBalancerPort"] = request.LoadBalancerPort.ToString();
-            }
-            List<string> setLoadBalancerPoliciesOfListenerRequestPolicyNamesList = request.PolicyNames;
-            int setLoadBalancerPoliciesOfListenerRequestPolicyNamesListIndex = 1;
-            foreach (string setLoadBalancerPoliciesOfListenerRequestPolicyNames in setLoadBalancerPoliciesOfListenerRequestPolicyNamesList)
-            {
-                parameters[String.Concat("PolicyNames", ".member.", setLoadBalancerPoliciesOfListenerRequestPolicyNamesListIndex)] = setLoadBalancerPoliciesOfListenerRequestPolicyNames;
-                setLoadBalancerPoliciesOfListenerRequestPolicyNamesListIndex++;
-            }
-
-            return parameters;
-        }
-
-        /*
-         *  Transforms response based on xslt template
-         */
-        private static string Transform(string responseBody, Type t)
-        {
-            XslCompiledTransform transformer = new XslCompiledTransform();
-
-            // Build the name of the xslt transform to apply to the response
-            char[] seps = { ',' };
-
-            Assembly assembly = Assembly.GetAssembly(t);
-            string assemblyName = assembly.FullName;
-            assemblyName = assemblyName.Split(seps)[0];
-
-            string ns = t.Namespace;
-            string resourceName = String.Concat(
-                assemblyName,
-                ".",
-                ns,
-                ".Model.",
-                "ResponseTransformer.xslt"
-                );
-            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
-            {
-                transformer.Load(xmlReader);
-
-                StringBuilder sb = new StringBuilder(1024);
-                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
-                {
-                    using (StringWriter sw = new StringWriter(sb))
-                    {
-                        transformer.Transform(xmlR, null, sw);
-                        return sb.ToString();
-                    }
-                }
-            }
-        }
-
-        #endregion
+    
     }
-}
+}   
+    

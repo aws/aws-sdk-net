@@ -25,9 +25,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMFADevices operation.
-    /// <para>Lists the MFA devices associated with the specified user.</para>
-    /// <para>You can paginate the results using the <c>MaxItems</c> and
-    /// <c>Marker</c> parameters.</para>
+    /// <para>Lists the MFA devices associated with the specified User
+    /// name.</para> <para>You can paginate the results using the
+    /// <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListMFADevices"/>
     public class ListMFADevicesRequest : AmazonWebServiceRequest
@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         private int? maxItems;
 
         /// <summary>
-        /// Name of the user whose MFA devices you want to list.
+        /// Name of the User whose MFA devices you want to list.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -77,10 +77,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Use this only when paginating results, and only in a follow-up request
-        /// after you've received a response where the results are truncated. Set
-        /// this to the value of the <c>Marker</c> element in the response you
-        /// just received.
+        /// Use this only when paginating results, and only in a subsequent
+        /// request after you've received a response where the results are
+        /// truncated. Set it to the value of the <c>Marker</c> element in the
+        /// response you just received.
         ///  
         /// <para>
         /// <b>Constraints:</b>

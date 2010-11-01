@@ -1,330 +1,316 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    ///<summary>
-    ///Information about the DB Parameter.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class Parameter
+    /// <summary>
+    /// <para> </para>
+    /// </summary>
+    public class Parameter  
     {
-        private string parameterNameField;
-        private string parameterValueField;
-        private string descriptionField;
-        private string sourceField;
-        private string applyTypeField;
-        private string dataTypeField;
-        private string allowedValuesField;
-        private bool? isModifiableField;
-        private string applyMethodField;
+        
+        private string parameterName;
+        private string parameterValue;
+        private string description;
+        private string source;
+        private string applyType;
+        private string dataType;
+        private string allowedValues;
+        private bool? isModifiable;
+        private string minimumEngineVersion;
+        private string applyMethod;
 
         /// <summary>
-        /// Gets and sets the ParameterName property.
-        /// The name of the parameter.
+        /// Specifies the name of the parameter.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ParameterName")]
         public string ParameterName
         {
-            get { return this.parameterNameField; }
-            set { this.parameterNameField = value; }
+            get { return this.parameterName; }
+            set { this.parameterName = value; }
         }
 
         /// <summary>
         /// Sets the ParameterName property
         /// </summary>
-        /// <param name="parameterName">The name of the parameter.</param>
+        /// <param name="parameterName">The value to set for the ParameterName property </param>
         /// <returns>this instance</returns>
         public Parameter WithParameterName(string parameterName)
         {
-            this.parameterNameField = parameterName;
+            this.parameterName = parameterName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if ParameterName property is set
-        /// </summary>
-        /// <returns>true if ParameterName property is set</returns>
-        public bool IsSetParameterName()
+            
+        // Check to see if ParameterName property is set
+        internal bool IsSetParameterName()
         {
-            return this.parameterNameField != null;
+            return this.parameterName != null;      
         }
 
         /// <summary>
-        /// Gets and sets the ParameterValue property.
+        /// Specifies the value of the parameter.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ParameterValue")]
         public string ParameterValue
         {
-            get { return this.parameterValueField; }
-            set { this.parameterValueField = value; }
+            get { return this.parameterValue; }
+            set { this.parameterValue = value; }
         }
 
         /// <summary>
         /// Sets the ParameterValue property
         /// </summary>
-        /// <param name="parameterValue">ParameterValue property</param>
+        /// <param name="parameterValue">The value to set for the ParameterValue property </param>
         /// <returns>this instance</returns>
         public Parameter WithParameterValue(string parameterValue)
         {
-            this.parameterValueField = parameterValue;
+            this.parameterValue = parameterValue;
             return this;
         }
-
-        /// <summary>
-        /// Checks if ParameterValue property is set
-        /// </summary>
-        /// <returns>true if ParameterValue property is set</returns>
-        public bool IsSetParameterValue()
+            
+        // Check to see if ParameterValue property is set
+        internal bool IsSetParameterValue()
         {
-            return this.parameterValueField != null;
+            return this.parameterValue != null;         
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
-        /// A description of the parameter.
+        /// Provides a description of the parameter.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField; }
-            set { this.descriptionField = value; }
+            get { return this.description; }
+            set { this.description = value; }
         }
 
         /// <summary>
         /// Sets the Description property
         /// </summary>
-        /// <param name="description">A description of the parameter.</param>
+        /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
         public Parameter WithDescription(string description)
         {
-            this.descriptionField = description;
+            this.description = description;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Description property is set
-        /// </summary>
-        /// <returns>true if Description property is set</returns>
-        public bool IsSetDescription()
+            
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
         {
-            return this.descriptionField != null;
+            return this.description != null;        
         }
 
         /// <summary>
-        /// Gets and sets the Source property.
-        /// Indicates the source of the parameter value. User indicates that you set this value, EngineDefault indicates it
-        /// is the default value specified by the database engine, and System indicates that it is a value optimized based on
-        /// the DBInstanceClass or AllocatedStorage of the DB Instance. Valid Values: user | system | engine-default.
+        /// Indicates the source of the parameter value.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Source")]
         public string Source
         {
-            get { return this.sourceField; }
-            set { this.sourceField = value; }
+            get { return this.source; }
+            set { this.source = value; }
         }
 
         /// <summary>
         /// Sets the Source property
         /// </summary>
-        /// <param name="source">Indicates the source of the parameter value. User indicates that you set this value, EngineDefault indicates it
-        /// is the default value specified by the database engine, and System indicates that it is a value optimized based on
-        /// the DBInstanceClass or AllocatedStorage of the DB Instance. Valid Values: user | system | engine-default.</param>
+        /// <param name="source">The value to set for the Source property </param>
         /// <returns>this instance</returns>
         public Parameter WithSource(string source)
         {
-            this.sourceField = source;
+            this.source = source;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Source property is set
-        /// </summary>
-        /// <returns>true if Source property is set</returns>
-        public bool IsSetSource()
+            
+        // Check to see if Source property is set
+        internal bool IsSetSource()
         {
-            return this.sourceField != null;
+            return this.source != null;         
         }
 
         /// <summary>
-        /// Gets and sets the ApplyType property.
-        /// The engine specific parameter type. Valid Values: static | dynamic.
+        /// Specifies the engine specific parameters type.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ApplyType")]
         public string ApplyType
         {
-            get { return this.applyTypeField; }
-            set { this.applyTypeField = value; }
+            get { return this.applyType; }
+            set { this.applyType = value; }
         }
 
         /// <summary>
         /// Sets the ApplyType property
         /// </summary>
-        /// <param name="applyType">The engine specific parameter type. Valid Values: static | dynamic.</param>
+        /// <param name="applyType">The value to set for the ApplyType property </param>
         /// <returns>this instance</returns>
         public Parameter WithApplyType(string applyType)
         {
-            this.applyTypeField = applyType;
+            this.applyType = applyType;
             return this;
         }
-
-        /// <summary>
-        /// Checks if ApplyType property is set
-        /// </summary>
-        /// <returns>true if ApplyType property is set</returns>
-        public bool IsSetApplyType()
+            
+        // Check to see if ApplyType property is set
+        internal bool IsSetApplyType()
         {
-            return this.applyTypeField != null;
+            return this.applyType != null;      
         }
 
         /// <summary>
-        /// Gets and sets the DataType property.
-        /// The valid data type for the parameter. Valid Values: integer | string | boolean.
+        /// Specifies the valid data type for the parameter.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DataType")]
         public string DataType
         {
-            get { return this.dataTypeField; }
-            set { this.dataTypeField = value; }
+            get { return this.dataType; }
+            set { this.dataType = value; }
         }
 
         /// <summary>
         /// Sets the DataType property
         /// </summary>
-        /// <param name="dataType">The valid data type for the parameter. Valid Values: integer | string | boolean.</param>
+        /// <param name="dataType">The value to set for the DataType property </param>
         /// <returns>this instance</returns>
         public Parameter WithDataType(string dataType)
         {
-            this.dataTypeField = dataType;
+            this.dataType = dataType;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DataType property is set
-        /// </summary>
-        /// <returns>true if DataType property is set</returns>
-        public bool IsSetDataType()
+            
+        // Check to see if DataType property is set
+        internal bool IsSetDataType()
         {
-            return this.dataTypeField != null;
+            return this.dataType != null;       
         }
 
         /// <summary>
-        /// Gets and sets the AllowedValues property.
-        /// The valid range of values for this parameter.
+        /// Specifies the valid range of values for the parameter.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "AllowedValues")]
         public string AllowedValues
         {
-            get { return this.allowedValuesField; }
-            set { this.allowedValuesField = value; }
+            get { return this.allowedValues; }
+            set { this.allowedValues = value; }
         }
 
         /// <summary>
         /// Sets the AllowedValues property
         /// </summary>
-        /// <param name="allowedValues">The valid range of values for this parameter.</param>
+        /// <param name="allowedValues">The value to set for the AllowedValues property </param>
         /// <returns>this instance</returns>
         public Parameter WithAllowedValues(string allowedValues)
         {
-            this.allowedValuesField = allowedValues;
+            this.allowedValues = allowedValues;
             return this;
         }
-
-        /// <summary>
-        /// Checks if AllowedValues property is set
-        /// </summary>
-        /// <returns>true if AllowedValues property is set</returns>
-        public bool IsSetAllowedValues()
+            
+        // Check to see if AllowedValues property is set
+        internal bool IsSetAllowedValues()
         {
-            return this.allowedValuesField != null;
+            return this.allowedValues != null;      
         }
 
         /// <summary>
-        /// Gets and sets the IsModifiable property.
-        /// Indicates whether the parameter can be modified. Some parameters have security or operational
+        /// Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
+        /// can be modified. Some parameters have security or operational
         /// implications that prevent them from being changed.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "IsModifiable")]
         public bool IsModifiable
         {
-            get { return this.isModifiableField.GetValueOrDefault(); }
-            set { this.isModifiableField = value; }
+            get { return this.isModifiable ?? default(bool); }
+            set { this.isModifiable = value; }
         }
 
         /// <summary>
         /// Sets the IsModifiable property
         /// </summary>
-        /// <param name="isModifiable">Indicates whether the parameter can be modified. Some parameters have security or operational
-        /// implications that prevent them from being changed.</param>
+        /// <param name="isModifiable">The value to set for the IsModifiable property </param>
         /// <returns>this instance</returns>
         public Parameter WithIsModifiable(bool isModifiable)
         {
-            this.isModifiableField = isModifiable;
+            this.isModifiable = isModifiable;
             return this;
         }
-
-        /// <summary>
-        /// Checks if IsModifiable property is set
-        /// </summary>
-        /// <returns>true if IsModifiable property is set</returns>
-        public bool IsSetIsModifiable()
+            
+        // Check to see if IsModifiable property is set
+        internal bool IsSetIsModifiable()
         {
-            return this.isModifiableField.HasValue;
+            return this.isModifiable.HasValue;      
+        }
+        public string MinimumEngineVersion
+        {
+            get { return this.minimumEngineVersion; }
+            set { this.minimumEngineVersion = value; }
         }
 
         /// <summary>
-        /// Gets and sets the ApplyMethod property.
-        /// Indicates when to apply parameter updates. Valid Values for MySQL5.1: immediate | pending-reboot
+        /// Sets the MinimumEngineVersion property
         /// </summary>
-        [XmlElementAttribute(ElementName = "ApplyMethod")]
+        /// <param name="minimumEngineVersion">The value to set for the MinimumEngineVersion property </param>
+        /// <returns>this instance</returns>
+        public Parameter WithMinimumEngineVersion(string minimumEngineVersion)
+        {
+            this.minimumEngineVersion = minimumEngineVersion;
+            return this;
+        }
+            
+        // Check to see if MinimumEngineVersion property is set
+        internal bool IsSetMinimumEngineVersion()
+        {
+            return this.minimumEngineVersion != null;       
+        }
+
+        /// <summary>
+        /// Indicates when to apply parameter updates.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>immediate, pending-reboot</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string ApplyMethod
         {
-            get { return this.applyMethodField; }
-            set { this.applyMethodField = value; }
+            get { return this.applyMethod; }
+            set { this.applyMethod = value; }
         }
 
         /// <summary>
         /// Sets the ApplyMethod property
         /// </summary>
-        /// <param name="applyMethod">Indicates when to apply parameter updates. Valid Values for MySQL5.1: immediate | pending-reboot</param>
+        /// <param name="applyMethod">The value to set for the ApplyMethod property </param>
         /// <returns>this instance</returns>
         public Parameter WithApplyMethod(string applyMethod)
         {
-            this.applyMethodField = applyMethod;
+            this.applyMethod = applyMethod;
             return this;
         }
-
-        /// <summary>
-        /// Checks if ApplyMethod property is set
-        /// </summary>
-        /// <returns>true if ApplyMethod property is set</returns>
-        public bool IsSetApplyMethod()
+            
+        // Check to see if ApplyMethod property is set
+        internal bool IsSetApplyMethod()
         {
-            return this.applyMethodField != null;
+            return this.applyMethod != null;        
         }
-
     }
 }

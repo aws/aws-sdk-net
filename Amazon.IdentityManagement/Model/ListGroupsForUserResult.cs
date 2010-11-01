@@ -28,7 +28,7 @@ namespace Amazon.IdentityManagement.Model
     {
         
         private List<Group> groups = new List<Group>();
-        private bool isTruncated;
+        private bool? isTruncated;
         private string marker;
 
         /// <summary>
@@ -40,24 +40,60 @@ namespace Amazon.IdentityManagement.Model
             get { return this.groups; }
             set { this.groups = value; }
         }
+        /// <summary>
+        /// Adds elements to the Groups collection
+        /// </summary>
+        /// <param name="groups">The values to add to the Groups collection </param>
+        /// <returns>this instance</returns>
+        public ListGroupsForUserResult WithGroups(params Group[] groups)
+        {
+            foreach (Group element in groups)
+            {
+                this.groups.Add(element);
+            }
+
+            return this;
+        }
+        // Check to see if Groups property is set
+        internal bool IsSetGroups()
+        {
+            return this.groups != null;         
+        }
 
         /// <summary>
         /// A flag that indicates whether there are more groups to list. If your
-        /// results were truncated, you can make a follow-up pagination request
+        /// results were truncated, you can make a subsequent pagination request
         /// using the <c>Marker</c> request parameter to retrieve more groups in
         /// the list.
         ///  
         /// </summary>
         public bool IsTruncated
         {
-            get { return this.isTruncated; }
+            get { return this.isTruncated ?? default(bool); }
             set { this.isTruncated = value; }
+        }
+
+        /// <summary>
+        /// Sets the IsTruncated property
+        /// </summary>
+        /// <param name="isTruncated">The value to set for the IsTruncated property </param>
+        /// <returns>this instance</returns>
+        public ListGroupsForUserResult WithIsTruncated(bool isTruncated)
+        {
+            this.isTruncated = isTruncated;
+            return this;
+        }
+            
+        // Check to see if IsTruncated property is set
+        internal bool IsSetIsTruncated()
+        {
+            return this.isTruncated.HasValue;       
         }
 
         /// <summary>
         /// If <c>IsTruncated</c> is <c>true</c>, this element is present and
         /// contains the value to use for the <c>Marker</c> parameter in a
-        /// follow-up pagination request.
+        /// subsequent pagination request.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -77,6 +113,23 @@ namespace Amazon.IdentityManagement.Model
         {
             get { return this.marker; }
             set { this.marker = value; }
+        }
+
+        /// <summary>
+        /// Sets the Marker property
+        /// </summary>
+        /// <param name="marker">The value to set for the Marker property </param>
+        /// <returns>this instance</returns>
+        public ListGroupsForUserResult WithMarker(string marker)
+        {
+            this.marker = marker;
+            return this;
+        }
+            
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this.marker != null;         
         }
     }
 }

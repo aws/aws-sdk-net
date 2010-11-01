@@ -27,15 +27,13 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the PutGroupPolicy operation.
     /// <para>Adds (or updates) a policy document associated with the
     /// specified group. For information about how to write a policy, refer to
-    /// the <a href="http://aws.amazon.com/documentation/"> AWS Identity and
-    /// Access Management User Guide </a> .</para> <para>For information about
-    /// limits on the number of policies you can associate with a group, see
-    /// Limitations on AWS IAM Entities in the <a
-    /// href="http://aws.amazon.com/documentation/"> AWS Identity and Access
-    /// Management User Guide </a> .</para> <para><b>NOTE:</b>Because policy
-    /// documents can be large, you should use POST rather than GET when
-    /// calling PutGroupPolicy. For more information, see Using the Query API
-    /// in the AWS Identity and Access Management User Guide.</para>
+    /// Using AWS Identity and Access Management.</para> <para>For information
+    /// about limits on the number of policies you can associate with a group,
+    /// see Limitations on IAM Entities in Using AWS Identity and Access
+    /// Management.</para> <para><b>NOTE:</b>Because policy documents can be
+    /// large, you should use POST rather than GET when calling
+    /// PutGroupPolicy. For more information, see Using the Query API in Using
+    /// AWS Identity and Access Management.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.PutGroupPolicy"/>
     public class PutGroupPolicyRequest : AmazonWebServiceRequest
@@ -130,6 +128,10 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 131072</description>
+        ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
         ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>

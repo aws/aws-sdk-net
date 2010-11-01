@@ -82,6 +82,11 @@ namespace Amazon.Runtime.Internal.Transform
                 if (xmlReader.NodeType == XmlNodeType.None)
                     xmlReader.Read();
 
+                while (xmlReader.IsEmptyElement)
+                {
+                    xmlReader.Read();
+                }
+
                 switch (xmlReader.NodeType)
                 {
                     case XmlNodeType.EndElement:
@@ -166,7 +171,7 @@ namespace Amazon.Runtime.Internal.Transform
                 }
             }
             return (startingStackDepth == this.CurrentDepth 
-                    && stackString.EndsWith(expression));
+                    && stackString.EndsWith("/" + expression));
         }
 
         /// <summary>

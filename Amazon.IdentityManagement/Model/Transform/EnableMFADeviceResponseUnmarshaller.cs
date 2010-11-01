@@ -27,13 +27,15 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// </summary>
     internal class EnableMFADeviceResponseUnmarshaller : IResponseUnmarshaller<EnableMFADeviceResponse, UnmarshallerContext> {
 
-        public EnableMFADeviceResponse Unmarshall(UnmarshallerContext context) {
+        public EnableMFADeviceResponse Unmarshall(UnmarshallerContext context) 
+        {
             EnableMFADeviceResponse response = new EnableMFADeviceResponse();
 
             while (context.Read())
             {
                 if (context.IsStartElement)
                 {
+                    
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
                         response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
@@ -44,31 +46,32 @@ namespace Amazon.IdentityManagement.Model.Transform
             return response;
         }
         
+        
         public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
-            if (errorResponse.Code.Equals("EntityTemporarilyUnmodifiable"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("EntityTemporarilyUnmodifiable"))
             {
                 return new EntityTemporarilyUnmodifiableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code.Equals("NoSuchEntity"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchEntity"))
             {
                 return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code.Equals("InvalidAuthenticationCode"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAuthenticationCode"))
             {
                 return new InvalidAuthenticationCodeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code.Equals("LimitExceeded"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code.Equals("EntityAlreadyExists"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("EntityAlreadyExists"))
             {
                 return new EntityAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
@@ -86,6 +89,7 @@ namespace Amazon.IdentityManagement.Model.Transform
             }
             return instance;
         }
+    
     }
 }
     

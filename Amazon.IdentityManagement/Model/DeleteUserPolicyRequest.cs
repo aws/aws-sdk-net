@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the DeleteUserPolicy operation.
     /// <para>Deletes the specified policy associated with the specified
-    /// user.</para>
+    /// User.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteUserPolicy"/>
     public class DeleteUserPolicyRequest : AmazonWebServiceRequest
@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
         private string policyName;
 
         /// <summary>
-        /// Name of the user the policy is associated with.
+        /// Name of the User the policy is associated with.
         ///  
         /// <para>
         /// <b>Constraints:</b>

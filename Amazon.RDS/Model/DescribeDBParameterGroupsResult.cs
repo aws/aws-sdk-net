@@ -1,110 +1,88 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Details for a particular DB Parameter Group.
+    /// <para> </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class DescribeDBParameterGroupsResult
+    public class DescribeDBParameterGroupsResult  
     {
-        private string markerField;
-        private List<DBParameterGroup> DBParameterGroupField;
+        
+        private string marker;
+        private List<DBParameterGroup> dBParameterGroups = new List<DBParameterGroup>();
 
         /// <summary>
-        /// Gets and sets the Marker property.
-        /// Identifier returned to allow retrieval of paginated results.
+        /// The marker obtained from a previous operation response.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Marker")]
         public string Marker
         {
-            get { return this.markerField; }
-            set { this.markerField = value; }
+            get { return this.marker; }
+            set { this.marker = value; }
         }
 
         /// <summary>
-        /// Checks if Marker property is set
+        /// Sets the Marker property
         /// </summary>
-        /// <returns>true if Marker property is set</returns>
-        public bool IsSetMarker()
+        /// <param name="marker">The value to set for the Marker property </param>
+        /// <returns>this instance</returns>
+        public DescribeDBParameterGroupsResult WithMarker(string marker)
         {
-            return this.markerField != null;
+            this.marker = marker;
+            return this;
+        }
+            
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this.marker != null;         
         }
 
         /// <summary>
-        /// Gets and sets the DBParameterGroup property.
-        /// A list of DB Parameter Groups.
+        /// A list of <a>DPParameterGroup</a> instances..
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBParameterGroup")]
-        public List<DBParameterGroup> DBParameterGroup
+        public List<DBParameterGroup> DBParameterGroups
         {
-            get
+            get { return this.dBParameterGroups; }
+            set { this.dBParameterGroups = value; }
+        }
+        /// <summary>
+        /// Adds elements to the DBParameterGroups collection
+        /// </summary>
+        /// <param name="dBParameterGroups">The values to add to the DBParameterGroups collection </param>
+        /// <returns>this instance</returns>
+        public DescribeDBParameterGroupsResult WithDBParameterGroups(params DBParameterGroup[] dBParameterGroups)
+        {
+            foreach (DBParameterGroup element in dBParameterGroups)
             {
-                if (this.DBParameterGroupField == null)
-                {
-                    this.DBParameterGroupField = new List<DBParameterGroup>();
-                }
-                return this.DBParameterGroupField;
+                this.dBParameterGroups.Add(element);
             }
-            set { this.DBParameterGroupField = value; }
-        }
 
-        /// <summary>
-        /// Checks if DBParameterGroup property is set
-        /// </summary>
-        /// <returns>true if DBParameterGroup property is set</returns>
-        public bool IsSetDBParameterGroup()
-        {
-            return (DBParameterGroup.Count > 0);
+            return this;
         }
-
-        /// <summary>
-        /// XML Representation of this object
-        /// </summary>
-        /// <returns>XML String</returns>
-        public string ToXML()
+        // Check to see if DBParameterGroups property is set
+        internal bool IsSetDBParameterGroups()
         {
-            StringBuilder xml = new StringBuilder(1024);
-            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
-            using (StringWriter sw = new StringWriter(xml))
-            {
-                serializer.Serialize(sw, this);
-            }
-            return xml.ToString();
-        }
-
-        /// <summary>
-        /// String Representation of this object. Overrides Object.ToString()
-        /// </summary>
-        /// <returns>This object as a string</returns>
-        public override string ToString()
-        {
-            return this.ToXML();
+            return this.dBParameterGroups.Count > 0;        
         }
     }
 }

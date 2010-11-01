@@ -26,15 +26,15 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListSigningCertificates operation.
     /// <para>Returns information about the signing certificates associated
-    /// with the specified user. If there are none, the action returns an
-    /// empty list.</para> <para>Although each user is limited to a small
+    /// with the specified User. If there are none, the action returns an
+    /// empty list.</para> <para>Although each User is limited to a small
     /// number of signing certificates, you can still paginate the results
     /// using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// <para>If the <c>UserName</c> field is not specified, the UserName is
     /// determined implicitly based on the AWS Access Key ID used to sign the
-    /// request. Because this action works for access keys under the account,
-    /// this API can be used to manage root credentials even if the account
-    /// has no associated users.</para>
+    /// request. Because this action works for access keys under the AWS
+    /// Account, this API can be used to manage root credentials even if the
+    /// AWS Account has no associated Users.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListSigningCertificates"/>
     public class ListSigningCertificatesRequest : AmazonWebServiceRequest
@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
         private int? maxItems;
 
         /// <summary>
-        /// The name of the user.
+        /// The name of the User.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -84,10 +84,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Use this only when paginating results, and only in a follow-up request
-        /// after you've received a response where the results are truncated. Set
-        /// this to the value of the <c>Marker</c> element in the response you
-        /// just received.
+        /// Use this only when paginating results, and only in a subsequent
+        /// request after you've received a response where the results are
+        /// truncated. Set it to the value of the <c>Marker</c> element in the
+        /// response you just received.
         ///  
         /// <para>
         /// <b>Constraints:</b>

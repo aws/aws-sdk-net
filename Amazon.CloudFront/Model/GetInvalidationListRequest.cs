@@ -106,7 +106,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Sets the DistributionId property of this request to the value passed in.
         /// </summary>
-        /// <param name="id">The distribution's id</param>
+        /// <param name="distributionId">The distribution's id</param>
         /// <returns>The request with the DistributionId property set</returns>
         public GetInvalidationListRequest WithDistributionId(string distributionId)
         {

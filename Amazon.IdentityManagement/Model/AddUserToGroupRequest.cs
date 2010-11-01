@@ -25,7 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the AddUserToGroup operation.
-    /// <para>Adds the specified user to the specified group.</para>
+    /// <para>Adds the specified User to the specified group.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.AddUserToGroup"/>
     public class AddUserToGroupRequest : AmazonWebServiceRequest
@@ -74,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Name of the user to add.
+        /// Name of the User to add.
         ///  
         /// <para>
         /// <b>Constraints:</b>

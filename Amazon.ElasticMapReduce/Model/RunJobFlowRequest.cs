@@ -1,253 +1,258 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-03-31
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Creates a new job flow, an EC2 cluster, and executes the job flow steps on the cluster. When the job flow finishes, depending
-    /// on the parameter values, RunJobFlow terminates the EC2 cluster and uploads results to a specified Amazon S3 bucket.
-    /// The maximum lifetime of a job flow is 2 weeks. The maximum number of steps allowed in a job flow is 256.
+    /// Container for the parameters to the RunJobFlow operation.
+    /// <para> RunJobFlow creates and starts running a new job flow. The job
+    /// flow will run the steps specified. Once the job flow completes, the
+    /// cluster is stopped and the HDFS partition is lost. To prevent loss of
+    /// data, configure the last step of the job flow to store results in
+    /// Amazon S3. If the JobFlowInstancesDetail : KeepJobFlowAliveWhenNoSteps
+    /// parameter is set to <c>TRUE</c> , the job flow will transition to the
+    /// WAITING state rather than shutting down once the steps have completed.
+    /// </para> <para>A maximum of 256 steps are allowed in each job
+    /// flow.</para> <para>For long running job flows, we recommended that you
+    /// periodically store your results.</para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticmapreduce.amazonaws.com/doc/2009-03-31", IsNullable = false)]
-    public class RunJobFlowRequest
+    /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.RunJobFlow"/>
+    public class RunJobFlowRequest : AmazonWebServiceRequest
     {
-        private string nameField;
-        private string logUriField;
-        private string additionalInfoField;
-        private JobFlowInstancesConfig instancesField;
-        private List<StepConfig> stepsField;
-        private List<BootstrapActionConfig> bootstrapActionsField;
+        private string name;
+        private string logUri;
+        private string additionalInfo;
+        private JobFlowInstancesConfig instances;
+        private List<StepConfig> steps = new List<StepConfig>();
+        private List<BootstrapActionConfig> bootstrapActions = new List<BootstrapActionConfig>();
 
         /// <summary>
-        /// Gets and sets the Name property.
-        /// Name of the job flow. 1 to 255 characters.
+        /// The name of the job flow.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 256</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField; }
-            set { this.nameField = value; }
+            get { return this.name; }
+            set { this.name = value; }
         }
 
         /// <summary>
         /// Sets the Name property
         /// </summary>
-        /// <param name="name">Name of the job flow. 1 to 255 characters.</param>
+        /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
         public RunJobFlowRequest WithName(string name)
         {
-            this.nameField = name;
+            this.name = name;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Name property is set
-        /// </summary>
-        /// <returns>true if Name property is set</returns>
-        public bool IsSetName()
+            
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this.nameField != null;
+            return this.name != null;       
         }
 
         /// <summary>
-        /// Gets and sets the LogUri property.
-        /// URI for the log files. If you do not provide a value, logs are not generated. Valid Form: bucket_name
-        /// /key_prefix Constraint: bucket_name must be less than 256 characters and key_prefix must be less than 1025 characters.
+        /// Specifies the location in Amazon S3 to write the log files of the job
+        /// flow. If a value is not provided, logs are not created.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 10280</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "LogUri")]
         public string LogUri
         {
-            get { return this.logUriField; }
-            set { this.logUriField = value; }
+            get { return this.logUri; }
+            set { this.logUri = value; }
         }
 
         /// <summary>
         /// Sets the LogUri property
         /// </summary>
-        /// <param name="logUri">URI for the log files. If you do not provide a value, logs are not generated. Valid Form: bucket_name
-        /// /key_prefix Constraint: bucket_name must be less than 256 characters and key_prefix must be less than 1025 characters.</param>
+        /// <param name="logUri">The value to set for the LogUri property </param>
         /// <returns>this instance</returns>
         public RunJobFlowRequest WithLogUri(string logUri)
         {
-            this.logUriField = logUri;
+            this.logUri = logUri;
             return this;
         }
-
-        /// <summary>
-        /// Checks if LogUri property is set
-        /// </summary>
-        /// <returns>true if LogUri property is set</returns>
-        public bool IsSetLogUri()
+            
+        // Check to see if LogUri property is set
+        internal bool IsSetLogUri()
         {
-            return this.logUriField != null;
+            return this.logUri != null;         
         }
 
         /// <summary>
-        /// Gets and sets the AdditionalInfo property.
         /// A JSON string for selecting additional features.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 10280</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "AdditionalInfo")]
         public string AdditionalInfo
         {
-            get { return this.additionalInfoField; }
-            set { this.additionalInfoField = value; }
+            get { return this.additionalInfo; }
+            set { this.additionalInfo = value; }
         }
 
         /// <summary>
         /// Sets the AdditionalInfo property
         /// </summary>
-        /// <param name="additionalInfo">A JSON string for selecting additional features.</param>
+        /// <param name="additionalInfo">The value to set for the AdditionalInfo property </param>
         /// <returns>this instance</returns>
         public RunJobFlowRequest WithAdditionalInfo(string additionalInfo)
         {
-            this.additionalInfoField = additionalInfo;
+            this.additionalInfo = additionalInfo;
             return this;
         }
-
-        /// <summary>
-        /// Checks if AdditionalInfo property is set
-        /// </summary>
-        /// <returns>true if AdditionalInfo property is set</returns>
-        public bool IsSetAdditionalInfo()
+            
+        // Check to see if AdditionalInfo property is set
+        internal bool IsSetAdditionalInfo()
         {
-            return this.additionalInfoField != null;
+            return this.additionalInfo != null;         
         }
 
         /// <summary>
-        /// Gets and sets the Instances property.
-        /// A specification of the number and type of Amazon EC2 instances on which to run the job flow.
+        /// A specification of the number and type of Amazon EC2 instances on
+        /// which to run the job flow.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Instances")]
         public JobFlowInstancesConfig Instances
         {
-            get { return this.instancesField; }
-            set { this.instancesField = value; }
+            get { return this.instances; }
+            set { this.instances = value; }
         }
 
         /// <summary>
         /// Sets the Instances property
         /// </summary>
-        /// <param name="instances">A specification of the number and type of Amazon EC2 instances on which to run the job flow.</param>
+        /// <param name="instances">The value to set for the Instances property </param>
         /// <returns>this instance</returns>
         public RunJobFlowRequest WithInstances(JobFlowInstancesConfig instances)
         {
-            this.instancesField = instances;
+            this.instances = instances;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Instances property is set
-        /// </summary>
-        /// <returns>true if Instances property is set</returns>
-        public bool IsSetInstances()
+            
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
         {
-            return this.instancesField != null;
+            return this.instances != null;      
         }
 
         /// <summary>
-        /// Gets and sets the Steps property.
         /// A list of steps to be executed by the job flow.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Steps")]
         public List<StepConfig> Steps
         {
-            get
-            {
-                if (this.stepsField == null)
-                {
-                    this.stepsField = new List<StepConfig>();
-                }
-                return this.stepsField;
-            }
-            set { this.stepsField = value; }
+            get { return this.steps; }
+            set { this.steps = value; }
         }
-
         /// <summary>
-        /// Sets the Steps property
+        /// Adds elements to the Steps collection
         /// </summary>
-        /// <param name="list">A list of steps to be executed by the job flow.</param>
+        /// <param name="steps">The values to add to the Steps collection </param>
         /// <returns>this instance</returns>
-        public RunJobFlowRequest WithSteps(params StepConfig[] list)
+        public RunJobFlowRequest WithSteps(params StepConfig[] steps)
         {
-            foreach (StepConfig item in list)
+            foreach (StepConfig element in steps)
             {
-                Steps.Add(item);
+                this.steps.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if Steps property is set
-        /// </summary>
-        /// <returns>true if Steps property is set</returns>
-        public bool IsSetSteps()
+        // Check to see if Steps property is set
+        internal bool IsSetSteps()
         {
-            return (Steps.Count > 0);
+            return this.steps.Count > 0;        
         }
 
         /// <summary>
-        /// Gets and sets the BootstrapActions property.
-        /// A list of bootstrap actions that will be run before Hadoop is started on the job flow.
+        /// A list of bootstrap actions that will be run before Hadoop is started
+        /// on the cluster nodes.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "BootstrapActions")]
         public List<BootstrapActionConfig> BootstrapActions
         {
-            get
-            {
-                if (this.bootstrapActionsField == null)
-                {
-                    this.bootstrapActionsField = new List<BootstrapActionConfig>();
-                }
-                return this.bootstrapActionsField;
-            }
-            set { this.bootstrapActionsField = value; }
+            get { return this.bootstrapActions; }
+            set { this.bootstrapActions = value; }
         }
-
         /// <summary>
-        /// Sets the BootstrapActions property
+        /// Adds elements to the BootstrapActions collection
         /// </summary>
-        /// <param name="list">A list of bootstrap actions that will be run before Hadoop is started on the job flow.</param>
+        /// <param name="bootstrapActions">The values to add to the BootstrapActions collection </param>
         /// <returns>this instance</returns>
-        public RunJobFlowRequest WithBootstrapActions(params BootstrapActionConfig[] list)
+        public RunJobFlowRequest WithBootstrapActions(params BootstrapActionConfig[] bootstrapActions)
         {
-            foreach (BootstrapActionConfig item in list)
+            foreach (BootstrapActionConfig element in bootstrapActions)
             {
-                BootstrapActions.Add(item);
+                this.bootstrapActions.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if BootstrapActions property is set
-        /// </summary>
-        /// <returns>true if BootstrapActions property is set</returns>
-        public bool IsSetBootstrapActions()
+        // Check to see if BootstrapActions property is set
+        internal bool IsSetBootstrapActions()
         {
-            return (BootstrapActions.Count > 0);
+            return this.bootstrapActions.Count > 0;         
         }
-
     }
 }
+    

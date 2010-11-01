@@ -26,16 +26,15 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateAccessKey operation.
     /// <para>Changes the status of the specified access key from Active to
-    /// Inactive, or vice versa. This action can be used to disable a user's
+    /// Inactive, or vice versa. This action can be used to disable a User's
     /// key as part of a key rotation workflow.</para> <para>If the
     /// <c>UserName</c> field is not specified, the UserName is determined
     /// implicitly based on the AWS Access Key ID used to sign the request.
-    /// Because this action works for access keys under the account, this API
-    /// can be used to manage root credentials even if the account has no
-    /// associated users.</para> <para>For information about rotating keys,
-    /// see Managing Keys and Certificates in the <a
-    /// href="http://aws.amazon.com/documentation/"> AWS Identity and Access
-    /// Management User Guide </a> .</para>
+    /// Because this action works for access keys under the AWS Account, this
+    /// API can be used to manage root credentials even if the AWS Account has
+    /// no associated Users.</para> <para>For information about rotating keys,
+    /// see Managing Keys and Certificates in Using AWS Identity and Access
+    /// Management.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateAccessKey"/>
     public class UpdateAccessKeyRequest : AmazonWebServiceRequest
@@ -45,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
         private string status;
 
         /// <summary>
-        /// Name of the user whose key you want to update.
+        /// Name of the User whose key you want to update.
         ///  
         /// <para>
         /// <b>Constraints:</b>

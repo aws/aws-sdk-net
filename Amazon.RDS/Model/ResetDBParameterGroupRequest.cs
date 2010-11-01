@@ -1,150 +1,132 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Resets some or all of the parameters of a DB Parameter Group to the default values. When resetting the entire group,
-    /// dynamic parameters are updated immediately, and static parameters are set to pending-reboot to take effect when the
-    /// DB Instance reboots.
+    /// Container for the parameters to the ResetDBParameterGroup operation.
+    /// <para> This API modifies the parameters of a DBParameterGroup to the
+    /// engine/system default value. To reset specific parameters submit a
+    /// list of the following: ParameterName and ApplyMethod. To reset the
+    /// entire DBParameterGroup specify the DBParameterGroup name and
+    /// ResetAllParameters parameters. When resetting the entire group,
+    /// dynamic parameters are updated immediately and static parameters are
+    /// set to pending-reboot to take effect on the next MySQL reboot or
+    /// RebootDBInstance request. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class ResetDBParameterGroupRequest
+    /// <seealso cref="Amazon.RDS.AmazonRDS.ResetDBParameterGroup"/>
+    public class ResetDBParameterGroupRequest : AmazonWebServiceRequest
     {
-        private string DBParameterGroupNameField;
-        private bool? resetAllParametersField;
-        private List<Parameter> parametersField;
+        private string dBParameterGroupName;
+        private bool? resetAllParameters;
+        private List<Parameter> parameters = new List<Parameter>();
 
         /// <summary>
-        /// Gets and sets the DBParameterGroupName property.
-        /// Name of the DB Parameter Group.
-        /// Must contain from 1 to 255 alphanumeric characters or hyphens.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.
+        /// The name of the DB Parameter Group.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBParameterGroupName")]
         public string DBParameterGroupName
         {
-            get { return this.DBParameterGroupNameField; }
-            set { this.DBParameterGroupNameField = value; }
+            get { return this.dBParameterGroupName; }
+            set { this.dBParameterGroupName = value; }
         }
 
         /// <summary>
         /// Sets the DBParameterGroupName property
         /// </summary>
-        /// <param name="DBParameterGroupName">Name of the DB Parameter Group.
-        /// Must contain from 1 to 255 alphanumeric characters or hyphens.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.</param>
+        /// <param name="dBParameterGroupName">The value to set for the DBParameterGroupName property </param>
         /// <returns>this instance</returns>
-        public ResetDBParameterGroupRequest WithDBParameterGroupName(string DBParameterGroupName)
+        public ResetDBParameterGroupRequest WithDBParameterGroupName(string dBParameterGroupName)
         {
-            this.DBParameterGroupNameField = DBParameterGroupName;
+            this.dBParameterGroupName = dBParameterGroupName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBParameterGroupName property is set
-        /// </summary>
-        /// <returns>true if DBParameterGroupName property is set</returns>
-        public bool IsSetDBParameterGroupName()
+            
+        // Check to see if DBParameterGroupName property is set
+        internal bool IsSetDBParameterGroupName()
         {
-            return this.DBParameterGroupNameField != null;
+            return this.dBParameterGroupName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the ResetAllParameters property.
-        /// Specifies whether to reset all parameters in the DB Parameter Group to default values. Default: TRUE.
+        /// Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
+        /// parameters in the DB Parameter Group to default values.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ResetAllParameters")]
         public bool ResetAllParameters
         {
-            get { return this.resetAllParametersField.GetValueOrDefault(); }
-            set { this.resetAllParametersField = value; }
+            get { return this.resetAllParameters ?? default(bool); }
+            set { this.resetAllParameters = value; }
         }
 
         /// <summary>
         /// Sets the ResetAllParameters property
         /// </summary>
-        /// <param name="resetAllParameters">Specifies whether to reset all parameters in the DB Parameter Group to default values. Default: TRUE.</param>
+        /// <param name="resetAllParameters">The value to set for the ResetAllParameters property </param>
         /// <returns>this instance</returns>
         public ResetDBParameterGroupRequest WithResetAllParameters(bool resetAllParameters)
         {
-            this.resetAllParametersField = resetAllParameters;
+            this.resetAllParameters = resetAllParameters;
             return this;
         }
-
-        /// <summary>
-        /// Checks if ResetAllParameters property is set
-        /// </summary>
-        /// <returns>true if ResetAllParameters property is set</returns>
-        public bool IsSetResetAllParameters()
+            
+        // Check to see if ResetAllParameters property is set
+        internal bool IsSetResetAllParameters()
         {
-            return this.resetAllParametersField.HasValue;
+            return this.resetAllParameters.HasValue;        
         }
 
         /// <summary>
-        /// Gets and sets the Parameters property.
+        /// An array of parameter names, values, and the apply method for the
+        /// parameter update. At least one parameter name, value, and apply method
+        /// must be supplied; subsequent arguments are optional. A maximum of 20
+        /// parameters may be modified in a single request.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Parameters")]
         public List<Parameter> Parameters
         {
-            get
-            {
-                if (this.parametersField == null)
-                {
-                    this.parametersField = new List<Parameter>();
-                }
-                return this.parametersField;
-            }
-            set { this.parametersField = value; }
+            get { return this.parameters; }
+            set { this.parameters = value; }
         }
-
         /// <summary>
-        /// Sets the Parameters property
+        /// Adds elements to the Parameters collection
         /// </summary>
-        /// <param name="list">Parameters property</param>
+        /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
-        public ResetDBParameterGroupRequest WithParameters(params Parameter[] list)
+        public ResetDBParameterGroupRequest WithParameters(params Parameter[] parameters)
         {
-            foreach (Parameter item in list)
+            foreach (Parameter element in parameters)
             {
-                Parameters.Add(item);
+                this.parameters.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if Parameters property is set
-        /// </summary>
-        /// <returns>true if Parameters property is set</returns>
-        public bool IsSetParameters()
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
         {
-            return (Parameters.Count > 0);
+            return this.parameters.Count > 0;       
         }
-
     }
 }
+    

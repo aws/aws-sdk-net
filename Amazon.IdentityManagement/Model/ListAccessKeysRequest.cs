@@ -26,16 +26,17 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListAccessKeys operation.
     /// <para>Returns information about the Access Key IDs associated with the
-    /// specified user. If there are none, the action returns an empty
-    /// list.</para> <para>Although each user is limited to a small number of
+    /// specified User. If there are none, the action returns an empty
+    /// list.</para> <para>Although each User is limited to a small number of
     /// keys, you can still paginate the results using the <c>MaxItems</c> and
     /// <c>Marker</c> parameters.</para> <para>If the <c>UserName</c> field is
     /// not specified, the UserName is determined implicitly based on the AWS
     /// Access Key ID used to sign the request. Because this action works for
-    /// access keys under the account, this API can be used to manage root
-    /// credentials even if the account has no associated users.</para>
-    /// <para><b>NOTE:</b>To ensure the security of your account, the secret
-    /// access key is accesible only during key and user creation.</para>
+    /// access keys under the AWS Account, this API can be used to manage root
+    /// credentials even if the AWS Account has no associated Users.</para>
+    /// <para><b>NOTE:</b>To ensure the security of your AWS Account, the
+    /// secret access key is accessible only during key and User
+    /// creation.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListAccessKeys"/>
     public class ListAccessKeysRequest : AmazonWebServiceRequest
@@ -45,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         private int? maxItems;
 
         /// <summary>
-        /// Name of the user.
+        /// Name of the User.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -85,10 +86,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Use this only when paginating results, and only in a follow-up request
-        /// after you've received a response where the results are truncated. Set
-        /// this to the value of the <c>Marker</c> element in the response you
-        /// just received.
+        /// Use this only when paginating results, and only in a subsequent
+        /// request after you've received a response where the results are
+        /// truncated. Set it to the value of the <c>Marker</c> element in the
+        /// response you just received.
         ///  
         /// <para>
         /// <b>Constraints:</b>

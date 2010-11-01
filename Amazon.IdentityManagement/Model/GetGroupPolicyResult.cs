@@ -55,6 +55,23 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Sets the GroupName property
+        /// </summary>
+        /// <param name="groupName">The value to set for the GroupName property </param>
+        /// <returns>this instance</returns>
+        public GetGroupPolicyResult WithGroupName(string groupName)
+        {
+            this.groupName = groupName;
+            return this;
+        }
+            
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this.groupName != null;      
+        }
+
+        /// <summary>
         /// The name of the policy.
         ///  
         /// <para>
@@ -78,11 +95,32 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Sets the PolicyName property
+        /// </summary>
+        /// <param name="policyName">The value to set for the PolicyName property </param>
+        /// <returns>this instance</returns>
+        public GetGroupPolicyResult WithPolicyName(string policyName)
+        {
+            this.policyName = policyName;
+            return this;
+        }
+            
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
+        {
+            return this.policyName != null;         
+        }
+
+        /// <summary>
         /// The policy document.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 131072</description>
+        ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
         ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
@@ -94,6 +132,23 @@ namespace Amazon.IdentityManagement.Model
         {
             get { return this.policyDocument; }
             set { this.policyDocument = value; }
+        }
+
+        /// <summary>
+        /// Sets the PolicyDocument property
+        /// </summary>
+        /// <param name="policyDocument">The value to set for the PolicyDocument property </param>
+        /// <returns>this instance</returns>
+        public GetGroupPolicyResult WithPolicyDocument(string policyDocument)
+        {
+            this.policyDocument = policyDocument;
+            return this;
+        }
+            
+        // Check to see if PolicyDocument property is set
+        internal bool IsSetPolicyDocument()
+        {
+            return this.policyDocument != null;         
         }
     }
 }

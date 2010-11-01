@@ -38,5 +38,22 @@ namespace Amazon.IdentityManagement.Model
             get { return this.loginProfile; }
             set { this.loginProfile = value; }
         }
+
+        /// <summary>
+        /// Sets the LoginProfile property
+        /// </summary>
+        /// <param name="loginProfile">The value to set for the LoginProfile property </param>
+        /// <returns>this instance</returns>
+        public CreateLoginProfileResult WithLoginProfile(LoginProfile loginProfile)
+        {
+            this.loginProfile = loginProfile;
+            return this;
+        }
+            
+        // Check to see if LoginProfile property is set
+        internal bool IsSetLoginProfile()
+        {
+            return this.loginProfile != null;       
+        }
     }
 }

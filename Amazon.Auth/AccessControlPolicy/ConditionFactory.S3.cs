@@ -26,7 +26,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <summary>
         /// Condition key for the canned ACL specified by a request.
         /// <para>
-        /// This condition key may only be used with <see cref="Amazon.Auth.AccessControlPolicy.ConditionFactory.StringComparisonType"> enum.
+        /// This condition key may only be used with <see cref="Amazon.Auth.AccessControlPolicy.ConditionFactory.StringComparisonType"/> enum.
         /// </para>
         /// </summary>
         public const string S3_CANNED_ACL_CONDITION_KEY = "s3:x-amz-acl";

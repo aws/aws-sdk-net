@@ -65,9 +65,9 @@ namespace Amazon.Auth.AccessControlPolicy
     /// </summary>
     public class Condition
     {
-        protected string type;
-        protected string conditionKey;
-        protected string[] values;
+        private string type;
+        private string conditionKey;
+        private string[] values;
 
         internal Condition()
         {

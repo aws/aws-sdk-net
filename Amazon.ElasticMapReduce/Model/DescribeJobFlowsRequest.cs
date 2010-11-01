@@ -1,195 +1,171 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-03-31
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Makes a request to return information about a job flow. You specify job flows by their ID, creation date, or state. Elastic MapReduce returns descriptions of job flows that are up to two months old. Specifying an older date returns an error. The maximum number of job flow descriptions returned is 512.
-    /// Each input parameter acts as a filter so that Elastic MapReduce returns information about a more precise set of job flows with each parameter you use in your request. If you do not include parameters in a request, Elastic MapReduce returns descriptions of all job flows that have: created and completed in the last two weeks, or not ended within the last two months
-    /// These jobs are in one of the following states: RUNNING, WAITING, SHUTTING_ DOWN, STARTING.
+    /// Container for the parameters to the DescribeJobFlows operation.
+    /// <para> DescribeJobFlows returns a list of job flows that match all of
+    /// the supplied parameters. The parameters can include a list of job flow
+    /// IDs, job flow states, and restrictions on job flow creation date and
+    /// time.</para> <para> Regardless of supplied parameters, only job flows
+    /// created within the last two months are returned.</para> <para> If no
+    /// parameters are supplied, then job flows matching either of the
+    /// following criteria are returned:</para>
+    /// <ul>
+    /// <li>Job flows created and completed in the last two weeks</li>
+    /// <li> Job flows created within the last two months that are in one of
+    /// the following states: <c>RUNNING</c> ,
+    /// 
+    /// <c>WAITING</c> ,
+    /// 
+    /// <c>SHUTTING_DOWN</c> ,
+    /// 
+    /// <c>STARTING</c> </li>
+    /// 
+    /// </ul>
+    /// <para> Amazon Elastic MapReduce can return a maximum of 512 job flow
+    /// descriptions. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticmapreduce.amazonaws.com/doc/2009-03-31", IsNullable = false)]
-    public class DescribeJobFlowsRequest
+    /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.DescribeJobFlows"/>
+    public class DescribeJobFlowsRequest : AmazonWebServiceRequest
     {
-        private string createdAfterField;
-        private string createdBeforeField;
-        private List<string> jobFlowIdsField;
-        private List<string> jobFlowStatesField;
+        private DateTime? createdAfter;
+        private DateTime? createdBefore;
+        private List<string> jobFlowIds = new List<string>();
+        private List<string> jobFlowStates = new List<string>();
 
         /// <summary>
-        /// Gets and sets the CreatedAfter property.
-        /// Returns descriptions of job flows created after this date. Default is two months ago. Must be two months ago or more recent.
-        /// Format is yyyy-mm-ddThh:mm:ss.
+        /// Return only job flows created after this date and time.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "CreatedAfter")]
-        public string CreatedAfter
+        public DateTime CreatedAfter
         {
-            get { return this.createdAfterField; }
-            set { this.createdAfterField = value; }
+            get { return this.createdAfter ?? default(DateTime); }
+            set { this.createdAfter = value; }
         }
 
         /// <summary>
         /// Sets the CreatedAfter property
         /// </summary>
-        /// <param name="createdAfter">Returns descriptions of job flows created after this date. Default is two months ago. Must be two months ago or more recent.
-        /// Format is yyyy-mm-ddThh:mm:ss.</param>
+        /// <param name="createdAfter">The value to set for the CreatedAfter property </param>
         /// <returns>this instance</returns>
-        public DescribeJobFlowsRequest WithCreatedAfter(string createdAfter)
+        public DescribeJobFlowsRequest WithCreatedAfter(DateTime createdAfter)
         {
-            this.createdAfterField = createdAfter;
+            this.createdAfter = createdAfter;
             return this;
         }
-
-        /// <summary>
-        /// Checks if CreatedAfter property is set
-        /// </summary>
-        /// <returns>true if CreatedAfter property is set</returns>
-        public bool IsSetCreatedAfter()
+            
+        // Check to see if CreatedAfter property is set
+        internal bool IsSetCreatedAfter()
         {
-            return this.createdAfterField != null;
+            return this.createdAfter.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the CreatedBefore property.
-        /// Returns descriptions of job flows created before this date. Default is now. Must be before now and after two months ago.
-        /// Format is yyyy-mm-ddThh:mm:ss.
+        /// Return only job flows created before this date and time.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "CreatedBefore")]
-        public string CreatedBefore
+        public DateTime CreatedBefore
         {
-            get { return this.createdBeforeField; }
-            set { this.createdBeforeField = value; }
+            get { return this.createdBefore ?? default(DateTime); }
+            set { this.createdBefore = value; }
         }
 
         /// <summary>
         /// Sets the CreatedBefore property
         /// </summary>
-        /// <param name="createdBefore">Returns descriptions of job flows created before this date. Default is now. Must be before now and after two months ago.
-        /// Format is yyyy-mm-ddThh:mm:ss.</param>
+        /// <param name="createdBefore">The value to set for the CreatedBefore property </param>
         /// <returns>this instance</returns>
-        public DescribeJobFlowsRequest WithCreatedBefore(string createdBefore)
+        public DescribeJobFlowsRequest WithCreatedBefore(DateTime createdBefore)
         {
-            this.createdBeforeField = createdBefore;
+            this.createdBefore = createdBefore;
             return this;
         }
-
-        /// <summary>
-        /// Checks if CreatedBefore property is set
-        /// </summary>
-        /// <returns>true if CreatedBefore property is set</returns>
-        public bool IsSetCreatedBefore()
+            
+        // Check to see if CreatedBefore property is set
+        internal bool IsSetCreatedBefore()
         {
-            return this.createdBeforeField != null;
+            return this.createdBefore.HasValue;         
         }
 
         /// <summary>
-        /// Gets and sets the JobFlowIds property.
-        /// Returns descriptions of job flows specified by the job flow IDs. These values are in the RunJobFlow response.
-        /// The ID uniquely identifies the job flow.
+        /// Return only job flows whose job flow ID is contained in this list.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "JobFlowIds")]
         public List<string> JobFlowIds
         {
-            get
-            {
-                if (this.jobFlowIdsField == null)
-                {
-                    this.jobFlowIdsField = new List<string>();
-                }
-                return this.jobFlowIdsField;
-            }
-            set { this.jobFlowIdsField = value; }
+            get { return this.jobFlowIds; }
+            set { this.jobFlowIds = value; }
         }
-
         /// <summary>
-        /// Sets the JobFlowIds property
+        /// Adds elements to the JobFlowIds collection
         /// </summary>
-        /// <param name="list">Returns descriptions of job flows specified by the job flow IDs. These values are in the RunJobFlow response.
-        /// The ID uniquely identifies the job flow.</param>
+        /// <param name="jobFlowIds">The values to add to the JobFlowIds collection </param>
         /// <returns>this instance</returns>
-        public DescribeJobFlowsRequest WithJobFlowIds(params string[] list)
+        public DescribeJobFlowsRequest WithJobFlowIds(params string[] jobFlowIds)
         {
-            foreach (string item in list)
+            foreach (string element in jobFlowIds)
             {
-                JobFlowIds.Add(item);
+                this.jobFlowIds.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if JobFlowIds property is set
-        /// </summary>
-        /// <returns>true if JobFlowIds property is set</returns>
-        public bool IsSetJobFlowIds()
+        // Check to see if JobFlowIds property is set
+        internal bool IsSetJobFlowIds()
         {
-            return (JobFlowIds.Count > 0);
+            return this.jobFlowIds.Count > 0;       
         }
 
         /// <summary>
-        /// Gets and sets the JobFlowStates property.
-        /// Returns descriptions of job flows specified by the job flow IDs. These values are in the RunJobFlow response.
-        /// The ID uniquely identifies the job flow. Values can be: One or more of the following: COMPLETED | FAILED | TERMINATED | RUNNING | SHUTTING_DOWN | STARTING | WAITING.
+        /// Return only job flows whose state is contained in this list.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "JobFlowStates")]
         public List<string> JobFlowStates
         {
-            get
-            {
-                if (this.jobFlowStatesField == null)
-                {
-                    this.jobFlowStatesField = new List<string>();
-                }
-                return this.jobFlowStatesField;
-            }
-            set { this.jobFlowStatesField = value; }
+            get { return this.jobFlowStates; }
+            set { this.jobFlowStates = value; }
         }
-
         /// <summary>
-        /// Sets the JobFlowStates property
+        /// Adds elements to the JobFlowStates collection
         /// </summary>
-        /// <param name="list">Returns descriptions of job flows specified by the job flow IDs. These values are in the RunJobFlow response.
-        /// The ID uniquely identifies the job flow. Values can be: One or more of the following: COMPLETED | FAILED | TERMINATED | RUNNING | SHUTTING_DOWN | STARTING | WAITING.</param>
+        /// <param name="jobFlowStates">The values to add to the JobFlowStates collection </param>
         /// <returns>this instance</returns>
-        public DescribeJobFlowsRequest WithJobFlowStates(params string[] list)
+        public DescribeJobFlowsRequest WithJobFlowStates(params string[] jobFlowStates)
         {
-            foreach (string item in list)
+            foreach (string element in jobFlowStates)
             {
-                JobFlowStates.Add(item);
+                this.jobFlowStates.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if JobFlowStates property is set
-        /// </summary>
-        /// <returns>true if JobFlowStates property is set</returns>
-        public bool IsSetJobFlowStates()
+        // Check to see if JobFlowStates property is set
+        internal bool IsSetJobFlowStates()
         {
-            return (JobFlowStates.Count > 0);
+            return this.jobFlowStates.Count > 0;        
         }
-
     }
 }
+    

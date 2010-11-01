@@ -46,7 +46,18 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </summary>
         public static readonly Principal AllUsers = new Principal("*");
 
+        /// <summary>
+        /// The default Principal provider for AWS accounts.
+        /// </summary>
+        public const string AWS_PROVIDER = "AWS";
+
+        /// <summary>
+        /// Principal provider for Canonical User IDs.
+        /// </summary>
+        public const string CANONICAL_USER_PROVIDER = "CanonicalUser";
+
         private string id;
+        private string provider;
 
         /// <summary>
         /// Constructs a new principal with the specified AWS account ID.
@@ -54,6 +65,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <param name="accountId">An AWS account ID.</param>
         public Principal(string accountId) 
         {
+            this.provider = AWS_PROVIDER;
             if (accountId == null) 
             {
                 throw new ArgumentNullException("accountId");
@@ -62,14 +74,18 @@ namespace Amazon.Auth.AccessControlPolicy
         }
 
         /// <summary>
-        /// Gets the provider for this principal, which indicates in what group of
+        /// Gets and sets the provider for this principal, which indicates in what group of
         /// users this principal resides.
         /// </summary>
         public string Provider
         {
             get
             {
-                return "AWS";
+                return provider;
+            }
+            set
+            {
+                provider = value;
             }
         }
 

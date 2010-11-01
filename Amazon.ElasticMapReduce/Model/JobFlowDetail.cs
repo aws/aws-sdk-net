@@ -1,281 +1,269 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-03-31
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.ElasticMapReduce.Model
 {
-    ///<summary>
-    ///Information about a job flow.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://elasticmapreduce.amazonaws.com/doc/2009-03-31", IsNullable = false)]
-    public class JobFlowDetail
+    /// <summary>
+    /// <para> A description of a job flow.</para>
+    /// </summary>
+    public class JobFlowDetail  
     {
-        private string jobFlowIdField;
-        private string nameField;
-        private string logUriField;
-        private JobFlowExecutionStatusDetail executionStatusDetailField;
-        private JobFlowInstancesDetail instancesField;
-        private List<StepDetail> stepsField;
-        private List<BootstrapActionDetail> bootstrapActionsField;
+        
+        private string jobFlowId;
+        private string name;
+        private string logUri;
+        private JobFlowExecutionStatusDetail executionStatusDetail;
+        private JobFlowInstancesDetail instances;
+        private List<StepDetail> steps = new List<StepDetail>();
+        private List<BootstrapActionDetail> bootstrapActions = new List<BootstrapActionDetail>();
 
         /// <summary>
-        /// Gets and sets the JobFlowId property.
-        /// ID that uniquely identifies the job flow.
+        /// The job flow identifier.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 256</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "JobFlowId")]
         public string JobFlowId
         {
-            get { return this.jobFlowIdField; }
-            set { this.jobFlowIdField = value; }
+            get { return this.jobFlowId; }
+            set { this.jobFlowId = value; }
         }
 
         /// <summary>
         /// Sets the JobFlowId property
         /// </summary>
-        /// <param name="jobFlowId">ID that uniquely identifies the job flow.</param>
+        /// <param name="jobFlowId">The value to set for the JobFlowId property </param>
         /// <returns>this instance</returns>
         public JobFlowDetail WithJobFlowId(string jobFlowId)
         {
-            this.jobFlowIdField = jobFlowId;
+            this.jobFlowId = jobFlowId;
             return this;
         }
-
-        /// <summary>
-        /// Checks if JobFlowId property is set
-        /// </summary>
-        /// <returns>true if JobFlowId property is set</returns>
-        public bool IsSetJobFlowId()
+            
+        // Check to see if JobFlowId property is set
+        internal bool IsSetJobFlowId()
         {
-            return this.jobFlowIdField != null;
+            return this.jobFlowId != null;      
         }
 
         /// <summary>
-        /// Gets and sets the Name property.
-        /// Name of the job flow.
+        /// The name of the job flow.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 256</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField; }
-            set { this.nameField = value; }
+            get { return this.name; }
+            set { this.name = value; }
         }
 
         /// <summary>
         /// Sets the Name property
         /// </summary>
-        /// <param name="name">Name of the job flow.</param>
+        /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
         public JobFlowDetail WithName(string name)
         {
-            this.nameField = name;
+            this.name = name;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Name property is set
-        /// </summary>
-        /// <returns>true if Name property is set</returns>
-        public bool IsSetName()
+            
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this.nameField != null;
+            return this.name != null;       
         }
 
         /// <summary>
-        /// Gets and sets the LogUri property.
-        /// URI for the location of the log files on Amazon S3. Amazon S3 URIs are of the form: bucketName/optionalPathToObject.
+        /// The location in Amazon S3 where log files for the job are stored.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 10280</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "LogUri")]
         public string LogUri
         {
-            get { return this.logUriField; }
-            set { this.logUriField = value; }
+            get { return this.logUri; }
+            set { this.logUri = value; }
         }
 
         /// <summary>
         /// Sets the LogUri property
         /// </summary>
-        /// <param name="logUri">URI for the location of the log files on Amazon S3. Amazon S3 URIs are of the form: bucketName/optionalPathToObject.</param>
+        /// <param name="logUri">The value to set for the LogUri property </param>
         /// <returns>this instance</returns>
         public JobFlowDetail WithLogUri(string logUri)
         {
-            this.logUriField = logUri;
+            this.logUri = logUri;
             return this;
         }
-
-        /// <summary>
-        /// Checks if LogUri property is set
-        /// </summary>
-        /// <returns>true if LogUri property is set</returns>
-        public bool IsSetLogUri()
+            
+        // Check to see if LogUri property is set
+        internal bool IsSetLogUri()
         {
-            return this.logUriField != null;
+            return this.logUri != null;         
         }
 
         /// <summary>
-        /// Gets and sets the ExecutionStatusDetail property.
-        /// Container for the description of the execution status.
+        /// Describes the execution status of the job flow.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ExecutionStatusDetail")]
         public JobFlowExecutionStatusDetail ExecutionStatusDetail
         {
-            get { return this.executionStatusDetailField; }
-            set { this.executionStatusDetailField = value; }
+            get { return this.executionStatusDetail; }
+            set { this.executionStatusDetail = value; }
         }
 
         /// <summary>
         /// Sets the ExecutionStatusDetail property
         /// </summary>
-        /// <param name="executionStatusDetail">Container for the description of the execution status.</param>
+        /// <param name="executionStatusDetail">The value to set for the ExecutionStatusDetail property </param>
         /// <returns>this instance</returns>
         public JobFlowDetail WithExecutionStatusDetail(JobFlowExecutionStatusDetail executionStatusDetail)
         {
-            this.executionStatusDetailField = executionStatusDetail;
+            this.executionStatusDetail = executionStatusDetail;
             return this;
         }
-
-        /// <summary>
-        /// Checks if ExecutionStatusDetail property is set
-        /// </summary>
-        /// <returns>true if ExecutionStatusDetail property is set</returns>
-        public bool IsSetExecutionStatusDetail()
+            
+        // Check to see if ExecutionStatusDetail property is set
+        internal bool IsSetExecutionStatusDetail()
         {
-            return this.executionStatusDetailField != null;
+            return this.executionStatusDetail != null;      
         }
 
         /// <summary>
-        /// Gets and sets the Instances property.
-        /// Container for JobFlowInstancesDetail.
+        /// Describes the Amazon EC2 instances of the job flow.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Instances")]
         public JobFlowInstancesDetail Instances
         {
-            get { return this.instancesField; }
-            set { this.instancesField = value; }
+            get { return this.instances; }
+            set { this.instances = value; }
         }
 
         /// <summary>
         /// Sets the Instances property
         /// </summary>
-        /// <param name="instances">Container for JobFlowInstancesDetail.</param>
+        /// <param name="instances">The value to set for the Instances property </param>
         /// <returns>this instance</returns>
         public JobFlowDetail WithInstances(JobFlowInstancesDetail instances)
         {
-            this.instancesField = instances;
+            this.instances = instances;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Instances property is set
-        /// </summary>
-        /// <returns>true if Instances property is set</returns>
-        public bool IsSetInstances()
+            
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
         {
-            return this.instancesField != null;
+            return this.instances != null;      
         }
 
         /// <summary>
-        /// Gets and sets the Steps property.
-        /// A list of steps associated with the job.
+        /// A list of steps run by the job flow.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Steps")]
         public List<StepDetail> Steps
         {
-            get
-            {
-                if (this.stepsField == null)
-                {
-                    this.stepsField = new List<StepDetail>();
-                }
-                return this.stepsField;
-            }
-            set { this.stepsField = value; }
+            get { return this.steps; }
+            set { this.steps = value; }
         }
-
         /// <summary>
-        /// Sets the Steps property
+        /// Adds elements to the Steps collection
         /// </summary>
-        /// <param name="list">A list of steps associated with the job.</param>
+        /// <param name="steps">The values to add to the Steps collection </param>
         /// <returns>this instance</returns>
-        public JobFlowDetail WithSteps(params StepDetail[] list)
+        public JobFlowDetail WithSteps(params StepDetail[] steps)
         {
-            foreach (StepDetail item in list)
+            foreach (StepDetail element in steps)
             {
-                Steps.Add(item);
+                this.steps.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if Steps property is set
-        /// </summary>
-        /// <returns>true if Steps property is set</returns>
-        public bool IsSetSteps()
+        // Check to see if Steps property is set
+        internal bool IsSetSteps()
         {
-            return (Steps.Count > 0);
+            return this.steps.Count > 0;        
         }
 
         /// <summary>
-        /// Gets and sets the BootstrapActions property.
         /// A list of the bootstrap actions run by the job flow.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "BootstrapActions")]
         public List<BootstrapActionDetail> BootstrapActions
         {
-            get
-            {
-                if (this.bootstrapActionsField == null)
-                {
-                    this.bootstrapActionsField = new List<BootstrapActionDetail>();
-                }
-                return this.bootstrapActionsField;
-            }
-            set { this.bootstrapActionsField = value; }
+            get { return this.bootstrapActions; }
+            set { this.bootstrapActions = value; }
         }
-
         /// <summary>
-        /// Sets the BootstrapActions property
+        /// Adds elements to the BootstrapActions collection
         /// </summary>
-        /// <param name="list">A list of the bootstrap actions run by the job flow.</param>
+        /// <param name="bootstrapActions">The values to add to the BootstrapActions collection </param>
         /// <returns>this instance</returns>
-        public JobFlowDetail WithBootstrapActions(params BootstrapActionDetail[] list)
+        public JobFlowDetail WithBootstrapActions(params BootstrapActionDetail[] bootstrapActions)
         {
-            foreach (BootstrapActionDetail item in list)
+            foreach (BootstrapActionDetail element in bootstrapActions)
             {
-                BootstrapActions.Add(item);
+                this.bootstrapActions.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if BootstrapActions property is set
-        /// </summary>
-        /// <returns>true if BootstrapActions property is set</returns>
-        public bool IsSetBootstrapActions()
+        // Check to see if BootstrapActions property is set
+        internal bool IsSetBootstrapActions()
         {
-            return (BootstrapActions.Count > 0);
+            return this.bootstrapActions.Count > 0;         
         }
-
     }
 }

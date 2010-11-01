@@ -1,111 +1,95 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-11-25
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    ///<summary>
-    ///Associates a Listener with the list of Policies enabled for it.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
-    public class ListenerDescription
+    /// <summary>
+    /// <para> The ListenerDescription data type. </para>
+    /// </summary>
+    public class ListenerDescription  
     {
-        private Listener listenerField;
-        private List<string> policyNamesField;
+        
+        private Listener listener;
+        private List<string> policyNames = new List<string>();
+        /// <summary>
+        /// Default constructor for a new ListenerDescription object.  Callers should use the
+        /// properties or fluent setter (With...) methods to initialize this object after creating it.
+        /// </summary>
+        public ListenerDescription() {}
+    
 
         /// <summary>
-        /// Gets and sets the Listener property.
-        /// Specifies the configuration of the Listener for the Load Balacner.
+        /// The Listener data type.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Listener")]
         public Listener Listener
         {
-            get { return this.listenerField; }
-            set { this.listenerField = value; }
+            get { return this.listener; }
+            set { this.listener = value; }
         }
 
         /// <summary>
         /// Sets the Listener property
         /// </summary>
-        /// <param name="listener">Specifies the configuration of the Listener for the Load Balacner.</param>
+        /// <param name="listener">The value to set for the Listener property </param>
         /// <returns>this instance</returns>
         public ListenerDescription WithListener(Listener listener)
         {
-            this.listenerField = listener;
+            this.listener = listener;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Listener property is set
-        /// </summary>
-        /// <returns>true if Listener property is set</returns>
-        public bool IsSetListener()
+            
+        // Check to see if Listener property is set
+        internal bool IsSetListener()
         {
-            return this.listenerField != null;
+            return this.listener != null;       
         }
 
         /// <summary>
-        /// Gets and sets the PolicyNames property.
-        /// List of policies enabled for this listener. An empty list indicates that no policies are enabled.
+        /// A list of policies enabled for this listener. An empty list indicates
+        /// that no policies are enabled.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PolicyNames")]
         public List<string> PolicyNames
         {
-            get
-            {
-                if (this.policyNamesField == null)
-                {
-                    this.policyNamesField = new List<string>();
-                }
-                return this.policyNamesField;
-            }
-            set { this.policyNamesField = value; }
+            get { return this.policyNames; }
+            set { this.policyNames = value; }
         }
-
         /// <summary>
-        /// Sets the PolicyNames property
+        /// Adds elements to the PolicyNames collection
         /// </summary>
-        /// <param name="list">List of policies enabled for this listener. An empty list indicates that no policies are enabled.</param>
+        /// <param name="policyNames">The values to add to the PolicyNames collection </param>
         /// <returns>this instance</returns>
-        public ListenerDescription WithPolicyNames(params string[] list)
+        public ListenerDescription WithPolicyNames(params string[] policyNames)
         {
-            foreach (string item in list)
+            foreach (string element in policyNames)
             {
-                PolicyNames.Add(item);
+                this.policyNames.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if PolicyNames property is set
-        /// </summary>
-        /// <returns>true if PolicyNames property is set</returns>
-        public bool IsSetPolicyNames()
+        // Check to see if PolicyNames property is set
+        internal bool IsSetPolicyNames()
         {
-            return (PolicyNames.Count > 0);
+            return this.policyNames.Count > 0;      
         }
-
     }
 }

@@ -27,7 +27,8 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// </summary>
     internal class CreateLoginProfileResponseUnmarshaller : IResponseUnmarshaller<CreateLoginProfileResponse, UnmarshallerContext> {
 
-        public CreateLoginProfileResponse Unmarshall(UnmarshallerContext context) {
+        public CreateLoginProfileResponse Unmarshall(UnmarshallerContext context) 
+        {
             CreateLoginProfileResponse response = new CreateLoginProfileResponse();
 
             while (context.Read())
@@ -49,16 +50,17 @@ namespace Amazon.IdentityManagement.Model.Transform
             return response;
         }
         
+        
         public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
-            if (errorResponse.Code.Equals("NoSuchEntity"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchEntity"))
             {
                 return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code.Equals("EntityAlreadyExists"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("EntityAlreadyExists"))
             {
                 return new EntityAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
@@ -76,6 +78,7 @@ namespace Amazon.IdentityManagement.Model.Transform
             }
             return instance;
         }
+    
     }
 }
     

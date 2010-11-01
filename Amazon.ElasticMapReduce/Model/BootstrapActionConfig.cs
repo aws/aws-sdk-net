@@ -1,101 +1,99 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-03-31
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.ElasticMapReduce.Model
 {
-    ///<summary>
-    ///Configuration of a bootstrap action.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://elasticmapreduce.amazonaws.com/doc/2009-03-31", IsNullable = false)]
-    public class BootstrapActionConfig
+    /// <summary>
+    /// <para>Configuration of a bootstrap action.</para>
+    /// </summary>
+    public class BootstrapActionConfig  
     {
-        private string nameField;
-        private ScriptBootstrapActionConfig scriptBootstrapActionField;
+        
+        private string name;
+        private ScriptBootstrapActionConfig scriptBootstrapAction;
 
         /// <summary>
-        /// Gets and sets the Name property.
         /// The name of the bootstrap action.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 256</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "Name")]
         public string Name
         {
-            get { return this.nameField; }
-            set { this.nameField = value; }
+            get { return this.name; }
+            set { this.name = value; }
         }
 
         /// <summary>
         /// Sets the Name property
         /// </summary>
-        /// <param name="name">The name of the bootstrap action.</param>
+        /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
         public BootstrapActionConfig WithName(string name)
         {
-            this.nameField = name;
+            this.name = name;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Name property is set
-        /// </summary>
-        /// <returns>true if Name property is set</returns>
-        public bool IsSetName()
+            
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this.nameField != null;
+            return this.name != null;       
         }
 
         /// <summary>
-        /// Gets and sets the ScriptBootstrapAction property.
         /// The script run by the bootstrap action.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ScriptBootstrapAction")]
         public ScriptBootstrapActionConfig ScriptBootstrapAction
         {
-            get { return this.scriptBootstrapActionField; }
-            set { this.scriptBootstrapActionField = value; }
+            get { return this.scriptBootstrapAction; }
+            set { this.scriptBootstrapAction = value; }
         }
 
         /// <summary>
         /// Sets the ScriptBootstrapAction property
         /// </summary>
-        /// <param name="scriptBootstrapAction">The script run by the bootstrap action.</param>
+        /// <param name="scriptBootstrapAction">The value to set for the ScriptBootstrapAction property </param>
         /// <returns>this instance</returns>
         public BootstrapActionConfig WithScriptBootstrapAction(ScriptBootstrapActionConfig scriptBootstrapAction)
         {
-            this.scriptBootstrapActionField = scriptBootstrapAction;
+            this.scriptBootstrapAction = scriptBootstrapAction;
             return this;
         }
-
-        /// <summary>
-        /// Checks if ScriptBootstrapAction property is set
-        /// </summary>
-        /// <returns>true if ScriptBootstrapAction property is set</returns>
-        public bool IsSetScriptBootstrapAction()
+            
+        // Check to see if ScriptBootstrapAction property is set
+        internal bool IsSetScriptBootstrapAction()
         {
-            return this.scriptBootstrapActionField != null;
+            return this.scriptBootstrapAction != null;      
         }
-
     }
 }

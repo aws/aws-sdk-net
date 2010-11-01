@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Sets the InvalidationId property of this request to the value passed in.
         /// </summary>
-        /// <param name="id">The invalidation's id</param>
+        /// <param name="invalidationId">The invalidation's id</param>
         /// <returns>The request with the InvalidationId property set</returns>
         public GetInvalidationRequest WithInvalidationId(string invalidationId)
         {
@@ -82,7 +82,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Sets the DistributionId property of this request to the value passed in.
         /// </summary>
-        /// <param name="id">The distribution's id</param>
+        /// <param name="distributionId">The distribution's id</param>
         /// <returns>The request with the DistributionId property set</returns>
         public GetInvalidationRequest WithDistribtionId(string distributionId)
         {

@@ -27,7 +27,8 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// </summary>
     internal class CreateUserResponseUnmarshaller : IResponseUnmarshaller<CreateUserResponse, UnmarshallerContext> {
 
-        public CreateUserResponse Unmarshall(UnmarshallerContext context) {
+        public CreateUserResponse Unmarshall(UnmarshallerContext context) 
+        {
             CreateUserResponse response = new CreateUserResponse();
 
             while (context.Read())
@@ -49,21 +50,22 @@ namespace Amazon.IdentityManagement.Model.Transform
             return response;
         }
         
+        
         public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
-            if (errorResponse.Code.Equals("NoSuchEntity"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchEntity"))
             {
                 return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code.Equals("LimitExceeded"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code.Equals("EntityAlreadyExists"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("EntityAlreadyExists"))
             {
                 return new EntityAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
@@ -81,6 +83,7 @@ namespace Amazon.IdentityManagement.Model.Transform
             }
             return instance;
         }
+    
     }
 }
     

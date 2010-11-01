@@ -26,18 +26,18 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the UploadSigningCertificate operation.
     /// <para>Uploads an X.509 signing certificate and associates it with the
-    /// specified user. Some AWS services use X.509 signing certificates to
+    /// specified User. Some AWS services use X.509 signing certificates to
     /// validate requests that are signed with a corresponding private key.
-    /// When you upload the certificate, its default status is Active.</para>
-    /// <para>If the <c>UserName</c> field is not specified, the UserName is
-    /// determined implicitly based on the AWS Access Key ID used to sign the
-    /// request. Because this action works for access keys under the account,
-    /// this API can be used to manage root credentials even if the account
-    /// has no associated users.</para> <para><b>NOTE:</b>Because the body of
-    /// a X.509 certificate can be large, you should use POST rather than GET
-    /// when calling UploadSigningCertificate. For more information, see Using
-    /// the Query API in the AWS Identity and Access Management User
-    /// Guide.</para>
+    /// When you upload the certificate, its default status is <c>Active</c>
+    /// .</para> <para>If the <c>UserName</c> field is not specified, the User
+    /// name is determined implicitly based on the AWS Access Key ID used to
+    /// sign the request. Because this action works for access keys under the
+    /// AWS Account, this API can be used to manage root credentials even if
+    /// the AWS Account has no associated Users.</para>
+    /// <para><b>NOTE:</b>Because the body of a X.509 certificate can be
+    /// large, you should use POST rather than GET when calling
+    /// UploadSigningCertificate. For more information, see Using the Query
+    /// API in Using AWS Identity and Access Management.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UploadSigningCertificate"/>
     public class UploadSigningCertificateRequest : AmazonWebServiceRequest
@@ -46,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         private string certificateBody;
 
         /// <summary>
-        /// Name of the user the signing certificate is for.
+        /// Name of the User the signing certificate is for.
         ///  
         /// <para>
         /// <b>Constraints:</b>

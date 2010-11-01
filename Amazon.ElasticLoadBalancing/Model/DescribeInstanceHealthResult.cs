@@ -1,90 +1,59 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-11-25
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>
-    /// Returns the current state of the instances of the specified LoadBalancer.
+    /// <summary>Describe Instance Health Result
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
-    public class DescribeInstanceHealthResult
+    public class DescribeInstanceHealthResult  
     {
-        private List<InstanceState> instanceStatesField;
+        
+        private List<InstanceState> instanceStates = new List<InstanceState>();
 
         /// <summary>
-        /// Gets and sets the InstanceStates property.
-        /// Structure containing instance Health information for the specified instances, such as InService or
-        /// OutOfService and any reasons associated with the OutOfService state.
+        /// A list containing health information for the specified instances.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "InstanceStates")]
         public List<InstanceState> InstanceStates
         {
-            get
+            get { return this.instanceStates; }
+            set { this.instanceStates = value; }
+        }
+        /// <summary>
+        /// Adds elements to the InstanceStates collection
+        /// </summary>
+        /// <param name="instanceStates">The values to add to the InstanceStates collection </param>
+        /// <returns>this instance</returns>
+        public DescribeInstanceHealthResult WithInstanceStates(params InstanceState[] instanceStates)
+        {
+            foreach (InstanceState element in instanceStates)
             {
-                if (this.instanceStatesField == null)
-                {
-                    this.instanceStatesField = new List<InstanceState>();
-                }
-                return this.instanceStatesField;
+                this.instanceStates.Add(element);
             }
-            set { this.instanceStatesField = value; }
-        }
 
-        /// <summary>
-        /// Checks if InstanceStates property is set
-        /// </summary>
-        /// <returns>true if InstanceStates property is set</returns>
-        public bool IsSetInstanceStates()
-        {
-            return (InstanceStates.Count > 0);
+            return this;
         }
-
-        /// <summary>
-        /// XML Representation of this object
-        /// </summary>
-        /// <returns>XML String</returns>
-        public string ToXML()
+        // Check to see if InstanceStates property is set
+        internal bool IsSetInstanceStates()
         {
-            StringBuilder xml = new StringBuilder(1024);
-            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
-            using (StringWriter sw = new StringWriter(xml))
-            {
-                serializer.Serialize(sw, this);
-            }
-            return xml.ToString();
-        }
-
-        /// <summary>
-        /// String Representation of this object. Overrides Object.ToString()
-        /// </summary>
-        /// <returns>This object as a string</returns>
-        public override string ToString()
-        {
-            return this.ToXML();
+            return this.instanceStates.Count > 0;       
         }
     }
 }

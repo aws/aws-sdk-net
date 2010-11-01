@@ -1,115 +1,120 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-11-25
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns the current state of the instances of the specified LoadBalancer. If no instances are specified, the state of
-    /// all the instances for the LoadBalancer is returned.
-    ///
-    /// You must have been the one who created in the LoadBalancer. In other words, in order to successfully call this API, you must
-    /// provide the same account credentials as those that were used to create the LoadBalancer.
+    /// Container for the parameters to the DescribeInstanceHealth operation.
+    /// <para> Returns the current state of the instances of the specified
+    /// LoadBalancer. If no instances are specified, the state of all the
+    /// instances for the LoadBalancer is returned. </para> <para><b>NOTE:</b>
+    /// The client must have created the specified input LoadBalancer in order
+    /// to retrieve this information; the client must provide the same account
+    /// credentials as those that were used to create the LoadBalancer.
+    /// </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
-    public class DescribeInstanceHealthRequest
+    /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DescribeInstanceHealth"/>
+    public class DescribeInstanceHealthRequest : AmazonWebServiceRequest
     {
-        private string loadBalancerNameField;
-        private List<Instance> instancesField;
+        private string loadBalancerName;
+        private List<Instance> instances = new List<Instance>();
+        /// <summary>
+        /// Default constructor for a new DescribeInstanceHealthRequest object.  Callers should use the
+        /// properties or fluent setter (With...) methods to initialize this object after creating it.
+        /// </summary>
+        public DescribeInstanceHealthRequest() {}
+    
+        /// <summary>
+        /// Constructs a new DescribeInstanceHealthRequest object.
+        /// Callers should use the properties or fluent setter (With...) methods to
+        /// initialize any additional object members.
+        /// </summary>
+        /// 
+        /// <param name="loadBalancerName"> The name associated with the
+        /// LoadBalancer. The name must be unique within the client AWS account.
+        /// </param>
+        public DescribeInstanceHealthRequest(string loadBalancerName) 
+        {
+            this.loadBalancerName = loadBalancerName;
+        }
+    
 
         /// <summary>
-        /// Gets and sets the LoadBalancerName property.
-        /// The mnemonic name associated with the LoadBalancer. The name must be unique within your AWS account.
+        /// The name associated with the LoadBalancer. The name must be unique
+        /// within the client AWS account.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "LoadBalancerName")]
         public string LoadBalancerName
         {
-            get { return this.loadBalancerNameField; }
-            set { this.loadBalancerNameField = value; }
+            get { return this.loadBalancerName; }
+            set { this.loadBalancerName = value; }
         }
 
         /// <summary>
         /// Sets the LoadBalancerName property
         /// </summary>
-        /// <param name="loadBalancerName">The mnemonic name associated with the LoadBalancer. The name must be unique within your AWS account.</param>
+        /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
         public DescribeInstanceHealthRequest WithLoadBalancerName(string loadBalancerName)
         {
-            this.loadBalancerNameField = loadBalancerName;
+            this.loadBalancerName = loadBalancerName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if LoadBalancerName property is set
-        /// </summary>
-        /// <returns>true if LoadBalancerName property is set</returns>
-        public bool IsSetLoadBalancerName()
+            
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerNameField != null;
+            return this.loadBalancerName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the Instances property.
-        /// List of instances IDs whose state is being queried.
+        /// A list of instance IDs whose states are being queried.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Instances")]
         public List<Instance> Instances
         {
-            get
-            {
-                if (this.instancesField == null)
-                {
-                    this.instancesField = new List<Instance>();
-                }
-                return this.instancesField;
-            }
-            set { this.instancesField = value; }
+            get { return this.instances; }
+            set { this.instances = value; }
         }
-
         /// <summary>
-        /// Sets the Instances property
+        /// Adds elements to the Instances collection
         /// </summary>
-        /// <param name="list">List of instances IDs whose state is being queried.</param>
+        /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
-        public DescribeInstanceHealthRequest WithInstances(params Instance[] list)
+        public DescribeInstanceHealthRequest WithInstances(params Instance[] instances)
         {
-            foreach (Instance item in list)
+            foreach (Instance element in instances)
             {
-                Instances.Add(item);
+                this.instances.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if Instances property is set
-        /// </summary>
-        /// <returns>true if Instances property is set</returns>
-        public bool IsSetInstances()
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
         {
-            return (Instances.Count > 0);
+            return this.instances.Count > 0;        
         }
-
     }
 }
+    

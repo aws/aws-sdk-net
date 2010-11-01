@@ -1,148 +1,158 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-11-25
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Generates a stickiness policy with sticky session lifetimes that follow
-    /// that of an application-generated cookie. This policy can only be associated
-    /// with HTTP listeners.
-    ///
-    /// This policy is similar to the policy created by CreateLBCookieStickinessPolicy,
-    /// except that the lifetime of the special Elastic Load Balancing cookie follows the
-    /// lifetime of the application-generated cookie specified in the policy configuration.
-    /// The load balancer only inserts a new stickiness cookie when the application response
-    /// includes a new application cookie.
-    ///
-    /// If the application cookie is explicitly removed or expires, the session stops being
-    /// sticky until a new application cookie is issued.
+    /// Container for the parameters to the CreateAppCookieStickinessPolicy operation.
+    /// <para> Generates a stickiness policy with sticky session lifetimes
+    /// that follow that of an application-generated cookie. This policy can
+    /// only be associated with HTTP listeners. </para> <para> This policy is
+    /// similar to the policy created by CreateLBCookieStickinessPolicy,
+    /// except that the lifetime of the special Elastic Load Balancing cookie
+    /// follows the lifetime of the application-generated cookie specified in
+    /// the policy configuration. The load balancer only inserts a new
+    /// stickiness cookie when the application response includes a new
+    /// application cookie. </para> <para> If the application cookie is
+    /// explicitly removed or expires, the session stops being sticky until a
+    /// new application cookie is issued. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
-    public class CreateAppCookieStickinessPolicyRequest
+    /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateAppCookieStickinessPolicy"/>
+    public class CreateAppCookieStickinessPolicyRequest : AmazonWebServiceRequest
     {
-        private string loadBalancerNameField;
-        private string policyNameField;
-        private string cookieNameField;
+        private string loadBalancerName;
+        private string policyName;
+        private string cookieName;
+        /// <summary>
+        /// Default constructor for a new CreateAppCookieStickinessPolicyRequest object.  Callers should use the
+        /// properties or fluent setter (With...) methods to initialize this object after creating it.
+        /// </summary>
+        public CreateAppCookieStickinessPolicyRequest() {}
+    
+        /// <summary>
+        /// Constructs a new CreateAppCookieStickinessPolicyRequest object.
+        /// Callers should use the properties or fluent setter (With...) methods to
+        /// initialize any additional object members.
+        /// </summary>
+        /// 
+        /// <param name="loadBalancerName"> The name associated with the
+        /// LoadBalancer. The name must be unique within the client AWS account.
+        /// </param>
+        /// <param name="policyName"> The name of the policy being created. The
+        /// name must be unique within the set of policies for this Load Balancer.
+        /// </param>
+        /// <param name="cookieName"> Name of the application cookie used for
+        /// stickiness. </param>
+        public CreateAppCookieStickinessPolicyRequest(string loadBalancerName, string policyName, string cookieName) 
+        {
+            this.loadBalancerName = loadBalancerName;
+            this.policyName = policyName;
+            this.cookieName = cookieName;
+        }
+    
 
         /// <summary>
-        /// Gets and sets the LoadBalancerName property.
-        /// The name associated with the LoadBalancer.
-        /// The name must be unique within the client AWS account.
+        /// The name associated with the LoadBalancer. The name must be unique
+        /// within the client AWS account.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "LoadBalancerName")]
         public string LoadBalancerName
         {
-            get { return this.loadBalancerNameField; }
-            set { this.loadBalancerNameField = value; }
+            get { return this.loadBalancerName; }
+            set { this.loadBalancerName = value; }
         }
 
         /// <summary>
         /// Sets the LoadBalancerName property
         /// </summary>
-        /// <param name="loadBalancerName">The name associated with the LoadBalancer.
-        /// The name must be unique within the client AWS account.</param>
+        /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
         public CreateAppCookieStickinessPolicyRequest WithLoadBalancerName(string loadBalancerName)
         {
-            this.loadBalancerNameField = loadBalancerName;
+            this.loadBalancerName = loadBalancerName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if LoadBalancerName property is set
-        /// </summary>
-        /// <returns>true if LoadBalancerName property is set</returns>
-        public bool IsSetLoadBalancerName()
+            
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerNameField != null;
+            return this.loadBalancerName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the PolicyName property.
-        /// The name of the policy being created.
-        /// The name must be unique within the set of policies for this Load Balancer.
+        /// The name of the policy being created. The name must be unique within
+        /// the set of policies for this Load Balancer.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PolicyName")]
         public string PolicyName
         {
-            get { return this.policyNameField; }
-            set { this.policyNameField = value; }
+            get { return this.policyName; }
+            set { this.policyName = value; }
         }
 
         /// <summary>
         /// Sets the PolicyName property
         /// </summary>
-        /// <param name="policyName">The name of the policy being created.
-        /// The name must be unique within the set of policies for this Load Balancer.</param>
+        /// <param name="policyName">The value to set for the PolicyName property </param>
         /// <returns>this instance</returns>
         public CreateAppCookieStickinessPolicyRequest WithPolicyName(string policyName)
         {
-            this.policyNameField = policyName;
+            this.policyName = policyName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if PolicyName property is set
-        /// </summary>
-        /// <returns>true if PolicyName property is set</returns>
-        public bool IsSetPolicyName()
+            
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
         {
-            return this.policyNameField != null;
+            return this.policyName != null;         
         }
 
         /// <summary>
-        /// Gets and sets the CookieName property.
         /// Name of the application cookie used for stickiness.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "CookieName")]
         public string CookieName
         {
-            get { return this.cookieNameField; }
-            set { this.cookieNameField = value; }
+            get { return this.cookieName; }
+            set { this.cookieName = value; }
         }
 
         /// <summary>
         /// Sets the CookieName property
         /// </summary>
-        /// <param name="cookieName">Name of the application cookie used for stickiness.</param>
+        /// <param name="cookieName">The value to set for the CookieName property </param>
         /// <returns>this instance</returns>
         public CreateAppCookieStickinessPolicyRequest WithCookieName(string cookieName)
         {
-            this.cookieNameField = cookieName;
+            this.cookieName = cookieName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if CookieName property is set
-        /// </summary>
-        /// <returns>true if CookieName property is set</returns>
-        public bool IsSetCookieName()
+            
+        // Check to see if CookieName property is set
+        internal bool IsSetCookieName()
         {
-            return this.cookieNameField != null;
+            return this.cookieName != null;         
         }
-
     }
 }
+    

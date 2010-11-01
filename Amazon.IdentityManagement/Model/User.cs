@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The User data type contains information about a user.</para>
+    /// <para>The User data type contains information about a User.</para>
     /// <para> This data type is used as a response element in the following
     /// actions:</para>
     /// <ul>
@@ -40,9 +40,10 @@ namespace Amazon.IdentityManagement.Model
         private string arn;
 
         /// <summary>
-        /// Path to the user. For more information about paths, see Identifiers
-        /// for Users and Groups in the AWS Identity and Access Management User
-        /// Guide.
+        /// Path to the User name. For more information about paths, see
+        /// Identifiers for Users and Groups in <a
+        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
+        /// target="_blank">Using AWS Identity and Access Management</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -74,9 +75,15 @@ namespace Amazon.IdentityManagement.Model
             this.path = path;
             return this;
         }
+            
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this.path != null;       
+        }
 
         /// <summary>
-        /// The name identifying the user.
+        /// The name identifying the User.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -108,11 +115,18 @@ namespace Amazon.IdentityManagement.Model
             this.userName = userName;
             return this;
         }
+            
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this.userName != null;       
+        }
 
         /// <summary>
-        /// The stable and unique string identifying the user. For more
-        /// information about IDs, see Identifiers for Users and Groups in the AWS
-        /// Identity and Access Management User Guide.
+        /// The stable and unique string identifying the User. For more
+        /// information about IDs, see Identifiers for Users and Groups in <a
+        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
+        /// target="_blank">Using AWS Identity and Access Management</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -144,12 +158,19 @@ namespace Amazon.IdentityManagement.Model
             this.userId = userId;
             return this;
         }
+            
+        // Check to see if UserId property is set
+        internal bool IsSetUserId()
+        {
+            return this.userId != null;         
+        }
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) specifying the user. For more
+        /// The Amazon Resource Name (ARN) specifying the User. For more
         /// information about ARNs and how to use them in policies, see
-        /// Identifiers for Users and Groups in the AWS Identity and Access
-        /// Management User Guide.
+        /// Identifiers for Users and Groups in <a
+        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
+        /// target="_blank">Using AWS Identity and Access Management</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -176,6 +197,12 @@ namespace Amazon.IdentityManagement.Model
         {
             this.arn = arn;
             return this;
+        }
+            
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this.arn != null;        
         }
     }
 }

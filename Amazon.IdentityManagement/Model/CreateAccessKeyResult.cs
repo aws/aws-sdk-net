@@ -38,5 +38,22 @@ namespace Amazon.IdentityManagement.Model
             get { return this.accessKey; }
             set { this.accessKey = value; }
         }
+
+        /// <summary>
+        /// Sets the AccessKey property
+        /// </summary>
+        /// <param name="accessKey">The value to set for the AccessKey property </param>
+        /// <returns>this instance</returns>
+        public CreateAccessKeyResult WithAccessKey(AccessKey accessKey)
+        {
+            this.accessKey = accessKey;
+            return this;
+        }
+            
+        // Check to see if AccessKey property is set
+        internal bool IsSetAccessKey()
+        {
+            return this.accessKey != null;      
+        }
     }
 }

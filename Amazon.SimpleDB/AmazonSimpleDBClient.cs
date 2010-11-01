@@ -165,8 +165,6 @@ namespace Amazon.SimpleDB
             }
             this.awsAccessKeyId = awsAccessKeyId;
             this.config = config;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
         }
 
         /// <summary>
@@ -181,8 +179,6 @@ namespace Amazon.SimpleDB
             this.awsAccessKeyId = awsAccessKeyId;
             this.awsSecretAccessKey = awsSecretAccessKey;
             this.config = config;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
         }
 
         #region Public API
@@ -375,6 +371,8 @@ namespace Amazon.SimpleDB
                 request.Timeout = 50000;
                 request.ContentType = AWSSDKUtils.UrlEncodedContent;
                 request.ContentLength = contentLength;
+                request.ServicePoint.Expect100Continue = false;
+                request.ServicePoint.UseNagleAlgorithm = false;
             }
 
             return request;

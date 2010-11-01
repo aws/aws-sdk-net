@@ -27,13 +27,15 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// </summary>
     internal class DeleteSigningCertificateResponseUnmarshaller : IResponseUnmarshaller<DeleteSigningCertificateResponse, UnmarshallerContext> {
 
-        public DeleteSigningCertificateResponse Unmarshall(UnmarshallerContext context) {
+        public DeleteSigningCertificateResponse Unmarshall(UnmarshallerContext context) 
+        {
             DeleteSigningCertificateResponse response = new DeleteSigningCertificateResponse();
 
             while (context.Read())
             {
                 if (context.IsStartElement)
                 {
+                    
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
                         response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
@@ -44,11 +46,12 @@ namespace Amazon.IdentityManagement.Model.Transform
             return response;
         }
         
+        
         public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
-            if (errorResponse.Code.Equals("NoSuchEntity"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchEntity"))
             {
                 return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
@@ -66,6 +69,7 @@ namespace Amazon.IdentityManagement.Model.Transform
             }
             return instance;
         }
+    
     }
 }
     

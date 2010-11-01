@@ -27,7 +27,8 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// </summary>
     internal class GetGroupPolicyResponseUnmarshaller : IResponseUnmarshaller<GetGroupPolicyResponse, UnmarshallerContext> {
 
-        public GetGroupPolicyResponse Unmarshall(UnmarshallerContext context) {
+        public GetGroupPolicyResponse Unmarshall(UnmarshallerContext context) 
+        {
             GetGroupPolicyResponse response = new GetGroupPolicyResponse();
 
             while (context.Read())
@@ -49,11 +50,12 @@ namespace Amazon.IdentityManagement.Model.Transform
             return response;
         }
         
+        
         public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
-            if (errorResponse.Code.Equals("NoSuchEntity"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchEntity"))
             {
                 return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
@@ -71,6 +73,7 @@ namespace Amazon.IdentityManagement.Model.Transform
             }
             return instance;
         }
+    
     }
 }
     

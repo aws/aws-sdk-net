@@ -86,6 +86,17 @@ namespace Amazon.Runtime.Internal.Util
                     errorWithExceptionMethod = logType.GetMethod("Error", new Type[] { typeof(string), typeof(Exception) });
                     infoFormatMethod = logType.GetMethod("InfoFormat", new Type[] { typeof(string), typeof(object[]) });
 
+                    if (getLoggerWithTypeMethod == null ||
+                        logType == null ||
+                        debugFormatMethod == null ||
+                        debugWithExceptionMethod == null ||
+                        errorWithExceptionMethod == null ||
+                        infoFormatMethod == null)
+                    {
+                        loadState = LoadState.Failed;
+                        return;
+                    }
+
                     loadState = LoadState.Success;
                 }
                 catch
@@ -103,7 +114,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="exception"></param>
         public void Error(string message, Exception exception)
         {
-            if (loadState != LoadState.Success)
+            if (loadState != LoadState.Success || this.internalLogger == null || errorWithExceptionMethod == null)
                 return;
 
             errorWithExceptionMethod.Invoke(this.internalLogger, new object[] { message, exception });
@@ -116,7 +127,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="exception"></param>
         public void Debug(string message, Exception exception)
         {
-            if (loadState != LoadState.Success)
+            if (loadState != LoadState.Success || this.internalLogger == null || debugWithExceptionMethod == null)
                 return;
 
             debugWithExceptionMethod.Invoke(this.internalLogger, new object[] { message, exception });
@@ -129,7 +140,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="arguments"></param>
         public void DebugFormat(string message, params object[] arguments)
         {
-            if (loadState != LoadState.Success)
+            if (loadState != LoadState.Success || this.internalLogger == null || debugFormatMethod == null)
                 return;
 
             debugFormatMethod.Invoke(this.internalLogger, new object[] { message, arguments });
@@ -142,7 +153,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="arguments"></param>
         public void InfoFormat(string message, params object[] arguments)
         {
-            if (loadState != LoadState.Success)
+            if (loadState != LoadState.Success || this.internalLogger == null || infoFormatMethod == null)
                 return;
 
             infoFormatMethod.Invoke(this.internalLogger, new object[] { message, arguments });

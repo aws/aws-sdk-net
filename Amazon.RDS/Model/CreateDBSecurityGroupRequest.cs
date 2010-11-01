@@ -1,101 +1,93 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Creates a new DB Security Group.
+    /// Container for the parameters to the CreateDBSecurityGroup operation.
+    /// <para> This API creates a new database security group. Database
+    /// Security groups control access to a database instance. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class CreateDBSecurityGroupRequest
+    /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBSecurityGroup"/>
+    public class CreateDBSecurityGroupRequest : AmazonWebServiceRequest
     {
-        private string DBSecurityGroupNameField;
-        private string DBSecurityGroupDescriptionField;
+        private string dBSecurityGroupName;
+        private string dBSecurityGroupDescription;
 
         /// <summary>
-        /// Gets and sets the DBSecurityGroupName property.
-        /// Name for the DB Security Group. This value is store as a lower-case string.
+        /// The name for the DB Security Group. This value is stored as a
+        /// lowercase string.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBSecurityGroupName")]
         public string DBSecurityGroupName
         {
-            get { return this.DBSecurityGroupNameField; }
-            set { this.DBSecurityGroupNameField = value; }
+            get { return this.dBSecurityGroupName; }
+            set { this.dBSecurityGroupName = value; }
         }
 
         /// <summary>
         /// Sets the DBSecurityGroupName property
         /// </summary>
-        /// <param name="DBSecurityGroupName">Name for the DB Security Group. This value is store as a lower-case string.</param>
+        /// <param name="dBSecurityGroupName">The value to set for the DBSecurityGroupName property </param>
         /// <returns>this instance</returns>
-        public CreateDBSecurityGroupRequest WithDBSecurityGroupName(string DBSecurityGroupName)
+        public CreateDBSecurityGroupRequest WithDBSecurityGroupName(string dBSecurityGroupName)
         {
-            this.DBSecurityGroupNameField = DBSecurityGroupName;
+            this.dBSecurityGroupName = dBSecurityGroupName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBSecurityGroupName property is set
-        /// </summary>
-        /// <returns>true if DBSecurityGroupName property is set</returns>
-        public bool IsSetDBSecurityGroupName()
+            
+        // Check to see if DBSecurityGroupName property is set
+        internal bool IsSetDBSecurityGroupName()
         {
-            return this.DBSecurityGroupNameField != null;
+            return this.dBSecurityGroupName != null;        
         }
 
         /// <summary>
-        /// Gets and sets the DBSecurityGroupDescription property.
-        /// Description for the DB Security Group.
+        /// The description for the DB Security Group.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBSecurityGroupDescription")]
         public string DBSecurityGroupDescription
         {
-            get { return this.DBSecurityGroupDescriptionField; }
-            set { this.DBSecurityGroupDescriptionField = value; }
+            get { return this.dBSecurityGroupDescription; }
+            set { this.dBSecurityGroupDescription = value; }
         }
 
         /// <summary>
         /// Sets the DBSecurityGroupDescription property
         /// </summary>
-        /// <param name="DBSecurityGroupDescription">Description for the DB Security Group.</param>
+        /// <param name="dBSecurityGroupDescription">The value to set for the DBSecurityGroupDescription property </param>
         /// <returns>this instance</returns>
-        public CreateDBSecurityGroupRequest WithDBSecurityGroupDescription(string DBSecurityGroupDescription)
+        public CreateDBSecurityGroupRequest WithDBSecurityGroupDescription(string dBSecurityGroupDescription)
         {
-            this.DBSecurityGroupDescriptionField = DBSecurityGroupDescription;
+            this.dBSecurityGroupDescription = dBSecurityGroupDescription;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBSecurityGroupDescription property is set
-        /// </summary>
-        /// <returns>true if DBSecurityGroupDescription property is set</returns>
-        public bool IsSetDBSecurityGroupDescription()
+            
+        // Check to see if DBSecurityGroupDescription property is set
+        internal bool IsSetDBSecurityGroupDescription()
         {
-            return this.DBSecurityGroupDescriptionField != null;
+            return this.dBSecurityGroupDescription != null;         
         }
-
     }
 }
+    

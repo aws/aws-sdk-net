@@ -65,7 +65,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <summary>
         /// Condition key for the current time, in epoch seconds.
         /// <para>
-        /// This condition key should only be used with <see cref="Amazon.Auth.AccessControlPolicy.ConditionFactory.NumericComparisonType"> enum.
+        /// This condition key should only be used with <see cref="Amazon.Auth.AccessControlPolicy.ConditionFactory.NumericComparisonType"/> enum.
         /// objects.
         /// </para>
         /// </summary>
@@ -271,7 +271,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// source IP address is within the CIDR range or not) depends on the
         /// specified IpAddressComparisonType.
         /// </summary>
-        /// <param name="type">The type of comparison to to perform.</paramparam>
+        /// <param name="type">The type of comparison to to perform.</param>
         /// <param name="ipAddressRange">The CIDR IP range involved in the policy condition.</param>
         public static Condition NewCondition(IpAddressComparisonType type, string ipAddressRange)
         {
@@ -297,7 +297,6 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <param name="type">The type of comparison to perform</param>
         /// <param name="key">The access policy condition key specifying where to get the
         ///            first string for the comparison (ex: aws:UserAgent). 
-        ///            <see cref="Amazon.Auth.Conditions.AWSCommonConditions"/>
         /// </param>
         /// <param name="value">The second string to compare against. When using
         ///            StringComparisonType.StringLike or

@@ -59,7 +59,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </para>
         /// <para>
         /// For example, an Amazon SQS queue might be addressed with the following
-        /// ARN: arn:aws:sqs:us-east-1:987654321000:MyQueue<
+        /// ARN: arn:aws:sqs:us-east-1:987654321000:MyQueue
         /// </para>
         /// <para>
         /// Some resources may not use every field in an ARN. For example, resources

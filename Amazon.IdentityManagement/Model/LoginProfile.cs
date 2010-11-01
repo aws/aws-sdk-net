@@ -22,7 +22,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// <para>The LoginProfile data type contains information about a login
-    /// profile for a user.</para> <para> This data type is used as a response
+    /// profile for a User.</para> <para> This data type is used as a response
     /// element in the actions CreateLoginProfile and GetLoginProfile. </para>
     /// </summary>
     public class LoginProfile  
@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
         private string userName;
 
         /// <summary>
-        /// The name of the user, which can be used for logins.
+        /// The name of the User, which can be used for logins.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -62,6 +62,12 @@ namespace Amazon.IdentityManagement.Model
         {
             this.userName = userName;
             return this;
+        }
+            
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this.userName != null;       
         }
     }
 }

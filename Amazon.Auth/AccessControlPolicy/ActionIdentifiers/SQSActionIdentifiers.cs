@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Amazon Simple Queue
     /// Service.
     /// </summary>
-    /// <see cref="Amazon.Auth.Statement.Actions"/>
+    /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
     public class SQSActionIdentifiers
     {
         /// <summary>
@@ -32,77 +32,66 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
 
         /// <summary>
         /// Action for the AddPermission operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.AddPermissionRequest"/>
         public static readonly ActionIdentifier AddPermission = new ActionIdentifier("sqs:AddPermission");
 
         /// <summary>
         /// Action for the ChangeMessageVisibility operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.ChangeMessageVisibilityRequest"/>
         public static readonly ActionIdentifier ChangeMessageVisibility = new ActionIdentifier("sqs:ChangeMessageVisibility");
 
         /// <summary>
         /// Action for the CreateQueue operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.CreateQueueRequest"/>
         public static readonly ActionIdentifier CreateQueue = new ActionIdentifier("sqs:CreateQueue");
 
         /// <summary>
         /// Action for the DeleteMessage operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.DeleteMessageRequest"/>
         public static readonly ActionIdentifier DeleteMessage = new ActionIdentifier("sqs:DeleteMessage");
 
         /// <summary>
         /// Action for the DeleteQueue operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.DeleteQueueRequest"/>
         public static readonly ActionIdentifier DeleteQueue = new ActionIdentifier("sqs:DeleteQueue");
 
         /// <summary>
         /// Action for the GetQueueAttributes operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.GetQueueAttributesRequest"/>
         public static readonly ActionIdentifier GetQueueAttributes = new ActionIdentifier("sqs:GetQueueAttributes");
 
         /// <summary>
         /// Action for the ListQueues operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.ListQueuesRequest"/>
         public static readonly ActionIdentifier ListQueues = new ActionIdentifier("sqs:ListQueues");
 
         /// <summary>
         /// Action for the ReceiveMessage operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.ReceiveMessageRequest"/>
         public static readonly ActionIdentifier ReceiveMessage = new ActionIdentifier("sqs:ReceiveMessage");
 
         /// <summary>
         /// Action for the RemovePermission operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.RemovePermissionRequest"/>
         public static readonly ActionIdentifier RemovePermission = new ActionIdentifier("sqs:RemovePermission");
 
         /// <summary>
         /// Action for the SendMessage operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.SendMessageRequest"/>
         public static readonly ActionIdentifier SendMessage = new ActionIdentifier("sqs:SendMessage");
 
         /// <summary>
         /// Action for the SetQueueAttributes operation on Amazon SQS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SQS.Model.SetQueueAttributesRequest"/>
         public static readonly ActionIdentifier SetQueueAttributes = new ActionIdentifier("sqs:SetQueueAttributes");

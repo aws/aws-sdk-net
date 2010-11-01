@@ -25,11 +25,16 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUser operation.
-    /// <para>Updates the name and/or the path of the specified user.</para>
+    /// <para>Updates the name and/or the path of the specified User.</para>
     /// <para><b>IMPORTANT:</b> You should understand the implications of
-    /// changing a user's path or name. For more information, see Renaming
-    /// Users and Groups in the AWS Identity and Access Management User Guide.
-    /// </para>
+    /// changing a User's path or name. For more information, see Renaming
+    /// Users and Groups in Using AWS Identity and Access Management. </para>
+    /// <para><b>NOTE:</b>To change a User name the requester must have
+    /// appropriate permissions on both the source object and the target
+    /// object. For example, to change Bob to Robert, the entity making the
+    /// request must have permission on Bob and Robert, or must have
+    /// permission on all (*). For more information about permissions, see
+    /// Permissions and Policies. </para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateUser"/>
     public class UpdateUserRequest : AmazonWebServiceRequest
@@ -39,8 +44,8 @@ namespace Amazon.IdentityManagement.Model
         private string newUserName;
 
         /// <summary>
-        /// Name of the user to update. If you're changing the name of the user,
-        /// this is the original name.
+        /// Name of the User to update. If you're changing the name of the User,
+        /// this is the original User name.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -80,7 +85,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// New path for the user. Include this only if you're changing the user's
+        /// New path for the User. Include this only if you're changing the User's
         /// path.
         ///  
         /// <para>
@@ -121,7 +126,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// New name for the user. Include this only if you're changing the user's
+        /// New name for the User. Include this only if you're changing the User's
         /// name.
         ///  
         /// <para>

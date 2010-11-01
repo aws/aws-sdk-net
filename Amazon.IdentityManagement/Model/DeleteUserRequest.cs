@@ -25,7 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// <para>Deletes the specified user. The user must not belong to any
+    /// <para>Deletes the specified User. The User must not belong to any
     /// groups, have any keys or signing certificates, or have any attached
     /// policies.</para>
     /// </summary>
@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
         private string userName;
 
         /// <summary>
-        /// Name of the user to delete.
+        /// Name of the User to delete.
         ///  
         /// <para>
         /// <b>Constraints:</b>

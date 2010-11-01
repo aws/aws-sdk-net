@@ -22,61 +22,53 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Amazon Simple
     /// Notification Service.
     /// </summary>
-    /// <see cref="Amazon.Auth.Statement.Actions"/>
+    /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
     public class SNSActionIdentifiers
     {
         /// <summary>
         /// Action for the AddPermission operation on Amazon SNS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SimpleNotificationService.Model.AddPermissionRequest"/>
         public static readonly ActionIdentifier AddPermission = new ActionIdentifier("sns:AddPermission");
 
         /// <summary>
         /// Action for the AddPermission operation on Amazon SNS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SimpleNotificationService.Model.AddPermissionRequest"/>
         public static readonly ActionIdentifier DeleteTopic = new ActionIdentifier("sns:DeleteTopic");
 
         /// <summary>
         /// Action for the GetTopicAttributes operation on Amazon SNS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SimpleNotificationService.Model.GetTopicAttributesRequest"/>
         public static readonly ActionIdentifier GetTopicAttributes = new ActionIdentifier("sns:GetTopicAttributes");
 
         /// <summary>
         /// Action for the ListSubscriptionsByTopic operation on Amazon SNS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SimpleNotificationService.Model.ListSubscriptionsByTopicRequest"/>
         public static readonly ActionIdentifier ListSubscriptionsByTopic = new ActionIdentifier("sns:ListSubscriptionsByTopic");
 
         /// <summary>
         /// Action for the Publish operation on Amazon SNS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SimpleNotificationService.Model.PublishRequest"/>
         public static readonly ActionIdentifier Publish = new ActionIdentifier("sns:Publish");
 
         /// <summary>
         /// Action for the RemovePermission operation on Amazon SNS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SimpleNotificationService.Model.RemovePermissionRequest"/>
         public static readonly ActionIdentifier RemovePermission = new ActionIdentifier("sns:RemovePermission");
 
         /// <summary>
         /// Action for the SetTopicAttributes operation on Amazon SNS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SimpleNotificationService.Model.SetTopicAttributesRequest"/>
         public static readonly ActionIdentifier SetTopicAttributes = new ActionIdentifier("sns:SetTopicAttributes");
 
         /// <summary>
         /// Action for the Subscribe operation on Amazon SNS.
-        /// </para>
         /// </summary>
         /// <see cref="Amazon.SimpleNotificationService.Model.SubscribeRequest"/>
         public static readonly ActionIdentifier Subscribe = new ActionIdentifier("sns:Subscribe");

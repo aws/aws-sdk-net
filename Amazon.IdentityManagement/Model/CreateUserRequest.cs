@@ -25,11 +25,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// <para>Creates a new user for your account.</para> <para>For
-    /// information about limitations on the number of users you can create,
-    /// see Limitations on AWS IAM Entities in the <a
-    /// href="http://aws.amazon.com/documentation/"> AWS Identity and Access
-    /// Management User Guide </a> .</para>
+    /// <para>Creates a new User for your AWS Account.</para> <para>For
+    /// information about limitations on the number of Users you can create,
+    /// see Limitations on IAM Entities in Using AWS Identity and Access
+    /// Management.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateUser"/>
     public class CreateUserRequest : AmazonWebServiceRequest
@@ -38,10 +37,12 @@ namespace Amazon.IdentityManagement.Model
         private string userName;
 
         /// <summary>
-        /// The user's path. For more information about paths, see Identifiers for
-        /// Users and Groups in the AWS AWS Identity and Access Management User
-        /// Guide. This parameter is optional. If it is not included, it defaults
-        /// to /.
+        /// The path for the User name. For more information about paths, see
+        /// Identifiers for Users and Groups in <a
+        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
+        /// target="_blank">Using AWS Identity and Access Management</a>. This
+        /// parameter is optional. If it is not included, it defaults to a slash
+        /// (/).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -81,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Name of the user to create.
+        /// Name of the User to create.
         ///  
         /// <para>
         /// <b>Constraints:</b>

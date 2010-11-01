@@ -26,7 +26,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// conditions to restrict access to specific endpoints (e.g.,
         /// *@mycompany.com).
         /// <para>
-        /// This condition key may only be used with <see cref="Amazon.Auth.AccessControlPolicy.ConditionFactory.StringComparisonType"> enum.
+        /// This condition key may only be used with <see cref="Amazon.Auth.AccessControlPolicy.ConditionFactory.StringComparisonType"/> enum.
         /// </para>
         /// </summary>
         public const string SNS_ENDPOINT_CONDITION_KEY = "sns:Endpoint";
@@ -36,7 +36,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// previously confirmed subscription. Use with string conditions to restrict
         /// publication to specific delivery protocols (e.g., HTTPS).
         /// <para>
-        /// This condition key may only be used with <see cref="Amazon.Auth.AccessControlPolicy.ConditionFactory.StringComparisonType"> enum.
+        /// This condition key may only be used with <see cref="Amazon.Auth.AccessControlPolicy.ConditionFactory.StringComparisonType"/> enum.
         /// </para>
         /// </summary>
         public const string SNS_PROTOCOL_CONDITION_KEY = "sns:Protocol";

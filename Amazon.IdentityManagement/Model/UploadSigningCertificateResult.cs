@@ -38,5 +38,22 @@ namespace Amazon.IdentityManagement.Model
             get { return this.certificate; }
             set { this.certificate = value; }
         }
+
+        /// <summary>
+        /// Sets the Certificate property
+        /// </summary>
+        /// <param name="certificate">The value to set for the Certificate property </param>
+        /// <returns>this instance</returns>
+        public UploadSigningCertificateResult WithCertificate(SigningCertificate certificate)
+        {
+            this.certificate = certificate;
+            return this;
+        }
+            
+        // Check to see if Certificate property is set
+        internal bool IsSetCertificate()
+        {
+            return this.certificate != null;        
+        }
     }
 }

@@ -1,229 +1,221 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-03-31
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.ElasticMapReduce.Model
 {
-    ///<summary>
-    ///Information about a job flow execution.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://elasticmapreduce.amazonaws.com/doc/2009-03-31", IsNullable = false)]
-    public class JobFlowExecutionStatusDetail
+    /// <summary>
+    /// <para>Describes the status of the job flow.</para>
+    /// </summary>
+    public class JobFlowExecutionStatusDetail  
     {
-        private string stateField;
-        private string creationDateTimeField;
-        private string startDateTimeField;
-        private string readyDateTimeField;
-        private string endDateTimeField;
-        private string lastStateChangeReasonField;
+        
+        private string state;
+        private DateTime? creationDateTime;
+        private DateTime? startDateTime;
+        private DateTime? readyDateTime;
+        private DateTime? endDateTime;
+        private string lastStateChangeReason;
 
         /// <summary>
-        /// Gets and sets the State property.
-        /// State of the job flow.
+        /// The state of the job flow.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "State")]
         public string State
         {
-            get { return this.stateField; }
-            set { this.stateField = value; }
+            get { return this.state; }
+            set { this.state = value; }
         }
 
         /// <summary>
         /// Sets the State property
         /// </summary>
-        /// <param name="state">State of the job flow.</param>
+        /// <param name="state">The value to set for the State property </param>
         /// <returns>this instance</returns>
         public JobFlowExecutionStatusDetail WithState(string state)
         {
-            this.stateField = state;
+            this.state = state;
             return this;
         }
-
-        /// <summary>
-        /// Checks if State property is set
-        /// </summary>
-        /// <returns>true if State property is set</returns>
-        public bool IsSetState()
+            
+        // Check to see if State property is set
+        internal bool IsSetState()
         {
-            return this.stateField != null;
+            return this.state != null;      
         }
 
         /// <summary>
-        /// Gets and sets the CreationDateTime property.
-        /// Date and time the job flow was created.
+        /// The creation date and time of the job flow.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "CreationDateTime")]
-        public string CreationDateTime
+        public DateTime CreationDateTime
         {
-            get { return this.creationDateTimeField; }
-            set { this.creationDateTimeField = value; }
+            get { return this.creationDateTime ?? default(DateTime); }
+            set { this.creationDateTime = value; }
         }
 
         /// <summary>
         /// Sets the CreationDateTime property
         /// </summary>
-        /// <param name="creationDateTime">Date and time the job flow was created.</param>
+        /// <param name="creationDateTime">The value to set for the CreationDateTime property </param>
         /// <returns>this instance</returns>
-        public JobFlowExecutionStatusDetail WithCreationDateTime(string creationDateTime)
+        public JobFlowExecutionStatusDetail WithCreationDateTime(DateTime creationDateTime)
         {
-            this.creationDateTimeField = creationDateTime;
+            this.creationDateTime = creationDateTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if CreationDateTime property is set
-        /// </summary>
-        /// <returns>true if CreationDateTime property is set</returns>
-        public bool IsSetCreationDateTime()
+            
+        // Check to see if CreationDateTime property is set
+        internal bool IsSetCreationDateTime()
         {
-            return this.creationDateTimeField != null;
+            return this.creationDateTime.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the StartDateTime property.
-        /// Date and time the job flow started.
+        /// The start date and time of the job flow.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "StartDateTime")]
-        public string StartDateTime
+        public DateTime StartDateTime
         {
-            get { return this.startDateTimeField; }
-            set { this.startDateTimeField = value; }
+            get { return this.startDateTime ?? default(DateTime); }
+            set { this.startDateTime = value; }
         }
 
         /// <summary>
         /// Sets the StartDateTime property
         /// </summary>
-        /// <param name="startDateTime">Date and time the job flow started.</param>
+        /// <param name="startDateTime">The value to set for the StartDateTime property </param>
         /// <returns>this instance</returns>
-        public JobFlowExecutionStatusDetail WithStartDateTime(string startDateTime)
+        public JobFlowExecutionStatusDetail WithStartDateTime(DateTime startDateTime)
         {
-            this.startDateTimeField = startDateTime;
+            this.startDateTime = startDateTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if StartDateTime property is set
-        /// </summary>
-        /// <returns>true if StartDateTime property is set</returns>
-        public bool IsSetStartDateTime()
+            
+        // Check to see if StartDateTime property is set
+        internal bool IsSetStartDateTime()
         {
-            return this.startDateTimeField != null;
+            return this.startDateTime.HasValue;         
         }
 
         /// <summary>
-        /// Gets and sets the ReadyDateTime property.
-        /// The date and time when the job flow was ready to start running bootstrap actions.
+        /// The date and time when the job flow was ready to start running
+        /// bootstrap actions.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ReadyDateTime")]
-        public string ReadyDateTime
+        public DateTime ReadyDateTime
         {
-            get { return this.readyDateTimeField; }
-            set { this.readyDateTimeField = value; }
+            get { return this.readyDateTime ?? default(DateTime); }
+            set { this.readyDateTime = value; }
         }
 
         /// <summary>
         /// Sets the ReadyDateTime property
         /// </summary>
-        /// <param name="readyDateTime">The date and time when the job flow was ready to start running bootstrap actions.</param>
+        /// <param name="readyDateTime">The value to set for the ReadyDateTime property </param>
         /// <returns>this instance</returns>
-        public JobFlowExecutionStatusDetail WithReadyDateTime(string readyDateTime)
+        public JobFlowExecutionStatusDetail WithReadyDateTime(DateTime readyDateTime)
         {
-            this.readyDateTimeField = readyDateTime;
+            this.readyDateTime = readyDateTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if ReadyDateTime property is set
-        /// </summary>
-        /// <returns>true if ReadyDateTime property is set</returns>
-        public bool IsSetReadyDateTime()
+            
+        // Check to see if ReadyDateTime property is set
+        internal bool IsSetReadyDateTime()
         {
-            return this.readyDateTimeField != null;
+            return this.readyDateTime.HasValue;         
         }
 
         /// <summary>
-        /// Gets and sets the EndDateTime property.
-        /// Date and time the job flow ended.
+        /// The completion date and time of the job flow.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "EndDateTime")]
-        public string EndDateTime
+        public DateTime EndDateTime
         {
-            get { return this.endDateTimeField; }
-            set { this.endDateTimeField = value; }
+            get { return this.endDateTime ?? default(DateTime); }
+            set { this.endDateTime = value; }
         }
 
         /// <summary>
         /// Sets the EndDateTime property
         /// </summary>
-        /// <param name="endDateTime">Date and time the job flow ended.</param>
+        /// <param name="endDateTime">The value to set for the EndDateTime property </param>
         /// <returns>this instance</returns>
-        public JobFlowExecutionStatusDetail WithEndDateTime(string endDateTime)
+        public JobFlowExecutionStatusDetail WithEndDateTime(DateTime endDateTime)
         {
-            this.endDateTimeField = endDateTime;
+            this.endDateTime = endDateTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if EndDateTime property is set
-        /// </summary>
-        /// <returns>true if EndDateTime property is set</returns>
-        public bool IsSetEndDateTime()
+            
+        // Check to see if EndDateTime property is set
+        internal bool IsSetEndDateTime()
         {
-            return this.endDateTimeField != null;
+            return this.endDateTime.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the LastStateChangeReason property.
-        /// Explains the last change of Amazon EC2 status.
+        /// Description of the job flow last changed state.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 10280</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "LastStateChangeReason")]
         public string LastStateChangeReason
         {
-            get { return this.lastStateChangeReasonField; }
-            set { this.lastStateChangeReasonField = value; }
+            get { return this.lastStateChangeReason; }
+            set { this.lastStateChangeReason = value; }
         }
 
         /// <summary>
         /// Sets the LastStateChangeReason property
         /// </summary>
-        /// <param name="lastStateChangeReason">Explains the last change of Amazon EC2 status.</param>
+        /// <param name="lastStateChangeReason">The value to set for the LastStateChangeReason property </param>
         /// <returns>this instance</returns>
         public JobFlowExecutionStatusDetail WithLastStateChangeReason(string lastStateChangeReason)
         {
-            this.lastStateChangeReasonField = lastStateChangeReason;
+            this.lastStateChangeReason = lastStateChangeReason;
             return this;
         }
-
-        /// <summary>
-        /// Checks if LastStateChangeReason property is set
-        /// </summary>
-        /// <returns>true if LastStateChangeReason property is set</returns>
-        public bool IsSetLastStateChangeReason()
+            
+        // Check to see if LastStateChangeReason property is set
+        internal bool IsSetLastStateChangeReason()
         {
-            return this.lastStateChangeReasonField != null;
+            return this.lastStateChangeReason != null;      
         }
-
     }
 }

@@ -21,7 +21,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// <summary>
     /// The available AWS access control policy actions for Amazon S3.
     /// </summary>
-    /// <see cref="Amazon.Auth.Statement.Actions"/>
+    /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
     public class S3ActionIdentifiers
     {
         /// <summary>
@@ -32,28 +32,28 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for retrieving an object (GET), object metadata (HEAD) or an object torrent.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.GetObjectRequest"/>
-        /// <see cref="Amazon.S3.Model.GetObjectMetaDataRequest"/>
+        /// <see cref="Amazon.S3.Model.GetObjectMetadataRequest"/>
         public static readonly ActionIdentifier GetObject = new ActionIdentifier("s3:GetObject");
 
         /// <summary>
         /// Action for retrieving a object version (GET), object metadata for an
         /// object version (HEAD) or a torrent for an object version.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.GetObjectRequest"/>
-        /// <see cref="Amazon.S3.Model.GetObjectMetaDataRequest"/>
+        /// <see cref="Amazon.S3.Model.GetObjectMetadataRequest"/>
         public static readonly ActionIdentifier GetObjectVersion = new ActionIdentifier("s3:GetObjectVersion");
 
         /// <summary>
         /// Action for uploading an object (PUT or POST).
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.PutObjectRequest"/>
@@ -62,7 +62,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for retrieving an object's ACL.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.GetACLRequest"/>
@@ -71,7 +71,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for retrieving an object version's ACL.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.GetACLRequest"/>
@@ -80,7 +80,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for setting an object's ACL.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.S3AccessControlList"/>
@@ -90,7 +90,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for setting an object version's ACL.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.S3AccessControlList"/>
@@ -100,7 +100,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for deleting an object.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.DeleteObjectRequest"/>
@@ -109,7 +109,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for deleting an object version.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.DeleteObjectRequest"/>
@@ -118,7 +118,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for creating a new Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.PutBucketRequest"/>
@@ -127,7 +127,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for deleting an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3ObjectResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3ObjectResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.DeleteBucketRequest"/>
@@ -136,16 +136,16 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for listing the objects in an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
-        /// <see cref="Amazon.S3.Model.ListObjectRequest"/>
+        /// <see cref="Amazon.S3.Model.ListObjectsRequest"/>
         public static readonly ActionIdentifier ListObjects = new ActionIdentifier("s3:ListBucket");
 
         /// <summary>
         /// Action for listing the object versions in an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.ListVersionsRequest"/>
@@ -154,7 +154,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for listing the Amazon S3 buckets in an account.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.ListBucketsRequest"/>
@@ -163,7 +163,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for retrieving the ACL of an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.GetACLRequest"/>
@@ -172,7 +172,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for setting the ACL of an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.S3AccessControlList"/>
@@ -182,7 +182,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for retrieving the versioning configuration of an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.S3BucketVersioningConfig"/>
@@ -192,7 +192,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for setting the versioning configuration of an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.S3BucketVersioningConfig"/>
@@ -202,7 +202,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for retrieving the requester pays status of an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         public static readonly ActionIdentifier GetBucketRequesterPays = new ActionIdentifier("s3:GetBucketRequesterPays");
@@ -210,7 +210,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for setting the requester pays status of an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         public static readonly ActionIdentifier SetBucketRequesterPays = new ActionIdentifier("s3:PutBucketRequesterPays");
@@ -218,7 +218,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for retrieving the bucket location of an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.GetBucketLocationRequest"/>
@@ -227,7 +227,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for retrieving the access control policy for an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.GetBucketPolicyRequest"/>
@@ -236,7 +236,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// <summary>
         /// Action for setting the access control policy for an Amazon S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.PutBucketPolicyRequest"/>
@@ -246,7 +246,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// Action for retrieving the bucket notification configuration for an Amazon
         /// S3 bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.GetNotificationConfigurationRequest"/>
@@ -256,7 +256,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         /// Action for setting the bucket notification configuration for an Amazon S3
         /// bucket.
         /// <para>
-        /// Valid for use with <see cref="Amazon.Auth.Resources.S3BucketResource"/> resources.
+        /// Valid for use with <see cref="M:Amazon.Auth.AccessControlPolicy.NewS3BucketResource"/> resources.
         /// </para>
         /// </summary>
         /// <see cref="Amazon.S3.Model.SetNotificationConfigurationRequest"/>

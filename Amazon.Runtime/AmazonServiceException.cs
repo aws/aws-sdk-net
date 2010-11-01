@@ -28,10 +28,10 @@ namespace Amazon.Runtime
     /// </summary>
     public class AmazonServiceException : Exception
     {
-        protected ErrorType errorType;
-        protected string errorCode;
-        protected string requestId;
-        protected HttpStatusCode statusCode;
+        private ErrorType errorType;
+        private string errorCode;
+        private string requestId;
+        private HttpStatusCode statusCode;
 
         protected internal AmazonServiceException()
             : base()
@@ -83,6 +83,7 @@ namespace Amazon.Runtime
         public ErrorType ErrorType
         {
             get { return this.errorType; }
+            protected set { this.errorType = value; }
         }
 
         /// <summary>
@@ -91,6 +92,7 @@ namespace Amazon.Runtime
         public string ErrorCode
         {
             get { return this.errorCode; }
+            protected set { this.errorCode = value; }
         }
 
         /// <summary>
@@ -99,6 +101,7 @@ namespace Amazon.Runtime
         public string RequestId
         {
             get { return this.requestId; }
+            protected set { this.requestId = value; }
         }
 
         /// <summary>
@@ -107,6 +110,7 @@ namespace Amazon.Runtime
         public HttpStatusCode StatusCode
         {
             get { return this.statusCode; }
+            protected set { this.statusCode = value; }
         }
     }
 }

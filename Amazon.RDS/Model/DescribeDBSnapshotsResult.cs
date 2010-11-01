@@ -1,109 +1,88 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// A list of DB Snapshot data types.
+    /// <para> </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class DescribeDBSnapshotsResult
+    public class DescribeDBSnapshotsResult  
     {
-        private string markerField;
-        private List<DBSnapshot> DBSnapshotField;
+        
+        private string marker;
+        private List<DBSnapshot> dBSnapshots = new List<DBSnapshot>();
 
         /// <summary>
-        /// Gets and sets the Marker property.
-        /// Identifier returned to allow retrieval of paginated results.
+        /// The marker obtained from a previous operation response.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Marker")]
         public string Marker
         {
-            get { return this.markerField; }
-            set { this.markerField = value; }
+            get { return this.marker; }
+            set { this.marker = value; }
         }
 
         /// <summary>
-        /// Checks if Marker property is set
+        /// Sets the Marker property
         /// </summary>
-        /// <returns>true if Marker property is set</returns>
-        public bool IsSetMarker()
+        /// <param name="marker">The value to set for the Marker property </param>
+        /// <returns>this instance</returns>
+        public DescribeDBSnapshotsResult WithMarker(string marker)
         {
-            return this.markerField != null;
+            this.marker = marker;
+            return this;
+        }
+            
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this.marker != null;         
         }
 
         /// <summary>
-        /// Gets and sets the DBSnapshot property.
+        /// A list of <a>DBSnapshot</a> instances.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBSnapshot")]
-        public List<DBSnapshot> DBSnapshot
+        public List<DBSnapshot> DBSnapshots
         {
-            get
+            get { return this.dBSnapshots; }
+            set { this.dBSnapshots = value; }
+        }
+        /// <summary>
+        /// Adds elements to the DBSnapshots collection
+        /// </summary>
+        /// <param name="dBSnapshots">The values to add to the DBSnapshots collection </param>
+        /// <returns>this instance</returns>
+        public DescribeDBSnapshotsResult WithDBSnapshots(params DBSnapshot[] dBSnapshots)
+        {
+            foreach (DBSnapshot element in dBSnapshots)
             {
-                if (this.DBSnapshotField == null)
-                {
-                    this.DBSnapshotField = new List<DBSnapshot>();
-                }
-                return this.DBSnapshotField;
+                this.dBSnapshots.Add(element);
             }
-            set { this.DBSnapshotField = value; }
-        }
 
-        /// <summary>
-        /// Checks if DBSnapshot property is set
-        /// </summary>
-        /// <returns>true if DBSnapshot property is set</returns>
-        public bool IsSetDBSnapshot()
-        {
-            return (DBSnapshot.Count > 0);
+            return this;
         }
-
-        /// <summary>
-        /// XML Representation of this object
-        /// </summary>
-        /// <returns>XML String</returns>
-        public string ToXML()
+        // Check to see if DBSnapshots property is set
+        internal bool IsSetDBSnapshots()
         {
-            StringBuilder xml = new StringBuilder(1024);
-            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(this.GetType());
-            using (StringWriter sw = new StringWriter(xml))
-            {
-                serializer.Serialize(sw, this);
-            }
-            return xml.ToString();
-        }
-
-        /// <summary>
-        /// String Representation of this object. Overrides Object.ToString()
-        /// </summary>
-        /// <returns>This object as a string</returns>
-        public override string ToString()
-        {
-            return this.ToXML();
+            return this.dBSnapshots.Count > 0;      
         }
     }
 }

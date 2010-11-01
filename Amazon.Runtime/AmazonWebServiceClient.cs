@@ -51,7 +51,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Implements the Dispose pattern for the AmazonWebServiceClient
         /// </summary>
-        /// <param name="fDisposing">Whether this object is being disposed via a call to Dispose
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
         /// or garbage collected.</param>
         protected virtual void Dispose(bool disposing)
         {
@@ -200,7 +200,16 @@ namespace Amazon.Runtime
                         {
                             DateTime responseReceived = DateTime.UtcNow;
                             this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", requestName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
-                            XmlTextReader reader = new XmlTextReader(new StreamReader(httpResponse.GetResponseStream()));
+                            XmlTextReader reader;
+
+// Using NOSTREAM is the less effcient way of dealing with the response body but it is helpful 
+// for debug purposes to see the entire xml body coming back from the server.
+#if NOSTREAM
+                            string responseBody = new StreamReader(httpResponse.GetResponseStream()).ReadToEnd(); ;
+                            reader = new XmlTextReader(new StringReader(responseBody));
+#else
+                            reader = new XmlTextReader(new StreamReader(httpResponse.GetResponseStream()));
+#endif
                             UnmarshallerContext context = new UnmarshallerContext(reader);
                             result = unmarshaller.Unmarshall(context);
                         }
@@ -234,7 +243,14 @@ namespace Amazon.Runtime
                 }
                 statusCode = httpErrorResponse.StatusCode;
 
-                XmlTextReader errorReader = new XmlTextReader(new StreamReader(httpErrorResponse.GetResponseStream()));
+                XmlTextReader errorReader;
+#if NOSTREAM
+                string responseBody = new StreamReader(httpErrorResponse.GetResponseStream()).ReadToEnd(); ;
+                errorReader = new XmlTextReader(new StringReader(responseBody));
+#else
+                errorReader = new XmlTextReader(new StreamReader(httpErrorResponse.GetResponseStream()));
+#endif
+
                 UnmarshallerContext errorContext = new UnmarshallerContext(errorReader);
                 errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
 

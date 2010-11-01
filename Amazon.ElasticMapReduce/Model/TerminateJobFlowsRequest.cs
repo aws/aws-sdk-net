@@ -1,82 +1,69 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-03-31
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Terminates job flow processing, uploads data from EC2 to Amazon S3, and terminates the EC2 cluster. You can use this action
-    /// to terminate a single job flow or a list of job flows. Job flows that complete successfully terminate automatically unless
-    /// you set the RunJobFlows parameter, KeepJobFlowAliveWhenNoSteps, to True. Job flows also terminate automatically on failure
-    /// unless you set the RunJobFlows parameter, KeepJobFlowAliveWhenNoSteps, to CANCEL_AND_WAIT or CONTINUE.
+    /// Container for the parameters to the TerminateJobFlows operation.
+    /// <para> TerminateJobFlows shuts a list of job flows down. When a job
+    /// flow is shut down, any step not yet completed is canceled and the EC2
+    /// instances on which the job flow is running are stopped. Any log files
+    /// not already saved are uploaded to Amazon S3 if a LogUri was specified
+    /// when the job flow was created. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticmapreduce.amazonaws.com/doc/2009-03-31", IsNullable = false)]
-    public class TerminateJobFlowsRequest
+    /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.TerminateJobFlows"/>
+    public class TerminateJobFlowsRequest : AmazonWebServiceRequest
     {
-        private List<string> jobFlowIdsField;
+        private List<string> jobFlowIds = new List<string>();
 
         /// <summary>
-        /// Gets and sets the JobFlowIds property.
-        /// One or more job flow IDs that specify the job flows to terminate. Each JobFlowId is a string returned by RunJobFlow.
+        /// A list of job flows to be shutdown.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "JobFlowIds")]
         public List<string> JobFlowIds
         {
-            get
-            {
-                if (this.jobFlowIdsField == null)
-                {
-                    this.jobFlowIdsField = new List<string>();
-                }
-                return this.jobFlowIdsField;
-            }
-            set { this.jobFlowIdsField = value; }
+            get { return this.jobFlowIds; }
+            set { this.jobFlowIds = value; }
         }
-
         /// <summary>
-        /// Sets the JobFlowIds property
+        /// Adds elements to the JobFlowIds collection
         /// </summary>
-        /// <param name="list">One or more job flow IDs that specify the job flows to terminate. Each JobFlowId is a string returned by RunJobFlow.</param>
+        /// <param name="jobFlowIds">The values to add to the JobFlowIds collection </param>
         /// <returns>this instance</returns>
-        public TerminateJobFlowsRequest WithJobFlowIds(params string[] list)
+        public TerminateJobFlowsRequest WithJobFlowIds(params string[] jobFlowIds)
         {
-            foreach (string item in list)
+            foreach (string element in jobFlowIds)
             {
-                JobFlowIds.Add(item);
+                this.jobFlowIds.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if JobFlowIds property is set
-        /// </summary>
-        /// <returns>true if JobFlowIds property is set</returns>
-        public bool IsSetJobFlowIds()
+        // Check to see if JobFlowIds property is set
+        internal bool IsSetJobFlowIds()
         {
-            return (JobFlowIds.Count > 0);
+            return this.jobFlowIds.Count > 0;       
         }
-
     }
 }
+    

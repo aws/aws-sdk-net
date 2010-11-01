@@ -1,567 +1,510 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Creates a new Amazon RDS database instance.
+    /// Container for the parameters to the CreateDBInstance operation.
+    /// <para> This API creates a new DB instance. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class CreateDBInstanceRequest
+    /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBInstance"/>
+    public class CreateDBInstanceRequest : AmazonWebServiceRequest
     {
-        private string DBNameField;
-        private string DBInstanceIdentifierField;
-        private Decimal? allocatedStorageField;
-        private string DBInstanceClassField;
-        private string engineField;
-        private string masterUsernameField;
-        private string masterUserPasswordField;
-        private List<string> DBSecurityGroupsField;
-        private string availabilityZoneField;
-        private string preferredMaintenanceWindowField;
-        private string DBParameterGroupNameField;
-        private Decimal? backupRetentionPeriodField;
-        private string preferredBackupWindowField;
-        private Decimal? portField;
-        private bool? multiAZField;
+        private string dBName;
+        private string dBInstanceIdentifier;
+        private int? allocatedStorage;
+        private string dBInstanceClass;
+        private string engine;
+        private string masterUsername;
+        private string masterUserPassword;
+        private List<string> dBSecurityGroups = new List<string>();
+        private string availabilityZone;
+        private string preferredMaintenanceWindow;
+        private string dBParameterGroupName;
+        private int? backupRetentionPeriod;
+        private string preferredBackupWindow;
+        private int? port;
+        private bool? multiAZ;
+        private string engineVersion;
+        private bool? autoMinorVersionUpgrade;
 
         /// <summary>
-        /// Gets and sets the DBName property.
-        /// Name of a database to create when the DB Instance is created. If this parameter is not specified, no database is created in the DB Instance.
-        /// Must contain 1 to 64 alphanumeric characters. Cannot be a word reserved by the specified database engine.
+        /// The name of the database to create when the DB Instance is created. If
+        /// this parameter is not specified, no database is created in the DB
+        /// Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBName")]
         public string DBName
         {
-            get { return this.DBNameField; }
-            set { this.DBNameField = value; }
+            get { return this.dBName; }
+            set { this.dBName = value; }
         }
 
         /// <summary>
         /// Sets the DBName property
         /// </summary>
-        /// <param name="DBName">Name of a database to create when the DB Instance is created. If this parameter is not specified, no database is created in the DB Instance.
-        /// Must contain 1 to 64 alphanumeric characters. Cannot be a word reserved by the specified database engine.</param>
+        /// <param name="dBName">The value to set for the DBName property </param>
         /// <returns>this instance</returns>
-        public CreateDBInstanceRequest WithDBName(string DBName)
+        public CreateDBInstanceRequest WithDBName(string dBName)
         {
-            this.DBNameField = DBName;
+            this.dBName = dBName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBName property is set
-        /// </summary>
-        /// <returns>true if DBName property is set</returns>
-        public bool IsSetDBName()
+            
+        // Check to see if DBName property is set
+        internal bool IsSetDBName()
         {
-            return this.DBNameField != null;
+            return this.dBName != null;         
         }
 
         /// <summary>
-        /// Gets and sets the DBInstanceIdentifier property.
-        /// DB Instance identifier. This is the unique key that identifies a DB Instance. This parameter is stored as a lowercase string.
-        /// ust contain from 1 to 63 alphanumeric characters or hyphens.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.
+        /// The DB Instance identifier. This parameter is stored as a lowercase
+        /// string.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField; }
-            set { this.DBInstanceIdentifierField = value; }
+            get { return this.dBInstanceIdentifier; }
+            set { this.dBInstanceIdentifier = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceIdentifier property
         /// </summary>
-        /// <param name="DBInstanceIdentifier">DB Instance identifier. This is the unique key that identifies a DB Instance. This parameter is stored as a lowercase string.
-        /// ust contain from 1 to 63 alphanumeric characters or hyphens.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.</param>
+        /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
-        public CreateDBInstanceRequest WithDBInstanceIdentifier(string DBInstanceIdentifier)
+        public CreateDBInstanceRequest WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
-            this.DBInstanceIdentifierField = DBInstanceIdentifier;
+            this.dBInstanceIdentifier = dBInstanceIdentifier;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceIdentifier property is set
-        /// </summary>
-        /// <returns>true if DBInstanceIdentifier property is set</returns>
-        public bool IsSetDBInstanceIdentifier()
+            
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
         {
-            return this.DBInstanceIdentifierField != null;
+            return this.dBInstanceIdentifier != null;       
         }
 
         /// <summary>
-        /// Gets and sets the AllocatedStorage property.
-        /// Amount of storage to be initially allocated for the database instance, in gigabytes.
-        /// Must be an integer between 5 and 1024.
+        /// The amount of storage (in gigabytes) to be initially allocated for the
+        /// database instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "AllocatedStorage")]
-        public Decimal AllocatedStorage
+        public int AllocatedStorage
         {
-            get { return this.allocatedStorageField.GetValueOrDefault(); }
-            set { this.allocatedStorageField = value; }
+            get { return this.allocatedStorage ?? default(int); }
+            set { this.allocatedStorage = value; }
         }
 
         /// <summary>
         /// Sets the AllocatedStorage property
         /// </summary>
-        /// <param name="allocatedStorage">Amount of storage to be initially allocated for the database instance, in gigabytes.
-        /// Must be an integer between 5 and 1024.</param>
+        /// <param name="allocatedStorage">The value to set for the AllocatedStorage property </param>
         /// <returns>this instance</returns>
-        public CreateDBInstanceRequest WithAllocatedStorage(Decimal allocatedStorage)
+        public CreateDBInstanceRequest WithAllocatedStorage(int allocatedStorage)
         {
-            this.allocatedStorageField = allocatedStorage;
+            this.allocatedStorage = allocatedStorage;
             return this;
         }
-
-        /// <summary>
-        /// Checks if AllocatedStorage property is set
-        /// </summary>
-        /// <returns>true if AllocatedStorage property is set</returns>
-        public bool IsSetAllocatedStorage()
+            
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorageField.HasValue;
+            return this.allocatedStorage.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the DBInstanceClass property.
-        /// Contains the compute and memory capacity of the DB Instance.
-        /// Valid values: db.m1.small | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge
+        /// The compute and memory capacity of the DB Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceClass")]
         public string DBInstanceClass
         {
-            get { return this.DBInstanceClassField; }
-            set { this.DBInstanceClassField = value; }
+            get { return this.dBInstanceClass; }
+            set { this.dBInstanceClass = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceClass property
         /// </summary>
-        /// <param name="DBInstanceClass">Contains the compute and memory capacity of the DB Instance.
-        /// Valid values: db.m1.small | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</param>
+        /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
-        public CreateDBInstanceRequest WithDBInstanceClass(string DBInstanceClass)
+        public CreateDBInstanceRequest WithDBInstanceClass(string dBInstanceClass)
         {
-            this.DBInstanceClassField = DBInstanceClass;
+            this.dBInstanceClass = dBInstanceClass;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceClass property is set
-        /// </summary>
-        /// <returns>true if DBInstanceClass property is set</returns>
-        public bool IsSetDBInstanceClass()
+            
+        // Check to see if DBInstanceClass property is set
+        internal bool IsSetDBInstanceClass()
         {
-            return this.DBInstanceClassField != null;
+            return this.dBInstanceClass != null;        
         }
 
         /// <summary>
-        /// Gets and sets the Engine property.
-        /// Name of the database engine to be used for this instance.
-        /// Valid values: MySQL5.1
+        /// The name of the database engine to be used for this instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Engine")]
         public string Engine
         {
-            get { return this.engineField; }
-            set { this.engineField = value; }
+            get { return this.engine; }
+            set { this.engine = value; }
         }
 
         /// <summary>
         /// Sets the Engine property
         /// </summary>
-        /// <param name="engine">Name of the database engine to be used for this instance.
-        /// Valid values: MySQL5.1</param>
+        /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
         public CreateDBInstanceRequest WithEngine(string engine)
         {
-            this.engineField = engine;
+            this.engine = engine;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Engine property is set
-        /// </summary>
-        /// <returns>true if Engine property is set</returns>
-        public bool IsSetEngine()
+            
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
         {
-            return this.engineField != null;
+            return this.engine != null;         
         }
 
         /// <summary>
-        /// Gets and sets the MasterUsername property.
-        /// Name of master user for your DB Instance.
-        /// Must be 1 to 15 alphanumeric characters.
-        /// First character must be a letter.
-        /// Cannot be a reserved word for the chosen database engine.
+        /// The name of master user for the client DB Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "MasterUsername")]
         public string MasterUsername
         {
-            get { return this.masterUsernameField; }
-            set { this.masterUsernameField = value; }
+            get { return this.masterUsername; }
+            set { this.masterUsername = value; }
         }
 
         /// <summary>
         /// Sets the MasterUsername property
         /// </summary>
-        /// <param name="masterUsername">Name of master user for your DB Instance.
-        /// Must be 1 to 15 alphanumeric characters.
-        /// First character must be a letter.
-        /// Cannot be a reserved word for the chosen database engine.</param>
+        /// <param name="masterUsername">The value to set for the MasterUsername property </param>
         /// <returns>this instance</returns>
         public CreateDBInstanceRequest WithMasterUsername(string masterUsername)
         {
-            this.masterUsernameField = masterUsername;
+            this.masterUsername = masterUsername;
             return this;
         }
-
-        /// <summary>
-        /// Checks if MasterUsername property is set
-        /// </summary>
-        /// <returns>true if MasterUsername property is set</returns>
-        public bool IsSetMasterUsername()
+            
+        // Check to see if MasterUsername property is set
+        internal bool IsSetMasterUsername()
         {
-            return this.masterUsernameField != null;
+            return this.masterUsername != null;         
         }
 
         /// <summary>
-        /// Gets and sets the MasterUserPassword property.
-        /// Password for the master DB Instance user. Must contain 4 to 16 alphanumeric characters.
+        /// The password for the master DB Instance user.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "MasterUserPassword")]
         public string MasterUserPassword
         {
-            get { return this.masterUserPasswordField; }
-            set { this.masterUserPasswordField = value; }
+            get { return this.masterUserPassword; }
+            set { this.masterUserPassword = value; }
         }
 
         /// <summary>
         /// Sets the MasterUserPassword property
         /// </summary>
-        /// <param name="masterUserPassword">Password for the master DB Instance user. Must contain 4 to 16 alphanumeric characters.</param>
+        /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
         /// <returns>this instance</returns>
         public CreateDBInstanceRequest WithMasterUserPassword(string masterUserPassword)
         {
-            this.masterUserPasswordField = masterUserPassword;
+            this.masterUserPassword = masterUserPassword;
             return this;
         }
-
-        /// <summary>
-        /// Checks if MasterUserPassword property is set
-        /// </summary>
-        /// <returns>true if MasterUserPassword property is set</returns>
-        public bool IsSetMasterUserPassword()
+            
+        // Check to see if MasterUserPassword property is set
+        internal bool IsSetMasterUserPassword()
         {
-            return this.masterUserPasswordField != null;
+            return this.masterUserPassword != null;         
         }
 
         /// <summary>
-        /// Gets and sets the DBSecurityGroups property.
-        /// List of DB Security Groups to associate with this DB Instance.
-        /// The default DB Security Group for the database engine.
+        /// A list of DB Security Groups to associate with this DB Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBSecurityGroups")]
         public List<string> DBSecurityGroups
         {
-            get
-            {
-                if (this.DBSecurityGroupsField == null)
-                {
-                    this.DBSecurityGroupsField = new List<string>();
-                }
-                return this.DBSecurityGroupsField;
-            }
-            set { this.DBSecurityGroupsField = value; }
+            get { return this.dBSecurityGroups; }
+            set { this.dBSecurityGroups = value; }
         }
-
         /// <summary>
-        /// Sets the DBSecurityGroups property
+        /// Adds elements to the DBSecurityGroups collection
         /// </summary>
-        /// <param name="list">List of DB Security Groups to associate with this DB Instance.
-        /// The default DB Security Group for the database engine.</param>
+        /// <param name="dBSecurityGroups">The values to add to the DBSecurityGroups collection </param>
         /// <returns>this instance</returns>
-        public CreateDBInstanceRequest WithDBSecurityGroups(params string[] list)
+        public CreateDBInstanceRequest WithDBSecurityGroups(params string[] dBSecurityGroups)
         {
-            foreach (string item in list)
+            foreach (string element in dBSecurityGroups)
             {
-                DBSecurityGroups.Add(item);
+                this.dBSecurityGroups.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBSecurityGroups property is set
-        /// </summary>
-        /// <returns>true if DBSecurityGroups property is set</returns>
-        public bool IsSetDBSecurityGroups()
+        // Check to see if DBSecurityGroups property is set
+        internal bool IsSetDBSecurityGroups()
         {
-            return (DBSecurityGroups.Count > 0);
+            return this.dBSecurityGroups.Count > 0;         
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
-        /// The EC2 Availability Zone that the database instance will be created in.
-        /// Default: A random, system-chosen Availability Zone.
+        /// The EC2 Availability Zone that the database instance will be created
+        /// in.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField; }
-            set { this.availabilityZoneField = value; }
+            get { return this.availabilityZone; }
+            set { this.availabilityZone = value; }
         }
 
         /// <summary>
         /// Sets the AvailabilityZone property
         /// </summary>
-        /// <param name="availabilityZone">The EC2 Availability Zone that the database instance will be created in.
-        /// Default: A random, system-chosen Availability Zone.</param>
+        /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
         public CreateDBInstanceRequest WithAvailabilityZone(string availabilityZone)
         {
-            this.availabilityZoneField = availabilityZone;
+            this.availabilityZone = availabilityZone;
             return this;
         }
-
-        /// <summary>
-        /// Checks if AvailabilityZone property is set
-        /// </summary>
-        /// <returns>true if AvailabilityZone property is set</returns>
-        public bool IsSetAvailabilityZone()
+            
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZoneField != null;
+            return this.availabilityZone != null;       
         }
 
         /// <summary>
-        /// Gets and sets the PreferredMaintenanceWindow property.
-        /// The weekly time range (in UTC) during which system maintenance can occur.
-        /// Format: ddd:hh24:mi-ddd:hh24:mi.
-        /// Default: Sun:05:00-Sun:09:00 UTC.
-        /// Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
-        /// Constraints: Minimum four hour period.
+        /// The weekly time range (in UTC) during which system maintenance can
+        /// occur.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PreferredMaintenanceWindow")]
         public string PreferredMaintenanceWindow
         {
-            get { return this.preferredMaintenanceWindowField; }
-            set { this.preferredMaintenanceWindowField = value; }
+            get { return this.preferredMaintenanceWindow; }
+            set { this.preferredMaintenanceWindow = value; }
         }
 
         /// <summary>
         /// Sets the PreferredMaintenanceWindow property
         /// </summary>
-        /// <param name="preferredMaintenanceWindow">The weekly time range (in UTC) during which system maintenance can occur.
-        /// Format: ddd:hh24:mi-ddd:hh24:mi.
-        /// Default: Sun:05:00-Sun:09:00 UTC.
-        /// Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
-        /// Constraints: Minimum four hour period.</param>
+        /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
         public CreateDBInstanceRequest WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
-            this.preferredMaintenanceWindowField = preferredMaintenanceWindow;
+            this.preferredMaintenanceWindow = preferredMaintenanceWindow;
             return this;
         }
-
-        /// <summary>
-        /// Checks if PreferredMaintenanceWindow property is set
-        /// </summary>
-        /// <returns>true if PreferredMaintenanceWindow property is set</returns>
-        public bool IsSetPreferredMaintenanceWindow()
+            
+        // Check to see if PreferredMaintenanceWindow property is set
+        internal bool IsSetPreferredMaintenanceWindow()
         {
-            return this.preferredMaintenanceWindowField != null;
+            return this.preferredMaintenanceWindow != null;         
         }
 
         /// <summary>
-        /// Gets and sets the DBParameterGroupName property.
-        /// Name of the database parameter group to associate with this DB instance. If this argument is omitted, the
-        /// default DBParameterGroup for the specified engine will be used.
+        /// The name of the database parameter group to associate with this DB
+        /// instance. If this argument is omitted, the default DBParameterGroup
+        /// for the specified engine will be used.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBParameterGroupName")]
         public string DBParameterGroupName
         {
-            get { return this.DBParameterGroupNameField; }
-            set { this.DBParameterGroupNameField = value; }
+            get { return this.dBParameterGroupName; }
+            set { this.dBParameterGroupName = value; }
         }
 
         /// <summary>
         /// Sets the DBParameterGroupName property
         /// </summary>
-        /// <param name="DBParameterGroupName">Name of the database parameter group to associate with this DB instance. If this argument is omitted, the
-        /// default DBParameterGroup for the specified engine will be used.</param>
+        /// <param name="dBParameterGroupName">The value to set for the DBParameterGroupName property </param>
         /// <returns>this instance</returns>
-        public CreateDBInstanceRequest WithDBParameterGroupName(string DBParameterGroupName)
+        public CreateDBInstanceRequest WithDBParameterGroupName(string dBParameterGroupName)
         {
-            this.DBParameterGroupNameField = DBParameterGroupName;
+            this.dBParameterGroupName = dBParameterGroupName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBParameterGroupName property is set
-        /// </summary>
-        /// <returns>true if DBParameterGroupName property is set</returns>
-        public bool IsSetDBParameterGroupName()
+            
+        // Check to see if DBParameterGroupName property is set
+        internal bool IsSetDBParameterGroupName()
         {
-            return this.DBParameterGroupNameField != null;
+            return this.dBParameterGroupName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the BackupRetentionPeriod property.
-        /// The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups.
-        /// Setting this parameter to 0 disables automated backups.
+        /// The number of days for which automated backups are retained. Setting
+        /// this parameter to a positive number enables backups. Setting this
+        /// parameter to 0 disables automated backups.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "BackupRetentionPeriod")]
-        public Decimal BackupRetentionPeriod
+        public int BackupRetentionPeriod
         {
-            get { return this.backupRetentionPeriodField.GetValueOrDefault(); }
-            set { this.backupRetentionPeriodField = value; }
+            get { return this.backupRetentionPeriod ?? default(int); }
+            set { this.backupRetentionPeriod = value; }
         }
 
         /// <summary>
         /// Sets the BackupRetentionPeriod property
         /// </summary>
-        /// <param name="backupRetentionPeriod">The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups.
-        /// Setting this parameter to 0 disables automated backups.</param>
+        /// <param name="backupRetentionPeriod">The value to set for the BackupRetentionPeriod property </param>
         /// <returns>this instance</returns>
-        public CreateDBInstanceRequest WithBackupRetentionPeriod(Decimal backupRetentionPeriod)
+        public CreateDBInstanceRequest WithBackupRetentionPeriod(int backupRetentionPeriod)
         {
-            this.backupRetentionPeriodField = backupRetentionPeriod;
+            this.backupRetentionPeriod = backupRetentionPeriod;
             return this;
         }
-
-        /// <summary>
-        /// Checks if BackupRetentionPeriod property is set
-        /// </summary>
-        /// <returns>true if BackupRetentionPeriod property is set</returns>
-        public bool IsSetBackupRetentionPeriod()
+            
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
         {
-            return this.backupRetentionPeriodField.HasValue;
+            return this.backupRetentionPeriod.HasValue;         
         }
 
         /// <summary>
-        /// Gets and sets the PreferredBackupWindow property.
-        /// The daily time range during which automated backups are created if automated backups are enabled.
+        /// The daily time range during which automated backups are created if
+        /// automated backups are enabled, as determined by the
+        /// <i>BackupRetentionPeriod</i>.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PreferredBackupWindow")]
         public string PreferredBackupWindow
         {
-            get { return this.preferredBackupWindowField; }
-            set { this.preferredBackupWindowField = value; }
+            get { return this.preferredBackupWindow; }
+            set { this.preferredBackupWindow = value; }
         }
 
         /// <summary>
         /// Sets the PreferredBackupWindow property
         /// </summary>
-        /// <param name="preferredBackupWindow">The daily time range during which automated backups are created if automated backups are enabled.</param>
+        /// <param name="preferredBackupWindow">The value to set for the PreferredBackupWindow property </param>
         /// <returns>this instance</returns>
         public CreateDBInstanceRequest WithPreferredBackupWindow(string preferredBackupWindow)
         {
-            this.preferredBackupWindowField = preferredBackupWindow;
+            this.preferredBackupWindow = preferredBackupWindow;
             return this;
         }
-
-        /// <summary>
-        /// Checks if PreferredBackupWindow property is set
-        /// </summary>
-        /// <returns>true if PreferredBackupWindow property is set</returns>
-        public bool IsSetPreferredBackupWindow()
+            
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
         {
-            return this.preferredBackupWindowField != null;
+            return this.preferredBackupWindow != null;      
         }
 
         /// <summary>
-        /// Gets and sets the Port property.
-        /// Port number on which the database accepts connections.
-        /// Default: 3306
-        /// Valid Values: 1150-65535
+        /// The port number on which the database accepts connections.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Port")]
-        public Decimal Port
+        public int Port
         {
-            get { return this.portField.GetValueOrDefault(); }
-            set { this.portField = value; }
+            get { return this.port ?? default(int); }
+            set { this.port = value; }
         }
 
         /// <summary>
         /// Sets the Port property
         /// </summary>
-        /// <param name="port">Port number on which the database accepts connections.
-        /// Default: 3306
-        /// Valid Values: 1150-65535</param>
+        /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
-        public CreateDBInstanceRequest WithPort(Decimal port)
+        public CreateDBInstanceRequest WithPort(int port)
         {
-            this.portField = port;
+            this.port = port;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Port property is set
-        /// </summary>
-        /// <returns>true if Port property is set</returns>
-        public bool IsSetPort()
+            
+        // Check to see if Port property is set
+        internal bool IsSetPort()
         {
-            return this.portField.HasValue;
+            return this.port.HasValue;      
         }
-
-        /// <summary>
-        /// Gets and sets the MultiAZ property.
-        /// Specifies if the DB Instance is a Multi-AZ DB Instance.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "MultiAZ")]
         public bool MultiAZ
         {
-            get { return this.multiAZField.GetValueOrDefault(); }
-            set { this.multiAZField = value; }
+            get { return this.multiAZ ?? default(bool); }
+            set { this.multiAZ = value; }
         }
 
         /// <summary>
         /// Sets the MultiAZ property
         /// </summary>
-        /// <param name="multiAZ">Specifies if the DB Instance is a Multi-AZ DB Instance.</param>
+        /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
         public CreateDBInstanceRequest WithMultiAZ(bool multiAZ)
         {
-            this.multiAZField = multiAZ;
+            this.multiAZ = multiAZ;
             return this;
+        }
+            
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this.multiAZ.HasValue;       
+        }
+        public string EngineVersion
+        {
+            get { return this.engineVersion; }
+            set { this.engineVersion = value; }
         }
 
         /// <summary>
-        /// Checks if MultiAZ property is set
+        /// Sets the EngineVersion property
         /// </summary>
-        /// <returns>true if MultiAZ property is set</returns>
-        public bool IsSetMultiAZ()
+        /// <param name="engineVersion">The value to set for the EngineVersion property </param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceRequest WithEngineVersion(string engineVersion)
         {
-            return this.multiAZField.HasValue;
+            this.engineVersion = engineVersion;
+            return this;
+        }
+            
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this.engineVersion != null;      
+        }
+        public bool AutoMinorVersionUpgrade
+        {
+            get { return this.autoMinorVersionUpgrade ?? default(bool); }
+            set { this.autoMinorVersionUpgrade = value; }
         }
 
+        /// <summary>
+        /// Sets the AutoMinorVersionUpgrade property
+        /// </summary>
+        /// <param name="autoMinorVersionUpgrade">The value to set for the AutoMinorVersionUpgrade property </param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceRequest WithAutoMinorVersionUpgrade(bool autoMinorVersionUpgrade)
+        {
+            this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+            return this;
+        }
+            
+        // Check to see if AutoMinorVersionUpgrade property is set
+        internal bool IsSetAutoMinorVersionUpgrade()
+        {
+            return this.autoMinorVersionUpgrade.HasValue;       
+        }
     }
 }
+    

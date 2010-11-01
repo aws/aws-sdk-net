@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
         private string authenticationCode2;
 
         /// <summary>
-        /// Name of the user whose MFA device you want to resynchronize.
+        /// Name of the User whose MFA device you want to resynchronize.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -76,7 +76,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Serial number which uniquely identifies the MFA device.
+        /// Serial number that uniquely identifies the MFA device.
         ///  
         /// <para>
         /// <b>Constraints:</b>

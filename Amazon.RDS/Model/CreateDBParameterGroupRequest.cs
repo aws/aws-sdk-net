@@ -1,141 +1,120 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Creates a DB Parameter Group.
+    /// Container for the parameters to the CreateDBParameterGroup operation.
+    /// <para> This API creates a new database parameter group. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class CreateDBParameterGroupRequest
+    /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBParameterGroup"/>
+    public class CreateDBParameterGroupRequest : AmazonWebServiceRequest
     {
-        private string DBParameterGroupNameField;
-        private string engineField;
-        private string descriptionField;
+        private string dBParameterGroupName;
+        private string dBParameterGroupFamily;
+        private string description;
 
         /// <summary>
-        /// Gets and sets the DBParameterGroupName property.
-        /// Name of the DB Parameter Group.
-        /// Must be 1 to 255 alphanumeric characters.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.
+        /// The name of the DB Parameter Group.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBParameterGroupName")]
         public string DBParameterGroupName
         {
-            get { return this.DBParameterGroupNameField; }
-            set { this.DBParameterGroupNameField = value; }
+            get { return this.dBParameterGroupName; }
+            set { this.dBParameterGroupName = value; }
         }
 
         /// <summary>
         /// Sets the DBParameterGroupName property
         /// </summary>
-        /// <param name="DBParameterGroupName">Name of the DB Parameter Group.
-        /// Must be 1 to 255 alphanumeric characters.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.</param>
+        /// <param name="dBParameterGroupName">The value to set for the DBParameterGroupName property </param>
         /// <returns>this instance</returns>
-        public CreateDBParameterGroupRequest WithDBParameterGroupName(string DBParameterGroupName)
+        public CreateDBParameterGroupRequest WithDBParameterGroupName(string dBParameterGroupName)
         {
-            this.DBParameterGroupNameField = DBParameterGroupName;
+            this.dBParameterGroupName = dBParameterGroupName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBParameterGroupName property is set
-        /// </summary>
-        /// <returns>true if DBParameterGroupName property is set</returns>
-        public bool IsSetDBParameterGroupName()
+            
+        // Check to see if DBParameterGroupName property is set
+        internal bool IsSetDBParameterGroupName()
         {
-            return this.DBParameterGroupNameField != null;
+            return this.dBParameterGroupName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the Engine property.
-        /// Name of the database engine this DB Parameter Group can be used with.
-        /// Valid Values: MySQL5.1
+        /// The name of the DB Parameter Group Family the DB Parameter Group can
+        /// be used with.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Engine")]
-        public string Engine
+        public string DBParameterGroupFamily
         {
-            get { return this.engineField; }
-            set { this.engineField = value; }
+            get { return this.dBParameterGroupFamily; }
+            set { this.dBParameterGroupFamily = value; }
         }
 
         /// <summary>
-        /// Sets the Engine property
+        /// Sets the DBParameterGroupFamily property
         /// </summary>
-        /// <param name="engine">Name of the database engine this DB Parameter Group can be used with.
-        /// Valid Values: MySQL5.1</param>
+        /// <param name="dBParameterGroupFamily">The value to set for the DBParameterGroupFamily property </param>
         /// <returns>this instance</returns>
-        public CreateDBParameterGroupRequest WithEngine(string engine)
+        public CreateDBParameterGroupRequest WithDBParameterGroupFamily(string dBParameterGroupFamily)
         {
-            this.engineField = engine;
+            this.dBParameterGroupFamily = dBParameterGroupFamily;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Engine property is set
-        /// </summary>
-        /// <returns>true if Engine property is set</returns>
-        public bool IsSetEngine()
+            
+        // Check to see if DBParameterGroupFamily property is set
+        internal bool IsSetDBParameterGroupFamily()
         {
-            return this.engineField != null;
+            return this.dBParameterGroupFamily != null;         
         }
 
         /// <summary>
-        /// Gets and sets the Description property.
-        /// Description for the DB Parameter Group.
+        /// The description for the DB Parameter Group.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Description")]
         public string Description
         {
-            get { return this.descriptionField; }
-            set { this.descriptionField = value; }
+            get { return this.description; }
+            set { this.description = value; }
         }
 
         /// <summary>
         /// Sets the Description property
         /// </summary>
-        /// <param name="description">Description for the DB Parameter Group.</param>
+        /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
         public CreateDBParameterGroupRequest WithDescription(string description)
         {
-            this.descriptionField = description;
+            this.description = description;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Description property is set
-        /// </summary>
-        /// <returns>true if Description property is set</returns>
-        public bool IsSetDescription()
+            
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
         {
-            return this.descriptionField != null;
+            return this.description != null;        
         }
-
     }
 }
+    

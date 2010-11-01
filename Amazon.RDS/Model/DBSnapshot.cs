@@ -1,359 +1,336 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    ///<summary>
-    ///Information about the DB Snapshot.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class DBSnapshot
+    /// <summary>
+    /// <para> </para>
+    /// </summary>
+    public class DBSnapshot  
     {
-        private string DBSnapshotIdentifierField;
-        private string DBInstanceIdentifierField;
-        private DateTime? snapshotCreateTimeField;
-        private string engineField;
-        private Decimal? allocatedStorageField;
-        private string statusField;
-        private Decimal? portField;
-        private string availabilityZoneField;
-        private DateTime? instanceCreateTimeField;
-        private string masterUsernameField;
+        
+        private string dBSnapshotIdentifier;
+        private string dBInstanceIdentifier;
+        private DateTime? snapshotCreateTime;
+        private string engine;
+        private int? allocatedStorage;
+        private string status;
+        private int? port;
+        private string availabilityZone;
+        private DateTime? instanceCreateTime;
+        private string masterUsername;
+        private string engineVersion;
 
         /// <summary>
-        /// Gets and sets the DBSnapshotIdentifier property.
-        /// The identifier for the DB Snapshot.
+        /// Specifies the identifier for the DB Snapshot.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBSnapshotIdentifier")]
         public string DBSnapshotIdentifier
         {
-            get { return this.DBSnapshotIdentifierField; }
-            set { this.DBSnapshotIdentifierField = value; }
+            get { return this.dBSnapshotIdentifier; }
+            set { this.dBSnapshotIdentifier = value; }
         }
 
         /// <summary>
         /// Sets the DBSnapshotIdentifier property
         /// </summary>
-        /// <param name="DBSnapshotIdentifier">The identifier for the DB Snapshot.</param>
+        /// <param name="dBSnapshotIdentifier">The value to set for the DBSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
-        public DBSnapshot WithDBSnapshotIdentifier(string DBSnapshotIdentifier)
+        public DBSnapshot WithDBSnapshotIdentifier(string dBSnapshotIdentifier)
         {
-            this.DBSnapshotIdentifierField = DBSnapshotIdentifier;
+            this.dBSnapshotIdentifier = dBSnapshotIdentifier;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBSnapshotIdentifier property is set
-        /// </summary>
-        /// <returns>true if DBSnapshotIdentifier property is set</returns>
-        public bool IsSetDBSnapshotIdentifier()
+            
+        // Check to see if DBSnapshotIdentifier property is set
+        internal bool IsSetDBSnapshotIdentifier()
         {
-            return this.DBSnapshotIdentifierField != null;
+            return this.dBSnapshotIdentifier != null;       
         }
 
         /// <summary>
-        /// Gets and sets the DBInstanceIdentifier property.
-        /// The DBInstanceIdentifier of the DB Instance this DB Snapshot was created from.
+        /// Specifies the the DBInstanceIdentifier of the DB Instance this DB
+        /// Snapshot was created from.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField; }
-            set { this.DBInstanceIdentifierField = value; }
+            get { return this.dBInstanceIdentifier; }
+            set { this.dBInstanceIdentifier = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceIdentifier property
         /// </summary>
-        /// <param name="DBInstanceIdentifier">The DBInstanceIdentifier of the DB Instance this DB Snapshot was created from.</param>
+        /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
-        public DBSnapshot WithDBInstanceIdentifier(string DBInstanceIdentifier)
+        public DBSnapshot WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
-            this.DBInstanceIdentifierField = DBInstanceIdentifier;
+            this.dBInstanceIdentifier = dBInstanceIdentifier;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceIdentifier property is set
-        /// </summary>
-        /// <returns>true if DBInstanceIdentifier property is set</returns>
-        public bool IsSetDBInstanceIdentifier()
+            
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
         {
-            return this.DBInstanceIdentifierField != null;
+            return this.dBInstanceIdentifier != null;       
         }
 
         /// <summary>
-        /// Gets and sets the SnapshotCreateTime property.
-        /// The time (UTC) when the snapshot was taken. Example: 2009-01-2009T23:50.000Z.
+        /// Provides the time (UTC) when the snapshot was taken.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "SnapshotCreateTime")]
         public DateTime SnapshotCreateTime
         {
-            get { return this.snapshotCreateTimeField.GetValueOrDefault(); }
-            set { this.snapshotCreateTimeField = value; }
+            get { return this.snapshotCreateTime ?? default(DateTime); }
+            set { this.snapshotCreateTime = value; }
         }
 
         /// <summary>
         /// Sets the SnapshotCreateTime property
         /// </summary>
-        /// <param name="snapshotCreateTime">The time (UTC) when the snapshot was taken. Example: 2009-01-2009T23:50.000Z.</param>
+        /// <param name="snapshotCreateTime">The value to set for the SnapshotCreateTime property </param>
         /// <returns>this instance</returns>
         public DBSnapshot WithSnapshotCreateTime(DateTime snapshotCreateTime)
         {
-            this.snapshotCreateTimeField = snapshotCreateTime;
+            this.snapshotCreateTime = snapshotCreateTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if SnapshotCreateTime property is set
-        /// </summary>
-        /// <returns>true if SnapshotCreateTime property is set</returns>
-        public bool IsSetSnapshotCreateTime()
+            
+        // Check to see if SnapshotCreateTime property is set
+        internal bool IsSetSnapshotCreateTime()
         {
-            return this.snapshotCreateTimeField.HasValue;
+            return this.snapshotCreateTime.HasValue;        
         }
 
         /// <summary>
-        /// Gets and sets the Engine property.
-        /// Name of the database engine. Valid Values: MySQL5.1.
+        /// Specifies the name of the database engine.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Engine")]
         public string Engine
         {
-            get { return this.engineField; }
-            set { this.engineField = value; }
+            get { return this.engine; }
+            set { this.engine = value; }
         }
 
         /// <summary>
         /// Sets the Engine property
         /// </summary>
-        /// <param name="engine">Name of the database engine. Valid Values: MySQL5.1.</param>
+        /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
         public DBSnapshot WithEngine(string engine)
         {
-            this.engineField = engine;
+            this.engine = engine;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Engine property is set
-        /// </summary>
-        /// <returns>true if Engine property is set</returns>
-        public bool IsSetEngine()
+            
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
         {
-            return this.engineField != null;
+            return this.engine != null;         
         }
 
         /// <summary>
-        /// Gets and sets the AllocatedStorage property.
-        /// Allocated storage size in gigabytes (GB).
+        /// Specifies the allocated storage size in gigabytes (GB).
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "AllocatedStorage")]
-        public Decimal AllocatedStorage
+        public int AllocatedStorage
         {
-            get { return this.allocatedStorageField.GetValueOrDefault(); }
-            set { this.allocatedStorageField = value; }
+            get { return this.allocatedStorage ?? default(int); }
+            set { this.allocatedStorage = value; }
         }
 
         /// <summary>
         /// Sets the AllocatedStorage property
         /// </summary>
-        /// <param name="allocatedStorage">Allocated storage size in gigabytes (GB).</param>
+        /// <param name="allocatedStorage">The value to set for the AllocatedStorage property </param>
         /// <returns>this instance</returns>
-        public DBSnapshot WithAllocatedStorage(Decimal allocatedStorage)
+        public DBSnapshot WithAllocatedStorage(int allocatedStorage)
         {
-            this.allocatedStorageField = allocatedStorage;
+            this.allocatedStorage = allocatedStorage;
             return this;
         }
-
-        /// <summary>
-        /// Checks if AllocatedStorage property is set
-        /// </summary>
-        /// <returns>true if AllocatedStorage property is set</returns>
-        public bool IsSetAllocatedStorage()
+            
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorageField.HasValue;
+            return this.allocatedStorage.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the Status property.
-        /// The status of this DB Snapshot.
+        /// Specifies the status of this DB Snapshot.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Status")]
         public string Status
         {
-            get { return this.statusField; }
-            set { this.statusField = value; }
+            get { return this.status; }
+            set { this.status = value; }
         }
 
         /// <summary>
         /// Sets the Status property
         /// </summary>
-        /// <param name="status">The status of this DB Snapshot.</param>
+        /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
         public DBSnapshot WithStatus(string status)
         {
-            this.statusField = status;
+            this.status = status;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Status property is set
-        /// </summary>
-        /// <returns>true if Status property is set</returns>
-        public bool IsSetStatus()
+            
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this.statusField != null;
+            return this.status != null;         
         }
 
         /// <summary>
-        /// Gets and sets the Port property.
-        /// The port that the database engine was listening on at the time of the snapshot.
+        /// Specifies the port that the database engine was listening on at the
+        /// time of the snapshot.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Port")]
-        public Decimal Port
+        public int Port
         {
-            get { return this.portField.GetValueOrDefault(); }
-            set { this.portField = value; }
+            get { return this.port ?? default(int); }
+            set { this.port = value; }
         }
 
         /// <summary>
         /// Sets the Port property
         /// </summary>
-        /// <param name="port">The port that the database engine was listening on at the time of the snapshot.</param>
+        /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
-        public DBSnapshot WithPort(Decimal port)
+        public DBSnapshot WithPort(int port)
         {
-            this.portField = port;
+            this.port = port;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Port property is set
-        /// </summary>
-        /// <returns>true if Port property is set</returns>
-        public bool IsSetPort()
+            
+        // Check to see if Port property is set
+        internal bool IsSetPort()
         {
-            return this.portField.HasValue;
+            return this.port.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
-        /// The name of the Availability Zone the DB Instance was located in at the time of the DB Snapshot.
+        /// Specifies the name of the Availability Zone the DB Instance was
+        /// located in at the time of the DB Snapshot.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField; }
-            set { this.availabilityZoneField = value; }
+            get { return this.availabilityZone; }
+            set { this.availabilityZone = value; }
         }
 
         /// <summary>
         /// Sets the AvailabilityZone property
         /// </summary>
-        /// <param name="availabilityZone">The name of the Availability Zone the DB Instance was located in at the time of the DB Snapshot.</param>
+        /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
         public DBSnapshot WithAvailabilityZone(string availabilityZone)
         {
-            this.availabilityZoneField = availabilityZone;
+            this.availabilityZone = availabilityZone;
             return this;
         }
-
-        /// <summary>
-        /// Checks if AvailabilityZone property is set
-        /// </summary>
-        /// <returns>true if AvailabilityZone property is set</returns>
-        public bool IsSetAvailabilityZone()
+            
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZoneField != null;
+            return this.availabilityZone != null;       
         }
 
         /// <summary>
-        /// Gets and sets the InstanceCreateTime property.
-        /// Date and time the source DB Instance was created.
-        /// Example: 2009-07-08T21:16:46Z.
+        /// Specifies the time (UTC) when the snapshot was taken.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "InstanceCreateTime")]
         public DateTime InstanceCreateTime
         {
-            get { return this.instanceCreateTimeField.GetValueOrDefault(); }
-            set { this.instanceCreateTimeField = value; }
+            get { return this.instanceCreateTime ?? default(DateTime); }
+            set { this.instanceCreateTime = value; }
         }
 
         /// <summary>
         /// Sets the InstanceCreateTime property
         /// </summary>
-        /// <param name="instanceCreateTime">Date and time the source DB Instance was created.
-        /// Example: 2009-07-08T21:16:46Z.</param>
+        /// <param name="instanceCreateTime">The value to set for the InstanceCreateTime property </param>
         /// <returns>this instance</returns>
         public DBSnapshot WithInstanceCreateTime(DateTime instanceCreateTime)
         {
-            this.instanceCreateTimeField = instanceCreateTime;
+            this.instanceCreateTime = instanceCreateTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if InstanceCreateTime property is set
-        /// </summary>
-        /// <returns>true if InstanceCreateTime property is set</returns>
-        public bool IsSetInstanceCreateTime()
+            
+        // Check to see if InstanceCreateTime property is set
+        internal bool IsSetInstanceCreateTime()
         {
-            return this.instanceCreateTimeField.HasValue;
+            return this.instanceCreateTime.HasValue;        
         }
 
         /// <summary>
-        /// Gets and sets the MasterUsername property.
-        /// The master username for the DB Instance.
+        /// Provides the master username for the DB Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "MasterUsername")]
         public string MasterUsername
         {
-            get { return this.masterUsernameField; }
-            set { this.masterUsernameField = value; }
+            get { return this.masterUsername; }
+            set { this.masterUsername = value; }
         }
 
         /// <summary>
         /// Sets the MasterUsername property
         /// </summary>
-        /// <param name="masterUsername">The master username for the DB Instance.</param>
+        /// <param name="masterUsername">The value to set for the MasterUsername property </param>
         /// <returns>this instance</returns>
         public DBSnapshot WithMasterUsername(string masterUsername)
         {
-            this.masterUsernameField = masterUsername;
+            this.masterUsername = masterUsername;
             return this;
+        }
+            
+        // Check to see if MasterUsername property is set
+        internal bool IsSetMasterUsername()
+        {
+            return this.masterUsername != null;         
+        }
+        public string EngineVersion
+        {
+            get { return this.engineVersion; }
+            set { this.engineVersion = value; }
         }
 
         /// <summary>
-        /// Checks if MasterUsername property is set
+        /// Sets the EngineVersion property
         /// </summary>
-        /// <returns>true if MasterUsername property is set</returns>
-        public bool IsSetMasterUsername()
+        /// <param name="engineVersion">The value to set for the EngineVersion property </param>
+        /// <returns>this instance</returns>
+        public DBSnapshot WithEngineVersion(string engineVersion)
         {
-            return this.masterUsernameField != null;
+            this.engineVersion = engineVersion;
+            return this;
         }
-
+            
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this.engineVersion != null;      
+        }
     }
 }

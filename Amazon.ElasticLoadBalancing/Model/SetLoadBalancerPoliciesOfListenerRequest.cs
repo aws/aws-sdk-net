@@ -1,150 +1,154 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-11-25
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Associates, updates, or disables a policy with a listener on the load balancer.
-    /// Only 0 or 1 policy can be associated with a listener.
+    /// Container for the parameters to the SetLoadBalancerPoliciesOfListener operation.
+    /// <para> Associates, updates, or disables a policy with a listener on
+    /// the load balancer. Currently only zero (0) or one (1) policy can be
+    /// associated with a listener. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
-    public class SetLoadBalancerPoliciesOfListenerRequest
+    /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.SetLoadBalancerPoliciesOfListener"/>
+    public class SetLoadBalancerPoliciesOfListenerRequest : AmazonWebServiceRequest
     {
-        private string loadBalancerNameField;
-        private Decimal? loadBalancerPortField;
-        private List<string> policyNamesField;
+        private string loadBalancerName;
+        private int? loadBalancerPort;
+        private List<string> policyNames = new List<string>();
+        /// <summary>
+        /// Default constructor for a new SetLoadBalancerPoliciesOfListenerRequest object.  Callers should use the
+        /// properties or fluent setter (With...) methods to initialize this object after creating it.
+        /// </summary>
+        public SetLoadBalancerPoliciesOfListenerRequest() {}
+    
+        /// <summary>
+        /// Constructs a new SetLoadBalancerPoliciesOfListenerRequest object.
+        /// Callers should use the properties or fluent setter (With...) methods to
+        /// initialize any additional object members.
+        /// </summary>
+        /// 
+        /// <param name="loadBalancerName"> The name associated with the
+        /// LoadBalancer. The name must be unique within the client AWS account.
+        /// </param>
+        /// <param name="loadBalancerPort"> The external port of the LoadBalancer
+        /// with which this policy has to be associated. </param>
+        /// <param name="policyNames"> List of policies to be associated with the
+        /// listener. Currently this list can have at most one policy. If the list
+        /// is empty, the current policy is removed from the listener. </param>
+        public SetLoadBalancerPoliciesOfListenerRequest(string loadBalancerName, int loadBalancerPort, List<string> policyNames) 
+        {
+            this.loadBalancerName = loadBalancerName;
+            this.loadBalancerPort = loadBalancerPort;
+            this.policyNames = policyNames;
+        }
+    
 
         /// <summary>
-        /// Gets and sets the LoadBalancerName property.
-        /// The mnemonic name associated with the LoadBalancer.
-        /// The name must be unique within your AWS account.
+        /// The name associated with the LoadBalancer. The name must be unique
+        /// within the client AWS account.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "LoadBalancerName")]
         public string LoadBalancerName
         {
-            get { return this.loadBalancerNameField; }
-            set { this.loadBalancerNameField = value; }
+            get { return this.loadBalancerName; }
+            set { this.loadBalancerName = value; }
         }
 
         /// <summary>
         /// Sets the LoadBalancerName property
         /// </summary>
-        /// <param name="loadBalancerName">The mnemonic name associated with the LoadBalancer.
-        /// The name must be unique within your AWS account.</param>
+        /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
         public SetLoadBalancerPoliciesOfListenerRequest WithLoadBalancerName(string loadBalancerName)
         {
-            this.loadBalancerNameField = loadBalancerName;
+            this.loadBalancerName = loadBalancerName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if LoadBalancerName property is set
-        /// </summary>
-        /// <returns>true if LoadBalancerName property is set</returns>
-        public bool IsSetLoadBalancerName()
+            
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerNameField != null;
+            return this.loadBalancerName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the LoadBalancerPort property.
-        /// The external port of the LoadBalancer with which this policy has to be associated.
+        /// The external port of the LoadBalancer with which this policy has to be
+        /// associated.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "LoadBalancerPort")]
-        public Decimal LoadBalancerPort
+        public int LoadBalancerPort
         {
-            get { return this.loadBalancerPortField.GetValueOrDefault(); }
-            set { this.loadBalancerPortField = value; }
+            get { return this.loadBalancerPort ?? default(int); }
+            set { this.loadBalancerPort = value; }
         }
 
         /// <summary>
         /// Sets the LoadBalancerPort property
         /// </summary>
-        /// <param name="loadBalancerPort">The external port of the LoadBalancer with which this policy has to be associated.</param>
+        /// <param name="loadBalancerPort">The value to set for the LoadBalancerPort property </param>
         /// <returns>this instance</returns>
-        public SetLoadBalancerPoliciesOfListenerRequest WithLoadBalancerPort(Decimal loadBalancerPort)
+        public SetLoadBalancerPoliciesOfListenerRequest WithLoadBalancerPort(int loadBalancerPort)
         {
-            this.loadBalancerPortField = loadBalancerPort;
+            this.loadBalancerPort = loadBalancerPort;
             return this;
         }
-
-        /// <summary>
-        /// Checks if LoadBalancerPort property is set
-        /// </summary>
-        /// <returns>true if LoadBalancerPort property is set</returns>
-        public bool IsSetLoadBalancerPort()
+            
+        // Check to see if LoadBalancerPort property is set
+        internal bool IsSetLoadBalancerPort()
         {
-            return this.loadBalancerPortField.HasValue;
+            return this.loadBalancerPort.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the PolicyNames property.
-        /// List of policies to be associated with the listener.
-        /// This list can have at most one policy. If the list is empty,
-        /// the current policy is removed from the listener.
+        /// List of policies to be associated with the listener. Currently this
+        /// list can have at most one policy. If the list is empty, the current
+        /// policy is removed from the listener.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PolicyNames")]
         public List<string> PolicyNames
         {
-            get
-            {
-                if (this.policyNamesField == null)
-                {
-                    this.policyNamesField = new List<string>();
-                }
-                return this.policyNamesField;
-            }
-            set { this.policyNamesField = value; }
+            get { return this.policyNames; }
+            set { this.policyNames = value; }
         }
-
         /// <summary>
-        /// Sets the PolicyNames property
+        /// Adds elements to the PolicyNames collection
         /// </summary>
-        /// <param name="list">List of policies to be associated with the listener.
-        /// This list can have at most one policy. If the list is empty,
-        /// the current policy is removed from the listener.</param>
+        /// <param name="policyNames">The values to add to the PolicyNames collection </param>
         /// <returns>this instance</returns>
-        public SetLoadBalancerPoliciesOfListenerRequest WithPolicyNames(params string[] list)
+        public SetLoadBalancerPoliciesOfListenerRequest WithPolicyNames(params string[] policyNames)
         {
-            foreach (string item in list)
+            foreach (string element in policyNames)
             {
-                PolicyNames.Add(item);
+                this.policyNames.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if PolicyNames property is set
-        /// </summary>
-        /// <returns>true if PolicyNames property is set</returns>
-        public bool IsSetPolicyNames()
+        // Check to see if PolicyNames property is set
+        internal bool IsSetPolicyNames()
         {
-            return (PolicyNames.Count > 0);
+            return this.policyNames.Count > 0;      
         }
-
     }
 }
+    

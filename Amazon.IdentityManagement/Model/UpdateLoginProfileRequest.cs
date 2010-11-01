@@ -25,8 +25,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLoginProfile operation.
-    /// <para>Updates the login profile for the specified user. Use this API
-    /// to change the user's password.</para>
+    /// <para>Updates the login profile for the specified User. Use this API
+    /// to change the User's password.</para> <para><b>NOTE:</b>In the full
+    /// release you will be able to use IAM to access your services through
+    /// the AWS Management Console. Although this feature is not currently
+    /// available, you can create login profiles for your Users now. Then,
+    /// when this feature is implemented, your Users can use IAM to access
+    /// your services through the AWS Management Console.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateLoginProfile"/>
     public class UpdateLoginProfileRequest : AmazonWebServiceRequest
@@ -35,7 +40,7 @@ namespace Amazon.IdentityManagement.Model
         private string password;
 
         /// <summary>
-        /// Name of the user whose login profile you want to update.
+        /// Name of the User whose login profile you want to update.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -75,7 +80,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The new password for the user.
+        /// The new password for the User name.
         ///  
         /// <para>
         /// <b>Constraints:</b>

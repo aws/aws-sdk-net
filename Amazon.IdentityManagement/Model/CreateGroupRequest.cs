@@ -26,9 +26,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
     /// <para>Creates a new group.</para> <para>For information about the
-    /// number of groups you can create, see Limitations on AWS IAM Entities
-    /// in the <a href="http://aws.amazon.com/documentation/"> AWS Identity
-    /// and Access Management User Guide </a> .</para>
+    /// number of groups you can create, see Limitations on IAM Entities in
+    /// Using AWS Identity and Access Management.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateGroup"/>
     public class CreateGroupRequest : AmazonWebServiceRequest
@@ -38,10 +37,10 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// The path to the group. For more information about paths, see
-        /// Identifiers for Users and Groups in the <a
-        /// href="http://aws.amazon.com/documentation/" target="_blank">AWS
-        /// Identity and Access Management User Guide</a>. This parameter is
-        /// optional. If it is not included, it defaults to /.
+        /// Identifiers for Users and Groups in <a
+        /// href="http://aws.amazon.com/documentation/iam/" target="_blank">Using
+        /// AWS Identity and Access Management</a>. This parameter is optional. If
+        /// it is not included, it defaults to a slash (/).
         ///  
         /// <para>
         /// <b>Constraints:</b>

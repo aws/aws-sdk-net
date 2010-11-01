@@ -26,7 +26,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the DeactivateMFADevice operation.
     /// <para>Deactivates the specified MFA device and removes it from
-    /// association with the user for which it was originally enabled.</para>
+    /// association with the User name for which it was originally
+    /// enabled.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeactivateMFADevice"/>
     public class DeactivateMFADeviceRequest : AmazonWebServiceRequest
@@ -35,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
         private string serialNumber;
 
         /// <summary>
-        /// Name of the user whose MFA device you want to deactivate.
+        /// Name of the User whose MFA device you want to deactivate.
         ///  
         /// <para>
         /// <b>Constraints:</b>

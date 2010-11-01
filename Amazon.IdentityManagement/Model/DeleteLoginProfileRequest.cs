@@ -25,15 +25,19 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoginProfile operation.
-    /// <para>Deletes the login profile for the specified user, which
-    /// terminates the user's ability to access AWS services through the IAM
-    /// login page.</para> <para><b>IMPORTANT:</b>Deleting a user's login
-    /// profile does not prevent a user from accessing IAM through the command
-    /// line interface or the API. To prevent a user from accessing IAM
-    /// through the command line interface or the API you must either make the
-    /// access key inactive or delete it. For more information about making
-    /// keys inactive or deleting them, see UpdateAccessKey and
-    /// DeleteAccessKey. </para>
+    /// <para>Deletes the login profile for the specified User, which
+    /// terminates the User's ability to access AWS services through the IAM
+    /// login page.</para> <para><b>IMPORTANT:</b>Deleting a User's login
+    /// profile does not prevent a User from accessing IAM through the command
+    /// line interface or the API. To prevent all User access you must also
+    /// either make the access key inactive or delete it. For more
+    /// information about making keys inactive or deleting them, see
+    /// UpdateAccessKey and DeleteAccessKey. </para> <para><b>NOTE:</b>In the
+    /// full release you will be able to use IAM to access your services
+    /// through the AWS Management Console. Although this feature is not
+    /// currently available, you can create login profiles for your Users now.
+    /// Then, when this feature is implemented, your Users can use IAM to
+    /// access your services through the AWS Management Console.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteLoginProfile"/>
     public class DeleteLoginProfileRequest : AmazonWebServiceRequest
@@ -41,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         private string userName;
 
         /// <summary>
-        /// Name of the user whose login profile you want to delete.
+        /// Name of the User whose login profile you want to delete.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -25,7 +25,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLoginProfile operation.
-    /// <para>Retrieves the login profile for the specified user.</para>
+    /// <para>Retrieves the login profile for the specified User.</para>
+    /// <para><b>NOTE:</b>In the full release you will be able to use IAM to
+    /// access your services through the AWS Management Console. Although this
+    /// feature is not currently available, you can create login profiles for
+    /// your Users now. Then, when this feature is implemented, your Users can
+    /// use IAM to access your services through the AWS Management
+    /// Console.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetLoginProfile"/>
     public class GetLoginProfileRequest : AmazonWebServiceRequest
@@ -33,7 +39,7 @@ namespace Amazon.IdentityManagement.Model
         private string userName;
 
         /// <summary>
-        /// Name of the user whose login profile you want to retrieve.
+        /// Name of the User whose login profile you want to retrieve.
         ///  
         /// <para>
         /// <b>Constraints:</b>

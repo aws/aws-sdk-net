@@ -32,10 +32,10 @@ namespace Amazon.IdentityManagement.Model
         private string accessKeyId;
         private string status;
         private string secretAccessKey;
-        private DateTime createDate;
+        private DateTime? createDate;
 
         /// <summary>
-        /// Name of the user the key is associated with.
+        /// Name of the User the key is associated with.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -66,6 +66,12 @@ namespace Amazon.IdentityManagement.Model
         {
             this.userName = userName;
             return this;
+        }
+            
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this.userName != null;       
         }
 
         /// <summary>
@@ -101,6 +107,12 @@ namespace Amazon.IdentityManagement.Model
             this.accessKeyId = accessKeyId;
             return this;
         }
+            
+        // Check to see if AccessKeyId property is set
+        internal bool IsSetAccessKeyId()
+        {
+            return this.accessKeyId != null;        
+        }
 
         /// <summary>
         /// The status of the access key. <c>Active</c> means the key is valid for
@@ -132,6 +144,12 @@ namespace Amazon.IdentityManagement.Model
             this.status = status;
             return this;
         }
+            
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this.status != null;         
+        }
 
         /// <summary>
         /// The secret key used to sign requests.
@@ -153,6 +171,12 @@ namespace Amazon.IdentityManagement.Model
             this.secretAccessKey = secretAccessKey;
             return this;
         }
+            
+        // Check to see if SecretAccessKey property is set
+        internal bool IsSetSecretAccessKey()
+        {
+            return this.secretAccessKey != null;        
+        }
 
         /// <summary>
         /// The date when the access key was created.
@@ -160,7 +184,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public DateTime CreateDate
         {
-            get { return this.createDate; }
+            get { return this.createDate ?? default(DateTime); }
             set { this.createDate = value; }
         }
 
@@ -173,6 +197,12 @@ namespace Amazon.IdentityManagement.Model
         {
             this.createDate = createDate;
             return this;
+        }
+            
+        // Check to see if CreateDate property is set
+        internal bool IsSetCreateDate()
+        {
+            return this.createDate.HasValue;        
         }
     }
 }

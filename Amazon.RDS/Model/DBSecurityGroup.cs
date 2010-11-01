@@ -1,215 +1,174 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    ///<summary>
-    ///Information about the DB Security Group.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class DBSecurityGroup
+    /// <summary>
+    /// <para> </para>
+    /// </summary>
+    public class DBSecurityGroup  
     {
-        private string ownerIdField;
-        private string DBSecurityGroupNameField;
-        private string DBSecurityGroupDescriptionField;
-        private List<EC2SecurityGroup> EC2SecurityGroupField;
-        private List<IPRange> IPRangeField;
+        
+        private string ownerId;
+        private string dBSecurityGroupName;
+        private string dBSecurityGroupDescription;
+        private List<EC2SecurityGroup> eC2SecurityGroups = new List<EC2SecurityGroup>();
+        private List<IPRange> iPRanges = new List<IPRange>();
 
         /// <summary>
-        /// Gets and sets the OwnerId property.
-        /// AWS ID of the owner of the security group specified in the EC2SecurityGroupName parameter.
+        /// Provides the AWS ID of the owner of a specific DB Security Group.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "OwnerId")]
         public string OwnerId
         {
-            get { return this.ownerIdField; }
-            set { this.ownerIdField = value; }
+            get { return this.ownerId; }
+            set { this.ownerId = value; }
         }
 
         /// <summary>
         /// Sets the OwnerId property
         /// </summary>
-        /// <param name="ownerId">AWS ID of the owner of the security group specified in the EC2SecurityGroupName parameter.</param>
+        /// <param name="ownerId">The value to set for the OwnerId property </param>
         /// <returns>this instance</returns>
         public DBSecurityGroup WithOwnerId(string ownerId)
         {
-            this.ownerIdField = ownerId;
+            this.ownerId = ownerId;
             return this;
         }
-
-        /// <summary>
-        /// Checks if OwnerId property is set
-        /// </summary>
-        /// <returns>true if OwnerId property is set</returns>
-        public bool IsSetOwnerId()
+            
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
         {
-            return this.ownerIdField != null;
+            return this.ownerId != null;        
         }
 
         /// <summary>
-        /// Gets and sets the DBSecurityGroupName property.
+        /// Specifies the name of the DB Security Group.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBSecurityGroupName")]
         public string DBSecurityGroupName
         {
-            get { return this.DBSecurityGroupNameField; }
-            set { this.DBSecurityGroupNameField = value; }
+            get { return this.dBSecurityGroupName; }
+            set { this.dBSecurityGroupName = value; }
         }
 
         /// <summary>
         /// Sets the DBSecurityGroupName property
         /// </summary>
-        /// <param name="DBSecurityGroupName">DBSecurityGroupName property</param>
+        /// <param name="dBSecurityGroupName">The value to set for the DBSecurityGroupName property </param>
         /// <returns>this instance</returns>
-        public DBSecurityGroup WithDBSecurityGroupName(string DBSecurityGroupName)
+        public DBSecurityGroup WithDBSecurityGroupName(string dBSecurityGroupName)
         {
-            this.DBSecurityGroupNameField = DBSecurityGroupName;
+            this.dBSecurityGroupName = dBSecurityGroupName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBSecurityGroupName property is set
-        /// </summary>
-        /// <returns>true if DBSecurityGroupName property is set</returns>
-        public bool IsSetDBSecurityGroupName()
+            
+        // Check to see if DBSecurityGroupName property is set
+        internal bool IsSetDBSecurityGroupName()
         {
-            return this.DBSecurityGroupNameField != null;
+            return this.dBSecurityGroupName != null;        
         }
 
         /// <summary>
-        /// Gets and sets the DBSecurityGroupDescription property.
-        /// The description of the database security group.
+        /// Provides the description of the database security group.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBSecurityGroupDescription")]
         public string DBSecurityGroupDescription
         {
-            get { return this.DBSecurityGroupDescriptionField; }
-            set { this.DBSecurityGroupDescriptionField = value; }
+            get { return this.dBSecurityGroupDescription; }
+            set { this.dBSecurityGroupDescription = value; }
         }
 
         /// <summary>
         /// Sets the DBSecurityGroupDescription property
         /// </summary>
-        /// <param name="DBSecurityGroupDescription">The description of the database security group.</param>
+        /// <param name="dBSecurityGroupDescription">The value to set for the DBSecurityGroupDescription property </param>
         /// <returns>this instance</returns>
-        public DBSecurityGroup WithDBSecurityGroupDescription(string DBSecurityGroupDescription)
+        public DBSecurityGroup WithDBSecurityGroupDescription(string dBSecurityGroupDescription)
         {
-            this.DBSecurityGroupDescriptionField = DBSecurityGroupDescription;
+            this.dBSecurityGroupDescription = dBSecurityGroupDescription;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBSecurityGroupDescription property is set
-        /// </summary>
-        /// <returns>true if DBSecurityGroupDescription property is set</returns>
-        public bool IsSetDBSecurityGroupDescription()
+            
+        // Check to see if DBSecurityGroupDescription property is set
+        internal bool IsSetDBSecurityGroupDescription()
         {
-            return this.DBSecurityGroupDescriptionField != null;
+            return this.dBSecurityGroupDescription != null;         
         }
 
         /// <summary>
-        /// Gets and sets the EC2SecurityGroup property.
-        /// List of EC2SecurityGroup elements.
+        /// Contains a list of <a>EC2SecurityGroup</a> elements.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "EC2SecurityGroup")]
-        public List<EC2SecurityGroup> EC2SecurityGroup
+        public List<EC2SecurityGroup> EC2SecurityGroups
         {
-            get
-            {
-                if (this.EC2SecurityGroupField == null)
-                {
-                    this.EC2SecurityGroupField = new List<EC2SecurityGroup>();
-                }
-                return this.EC2SecurityGroupField;
-            }
-            set { this.EC2SecurityGroupField = value; }
+            get { return this.eC2SecurityGroups; }
+            set { this.eC2SecurityGroups = value; }
         }
-
         /// <summary>
-        /// Sets the EC2SecurityGroup property
+        /// Adds elements to the EC2SecurityGroups collection
         /// </summary>
-        /// <param name="list">List of EC2SecurityGroup elements.</param>
+        /// <param name="eC2SecurityGroups">The values to add to the EC2SecurityGroups collection </param>
         /// <returns>this instance</returns>
-        public DBSecurityGroup WithEC2SecurityGroup(params EC2SecurityGroup[] list)
+        public DBSecurityGroup WithEC2SecurityGroups(params EC2SecurityGroup[] eC2SecurityGroups)
         {
-            foreach (EC2SecurityGroup item in list)
+            foreach (EC2SecurityGroup element in eC2SecurityGroups)
             {
-                EC2SecurityGroup.Add(item);
+                this.eC2SecurityGroups.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if EC2SecurityGroup property is set
-        /// </summary>
-        /// <returns>true if EC2SecurityGroup property is set</returns>
-        public bool IsSetEC2SecurityGroup()
+        // Check to see if EC2SecurityGroups property is set
+        internal bool IsSetEC2SecurityGroups()
         {
-            return (EC2SecurityGroup.Count > 0);
+            return this.eC2SecurityGroups.Count > 0;        
         }
 
         /// <summary>
-        /// Gets and sets the IPRange property.
+        /// Contains a list of <a>IPRange</a> elements.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "IPRange")]
-        public List<IPRange> IPRange
+        public List<IPRange> IPRanges
         {
-            get
-            {
-                if (this.IPRangeField == null)
-                {
-                    this.IPRangeField = new List<IPRange>();
-                }
-                return this.IPRangeField;
-            }
-            set { this.IPRangeField = value; }
+            get { return this.iPRanges; }
+            set { this.iPRanges = value; }
         }
-
         /// <summary>
-        /// Sets the IPRange property
+        /// Adds elements to the IPRanges collection
         /// </summary>
-        /// <param name="list">IPRange property</param>
+        /// <param name="iPRanges">The values to add to the IPRanges collection </param>
         /// <returns>this instance</returns>
-        public DBSecurityGroup WithIPRange(params IPRange[] list)
+        public DBSecurityGroup WithIPRanges(params IPRange[] iPRanges)
         {
-            foreach (IPRange item in list)
+            foreach (IPRange element in iPRanges)
             {
-                IPRange.Add(item);
+                this.iPRanges.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if IPRange property is set
-        /// </summary>
-        /// <returns>true if IPRange property is set</returns>
-        public bool IsSetIPRange()
+        // Check to see if IPRanges property is set
+        internal bool IsSetIPRanges()
         {
-            return (IPRange.Count > 0);
+            return this.iPRanges.Count > 0;         
         }
-
     }
 }

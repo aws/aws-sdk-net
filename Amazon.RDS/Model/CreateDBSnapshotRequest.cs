@@ -1,99 +1,93 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Creates a restorable DB Snapshot of all data associated with a DB Instance.
+    /// Container for the parameters to the CreateDBSnapshot operation.
+    /// <para> This API is used to create a DBSnapshot. The source DBInstance
+    /// must be in "available" state. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class CreateDBSnapshotRequest
+    /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBSnapshot"/>
+    public class CreateDBSnapshotRequest : AmazonWebServiceRequest
     {
-        private string DBSnapshotIdentifierField;
-        private string DBInstanceIdentifierField;
+        private string dBSnapshotIdentifier;
+        private string dBInstanceIdentifier;
 
         /// <summary>
-        /// Gets and sets the DBSnapshotIdentifier property.
+        /// The identifier for the DB Snapshot.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBSnapshotIdentifier")]
         public string DBSnapshotIdentifier
         {
-            get { return this.DBSnapshotIdentifierField; }
-            set { this.DBSnapshotIdentifierField = value; }
+            get { return this.dBSnapshotIdentifier; }
+            set { this.dBSnapshotIdentifier = value; }
         }
 
         /// <summary>
         /// Sets the DBSnapshotIdentifier property
         /// </summary>
-        /// <param name="DBSnapshotIdentifier">DBSnapshotIdentifier property</param>
+        /// <param name="dBSnapshotIdentifier">The value to set for the DBSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
-        public CreateDBSnapshotRequest WithDBSnapshotIdentifier(string DBSnapshotIdentifier)
+        public CreateDBSnapshotRequest WithDBSnapshotIdentifier(string dBSnapshotIdentifier)
         {
-            this.DBSnapshotIdentifierField = DBSnapshotIdentifier;
+            this.dBSnapshotIdentifier = dBSnapshotIdentifier;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBSnapshotIdentifier property is set
-        /// </summary>
-        /// <returns>true if DBSnapshotIdentifier property is set</returns>
-        public bool IsSetDBSnapshotIdentifier()
+            
+        // Check to see if DBSnapshotIdentifier property is set
+        internal bool IsSetDBSnapshotIdentifier()
         {
-            return this.DBSnapshotIdentifierField != null;
+            return this.dBSnapshotIdentifier != null;       
         }
 
         /// <summary>
-        /// Gets and sets the DBInstanceIdentifier property.
+        /// The DB Instance identifier. This is the unique key that identifies a
+        /// DB Instance. This parameter isn't case sensitive.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField; }
-            set { this.DBInstanceIdentifierField = value; }
+            get { return this.dBInstanceIdentifier; }
+            set { this.dBInstanceIdentifier = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceIdentifier property
         /// </summary>
-        /// <param name="DBInstanceIdentifier">DBInstanceIdentifier property</param>
+        /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
-        public CreateDBSnapshotRequest WithDBInstanceIdentifier(string DBInstanceIdentifier)
+        public CreateDBSnapshotRequest WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
-            this.DBInstanceIdentifierField = DBInstanceIdentifier;
+            this.dBInstanceIdentifier = dBInstanceIdentifier;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceIdentifier property is set
-        /// </summary>
-        /// <returns>true if DBInstanceIdentifier property is set</returns>
-        public bool IsSetDBInstanceIdentifier()
+            
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
         {
-            return this.DBInstanceIdentifierField != null;
+            return this.dBInstanceIdentifier != null;       
         }
-
     }
 }
+    

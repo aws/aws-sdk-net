@@ -1,324 +1,268 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-11-25
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    ///<summary>
-    ///A LoadBalancer is represented by a DNS name and a set of ports and provides the destination to which all requests intended
-    ///for your application should be directed. Each LoadBalancer can distribute requests to multiple application instances.
-    ///LoadBalancers can span multiple Availability Zones within an EC2 region, but cannot span multiple regions.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
-    public class LoadBalancerDescription
+    /// <summary>
+    /// <para> The LoadBalancerDescription data type. </para>
+    /// </summary>
+    public class LoadBalancerDescription  
     {
-        private string loadBalancerNameField;
-        private string DNSNameField;
-        private Policies policiesField;
-        private List<ListenerDescription> listenerDescriptionsField;
-        private List<string> availabilityZonesField;
-        private List<Instance> instancesField;
-        private HealthCheck healthCheckField;
-        private string createdTimeField;
+        
+        private string loadBalancerName;
+        private string dNSName;
+        private List<ListenerDescription> listenerDescriptions = new List<ListenerDescription>();
+        private Policies policies;
+        private List<string> availabilityZones = new List<string>();
+        private List<Instance> instances = new List<Instance>();
+        private HealthCheck healthCheck;
+        private DateTime? createdTime;
+        /// <summary>
+        /// Default constructor for a new LoadBalancerDescription object.  Callers should use the
+        /// properties or fluent setter (With...) methods to initialize this object after creating it.
+        /// </summary>
+        public LoadBalancerDescription() {}
+    
 
         /// <summary>
-        /// Gets and sets the LoadBalancerName property.
-        /// The mnemonic name associated with the LoadBalancer.
+        /// Specifies the name associated with the LoadBalancer.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "LoadBalancerName")]
         public string LoadBalancerName
         {
-            get { return this.loadBalancerNameField; }
-            set { this.loadBalancerNameField = value; }
+            get { return this.loadBalancerName; }
+            set { this.loadBalancerName = value; }
         }
 
         /// <summary>
         /// Sets the LoadBalancerName property
         /// </summary>
-        /// <param name="loadBalancerName">The mnemonic name associated with the LoadBalancer.</param>
+        /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
         public LoadBalancerDescription WithLoadBalancerName(string loadBalancerName)
         {
-            this.loadBalancerNameField = loadBalancerName;
+            this.loadBalancerName = loadBalancerName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if LoadBalancerName property is set
-        /// </summary>
-        /// <returns>true if LoadBalancerName property is set</returns>
-        public bool IsSetLoadBalancerName()
+            
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerNameField != null;
+            return this.loadBalancerName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the DNSName property.
-        /// External DNS name associated with the LoadBalancer.
+        /// Specifies the external DNS name associated with the LoadBalancer.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DNSName")]
         public string DNSName
         {
-            get { return this.DNSNameField; }
-            set { this.DNSNameField = value; }
+            get { return this.dNSName; }
+            set { this.dNSName = value; }
         }
 
         /// <summary>
         /// Sets the DNSName property
         /// </summary>
-        /// <param name="DNSName">External DNS name associated with the LoadBalancer.</param>
+        /// <param name="dNSName">The value to set for the DNSName property </param>
         /// <returns>this instance</returns>
-        public LoadBalancerDescription WithDNSName(string DNSName)
+        public LoadBalancerDescription WithDNSName(string dNSName)
         {
-            this.DNSNameField = DNSName;
+            this.dNSName = dNSName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DNSName property is set
-        /// </summary>
-        /// <returns>true if DNSName property is set</returns>
-        public bool IsSetDNSName()
+            
+        // Check to see if DNSName property is set
+        internal bool IsSetDNSName()
         {
-            return this.DNSNameField != null;
+            return this.dNSName != null;        
         }
 
         /// <summary>
-        /// Gets and sets the Policies property.
-        /// A list of Policies associated with the LoadBalancer.
+        /// LoadBalancerPort, InstancePort, Protocol, and PolicyNames are returned
+        /// in a list of tuples in the ListenerDescriptions element.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Policies")]
+        public List<ListenerDescription> ListenerDescriptions
+        {
+            get { return this.listenerDescriptions; }
+            set { this.listenerDescriptions = value; }
+        }
+        /// <summary>
+        /// Adds elements to the ListenerDescriptions collection
+        /// </summary>
+        /// <param name="listenerDescriptions">The values to add to the ListenerDescriptions collection </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithListenerDescriptions(params ListenerDescription[] listenerDescriptions)
+        {
+            foreach (ListenerDescription element in listenerDescriptions)
+            {
+                this.listenerDescriptions.Add(element);
+            }
+
+            return this;
+        }
+        // Check to see if ListenerDescriptions property is set
+        internal bool IsSetListenerDescriptions()
+        {
+            return this.listenerDescriptions.Count > 0;         
+        }
+
+        /// <summary>
+        /// Provides a list of policies defined for the LoadBalancer.
+        ///  
+        /// </summary>
         public Policies Policies
         {
-            get { return this.policiesField; }
-            set { this.policiesField = value; }
+            get { return this.policies; }
+            set { this.policies = value; }
         }
 
         /// <summary>
         /// Sets the Policies property
         /// </summary>
-        /// <param name="policies">A list of Policies associated with the LoadBalancer.</param>
+        /// <param name="policies">The value to set for the Policies property </param>
         /// <returns>this instance</returns>
         public LoadBalancerDescription WithPolicies(Policies policies)
         {
-            this.policiesField = policies;
+            this.policies = policies;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Policies property is set
-        /// </summary>
-        /// <returns>true if Policies property is set</returns>
-        public bool IsSetPolicies()
+            
+        // Check to see if Policies property is set
+        internal bool IsSetPolicies()
         {
-            return this.policiesField != null;
+            return this.policies != null;       
         }
 
         /// <summary>
-        /// Gets and sets the ListenerDescriptions property.
+        /// Specifies a list of Availability Zones.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ListenerDescriptions")]
-        public List<ListenerDescription> ListenerDescriptions
-        {
-            get
-            {
-                if (this.listenerDescriptionsField == null)
-                {
-                    this.listenerDescriptionsField = new List<ListenerDescription>();
-                }
-                return this.listenerDescriptionsField;
-            }
-            set { this.listenerDescriptionsField = value; }
-        }
-
-        /// <summary>
-        /// Sets the ListenerDescriptions property
-        /// </summary>
-        /// <param name="list">ListenerDescriptions property</param>
-        /// <returns>this instance</returns>
-        public LoadBalancerDescription WithListenerDescriptions(params ListenerDescription[] list)
-        {
-            foreach (ListenerDescription item in list)
-            {
-                ListenerDescriptions.Add(item);
-            }
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if ListenerDescriptions property is set
-        /// </summary>
-        /// <returns>true if ListenerDescriptions property is set</returns>
-        public bool IsSetListenerDescriptions()
-        {
-            return (ListenerDescriptions.Count > 0);
-        }
-
-        /// <summary>
-        /// Gets and sets the AvailabilityZones property.
-        /// List of Availability Zones.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "AvailabilityZones")]
         public List<string> AvailabilityZones
         {
-            get
-            {
-                if (this.availabilityZonesField == null)
-                {
-                    this.availabilityZonesField = new List<string>();
-                }
-                return this.availabilityZonesField;
-            }
-            set { this.availabilityZonesField = value; }
+            get { return this.availabilityZones; }
+            set { this.availabilityZones = value; }
         }
-
         /// <summary>
-        /// Sets the AvailabilityZones property
+        /// Adds elements to the AvailabilityZones collection
         /// </summary>
-        /// <param name="list">List of Availability Zones.</param>
+        /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
-        public LoadBalancerDescription WithAvailabilityZones(params string[] list)
+        public LoadBalancerDescription WithAvailabilityZones(params string[] availabilityZones)
         {
-            foreach (string item in list)
+            foreach (string element in availabilityZones)
             {
-                AvailabilityZones.Add(item);
+                this.availabilityZones.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if AvailabilityZones property is set
-        /// </summary>
-        /// <returns>true if AvailabilityZones property is set</returns>
-        public bool IsSetAvailabilityZones()
+        // Check to see if AvailabilityZones property is set
+        internal bool IsSetAvailabilityZones()
         {
-            return (AvailabilityZones.Count > 0);
+            return this.availabilityZones.Count > 0;        
         }
 
         /// <summary>
-        /// Gets and sets the Instances property.
-        /// List of instance IDs. EC2 instances comprise the instances for the LoadBalancer.
+        /// Provides a list of EC2 instance IDs for the LoadBalancer.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Instances")]
         public List<Instance> Instances
         {
-            get
-            {
-                if (this.instancesField == null)
-                {
-                    this.instancesField = new List<Instance>();
-                }
-                return this.instancesField;
-            }
-            set { this.instancesField = value; }
+            get { return this.instances; }
+            set { this.instances = value; }
         }
-
         /// <summary>
-        /// Sets the Instances property
+        /// Adds elements to the Instances collection
         /// </summary>
-        /// <param name="list">List of instance IDs. EC2 instances comprise the instances for the LoadBalancer.</param>
+        /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
-        public LoadBalancerDescription WithInstances(params Instance[] list)
+        public LoadBalancerDescription WithInstances(params Instance[] instances)
         {
-            foreach (Instance item in list)
+            foreach (Instance element in instances)
             {
-                Instances.Add(item);
+                this.instances.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if Instances property is set
-        /// </summary>
-        /// <returns>true if Instances property is set</returns>
-        public bool IsSetInstances()
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
         {
-            return (Instances.Count > 0);
+            return this.instances.Count > 0;        
         }
 
         /// <summary>
-        /// Gets and sets the HealthCheck property.
-        /// Structure containing the various health probes conducted on the LoadBalancer.
+        /// Specifies information regarding the various health probes conducted on
+        /// the LoadBalancer.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "HealthCheck")]
         public HealthCheck HealthCheck
         {
-            get { return this.healthCheckField; }
-            set { this.healthCheckField = value; }
+            get { return this.healthCheck; }
+            set { this.healthCheck = value; }
         }
 
         /// <summary>
         /// Sets the HealthCheck property
         /// </summary>
-        /// <param name="healthCheck">Structure containing the various health probes conducted on the LoadBalancer.</param>
+        /// <param name="healthCheck">The value to set for the HealthCheck property </param>
         /// <returns>this instance</returns>
         public LoadBalancerDescription WithHealthCheck(HealthCheck healthCheck)
         {
-            this.healthCheckField = healthCheck;
+            this.healthCheck = healthCheck;
             return this;
         }
-
-        /// <summary>
-        /// Checks if HealthCheck property is set
-        /// </summary>
-        /// <returns>true if HealthCheck property is set</returns>
-        public bool IsSetHealthCheck()
+            
+        // Check to see if HealthCheck property is set
+        internal bool IsSetHealthCheck()
         {
-            return this.healthCheckField != null;
+            return this.healthCheck != null;        
         }
 
         /// <summary>
-        /// Gets and sets the CreatedTime property.
-        /// Time that the LoadBalancer was created.
+        /// Provides the date and time the LoadBalancer was created.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "CreatedTime")]
-        public string CreatedTime
+        public DateTime CreatedTime
         {
-            get { return this.createdTimeField; }
-            set { this.createdTimeField = value; }
+            get { return this.createdTime ?? default(DateTime); }
+            set { this.createdTime = value; }
         }
 
         /// <summary>
         /// Sets the CreatedTime property
         /// </summary>
-        /// <param name="createdTime">Time that the LoadBalancer was created.</param>
+        /// <param name="createdTime">The value to set for the CreatedTime property </param>
         /// <returns>this instance</returns>
-        public LoadBalancerDescription WithCreatedTime(string createdTime)
+        public LoadBalancerDescription WithCreatedTime(DateTime createdTime)
         {
-            this.createdTimeField = createdTime;
+            this.createdTime = createdTime;
             return this;
         }
-
-        /// <summary>
-        /// Checks if CreatedTime property is set
-        /// </summary>
-        /// <returns>true if CreatedTime property is set</returns>
-        public bool IsSetCreatedTime()
+            
+        // Check to see if CreatedTime property is set
+        internal bool IsSetCreatedTime()
         {
-            return this.createdTimeField != null;
+            return this.createdTime.HasValue;       
         }
-
     }
 }

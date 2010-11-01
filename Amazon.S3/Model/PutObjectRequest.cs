@@ -114,6 +114,7 @@ namespace Amazon.S3.Model
         internal NameValueCollection metaData;
         private int timeout = 0;
         private S3StorageClass storageClass;
+        private bool autoCloseStream = true;
 
         #endregion
 
@@ -622,6 +623,30 @@ namespace Amazon.S3.Model
             return this;
         }
 
+        #endregion
+
+        #region AutoCloseStream
+        /// <summary>
+        /// Gets and sets the AutoCloseStream property.
+        /// </summary>
+        public bool AutoCloseStream
+        {
+            get { return this.autoCloseStream; }
+            set { this.autoCloseStream = value; }
+        }
+
+        /// <summary>
+        /// Sets the autoCloseStream property for this request.
+        /// Use this property if you want to upload plaintext to
+        /// S3. The ContentBody is the data for your S3 Object.
+        /// </summary>
+        /// <param name="contentBody">the value the ContentBody to be set to</param>
+        /// <returns>The request with the ContentBody set</returns>
+        public PutObjectRequest WithAutoCloseStream(bool autoCloseStream)
+        {
+            this.autoCloseStream = autoCloseStream;
+            return this;
+        }
         #endregion
 
         /// <summary>

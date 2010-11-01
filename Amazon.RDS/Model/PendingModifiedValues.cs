@@ -1,237 +1,220 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    ///<summary>
-    ///Information about the DB Instance that will be applied or is in progress.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class PendingModifiedValues
+    /// <summary>
+    /// <para> </para>
+    /// </summary>
+    public class PendingModifiedValues  
     {
-        private string DBInstanceClassField;
-        private Decimal? allocatedStorageField;
-        private string masterUserPasswordField;
-        private Decimal? portField;
-        private Decimal? backupRetentionPeriodField;
-        private bool? multiAZField;
+        
+        private string dBInstanceClass;
+        private int? allocatedStorage;
+        private string masterUserPassword;
+        private int? port;
+        private int? backupRetentionPeriod;
+        private bool? multiAZ;
+        private string engineVersion;
 
         /// <summary>
-        /// Gets and sets the DBInstanceClass property.
-        /// When this element is present it identifies the new DBInstanceClass for the DB
-        /// Instance that will be applied or is in progress.
+        /// Contains the new <i>DBInstanceClass</i> for the DB Instance that will
+        /// be applied or is in progress.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceClass")]
         public string DBInstanceClass
         {
-            get { return this.DBInstanceClassField; }
-            set { this.DBInstanceClassField = value; }
+            get { return this.dBInstanceClass; }
+            set { this.dBInstanceClass = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceClass property
         /// </summary>
-        /// <param name="DBInstanceClass">When this element is present it identifies the new DBInstanceClass for the DB
-        /// Instance that will be applied or is in progress.</param>
+        /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
-        public PendingModifiedValues WithDBInstanceClass(string DBInstanceClass)
+        public PendingModifiedValues WithDBInstanceClass(string dBInstanceClass)
         {
-            this.DBInstanceClassField = DBInstanceClass;
+            this.dBInstanceClass = dBInstanceClass;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceClass property is set
-        /// </summary>
-        /// <returns>true if DBInstanceClass property is set</returns>
-        public bool IsSetDBInstanceClass()
+            
+        // Check to see if DBInstanceClass property is set
+        internal bool IsSetDBInstanceClass()
         {
-            return this.DBInstanceClassField != null;
+            return this.dBInstanceClass != null;        
         }
 
         /// <summary>
-        /// Gets and sets the AllocatedStorage property.
-        /// When this element is present it identifies the new AllocatedStorage size for the DB Instance
-        /// that will be applied or is in progress.
+        /// Contains the new <i>AllocatedStorage</i> size for the DB Instance that
+        /// will be applied or is in progress.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "AllocatedStorage")]
-        public Decimal AllocatedStorage
+        public int AllocatedStorage
         {
-            get { return this.allocatedStorageField.GetValueOrDefault(); }
-            set { this.allocatedStorageField = value; }
+            get { return this.allocatedStorage ?? default(int); }
+            set { this.allocatedStorage = value; }
         }
 
         /// <summary>
         /// Sets the AllocatedStorage property
         /// </summary>
-        /// <param name="allocatedStorage">When this element is present it identifies the new AllocatedStorage size for the DB Instance
-        /// that will be applied or is in progress.</param>
+        /// <param name="allocatedStorage">The value to set for the AllocatedStorage property </param>
         /// <returns>this instance</returns>
-        public PendingModifiedValues WithAllocatedStorage(Decimal allocatedStorage)
+        public PendingModifiedValues WithAllocatedStorage(int allocatedStorage)
         {
-            this.allocatedStorageField = allocatedStorage;
+            this.allocatedStorage = allocatedStorage;
             return this;
         }
-
-        /// <summary>
-        /// Checks if AllocatedStorage property is set
-        /// </summary>
-        /// <returns>true if AllocatedStorage property is set</returns>
-        public bool IsSetAllocatedStorage()
+            
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorageField.HasValue;
+            return this.allocatedStorage.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the MasterUserPassword property.
-        /// When this element is present it conveys the pending or in-progress change of the master credentials for the
-        /// DB Instance. This element always contains "****" because the API never returns a password in clear text.
+        /// Contains the pending or in-progress change of the master credentials
+        /// for the DB Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "MasterUserPassword")]
         public string MasterUserPassword
         {
-            get { return this.masterUserPasswordField; }
-            set { this.masterUserPasswordField = value; }
+            get { return this.masterUserPassword; }
+            set { this.masterUserPassword = value; }
         }
 
         /// <summary>
         /// Sets the MasterUserPassword property
         /// </summary>
-        /// <param name="masterUserPassword">When this element is present it conveys the pending or in-progress change of the master credentials for the
-        /// DB Instance. This element always contains "****" because the API never returns a password in clear text.</param>
+        /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
         /// <returns>this instance</returns>
         public PendingModifiedValues WithMasterUserPassword(string masterUserPassword)
         {
-            this.masterUserPasswordField = masterUserPassword;
+            this.masterUserPassword = masterUserPassword;
             return this;
         }
-
-        /// <summary>
-        /// Checks if MasterUserPassword property is set
-        /// </summary>
-        /// <returns>true if MasterUserPassword property is set</returns>
-        public bool IsSetMasterUserPassword()
+            
+        // Check to see if MasterUserPassword property is set
+        internal bool IsSetMasterUserPassword()
         {
-            return this.masterUserPasswordField != null;
+            return this.masterUserPassword != null;         
         }
 
         /// <summary>
-        /// Gets and sets the Port property.
-        /// Port number on which the database accepts connections. Value must be 1115-65535.
+        /// Specifies the pending port for the DB Instance.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Port")]
-        public Decimal Port
+        public int Port
         {
-            get { return this.portField.GetValueOrDefault(); }
-            set { this.portField = value; }
+            get { return this.port ?? default(int); }
+            set { this.port = value; }
         }
 
         /// <summary>
         /// Sets the Port property
         /// </summary>
-        /// <param name="port">Port number on which the database accepts connections. Value must be 1115-65535.</param>
+        /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
-        public PendingModifiedValues WithPort(Decimal port)
+        public PendingModifiedValues WithPort(int port)
         {
-            this.portField = port;
+            this.port = port;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Port property is set
-        /// </summary>
-        /// <returns>true if Port property is set</returns>
-        public bool IsSetPort()
+            
+        // Check to see if Port property is set
+        internal bool IsSetPort()
         {
-            return this.portField.HasValue;
+            return this.port.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the BackupRetentionPeriod property.
-        /// The number of days for which automated backups are retained. Setting this parameter to a positive number enables
-        /// backups. Setting this parameter to 0 disables automated backups.
+        /// Specifies the pending number of days for which automated backups are
+        /// retained.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "BackupRetentionPeriod")]
-        public Decimal BackupRetentionPeriod
+        public int BackupRetentionPeriod
         {
-            get { return this.backupRetentionPeriodField.GetValueOrDefault(); }
-            set { this.backupRetentionPeriodField = value; }
+            get { return this.backupRetentionPeriod ?? default(int); }
+            set { this.backupRetentionPeriod = value; }
         }
 
         /// <summary>
         /// Sets the BackupRetentionPeriod property
         /// </summary>
-        /// <param name="backupRetentionPeriod">The number of days for which automated backups are retained. Setting this parameter to a positive number enables
-        /// backups. Setting this parameter to 0 disables automated backups.</param>
+        /// <param name="backupRetentionPeriod">The value to set for the BackupRetentionPeriod property </param>
         /// <returns>this instance</returns>
-        public PendingModifiedValues WithBackupRetentionPeriod(Decimal backupRetentionPeriod)
+        public PendingModifiedValues WithBackupRetentionPeriod(int backupRetentionPeriod)
         {
-            this.backupRetentionPeriodField = backupRetentionPeriod;
+            this.backupRetentionPeriod = backupRetentionPeriod;
             return this;
         }
-
-        /// <summary>
-        /// Checks if BackupRetentionPeriod property is set
-        /// </summary>
-        /// <returns>true if BackupRetentionPeriod property is set</returns>
-        public bool IsSetBackupRetentionPeriod()
+            
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
         {
-            return this.backupRetentionPeriodField.HasValue;
+            return this.backupRetentionPeriod.HasValue;         
         }
-
-        /// <summary>
-        /// Gets and sets the MultiAZ property.
-        /// Specifies if the DB Instance is a Multi-AZ DB Instance.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "MultiAZ")]
         public bool MultiAZ
         {
-            get { return this.multiAZField.GetValueOrDefault(); }
-            set { this.multiAZField = value; }
+            get { return this.multiAZ ?? default(bool); }
+            set { this.multiAZ = value; }
         }
 
         /// <summary>
         /// Sets the MultiAZ property
         /// </summary>
-        /// <param name="multiAZ">Specifies if the DB Instance is a Multi-AZ DB Instance.</param>
+        /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
         public PendingModifiedValues WithMultiAZ(bool multiAZ)
         {
-            this.multiAZField = multiAZ;
+            this.multiAZ = multiAZ;
             return this;
+        }
+            
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this.multiAZ.HasValue;       
+        }
+        public string EngineVersion
+        {
+            get { return this.engineVersion; }
+            set { this.engineVersion = value; }
         }
 
         /// <summary>
-        /// Checks if MultiAZ property is set
+        /// Sets the EngineVersion property
         /// </summary>
-        /// <returns>true if MultiAZ property is set</returns>
-        public bool IsSetMultiAZ()
+        /// <param name="engineVersion">The value to set for the EngineVersion property </param>
+        /// <returns>this instance</returns>
+        public PendingModifiedValues WithEngineVersion(string engineVersion)
         {
-            return this.multiAZField.HasValue;
+            this.engineVersion = engineVersion;
+            return this;
         }
-
+            
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this.engineVersion != null;      
+        }
     }
 }

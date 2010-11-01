@@ -1,111 +1,120 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-03-31
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Adds new steps to a job flow already loaded on an EC2 cluster. Each step applies an algorithm to the data set, for the first step, or to the data returned by the previous step in the job flow. If the job flow isn't executing any other steps, execution begins from the first added step. The maximum number of steps in a job flow is 256.
+    /// Container for the parameters to the AddJobFlowSteps operation.
+    /// <para> AddJobFlowSteps adds new steps to a running job flow. A maximum
+    /// of 256 steps are allowed in each job flow. </para> <para> A step
+    /// specifies the location of a JAR file stored either on the master node
+    /// of the job flow or in Amazon S3. Each step is performed by the main
+    /// function of the main class of the JAR file. The main class can be
+    /// specified either in the manifest of the JAR or by using the
+    /// MainFunction parameter of the step. </para> <para> Elastic MapReduce
+    /// executes each step in the order listed. For a step to be considered
+    /// complete, the main function must exit with a zero exit code and all
+    /// Hadoop jobs started while the step was running must have completed and
+    /// run successfully. </para> <para> You can only add steps to a job flow
+    /// that is in one of the following states: STARTING, BOOTSTAPPING,
+    /// RUNNING, or WAITING.</para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticmapreduce.amazonaws.com/doc/2009-03-31", IsNullable = false)]
-    public class AddJobFlowStepsRequest
+    /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.AddJobFlowSteps"/>
+    public class AddJobFlowStepsRequest : AmazonWebServiceRequest
     {
-        private string jobFlowIdField;
-        private List<StepConfig> stepsField;
+        private string jobFlowId;
+        private List<StepConfig> steps = new List<StepConfig>();
 
         /// <summary>
-        /// Gets and sets the JobFlowId property.
-        /// String that uniquely identifies a job flow. Elastic MapReduce returns this value in the RunJobFlow response. Must be valid, encrypted job flow ID.
+        /// A string that uniquely identifies the job flow. This identifier is
+        /// returned by <a>RunJobFlow</a> and can also be obtained from
+        /// <a>DescribeJobFlows</a> .
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 256</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "JobFlowId")]
         public string JobFlowId
         {
-            get { return this.jobFlowIdField; }
-            set { this.jobFlowIdField = value; }
+            get { return this.jobFlowId; }
+            set { this.jobFlowId = value; }
         }
 
         /// <summary>
         /// Sets the JobFlowId property
         /// </summary>
-        /// <param name="jobFlowId">String that uniquely identifies a job flow. Elastic MapReduce returns this value in the RunJobFlow response. Must be valid, encrypted job flow ID.</param>
+        /// <param name="jobFlowId">The value to set for the JobFlowId property </param>
         /// <returns>this instance</returns>
         public AddJobFlowStepsRequest WithJobFlowId(string jobFlowId)
         {
-            this.jobFlowIdField = jobFlowId;
+            this.jobFlowId = jobFlowId;
             return this;
         }
-
-        /// <summary>
-        /// Checks if JobFlowId property is set
-        /// </summary>
-        /// <returns>true if JobFlowId property is set</returns>
-        public bool IsSetJobFlowId()
+            
+        // Check to see if JobFlowId property is set
+        internal bool IsSetJobFlowId()
         {
-            return this.jobFlowIdField != null;
+            return this.jobFlowId != null;      
         }
 
         /// <summary>
-        /// Gets and sets the Steps property.
-        /// A list of StepConfig to be executed by the job flow.
+        /// A list of <a>StepConfig</a> to be executed by the job flow.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Steps")]
         public List<StepConfig> Steps
         {
-            get
-            {
-                if (this.stepsField == null)
-                {
-                    this.stepsField = new List<StepConfig>();
-                }
-                return this.stepsField;
-            }
-            set { this.stepsField = value; }
+            get { return this.steps; }
+            set { this.steps = value; }
         }
-
         /// <summary>
-        /// Sets the Steps property
+        /// Adds elements to the Steps collection
         /// </summary>
-        /// <param name="list">A list of StepConfig to be executed by the job flow.</param>
+        /// <param name="steps">The values to add to the Steps collection </param>
         /// <returns>this instance</returns>
-        public AddJobFlowStepsRequest WithSteps(params StepConfig[] list)
+        public AddJobFlowStepsRequest WithSteps(params StepConfig[] steps)
         {
-            foreach (StepConfig item in list)
+            foreach (StepConfig element in steps)
             {
-                Steps.Add(item);
+                this.steps.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if Steps property is set
-        /// </summary>
-        /// <returns>true if Steps property is set</returns>
-        public bool IsSetSteps()
+        // Check to see if Steps property is set
+        internal bool IsSetSteps()
         {
-            return (Steps.Count > 0);
+            return this.steps.Count > 0;        
         }
-
     }
 }
+    

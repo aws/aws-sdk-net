@@ -25,7 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// <para>Lists the users that have the specified path prefix. If there
+    /// <para>Lists the Users that have the specified path prefix. If there
     /// are none, the action returns an empty list.</para> <para>You can
     /// paginate the results using the <c>MaxItems</c> and <c>Marker</c>
     /// parameters.</para>
@@ -39,10 +39,10 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// The path prefix for filtering the results. For example:
-        /// <c>/division_abc/subdivision_xyz/</c>, which would get all users whose
-        /// path starts with <c>/division_abc/subdivision_xyz/</c>. This parameter
-        /// is optional. If it is not included, it defaults to /, listing all
-        /// users.
+        /// <c>/division_abc/subdivision_xyz/</c>, which would get all User names
+        /// whose path starts with <c>/division_abc/subdivision_xyz/</c>. This
+        /// parameter is optional. If it is not included, it defaults to a slash
+        /// (/), listing all User names.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -82,10 +82,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Use this only when paginating results, and only in a follow-up request
-        /// after you've received a response where the results are truncated. Set
-        /// this to the value of the <c>Marker</c> element in the response you
-        /// just received.
+        /// Use this only when paginating results, and only in a subsequent
+        /// request after you've received a response where the results are
+        /// truncated. Set it to the value of the <c>Marker</c> element in the
+        /// response you just received.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -126,8 +126,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Use this only when paginating results to indicate the maximum number
-        /// of users you want in the response. If there are additional users
-        /// beyond the maximum you specify, the <c>IsTruncated</c> response
+        /// of User names you want in the response. If there are additional User
+        /// names beyond the maximum you specify, the <c>IsTruncated</c> response
         /// element is <c>true</c>.
         ///  
         /// <para>

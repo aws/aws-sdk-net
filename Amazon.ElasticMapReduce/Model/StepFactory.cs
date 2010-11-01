@@ -1,4 +1,18 @@
-﻿using System;
+﻿/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -98,7 +112,7 @@ namespace Amazon.ElasticMapReduce.Model
             return NewScriptRunnerStep(String.Format("s3://{0}/libs/state-pusher/0.1/fetch", bucket));
         }
 
-        private HadoopJarStepConfig NewHivePigStep(string type, params string[] args) 
+        private HadoopJarStepConfig newHivePigStep(string type, params string[] args) 
         {
             String[] argsArray = new String[args.Length + 2];
             argsArray[0] = SWITCH_BASE_PATH;
@@ -113,7 +127,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
         public HadoopJarStepConfig NewInstallHiveStep() 
         {
-            return NewHivePigStep(TOOL_HIVE, SWITCH_INSTALL_HIVE);
+            return newHivePigStep(TOOL_HIVE, SWITCH_INSTALL_HIVE);
         }
 
         /// <summary>
@@ -130,7 +144,7 @@ namespace Amazon.ElasticMapReduce.Model
             argsArray[2] = SWITCH_F;
             argsArray[3] = script;
             Array.Copy(args, 0, argsArray, 4, args.Length);
-            return NewHivePigStep(TOOL_HIVE, argsArray);
+            return newHivePigStep(TOOL_HIVE, argsArray);
         }
 
         /// <summary>
@@ -139,7 +153,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
         public HadoopJarStepConfig NewInstallPigStep()
         {
-            return NewHivePigStep(TOOL_PIG, SWITCH_INSTALL_PIG);
+            return newHivePigStep(TOOL_PIG, SWITCH_INSTALL_PIG);
         }
 
         /// <summary>
@@ -156,7 +170,7 @@ namespace Amazon.ElasticMapReduce.Model
             argsArray[2] = SWITCH_F;
             argsArray[3] = script;
             Array.Copy(args, 0, argsArray, 4, args.Length);
-            return NewHivePigStep(TOOL_PIG, argsArray);
+            return newHivePigStep(TOOL_PIG, argsArray);
         }
     }
 }

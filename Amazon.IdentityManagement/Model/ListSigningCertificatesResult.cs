@@ -28,11 +28,11 @@ namespace Amazon.IdentityManagement.Model
     {
         
         private List<SigningCertificate> certificates = new List<SigningCertificate>();
-        private bool isTruncated;
+        private bool? isTruncated;
         private string marker;
 
         /// <summary>
-        /// A list of the user's signing certificate information.
+        /// A list of the User's signing certificate information.
         ///  
         /// </summary>
         public List<SigningCertificate> Certificates
@@ -40,24 +40,60 @@ namespace Amazon.IdentityManagement.Model
             get { return this.certificates; }
             set { this.certificates = value; }
         }
+        /// <summary>
+        /// Adds elements to the Certificates collection
+        /// </summary>
+        /// <param name="certificates">The values to add to the Certificates collection </param>
+        /// <returns>this instance</returns>
+        public ListSigningCertificatesResult WithCertificates(params SigningCertificate[] certificates)
+        {
+            foreach (SigningCertificate element in certificates)
+            {
+                this.certificates.Add(element);
+            }
+
+            return this;
+        }
+        // Check to see if Certificates property is set
+        internal bool IsSetCertificates()
+        {
+            return this.certificates != null;       
+        }
 
         /// <summary>
         /// A flag that indicates whether there are more certificate IDs to list.
-        /// If your results were truncated, you can make a follow-up pagination
+        /// If your results were truncated, you can make a subsequent pagination
         /// request using the <c>Marker</c> request parameter to retrieve more
         /// certificates in the list.
         ///  
         /// </summary>
         public bool IsTruncated
         {
-            get { return this.isTruncated; }
+            get { return this.isTruncated ?? default(bool); }
             set { this.isTruncated = value; }
         }
 
         /// <summary>
-        /// If <c>IsTruncated</c> is true, this element is present and contains
-        /// the value to use for the <c>Marker</c> parameter in a follow-up
-        /// pagination request.
+        /// Sets the IsTruncated property
+        /// </summary>
+        /// <param name="isTruncated">The value to set for the IsTruncated property </param>
+        /// <returns>this instance</returns>
+        public ListSigningCertificatesResult WithIsTruncated(bool isTruncated)
+        {
+            this.isTruncated = isTruncated;
+            return this;
+        }
+            
+        // Check to see if IsTruncated property is set
+        internal bool IsSetIsTruncated()
+        {
+            return this.isTruncated.HasValue;       
+        }
+
+        /// <summary>
+        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and
+        /// contains the value to use for the <c>Marker</c> parameter in a
+        /// subsequent pagination request.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -77,6 +113,23 @@ namespace Amazon.IdentityManagement.Model
         {
             get { return this.marker; }
             set { this.marker = value; }
+        }
+
+        /// <summary>
+        /// Sets the Marker property
+        /// </summary>
+        /// <param name="marker">The value to set for the Marker property </param>
+        /// <returns>this instance</returns>
+        public ListSigningCertificatesResult WithMarker(string marker)
+        {
+            this.marker = marker;
+            return this;
+        }
+            
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this.marker != null;         
         }
     }
 }

@@ -1,167 +1,151 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    ///<summary>
-    ///Information about the event.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class Event
+    /// <summary>
+    /// <para> </para>
+    /// </summary>
+    public class Event  
     {
-        private string sourceIdentifierField;
-        private string sourceTypeField;
-        private string messageField;
-        private DateTime? dateField;
+        
+        private string sourceIdentifier;
+        private string sourceType;
+        private string message;
+        private DateTime? date;
 
         /// <summary>
-        /// Gets and sets the SourceIdentifier property.
-        /// The identifier of the source for the event. If the source type is DBInstance, then this value is a DBInstanceIdentifier. If the
-        /// source type is a DBSecurityGroup, this value is a DBSecurityGroupName.
+        /// Provides the identifier for the source of the event.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "SourceIdentifier")]
         public string SourceIdentifier
         {
-            get { return this.sourceIdentifierField; }
-            set { this.sourceIdentifierField = value; }
+            get { return this.sourceIdentifier; }
+            set { this.sourceIdentifier = value; }
         }
 
         /// <summary>
         /// Sets the SourceIdentifier property
         /// </summary>
-        /// <param name="sourceIdentifier">The identifier of the source for the event. If the source type is DBInstance, then this value is a DBInstanceIdentifier. If the
-        /// source type is a DBSecurityGroup, this value is a DBSecurityGroupName.</param>
+        /// <param name="sourceIdentifier">The value to set for the SourceIdentifier property </param>
         /// <returns>this instance</returns>
         public Event WithSourceIdentifier(string sourceIdentifier)
         {
-            this.sourceIdentifierField = sourceIdentifier;
+            this.sourceIdentifier = sourceIdentifier;
             return this;
         }
-
-        /// <summary>
-        /// Checks if SourceIdentifier property is set
-        /// </summary>
-        /// <returns>true if SourceIdentifier property is set</returns>
-        public bool IsSetSourceIdentifier()
+            
+        // Check to see if SourceIdentifier property is set
+        internal bool IsSetSourceIdentifier()
         {
-            return this.sourceIdentifierField != null;
+            return this.sourceIdentifier != null;       
         }
 
         /// <summary>
-        /// Gets and sets the SourceType property.
-        /// The source type for this event.
+        /// Specifies the source type for this event.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>db-instance, db-parameter-group, db-security-group, db-snapshot</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "SourceType")]
         public string SourceType
         {
-            get { return this.sourceTypeField; }
-            set { this.sourceTypeField = value; }
+            get { return this.sourceType; }
+            set { this.sourceType = value; }
         }
 
         /// <summary>
         /// Sets the SourceType property
         /// </summary>
-        /// <param name="sourceType">The source type for this event.</param>
+        /// <param name="sourceType">The value to set for the SourceType property </param>
         /// <returns>this instance</returns>
         public Event WithSourceType(string sourceType)
         {
-            this.sourceTypeField = sourceType;
+            this.sourceType = sourceType;
             return this;
         }
-
-        /// <summary>
-        /// Checks if SourceType property is set
-        /// </summary>
-        /// <returns>true if SourceType property is set</returns>
-        public bool IsSetSourceType()
+            
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
         {
-            return this.sourceTypeField != null;
+            return this.sourceType != null;         
         }
 
         /// <summary>
-        /// Gets and sets the Message property.
-        /// The text of the event.
+        /// Provides the text of this event.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Message")]
         public string Message
         {
-            get { return this.messageField; }
-            set { this.messageField = value; }
+            get { return this.message; }
+            set { this.message = value; }
         }
 
         /// <summary>
         /// Sets the Message property
         /// </summary>
-        /// <param name="message">The text of the event.</param>
+        /// <param name="message">The value to set for the Message property </param>
         /// <returns>this instance</returns>
         public Event WithMessage(string message)
         {
-            this.messageField = message;
+            this.message = message;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Message property is set
-        /// </summary>
-        /// <returns>true if Message property is set</returns>
-        public bool IsSetMessage()
+            
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
         {
-            return this.messageField != null;
+            return this.message != null;        
         }
 
         /// <summary>
-        /// Gets and sets the Date property.
-        /// The date and time of the event. Example: 2009-01-2009T23:50.000Z.
+        /// Specifies the date and time of the event.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Date")]
         public DateTime Date
         {
-            get { return this.dateField.GetValueOrDefault(); }
-            set { this.dateField = value; }
+            get { return this.date ?? default(DateTime); }
+            set { this.date = value; }
         }
 
         /// <summary>
         /// Sets the Date property
         /// </summary>
-        /// <param name="date">The date and time of the event. Example: 2009-01-2009T23:50.000Z.</param>
+        /// <param name="date">The value to set for the Date property </param>
         /// <returns>this instance</returns>
         public Event WithDate(DateTime date)
         {
-            this.dateField = date;
+            this.date = date;
             return this;
         }
-
-        /// <summary>
-        /// Checks if Date property is set
-        /// </summary>
-        /// <returns>true if Date property is set</returns>
-        public bool IsSetDate()
+            
+        // Check to see if Date property is set
+        internal bool IsSetDate()
         {
-            return this.dateField.HasValue;
+            return this.date.HasValue;      
         }
-
     }
 }

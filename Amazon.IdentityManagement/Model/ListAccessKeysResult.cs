@@ -28,7 +28,7 @@ namespace Amazon.IdentityManagement.Model
     {
         
         private List<AccessKeyMetadata> accessKeyMetadata = new List<AccessKeyMetadata>();
-        private bool isTruncated;
+        private bool? isTruncated;
         private string marker;
 
         /// <summary>
@@ -40,24 +40,60 @@ namespace Amazon.IdentityManagement.Model
             get { return this.accessKeyMetadata; }
             set { this.accessKeyMetadata = value; }
         }
+        /// <summary>
+        /// Adds elements to the AccessKeyMetadata collection
+        /// </summary>
+        /// <param name="accessKeyMetadata">The values to add to the AccessKeyMetadata collection </param>
+        /// <returns>this instance</returns>
+        public ListAccessKeysResult WithAccessKeyMetadata(params AccessKeyMetadata[] accessKeyMetadata)
+        {
+            foreach (AccessKeyMetadata element in accessKeyMetadata)
+            {
+                this.accessKeyMetadata.Add(element);
+            }
+
+            return this;
+        }
+        // Check to see if AccessKeyMetadata property is set
+        internal bool IsSetAccessKeyMetadata()
+        {
+            return this.accessKeyMetadata != null;      
+        }
 
         /// <summary>
         /// A flag that indicates whether there are more keys to list. If your
-        /// results were truncated, you can make a follow-up pagination request
+        /// results were truncated, you can make a subsequent pagination request
         /// using the <c>Marker</c> request parameter to retrieve more keys in the
         /// list.
         ///  
         /// </summary>
         public bool IsTruncated
         {
-            get { return this.isTruncated; }
+            get { return this.isTruncated ?? default(bool); }
             set { this.isTruncated = value; }
         }
 
         /// <summary>
-        /// If <c>IsTruncated</c> is true, this element is present and contains
-        /// the value to use for the <c>Marker</c> parameter in a follow-up
-        /// pagination request.
+        /// Sets the IsTruncated property
+        /// </summary>
+        /// <param name="isTruncated">The value to set for the IsTruncated property </param>
+        /// <returns>this instance</returns>
+        public ListAccessKeysResult WithIsTruncated(bool isTruncated)
+        {
+            this.isTruncated = isTruncated;
+            return this;
+        }
+            
+        // Check to see if IsTruncated property is set
+        internal bool IsSetIsTruncated()
+        {
+            return this.isTruncated.HasValue;       
+        }
+
+        /// <summary>
+        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and
+        /// contains the value to use for the <c>Marker</c> parameter in a
+        /// subsequent pagination request.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -77,6 +113,23 @@ namespace Amazon.IdentityManagement.Model
         {
             get { return this.marker; }
             set { this.marker = value; }
+        }
+
+        /// <summary>
+        /// Sets the Marker property
+        /// </summary>
+        /// <param name="marker">The value to set for the Marker property </param>
+        /// <returns>this instance</returns>
+        public ListAccessKeysResult WithMarker(string marker)
+        {
+            this.marker = marker;
+            return this;
+        }
+            
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this.marker != null;         
         }
     }
 }

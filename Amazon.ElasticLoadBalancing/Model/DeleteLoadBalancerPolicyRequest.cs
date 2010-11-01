@@ -1,101 +1,116 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-11-25
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Defines the properties needed to delete a Load Balancer Policy.
+    /// Container for the parameters to the DeleteLoadBalancerPolicy operation.
+    /// <para> Deletes a policy from the LoadBalancer. The specified policy
+    /// must not be enabled for any listeners. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://elasticloadbalancing.amazonaws.com/doc/2009-11-25/", IsNullable = false)]
-    public class DeleteLoadBalancerPolicyRequest
+    /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancerPolicy"/>
+    public class DeleteLoadBalancerPolicyRequest : AmazonWebServiceRequest
     {
-        private string loadBalancerNameField;
-        private string policyNameField;
+        private string loadBalancerName;
+        private string policyName;
+        /// <summary>
+        /// Default constructor for a new DeleteLoadBalancerPolicyRequest object.  Callers should use the
+        /// properties or fluent setter (With...) methods to initialize this object after creating it.
+        /// </summary>
+        public DeleteLoadBalancerPolicyRequest() {}
+    
+        /// <summary>
+        /// Constructs a new DeleteLoadBalancerPolicyRequest object.
+        /// Callers should use the properties or fluent setter (With...) methods to
+        /// initialize any additional object members.
+        /// </summary>
+        /// 
+        /// <param name="loadBalancerName"> The mnemonic name associated with the
+        /// LoadBalancer. The name must be unique within your AWS account.
+        /// </param>
+        /// <param name="policyName"> The mnemonic name for the policy being
+        /// deleted. </param>
+        public DeleteLoadBalancerPolicyRequest(string loadBalancerName, string policyName) 
+        {
+            this.loadBalancerName = loadBalancerName;
+            this.policyName = policyName;
+        }
+    
 
         /// <summary>
-        /// Gets and sets the LoadBalancerName property.
-        /// The name of the Load Balancer whose policy is to be deleted.
+        /// The mnemonic name associated with the LoadBalancer. The name must be
+        /// unique within your AWS account.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "LoadBalancerName")]
         public string LoadBalancerName
         {
-            get { return this.loadBalancerNameField; }
-            set { this.loadBalancerNameField = value; }
+            get { return this.loadBalancerName; }
+            set { this.loadBalancerName = value; }
         }
 
         /// <summary>
         /// Sets the LoadBalancerName property
         /// </summary>
-        /// <param name="loadBalancerName">The name of the Load Balancer whose policy is to be deleted.</param>
+        /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
         public DeleteLoadBalancerPolicyRequest WithLoadBalancerName(string loadBalancerName)
         {
-            this.loadBalancerNameField = loadBalancerName;
+            this.loadBalancerName = loadBalancerName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if LoadBalancerName property is set
-        /// </summary>
-        /// <returns>true if LoadBalancerName property is set</returns>
-        public bool IsSetLoadBalancerName()
+            
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerNameField != null;
+            return this.loadBalancerName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the PolicyName property.
-        /// The name of the policy to be deleted.
+        /// The mnemonic name for the policy being deleted.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PolicyName")]
         public string PolicyName
         {
-            get { return this.policyNameField; }
-            set { this.policyNameField = value; }
+            get { return this.policyName; }
+            set { this.policyName = value; }
         }
 
         /// <summary>
         /// Sets the PolicyName property
         /// </summary>
-        /// <param name="policyName">The name of the policy to be deleted.</param>
+        /// <param name="policyName">The value to set for the PolicyName property </param>
         /// <returns>this instance</returns>
         public DeleteLoadBalancerPolicyRequest WithPolicyName(string policyName)
         {
-            this.policyNameField = policyName;
+            this.policyName = policyName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if PolicyName property is set
-        /// </summary>
-        /// <returns>true if PolicyName property is set</returns>
-        public bool IsSetPolicyName()
+            
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
         {
-            return this.policyNameField != null;
+            return this.policyName != null;         
         }
-
     }
 }
+    

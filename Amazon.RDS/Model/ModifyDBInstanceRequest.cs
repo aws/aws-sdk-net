@@ -1,462 +1,442 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-01-01
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Changes the settings of an existing DB Instance.
-    ///
-    /// Changes are applied in the following manner: A ModifyDBInstance API call to modify security groups or to change the
-    /// maintenance windows results in immediate action. Modification of the DB Parameter Group applies immediate parameters as
-    /// soon as possible and pending-reboot parameters only when the RDS instance is rebooted. A request to scale the DB Instance
-    /// class results puts the database instance into the modifying state.
-    ///
-    /// The DB Instance must be in available or modifying state for this API to accept changes.
+    /// Container for the parameters to the ModifyDBInstance operation.
+    /// <para> This API is used to change RDS Instance settings. Users call
+    /// the ModifyDBInstance API to change one or more database configuration
+    /// parameters by specifying these parameters and the new values in the
+    /// request. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://rds.amazonaws.com/doc/2010-01-01/", IsNullable = false)]
-    public class ModifyDBInstanceRequest
+    /// <seealso cref="Amazon.RDS.AmazonRDS.ModifyDBInstance"/>
+    public class ModifyDBInstanceRequest : AmazonWebServiceRequest
     {
-        private string DBInstanceIdentifierField;
-        private Decimal? allocatedStorageField;
-        private string DBInstanceClassField;
-        private List<string> DBSecurityGroupsField;
-        private bool? applyImmediatelyField;
-        private string masterUserPasswordField;
-        private string DBParameterGroupNameField;
-        private Decimal? backupRetentionPeriodField;
-        private string preferredBackupWindowField;
-        private string preferredMaintenanceWindowField;
-        private bool? multiAZField;
+        private string dBInstanceIdentifier;
+        private int? allocatedStorage;
+        private string dBInstanceClass;
+        private List<string> dBSecurityGroups = new List<string>();
+        private bool? applyImmediately;
+        private string masterUserPassword;
+        private string dBParameterGroupName;
+        private int? backupRetentionPeriod;
+        private string preferredBackupWindow;
+        private string preferredMaintenanceWindow;
+        private bool? multiAZ;
+        private string engineVersion;
+        private bool? allowMajorVersionUpgrade;
+        private bool? autoMinorVersionUpgrade;
 
         /// <summary>
-        /// Gets and sets the DBInstanceIdentifier property.
-        /// DB Instance identifier. This is the unique key that identifies a DB Instance. This parameter is stored as a lower-case string.
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.
+        /// The DB Instance identifier. This value is stored as a lowercase
+        /// string.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceIdentifier")]
         public string DBInstanceIdentifier
         {
-            get { return this.DBInstanceIdentifierField; }
-            set { this.DBInstanceIdentifierField = value; }
+            get { return this.dBInstanceIdentifier; }
+            set { this.dBInstanceIdentifier = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceIdentifier property
         /// </summary>
-        /// <param name="DBInstanceIdentifier">DB Instance identifier. This is the unique key that identifies a DB Instance. This parameter is stored as a lower-case string.
-        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.</param>
+        /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
-        public ModifyDBInstanceRequest WithDBInstanceIdentifier(string DBInstanceIdentifier)
+        public ModifyDBInstanceRequest WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
-            this.DBInstanceIdentifierField = DBInstanceIdentifier;
+            this.dBInstanceIdentifier = dBInstanceIdentifier;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceIdentifier property is set
-        /// </summary>
-        /// <returns>true if DBInstanceIdentifier property is set</returns>
-        public bool IsSetDBInstanceIdentifier()
+            
+        // Check to see if DBInstanceIdentifier property is set
+        internal bool IsSetDBInstanceIdentifier()
         {
-            return this.DBInstanceIdentifierField != null;
+            return this.dBInstanceIdentifier != null;       
         }
 
         /// <summary>
-        /// Gets and sets the AllocatedStorage property.
-        /// The new storage capacity of the RDS instance. This change does not result in an outage and is applied during the next maintenance
-        /// window unless the ApplyImmediately parameter is specified as True for this request. Default: Uses existing setting. Valid Values: 5-1024.
-        /// Constraints: Value supplied must be at least 10% greater than the current value. Values are that are not at least 10% greater than the existing value are rounded up to the nearest 10 GB boundary.
+        /// The new storage capacity of the RDS instance. This change does not
+        /// result in an outage and is applied during the next maintenance window
+        /// unless the <i>ApplyImmediately</i> parameter is specified as
+        /// <i>true</i> for this request.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "AllocatedStorage")]
-        public Decimal AllocatedStorage
+        public int AllocatedStorage
         {
-            get { return this.allocatedStorageField.GetValueOrDefault(); }
-            set { this.allocatedStorageField = value; }
+            get { return this.allocatedStorage ?? default(int); }
+            set { this.allocatedStorage = value; }
         }
 
         /// <summary>
         /// Sets the AllocatedStorage property
         /// </summary>
-        /// <param name="allocatedStorage">The new storage capacity of the RDS instance. This change does not result in an outage and is applied during the next maintenance
-        /// window unless the ApplyImmediately parameter is specified as True for this request. Default: Uses existing setting. Valid Values: 5-1024.
-        /// Constraints: Value supplied must be at least 10% greater than the current value. Values are that are not at least 10% greater than the existing value are rounded up to the nearest 10 GB boundary.</param>
+        /// <param name="allocatedStorage">The value to set for the AllocatedStorage property </param>
         /// <returns>this instance</returns>
-        public ModifyDBInstanceRequest WithAllocatedStorage(Decimal allocatedStorage)
+        public ModifyDBInstanceRequest WithAllocatedStorage(int allocatedStorage)
         {
-            this.allocatedStorageField = allocatedStorage;
+            this.allocatedStorage = allocatedStorage;
             return this;
         }
-
-        /// <summary>
-        /// Checks if AllocatedStorage property is set
-        /// </summary>
-        /// <returns>true if AllocatedStorage property is set</returns>
-        public bool IsSetAllocatedStorage()
+            
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorageField.HasValue;
+            return this.allocatedStorage.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the DBInstanceClass property.
-        /// The new compute and memory capacity of the DB Instance. This change causes an outage during the change and is
-        /// applied during the next maintenance window, unless the ApplyImmediately parameter true for this request.
+        /// The new compute and memory capacity of the DB Instance. Passing a
+        /// value for this parameter causes an outage during the change and is
+        /// applied during the next maintenance window, unless the
+        /// <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
+        /// request.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBInstanceClass")]
         public string DBInstanceClass
         {
-            get { return this.DBInstanceClassField; }
-            set { this.DBInstanceClassField = value; }
+            get { return this.dBInstanceClass; }
+            set { this.dBInstanceClass = value; }
         }
 
         /// <summary>
         /// Sets the DBInstanceClass property
         /// </summary>
-        /// <param name="DBInstanceClass">The new compute and memory capacity of the DB Instance. This change causes an outage during the change and is
-        /// applied during the next maintenance window, unless the ApplyImmediately parameter true for this request.</param>
+        /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
-        public ModifyDBInstanceRequest WithDBInstanceClass(string DBInstanceClass)
+        public ModifyDBInstanceRequest WithDBInstanceClass(string dBInstanceClass)
         {
-            this.DBInstanceClassField = DBInstanceClass;
+            this.dBInstanceClass = dBInstanceClass;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBInstanceClass property is set
-        /// </summary>
-        /// <returns>true if DBInstanceClass property is set</returns>
-        public bool IsSetDBInstanceClass()
+            
+        // Check to see if DBInstanceClass property is set
+        internal bool IsSetDBInstanceClass()
         {
-            return this.DBInstanceClassField != null;
+            return this.dBInstanceClass != null;        
         }
 
         /// <summary>
-        /// Gets and sets the DBSecurityGroups property.
-        /// List of DB Security Groups to authorize on this DB Instance. This change is asynchronously applied as soon as possible.
+        /// A list of DB Security Groups to authorize on this DB Instance. This
+        /// change is asynchronously applied as soon as possible.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBSecurityGroups")]
         public List<string> DBSecurityGroups
         {
-            get
-            {
-                if (this.DBSecurityGroupsField == null)
-                {
-                    this.DBSecurityGroupsField = new List<string>();
-                }
-                return this.DBSecurityGroupsField;
-            }
-            set { this.DBSecurityGroupsField = value; }
+            get { return this.dBSecurityGroups; }
+            set { this.dBSecurityGroups = value; }
         }
-
         /// <summary>
-        /// Sets the DBSecurityGroups property
+        /// Adds elements to the DBSecurityGroups collection
         /// </summary>
-        /// <param name="list">List of DB Security Groups to authorize on this DB Instance. This change is asynchronously applied as soon as possible.</param>
+        /// <param name="dBSecurityGroups">The values to add to the DBSecurityGroups collection </param>
         /// <returns>this instance</returns>
-        public ModifyDBInstanceRequest WithDBSecurityGroups(params string[] list)
+        public ModifyDBInstanceRequest WithDBSecurityGroups(params string[] dBSecurityGroups)
         {
-            foreach (string item in list)
+            foreach (string element in dBSecurityGroups)
             {
-                DBSecurityGroups.Add(item);
+                this.dBSecurityGroups.Add(element);
             }
+
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBSecurityGroups property is set
-        /// </summary>
-        /// <returns>true if DBSecurityGroups property is set</returns>
-        public bool IsSetDBSecurityGroups()
+        // Check to see if DBSecurityGroups property is set
+        internal bool IsSetDBSecurityGroups()
         {
-            return (DBSecurityGroups.Count > 0);
+            return this.dBSecurityGroups.Count > 0;         
         }
 
         /// <summary>
-        /// Gets and sets the ApplyImmediately property.
-        /// Specifies that the modifications in this request and any pending modifications are asynchronously applied as soon
-        /// as possible, regardless of the PreferredMaintenanceWindow setting for the DB Instance. If this parameter is false,
-        /// changes to the DB Instance are applied on the next call to RebootDBInstance or the next maintenance or failure
-        /// reboot, whichever occurs first. Default is FALSE.
+        /// Specifies whether or not the modifications in this request and any
+        /// pending modifications are asynchronously applied as soon as possible,
+        /// regardless of the <i>PreferredMaintenanceWindow</i> setting for the DB
+        /// Instance. If this parameter is passed as <i>false</i>, changes to the
+        /// DB Instance are applied on the next call to <a>RebootDBInstance</a>,
+        /// the next maintenance reboot, or the next failure reboot, whichever
+        /// occurs first.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ApplyImmediately")]
         public bool ApplyImmediately
         {
-            get { return this.applyImmediatelyField.GetValueOrDefault(); }
-            set { this.applyImmediatelyField = value; }
+            get { return this.applyImmediately ?? default(bool); }
+            set { this.applyImmediately = value; }
         }
 
         /// <summary>
         /// Sets the ApplyImmediately property
         /// </summary>
-        /// <param name="applyImmediately">Specifies that the modifications in this request and any pending modifications are asynchronously applied as soon
-        /// as possible, regardless of the PreferredMaintenanceWindow setting for the DB Instance. If this parameter is false,
-        /// changes to the DB Instance are applied on the next call to RebootDBInstance or the next maintenance or failure
-        /// reboot, whichever occurs first. Default is FALSE.</param>
+        /// <param name="applyImmediately">The value to set for the ApplyImmediately property </param>
         /// <returns>this instance</returns>
         public ModifyDBInstanceRequest WithApplyImmediately(bool applyImmediately)
         {
-            this.applyImmediatelyField = applyImmediately;
+            this.applyImmediately = applyImmediately;
             return this;
         }
-
-        /// <summary>
-        /// Checks if ApplyImmediately property is set
-        /// </summary>
-        /// <returns>true if ApplyImmediately property is set</returns>
-        public bool IsSetApplyImmediately()
+            
+        // Check to see if ApplyImmediately property is set
+        internal bool IsSetApplyImmediately()
         {
-            return this.applyImmediatelyField.HasValue;
+            return this.applyImmediately.HasValue;      
         }
 
         /// <summary>
-        /// Gets and sets the MasterUserPassword property.
-        /// New password for the DB Instance master user. This change is asynchronously applied as soon as possible. Between
-        /// the time of the request and the completion of the request, the MasterUserPassword element exists in the
-        /// PendingModifiedValues element of the API response.
+        /// The new password for the DB Instance master user. This change is
+        /// asynchronously applied as soon as possible. Between the time of the
+        /// request and the completion of the request, the
+        /// <i>MasterUserPassword</i> element exists in the
+        /// <i>PendingModifiedValues</i> element of the operation response.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "MasterUserPassword")]
         public string MasterUserPassword
         {
-            get { return this.masterUserPasswordField; }
-            set { this.masterUserPasswordField = value; }
+            get { return this.masterUserPassword; }
+            set { this.masterUserPassword = value; }
         }
 
         /// <summary>
         /// Sets the MasterUserPassword property
         /// </summary>
-        /// <param name="masterUserPassword">New password for the DB Instance master user. This change is asynchronously applied as soon as possible. Between
-        /// the time of the request and the completion of the request, the MasterUserPassword element exists in the
-        /// PendingModifiedValues element of the API response.</param>
+        /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
         /// <returns>this instance</returns>
         public ModifyDBInstanceRequest WithMasterUserPassword(string masterUserPassword)
         {
-            this.masterUserPasswordField = masterUserPassword;
+            this.masterUserPassword = masterUserPassword;
             return this;
         }
-
-        /// <summary>
-        /// Checks if MasterUserPassword property is set
-        /// </summary>
-        /// <returns>true if MasterUserPassword property is set</returns>
-        public bool IsSetMasterUserPassword()
+            
+        // Check to see if MasterUserPassword property is set
+        internal bool IsSetMasterUserPassword()
         {
-            return this.masterUserPasswordField != null;
+            return this.masterUserPassword != null;         
         }
 
         /// <summary>
-        /// Gets and sets the DBParameterGroupName property.
-        /// Name of the DB Parameter Group to apply to this DB Instance. This change is asynchronously applied as soon as possible for
-        /// parameters when the ApplyMethod is immediate.
-        /// Must contain from 1 to 255 alphanumeric characters or hyphens.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.
+        /// The name of the DB Parameter Group to apply to this DB Instance. This
+        /// change is asynchronously applied as soon as possible for parameters
+        /// when the <i>ApplyImmediately</i> parameter is specified as <i>true</i>
+        /// for this request.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DBParameterGroupName")]
         public string DBParameterGroupName
         {
-            get { return this.DBParameterGroupNameField; }
-            set { this.DBParameterGroupNameField = value; }
+            get { return this.dBParameterGroupName; }
+            set { this.dBParameterGroupName = value; }
         }
 
         /// <summary>
         /// Sets the DBParameterGroupName property
         /// </summary>
-        /// <param name="DBParameterGroupName">Name of the DB Parameter Group to apply to this DB Instance. This change is asynchronously applied as soon as possible for
-        /// parameters when the ApplyMethod is immediate.
-        /// Must contain from 1 to 255 alphanumeric characters or hyphens.
-        /// First character must be a letter.
-        /// May not end with a hyphen or contain two consecutive hyphens.</param>
+        /// <param name="dBParameterGroupName">The value to set for the DBParameterGroupName property </param>
         /// <returns>this instance</returns>
-        public ModifyDBInstanceRequest WithDBParameterGroupName(string DBParameterGroupName)
+        public ModifyDBInstanceRequest WithDBParameterGroupName(string dBParameterGroupName)
         {
-            this.DBParameterGroupNameField = DBParameterGroupName;
+            this.dBParameterGroupName = dBParameterGroupName;
             return this;
         }
-
-        /// <summary>
-        /// Checks if DBParameterGroupName property is set
-        /// </summary>
-        /// <returns>true if DBParameterGroupName property is set</returns>
-        public bool IsSetDBParameterGroupName()
+            
+        // Check to see if DBParameterGroupName property is set
+        internal bool IsSetDBParameterGroupName()
         {
-            return this.DBParameterGroupNameField != null;
+            return this.dBParameterGroupName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the BackupRetentionPeriod property.
-        /// The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this
-        /// parameter to 0 disables automated backups. Constraints: Must be a value from 0 to 8.
+        /// The number of days to retain automated backups. Setting this parameter
+        /// to a positive number enables backups. Setting this parameter to 0
+        /// disables automated backups.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "BackupRetentionPeriod")]
-        public Decimal BackupRetentionPeriod
+        public int BackupRetentionPeriod
         {
-            get { return this.backupRetentionPeriodField.GetValueOrDefault(); }
-            set { this.backupRetentionPeriodField = value; }
+            get { return this.backupRetentionPeriod ?? default(int); }
+            set { this.backupRetentionPeriod = value; }
         }
 
         /// <summary>
         /// Sets the BackupRetentionPeriod property
         /// </summary>
-        /// <param name="backupRetentionPeriod">The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this
-        /// parameter to 0 disables automated backups. Constraints: Must be a value from 0 to 8.</param>
+        /// <param name="backupRetentionPeriod">The value to set for the BackupRetentionPeriod property </param>
         /// <returns>this instance</returns>
-        public ModifyDBInstanceRequest WithBackupRetentionPeriod(Decimal backupRetentionPeriod)
+        public ModifyDBInstanceRequest WithBackupRetentionPeriod(int backupRetentionPeriod)
         {
-            this.backupRetentionPeriodField = backupRetentionPeriod;
+            this.backupRetentionPeriod = backupRetentionPeriod;
             return this;
         }
-
-        /// <summary>
-        /// Checks if BackupRetentionPeriod property is set
-        /// </summary>
-        /// <returns>true if BackupRetentionPeriod property is set</returns>
-        public bool IsSetBackupRetentionPeriod()
+            
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
         {
-            return this.backupRetentionPeriodField.HasValue;
+            return this.backupRetentionPeriod.HasValue;         
         }
 
         /// <summary>
-        /// Gets and sets the PreferredBackupWindow property.
-        /// The daily time range during which automated backups are created if backups are enabled.
-        /// Must be in the format hh24:mi-hh24:mi.
-        /// Times should be Universal Time Coordinated (UTC).
-        /// Must not conflict with the --preferred-maintenance-window.
-        /// Must be at least 2 hours.
+        /// The daily time range during which automated backups are created if
+        /// automated backups are enabled, as determined by the
+        /// <i>BackupRetentionPeriod</i>.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PreferredBackupWindow")]
         public string PreferredBackupWindow
         {
-            get { return this.preferredBackupWindowField; }
-            set { this.preferredBackupWindowField = value; }
+            get { return this.preferredBackupWindow; }
+            set { this.preferredBackupWindow = value; }
         }
 
         /// <summary>
         /// Sets the PreferredBackupWindow property
         /// </summary>
-        /// <param name="preferredBackupWindow">The daily time range during which automated backups are created if backups are enabled.
-        /// Must be in the format hh24:mi-hh24:mi.
-        /// Times should be Universal Time Coordinated (UTC).
-        /// Must not conflict with the --preferred-maintenance-window.
-        /// Must be at least 2 hours.</param>
+        /// <param name="preferredBackupWindow">The value to set for the PreferredBackupWindow property </param>
         /// <returns>this instance</returns>
         public ModifyDBInstanceRequest WithPreferredBackupWindow(string preferredBackupWindow)
         {
-            this.preferredBackupWindowField = preferredBackupWindow;
+            this.preferredBackupWindow = preferredBackupWindow;
             return this;
         }
-
-        /// <summary>
-        /// Checks if PreferredBackupWindow property is set
-        /// </summary>
-        /// <returns>true if PreferredBackupWindow property is set</returns>
-        public bool IsSetPreferredBackupWindow()
+            
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
         {
-            return this.preferredBackupWindowField != null;
+            return this.preferredBackupWindow != null;      
         }
 
         /// <summary>
-        /// Gets and sets the PreferredMaintenanceWindow property.
-        /// The weekly time range (in UTC) during which system maintenance can occur, which may result in an outage. This
-        /// change is made immediately. If moving this window to the current time, there must be at least 120 minutes between
-        /// the current time and end of the window to assure pending changes are applied.
-        ///
-        /// Default: Uses existing setting
-        /// Format: ddd:hh24:mi-ddd:hh24:mi
-        /// Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-        ///
-        /// Constraints: Minimum four hour period.
+        /// The weekly time range (in UTC) during which system maintenance can
+        /// occur, which may result in an outage. This change is made immediately.
+        /// If moving this window to the current time, there must be at least 120
+        /// minutes between the current time and end of the window to ensure
+        /// pending changes are applied.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "PreferredMaintenanceWindow")]
         public string PreferredMaintenanceWindow
         {
-            get { return this.preferredMaintenanceWindowField; }
-            set { this.preferredMaintenanceWindowField = value; }
+            get { return this.preferredMaintenanceWindow; }
+            set { this.preferredMaintenanceWindow = value; }
         }
 
         /// <summary>
         /// Sets the PreferredMaintenanceWindow property
         /// </summary>
-        /// <param name="preferredMaintenanceWindow">The weekly time range (in UTC) during which system maintenance can occur, which may result in an outage. This
-        /// change is made immediately. If moving this window to the current time, there must be at least 120 minutes between
-        /// the current time and end of the window to assure pending changes are applied.
-        ///
-        /// Default: Uses existing setting
-        /// Format: ddd:hh24:mi-ddd:hh24:mi
-        /// Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-        ///
-        /// Constraints: Minimum four hour period.</param>
+        /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
         public ModifyDBInstanceRequest WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
-            this.preferredMaintenanceWindowField = preferredMaintenanceWindow;
+            this.preferredMaintenanceWindow = preferredMaintenanceWindow;
             return this;
         }
-
-        /// <summary>
-        /// Checks if PreferredMaintenanceWindow property is set
-        /// </summary>
-        /// <returns>true if PreferredMaintenanceWindow property is set</returns>
-        public bool IsSetPreferredMaintenanceWindow()
+            
+        // Check to see if PreferredMaintenanceWindow property is set
+        internal bool IsSetPreferredMaintenanceWindow()
         {
-            return this.preferredMaintenanceWindowField != null;
+            return this.preferredMaintenanceWindow != null;         
         }
-
-        /// <summary>
-        /// Gets and sets the MultiAZ property.
-        /// Specifies if the DB Instance is a Multi-AZ DB Instance.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "MultiAZ")]
         public bool MultiAZ
         {
-            get { return this.multiAZField.GetValueOrDefault(); }
-            set { this.multiAZField = value; }
+            get { return this.multiAZ ?? default(bool); }
+            set { this.multiAZ = value; }
         }
 
         /// <summary>
         /// Sets the MultiAZ property
         /// </summary>
-        /// <param name="multiAZ">Specifies if the DB Instance is a Multi-AZ DB Instance.</param>
+        /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
         public ModifyDBInstanceRequest WithMultiAZ(bool multiAZ)
         {
-            this.multiAZField = multiAZ;
+            this.multiAZ = multiAZ;
             return this;
+        }
+            
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this.multiAZ.HasValue;       
+        }
+        public string EngineVersion
+        {
+            get { return this.engineVersion; }
+            set { this.engineVersion = value; }
         }
 
         /// <summary>
-        /// Checks if MultiAZ property is set
+        /// Sets the EngineVersion property
         /// </summary>
-        /// <returns>true if MultiAZ property is set</returns>
-        public bool IsSetMultiAZ()
+        /// <param name="engineVersion">The value to set for the EngineVersion property </param>
+        /// <returns>this instance</returns>
+        public ModifyDBInstanceRequest WithEngineVersion(string engineVersion)
         {
-            return this.multiAZField.HasValue;
+            this.engineVersion = engineVersion;
+            return this;
+        }
+            
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this.engineVersion != null;      
+        }
+        public bool AllowMajorVersionUpgrade
+        {
+            get { return this.allowMajorVersionUpgrade ?? default(bool); }
+            set { this.allowMajorVersionUpgrade = value; }
         }
 
+        /// <summary>
+        /// Sets the AllowMajorVersionUpgrade property
+        /// </summary>
+        /// <param name="allowMajorVersionUpgrade">The value to set for the AllowMajorVersionUpgrade property </param>
+        /// <returns>this instance</returns>
+        public ModifyDBInstanceRequest WithAllowMajorVersionUpgrade(bool allowMajorVersionUpgrade)
+        {
+            this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
+            return this;
+        }
+            
+        // Check to see if AllowMajorVersionUpgrade property is set
+        internal bool IsSetAllowMajorVersionUpgrade()
+        {
+            return this.allowMajorVersionUpgrade.HasValue;      
+        }
+        public bool AutoMinorVersionUpgrade
+        {
+            get { return this.autoMinorVersionUpgrade ?? default(bool); }
+            set { this.autoMinorVersionUpgrade = value; }
+        }
+
+        /// <summary>
+        /// Sets the AutoMinorVersionUpgrade property
+        /// </summary>
+        /// <param name="autoMinorVersionUpgrade">The value to set for the AutoMinorVersionUpgrade property </param>
+        /// <returns>this instance</returns>
+        public ModifyDBInstanceRequest WithAutoMinorVersionUpgrade(bool autoMinorVersionUpgrade)
+        {
+            this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+            return this;
+        }
+            
+        // Check to see if AutoMinorVersionUpgrade property is set
+        internal bool IsSetAutoMinorVersionUpgrade()
+        {
+            return this.autoMinorVersionUpgrade.HasValue;       
+        }
     }
 }
+    
