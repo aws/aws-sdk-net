@@ -1,2 +1,6 @@
-*.zip
+*.suo
+obj
+bin
+*.csproj.user
+
 
