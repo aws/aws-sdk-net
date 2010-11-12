@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-01
+ *  API Version: 2010-11-01
  *
  */
 
@@ -48,7 +48,7 @@ namespace Amazon.CloudFront.Model
     /// - <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/StreamingDistributionDatatype.html"/>
     /// </summary>
     [Serializable()]
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-08-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-11-01/", IsNullable = false)]
     public class CloudFrontDistributionBase
     {
         #region Private Members

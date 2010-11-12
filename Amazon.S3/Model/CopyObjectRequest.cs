@@ -436,7 +436,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        #region MetaData
+        #region Metadata
 
         /// <summary>
         /// Adds a key/value pair to the Metadata property for this request.
@@ -487,16 +487,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if MetaData property is set.
+        /// Checks if Metadata property is set.
         /// </summary>
-        /// <returns>true if MetaData property is set.</returns>
+        /// <returns>true if Metadata property is set.</returns>
         internal bool IsSetMetaData()
         {
             return (metaData != null && metaData.Count > 0);
         }
 
         /// <summary>
-        /// Removes a key from the MetaData list if it was
+        /// Removes a key from the Metadata list if it was
         /// added previously
         /// </summary>
         /// <param name="key">The key to remove</param>
@@ -593,6 +593,11 @@ namespace Amazon.S3.Model
         {
             Timeout = timeout;
             return this;
+        }
+
+        internal override bool SupportTimeout
+        {
+            get { return true; }
         }
 
         #endregion

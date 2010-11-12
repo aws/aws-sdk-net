@@ -29,7 +29,11 @@ namespace Amazon.S3.Util
     internal static class S3Constants
     {
         internal const int PutObjectDefaultTimeout = 20 * 60 * 1000;
-        internal static readonly long MaxS3ObjectSize = 5 * (long)Math.Pow(2, 30);
+
+        internal static readonly long MinPartSize = 5 * (long)Math.Pow(2, 20);
+        internal const int MaxNumberOfParts = 10000;
+
+        internal const int DefaultBufferSize = 8192;
 
         internal const string S3DefaultEndpoint = "s3.amazonaws.com";
 
@@ -50,11 +54,12 @@ namespace Amazon.S3.Util
         internal const string AmzStorageClassHeader = "x-amz-storage-class";
 
         // Accepted HTTP Verbs
-        internal static readonly string[] Verbs = { "GET", "HEAD", "PUT", "DELETE" };
+        internal static readonly string[] Verbs = { "GET", "HEAD", "PUT", "DELETE", "POST" };
         internal static readonly string GetVerb = Verbs[0];
         internal static readonly string HeadVerb = Verbs[1];
         internal static readonly string PutVerb = Verbs[2];
         internal static readonly string DeleteVerb = Verbs[3];
+        internal static readonly string PostVerb = Verbs[4];
 
         // Commonly used static strings
         internal const string RequestParam = "request";

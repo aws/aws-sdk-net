@@ -94,7 +94,10 @@ namespace Amazon.S3.Model
         RequestTimeout,
         Url,
         Verb,
-        VerifyChecksum
+        VerifyChecksum,
+        MaxUploads,
+        KeyMarker,
+        UploadIdMarker
     }
 
     /// <summary>

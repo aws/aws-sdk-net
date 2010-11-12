@@ -362,19 +362,9 @@ namespace Amazon.S3
                 throw new ArgumentNullException(S3Constants.RequestParam, "The LoggingConfig is null!");
             }
 
-            if (!config.IsSetGrants())
-            {
-                throw new ArgumentNullException(S3Constants.RequestParam, "The Grants of the LoggingConfig is null!");
-            }
-
             if (!config.IsSetTargetBucketName())
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName of the LoggingConfig is null or empty!");
-            }
-
-            if (!config.IsSetTargetPrefix())
-            {
-                throw new ArgumentNullException(S3Constants.RequestParam, "The TargetPrefix of the LoggingConfig is null!");
             }
 
             ConvertEnableBucketLogging(request);
@@ -1143,9 +1133,16 @@ namespace Amazon.S3
             }
             finally
             {
-                if (request.InputStream != null && (request.IsSetFilePath() || request.AutoCloseStream))
+                try
                 {
-                    request.InputStream.Close();
+                    if (request.InputStream != null && (request.IsSetFilePath() || request.AutoCloseStream))
+                    {
+                        request.InputStream.Close();
+                    }
+                }
+                catch(Exception e) 
+                {
+                    this.logger.Error("Error closing stream after PutObject.", e);
                 }
             }
         }
@@ -1245,6 +1242,295 @@ namespace Amazon.S3
 
             ConvertCopyObject(request);
             return Invoke<CopyObjectResponse>(request);
+        }
+
+        /// <summary>
+        /// This method initiates a multipart upload and returns an InitiateMultipartUploadResponse 
+        /// which contains an upload ID. This upload ID associates all the
+        /// parts in the specific upload. You specify this upload ID in each of 
+        /// your subsequent Upload Part requests. You also include
+        /// this upload ID in the final request to either complete, or abort
+        /// the multipart upload request.
+        /// </summary>
+        /// <param name="request">
+        /// The CopyObjectRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a InitiateMultipartUploadResponse from S3.</returns>
+        public InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The InitiateMultipartUploadRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+            if (!request.IsSetKey())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The Key Specified is null or empty!");
+            }
+
+            ConvertInitiateMultipartUpload(request);
+            return Invoke<InitiateMultipartUploadResponse>(request);
+        }
+
+        /// <summary>
+        /// This method uploads a part in a multipart upload.  You must initiate a 
+        /// multipart upload before you can upload any part.
+        /// <para>
+        /// Your UploadPart request must include an upload ID and a part number. 
+        /// The upload ID is the ID returned by Amazon S3 in response to your 
+        /// Initiate Multipart Upload request. For more information on initiating a
+        /// multipart upload. Part number can be any number between 1 and
+        /// 10,000, inclusive. A part number uniquely identifies a part and also 
+        /// defines its position within the object being uploaded. If you 
+        /// upload a new part using the same part number that was specified in uploading a
+        /// previous part, the previously uploaded part is overwritten.
+        /// </para>
+        /// <para>
+        /// To ensure data is not corrupted traversing the network, specify the 
+        /// Content-MD5 header in the Upload Part request. Amazon S3 checks 
+        /// the part data against the provided MD5 value. If they do not match,
+        /// Amazon S3 returns an error.
+        /// </para>
+        /// <para>
+        /// When you upload a part, the UploadPartResponse response contains an ETag property.
+        /// You should record this ETag property value and the part 
+        /// number. After uploading all parts, you must send a CompleteMultipartUpload
+        /// request. At that time Amazon S3 constructs a complete object by 
+        /// concatenating all the parts you uploaded, in ascending order based on 
+        /// the part numbers. The CompleteMultipartUpload request requires you to
+        /// send all the part numbers and the corresponding ETag values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">
+        /// The UploadPartRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a UploadPartResponse from S3.</returns>
+        public UploadPartResponse UploadPart(UploadPartRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The UploadPartUpload is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentException("The S3 BucketName specified is null or empty!");
+            }
+            if (!request.IsSetKey())
+            {
+                throw new ArgumentException("The Key Specified is null or empty!");
+            }
+            if (!request.IsSetUploadId())
+            {
+                throw new ArgumentException("The UploadId Specified is null or empty!");
+            }
+            if (!request.IsSetInputStream() && !request.IsSetFilePath())
+            {
+                throw new ArgumentException("Either InputStream or FilePath must be set.");
+            }
+            if (request.IsSetInputStream() && request.IsSetFilePath())
+            {
+                throw new ArgumentException("Both InputStream and FilePath can not be set.");
+            }
+            if (request.IsSetFilePath() && !request.IsSetFilePosition())
+            {
+                throw new ArgumentException("FilePosition is not set which is required when using FilePath.");
+            }
+
+            Stream fStream = null;
+            Stream orignalStream = request.InputStream;
+            try
+            {
+                if (request.IsSetInputStream())
+                {
+                    request.InputStream = new PartStreamWrapper(request.InputStream, request.PartSize);
+                }
+                else
+                {
+                    fStream = File.OpenRead(request.FilePath);
+                    fStream.Position = request.FilePosition;
+                    request.InputStream = new PartStreamWrapper(fStream, request.PartSize);
+                }
+
+                ConvertUploadPart(request);
+                UploadPartResponse response = Invoke<UploadPartResponse>(request);
+                response.PartNumber = request.PartNumber;
+                return response;
+            }
+            finally
+            {
+                if (fStream != null)
+                {
+                    fStream.Close();
+                }
+                request.InputStream = orignalStream;
+            }
+        }
+
+        /// <summary>
+        /// This method lists the parts that have been uploaded 
+        /// for a particular multipart upload.
+        /// <para>
+        /// This method must include the upload ID, returned by 
+        /// the InitiateMultipartUpload request. This request 
+        /// returns a maximum of 1000 uploaded parts by default. You can
+        /// restrict the number of parts returned by specifying the 
+        /// MaxParts property on the ListPartsRequest. If your multipart
+        /// upload consists of more parts than allowed in the 
+        /// ListParts response, the response returns a IsTruncated
+        /// field with value true, and a NextPartNumberMarker property. 
+        /// In subsequent ListParts request you can include the 
+        /// PartNumberMarker property and set its value to the
+        /// NextPartNumberMarker property value from the previous response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">
+        /// The ListPartsRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a ListPartsResponse from S3.</returns>
+        public ListPartsResponse ListParts(ListPartsRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The ListPartsRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+            if (!request.IsSetKey())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The Key Specified is null or empty!");
+            }
+            if (!request.IsSetUploadId())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The UploadId Specified is null or empty!");
+            }
+
+            ConvertListParts(request);
+            return Invoke<ListPartsResponse>(request);
+        }
+
+        /// <summary>
+        /// This method aborts a multipart upload. After a multipart upload is 
+        /// aborted, no additional parts can be uploaded using that upload ID. 
+        /// The storage consumed by any previously uploaded parts will be freed.
+        /// However, if any part uploads are currently in progress, those part 
+        /// uploads may or may not succeed. As a result, it may be necessary to 
+        /// abort a given multipart upload multiple times in order to completely free
+        /// all storage consumed by all parts.
+        /// </summary>
+        /// <param name="request">
+        /// The AbortMultipartUploadRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a AbortMultipartUploadResponse from S3.</returns>
+        public AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The AbortMultipartUploadRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+            if (!request.IsSetKey())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The Key Specified is null or empty!");
+            }
+            if (!request.IsSetUploadId())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The UploadId Specified is null or empty!");
+            }
+
+            ConvertAbortMultipartUpload(request);
+            return Invoke<AbortMultipartUploadResponse>(request);
+        }
+
+        /// <summary>
+        /// This operation completes a multipart upload by assembling 
+        /// previously uploaded parts.
+        /// <para>
+        /// You first upload all parts using the UploadPart method. 
+        /// After successfully uploading all relevant parts of an upload, 
+        /// you call this operation to complete the upload. Upon receiving
+        /// this request, Amazon S3 concatenates all the parts in ascending 
+        /// order by part number to create a new object. In the 
+        /// CompleteMultipartUpload request, you must provide the 
+        /// parts list. For each part in the list, you provide the 
+        /// part number and the ETag header value, returned after that 
+        /// part was uploaded.
+        /// </para>
+        /// <para>
+        /// Processing of a CompleteMultipartUpload request may take 
+        /// several minutes to complete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">
+        /// The CompleteMultipartUploadRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a CompleteMultipartUploadResponse from S3.</returns>
+        public CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The CompleteMultipartUploadRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentException("The S3 BucketName specified is null or empty!");
+            }
+            if (!request.IsSetKey())
+            {
+                throw new ArgumentException("The Key Specified is null or empty!");
+            }
+            if (!request.IsSetUploadId())
+            {
+                throw new ArgumentException("The UploadId Specified is null or empty!");
+            }
+            if (request.PartETags.Count == 0)
+            {
+                throw new ArgumentException("No part etags were added to the request!");
+            }
+
+            ConvertCompleteMultipartUpload(request);
+            return Invoke<CompleteMultipartUploadResponse>(request);
+        }
+
+        /// <summary>
+        /// This operation lists in-progress multipart uploads. An in-progress 
+        /// multipart upload is a multipart upload that has been initiated, 
+        /// using the InitiateMultipartUpload request, but has not yet been 
+        /// completed or aborted.
+        /// <para>
+        /// This operation returns at most 1,000 multipart uploads in the 
+        /// response by default. The number of multipart uploads can be further 
+        /// limited using the MaxUploads property on the request parameter. If there are 
+        /// additional multipart uploads that satisfy the list criteria, the 
+        /// response will contain an IsTruncated property with the value set to true.
+        /// To list the additional multipart uploads use the KeyMarker and 
+        /// UploadIdMarker properties on the request parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">
+        /// The ListMultipartUploadsRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a ListMultipartUploadsResponse from S3.</returns>
+        public ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The ListMultipartUploadsRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentException("The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertListMultipartUploads(request);
+            return Invoke<ListMultipartUploadsResponse>(request);
         }
 
         #endregion
@@ -1767,7 +2053,17 @@ namespace Amazon.S3
                 // Add headers of type x-amz-meta-<key> to the request
                 foreach (string key in request.metaData)
                 {
-                    webHeaders[String.Concat("x-amz-meta-", key)] = request.metaData[key];
+                    string prefixedKey;
+                    if (!key.StartsWith("x-amz-meta-"))
+                    {
+                        prefixedKey = String.Concat("x-amz-meta-", key);
+                    }
+                    else
+                    {
+                        prefixedKey = key;
+                    }
+
+                    webHeaders[prefixedKey] = request.metaData[key];
                 }
             }
 
@@ -1947,7 +2243,17 @@ namespace Amazon.S3
                     // Add headers of type x-amz-meta-<key> to the request
                     foreach (string key in request.metaData)
                     {
-                        webHeaders[String.Concat("x-amz-meta-", key)] = request.metaData[key];
+                        string prefixedKey;
+                        if (!key.StartsWith("x-amz-meta-"))
+                        {
+                            prefixedKey = String.Concat("x-amz-meta-", key);
+                        }
+                        else
+                        {
+                            prefixedKey = key;
+                        }
+
+                        webHeaders[prefixedKey] = request.metaData[key];
                     }
                 }
 
@@ -2021,6 +2327,206 @@ namespace Amazon.S3
                 SetMfaHeader(webHeaders, request.MfaCodes);
             }
 
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert InitiateMultipartUpload to key/value pairs.
+         */
+        private void ConvertInitiateMultipartUpload(InitiateMultipartUploadRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.PostVerb;
+            parameters[S3QueryParameter.Action] = "InitiateMultipartUpload";
+            parameters[S3QueryParameter.Key] = request.Key;
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?uploads";
+
+            // Add the Content Type
+            if (request.IsSetContentType())
+            {
+                parameters[S3QueryParameter.ContentType] = request.ContentType;
+            }
+
+            // Add the Put Object specific headers to the request
+            // 1. The Canned ACL
+            if (request.IsSetCannedACL())
+            {
+                SetCannedACLHeader(webHeaders, request.CannedACL);
+            }
+
+            // 2. The Metadata
+            if (request.IsSetMetaData())
+            {
+                // Add headers of type x-amz-meta-<key> to the request
+                foreach (string key in request.metaData)
+                {
+                    webHeaders[String.Concat("x-amz-meta-", key)] = request.metaData[key];
+                }
+            }
+
+            // Add the storage class header
+            webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
+
+            // Finally, add the S3 specific parameters and headers
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert AbortMultipartUploadRequest for enable logging, to key/value pairs.
+         */
+        private void ConvertAbortMultipartUpload(AbortMultipartUploadRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.DeleteVerb;
+            parameters[S3QueryParameter.Action] = "AbortMultipartUpload";
+            parameters[S3QueryParameter.Key] = request.Key;
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = string.Format("?uploadId={0}", request.UploadId);
+
+
+            // Finally, add the S3 specific parameters and headers
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert ListMultipartUploadsRequest for enable logging, to key/value pairs.
+         */
+        private void ConvertListMultipartUploads(ListMultipartUploadsRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
+            parameters[S3QueryParameter.Action] = "ListMultipartUploads";
+            parameters[S3QueryParameter.QueryToSign] = "?uploads";
+
+            //Create query string if any of the values are set.
+            StringBuilder sb = new StringBuilder("?uploads&", 256);
+            if (request.IsSetMaxUploads())
+            {
+                sb.Append(String.Concat("max-uploads=", request.MaxUploads.ToString(), "&"));
+            }
+            if (request.IsSetKeyMarker())
+            {
+                sb.Append(String.Concat("key-marker=", AmazonS3Util.UrlEncode(request.KeyMarker, false), "&"));
+            }
+            if (request.IsSetUploadIdMarker())
+            {
+                sb.Append(String.Concat("upload-idmarker=", AmazonS3Util.UrlEncode(request.UploadIdMarker, false), "&"));
+            }
+
+            string query = sb.ToString();
+
+            // Remove trailing & character
+            if (query.EndsWith("&"))
+            {
+                query = query.Remove(query.Length - 1);
+            }
+
+            parameters[S3QueryParameter.Query] = query;
+
+            // Finally, add the S3 specific parameters and headers
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert ListPartsRequest for enable logging, to key/value pairs.
+         */
+        private void ConvertListParts(ListPartsRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
+            parameters[S3QueryParameter.Action] = "ListParts";
+            parameters[S3QueryParameter.Key] = request.Key;
+            parameters[S3QueryParameter.QueryToSign] = string.Format("?uploadId={0}", request.UploadId);
+
+            //Create query string if any of the values are set.
+            StringBuilder sb = new StringBuilder(string.Format("?uploadId={0}", request.UploadId), 256);
+            if (request.IsSetMaxParts())
+            {
+                sb.Append(String.Concat("max-parts=", request.MaxParts.ToString(), "&"));
+            }
+            if (request.IsSetPartNumberMarker())
+            {
+                sb.Append(String.Concat("part-number-marker=", AmazonS3Util.UrlEncode(request.PartNumberMarker, false), "&"));
+            }
+
+            string query = sb.ToString();
+
+            // Remove trailing & character
+            if (query.EndsWith("&"))
+            {
+                query = query.Remove(query.Length - 1);
+            }
+
+            parameters[S3QueryParameter.Query] = query;
+
+            // Finally, add the S3 specific parameters and headers
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert CompleteMultipartUploadRequest for enable logging, to key/value pairs.
+         */
+        private void ConvertCompleteMultipartUpload(CompleteMultipartUploadRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.PostVerb;
+            parameters[S3QueryParameter.Action] = "CompleteMultipartUpload";
+            parameters[S3QueryParameter.Key] = request.Key;
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = string.Format("?uploadId={0}", request.UploadId);
+            parameters[S3QueryParameter.ContentBody] = request.ContentXML;
+            parameters[S3QueryParameter.ContentType] = "application/xml";
+
+
+            // Finally, add the S3 specific parameters and headers
+            AddS3QueryParameters(request, request.BucketName);
+        }
+
+        /**
+         * Convert SetBucketLoggingRequest for enable logging, to key/value pairs.
+         */
+        private void ConvertUploadPart(UploadPartRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
+            parameters[S3QueryParameter.Action] = "UploadPart";
+            parameters[S3QueryParameter.Key] = request.Key;
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = string.Format("?partNumber={1}&uploadId={0}", request.UploadId, request.PartNumber);
+
+            if (request.IsSetMD5Digest())
+            {
+                webHeaders[AWSSDKUtils.ContentMD5Header] = request.MD5Digest;
+            }
+            else if (request.GenerateMD5Digest)
+            {
+                string checksum = null;
+                if (request.IsSetInputStream())
+                {
+                    checksum = AmazonS3Util.GenerateChecksumForStream(request.InputStream, true);
+                }
+
+                webHeaders[AWSSDKUtils.ContentMD5Header] = checksum;
+            }
+
+            // InputStream is a PartStreamWrapper that will take care of computing the length for the part.
+            parameters[S3QueryParameter.ContentLength] = request.InputStream.Length.ToString();
+
+
+            // Add the Timeout parameter
+            parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
+
+
+            // Finally, add the S3 specific parameters and headers
             AddS3QueryParameters(request, request.BucketName);
         }
 
@@ -2117,26 +2623,25 @@ namespace Amazon.S3
 
         private void WriteStreamToService(S3Request request, long reqDataLen, Stream inputStream, Stream requestStream)
         {
-            PutObjectRequest putObjReq = request as PutObjectRequest;
-
             if (inputStream != null)
             {
                 long current = 0;
                 // Reset the file stream's position to the starting point
                 inputStream.Position = 0;
-                byte[] buffer = new byte[65536];
+                byte[] buffer = new byte[this.config.BufferSize];
                 int bytesRead = 0;
                 while ((bytesRead = inputStream.Read(buffer, 0, buffer.Length)) > 0)
                 {
                     current += bytesRead;
                     requestStream.Write(buffer, 0, bytesRead);
-                    if (putObjReq != null)
+                    if (request != null)
                     {
-                        putObjReq.OnRaiseProgressEvent(new PutObjectProgressArgs(current, reqDataLen));
+                        request.OnRaiseProgressEvent(bytesRead, current, reqDataLen);
                     }
                 }
             }
         }
+
 
         /**
         * Invoke request and return response
@@ -2173,12 +2678,13 @@ namespace Amazon.S3
             if (!(verb.Equals(S3Constants.PutVerb) ||
                 verb.Equals(S3Constants.GetVerb) ||
                 verb.Equals(S3Constants.DeleteVerb) ||
-                verb.Equals(S3Constants.HeadVerb)))
+                verb.Equals(S3Constants.HeadVerb) ||
+                verb.Equals(S3Constants.PostVerb)))
             {
                 throw new AmazonS3Exception("Invalid HTTP Operation attempted! Supported operations - GET, HEAD, PUT, DELETE");
             }
 
-            if (verb.Equals(S3Constants.PutVerb))
+            if (verb.Equals(S3Constants.PutVerb) || verb.Equals(S3Constants.PostVerb))
             {
                 if (parameters.ContainsKey(S3QueryParameter.ContentBody))
                 {
@@ -2195,19 +2701,6 @@ namespace Amazon.S3
                 if (parameters.ContainsKey(S3QueryParameter.ContentLength))
                 {
                     reqDataLen = Int64.Parse(parameters[S3QueryParameter.ContentLength]);
-                    if (reqDataLen > S3Constants.MaxS3ObjectSize)
-                    {
-                        throw new AmazonS3Exception(
-                            "Your proposed upload exceeds the maximum allowed object size",
-                            HttpStatusCode.BadRequest,
-                            "EntityTooLarge",
-                            "",
-                            "",
-                            "",
-                            config.ServiceURL,
-                            null
-                            );
-                    }
                 }
             }
 
@@ -2218,6 +2711,14 @@ namespace Amazon.S3
             HttpWebRequest request;
             HttpWebResponse httpResponse = null;
             string requestAddr;
+            WebHeaderCollection respHdrs = null;
+            Exception cause = null;
+
+            long orignalStreamPosition = 0;
+            if (fStream != null)
+            {
+                orignalStreamPosition = fStream.Position;
+            }
             do
             {
                 shouldRetry = false;
@@ -2262,13 +2763,14 @@ namespace Amazon.S3
 
                     if (httpResponse != null)
                     {
+                        respHdrs = httpResponse.Headers;
                         this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", actionName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
 
                         statusCode = httpResponse.StatusCode;
                         if (!IsRedirect(httpResponse))
                         {
                             // The request submission has completed. Retrieve the response.
-                            response = ProcessRequestResponse<T>(httpResponse, parameters, myType);
+                            shouldRetry = ProcessRequestResponse<T>(httpResponse, parameters, myType, out response, out cause);
                         }
                         else
                         {
@@ -2277,7 +2779,7 @@ namespace Amazon.S3
                             ProcessRedirect(userRequest, httpResponse);
                             this.logger.InfoFormat("Request for {0} is being redirect to {1}.", actionName, userRequest.parameters[S3QueryParameter.Url]);
 
-                            PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, httpResponse.Headers);
+                            PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, httpResponse.Headers, cause);
 
                             // The HTTPResponse object needs to be closed. Once this is done, the request
                             // is gracefully terminated. Mind you, if this response object is not closed,
@@ -2294,11 +2796,10 @@ namespace Amazon.S3
                 catch (WebException we)
                 {
                     this.logger.Debug(string.Format("Error making request {0}.", actionName), we);
-                    WebHeaderCollection respHdrs;
 
                     using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
                     {
-                        shouldRetry = ProcessRequestError(actionName, request, we, errorResponse, requestAddr, out respHdrs, myType);
+                        shouldRetry = ProcessRequestError(actionName, request, we, errorResponse, requestAddr, out respHdrs, myType, out cause);
 
                         if (httpResponse != null)
                         {
@@ -2317,10 +2818,6 @@ namespace Amazon.S3
                         {
                             statusCode = HttpStatusCode.BadRequest;
                         }
-                        if (shouldRetry)
-                        {
-                            PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, respHdrs);
-                        }
                     }
                 }
                 catch (IOException e)
@@ -2334,7 +2831,10 @@ namespace Amazon.S3
                     // Abort the unsuccessful request
                     request.Abort();
 
-                    throw;
+                    if (retries <= maxRetries)
+                        shouldRetry = true;
+                    else
+                        throw;
                 }
 
                 if (shouldRetry)
@@ -2343,9 +2843,10 @@ namespace Amazon.S3
                     {
                         this.logger.InfoFormat("Retry number {0} for request {1}.", retries, actionName);
                     }
+                    PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, respHdrs, cause);
                     // Reset the request so that streams are recreated,
                     // removed headers are added back, etc
-                    PrepareRequestForRetry(userRequest);
+                    PrepareRequestForRetry(userRequest, orignalStreamPosition);
                 }
             } while (shouldRetry && retries <= maxRetries);
 
@@ -2389,11 +2890,11 @@ namespace Amazon.S3
          * 1. Add removed headers back to the request's headers
          * 2. If the InputStream is not-null, reset its position to 0
          */
-        private void PrepareRequestForRetry(S3Request request)
+        private void PrepareRequestForRetry(S3Request request, long orignalStreamPosition)
         {
             if (request.InputStream != null)
             {
-                request.InputStream.Position = 0;
+                request.InputStream.Position = orignalStreamPosition;
             }
 
             if (request.removedHeaders.Count > 0)
@@ -2402,11 +2903,13 @@ namespace Amazon.S3
             }
         }
 
-        private static T ProcessRequestResponse<T>(HttpWebResponse httpResponse, IDictionary<S3QueryParameter, string> parameters, Type t)
+        private static bool ProcessRequestResponse<T>(HttpWebResponse httpResponse, IDictionary<S3QueryParameter, string> parameters, Type t, out T response, out Exception cause)
             where T : S3Response, new()
         {
-            T response = default(T);
+            response = default(T);
+            cause = null;
             string actionName = parameters[S3QueryParameter.Action];
+            bool shouldRetry = false;
 
             if (httpResponse == null)
             {
@@ -2462,7 +2965,7 @@ namespace Amazon.S3
                                     "",
                                     "",
                                     parameters[S3QueryParameter.RequestAddress],
-                                    httpResponse.Headers
+                                    headerCollection
                                     );
                             }
                         }
@@ -2492,9 +2995,23 @@ namespace Amazon.S3
 #if TRACE
                         DateTime streamRead = DateTime.UtcNow;
 #endif
+                        if (responseBody.EndsWith("/Error>"))
+                        {
+                            // Even though we received a 200 OK, there is a possibility of receiving an error
+                            string transformed = Transform(responseBody, "S3Error", t);
+                            // Attempt to deserialize response into S3ErrorResponse type
+                            S3Error error;
+                            XmlSerializer serializer = new XmlSerializer(typeof(S3Error));
+                            using (XmlTextReader sr = new XmlTextReader(new StringReader(transformed)))
+                            {
+                                error = (S3Error)serializer.Deserialize(sr);
+                            }
+                            cause = new AmazonS3Exception(statusCode, responseBody, parameters[S3QueryParameter.RequestAddress], headerCollection, error);
+                            shouldRetry = true;
+                        }
 
                         // Perform response transformation
-                        if (responseBody.EndsWith(">"))
+                        else if (responseBody.EndsWith(">"))
                         {
                             string transformed = Transform(responseBody, actionName, t);
 
@@ -2555,10 +3072,10 @@ namespace Amazon.S3
                 }
             }
 
-            return response;
+            return shouldRetry;
         }
 
-        private bool ProcessRequestError(string actionName, HttpWebRequest request, WebException we, HttpWebResponse errorResponse, string requestAddr, out WebHeaderCollection respHdrs, Type t)
+        private bool ProcessRequestError(string actionName, HttpWebRequest request, WebException we, HttpWebResponse errorResponse, string requestAddr, out WebHeaderCollection respHdrs, Type t, out Exception cause)
         {
             bool shouldRetry = false;
             HttpStatusCode statusCode = default(HttpStatusCode);
@@ -2614,6 +3131,7 @@ namespace Amazon.S3
                 statusCode == HttpStatusCode.ServiceUnavailable)
             {
                 shouldRetry = true;
+                cause = we;
             }
             else
             {
@@ -2782,15 +3300,12 @@ namespace Amazon.S3
                     httpRequest.UserAgent = config.UserAgent;
                 }
 
-                value = parameters[S3QueryParameter.Action];
                 // Let's enable Expect100Continue only for PutObject requests
-                httpRequest.ServicePoint.Expect100Continue = value.Equals("PutObject");
+                httpRequest.ServicePoint.Expect100Continue = request.Expect100Continue;
 
                 // While checking the Action, for Get, Put and Copy Object, set
                 // the timeout to the value specified in the request.
-                if (value.Equals("GetObject") ||
-                    value.Equals("PutObject") ||
-                    value.Equals("CopyObject"))
+                if (request.SupportTimeout)
                 {
                     int timeout = 0;
                     Int32.TryParse(parameters[S3QueryParameter.RequestTimeout], out timeout);
@@ -2814,7 +3329,7 @@ namespace Amazon.S3
         /**
          * Exponential sleep on failed request
          */
-        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status, string requestAddr, WebHeaderCollection headers)
+        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status, string requestAddr, WebHeaderCollection headers, Exception cause)
         {
             if (retries <= maxRetries)
             {
@@ -2826,12 +3341,9 @@ namespace Amazon.S3
                 throw new AmazonS3Exception(
                     String.Concat("Maximum number of retry attempts reached : ", (retries - 1)),
                     status,
-                    "",
-                    "",
-                    "",
-                    "",
                     requestAddr,
-                    headers
+                    headers,
+                    cause
                     );
             }
         }

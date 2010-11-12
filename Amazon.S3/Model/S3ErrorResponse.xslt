@@ -5,14 +5,24 @@
 
 	<xsl:template match="Error">
 		<xsl:element name="S3Error">
-			<xsl:apply-templates/>
-		</xsl:element>
-	</xsl:template>
-
-	<xsl:template match="*">
-		<xsl:copy>
-			<xsl:copy-of select="@*" />
-			<xsl:apply-templates />
-		</xsl:copy>
+      <Code>
+        <xsl:value-of select="Code"/>
+      </Code>
+      <Message>
+        <xsl:value-of select="Message"/>
+      </Message>
+      <HostId>
+        <xsl:value-of select="HostId"/>
+      </HostId>
+      <RequestId>
+        <xsl:value-of select="RequestId"/>
+      </RequestId>
+      <UploadId>
+        <xsl:value-of select="UploadId"/>
+      </UploadId>
+      <ETag>
+        <xsl:value-of select="ETag"/>
+      </ETag>
+    </xsl:element>
 	</xsl:template>
 </xsl:stylesheet>

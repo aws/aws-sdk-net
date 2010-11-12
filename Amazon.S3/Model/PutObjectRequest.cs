@@ -28,69 +28,7 @@ using Amazon.S3.Util;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>
-    /// Encapsulates the information needed to provide
-    /// transfer progress to subscribers of the Put Object
-    /// Event.
-    /// </summary>
-    public class PutObjectProgressArgs : EventArgs
-    {
-        private long total;
-        private long transferred;
 
-        /// <summary>
-        /// The constructor takes the number of
-        /// currently transferred bytes and the
-        /// total number of bytes to be transferred
-        /// </summary>
-        /// <param name="transferred">The number of bytes transferred</param>
-        /// <param name="total">The total number of bytes to be transferred</param>
-        public PutObjectProgressArgs(long transferred, long total)
-        {
-            this.transferred = transferred;
-            this.total = total;
-        }
-
-        /// <summary>
-        /// Gets the percentage of transfer completed
-        /// </summary>
-        public int PercentDone
-        {
-            get { return (int)((transferred * 100)/total); }
-        }
-
-        /// <summary>
-        /// Gets the number of bytes transferred
-        /// </summary>
-        public long TransferredBytes
-        {
-            get { return transferred; }
-        }
-
-        /// <summary>
-        /// Gets the total number of bytes to be transferred
-        /// </summary>
-        public long TotalBytes
-        {
-            get { return total; }
-        }
-
-        /// <summary>
-        /// Returns a string representation of this object
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-            return String.Concat(
-                "Put Object Statistics. Percentage completed: ",
-                PercentDone,
-                ", Bytes transferred: ",
-                transferred,
-                ", Total bytes to transfer: ",
-                total
-                );
-        }
-    }
 
     /// <summary>
     /// The PutObjectRequest contains the parameters used for the PutObject operation.
@@ -268,7 +206,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the CannedACL property.
         /// If set, the S3 Object will have this CannedACL
-        /// permission. Please refer
+        /// permission. Please refer to 
         /// <see cref="T:Amazon.S3.Model.S3CannedACL"/> for
         /// information on S3 Canned ACLs.
         /// </summary>
@@ -281,7 +219,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Sets the CannedACL property for this request.
         /// If set, the S3 Object will have this CannedACL
-        /// permission. Please refer
+        /// permission. Please refer to 
         /// <see cref="T:Amazon.S3.Model.S3CannedACL"/> for
         /// information on S3 Canned ACLs.
         /// </summary>
@@ -466,7 +404,7 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        #region MetaData
+        #region Metadata
 
         /// <summary>
         /// Adds a key/value pair to the Metadata property for this request.
@@ -517,16 +455,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if MetaData property is set.
+        /// Checks if Metadata property is set.
         /// </summary>
-        /// <returns>true if MetaData property is set.</returns>
+        /// <returns>true if Metadata property is set.</returns>
         internal bool IsSetMetaData()
         {
             return (metaData != null && metaData.Count > 0);
         }
 
         /// <summary>
-        /// Removes a key from the MetaData list if it was
+        /// Removes a key from the Metadata list if it was
         /// added previously
         /// </summary>
         /// <param name="key">The key to remove</param>
@@ -543,6 +481,11 @@ namespace Amazon.S3.Model
         #endregion
 
         #region Timeout
+
+        internal override bool SupportTimeout
+        {
+            get { return true; }
+        }
 
         /// <summary>
         /// Gets and sets of the Timeout property (in milliseconds).
@@ -590,7 +533,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the StorageClass property.
         /// Default: S3StorageClass.Standard. Set this property
         /// only if you want reduced redundancy for this object.
-        /// Please refer
+        /// Please refer to 
         /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
         /// information on S3 Storage Classes.
         /// </summary>
@@ -611,7 +554,7 @@ namespace Amazon.S3.Model
         /// Sets the StorageClass property for this request.
         /// Default: S3StorageClass.Standard. Set this property
         /// only if you want reduced redundancy for this object.
-        /// Please refer
+        /// Please refer to 
         /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
         /// information on S3 Storage Classes.
         /// </summary>
@@ -625,37 +568,15 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        #region AutoCloseStream
-        /// <summary>
-        /// Gets and sets the AutoCloseStream property.
-        /// </summary>
-        public bool AutoCloseStream
-        {
-            get { return this.autoCloseStream; }
-            set { this.autoCloseStream = value; }
-        }
-
-        /// <summary>
-        /// Sets the autoCloseStream property for this request.
-        /// Use this property if you want to upload plaintext to
-        /// S3. The ContentBody is the data for your S3 Object.
-        /// </summary>
-        /// <param name="contentBody">the value the ContentBody to be set to</param>
-        /// <returns>The request with the ContentBody set</returns>
-        public PutObjectRequest WithAutoCloseStream(bool autoCloseStream)
-        {
-            this.autoCloseStream = autoCloseStream;
-            return this;
-        }
-        #endregion
-
         /// <summary>
         /// This method is called by a producer of put object progress
         /// notifications. When called, all the subscribers in the 
         /// invocation list will be called sequentially.
         /// </summary>
-        /// <param name="e"></param>
-        internal void OnRaiseProgressEvent(PutObjectProgressArgs e)
+        /// <param name="incrementTransferred">The number of bytes transferred since last event</param>
+        /// <param name="transferred">The number of bytes transferred</param>
+        /// <param name="total">The total number of bytes to be transferred</param>
+        internal override void OnRaiseProgressEvent(long incrementTransferred, long transferred, long total)
         {
             // Make a temporary copy of the event to avoid the possibility of
             // a race condition if the last and only subscriber unsubscribes
@@ -668,12 +589,64 @@ namespace Amazon.S3.Model
                 {
                     // This automatically calls all subscribers sequentially
                     // http://msdn.microsoft.com/en-us/library/ms173172%28VS.80%29.aspx
-                    handler(this, e);
+                    handler(this, new PutObjectProgressArgs(incrementTransferred, transferred, total));
                 }
             }
             catch
             {
             }
+        }
+
+        #region AutoCloseStream
+        /// <summary>
+        /// Gets and sets the AutoCloseStream property. If this value is set to true
+        /// then the stream used with this request will be closed when all the content 
+        /// is read from the stream.  The property is defaulted to true.
+        /// </summary>
+        public bool AutoCloseStream
+        {
+            get { return this.autoCloseStream; }
+            set { this.autoCloseStream = value; }
+        }
+
+        /// <summary>
+        /// Sets the AutoCloseStream property for this request. If this value is set to true
+        /// then the stream used with this request will be closed when all the content 
+        /// is read from the stream.  The property is defaulted to true.
+        /// </summary>
+        /// <param name="autoCloseStream">the value the AutoCloseStream to be set to</param>
+        /// <returns>The request with the AutoCloseStream set</returns>
+        public PutObjectRequest WithAutoCloseStream(bool autoCloseStream)
+        {
+            this.autoCloseStream = autoCloseStream;
+            return this;
+        }
+        #endregion
+
+        internal override bool Expect100Continue
+        {
+            get { return true; }
+        }
+    }
+
+    /// <summary>
+    /// Encapsulates the information needed to provide
+    /// transfer progress to subscribers of the Put Object
+    /// Event.
+    /// </summary>
+    public class PutObjectProgressArgs : TransferProgressArgs
+    {
+        /// <summary>
+        /// The constructor takes the number of
+        /// currently transferred bytes and the
+        /// total number of bytes to be transferred
+        /// </summary>
+        /// <param name="incrementTransferred">The number of bytes transferred since last event</param>
+        /// <param name="transferred">The number of bytes transferred</param>
+        /// <param name="total">The total number of bytes to be transferred</param>
+        public PutObjectProgressArgs(long incrementTransferred, long transferred, long total)
+            : base(incrementTransferred, transferred, total)
+        {
         }
     }
 }

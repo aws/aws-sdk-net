@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-01
+ *  API Version: 2010-11-01
  *
  */
 
@@ -68,7 +68,7 @@ namespace Amazon.CloudFront.Model
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?><StreamingDistributionConfig ");
-            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-08-01/\">");
+            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-11-01/\">");
             sb.Append(base.ToString());
             sb.Append("</StreamingDistributionConfig>");
             return sb.ToString();
@@ -79,9 +79,12 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="origin">Origin property</param>
         /// <returns>this instance</returns>
+        [Obsolete("This property has been obsoleted in favor of the WithS3Origin method.")]
         public CloudFrontStreamingDistributionConfig WithOrigin(string origin)
         {
+#pragma warning disable 0618
             Origin = origin;
+#pragma warning restore 0618
             return this;
         }
 
@@ -139,9 +142,12 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="identity">OriginAccessIdentity property</param>
         /// <returns>this instance</returns>
+        [Obsolete("This property has been obsoleted in favor of the WithS3Origin method.")]
         public CloudFrontStreamingDistributionConfig WithOriginAccessIdentity(CloudFrontOriginAccessIdentity identity)
         {
-            this.OriginAccessIdentity = identity;
+#pragma warning disable 0618
+            OriginAccessIdentity = identity;
+#pragma warning restore 0618
             return this;
         }
 

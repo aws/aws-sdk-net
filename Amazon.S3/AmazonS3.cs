@@ -567,5 +567,138 @@ namespace Amazon.S3
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         SetNotificationConfigurationResponse SetNotificationConfiguration(SetNotificationConfigurationRequest request);
+
+        /// <summary>
+        /// This method initiates a multipart upload and returns an InitiateMultipartUploadResponse 
+        /// which contains an upload ID. This upload ID associates all the
+        /// parts in the specific upload. You specify this upload ID in each of 
+        /// your subsequent Upload Part requests. You also include
+        /// this upload ID in the final request to either complete, or abort
+        /// the multipart upload request.
+        /// </summary>
+        /// <param name="request">
+        /// The CopyObjectRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a InitiateMultipartUploadResponse from S3.</returns>
+        InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request);
+
+        /// <summary>
+        /// This method uploads a part in a multipart upload.  You must initiate a 
+        /// multipart upload before you can upload any part.
+        /// <para>
+        /// Your UploadPart request must include an upload ID and a part number. 
+        /// The upload ID is the ID returned by Amazon S3 in response to your 
+        /// Initiate Multipart Upload request. For more information on initiating a
+        /// multipart upload. Part number can be any number between 1 and
+        /// 10,000, inclusive. A part number uniquely identifies a part and also 
+        /// defines its position within the object being uploaded. If you 
+        /// upload a new part using the same part number that was specified in uploading a
+        /// previous part, the previously uploaded part is overwritten.
+        /// </para>
+        /// <para>
+        /// To ensure data is not corrupted traversing the network, specify the 
+        /// Content-MD5 header in the Upload Part request. Amazon S3 checks 
+        /// the part data against the provided MD5 value. If they do not match,
+        /// Amazon S3 returns an error.
+        /// </para>
+        /// <para>
+        /// When you upload a part, the UploadPartResponse response contains an ETag property.
+        /// You should record this ETag property value and the part 
+        /// number. After uploading all parts, you must send a CompleteMultipartUpload
+        /// request. At that time Amazon S3 constructs a complete object by 
+        /// concatenating all the parts you uploaded, in ascending order based on 
+        /// the part numbers. The CompleteMultipartUpload request requires you to
+        /// send all the part numbers and the corresponding ETag values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">
+        /// The UploadPartRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a UploadPartResponse from S3.</returns>
+        UploadPartResponse UploadPart(UploadPartRequest request);
+
+        /// <summary>
+        /// This method lists the parts that have been uploaded 
+        /// for a particular multipart upload.
+        /// <para>
+        /// This method must include the upload ID, returned by 
+        /// the InitiateMultipartUpload request. This request 
+        /// returns a maximum of 1000 uploaded parts by default. You can
+        /// restrict the number of parts returned by specifying the 
+        /// MaxParts property on the ListPartsRequest. If your multipart
+        /// upload consists of more parts than allowed in the 
+        /// ListParts response, the response returns a IsTruncated
+        /// field with value true, and a NextPartNumberMarker property. 
+        /// In subsequent ListParts request you can include the 
+        /// PartNumberMarker property and set its value to the
+        /// NextPartNumberMarker property value from the previous response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">
+        /// The ListPartsRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a ListPartsResponse from S3.</returns>
+        ListPartsResponse ListParts(ListPartsRequest request);
+
+        /// <summary>
+        /// This method aborts a multipart upload. After a multipart upload is 
+        /// aborted, no additional parts can be uploaded using that upload ID. 
+        /// The storage consumed by any previously uploaded parts will be freed.
+        /// However, if any part uploads are currently in progress, those part 
+        /// uploads may or may not succeed. As a result, it may be necessary to 
+        /// abort a given multipart upload multiple times in order to completely free
+        /// all storage consumed by all parts.
+        /// </summary>
+        /// <param name="request">
+        /// The AbortMultipartUploadRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a AbortMultipartUploadResponse from S3.</returns>
+        AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request);
+
+        /// <summary>
+        /// This operation completes a multipart upload by assembling 
+        /// previously uploaded parts.
+        /// <para>
+        /// You first upload all parts using the UploadPart method. 
+        /// After successfully uploading all relevant parts of an upload, 
+        /// you call this operation to complete the upload. Upon receiving
+        /// this request, Amazon S3 concatenates all the parts in ascending 
+        /// order by part number to create a new object. In the 
+        /// CompleteMultipartUpload request, you must provide the 
+        /// parts list. For each part in the list, you provide the 
+        /// part number and the ETag header value, returned after that 
+        /// part was uploaded.
+        /// </para>
+        /// <para>
+        /// Processing of a CompleteMultipartUpload request may take 
+        /// several minutes to complete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">
+        /// The CompleteMultipartUploadRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a CompleteMultipartUploadResponse from S3.</returns>
+        CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request);
+
+        /// <summary>
+        /// This operation lists in-progress multipart uploads. An in-progress 
+        /// multipart upload is a multipart upload that has been initiated, 
+        /// using the InitiateMultipartUpload request, but has not yet been 
+        /// completed or aborted.
+        /// <para>
+        /// This operation returns at most 1,000 multipart uploads in the 
+        /// response by default. The number of multipart uploads can be further 
+        /// limited using the MaxUploads property on the request parameter. If there are 
+        /// additional multipart uploads that satisfy the list criteria, the 
+        /// response will contain an IsTruncated property with the value set to true.
+        /// To list the additional multipart uploads use the KeyMarker and 
+        /// UploadIdMarker properties on the request parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">
+        /// The ListMultipartUploadsRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a ListMultipartUploadsResponse from S3.</returns>
+        ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request);
     }
 }

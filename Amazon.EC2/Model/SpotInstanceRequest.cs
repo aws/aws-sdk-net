@@ -113,7 +113,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Type property.
-        /// The instance type (eg. m1.small)
+        /// The instance type 
+        /// Valid values are:
+        /// m1.small | m1.large | m1.xlarge |
+        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
+        /// m2.4xlarge | cc1.4xlarge | t1.micro 
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
@@ -124,8 +128,12 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Sets the Type property
+        /// Valid values are:
+        /// m1.small | m1.large | m1.xlarge |
+        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
+        /// m2.4xlarge | cc1.4xlarge | t1.micro 
         /// </summary>
-        /// <param name="type">The instance type (eg. m1.small)</param>
+        /// <param name="type">The instance type</param>
         /// <returns>this instance</returns>
         public SpotInstanceRequest WithType(string type)
         {

@@ -107,8 +107,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Type property.
-        /// The instance type. Valid values:
-        /// m1.small|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge.
+        /// The instance type. 
+        /// Valid values are:
+        /// m1.small | m1.large | m1.xlarge |
+        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
+        /// m2.4xlarge | cc1.4xlarge | t1.micro 
         /// Default - m1.small.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
@@ -121,8 +124,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Type property
         /// </summary>
-        /// <param name="type">The instance type. Valid values:
-        /// m1.small|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge.
+        /// <param name="type">The instance type. 
+        /// Valid values are:
+        /// m1.small | m1.large | m1.xlarge |
+        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
+        /// m2.4xlarge | cc1.4xlarge | t1.micro 
         /// Default - m1.small.</param>
         /// <returns>this instance</returns>
         public RequestSpotInstancesRequest WithType(string type)

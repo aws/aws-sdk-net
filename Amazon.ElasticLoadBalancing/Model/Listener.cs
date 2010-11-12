@@ -156,8 +156,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// The ID of the SSL certificate chain to use. For more information on
-        /// SSL certificates, see <a
-        /// ervices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+        /// SSL certificates, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingServerCerts.html">
         /// Managing Keys and Certificates </a> in the AWS Identity and Access
         /// Management documentation.
         ///  

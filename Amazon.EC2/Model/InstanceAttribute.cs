@@ -75,9 +75,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceType property.
-        /// The instance type (e.g., m1.small, c1.medium,
-        /// m2.2xlarge, and so
-        /// on).
+        /// The instance type. 
+        /// Valid values are:
+        /// m1.small | m1.large | m1.xlarge |
+        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
+        /// m2.4xlarge | cc1.4xlarge | t1.micro 
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
@@ -88,10 +90,12 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Sets the InstanceType property
+        /// Valid values are:
+        /// m1.small | m1.large | m1.xlarge |
+        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
+        /// m2.4xlarge | cc1.4xlarge | t1.micro 
         /// </summary>
-        /// <param name="instanceType">The instance type (e.g., m1.small, c1.medium,
-        /// m2.2xlarge, and so
-        /// on).</param>
+        /// <param name="instanceType">The instance type</param>
         /// <returns>this instance</returns>
         public InstanceAttribute WithInstanceType(string instanceType)
         {

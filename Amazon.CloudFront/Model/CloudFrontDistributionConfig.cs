@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-01
+ *  API Version: 2010-11-01
  *
  */
 
@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model
     {
         #region Private Members
 
+        CustomOrigin _customOrigin;
         List<Protocol> requiredProtocols;
         string defaultRootObject;
 
@@ -76,7 +77,7 @@ namespace Amazon.CloudFront.Model
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?><DistributionConfig ");
-            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-08-01/\">");
+            sb.Append("xmlns=\"http://cloudfront.amazonaws.com/doc/2010-11-01/\">");
             sb.Append(base.ToString());
 
             // Represent RequiredProtocols in the xml
@@ -93,6 +94,10 @@ namespace Amazon.CloudFront.Model
             {
                 sb.Append(String.Concat("<DefaultRootObject>", this.DefaultRootObject, "</DefaultRootObject>"));
             }
+            if(this.IsSetCustomOrigin())
+            {
+                sb.Append(this.CustomOrigin.ToString());
+            }
 
             sb.Append("</DistributionConfig>");
             return sb.ToString();
@@ -106,10 +111,13 @@ namespace Amazon.CloudFront.Model
         /// Sets the Origin property.
         /// </summary>
         /// <param name="origin">Origin property</param>
-        /// <returns>this instance</returns>
+        /// <returns>this instance</returns>        
+        [Obsolete("This property has been obsoleted in favor of the WithS3Origin method.")]
         public CloudFrontDistributionConfig WithOrigin(string origin)
         {
+#pragma warning disable 0618
             Origin = origin;
+#pragma warning restore 0618
             return this;
         }
 
@@ -166,9 +174,12 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="identity">OriginAccessIdentity property</param>
         /// <returns>this instance</returns>
+        [Obsolete("This property has been obsoleted in favor of the WithS3Origin method.")]
         public CloudFrontDistributionConfig WithOriginAccessIdentity(CloudFrontOriginAccessIdentity identity)
         {
-            this.OriginAccessIdentity = identity;
+#pragma warning disable 0618
+            OriginAccessIdentity = identity;
+#pragma warning restore 0618
             return this;
         }
 
@@ -182,6 +193,34 @@ namespace Amazon.CloudFront.Model
         {
             this.TrustedSigners = signers;
             return this;
+        }
+
+        /// <summary>
+        /// Gets and sets the CustomOrigin property.
+        /// The CustomOrigin contains the information for a non Amazon S3 Bucket origin.
+        /// </summary>
+        public CustomOrigin CustomOrigin
+        {
+            get { return this._customOrigin; }
+            set { this._customOrigin = value; }
+        }
+
+        /// <summary>
+        /// Sets the CustomOrigin property.
+        /// The CustomOrigin contains the information for a non Amazon S3 Bucket origin.
+        /// This instance is returned to allow method chaining.
+        /// </summary>
+        /// <param name="customOrigin">CustomOrigin property is set to this value.</param>
+        /// <returns>This instance</returns>
+        public CloudFrontDistributionConfig WithCustomOrigin(CustomOrigin customOrigin)
+        {
+            this.CustomOrigin = customOrigin;
+            return this;
+        }
+
+        internal bool IsSetCustomOrigin()
+        {
+            return this._customOrigin != null;
         }
 
         #endregion

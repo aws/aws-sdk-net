@@ -397,6 +397,11 @@ namespace Amazon.S3.Model
             return this;
         }
 
+        internal override bool SupportTimeout
+        {
+            get { return true; }
+        }
+
         #endregion
     }
 }

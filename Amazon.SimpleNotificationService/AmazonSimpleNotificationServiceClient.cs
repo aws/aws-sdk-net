@@ -788,14 +788,14 @@ namespace Amazon.SimpleNotificationService
             int addPermissionRequestAWSAccountIdsListIndex = 1;
             foreach (string addPermissionRequestAWSAccountIds in addPermissionRequestAWSAccountIdsList)
             {
-                parameters[String.Concat("AWSAccountIds", ".member.", addPermissionRequestAWSAccountIdsListIndex)] = addPermissionRequestAWSAccountIds;
+                parameters[String.Concat("AWSAccountId", ".member.", addPermissionRequestAWSAccountIdsListIndex)] = addPermissionRequestAWSAccountIds;
                 addPermissionRequestAWSAccountIdsListIndex++;
             }
             List<string> addPermissionRequestActionNamesList = request.ActionNames;
             int addPermissionRequestActionNamesListIndex = 1;
             foreach (string addPermissionRequestActionNames in addPermissionRequestActionNamesList)
             {
-                parameters[String.Concat("ActionNames", ".member.", addPermissionRequestActionNamesListIndex)] = addPermissionRequestActionNames;
+                parameters[String.Concat("ActionName", ".member.", addPermissionRequestActionNamesListIndex)] = addPermissionRequestActionNames;
                 addPermissionRequestActionNamesListIndex++;
             }
 

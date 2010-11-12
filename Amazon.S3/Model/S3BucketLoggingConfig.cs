@@ -24,6 +24,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
+using Amazon.S3.Util;
+
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -35,7 +37,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public class S3BucketLoggingConfig
     {
-        #region Private Members
+        #region Private Members        
 
         private string targetBucketName;
         private string targetPrefix = "";
@@ -106,18 +108,30 @@ namespace Amazon.S3.Model
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<BucketLoggingStatus xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">");
-            if (IsSetTargetBucketName() && IsSetTargetPrefix() && IsSetGrants())
+            if (IsSetTargetBucketName())
             {
                 sb.Append("<LoggingEnabled>");
                 sb.Append(System.String.Concat("<TargetBucket>", TargetBucketName, "</TargetBucket>"));
-                sb.Append(System.String.Concat("<TargetPrefix>", TargetPrefix, "</TargetPrefix>"));
-                sb.Append("<TargetGrants>");
-                foreach (S3Grant grant in this.Grants)
+
+                if (IsSetTargetPrefix())
                 {
-                    sb.Append(grant.ToXML());
+                    sb.Append(System.String.Concat("<TargetPrefix>", TargetPrefix, "</TargetPrefix>"));
                 }
-                sb.Append("</TargetGrants>");
-                @sb.Append("</LoggingEnabled>");
+                else
+                {
+                    sb.Append("<TargetPrefix/>");
+                }
+
+                if (IsSetGrants())
+                {
+                    sb.Append("<TargetGrants>");
+                    foreach (S3Grant grant in this.Grants)
+                    {
+                        sb.Append(grant.ToXML());
+                    }
+                    sb.Append("</TargetGrants>");
+                }
+                sb.Append("</LoggingEnabled>");
             }
             sb.Append("</BucketLoggingStatus>");
             return sb.ToString();

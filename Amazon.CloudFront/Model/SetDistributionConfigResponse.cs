@@ -17,7 +17,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-01
+ *  API Version: 2010-11-01
  *
  */
 
@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
     /// information structure along with any other headers returned by 
     /// CloudFront.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-08-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-11-01/", IsNullable = false)]
     public class SetDistributionConfigResponse : GetDistributionInfoResponse
     {
         #region ETag

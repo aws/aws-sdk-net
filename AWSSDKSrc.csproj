@@ -157,6 +157,7 @@
     <Compile Include="Amazon.CloudFront\Model\CloudFrontStreamingDistributionConfig.cs" />
     <Compile Include="Amazon.CloudFront\Model\CreateStreamingDistributionRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\CreateStreamingDistributionResponse.cs" />
+    <Compile Include="Amazon.CloudFront\Model\CustomOrigin.cs" />
     <Compile Include="Amazon.CloudFront\Model\DeleteOriginAccessIdentityRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\DeleteOriginAccessIdentityResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\CreateOriginAccessIdentityRequest.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="Amazon.CloudFront\Model\ListStreamingDistributionsResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\PostInvalidationRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\PostInvalidationResponse.cs" />
+    <Compile Include="Amazon.CloudFront\Model\S3Origin.cs" />
     <Compile Include="Amazon.CloudFront\Model\SetDistributionConfigRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\SetDistributionConfigResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\SetOriginAccessIdentityConfigRequest.cs" />
@@ -1301,6 +1303,10 @@
     </Compile>
     <Compile Include="Amazon.S3\AmazonS3Config.cs" />
     <Compile Include="Amazon.S3\AmazonS3Exception.cs" />
+    <Compile Include="Amazon.S3\Model\AbortMultipartUploadRequest.cs" />
+    <Compile Include="Amazon.S3\Model\AbortMultipartUploadResponse.cs" />
+    <Compile Include="Amazon.S3\Model\CompleteMultipartUploadRequest.cs" />
+    <Compile Include="Amazon.S3\Model\CompleteMultipartUploadResponse.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketPolicyResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketPolicyRequest.cs" />
@@ -1310,9 +1316,19 @@
     <Compile Include="Amazon.S3\Model\GetNotificationConfigurationRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetNotificationConfigurationResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetPreSignedUrlRequest.cs" />
+    <Compile Include="Amazon.S3\Model\InitiateMultipartUploadRequest.cs" />
+    <Compile Include="Amazon.S3\Model\InitiateMultipartUploadResponse.cs" />
+    <Compile Include="Amazon.S3\Model\ListMultipartUploadsRequest.cs" />
+    <Compile Include="Amazon.S3\Model\ListMultipartUploadsResponse.cs" />
+    <Compile Include="Amazon.S3\Model\ListPartsRequest.cs" />
+    <Compile Include="Amazon.S3\Model\ListPartsResponse.cs" />
     <Compile Include="Amazon.S3\Model\ListVersionsRequest.cs" />
     <Compile Include="Amazon.S3\Model\ListVersionsResponse.cs" />
+    <Compile Include="Amazon.S3\Model\MultiPartUpload.cs" />
     <Compile Include="Amazon.S3\Model\NotificationConfigurationList.cs" />
+    <Compile Include="Amazon.S3\Model\PartDetail.cs" />
+    <Compile Include="Amazon.S3\Model\PartEtag.cs" />
+    <Compile Include="Amazon.S3\Model\PartStreamWrapper.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs" />
     <Compile Include="Amazon.S3\Model\S3AccessControlList.cs" />
@@ -1336,6 +1352,7 @@
     <Compile Include="Amazon.S3\Model\SetNotificationConfigurationRequest.cs" />
     <Compile Include="Amazon.S3\Model\SetNotificationConfigurationResponse.cs" />
     <Compile Include="Amazon.S3\Model\TopicConfiguration.cs" />
+    <Compile Include="Amazon.S3\Model\TransferProgressArgs.cs" />
     <Compile Include="Amazon.S3\Model\Tuple.cs" />
     <Compile Include="Amazon.S3\Model\S3Enumerations.cs" />
     <Compile Include="Amazon.S3\Model\CopyObjectRequest.cs" />
@@ -1365,6 +1382,18 @@
     <Compile Include="Amazon.S3\Model\PutObjectResponse.cs" />
     <Compile Include="Amazon.S3\Model\S3Object.cs" />
     <Compile Include="Amazon.S3\Model\S3Response.cs" />
+    <Compile Include="Amazon.S3\Model\UploadPartRequest.cs" />
+    <Compile Include="Amazon.S3\Model\UploadPartResponse.cs" />
+    <Compile Include="Amazon.S3\Transfer\BaseDownloadRequest.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\MultipartUploadCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\SimpleUploadCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\UploadDirectoryCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtility.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityConfig.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityDownloadRequest.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityOpenStreamRequest.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityUploadDirectoryRequest.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityUploadRequest.cs" />
     <Compile Include="Amazon.S3\Util\S3Constants.cs" />
     <Compile Include="Amazon.S3\Util\AmazonS3Util.cs" />
     <Compile Include="Amazon.S3\Model\S3Request.cs" />
@@ -1673,6 +1702,10 @@
     <EmbeddedResource Include="Amazon.EC2\Model\DeleteTagsResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\DescribeTagsResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\ImportKeyPairResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\CompleteMultipartUploadResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\InitiateMultipartUploadResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\ListMultipartUploadsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\ListPartsResponse.xslt" />
     <EmbeddedResource Include="Amazon.AutoScaling\Model\ResponseTransformer.xslt" />
     <EmbeddedResource Include="Amazon.CloudWatch\Model\ResponseTransformer.xslt" />
     <Content Include="ThirdParty\Newtonsoft.Json.Net20.dll" />

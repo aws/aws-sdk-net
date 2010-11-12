@@ -221,6 +221,14 @@ namespace Amazon.Runtime
                         processWebException<X, Y>(requestName, we, webRequest, unmarshaller, request, retries);
                     }
                 }
+                catch (IOException e)
+                {
+                    this.logger.Error(string.Format("IOException making request {0} to {1}.", requestName, request.Endpoint.ToString()), e);
+                    if (retries > this.config.MaxErrorRetry)
+                        throw;
+                    else
+                        this.logger.Error(string.Format("IOException making request {0} to {1}. Attempting retry {2}.", requestName, request.Endpoint.ToString(), retries), e);
+                }
                 catch (Exception e)
                 {
                     this.logger.Error(string.Format("Error configuring web request {0} to {1}.", requestName, request.Endpoint.ToString()), e);

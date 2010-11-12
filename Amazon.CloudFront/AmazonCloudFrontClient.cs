@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-01
+ *  API Version: 2010-11-01
  *  Author(s): Manoj Mehta, Norm Johanson
  *
  */
@@ -402,7 +402,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// The CreateDistribution operation creates a new CloudFront Distribution.
         /// </summary>
-        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-08-01/APIReference/CreateDistribution.html">
+        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-11-01/APIReference/CreateDistribution.html">
         /// POST Distribution API Reference</seealso>
         /// <param name="request">
         /// The CreateDistributionRequest that defines the parameters of the operation.
@@ -425,9 +425,25 @@ namespace Amazon.CloudFront
                 throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The request's DistributionConfig is null!");
             }
 
-            if (!config.IsSetOrigin())
+            if (!config.IsSetS3Origin() && !config.IsSetCustomOrigin())
             {
-                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The Origin Server Bucket to create the distribution with is null or empty!");
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "Either the S3Origin or CustomOrigin property must be set!");
+            }
+            if (config.IsSetS3Origin() && config.IsSetCustomOrigin())
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "Both the S3Origin and CustomOrigin property are set, only one can be set!");
+            }
+            if (config.IsSetS3Origin() && !config.S3Origin.IsSetDNSName())
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The DNSName property on the S3Origin object is null or empty which must be set!");
+            }
+            if (config.IsSetCustomOrigin() && !config.CustomOrigin.IsSetDNSName())
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The DNSName property on the CustomOrigin object is null or empty which must be set!");
+            }
+            if (config.IsSetCustomOrigin() && !config.CustomOrigin.IsSetProtocolPolicy())
+            {
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The ProtocolPolicy property on the CustomOrigin object is null which must be set!");
             }
 
             if (!config.IsSetCallerReference())
@@ -786,7 +802,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// The CreateStreamingDistribution operation creates a new CloudFront StreamingDistribution.
         /// </summary>
-        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-08-01/APIReference/CreateStreamingDistribution.html">
+        /// <seealso href="http://docs.amazonwebservices.com/AmazonCloudFront/2010-11-01/APIReference/CreateStreamingDistribution.html">
         /// POST Streaming Distribution API Reference</seealso>
         /// <param name="request">
         /// The CreateStreamingDistributionRequest that defines the parameters of the operation.
@@ -809,7 +825,7 @@ namespace Amazon.CloudFront
                 throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The request's StreamingDistributionConfig is null!");
             }
 
-            if (!config.IsSetOrigin())
+            if (!config.IsSetS3Origin() || !config.S3Origin.IsSetDNSName())
             {
                 throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The Origin Server Bucket to create the distribution with is null or empty!");
             }
@@ -1342,7 +1358,7 @@ namespace Amazon.CloudFront
                 canonicalResource.Append("origin-access-identity/cloudfront");
             }
             else if(action.Equals("PostInvalidation"))
-            {
+            {                
                 canonicalResource.AppendFormat("distribution/{0}/invalidation", parameters[CloudFrontQueryParameter.DistributionId]);
             }
             else if (action.Equals("GetInvalidationList"))

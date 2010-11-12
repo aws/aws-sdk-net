@@ -76,6 +76,7 @@ namespace Amazon.EC2.Model
         public const string C1Medium = "c1.medium";
         public const string C1Xlarge = "c1.xlarge";
         public const string Cc14xlarge = "cc1.4xlarge";
+        public const string T1micro = "t1.micro";
 
         private InstanceType()
         { 

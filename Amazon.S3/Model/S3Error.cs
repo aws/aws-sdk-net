@@ -31,69 +31,66 @@ namespace Amazon.S3.Model
     /// </summary>
     public class S3Error
     {
-        #region Private Members
-
         private string code;
         private string message;
         private string hostId;
         private string requestId;
-
-        #endregion
-
-        #region Code
+        private string uploadId;
+        private string etag;
 
         /// <summary>
         /// Gets and sets the Code property.
         /// </summary>
-        [XmlElementAttribute(ElementName = "Code")]
         public string Code
         {
             get { return this.code; }
             set { this.code = value; }
         }
 
-        #endregion
-
-        #region Message
-
         /// <summary>
         /// Gets and sets the Message property.
         /// </summary>
-        [XmlElementAttribute(ElementName = "Message")]
         public string Message
         {
             get { return this.message; }
             set { this.message = value; }
         }
 
-        #endregion
-
-        #region HostId
-
         /// <summary>
         /// Gets and sets the HostId property.
         /// </summary>
-        [XmlElementAttribute(ElementName = "HostId")]
         public string HostId
         {
             get { return this.hostId; }
             set { this.hostId = value; }
         }
 
-        #endregion
-
-        #region RequestId
-
         /// <summary>
         /// Gets and sets the RequestId property.
         /// </summary>
-        [XmlElementAttribute(ElementName = "RequestId")]
         public string RequestId
         {
             get { return this.requestId; }
             set { this.requestId = value; }
         }
 
-        #endregion
+        /// <summary>
+        /// Gets and sets the UploadId property.
+        /// </summary>
+        public string UploadId
+        {
+            get { return this.uploadId; }
+            set { this.uploadId = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the ETag property.
+        /// </summary>
+        public string ETag
+        {
+            get { return this.etag; }
+            set { this.etag = value; }
+        }
+
     }
 }

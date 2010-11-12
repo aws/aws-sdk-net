@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-01
+ *  API Version: 2010-11-01
  *
  */
 
@@ -29,7 +29,7 @@ namespace Amazon.CloudFront.Model
     /// The ListStreamingDistributionsResponse contains the ListStreamingDistributionsResult and
     /// any headers or metadata returned by CloudFront.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-08-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-11-01/", IsNullable = false)]
     public class ListStreamingDistributionsResponse : CloudFrontResponse
     {
         #region Private Members

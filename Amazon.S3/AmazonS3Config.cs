@@ -41,6 +41,7 @@ namespace Amazon.S3
         private int maxErrorRetry = 3;
         private Protocol protocol = Protocol.HTTPS;
         private bool fUseSecureString = true;
+        private int bufferSize = S3Constants.DefaultBufferSize;
 
         #endregion
 
@@ -338,6 +339,17 @@ namespace Amazon.S3
         {
             fUseSecureString = fSecure;
             return this;
+        }
+
+        /// <summary>
+        /// Gets and Sets the BufferSize property.
+        /// The BufferSize controls the buffer used to read in from input streams and write 
+        /// out to the request.
+        /// </summary>
+        public int BufferSize
+        {
+            get { return this.bufferSize; }
+            set { this.bufferSize = value; }
         }
     }
 }

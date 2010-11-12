@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-01
+ *  API Version: 2010-11-01
  *
  */
 
@@ -33,7 +33,7 @@ namespace Amazon.CloudFront.Model
     /// The errors are parsed from the Response XML provided by the HTTPWebResponse
     /// embedded in the WebException thrown during Response retrieval.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-08-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-11-01/", IsNullable = false)]
     public class ErrorResponse
     {
         private List<CloudFrontError> errorField;

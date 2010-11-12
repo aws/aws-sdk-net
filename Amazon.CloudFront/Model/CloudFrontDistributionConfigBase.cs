@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-01
+ *  API Version: 2010-11-01
  *
  */
 
@@ -54,15 +54,15 @@ namespace Amazon.CloudFront.Model
     {
         #region Private Members
 
-        private string origin;
-        private string callerReference = System.DateTime.UtcNow.ToString();
-        private List<string> cnames;
-        private string comment;
-        private bool enabled;
-        private string eTag;
-        private CloudFrontOriginAccessIdentity identity;
-        private UrlTrustedSigners trustedSigners;
-        private Tuple<string, string> logging;
+        S3Origin _s3Origin;
+        string callerReference = System.DateTime.UtcNow.ToString();
+        List<string> cnames;
+        string comment;
+        bool enabled;
+        string eTag;
+        UrlTrustedSigners trustedSigners;
+        Tuple<string, string> logging;
+        
 
         #endregion
 
@@ -77,11 +77,9 @@ namespace Amazon.CloudFront.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder(1024);
-            if (IsSetOrigin())
+            if (this._s3Origin != null)
             {
-                sb.Append("<Origin>");
-                sb.Append((Origin.EndsWith(".s3.amazonaws.com")) ? Origin : String.Concat(Origin, ".s3.amazonaws.com"));
-                sb.Append("</Origin>");
+                sb.Append(this._s3Origin.ToString());
             }
 
             if (IsSetCallerReference())
@@ -127,17 +125,31 @@ namespace Amazon.CloudFront.Model
                 sb.Append("</Logging>");
             }
 
-            if (IsSetOriginAccessIdentity())
-            {
-                sb.Append(String.Concat("<OriginAccessIdentity>", OriginAccessIdentity, "</OriginAccessIdentity>"));
-            }
-
             if (IsSetTrustedSigners())
             {
                 sb.Append(String.Concat("<TrustedSigners>", TrustedSigners, "</TrustedSigners>"));
             }
 
             return sb.ToString();
+        }
+
+        #endregion
+
+        #region S3Origin
+
+        /// <summary>
+        /// Gets and sets the S3Origin property.
+        /// The S3Origin contains the Amazon S3 bucket that will be used for the Distribution.
+        /// </summary>
+        public virtual S3Origin S3Origin
+        {
+            get { return this._s3Origin; }
+            set { this._s3Origin = value; }
+        }
+
+        internal virtual bool IsSetS3Origin()
+        {
+            return this.S3Origin != null;
         }
 
         #endregion
@@ -149,32 +161,36 @@ namespace Amazon.CloudFront.Model
         /// The Amazon S3 bucket to associate with the distribution.
         /// For example: mybucket.s3.amazonaws.com.
         /// </summary>
-        [XmlElementAttribute(ElementName = "Origin")]
+        [Obsolete("This property has been obsoleted in favor of the S3Origin property.")]
         public virtual string Origin
         {
-            get { return this.origin; }
+            get 
+            {
+                if (this.S3Origin == null)
+                {
+                    return null;
+                }
+
+
+                return this.S3Origin.DNSName; 
+            }
             set
             {
-                if (AmazonS3Util.ValidateV2Bucket(value))
+                // Don' create the S3Origin object if the value is just being set to null.
+                // The S3Origin is nulled out because the bucket is a required field.
+                if (value == null)
                 {
-                    this.origin = value;
+                    this.S3Origin = null;
+                    return;
                 }
-                else
-                {
-                    throw new AmazonCloudFrontException(
-                        "Only Amazon S3 V2 style buckets are acceptable as Origin values"
-                        );
-                }
-            }
-        }
 
-        /// <summary>
-        /// Checks if Origin property is set.
-        /// </summary>
-        /// <returns>true if Origin property is set.</returns>
-        internal virtual bool IsSetOrigin()
-        {
-            return !String.IsNullOrEmpty(this.origin);
+                if (this.S3Origin == null)
+                {
+                    this.S3Origin = new S3Origin();
+                }
+
+                this.S3Origin.DNSName = value;
+            }
         }
 
         #endregion
@@ -325,20 +341,40 @@ namespace Amazon.CloudFront.Model
         /// If you want the distribution to serve private content, include this element; 
         /// if you want the distribution to serve public content, remove this element.        
         /// </summary>
-        [XmlElementAttribute(ElementName = "OriginAccessIdentity")]
+        [Obsolete("This property has been obsoleted in favor of the S3Origin property.")]
         public CloudFrontOriginAccessIdentity OriginAccessIdentity
         {
-            get { return this.identity; }
-            set { this.identity = value; }
-        }
+            get 
+            {
+                if (this.S3Origin == null)
+                {
+                    return null;
+                }
 
-        /// <summary>
-        /// Checks if OriginAccessIdentity property is set.
-        /// </summary>
-        /// <returns>true if OriginAccessIdentity property is set.</returns>
-        internal bool IsSetOriginAccessIdentity()
-        {
-            return this.identity != null;
+
+                return this.S3Origin.OriginAccessIdentity;
+            }
+            set 
+            {
+                // Don' create the S3Origin object if the value is just being set to null.
+                // The S3Origin is not nulled out because OriginAccessIdentity is not a required field.
+                if (value == null)
+                {
+                    if (this.S3Origin != null)
+                    {
+                        this.S3Origin.OriginAccessIdentity = null;
+                    }
+
+                    return;
+                }
+
+                if (this.S3Origin == null)
+                {
+                    this.S3Origin = new S3Origin();
+                }
+
+                this.S3Origin.OriginAccessIdentity = value;
+            }
         }
 
         #endregion

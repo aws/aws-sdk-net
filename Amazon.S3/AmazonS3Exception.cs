@@ -25,6 +25,8 @@ using System.Net;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
+using Amazon.S3.Model;
+
 namespace Amazon.S3
 {
     /// <summary>
@@ -183,6 +185,59 @@ namespace Amazon.S3
             this.xml = xml;
             this.requestAddr = requestAddr;
             this.responseHeaders = responseHeaders;
+        }
+
+        /// <summary>
+        /// Initializes an AmazonS3Exception with error information provided in an
+        /// AmazonS3 response and the inner exception that is the cause of the exception
+        /// </summary>
+        /// <param name="message">Overview of error</param>
+        /// <param name="statusCode">HTTP status code for error response</param>
+        /// <param name="requestAddr">The S3 request url</param>
+        /// <param name="responseHeaders">The response headers containing S3 specific information
+        /// <param name="innerException">The nested exception that caused the AmazonS3Exception</param>
+        /// </param>
+        public AmazonS3Exception(
+            string message,
+            HttpStatusCode statusCode,
+            string requestAddr,
+            WebHeaderCollection responseHeaders,
+            Exception innerException)
+            : this(message, innerException)
+        {
+            this.statusCode = statusCode;
+            this.requestAddr = requestAddr;
+            this.responseHeaders = responseHeaders;
+        }
+
+        /// <summary>
+        /// Initializes an AmazonS3Exception with error information provided in an
+        /// AmazonS3 response and the inner exception that is the cause of the exception
+        /// </summary>
+        /// <param name="statusCode">HTTP status code for error response</param>
+        /// <param name="xml">Compete xml found in response</param>
+        /// <param name="requestAddr">The S3 request url</param>
+        /// <param name="responseHeaders">The response headers containing S3 specific information
+        /// <param name="error">The nested exception that caused the AmazonS3Exception</param>
+        /// </param>
+        public AmazonS3Exception(
+            HttpStatusCode statusCode,
+            string xml,
+            string requestAddr,
+            WebHeaderCollection responseHeaders,
+            S3Error error)
+        {
+            this.xml = xml;
+            this.statusCode = statusCode;
+            this.requestAddr = requestAddr;
+            this.responseHeaders = responseHeaders;
+            if (error != null)
+            {
+                this.errorCode = error.Code;
+                this.hostId = error.HostId;
+                this.requestId = error.RequestId;
+                this.message = error.Message;
+            }
         }
 
         /// <summary>

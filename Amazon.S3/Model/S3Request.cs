@@ -122,5 +122,19 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        internal virtual bool SupportTimeout
+        {
+            get { return false; }
+        }
+
+        internal virtual bool Expect100Continue
+        {
+            get { return false; }
+        }
+
+        internal virtual void OnRaiseProgressEvent(long incrementTransferred, long transferred, long total)
+        {
+        }
     }
 }
