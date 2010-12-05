@@ -2,5 +2,6 @@
 obj
 bin
 *.csproj.user
-
-
+*.pidb
+*.userprefs
+*~HEAD
