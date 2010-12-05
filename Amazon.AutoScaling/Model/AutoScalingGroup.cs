@@ -1,388 +1,702 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.AutoScaling.Model
 {
-    ///<summary>
-    ///The AutoScalingGroup data type.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://autoscaling.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
-    public class AutoScalingGroup
+    /// <summary>
+    /// <para> The AutoScalingGroup data type. </para>
+    /// </summary>
+    public class AutoScalingGroup  
     {
-        private string autoScalingGroupNameField;
-        private string launchConfigurationNameField;
-        private Decimal? minSizeField;
-        private Decimal? maxSizeField;
-        private Decimal? desiredCapacityField;
-        private Decimal? cooldownField;
-        private List<string> availabilityZonesField;
-        private List<string> loadBalancerNamesField;
-        private List<Instance> instancesField;
-        private DateTime? createdTimeField;
+        
+        private string autoScalingGroupName;
+        private string autoScalingGroupARN;
+        private string launchConfigurationName;
+        private int? minSize;
+        private int? maxSize;
+        private int? desiredCapacity;
+        private int? defaultCooldown;
+        private List<string> availabilityZones = new List<string>();
+        private List<string> loadBalancerNames = new List<string>();
+        private string healthCheckType;
+        private int? healthCheckGracePeriod;
+        private List<Instance> instances = new List<Instance>();
+        private DateTime? createdTime;
+        private List<SuspendedProcess> suspendedProcesses = new List<SuspendedProcess>();
+        private string placementGroup;
+        private string vPCZoneIdentifier;
+        private List<EnabledMetric> enabledMetrics = new List<EnabledMetric>();
 
         /// <summary>
-        /// Gets and sets the AutoScalingGroupName property.
-        /// Name of the AutoScalingGroup.
+        /// Specifies the name of the group.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "AutoScalingGroupName")]
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupNameField; }
-            set { this.autoScalingGroupNameField = value; }
+            get { return this.autoScalingGroupName; }
+            set { this.autoScalingGroupName = value; }
         }
 
         /// <summary>
         /// Sets the AutoScalingGroupName property
         /// </summary>
-        /// <param name="autoScalingGroupName">Name of the AutoScalingGroup.</param>
+        /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
         public AutoScalingGroup WithAutoScalingGroupName(string autoScalingGroupName)
         {
-            this.autoScalingGroupNameField = autoScalingGroupName;
+            this.autoScalingGroupName = autoScalingGroupName;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if AutoScalingGroupName property is set
-        /// </summary>
-        /// <returns>true if AutoScalingGroupName property is set</returns>
-        public bool IsSetAutoScalingGroupName()
+        // Check to see if AutoScalingGroupName property is set
+        internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupNameField != null;
+            return this.autoScalingGroupName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the LaunchConfigurationName property.
-        /// Name of the associated LaunchConfiguration.
+        /// The Amazon Resource Name (ARN) of the Auto Scaling group.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1600</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "LaunchConfigurationName")]
+        public string AutoScalingGroupARN
+        {
+            get { return this.autoScalingGroupARN; }
+            set { this.autoScalingGroupARN = value; }
+        }
+
+        /// <summary>
+        /// Sets the AutoScalingGroupARN property
+        /// </summary>
+        /// <param name="autoScalingGroupARN">The value to set for the AutoScalingGroupARN property </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithAutoScalingGroupARN(string autoScalingGroupARN)
+        {
+            this.autoScalingGroupARN = autoScalingGroupARN;
+            return this;
+        }
+            
+
+        // Check to see if AutoScalingGroupARN property is set
+        internal bool IsSetAutoScalingGroupARN()
+        {
+            return this.autoScalingGroupARN != null;       
+        }
+
+        /// <summary>
+        /// Specifies the name of the associated <a>LaunchConfiguration</a>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string LaunchConfigurationName
         {
-            get { return this.launchConfigurationNameField; }
-            set { this.launchConfigurationNameField = value; }
+            get { return this.launchConfigurationName; }
+            set { this.launchConfigurationName = value; }
         }
 
         /// <summary>
         /// Sets the LaunchConfigurationName property
         /// </summary>
-        /// <param name="launchConfigurationName">Name of the associated LaunchConfiguration.</param>
+        /// <param name="launchConfigurationName">The value to set for the LaunchConfigurationName property </param>
         /// <returns>this instance</returns>
         public AutoScalingGroup WithLaunchConfigurationName(string launchConfigurationName)
         {
-            this.launchConfigurationNameField = launchConfigurationName;
+            this.launchConfigurationName = launchConfigurationName;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if LaunchConfigurationName property is set
-        /// </summary>
-        /// <returns>true if LaunchConfigurationName property is set</returns>
-        public bool IsSetLaunchConfigurationName()
+        // Check to see if LaunchConfigurationName property is set
+        internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationNameField != null;
+            return this.launchConfigurationName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the MinSize property.
-        /// Minimum size of the AutoScalingGroup.
+        /// Contains the minimum size of the AutoScalingGroup.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "MinSize")]
-        public Decimal MinSize
+        public int MinSize
         {
-            get { return this.minSizeField.GetValueOrDefault(); }
-            set { this.minSizeField = value; }
+            get { return this.minSize ?? default(int); }
+            set { this.minSize = value; }
         }
 
         /// <summary>
         /// Sets the MinSize property
         /// </summary>
-        /// <param name="minSize">Minimum size of the AutoScalingGroup.</param>
+        /// <param name="minSize">The value to set for the MinSize property </param>
         /// <returns>this instance</returns>
-        public AutoScalingGroup WithMinSize(Decimal minSize)
+        public AutoScalingGroup WithMinSize(int minSize)
         {
-            this.minSizeField = minSize;
+            this.minSize = minSize;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if MinSize property is set
-        /// </summary>
-        /// <returns>true if MinSize property is set</returns>
-        public bool IsSetMinSize()
+        // Check to see if MinSize property is set
+        internal bool IsSetMinSize()
         {
-            return this.minSizeField.HasValue;
+            return this.minSize.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the MaxSize property.
-        /// Maximum size of the AutoScalingGroup.
+        /// Contains the maximum size of the AutoScalingGroup.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "MaxSize")]
-        public Decimal MaxSize
+        public int MaxSize
         {
-            get { return this.maxSizeField.GetValueOrDefault(); }
-            set { this.maxSizeField = value; }
+            get { return this.maxSize ?? default(int); }
+            set { this.maxSize = value; }
         }
 
         /// <summary>
         /// Sets the MaxSize property
         /// </summary>
-        /// <param name="maxSize">Maximum size of the AutoScalingGroup.</param>
+        /// <param name="maxSize">The value to set for the MaxSize property </param>
         /// <returns>this instance</returns>
-        public AutoScalingGroup WithMaxSize(Decimal maxSize)
+        public AutoScalingGroup WithMaxSize(int maxSize)
         {
-            this.maxSizeField = maxSize;
+            this.maxSize = maxSize;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if MaxSize property is set
-        /// </summary>
-        /// <returns>true if MaxSize property is set</returns>
-        public bool IsSetMaxSize()
+        // Check to see if MaxSize property is set
+        internal bool IsSetMaxSize()
         {
-            return this.maxSizeField.HasValue;
+            return this.maxSize.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the DesiredCapacity property.
-        /// Desired capacity for the AutoScalingGroup.
+        /// Specifies the desired capacity for the AutoScalingGroup.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DesiredCapacity")]
-        public Decimal DesiredCapacity
+        public int DesiredCapacity
         {
-            get { return this.desiredCapacityField.GetValueOrDefault(); }
-            set { this.desiredCapacityField = value; }
+            get { return this.desiredCapacity ?? default(int); }
+            set { this.desiredCapacity = value; }
         }
 
         /// <summary>
         /// Sets the DesiredCapacity property
         /// </summary>
-        /// <param name="desiredCapacity">Desired capacity for the AutoScalingGroup.</param>
+        /// <param name="desiredCapacity">The value to set for the DesiredCapacity property </param>
         /// <returns>this instance</returns>
-        public AutoScalingGroup WithDesiredCapacity(Decimal desiredCapacity)
+        public AutoScalingGroup WithDesiredCapacity(int desiredCapacity)
         {
-            this.desiredCapacityField = desiredCapacity;
+            this.desiredCapacity = desiredCapacity;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if DesiredCapacity property is set
-        /// </summary>
-        /// <returns>true if DesiredCapacity property is set</returns>
-        public bool IsSetDesiredCapacity()
+        // Check to see if DesiredCapacity property is set
+        internal bool IsSetDesiredCapacity()
         {
-            return this.desiredCapacityField.HasValue;
+            return this.desiredCapacity.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the Cooldown property.
-        /// The number of seconds after a ScalingActivity completes before any further scaling activities can start.
-        /// Default is 0.
+        /// The number of seconds after a scaling activity completes before any
+        /// further scaling activities can start.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Cooldown")]
-        public Decimal Cooldown
+        public int DefaultCooldown
         {
-            get { return this.cooldownField.GetValueOrDefault(); }
-            set { this.cooldownField = value; }
+            get { return this.defaultCooldown ?? default(int); }
+            set { this.defaultCooldown = value; }
         }
 
         /// <summary>
-        /// Sets the Cooldown property
+        /// Sets the DefaultCooldown property
         /// </summary>
-        /// <param name="cooldown">The number of seconds after a ScalingActivity completes before any further scaling activities can start.
-        /// Default is 0.</param>
+        /// <param name="defaultCooldown">The value to set for the DefaultCooldown property </param>
         /// <returns>this instance</returns>
-        public AutoScalingGroup WithCooldown(Decimal cooldown)
+        public AutoScalingGroup WithDefaultCooldown(int defaultCooldown)
         {
-            this.cooldownField = cooldown;
+            this.defaultCooldown = defaultCooldown;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if Cooldown property is set
-        /// </summary>
-        /// <returns>true if Cooldown property is set</returns>
-        public bool IsSetCooldown()
+        // Check to see if DefaultCooldown property is set
+        internal bool IsSetDefaultCooldown()
         {
-            return this.cooldownField.HasValue;
+            return this.defaultCooldown.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZones property.
-        /// Availability Zones for the group. Restricted to one availability zone.
+        /// Contains a list of availability zones for the group.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - </description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "AvailabilityZones")]
         public List<string> AvailabilityZones
         {
-            get
-            {
-                if (this.availabilityZonesField == null)
-                {
-                    this.availabilityZonesField = new List<string>();
-                }
-                return this.availabilityZonesField;
-            }
-            set { this.availabilityZonesField = value; }
+            get { return this.availabilityZones; }
+            set { this.availabilityZones = value; }
         }
-
         /// <summary>
-        /// Sets the AvailabilityZones property
+        /// Adds elements to the AvailabilityZones collection
         /// </summary>
-        /// <param name="list">Availability Zones for the group. Restricted to one availability zone.</param>
+        /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
-        public AutoScalingGroup WithAvailabilityZones(params string[] list)
+        public AutoScalingGroup WithAvailabilityZones(params string[] availabilityZones)
         {
-            foreach (string item in list)
+            foreach (string element in availabilityZones)
             {
-                AvailabilityZones.Add(item);
+                this.availabilityZones.Add(element);
             }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the AvailabilityZones collection
+        /// </summary>
+        /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithAvailabilityZones(IEnumerable<string> availabilityZones)
+        {
+            foreach (string element in availabilityZones)
+            {
+                this.availabilityZones.Add(element);
+            }
+
             return this;
         }
 
-        /// <summary>
-        /// Checks if AvailabilityZones property is set
-        /// </summary>
-        /// <returns>true if AvailabilityZones property is set</returns>
-        public bool IsSetAvailabilityZones()
+        // Check to see if AvailabilityZones property is set
+        internal bool IsSetAvailabilityZones()
         {
-            return (AvailabilityZones.Count > 0);
+            return this.availabilityZones.Count > 0;       
         }
 
         /// <summary>
-        /// Gets and sets the LoadBalancerNames property.
-        /// List of load balancer names.
+        /// A list of load balancers associated with this Auto Scaling group.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "LoadBalancerNames")]
         public List<string> LoadBalancerNames
         {
-            get
-            {
-                if (this.loadBalancerNamesField == null)
-                {
-                    this.loadBalancerNamesField = new List<string>();
-                }
-                return this.loadBalancerNamesField;
-            }
-            set { this.loadBalancerNamesField = value; }
+            get { return this.loadBalancerNames; }
+            set { this.loadBalancerNames = value; }
         }
-
         /// <summary>
-        /// Sets the LoadBalancerNames property
+        /// Adds elements to the LoadBalancerNames collection
         /// </summary>
-        /// <param name="list">List of load balancer names.</param>
+        /// <param name="loadBalancerNames">The values to add to the LoadBalancerNames collection </param>
         /// <returns>this instance</returns>
-        public AutoScalingGroup WithLoadBalancerNames(params string[] list)
+        public AutoScalingGroup WithLoadBalancerNames(params string[] loadBalancerNames)
         {
-            foreach (string item in list)
+            foreach (string element in loadBalancerNames)
             {
-                LoadBalancerNames.Add(item);
+                this.loadBalancerNames.Add(element);
             }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the LoadBalancerNames collection
+        /// </summary>
+        /// <param name="loadBalancerNames">The values to add to the LoadBalancerNames collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithLoadBalancerNames(IEnumerable<string> loadBalancerNames)
+        {
+            foreach (string element in loadBalancerNames)
+            {
+                this.loadBalancerNames.Add(element);
+            }
+
             return this;
         }
 
-        /// <summary>
-        /// Checks if LoadBalancerNames property is set
-        /// </summary>
-        /// <returns>true if LoadBalancerNames property is set</returns>
-        public bool IsSetLoadBalancerNames()
+        // Check to see if LoadBalancerNames property is set
+        internal bool IsSetLoadBalancerNames()
         {
-            return (LoadBalancerNames.Count > 0);
+            return this.loadBalancerNames.Count > 0;       
         }
+
         /// <summary>
-        /// Gets and sets the Instances property.
-        /// Summary list of EC2 instances.
+        /// The service of interest for the health status check, either "EC2" for
+        /// Amazon EC2 or "ELB" for Elastic Load Balancing.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 32</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "Instances")]
+        public string HealthCheckType
+        {
+            get { return this.healthCheckType; }
+            set { this.healthCheckType = value; }
+        }
+
+        /// <summary>
+        /// Sets the HealthCheckType property
+        /// </summary>
+        /// <param name="healthCheckType">The value to set for the HealthCheckType property </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithHealthCheckType(string healthCheckType)
+        {
+            this.healthCheckType = healthCheckType;
+            return this;
+        }
+            
+
+        // Check to see if HealthCheckType property is set
+        internal bool IsSetHealthCheckType()
+        {
+            return this.healthCheckType != null;       
+        }
+
+        /// <summary>
+        /// The length of time that Auto Scaling waits before checking an
+        /// instance's health status. The grace period begins when an instance
+        /// comes into service.
+        ///  
+        /// </summary>
+        public int HealthCheckGracePeriod
+        {
+            get { return this.healthCheckGracePeriod ?? default(int); }
+            set { this.healthCheckGracePeriod = value; }
+        }
+
+        /// <summary>
+        /// Sets the HealthCheckGracePeriod property
+        /// </summary>
+        /// <param name="healthCheckGracePeriod">The value to set for the HealthCheckGracePeriod property </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithHealthCheckGracePeriod(int healthCheckGracePeriod)
+        {
+            this.healthCheckGracePeriod = healthCheckGracePeriod;
+            return this;
+        }
+            
+
+        // Check to see if HealthCheckGracePeriod property is set
+        internal bool IsSetHealthCheckGracePeriod()
+        {
+            return this.healthCheckGracePeriod.HasValue;       
+        }
+
+        /// <summary>
+        /// Provides a summary list of EC2 instances.
+        ///  
+        /// </summary>
         public List<Instance> Instances
         {
-            get
-            {
-                if (this.instancesField == null)
-                {
-                    this.instancesField = new List<Instance>();
-                }
-                return this.instancesField;
-            }
-            set { this.instancesField = value; }
+            get { return this.instances; }
+            set { this.instances = value; }
         }
-
         /// <summary>
-        /// Sets the Instances property
+        /// Adds elements to the Instances collection
         /// </summary>
-        /// <param name="list">Summary list of EC2 instances.</param>
+        /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
-        public AutoScalingGroup WithInstances(params Instance[] list)
+        public AutoScalingGroup WithInstances(params Instance[] instances)
         {
-            foreach (Instance item in list)
+            foreach (Instance element in instances)
             {
-                Instances.Add(item);
+                this.instances.Add(element);
             }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Instances collection
+        /// </summary>
+        /// <param name="instances">The values to add to the Instances collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithInstances(IEnumerable<Instance> instances)
+        {
+            foreach (Instance element in instances)
+            {
+                this.instances.Add(element);
+            }
+
             return this;
         }
 
-        /// <summary>
-        /// Checks if Instances property is set
-        /// </summary>
-        /// <returns>true if Instances property is set</returns>
-        public bool IsSetInstances()
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
         {
-            return (Instances.Count > 0);
+            return this.instances.Count > 0;       
         }
 
         /// <summary>
-        /// Gets and sets the CreatedTime property.
-        /// The date and time that this AutoScalingGroup was created.
+        /// Specifies the date and time the Auto Scaling group was created.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "CreatedTime")]
         public DateTime CreatedTime
         {
-            get { return this.createdTimeField.GetValueOrDefault(); }
-            set { this.createdTimeField = value; }
+            get { return this.createdTime ?? default(DateTime); }
+            set { this.createdTime = value; }
         }
 
         /// <summary>
         /// Sets the CreatedTime property
         /// </summary>
-        /// <param name="createdTime">The date and time that this AutoScalingGroup was created.</param>
+        /// <param name="createdTime">The value to set for the CreatedTime property </param>
         /// <returns>this instance</returns>
         public AutoScalingGroup WithCreatedTime(DateTime createdTime)
         {
-            this.createdTimeField = createdTime;
+            this.createdTime = createdTime;
             return this;
+        }
+            
+
+        // Check to see if CreatedTime property is set
+        internal bool IsSetCreatedTime()
+        {
+            return this.createdTime.HasValue;       
         }
 
         /// <summary>
-        /// Checks if CreatedTime property is set
+        /// Suspended processes associated with this Auto Scaling group.
+        ///  
         /// </summary>
-        /// <returns>true if CreatedTime property is set</returns>
-        public bool IsSetCreatedTime()
+        public List<SuspendedProcess> SuspendedProcesses
         {
-            return this.createdTimeField.HasValue;
+            get { return this.suspendedProcesses; }
+            set { this.suspendedProcesses = value; }
+        }
+        /// <summary>
+        /// Adds elements to the SuspendedProcesses collection
+        /// </summary>
+        /// <param name="suspendedProcesses">The values to add to the SuspendedProcesses collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithSuspendedProcesses(params SuspendedProcess[] suspendedProcesses)
+        {
+            foreach (SuspendedProcess element in suspendedProcesses)
+            {
+                this.suspendedProcesses.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the SuspendedProcesses collection
+        /// </summary>
+        /// <param name="suspendedProcesses">The values to add to the SuspendedProcesses collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithSuspendedProcesses(IEnumerable<SuspendedProcess> suspendedProcesses)
+        {
+            foreach (SuspendedProcess element in suspendedProcesses)
+            {
+                this.suspendedProcesses.Add(element);
+            }
+
+            return this;
         }
 
+        // Check to see if SuspendedProcesses property is set
+        internal bool IsSetSuspendedProcesses()
+        {
+            return this.suspendedProcesses.Count > 0;       
+        }
+
+        /// <summary>
+        /// The name of the cluster placement group, if applicable. For more
+        /// information, go to <a href="http://docs.amazonwebservices.com/AWSEC2/latest/DeveloperGuide/concepts_cluster_compute.html">
+        /// Cluster Compute Instance Concepts</a> in the Amazon EC2 Developer
+        /// Guide.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string PlacementGroup
+        {
+            get { return this.placementGroup; }
+            set { this.placementGroup = value; }
+        }
+
+        /// <summary>
+        /// Sets the PlacementGroup property
+        /// </summary>
+        /// <param name="placementGroup">The value to set for the PlacementGroup property </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithPlacementGroup(string placementGroup)
+        {
+            this.placementGroup = placementGroup;
+            return this;
+        }
+            
+
+        // Check to see if PlacementGroup property is set
+        internal bool IsSetPlacementGroup()
+        {
+            return this.placementGroup != null;       
+        }
+
+        /// <summary>
+        /// The identifier for the VPC connection, if applicable.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string VPCZoneIdentifier
+        {
+            get { return this.vPCZoneIdentifier; }
+            set { this.vPCZoneIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the VPCZoneIdentifier property
+        /// </summary>
+        /// <param name="vPCZoneIdentifier">The value to set for the VPCZoneIdentifier property </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithVPCZoneIdentifier(string vPCZoneIdentifier)
+        {
+            this.vPCZoneIdentifier = vPCZoneIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if VPCZoneIdentifier property is set
+        internal bool IsSetVPCZoneIdentifier()
+        {
+            return this.vPCZoneIdentifier != null;       
+        }
+
+        /// <summary>
+        /// A list of metrics enabled for this Auto Scaling group.
+        ///  
+        /// </summary>
+        public List<EnabledMetric> EnabledMetrics
+        {
+            get { return this.enabledMetrics; }
+            set { this.enabledMetrics = value; }
+        }
+        /// <summary>
+        /// Adds elements to the EnabledMetrics collection
+        /// </summary>
+        /// <param name="enabledMetrics">The values to add to the EnabledMetrics collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithEnabledMetrics(params EnabledMetric[] enabledMetrics)
+        {
+            foreach (EnabledMetric element in enabledMetrics)
+            {
+                this.enabledMetrics.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the EnabledMetrics collection
+        /// </summary>
+        /// <param name="enabledMetrics">The values to add to the EnabledMetrics collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithEnabledMetrics(IEnumerable<EnabledMetric> enabledMetrics)
+        {
+            foreach (EnabledMetric element in enabledMetrics)
+            {
+                this.enabledMetrics.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if EnabledMetrics property is set
+        internal bool IsSetEnabledMetrics()
+        {
+            return this.enabledMetrics.Count > 0;       
+        }
     }
 }

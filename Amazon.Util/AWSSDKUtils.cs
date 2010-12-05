@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -21,9 +21,14 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
+using System.Xml;
+using System.Xml.Xsl;
+
+using Microsoft.Win32;
 
 namespace Amazon.Util
 {
@@ -34,6 +39,8 @@ namespace Amazon.Util
     public static class AWSSDKUtils
     {
         #region Internal Constants
+
+        internal const string SDKVersionNumber = "1.2.0.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -46,11 +53,6 @@ namespace Amazon.Util
         #endregion
 
         #region Public Constants
-
-        /// <summary>
-        /// The AWS SDK User Agent
-        /// </summary>
-        public const string SDKUserAgent = "AWS SDK for .NET/1.1.1.0";
 
         /// <summary>
         /// The Set of accepted and valid Url characters. 
@@ -82,6 +84,49 @@ namespace Amazon.Util
         /// The RFC822Date Format string. Used when parsing date objects
         /// </summary>
         public const string RFC822DateFormat = "ddd, dd MMM yyyy HH:mm:ss \\G\\M\\T";
+
+        #endregion
+
+        #region UserAgent
+
+        /// <summary>
+        /// The AWS SDK User Agent
+        /// </summary>
+        public static readonly string SDKUserAgent;
+
+        static AWSSDKUtils()
+        {
+            SDKUserAgent = string.Format("aws-sdk-dotnet/{0} .NET Runtime/{1} .NET Framework/{2} OS/{3}",
+                SDKVersionNumber,
+                determineRuntime(),
+                determineFramework(),
+                Environment.OSVersion.Version.ToString());
+        }
+
+        static string determineRuntime()
+        {
+            return string.Format("{0}.{1}", Environment.Version.Major, Environment.Version.MajorRevision);
+        }
+
+        static string determineFramework()
+        {
+            try
+            {
+                if (Environment.Version.Major >= 4 && Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Net Framework Setup\\NDP\\v4") != null)
+                    return "4.0";
+                if (Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Net Framework Setup\\NDP\\v3.5") != null)
+                    return "3.5";
+                if (Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Net Framework Setup\\NDP\\v3.0") != null)
+                    return "3.0";
+                if (Registry.LocalMachine.OpenSubKey(@"Software\\Microsoft\\Net Framework Setup\\NDP\\v2.0.50727") != null)
+                    return "2.0";
+            }
+            catch
+            {
+            }
+
+            return "Unknown";
+        }    
 
         #endregion
 
@@ -142,6 +187,38 @@ namespace Amazon.Util
             }
             string result = data.ToString();
             return result.Remove(result.Length - 1);
+        }
+
+
+        static Dictionary<string, XslCompiledTransform> typeToXslCompiledTransform = new Dictionary<string, XslCompiledTransform>();
+
+        internal static XslCompiledTransform GetXslCompiledTransform(string name)
+        {
+            XslCompiledTransform Result;
+
+            if (false == typeToXslCompiledTransform.TryGetValue(name, out Result))
+            {
+                lock (typeToXslCompiledTransform)
+                {
+                    // This is to cover the very small window where multiple threads might have come in at the
+                    // same time before the XSL had been loaded.  In that case the first thread would get the lock
+                    // and the second would be blocked.  Without this "if" check the second thread would recreate the 
+                    // transform the first thread created.
+                    if (false == typeToXslCompiledTransform.TryGetValue(name, out Result))
+                    {
+                        Result = new XslCompiledTransform();
+
+                        using (XmlTextReader xmlReader = new XmlTextReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(name)))
+                        {
+                            Result.Load(xmlReader);
+                        }
+
+                        typeToXslCompiledTransform.Add(name, Result);
+                    }
+                }
+            }
+
+            return Result;
         }
 
         #endregion

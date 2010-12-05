@@ -1,113 +1,47 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Security;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Reflection;
-using System.Xml;
-using System.Xml.Xsl;
-using System.Xml.Serialization;
-
-using Amazon.Util;
 
 using Amazon.AutoScaling.Model;
+using Amazon.AutoScaling.Model.Transform;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+
 
 namespace Amazon.AutoScaling
 {
     /// <summary>
-    /// AmazonAutoScalingClient is an implementation of AmazonAutoScaling;
-    /// the client allows you to manage your AmazonAutoScaling resources.<br />
-    /// If you want to use the AmazonAutoScalingClient from a Medium Trust
-    /// hosting environment, please create the client with an
-    /// AmazonAutoScalingConfig object whose UseSecureStringForAwsSecretKey
-    /// property is false.
+    /// Implemenation for accessing AmazonAutoScaling.
+    ///  
+    /// Auto Scaling <para> Auto Scaling is a web service designed to
+    /// automatically launch or terminate EC2 instances based on user-defined
+    /// policies, schedules, and health checks. Auto Scaling responds
+    /// automatically to changing conditions. All you need to do is specify
+    /// how it should respond to those changes. </para> <para> Auto Scaling
+    /// groups can work across multiple Availability Zones - distinct physical
+    /// locations for the hosted Amazon EC2 instances - so that if an
+    /// Availability Zone becomes unavailable, Auto Scaling will automatically
+    /// redistribute applications to a different Availability Zone. </para>
     /// </summary>
-    /// <remarks>
-    /// Auto Scaling allows you to automatically scale your Amazon EC2 capacity up or down
-    /// according to conditions you define. With Auto Scaling, you can ensure that the number
-    /// of Amazon EC2 instances you're using scales up seamlessly during demand spikes
-    /// to maintain performance, and scales down automatically during demand lulls to minimize costs.
-    /// Auto Scaling is particularly well suited for applications that experience hourly, daily,
-    /// or weekly variability in usage. Auto Scaling is enabled by Amazon CloudWatch and available
-    /// at no additional charge beyond Amazon CloudWatch fees.
-    /// </remarks>
-    /// <seealso cref="P:Amazon.AutoScaling.AmazonAutoScalingConfig.UseSecureStringForAwsSecretKey"/>
-    public class AmazonAutoScalingClient : AmazonAutoScaling
+    public class AmazonAutoScalingClient : AmazonWebServiceClient, AmazonAutoScaling
     {
-        private string awsAccessKeyId;
-        private SecureString awsSecretAccessKey;
-        private AmazonAutoScalingConfig config;
-        private bool disposed;
-        private string clearAwsSecretAccessKey;
-
-        #region Dispose Pattern Implementation
-
-        /// <summary>
-        /// Implements the Dispose pattern for the AmazonAutoScalingClient
-        /// </summary>
-        /// <param name="fDisposing">Whether this object is being disposed via a call to Dispose
-        /// or garbage collected.</param>
-        protected virtual void Dispose(bool fDisposing)
-        {
-            if (!this.disposed)
-            {
-                if (fDisposing)
-                {
-                    //Remove Unmanaged Resources
-                    // I.O.W. remove resources that have to be explicitly
-                    // "Dispose"d or Closed
-                    if (awsSecretAccessKey != null)
-                    {
-                        awsSecretAccessKey.Dispose();
-                        awsSecretAccessKey = null;
-                    }
-                }
-                this.disposed = true;
-            }
-        }
-
-        /// <summary>
-        /// Disposes of all managed and unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        /// The destructor for the client class.
-        /// </summary>
-        ~AmazonAutoScalingClient()
-        {
-            this.Dispose(false);
-        }
-
-        #endregion
+    
+    
+        AbstractAWSSigner signer = new QueryStringSigner();
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with AWS Access Key ID and AWS Secret Key
@@ -121,897 +55,580 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonAutoScaling Configuration object. If the config object's
+        /// AmazonS3 Configuration object. If the config object's
         /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
         /// is stored as a clear-text string. Please use this option only
         /// if the application environment doesn't allow the use of SecureStrings.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
-        /// <param name="config">The AmazonAutoScaling Configuration Object</param>
-        public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonAutoScalingConfig config)
+        /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
+        public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonAutoScalingConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
-            if (!String.IsNullOrEmpty(awsSecretAccessKey))
-            {
-                if (config.UseSecureStringForAwsSecretKey)
-                {
-                    this.awsSecretAccessKey = new SecureString();
-                    foreach (char ch in awsSecretAccessKey.ToCharArray())
-                    {
-                        this.awsSecretAccessKey.AppendChar(ch);
-                    }
-                    this.awsSecretAccessKey.MakeReadOnly();
-                }
-                else
-                {
-                    clearAwsSecretAccessKey = awsSecretAccessKey;
-                }
-            }
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.config = config;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
         }
+        
+   
 
-        /// <summary>
-        /// Constructs an AmazonAutoScalingClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonAutoScaling Configuration object
-        /// </summary>
-        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
-        /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
-        /// <param name="config">The AmazonAutoScaling Configuration Object</param>
-        public AmazonAutoScalingClient(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonAutoScalingConfig config)
-        {
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.awsSecretAccessKey = awsSecretAccessKey;
-            this.config = config;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
-        }
-
-        #region Public API
-
-        /// <summary>
-        /// Delete Launch Configuration
-        /// </summary>
-        /// <param name="request">Delete Launch Configuration  request</param>
-        /// <returns>Delete Launch Configuration  Response from the service</returns>
-        public DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request)
-        {
-            return Invoke<DeleteLaunchConfigurationResponse>(ConvertDeleteLaunchConfiguration(request));
-        }
-
-        /// <summary>
-        /// Describe Triggers
-        /// </summary>
-        /// <param name="request">Describe Triggers  request</param>
-        /// <returns>Describe Triggers  Response from the service</returns>
-        public DescribeTriggersResponse DescribeTriggers(DescribeTriggersRequest request)
-        {
-            return Invoke<DescribeTriggersResponse>(ConvertDescribeTriggers(request));
-        }
-
-        /// <summary>
-        /// Update Auto Scaling Group
-        /// </summary>
-        /// <param name="request">Update Auto Scaling Group  request</param>
-        /// <returns>Update Auto Scaling Group  Response from the service</returns>
-        public UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request)
-        {
-            return Invoke<UpdateAutoScalingGroupResponse>(ConvertUpdateAutoScalingGroup(request));
-        }
-
-        /// <summary>
-        /// Create Auto Scaling Group
-        /// </summary>
-        /// <param name="request">Create Auto Scaling Group  request</param>
-        /// <returns>Create Auto Scaling Group  Response from the service</returns>
-        public CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
-        {
-            return Invoke<CreateAutoScalingGroupResponse>(ConvertCreateAutoScalingGroup(request));
-        }
-
-        /// <summary>
-        /// Delete Trigger
-        /// </summary>
-        /// <param name="request">Delete Trigger  request</param>
-        /// <returns>Delete Trigger  Response from the service</returns>
-        public DeleteTriggerResponse DeleteTrigger(DeleteTriggerRequest request)
-        {
-            return Invoke<DeleteTriggerResponse>(ConvertDeleteTrigger(request));
-        }
-
-        /// <summary>
-        /// Terminate Instance In Auto Scaling Group
-        /// </summary>
-        /// <param name="request">Terminate Instance In Auto Scaling Group  request</param>
-        /// <returns>Terminate Instance In Auto Scaling Group  Response from the service</returns>
-        public TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request)
-        {
-            return Invoke<TerminateInstanceInAutoScalingGroupResponse>(ConvertTerminateInstanceInAutoScalingGroup(request));
-        }
-
-        /// <summary>
-        /// Create Or Update Scaling Trigger
-        /// </summary>
-        /// <param name="request">Create Or Update Scaling Trigger  request</param>
-        /// <returns>Create Or Update Scaling Trigger  Response from the service</returns>
-        public CreateOrUpdateScalingTriggerResponse CreateOrUpdateScalingTrigger(CreateOrUpdateScalingTriggerRequest request)
-        {
-            return Invoke<CreateOrUpdateScalingTriggerResponse>(ConvertCreateOrUpdateScalingTrigger(request));
-        }
-
-        /// <summary>
-        /// Describe Auto Scaling Groups
-        /// </summary>
-        /// <param name="request">Describe Auto Scaling Groups  request</param>
-        /// <returns>Describe Auto Scaling Groups  Response from the service</returns>
-        public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
-        {
-            return Invoke<DescribeAutoScalingGroupsResponse>(ConvertDescribeAutoScalingGroups(request));
-        }
-
-        /// <summary>
-        /// Create Launch Configuration
-        /// </summary>
-        /// <param name="request">Create Launch Configuration  request</param>
-        /// <returns>Create Launch Configuration  Response from the service</returns>
-        public CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
-        {
-            return Invoke<CreateLaunchConfigurationResponse>(ConvertCreateLaunchConfiguration(request));
-        }
-
-        /// <summary>
-        /// Describe Launch Configurations
-        /// </summary>
-        /// <param name="request">Describe Launch Configurations  request</param>
-        /// <returns>Describe Launch Configurations  Response from the service</returns>
-        public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
-        {
-            return Invoke<DescribeLaunchConfigurationsResponse>(ConvertDescribeLaunchConfigurations(request));
-        }
-
-        /// <summary>
-        /// Describe Scaling Activities
-        /// </summary>
-        /// <param name="request">Describe Scaling Activities  request</param>
-        /// <returns>Describe Scaling Activities  Response from the service</returns>
-        public DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
-        {
-            return Invoke<DescribeScalingActivitiesResponse>(ConvertDescribeScalingActivities(request));
-        }
-
-        /// <summary>
-        /// Set Desired Capacity
-        /// </summary>
-        /// <param name="request">Set Desired Capacity  request</param>
-        /// <returns>Set Desired Capacity  Response from the service</returns>
-        public SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request)
-        {
-            return Invoke<SetDesiredCapacityResponse>(ConvertSetDesiredCapacity(request));
-        }
-
-        /// <summary>
-        /// Delete Auto Scaling Group
-        /// </summary>
-        /// <param name="request">Delete Auto Scaling Group  request</param>
-        /// <returns>Delete Auto Scaling Group  Response from the service</returns>
-        public DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request)
-        {
-            return Invoke<DeleteAutoScalingGroupResponse>(ConvertDeleteAutoScalingGroup(request));
-        }
-
-        #endregion
-
-        #region Private API
-
-        /**
-         * Configure HttpClient with set of defaults as well as configuration
-         * from AmazonAutoScalingConfig instance
-         */
-        private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonAutoScalingConfig config)
-        {
-            HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
-            if (request != null)
-            {
-                if (config.IsSetProxyHost() && config.IsSetProxyPort())
-                {
-                    WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
-                    if (config.IsSetProxyUsername())
-                    {
-                        proxy.Credentials = new NetworkCredential(
-                            config.ProxyUsername,
-                            config.ProxyPassword ?? String.Empty
-                            );
-                    }
-                    request.Proxy = proxy;
-                }
-                request.UserAgent = config.UserAgent;
-                request.Method = "POST";
-                request.Timeout = 50000;
-                request.ContentType = AWSSDKUtils.UrlEncodedContent;
-                request.ContentLength = contentLength;
-            }
-
-            return request;
-        }
-
-        /**
-         * Invoke request and return response
-         */
-        private T Invoke<T>(IDictionary<string, string> parameters)
-        {
-            string actionName = parameters["Action"];
-            T response = default(T);
-            HttpStatusCode statusCode = default(HttpStatusCode);
-
-            /* Add required request parameters */
-            AddRequiredParameters(parameters);
-
-            string queryString = AWSSDKUtils.GetParametersAsString(parameters);
-
-            byte[] requestData = Encoding.UTF8.GetBytes(queryString);
-            bool shouldRetry = true;
-            int retries = 0;
-            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
-
-            do
-            {
-                string responseBody = null;
-                HttpWebRequest request = ConfigureWebRequest(requestData.Length, config);
-                /* Submit the request and read response body */
-                try
-                {
-                    using (Stream requestStream = request.GetRequestStream())
-                    {
-                        requestStream.Write(requestData, 0, requestData.Length);
-                    }
-                    using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
-                    {
-                        if (httpResponse == null)
-                        {
-                            throw new WebException(
-                                "The Web Response for a successful request is null!",
-                                WebExceptionStatus.ProtocolError
-                                );
-                        }
-
-                        statusCode = httpResponse.StatusCode;
-                        using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
-                        {
-                            responseBody = reader.ReadToEnd();
-                        }
-                    }
-
-                    /* Perform response transformation */
-                    if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
-                    {
-                        responseBody = Transform(responseBody, this.GetType());
-                    }
-                    /* Attempt to deserialize response into <Action> Response type */
-                    XmlSerializer serializer = new XmlSerializer(typeof(T));
-                    using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
-                    {
-                        response = (T)serializer.Deserialize(sr);
-                    }
-                    shouldRetry = false;
-                }
-                /* Web exception is thrown on unsucessful responses */
-                catch (WebException we)
-                {
-                    shouldRetry = false;
-                    using (HttpWebResponse httpErrorResponse = we.Response as HttpWebResponse)
-                    {
-                        if (httpErrorResponse == null)
-                        {
-                            // Abort the unsuccessful request
-                            request.Abort();
-                            throw we;
-                        }
-                        statusCode = httpErrorResponse.StatusCode;
-                        using (StreamReader reader = new StreamReader(httpErrorResponse.GetResponseStream(), Encoding.UTF8))
-                        {
-                            responseBody = reader.ReadToEnd();
-                        }
-
-                        // Abort the unsuccessful request
-                        request.Abort();
-                    }
-
-                    if (statusCode == HttpStatusCode.InternalServerError ||
-                        statusCode == HttpStatusCode.ServiceUnavailable)
-                    {
-                        shouldRetry = true;
-                        PauseOnRetry(++retries, maxRetries, statusCode);
-                    }
-                    else
-                    {
-                        /* Attempt to deserialize response into ErrorResponse type */
-                        try
-                        {
-                            using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
-                            {
-                                XmlSerializer serializer = new XmlSerializer(typeof(ErrorResponse));
-                                ErrorResponse errorResponse = (ErrorResponse)serializer.Deserialize(sr);
-                                Error error = errorResponse.Error[0];
-
-                                /* Throw formatted exception with information available from the error response */
-                                throw new AmazonAutoScalingException(
-                                    error.Message,
-                                    statusCode,
-                                    error.Code,
-                                    error.Type,
-                                    errorResponse.RequestId,
-                                    errorResponse.ToXML()
-                                    );
-                            }
-                        }
-                        /* Rethrow on deserializer error */
-                        catch (Exception e)
-                        {
-                            if (e is AmazonAutoScalingException)
-                            {
-                                throw;
-                            }
-                            else
-                            {
-                                throw ReportAnyErrors(responseBody, statusCode);
-                            }
-                        }
-                    }
-                }
-                /* Catch other exceptions, attempt to convert to formatted exception,
-                 * else rethrow wrapped exception */
-                catch (Exception)
-                {
-                    // Abort the unsuccessful request
-                    request.Abort();
-                    throw;
-                }
-            } while (shouldRetry);
-
+         /// <summary>
+         /// <para> Creates a scheduled scaling action for a Auto Scaling group. If
+         /// you leave a parameter unspecified, the corresponding value remains
+         /// unchanged in the affected Auto Scaling group. </para>
+         /// </summary>
+         /// 
+         /// <param name="putScheduledUpdateGroupActionRequest">Container for the
+         ///           necessary parameters to execute the PutScheduledUpdateGroupAction
+         ///           service method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="AlreadyExistsException"/>
+         /// <exception cref="LimitExceededException"/>
+        public PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest) 
+        {           
+            IRequest<PutScheduledUpdateGroupActionRequest> request = new PutScheduledUpdateGroupActionRequestMarshaller().Marshall(putScheduledUpdateGroupActionRequest);
+            PutScheduledUpdateGroupActionResponse response = Invoke<PutScheduledUpdateGroupActionRequest, PutScheduledUpdateGroupActionResponse> (request, this.signer, PutScheduledUpdateGroupActionResponseUnmarshaller.GetInstance());
             return response;
         }
+    
 
-        /**
-         * Look for additional error strings in the response and return formatted exception
-         */
-        private static AmazonAutoScalingException ReportAnyErrors(string responseBody, HttpStatusCode status)
-        {
-            AmazonAutoScalingException ex = null;
-
-            if (responseBody != null &&
-                responseBody.StartsWith("<"))
-            {
-                Match errorMatcherOne = Regex.Match(
-                    responseBody,
-                    "<RequestId>(.*)</RequestId>.*<Error><Code>(.*)</Code><Message>(.*)</Message></Error>.*(<Error>)?",
-                    RegexOptions.Multiline
-                    );
-                Match errorMatcherTwo = Regex.Match(
-                    responseBody,
-                    "<Error><Code>(.*)</Code><Message>(.*)</Message></Error>.*(<Error>)?.*<RequestID>(.*)</RequestID>",
-                    RegexOptions.Multiline
-                    );
-
-                if (errorMatcherOne.Success)
-                {
-                    string requestId = errorMatcherOne.Groups[1].Value;
-                    string code = errorMatcherOne.Groups[2].Value;
-                    string message = errorMatcherOne.Groups[3].Value;
-
-                    ex = new AmazonAutoScalingException(message, status, code, "Unknown", requestId, responseBody);
-                }
-                else if (errorMatcherTwo.Success)
-                {
-                    string code = errorMatcherTwo.Groups[1].Value;
-                    string message = errorMatcherTwo.Groups[2].Value;
-                    string requestId = errorMatcherTwo.Groups[4].Value;
-
-                    ex = new AmazonAutoScalingException(message, status, code, "Unknown", requestId, responseBody);
-                }
-                else
-                {
-                    ex = new AmazonAutoScalingException("Internal Error", status);
-                }
-            }
-            else
-            {
-                ex = new AmazonAutoScalingException("Internal Error", status);
-            }
-            return ex;
+         /// <summary>
+         /// <para> Adjusts the desired size of the AutoScalingGroup by initiating
+         /// scaling activities. When reducing the size of the group, it is not
+         /// possible to define which EC2 instances will be terminated. This
+         /// applies to any auto-scaling decisions that might result in the
+         /// termination of instances. </para>
+         /// </summary>
+         /// 
+         /// <param name="setDesiredCapacityRequest">Container for the necessary
+         ///           parameters to execute the SetDesiredCapacity service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="ScalingActivityInProgressException"/>
+        public SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest) 
+        {           
+            IRequest<SetDesiredCapacityRequest> request = new SetDesiredCapacityRequestMarshaller().Marshall(setDesiredCapacityRequest);
+            SetDesiredCapacityResponse response = Invoke<SetDesiredCapacityRequest, SetDesiredCapacityResponse> (request, this.signer, SetDesiredCapacityResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Exponential sleep on failed request
-         */
-        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status)
-        {
-            if (retries <= maxRetries)
-            {
-                int delay = (int)Math.Pow(4, retries) * 100;
-                System.Threading.Thread.Sleep(delay);
-            }
-            else
-            {
-                throw new AmazonAutoScalingException(
-                    "Maximum number of retry attempts reached : " + (retries - 1),
-                    status
-                    );
-            }
+         /// <summary>
+         /// <para>Deletes a policy created by PutScalingPolicy </para>
+         /// </summary>
+         /// 
+         /// <param name="deletePolicyRequest">Container for the necessary
+         ///           parameters to execute the DeletePolicy service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        public DeletePolicyResponse DeletePolicy(DeletePolicyRequest deletePolicyRequest) 
+        {           
+            IRequest<DeletePolicyRequest> request = new DeletePolicyRequestMarshaller().Marshall(deletePolicyRequest);
+            DeletePolicyResponse response = Invoke<DeletePolicyRequest, DeletePolicyResponse> (request, this.signer, DeletePolicyResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Add authentication related and version parameters
-         */
-        private void AddRequiredParameters(IDictionary<string, string> parameters)
-        {
-            if (String.IsNullOrEmpty(this.awsAccessKeyId))
-            {
-                throw new AmazonAutoScalingException("The AWS Access Key ID cannot be NULL or a Zero length string");
-            }
-
-            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
-            parameters["SignatureVersion"] = config.SignatureVersion;
-            parameters["SignatureMethod"] = config.SignatureMethod;
-            parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
-            parameters["Version"] = config.ServiceVersion;
-            if (!config.SignatureVersion.Equals("2"))
-            {
-                throw new AmazonAutoScalingException("Invalid Signature Version specified");
-            }
-            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
-
-            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
-            string auth;
-
-            if (config.UseSecureStringForAwsSecretKey)
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
-            }
-            else
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
-            }
-            parameters["Signature"] = auth;
+         /// <summary>
+         /// <para>Deletes a scheduled action previously created using the
+         /// PutScheduledUpdateGroupAction.</para>
+         /// </summary>
+         /// 
+         /// <param name="deleteScheduledActionRequest">Container for the necessary
+         ///           parameters to execute the DeleteScheduledAction service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        public DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest) 
+        {           
+            IRequest<DeleteScheduledActionRequest> request = new DeleteScheduledActionRequestMarshaller().Marshall(deleteScheduledActionRequest);
+            DeleteScheduledActionResponse response = Invoke<DeleteScheduledActionRequest, DeleteScheduledActionResponse> (request, this.signer, DeleteScheduledActionResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DeleteLaunchConfigurationRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DeleteLaunchConfiguration";
-            if (request.IsSetLaunchConfigurationName())
-            {
-                parameters["LaunchConfigurationName"] = request.LaunchConfigurationName;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Returns a full description of the launch configurations given
+         /// the specified names. </para> <para> If no names are specified, then
+         /// the full details of all launch configurations are returned. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeLaunchConfigurationsRequest">Container for the
+         ///           necessary parameters to execute the DescribeLaunchConfigurations
+         ///           service method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeLaunchConfigurations service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest) 
+        {           
+            IRequest<DescribeLaunchConfigurationsRequest> request = new DescribeLaunchConfigurationsRequestMarshaller().Marshall(describeLaunchConfigurationsRequest);
+            DescribeLaunchConfigurationsResponse response = Invoke<DescribeLaunchConfigurationsRequest, DescribeLaunchConfigurationsResponse> (request, this.signer, DescribeLaunchConfigurationsResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DescribeTriggersRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDescribeTriggers(DescribeTriggersRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DescribeTriggers";
-            if (request.IsSetAutoScalingGroupName())
-            {
-                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para>Returns scaling process types for use in the ResumeProcesses and
+         /// SuspendProcesses actions.</para>
+         /// </summary>
+         /// 
+         /// <param name="describeScalingProcessTypesRequest">Container for the
+         ///           necessary parameters to execute the DescribeScalingProcessTypes
+         ///           service method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeScalingProcessTypes service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+        public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest) 
+        {           
+            IRequest<DescribeScalingProcessTypesRequest> request = new DescribeScalingProcessTypesRequestMarshaller().Marshall(describeScalingProcessTypesRequest);
+            DescribeScalingProcessTypesResponse response = Invoke<DescribeScalingProcessTypesRequest, DescribeScalingProcessTypesResponse> (request, this.signer, DescribeScalingProcessTypesResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert UpdateAutoScalingGroupRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertUpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "UpdateAutoScalingGroup";
-            if (request.IsSetAutoScalingGroupName())
-            {
-                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
-            }
-            if (request.IsSetLaunchConfigurationName())
-            {
-                parameters["LaunchConfigurationName"] = request.LaunchConfigurationName;
-            }
-            if (request.IsSetMinSize())
-            {
-                parameters["MinSize"] = request.MinSize.ToString();
-            }
-            if (request.IsSetMaxSize())
-            {
-                parameters["MaxSize"] = request.MaxSize.ToString();
-            }
-            if (request.IsSetCooldown())
-            {
-                parameters["Cooldown"] = request.Cooldown.ToString();
-            }
-            List<string> updateAutoScalingGroupRequestAvailabilityZonesList = request.AvailabilityZones;
-            int updateAutoScalingGroupRequestAvailabilityZonesListIndex = 1;
-            foreach (string updateAutoScalingGroupRequestAvailabilityZones in updateAutoScalingGroupRequestAvailabilityZonesList)
-            {
-                parameters[String.Concat("AvailabilityZones", ".member.", updateAutoScalingGroupRequestAvailabilityZonesListIndex)] = updateAutoScalingGroupRequestAvailabilityZones;
-                updateAutoScalingGroupRequestAvailabilityZonesListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Returns a full description of each Auto Scaling group in the
+         /// given list. This includes all Amazon EC2 instances that are members of
+         /// the group. If a list of names is not provided, the service returns the
+         /// full details of all Auto Scaling groups. </para> <para> This action
+         /// supports pagination by returning a token if there are more pages to
+         /// retrieve. To get the next page, call this action again with the
+         /// returned token as the NextToken parameter. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeAutoScalingGroupsRequest">Container for the
+         ///           necessary parameters to execute the DescribeAutoScalingGroups service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeAutoScalingGroups service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) 
+        {           
+            IRequest<DescribeAutoScalingGroupsRequest> request = new DescribeAutoScalingGroupsRequestMarshaller().Marshall(describeAutoScalingGroupsRequest);
+            DescribeAutoScalingGroupsResponse response = Invoke<DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResponse> (request, this.signer, DescribeAutoScalingGroupsResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert CreateAutoScalingGroupRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertCreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "CreateAutoScalingGroup";
-            if (request.IsSetAutoScalingGroupName())
-            {
-                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
-            }
-            if (request.IsSetLaunchConfigurationName())
-            {
-                parameters["LaunchConfigurationName"] = request.LaunchConfigurationName;
-            }
-            if (request.IsSetMinSize())
-            {
-                parameters["MinSize"] = request.MinSize.ToString();
-            }
-            if (request.IsSetMaxSize())
-            {
-                parameters["MaxSize"] = request.MaxSize.ToString();
-            }
-            if (request.IsSetCooldown())
-            {
-                parameters["Cooldown"] = request.Cooldown.ToString();
-            }
-            List<string> createAutoScalingGroupRequestAvailabilityZonesList = request.AvailabilityZones;
-            int createAutoScalingGroupRequestAvailabilityZonesListIndex = 1;
-            foreach (string createAutoScalingGroupRequestAvailabilityZones in createAutoScalingGroupRequestAvailabilityZonesList)
-            {
-                parameters[String.Concat("AvailabilityZones", ".member.", createAutoScalingGroupRequestAvailabilityZonesListIndex)] = createAutoScalingGroupRequestAvailabilityZones;
-                createAutoScalingGroupRequestAvailabilityZonesListIndex++;
-            }
-            List<string> createAutoScalingGroupRequestLoadBalancerNamesList = request.LoadBalancerNames;
-            int createAutoScalingGroupRequestLoadBalancerNamesListIndex = 1;
-            foreach (string createAutoScalingGroupRequestLoadBalancerNames in createAutoScalingGroupRequestLoadBalancerNamesList)
-            {
-                parameters[String.Concat("LoadBalancerNames", ".member.", createAutoScalingGroupRequestLoadBalancerNamesListIndex)] = createAutoScalingGroupRequestLoadBalancerNames;
-                createAutoScalingGroupRequestLoadBalancerNamesListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Enables monitoring of group metrics for the Auto Scaling group
+         /// specified in AutoScalingGroupName. You can specify the list of enabled
+         /// metrics with the Metrics parameter. </para> <para> Auto scaling
+         /// metrics collection can be turned on only if the
+         /// <c>InstanceMonitoring.Enabled</c> flag, in the Auto Scaling group's
+         /// launch configuration, is set to <c>true</c> .
+         /// </para>
+         /// </summary>
+         /// 
+         /// <param name="enableMetricsCollectionRequest">Container for the
+         ///           necessary parameters to execute the EnableMetricsCollection service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+        public EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest enableMetricsCollectionRequest) 
+        {           
+            IRequest<EnableMetricsCollectionRequest> request = new EnableMetricsCollectionRequestMarshaller().Marshall(enableMetricsCollectionRequest);
+            EnableMetricsCollectionResponse response = Invoke<EnableMetricsCollectionRequest, EnableMetricsCollectionResponse> (request, this.signer, EnableMetricsCollectionResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DeleteTriggerRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDeleteTrigger(DeleteTriggerRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DeleteTrigger";
-            if (request.IsSetAutoScalingGroupName())
-            {
-                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
-            }
-            if (request.IsSetTriggerName())
-            {
-                parameters["TriggerName"] = request.TriggerName;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Terminates the specified instance. Optionally, the desired
+         /// group size can be adjusted. </para> <para><b>NOTE:</b> This call
+         /// simply registers a termination request. The termination of the
+         /// instance cannot happen immediately. </para>
+         /// </summary>
+         /// 
+         /// <param name="terminateInstanceInAutoScalingGroupRequest">Container for
+         ///           the necessary parameters to execute the
+         ///           TerminateInstanceInAutoScalingGroup service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the TerminateInstanceInAutoScalingGroup
+         ///         service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="ScalingActivityInProgressException"/>
+        public TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest) 
+        {           
+            IRequest<TerminateInstanceInAutoScalingGroupRequest> request = new TerminateInstanceInAutoScalingGroupRequestMarshaller().Marshall(terminateInstanceInAutoScalingGroupRequest);
+            TerminateInstanceInAutoScalingGroupResponse response = Invoke<TerminateInstanceInAutoScalingGroupRequest, TerminateInstanceInAutoScalingGroupResponse> (request, this.signer, TerminateInstanceInAutoScalingGroupResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert TerminateInstanceInAutoScalingGroupRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertTerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "TerminateInstanceInAutoScalingGroup";
-            if (request.IsSetInstanceId())
-            {
-                parameters["InstanceId"] = request.InstanceId;
-            }
-            if (request.IsSetShouldDecrementDesiredCapacity())
-            {
-                parameters["ShouldDecrementDesiredCapacity"] = request.ShouldDecrementDesiredCapacity.ToString().ToLower();
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Returns the scaling activities for the specified Auto Scaling
+         /// group. </para> <para> If the specified <i>ActivityIds</i> list is
+         /// empty, all the activities from the past six weeks are returned.
+         /// Activities are sorted by completion time. Activities still in progress
+         /// appear first on the list. </para> <para> This action supports
+         /// pagination. If the response includes a token, there are more records
+         /// available. To get the additional records, repeat the request with the
+         /// response token as the NextToken parameter. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeScalingActivitiesRequest">Container for the
+         ///           necessary parameters to execute the DescribeScalingActivities service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeScalingActivities service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) 
+        {           
+            IRequest<DescribeScalingActivitiesRequest> request = new DescribeScalingActivitiesRequestMarshaller().Marshall(describeScalingActivitiesRequest);
+            DescribeScalingActivitiesResponse response = Invoke<DescribeScalingActivitiesRequest, DescribeScalingActivitiesResponse> (request, this.signer, DescribeScalingActivitiesResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert CreateOrUpdateScalingTriggerRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertCreateOrUpdateScalingTrigger(CreateOrUpdateScalingTriggerRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "CreateOrUpdateScalingTrigger";
-            if (request.IsSetTriggerName())
-            {
-                parameters["TriggerName"] = request.TriggerName;
-            }
-            if (request.IsSetAutoScalingGroupName())
-            {
-                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
-            }
-            if (request.IsSetMeasureName())
-            {
-                parameters["MeasureName"] = request.MeasureName;
-            }
-            if (request.IsSetStatistic())
-            {
-                parameters["Statistic"] = request.Statistic;
-            }
-            List<Dimension> createOrUpdateScalingTriggerRequestDimensionsList = request.Dimensions;
-            int createOrUpdateScalingTriggerRequestDimensionsListIndex = 1;
-            foreach (Dimension createOrUpdateScalingTriggerRequestDimensions in createOrUpdateScalingTriggerRequestDimensionsList)
-            {
-                if (createOrUpdateScalingTriggerRequestDimensions.IsSetName())
-                {
-                    parameters[String.Concat("Dimensions", ".member.", createOrUpdateScalingTriggerRequestDimensionsListIndex, ".", "Name")] = createOrUpdateScalingTriggerRequestDimensions.Name;
-                }
-                if (createOrUpdateScalingTriggerRequestDimensions.IsSetValue())
-                {
-                    parameters[String.Concat("Dimensions", ".member.", createOrUpdateScalingTriggerRequestDimensionsListIndex, ".", "Value")] = createOrUpdateScalingTriggerRequestDimensions.Value;
-                }
-
-                createOrUpdateScalingTriggerRequestDimensionsListIndex++;
-            }
-            if (request.IsSetPeriod())
-            {
-                parameters["Period"] = request.Period.ToString();
-            }
-            if (request.IsSetUnit())
-            {
-                parameters["Unit"] = request.Unit;
-            }
-            if (request.IsSetCustomUnit())
-            {
-                parameters["CustomUnit"] = request.CustomUnit;
-            }
-            if (request.IsSetNamespace())
-            {
-                parameters["Namespace"] = request.Namespace;
-            }
-            if (request.IsSetLowerThreshold())
-            {
-                parameters["LowerThreshold"] = request.LowerThreshold.ToString();
-            }
-            if (request.IsSetLowerBreachScaleIncrement())
-            {
-                parameters["LowerBreachScaleIncrement"] = request.LowerBreachScaleIncrement;
-            }
-            if (request.IsSetUpperThreshold())
-            {
-                parameters["UpperThreshold"] = request.UpperThreshold.ToString();
-            }
-            if (request.IsSetUpperBreachScaleIncrement())
-            {
-                parameters["UpperBreachScaleIncrement"] = request.UpperBreachScaleIncrement;
-            }
-            if (request.IsSetBreachDuration())
-            {
-                parameters["BreachDuration"] = request.BreachDuration.ToString();
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para>Runs the policy you create for your Auto Scaling group in
+         /// PutScalingPolicy.</para>
+         /// </summary>
+         /// 
+         /// <param name="executePolicyRequest">Container for the necessary
+         ///           parameters to execute the ExecutePolicy service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="ScalingActivityInProgressException"/>
+        public ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest executePolicyRequest) 
+        {           
+            IRequest<ExecutePolicyRequest> request = new ExecutePolicyRequestMarshaller().Marshall(executePolicyRequest);
+            ExecutePolicyResponse response = Invoke<ExecutePolicyRequest, ExecutePolicyResponse> (request, this.signer, ExecutePolicyResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DescribeAutoScalingGroupsRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DescribeAutoScalingGroups";
-            List<string> describeAutoScalingGroupsRequestAutoScalingGroupNamesList = request.AutoScalingGroupNames;
-            int describeAutoScalingGroupsRequestAutoScalingGroupNamesListIndex = 1;
-            foreach (string describeAutoScalingGroupsRequestAutoScalingGroupNames in describeAutoScalingGroupsRequestAutoScalingGroupNamesList)
-            {
-                parameters[String.Concat("AutoScalingGroupNames", ".member.", describeAutoScalingGroupsRequestAutoScalingGroupNamesListIndex)] = describeAutoScalingGroupsRequestAutoScalingGroupNames;
-                describeAutoScalingGroupsRequestAutoScalingGroupNamesListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Returns a list of metrics and a corresponding list of
+         /// granularities for each metric. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeMetricCollectionTypesRequest">Container for the
+         ///           necessary parameters to execute the DescribeMetricCollectionTypes
+         ///           service method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeMetricCollectionTypes service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+        public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest) 
+        {           
+            IRequest<DescribeMetricCollectionTypesRequest> request = new DescribeMetricCollectionTypesRequestMarshaller().Marshall(describeMetricCollectionTypesRequest);
+            DescribeMetricCollectionTypesResponse response = Invoke<DescribeMetricCollectionTypesRequest, DescribeMetricCollectionTypesResponse> (request, this.signer, DescribeMetricCollectionTypesResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert CreateLaunchConfigurationRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertCreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "CreateLaunchConfiguration";
-            if (request.IsSetLaunchConfigurationName())
-            {
-                parameters["LaunchConfigurationName"] = request.LaunchConfigurationName;
-            }
-            if (request.IsSetImageId())
-            {
-                parameters["ImageId"] = request.ImageId;
-            }
-            if (request.IsSetKeyName())
-            {
-                parameters["KeyName"] = request.KeyName;
-            }
-            List<string> createLaunchConfigurationRequestSecurityGroupsList = request.SecurityGroups;
-            int createLaunchConfigurationRequestSecurityGroupsListIndex = 1;
-            foreach (string createLaunchConfigurationRequestSecurityGroups in createLaunchConfigurationRequestSecurityGroupsList)
-            {
-                parameters[String.Concat("SecurityGroups", ".member.", createLaunchConfigurationRequestSecurityGroupsListIndex)] = createLaunchConfigurationRequestSecurityGroups;
-                createLaunchConfigurationRequestSecurityGroupsListIndex++;
-            }
-            if (request.IsSetUserData())
-            {
-                parameters["UserData"] = request.UserData;
-            }
-            if (request.IsSetInstanceType())
-            {
-                parameters["InstanceType"] = request.InstanceType;
-            }
-            if (request.IsSetKernelId())
-            {
-                parameters["KernelId"] = request.KernelId;
-            }
-            if (request.IsSetRamdiskId())
-            {
-                parameters["RamdiskId"] = request.RamdiskId;
-            }
-            List<BlockDeviceMapping> createLaunchConfigurationRequestBlockDeviceMappingsList = request.BlockDeviceMappings;
-            int createLaunchConfigurationRequestBlockDeviceMappingsListIndex = 1;
-            foreach (BlockDeviceMapping createLaunchConfigurationRequestBlockDeviceMappings in createLaunchConfigurationRequestBlockDeviceMappingsList)
-            {
-                if (createLaunchConfigurationRequestBlockDeviceMappings.IsSetVirtualName())
-                {
-                    parameters[String.Concat("BlockDeviceMappings", ".member.", createLaunchConfigurationRequestBlockDeviceMappingsListIndex, ".", "VirtualName")] = createLaunchConfigurationRequestBlockDeviceMappings.VirtualName;
-                }
-                if (createLaunchConfigurationRequestBlockDeviceMappings.IsSetDeviceName())
-                {
-                    parameters[String.Concat("BlockDeviceMappings", ".member.", createLaunchConfigurationRequestBlockDeviceMappingsListIndex, ".", "DeviceName")] = createLaunchConfigurationRequestBlockDeviceMappings.DeviceName;
-                }
-
-                createLaunchConfigurationRequestBlockDeviceMappingsListIndex++;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Returns descriptions of what each policy does. This action
+         /// supports pagination. If the response includes a token, there are more
+         /// records available. To get the additional records, repeat the request
+         /// with the response token as the NextToken parameter. </para>
+         /// </summary>
+         /// 
+         /// <param name="describePoliciesRequest">Container for the necessary
+         ///           parameters to execute the DescribePolicies service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribePolicies service method, as
+         ///         returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest describePoliciesRequest) 
+        {           
+            IRequest<DescribePoliciesRequest> request = new DescribePoliciesRequestMarshaller().Marshall(describePoliciesRequest);
+            DescribePoliciesResponse response = Invoke<DescribePoliciesRequest, DescribePoliciesResponse> (request, this.signer, DescribePoliciesResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DescribeLaunchConfigurationsRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DescribeLaunchConfigurations";
-            List<string> describeLaunchConfigurationsRequestLaunchConfigurationNamesList = request.LaunchConfigurationNames;
-            int describeLaunchConfigurationsRequestLaunchConfigurationNamesListIndex = 1;
-            foreach (string describeLaunchConfigurationsRequestLaunchConfigurationNames in describeLaunchConfigurationsRequestLaunchConfigurationNamesList)
-            {
-                parameters[String.Concat("LaunchConfigurationNames", ".member.", describeLaunchConfigurationsRequestLaunchConfigurationNamesListIndex)] = describeLaunchConfigurationsRequestLaunchConfigurationNames;
-                describeLaunchConfigurationsRequestLaunchConfigurationNamesListIndex++;
-            }
-            if (request.IsSetNextToken())
-            {
-                parameters["NextToken"] = request.NextToken;
-            }
-            if (request.IsSetMaxRecords())
-            {
-                parameters["MaxRecords"] = request.MaxRecords.ToString();
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Returns policy adjustment types for use in the PutScalingPolicy
+         /// action. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeAdjustmentTypesRequest">Container for the
+         ///           necessary parameters to execute the DescribeAdjustmentTypes service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeAdjustmentTypes service method,
+         ///         as returned by AmazonAutoScaling.</returns>
+         /// 
+        public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest) 
+        {           
+            IRequest<DescribeAdjustmentTypesRequest> request = new DescribeAdjustmentTypesRequestMarshaller().Marshall(describeAdjustmentTypesRequest);
+            DescribeAdjustmentTypesResponse response = Invoke<DescribeAdjustmentTypesRequest, DescribeAdjustmentTypesResponse> (request, this.signer, DescribeAdjustmentTypesResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DescribeScalingActivitiesRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDescribeScalingActivities(DescribeScalingActivitiesRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DescribeScalingActivities";
-            List<string> describeScalingActivitiesRequestActivityIdsList = request.ActivityIds;
-            int describeScalingActivitiesRequestActivityIdsListIndex = 1;
-            foreach (string describeScalingActivitiesRequestActivityIds in describeScalingActivitiesRequestActivityIdsList)
-            {
-                parameters[String.Concat("ActivityIds", ".member.", describeScalingActivitiesRequestActivityIdsListIndex)] = describeScalingActivitiesRequestActivityIds;
-                describeScalingActivitiesRequestActivityIdsListIndex++;
-            }
-            if (request.IsSetAutoScalingGroupName())
-            {
-                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
-            }
-            if (request.IsSetMaxRecords())
-            {
-                parameters["MaxRecords"] = request.MaxRecords.ToString();
-            }
-            if (request.IsSetNextToken())
-            {
-                parameters["NextToken"] = request.NextToken;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Deletes the specified auto scaling group if the group has no
+         /// instances and no scaling activities in progress. </para>
+         /// <para><b>NOTE:</b> To remove all instances before calling
+         /// DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the
+         /// minimum and maximum size of the AutoScalingGroup to zero. </para>
+         /// </summary>
+         /// 
+         /// <param name="deleteAutoScalingGroupRequest">Container for the
+         ///           necessary parameters to execute the DeleteAutoScalingGroup service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="ResourceInUseException"/>
+         /// <exception cref="ScalingActivityInProgressException"/>
+        public DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) 
+        {           
+            IRequest<DeleteAutoScalingGroupRequest> request = new DeleteAutoScalingGroupRequestMarshaller().Marshall(deleteAutoScalingGroupRequest);
+            DeleteAutoScalingGroupResponse response = Invoke<DeleteAutoScalingGroupRequest, DeleteAutoScalingGroupResponse> (request, this.signer, DeleteAutoScalingGroupResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert SetDesiredCapacityRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertSetDesiredCapacity(SetDesiredCapacityRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "SetDesiredCapacity";
-            if (request.IsSetAutoScalingGroupName())
-            {
-                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
-            }
-            if (request.IsSetDesiredCapacity())
-            {
-                parameters["DesiredCapacity"] = request.DesiredCapacity.ToString();
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Creates a new Auto Scaling group with the specified name. Once
+         /// the creation request is completed, the AutoScalingGroup is ready to be
+         /// used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group
+         /// name must be unique within the scope of your AWS account, and under
+         /// the quota of Auto Scaling groups allowed for your account. </para>
+         /// </summary>
+         /// 
+         /// <param name="createAutoScalingGroupRequest">Container for the
+         ///           necessary parameters to execute the CreateAutoScalingGroup service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="AlreadyExistsException"/>
+         /// <exception cref="LimitExceededException"/>
+        public CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest createAutoScalingGroupRequest) 
+        {           
+            IRequest<CreateAutoScalingGroupRequest> request = new CreateAutoScalingGroupRequestMarshaller().Marshall(createAutoScalingGroupRequest);
+            CreateAutoScalingGroupResponse response = Invoke<CreateAutoScalingGroupRequest, CreateAutoScalingGroupResponse> (request, this.signer, CreateAutoScalingGroupResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert DeleteAutoScalingGroupRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DeleteAutoScalingGroup";
-            if (request.IsSetAutoScalingGroupName())
-            {
-                parameters["AutoScalingGroupName"] = request.AutoScalingGroupName;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Returns a description of each Auto Scaling instance in the
+         /// InstanceIds list. If a list is not provided, the service returns the
+         /// full details of all instances up to a maximum of fifty. </para> <para>
+         /// This action supports pagination by returning a token if there are more
+         /// pages to retrieve. To get the next page, call this action again with
+         /// the returned token as the NextToken parameter. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeAutoScalingInstancesRequest">Container for the
+         ///           necessary parameters to execute the DescribeAutoScalingInstances
+         ///           service method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeAutoScalingInstances service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest) 
+        {           
+            IRequest<DescribeAutoScalingInstancesRequest> request = new DescribeAutoScalingInstancesRequestMarshaller().Marshall(describeAutoScalingInstancesRequest);
+            DescribeAutoScalingInstancesResponse response = Invoke<DescribeAutoScalingInstancesRequest, DescribeAutoScalingInstancesResponse> (request, this.signer, DescribeAutoScalingInstancesResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /*
-         *  Transforms response based on xslt template
-         */
-        private static string Transform(string responseBody, Type t)
-        {
-            XslCompiledTransform transformer = new XslCompiledTransform();
-
-            // Build the name of the xslt transform to apply to the response
-            char[] seps = { ',' };
-
-            Assembly assembly = Assembly.GetAssembly(t);
-            string assemblyName = assembly.FullName;
-            assemblyName = assemblyName.Split(seps)[0];
-
-            string ns = t.Namespace;
-            string resourceName = String.Concat(
-                assemblyName,
-                ".",
-                ns,
-                ".Model.",
-                "ResponseTransformer.xslt"
-                );
-            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
-            {
-                transformer.Load(xmlReader);
-
-                StringBuilder sb = new StringBuilder(1024);
-                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
-                {
-                    using (StringWriter sw = new StringWriter(sb))
-                    {
-                        transformer.Transform(xmlR, null, sw);
-                        return sb.ToString();
-                    }
-                }
-            }
+         /// <summary>
+         /// <para> Deletes the specified LaunchConfiguration. </para> <para> The
+         /// specified launch configuration must not be attached to an Auto Scaling
+         /// group. Once this call completes, the launch configuration is no longer
+         /// available for use. </para>
+         /// </summary>
+         /// 
+         /// <param name="deleteLaunchConfigurationRequest">Container for the
+         ///           necessary parameters to execute the DeleteLaunchConfiguration service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="ResourceInUseException"/>
+        public DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest) 
+        {           
+            IRequest<DeleteLaunchConfigurationRequest> request = new DeleteLaunchConfigurationRequestMarshaller().Marshall(deleteLaunchConfigurationRequest);
+            DeleteLaunchConfigurationResponse response = Invoke<DeleteLaunchConfigurationRequest, DeleteLaunchConfigurationResponse> (request, this.signer, DeleteLaunchConfigurationResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        #endregion
+         /// <summary>
+         /// <para> Creates or updates a policy for an Auto Scaling group. To
+         /// update an existing policy, use the existing policy name and set the
+         /// parameter(s) you want to change. Any existing parameter not changed in
+         /// an update to an existing policy is not changed in this update request.
+         /// </para>
+         /// </summary>
+         /// 
+         /// <param name="putScalingPolicyRequest">Container for the necessary
+         ///           parameters to execute the PutScalingPolicy service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the PutScalingPolicy service method, as
+         ///         returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="LimitExceededException"/>
+        public PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) 
+        {           
+            IRequest<PutScalingPolicyRequest> request = new PutScalingPolicyRequestMarshaller().Marshall(putScalingPolicyRequest);
+            PutScalingPolicyResponse response = Invoke<PutScalingPolicyRequest, PutScalingPolicyResponse> (request, this.signer, PutScalingPolicyResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para> Sets the health status of an instance. </para>
+         /// </summary>
+         /// 
+         /// <param name="setInstanceHealthRequest">Container for the necessary
+         ///           parameters to execute the SetInstanceHealth service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        public SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest) 
+        {           
+            IRequest<SetInstanceHealthRequest> request = new SetInstanceHealthRequestMarshaller().Marshall(setInstanceHealthRequest);
+            SetInstanceHealthResponse response = Invoke<SetInstanceHealthRequest, SetInstanceHealthResponse> (request, this.signer, SetInstanceHealthResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para> Updates the configuration for the specified AutoScalingGroup.
+         /// </para> <para><b>NOTE:</b> To update an Auto Scaling group with a
+         /// launch configuration that has the InstanceMonitoring.enabled flag set
+         /// to false, you must first ensure that collection of group metrics is
+         /// disabled. Otherwise, calls to UpdateAutoScalingGroup will fail. If you
+         /// have previously enabled group metrics collection, you can disable
+         /// collection of all group metrics by calling DisableMetricsCollection.
+         /// </para> <para> The new settings are registered upon the completion of
+         /// this call. Any launch configuration settings take effect on any
+         /// triggers after this call returns. Triggers that are currently in
+         /// progress aren't affected. </para> <para><b>NOTE:</b> If the new values
+         /// are specified for the MinSize or MaxSize parameters, then there will
+         /// be an implicit call to SetDesiredCapacity to set the group to the new
+         /// MaxSize. All optional parameters are left unchanged if not passed in
+         /// the request. </para>
+         /// </summary>
+         /// 
+         /// <param name="updateAutoScalingGroupRequest">Container for the
+         ///           necessary parameters to execute the UpdateAutoScalingGroup service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="ScalingActivityInProgressException"/>
+        public UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest) 
+        {           
+            IRequest<UpdateAutoScalingGroupRequest> request = new UpdateAutoScalingGroupRequestMarshaller().Marshall(updateAutoScalingGroupRequest);
+            UpdateAutoScalingGroupResponse response = Invoke<UpdateAutoScalingGroupRequest, UpdateAutoScalingGroupResponse> (request, this.signer, UpdateAutoScalingGroupResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para> Lists all the actions scheduled for your Auto Scaling group
+         /// that haven't been executed. To see a list of action already executed,
+         /// see the activity record returned in DescribeScalingActivities. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeScheduledActionsRequest">Container for the
+         ///           necessary parameters to execute the DescribeScheduledActions service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeScheduledActions service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest describeScheduledActionsRequest) 
+        {           
+            IRequest<DescribeScheduledActionsRequest> request = new DescribeScheduledActionsRequestMarshaller().Marshall(describeScheduledActionsRequest);
+            DescribeScheduledActionsResponse response = Invoke<DescribeScheduledActionsRequest, DescribeScheduledActionsResponse> (request, this.signer, DescribeScheduledActionsResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To
+         /// suspend specific process types, specify them by name with the
+         /// <c>ScalingProcesses.member.N</c> parameter. To suspend all process
+         /// types, omit the <c>ScalingProcesses.member.N</c> parameter. </para>
+         /// <para><b>IMPORTANT:</b> Suspending either of the two primary process
+         /// types, Launch or Terminate, can prevent other process types from
+         /// functioning properly. For more information about processes and their
+         /// dependencies, see ProcessType. </para> <para> To resume processes that
+         /// have been suspended, use ResumeProcesses. </para>
+         /// </summary>
+         /// 
+         /// <param name="suspendProcessesRequest">Container for the necessary
+         ///           parameters to execute the SuspendProcesses service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        public SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest suspendProcessesRequest) 
+        {           
+            IRequest<SuspendProcessesRequest> request = new SuspendProcessesRequestMarshaller().Marshall(suspendProcessesRequest);
+            SuspendProcessesResponse response = Invoke<SuspendProcessesRequest, SuspendProcessesResponse> (request, this.signer, SuspendProcessesResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For
+         /// more information, see SuspendProcesses and ProcessType. </para>
+         /// </summary>
+         /// 
+         /// <param name="resumeProcessesRequest">Container for the necessary
+         ///           parameters to execute the ResumeProcesses service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        public ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest resumeProcessesRequest) 
+        {           
+            IRequest<ResumeProcessesRequest> request = new ResumeProcessesRequestMarshaller().Marshall(resumeProcessesRequest);
+            ResumeProcessesResponse response = Invoke<ResumeProcessesRequest, ResumeProcessesResponse> (request, this.signer, ResumeProcessesResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para> Creates a new launch configuration. Once created, the new
+         /// launch configuration is available for immediate use. </para>
+         /// <para><b>NOTE:</b> The launch configuration name used must be unique,
+         /// within the scope of the client's AWS account, and the maximum limit of
+         /// launch configurations must not yet have been met, or else the call
+         /// will fail. </para>
+         /// </summary>
+         /// 
+         /// <param name="createLaunchConfigurationRequest">Container for the
+         ///           necessary parameters to execute the CreateLaunchConfiguration service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="AlreadyExistsException"/>
+         /// <exception cref="LimitExceededException"/>
+        public CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) 
+        {           
+            IRequest<CreateLaunchConfigurationRequest> request = new CreateLaunchConfigurationRequestMarshaller().Marshall(createLaunchConfigurationRequest);
+            CreateLaunchConfigurationResponse response = Invoke<CreateLaunchConfigurationRequest, CreateLaunchConfigurationResponse> (request, this.signer, CreateLaunchConfigurationResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para> Disables monitoring of group metrics for the Auto Scaling group
+         /// specified in AutoScalingGroupName. You can specify the list of
+         /// affected metrics with the Metrics parameter. </para>
+         /// </summary>
+         /// 
+         /// <param name="disableMetricsCollectionRequest">Container for the
+         ///           necessary parameters to execute the DisableMetricsCollection service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+        public DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest disableMetricsCollectionRequest) 
+        {           
+            IRequest<DisableMetricsCollectionRequest> request = new DisableMetricsCollectionRequestMarshaller().Marshall(disableMetricsCollectionRequest);
+            DisableMetricsCollectionResponse response = Invoke<DisableMetricsCollectionRequest, DisableMetricsCollectionResponse> (request, this.signer, DisableMetricsCollectionResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
     }
-}
+}   
+    

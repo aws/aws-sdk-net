@@ -1,179 +1,212 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns the scaling activities specified for the given group. If the input list is empty, all the activities
-    /// from the past six weeks are returned. Activities will be sorted by completion time. Activities that have no
-    /// completion time are considered as using the most recent possible time.
+    /// Container for the parameters to the DescribeScalingActivities operation.
+    /// <para> Returns the scaling activities for the specified Auto Scaling
+    /// group. </para> <para> If the specified <i>ActivityIds</i> list is
+    /// empty, all the activities from the past six weeks are returned.
+    /// Activities are sorted by completion time. Activities still in progress
+    /// appear first on the list. </para> <para> This action supports
+    /// pagination. If the response includes a token, there are more records
+    /// available. To get the additional records, repeat the request with the
+    /// response token as the NextToken parameter. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://autoscaling.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
-    public class DescribeScalingActivitiesRequest
+    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeScalingActivities"/>
+    public class DescribeScalingActivitiesRequest : AmazonWebServiceRequest
     {
-        private List<string> activityIdsField;
-        private string autoScalingGroupNameField;
-        private Decimal? maxRecordsField;
-        private string nextTokenField;
+        private List<string> activityIds = new List<string>();
+        private string autoScalingGroupName;
+        private int? maxRecords;
+        private string nextToken;
 
         /// <summary>
-        /// Gets and sets the ActivityIds property.
-        /// List specifying the requested scaling activities using the ID number of each Scaling Activity.
+        /// A list containing the activity IDs of the desired scaling activities.
+        /// If this list is omitted, all activities are described. If an
+        /// AutoScalingGroupName is provided, the results are limited to that
+        /// group. The list of requested activities cannot contain more than 50
+        /// items. If unknown activities are requested, they are ignored with no
+        /// error.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ActivityIds")]
         public List<string> ActivityIds
         {
-            get
-            {
-                if (this.activityIdsField == null)
-                {
-                    this.activityIdsField = new List<string>();
-                }
-                return this.activityIdsField;
-            }
-            set { this.activityIdsField = value; }
+            get { return this.activityIds; }
+            set { this.activityIds = value; }
         }
-
         /// <summary>
-        /// Sets the ActivityIds property
+        /// Adds elements to the ActivityIds collection
         /// </summary>
-        /// <param name="list">List specifying the requested scaling activities using the ID number of each Scaling Activity.</param>
+        /// <param name="activityIds">The values to add to the ActivityIds collection </param>
         /// <returns>this instance</returns>
-        public DescribeScalingActivitiesRequest WithActivityIds(params string[] list)
+        public DescribeScalingActivitiesRequest WithActivityIds(params string[] activityIds)
         {
-            foreach (string item in list)
+            foreach (string element in activityIds)
             {
-                ActivityIds.Add(item);
+                this.activityIds.Add(element);
             }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the ActivityIds collection
+        /// </summary>
+        /// <param name="activityIds">The values to add to the ActivityIds collection </param>
+        /// <returns>this instance</returns>
+        public DescribeScalingActivitiesRequest WithActivityIds(IEnumerable<string> activityIds)
+        {
+            foreach (string element in activityIds)
+            {
+                this.activityIds.Add(element);
+            }
+
             return this;
         }
 
-        /// <summary>
-        /// Checks if ActivityIds property is set
-        /// </summary>
-        /// <returns>true if ActivityIds property is set</returns>
-        public bool IsSetActivityIds()
+        // Check to see if ActivityIds property is set
+        internal bool IsSetActivityIds()
         {
-            return (ActivityIds.Count > 0);
+            return this.activityIds.Count > 0;       
         }
 
         /// <summary>
-        /// Gets and sets the AutoScalingGroupName property.
-        /// Name of the AutoScalingGroup. AutoScalingGroup must exist within the scope of the caller's Amazon
-        /// Web Services account.
+        /// The name of the <a>AutoScalingGroup</a>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1600</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "AutoScalingGroupName")]
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupNameField; }
-            set { this.autoScalingGroupNameField = value; }
+            get { return this.autoScalingGroupName; }
+            set { this.autoScalingGroupName = value; }
         }
 
         /// <summary>
         /// Sets the AutoScalingGroupName property
         /// </summary>
-        /// <param name="autoScalingGroupName">Name of the AutoScalingGroup. AutoScalingGroup must exist within the scope of the caller's Amazon
-        /// Web Services account.</param>
+        /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
         public DescribeScalingActivitiesRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
-            this.autoScalingGroupNameField = autoScalingGroupName;
+            this.autoScalingGroupName = autoScalingGroupName;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if AutoScalingGroupName property is set
-        /// </summary>
-        /// <returns>true if AutoScalingGroupName property is set</returns>
-        public bool IsSetAutoScalingGroupName()
+        // Check to see if AutoScalingGroupName property is set
+        internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupNameField != null;
+            return this.autoScalingGroupName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the MaxRecords property.
-        /// The maximum number of scaling activities to return. Default is 100. Value must be greater than 10, less than 100.
+        /// The maximum number of scaling activities to return.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>1 - 50</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "MaxRecords")]
-        public Decimal MaxRecords
+        public int MaxRecords
         {
-            get { return this.maxRecordsField.GetValueOrDefault(); }
-            set { this.maxRecordsField = value; }
+            get { return this.maxRecords ?? default(int); }
+            set { this.maxRecords = value; }
         }
 
         /// <summary>
         /// Sets the MaxRecords property
         /// </summary>
-        /// <param name="maxRecords">The maximum number of scaling activities to return. Default is 100. Value must be greater than 10, less than 100.</param>
+        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
-        public DescribeScalingActivitiesRequest WithMaxRecords(Decimal maxRecords)
+        public DescribeScalingActivitiesRequest WithMaxRecords(int maxRecords)
         {
-            this.maxRecordsField = maxRecords;
+            this.maxRecords = maxRecords;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if MaxRecords property is set
-        /// </summary>
-        /// <returns>true if MaxRecords property is set</returns>
-        public bool IsSetMaxRecords()
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
         {
-            return this.maxRecordsField.HasValue;
+            return this.maxRecords.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the NextToken property.
-        /// String that used to mark the start of the next batch of returned results for pagination.
+        /// A string that marks the start of the next batch of returned results
+        /// for pagination.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "NextToken")]
         public string NextToken
         {
-            get { return this.nextTokenField; }
-            set { this.nextTokenField = value; }
+            get { return this.nextToken; }
+            set { this.nextToken = value; }
         }
 
         /// <summary>
         /// Sets the NextToken property
         /// </summary>
-        /// <param name="nextToken">String that used to mark the start of the next batch of returned results for pagination.</param>
+        /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
         public DescribeScalingActivitiesRequest WithNextToken(string nextToken)
         {
-            this.nextTokenField = nextToken;
+            this.nextToken = nextToken;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if NextToken property is set
-        /// </summary>
-        /// <returns>true if NextToken property is set</returns>
-        public bool IsSetNextToken()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this.nextTokenField != null;
+            return this.nextToken != null;       
         }
-
     }
 }
+    

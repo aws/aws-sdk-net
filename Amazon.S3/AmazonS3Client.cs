@@ -34,6 +34,7 @@ using System.Reflection;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Xml.Xsl;
@@ -208,11 +209,6 @@ namespace Amazon.S3
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The PreSignedUrlRequest specified is null!");
-            }
-
-            if (!request.IsSetBucketName())
-            {
-                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName Specified is null or empty!");
             }
 
             if (!request.IsSetExpires())
@@ -2094,15 +2090,13 @@ namespace Amazon.S3
             {
                 queryStr.Append("&max-keys=0");
             }
-            else
-            {
-                throw new ArgumentNullException(
-                    S3Constants.RequestParam,
-                    "The Key must be set for GET and PUT requests"
-                    );
-            }
 
-            queryStr.Append("&Expires=");
+            if (queryStr.Length != 0)
+            {
+                queryStr.Append("&");
+            }            
+            queryStr.Append("Expires=");
+
             string value = Convert.ToInt64((request.Expires.ToUniversalTime() - new DateTime(1970, 1, 1)).TotalSeconds).ToString();
             queryStr.Append(value);
             parameters[S3QueryParameter.Expires] = value;
@@ -2822,6 +2816,9 @@ namespace Amazon.S3
                 }
                 catch (IOException e)
                 {
+                    if (this.isInnerExceptionThreadAbort(e))
+                        throw;
+
                     this.logger.Error(string.Format("Error making request {0}.", actionName), e);
                     if (httpResponse != null)
                     {
@@ -2851,6 +2848,15 @@ namespace Amazon.S3
             } while (shouldRetry && retries <= maxRetries);
 
             return response;
+        }
+
+        private bool isInnerExceptionThreadAbort(Exception e)
+        {
+            if (e.InnerException is ThreadAbortException)
+                return true;
+            if (e.InnerException != null)
+                return isInnerExceptionThreadAbort(e.InnerException);
+            return false;
         }
 
         private static void ProcessRedirect(S3Request userRequest, HttpWebResponse httpResponse)
@@ -3353,7 +3359,6 @@ namespace Amazon.S3
          */
         private static string Transform(string responseBody, string actionName, Type t)
         {
-            XslCompiledTransform transformer = new XslCompiledTransform();
             char[] seps = { ',' };
             Assembly assembly = Assembly.GetAssembly(t);
 
@@ -3371,18 +3376,14 @@ namespace Amazon.S3
                 "Response.xslt"
                 );
 
-            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
+            XslCompiledTransform transformer = AWSSDKUtils.GetXslCompiledTransform(resourceName);
+            StringBuilder sb = new StringBuilder(1024);
+            using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
             {
-                transformer.Load(xmlReader);
-
-                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
+                using (StringWriter sw = new StringWriter(sb))
                 {
-                    StringBuilder sb = new StringBuilder(1024);
-                    using (StringWriter sw = new StringWriter(sb))
-                    {
-                        transformer.Transform(xmlR, null, sw);
-                        return sb.ToString();
-                    }
+                    transformer.Transform(xmlR, null, sw);
+                    return sb.ToString();
                 }
             }
         }

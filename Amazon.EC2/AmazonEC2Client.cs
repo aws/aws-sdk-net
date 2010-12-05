@@ -4877,8 +4877,6 @@ namespace Amazon.EC2
          */
         private static string Transform(string responseBody, string action, Type t)
         {
-            XslCompiledTransform transformer = new XslCompiledTransform();
-
             // Build the name of the xslt transform to apply to the response
             char[] seps = { ',' };
 
@@ -4896,18 +4894,14 @@ namespace Amazon.EC2
                 "Response.xslt"
                 );
 
-            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
+            XslCompiledTransform transformer = AWSSDKUtils.GetXslCompiledTransform(resourceName);
+            StringBuilder sb = new StringBuilder(1024);
+            using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
             {
-                transformer.Load(xmlReader);
-
-                StringBuilder sb = new StringBuilder(1024);
-                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
+                using (StringWriter sw = new StringWriter(sb))
                 {
-                    using (StringWriter sw = new StringWriter(sb))
-                    {
-                        transformer.Transform(xmlR, null, sw);
-                        return sb.ToString();
-                    }
+                    transformer.Transform(xmlR, null, sw);
+                    return sb.ToString();
                 }
             }
         }

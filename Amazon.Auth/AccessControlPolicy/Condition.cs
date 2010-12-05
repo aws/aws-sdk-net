@@ -69,10 +69,11 @@ namespace Amazon.Auth.AccessControlPolicy
         private string conditionKey;
         private string[] values;
 
-        internal Condition()
+        public Condition()
         {
         }
-        internal Condition(string type, string conditionKey, params string[] values)
+
+        public Condition(string type, string conditionKey, params string[] values)
         {
             this.type = type;
             this.conditionKey = conditionKey;

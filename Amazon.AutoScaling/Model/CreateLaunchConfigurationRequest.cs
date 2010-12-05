@@ -1,358 +1,471 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Creates a new Launch Configuration. Please note that the launch configuration name used must be unique,
-    /// within the scope of your AWS account, and the maximum limit of launch configurations must not yet have been met,
-    /// or else the call will fail. Once created, the new launch configuration is available for immediate use.
+    /// Container for the parameters to the CreateLaunchConfiguration operation.
+    /// <para> Creates a new launch configuration. Once created, the new
+    /// launch configuration is available for immediate use. </para>
+    /// <para><b>NOTE:</b> The launch configuration name used must be unique,
+    /// within the scope of the client's AWS account, and the maximum limit of
+    /// launch configurations must not yet have been met, or else the call
+    /// will fail. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://autoscaling.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
-    public class CreateLaunchConfigurationRequest
+    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateLaunchConfiguration"/>
+    public class CreateLaunchConfigurationRequest : AmazonWebServiceRequest
     {
-        private string launchConfigurationNameField;
-        private string imageIdField;
-        private string keyNameField;
-        private List<string> securityGroupsField;
-        private string userDataField;
-        private string instanceTypeField;
-        private string kernelIdField;
-        private string ramdiskIdField;
-        private List<BlockDeviceMapping> blockDeviceMappingsField;
+        private string launchConfigurationName;
+        private string imageId;
+        private string keyName;
+        private List<string> securityGroups = new List<string>();
+        private string userData;
+        private string instanceType;
+        private string kernelId;
+        private string ramdiskId;
+        private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
+        private InstanceMonitoring instanceMonitoring;
 
         /// <summary>
-        /// Gets and sets the LaunchConfigurationName property.
-        /// Name of the launch configuration to create.
+        /// The name of the launch configuration to create.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "LaunchConfigurationName")]
         public string LaunchConfigurationName
         {
-            get { return this.launchConfigurationNameField; }
-            set { this.launchConfigurationNameField = value; }
+            get { return this.launchConfigurationName; }
+            set { this.launchConfigurationName = value; }
         }
 
         /// <summary>
         /// Sets the LaunchConfigurationName property
         /// </summary>
-        /// <param name="launchConfigurationName">Name of the launch configuration to create.</param>
+        /// <param name="launchConfigurationName">The value to set for the LaunchConfigurationName property </param>
         /// <returns>this instance</returns>
         public CreateLaunchConfigurationRequest WithLaunchConfigurationName(string launchConfigurationName)
         {
-            this.launchConfigurationNameField = launchConfigurationName;
+            this.launchConfigurationName = launchConfigurationName;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if LaunchConfigurationName property is set
-        /// </summary>
-        /// <returns>true if LaunchConfigurationName property is set</returns>
-        public bool IsSetLaunchConfigurationName()
+        // Check to see if LaunchConfigurationName property is set
+        internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationNameField != null;
+            return this.launchConfigurationName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the ImageId property.
-        /// Unique ID of the Amazon Machine Image (AMI) which was assigned during registration. For more information about
-        /// Amazon EC2 images, go to the Amazon EC2 product documentation.
+        /// Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
+        /// during registration. For more information about Amazon EC2 images,
+        /// please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+        /// documentation</a>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "ImageId")]
         public string ImageId
         {
-            get { return this.imageIdField; }
-            set { this.imageIdField = value; }
+            get { return this.imageId; }
+            set { this.imageId = value; }
         }
 
         /// <summary>
         /// Sets the ImageId property
         /// </summary>
-        /// <param name="imageId">Unique ID of the Amazon Machine Image (AMI) which was assigned during registration. For more information about
-        /// Amazon EC2 images, go to the Amazon EC2 product documentation.</param>
+        /// <param name="imageId">The value to set for the ImageId property </param>
         /// <returns>this instance</returns>
         public CreateLaunchConfigurationRequest WithImageId(string imageId)
         {
-            this.imageIdField = imageId;
+            this.imageId = imageId;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if ImageId property is set
-        /// </summary>
-        /// <returns>true if ImageId property is set</returns>
-        public bool IsSetImageId()
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
         {
-            return this.imageIdField != null;
+            return this.imageId != null;       
         }
 
         /// <summary>
-        /// Gets and sets the KeyName property.
         /// The name of the EC2 key pair.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "KeyName")]
         public string KeyName
         {
-            get { return this.keyNameField; }
-            set { this.keyNameField = value; }
+            get { return this.keyName; }
+            set { this.keyName = value; }
         }
 
         /// <summary>
         /// Sets the KeyName property
         /// </summary>
-        /// <param name="keyName">The name of the EC2 key pair.</param>
+        /// <param name="keyName">The value to set for the KeyName property </param>
         /// <returns>this instance</returns>
         public CreateLaunchConfigurationRequest WithKeyName(string keyName)
         {
-            this.keyNameField = keyName;
+            this.keyName = keyName;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if KeyName property is set
-        /// </summary>
-        /// <returns>true if KeyName property is set</returns>
-        public bool IsSetKeyName()
+        // Check to see if KeyName property is set
+        internal bool IsSetKeyName()
         {
-            return this.keyNameField != null;
+            return this.keyName != null;       
         }
 
         /// <summary>
-        /// Gets and sets the SecurityGroups property.
-        /// Names of the security groups with which to associate the EC2 instances. For more information about Amazon EC2
-        /// security groups, go to the Amazon EC2 product documentation.
+        /// The names of the security groups with which to associate EC2
+        /// instances. For more information about Amazon EC2 security groups, go
+        /// to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+        /// documentation.</a>
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "SecurityGroups")]
         public List<string> SecurityGroups
         {
-            get
-            {
-                if (this.securityGroupsField == null)
-                {
-                    this.securityGroupsField = new List<string>();
-                }
-                return this.securityGroupsField;
-            }
-            set { this.securityGroupsField = value; }
+            get { return this.securityGroups; }
+            set { this.securityGroups = value; }
         }
-
         /// <summary>
-        /// Sets the SecurityGroups property
+        /// Adds elements to the SecurityGroups collection
         /// </summary>
-        /// <param name="list">Names of the security groups with which to associate the EC2 instances. For more information about Amazon EC2
-        /// security groups, go to the Amazon EC2 product documentation.</param>
+        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
-        public CreateLaunchConfigurationRequest WithSecurityGroups(params string[] list)
+        public CreateLaunchConfigurationRequest WithSecurityGroups(params string[] securityGroups)
         {
-            foreach (string item in list)
+            foreach (string element in securityGroups)
             {
-                SecurityGroups.Add(item);
+                this.securityGroups.Add(element);
             }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the SecurityGroups collection
+        /// </summary>
+        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public CreateLaunchConfigurationRequest WithSecurityGroups(IEnumerable<string> securityGroups)
+        {
+            foreach (string element in securityGroups)
+            {
+                this.securityGroups.Add(element);
+            }
+
             return this;
         }
 
-        /// <summary>
-        /// Checks if SecurityGroups property is set
-        /// </summary>
-        /// <returns>true if SecurityGroups property is set</returns>
-        public bool IsSetSecurityGroups()
+        // Check to see if SecurityGroups property is set
+        internal bool IsSetSecurityGroups()
         {
-            return (SecurityGroups.Count > 0);
+            return this.securityGroups.Count > 0;       
         }
 
         /// <summary>
-        /// Gets and sets the UserData property.
-        /// The user data available to the launched EC2 instances. For more information on Amazon EC2 user data, go to the
-        /// Amazon EC2 product documentation. The data must be base64 encoded as described in RFC354. For more information,
-        /// refer to the Amazon Elastic Compute Cloud Developer Guide.
+        /// The user data available to the launched EC2 instances. For more
+        /// information about Amazon EC2 user data, please see <a
+        /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+        /// documentation</a>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 21847</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "UserData")]
         public string UserData
         {
-            get { return this.userDataField; }
-            set { this.userDataField = value; }
+            get { return this.userData; }
+            set { this.userData = value; }
         }
 
         /// <summary>
         /// Sets the UserData property
         /// </summary>
-        /// <param name="userData">The user data available to the launched EC2 instances. For more information on Amazon EC2 user data, go to the
-        /// Amazon EC2 product documentation. The data must be base64 encoded as described in RFC354. For more information,
-        /// refer to the Amazon Elastic Compute Cloud Developer Guide.</param>
+        /// <param name="userData">The value to set for the UserData property </param>
         /// <returns>this instance</returns>
         public CreateLaunchConfigurationRequest WithUserData(string userData)
         {
-            this.userDataField = userData;
+            this.userData = userData;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if UserData property is set
-        /// </summary>
-        /// <returns>true if UserData property is set</returns>
-        public bool IsSetUserData()
+        // Check to see if UserData property is set
+        internal bool IsSetUserData()
         {
-            return this.userDataField != null;
+            return this.userData != null;       
         }
 
         /// <summary>
-        /// Gets and sets the InstanceType property.
-        /// This specifies the instance type of the EC2 instance. For more information on Amazon EC2 instance types, go to
-        /// the Amazon EC2 product documentation. Default is ml.small.
+        /// The instance type of the EC2 instance. For more information about
+        /// Amazon EC2 instance types, please see <a
+        /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+        /// documentation</a>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
         {
-            get { return this.instanceTypeField; }
-            set { this.instanceTypeField = value; }
+            get { return this.instanceType; }
+            set { this.instanceType = value; }
         }
 
         /// <summary>
         /// Sets the InstanceType property
         /// </summary>
-        /// <param name="instanceType">This specifies the instance type of the EC2 instance. For more information on Amazon EC2 instance types, go to
-        /// the Amazon EC2 product documentation. Default is ml.small.</param>
+        /// <param name="instanceType">The value to set for the InstanceType property </param>
         /// <returns>this instance</returns>
         public CreateLaunchConfigurationRequest WithInstanceType(string instanceType)
         {
-            this.instanceTypeField = instanceType;
+            this.instanceType = instanceType;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if InstanceType property is set
-        /// </summary>
-        /// <returns>true if InstanceType property is set</returns>
-        public bool IsSetInstanceType()
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
         {
-            return this.instanceTypeField != null;
+            return this.instanceType != null;       
         }
 
         /// <summary>
-        /// Gets and sets the KernelId property.
-        /// ID of the kernel associated with the EC2 AMI.
+        /// The ID of the kernel associated with the EC2 AMI.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "KernelId")]
         public string KernelId
         {
-            get { return this.kernelIdField; }
-            set { this.kernelIdField = value; }
+            get { return this.kernelId; }
+            set { this.kernelId = value; }
         }
 
         /// <summary>
         /// Sets the KernelId property
         /// </summary>
-        /// <param name="kernelId">ID of the kernel associated with the EC2 AMI.</param>
+        /// <param name="kernelId">The value to set for the KernelId property </param>
         /// <returns>this instance</returns>
         public CreateLaunchConfigurationRequest WithKernelId(string kernelId)
         {
-            this.kernelIdField = kernelId;
+            this.kernelId = kernelId;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if KernelId property is set
-        /// </summary>
-        /// <returns>true if KernelId property is set</returns>
-        public bool IsSetKernelId()
+        // Check to see if KernelId property is set
+        internal bool IsSetKernelId()
         {
-            return this.kernelIdField != null;
+            return this.kernelId != null;       
         }
 
         /// <summary>
-        /// Gets and sets the RamdiskId property.
-        /// ID of the RAM disk associated with the EC2 AMI.
+        /// The ID of the RAM disk associated with the EC2 AMI.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "RamdiskId")]
         public string RamdiskId
         {
-            get { return this.ramdiskIdField; }
-            set { this.ramdiskIdField = value; }
+            get { return this.ramdiskId; }
+            set { this.ramdiskId = value; }
         }
 
         /// <summary>
         /// Sets the RamdiskId property
         /// </summary>
-        /// <param name="ramdiskId">ID of the RAM disk associated with the EC2 AMI.</param>
+        /// <param name="ramdiskId">The value to set for the RamdiskId property </param>
         /// <returns>this instance</returns>
         public CreateLaunchConfigurationRequest WithRamdiskId(string ramdiskId)
         {
-            this.ramdiskIdField = ramdiskId;
+            this.ramdiskId = ramdiskId;
             return this;
+        }
+            
+
+        // Check to see if RamdiskId property is set
+        internal bool IsSetRamdiskId()
+        {
+            return this.ramdiskId != null;       
         }
 
         /// <summary>
-        /// Checks if RamdiskId property is set
+        /// A list of mappings that specify how block devices are exposed to the
+        /// instance. Each mapping is made up of a <i>VirtualName</i> and a
+        /// <i>DeviceName</i>. For more information about Amazon EC2
+        /// BlockDeviceMappings, please see <a href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+        /// Block Device Mapping</a> in the Amazon EC2 product documentation.
+        ///  
         /// </summary>
-        /// <returns>true if RamdiskId property is set</returns>
-        public bool IsSetRamdiskId()
-        {
-            return this.ramdiskIdField != null;
-        }
-        /// <summary>
-        /// Gets and sets the BlockDeviceMappings property.
-        /// Specifies how block devices are exposed to the instance. Each mapping is made up of a VirtualName and a DeviceName.
-        /// For more information on BlockDeviceMappings, go to the Amazon EC2 product documentation.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "BlockDeviceMappings")]
         public List<BlockDeviceMapping> BlockDeviceMappings
         {
-            get
-            {
-                if (this.blockDeviceMappingsField == null)
-                {
-                    this.blockDeviceMappingsField = new List<BlockDeviceMapping>();
-                }
-                return this.blockDeviceMappingsField;
-            }
-            set { this.blockDeviceMappingsField = value; }
+            get { return this.blockDeviceMappings; }
+            set { this.blockDeviceMappings = value; }
         }
-
         /// <summary>
-        /// Sets the BlockDeviceMappings property
+        /// Adds elements to the BlockDeviceMappings collection
         /// </summary>
-        /// <param name="list">Specifies how block devices are exposed to the instance. Each mapping is made up of a VirtualName and a DeviceName.
-        /// For more information on BlockDeviceMappings, go to the Amazon EC2 product documentation.</param>
+        /// <param name="blockDeviceMappings">The values to add to the BlockDeviceMappings collection </param>
         /// <returns>this instance</returns>
-        public CreateLaunchConfigurationRequest WithBlockDeviceMappings(params BlockDeviceMapping[] list)
+        public CreateLaunchConfigurationRequest WithBlockDeviceMappings(params BlockDeviceMapping[] blockDeviceMappings)
         {
-            foreach (BlockDeviceMapping item in list)
+            foreach (BlockDeviceMapping element in blockDeviceMappings)
             {
-                BlockDeviceMappings.Add(item);
+                this.blockDeviceMappings.Add(element);
             }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the BlockDeviceMappings collection
+        /// </summary>
+        /// <param name="blockDeviceMappings">The values to add to the BlockDeviceMappings collection </param>
+        /// <returns>this instance</returns>
+        public CreateLaunchConfigurationRequest WithBlockDeviceMappings(IEnumerable<BlockDeviceMapping> blockDeviceMappings)
+        {
+            foreach (BlockDeviceMapping element in blockDeviceMappings)
+            {
+                this.blockDeviceMappings.Add(element);
+            }
+
             return this;
         }
 
-        /// <summary>
-        /// Checks if BlockDeviceMappings property is set
-        /// </summary>
-        /// <returns>true if BlockDeviceMappings property is set</returns>
-        public bool IsSetBlockDeviceMappings()
+        // Check to see if BlockDeviceMappings property is set
+        internal bool IsSetBlockDeviceMappings()
         {
-            return (BlockDeviceMappings.Count > 0);
+            return this.blockDeviceMappings.Count > 0;       
         }
 
+        /// <summary>
+        /// Enables detailed monitoring.
+        ///  
+        /// </summary>
+        public InstanceMonitoring InstanceMonitoring
+        {
+            get { return this.instanceMonitoring; }
+            set { this.instanceMonitoring = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstanceMonitoring property
+        /// </summary>
+        /// <param name="instanceMonitoring">The value to set for the InstanceMonitoring property </param>
+        /// <returns>this instance</returns>
+        public CreateLaunchConfigurationRequest WithInstanceMonitoring(InstanceMonitoring instanceMonitoring)
+        {
+            this.instanceMonitoring = instanceMonitoring;
+            return this;
+        }
+            
+
+        // Check to see if InstanceMonitoring property is set
+        internal bool IsSetInstanceMonitoring()
+        {
+            return this.instanceMonitoring != null;       
+        }
     }
 }
+    

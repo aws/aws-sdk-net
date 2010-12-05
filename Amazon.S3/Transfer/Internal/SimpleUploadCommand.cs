@@ -67,6 +67,11 @@ namespace Amazon.S3.Transfer.Internal
 
             putRequest.InputStream = this._fileTransporterRequest.InputStream;
 
+            if (this._fileTransporterRequest.metadata != null && this._fileTransporterRequest.metadata.Count > 0)
+                putRequest.WithMetaData(this._fileTransporterRequest.metadata);
+            if (this._fileTransporterRequest.Headers != null && this._fileTransporterRequest.Headers.Count > 0)
+                putRequest.AddHeaders(this._fileTransporterRequest.Headers);
+
             this._s3Client.PutObject(putRequest);
         }
 

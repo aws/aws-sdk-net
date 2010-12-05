@@ -45,7 +45,8 @@ namespace Amazon.S3.Util
 
         static AmazonS3Util()
         {
-            extensionToMime = new Dictionary<string, string>(150);
+            extensionToMime = extensionToMime = new Dictionary<string, string>(150, StringComparer.InvariantCultureIgnoreCase);
+
             extensionToMime[".ai"] = "application/postscript";
             extensionToMime[".aif"] = "audio/x-aiff";
             extensionToMime[".aifc"] = "audio/x-aiff";
@@ -209,6 +210,10 @@ namespace Amazon.S3.Util
             extensionToMime[".m4v"] = "video/x-m4v";
             extensionToMime[".webm"] = "video/webm";
             extensionToMime[".ogv"] = "video/ogv";
+            extensionToMime[".xap"] = "application/x-silverlight-app";
+            extensionToMime[".mp4"] = "video/mp4";
+            extensionToMime[".wmv"] = "video/x-ms-wmv";
+
         }
 
         /// <summary>

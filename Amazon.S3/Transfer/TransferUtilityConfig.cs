@@ -59,6 +59,17 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
+        /// Sets the MinSizeBeforePartUpload property
+        /// </summary>
+        /// <param name="minSizeBeforePartUpload">MinSizeBeforePartUpload property</param>
+        /// <returns>this instance</returns>
+        public TransferUtilityConfig WithMinSizeBeforePartUpload(long minSizeBeforePartUpload)
+        {
+            this.MinSizeBeforePartUpload = minSizeBeforePartUpload;
+            return this;
+        }
+
+        /// <summary>
         /// 	Gets or sets the number of executing threads.
         /// 	This property determines how many active threads will be used to upload 
         /// 	the file. The default value is 10 threads.
@@ -76,12 +87,34 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
+        /// Sets the NumberOfUploadThreads property
+        /// </summary>
+        /// <param name="numberOfUploadThreads">NumberOfUploadThreads property</param>
+        /// <returns>this instance</returns>
+        public TransferUtilityConfig WithNumberOfUploadThreads(int numberOfUploadThreads)
+        {
+            this.NumberOfUploadThreads = numberOfUploadThreads;
+            return this;
+        }
+
+        /// <summary>
         /// Gets or sets the default timeout in milliseconds used for writing objects to S3.  The default value is 5 minutes.
         /// </summary>
         public int DefaultTimeout
         {
             get { return this._defaultTimeout; }
             set { this._defaultTimeout = value; }
+        }
+
+        /// <summary>
+        /// Sets the DefaultTimeout property
+        /// </summary>
+        /// <param name="defaultTimeout">DefaultTimeout property</param>
+        /// <returns>this instance</returns>
+        public TransferUtilityConfig WithDefaultTimeout(int defaultTimeout)
+        {
+            this.DefaultTimeout = defaultTimeout;
+            return this;
         }
     }
 }

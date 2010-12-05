@@ -1725,7 +1725,6 @@ namespace Amazon.CloudFront
          */
         private static string Transform(string responseBody, string actionName, Type t)
         {
-            XslCompiledTransform transformer = new XslCompiledTransform();
             char[] seps = { ',' };
             Assembly assembly = Assembly.GetAssembly(t);
 
@@ -1743,18 +1742,14 @@ namespace Amazon.CloudFront
                 "Response.xslt"
                 );
 
-            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
+            XslCompiledTransform transformer = AWSSDKUtils.GetXslCompiledTransform(resourceName);
+            StringBuilder sb = new StringBuilder(1024);
+            using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
             {
-                transformer.Load(xmlReader);
-
-                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
+                using (StringWriter sw = new StringWriter(sb))
                 {
-                    StringBuilder sb = new StringBuilder(1024);
-                    using (StringWriter sw = new StringWriter(sb))
-                    {
-                        transformer.Transform(xmlR, null, sw);
-                        return sb.ToString();
-                    }
+                    transformer.Transform(xmlR, null, sw);
+                    return sb.ToString();
                 }
             }
         }

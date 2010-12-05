@@ -1,112 +1,58 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Security;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Reflection;
-using System.Xml;
-using System.Xml.Xsl;
-using System.Xml.Serialization;
-
-using Amazon.Util;
 
 using Amazon.CloudWatch.Model;
+using Amazon.CloudWatch.Model.Transform;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+
 
 namespace Amazon.CloudWatch
 {
     /// <summary>
-    /// AmazonCloudWatchClient is an implementation of AmazonCloudWatch;
-    /// the client allows you to manage your AmazonCloudWatch resources.<br />
-    /// If you want to use the AmazonCloudWatchClient from a Medium Trust
-    /// hosting environment, please create the client with an
-    /// AmazonCloudWatchConfig object whose UseSecureStringForAwsSecretKey
-    /// property is false.
+    /// Interface for accessing AmazonCloudWatch.
+    ///  
+    ///  <para>Amazon CloudWatch is a web service that enables you to monitor
+    /// and manage various metrics, as well as configure alarm actions based
+    /// on data from metrics.</para> <para>Amazon CloudWatch monitoring
+    /// enables you to collect, analyze, and view system and application
+    /// metrics so that you can make operational and business decisions more
+    /// quickly and with greater confidence. You can use Amazon CloudWatch to
+    /// collect metrics about your AWS resources, such as the performance of
+    /// your Amazon EC2 instances. You can also publish your own metrics
+    /// directly to Amazon CloudWatch.</para> <para>Amazon CloudWatch allows
+    /// you to manage the metrics in several ways. If you
+    /// are registered for an AWS product that supports Amazon CloudWatch, the
+    /// service automatically pushes basic metrics to CloudWatch for you. Once
+    /// Amazon CloudWatch contains metrics you can
+    /// calculate statistics based on that data and graphically visualize
+    /// those statistics in the Amazon CloudWatch Console.</para> <para>Amazon
+    /// CloudWatch alarms help you implement decisions more easily by enabling
+    /// you do things like send notifications or automatically make changes to
+    /// the resources you are monitoring, based on rules that you define. For
+    /// example, you can create alarms that initiate Auto Scaling and Simple
+    /// Notification Service actions on your behalf. </para>
     /// </summary>
-    /// <remarks>
-    /// Amazon CloudWatch is a web service that provides monitoring for AWS cloud resources, starting
-    /// with Amazon EC2. It provides you with visibility into resource utilization, operational performance,
-    /// and overall demand patterns—including metrics such as CPU utilization, disk reads and writes, and
-    /// network traffic. To use Amazon CloudWatch, simply select the Amazon EC2 instances that you'd like
-    /// to monitor; within minutes, Amazon CloudWatch will begin aggregating and storing monitoring data
-    /// that can be accessed using web service APIs or Command Line Tools.
-    /// </remarks>
-    /// <seealso cref="P:Amazon.CloudWatch.AmazonCloudWatchConfig.UseSecureStringForAwsSecretKey"/>
-    public class AmazonCloudWatchClient : AmazonCloudWatch
+    public class AmazonCloudWatchClient : AmazonWebServiceClient, AmazonCloudWatch
     {
-        private string awsAccessKeyId;
-        private SecureString awsSecretAccessKey;
-        private AmazonCloudWatchConfig config;
-        private bool disposed;
-        private string clearAwsSecretAccessKey;
-
-        #region Dispose Pattern Implementation
-
-        /// <summary>
-        /// Implements the Dispose pattern for the AmazonCloudWatchClient
-        /// </summary>
-        /// <param name="fDisposing">Whether this object is being disposed via a call to Dispose
-        /// or garbage collected.</param>
-        protected virtual void Dispose(bool fDisposing)
-        {
-            if (!this.disposed)
-            {
-                if (fDisposing)
-                {
-                    //Remove Unmanaged Resources
-                    // I.O.W. remove resources that have to be explicitly
-                    // "Dispose"d or Closed
-                    if (awsSecretAccessKey != null)
-                    {
-                        awsSecretAccessKey.Dispose();
-                        awsSecretAccessKey = null;
-                    }
-                }
-                this.disposed = true;
-            }
-        }
-
-        /// <summary>
-        /// Disposes of all managed and unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        /// The destructor for the client class.
-        /// </summary>
-        ~AmazonCloudWatchClient()
-        {
-            this.Dispose(false);
-        }
-
-        #endregion
+    
+    
+        AbstractAWSSigner signer = new QueryStringSigner();
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with AWS Access Key ID and AWS Secret Key
@@ -120,465 +66,242 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCloudWatch Configuration object. If the config object's
+        /// AmazonS3 Configuration object. If the config object's
         /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
         /// is stored as a clear-text string. Please use this option only
         /// if the application environment doesn't allow the use of SecureStrings.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
-        /// <param name="config">The AmazonCloudWatch Configuration Object</param>
-        public AmazonCloudWatchClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudWatchConfig config)
+        /// <param name="clientConfig">The AmazonCloudWatchClient Configuration Object</param>
+        public AmazonCloudWatchClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudWatchConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
         {
-            if (!String.IsNullOrEmpty(awsSecretAccessKey))
-            {
-                if (config.UseSecureStringForAwsSecretKey)
-                {
-                    this.awsSecretAccessKey = new SecureString();
-                    foreach (char ch in awsSecretAccessKey.ToCharArray())
-                    {
-                        this.awsSecretAccessKey.AppendChar(ch);
-                    }
-                    this.awsSecretAccessKey.MakeReadOnly();
-                }
-                else
-                {
-                    clearAwsSecretAccessKey = awsSecretAccessKey;
-                }
-            }
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.config = config;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
         }
+        
+   
 
-        /// <summary>
-        /// Constructs an AmazonCloudWatchClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCloudWatch Configuration object
-        /// </summary>
-        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
-        /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
-        /// <param name="config">The AmazonCloudWatch Configuration Object</param>
-        public AmazonCloudWatchClient(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonCloudWatchConfig config)
-        {
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.awsSecretAccessKey = awsSecretAccessKey;
-            this.config = config;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
-        }
-
-        #region Public API
-
-        /// <summary>
-        /// List Metrics
-        /// </summary>
-        /// <param name="request">List Metrics  request</param>
-        /// <returns>List Metrics  Response from the service</returns>
-        public ListMetricsResponse ListMetrics(ListMetricsRequest request)
-        {
-            return Invoke<ListMetricsResponse>(ConvertListMetrics(request));
-        }
-
-        /// <summary>
-        /// Get Metric Statistics
-        /// </summary>
-        /// <param name="request">Get Metric Statistics  request</param>
-        /// <returns>Get Metric Statistics  Response from the service</returns>
-        public GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request)
-        {
-            return Invoke<GetMetricStatisticsResponse>(ConvertGetMetricStatistics(request));
-        }
-
-        #endregion
-
-        #region Private API
-
-        /**
-         * Configure HttpClient with set of defaults as well as configuration
-         * from AmazonCloudWatchConfig instance
-         */
-        private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonCloudWatchConfig config)
-        {
-            HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
-            if (request != null)
-            {
-                if (config.IsSetProxyHost() && config.IsSetProxyPort())
-                {
-                    WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
-                    if (config.IsSetProxyUsername())
-                    {
-                        proxy.Credentials = new NetworkCredential(
-                            config.ProxyUsername,
-                            config.ProxyPassword ?? String.Empty
-                            );
-                    }
-                    request.Proxy = proxy;
-                }
-                request.UserAgent = config.UserAgent;
-                request.Method = "POST";
-                request.Timeout = 50000;
-                request.ContentType = AWSSDKUtils.UrlEncodedContent;
-                request.ContentLength = contentLength;
-            }
-
-            return request;
-        }
-
-        /**
-         * Invoke request and return response
-         */
-        private T Invoke<T>(IDictionary<string, string> parameters)
-        {
-            string actionName = parameters["Action"];
-            T response = default(T);
-            HttpStatusCode statusCode = default(HttpStatusCode);
-
-            /* Add required request parameters */
-            AddRequiredParameters(parameters);
-
-            string queryString = AWSSDKUtils.GetParametersAsString(parameters);
-
-            byte[] requestData = Encoding.UTF8.GetBytes(queryString);
-            bool shouldRetry = true;
-            int retries = 0;
-            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
-
-            do
-            {
-                string responseBody = null;
-                HttpWebRequest request = ConfigureWebRequest(requestData.Length, config);
-                /* Submit the request and read response body */
-                try
-                {
-                    using (Stream requestStream = request.GetRequestStream())
-                    {
-                        requestStream.Write(requestData, 0, requestData.Length);
-                    }
-                    using (HttpWebResponse httpResponse = request.GetResponse() as HttpWebResponse)
-                    {
-                        if (httpResponse == null)
-                        {
-                            throw new WebException(
-                                "The Web Response for a successful request is null!",
-                                WebExceptionStatus.ProtocolError
-                                );
-                        }
-
-                        statusCode = httpResponse.StatusCode;
-                        using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
-                        {
-                            responseBody = reader.ReadToEnd();
-                        }
-                    }
-
-                    /* Perform response transformation */
-                    if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
-                    {
-                        responseBody = Transform(responseBody, this.GetType());
-                    }
-                    /* Attempt to deserialize response into <Action> Response type */
-                    XmlSerializer serializer = new XmlSerializer(typeof(T));
-                    using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
-                    {
-                        response = (T)serializer.Deserialize(sr);
-                    }
-                    shouldRetry = false;
-                }
-                /* Web exception is thrown on unsucessful responses */
-                catch (WebException we)
-                {
-                    shouldRetry = false;
-                    using (HttpWebResponse httpErrorResponse = we.Response as HttpWebResponse)
-                    {
-                        if (httpErrorResponse == null)
-                        {
-                            // Abort the unsuccessful request
-                            request.Abort();
-                            throw we;
-                        }
-                        statusCode = httpErrorResponse.StatusCode;
-                        using (StreamReader reader = new StreamReader(httpErrorResponse.GetResponseStream(), Encoding.UTF8))
-                        {
-                            responseBody = reader.ReadToEnd();
-                        }
-
-                        // Abort the unsuccessful request
-                        request.Abort();
-                    }
-
-                    if (statusCode == HttpStatusCode.InternalServerError ||
-                        statusCode == HttpStatusCode.ServiceUnavailable)
-                    {
-                        shouldRetry = true;
-                        PauseOnRetry(++retries, maxRetries, statusCode);
-                    }
-                    else
-                    {
-                        /* Attempt to deserialize response into ErrorResponse type */
-                        try
-                        {
-                            using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
-                            {
-                                XmlSerializer serializer = new XmlSerializer(typeof(ErrorResponse));
-                                ErrorResponse errorResponse = (ErrorResponse)serializer.Deserialize(sr);
-                                Error error = errorResponse.Error[0];
-
-                                /* Throw formatted exception with information available from the error response */
-                                throw new AmazonCloudWatchException(
-                                    error.Message,
-                                    statusCode,
-                                    error.Code,
-                                    error.Type,
-                                    errorResponse.RequestId,
-                                    errorResponse.ToXML()
-                                    );
-                            }
-                        }
-                        /* Rethrow on deserializer error */
-                        catch (Exception e)
-                        {
-                            if (e is AmazonCloudWatchException)
-                            {
-                                throw;
-                            }
-                            else
-                            {
-                                throw ReportAnyErrors(responseBody, statusCode);
-                            }
-                        }
-                    }
-                }
-                /* Catch other exceptions, attempt to convert to formatted exception,
-                 * else rethrow wrapped exception */
-                catch (Exception)
-                {
-                    // Abort the unsuccessful request
-                    request.Abort();
-                    throw;
-                }
-            } while (shouldRetry);
-
+         /// <summary>
+         /// <para> Creates or updates an alarm and associates it with the
+         /// specified Amazon CloudWatch metric. Optionally, this operation can
+         /// associate one or more Amazon Simple Notification Service resources
+         /// with the alarm. </para> <para> When this operation creates an alarm,
+         /// the alarm state is immediately set to <c>INSUFFICIENT_DATA</c> . The
+         /// alarm is evaluated and its <c>StateValue</c> is set appropriately.
+         /// Any actions associated with the <c>StateValue</c> is then executed.
+         /// </para> <para><b>NOTE:</b> When updating an existing alarm, its
+         /// StateValue is left unchanged. </para>
+         /// </summary>
+         /// 
+         /// <param name="putMetricAlarmRequest">Container for the necessary
+         ///           parameters to execute the PutMetricAlarm service method on
+         ///           AmazonCloudWatch.</param>
+         /// 
+         /// <exception cref="LimitExceededException"/>
+        public PutMetricAlarmResponse PutMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest) 
+        {           
+            IRequest<PutMetricAlarmRequest> request = new PutMetricAlarmRequestMarshaller().Marshall(putMetricAlarmRequest);
+            PutMetricAlarmResponse response = Invoke<PutMetricAlarmRequest, PutMetricAlarmResponse> (request, this.signer, PutMetricAlarmResponseUnmarshaller.GetInstance());
             return response;
         }
+    
 
-        /**
-         * Look for additional error strings in the response and return formatted exception
-         */
-        private static AmazonCloudWatchException ReportAnyErrors(string responseBody, HttpStatusCode status)
-        {
-            AmazonCloudWatchException ex = null;
-
-            if (responseBody != null &&
-                responseBody.StartsWith("<"))
-            {
-                Match errorMatcherOne = Regex.Match(
-                    responseBody,
-                    "<RequestId>(.*)</RequestId>.*<Error><Code>(.*)</Code><Message>(.*)</Message></Error>.*(<Error>)?",
-                    RegexOptions.Multiline
-                    );
-                Match errorMatcherTwo = Regex.Match(
-                    responseBody,
-                    "<Error><Code>(.*)</Code><Message>(.*)</Message></Error>.*(<Error>)?.*<RequestID>(.*)</RequestID>",
-                    RegexOptions.Multiline
-                    );
-
-                if (errorMatcherOne.Success)
-                {
-                    string requestId = errorMatcherOne.Groups[1].Value;
-                    string code = errorMatcherOne.Groups[2].Value;
-                    string message = errorMatcherOne.Groups[3].Value;
-
-                    ex = new AmazonCloudWatchException(message, status, code, "Unknown", requestId, responseBody);
-                }
-                else if (errorMatcherTwo.Success)
-                {
-                    string code = errorMatcherTwo.Groups[1].Value;
-                    string message = errorMatcherTwo.Groups[2].Value;
-                    string requestId = errorMatcherTwo.Groups[4].Value;
-
-                    ex = new AmazonCloudWatchException(message, status, code, "Unknown", requestId, responseBody);
-                }
-                else
-                {
-                    ex = new AmazonCloudWatchException("Internal Error", status);
-                }
-            }
-            else
-            {
-                ex = new AmazonCloudWatchException("Internal Error", status);
-            }
-            return ex;
+         /// <summary>
+         /// <para> Returns a list of valid metrics stored for the AWS account
+         /// owner. Returned metrics can be used with <c>GetMetricStatistics</c> to
+         /// obtain statistical data for a given metric. </para> <para><b>NOTE:</b>
+         /// Up to 500 results are returned for any one call. To retrieve further
+         /// results, use returned NextToken values with subsequent ListMetrics
+         /// operations. </para>
+         /// </summary>
+         /// 
+         /// <param name="listMetricsRequest">Container for the necessary
+         ///           parameters to execute the ListMetrics service method on
+         ///           AmazonCloudWatch.</param>
+         /// 
+         /// <returns>The response from the ListMetrics service method, as returned
+         ///         by AmazonCloudWatch.</returns>
+         /// 
+         /// <exception cref="InternalServiceException"/>
+         /// <exception cref="InvalidParameterValueException"/>
+        public ListMetricsResponse ListMetrics(ListMetricsRequest listMetricsRequest) 
+        {           
+            IRequest<ListMetricsRequest> request = new ListMetricsRequestMarshaller().Marshall(listMetricsRequest);
+            ListMetricsResponse response = Invoke<ListMetricsRequest, ListMetricsResponse> (request, this.signer, ListMetricsResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Exponential sleep on failed request
-         */
-        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status)
-        {
-            if (retries <= maxRetries)
-            {
-                int delay = (int)Math.Pow(4, retries) * 100;
-                System.Threading.Thread.Sleep(delay);
-            }
-            else
-            {
-                throw new AmazonCloudWatchException(
-                    "Maximum number of retry attempts reached : " + (retries - 1),
-                    status
-                    );
-            }
+         /// <summary>
+         /// <para> Gets statistics for the specified metric. </para>
+         /// <para><b>NOTE:</b> The maximum number of datapoints returned from a
+         /// single GetMetricStatistics request is 1,440. If a request is made that
+         /// generates more than 1,440 datapoints, Amazon CloudWatch returns an
+         /// error. In such a case, alter the request by narrowing the specified
+         /// time range or increasing the specified period. Alternatively, make
+         /// multiple requests across adjacent time ranges. </para>
+         /// </summary>
+         /// 
+         /// <param name="getMetricStatisticsRequest">Container for the necessary
+         ///           parameters to execute the GetMetricStatistics service method on
+         ///           AmazonCloudWatch.</param>
+         /// 
+         /// <returns>The response from the GetMetricStatistics service method, as
+         ///         returned by AmazonCloudWatch.</returns>
+         /// 
+         /// <exception cref="InvalidParameterValueException"/>
+         /// <exception cref="InternalServiceException"/>
+         /// <exception cref="InvalidParameterCombinationException"/>
+         /// <exception cref="MissingRequiredParameterException"/>
+        public GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest getMetricStatisticsRequest) 
+        {           
+            IRequest<GetMetricStatisticsRequest> request = new GetMetricStatisticsRequestMarshaller().Marshall(getMetricStatisticsRequest);
+            GetMetricStatisticsResponse response = Invoke<GetMetricStatisticsRequest, GetMetricStatisticsResponse> (request, this.signer, GetMetricStatisticsResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Add authentication related and version parameters
-         */
-        private void AddRequiredParameters(IDictionary<string, string> parameters)
-        {
-            if (String.IsNullOrEmpty(this.awsAccessKeyId))
-            {
-                throw new AmazonCloudWatchException("The AWS Access Key ID cannot be NULL or a Zero length string");
-            }
-
-            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
-            parameters["SignatureVersion"] = config.SignatureVersion;
-            parameters["SignatureMethod"] = config.SignatureMethod;
-            parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
-            parameters["Version"] = config.ServiceVersion;
-            if (!config.SignatureVersion.Equals("2"))
-            {
-                throw new AmazonCloudWatchException("Invalid Signature Version specified");
-            }
-            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
-
-            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
-            string auth;
-
-            if (config.UseSecureStringForAwsSecretKey)
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
-            }
-            else
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
-            }
-            parameters["Signature"] = auth;
+         /// <summary>
+         /// <para> Disables actions for the specified alarms. When an alarm's
+         /// actions are disabled the alarm's state may change, but none of the
+         /// alarm's actions will execute. </para>
+         /// </summary>
+         /// 
+         /// <param name="disableAlarmActionsRequest">Container for the necessary
+         ///           parameters to execute the DisableAlarmActions service method on
+         ///           AmazonCloudWatch.</param>
+         /// 
+        public DisableAlarmActionsResponse DisableAlarmActions(DisableAlarmActionsRequest disableAlarmActionsRequest) 
+        {           
+            IRequest<DisableAlarmActionsRequest> request = new DisableAlarmActionsRequestMarshaller().Marshall(disableAlarmActionsRequest);
+            DisableAlarmActionsResponse response = Invoke<DisableAlarmActionsRequest, DisableAlarmActionsResponse> (request, this.signer, DisableAlarmActionsResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert ListMetricsRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertListMetrics(ListMetricsRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "ListMetrics";
-            if (request.IsSetNextToken())
-            {
-                parameters["NextToken"] = request.NextToken;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Retrieves alarms with the specified names. If no name is
+         /// specified, all alarms for the user are returned. Alarms can be
+         /// retrieved by using only a prefix for the alarm name, the alarm state,
+         /// or a prefix for any action. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeAlarmsRequest">Container for the necessary
+         ///           parameters to execute the DescribeAlarms service method on
+         ///           AmazonCloudWatch.</param>
+         /// 
+         /// <returns>The response from the DescribeAlarms service method, as
+         ///         returned by AmazonCloudWatch.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeAlarmsResponse DescribeAlarms(DescribeAlarmsRequest describeAlarmsRequest) 
+        {           
+            IRequest<DescribeAlarmsRequest> request = new DescribeAlarmsRequestMarshaller().Marshall(describeAlarmsRequest);
+            DescribeAlarmsResponse response = Invoke<DescribeAlarmsRequest, DescribeAlarmsResponse> (request, this.signer, DescribeAlarmsResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /**
-         * Convert GetMetricStatisticsRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertGetMetricStatistics(GetMetricStatisticsRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "GetMetricStatistics";
-            List<string> getMetricStatisticsRequestStatisticsList = request.Statistics;
-            int getMetricStatisticsRequestStatisticsListIndex = 1;
-            foreach (string getMetricStatisticsRequestStatistics in getMetricStatisticsRequestStatisticsList)
-            {
-                parameters[String.Concat("Statistics", ".member.", getMetricStatisticsRequestStatisticsListIndex)] = getMetricStatisticsRequestStatistics;
-                getMetricStatisticsRequestStatisticsListIndex++;
-            }
-            if (request.IsSetPeriod())
-            {
-                parameters["Period"] = request.Period.ToString();
-            }
-            if (request.IsSetMeasureName())
-            {
-                parameters["MeasureName"] = request.MeasureName;
-            }
-            List<Dimension> getMetricStatisticsRequestDimensionsList = request.Dimensions;
-            int getMetricStatisticsRequestDimensionsListIndex = 1;
-            foreach (Dimension getMetricStatisticsRequestDimensions in getMetricStatisticsRequestDimensionsList)
-            {
-                if (getMetricStatisticsRequestDimensions.IsSetName())
-                {
-                    parameters[String.Concat("Dimensions", ".member.", getMetricStatisticsRequestDimensionsListIndex, ".", "Name")] = getMetricStatisticsRequestDimensions.Name;
-                }
-                if (getMetricStatisticsRequestDimensions.IsSetValue())
-                {
-                    parameters[String.Concat("Dimensions", ".member.", getMetricStatisticsRequestDimensionsListIndex, ".", "Value")] = getMetricStatisticsRequestDimensions.Value;
-                }
-
-                getMetricStatisticsRequestDimensionsListIndex++;
-            }
-            if (request.IsSetStartTime())
-            {
-                parameters["StartTime"] = request.StartTime;
-            }
-            if (request.IsSetEndTime())
-            {
-                parameters["EndTime"] = request.EndTime;
-            }
-            if (request.IsSetUnit())
-            {
-                parameters["Unit"] = request.Unit;
-            }
-            if (request.IsSetCustomUnit())
-            {
-                parameters["CustomUnit"] = request.CustomUnit;
-            }
-            if (request.IsSetNamespace())
-            {
-                parameters["Namespace"] = request.Namespace;
-            }
-
-            return parameters;
+         /// <summary>
+         /// <para> Retrieves all alarms for a single metric. Specify a statistic,
+         /// period, or unit to filter the set of alarms further. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeAlarmsForMetricRequest">Container for the
+         ///           necessary parameters to execute the DescribeAlarmsForMetric service
+         ///           method on AmazonCloudWatch.</param>
+         /// 
+         /// <returns>The response from the DescribeAlarmsForMetric service method,
+         ///         as returned by AmazonCloudWatch.</returns>
+         /// 
+        public DescribeAlarmsForMetricResponse DescribeAlarmsForMetric(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest) 
+        {           
+            IRequest<DescribeAlarmsForMetricRequest> request = new DescribeAlarmsForMetricRequestMarshaller().Marshall(describeAlarmsForMetricRequest);
+            DescribeAlarmsForMetricResponse response = Invoke<DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResponse> (request, this.signer, DescribeAlarmsForMetricResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        /*
-         *  Transforms response based on xslt template
-         */
-        private static string Transform(string responseBody, Type t)
-        {
-            XslCompiledTransform transformer = new XslCompiledTransform();
-
-            // Build the name of the xslt transform to apply to the response
-            char[] seps = { ',' };
-
-            Assembly assembly = Assembly.GetAssembly(t);
-            string assemblyName = assembly.FullName;
-            assemblyName = assemblyName.Split(seps)[0];
-
-            string ns = t.Namespace;
-            string resourceName = String.Concat(
-                assemblyName,
-                ".",
-                ns,
-                ".Model.",
-                "ResponseTransformer.xslt"
-                );
-            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
-            {
-                transformer.Load(xmlReader);
-
-                StringBuilder sb = new StringBuilder(1024);
-                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
-                {
-                    using (StringWriter sw = new StringWriter(sb))
-                    {
-                        transformer.Transform(xmlR, null, sw);
-                        return sb.ToString();
-                    }
-                }
-            }
+         /// <summary>
+         /// <para> Retrieves history for the specified alarm. Filter alarms by
+         /// date range or item type. If an alarm name is not specified, Amazon
+         /// CloudWatch returns histories for all of the owner's alarms. </para>
+         /// <para><b>NOTE:</b> Amazon CloudWatch retains the history of deleted
+         /// alarms for a period of six weeks. If an alarm has been deleted, its
+         /// history can still be queried. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeAlarmHistoryRequest">Container for the necessary
+         ///           parameters to execute the DescribeAlarmHistory service method on
+         ///           AmazonCloudWatch.</param>
+         /// 
+         /// <returns>The response from the DescribeAlarmHistory service method, as
+         ///         returned by AmazonCloudWatch.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeAlarmHistoryResponse DescribeAlarmHistory(DescribeAlarmHistoryRequest describeAlarmHistoryRequest) 
+        {           
+            IRequest<DescribeAlarmHistoryRequest> request = new DescribeAlarmHistoryRequestMarshaller().Marshall(describeAlarmHistoryRequest);
+            DescribeAlarmHistoryResponse response = Invoke<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResponse> (request, this.signer, DescribeAlarmHistoryResponseUnmarshaller.GetInstance());
+            return response;
         }
+    
 
-        #endregion
+         /// <summary>
+         /// <para> Enables actions for the specified alarms. </para>
+         /// </summary>
+         /// 
+         /// <param name="enableAlarmActionsRequest">Container for the necessary
+         ///           parameters to execute the EnableAlarmActions service method on
+         ///           AmazonCloudWatch.</param>
+         /// 
+        public EnableAlarmActionsResponse EnableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest) 
+        {           
+            IRequest<EnableAlarmActionsRequest> request = new EnableAlarmActionsRequestMarshaller().Marshall(enableAlarmActionsRequest);
+            EnableAlarmActionsResponse response = Invoke<EnableAlarmActionsRequest, EnableAlarmActionsResponse> (request, this.signer, EnableAlarmActionsResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para> Deletes all specified alarms. In the event of an error, no
+         /// alarms are deleted. </para>
+         /// </summary>
+         /// 
+         /// <param name="deleteAlarmsRequest">Container for the necessary
+         ///           parameters to execute the DeleteAlarms service method on
+         ///           AmazonCloudWatch.</param>
+         /// 
+         /// <exception cref="ResourceNotFoundException"/>
+        public DeleteAlarmsResponse DeleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest) 
+        {           
+            IRequest<DeleteAlarmsRequest> request = new DeleteAlarmsRequestMarshaller().Marshall(deleteAlarmsRequest);
+            DeleteAlarmsResponse response = Invoke<DeleteAlarmsRequest, DeleteAlarmsResponse> (request, this.signer, DeleteAlarmsResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para> Temporarily sets the state of an alarm. When the updated
+         /// <c>StateValue</c> differs from the previous value, the action
+         /// configured for the appropriate state is invoked. This is not a
+         /// permanent change. The next periodic alarm check (in about a minute)
+         /// will set the alarm to its actual state. </para>
+         /// </summary>
+         /// 
+         /// <param name="setAlarmStateRequest">Container for the necessary
+         ///           parameters to execute the SetAlarmState service method on
+         ///           AmazonCloudWatch.</param>
+         /// 
+         /// <exception cref="ResourceNotFoundException"/>
+         /// <exception cref="InvalidFormatException"/>
+        public SetAlarmStateResponse SetAlarmState(SetAlarmStateRequest setAlarmStateRequest) 
+        {           
+            IRequest<SetAlarmStateRequest> request = new SetAlarmStateRequestMarshaller().Marshall(setAlarmStateRequest);
+            SetAlarmStateResponse response = Invoke<SetAlarmStateRequest, SetAlarmStateResponse> (request, this.signer, SetAlarmStateResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
     }
-}
+}   
+    

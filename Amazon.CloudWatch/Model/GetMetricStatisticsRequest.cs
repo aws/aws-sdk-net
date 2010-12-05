@@ -1,408 +1,375 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// This call returns data for one or more statistics of given a metric. For more information, see the CloudWatch developer
-    /// documentation. The maximum number of datapoints that the Amazon CloudWatch service will return in a single GetMetricStatistics
-    /// request is 1,440. If a request is made that would generate more datapoints than this amount, Amazon CloudWatch will return an
-    /// error. You can alter your request by narrowing the time range (StartTime, EndTime) or increasing the Period in your single
-    /// request. You may also get all of the data at the granularity you originally asked for by making multiple requests with
-    /// adjacent time ranges.
+    /// Container for the parameters to the GetMetricStatistics operation.
+    /// <para> Gets statistics for the specified metric. </para>
+    /// <para><b>NOTE:</b> The maximum number of datapoints returned from a
+    /// single GetMetricStatistics request is 1,440. If a request is made that
+    /// generates more than 1,440 datapoints, Amazon CloudWatch returns an
+    /// error. In such a case, alter the request by narrowing the specified
+    /// time range or increasing the specified period. Alternatively, make
+    /// multiple requests across adjacent time ranges. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://monitoring.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
-    public class GetMetricStatisticsRequest
+    /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.GetMetricStatistics"/>
+    public class GetMetricStatisticsRequest : AmazonWebServiceRequest
     {
-        private List<string> statisticsField;
-        private Decimal? periodField;
-        private string measureNameField;
-        private List<Dimension> dimensionsField;
-        private string startTimeField;
-        private string endTimeField;
-        private string unitField;
-        private string customUnitField;
-        private string namespaceValueField;
+        private string namespaceValue;
+        private string metricName;
+        private List<Dimension> dimensions = new List<Dimension>();
+        private DateTime? startTime;
+        private DateTime? endTime;
+        private int? period;
+        private List<string> statistics = new List<string>();
+        private string unit;
 
         /// <summary>
-        /// Gets and sets the Statistics property.
-        /// The statistics to be returned for the given metric. No default.
+        /// The namespace of the metric.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[^:].*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "Statistics")]
-        public List<string> Statistics
-        {
-            get
-            {
-                if (this.statisticsField == null)
-                {
-                    this.statisticsField = new List<string>();
-                }
-                return this.statisticsField;
-            }
-            set { this.statisticsField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Statistics property
-        /// </summary>
-        /// <param name="list">The statistics to be returned for the given metric. No default.</param>
-        /// <returns>this instance</returns>
-        public GetMetricStatisticsRequest WithStatistics(params string[] list)
-        {
-            foreach (string item in list)
-            {
-                Statistics.Add(item);
-            }
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if Statistics property is set
-        /// </summary>
-        /// <returns>true if Statistics property is set</returns>
-        public bool IsSetStatistics()
-        {
-            return (Statistics.Count > 0);
-        }
-
-        /// <summary>
-        /// Gets and sets the Period property.
-        /// The granularity (in seconds) of the returned datapoints. Valid Values are 60 or a multiple of 60. Default is 60.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "Period")]
-        public Decimal Period
-        {
-            get { return this.periodField.GetValueOrDefault(); }
-            set { this.periodField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Period property
-        /// </summary>
-        /// <param name="period">The granularity (in seconds) of the returned datapoints. Valid Values are 60 or a multiple of 60. Default is 60.</param>
-        /// <returns>this instance</returns>
-        public GetMetricStatisticsRequest WithPeriod(Decimal period)
-        {
-            this.periodField = period;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if Period property is set
-        /// </summary>
-        /// <returns>true if Period property is set</returns>
-        public bool IsSetPeriod()
-        {
-            return this.periodField.HasValue;
-        }
-
-        /// <summary>
-        /// Gets and sets the MeasureName property.
-        /// The measure name that corresponds to the measure for the gathered metric. Must be a valid collected metric with the corresponding measure name.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "MeasureName")]
-        public string MeasureName
-        {
-            get { return this.measureNameField; }
-            set { this.measureNameField = value; }
-        }
-
-        /// <summary>
-        /// Sets the MeasureName property
-        /// </summary>
-        /// <param name="measureName">The measure name that corresponds to the measure for the gathered metric. Must be a valid collected metric with the corresponding measure name.</param>
-        /// <returns>this instance</returns>
-        public GetMetricStatisticsRequest WithMeasureName(string measureName)
-        {
-            this.measureNameField = measureName;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if MeasureName property is set
-        /// </summary>
-        /// <returns>true if MeasureName property is set</returns>
-        public bool IsSetMeasureName()
-        {
-            return this.measureNameField != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the Dimensions property.
-        /// Amazon CloudWatch allows you to specify one Dimension to further filter metric data on. If you don't specify a dimension,
-        /// the service returns the aggregate of all the measures with the given measure name and time range.
-        ///
-        /// Exception: LoadBalancerName and AvailabilityZone can be used together as a special case of multiple-dimension aggregation.
-        ///
-        /// Constraints: Must correspond to dimensions of a currently gathered metric. Please see Amazon CloudWatch Dimensions.
-        ///
-        /// Default: None
-        /// </summary>
-        [XmlElementAttribute(ElementName = "Dimensions")]
-        public List<Dimension> Dimensions
-        {
-            get
-            {
-                if (this.dimensionsField == null)
-                {
-                    this.dimensionsField = new List<Dimension>();
-                }
-                return this.dimensionsField;
-            }
-            set { this.dimensionsField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Dimensions property
-        /// </summary>
-        /// <param name="list">Amazon CloudWatch allows you to specify one Dimension to further filter metric data on. If you don't specify a dimension,
-        /// the service returns the aggregate of all the measures with the given measure name and time range.
-        ///
-        /// Exception: LoadBalancerName and AvailabilityZone can be used together as a special case of multiple-dimension aggregation.
-        ///
-        /// Constraints: Must correspond to dimensions of a currently gathered metric. Please see Amazon CloudWatch Dimensions.
-        ///
-        /// Default: None</param>
-        /// <returns>this instance</returns>
-        public GetMetricStatisticsRequest WithDimensions(params Dimension[] list)
-        {
-            foreach (Dimension item in list)
-            {
-                Dimensions.Add(item);
-            }
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if Dimensions property is set
-        /// </summary>
-        /// <returns>true if Dimensions property is set</returns>
-        public bool IsSetDimensions()
-        {
-            return (Dimensions.Count > 0);
-        }
-
-        /// <summary>
-        /// Gets and sets the StartTime property.
-        /// The timestamp of the first datapoint to return, inclusive. For example, 2008-02-26T19:00:00+00:00. We round your value down
-        /// to the nearest minute.
-        ///
-        /// You can set your start time for more than two weeks in the past. However, you will only get data for the past two weeks.
-        ///
-        /// In ISO 8601 format; for more information, go to http://isotc.iso.org .)
-        ///
-        /// Default: None
-        ///
-        /// Constraints: Must be before EndTime
-        /// </summary>
-        [XmlElementAttribute(ElementName = "StartTime")]
-        public string StartTime
-        {
-            get { return this.startTimeField; }
-            set { this.startTimeField = value; }
-        }
-
-        /// <summary>
-        /// Sets the StartTime property
-        /// </summary>
-        /// <param name="startTime">The timestamp of the first datapoint to return, inclusive. For example, 2008-02-26T19:00:00+00:00. We round your value down
-        /// to the nearest minute.
-        ///
-        /// You can set your start time for more than two weeks in the past. However, you will only get data for the past two weeks.
-        ///
-        /// In ISO 8601 format; for more information, go to http://isotc.iso.org .)
-        ///
-        /// Default: None
-        ///
-        /// Constraints: Must be before EndTime</param>
-        /// <returns>this instance</returns>
-        public GetMetricStatisticsRequest WithStartTime(string startTime)
-        {
-            this.startTimeField = startTime;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if StartTime property is set
-        /// </summary>
-        /// <returns>true if StartTime property is set</returns>
-        public bool IsSetStartTime()
-        {
-            return this.startTimeField != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the EndTime property.
-        /// The timestamp to use for determining the last datapoint to return. This is the last datapoint to fetch, exclusive.
-        /// For example, 2008-02-26T20:00:00+00:00.
-        ///
-        /// Type: dateTime (in ISO 8601 format; for more information, go to http://isotc.iso.org .)
-        ///
-        /// Default: None
-        /// </summary>
-        [XmlElementAttribute(ElementName = "EndTime")]
-        public string EndTime
-        {
-            get { return this.endTimeField; }
-            set { this.endTimeField = value; }
-        }
-
-        /// <summary>
-        /// Sets the EndTime property
-        /// </summary>
-        /// <param name="endTime">The timestamp to use for determining the last datapoint to return. This is the last datapoint to fetch, exclusive.
-        /// For example, 2008-02-26T20:00:00+00:00.
-        ///
-        /// Type: dateTime (in ISO 8601 format; for more information, go to http://isotc.iso.org .)
-        ///
-        /// Default: None</param>
-        /// <returns>this instance</returns>
-        public GetMetricStatisticsRequest WithEndTime(string endTime)
-        {
-            this.endTimeField = endTime;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if EndTime property is set
-        /// </summary>
-        /// <returns>true if EndTime property is set</returns>
-        public bool IsSetEndTime()
-        {
-            return this.endTimeField != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the Unit property.
-        /// The standard unit of Measurement for a given Measure. Please see the key term Unit.
-        ///
-        /// Default: None
-        ///
-        /// Valid Values: For more information, see StandardUnit
-        ///
-        /// Constraints: When using count/second as the unit, you should use Sum as the statistic instead of Average. Otherwise,
-        /// the sample returns as equal to the number of requests instead of the number of 60-second intervals. This will cause
-        /// the Average to always equals one when the unit is count/second.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "Unit")]
-        public string Unit
-        {
-            get { return this.unitField; }
-            set { this.unitField = value; }
-        }
-
-        /// <summary>
-        /// Sets the Unit property
-        /// </summary>
-        /// <param name="unit">The standard unit of Measurement for a given Measure. Please see the key term Unit.
-        ///
-        /// Default: None
-        ///
-        /// Valid Values: For more information, see StandardUnit
-        ///
-        /// Constraints: When using count/second as the unit, you should use Sum as the statistic instead of Average. Otherwise,
-        /// the sample returns as equal to the number of requests instead of the number of 60-second intervals. This will cause
-        /// the Average to always equals one when the unit is count/second.</param>
-        /// <returns>this instance</returns>
-        public GetMetricStatisticsRequest WithUnit(string unit)
-        {
-            this.unitField = unit;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if Unit property is set
-        /// </summary>
-        /// <returns>true if Unit property is set</returns>
-        public bool IsSetUnit()
-        {
-            return this.unitField != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the CustomUnit property.
-        /// The user-defined CustomUnit applied to a Measure. Please see the key term Unit. CustomUnits are not currently available.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "CustomUnit")]
-        public string CustomUnit
-        {
-            get { return this.customUnitField; }
-            set { this.customUnitField = value; }
-        }
-
-        /// <summary>
-        /// Sets the CustomUnit property
-        /// </summary>
-        /// <param name="customUnit">The user-defined CustomUnit applied to a Measure. Please see the key term Unit. CustomUnits are not currently available.</param>
-        /// <returns>this instance</returns>
-        public GetMetricStatisticsRequest WithCustomUnit(string customUnit)
-        {
-            this.customUnitField = customUnit;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if CustomUnit property is set
-        /// </summary>
-        /// <returns>true if CustomUnit property is set</returns>
-        public bool IsSetCustomUnit()
-        {
-            return this.customUnitField != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the Namespace property.
-        /// The namespace corresponding to the service of interest. For example, AWS/EC2 represents Amazon EC2.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "Namespace")]
         public string Namespace
         {
-            get { return this.namespaceValueField; }
-            set { this.namespaceValueField = value; }
+            get { return this.namespaceValue; }
+            set { this.namespaceValue = value; }
         }
 
         /// <summary>
         /// Sets the Namespace property
         /// </summary>
-        /// <param name="namespaceValue">The namespace corresponding to the service of interest. For example, AWS/EC2 represents Amazon EC2.</param>
+        /// <param name="namespaceValue">The value to set for the Namespace property </param>
         /// <returns>this instance</returns>
         public GetMetricStatisticsRequest WithNamespace(string namespaceValue)
         {
-            this.namespaceValueField = namespaceValue;
+            this.namespaceValue = namespaceValue;
             return this;
+        }
+            
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this.namespaceValue != null;       
         }
 
         /// <summary>
-        /// Checks if Namespace property is set
+        /// The name of the metric.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        /// <returns>true if Namespace property is set</returns>
-        public bool IsSetNamespace()
+        public string MetricName
         {
-            return this.namespaceValueField != null;
+            get { return this.metricName; }
+            set { this.metricName = value; }
         }
 
+        /// <summary>
+        /// Sets the MetricName property
+        /// </summary>
+        /// <param name="metricName">The value to set for the MetricName property </param>
+        /// <returns>this instance</returns>
+        public GetMetricStatisticsRequest WithMetricName(string metricName)
+        {
+            this.metricName = metricName;
+            return this;
+        }
+            
+
+        // Check to see if MetricName property is set
+        internal bool IsSetMetricName()
+        {
+            return this.metricName != null;       
+        }
+
+        /// <summary>
+        /// A list of dimensions describing qualities of the metric.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 10</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public List<Dimension> Dimensions
+        {
+            get { return this.dimensions; }
+            set { this.dimensions = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Dimensions collection
+        /// </summary>
+        /// <param name="dimensions">The values to add to the Dimensions collection </param>
+        /// <returns>this instance</returns>
+        public GetMetricStatisticsRequest WithDimensions(params Dimension[] dimensions)
+        {
+            foreach (Dimension element in dimensions)
+            {
+                this.dimensions.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Dimensions collection
+        /// </summary>
+        /// <param name="dimensions">The values to add to the Dimensions collection </param>
+        /// <returns>this instance</returns>
+        public GetMetricStatisticsRequest WithDimensions(IEnumerable<Dimension> dimensions)
+        {
+            foreach (Dimension element in dimensions)
+            {
+                this.dimensions.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Dimensions property is set
+        internal bool IsSetDimensions()
+        {
+            return this.dimensions.Count > 0;       
+        }
+
+        /// <summary>
+        /// The time stamp to use for determining the first datapoint to return.
+        /// The value specified is inclusive; results include datapoints with the
+        /// time stamp specified. <note> The specified start time is rounded down
+        /// to the nearest value. Datapoints are returned for start times up to
+        /// two weeks in the past. Specified start times that are more than two
+        /// weeks in the past will not return datapoints for metrics that are
+        /// older than two weeks. </note>
+        ///  
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this.startTime ?? default(DateTime); }
+            set { this.startTime = value; }
+        }
+
+        /// <summary>
+        /// Sets the StartTime property
+        /// </summary>
+        /// <param name="startTime">The value to set for the StartTime property </param>
+        /// <returns>this instance</returns>
+        public GetMetricStatisticsRequest WithStartTime(DateTime startTime)
+        {
+            this.startTime = startTime;
+            return this;
+        }
+            
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this.startTime.HasValue;       
+        }
+
+        /// <summary>
+        /// The time stamp to use for determining the last datapoint to return.
+        /// The value specified is exclusive; results will include datapoints up
+        /// to the time stamp specified.
+        ///  
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this.endTime ?? default(DateTime); }
+            set { this.endTime = value; }
+        }
+
+        /// <summary>
+        /// Sets the EndTime property
+        /// </summary>
+        /// <param name="endTime">The value to set for the EndTime property </param>
+        /// <returns>this instance</returns>
+        public GetMetricStatisticsRequest WithEndTime(DateTime endTime)
+        {
+            this.endTime = endTime;
+            return this;
+        }
+            
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this.endTime.HasValue;       
+        }
+
+        /// <summary>
+        /// The granularity, in seconds, of the returned datapoints. <c>Period</c>
+        /// must be at least 60 seconds and must be a multiple of 60. The default
+        /// value is 60.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>60 - </description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public int Period
+        {
+            get { return this.period ?? default(int); }
+            set { this.period = value; }
+        }
+
+        /// <summary>
+        /// Sets the Period property
+        /// </summary>
+        /// <param name="period">The value to set for the Period property </param>
+        /// <returns>this instance</returns>
+        public GetMetricStatisticsRequest WithPeriod(int period)
+        {
+            this.period = period;
+            return this;
+        }
+            
+
+        // Check to see if Period property is set
+        internal bool IsSetPeriod()
+        {
+            return this.period.HasValue;       
+        }
+
+        /// <summary>
+        /// The metric statistics to return.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 5</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public List<string> Statistics
+        {
+            get { return this.statistics; }
+            set { this.statistics = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Statistics collection
+        /// </summary>
+        /// <param name="statistics">The values to add to the Statistics collection </param>
+        /// <returns>this instance</returns>
+        public GetMetricStatisticsRequest WithStatistics(params string[] statistics)
+        {
+            foreach (string element in statistics)
+            {
+                this.statistics.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Statistics collection
+        /// </summary>
+        /// <param name="statistics">The values to add to the Statistics collection </param>
+        /// <returns>this instance</returns>
+        public GetMetricStatisticsRequest WithStatistics(IEnumerable<string> statistics)
+        {
+            foreach (string element in statistics)
+            {
+                this.statistics.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Statistics property is set
+        internal bool IsSetStatistics()
+        {
+            return this.statistics.Count > 0;       
+        }
+
+        /// <summary>
+        /// The unit for the metric.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Unit
+        {
+            get { return this.unit; }
+            set { this.unit = value; }
+        }
+
+        /// <summary>
+        /// Sets the Unit property
+        /// </summary>
+        /// <param name="unit">The value to set for the Unit property </param>
+        /// <returns>this instance</returns>
+        public GetMetricStatisticsRequest WithUnit(string unit)
+        {
+            this.unit = unit;
+            return this;
+        }
+            
+
+        // Check to see if Unit property is set
+        internal bool IsSetUnit()
+        {
+            return this.unit != null;       
+        }
     }
 }
+    

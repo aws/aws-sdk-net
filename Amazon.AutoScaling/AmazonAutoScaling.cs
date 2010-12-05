@@ -1,132 +1,444 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
-using System.Xml.Serialization;
-using System.Collections.Generic;
+
+using Amazon.AutoScaling;
 using Amazon.AutoScaling.Model;
 
 namespace Amazon.AutoScaling
 {
     /// <summary>
-    /// Auto Scaling allows you to automatically scale your Amazon EC2 capacity up or down
-    /// according to conditions you define. With Auto Scaling, you can ensure that the number
-    /// of Amazon EC2 instances you're using scales up seamlessly during demand spikes
-    /// to maintain performance, and scales down automatically during demand lulls to minimize costs.
-    /// Auto Scaling is particularly well suited for applications that experience hourly, daily,
-    /// or weekly variability in usage. Auto Scaling is enabled by Amazon CloudWatch and available
-    /// at no additional charge beyond Amazon CloudWatch fees.
+    /// Interface for accessing AmazonAutoScaling.
+    ///  
+    ///  Auto Scaling <para> Auto Scaling is a web service designed to
+    /// automatically launch or terminate EC2 instances based on user-defined
+    /// policies, schedules, and health checks. Auto Scaling responds
+    /// automatically to changing conditions. All you need to do is specify
+    /// how it should respond to those changes. </para> <para> Auto Scaling
+    /// groups can work across multiple Availability Zones - distinct physical
+    /// locations for the hosted Amazon EC2 instances - so that if an
+    /// Availability Zone becomes unavailable, Auto Scaling will automatically
+    /// redistribute applications to a different Availability Zone. </para>
     /// </summary>
     public interface AmazonAutoScaling : IDisposable
     {
-        /// <summary>
-        /// Delete Launch Configuration
-        /// </summary>
-        /// <param name="request">Delete Launch Configuration  request</param>
-        /// <returns>Delete Launch Configuration  Response from the service</returns>
-        DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request);
+        
 
-        /// <summary>
-        /// Describe Triggers
-        /// </summary>
-        /// <param name="request">Describe Triggers  request</param>
-        /// <returns>Describe Triggers  Response from the service</returns>
-        DescribeTriggersResponse DescribeTriggers(DescribeTriggersRequest request);
+         /// <summary>
+         /// <para> Creates a scheduled scaling action for a Auto Scaling group. If
+         /// you leave a parameter unspecified, the corresponding value remains
+         /// unchanged in the affected Auto Scaling group. </para>
+         /// </summary>
+         /// 
+         /// <param name="putScheduledUpdateGroupActionRequest">Container for the
+         ///           necessary parameters to execute the PutScheduledUpdateGroupAction
+         ///           service method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="AlreadyExistsException"/>
+         /// <exception cref="LimitExceededException"/>
+        PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest); 
 
-        /// <summary>
-        /// Update Auto Scaling Group
-        /// </summary>
-        /// <param name="request">Update Auto Scaling Group  request</param>
-        /// <returns>Update Auto Scaling Group  Response from the service</returns>
-        UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request);
+         /// <summary>
+         /// <para> Adjusts the desired size of the AutoScalingGroup by initiating
+         /// scaling activities. When reducing the size of the group, it is not
+         /// possible to define which EC2 instances will be terminated. This
+         /// applies to any auto-scaling decisions that might result in the
+         /// termination of instances. </para>
+         /// </summary>
+         /// 
+         /// <param name="setDesiredCapacityRequest">Container for the necessary
+         ///           parameters to execute the SetDesiredCapacity service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="ScalingActivityInProgressException"/>
+        SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest); 
 
-        /// <summary>
-        /// Create Auto Scaling Group
-        /// </summary>
-        /// <param name="request">Create Auto Scaling Group  request</param>
-        /// <returns>Create Auto Scaling Group  Response from the service</returns>
-        CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request);
+         /// <summary>
+         /// <para>Deletes a policy created by PutScalingPolicy </para>
+         /// </summary>
+         /// 
+         /// <param name="deletePolicyRequest">Container for the necessary
+         ///           parameters to execute the DeletePolicy service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        DeletePolicyResponse DeletePolicy(DeletePolicyRequest deletePolicyRequest); 
 
-        /// <summary>
-        /// Delete Trigger
-        /// </summary>
-        /// <param name="request">Delete Trigger  request</param>
-        /// <returns>Delete Trigger  Response from the service</returns>
-        DeleteTriggerResponse DeleteTrigger(DeleteTriggerRequest request);
+         /// <summary>
+         /// <para>Deletes a scheduled action previously created using the
+         /// PutScheduledUpdateGroupAction.</para>
+         /// </summary>
+         /// 
+         /// <param name="deleteScheduledActionRequest">Container for the necessary
+         ///           parameters to execute the DeleteScheduledAction service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest); 
 
-        /// <summary>
-        /// Terminate Instance In Auto Scaling Group
-        /// </summary>
-        /// <param name="request">Terminate Instance In Auto Scaling Group  request</param>
-        /// <returns>Terminate Instance In Auto Scaling Group  Response from the service</returns>
-        TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request);
+         /// <summary>
+         /// <para> Returns a full description of the launch configurations given
+         /// the specified names. </para> <para> If no names are specified, then
+         /// the full details of all launch configurations are returned. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeLaunchConfigurationsRequest">Container for the
+         ///           necessary parameters to execute the DescribeLaunchConfigurations
+         ///           service method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeLaunchConfigurations service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest); 
 
-        /// <summary>
-        /// Create Or Update Scaling Trigger
-        /// </summary>
-        /// <param name="request">Create Or Update Scaling Trigger  request</param>
-        /// <returns>Create Or Update Scaling Trigger  Response from the service</returns>
-        CreateOrUpdateScalingTriggerResponse CreateOrUpdateScalingTrigger(CreateOrUpdateScalingTriggerRequest request);
+         /// <summary>
+         /// <para>Returns scaling process types for use in the ResumeProcesses and
+         /// SuspendProcesses actions.</para>
+         /// </summary>
+         /// 
+         /// <param name="describeScalingProcessTypesRequest">Container for the
+         ///           necessary parameters to execute the DescribeScalingProcessTypes
+         ///           service method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeScalingProcessTypes service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+        DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest); 
 
-        /// <summary>
-        /// Describe Auto Scaling Groups
-        /// </summary>
-        /// <param name="request">Describe Auto Scaling Groups  request</param>
-        /// <returns>Describe Auto Scaling Groups  Response from the service</returns>
-        DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request);
+         /// <summary>
+         /// <para> Returns a full description of each Auto Scaling group in the
+         /// given list. This includes all Amazon EC2 instances that are members of
+         /// the group. If a list of names is not provided, the service returns the
+         /// full details of all Auto Scaling groups. </para> <para> This action
+         /// supports pagination by returning a token if there are more pages to
+         /// retrieve. To get the next page, call this action again with the
+         /// returned token as the NextToken parameter. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeAutoScalingGroupsRequest">Container for the
+         ///           necessary parameters to execute the DescribeAutoScalingGroups service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeAutoScalingGroups service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest); 
 
-        /// <summary>
-        /// Create Launch Configuration
-        /// </summary>
-        /// <param name="request">Create Launch Configuration  request</param>
-        /// <returns>Create Launch Configuration  Response from the service</returns>
-        CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request);
+         /// <summary>
+         /// <para> Enables monitoring of group metrics for the Auto Scaling group
+         /// specified in AutoScalingGroupName. You can specify the list of enabled
+         /// metrics with the Metrics parameter. </para> <para> Auto scaling
+         /// metrics collection can be turned on only if the
+         /// <c>InstanceMonitoring.Enabled</c> flag, in the Auto Scaling group's
+         /// launch configuration, is set to <c>true</c> .
+         /// </para>
+         /// </summary>
+         /// 
+         /// <param name="enableMetricsCollectionRequest">Container for the
+         ///           necessary parameters to execute the EnableMetricsCollection service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+        EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest enableMetricsCollectionRequest); 
 
-        /// <summary>
-        /// Describe Launch Configurations
-        /// </summary>
-        /// <param name="request">Describe Launch Configurations  request</param>
-        /// <returns>Describe Launch Configurations  Response from the service</returns>
-        DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request);
+         /// <summary>
+         /// <para> Terminates the specified instance. Optionally, the desired
+         /// group size can be adjusted. </para> <para><b>NOTE:</b> This call
+         /// simply registers a termination request. The termination of the
+         /// instance cannot happen immediately. </para>
+         /// </summary>
+         /// 
+         /// <param name="terminateInstanceInAutoScalingGroupRequest">Container for
+         ///           the necessary parameters to execute the
+         ///           TerminateInstanceInAutoScalingGroup service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the TerminateInstanceInAutoScalingGroup
+         ///         service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="ScalingActivityInProgressException"/>
+        TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest); 
 
-        /// <summary>
-        /// Describe Scaling Activities
-        /// </summary>
-        /// <param name="request">Describe Scaling Activities  request</param>
-        /// <returns>Describe Scaling Activities  Response from the service</returns>
-        DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request);
+         /// <summary>
+         /// <para> Returns the scaling activities for the specified Auto Scaling
+         /// group. </para> <para> If the specified <i>ActivityIds</i> list is
+         /// empty, all the activities from the past six weeks are returned.
+         /// Activities are sorted by completion time. Activities still in progress
+         /// appear first on the list. </para> <para> This action supports
+         /// pagination. If the response includes a token, there are more records
+         /// available. To get the additional records, repeat the request with the
+         /// response token as the NextToken parameter. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeScalingActivitiesRequest">Container for the
+         ///           necessary parameters to execute the DescribeScalingActivities service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeScalingActivities service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest); 
 
-        /// <summary>
-        /// Set Desired Capacity
-        /// </summary>
-        /// <param name="request">Set Desired Capacity  request</param>
-        /// <returns>Set Desired Capacity  Response from the service</returns>
-        SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request);
+         /// <summary>
+         /// <para>Runs the policy you create for your Auto Scaling group in
+         /// PutScalingPolicy.</para>
+         /// </summary>
+         /// 
+         /// <param name="executePolicyRequest">Container for the necessary
+         ///           parameters to execute the ExecutePolicy service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="ScalingActivityInProgressException"/>
+        ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest executePolicyRequest); 
 
-        /// <summary>
-        /// Delete Auto Scaling Group
-        /// </summary>
-        /// <param name="request">Delete Auto Scaling Group  request</param>
-        /// <returns>Delete Auto Scaling Group  Response from the service</returns>
-        DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request);
+         /// <summary>
+         /// <para> Returns a list of metrics and a corresponding list of
+         /// granularities for each metric. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeMetricCollectionTypesRequest">Container for the
+         ///           necessary parameters to execute the DescribeMetricCollectionTypes
+         ///           service method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeMetricCollectionTypes service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+        DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest); 
 
+         /// <summary>
+         /// <para> Returns descriptions of what each policy does. This action
+         /// supports pagination. If the response includes a token, there are more
+         /// records available. To get the additional records, repeat the request
+         /// with the response token as the NextToken parameter. </para>
+         /// </summary>
+         /// 
+         /// <param name="describePoliciesRequest">Container for the necessary
+         ///           parameters to execute the DescribePolicies service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribePolicies service method, as
+         ///         returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest describePoliciesRequest); 
+
+         /// <summary>
+         /// <para> Returns policy adjustment types for use in the PutScalingPolicy
+         /// action. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeAdjustmentTypesRequest">Container for the
+         ///           necessary parameters to execute the DescribeAdjustmentTypes service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeAdjustmentTypes service method,
+         ///         as returned by AmazonAutoScaling.</returns>
+         /// 
+        DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest); 
+
+         /// <summary>
+         /// <para> Deletes the specified auto scaling group if the group has no
+         /// instances and no scaling activities in progress. </para>
+         /// <para><b>NOTE:</b> To remove all instances before calling
+         /// DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the
+         /// minimum and maximum size of the AutoScalingGroup to zero. </para>
+         /// </summary>
+         /// 
+         /// <param name="deleteAutoScalingGroupRequest">Container for the
+         ///           necessary parameters to execute the DeleteAutoScalingGroup service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="ResourceInUseException"/>
+         /// <exception cref="ScalingActivityInProgressException"/>
+        DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest); 
+
+         /// <summary>
+         /// <para> Creates a new Auto Scaling group with the specified name. Once
+         /// the creation request is completed, the AutoScalingGroup is ready to be
+         /// used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group
+         /// name must be unique within the scope of your AWS account, and under
+         /// the quota of Auto Scaling groups allowed for your account. </para>
+         /// </summary>
+         /// 
+         /// <param name="createAutoScalingGroupRequest">Container for the
+         ///           necessary parameters to execute the CreateAutoScalingGroup service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="AlreadyExistsException"/>
+         /// <exception cref="LimitExceededException"/>
+        CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest createAutoScalingGroupRequest); 
+
+         /// <summary>
+         /// <para> Returns a description of each Auto Scaling instance in the
+         /// InstanceIds list. If a list is not provided, the service returns the
+         /// full details of all instances up to a maximum of fifty. </para> <para>
+         /// This action supports pagination by returning a token if there are more
+         /// pages to retrieve. To get the next page, call this action again with
+         /// the returned token as the NextToken parameter. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeAutoScalingInstancesRequest">Container for the
+         ///           necessary parameters to execute the DescribeAutoScalingInstances
+         ///           service method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeAutoScalingInstances service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest); 
+
+         /// <summary>
+         /// <para> Deletes the specified LaunchConfiguration. </para> <para> The
+         /// specified launch configuration must not be attached to an Auto Scaling
+         /// group. Once this call completes, the launch configuration is no longer
+         /// available for use. </para>
+         /// </summary>
+         /// 
+         /// <param name="deleteLaunchConfigurationRequest">Container for the
+         ///           necessary parameters to execute the DeleteLaunchConfiguration service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="ResourceInUseException"/>
+        DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest); 
+
+         /// <summary>
+         /// <para> Creates or updates a policy for an Auto Scaling group. To
+         /// update an existing policy, use the existing policy name and set the
+         /// parameter(s) you want to change. Any existing parameter not changed in
+         /// an update to an existing policy is not changed in this update request.
+         /// </para>
+         /// </summary>
+         /// 
+         /// <param name="putScalingPolicyRequest">Container for the necessary
+         ///           parameters to execute the PutScalingPolicy service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the PutScalingPolicy service method, as
+         ///         returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="LimitExceededException"/>
+        PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest); 
+
+         /// <summary>
+         /// <para> Sets the health status of an instance. </para>
+         /// </summary>
+         /// 
+         /// <param name="setInstanceHealthRequest">Container for the necessary
+         ///           parameters to execute the SetInstanceHealth service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest); 
+
+         /// <summary>
+         /// <para> Updates the configuration for the specified AutoScalingGroup.
+         /// </para> <para><b>NOTE:</b> To update an Auto Scaling group with a
+         /// launch configuration that has the InstanceMonitoring.enabled flag set
+         /// to false, you must first ensure that collection of group metrics is
+         /// disabled. Otherwise, calls to UpdateAutoScalingGroup will fail. If you
+         /// have previously enabled group metrics collection, you can disable
+         /// collection of all group metrics by calling DisableMetricsCollection.
+         /// </para> <para> The new settings are registered upon the completion of
+         /// this call. Any launch configuration settings take effect on any
+         /// triggers after this call returns. Triggers that are currently in
+         /// progress aren't affected. </para> <para><b>NOTE:</b> If the new values
+         /// are specified for the MinSize or MaxSize parameters, then there will
+         /// be an implicit call to SetDesiredCapacity to set the group to the new
+         /// MaxSize. All optional parameters are left unchanged if not passed in
+         /// the request. </para>
+         /// </summary>
+         /// 
+         /// <param name="updateAutoScalingGroupRequest">Container for the
+         ///           necessary parameters to execute the UpdateAutoScalingGroup service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="ScalingActivityInProgressException"/>
+        UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest); 
+
+         /// <summary>
+         /// <para> Lists all the actions scheduled for your Auto Scaling group
+         /// that haven't been executed. To see a list of action already executed,
+         /// see the activity record returned in DescribeScalingActivities. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeScheduledActionsRequest">Container for the
+         ///           necessary parameters to execute the DescribeScheduledActions service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeScheduledActions service
+         ///         method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest describeScheduledActionsRequest); 
+
+         /// <summary>
+         /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To
+         /// suspend specific process types, specify them by name with the
+         /// <c>ScalingProcesses.member.N</c> parameter. To suspend all process
+         /// types, omit the <c>ScalingProcesses.member.N</c> parameter. </para>
+         /// <para><b>IMPORTANT:</b> Suspending either of the two primary process
+         /// types, Launch or Terminate, can prevent other process types from
+         /// functioning properly. For more information about processes and their
+         /// dependencies, see ProcessType. </para> <para> To resume processes that
+         /// have been suspended, use ResumeProcesses. </para>
+         /// </summary>
+         /// 
+         /// <param name="suspendProcessesRequest">Container for the necessary
+         ///           parameters to execute the SuspendProcesses service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest suspendProcessesRequest); 
+
+         /// <summary>
+         /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For
+         /// more information, see SuspendProcesses and ProcessType. </para>
+         /// </summary>
+         /// 
+         /// <param name="resumeProcessesRequest">Container for the necessary
+         ///           parameters to execute the ResumeProcesses service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest resumeProcessesRequest); 
+
+         /// <summary>
+         /// <para> Creates a new launch configuration. Once created, the new
+         /// launch configuration is available for immediate use. </para>
+         /// <para><b>NOTE:</b> The launch configuration name used must be unique,
+         /// within the scope of the client's AWS account, and the maximum limit of
+         /// launch configurations must not yet have been met, or else the call
+         /// will fail. </para>
+         /// </summary>
+         /// 
+         /// <param name="createLaunchConfigurationRequest">Container for the
+         ///           necessary parameters to execute the CreateLaunchConfiguration service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="AlreadyExistsException"/>
+         /// <exception cref="LimitExceededException"/>
+        CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest); 
+
+         /// <summary>
+         /// <para> Disables monitoring of group metrics for the Auto Scaling group
+         /// specified in AutoScalingGroupName. You can specify the list of
+         /// affected metrics with the Metrics parameter. </para>
+         /// </summary>
+         /// 
+         /// <param name="disableMetricsCollectionRequest">Container for the
+         ///           necessary parameters to execute the DisableMetricsCollection service
+         ///           method on AmazonAutoScaling.</param>
+         /// 
+        DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest disableMetricsCollectionRequest); 
     }
 }
+    

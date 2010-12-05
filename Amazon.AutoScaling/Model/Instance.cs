@@ -1,133 +1,240 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.AutoScaling.Model
 {
-    ///<summary>
-    ///The Instance data type.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://autoscaling.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
-    public class Instance
+    /// <summary>
+    /// <para> The Instance data type. </para>
+    /// </summary>
+    public class Instance  
     {
-        private string instanceIdField;
-        private string availabilityZoneField;
-        private string lifecycleStateField;
+        
+        private string instanceId;
+        private string availabilityZone;
+        private string lifecycleState;
+        private string healthStatus;
+        private string launchConfigurationName;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
-        /// Amazon EC2 instance ID.
+        /// Specifies the EC2 instance ID.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 16</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField; }
-            set { this.instanceIdField = value; }
+            get { return this.instanceId; }
+            set { this.instanceId = value; }
         }
 
         /// <summary>
         /// Sets the InstanceId property
         /// </summary>
-        /// <param name="instanceId">Amazon EC2 instance ID.</param>
+        /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
         public Instance WithInstanceId(string instanceId)
         {
-            this.instanceIdField = instanceId;
+            this.instanceId = instanceId;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if InstanceId property is set
-        /// </summary>
-        /// <returns>true if InstanceId property is set</returns>
-        public bool IsSetInstanceId()
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
         {
-            return this.instanceIdField != null;
+            return this.instanceId != null;       
         }
 
         /// <summary>
-        /// Gets and sets the AvailabilityZone property.
-        /// Amazon EC2 availability zone.
+        /// Availability zones associated with this instance.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
-            get { return this.availabilityZoneField; }
-            set { this.availabilityZoneField = value; }
+            get { return this.availabilityZone; }
+            set { this.availabilityZone = value; }
         }
 
         /// <summary>
         /// Sets the AvailabilityZone property
         /// </summary>
-        /// <param name="availabilityZone">Amazon EC2 availability zone.</param>
+        /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
         public Instance WithAvailabilityZone(string availabilityZone)
         {
-            this.availabilityZoneField = availabilityZone;
+            this.availabilityZone = availabilityZone;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if AvailabilityZone property is set
-        /// </summary>
-        /// <returns>true if AvailabilityZone property is set</returns>
-        public bool IsSetAvailabilityZone()
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZoneField != null;
+            return this.availabilityZone != null;       
         }
 
         /// <summary>
-        /// Gets and sets the LifecycleState property.
-        /// Description of current lifecycle state.
+        /// Contains a description of the current <i>lifecycle</i> state.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 32</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "LifecycleState")]
         public string LifecycleState
         {
-            get { return this.lifecycleStateField; }
-            set { this.lifecycleStateField = value; }
+            get { return this.lifecycleState; }
+            set { this.lifecycleState = value; }
         }
 
         /// <summary>
         /// Sets the LifecycleState property
         /// </summary>
-        /// <param name="lifecycleState">Description of current lifecycle state.</param>
+        /// <param name="lifecycleState">The value to set for the LifecycleState property </param>
         /// <returns>this instance</returns>
         public Instance WithLifecycleState(string lifecycleState)
         {
-            this.lifecycleStateField = lifecycleState;
+            this.lifecycleState = lifecycleState;
             return this;
+        }
+            
+
+        // Check to see if LifecycleState property is set
+        internal bool IsSetLifecycleState()
+        {
+            return this.lifecycleState != null;       
         }
 
         /// <summary>
-        /// Checks if LifecycleState property is set
+        /// The instance's health status.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 32</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        /// <returns>true if LifecycleState property is set</returns>
-        public bool IsSetLifecycleState()
+        public string HealthStatus
         {
-            return this.lifecycleStateField != null;
+            get { return this.healthStatus; }
+            set { this.healthStatus = value; }
         }
 
+        /// <summary>
+        /// Sets the HealthStatus property
+        /// </summary>
+        /// <param name="healthStatus">The value to set for the HealthStatus property </param>
+        /// <returns>this instance</returns>
+        public Instance WithHealthStatus(string healthStatus)
+        {
+            this.healthStatus = healthStatus;
+            return this;
+        }
+            
+
+        // Check to see if HealthStatus property is set
+        internal bool IsSetHealthStatus()
+        {
+            return this.healthStatus != null;       
+        }
+
+        /// <summary>
+        /// The launch configuration associated with this instance.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string LaunchConfigurationName
+        {
+            get { return this.launchConfigurationName; }
+            set { this.launchConfigurationName = value; }
+        }
+
+        /// <summary>
+        /// Sets the LaunchConfigurationName property
+        /// </summary>
+        /// <param name="launchConfigurationName">The value to set for the LaunchConfigurationName property </param>
+        /// <returns>this instance</returns>
+        public Instance WithLaunchConfigurationName(string launchConfigurationName)
+        {
+            this.launchConfigurationName = launchConfigurationName;
+            return this;
+        }
+            
+
+        // Check to see if LaunchConfigurationName property is set
+        internal bool IsSetLaunchConfigurationName()
+        {
+            return this.launchConfigurationName != null;       
+        }
     }
 }

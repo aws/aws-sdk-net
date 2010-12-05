@@ -1,293 +1,244 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.CloudWatch.Model
 {
-    ///<summary>
-    ///A collection of datapoints.
-    ///</summary>
-    [XmlRootAttribute(Namespace = "http://monitoring.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
-    public class Datapoint
+    /// <summary>
+    /// <para> The <c>Datapoint</c> data type encapsulates the statistical
+    /// data that Amazon CloudWatch computes from metric data. </para>
+    /// </summary>
+    public class Datapoint  
     {
-        private string timestampField;
-        private Double? samplesField;
-        private Double? averageField;
-        private Double? sumField;
-        private Double? minimumField;
-        private Double? maximumField;
-        private string unitField;
-        private string customUnitField;
+        
+        private DateTime? timestamp;
+        private double? sampleCount;
+        private double? average;
+        private double? sum;
+        private double? minimum;
+        private double? maximum;
+        private string unit;
 
         /// <summary>
-        /// Gets and sets the Timestamp property.
-        /// Indicates the beginning of the time aggregation for this value and samples.s
+        /// The time stamp used for the datapoint.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Timestamp")]
-        public string Timestamp
+        public DateTime Timestamp
         {
-            get { return this.timestampField; }
-            set { this.timestampField = value; }
+            get { return this.timestamp ?? default(DateTime); }
+            set { this.timestamp = value; }
         }
 
         /// <summary>
         /// Sets the Timestamp property
         /// </summary>
-        /// <param name="timestamp">Indicates the beginning of the time aggregation for this value and samples.s</param>
+        /// <param name="timestamp">The value to set for the Timestamp property </param>
         /// <returns>this instance</returns>
-        public Datapoint WithTimestamp(string timestamp)
+        public Datapoint WithTimestamp(DateTime timestamp)
         {
-            this.timestampField = timestamp;
+            this.timestamp = timestamp;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if Timestamp property is set
-        /// </summary>
-        /// <returns>true if Timestamp property is set</returns>
-        public bool IsSetTimestamp()
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
         {
-            return this.timestampField != null;
+            return this.timestamp.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the Samples property.
-        /// The number of Measurements that contributed to the aggregate value of this datapoint.
+        /// The number of metric values that contributed to the aggregate value of
+        /// this datapoint.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Samples")]
-        public Double Samples
+        public double SampleCount
         {
-            get { return this.samplesField.GetValueOrDefault(); }
-            set { this.samplesField = value; }
+            get { return this.sampleCount ?? default(double); }
+            set { this.sampleCount = value; }
         }
 
         /// <summary>
-        /// Sets the Samples property
+        /// Sets the SampleCount property
         /// </summary>
-        /// <param name="samples">The number of Measurements that contributed to the aggregate value of this datapoint.</param>
+        /// <param name="sampleCount">The value to set for the SampleCount property </param>
         /// <returns>this instance</returns>
-        public Datapoint WithSamples(Double samples)
+        public Datapoint WithSampleCount(double sampleCount)
         {
-            this.samplesField = samples;
+            this.sampleCount = sampleCount;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if Samples property is set
-        /// </summary>
-        /// <returns>true if Samples property is set</returns>
-        public bool IsSetSamples()
+        // Check to see if SampleCount property is set
+        internal bool IsSetSampleCount()
         {
-            return this.samplesField.HasValue;
+            return this.sampleCount.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the Average property.
-        /// Average of samples for the datapoint.
+        /// The average of metric values that correspond to the datapoint.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Average")]
-        public Double Average
+        public double Average
         {
-            get { return this.averageField.GetValueOrDefault(); }
-            set { this.averageField = value; }
+            get { return this.average ?? default(double); }
+            set { this.average = value; }
         }
 
         /// <summary>
         /// Sets the Average property
         /// </summary>
-        /// <param name="average">Average of samples for the datapoint.</param>
+        /// <param name="average">The value to set for the Average property </param>
         /// <returns>this instance</returns>
-        public Datapoint WithAverage(Double average)
+        public Datapoint WithAverage(double average)
         {
-            this.averageField = average;
+            this.average = average;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if Average property is set
-        /// </summary>
-        /// <returns>true if Average property is set</returns>
-        public bool IsSetAverage()
+        // Check to see if Average property is set
+        internal bool IsSetAverage()
         {
-            return this.averageField.HasValue;
+            return this.average.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the Sum property.
-        /// Sum of samples for the datapoint.
+        /// The sum of metric values used for the datapoint.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Sum")]
-        public Double Sum
+        public double Sum
         {
-            get { return this.sumField.GetValueOrDefault(); }
-            set { this.sumField = value; }
+            get { return this.sum ?? default(double); }
+            set { this.sum = value; }
         }
 
         /// <summary>
         /// Sets the Sum property
         /// </summary>
-        /// <param name="sum">Sum of samples for the datapoint.</param>
+        /// <param name="sum">The value to set for the Sum property </param>
         /// <returns>this instance</returns>
-        public Datapoint WithSum(Double sum)
+        public Datapoint WithSum(double sum)
         {
-            this.sumField = sum;
+            this.sum = sum;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if Sum property is set
-        /// </summary>
-        /// <returns>true if Sum property is set</returns>
-        public bool IsSetSum()
+        // Check to see if Sum property is set
+        internal bool IsSetSum()
         {
-            return this.sumField.HasValue;
+            return this.sum.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the Minimum property.
-        /// Minimum of samples for the datapoint.
+        /// The minimum metric value used for the datapoint.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Minimum")]
-        public Double Minimum
+        public double Minimum
         {
-            get { return this.minimumField.GetValueOrDefault(); }
-            set { this.minimumField = value; }
+            get { return this.minimum ?? default(double); }
+            set { this.minimum = value; }
         }
 
         /// <summary>
         /// Sets the Minimum property
         /// </summary>
-        /// <param name="minimum">Minimum of samples for the datapoint.</param>
+        /// <param name="minimum">The value to set for the Minimum property </param>
         /// <returns>this instance</returns>
-        public Datapoint WithMinimum(Double minimum)
+        public Datapoint WithMinimum(double minimum)
         {
-            this.minimumField = minimum;
+            this.minimum = minimum;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if Minimum property is set
-        /// </summary>
-        /// <returns>true if Minimum property is set</returns>
-        public bool IsSetMinimum()
+        // Check to see if Minimum property is set
+        internal bool IsSetMinimum()
         {
-            return this.minimumField.HasValue;
+            return this.minimum.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the Maximum property.
-        /// Maximum of the samples used for the datapoint.
+        /// The maximum of the metric value used for the datapoint.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "Maximum")]
-        public Double Maximum
+        public double Maximum
         {
-            get { return this.maximumField.GetValueOrDefault(); }
-            set { this.maximumField = value; }
+            get { return this.maximum ?? default(double); }
+            set { this.maximum = value; }
         }
 
         /// <summary>
         /// Sets the Maximum property
         /// </summary>
-        /// <param name="maximum">Maximum of the samples used for the datapoint.</param>
+        /// <param name="maximum">The value to set for the Maximum property </param>
         /// <returns>this instance</returns>
-        public Datapoint WithMaximum(Double maximum)
+        public Datapoint WithMaximum(double maximum)
         {
-            this.maximumField = maximum;
+            this.maximum = maximum;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if Maximum property is set
-        /// </summary>
-        /// <returns>true if Maximum property is set</returns>
-        public bool IsSetMaximum()
+        // Check to see if Maximum property is set
+        internal bool IsSetMaximum()
         {
-            return this.maximumField.HasValue;
+            return this.maximum.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the Unit property.
-        /// Standard unit used for the datapoint.
+        /// The standard unit used for the datapoint.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "Unit")]
         public string Unit
         {
-            get { return this.unitField; }
-            set { this.unitField = value; }
+            get { return this.unit; }
+            set { this.unit = value; }
         }
 
         /// <summary>
         /// Sets the Unit property
         /// </summary>
-        /// <param name="unit">Standard unit used for the datapoint.</param>
+        /// <param name="unit">The value to set for the Unit property </param>
         /// <returns>this instance</returns>
         public Datapoint WithUnit(string unit)
         {
-            this.unitField = unit;
+            this.unit = unit;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if Unit property is set
-        /// </summary>
-        /// <returns>true if Unit property is set</returns>
-        public bool IsSetUnit()
+        // Check to see if Unit property is set
+        internal bool IsSetUnit()
         {
-            return this.unitField != null;
+            return this.unit != null;       
         }
-
-        /// <summary>
-        /// Gets and sets the CustomUnit property.
-        /// CustomUnit defined for the datapoint.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "CustomUnit")]
-        public string CustomUnit
-        {
-            get { return this.customUnitField; }
-            set { this.customUnitField = value; }
-        }
-
-        /// <summary>
-        /// Sets the CustomUnit property
-        /// </summary>
-        /// <param name="customUnit">CustomUnit defined for the datapoint.</param>
-        /// <returns>this instance</returns>
-        public Datapoint WithCustomUnit(string customUnit)
-        {
-            this.customUnitField = customUnit;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if CustomUnit property is set
-        /// </summary>
-        /// <returns>true if CustomUnit property is set</returns>
-        public bool IsSetCustomUnit()
-        {
-            return this.customUnitField != null;
-        }
-
     }
 }

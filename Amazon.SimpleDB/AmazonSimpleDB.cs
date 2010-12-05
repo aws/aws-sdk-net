@@ -168,6 +168,18 @@ namespace Amazon.SimpleDB
         DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request);
 
         /// <summary>
+        /// Batch Delete Attributes
+        /// </summary>
+        /// <param name="request">Batch Delete Attributes request</param>
+        /// <returns>BatchDeleteAttributesResponse from the service</returns>
+        /// <remarks>
+        /// The BatchDeleteAttributes operation deletes attributes within one or more items.
+        /// An item name and a collection of <see cref="T:Amazon.SimpleDB.Model.Attribute"/> is specified for each
+        /// item to have attributes deleted for.  If no attributes are specified then the entire item will be deleted.
+        /// </remarks>
+        BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request);
+
+        /// <summary>
         /// Select
         /// </summary>
         /// <param name="request">Select  request</param>

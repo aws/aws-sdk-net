@@ -1,109 +1,114 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns a full description of the launch configurations given the specified names. If no names are specified, then the full
-    /// details of all launch configurations are returned. For more information on launch configurations, see Launch Configuration.
+    /// <para> The LaunchConfigurationsType data type. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://autoscaling.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
-    public class DescribeLaunchConfigurationsResult
+    public class DescribeLaunchConfigurationsResult  
     {
-        private List<LaunchConfiguration> launchConfigurationsField;
-        private string nextTokenField;
-        /// <summary>
-        /// Gets and sets the LaunchConfigurations property.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "LaunchConfigurations")]
-        public List<LaunchConfiguration> LaunchConfigurations
-        {
-            get
-            {
-                if (this.launchConfigurationsField == null)
-                {
-                    this.launchConfigurationsField = new List<LaunchConfiguration>();
-                }
-                return this.launchConfigurationsField;
-            }
-            set { this.launchConfigurationsField = value; }
-        }
+        
+        private List<LaunchConfiguration> launchConfigurations = new List<LaunchConfiguration>();
+        private string nextToken;
 
         /// <summary>
-        /// Sets the LaunchConfigurations property
+        /// A list of launch configurations.
+        ///  
         /// </summary>
-        /// <param name="list">LaunchConfigurations property</param>
-        /// <returns>this instance</returns>
-        public DescribeLaunchConfigurationsResult WithLaunchConfigurations(params LaunchConfiguration[] list)
+        public List<LaunchConfiguration> LaunchConfigurations
         {
-            foreach (LaunchConfiguration item in list)
+            get { return this.launchConfigurations; }
+            set { this.launchConfigurations = value; }
+        }
+        /// <summary>
+        /// Adds elements to the LaunchConfigurations collection
+        /// </summary>
+        /// <param name="launchConfigurations">The values to add to the LaunchConfigurations collection </param>
+        /// <returns>this instance</returns>
+        public DescribeLaunchConfigurationsResult WithLaunchConfigurations(params LaunchConfiguration[] launchConfigurations)
+        {
+            foreach (LaunchConfiguration element in launchConfigurations)
             {
-                LaunchConfigurations.Add(item);
+                this.launchConfigurations.Add(element);
             }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the LaunchConfigurations collection
+        /// </summary>
+        /// <param name="launchConfigurations">The values to add to the LaunchConfigurations collection </param>
+        /// <returns>this instance</returns>
+        public DescribeLaunchConfigurationsResult WithLaunchConfigurations(IEnumerable<LaunchConfiguration> launchConfigurations)
+        {
+            foreach (LaunchConfiguration element in launchConfigurations)
+            {
+                this.launchConfigurations.Add(element);
+            }
+
             return this;
         }
 
-        /// <summary>
-        /// Checks if LaunchConfigurations property is set
-        /// </summary>
-        /// <returns>true if LaunchConfigurations property is set</returns>
-        public bool IsSetLaunchConfigurations()
+        // Check to see if LaunchConfigurations property is set
+        internal bool IsSetLaunchConfigurations()
         {
-            return (LaunchConfigurations.Count > 0);
+            return this.launchConfigurations.Count > 0;       
         }
 
         /// <summary>
-        /// Gets and sets the NextToken property.
+        /// A string that marks the start of the next batch of returned results.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "NextToken")]
         public string NextToken
         {
-            get { return this.nextTokenField; }
-            set { this.nextTokenField = value; }
+            get { return this.nextToken; }
+            set { this.nextToken = value; }
         }
 
         /// <summary>
         /// Sets the NextToken property
         /// </summary>
-        /// <param name="nextToken">NextToken property</param>
+        /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
         public DescribeLaunchConfigurationsResult WithNextToken(string nextToken)
         {
-            this.nextTokenField = nextToken;
+            this.nextToken = nextToken;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if NextToken property is set
-        /// </summary>
-        /// <returns>true if NextToken property is set</returns>
-        public bool IsSetNextToken()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this.nextTokenField != null;
+            return this.nextToken != null;       
         }
-
     }
 }

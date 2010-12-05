@@ -223,6 +223,9 @@ namespace Amazon.Runtime
                 }
                 catch (IOException e)
                 {
+                    if (this.isInnerExceptionThreadAbort(e))
+                        throw;
+
                     this.logger.Error(string.Format("IOException making request {0} to {1}.", requestName, request.Endpoint.ToString()), e);
                     if (retries > this.config.MaxErrorRetry)
                         throw;
@@ -235,6 +238,15 @@ namespace Amazon.Runtime
                     throw;
                 }
             }
+        }
+
+        private bool isInnerExceptionThreadAbort(Exception e)
+        {
+            if (e.InnerException is ThreadAbortException)
+                return true;
+            if (e.InnerException != null)
+                return isInnerExceptionThreadAbort(e.InnerException);
+            return false;
         }
 
         private void processWebException<X, Y>(string requestName, WebException we, HttpWebRequest webRequest, IResponseUnmarshaller<Y, UnmarshallerContext> unmarshaller, IRequest<X> request, int retries)

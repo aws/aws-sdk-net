@@ -327,6 +327,21 @@ namespace Amazon.SimpleDB
         }
 
         /// <summary>
+        /// Batch Delete Attributes
+        /// </summary>
+        /// <param name="request">Batch Delete Attributes request</param>
+        /// <returns>BatchDeleteAttributesResponse from the service</returns>
+        /// <remarks>
+        /// The BatchDeleteAttributes operation deletes attributes within one or more items.
+        /// An item name and a collection of <see cref="T:Amazon.SimpleDB.Model.Attribute"/> is specified for each
+        /// item to have attributes deleted for.  If no attributes are specified then the entire item will be deleted.
+        /// </remarks>
+        public BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
+        {
+            return Invoke<BatchDeleteAttributesResponse>(ConvertDeleteAttributes(request));
+        }
+
+        /// <summary>
         /// Select
         /// </summary>
         /// <param name="request">Select  request</param>
@@ -648,8 +663,6 @@ namespace Amazon.SimpleDB
          */
         private static string Transform(string responseBody, string action, Type t)
         {
-            XslCompiledTransform transformer = new XslCompiledTransform();
-
             // Build the name of the xslt transform to apply to the response
             char[] seps = { ',' };
 
@@ -666,18 +679,14 @@ namespace Amazon.SimpleDB
                 "ResponseTransformer.xslt"
                 );
 
-            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
+            XslCompiledTransform transformer = AWSSDKUtils.GetXslCompiledTransform(resourceName);
+            StringBuilder sb = new StringBuilder(1024);
+            using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
             {
-                transformer.Load(xmlReader);
-
-                StringBuilder sb = new StringBuilder(1024);
-                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
+                using (StringWriter sw = new StringWriter(sb))
                 {
-                    using (StringWriter sw = new StringWriter(sb))
-                    {
-                        transformer.Transform(xmlR, null, sw);
-                        return sb.ToString();
-                    }
+                    transformer.Transform(xmlR, null, sw);
+                    return sb.ToString();
                 }
             }
         }
@@ -840,6 +849,44 @@ namespace Amazon.SimpleDB
                 }
 
                 batchPutAttributesRequestItemListIndex++;
+            }
+
+            return parameters;
+        }
+
+        private static IDictionary<string, string> ConvertDeleteAttributes(BatchDeleteAttributesRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "BatchDeleteAttributes";
+            if (request.IsSetDomainName())
+            {
+                parameters["DomainName"] = request.DomainName;
+            }
+            List<DeleteableItem> batchDeleteAttributesRequestItemList = request.Item;
+            int batchDeleteAttributesRequestItemListIndex = 1;
+            foreach (DeleteableItem batchDeleteAttributesRequestItem in batchDeleteAttributesRequestItemList)
+            {
+                if (batchDeleteAttributesRequestItem.IsSetItemName())
+                {
+                    parameters[String.Concat("Item", ".", batchDeleteAttributesRequestItemListIndex, ".", "ItemName")] = batchDeleteAttributesRequestItem.ItemName;
+                }
+                List<Attribute> itemAttributeList = batchDeleteAttributesRequestItem.Attribute;
+                int itemAttributeListIndex = 1;
+                foreach (Attribute itemAttribute in itemAttributeList)
+                {
+                    if (itemAttribute.IsSetName())
+                    {
+                        parameters[String.Concat("Item", ".", batchDeleteAttributesRequestItemListIndex, ".", "Attribute", ".", itemAttributeListIndex, ".", "Name")] = itemAttribute.Name;
+                    }
+                    if (itemAttribute.IsSetValue())
+                    {
+                        parameters[String.Concat("Item", ".", batchDeleteAttributesRequestItemListIndex, ".", "Attribute", ".", itemAttributeListIndex, ".", "Value")] = itemAttribute.Value;
+                    }
+
+                    itemAttributeListIndex++;
+                }
+
+                batchDeleteAttributesRequestItemListIndex++;
             }
 
             return parameters;

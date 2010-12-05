@@ -894,8 +894,6 @@ namespace Amazon.SimpleNotificationService
          */
         private static string Transform(string responseBody, Type t)
         {
-            XslCompiledTransform transformer = new XslCompiledTransform();
-
             // Build the name of the xslt transform to apply to the response
             char[] seps = { ',' };
 
@@ -911,18 +909,15 @@ namespace Amazon.SimpleNotificationService
                 ".Model.",
                 "ResponseTransformer.xslt"
                 );
-            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
-            {
-                transformer.Load(xmlReader);
 
-                StringBuilder sb = new StringBuilder(1024);
-                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
+            XslCompiledTransform transformer = AWSSDKUtils.GetXslCompiledTransform(resourceName);
+            StringBuilder sb = new StringBuilder(1024);
+            using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
+            {
+                using (StringWriter sw = new StringWriter(sb))
                 {
-                    using (StringWriter sw = new StringWriter(sb))
-                    {
-                        transformer.Transform(xmlR, null, sw);
-                        return sb.ToString();
-                    }
+                    transformer.Transform(xmlR, null, sw);
+                    return sb.ToString();
                 }
             }
         }

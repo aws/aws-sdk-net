@@ -1,109 +1,111 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns the activity to terminate the instance.
+    /// Container for the parameters to the TerminateInstanceInAutoScalingGroup operation.
+    /// <para> Terminates the specified instance. Optionally, the desired
+    /// group size can be adjusted. </para> <para><b>NOTE:</b> This call
+    /// simply registers a termination request. The termination of the
+    /// instance cannot happen immediately. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://autoscaling.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
-    public class TerminateInstanceInAutoScalingGroupRequest
+    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.TerminateInstanceInAutoScalingGroup"/>
+    public class TerminateInstanceInAutoScalingGroupRequest : AmazonWebServiceRequest
     {
-        private string instanceIdField;
-        private bool? shouldDecrementDesiredCapacityField;
+        private string instanceId;
+        private bool? shouldDecrementDesiredCapacity;
 
         /// <summary>
-        /// Gets and sets the InstanceId property.
-        /// Terminates the specified instance. Optionally, the desired group size can be adjusted.
-        /// If set to true, the default, the AutoScalingGroup size decreases by one. If the AutoScalingGroup
-        /// is associated with a LoadBalancer, the system deregisters the instance before terminating it.
-        /// This call simply registers a termination request. The termination of the instance can not happen immediately.
+        /// The ID of the EC2 instance to be terminated.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 16</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "InstanceId")]
         public string InstanceId
         {
-            get { return this.instanceIdField; }
-            set { this.instanceIdField = value; }
+            get { return this.instanceId; }
+            set { this.instanceId = value; }
         }
 
         /// <summary>
         /// Sets the InstanceId property
         /// </summary>
-        /// <param name="instanceId">Terminates the specified instance. Optionally, the desired group size can be adjusted.
-        /// If set to true, the default, the AutoScalingGroup size decreases by one. If the AutoScalingGroup
-        /// is associated with a LoadBalancer, the system deregisters the instance before terminating it.
-        /// This call simply registers a termination request. The termination of the instance can not happen immediately.</param>
+        /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
         public TerminateInstanceInAutoScalingGroupRequest WithInstanceId(string instanceId)
         {
-            this.instanceIdField = instanceId;
+            this.instanceId = instanceId;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if InstanceId property is set
-        /// </summary>
-        /// <returns>true if InstanceId property is set</returns>
-        public bool IsSetInstanceId()
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
         {
-            return this.instanceIdField != null;
+            return this.instanceId != null;       
         }
 
         /// <summary>
-        /// Gets and sets the ShouldDecrementDesiredCapacity property.
-        /// Specifies whether terminating this instance should also decrement the size of the AutoScalingGroup.
-        /// The default is true.
+        /// Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
+        /// instance should also decrement the size of the
+        /// <a>AutoScalingGroup</a>.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "ShouldDecrementDesiredCapacity")]
         public bool ShouldDecrementDesiredCapacity
         {
-            get { return this.shouldDecrementDesiredCapacityField.GetValueOrDefault(); }
-            set { this.shouldDecrementDesiredCapacityField = value; }
+            get { return this.shouldDecrementDesiredCapacity ?? default(bool); }
+            set { this.shouldDecrementDesiredCapacity = value; }
         }
 
         /// <summary>
         /// Sets the ShouldDecrementDesiredCapacity property
         /// </summary>
-        /// <param name="shouldDecrementDesiredCapacity">Specifies whether terminating this instance should also decrement the size of the AutoScalingGroup.
-        /// The default is true.</param>
+        /// <param name="shouldDecrementDesiredCapacity">The value to set for the ShouldDecrementDesiredCapacity property </param>
         /// <returns>this instance</returns>
         public TerminateInstanceInAutoScalingGroupRequest WithShouldDecrementDesiredCapacity(bool shouldDecrementDesiredCapacity)
         {
-            this.shouldDecrementDesiredCapacityField = shouldDecrementDesiredCapacity;
+            this.shouldDecrementDesiredCapacity = shouldDecrementDesiredCapacity;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if ShouldDecrementDesiredCapacity property is set
-        /// </summary>
-        /// <returns>true if ShouldDecrementDesiredCapacity property is set</returns>
-        public bool IsSetShouldDecrementDesiredCapacity()
+        // Check to see if ShouldDecrementDesiredCapacity property is set
+        internal bool IsSetShouldDecrementDesiredCapacity()
         {
-            return this.shouldDecrementDesiredCapacityField.HasValue;
+            return this.shouldDecrementDesiredCapacity.HasValue;       
         }
-
     }
 }
+    

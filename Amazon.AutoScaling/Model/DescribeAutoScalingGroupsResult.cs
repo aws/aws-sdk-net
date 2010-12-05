@@ -1,79 +1,114 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns a full description of the AutoScalingGroups from the given list. This includes all Amazon EC2
-    /// instances that are members of the group. If a list of names is not provided, then the full details of all
-    /// AutoScalingGroups is returned.
+    /// <para> The AutoScalingGroupsType data type. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://autoscaling.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
-    public class DescribeAutoScalingGroupsResult
+    public class DescribeAutoScalingGroupsResult  
     {
-        private List<AutoScalingGroup> autoScalingGroupsField;
-        /// <summary>
-        /// Gets and sets the AutoScalingGroups property.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "AutoScalingGroups")]
-        public List<AutoScalingGroup> AutoScalingGroups
-        {
-            get
-            {
-                if (this.autoScalingGroupsField == null)
-                {
-                    this.autoScalingGroupsField = new List<AutoScalingGroup>();
-                }
-                return this.autoScalingGroupsField;
-            }
-            set { this.autoScalingGroupsField = value; }
-        }
+        
+        private List<AutoScalingGroup> autoScalingGroups = new List<AutoScalingGroup>();
+        private string nextToken;
 
         /// <summary>
-        /// Sets the AutoScalingGroups property
+        /// A list of Auto Scaling groups.
+        ///  
         /// </summary>
-        /// <param name="list">AutoScalingGroups property</param>
-        /// <returns>this instance</returns>
-        public DescribeAutoScalingGroupsResult WithAutoScalingGroups(params AutoScalingGroup[] list)
+        public List<AutoScalingGroup> AutoScalingGroups
         {
-            foreach (AutoScalingGroup item in list)
+            get { return this.autoScalingGroups; }
+            set { this.autoScalingGroups = value; }
+        }
+        /// <summary>
+        /// Adds elements to the AutoScalingGroups collection
+        /// </summary>
+        /// <param name="autoScalingGroups">The values to add to the AutoScalingGroups collection </param>
+        /// <returns>this instance</returns>
+        public DescribeAutoScalingGroupsResult WithAutoScalingGroups(params AutoScalingGroup[] autoScalingGroups)
+        {
+            foreach (AutoScalingGroup element in autoScalingGroups)
             {
-                AutoScalingGroups.Add(item);
+                this.autoScalingGroups.Add(element);
             }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the AutoScalingGroups collection
+        /// </summary>
+        /// <param name="autoScalingGroups">The values to add to the AutoScalingGroups collection </param>
+        /// <returns>this instance</returns>
+        public DescribeAutoScalingGroupsResult WithAutoScalingGroups(IEnumerable<AutoScalingGroup> autoScalingGroups)
+        {
+            foreach (AutoScalingGroup element in autoScalingGroups)
+            {
+                this.autoScalingGroups.Add(element);
+            }
+
             return this;
         }
 
-        /// <summary>
-        /// Checks if AutoScalingGroups property is set
-        /// </summary>
-        /// <returns>true if AutoScalingGroups property is set</returns>
-        public bool IsSetAutoScalingGroups()
+        // Check to see if AutoScalingGroups property is set
+        internal bool IsSetAutoScalingGroups()
         {
-            return (AutoScalingGroups.Count > 0);
+            return this.autoScalingGroups.Count > 0;       
         }
 
+        /// <summary>
+        /// A string that marks the start of the next batch of returned results.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this.nextToken; }
+            set { this.nextToken = value; }
+        }
+
+        /// <summary>
+        /// Sets the NextToken property
+        /// </summary>
+        /// <param name="nextToken">The value to set for the NextToken property </param>
+        /// <returns>this instance</returns>
+        public DescribeAutoScalingGroupsResult WithNextToken(string nextToken)
+        {
+            this.nextToken = nextToken;
+            return this;
+        }
+            
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this.nextToken != null;       
+        }
     }
 }

@@ -127,6 +127,7 @@ namespace Amazon.S3.Transfer.Internal
             {
                 this._invokers[i] = new UploadPartInvoker(this);
                 Thread thread = new Thread(new ThreadStart(this._invokers[i].Execute));
+                thread.IsBackground = true;
                 this._executedThreads[i] = thread;
                 thread.Start();
             }
@@ -147,6 +148,12 @@ namespace Amazon.S3.Transfer.Internal
                 .WithCannedACL(this._fileTransporterRequest.CannedACL)
                 .WithContentType(this._fileTransporterRequest.ContentType)
                 .WithStorageClass(this._fileTransporterRequest.StorageClass);
+
+            if (this._fileTransporterRequest.metadata != null && this._fileTransporterRequest.metadata.Count > 0)
+                initRequest.WithMetaData(this._fileTransporterRequest.metadata);
+            if (this._fileTransporterRequest.Headers != null && this._fileTransporterRequest.Headers.Count > 0)
+                initRequest.AddHeaders(this._fileTransporterRequest.Headers);
+
             InitiateMultipartUploadResponse initResponse = this._s3Client.InitiateMultipartUpload(initRequest);
             this._logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
 

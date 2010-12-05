@@ -128,7 +128,7 @@ namespace Amazon.S3.Model
             FileInfo fi = new FileInfo(filePath);
             Directory.CreateDirectory(fi.DirectoryName);
 
-            Stream downloadStream = new BufferedStream(File.OpenWrite(filePath));
+            Stream downloadStream = new BufferedStream(new FileStream(filePath, FileMode.Create));
             try
             {
                 long current = 0;

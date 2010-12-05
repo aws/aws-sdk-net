@@ -1,148 +1,159 @@
-/*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- * this file except in compliance with the License. A copy of the License is located at
- *
- * http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and
- * limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2009-05-15
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns a full description of the launch configurations given the specified names. If no names are specified, then the full
-    /// details of all launch configurations are returned. For more information on launch configurations, see Launch Configuration.
+    /// Container for the parameters to the DescribeLaunchConfigurations operation.
+    /// <para> Returns a full description of the launch configurations given
+    /// the specified names. </para> <para> If no names are specified, then
+    /// the full details of all launch configurations are returned. </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://autoscaling.amazonaws.com/doc/2009-05-15/", IsNullable = false)]
-    public class DescribeLaunchConfigurationsRequest
+    /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeLaunchConfigurations"/>
+    public class DescribeLaunchConfigurationsRequest : AmazonWebServiceRequest
     {
-        private List<string> launchConfigurationNamesField;
-        private string nextTokenField;
-        private Decimal? maxRecordsField;
+        private List<string> launchConfigurationNames = new List<string>();
+        private string nextToken;
+        private int? maxRecords;
 
         /// <summary>
-        /// Gets and sets the LaunchConfigurationNames property.
-        /// List of the launch configurations for which details are requested. Any specified launch configuration that cannot be
-        /// found are omitted from the returned results.
+        /// A list of launch configuration names.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "LaunchConfigurationNames")]
         public List<string> LaunchConfigurationNames
         {
-            get
-            {
-                if (this.launchConfigurationNamesField == null)
-                {
-                    this.launchConfigurationNamesField = new List<string>();
-                }
-                return this.launchConfigurationNamesField;
-            }
-            set { this.launchConfigurationNamesField = value; }
+            get { return this.launchConfigurationNames; }
+            set { this.launchConfigurationNames = value; }
         }
-
         /// <summary>
-        /// Sets the LaunchConfigurationNames property
+        /// Adds elements to the LaunchConfigurationNames collection
         /// </summary>
-        /// <param name="list">List of the launch configurations for which details are requested. Any specified launch configuration that cannot be
-        /// found are omitted from the returned results.</param>
+        /// <param name="launchConfigurationNames">The values to add to the LaunchConfigurationNames collection </param>
         /// <returns>this instance</returns>
-        public DescribeLaunchConfigurationsRequest WithLaunchConfigurationNames(params string[] list)
+        public DescribeLaunchConfigurationsRequest WithLaunchConfigurationNames(params string[] launchConfigurationNames)
         {
-            foreach (string item in list)
+            foreach (string element in launchConfigurationNames)
             {
-                LaunchConfigurationNames.Add(item);
+                this.launchConfigurationNames.Add(element);
             }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the LaunchConfigurationNames collection
+        /// </summary>
+        /// <param name="launchConfigurationNames">The values to add to the LaunchConfigurationNames collection </param>
+        /// <returns>this instance</returns>
+        public DescribeLaunchConfigurationsRequest WithLaunchConfigurationNames(IEnumerable<string> launchConfigurationNames)
+        {
+            foreach (string element in launchConfigurationNames)
+            {
+                this.launchConfigurationNames.Add(element);
+            }
+
             return this;
         }
 
-        /// <summary>
-        /// Checks if LaunchConfigurationNames property is set
-        /// </summary>
-        /// <returns>true if LaunchConfigurationNames property is set</returns>
-        public bool IsSetLaunchConfigurationNames()
+        // Check to see if LaunchConfigurationNames property is set
+        internal bool IsSetLaunchConfigurationNames()
         {
-            return (LaunchConfigurationNames.Count > 0);
+            return this.launchConfigurationNames.Count > 0;       
         }
 
         /// <summary>
-        /// Gets and sets the NextToken property.
-        /// String value that specifies where to start the list of scaling activities for pagination of long results.
+        /// A string that marks the start of the next batch of returned results.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "NextToken")]
         public string NextToken
         {
-            get { return this.nextTokenField; }
-            set { this.nextTokenField = value; }
+            get { return this.nextToken; }
+            set { this.nextToken = value; }
         }
 
         /// <summary>
         /// Sets the NextToken property
         /// </summary>
-        /// <param name="nextToken">String value that specifies where to start the list of scaling activities for pagination of long results.</param>
+        /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
         public DescribeLaunchConfigurationsRequest WithNextToken(string nextToken)
         {
-            this.nextTokenField = nextToken;
+            this.nextToken = nextToken;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if NextToken property is set
-        /// </summary>
-        /// <returns>true if NextToken property is set</returns>
-        public bool IsSetNextToken()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this.nextTokenField != null;
+            return this.nextToken != null;       
         }
 
         /// <summary>
-        /// Gets and sets the MaxRecords property.
-        /// The maximum number of scaling activities to return. Default is 100.
-        /// Value must be greater than 10 and less than 100.
+        /// The maximum number of launch configurations.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>1 - 50</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        [XmlElementAttribute(ElementName = "MaxRecords")]
-        public Decimal MaxRecords
+        public int MaxRecords
         {
-            get { return this.maxRecordsField.GetValueOrDefault(); }
-            set { this.maxRecordsField = value; }
+            get { return this.maxRecords ?? default(int); }
+            set { this.maxRecords = value; }
         }
 
         /// <summary>
         /// Sets the MaxRecords property
         /// </summary>
-        /// <param name="maxRecords">The maximum number of scaling activities to return. Default is 100.
-        /// Value must be greater than 10 and less than 100.</param>
+        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
-        public DescribeLaunchConfigurationsRequest WithMaxRecords(Decimal maxRecords)
+        public DescribeLaunchConfigurationsRequest WithMaxRecords(int maxRecords)
         {
-            this.maxRecordsField = maxRecords;
+            this.maxRecords = maxRecords;
             return this;
         }
+            
 
-        /// <summary>
-        /// Checks if MaxRecords property is set
-        /// </summary>
-        /// <returns>true if MaxRecords property is set</returns>
-        public bool IsSetMaxRecords()
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
         {
-            return this.maxRecordsField.HasValue;
+            return this.maxRecords.HasValue;       
         }
-
     }
 }
+    
