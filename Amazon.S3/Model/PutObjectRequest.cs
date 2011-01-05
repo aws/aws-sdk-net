@@ -399,7 +399,7 @@ namespace Amazon.S3.Model
         /// <returns>true if ContentBody property is set.</returns>
         internal bool IsSetContentBody()
         {
-            return this.contentBody != null;
+            return !System.String.IsNullOrEmpty(this.contentBody);
         }
 
         #endregion

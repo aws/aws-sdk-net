@@ -2342,17 +2342,6 @@ namespace Amazon.S3
             {
                 parameters[S3QueryParameter.ContentType] = request.ContentType;
             }
-            else if (request.IsSetKey())
-            {
-                // Get the extension of the file from the path.
-                // Try the key as well.
-                string ext = Path.GetExtension(request.Key);
-                // Use the extension to get the mime-type
-                if (!String.IsNullOrEmpty(ext))
-                {
-                    parameters[S3QueryParameter.ContentType] = AmazonS3Util.MimeTypeFromExtension(ext);
-                }
-            }
 
             // Add the Put Object specific headers to the request
             // 1. The Canned ACL
