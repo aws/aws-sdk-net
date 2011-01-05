@@ -102,6 +102,30 @@ namespace Amazon.S3.Transfer.Internal
             return partSize;
         }
 
+        private string determineContentType()
+        {
+            if (this._fileTransporterRequest.IsSetContentType())
+                return this._fileTransporterRequest.ContentType;
+
+            if (this._fileTransporterRequest.IsSetFilePath() ||
+                this._fileTransporterRequest.IsSetKey())
+            {
+                // Get the extension of the file from the path.
+                // Try the key as well.
+                string ext = Path.GetExtension(this._fileTransporterRequest.FilePath);
+                if (String.IsNullOrEmpty(ext) &&
+                    this._fileTransporterRequest.IsSetKey())
+                {
+                    ext = Path.GetExtension(this._fileTransporterRequest.Key);
+                }
+
+                string type = AmazonS3Util.MimeTypeFromExtension(ext);
+                return type;
+            }
+
+            return null;
+        }
+
 
         private void startInvokerPool()
         {
@@ -146,7 +170,7 @@ namespace Amazon.S3.Transfer.Internal
                 .WithBucketName(this._fileTransporterRequest.BucketName)
                 .WithKey(this._fileTransporterRequest.Key)
                 .WithCannedACL(this._fileTransporterRequest.CannedACL)
-                .WithContentType(this._fileTransporterRequest.ContentType)
+                .WithContentType(determineContentType())
                 .WithStorageClass(this._fileTransporterRequest.StorageClass);
 
             if (this._fileTransporterRequest.metadata != null && this._fileTransporterRequest.metadata.Count > 0)
