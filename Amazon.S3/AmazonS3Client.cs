@@ -2440,7 +2440,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.QueryToSign] = string.Format("?uploadId={0}", request.UploadId);
 
             //Create query string if any of the values are set.
-            StringBuilder sb = new StringBuilder(string.Format("?uploadId={0}", request.UploadId), 256);
+            StringBuilder sb = new StringBuilder(string.Format("?uploadId={0}&", request.UploadId), 256);
             if (request.IsSetMaxParts())
             {
                 sb.Append(String.Concat("max-parts=", request.MaxParts.ToString(), "&"));
