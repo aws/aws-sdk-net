@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+for branch in `git branch -a | egrep -v master|HEAD | sed -e 's/remotes\/origin\///'`; do
+	echo $branch;
+done
+
