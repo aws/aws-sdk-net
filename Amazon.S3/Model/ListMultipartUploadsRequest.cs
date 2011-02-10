@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -35,6 +35,8 @@ namespace Amazon.S3.Model
         private int? maxUploads;
         private string keyMarker;
         private string uploadIdMarker;
+        private string prefix;
+        private string delimiter;
 
         #region BucketName
 
@@ -192,5 +194,84 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        #region Prefix
+
+        /// <summary>
+        /// Gets and sets the Prefix property.
+        /// All keys matched will have this prefix.
+        /// </summary>
+        public string Prefix
+        {
+            get { return this.prefix; }
+            set { this.prefix = value; }
+        }
+
+        /// <summary>
+        /// Sets the Prefix property for this request.
+        /// All keys matched will have this prefix.
+        /// </summary>
+        /// <param name="prefix">The value that Prefix is set to</param>
+        /// <returns>this instance</returns>
+        public ListMultipartUploadsRequest WithPrefix(string prefix)
+        {
+            this.prefix = prefix;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Prefix property is set
+        /// </summary>
+        /// <returns>true if Prefix property is set</returns>
+        internal bool IsSetPrefix()
+        {
+            return !System.String.IsNullOrEmpty(this.prefix);
+        }
+
+        #endregion
+
+        #region Delimiter
+
+        /// <summary>
+        /// Gets and sets the Delimiter property.
+        /// Causes keys that contain the same string between the prefix and the 
+        /// first occurrence of the delimiter to be rolled up into a single result 
+        /// element in the CommonPrefixes collection.
+        /// </summary>
+        /// <remarks>
+        /// These rolled-up keys are not returned elsewhere in the response.
+        /// </remarks>
+        public string Delimiter
+        {
+            get { return this.delimiter; }
+            set { this.delimiter = value; }
+        }
+
+        /// <summary>
+        /// Sets the Delimiter property for this request.
+        /// Causes keys that contain the same string between the prefix and the 
+        /// first occurrence of the delimiter to be rolled up into a single result 
+        /// element in the CommonPrefixes collection. 
+        /// These rolled-up keys are not returned elsewhere in the response.
+        /// </summary>
+        /// <param name="delimiter">the value that Delimiter is set to.</param>
+        /// <returns>this instance</returns>
+        public ListMultipartUploadsRequest WithDelimiter(string delimiter)
+        {
+            this.delimiter = delimiter;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Delimiter property is set
+        /// </summary>
+        /// <returns>true if Delimiter property is set</returns>
+        internal bool IsSetDelimiter()
+        {
+            return !System.String.IsNullOrEmpty(this.delimiter);
+        }
+
+        #endregion
+
     }
 }

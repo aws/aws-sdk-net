@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,15 +37,16 @@ namespace Amazon.S3.Model
     {
         #region Private Members
 
-        private string bucketName;
-        private string key;
-        private string versionId;
-        private DateTime? modifiedSinceDate;
-        private DateTime? unmodifiedSinceDate;
-        private string etagToMatch;
-        private string etagToNotMatch;
-        private Tuple<int, int> byteRange;
-        private int timeout = 0;
+        string bucketName;
+        string key;
+        string versionId;
+        DateTime? modifiedSinceDate;
+        DateTime? unmodifiedSinceDate;
+        string etagToMatch;
+        string etagToNotMatch;
+        Tuple<long, long> byteRange;
+        int timeout = 0;
+        ResponseHeaderOverrides _responseHeaders;
 
         #endregion
 
@@ -304,14 +305,61 @@ namespace Amazon.S3.Model
         #endregion
 
         #region ByteRange
-        
+
         /// <summary>
-        /// Gets the byteRange property.
+        /// Gets and sets the ByteRangeLong property.
         /// </summary>
         [XmlElementAttribute(ElementName = "ByteRange")]
-        public Tuple<int, int> ByteRange
+        public Tuple<long, long> ByteRangeLong
         {
             get { return this.byteRange; }
+            set { this.byteRange = value; }
+        }
+
+        /// <summary>
+        /// Sets the ByteRangeLong property with the start and end index
+        /// specified.
+        /// When this is set the request downloads the specified range of an object.
+        /// </summary>
+        /// <param name="startIndex">Specifies the index to start at</param>
+        /// <param name="endIndex">Specifies the index to end at</param>
+        /// <returns>this instance</returns>
+        public GetObjectRequest WithByteRangeLong(long startIndex, long endIndex)
+        {
+            if (startIndex > endIndex)
+            {
+                throw new ArgumentException("The Start Index of the range needs to be greater than the End Index");
+            }
+
+            if (startIndex < 0)
+            {
+                throw new ArgumentException("The Start Index of the range needs to be >= 0");
+            }
+
+            if (endIndex < 0)
+            {
+                throw new ArgumentException("The End Index of the range needs to be >= 0");
+            }
+
+            this.byteRange = new Tuple<long, long>(startIndex, endIndex);
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Gets the ByteRange property.
+        /// </summary>
+        public Tuple<int, int> ByteRange
+        {
+            get 
+            {
+                if (this.byteRange == null)
+                {
+                    return null;
+                }
+
+                return new Tuple<int, int>((int)this.byteRange.First, (int)this.byteRange.Second); 
+            }
         }
 
         /// <summary>
@@ -339,7 +387,7 @@ namespace Amazon.S3.Model
                 throw new ArgumentException("The End Index of the range needs to be >= 0");
             }
 
-            this.byteRange = new Tuple<int, int>(startIndex, endIndex);
+            this.byteRange = new Tuple<long, long>(startIndex, endIndex);
 
             return this;
         }
@@ -350,7 +398,7 @@ namespace Amazon.S3.Model
         /// <returns>true if ByteRange property is set.</returns>
         internal bool IsSetByteRange()
         {
-            return this.ByteRange != null;
+            return this.ByteRangeLong != null;
         }
 
         #endregion
@@ -403,5 +451,41 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        #region Response Headers
+
+
+        /// <summary>
+        /// Gets and sets the response headers to be returned back with the response of the object.
+        /// </summary>
+        public ResponseHeaderOverrides ResponseHeaderOverrides
+        {
+            get
+            {
+                if (this._responseHeaders == null)
+                {
+                    this._responseHeaders = new ResponseHeaderOverrides();
+                }
+                return this._responseHeaders;
+            }
+            set
+            {
+                this._responseHeaders = value;
+            }        
+        }
+
+        /// <summary>
+        /// Sets the ResponseHeaderOverrides property and returns back this instance for method chaining.
+        /// </summary>
+        /// <param name="responseHeaderOverrides">The response headers</param>
+        /// <returns>this instance</returns>
+        public GetObjectRequest WithResponseHeaderOverrides(ResponseHeaderOverrides responseHeaderOverrides)
+        {
+            this.ResponseHeaderOverrides = responseHeaderOverrides;
+            return this;
+        }
+
+        #endregion
+
     }
 }

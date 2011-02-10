@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -40,7 +40,7 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.2.0.2";
+        internal const string SDKVersionNumber = "1.2.1.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";

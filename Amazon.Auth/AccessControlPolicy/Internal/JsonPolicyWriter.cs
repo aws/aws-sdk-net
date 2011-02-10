@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text;
 
-using Newtonsoft.Json;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.Auth.AccessControlPolicy.Internal
 {
@@ -50,10 +50,9 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             StringWriter writer = new StringWriter();
             try
             {
-                JsonWriter generator = new JsonTextWriter(writer);
-                generator.Formatting = Formatting.Indented;
+                JsonWriter generator = new JsonWriter(writer);
+                generator.IndentValue = 4;
                 writePolicy(policy, generator);
-                generator.Flush();
                 return writer.ToString();
             }
             catch (Exception e)
@@ -63,22 +62,23 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             }
         }
 
-        private void writePolicy(Policy policy, JsonWriter generator) {
-            generator.WriteStartObject();
+        private void writePolicy(Policy policy, JsonWriter generator)
+        {
+            generator.WriteObjectStart();
 
             writePropertyValue(generator, "Version", policy.Version);
 
-            if (policy.Id != null) 
+            if (policy.Id != null)
             {
                 writePropertyValue(generator, "Id", policy.Id);
             }
 
             generator.WritePropertyName("Statement");
-            generator.WriteStartArray();
-            foreach (Statement statement in policy.Statements) 
+            generator.WriteArrayStart();
+            foreach (Statement statement in policy.Statements)
             {
-                generator.WriteStartObject();
-                if (statement.Id != null) 
+                generator.WriteObjectStart();
+                if (statement.Id != null)
                 {
                     writePropertyValue(generator, "Sid", statement.Id);
                 }
@@ -89,11 +89,11 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                 writeResources(statement, generator);
                 writeConditions(statement, generator);
 
-                generator.WriteEndObject();
+                generator.WriteObjectEnd();
             }
-            generator.WriteEndArray();
+            generator.WriteArrayEnd();
 
-            generator.WriteEndObject();
+            generator.WriteObjectEnd();
         }
 
         /// <summary>
@@ -106,12 +106,12 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             if (principals == null || principals.Count == 0) return;
 
             generator.WritePropertyName("Principal");
-            generator.WriteStartObject();
+            generator.WriteObjectStart();
             Dictionary<string, List<string>> principalIdsByScheme = new Dictionary<string, List<string>>();
-            foreach (Principal p in principals) 
+            foreach (Principal p in principals)
             {
                 List<string> principalIds;
-                if(!principalIdsByScheme.TryGetValue(p.Provider, out principalIds))
+                if (!principalIdsByScheme.TryGetValue(p.Provider, out principalIds))
                 {
                     principalIds = new List<string>();
                     principalIdsByScheme[p.Provider] = principalIds;
@@ -119,30 +119,30 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
 
                 principalIds.Add(p.Id);
             }
-            foreach (string scheme in principalIdsByScheme.Keys) 
+            foreach (string scheme in principalIdsByScheme.Keys)
             {
                 generator.WritePropertyName(scheme);
 
                 if (principalIdsByScheme[scheme].Count > 1)
                 {
-                    generator.WriteStartArray();
+                    generator.WriteArrayStart();
                 }
-                foreach (string principalId in principalIdsByScheme[scheme]) 
+                foreach (string principalId in principalIdsByScheme[scheme])
                 {
-                    generator.WriteValue(principalId);
+                    generator.Write(principalId);
                 }
                 if (principalIdsByScheme[scheme].Count > 1)
                 {
-                    generator.WriteEndArray();
+                    generator.WriteArrayEnd();
                 }
             }
-            generator.WriteEndObject();
+            generator.WriteObjectEnd();
         }
 
         private void writeActions(Statement statement, JsonWriter generator)
         {
             IList<ActionIdentifier> actions = statement.Actions;
-            if (actions == null || actions.Count == 0) 
+            if (actions == null || actions.Count == 0)
             {
                 return;
             }
@@ -150,24 +150,24 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             generator.WritePropertyName("Action");
             if (actions.Count > 1)
             {
-                generator.WriteStartArray();
+                generator.WriteArrayStart();
             }
 
-            foreach (ActionIdentifier action in actions) 
+            foreach (ActionIdentifier action in actions)
             {
-                generator.WriteValue(action.ActionName);
+                generator.Write(action.ActionName);
             }
 
             if (actions.Count > 1)
             {
-                generator.WriteEndArray();
+                generator.WriteArrayEnd();
             }
         }
 
         private void writeResources(Statement statement, JsonWriter generator)
         {
             IList<Resource> resources = statement.Resources;
-            if (resources == null || resources.Count == 0) 
+            if (resources == null || resources.Count == 0)
             {
                 return;
             }
@@ -175,24 +175,24 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             generator.WritePropertyName("Resource");
             if (resources.Count > 1)
             {
-                generator.WriteStartArray();
+                generator.WriteArrayStart();
             }
 
-            foreach (Resource resource in resources) 
+            foreach (Resource resource in resources)
             {
-                generator.WriteValue(resource.Id);
+                generator.Write(resource.Id);
             }
 
             if (resources.Count > 1)
             {
-                generator.WriteEndArray();
+                generator.WriteArrayEnd();
             }
         }
 
         private void writeConditions(Statement statement, JsonWriter generator)
         {
             IList<Condition> conditions = statement.Conditions;
-            if (conditions == null || conditions.Count == 0) 
+            if (conditions == null || conditions.Count == 0)
             {
                 return;
             }
@@ -204,37 +204,37 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             Dictionary<string, Dictionary<string, List<string>>> conditionsByTypeAndKeys = sortConditionsByTypeAndKey(conditions);
 
             generator.WritePropertyName("Condition");
-            generator.WriteStartObject();
-            foreach (KeyValuePair<string, Dictionary<string, List<string>>> typeEntry in conditionsByTypeAndKeys) 
+            generator.WriteObjectStart();
+            foreach (KeyValuePair<string, Dictionary<string, List<string>>> typeEntry in conditionsByTypeAndKeys)
             {
                 generator.WritePropertyName(typeEntry.Key);
-                generator.WriteStartObject();
-                foreach (KeyValuePair<string, List<string>> keyEntry in typeEntry.Value) 
+                generator.WriteObjectStart();
+                foreach (KeyValuePair<string, List<string>> keyEntry in typeEntry.Value)
                 {
                     generator.WritePropertyName(keyEntry.Key);
                     IList<string> conditionValues = keyEntry.Value;
 
                     if (conditionValues.Count > 1)
                     {
-                        generator.WriteStartArray();
+                        generator.WriteArrayStart();
                     }
 
-                    if (conditionValues != null && conditionValues.Count != 0) 
+                    if (conditionValues != null && conditionValues.Count != 0)
                     {
-                        foreach (string conditionValue in conditionValues) 
+                        foreach (string conditionValue in conditionValues)
                         {
-                            generator.WriteValue(conditionValue);
+                            generator.Write(conditionValue);
                         }
                     }
 
                     if (conditionValues.Count > 1)
                     {
-                        generator.WriteEndArray();
+                        generator.WriteArrayEnd();
                     }
                 }
-                generator.WriteEndObject();
+                generator.WriteObjectEnd();
             }
-            generator.WriteEndObject();
+            generator.WriteObjectEnd();
         }
 
         /// <summary>
@@ -242,16 +242,16 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
         /// </summary>
         /// <param name="conditions">The list of conditions to be sorted.</param>
         /// <returns></returns>
-        private Dictionary<string, Dictionary<string, List<string>>> sortConditionsByTypeAndKey(IList<Condition> conditions) 
+        private Dictionary<string, Dictionary<string, List<string>>> sortConditionsByTypeAndKey(IList<Condition> conditions)
         {
             Dictionary<string, Dictionary<string, List<string>>> conditionsByTypeAndKeys = new Dictionary<string, Dictionary<string, List<string>>>();
-            foreach (Condition condition in conditions) 
+            foreach (Condition condition in conditions)
             {
                 string conditionType = condition.Type;
                 string conditionKey = condition.ConditionKey;
 
                 Dictionary<string, List<string>> keys;
-                if(!conditionsByTypeAndKeys.TryGetValue(conditionType, out keys))
+                if (!conditionsByTypeAndKeys.TryGetValue(conditionType, out keys))
                 {
                     keys = new Dictionary<string, List<string>>();
                     conditionsByTypeAndKeys[conditionType] = keys;
@@ -276,7 +276,7 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
         private void writePropertyValue(JsonWriter generator, string propertyName, string value)
         {
             generator.WritePropertyName(propertyName);
-            generator.WriteValue(value);
+            generator.Write(value);
         }
     }
 }

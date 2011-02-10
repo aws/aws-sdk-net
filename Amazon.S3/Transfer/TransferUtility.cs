@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -45,6 +45,13 @@ namespace Amazon.S3.Transfer
     /// 	When uploading large files by specifing files path as opposed to a stream, <c>TransferUtility</c> uses multiple threads to upload
     /// 	multiple parts of a single upload at once. When dealing with large content
     /// 	sizes and high bandwidth, this can have a significant increase on throughput.
+    /// 	</para>
+    /// 	<para>
+    /// 	The <c>TransferUtility</c> checks to make sure that <seealso cref="System.Net.ServicePointManager.DefaultConnectionLimit"/>
+    /// 	is equal to or greater than <seealso cref="Amazon.S3.Transfer.TransferUtilityConfig.NumberOfUploadThreads"/>.  If
+    /// 	it is not then it will update <seealso cref="System.Net.ServicePointManager.DefaultConnectionLimit"/> to the same value as
+    /// 	<seealso cref="Amazon.S3.Transfer.TransferUtilityConfig.NumberOfUploadThreads"/>.  If simultaneous uploads are being
+    ///     done then consider increasing the <seealso cref="System.Net.ServicePointManager.DefaultConnectionLimit"/> property.
     /// 	</para>
     /// </summary>
     /// <remarks>

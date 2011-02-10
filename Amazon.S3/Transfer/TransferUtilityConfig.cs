@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -21,6 +21,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 
 namespace Amazon.S3.Transfer
@@ -40,9 +41,17 @@ namespace Amazon.S3.Transfer
     public class TransferUtilityConfig
     {
         long _minSizeBeforePartUpload = 16 * (long)Math.Pow(2, 20);
-        int _numberOfThreads = 10;
+        int _numberOfThreads;
         int _defaultTimeout = 5 * 60 * 1000; // Default value is 5 minutes.
 
+
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        public TransferUtilityConfig()
+        {
+            this.NumberOfUploadThreads = 10;
+        }
 
         /// <summary>
         /// Gets or sets the minimum part size for upload parts. 
@@ -59,20 +68,13 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
-        /// Sets the MinSizeBeforePartUpload property
-        /// </summary>
-        /// <param name="minSizeBeforePartUpload">MinSizeBeforePartUpload property</param>
-        /// <returns>this instance</returns>
-        public TransferUtilityConfig WithMinSizeBeforePartUpload(long minSizeBeforePartUpload)
-        {
-            this.MinSizeBeforePartUpload = minSizeBeforePartUpload;
-            return this;
-        }
-
-        /// <summary>
         /// 	Gets or sets the number of executing threads.
         /// 	This property determines how many active threads will be used to upload 
         /// 	the file. The default value is 10 threads.
+        /// 	
+        ///     If this property is set to a value greater then <seealso cref="System.Net.ServicePointManager.DefaultConnectionLimit"/> than
+        ///     <seealso cref="System.Net.ServicePointManager.DefaultConnectionLimit"/> will be updated to the value.  If simultaneous uploads are being
+        ///     done then consider increasing the <seealso cref="System.Net.ServicePointManager.DefaultConnectionLimit"/> property.
         /// </summary>
         /// <remarks>
         /// 	A value less than or equal to 0 will be silently ignored.
@@ -82,19 +84,15 @@ namespace Amazon.S3.Transfer
             get { return this._numberOfThreads; }
             set
             {
-                this._numberOfThreads = value > 1 ? value : 1;
-            }
-        }
+                if (value < 1)
+                    value = 1;
 
-        /// <summary>
-        /// Sets the NumberOfUploadThreads property
-        /// </summary>
-        /// <param name="numberOfUploadThreads">NumberOfUploadThreads property</param>
-        /// <returns>this instance</returns>
-        public TransferUtilityConfig WithNumberOfUploadThreads(int numberOfUploadThreads)
-        {
-            this.NumberOfUploadThreads = numberOfUploadThreads;
-            return this;
+                this._numberOfThreads = value;
+                if (ServicePointManager.DefaultConnectionLimit < value)
+                {
+                    ServicePointManager.DefaultConnectionLimit = value;
+                }
+            }
         }
 
         /// <summary>
@@ -104,17 +102,6 @@ namespace Amazon.S3.Transfer
         {
             get { return this._defaultTimeout; }
             set { this._defaultTimeout = value; }
-        }
-
-        /// <summary>
-        /// Sets the DefaultTimeout property
-        /// </summary>
-        /// <param name="defaultTimeout">DefaultTimeout property</param>
-        /// <returns>this instance</returns>
-        public TransferUtilityConfig WithDefaultTimeout(int defaultTimeout)
-        {
-            this.DefaultTimeout = defaultTimeout;
-            return this;
         }
     }
 }

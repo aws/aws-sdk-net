@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
             SWITCH_BASE_PATH       = "--base-path",
             SWITCH_INSTALL_HIVE    = "--install-hive",
             SWITCH_INSTALL_PIG     = "--install-pig",
+            SWITCH_HIVE_VERSIONS   = "--hive-versions",
             SWITCH_RUN_HIVE_SCRIPT = "--run-hive-script",
             SWITCH_RUN_PIG_SCRIPT  = "--run-pig-script",
             SWITCH_ARGS            = "--args",
@@ -124,10 +125,31 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Step that installs Hive on your job flow.
         /// </summary>
+        /// <param name="hiveVersions">The versions of Hive to install.</param>
+        /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
+        public HadoopJarStepConfig NewInstallHiveStep(params HiveVersion[] hiveVersions)
+        {
+            if (hiveVersions.Length > 0)
+            {
+                string[] versionStrings = new String[hiveVersions.Length];
+                
+                for (int i = 0; i < hiveVersions.Length; i++)
+                {
+                    versionStrings[i] = hiveVersions[i].VersionString;
+                }
+                return newHivePigStep(TOOL_HIVE, SWITCH_INSTALL_HIVE, SWITCH_HIVE_VERSIONS, string.Join(",", versionStrings));
+            }
+
+            return newHivePigStep(TOOL_HIVE, SWITCH_INSTALL_HIVE);
+        }
+
+        /// <summary>
+        /// Step that installs Hive on your job flow.
+        /// </summary>
         /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
         public HadoopJarStepConfig NewInstallHiveStep() 
         {
-            return newHivePigStep(TOOL_HIVE, SWITCH_INSTALL_HIVE);
+            return NewInstallHiveStep(HiveVersion.Hive_0_5);
         }
 
         /// <summary>
@@ -171,6 +193,29 @@ namespace Amazon.ElasticMapReduce.Model
             argsArray[3] = script;
             Array.Copy(args, 0, argsArray, 4, args.Length);
             return newHivePigStep(TOOL_PIG, argsArray);
+        }
+
+        /// <summary>
+        /// The available Hive versions.  These are only available on Hadoop 0.20
+        /// Hive_0_5 Hive 0.5
+        /// Hive_0_7 Hive 0.7
+        /// </summary>
+        public class HiveVersion
+        {
+            public static readonly HiveVersion Hive_0_5 = new HiveVersion("0.5");
+            public static readonly HiveVersion Hive_0_7 = new HiveVersion("0.7");
+
+            string _version;
+
+            private HiveVersion(string version)
+            {
+                this._version = version;
+            }
+
+            public string VersionString
+            {
+                get { return this._version; }
+            }
         }
     }
 }

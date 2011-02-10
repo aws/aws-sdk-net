@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -127,7 +127,7 @@ namespace Amazon.S3.Model
         {
             StringBuilder sb = new StringBuilder(1024);
             sb.Append("<Grant>");
-            if (Grantee.IsSetCanonicalUser())
+            if (Grantee.CanonicalUser != null && !string.IsNullOrEmpty(Grantee.CanonicalUser.First))
             {
                 sb.Append("<Grantee xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"CanonicalUser\">");
                 sb.Append("<ID>").Append(SecurityElement.Escape(this.Grantee.CanonicalUser.First)).Append("</ID>");

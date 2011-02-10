@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -239,7 +239,7 @@ namespace Amazon.S3
         GetACLResponse GetACL(GetACLRequest request);
 
         /// <summary>
-        /// The SetACL operation gets the S3AccessControlList for a given bucket or object.
+        /// The SetACL operation sets the S3AccessControlList for a given bucket or object.
         /// Each bucket and object in Amazon S3 has an ACL that defines its access control
         /// policy, which is a list of grants. A grant consists of one grantee and one permission.
         /// ACLs only grant permissions; they do not deny them.

@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -113,6 +113,21 @@ namespace Amazon.CloudFront.Model
         public InvalidationBatch WithPaths(params string[] path)
         {
             foreach (string p in path)
+            {
+                this.paths.Add(p);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds paths to the collection of path strings and returns back this instance to chain method calls.
+        /// </summary>
+        /// <param name="paths">A list of paths to objects that will be invalidated</param>
+        /// <returns>This instance</returns>
+        public InvalidationBatch WithPaths(IEnumerable<string> paths)
+        {
+            foreach (string p in paths)
             {
                 this.paths.Add(p);
             }

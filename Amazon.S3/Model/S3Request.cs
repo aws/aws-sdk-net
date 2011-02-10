@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -86,6 +86,16 @@ namespace Amazon.S3.Model
         public void AddHeaders(NameValueCollection collection)
         {
             this.Headers.Add(collection);
+        }
+
+        /// <summary>
+        /// Adds the header to the collection of headers for the request.
+        /// </summary>
+        /// <param name="key">The name of the header for example Content-Disposition.</param>
+        /// <param name="value">The value to be set for the header.</param>
+        public void AddHeader(string key, string value)
+        {
+            this.Headers.Add(key, value);
         }
 
         #endregion

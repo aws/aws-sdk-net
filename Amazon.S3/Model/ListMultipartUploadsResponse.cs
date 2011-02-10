@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -39,6 +39,9 @@ namespace Amazon.S3.Model
         private int maxUploads;
         private bool isTruncated;
         private List<MultipartUpload> multipartUploads;
+        private string delimiter;
+        private List<string> commonPrefixes;
+        private string prefix;
 
 
         /// <summary>
@@ -131,6 +134,45 @@ namespace Amazon.S3.Model
         {
             get { return this.multipartUploads; }
             set { this.multipartUploads = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the Prefix property.
+        /// </summary>
+        public string Prefix
+        {
+            get { return this.prefix; }
+            set { this.prefix = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the Delimiter property.
+        /// </summary>
+        public string Delimiter
+        {
+            get { return this.delimiter; }
+            set { this.delimiter = value; }
+        }
+
+        /// <summary>
+        /// Gets the CommonPrefixes property. 
+        /// A response can contain CommonPrefixes only if you specify a delimiter. 
+        /// When you do, CommonPrefixes contains all (if there are any) keys between 
+        /// Prefix and the next occurrence of the string specified by delimiter. In effect, 
+        /// CommonPrefixes lists keys that act like subdirectories in the directory specified 
+        /// by Prefix. For example, if prefix is notes/ and delimiter is a slash (/), in 
+        /// notes/summer/july, the common prefix is notes/summer/.
+        /// </summary>
+        public List<string> CommonPrefixes
+        {
+            get
+            {
+                if (this.commonPrefixes == null)
+                {
+                    this.commonPrefixes = new List<string>();
+                }
+                return this.commonPrefixes;
+            }
         }
 
     }

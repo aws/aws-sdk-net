@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,8 +16,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace Amazon.Auth.AccessControlPolicy
 {

@@ -16,6 +16,14 @@
     </xsl:element>
   </xsl:template>
 
+  <xsl:template match="cf:Comment">
+    <xsl:element name="OriginAccessIdentityConfig" namespace="{$ns}">
+      <xsl:element name="Comment" namespace="{$ns}">
+        <xsl:apply-templates/>
+      </xsl:element>
+    </xsl:element>
+  </xsl:template>
+
   <xsl:template match="@* | node()">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>

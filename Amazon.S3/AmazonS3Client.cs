@@ -1,5 +1,5 @@
 /* *****************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -805,7 +805,7 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// The SetACL operation gets the S3AccessControlList for a given bucket or object.
+        /// The SetACL operation sets the S3AccessControlList for a given bucket or object.
         /// Each bucket and object in Amazon S3 has an ACL that defines its access control
         /// policy, which is a list of grants. A grant consists of one grantee and one permission.
         /// ACLs only grant permissions; they do not deny them.
@@ -1914,11 +1914,22 @@ namespace Amazon.S3
             {
                 SetIfUnmodifiedSinceHeader(webHeaders, request.UnmodifiedSinceDate);
             }
-            if (request.IsSetVersionId())
+
+            StringBuilder queryStr = new StringBuilder();
+
+            addParameter(queryStr, "versionId", request.VersionId);
+            addParameter(queryStr, ResponseHeaderOverrides.RESPONSE_CACHE_CONTROL, request.ResponseHeaderOverrides.CacheControl);
+            addParameter(queryStr, ResponseHeaderOverrides.RESPONSE_CONTENT_DISPOSITION, request.ResponseHeaderOverrides.ContentDisposition);
+            addParameter(queryStr, ResponseHeaderOverrides.RESPONSE_CONTENT_ENCODING, request.ResponseHeaderOverrides.ContentEncoding);
+            addParameter(queryStr, ResponseHeaderOverrides.RESPONSE_CONTENT_LANGUAGE, request.ResponseHeaderOverrides.ContentLanguage);
+            addParameter(queryStr, ResponseHeaderOverrides.RESPONSE_CONTENT_TYPE, request.ResponseHeaderOverrides.ContentType);
+            addParameter(queryStr, ResponseHeaderOverrides.RESPONSE_EXPIRES, request.ResponseHeaderOverrides.Expires);
+
+
+            if (queryStr.Length > 0)
             {
-                string queryStr = String.Concat("?versionId=", request.VersionId);
-                parameters[S3QueryParameter.Query] = queryStr;
-                parameters[S3QueryParameter.QueryToSign] = queryStr;
+                parameters[S3QueryParameter.Query] = "?" + queryStr.ToString();
+                parameters[S3QueryParameter.QueryToSign] = parameters[S3QueryParameter.Query];
             }
 
             // Add the Timeout parameter
@@ -1926,6 +1937,17 @@ namespace Amazon.S3
 
             AddS3QueryParameters(request, request.BucketName);
         }
+
+        void addParameter(StringBuilder queryStr, string key, string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                if (queryStr.Length > 0)
+                    queryStr.Append("&");
+
+                queryStr.AppendFormat("{0}={1}", key, value);
+            }
+         }
 
         /**
          * Convert GetObjectMetadataRequest to key/value pairs.
@@ -2101,13 +2123,26 @@ namespace Amazon.S3
             queryStr.Append(value);
             parameters[S3QueryParameter.Expires] = value;
 
+            StringBuilder queryStrToSign = new StringBuilder(); 
             if (request.IsSetKey() &&
                 request.IsSetVersionId() &&
                 request.Verb < HttpVerb.PUT)
             {
-                string queryStrToSign = String.Concat("?versionId=", request.VersionId);
-                parameters[S3QueryParameter.QueryToSign] = queryStrToSign;
-                queryStr.Append(String.Concat("&versionId=", request.VersionId));
+                queryStrToSign.AppendFormat("versionId={0}", request.VersionId);
+            }
+
+            addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_CACHE_CONTROL, request.ResponseHeaderOverrides.CacheControl);
+            addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_DISPOSITION, request.ResponseHeaderOverrides.ContentDisposition);
+            addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_ENCODING, request.ResponseHeaderOverrides.ContentEncoding);
+            addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_LANGUAGE, request.ResponseHeaderOverrides.ContentLanguage);
+            addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_TYPE, request.ResponseHeaderOverrides.ContentType);
+            addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_EXPIRES, request.ResponseHeaderOverrides.Expires);
+
+
+            if (queryStrToSign.Length > 0)
+            {
+                parameters[S3QueryParameter.QueryToSign] = "?" + queryStrToSign.ToString();
+                queryStr.Append("&" + queryStrToSign.ToString());
             }
 
             parameters[S3QueryParameter.Query] = queryStr.ToString();

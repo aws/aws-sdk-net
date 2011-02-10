@@ -24,6 +24,12 @@
     </xsl:element>
   </xsl:template>
 
+  <xsl:template match="cf:Self[local-name(..)='Signer'] | cf:Self[local-name(..)='TrustedSigners']">
+    <xsl:element name="Self" namespace="{$ns}">
+      <xsl:text>true</xsl:text>
+    </xsl:element>
+  </xsl:template>
+
   <xsl:template match="*">
     <xsl:copy>
       <xsl:copy-of select="@*" />

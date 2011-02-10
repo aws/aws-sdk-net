@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -88,7 +88,7 @@ namespace Amazon.Runtime
 
         #endregion
 
-        internal AmazonWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, ClientConfig config) 
+        internal AmazonWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, ClientConfig config)
         {
             this.logger = new Logger(this.GetType());
             this.config = config;
@@ -202,8 +202,8 @@ namespace Amazon.Runtime
                             this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", requestName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
                             XmlTextReader reader;
 
-// Using NOSTREAM is the less effcient way of dealing with the response body but it is helpful 
-// for debug purposes to see the entire xml body coming back from the server.
+                            // Using NOSTREAM is the less effcient way of dealing with the response body but it is helpful 
+                            // for debug purposes to see the entire xml body coming back from the server.
 #if NOSTREAM
                             string responseBody = new StreamReader(httpResponse.GetResponseStream()).ReadToEnd(); ;
                             reader = new XmlTextReader(new StringReader(responseBody));
@@ -278,7 +278,7 @@ namespace Amazon.Runtime
                 webRequest.Abort();
 
                 if (isTemporaryRedirect(httpErrorResponse))
-                {                    
+                {
                     string redirectedLocation = httpErrorResponse.Headers["location"];
                     this.logger.InfoFormat("Request {0} is being redirected to {1}.", requestName, redirectedLocation);
                     request.Endpoint = new Uri(redirectedLocation);

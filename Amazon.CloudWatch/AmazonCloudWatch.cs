@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,10 +31,11 @@ namespace Amazon.CloudWatch
     /// collect metrics about your AWS resources, such as the performance of
     /// your Amazon EC2 instances. You can also publish your own metrics
     /// directly to Amazon CloudWatch.</para> <para>Amazon CloudWatch allows
-    /// you to manage the metrics in several ways. If you
+    /// you to manage the metrics in several ways. If you are publishing your
+    /// own metrics, you can define custom metrics for your own use. If you
     /// are registered for an AWS product that supports Amazon CloudWatch, the
     /// service automatically pushes basic metrics to CloudWatch for you. Once
-    /// Amazon CloudWatch contains metrics you can
+    /// Amazon CloudWatch contains metrics from either source, you can
     /// calculate statistics based on that data and graphically visualize
     /// those statistics in the Amazon CloudWatch Console.</para> <para>Amazon
     /// CloudWatch alarms help you implement decisions more easily by enabling

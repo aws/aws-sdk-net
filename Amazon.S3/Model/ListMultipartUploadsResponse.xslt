@@ -26,12 +26,29 @@
       <IsTruncated>
         <xsl:value-of select="s3:IsTruncated"/>
       </IsTruncated>
+      <Prefix>
+        <xsl:value-of select="s3:Prefix"/>
+      </Prefix>
+      <Delimiter>
+        <xsl:value-of select="s3:Delimiter"/>
+      </Delimiter>
 
+      <CommonPrefixes>
+      <xsl:apply-templates select="s3:CommonPrefixes"/>
+      </CommonPrefixes>
       <MultipartUploads>
       <xsl:apply-templates select="s3:Upload"/>
       </MultipartUploads>
+  
+  
   </ListMultipartUploadsResponse>
   </xsl:template>
+
+  <xsl:template match="s3:CommonPrefixes">
+    <string>
+      <xsl:value-of select="./s3:Prefix"/>
+    </string>
+  </xsl:template>  
 
   <xsl:template match="s3:Upload">
     <MultipartUpload>

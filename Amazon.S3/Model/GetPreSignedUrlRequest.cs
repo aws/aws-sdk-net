@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -36,12 +36,13 @@ namespace Amazon.S3.Model
     {
         #region Private Members
 
-        private string bucketName;
-        private string key;
-        private DateTime? expires;
-        private Protocol protocol;
-        private HttpVerb verb;
-        private string versionId;
+        ResponseHeaderOverrides _responseHeaders;
+        string bucketName;
+        string key;
+        DateTime? expires;
+        Protocol protocol;
+        HttpVerb verb;
+        string versionId;
 
         #endregion
 
@@ -247,6 +248,41 @@ namespace Amazon.S3.Model
         internal bool IsSetVersionId()
         {
             return !System.String.IsNullOrEmpty(this.versionId);
+        }
+
+        #endregion
+
+        #region Response Headers
+
+
+        /// <summary>
+        /// Gets and sets the response headers to be returned back with the response of the object.
+        /// </summary>
+        public ResponseHeaderOverrides ResponseHeaderOverrides
+        {
+            get
+            {
+                if (this._responseHeaders == null)
+                {
+                    this._responseHeaders = new ResponseHeaderOverrides();
+                }
+                return this._responseHeaders;
+            }
+            set
+            {
+                this._responseHeaders = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets the ResponseHeaderOverrides property and returns back this instance for method chaining.
+        /// </summary>
+        /// <param name="responseHeaderOverrides">The response headers</param>
+        /// <returns>this instance</returns>
+        public GetPreSignedUrlRequest WithResponseHeaderOverrides(ResponseHeaderOverrides responseHeaderOverrides)
+        {
+            this.ResponseHeaderOverrides = responseHeaderOverrides;
+            return this;
         }
 
         #endregion
