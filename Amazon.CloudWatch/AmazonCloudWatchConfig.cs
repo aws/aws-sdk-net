@@ -20,7 +20,7 @@ namespace Amazon.CloudWatch
 {
 
     /// <summary>
-    /// Configuration for accessing  service
+    /// Configuration for accessing Amazon CloudWatch service
     /// </summary>
     public class AmazonCloudWatchConfig : ClientConfig
     {

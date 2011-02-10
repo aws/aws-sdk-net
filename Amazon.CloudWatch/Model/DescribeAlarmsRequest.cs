@@ -95,8 +95,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The alarm name prefix. <c>AlarmNames</c> cannot be specified if this
-        /// parameter is specified.
+        /// The alarm name prefix. <c>AlarmNames</c> cannot be specified if this parameter is specified.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -140,7 +139,7 @@ namespace Amazon.CloudWatch.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>OK, ALARM, UNKNOWN</description>
+        ///         <description>OK, ALARM, INSUFFICIENT_DATA</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -244,8 +243,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The token returned by a previous call to indicate that there is more
-        /// data available.
+        /// The token returned by a previous call to indicate that there is more data available.
         ///  
         /// </summary>
         public string NextToken

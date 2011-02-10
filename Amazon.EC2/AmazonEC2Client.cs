@@ -3756,7 +3756,8 @@ namespace Amazon.EC2
             }
             if (request.IsSetDescription())
             {
-                parameters["Description"] = request.Description;
+                parameters.Remove("Attribute");
+                parameters["Description.Value"] = request.Description;
             }
 
             return parameters;

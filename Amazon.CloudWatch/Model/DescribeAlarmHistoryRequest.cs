@@ -210,8 +210,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The token returned by a previous call to indicate that there is more
-        /// data available.
+        /// The token returned by a previous call to indicate that there is more data available.
         ///  
         /// </summary>
         public string NextToken

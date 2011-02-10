@@ -40,8 +40,7 @@ namespace Amazon.CloudWatch.Model
         private string stateReasonData;
 
         /// <summary>
-        /// The descriptive name for the alarm. This name must be unique within
-        /// the user's AWS account
+        /// The descriptive name for the alarm. This name must be unique within the user's AWS account
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -85,7 +84,7 @@ namespace Amazon.CloudWatch.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>OK, ALARM, UNKNOWN</description>
+        ///         <description>OK, ALARM, INSUFFICIENT_DATA</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -115,8 +114,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The reason that this alarm is set to this specific state (in
-        /// human-readable text format)
+        /// The reason that this alarm is set to this specific state (in human-readable text format)
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -153,8 +151,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The reason that this alarm is set to this specific state (in
-        /// machine-readable JSON format)
+        /// The reason that this alarm is set to this specific state (in machine-readable JSON format)
         ///  
         /// <para>
         /// <b>Constraints:</b>

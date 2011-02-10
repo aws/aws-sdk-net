@@ -70,12 +70,12 @@ namespace Amazon.CloudWatch.Model.Transform
             }
             if (putMetricAlarmRequest != null) 
             {
-                List<string> unknownActionsList = putMetricAlarmRequest.UnknownActions;
-                int unknownActionsListIndex = 1;
-                foreach (string unknownActionsListValue in unknownActionsList) 
+                List<string> insufficientDataActionsList = putMetricAlarmRequest.InsufficientDataActions;
+                int insufficientDataActionsListIndex = 1;
+                foreach (string insufficientDataActionsListValue in insufficientDataActionsList) 
                 { 
-                    request.Parameters.Add("UnknownActions.member." + unknownActionsListIndex, StringUtils.FromString(unknownActionsListValue));
-                    unknownActionsListIndex++;
+                    request.Parameters.Add("InsufficientDataActions.member." + insufficientDataActionsListIndex, StringUtils.FromString(insufficientDataActionsListValue));
+                    insufficientDataActionsListIndex++;
                 }
             }
             if (putMetricAlarmRequest != null && putMetricAlarmRequest.IsSetMetricName()) 

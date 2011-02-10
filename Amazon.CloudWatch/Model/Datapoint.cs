@@ -64,8 +64,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The number of metric values that contributed to the aggregate value of
-        /// this datapoint.
+        /// The number of metric values that contributed to the aggregate value of this datapoint.
         ///  
         /// </summary>
         public double SampleCount

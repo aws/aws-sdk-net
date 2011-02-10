@@ -58,7 +58,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The datapoints for the specified metric."
+        /// The datapoints for the specified metric.
         ///  
         /// </summary>
         public List<Datapoint> Datapoints

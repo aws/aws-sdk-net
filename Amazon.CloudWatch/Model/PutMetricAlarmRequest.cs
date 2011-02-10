@@ -43,7 +43,7 @@ namespace Amazon.CloudWatch.Model
         private bool? actionsEnabled;
         private List<string> oKActions = new List<string>();
         private List<string> alarmActions = new List<string>();
-        private List<string> unknownActions = new List<string>();
+        private List<string> insufficientDataActions = new List<string>();
         private string metricName;
         private string namespaceValue;
         private string statistic;
@@ -55,8 +55,7 @@ namespace Amazon.CloudWatch.Model
         private string comparisonOperator;
 
         /// <summary>
-        /// The descriptive name for the alarm. This name must be unique within
-        /// the user's AWS account
+        /// The descriptive name for the alarm. This name must be unique within the user's AWS account
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -130,8 +129,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Indicates whether or not actions should be executed during any changes
-        /// to the alarm's state.
+        /// Indicates whether or not actions should be executed during any changes to the alarm's state.
         ///  
         /// </summary>
         public bool ActionsEnabled
@@ -159,10 +157,8 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The list of actions to execute when this alarm transitions into an
-        /// <c>OK</c> state from any other state. Each action is specified as an
-        /// Amazon Resource Number (ARN). Currently the only action supported is
-        /// publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+        /// The list of actions to execute when this alarm transitions into an <c>OK</c> state from any other state. Each action is specified as an
+        /// Amazon Resource Number (ARN). Currently the only action supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -216,10 +212,8 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The list of actions to execute when this alarm transitions into an
-        /// <c>ALARM</c> state from any other state. Each action is specified as
-        /// an Amazon Resource Number (ARN). Currently the only action supported
-        /// is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
+        /// The list of actions to execute when this alarm transitions into an <c>ALARM</c> state from any other state. Each action is specified as an
+        /// Amazon Resource Number (ARN). Currently the only action supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -271,45 +265,45 @@ namespace Amazon.CloudWatch.Model
         {
             return this.alarmActions.Count > 0;       
         }
-        public List<string> UnknownActions
+        public List<string> InsufficientDataActions
         {
-            get { return this.unknownActions; }
-            set { this.unknownActions = value; }
+            get { return this.insufficientDataActions; }
+            set { this.insufficientDataActions = value; }
         }
         /// <summary>
-        /// Adds elements to the UnknownActions collection
+        /// Adds elements to the InsufficientDataActions collection
         /// </summary>
-        /// <param name="unknownActions">The values to add to the UnknownActions collection </param>
+        /// <param name="insufficientDataActions">The values to add to the InsufficientDataActions collection </param>
         /// <returns>this instance</returns>
-        public PutMetricAlarmRequest WithUnknownActions(params string[] unknownActions)
+        public PutMetricAlarmRequest WithInsufficientDataActions(params string[] insufficientDataActions)
         {
-            foreach (string element in unknownActions)
+            foreach (string element in insufficientDataActions)
             {
-                this.unknownActions.Add(element);
+                this.insufficientDataActions.Add(element);
             }
 
             return this;
         }
         
         /// <summary>
-        /// Adds elements to the UnknownActions collection
+        /// Adds elements to the InsufficientDataActions collection
         /// </summary>
-        /// <param name="unknownActions">The values to add to the UnknownActions collection </param>
+        /// <param name="insufficientDataActions">The values to add to the InsufficientDataActions collection </param>
         /// <returns>this instance</returns>
-        public PutMetricAlarmRequest WithUnknownActions(IEnumerable<string> unknownActions)
+        public PutMetricAlarmRequest WithInsufficientDataActions(IEnumerable<string> insufficientDataActions)
         {
-            foreach (string element in unknownActions)
+            foreach (string element in insufficientDataActions)
             {
-                this.unknownActions.Add(element);
+                this.insufficientDataActions.Add(element);
             }
 
             return this;
         }
 
-        // Check to see if UnknownActions property is set
-        internal bool IsSetUnknownActions()
+        // Check to see if InsufficientDataActions property is set
+        internal bool IsSetInsufficientDataActions()
         {
-            return this.unknownActions.Count > 0;       
+            return this.insufficientDataActions.Count > 0;       
         }
 
         /// <summary>
@@ -556,8 +550,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The number of periods over which data is compared to the specified
-        /// threshold.
+        /// The number of periods over which data is compared to the specified threshold.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -622,9 +615,8 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The arithmetic operation to use when comparing the specified
-        /// <c>Statistic</c> and <c>Threshold</c>. The specified <c>Statistic</c>
-        /// value is used as the first operand.
+        /// The arithmetic operation to use when comparing the specified <c>Statistic</c> and <c>Threshold</c>. The specified <c>Statistic</c> value is
+        /// used as the first operand.
         ///  
         /// <para>
         /// <b>Constraints:</b>

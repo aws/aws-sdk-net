@@ -78,9 +78,9 @@ namespace Amazon.CloudWatch.Model.Transform
                             
                         continue;
                     }
-                    if (context.TestExpression("UnknownActions/member", targetDepth))
+                    if (context.TestExpression("InsufficientDataActions/member", targetDepth))
                     {
-                        metricAlarm.UnknownActions.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
+                        metricAlarm.InsufficientDataActions.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
                     }

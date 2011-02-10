@@ -178,13 +178,10 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The time stamp to use for determining the first datapoint to return.
-        /// The value specified is inclusive; results include datapoints with the
-        /// time stamp specified. <note> The specified start time is rounded down
-        /// to the nearest value. Datapoints are returned for start times up to
-        /// two weeks in the past. Specified start times that are more than two
-        /// weeks in the past will not return datapoints for metrics that are
-        /// older than two weeks. </note>
+        /// The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the
+        /// time stamp specified. <note> The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to
+        /// two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older
+        /// than two weeks. </note>
         ///  
         /// </summary>
         public DateTime StartTime
@@ -212,9 +209,8 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The time stamp to use for determining the last datapoint to return.
-        /// The value specified is exclusive; results will include datapoints up
-        /// to the time stamp specified.
+        /// The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to
+        /// the time stamp specified.
         ///  
         /// </summary>
         public DateTime EndTime
@@ -242,8 +238,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The granularity, in seconds, of the returned datapoints. <c>Period</c>
-        /// must be at least 60 seconds and must be a multiple of 60. The default
+        /// The granularity, in seconds, of the returned datapoints. <c>Period</c> must be at least 60 seconds and must be a multiple of 60. The default
         /// value is 60.
         ///  
         /// <para>
