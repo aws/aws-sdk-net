@@ -981,7 +981,10 @@ namespace Amazon.S3
             }
 
             ConvertGetObject(request);
-            return Invoke<GetObjectResponse>(request);
+            GetObjectResponse response = Invoke<GetObjectResponse>(request);
+            response.BucketName = request.BucketName;
+            response.Key = request.Key;
+            return response;
         }
 
         /// <summary>

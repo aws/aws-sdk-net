@@ -40,7 +40,7 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.2.3.0";
+        internal const string SDKVersionNumber = "1.2.3.1";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";

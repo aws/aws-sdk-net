@@ -49,6 +49,28 @@ namespace Amazon.S3.Model
         private string contentType;
         private string versionId;
 
+        string bucketName;
+        string key;
+
+
+        /// <summary>
+        /// Gets and sets the BucketName property.
+        /// </summary>
+        public string BucketName
+        {
+            get { return this.bucketName; }
+            set { this.bucketName = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the Key property.
+        /// </summary>
+        public string Key
+        {
+            get { return this.key; }
+            set { this.key = value; }
+        }
+
         /// <summary>
         /// Gets and sets the ETag property.
         /// </summary>
@@ -209,7 +231,7 @@ namespace Amazon.S3.Model
                 {
                     // This automatically calls all subscribers sequentially
                     // http://msdn.microsoft.com/en-us/library/ms173172%28VS.80%29.aspx
-                    handler(this, new WriteObjectProgressArgs(incrementTransferred, transferred, total));
+                    handler(this, new WriteObjectProgressArgs(this.bucketName, this.key, this.versionId, incrementTransferred, transferred, total));
                 }
             }
             catch
@@ -224,17 +246,51 @@ namespace Amazon.S3.Model
     /// </summary>
     public class WriteObjectProgressArgs : TransferProgressArgs
     {
+        string bucketName;
+        string key;
+        string versionId;
+
         /// <summary>
         /// The constructor takes the number of
         /// currently transferred bytes and the
         /// total number of bytes to be transferred
         /// </summary>
+        /// <param name="bucketName">The bucket name for the S3 object being written.</param>
+        /// <param name="key">The object key for the S3 object being written.</param>
+        /// <param name="versionId">The version-id of the S3 object.</param>
         /// <param name="incrementTransferred">The number of bytes transferred since last event</param>
         /// <param name="transferred">The number of bytes transferred</param>
         /// <param name="total">The total number of bytes to be transferred</param>
-        public WriteObjectProgressArgs(long incrementTransferred, long transferred, long total)
+        internal WriteObjectProgressArgs(string bucketName, string key, string versionId, long incrementTransferred, long transferred, long total)
             : base(incrementTransferred, transferred, total)
         {
+            this.bucketName = bucketName;
+            this.key = key;
+            this.versionId = versionId;
+        }
+
+        /// <summary>
+        /// Gets the bucket name for the S3 object being written.
+        /// </summary>
+        public string BucketName
+        {
+            get { return this.bucketName; }
+        }
+
+        /// <summary>
+        /// Gets the object key for the S3 object being written.
+        /// </summary>
+        public string Key
+        {
+            get { return this.key; }
+        }
+
+        /// <summary>
+        /// Gets the version-id of the S3 object.
+        /// </summary>
+        public string VersionId
+        {
+            get { return this.versionId; }
         }
     }
 
