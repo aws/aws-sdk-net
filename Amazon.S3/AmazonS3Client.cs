@@ -2457,6 +2457,14 @@ namespace Amazon.S3
             {
                 sb.Append(String.Concat("upload-idmarker=", AmazonS3Util.UrlEncode(request.UploadIdMarker, false), "&"));
             }
+            if (request.IsSetPrefix())
+            {
+                sb.Append(String.Concat("prefix=", AmazonS3Util.UrlEncode(request.Prefix, false), "&"));
+            }
+            if (request.IsSetDelimiter())
+            {
+                sb.Append(String.Concat("delimiter=", AmazonS3Util.UrlEncode(request.Delimiter, false), "&"));
+            }
 
             string query = sb.ToString();
 
