@@ -1891,9 +1891,9 @@ namespace Amazon.S3
             if (request.IsSetByteRange())
             {
                 parameters[S3QueryParameter.Range] = String.Concat(
-                    request.ByteRange.First,
+                    request.ByteRangeLong.First,
                     ":",
-                    request.ByteRange.Second
+                    request.ByteRangeLong.Second
                     );
             }
 

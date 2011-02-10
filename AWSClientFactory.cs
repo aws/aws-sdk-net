@@ -31,6 +31,7 @@ using Amazon.CloudFront;
 using Amazon.SimpleNotificationService;
 using Amazon.RDS;
 using Amazon.IdentityManagement;
+using Amazon.ElasticBeanstalk;
 
 namespace Amazon
 {
@@ -458,6 +459,36 @@ namespace Amazon
             )
         {
             return new AmazonIdentityManagementServiceClient(awsAccessKey, awsSecretAccessKey, config);
-        }     
+        }
+
+        /// <summary>
+        /// Create a client for the AWS Elastic Beanstalk service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An AWS Elastic Beanstalk client</returns>
+        public static AmazonElasticBeanstalk CreateAmazonElasticBeanstalkClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonElasticBeanstalkClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the AWS Elastic Beanstalk service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service</param>
+        /// <returns>An AWS Elastic Beanstalk client</returns>
+        public static AmazonElasticBeanstalk CreateAmazonElasticBeanstalkClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonElasticBeanstalkConfig config
+            )
+        {
+            return new AmazonElasticBeanstalkClient(awsAccessKey, awsSecretAccessKey, config);
+        } 
     }
 }
