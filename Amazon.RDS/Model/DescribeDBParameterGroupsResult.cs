@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> Contains the result of a successful invocation of the
+    /// DescribeDBParameterGroups action. </para>
     /// </summary>
     public class DescribeDBParameterGroupsResult  
     {
@@ -50,14 +51,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
 
         /// <summary>
-        /// A list of <a>DPParameterGroup</a> instances..
+        /// A list of <a>DBParameterGroup</a> instances.
         ///  
         /// </summary>
         public List<DBParameterGroup> DBParameterGroups
@@ -79,10 +81,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the DBParameterGroups collection
+        /// </summary>
+        /// <param name="dBParameterGroups">The values to add to the DBParameterGroups collection </param>
+        /// <returns>this instance</returns>
+        public DescribeDBParameterGroupsResult WithDBParameterGroups(IEnumerable<DBParameterGroup> dBParameterGroups)
+        {
+            foreach (DBParameterGroup element in dBParameterGroups)
+            {
+                this.dBParameterGroups.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if DBParameterGroups property is set
         internal bool IsSetDBParameterGroups()
         {
-            return this.dBParameterGroups.Count > 0;        
+            return this.dBParameterGroups.Count > 0;       
         }
     }
 }

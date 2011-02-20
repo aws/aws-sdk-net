@@ -21,7 +21,15 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> Contains the result of a successful invocation of the following
+    /// actions: </para>
+    /// <ul>
+    /// <li> CreateDBSnapshot </li>
+    /// <li> DeleteDBSnapshot </li>
+    /// 
+    /// </ul>
+    /// <para>This data type is used as a response element in the
+    /// DescribeDBSnapshots action.</para>
     /// </summary>
     public class DBSnapshot  
     {
@@ -59,6 +67,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
@@ -66,8 +75,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the the DBInstanceIdentifier of the DB Instance this DB
-        /// Snapshot was created from.
+        /// Specifies the the DBInstanceIdentifier of the DB Instance this DB Snapshot was created from.
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -87,6 +95,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
@@ -114,10 +123,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if SnapshotCreateTime property is set
         internal bool IsSetSnapshotCreateTime()
         {
-            return this.snapshotCreateTime.HasValue;        
+            return this.snapshotCreateTime.HasValue;       
         }
 
         /// <summary>
@@ -141,10 +151,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;         
+            return this.engine != null;       
         }
 
         /// <summary>
@@ -168,10 +179,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AllocatedStorage property is set
         internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorage.HasValue;      
+            return this.allocatedStorage.HasValue;       
         }
 
         /// <summary>
@@ -195,15 +207,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;         
+            return this.status != null;       
         }
 
         /// <summary>
-        /// Specifies the port that the database engine was listening on at the
-        /// time of the snapshot.
+        /// Specifies the port that the database engine was listening on at the time of the snapshot.
         ///  
         /// </summary>
         public int Port
@@ -223,15 +235,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;      
+            return this.port.HasValue;       
         }
 
         /// <summary>
-        /// Specifies the name of the Availability Zone the DB Instance was
-        /// located in at the time of the DB Snapshot.
+        /// Specifies the name of the Availability Zone the DB Instance was located in at the time of the DB Snapshot.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -251,6 +263,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
@@ -278,10 +291,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if InstanceCreateTime property is set
         internal bool IsSetInstanceCreateTime()
         {
-            return this.instanceCreateTime.HasValue;        
+            return this.instanceCreateTime.HasValue;       
         }
 
         /// <summary>
@@ -305,11 +319,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MasterUsername property is set
         internal bool IsSetMasterUsername()
         {
-            return this.masterUsername != null;         
+            return this.masterUsername != null;       
         }
+
+        /// <summary>
+        /// Specifies the version of the database engine.
+        ///  
+        /// </summary>
         public string EngineVersion
         {
             get { return this.engineVersion; }
@@ -327,10 +347,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;      
+            return this.engineVersion != null;       
         }
     }
 }

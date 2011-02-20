@@ -1127,6 +1127,8 @@
     <Compile Include="Amazon.IdentityManagement\Model\CreateAccessKeyRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\CreateAccessKeyResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\CreateAccessKeyResult.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\CreateAccountAliasRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\CreateAccountAliasResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\CreateGroupRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\CreateGroupResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\CreateGroupResult.cs" />
@@ -1140,6 +1142,8 @@
     <Compile Include="Amazon.IdentityManagement\Model\DeactivateMFADeviceResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteAccessKeyRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteAccessKeyResponse.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteAccountAliasRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteAccountAliasResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteConflictException.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteGroupPolicyRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteGroupPolicyResponse.cs" />
@@ -1189,6 +1193,9 @@
     <Compile Include="Amazon.IdentityManagement\Model\ListAccessKeysRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\ListAccessKeysResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\ListAccessKeysResult.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\ListAccountAliasesRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\ListAccountAliasesResponse.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\ListAccountAliasesResult.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\ListGroupPoliciesRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\ListGroupPoliciesResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\ListGroupPoliciesResult.cs" />
@@ -1236,6 +1243,8 @@
     <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateAccessKeyRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateAccessKeyResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateAccessKeyResultUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateAccountAliasRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateAccountAliasResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateGroupResultUnmarshaller.cs" />
@@ -1249,6 +1258,8 @@
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeactivateMFADeviceResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteAccessKeyRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteAccessKeyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteAccountAliasRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteAccountAliasResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteGroupPolicyRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteGroupPolicyResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteGroupRequestMarshaller.cs" />
@@ -1290,6 +1301,9 @@
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ListAccessKeysRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ListAccessKeysResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ListAccessKeysResultUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\ListAccountAliasesRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\ListAccountAliasesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\ListAccountAliasesResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ListGroupPoliciesRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ListGroupPoliciesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ListGroupPoliciesResultUnmarshaller.cs" />
@@ -1436,6 +1450,7 @@
     </Compile>
     <Compile Include="Amazon.RDS\Model\AuthorizationAlreadyExistsException.cs" />
     <Compile Include="Amazon.RDS\Model\AuthorizationNotFoundException.cs" />
+    <Compile Include="Amazon.RDS\Model\AuthorizationQuotaExceededException.cs" />
     <Compile Include="Amazon.RDS\Model\AuthorizeDBSecurityGroupIngressRequest.cs" />
     <Compile Include="Amazon.RDS\Model\AuthorizeDBSecurityGroupIngressResponse.cs" />
     <Compile Include="Amazon.RDS\Model\AuthorizeDBSecurityGroupIngressResult.cs" />
@@ -1692,10 +1707,14 @@
     <Compile Include="Amazon.S3\Model\CompleteMultipartUploadResponse.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketPolicyResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketPolicyResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketVersioningRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketVersioningResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketWebsiteRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketWebsiteResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetNotificationConfigurationRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetNotificationConfigurationResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetPreSignedUrlRequest.cs" />
@@ -1714,6 +1733,8 @@
     <Compile Include="Amazon.S3\Model\PartStreamWrapper.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketWebsiteRequest.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketWebsiteResponse.cs" />
     <Compile Include="Amazon.S3\Model\ResponseHeaderOverrides.cs" />
     <Compile Include="Amazon.S3\Model\S3AccessControlList.cs" />
     <Compile Include="Amazon.S3\Model\S3Bucket.cs">
@@ -1768,9 +1789,16 @@
     <Compile Include="Amazon.S3\Model\S3Response.cs" />
     <Compile Include="Amazon.S3\Model\UploadPartRequest.cs" />
     <Compile Include="Amazon.S3\Model\UploadPartResponse.cs" />
+    <Compile Include="Amazon.S3\Model\WebsiteConfiguration.cs" />
     <Compile Include="Amazon.S3\Transfer\BaseDownloadRequest.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\AbortMultipartUploadsCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\BaseCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\DownloadCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\Executer.cs" />
     <Compile Include="Amazon.S3\Transfer\Internal\MultipartUploadCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\OpenStreamCommand.cs" />
     <Compile Include="Amazon.S3\Transfer\Internal\SimpleUploadCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\TransferAsyncResult.cs" />
     <Compile Include="Amazon.S3\Transfer\Internal\UploadDirectoryCommand.cs" />
     <Compile Include="Amazon.S3\Transfer\TransferUtility.cs" />
     <Compile Include="Amazon.S3\Transfer\TransferUtilityConfig.cs" />
@@ -2151,6 +2179,9 @@
     <EmbeddedResource Include="Amazon.S3\Model\InitiateMultipartUploadResponse.xslt" />
     <EmbeddedResource Include="Amazon.S3\Model\ListMultipartUploadsResponse.xslt" />
     <EmbeddedResource Include="Amazon.S3\Model\ListPartsResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.S3\Model\GetBucketWebsiteResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

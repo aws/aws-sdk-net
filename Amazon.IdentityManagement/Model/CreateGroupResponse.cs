@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the CreateGroupResult property.
-        /// Contains the result of a successful invocation of the CreateGroup
-        /// action.
+        /// Contains the result of a successful invocation of the CreateGroup action.
         /// </summary>
         public CreateGroupResult CreateGroupResult
         {

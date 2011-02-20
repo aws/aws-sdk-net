@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the CreateAccessKeyResult property.
-        /// Contains the result of a successful invocation of the CreateAccessKey
-        /// action.
+        /// Contains the result of a successful invocation of the CreateAccessKey action.
         /// </summary>
         public CreateAccessKeyResult CreateAccessKeyResult
         {

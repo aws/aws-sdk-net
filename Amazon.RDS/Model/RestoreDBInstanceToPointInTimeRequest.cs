@@ -45,7 +45,8 @@ namespace Amazon.RDS.Model
         private bool? autoMinorVersionUpgrade;
 
         /// <summary>
-        /// The identifier of the source DB Instance from which to restore.
+        /// The identifier of the source DB Instance from which to restore. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+        /// hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string SourceDBInstanceIdentifier
@@ -65,14 +66,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if SourceDBInstanceIdentifier property is set
         internal bool IsSetSourceDBInstanceIdentifier()
         {
-            return this.sourceDBInstanceIdentifier != null;         
+            return this.sourceDBInstanceIdentifier != null;       
         }
 
         /// <summary>
-        /// The name of the new database instance to be created.
+        /// The name of the new database instance to be created. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+        /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string TargetDBInstanceIdentifier
@@ -92,14 +95,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if TargetDBInstanceIdentifier property is set
         internal bool IsSetTargetDBInstanceIdentifier()
         {
-            return this.targetDBInstanceIdentifier != null;         
+            return this.targetDBInstanceIdentifier != null;       
         }
 
         /// <summary>
-        /// The date and time from to restore from.
+        /// The date and time from to restore from. Valid Values: Value must be a UTC time Constraints: <ul> <li>Must be after the latest restorable
+        /// time for the DB Instance</li> <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul> Example:
+        /// <c>2009-09-07T23:45:00Z</c>
         ///  
         /// </summary>
         public DateTime RestoreTime
@@ -119,6 +125,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if RestoreTime property is set
         internal bool IsSetRestoreTime()
         {
@@ -126,8 +133,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies whether (<i>true</i>) or not (<i>false</i>) the DB Instance
-        /// is restored from the latest backup time.
+        /// Specifies whether (<c>true</c>) or not (<c>false</c>) the DB Instance is restored from the latest backup time. Default: <c>false</c>
+        /// Constraints: Cannot be specified if RestoreTime parameter is provided.
         ///  
         /// </summary>
         public bool UseLatestRestorableTime
@@ -147,6 +154,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if UseLatestRestorableTime property is set
         internal bool IsSetUseLatestRestorableTime()
         {
@@ -154,7 +162,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The compute and memory capacity of the Amazon RDS DB instance.
+        /// The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <c>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.2xlarge |
+        /// db.m2.4xlarge</c> Default: The same DBInstanceClass as the original DB Instance.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -174,14 +183,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;        
+            return this.dBInstanceClass != null;       
         }
 
         /// <summary>
-        /// The port number on which the database accepts connections.
+        /// The port number on which the database accepts connections. Constraints: Value must be <c>1115-65535</c> Default: The same port as the
+        /// original DB Instance.
         ///  
         /// </summary>
         public int Port
@@ -201,15 +212,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;      
+            return this.port.HasValue;       
         }
 
         /// <summary>
-        /// The EC2 Availability Zone that the database instance will be created
-        /// in.
+        /// The EC2 Availability Zone that the database instance will be created in. Default: A random, system-chosen Availability Zone. Constraint: You
+        /// cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to true. Example: <c>us-east-1a</c>
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -229,11 +241,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
             return this.availabilityZone != null;       
         }
+
+        /// <summary>
+        /// Specifies if the DB Instance is a Multi-AZ deployment. Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ
+        /// parameter is set to <c>true</c>.
+        ///  
+        /// </summary>
         public bool MultiAZ
         {
             get { return this.multiAZ ?? default(bool); }
@@ -251,11 +270,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
             return this.multiAZ.HasValue;       
         }
+
+        /// <summary>
+        /// Indicates that minor version upgrades will be applied automatically to the DB Instance during the maintenance window.
+        ///  
+        /// </summary>
         public bool AutoMinorVersionUpgrade
         {
             get { return this.autoMinorVersionUpgrade ?? default(bool); }
@@ -273,6 +298,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {

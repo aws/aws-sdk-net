@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the ListMFADevicesResult property.
-        /// Contains the result of a successful invocation of the ListMFADevices
-        /// action.
+        /// Contains the result of a successful invocation of the ListMFADevices action.
         /// </summary>
         public ListMFADevicesResult ListMFADevicesResult
         {

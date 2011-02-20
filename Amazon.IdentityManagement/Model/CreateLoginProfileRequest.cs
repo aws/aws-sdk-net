@@ -28,13 +28,8 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Creates a login profile for the specified User, giving the User
     /// the ability to access AWS services such as the AWS Management Console.
     /// For more information about login profiles, see Managing Login
-    /// Profiles and MFA Devices in Using AWS Identity and Access
-    /// Management.</para> <para><b>NOTE:</b>In the full release you will be
-    /// able to use IAM to access your services through the AWS Management
-    /// Console. Although this feature is not currently available, you can
-    /// create login profiles for your Users now. Then, when this feature is
-    /// implemented, your Users can use IAM to access your services through
-    /// the AWS Management Console.</para>
+    /// Profiles and MFA Devices in <i>Using AWS Identity and Access
+    /// Management</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateLoginProfile"/>
     public class CreateLoginProfileRequest : AmazonWebServiceRequest
@@ -76,6 +71,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -116,6 +112,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Password property is set
         internal bool IsSetPassword()
         {

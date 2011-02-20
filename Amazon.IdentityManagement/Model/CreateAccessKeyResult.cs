@@ -50,10 +50,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if AccessKey property is set
         internal bool IsSetAccessKey()
         {
-            return this.accessKey != null;      
+            return this.accessKey != null;       
         }
     }
 }

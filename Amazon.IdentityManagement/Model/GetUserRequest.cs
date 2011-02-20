@@ -36,8 +36,7 @@ namespace Amazon.IdentityManagement.Model
         private string userName;
 
         /// <summary>
-        /// Name of the User to get information about. This parameter is optional.
-        /// If it is not included, it defaults to the User making the request.
+        /// Name of the User to get information about. This parameter is optional. If it is not included, it defaults to the User making the request.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -70,6 +69,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {

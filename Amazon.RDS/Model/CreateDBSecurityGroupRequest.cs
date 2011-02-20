@@ -35,8 +35,8 @@ namespace Amazon.RDS.Model
         private string dBSecurityGroupDescription;
 
         /// <summary>
-        /// The name for the DB Security Group. This value is stored as a
-        /// lowercase string.
+        /// The name for the DB Security Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
+        /// characters or hyphens. Must not be "Default". Example: <c>mysecuritygroup</c>
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -56,10 +56,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this.dBSecurityGroupName != null;        
+            return this.dBSecurityGroupName != null;       
         }
 
         /// <summary>
@@ -83,10 +84,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSecurityGroupDescription property is set
         internal bool IsSetDBSecurityGroupDescription()
         {
-            return this.dBSecurityGroupDescription != null;         
+            return this.dBSecurityGroupDescription != null;       
         }
     }
 }

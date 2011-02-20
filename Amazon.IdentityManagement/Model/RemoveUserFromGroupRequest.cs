@@ -67,10 +67,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;      
+            return this.groupName != null;       
         }
 
         /// <summary>
@@ -107,6 +108,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {

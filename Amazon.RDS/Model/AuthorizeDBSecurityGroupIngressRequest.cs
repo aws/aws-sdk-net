@@ -31,7 +31,10 @@ namespace Amazon.RDS.Model
     /// on EC2 instances. Second, IP ranges are available if the application
     /// accessing your database is running on the Internet. Required
     /// parameters for this API are one of CIDR range or (EC2SecurityGroupName
-    /// AND EC2SecurityGroupOwnerId). </para>
+    /// AND EC2SecurityGroupOwnerId). </para> <para><b>NOTE:</b> You cannot
+    /// authorize ingress from an EC2 security group in one Region to an
+    /// Amazon RDS DB Instance in another. </para> <para>For an overview of
+    /// CIDR ranges, go to the Wikipedia Tutorial. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.AuthorizeDBSecurityGroupIngress"/>
     public class AuthorizeDBSecurityGroupIngressRequest : AmazonWebServiceRequest
@@ -62,10 +65,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this.dBSecurityGroupName != null;        
+            return this.dBSecurityGroupName != null;       
         }
 
         /// <summary>
@@ -89,10 +93,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this.cIDRIP != null;         
+            return this.cIDRIP != null;       
         }
 
         /// <summary>
@@ -116,6 +121,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EC2SecurityGroupName property is set
         internal bool IsSetEC2SecurityGroupName()
         {
@@ -123,8 +129,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// AWS Account Number of the owner of the security group specified in the
-        /// EC2SecurityGroupName parameter. The AWS Access Key ID is not an
+        /// AWS Account Number of the owner of the security group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
         /// acceptable value.
         ///  
         /// </summary>
@@ -145,10 +150,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EC2SecurityGroupOwnerId property is set
         internal bool IsSetEC2SecurityGroupOwnerId()
         {
-            return this.eC2SecurityGroupOwnerId != null;        
+            return this.eC2SecurityGroupOwnerId != null;       
         }
     }
 }

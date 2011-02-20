@@ -20,7 +20,7 @@ namespace Amazon.RDS
 {
 
     /// <summary>
-    /// Configuration for accessing  service
+    /// Configuration for accessing Amazon Relational Database Service service
     /// </summary>
     public class AmazonRDSConfig : ClientConfig
     {

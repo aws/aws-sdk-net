@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> Contains the result of a successful invocation of the
+    /// DescribeDBSecurityGroups action. </para>
     /// </summary>
     public class DescribeDBSecurityGroupsResult  
     {
@@ -50,10 +51,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
 
         /// <summary>
@@ -79,10 +81,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the DBSecurityGroups collection
+        /// </summary>
+        /// <param name="dBSecurityGroups">The values to add to the DBSecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public DescribeDBSecurityGroupsResult WithDBSecurityGroups(IEnumerable<DBSecurityGroup> dBSecurityGroups)
+        {
+            foreach (DBSecurityGroup element in dBSecurityGroups)
+            {
+                this.dBSecurityGroups.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this.dBSecurityGroups.Count > 0;         
+            return this.dBSecurityGroups.Count > 0;       
         }
     }
 }

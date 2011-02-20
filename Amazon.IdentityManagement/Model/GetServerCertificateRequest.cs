@@ -34,8 +34,7 @@ namespace Amazon.IdentityManagement.Model
         private string serverCertificateName;
 
         /// <summary>
-        /// The name of the server certificate whose information you want to
-        /// retrive.
+        /// The name of the server certificate you want to retrieve information about.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -68,10 +67,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if ServerCertificateName property is set
         internal bool IsSetServerCertificateName()
         {
-            return this.serverCertificateName != null;      
+            return this.serverCertificateName != null;       
         }
     }
 }

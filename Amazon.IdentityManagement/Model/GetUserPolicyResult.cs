@@ -65,6 +65,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -105,10 +106,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;         
+            return this.policyName != null;       
         }
 
         /// <summary>
@@ -145,10 +147,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if PolicyDocument property is set
         internal bool IsSetPolicyDocument()
         {
-            return this.policyDocument != null;         
+            return this.policyDocument != null;       
         }
     }
 }

@@ -35,7 +35,9 @@ namespace Amazon.RDS.Model
         private string description;
 
         /// <summary>
-        /// The name of the DB Parameter Group.
+        /// The name of the DB Parameter Group. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a
+        /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <note>This value is stored as a lower-case
+        /// string.</note>
         ///  
         /// </summary>
         public string DBParameterGroupName
@@ -55,6 +57,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
@@ -62,8 +65,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the DB Parameter Group Family the DB Parameter Group can
-        /// be used with.
+        /// The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be
+        /// applied only to a DB instance running a database engine compatible with that DB parameter group family and version. Valid Values:
+        /// <c>MySQL5.1</c> | <c>MySQL5.5</c>
         ///  
         /// </summary>
         public string DBParameterGroupFamily
@@ -83,10 +87,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this.dBParameterGroupFamily != null;         
+            return this.dBParameterGroupFamily != null;       
         }
 
         /// <summary>
@@ -110,10 +115,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;        
+            return this.description != null;       
         }
     }
 }

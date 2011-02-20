@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Gets and sets the DescribeDBParametersResult property.
-        /// 
+        /// Contains the result of a successful invocation of the DescribeDBParameters action.
         /// </summary>
         public DescribeDBParametersResult DescribeDBParametersResult
         {

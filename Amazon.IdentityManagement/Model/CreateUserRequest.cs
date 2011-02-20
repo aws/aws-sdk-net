@@ -27,8 +27,8 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the CreateUser operation.
     /// <para>Creates a new User for your AWS Account.</para> <para>For
     /// information about limitations on the number of Users you can create,
-    /// see Limitations on IAM Entities in Using AWS Identity and Access
-    /// Management.</para>
+    /// see Limitations on IAM Entities in <i>Using AWS Identity and Access
+    /// Management</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateUser"/>
     public class CreateUserRequest : AmazonWebServiceRequest
@@ -37,11 +37,9 @@ namespace Amazon.IdentityManagement.Model
         private string userName;
 
         /// <summary>
-        /// The path for the User name. For more information about paths, see
-        /// Identifiers for Users and Groups in <a
-        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
-        /// target="_blank">Using AWS Identity and Access Management</a>. This
-        /// parameter is optional. If it is not included, it defaults to a slash
+        /// The path for the User name. For more information about paths, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
+        /// Entities</a> in <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash
         /// (/).
         ///  
         /// <para>
@@ -75,6 +73,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
@@ -115,6 +114,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {

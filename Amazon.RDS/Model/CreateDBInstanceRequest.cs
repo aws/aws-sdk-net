@@ -49,9 +49,9 @@ namespace Amazon.RDS.Model
         private bool? autoMinorVersionUpgrade;
 
         /// <summary>
-        /// The name of the database to create when the DB Instance is created. If
-        /// this parameter is not specified, no database is created in the DB
-        /// Instance.
+        /// The name of the database to create when the DB Instance is created. If this parameter is not specified, no database is created in the DB
+        /// Instance. Constraints: <ul> <li>Must contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word reserved by the specified database
+        /// engine</li> </ul>
         ///  
         /// </summary>
         public string DBName
@@ -71,15 +71,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this.dBName != null;         
+            return this.dBName != null;       
         }
 
         /// <summary>
-        /// The DB Instance identifier. This parameter is stored as a lowercase
-        /// string.
+        /// The DB Instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+        /// characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+        /// </ul> Example: <c>mydbinstance</c>
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -99,6 +101,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
@@ -106,8 +109,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The amount of storage (in gigabytes) to be initially allocated for the
-        /// database instance.
+        /// The amount of storage (in gigabytes) to be initially allocated for the database instance. Must be an integer from 5 to 1024.
         ///  
         /// </summary>
         public int AllocatedStorage
@@ -127,14 +129,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AllocatedStorage property is set
         internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorage.HasValue;      
+            return this.allocatedStorage.HasValue;       
         }
 
         /// <summary>
-        /// The compute and memory capacity of the DB Instance.
+        /// The compute and memory capacity of the DB Instance. Valid Values: <c>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge
+        /// | db.m2.4xlarge</c>
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -154,14 +158,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;        
+            return this.dBInstanceClass != null;       
         }
 
         /// <summary>
-        /// The name of the database engine to be used for this instance.
+        /// The name of the database engine to be used for this instance. Valid Values: <c>MySQL</c>
         ///  
         /// </summary>
         public string Engine
@@ -181,14 +186,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;         
+            return this.engine != null;       
         }
 
         /// <summary>
-        /// The name of master user for the client DB Instance.
+        /// The name of master user for the client DB Instance. Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First character
+        /// must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul>
         ///  
         /// </summary>
         public string MasterUsername
@@ -208,14 +215,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MasterUsername property is set
         internal bool IsSetMasterUsername()
         {
-            return this.masterUsername != null;         
+            return this.masterUsername != null;       
         }
 
         /// <summary>
-        /// The password for the master DB Instance user.
+        /// The password for the master DB Instance user. Constraints: Must contain 4 to 41 alphanumeric characters.
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -235,14 +243,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MasterUserPassword property is set
         internal bool IsSetMasterUserPassword()
         {
-            return this.masterUserPassword != null;         
+            return this.masterUserPassword != null;       
         }
 
         /// <summary>
-        /// A list of DB Security Groups to associate with this DB Instance.
+        /// A list of DB Security Groups to associate with this DB Instance. Default: The default DB Security Group for the database engine.
         ///  
         /// </summary>
         public List<string> DBSecurityGroups
@@ -264,15 +273,32 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the DBSecurityGroups collection
+        /// </summary>
+        /// <param name="dBSecurityGroups">The values to add to the DBSecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceRequest WithDBSecurityGroups(IEnumerable<string> dBSecurityGroups)
+        {
+            foreach (string element in dBSecurityGroups)
+            {
+                this.dBSecurityGroups.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this.dBSecurityGroups.Count > 0;         
+            return this.dBSecurityGroups.Count > 0;       
         }
 
         /// <summary>
-        /// The EC2 Availability Zone that the database instance will be created
-        /// in.
+        /// The EC2 Availability Zone that the database instance will be created in. Default: A random, system-chosen Availability Zone in the
+        /// endpoint's region. Example: <c>us-east-1d</c> Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set
+        /// to <c>true</c>. The specified Availability Zone must be in the same region as the current endpoint.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -292,6 +318,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
@@ -299,8 +326,11 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The weekly time range (in UTC) during which system maintenance can
-        /// occur.
+        /// The weekly time range (in UTC) during which system maintenance can occur. Format: ddd:hh24:mi-ddd:hh24:mi Default: Depends on the Region the
+        /// database was created in. These are the default maintenance windows for each Region: <ul> <li><b>US-East (Northern Virginia) Region:</b>
+        /// Sun:05:00-Sun:09:00 UTC</li> <li><b>US-West (Northern California) Region:</b> Sun:08:00-Sun:12:00 UTC</li> <li><b>EU (Ireland) Region:</b>
+        /// Sun:00:00-Sun:04:00 UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> Sat:16:00-Sat:20:00 UTC</li> </ul> Valid Days: Mon, Tue, Wed, Thu,
+        /// Fri, Sat, Sun Constraints: Minimum four-hour period.
         ///  
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -320,16 +350,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if PreferredMaintenanceWindow property is set
         internal bool IsSetPreferredMaintenanceWindow()
         {
-            return this.preferredMaintenanceWindow != null;         
+            return this.preferredMaintenanceWindow != null;       
         }
 
         /// <summary>
-        /// The name of the database parameter group to associate with this DB
-        /// instance. If this argument is omitted, the default DBParameterGroup
-        /// for the specified engine will be used.
+        /// The name of the database parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for
+        /// the specified engine will be used. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a
+        /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string DBParameterGroupName
@@ -349,6 +380,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
@@ -356,9 +388,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The number of days for which automated backups are retained. Setting
-        /// this parameter to a positive number enables backups. Setting this
-        /// parameter to 0 disables automated backups.
+        /// The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this
+        /// parameter to 0 disables automated backups. Default: 1 Constraints: <ul> <li>Must be a value from 0 to 8</li> <li>Cannot be set to 0 if the
+        /// DB Instance is a master instance with read replicas</li> </ul>
         ///  
         /// </summary>
         public int BackupRetentionPeriod
@@ -378,16 +410,20 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if BackupRetentionPeriod property is set
         internal bool IsSetBackupRetentionPeriod()
         {
-            return this.backupRetentionPeriod.HasValue;         
+            return this.backupRetentionPeriod.HasValue;       
         }
 
         /// <summary>
-        /// The daily time range during which automated backups are created if
-        /// automated backups are enabled, as determined by the
-        /// <i>BackupRetentionPeriod</i>.
+        /// The daily time range during which automated backups are created if automated backups are enabled, as determined by the
+        /// <c>BackupRetentionPeriod</c>. Default: Depends on the Region the database was created in. These are the default backup windows for each
+        /// Region: <ul> <li><b>US-East (Northern Virginia) Region:</b> 03:00-05:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
+        /// 06:00-08:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-00:00 UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-16:00 UTC</li>
+        /// </ul> Constraints: Must be in the format hh24:mi-hh24:mi. Times should be Universal Time Coordinated (UTC). Must not conflict with the
+        /// preferred maintenance window. Must be at least two hours.
         ///  
         /// </summary>
         public string PreferredBackupWindow
@@ -407,14 +443,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if PreferredBackupWindow property is set
         internal bool IsSetPreferredBackupWindow()
         {
-            return this.preferredBackupWindow != null;      
+            return this.preferredBackupWindow != null;       
         }
 
         /// <summary>
-        /// The port number on which the database accepts connections.
+        /// The port number on which the database accepts connections. Default: <c>3306</c> Valid Values: <c>1150-65535</c>
         ///  
         /// </summary>
         public int Port
@@ -434,11 +471,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;      
+            return this.port.HasValue;       
         }
+
+        /// <summary>
+        /// Specifies if the DB Instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the MultiAZ parameter is set to
+        /// true.
+        ///  
+        /// </summary>
         public bool MultiAZ
         {
             get { return this.multiAZ ?? default(bool); }
@@ -456,11 +500,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
             return this.multiAZ.HasValue;       
         }
+
+        /// <summary>
+        /// The version number of the database engine to use. Example: <c>5.1.42</c>
+        ///  
+        /// </summary>
         public string EngineVersion
         {
             get { return this.engineVersion; }
@@ -478,11 +528,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;      
+            return this.engineVersion != null;       
         }
+
+        /// <summary>
+        /// Indicates that minor engine upgrades will be applied automatically to the DB Instance during the maintenance window. Default: <c>true</c>
+        ///  
+        /// </summary>
         public bool AutoMinorVersionUpgrade
         {
             get { return this.autoMinorVersionUpgrade ?? default(bool); }
@@ -500,6 +556,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {

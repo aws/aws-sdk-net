@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Gets and sets the DescribeDBSecurityGroupsResult property.
-        /// 
+        /// Contains the result of a successful invocation of the DescribeDBSecurityGroups action.
         /// </summary>
         public DescribeDBSecurityGroupsResult DescribeDBSecurityGroupsResult
         {

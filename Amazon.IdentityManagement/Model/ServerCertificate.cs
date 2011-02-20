@@ -33,8 +33,7 @@ namespace Amazon.IdentityManagement.Model
         private string certificateChain;
 
         /// <summary>
-        /// The meta information of the server certificate like its name, path, ID
-        /// and ARN.
+        /// The meta information of the server certificate, such as its name, path, ID, and ARN.
         ///  
         /// </summary>
         public ServerCertificateMetadata ServerCertificateMetadata
@@ -54,10 +53,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if ServerCertificateMetadata property is set
         internal bool IsSetServerCertificateMetadata()
         {
-            return this.serverCertificateMetadata != null;      
+            return this.serverCertificateMetadata != null;       
         }
 
         /// <summary>
@@ -94,10 +94,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;        
+            return this.certificateBody != null;       
         }
 
         /// <summary>
@@ -134,6 +135,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if CertificateChain property is set
         internal bool IsSetCertificateChain()
         {

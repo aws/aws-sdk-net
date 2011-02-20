@@ -44,8 +44,7 @@ namespace Amazon.IdentityManagement.Model
         private string newUserName;
 
         /// <summary>
-        /// Name of the User to update. If you're changing the name of the User,
-        /// this is the original User name.
+        /// Name of the User to update. If you're changing the name of the User, this is the original User name.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -78,6 +77,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -85,8 +85,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// New path for the User. Include this only if you're changing the User's
-        /// path.
+        /// New path for the User. Include this parameter only if you're changing the User's path.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -119,15 +118,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if NewPath property is set
         internal bool IsSetNewPath()
         {
-            return this.newPath != null;        
+            return this.newPath != null;       
         }
 
         /// <summary>
-        /// New name for the User. Include this only if you're changing the User's
-        /// name.
+        /// New name for the User. Include this parameter only if you're changing the User's name.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -160,10 +159,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if NewUserName property is set
         internal bool IsSetNewUserName()
         {
-            return this.newUserName != null;        
+            return this.newUserName != null;       
         }
     }
 }

@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the GetGroupPolicyResult property.
-        /// Contains the result of a successful invocation of the GetGroupPolicy
-        /// action.
+        /// Contains the result of a successful invocation of the GetGroupPolicy action.
         /// </summary>
         public GetGroupPolicyResult GetGroupPolicyResult
         {

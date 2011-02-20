@@ -19,20 +19,19 @@
  *
  */
 
-using Amazon.EC2;
-using Amazon.SimpleDB;
-using Amazon.ElasticMapReduce;
-using Amazon.SQS;
-using Amazon.CloudWatch;
-using Amazon.ElasticLoadBalancing;
 using Amazon.AutoScaling;
-using Amazon.S3;
 using Amazon.CloudFront;
-using Amazon.SimpleNotificationService;
-using Amazon.RDS;
-using Amazon.IdentityManagement;
+using Amazon.CloudWatch;
+using Amazon.EC2;
 using Amazon.ElasticBeanstalk;
-using Amazon.SimpleEmail;
+using Amazon.ElasticLoadBalancing;
+using Amazon.ElasticMapReduce;
+using Amazon.IdentityManagement;
+using Amazon.RDS;
+using Amazon.S3;
+using Amazon.SQS;
+using Amazon.SimpleDB;
+using Amazon.SimpleNotificationService;
 
 namespace Amazon
 {
@@ -463,11 +462,13 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the AWS Elastic Beanstalk service with the specified configuration
+        /// Create a client for the Amazon ElasticBeanstalk Service with the default configuration
         /// </summary>
         /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
         /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
-        /// <returns>An AWS Elastic Beanstalk client</returns>
+        /// <returns>An Amazon ElasticBeanstalk client</returns>
+        /// <remarks>
+        /// </remarks>
         public static AmazonElasticBeanstalk CreateAmazonElasticBeanstalkClient(
             string awsAccessKey,
             string awsSecretAccessKey
@@ -477,49 +478,21 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the AWS Elastic Beanstalk service with the specified configuration
+        /// Create a client for the Amazon ElasticBeanstalk Service with the specified configuration
         /// </summary>
         /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
         /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
-        /// <param name="config">Configuration options for the service</param>
-        /// <returns>An AWS Elastic Beanstalk client</returns>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon ElasticBeanstalk client</returns>
+        /// <remarks>
+        /// </remarks>
         public static AmazonElasticBeanstalk CreateAmazonElasticBeanstalkClient(
             string awsAccessKey,
-            string awsSecretAccessKey,
-            AmazonElasticBeanstalkConfig config
+            string awsSecretAccessKey, AmazonElasticBeanstalkConfig config
             )
         {
             return new AmazonElasticBeanstalkClient(awsAccessKey, awsSecretAccessKey, config);
-        }
-
-        /// <summary>
-        /// Create a client for the Amazon Simple Email Service with the specified configuration
-        /// </summary>
-        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
-        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
-        /// <returns>An Amazon Simple Email Service client</returns>
-        public static AmazonSimpleEmailService CreateAmazonSimpleEmailServiceClient(
-            string awsAccessKey,
-            string awsSecretAccessKey
-            )
-        {
-            return new AmazonSimpleEmailServiceClient(awsAccessKey, awsSecretAccessKey);
-        }
-
-        /// <summary>
-        /// Create a client for the Amazon Simple Email Service with the specified configuration
-        /// </summary>
-        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
-        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
-        /// <param name="config">Configuration options for the service</param>
-        /// <returns>An Amazon Simple Email Service client</returns>
-        public static AmazonSimpleEmailService CreateAmazonSimpleEmailServiceClient(
-            string awsAccessKey,
-            string awsSecretAccessKey,
-            AmazonSimpleEmailServiceConfig config
-            )
-        {
-            return new AmazonSimpleEmailServiceClient(awsAccessKey, awsSecretAccessKey, config);
         }
     }
 }

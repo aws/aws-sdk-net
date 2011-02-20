@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListServerCertificates operation.
     /// <para>Lists the server certificates that have the specified path
-    /// prefix. If there are none, the action returns an empty list.</para>
+    /// prefix. If none exist, the action returns an empty list.</para>
     /// <para>You can paginate the results using the <c>MaxItems</c> and
     /// <c>Marker</c> parameters.</para>
     /// </summary>
@@ -38,11 +38,9 @@ namespace Amazon.IdentityManagement.Model
         private int? maxItems;
 
         /// <summary>
-        /// The path prefix for filtering the results. For example:
-        /// <c>/company/servercerts</c>, which would get all server certificates
-        /// whose path starts with <c>/company/servercerts</c>. This parameter is
-        /// optional. If it is not included, it defaults to a slash (/), listing
-        /// all server certificates.
+        /// The path prefix for filtering the results. For example: <c>/company/servercerts</c> would get all server certificates for which the path
+        /// starts with <c>/company/servercerts</c>. This parameter is optional. If it is not included, it defaults to a slash (/), listing all server
+        /// certificates.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -75,17 +73,16 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if PathPrefix property is set
         internal bool IsSetPathPrefix()
         {
-            return this.pathPrefix != null;         
+            return this.pathPrefix != null;       
         }
 
         /// <summary>
-        /// Use this only when paginating results, and only in a subsequent
-        /// request after you've received a response where the results are
-        /// truncated. Set it to the value of the <c>Marker</c> element in the
-        /// response you just received.
+        /// Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated.
+        /// Set it to the value of the <c>Marker</c> element in the response you just received.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -118,17 +115,16 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
 
         /// <summary>
-        /// Use this only when paginating results to indicate the maximum number
-        /// of server certificates you want in the response. If there are
-        /// additional server certificates beyond the maximum you specify, the
-        /// <c>IsTruncated</c> response element will be set to <c>true</c>.
+        /// Use this only when paginating results to indicate the maximum number of server certificates you want in the response. If there are
+        /// additional server certificates beyond the maximum you specify, the <c>IsTruncated</c> response element will be set to <c>true</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -157,10 +153,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;      
+            return this.maxItems.HasValue;       
         }
     }
 }

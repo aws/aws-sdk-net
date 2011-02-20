@@ -48,6 +48,12 @@ namespace Amazon.IdentityManagement.Model.Transform
                             
                         continue;
                     }
+                    if (context.TestExpression("EnableDate", targetDepth))
+                    {
+                        mFADevice.EnableDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

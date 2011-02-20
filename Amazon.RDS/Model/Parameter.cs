@@ -21,7 +21,11 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> This data type is used as a request parameter in the
+    /// ModifyDBParameterGroup and ResetDBParameterGroup actions. </para>
+    /// <para>This data type is used as a response element in the
+    /// DescribeEngineDefaultParameters and DescribeDBParameters
+    /// actions.</para>
     /// </summary>
     public class Parameter  
     {
@@ -58,10 +62,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ParameterName property is set
         internal bool IsSetParameterName()
         {
-            return this.parameterName != null;      
+            return this.parameterName != null;       
         }
 
         /// <summary>
@@ -85,10 +90,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ParameterValue property is set
         internal bool IsSetParameterValue()
         {
-            return this.parameterValue != null;         
+            return this.parameterValue != null;       
         }
 
         /// <summary>
@@ -112,10 +118,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;        
+            return this.description != null;       
         }
 
         /// <summary>
@@ -139,10 +146,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Source property is set
         internal bool IsSetSource()
         {
-            return this.source != null;         
+            return this.source != null;       
         }
 
         /// <summary>
@@ -166,10 +174,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ApplyType property is set
         internal bool IsSetApplyType()
         {
-            return this.applyType != null;      
+            return this.applyType != null;       
         }
 
         /// <summary>
@@ -193,6 +202,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DataType property is set
         internal bool IsSetDataType()
         {
@@ -220,15 +230,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this.allowedValues != null;      
+            return this.allowedValues != null;       
         }
 
         /// <summary>
-        /// Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
-        /// can be modified. Some parameters have security or operational
+        /// Indicates whether (<c>true</c>) or not (<c>false</c>) the parameter can be modified. Some parameters have security or operational
         /// implications that prevent them from being changed.
         ///  
         /// </summary>
@@ -249,11 +259,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if IsModifiable property is set
         internal bool IsSetIsModifiable()
         {
-            return this.isModifiable.HasValue;      
+            return this.isModifiable.HasValue;       
         }
+
+        /// <summary>
+        /// The earliest engine version to which the parameter can apply.
+        ///  
+        /// </summary>
         public string MinimumEngineVersion
         {
             get { return this.minimumEngineVersion; }
@@ -271,6 +287,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MinimumEngineVersion property is set
         internal bool IsSetMinimumEngineVersion()
         {
@@ -307,10 +324,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ApplyMethod property is set
         internal bool IsSetApplyMethod()
         {
-            return this.applyMethod != null;        
+            return this.applyMethod != null;       
         }
     }
 }

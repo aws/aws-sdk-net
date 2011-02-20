@@ -20,7 +20,9 @@ using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>Reserved D B Instances Offering
+    /// <summary>
+    /// <para> This data type is used as a response element in the
+    /// DescribeReservedDBInstancesOfferings action. </para>
     /// </summary>
     public class ReservedDBInstancesOffering  
     {
@@ -32,6 +34,11 @@ namespace Amazon.RDS.Model
         private double? usagePrice;
         private string productDescription;
         private bool? multiAZ;
+
+        /// <summary>
+        /// The offering identifier.
+        ///  
+        /// </summary>
         public string ReservedDBInstancesOfferingId
         {
             get { return this.reservedDBInstancesOfferingId; }
@@ -49,11 +56,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ReservedDBInstancesOfferingId property is set
         internal bool IsSetReservedDBInstancesOfferingId()
         {
-            return this.reservedDBInstancesOfferingId != null;      
+            return this.reservedDBInstancesOfferingId != null;       
         }
+
+        /// <summary>
+        /// The DB instance class for the reserved DB Instance.
+        ///  
+        /// </summary>
         public string DBInstanceClass
         {
             get { return this.dBInstanceClass; }
@@ -71,11 +84,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;        
+            return this.dBInstanceClass != null;       
         }
+
+        /// <summary>
+        /// The duration of the offering in seconds.
+        ///  
+        /// </summary>
         public int Duration
         {
             get { return this.duration ?? default(int); }
@@ -93,11 +112,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Duration property is set
         internal bool IsSetDuration()
         {
-            return this.duration.HasValue;      
+            return this.duration.HasValue;       
         }
+
+        /// <summary>
+        /// The fixed price charged for this offering.
+        ///  
+        /// </summary>
         public double FixedPrice
         {
             get { return this.fixedPrice ?? default(double); }
@@ -115,11 +140,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if FixedPrice property is set
         internal bool IsSetFixedPrice()
         {
-            return this.fixedPrice.HasValue;        
+            return this.fixedPrice.HasValue;       
         }
+
+        /// <summary>
+        /// The hourly price charged for this offering.
+        ///  
+        /// </summary>
         public double UsagePrice
         {
             get { return this.usagePrice ?? default(double); }
@@ -137,11 +168,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if UsagePrice property is set
         internal bool IsSetUsagePrice()
         {
-            return this.usagePrice.HasValue;        
+            return this.usagePrice.HasValue;       
         }
+
+        /// <summary>
+        /// The database engine used by the offering.
+        ///  
+        /// </summary>
         public string ProductDescription
         {
             get { return this.productDescription; }
@@ -159,11 +196,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ProductDescription property is set
         internal bool IsSetProductDescription()
         {
-            return this.productDescription != null;         
+            return this.productDescription != null;       
         }
+
+        /// <summary>
+        /// Indicates if the offering applies to Multi-AZ deployments.
+        ///  
+        /// </summary>
         public bool MultiAZ
         {
             get { return this.multiAZ ?? default(bool); }
@@ -181,6 +224,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {

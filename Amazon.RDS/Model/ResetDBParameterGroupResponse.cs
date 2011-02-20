@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Gets and sets the ResetDBParameterGroupResult property.
-        /// 
+        /// Contains the result of a successful invocation of the ModifyDBParameterGroup or ResetDBParameterGroup action.
         /// </summary>
         public ResetDBParameterGroupResult ResetDBParameterGroupResult
         {

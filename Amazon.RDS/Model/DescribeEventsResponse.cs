@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Gets and sets the DescribeEventsResult property.
-        /// 
+        /// Contains the result of a successful invocation of the DescribeEvents action.
         /// </summary>
         public DescribeEventsResult DescribeEventsResult
         {

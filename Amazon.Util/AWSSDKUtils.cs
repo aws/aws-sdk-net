@@ -40,7 +40,7 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.2.3.2";
+        internal const string SDKVersionNumber = "1.3.0.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -89,15 +89,42 @@ namespace Amazon.Util
 
         #region UserAgent
 
+        static string _userAgentBaseName = "aws-sdk-dotnet";
+        static string _versionNumber;
+        static string _sdkUserAgent;
         /// <summary>
         /// The AWS SDK User Agent
-        /// </summary>
-        public static readonly string SDKUserAgent;
+        /// </summary>        
+        public static string SDKUserAgent
+        {
+            get
+            {
+                return _sdkUserAgent;
+            }
+        }
 
         static AWSSDKUtils()
         {
-            SDKUserAgent = string.Format("aws-sdk-dotnet/{0} .NET Runtime/{1} .NET Framework/{2} OS/{3}",
-                SDKVersionNumber,
+            buildUserAgentString();
+        }
+
+        public static void SetUserAgent(string productName, string versionNumber)
+        {
+            _userAgentBaseName = productName;
+            _versionNumber = versionNumber;
+            buildUserAgentString();
+        }
+
+        static void buildUserAgentString()
+        {
+            if (_versionNumber == null)
+            {
+                _versionNumber = SDKVersionNumber;
+            }
+
+            _sdkUserAgent = string.Format("{0}/{1} .NET Runtime/{2} .NET Framework/{3} OS/{4}",
+                _userAgentBaseName,
+                _versionNumber,
                 determineRuntime(),
                 determineFramework(),
                 Environment.OSVersion.Version.ToString());
@@ -219,6 +246,37 @@ namespace Amazon.Util
             }
 
             return Result;
+        }
+
+        static readonly object _preserveStackTraceLookupLock = new object();
+        static bool _preserveStackTraceLookup = false;
+        static MethodInfo _preserveStackTrace;
+        /// <summary>
+        /// This method is used preserve the stacktrace used from clients that support async calls.  This 
+        /// make sure that exceptions thrown during EndXXX methods has the orignal stacktrace that happen 
+        /// in the background thread.
+        /// </summary>
+        /// <param name="exception"></param>
+        internal static void PreserveStackTrace(Exception exception)
+        {
+            if (!_preserveStackTraceLookup)
+            {
+                lock (_preserveStackTraceLookupLock)
+                {
+                    _preserveStackTraceLookup = true;
+                    try
+                    {
+                        _preserveStackTrace = typeof(Exception).GetMethod("InternalPreserveStackTrace",
+                            BindingFlags.Instance | BindingFlags.NonPublic);
+                    }
+                    catch { }
+                }
+            }
+
+            if (_preserveStackTrace != null)
+            {
+                _preserveStackTrace.Invoke(exception, null);
+            }
         }
 
         #endregion

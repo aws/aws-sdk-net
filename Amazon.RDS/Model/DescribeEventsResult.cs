@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> Contains the result of a successful invocation of the
+    /// DescribeEvents action. </para>
     /// </summary>
     public class DescribeEventsResult  
     {
@@ -50,10 +51,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
 
         /// <summary>
@@ -79,6 +81,22 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Events collection
+        /// </summary>
+        /// <param name="events">The values to add to the Events collection </param>
+        /// <returns>this instance</returns>
+        public DescribeEventsResult WithEvents(IEnumerable<Event> events)
+        {
+            foreach (Event element in events)
+            {
+                this.events.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {

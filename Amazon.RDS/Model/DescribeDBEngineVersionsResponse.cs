@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Gets and sets the DescribeDBEngineVersionsResult property.
-        /// 
+        /// Contains the result of a successful invocation of the DescribeDBEngineVersions action.
         /// </summary>
         public DescribeDBEngineVersionsResult DescribeDBEngineVersionsResult
         {

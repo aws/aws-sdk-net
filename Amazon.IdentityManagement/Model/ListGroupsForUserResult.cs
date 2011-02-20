@@ -54,17 +54,31 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Groups collection
+        /// </summary>
+        /// <param name="groups">The values to add to the Groups collection </param>
+        /// <returns>this instance</returns>
+        public ListGroupsForUserResult WithGroups(IEnumerable<Group> groups)
+        {
+            foreach (Group element in groups)
+            {
+                this.groups.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this.groups != null;         
+            return this.groups.Count > 0;       
         }
 
         /// <summary>
-        /// A flag that indicates whether there are more groups to list. If your
-        /// results were truncated, you can make a subsequent pagination request
-        /// using the <c>Marker</c> request parameter to retrieve more groups in
-        /// the list.
+        /// A flag that indicates whether there are more groups to list. If your results were truncated, you can make a subsequent pagination request
+        /// using the <c>Marker</c> request parameter to retrieve more groups in the list.
         ///  
         /// </summary>
         public bool IsTruncated
@@ -84,6 +98,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
@@ -91,9 +106,8 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and
-        /// contains the value to use for the <c>Marker</c> parameter in a
-        /// subsequent pagination request.
+        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and contains the value to use for the <c>Marker</c> parameter in a subsequent
+        /// pagination request.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -126,10 +140,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
     }
 }

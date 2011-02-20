@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -26,7 +27,7 @@ namespace Amazon.Runtime.Internal.Transform
         public static T Unmarshall(UnmarshallerContext context)
         {
             string text = context.ReadText();
-            return (T)Convert.ChangeType(text, typeof(T));
+            return (T)Convert.ChangeType(text, typeof(T), CultureInfo.InvariantCulture);
         }
     }
 

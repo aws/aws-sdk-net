@@ -37,11 +37,9 @@ namespace Amazon.IdentityManagement.Model
         private int? maxItems;
 
         /// <summary>
-        /// The path prefix for filtering the results. For example:
-        /// <c>/division_abc/subdivision_xyz/</c>, which would get all groups
-        /// whose path starts with <c>/division_abc/subdivision_xyz/</c>. This
-        /// parameter is optional. If it is not included, it defaults to a slash
-        /// (/), listing all groups.
+        /// The path prefix for filtering the results. For example: <c>/division_abc/subdivision_xyz/</c>, which would get all groups whose path starts
+        /// with <c>/division_abc/subdivision_xyz/</c>. This parameter is optional. If it is not included, it defaults to a slash (/), listing all
+        /// groups.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -74,17 +72,16 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if PathPrefix property is set
         internal bool IsSetPathPrefix()
         {
-            return this.pathPrefix != null;         
+            return this.pathPrefix != null;       
         }
 
         /// <summary>
-        /// Use this only when paginating results, and only in a subsequent
-        /// request after you've received a response where the results are
-        /// truncated. Set it to the value of the <c>Marker</c> element in the
-        /// response you just received.
+        /// Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated.
+        /// Set it to the value of the <c>Marker</c> element in the response you just received.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -117,17 +114,16 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
 
         /// <summary>
-        /// Use this only when paginating results to indicate the maximum number
-        /// of groups you want in the response. If there are additional groups
-        /// beyond the maximum you specify, the <c>IsTruncated</c> response
-        /// element is <c>true</c>.
+        /// Use this only when paginating results to indicate the maximum number of groups you want in the response. If there are additional groups
+        /// beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -156,10 +152,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;      
+            return this.maxItems.HasValue;       
         }
     }
 }

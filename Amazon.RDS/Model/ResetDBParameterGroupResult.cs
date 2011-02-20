@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> Contains the result of a successful invocation of the
+    /// ModifyDBParameterGroup or ResetDBParameterGroup action. </para>
     /// </summary>
     public class ResetDBParameterGroupResult  
     {
@@ -29,7 +30,7 @@ namespace Amazon.RDS.Model
         private string dBParameterGroupName;
 
         /// <summary>
-        /// The name of the DP Parameter Group.
+        /// The name of the DB Parameter Group.
         ///  
         /// </summary>
         public string DBParameterGroupName
@@ -49,6 +50,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {

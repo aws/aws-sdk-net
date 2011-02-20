@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedDBInstancesOffering operation.
-    /// 
+    /// <para> Purchases a reserved DB Instance offering. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.PurchaseReservedDBInstancesOffering"/>
     public class PurchaseReservedDBInstancesOfferingRequest : AmazonWebServiceRequest
@@ -33,6 +33,11 @@ namespace Amazon.RDS.Model
         private string reservedDBInstancesOfferingId;
         private string reservedDBInstanceId;
         private int? dBInstanceCount;
+
+        /// <summary>
+        /// The ID of the Reserved DB Instance offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
+        ///  
+        /// </summary>
         public string ReservedDBInstancesOfferingId
         {
             get { return this.reservedDBInstancesOfferingId; }
@@ -50,11 +55,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ReservedDBInstancesOfferingId property is set
         internal bool IsSetReservedDBInstancesOfferingId()
         {
-            return this.reservedDBInstancesOfferingId != null;      
+            return this.reservedDBInstancesOfferingId != null;       
         }
+
+        /// <summary>
+        /// Customer-specified identifier to track this reservation. Example: myreservationID
+        ///  
+        /// </summary>
         public string ReservedDBInstanceId
         {
             get { return this.reservedDBInstanceId; }
@@ -72,11 +83,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ReservedDBInstanceId property is set
         internal bool IsSetReservedDBInstanceId()
         {
             return this.reservedDBInstanceId != null;       
         }
+
+        /// <summary>
+        /// The number of instances to reserve. Default: <c>1</c>
+        ///  
+        /// </summary>
         public int DBInstanceCount
         {
             get { return this.dBInstanceCount ?? default(int); }
@@ -94,6 +111,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceCount property is set
         internal bool IsSetDBInstanceCount()
         {

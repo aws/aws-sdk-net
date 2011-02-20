@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the GetServerCertificateResult property.
-        /// Contains the result of a successful invocation of the
-        /// GetServerCertificate action.
+        /// Contains the result of a successful invocation of the GetServerCertificate action.
         /// </summary>
         public GetServerCertificateResult GetServerCertificateResult
         {

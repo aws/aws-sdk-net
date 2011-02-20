@@ -50,10 +50,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Group property is set
         internal bool IsSetGroup()
         {
-            return this.group != null;      
+            return this.group != null;       
         }
     }
 }

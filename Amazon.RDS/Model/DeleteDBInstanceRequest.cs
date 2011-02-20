@@ -40,8 +40,9 @@ namespace Amazon.RDS.Model
         private string finalDBSnapshotIdentifier;
 
         /// <summary>
-        /// The DB Instance identifier for the DB Instance to be deleted. This
-        /// parameter isn't case sensitive.
+        /// The DB Instance identifier for the DB Instance to be deleted. This parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1
+        /// to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two
+        /// consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -61,6 +62,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
@@ -68,7 +70,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// 
+        /// Determines whether a final DB Snapshot is created before the DB Instance is deleted. If <c>true</c> is specified, no DBSnapshot is created.
+        /// If false is specified, a DB Snapshot is created before the DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter must be
+        /// specified if SkipFinalSnapshot is <c>false</c>.</note> Default: <c>false</c>
         ///  
         /// </summary>
         public bool SkipFinalSnapshot
@@ -88,17 +92,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if SkipFinalSnapshot property is set
         internal bool IsSetSkipFinalSnapshot()
         {
-            return this.skipFinalSnapshot.HasValue;         
+            return this.skipFinalSnapshot.HasValue;       
         }
 
         /// <summary>
-        /// Determines whether a final DB Snapshot is created before the DB
-        /// Instance is deleted. If <i>true</i>, no DBSnapshot is created. If
-        /// <i>false</i>, a DB Snapshot is created before the DB Instance is
-        /// deleted.
+        /// The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <c>false</c>. <note> Specifying this parameter and
+        /// also setting the SkipFinalShapshot parameter to true results in an error. </note> Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+        /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string FinalDBSnapshotIdentifier
@@ -118,10 +122,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if FinalDBSnapshotIdentifier property is set
         internal bool IsSetFinalDBSnapshotIdentifier()
         {
-            return this.finalDBSnapshotIdentifier != null;      
+            return this.finalDBSnapshotIdentifier != null;       
         }
     }
 }

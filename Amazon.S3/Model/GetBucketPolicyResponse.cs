@@ -38,21 +38,6 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        /// <summary>
-        /// Gets and sets the AspenPolicy property.
-        /// </summary>
-        [Obsolete("Use the Policy property instead.")]
-        public String AspenPolicy
-        {
-            get
-            {
-                return this.policy;
-            }
-            set
-            {
-                this.policy = value;
-            }
-        }
 
         /// <summary>
         /// Gets and sets the Policy property.

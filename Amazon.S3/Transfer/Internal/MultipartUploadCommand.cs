@@ -35,7 +35,7 @@ namespace Amazon.S3.Transfer.Internal
     /// <summary>
     /// The command to manage an upload using the S3 multipart API.
     /// </summary>
-    internal class MultipartUploadCommand
+    internal class MultipartUploadCommand : BaseCommand
     {
         readonly object COUNTER_LOCK = new object();
         readonly object QUEUE_ACECSS_LOCK = new object();
@@ -151,6 +151,7 @@ namespace Amazon.S3.Transfer.Internal
             {
                 this._invokers[i] = new UploadPartInvoker(this);
                 Thread thread = new Thread(new ThreadStart(this._invokers[i].Execute));
+                thread.Name = "Uploader " + i;
                 thread.IsBackground = true;
                 this._executedThreads[i] = thread;
                 thread.Start();
@@ -160,7 +161,7 @@ namespace Amazon.S3.Transfer.Internal
         /// <summary>
         /// Runs the multipart upload.
         /// </summary>
-        internal void Execute()
+        public override void Execute()
         {
             int timeout = this._config.DefaultTimeout;
             if (this._fileTransporterRequest.Timeout != 0)
@@ -355,7 +356,7 @@ namespace Amazon.S3.Transfer.Internal
 
             internal void Execute()
             {
-                UploadPartRequest request;
+                UploadPartRequest request = null;
                 while((request = getNextPartRequest()) != null)
                 {
                     this._lastException = null;

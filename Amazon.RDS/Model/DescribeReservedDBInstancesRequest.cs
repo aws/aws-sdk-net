@@ -25,7 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedDBInstances operation.
-    /// 
+    /// <para> Returns information about reserved DB Instances for this
+    /// account, or about a specified reserved DB Instance. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeReservedDBInstances"/>
     public class DescribeReservedDBInstancesRequest : AmazonWebServiceRequest
@@ -38,6 +39,12 @@ namespace Amazon.RDS.Model
         private bool? multiAZ;
         private int? maxRecords;
         private string marker;
+
+        /// <summary>
+        /// The reserved DB Instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation
+        /// ID.
+        ///  
+        /// </summary>
         public string ReservedDBInstanceId
         {
             get { return this.reservedDBInstanceId; }
@@ -55,11 +62,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ReservedDBInstanceId property is set
         internal bool IsSetReservedDBInstanceId()
         {
             return this.reservedDBInstanceId != null;       
         }
+
+        /// <summary>
+        /// The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.
+        ///  
+        /// </summary>
         public string ReservedDBInstancesOfferingId
         {
             get { return this.reservedDBInstancesOfferingId; }
@@ -77,11 +90,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ReservedDBInstancesOfferingId property is set
         internal bool IsSetReservedDBInstancesOfferingId()
         {
-            return this.reservedDBInstancesOfferingId != null;      
+            return this.reservedDBInstancesOfferingId != null;       
         }
+
+        /// <summary>
+        /// The DB Instance class filter value. Specify this parameter to show only those reservations matching the specified DB Instances class.
+        ///  
+        /// </summary>
         public string DBInstanceClass
         {
             get { return this.dBInstanceClass; }
@@ -99,11 +118,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;        
+            return this.dBInstanceClass != null;       
         }
+
+        /// <summary>
+        /// The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration. Valid Values:
+        /// <c>1 | 3 | 31536000 | 94608000</c>
+        ///  
+        /// </summary>
         public string Duration
         {
             get { return this.duration; }
@@ -121,11 +147,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Duration property is set
         internal bool IsSetDuration()
         {
             return this.duration != null;       
         }
+
+        /// <summary>
+        /// The product description filter value. Specify this parameter to show only those reservations matching the specified product description.
+        ///  
+        /// </summary>
         public string ProductDescription
         {
             get { return this.productDescription; }
@@ -143,11 +175,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ProductDescription property is set
         internal bool IsSetProductDescription()
         {
-            return this.productDescription != null;         
+            return this.productDescription != null;       
         }
+
+        /// <summary>
+        /// The Multi-AZ filter value. Specify this parameter to show only those reservations matching the specified Multi-AZ parameter.
+        ///  
+        /// </summary>
         public bool MultiAZ
         {
             get { return this.multiAZ ?? default(bool); }
@@ -165,11 +203,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
             return this.multiAZ.HasValue;       
         }
+
+        /// <summary>
+        /// The maximum number of records to include in the response. If more than the <c>MaxRecords</c> value is available, a marker is included in the
+        /// response so that the following results can be retrieved. Default: 100 Constraints: minimum 20, maximum 100
+        ///  
+        /// </summary>
         public int MaxRecords
         {
             get { return this.maxRecords ?? default(int); }
@@ -187,11 +232,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;        
+            return this.maxRecords.HasValue;       
         }
+
+        /// <summary>
+        /// The marker provided in the previous request. If this parameter is specified, the response includes records beyond the marker only, up to
+        /// <c>MaxRecords</c>.
+        ///  
+        /// </summary>
         public string Marker
         {
             get { return this.marker; }
@@ -209,10 +261,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
     }
 }

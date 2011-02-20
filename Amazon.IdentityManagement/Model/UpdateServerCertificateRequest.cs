@@ -28,8 +28,8 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Updates the name and/or the path of the specified server
     /// certificate.</para> <para><b>IMPORTANT:</b> You should understand the
     /// implications of changing a server certificate's path or name. For more
-    /// information, see Renaming Users and Groups in Using AWS Identity and
-    /// Access Management. </para> <para><b>NOTE:</b>To change a server
+    /// information, see Managing Server Certificates in Using AWS Identity
+    /// and Access Management. </para> <para><b>NOTE:</b>To change a server
     /// certificate name the requester must have appropriate permissions on
     /// both the source object and the target object. For example, to change
     /// the name from ProductionCert to ProdCert, the entity making the
@@ -45,8 +45,7 @@ namespace Amazon.IdentityManagement.Model
         private string newServerCertificateName;
 
         /// <summary>
-        /// The name of the server certificate whose information you want to
-        /// update.
+        /// The name of the server certificate that you want to update.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -79,15 +78,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if ServerCertificateName property is set
         internal bool IsSetServerCertificateName()
         {
-            return this.serverCertificateName != null;      
+            return this.serverCertificateName != null;       
         }
 
         /// <summary>
-        /// The new path for the server certificate. Include this only if you are
-        /// updating the server certificate's path.
+        /// The new path for the server certificate. Include this only if you are updating the server certificate's path.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -120,15 +119,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if NewPath property is set
         internal bool IsSetNewPath()
         {
-            return this.newPath != null;        
+            return this.newPath != null;       
         }
 
         /// <summary>
-        /// The new name for the server certificate. Include this only if you are
-        /// updating the server certificate's name.
+        /// The new name for the server certificate. Include this only if you are updating the server certificate's name.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -161,6 +160,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if NewServerCertificateName property is set
         internal bool IsSetNewServerCertificateName()
         {

@@ -50,10 +50,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Certificate property is set
         internal bool IsSetCertificate()
         {
-            return this.certificate != null;        
+            return this.certificate != null;       
         }
     }
 }

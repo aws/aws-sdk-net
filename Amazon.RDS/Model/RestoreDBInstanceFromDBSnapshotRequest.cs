@@ -44,7 +44,8 @@ namespace Amazon.RDS.Model
         private bool? autoMinorVersionUpgrade;
 
         /// <summary>
-        /// The identifier for the DB Snapshot to restore from.
+        /// The identifier for the DB Snapshot to restore from. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+        /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -64,6 +65,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
@@ -71,8 +73,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Name of the DB Instance to create from the DB Snapshot. This parameter
-        /// isn't case sensitive.
+        /// Name of the DB Instance to create from the DB Snapshot. This parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1 to
+        /// 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two
+        /// consecutive hyphens</li> </ul> Example: <c>my-snapshot-id</c>
         ///  
         /// </summary>
         public string DBSnapshotIdentifier
@@ -92,6 +95,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
@@ -99,7 +103,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The compute and memory capacity of the Amazon RDS DB instance.
+        /// The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <c>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.2xlarge |
+        /// db.m2.4xlarge</c>
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -119,14 +124,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;        
+            return this.dBInstanceClass != null;       
         }
 
         /// <summary>
-        /// The port number on which the database accepts connections.
+        /// The port number on which the database accepts connections. Default: The same port as the original DB Instance Constraints: Value must be
+        /// <c>1115-65535</c>
         ///  
         /// </summary>
         public int Port
@@ -146,15 +153,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;      
+            return this.port.HasValue;       
         }
 
         /// <summary>
-        /// The EC2 Availability Zone that the database instance will be created
-        /// in.
+        /// The EC2 Availability Zone that the database instance will be created in. Default: A random, system-chosen Availability Zone. Constraint: You
+        /// cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to <c>true</c>. Example: <c>us-east-1a</c>
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -174,11 +182,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
             return this.availabilityZone != null;       
         }
+
+        /// <summary>
+        /// Specifies if the DB Instance is a Multi-AZ deployment. Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ
+        /// parameter is set to <c>true</c>.
+        ///  
+        /// </summary>
         public bool MultiAZ
         {
             get { return this.multiAZ ?? default(bool); }
@@ -196,11 +211,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
             return this.multiAZ.HasValue;       
         }
+
+        /// <summary>
+        /// Indicates that minor version upgrades will be applied automatically to the DB Instance during the maintenance window.
+        ///  
+        /// </summary>
         public bool AutoMinorVersionUpgrade
         {
             get { return this.autoMinorVersionUpgrade ?? default(bool); }
@@ -218,6 +239,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {

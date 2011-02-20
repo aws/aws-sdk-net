@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> Contains the result of a successful invocation of the
+    /// DescribeEngineDefaultParameters action. </para>
     /// </summary>
     public class EngineDefaults  
     {
@@ -31,8 +32,7 @@ namespace Amazon.RDS.Model
         private List<Parameter> parameters = new List<Parameter>();
 
         /// <summary>
-        /// Specifies the name of the DB Parameter Group Family which the engine
-        /// default parameters apply to.
+        /// Specifies the name of the DB Parameter Group Family which the engine default parameters apply to.
         ///  
         /// </summary>
         public string DBParameterGroupFamily
@@ -52,10 +52,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this.dBParameterGroupFamily != null;         
+            return this.dBParameterGroupFamily != null;       
         }
 
         /// <summary>
@@ -79,10 +80,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
 
         /// <summary>
@@ -108,6 +110,22 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Parameters collection
+        /// </summary>
+        /// <param name="parameters">The values to add to the Parameters collection </param>
+        /// <returns>this instance</returns>
+        public EngineDefaults WithParameters(IEnumerable<Parameter> parameters)
+        {
+            foreach (Parameter element in parameters)
+            {
+                this.parameters.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {

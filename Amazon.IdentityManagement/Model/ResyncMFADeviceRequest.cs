@@ -69,6 +69,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -109,6 +110,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
@@ -149,10 +151,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if AuthenticationCode1 property is set
         internal bool IsSetAuthenticationCode1()
         {
-            return this.authenticationCode1 != null;        
+            return this.authenticationCode1 != null;       
         }
 
         /// <summary>
@@ -189,10 +192,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if AuthenticationCode2 property is set
         internal bool IsSetAuthenticationCode2()
         {
-            return this.authenticationCode2 != null;        
+            return this.authenticationCode2 != null;       
         }
     }
 }

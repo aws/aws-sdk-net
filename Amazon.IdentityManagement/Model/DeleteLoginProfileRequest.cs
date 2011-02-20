@@ -32,12 +32,7 @@ namespace Amazon.IdentityManagement.Model
     /// line interface or the API. To prevent all User access you must also
     /// either make the access key inactive or delete it. For more
     /// information about making keys inactive or deleting them, see
-    /// UpdateAccessKey and DeleteAccessKey. </para> <para><b>NOTE:</b>In the
-    /// full release you will be able to use IAM to access your services
-    /// through the AWS Management Console. Although this feature is not
-    /// currently available, you can create login profiles for your Users now.
-    /// Then, when this feature is implemented, your Users can use IAM to
-    /// access your services through the AWS Management Console.</para>
+    /// UpdateAccessKey and DeleteAccessKey. </para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteLoginProfile"/>
     public class DeleteLoginProfileRequest : AmazonWebServiceRequest
@@ -78,6 +73,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {

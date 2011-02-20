@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
     {
         
         private string userName;
+        private DateTime? createDate;
 
         /// <summary>
         /// The name of the User, which can be used for logins.
@@ -64,10 +65,39 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
             return this.userName != null;       
+        }
+
+        /// <summary>
+        /// The date when the login profile for the User was created.
+        ///  
+        /// </summary>
+        public DateTime CreateDate
+        {
+            get { return this.createDate ?? default(DateTime); }
+            set { this.createDate = value; }
+        }
+
+        /// <summary>
+        /// Sets the CreateDate property
+        /// </summary>
+        /// <param name="createDate">The value to set for the CreateDate property </param>
+        /// <returns>this instance</returns>
+        public LoginProfile WithCreateDate(DateTime createDate)
+        {
+            this.createDate = createDate;
+            return this;
+        }
+            
+
+        // Check to see if CreateDate property is set
+        internal bool IsSetCreateDate()
+        {
+            return this.createDate.HasValue;       
         }
     }
 }

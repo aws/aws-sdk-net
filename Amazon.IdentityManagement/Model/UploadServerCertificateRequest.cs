@@ -25,17 +25,17 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UploadServerCertificate operation.
-    /// <para>Uploads a server certificate entity for the AWS account. The
+    /// <para>Uploads a server certificate entity for the AWS Account. The
     /// server certificate entity includes a public key certificate, a private
-    /// key and an optional certificate chain. The uploaded public key
-    /// certificate, the private key and certificate chain should all be PEM
-    /// encoded.</para> <para>For information about the number of server
-    /// certificates you can upload, see Limitations on IAM Entities in Using
-    /// AWS Identity and Access Management.</para> <para><b>NOTE:</b>Because
-    /// the body of the public key certificate, private key and the
-    /// certificate chain can be large, you should use POST rather than GET
-    /// when calling UploadServerCertificate. For more information, see Using
-    /// the Query API in Using AWS Identity and Access Management.</para>
+    /// key, and an optional certificate chain, which should all be
+    /// PEM-encoded.</para> <para>For information about the number of server
+    /// certificates you can upload, see Limitations on IAM Entities in
+    /// <i>Using AWS Identity and Access Management</i> .</para>
+    /// <para><b>NOTE:</b>Because the body of the public key certificate,
+    /// private key, and the certificate chain can be large, you should use
+    /// POST rather than GET when calling UploadServerCertificate. For more
+    /// information, see Making Query Requests in Using AWS Identity and
+    /// Access Management.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UploadServerCertificate"/>
     public class UploadServerCertificateRequest : AmazonWebServiceRequest
@@ -47,11 +47,9 @@ namespace Amazon.IdentityManagement.Model
         private string certificateChain;
 
         /// <summary>
-        /// The path for the server certificate. For more information about the
-        /// paths, see Identifiers for Users and Groups in <a
-        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
-        /// target="_blank">Using AWS Identity and Access Management</a>. This
-        /// parameter is optional. If it is not included, it defaults to a slash
+        /// The path for the server certificate. For more information about paths, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
+        /// Entities</a> in <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash
         /// (/).
         ///  
         /// <para>
@@ -85,6 +83,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
@@ -92,8 +91,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The name for the server certificate. Do not include the path in this
-        /// value.
+        /// The name for the server certificate. Do not include the path in this value.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -126,14 +124,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if ServerCertificateName property is set
         internal bool IsSetServerCertificateName()
         {
-            return this.serverCertificateName != null;      
+            return this.serverCertificateName != null;       
         }
 
         /// <summary>
-        /// The contents the public key certificate in PEM encoded format.
+        /// The contents of the public key certificate in PEM-encoded format.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -166,14 +165,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;        
+            return this.certificateBody != null;       
         }
 
         /// <summary>
-        /// The contents of the private key in PEM encoded format.
+        /// The contents of the private key in PEM-encoded format.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -206,15 +206,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if PrivateKey property is set
         internal bool IsSetPrivateKey()
         {
-            return this.privateKey != null;         
+            return this.privateKey != null;       
         }
 
         /// <summary>
-        /// The contents of the certificate chain. This is typically a
-        /// concatenation of the PEM encoded public key certificates of the chain.
+        /// The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key certificates of the chain.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -247,6 +247,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if CertificateChain property is set
         internal bool IsSetCertificateChain()
         {

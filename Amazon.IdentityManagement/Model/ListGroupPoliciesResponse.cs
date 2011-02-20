@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the ListGroupPoliciesResult property.
-        /// Contains the result of a successful invocation of the
-        /// ListGroupPolicies action.
+        /// Contains the result of a successful invocation of the ListGroupPolicies action.
         /// </summary>
         public ListGroupPoliciesResult ListGroupPoliciesResult
         {

@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> This data type is used as a response element in the
+    /// DescribeEvents action. </para>
     /// </summary>
     public class Event  
     {
@@ -52,6 +53,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if SourceIdentifier property is set
         internal bool IsSetSourceIdentifier()
         {
@@ -88,10 +90,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if SourceType property is set
         internal bool IsSetSourceType()
         {
-            return this.sourceType != null;         
+            return this.sourceType != null;       
         }
 
         /// <summary>
@@ -115,10 +118,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;        
+            return this.message != null;       
         }
 
         /// <summary>
@@ -142,10 +146,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Date property is set
         internal bool IsSetDate()
         {
-            return this.date.HasValue;      
+            return this.date.HasValue;       
         }
     }
 }

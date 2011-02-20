@@ -72,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -79,8 +80,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The Access Key ID for the Access Key ID and Secret Access Key you want
-        /// to delete.
+        /// The Access Key ID for the Access Key ID and Secret Access Key you want to delete.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -113,10 +113,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if AccessKeyId property is set
         internal bool IsSetAccessKeyId()
         {
-            return this.accessKeyId != null;        
+            return this.accessKeyId != null;       
         }
     }
 }

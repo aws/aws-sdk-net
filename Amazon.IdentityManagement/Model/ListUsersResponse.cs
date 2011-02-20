@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the ListUsersResult property.
-        /// Contains the result of a successful invocation of the ListUsers
-        /// action.
+        /// Contains the result of a successful invocation of the ListUsers action.
         /// </summary>
         public ListUsersResult ListUsersResult
         {

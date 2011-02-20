@@ -50,6 +50,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if LoginProfile property is set
         internal bool IsSetLoginProfile()
         {

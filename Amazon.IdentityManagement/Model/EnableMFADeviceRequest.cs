@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the EnableMFADevice operation.
     /// <para>Enables the specified MFA device and associates it with the
-    /// specified User name. Once enabled, the MFA device is required for
+    /// specified User name. When enabled, the MFA device is required for
     /// every subsequent login by the User name associated with the
     /// device.</para>
     /// </summary>
@@ -72,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -112,6 +113,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
@@ -152,10 +154,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if AuthenticationCode1 property is set
         internal bool IsSetAuthenticationCode1()
         {
-            return this.authenticationCode1 != null;        
+            return this.authenticationCode1 != null;       
         }
 
         /// <summary>
@@ -192,10 +195,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if AuthenticationCode2 property is set
         internal bool IsSetAuthenticationCode2()
         {
-            return this.authenticationCode2 != null;        
+            return this.authenticationCode2 != null;       
         }
     }
 }

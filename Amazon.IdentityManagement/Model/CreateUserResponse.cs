@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the CreateUserResult property.
-        /// Contains the result of a successful invocation of the CreateUser
-        /// action.
+        /// Contains the result of a successful invocation of the CreateUser action.
         /// </summary>
         public CreateUserResult CreateUserResult
         {

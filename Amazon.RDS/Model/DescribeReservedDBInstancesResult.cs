@@ -20,13 +20,20 @@ using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>Describe Reserved D B Instances Result
+    /// <summary>
+    /// <para> Contains the result of a successful invocation of the
+    /// DescribeReservedDBInstances action. </para>
     /// </summary>
     public class DescribeReservedDBInstancesResult  
     {
         
         private string marker;
         private List<ReservedDBInstance> reservedDBInstances = new List<ReservedDBInstance>();
+
+        /// <summary>
+        /// The marker provided for paginated results.
+        ///  
+        /// </summary>
         public string Marker
         {
             get { return this.marker; }
@@ -44,11 +51,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
+
+        /// <summary>
+        /// A list of of reserved DB Instances.
+        ///  
+        /// </summary>
         public List<ReservedDBInstance> ReservedDBInstances
         {
             get { return this.reservedDBInstances; }
@@ -68,10 +81,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the ReservedDBInstances collection
+        /// </summary>
+        /// <param name="reservedDBInstances">The values to add to the ReservedDBInstances collection </param>
+        /// <returns>this instance</returns>
+        public DescribeReservedDBInstancesResult WithReservedDBInstances(IEnumerable<ReservedDBInstance> reservedDBInstances)
+        {
+            foreach (ReservedDBInstance element in reservedDBInstances)
+            {
+                this.reservedDBInstances.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if ReservedDBInstances property is set
         internal bool IsSetReservedDBInstances()
         {
-            return this.reservedDBInstances.Count > 0;      
+            return this.reservedDBInstances.Count > 0;       
         }
     }
 }

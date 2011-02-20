@@ -51,9 +51,10 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             try
             {
                 JsonWriter generator = new JsonWriter(writer);
+                generator.PrettyPrint = true;
                 generator.IndentValue = 4;
                 writePolicy(policy, generator);
-                return writer.ToString();
+                return writer.ToString().Trim();
             }
             catch (Exception e)
             {

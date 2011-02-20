@@ -17,12 +17,8 @@
  *
  *  AWS SDK for .NET
  *  API Version: 2006-03-01
- *  Author(s): Manoj Mehta, Nathan Schnarr
+ *  Author(s): Norm Johanson
  */
-
-#if TRACE
-using System.Diagnostics;
-#endif
 
 using System;
 using System.Collections;
@@ -39,44 +35,31 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Xml.Xsl;
 
+
 using Amazon.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 
 using Amazon.Runtime.Internal.Util;
 
+using Map = System.Collections.Generic.IDictionary<Amazon.S3.Model.S3QueryParameter, string>;
+
 namespace Amazon.S3
 {
-    using Map = System.Collections.Generic.IDictionary<Amazon.S3.Model.S3QueryParameter, string>;
-
-    /// <summary>
-    /// AmazonS3Client is an implementation of AmazonS3; the client allows you to manage your AmazonS3 buckets
-    /// and keys/objects.<br />
-    /// If you want to use the AmazonS3Client from a Medium Trust hosting environment, please create the
-    /// client with an AmazonS3Config object whose UseSecureStringForAwsSecretKey property is false.
-    /// </summary>
-    /// <remarks>
-    /// Amazon S3 is storage for the Internet. It is designed to make web-scale computing easier for developers.
-    /// Amazon S3 provides a simple web services interface that can be used to store and retrieve any amount of data,
-    /// at any time, from anywhere on the web. It gives any developer access to the same highly scalable, reliable,
-    /// fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of web sites.
-    /// The service aims to maximize benefits of scale and to pass those benefits on to developers.
-    /// </remarks>
-    /// <seealso cref="P:Amazon.S3.AmazonS3Config.UseSecureStringForAwsSecretKey"/>
     public class AmazonS3Client : AmazonS3
     {
         #region Private Members
 
-        private readonly string awsAccessKeyId;
-        private SecureString awsSecretAccessKey;
-        private AmazonS3Config config;
-        private bool disposed;
-        private Type myType;
-        private readonly string clearAwsSecretAccessKey;
+        protected internal readonly string awsAccessKeyId;
+        protected internal SecureString awsSecretAccessKey;
+        protected internal AmazonS3Config config;
+        protected internal bool disposed;
+        protected internal Type myType;
+        protected internal readonly string clearAwsSecretAccessKey;
 
         #endregion
 
-        Logger logger = new Logger(typeof(AmazonS3));
+        static Logger LOGGER = new Logger(typeof(AmazonS3));
 
         #region Dispose Pattern
 
@@ -123,7 +106,8 @@ namespace Amazon.S3
 
         #endregion
 
-        #region Public API
+
+        #region Constructors
 
         /// <summary>
         /// Constructs AmazonS3Client with AWS Access Key ID and AWS Secret Key
@@ -182,6 +166,9 @@ namespace Amazon.S3
             this.config = config;
             this.myType = this.GetType();
         }
+        #endregion
+
+        #region GetPreSignedURL
 
         /// <summary>
         /// The GetPreSignedURL operations creates a signed http request.
@@ -228,6 +215,9 @@ namespace Amazon.S3
             return request.parameters[S3QueryParameter.Url];
         }
 
+        #endregion
+
+        #region ListBuckets
         /// <summary>
         /// The ListBuckets operation returns a list of all of the buckets
         /// owned by the authenticated sender of the request.
@@ -242,6 +232,53 @@ namespace Amazon.S3
         }
 
         /// <summary>
+        /// Initiates the asynchronous execution of the ListBuckets operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
+        /// </summary>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndListBuckets.</returns>
+        public IAsyncResult BeginListBuckets(AsyncCallback callback, object state)
+        {
+            return BeginListBuckets(new ListBucketsRequest(), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBuckets operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
+        /// </summary>
+        /// <param name="request">The ListBucketsRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndListBuckets.</returns>
+        public IAsyncResult BeginListBuckets(ListBucketsRequest request, AsyncCallback callback, object state)
+        {
+            return invokeListBuckets(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListBuckets operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBuckets.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a ListBucketsResponse from S3.</returns>
+        public ListBucketsResponse EndListBuckets(IAsyncResult asyncResult)
+        {
+            return endOperation<ListBucketsResponse>(asyncResult);
+        }
+
+        /// <summary>
         /// The ListBuckets operation returns a list of all of the buckets
         /// owned by the authenticated sender of the request.
         /// </summary>
@@ -253,13 +290,56 @@ namespace Amazon.S3
         /// <returns>Returns a ListBucketsResponse with the response from S3.</returns>
         public ListBucketsResponse ListBuckets(ListBucketsRequest request)
         {
+            IAsyncResult asyncResult = invokeListBuckets(request, null, null, true);
+            return EndListBuckets(asyncResult);
+        }
+
+        IAsyncResult invokeListBuckets(ListBucketsRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The ListObjectsRequest is null!");
             }
 
             ConvertListBuckets(request);
-            return Invoke<ListBucketsResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<ListBucketsResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region GetBucketLocation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketLocation operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
+        /// </summary>
+        /// <param name="request">The GetBucketLocationRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndGetBucketLocation.</returns>
+        public IAsyncResult BeginGetBucketLocation(GetBucketLocationRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetBucketLocation(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetBucketLocation operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLocation.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetBucketLocationResponse from S3.</returns>
+        public GetBucketLocationResponse EndGetBucketLocation(IAsyncResult asyncResult)
+        {
+            return endOperation<GetBucketLocationResponse>(asyncResult);
         }
 
         /// <summary>
@@ -275,6 +355,12 @@ namespace Amazon.S3
         /// <returns>Returns a GetBucketLocationResponse from S3.</returns>
         public GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
         {
+            IAsyncResult asyncResult = invokeGetBucketLocation(request, null, null, true);
+            return EndGetBucketLocation(asyncResult);
+        }
+
+        IAsyncResult invokeGetBucketLocation(GetBucketLocationRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The GetBucketLocationRequest specified is null!");
@@ -286,8 +372,48 @@ namespace Amazon.S3
             }
 
             ConvertGetBucketLocation(request);
-            return Invoke<GetBucketLocationResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetBucketLocationResponse>(asyncResult);
+            return asyncResult;
         }
+
+        #endregion
+
+        #region GetBucketLogging
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketLogging operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
+        /// </summary>
+        /// <param name="request">The GetBucketLoggingRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndGetBucketLogging.</returns>
+        public IAsyncResult BeginGetBucketLogging(GetBucketLoggingRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetBucketLogging(request, callback, state, false);
+        }
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetBucketLogging operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLogging.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetBucketLoggingResponse from S3.</returns>
+        public GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult)
+        {
+            return endOperation<GetBucketLoggingResponse>(asyncResult);
+        }
+
 
         /// <summary>
         /// The GetBucketLogging operating gets the logging status for the bucket specified.
@@ -302,6 +428,12 @@ namespace Amazon.S3
         /// <returns>Returns a GetBucketLoggingResponse from S3.</returns>
         public GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
         {
+            IAsyncResult asyncResult = invokeGetBucketLogging(request, null, null, true);
+            return EndGetBucketLogging(asyncResult);
+        }
+
+        IAsyncResult invokeGetBucketLogging(GetBucketLoggingRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The GetBucketLoggingRequest specified is null!");
@@ -312,7 +444,44 @@ namespace Amazon.S3
             }
 
             ConvertGetBucketLogging(request);
-            return Invoke<GetBucketLoggingResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetBucketLoggingResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region EnableBucketLogging
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableBucketLogging operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
+        /// </summary>
+        /// <param name="request">The EnableBucketLoggingRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndEnableBucketLogging.</returns>
+        public IAsyncResult BeginEnableBucketLogging(EnableBucketLoggingRequest request, AsyncCallback callback, object state)
+        {
+            return invokeEnableBucketLogging(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the EnableBucketLogging operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableBucketLogging.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a EnableBucketLoggingResponse from S3.</returns>
+        public EnableBucketLoggingResponse EndEnableBucketLogging(IAsyncResult asyncResult)
+        {
+            return endOperation<EnableBucketLoggingResponse>(asyncResult);
         }
 
         /// <summary>
@@ -343,6 +512,12 @@ namespace Amazon.S3
         /// </remarks>
         public EnableBucketLoggingResponse EnableBucketLogging(EnableBucketLoggingRequest request)
         {
+            IAsyncResult asyncResult = invokeEnableBucketLogging(request, null, null, true);
+            return EndEnableBucketLogging(asyncResult);
+        }
+
+        IAsyncResult invokeEnableBucketLogging(EnableBucketLoggingRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The SetBucketLoggingRequest specified is null!");
@@ -364,8 +539,46 @@ namespace Amazon.S3
             }
 
             ConvertEnableBucketLogging(request);
-            return Invoke<EnableBucketLoggingResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<EnableBucketLoggingResponse>(asyncResult);
+            return asyncResult;
         }
+
+        #endregion
+
+        #region DisableBucketLogging
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableBucketLogging operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DisableBucketLogging"/>
+        /// </summary>
+        /// <param name="request">The DisableBucketLoggingRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndDisableBucketLogging.</returns>
+        public IAsyncResult BeginDisableBucketLogging(DisableBucketLoggingRequest request, AsyncCallback callback, object state)
+        {
+            return invokeDisableBucketLogging(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DisableBucketLogging operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableBucketLogging.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a DisableBucketLoggingResponse from S3.</returns>
+        public DisableBucketLoggingResponse EndDisableBucketLogging(IAsyncResult asyncResult)
+        {
+            return endOperation<DisableBucketLoggingResponse>(asyncResult);
+        }
+
 
         /// <summary>
         /// The DisableBucketLogging will turn off bucket logging for the bucket specified
@@ -387,6 +600,12 @@ namespace Amazon.S3
         /// <returns>Returns a DisableBucketLoggingResponse from S3.</returns>
         public DisableBucketLoggingResponse DisableBucketLogging(DisableBucketLoggingRequest request)
         {
+            IAsyncResult asyncResult = invokeDisableBucketLogging(request, null, null, true);
+            return EndDisableBucketLogging(asyncResult);
+        }
+
+        IAsyncResult invokeDisableBucketLogging(DisableBucketLoggingRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The SetBucketLoggingRequest specified is null!");
@@ -397,7 +616,44 @@ namespace Amazon.S3
             }
 
             ConvertDisableBucketLogging(request);
-            return Invoke<DisableBucketLoggingResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, true);
+            invoke<GetObjectResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region GetBucketVersioning
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketVersioning operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketVersioning"/>
+        /// </summary>
+        /// <param name="request">The GetBucketVersioningRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndGetBucketVersioning.</returns>
+        public IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetBucketVersioning(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetBucketVersioning operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketVersioning.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetBucketVersioningResponse from S3.</returns>
+        public GetBucketVersioningResponse EndGetBucketVersioning(IAsyncResult asyncResult)
+        {
+            return endOperation<GetBucketVersioningResponse>(asyncResult);
         }
 
         /// <summary>
@@ -412,6 +668,13 @@ namespace Amazon.S3
         /// <seealso cref="T:Amazon.S3.Model.S3BucketVersioningConfig"/>
         public GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
         {
+            IAsyncResult asyncResult = invokeGetBucketVersioning(request, null, null, true);
+            return EndGetBucketVersioning(asyncResult);
+
+        }
+
+        IAsyncResult invokeGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The GetBucketVersioningRequest specified is null!");
@@ -423,7 +686,45 @@ namespace Amazon.S3
             }
 
             ConvertGetBucketVersioning(request);
-            return Invoke<GetBucketVersioningResponse>(request);
+
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetBucketVersioningResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region SetBucketVersioning
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetBucketVersioning operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.SetBucketVersioning"/>
+        /// </summary>
+        /// <param name="request">The SetBucketVersioningRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndSetBucketVersioning.</returns>
+        public IAsyncResult BeginSetBucketVersioning(SetBucketVersioningRequest request, AsyncCallback callback, object state)
+        {
+            return invokeSetBucketVersioning(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetBucketVersioning operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetBucketVersioning.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a SetBucketVersioningResponse from S3.</returns>
+        public SetBucketVersioningResponse EndSetBucketVersioning(IAsyncResult asyncResult)
+        {
+            return endOperation<SetBucketVersioningResponse>(asyncResult);
         }
 
         /// <summary>
@@ -443,6 +744,12 @@ namespace Amazon.S3
         /// <returns>Returns a SetBucketVersioningResponse from S3.</returns>
         /// <seealso cref="T:Amazon.S3.Model.S3BucketVersioningConfig"/>
         public SetBucketVersioningResponse SetBucketVersioning(SetBucketVersioningRequest request)
+        {
+            IAsyncResult asyncResult = invokeSetBucketVersioning(request, null, null, true);
+            return EndSetBucketVersioning(asyncResult);
+        }
+
+        IAsyncResult invokeSetBucketVersioning(SetBucketVersioningRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             if (request == null)
             {
@@ -479,10 +786,56 @@ namespace Amazon.S3
 
             // Build out the request's parameters
             ConvertSetBucketVersioning(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<SetBucketVersioningResponse>(asyncResult);
+            return asyncResult;
+        }
 
-            SetBucketVersioningResponse resp = Invoke<SetBucketVersioningResponse>(request);
-            config.CommunicationProtocol = current;
-            return resp;
+        #endregion
+
+        #region GetBucketPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketPolicy operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketPolicy"/>
+        /// </summary>
+        /// <param name="request">The GetBucketPolicyRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndGetBucketPolicy.</returns>
+        public IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetBucketPolicy(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetBucketPolicy operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketPolicy.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetBucketPolicyResponse from S3.</returns>
+        public GetBucketPolicyResponse EndGetBucketPolicy(IAsyncResult asyncResult)
+        {
+            try
+            {
+                return endOperation<GetBucketPolicyResponse>(asyncResult);
+            }
+            catch (AmazonS3Exception e)
+            {
+                if (e.ErrorCode == S3Constants.NoSuchBucketPolicy)
+                {
+                    return new GetBucketPolicyResponse();
+                }
+
+                throw;
+            }
         }
 
         /// <summary>
@@ -508,30 +861,72 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         public GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
         {
-            try
+            if (request == null)
             {
-                if (request == null)
-                {
-                    throw new ArgumentNullException(S3Constants.RequestParam, "The GetBucketPolicyRequest specified is null!");
-                }
-
-                if (!request.IsSetBucketName())
-                {
-                    throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
-                }
-
-                ConvertGetBucketPolicy(request);
-                return this.Invoke<GetBucketPolicyResponse>(request);
+                throw new ArgumentNullException(S3Constants.RequestParam, "The GetBucketPolicyRequest specified is null!");
             }
-            catch (AmazonS3Exception e)
+
+            if (!request.IsSetBucketName())
             {
-                if (e.ErrorCode == S3Constants.NoSuchBucketPolicy)
-                {
-                    return new GetBucketPolicyResponse();
-                }
-
-                throw;
+                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
             }
+
+            ConvertGetBucketPolicy(request);
+            IAsyncResult asyncResult = invokeGetBucketPolicy(request, null, null, true);
+            return EndGetBucketPolicy(asyncResult);
+        }
+
+        IAsyncResult invokeGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The GetBucketPolicyRequest specified is null!");
+            }
+
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The BucketName specified is null or empty!");
+            }
+
+            ConvertGetBucketPolicy(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetBucketPolicyResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region PutBucketPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketPolicy operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutBucketPolicy"/>
+        /// </summary>
+        /// <param name="request">The PutBucketPolicyRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndPutBucketPolicy.</returns>
+        public IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state)
+        {
+            return invokePutBucketPolicy(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutBucketPolicy operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketPolicy.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a PutBucketPolicyResponse from S3.</returns>
+        public PutBucketPolicyResponse EndPutBucketPolicy(IAsyncResult asyncResult)
+        {
+            return endOperation<PutBucketPolicyResponse>(asyncResult);
         }
 
         /// <summary>
@@ -557,6 +952,12 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         public PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
         {
+            IAsyncResult asyncResult = invokePutBucketPolicy(request, null, null, true);
+            return EndPutBucketPolicy(asyncResult);
+        }
+
+        IAsyncResult invokePutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The PutBucketPolicyRequest specified is null!");
@@ -573,7 +974,44 @@ namespace Amazon.S3
             }
 
             ConvertPutBucketPolicy(request);
-            return this.Invoke<PutBucketPolicyResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<PutBucketPolicyResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region DeleteBucketPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketPolicy operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteBucketPolicy"/>
+        /// </summary>
+        /// <param name="request">The DeleteBucketPolicyRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndDeleteBucketPolicy.</returns>
+        public IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state)
+        {
+            return invokeDeleteBucketPolicy(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteBucketPolicy operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketPolicy.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a DeleteBucketPolicyResponse from S3.</returns>
+        public DeleteBucketPolicyResponse EndDeleteBucketPolicy(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteBucketPolicyResponse>(asyncResult);
         }
 
         /// <summary>
@@ -601,7 +1039,13 @@ namespace Amazon.S3
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         public DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
-        {            
+        {
+            IAsyncResult asyncResult = invokeDeleteBucketPolicy(request, null, null, true);
+            return EndDeleteBucketPolicy(asyncResult);
+        }
+
+        IAsyncResult invokeDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The DeleteBucketPolicyRequest specified is null!");
@@ -613,7 +1057,44 @@ namespace Amazon.S3
             }
 
             ConvertDeleteBucketPolicy(request);
-            return this.Invoke<DeleteBucketPolicyResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<DeleteBucketPolicyResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region SetNotificationConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetNotificationConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.SetNotificationConfiguration"/>
+        /// </summary>
+        /// <param name="request">The SetNotificationConfigurationRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndSetNotificationConfiguration.</returns>
+        public IAsyncResult BeginSetNotificationConfiguration(SetNotificationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            return invokeSetNotificationConfiguration(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetNotificationConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetNotificationConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a SetNotificationConfigurationResponse from S3.</returns>
+        public SetNotificationConfigurationResponse EndSetNotificationConfiguration(IAsyncResult asyncResult)
+        {
+            return endOperation<SetNotificationConfigurationResponse>(asyncResult);
         }
 
         /// <summary>
@@ -640,6 +1121,12 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         public SetNotificationConfigurationResponse SetNotificationConfiguration(SetNotificationConfigurationRequest request)
         {
+            IAsyncResult asyncResult = invokeSetNotificationConfiguration(request, null, null, true);
+            return EndSetNotificationConfiguration(asyncResult);
+        }
+
+        IAsyncResult invokeSetNotificationConfiguration(SetNotificationConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The SetNotificationConfigurationRequest specified is null!");
@@ -652,7 +1139,44 @@ namespace Amazon.S3
 
 
             ConvertSetNotificationConfiguration(request);
-            return this.Invoke<SetNotificationConfigurationResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<SetNotificationConfigurationResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region GetNotificationConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNotificationConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetNotificationConfiguration"/>
+        /// </summary>
+        /// <param name="request">The GetNotificationConfigurationRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndGetNotificationConfiguration.</returns>
+        public IAsyncResult BeginGetNotificationConfiguration(GetNotificationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetNotificationConfiguration(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetNotificationConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNotificationConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetNotificationConfigurationResponse from S3.</returns>
+        public GetNotificationConfigurationResponse EndGetNotificationConfiguration(IAsyncResult asyncResult)
+        {
+            return endOperation<GetNotificationConfigurationResponse>(asyncResult);
         }
 
         /// <summary>
@@ -668,6 +1192,12 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         public GetNotificationConfigurationResponse GetNotificationConfiguration(GetNotificationConfigurationRequest request)
         {
+            IAsyncResult asyncResult = invokeGetNotificationConfiguration(request, null, null, true);
+            return EndGetNotificationConfiguration(asyncResult);
+        }
+
+        IAsyncResult invokeGetNotificationConfiguration(GetNotificationConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The GetNotificationConfigurationRequest specified is null!");
@@ -680,7 +1210,44 @@ namespace Amazon.S3
 
 
             ConvertGetNotificationConfiguration(request);
-            return this.Invoke<GetNotificationConfigurationResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetNotificationConfigurationResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region ListObjects
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjects operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListObjects"/>
+        /// </summary>
+        /// <param name="request">The ListObjectsRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndListObjects.</returns>
+        public IAsyncResult BeginListObjects(ListObjectsRequest request, AsyncCallback callback, object state)
+        {
+            return invokeListObjects(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListObjects operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjects.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a ListObjectsResponse from S3.</returns>
+        public ListObjectsResponse EndListObjects(IAsyncResult asyncResult)
+        {
+            return endOperation<ListObjectsResponse>(asyncResult);
         }
 
         /// <summary>
@@ -710,6 +1277,12 @@ namespace Amazon.S3
         /// </remarks>
         public ListObjectsResponse ListObjects(ListObjectsRequest request)
         {
+            IAsyncResult asyncResult = invokeListObjects(request, null, null, true);
+            return EndListObjects(asyncResult);
+        }
+
+        IAsyncResult invokeListObjects(ListObjectsRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The ListObjectsRequest specified is null!");
@@ -721,7 +1294,44 @@ namespace Amazon.S3
             }
 
             ConvertListObjects(request);
-            return Invoke<ListObjectsResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<ListObjectsResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region ListVersions
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVersions operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListVersions"/>
+        /// </summary>
+        /// <param name="request">The ListVersionsRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndListVersions.</returns>
+        public IAsyncResult BeginListVersions(ListVersionsRequest request, AsyncCallback callback, object state)
+        {
+            return invokeListVersions(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListVersions operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVersions.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a ListVersionsResponse from S3.</returns>
+        public ListVersionsResponse EndListVersions(IAsyncResult asyncResult)
+        {
+            return endOperation<ListVersionsResponse>(asyncResult);
         }
 
         /// <summary>
@@ -760,6 +1370,12 @@ namespace Amazon.S3
         /// </remarks>
         public ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
+            IAsyncResult asyncResult = invokeListVersions(request, null, null, true);
+            return EndListVersions(asyncResult);
+        }
+
+        IAsyncResult invokeListVersions(ListVersionsRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The ListVersionsRequest specified is null!");
@@ -771,7 +1387,44 @@ namespace Amazon.S3
             }
 
             ConvertListVersions(request);
-            return Invoke<ListVersionsResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<ListVersionsResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region GetACL
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetACL operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetACL"/>
+        /// </summary>
+        /// <param name="request">The GetACLRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndGetACL.</returns>
+        public IAsyncResult BeginGetACL(GetACLRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetACL(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetACL operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetACL.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetACLResponse from S3.</returns>
+        public GetACLResponse EndGetACL(IAsyncResult asyncResult)
+        {
+            return endOperation<GetACLResponse>(asyncResult);
         }
 
         /// <summary>
@@ -790,6 +1443,12 @@ namespace Amazon.S3
         /// <seealso cref="T:Amazon.S3.Model.S3AccessControlList"/>
         public GetACLResponse GetACL(GetACLRequest request)
         {
+            IAsyncResult asyncResult = invokeGetACL(request, null, null, true);
+            return EndGetACL(asyncResult);
+        }
+
+        IAsyncResult invokeGetACL(GetACLRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The GetACLRequest specified is null!");
@@ -801,7 +1460,44 @@ namespace Amazon.S3
             }
 
             ConvertGetACL(request);
-            return Invoke<GetACLResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetACLResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region SetACL
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetACL operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.SetACL"/>
+        /// </summary>
+        /// <param name="request">The SetACLRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndSetACL.</returns>
+        public IAsyncResult BeginSetACL(SetACLRequest request, AsyncCallback callback, object state)
+        {
+            return invokeSetACL(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetACL operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetACL.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a SetACLResponse from S3.</returns>
+        public SetACLResponse EndSetACL(IAsyncResult asyncResult)
+        {
+            return endOperation<SetACLResponse>(asyncResult);
         }
 
         /// <summary>
@@ -822,6 +1518,12 @@ namespace Amazon.S3
         /// <returns>Returns a SetACLResponse from S3.</returns>
         /// <seealso cref="T:Amazon.S3.Model.S3AccessControlList"/>
         public SetACLResponse SetACL(SetACLRequest request)
+        {
+            IAsyncResult asyncResult = invokeSetACL(request, null, null, true);
+            return EndSetACL(asyncResult);
+        }
+
+        IAsyncResult invokeSetACL(SetACLRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             if (request == null)
             {
@@ -845,7 +1547,44 @@ namespace Amazon.S3
             }
 
             ConvertSetACL(request);
-            return Invoke<SetACLResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<SetACLResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region PutBucket
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucket operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutBucket"/>
+        /// </summary>
+        /// <param name="request">The PutBucketRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndPutBucket.</returns>
+        public IAsyncResult BeginPutBucket(PutBucketRequest request, AsyncCallback callback, object state)
+        {
+            return invokePutBucket(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutBucket operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucket.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a PutBucketResponse from S3.</returns>
+        public PutBucketResponse EndPutBucket(IAsyncResult asyncResult)
+        {
+            return endOperation<PutBucketResponse>(asyncResult);
         }
 
         /// <summary>
@@ -893,6 +1632,12 @@ namespace Amazon.S3
         /// <seealso cref="T:Amazon.S3.Model.S3Region"/>
         public PutBucketResponse PutBucket(PutBucketRequest request)
         {
+            IAsyncResult asyncResult = invokePutBucket(request, null, null, true);
+            return EndPutBucket(asyncResult);
+        }
+
+        IAsyncResult invokePutBucket(PutBucketRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The PutBucketRequest specified is null!");
@@ -904,7 +1649,44 @@ namespace Amazon.S3
             }
 
             ConvertPutBucket(request);
-            return Invoke<PutBucketResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<PutBucketResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region DeleteBucket
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucket operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteBucket"/>
+        /// </summary>
+        /// <param name="request">The DeleteBucketRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndDeleteBucket.</returns>
+        public IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state)
+        {
+            return invokeDeleteBucket(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteBucket operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucket.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a DeleteBucketResponse from S3.</returns>
+        public DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteBucketResponse>(asyncResult);
         }
 
         /// <summary>
@@ -921,6 +1703,12 @@ namespace Amazon.S3
         /// <returns>Returns a DeleteBucketResponse from S3.</returns>
         public DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
+            IAsyncResult asyncResult = invokeDeleteBucket(request, null, null, true);
+            return EndDeleteBucket(asyncResult);
+        }
+
+        IAsyncResult invokeDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The DeleteBucketRequest specified is null!");
@@ -932,7 +1720,51 @@ namespace Amazon.S3
             }
 
             ConvertDeleteBucket(request);
-            return Invoke<DeleteBucketResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<DeleteBucketResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region GetObject
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObject operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetObject"/>
+        /// </summary>
+        /// <param name="request">The GetObjectRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndGetObject.</returns>
+        public IAsyncResult BeginGetObject(GetObjectRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetObject(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetObject operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObject.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetObjectResponse from S3.</returns>
+        public GetObjectResponse EndGetObject(IAsyncResult asyncResult)
+        {
+            GetObjectResponse response = endOperation<GetObjectResponse>(asyncResult);
+
+            S3AsyncResult s3AsyncResult = asyncResult as S3AsyncResult;
+            GetObjectRequest request = s3AsyncResult.S3Request as GetObjectRequest;
+            response.BucketName = request.BucketName;
+            response.Key = request.Key;
+
+            return response;
         }
 
         /// <summary>
@@ -966,6 +1798,14 @@ namespace Amazon.S3
         /// </remarks>
         public GetObjectResponse GetObject(GetObjectRequest request)
         {
+            IAsyncResult asyncResult = invokeGetObject(request, null, null, true);
+            GetObjectResponse response = EndGetObject(asyncResult);
+            ((S3AsyncResult)asyncResult).FinalResponse = null;
+            return response;
+        }
+
+        IAsyncResult invokeGetObject(GetObjectRequest request, AsyncCallback callback, object state, bool synchronzied)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The GetObjectRequest specified is null!");
@@ -981,10 +1821,44 @@ namespace Amazon.S3
             }
 
             ConvertGetObject(request);
-            GetObjectResponse response = Invoke<GetObjectResponse>(request);
-            response.BucketName = request.BucketName;
-            response.Key = request.Key;
-            return response;
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronzied);
+            invoke<GetObjectResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region GetObjectMetadata
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectMetadata operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetObjectMetadata"/>
+        /// </summary>
+        /// <param name="request">The GetObjectMetadataRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndGetObjectMetadata.</returns>
+        public IAsyncResult BeginGetObjectMetadata(GetObjectMetadataRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetObjectMetadata(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetObjectMetadata operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectMetadata.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetObjectMetadataResponse from S3.</returns>
+        public GetObjectMetadataResponse EndGetObjectMetadata(IAsyncResult asyncResult)
+        {
+            return endOperation<GetObjectMetadataResponse>(asyncResult);
         }
 
         /// <summary>
@@ -1002,6 +1876,12 @@ namespace Amazon.S3
         /// <returns>Returns a GetObjectMetadataResponse from S3.</returns>
         public GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
         {
+            IAsyncResult asyncResult = invokeGetObjectMetadata(request, null, null, true);
+            return EndGetObjectMetadata(asyncResult);
+        }
+
+        IAsyncResult invokeGetObjectMetadata(GetObjectMetadataRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The GetObjectMetadataRequest specified is null!");
@@ -1017,7 +1897,67 @@ namespace Amazon.S3
             }
 
             ConvertGetObjectMetadata(request);
-            return Invoke<GetObjectMetadataResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetObjectMetadataResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region PutObject
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObject operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutObject"/>
+        /// </summary>
+        /// <param name="request">The PutObjectRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndPutObject.</returns>
+        public IAsyncResult BeginPutObject(PutObjectRequest request, AsyncCallback callback, object state)
+        {
+            return invokePutObject(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutObject operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObject.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a PutObjectResponse from S3.</returns>
+        public PutObjectResponse EndPutObject(IAsyncResult asyncResult)
+        {
+            // from the checks made, it is guaranteed that if a filename is not specified
+            // and the flow of execution gets this far, there has to be either an InputStream
+            // or a ContentBody with a Key
+            try
+            {
+                PutObjectResponse response = endOperation<PutObjectResponse>(asyncResult);
+                return response;
+            }
+            finally
+            {
+                try
+                {
+                    S3AsyncResult s3AsyncResult = asyncResult as S3AsyncResult;
+                    PutObjectRequest request = s3AsyncResult.S3Request as PutObjectRequest;
+                    if (request.InputStream != null && (request.IsSetFilePath() || request.AutoCloseStream))
+                    {
+                        request.InputStream.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    LOGGER.Error("Error closing stream after PutObject.", e);
+                }
+            }
         }
 
         /// <summary>
@@ -1055,6 +1995,13 @@ namespace Amazon.S3
         /// <exception cref="T:System.IO.FileNotFoundException"></exception>
         /// <returns>Returns a PutObjectResponse from S3.</returns>
         public PutObjectResponse PutObject(PutObjectRequest request)
+        {
+            IAsyncResult asyncResult;
+            asyncResult = invokePutObject(request, null, null, true);
+            return EndPutObject(asyncResult);
+        }
+
+        IAsyncResult invokePutObject(PutObjectRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             if (request == null)
             {
@@ -1122,28 +2069,45 @@ namespace Amazon.S3
                 }
             }
 
-            // from the checks made, it is guaranteed that if a filename is not specified
-            // and the flow of execution gets this far, there has to be either an InputStream
-            // or a ContentBody with a Key
-            try
-            {
-                ConvertPutObject(request);
-                return Invoke<PutObjectResponse>(request);
-            }
-            finally
-            {
-                try
-                {
-                    if (request.InputStream != null && (request.IsSetFilePath() || request.AutoCloseStream))
-                    {
-                        request.InputStream.Close();
-                    }
-                }
-                catch(Exception e) 
-                {
-                    this.logger.Error("Error closing stream after PutObject.", e);
-                }
-            }
+            ConvertPutObject(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<PutObjectResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region DeleteObject
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteObject operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteObject"/>
+        /// </summary>
+        /// <param name="request">The DeleteObjectRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndDeleteObject.</returns>
+        public IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state)
+        {
+            return invokeDeleteObject(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteObject operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObject.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a DeleteObjectResponse from S3.</returns>
+        public DeleteObjectResponse EndDeleteObject(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteObjectResponse>(asyncResult);
         }
 
         /// <summary>
@@ -1161,6 +2125,12 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a DeleteObjectResponse from S3.</returns>
         public DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
+        {
+            IAsyncResult asyncResult = invokeDeleteObject(request, null, null, true);
+            return EndDeleteObject(asyncResult);
+        }
+
+        IAsyncResult invokeDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             if (request == null)
             {
@@ -1184,10 +2154,44 @@ namespace Amazon.S3
             }
 
             ConvertDeleteObject(request);
-            DeleteObjectResponse resp = Invoke<DeleteObjectResponse>(request);
-            config.CommunicationProtocol = current;
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<DeleteObjectResponse>(asyncResult);
+            return asyncResult;
+        }
 
-            return resp;
+        #endregion
+
+        #region CopyObject
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyObject operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.CopyObject"/>
+        /// </summary>
+        /// <param name="request">The CopyObjectRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndCopyObject.</returns>
+        public IAsyncResult BeginCopyObject(CopyObjectRequest request, AsyncCallback callback, object state)
+        {
+            return invokeCopyObject(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CopyObject operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyObject.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a CopyObjectResponse from S3.</returns>
+        public CopyObjectResponse EndCopyObject(IAsyncResult asyncResult)
+        {
+            return endOperation<CopyObjectResponse>(asyncResult);
         }
 
         /// <summary>
@@ -1219,6 +2223,12 @@ namespace Amazon.S3
         /// </remarks>
         public CopyObjectResponse CopyObject(CopyObjectRequest request)
         {
+            IAsyncResult asyncResult = invokeCopyObject(request, null, null, true);
+            return EndCopyObject(asyncResult);
+        }
+
+        IAsyncResult invokeCopyObject(CopyObjectRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The CopyObjectRequest specified is null!");
@@ -1240,7 +2250,44 @@ namespace Amazon.S3
             }
 
             ConvertCopyObject(request);
-            return Invoke<CopyObjectResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<CopyObjectResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region InitiateMultipartUpload
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InitiateMultipartUpload operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.InitiateMultipartUpload"/>
+        /// </summary>
+        /// <param name="request">The InitiateMultipartUploadRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndInitiateMultipartUpload.</returns>
+        public IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
+        {
+            return invokeInitiateMultipartUpload(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the InitiateMultipartUpload operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateMultipartUpload.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a InitiateMultipartUploadResponse from S3.</returns>
+        public InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult)
+        {
+            return endOperation<InitiateMultipartUploadResponse>(asyncResult);
         }
 
         /// <summary>
@@ -1257,6 +2304,12 @@ namespace Amazon.S3
         /// <returns>Returns a InitiateMultipartUploadResponse from S3.</returns>
         public InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
+            IAsyncResult asyncResult = invokeInitiateMultipartUpload(request, null, null, true);
+            return EndInitiateMultipartUpload(asyncResult);
+        }
+
+        IAsyncResult invokeInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The InitiateMultipartUploadRequest is null!");
@@ -1271,7 +2324,69 @@ namespace Amazon.S3
             }
 
             ConvertInitiateMultipartUpload(request);
-            return Invoke<InitiateMultipartUploadResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<InitiateMultipartUploadResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region UploadPart
+
+        const string ORIGINAL_STREAM_PARAM = "ORIGINAL_STREAM_PARAM";
+        const string FILE_STREAM_PARAM = "FILE_STREAM_PARAM";
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UploadPart operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.UploadPart"/>
+        /// </summary>
+        /// <param name="request">The UploadPartRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndUploadPart.</returns>
+        public IAsyncResult BeginUploadPart(UploadPartRequest request, AsyncCallback callback, object state)
+        {
+            return invokeUploadPart(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UploadPart operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadPart.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a UploadPartResponse from S3.</returns>
+        public UploadPartResponse EndUploadPart(IAsyncResult asyncResult)
+        {
+            S3AsyncResult s3AsyncResult = asyncResult as S3AsyncResult;
+            if (s3AsyncResult == null)
+                return null;
+
+            Stream orignalStream = s3AsyncResult.Parameters[ORIGINAL_STREAM_PARAM] as Stream;
+            Stream fileStream = s3AsyncResult.Parameters[FILE_STREAM_PARAM] as Stream;
+
+            UploadPartRequest request = s3AsyncResult.S3Request as UploadPartRequest;
+            try
+            {
+                UploadPartResponse response = endOperation<UploadPartResponse>(asyncResult);
+                response.PartNumber = request.PartNumber;
+                return response;
+            }
+            finally
+            {
+                if (fileStream != null)
+                {
+                    fileStream.Close();
+                }
+
+                request.InputStream = orignalStream;
+            }
         }
 
         /// <summary>
@@ -1309,6 +2424,12 @@ namespace Amazon.S3
         /// <returns>Returns a UploadPartResponse from S3.</returns>
         public UploadPartResponse UploadPart(UploadPartRequest request)
         {
+            IAsyncResult asyncResult = invokeUploadPart(request, null, null, true);
+            return EndUploadPart(asyncResult);
+        }
+
+        IAsyncResult invokeUploadPart(UploadPartRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The UploadPartUpload is null!");
@@ -1338,7 +2459,7 @@ namespace Amazon.S3
                 throw new ArgumentException("FilePosition is not set which is required when using FilePath.");
             }
 
-            Stream fStream = null;
+            Stream fileStream = null;
             Stream orignalStream = request.InputStream;
             try
             {
@@ -1348,24 +2469,63 @@ namespace Amazon.S3
                 }
                 else
                 {
-                    fStream = File.OpenRead(request.FilePath);
-                    fStream.Position = request.FilePosition;
-                    request.InputStream = new PartStreamWrapper(fStream, request.PartSize);
+                    fileStream = File.OpenRead(request.FilePath);
+                    fileStream.Position = request.FilePosition;
+                    request.InputStream = new PartStreamWrapper(fileStream, request.PartSize);
                 }
 
                 ConvertUploadPart(request);
-                UploadPartResponse response = Invoke<UploadPartResponse>(request);
-                response.PartNumber = request.PartNumber;
-                return response;
+                S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+                asyncResult.Parameters[ORIGINAL_STREAM_PARAM] = orignalStream;
+                asyncResult.Parameters[FILE_STREAM_PARAM] = fileStream;
+                invoke<UploadPartResponse>(asyncResult);
+                return asyncResult;
             }
-            finally
+            catch
             {
-                if (fStream != null)
+                if (fileStream != null)
                 {
-                    fStream.Close();
+                    fileStream.Close();
                 }
                 request.InputStream = orignalStream;
+                throw;
             }
+        }
+
+
+        #endregion
+
+        #region ListParts
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListParts operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListParts"/>
+        /// </summary>
+        /// <param name="request">The ListPartsRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndListParts.</returns>
+        public IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
+        {
+            return invokeListParts(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListParts operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParts.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a ListPartsResponse from S3.</returns>
+        public ListPartsResponse EndListParts(IAsyncResult asyncResult)
+        {
+            return endOperation<ListPartsResponse>(asyncResult);
         }
 
         /// <summary>
@@ -1391,6 +2551,12 @@ namespace Amazon.S3
         /// <returns>Returns a ListPartsResponse from S3.</returns>
         public ListPartsResponse ListParts(ListPartsRequest request)
         {
+            IAsyncResult asyncResult = invokeListParts(request, null, null, true);
+            return EndListParts(asyncResult);
+        }
+
+        IAsyncResult invokeListParts(ListPartsRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The ListPartsRequest is null!");
@@ -1409,7 +2575,44 @@ namespace Amazon.S3
             }
 
             ConvertListParts(request);
-            return Invoke<ListPartsResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<ListPartsResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region AbortMultipartUpload
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AbortMultipartUpload operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.AbortMultipartUpload"/>
+        /// </summary>
+        /// <param name="request">The AbortMultipartUploadRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndAbortMultipartUpload.</returns>
+        public IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
+        {
+            return invokeAbortMultipartUpload(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AbortMultipartUpload operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortMultipartUpload.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a AbortMultipartUploadResponse from S3.</returns>
+        public AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult)
+        {
+            return endOperation<AbortMultipartUploadResponse>(asyncResult);
         }
 
         /// <summary>
@@ -1426,6 +2629,12 @@ namespace Amazon.S3
         /// </param>
         /// <returns>Returns a AbortMultipartUploadResponse from S3.</returns>
         public AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
+        {
+            IAsyncResult asyncResult = invokeAbortMultipartUpload(request, null, null, true);
+            return EndAbortMultipartUpload(asyncResult);
+        }
+
+        IAsyncResult invokeAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             if (request == null)
             {
@@ -1445,7 +2654,44 @@ namespace Amazon.S3
             }
 
             ConvertAbortMultipartUpload(request);
-            return Invoke<AbortMultipartUploadResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<AbortMultipartUploadResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region CompleteMultipartUpload
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CompleteMultipartUpload operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.CompleteMultipartUpload"/>
+        /// </summary>
+        /// <param name="request">The CompleteMultipartUploadRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndCompleteMultipartUpload.</returns>
+        public IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
+        {
+            return invokeCompleteMultipartUpload(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CompleteMultipartUpload operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteMultipartUpload.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a CompleteMultipartUploadResponse from S3.</returns>
+        public CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult)
+        {
+            return endOperation<CompleteMultipartUploadResponse>(asyncResult);
         }
 
         /// <summary>
@@ -1473,6 +2719,12 @@ namespace Amazon.S3
         /// <returns>Returns a CompleteMultipartUploadResponse from S3.</returns>
         public CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
+            IAsyncResult asyncResult = invokeCompleteMultipartUpload(request, null, null, true);
+            return EndCompleteMultipartUpload(asyncResult);
+        }
+
+        IAsyncResult invokeCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The CompleteMultipartUploadRequest is null!");
@@ -1495,7 +2747,44 @@ namespace Amazon.S3
             }
 
             ConvertCompleteMultipartUpload(request);
-            return Invoke<CompleteMultipartUploadResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<CompleteMultipartUploadResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region ListMultipartUploads
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMultipartUploads operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListMultipartUploads"/>
+        /// </summary>
+        /// <param name="request">The ListMultipartUploadsRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndListMultipartUploads.</returns>
+        public IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
+        {
+            return invokeListMultipartUploads(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListMultipartUploads operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultipartUploads.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a ListMultipartUploadsResponse from S3.</returns>
+        public ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult)
+        {
+            return endOperation<ListMultipartUploadsResponse>(asyncResult);
         }
 
         /// <summary>
@@ -1519,6 +2808,12 @@ namespace Amazon.S3
         /// <returns>Returns a ListMultipartUploadsResponse from S3.</returns>
         public ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
+            IAsyncResult asyncResult = invokeListMultipartUploads(request, null, null, true);
+            return EndListMultipartUploads(asyncResult);
+        }
+
+        IAsyncResult invokeListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
             if (request == null)
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The ListMultipartUploadsRequest is null!");
@@ -1529,7 +2824,264 @@ namespace Amazon.S3
             }
 
             ConvertListMultipartUploads(request);
-            return Invoke<ListMultipartUploadsResponse>(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<ListMultipartUploadsResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region PutBucketWebsite
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketWebsite operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutBucketWebsite"/>
+        /// </summary>
+        /// <param name="request">The PutBucketWebsiteRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndPutBucketWebsite.</returns>
+        public IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state)
+        {
+            return invokePutBucketWebsite(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutBucketWebsite operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketWebsite.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a PutBucketWebsiteResponse from S3.</returns>
+        public PutBucketWebsiteResponse EndPutBucketWebsite(IAsyncResult asyncResult)
+        {
+            return endOperation<PutBucketWebsiteResponse>(asyncResult);
+        }
+
+        /// <summary>
+        /// Enables and configures an Amazon S3 website using the corresponding bucket as the content source. 
+        /// The website will have one default domain name associated with it, which is the bucket name.
+        /// If you attempt to configure an Amazon S3 website for a bucket whose name is not a valid DNS name, 
+        /// Amazon S3 returns an InvalidBucketName error. For more information on bucket names and DNS, 
+        /// refer to Bucket Restrictions and Limitations.
+        /// 
+        /// To visit the Amazon S3 bucket as a website a new endpoint is created in the following pattern 
+        /// http://&lt;bucketName&gt;.s3-website-&lt;region&gt;.amazonaws.com/.  This is a sample URL for a bucket
+        /// called example-bucket in the <c>us-east-1</c> region. http://example-bucket.s3-website-us-east-1.amazonaws.com/
+        /// </summary>
+        /// <param name="request">
+        /// The PutBucketWebsiteRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a PutBucketWebsiteResponse from Amazon S3.</returns>
+        public PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
+        {
+            IAsyncResult asyncResult = invokePutBucketWebsite(request, null, null, true);
+            return EndPutBucketWebsite(asyncResult);
+        }
+
+        IAsyncResult invokePutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The PutBucketWebsiteRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentException("The S3 BucketName specified is null or empty!");
+            }
+            if (!request.WebsiteConfiguration.IsSetIndexDocumentSuffix())
+            {
+                throw new ArgumentException("The IndexDocumentSuffix specified is null or empty!");
+            }
+
+            ConvertPutBucketWebsite(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<PutBucketWebsiteResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        void ConvertPutBucketWebsite(PutBucketWebsiteRequest request)
+        {
+            Map parameters = request.parameters;
+            parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
+            parameters[S3QueryParameter.Action] = "PutBucketWebsite";
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?website";
+
+            parameters[S3QueryParameter.ContentBody] = request.WebsiteConfiguration.ToXML();
+            parameters[S3QueryParameter.ContentType] = "application/xml";
+
+            addS3QueryParameters(request, request.BucketName);
+        }
+
+        #endregion
+
+        #region GetBucketWebsite
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketWebsite operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketWebsite"/>
+        /// </summary>
+        /// <param name="request">The GetBucketWebsiteRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndGetBucketWebsite.</returns>
+        public IAsyncResult BeginGetBucketWebsite(GetBucketWebsiteRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetBucketWebsite(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetBucketWebsite operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketWebsite.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetBucketWebsiteResponse from S3.</returns>
+        public GetBucketWebsiteResponse EndGetBucketWebsite(IAsyncResult asyncResult)
+        {
+            try
+            {
+                return endOperation<GetBucketWebsiteResponse>(asyncResult);
+            }
+            catch (AmazonS3Exception e)
+            {
+                if (e.ErrorCode == S3Constants.NoSuchWebsiteConfiguration)
+                {
+                    return new GetBucketWebsiteResponse();
+                }
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Retrieves the website configuration for a bucket. The contents of this response 
+        /// is identical to the content submitted by the user during the PutBucketWebsite operation 
+        /// if the bucket has ever been configured. 
+        /// </summary>
+        /// <param name="request">
+        /// The GetBucketWebsiteRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a GetBucketWebsiteResponse from Amazon S3.</returns>
+        public GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
+        {
+            IAsyncResult asyncResult = invokeGetBucketWebsite(request, null, null, true);
+            return EndGetBucketWebsite(asyncResult);
+        }
+
+        IAsyncResult invokeGetBucketWebsite(GetBucketWebsiteRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The GetBucketWebsiteRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentException("The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertGetBucketWebsite(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetBucketWebsiteResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        void ConvertGetBucketWebsite(GetBucketWebsiteRequest request)
+        {
+            Map parameters = request.parameters;
+            parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
+            parameters[S3QueryParameter.Action] = "GetBucketWebsite";
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?website";
+
+            addS3QueryParameters(request, request.BucketName);
+        }
+
+        #endregion
+
+
+        #region DeleteBucketWebsite
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketWebsite operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteBucketWebsite"/>
+        /// </summary>
+        /// <param name="request">The DeleteBucketWebsiteRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndDeleteBucketWebsite.</returns>
+        public IAsyncResult BeginDeleteBucketWebsite(DeleteBucketWebsiteRequest request, AsyncCallback callback, object state)
+        {
+            return invokeDeleteBucketWebsite(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteBucketWebsite operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketWebsite.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a DeleteBucketWebsiteResponse from S3.</returns>
+        public DeleteBucketWebsiteResponse EndDeleteBucketWebsite(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteBucketWebsiteResponse>(asyncResult);
+        }
+
+        /// <summary>
+        /// Removes the website configuration for a bucket. 
+        /// </summary>
+        /// <param name="request">
+        /// The DeleteBucketWebsiteRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a DeleteBucketWebsiteResponse from Amazon S3.</returns>
+        public DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
+        {
+            IAsyncResult asyncResult = invokeDeleteBucketWebsite(request, null, null, true);
+            return EndDeleteBucketWebsite(asyncResult);
+        }
+
+        IAsyncResult invokeDeleteBucketWebsite(DeleteBucketWebsiteRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The DeleteBucketWebsiteRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentException("The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertDeleteBucketWebsite(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<DeleteBucketWebsiteResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        void ConvertDeleteBucketWebsite(DeleteBucketWebsiteRequest request)
+        {
+            Map parameters = request.parameters;
+            parameters[S3QueryParameter.Verb] = S3Constants.DeleteVerb;
+            parameters[S3QueryParameter.Action] = "DeleteBucketWebsite";
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?website";
+
+            addS3QueryParameters(request, request.BucketName);
         }
 
         #endregion
@@ -1545,7 +3097,7 @@ namespace Amazon.S3
 
             parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
             parameters[S3QueryParameter.Action] = "ListBuckets";
-            AddS3QueryParameters(request, null);
+            addS3QueryParameters(request, null);
         }
 
         /**
@@ -1559,7 +3111,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "GetBucketLocation";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?location";
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1574,7 +3126,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = "?logging";
             parameters[S3QueryParameter.QueryToSign] = "?logging";
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
 
         }
 
@@ -1593,7 +3145,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = "?logging";
             parameters[S3QueryParameter.QueryToSign] = "?logging";
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1648,7 +3200,7 @@ namespace Amazon.S3
 
             parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
             parameters[S3QueryParameter.Action] = "ListObjects";
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1688,7 +3240,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = sb.ToString();
             parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
             parameters[S3QueryParameter.Action] = "ListVersions";
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1718,7 +3270,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = queryStr;
             parameters[S3QueryParameter.QueryToSign] = queryStr;
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1737,7 +3289,7 @@ namespace Amazon.S3
 
             if (request.IsSetCannedACL())
             {
-                SetCannedACLHeader(webHeaders, request.CannedACL);
+                setCannedACLHeader(webHeaders, request.CannedACL);
             }
 
             parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
@@ -1760,7 +3312,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = queryStr;
             parameters[S3QueryParameter.QueryToSign] = queryStr;
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1782,7 +3334,7 @@ namespace Amazon.S3
                 parameters[S3QueryParameter.ContentBody] = content;
                 parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
             }
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1794,7 +3346,7 @@ namespace Amazon.S3
 
             parameters[S3QueryParameter.Verb] = S3Constants.DeleteVerb;
             parameters[S3QueryParameter.Action] = "DeleteBucket";
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1807,7 +3359,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "GetBucketPolicy";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?policy";
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1823,7 +3375,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.ContentBody] = request.Policy;
             parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1836,7 +3388,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "DeleteBucketPolicy";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?policy";
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1862,7 +3414,7 @@ namespace Amazon.S3
                 parameters[S3QueryParameter.ContentBody] = request.NotificationConfiguration.ToXML();
             }
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -1875,13 +3427,13 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "GetNotificationConfiguration";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?notification";
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
 
         /**
-         * Convert GetObjectRequest to key/value pairs.
-         */
+          * Convert GetObjectRequest to key/value pairs.
+          */
         private void ConvertGetObject(GetObjectRequest request)
         {
             Map parameters = request.parameters;
@@ -1903,19 +3455,19 @@ namespace Amazon.S3
             // Add the necessary get object specific headers to the request.Headers object
             if (request.IsSetETagToMatch())
             {
-                SetIfMatchHeader(webHeaders, request.ETagToMatch);
+                setIfMatchHeader(webHeaders, request.ETagToMatch);
             }
             if (request.IsSetETagToNotMatch())
             {
-                SetIfNoneMatchHeader(webHeaders, request.ETagToNotMatch);
+                setIfNoneMatchHeader(webHeaders, request.ETagToNotMatch);
             }
             if (request.IsSetModifiedSinceDate())
             {
-                SetIfModifiedSinceHeader(webHeaders, request.ModifiedSinceDate);
+                setIfModifiedSinceHeader(webHeaders, request.ModifiedSinceDate);
             }
             if (request.IsSetUnmodifiedSinceDate())
             {
-                SetIfUnmodifiedSinceHeader(webHeaders, request.UnmodifiedSinceDate);
+                setIfUnmodifiedSinceHeader(webHeaders, request.UnmodifiedSinceDate);
             }
 
             StringBuilder queryStr = new StringBuilder();
@@ -1938,7 +3490,7 @@ namespace Amazon.S3
             // Add the Timeout parameter
             parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         void addParameter(StringBuilder queryStr, string key, string value)
@@ -1950,7 +3502,7 @@ namespace Amazon.S3
 
                 queryStr.AppendFormat("{0}={1}", key, value);
             }
-         }
+        }
 
         /**
          * Convert GetObjectMetadataRequest to key/value pairs.
@@ -1966,15 +3518,15 @@ namespace Amazon.S3
 
             if (request.IsSetETagToNotMatch())
             {
-                SetIfNoneMatchHeader(webHeaders, request.ETagToNotMatch);
+                setIfNoneMatchHeader(webHeaders, request.ETagToNotMatch);
             }
             if (request.IsSetModifiedSinceDate())
             {
-                SetIfModifiedSinceHeader(webHeaders, request.ModifiedSinceDate);
+                setIfModifiedSinceHeader(webHeaders, request.ModifiedSinceDate);
             }
             if (request.IsSetUnmodifiedSinceDate())
             {
-                SetIfUnmodifiedSinceHeader(webHeaders, request.UnmodifiedSinceDate);
+                setIfUnmodifiedSinceHeader(webHeaders, request.UnmodifiedSinceDate);
             }
             if (request.IsSetVersionId())
             {
@@ -1983,13 +3535,13 @@ namespace Amazon.S3
                 parameters[S3QueryParameter.QueryToSign] = queryStr;
             }
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
          * Convert PutObjectRequest to key/value pairs.
          */
-        private void ConvertPutObject(PutObjectRequest request)
+        protected internal void ConvertPutObject(PutObjectRequest request)
         {
             Map parameters = request.parameters;
             WebHeaderCollection webHeaders = request.Headers;
@@ -2049,7 +3601,7 @@ namespace Amazon.S3
             if (request.IsSetContentBody())
             {
                 // The content length is determined based on the number of bytes
-                // needed to represent the content string - check Invoke<T>
+                // needed to represent the content string - check invoke<T>
                 parameters[S3QueryParameter.ContentBody] = request.ContentBody;
                 // Since a content body was set, let's determine whether a content type was set
                 if (!parameters.ContainsKey(S3QueryParameter.ContentType))
@@ -2065,7 +3617,7 @@ namespace Amazon.S3
             // 1. The Canned ACL
             if (request.IsSetCannedACL())
             {
-                SetCannedACLHeader(webHeaders, request.CannedACL);
+                setCannedACLHeader(webHeaders, request.CannedACL);
             }
 
             // 2. The MetaData
@@ -2092,7 +3644,7 @@ namespace Amazon.S3
             webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
 
             // Finally, add the S3 specific parameters and headers
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -2119,14 +3671,14 @@ namespace Amazon.S3
             if (queryStr.Length != 0)
             {
                 queryStr.Append("&");
-            }            
+            }
             queryStr.Append("Expires=");
 
             string value = Convert.ToInt64((request.Expires.ToUniversalTime() - new DateTime(1970, 1, 1)).TotalSeconds).ToString();
             queryStr.Append(value);
             parameters[S3QueryParameter.Expires] = value;
 
-            StringBuilder queryStrToSign = new StringBuilder(); 
+            StringBuilder queryStrToSign = new StringBuilder();
             if (request.IsSetKey() &&
                 request.IsSetVersionId() &&
                 request.Verb < HttpVerb.PUT)
@@ -2149,7 +3701,7 @@ namespace Amazon.S3
             }
 
             parameters[S3QueryParameter.Query] = queryStr.ToString();
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
 
             // the url needs to be modified so that:
             // 1. The right http protocol is used
@@ -2164,12 +3716,12 @@ namespace Amazon.S3
             {
                 switch (config.CommunicationProtocol)
                 {
-                case Protocol.HTTP:
-                    url = url.Replace("http://", "https://");
-                    break;
-                case Protocol.HTTPS:
-                    url = url.Replace("https://", "http://");
-                    break;
+                    case Protocol.HTTP:
+                        url = url.Replace("http://", "https://");
+                        break;
+                    case Protocol.HTTPS:
+                        url = url.Replace("https://", "http://");
+                        break;
                 }
             }
 
@@ -2199,10 +3751,10 @@ namespace Amazon.S3
 
             if (request.IsSetMfaCodes())
             {
-                SetMfaHeader(request.Headers, request.MfaCodes);
+                setMfaHeader(request.Headers, request.MfaCodes);
             }
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -2234,19 +3786,19 @@ namespace Amazon.S3
             // Add the Copy Object specific headers to the request
             if (request.IsSetETagToMatch())
             {
-                SetIfMatchCopyHeader(webHeaders, request.ETagToMatch);
+                setIfMatchCopyHeader(webHeaders, request.ETagToMatch);
             }
             if (request.IsSetETagToNotMatch())
             {
-                SetIfNoneMatchCopyHeader(webHeaders, request.ETagToNotMatch);
+                setIfNoneMatchCopyHeader(webHeaders, request.ETagToNotMatch);
             }
             if (request.IsSetModifiedSinceDate())
             {
-                SetIfModifiedSinceCopyHeader(webHeaders, request.ModifiedSinceDate);
+                setIfModifiedSinceCopyHeader(webHeaders, request.ModifiedSinceDate);
             }
             if (request.IsSetUnmodifiedSinceDate())
             {
-                SetIfUnmodifiedSinceCopyHeader(webHeaders, request.UnmodifiedSinceDate);
+                setIfUnmodifiedSinceCopyHeader(webHeaders, request.UnmodifiedSinceDate);
             }
 
             // Add the Copy Source header which makes this a COPY request
@@ -2259,10 +3811,10 @@ namespace Amazon.S3
                     request.SourceVersionId
                     );
             }
-            SetCopySourceHeader(webHeaders, request.SourceBucket, sourceKey);
+            setCopySourceHeader(webHeaders, request.SourceBucket, sourceKey);
 
             // there is always a directive associated with the request
-            SetMetadataDirectiveHeader(webHeaders, request.Directive);
+            setMetadataDirectiveHeader(webHeaders, request.Directive);
 
             // if the user has specified the REPLACE directive
             // and specified new metadata for the copied object
@@ -2315,13 +3867,13 @@ namespace Amazon.S3
             // The Canned ACL
             if (request.IsSetCannedACL())
             {
-                SetCannedACLHeader(webHeaders, request.CannedACL);
+                setCannedACLHeader(webHeaders, request.CannedACL);
             }
 
             // Add the storage class header
             webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
 
-            AddS3QueryParameters(request, request.DestinationBucket);
+            addS3QueryParameters(request, request.DestinationBucket);
         }
 
         /**
@@ -2336,7 +3888,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = "?versioning";
             parameters[S3QueryParameter.QueryToSign] = "?versioning";
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -2356,10 +3908,10 @@ namespace Amazon.S3
 
             if (request.VersioningConfig.IsSetEnableMfaDelete())
             {
-                SetMfaHeader(webHeaders, request.MfaCodes);
+                setMfaHeader(webHeaders, request.MfaCodes);
             }
 
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -2396,7 +3948,7 @@ namespace Amazon.S3
             // 1. The Canned ACL
             if (request.IsSetCannedACL())
             {
-                SetCannedACLHeader(webHeaders, request.CannedACL);
+                setCannedACLHeader(webHeaders, request.CannedACL);
             }
 
             // 2. The Metadata
@@ -2413,7 +3965,7 @@ namespace Amazon.S3
             webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
 
             // Finally, add the S3 specific parameters and headers
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -2431,7 +3983,7 @@ namespace Amazon.S3
 
 
             // Finally, add the S3 specific parameters and headers
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -2480,7 +4032,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = query;
 
             // Finally, add the S3 specific parameters and headers
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -2518,7 +4070,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = query;
 
             // Finally, add the S3 specific parameters and headers
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -2538,7 +4090,7 @@ namespace Amazon.S3
 
 
             // Finally, add the S3 specific parameters and headers
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         /**
@@ -2578,17 +4130,299 @@ namespace Amazon.S3
 
 
             // Finally, add the S3 specific parameters and headers
-            AddS3QueryParameters(request, request.BucketName);
+            addS3QueryParameters(request, request.BucketName);
         }
 
         #endregion
 
         #region Private Methods
 
+        T endOperation<T>(IAsyncResult result) where T : class
+        {
+            S3AsyncResult s3AsyncResult = result as S3AsyncResult;
+            if (s3AsyncResult == null)
+                return default(T);
+
+            if (!s3AsyncResult.IsCompleted)
+            {
+                s3AsyncResult.AsyncWaitHandle.WaitOne();
+            }
+
+            if (s3AsyncResult.Exception != null)
+            {
+                AWSSDKUtils.PreserveStackTrace(s3AsyncResult.Exception);
+                throw s3AsyncResult.Exception;
+            }
+
+            T response = s3AsyncResult.FinalResponse as T;
+            //s3AsyncResult.FinalResponse = null;
+            return response;
+        }
+
+        void invoke<T>(S3AsyncResult s3AsyncResult) where T : S3Response, new()
+        {
+            if (s3AsyncResult.S3Request == null)
+            {
+                throw new AmazonS3Exception("No request specified for the S3 operation!");
+            }
+
+            WebHeaderCollection headers = s3AsyncResult.S3Request.Headers;
+            Map parameters = s3AsyncResult.S3Request.parameters;
+            Stream fStream = s3AsyncResult.S3Request.InputStream;
+
+            string actionName = parameters[S3QueryParameter.Action];
+            string verb = parameters[S3QueryParameter.Verb];
+
+            LOGGER.DebugFormat("Starting request for {0}", actionName);
+
+            // Variables that pertain to PUT requests
+            byte[] requestData = Encoding.UTF8.GetBytes("");
+            long reqDataLen = 0;
+
+            if (String.IsNullOrEmpty(this.awsAccessKeyId))
+            {
+                throw new AmazonS3Exception("The AWS Access Key ID cannot be NULL or a Zero length string");
+            }
+
+            validateVerb(verb);
+
+            if (verb.Equals(S3Constants.PutVerb) || verb.Equals(S3Constants.PostVerb))
+            {
+                if (parameters.ContainsKey(S3QueryParameter.ContentBody))
+                {
+                    string reqBody = parameters[S3QueryParameter.ContentBody];
+                    LOGGER.DebugFormat("Request body's content [{0}]", reqBody);
+                    requestData = Encoding.UTF8.GetBytes(reqBody);
+
+                    // Since there is a request body, determine the length of the
+                    // data that will be sent to the server.
+                    reqDataLen = requestData.Length;
+                    parameters[S3QueryParameter.ContentLength] = reqDataLen.ToString();
+                }
+
+                if (parameters.ContainsKey(S3QueryParameter.ContentLength))
+                {
+                    reqDataLen = Int64.Parse(parameters[S3QueryParameter.ContentLength]);
+                }
+            }
+
+            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
+
+            if (fStream != null)
+            {
+                s3AsyncResult.OrignalStreamPosition = fStream.Position;
+            }
+
+            HttpWebRequest request = configureWebRequest(s3AsyncResult.S3Request, reqDataLen);
+
+            parameters[S3QueryParameter.RequestAddress] = request.Address.ToString();
+
+            try
+            {
+                s3AsyncResult.RequestState = new RequestState(request, parameters, fStream, requestData, reqDataLen);
+                if (reqDataLen > 0)
+                {
+                    if (s3AsyncResult.CompletedSynchronously)
+                    {
+                        this.getRequestStreamCallback<T>(s3AsyncResult);
+                    }
+                    else
+                    {
+                        IAsyncResult httpResult = request.BeginGetRequestStream(new AsyncCallback(this.getRequestStreamCallback<T>), s3AsyncResult);
+                        if (httpResult.CompletedSynchronously)
+                        {
+                            if (!s3AsyncResult.RequestState.GetRequestStreamCallbackCalled)
+                            {
+                                getRequestStreamCallback<T>(httpResult);
+                            }
+                            s3AsyncResult.SetCompletedSynchronously(true);
+                        }
+                    }
+                }
+                else
+                {
+                    if (s3AsyncResult.CompletedSynchronously)
+                    {
+                        this.getResponseCallback<T>(s3AsyncResult);
+                    }
+                    else
+                    {
+                        IAsyncResult httpResult = request.BeginGetResponse(new AsyncCallback(this.getResponseCallback<T>), s3AsyncResult);
+                        if (httpResult.CompletedSynchronously)
+                        {
+                            if (!s3AsyncResult.RequestState.GetResponseCallbackCalled)
+                            {
+                                getResponseCallback<T>(httpResult);
+                            }
+                            s3AsyncResult.SetCompletedSynchronously(true);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LOGGER.Error("Error starting async http operation", e);
+                throw;
+            }
+        }
+
+        void validateVerb(string verb)
+        {
+            // The HTTP operation specified has to be one of the operations
+            // the Amazon S3 service explicitly supports
+            if (!(verb.Equals(S3Constants.PutVerb) ||
+                verb.Equals(S3Constants.GetVerb) ||
+                verb.Equals(S3Constants.DeleteVerb) ||
+                verb.Equals(S3Constants.HeadVerb) ||
+                verb.Equals(S3Constants.PostVerb)))
+            {
+                throw new AmazonS3Exception("Invalid HTTP Operation attempted! Supported operations - GET, HEAD, PUT, DELETE, POST");
+            }
+        }
+
+        void getRequestStreamCallback<T>(IAsyncResult result) where T : S3Response, new()
+        {
+            S3AsyncResult s3AsyncResult;
+            if (result is S3AsyncResult)
+                s3AsyncResult = result as S3AsyncResult;
+            else
+                s3AsyncResult = result.AsyncState as S3AsyncResult;
+
+            s3AsyncResult.RequestState.GetRequestStreamCallbackCalled = true;
+            try
+            {
+                RequestState state = s3AsyncResult.RequestState;
+                bool shouldRetry = false;
+                try
+                {
+                    Stream requestStream;
+                    if (s3AsyncResult.CompletedSynchronously)
+                        requestStream = state.WebRequest.GetRequestStream();
+                    else
+                        requestStream = state.WebRequest.EndGetRequestStream(result);
+
+                    using (requestStream)
+                    {
+                        Stream stream = state.InputStream != null ? state.InputStream : new MemoryStream(state.RequestData);
+                        writeStreamToService(s3AsyncResult.S3Request, state.RequestDataLength, stream, requestStream);
+                    }
+                }
+                catch (IOException e)
+                {
+                    shouldRetry = handleIOException(s3AsyncResult.S3Request, s3AsyncResult.RequestState.WebRequest, null, e, s3AsyncResult.RetriesAttempt);
+                }
+
+                if (shouldRetry)
+                {
+                    s3AsyncResult.RetriesAttempt++;
+                    handleRetry(s3AsyncResult.S3Request, s3AsyncResult.RequestState.WebRequest, null, s3AsyncResult.OrignalStreamPosition,
+                        s3AsyncResult.RetriesAttempt, HttpStatusCode.OK, null);
+                    invoke<T>(s3AsyncResult);
+                }
+                else
+                {
+                    if (s3AsyncResult.CompletedSynchronously)
+                    {
+                        this.getResponseCallback<T>(s3AsyncResult);
+                    }
+                    else
+                    {
+                        IAsyncResult httpResult = state.WebRequest.BeginGetResponse(new AsyncCallback(this.getResponseCallback<T>), s3AsyncResult);
+                        if (httpResult.CompletedSynchronously)
+                        {
+                            if (!s3AsyncResult.RequestState.GetResponseCallbackCalled)
+                            {
+                                getResponseCallback<T>(httpResult);
+                            }
+                            s3AsyncResult.SetCompletedSynchronously(true);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                s3AsyncResult.RequestState.WebRequest.Abort();
+                LOGGER.Error("Error for GetRequestStream", e);
+                s3AsyncResult.Exception = e;
+
+                s3AsyncResult.SignalWaitHandle();
+                if (s3AsyncResult.Callback != null)
+                    s3AsyncResult.Callback(s3AsyncResult);
+            }
+        }
+
+        void getResponseCallback<T>(IAsyncResult result) where T : S3Response, new()
+        {
+            S3AsyncResult s3AsyncResult;
+            if (result is S3AsyncResult)
+                s3AsyncResult = result as S3AsyncResult;
+            else
+                s3AsyncResult = result.AsyncState as S3AsyncResult;
+
+            s3AsyncResult.RequestState.GetResponseCallbackCalled = true;
+            bool shouldRetry = false;
+            try
+            {
+                Exception cause = null;
+                HttpStatusCode statusCode = HttpStatusCode.OK;
+                RequestState state = s3AsyncResult.RequestState;
+                HttpWebResponse httpResponse = null;
+                T response;
+                try
+                {
+                    if (s3AsyncResult.CompletedSynchronously)
+                        httpResponse = state.WebRequest.GetResponse() as HttpWebResponse;
+                    else
+                        httpResponse = state.WebRequest.EndGetResponse(result) as HttpWebResponse;
+
+                    shouldRetry = handleHttpResponse<T>(s3AsyncResult.S3Request, state.WebRequest, httpResponse, s3AsyncResult.RetriesAttempt, new TimeSpan(DateTime.Now.Ticks - state.WebRequestStart), out response, out cause, out statusCode);
+                    if (!shouldRetry)
+                    {
+                        s3AsyncResult.FinalResponse = response;
+                    }
+                }
+                catch (WebException we)
+                {
+                    shouldRetry = handleHttpWebErrorResponse(s3AsyncResult.S3Request, we, s3AsyncResult.RequestState.WebRequest, httpResponse, out cause, out statusCode);
+                }
+                catch (IOException e)
+                {
+                    shouldRetry = handleIOException(s3AsyncResult.S3Request, s3AsyncResult.RequestState.WebRequest, httpResponse, e, s3AsyncResult.RetriesAttempt);
+                }
+
+                if (shouldRetry)
+                {
+                    s3AsyncResult.RetriesAttempt++;
+                    handleRetry(s3AsyncResult.S3Request, s3AsyncResult.RequestState.WebRequest, httpResponse, s3AsyncResult.OrignalStreamPosition,
+                        s3AsyncResult.RetriesAttempt, statusCode, cause);
+                    invoke<T>(s3AsyncResult);
+                }
+                else if (cause != null)
+                {
+                    s3AsyncResult.Exception = cause;
+                }
+            }
+            catch (Exception e)
+            {
+                LOGGER.Error("Error for GetResponse", e);
+                s3AsyncResult.Exception = e;
+                shouldRetry = false;
+            }
+            finally
+            {
+                if (!shouldRetry)
+                {
+                    s3AsyncResult.SignalWaitHandle();
+                    if (s3AsyncResult.Callback != null)
+                        s3AsyncResult.Callback(s3AsyncResult);
+                }
+            }
+        }
+
         /**
          * Add authentication related and version parameters
          */
-        private void AddS3QueryParameters(S3Request request, string destinationBucket)
+        void addS3QueryParameters(S3Request request, string destinationBucket)
         {
             if (request == null)
             {
@@ -2628,7 +4462,7 @@ namespace Amazon.S3
             }
 
             // The canonical resource doesn't need the query because it is added
-            // in the ConfigureWebRequest function directly to the URL
+            // in the configureWebRequest function directly to the URL
             if (parameters.ContainsKey(S3QueryParameter.Key))
             {
                 canonicalResource.Append(parameters[S3QueryParameter.Key]);
@@ -2646,7 +4480,7 @@ namespace Amazon.S3
                 webHeaders.Remove(AWSSDKUtils.ContentTypeHeader);
             }
 
-            string toSign = BuildSigningString(parameters, webHeaders);
+            string toSign = buildSigningString(parameters, webHeaders);
             string auth;
             if (config.UseSecureStringForAwsSecretKey)
             {
@@ -2669,10 +4503,10 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Authorization] = auth;
 
             // Insert the S3 Url into the parameters
-            AddUrlToParameters(request, config);
+            addUrlToParameters(request, config);
         }
 
-        private void WriteStreamToService(S3Request request, long reqDataLen, Stream inputStream, Stream requestStream)
+        void writeStreamToService(S3Request request, long reqDataLen, Stream inputStream, Stream requestStream)
         {
             if (inputStream != null)
             {
@@ -2694,220 +4528,41 @@ namespace Amazon.S3
         }
 
 
-        /**
-        * Invoke request and return response
-        */
-        private T Invoke<T>(S3Request userRequest) where T : S3Response, new()
+        void handleRetry(S3Request userRequest, HttpWebRequest request, HttpWebResponse httpResponse, long orignalStreamPosition, int retries, HttpStatusCode statusCode, Exception cause)
         {
-            if (userRequest == null)
+            WebHeaderCollection respHdrs = httpResponse == null ? new WebHeaderCollection() : httpResponse.Headers;
+            string actionName = userRequest.parameters[S3QueryParameter.Action];
+            string requestAddr = request.Address.ToString();
+
+            if (retries <= this.config.MaxErrorRetry)
             {
-                throw new AmazonS3Exception("No request specified for the S3 operation!");
+                LOGGER.InfoFormat("Retry number {0} for request {1}.", retries, actionName);
             }
-
-            WebHeaderCollection headers = userRequest.Headers;
-            Map parameters = userRequest.parameters;
-            Stream fStream = userRequest.InputStream;
-
-            string actionName = parameters[S3QueryParameter.Action];
-            T response = default(T);
-            HttpStatusCode statusCode = default(HttpStatusCode);
-            string verb = parameters[S3QueryParameter.Verb];
-
-            this.logger.DebugFormat("Starting request for {0}", actionName);
-
-            // Variables that pertain to PUT requests
-            byte[] requestData = Encoding.UTF8.GetBytes("");
-            long reqDataLen = 0;
-
-            if (String.IsNullOrEmpty(this.awsAccessKeyId))
-            {
-                throw new AmazonS3Exception("The AWS Access Key ID cannot be NULL or a Zero length string");
-            }
-
-            // The HTTP operation specified has to be one of the operations
-            // the Amazon S3 service explicitly supports
-            if (!(verb.Equals(S3Constants.PutVerb) ||
-                verb.Equals(S3Constants.GetVerb) ||
-                verb.Equals(S3Constants.DeleteVerb) ||
-                verb.Equals(S3Constants.HeadVerb) ||
-                verb.Equals(S3Constants.PostVerb)))
-            {
-                throw new AmazonS3Exception("Invalid HTTP Operation attempted! Supported operations - GET, HEAD, PUT, DELETE");
-            }
-
-            if (verb.Equals(S3Constants.PutVerb) || verb.Equals(S3Constants.PostVerb))
-            {
-                if (parameters.ContainsKey(S3QueryParameter.ContentBody))
-                {
-                    string reqBody = parameters[S3QueryParameter.ContentBody];
-                    this.logger.DebugFormat("Request body's content [{0}]", reqBody);
-                    requestData = Encoding.UTF8.GetBytes(reqBody);
-
-                    // Since there is a request body, determine the length of the
-                    // data that will be sent to the server.
-                    reqDataLen = requestData.Length;
-                    parameters[S3QueryParameter.ContentLength] = reqDataLen.ToString();
-                }
-
-                if (parameters.ContainsKey(S3QueryParameter.ContentLength))
-                {
-                    reqDataLen = Int64.Parse(parameters[S3QueryParameter.ContentLength]);
-                }
-            }
-
-            bool shouldRetry;
-            int retries = 0;
-            int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
-
-            HttpWebRequest request;
-            HttpWebResponse httpResponse = null;
-            string requestAddr;
-            WebHeaderCollection respHdrs = null;
-            Exception cause = null;
-
-            long orignalStreamPosition = 0;
-            if (fStream != null)
-            {
-                orignalStreamPosition = fStream.Position;
-            }
-            do
-            {
-                shouldRetry = false;
-                request = ConfigureWebRequest(userRequest, reqDataLen);
-
-                // Determine the Request Address and add it to our properties bag
-                requestAddr = request.Address.ToString();
-                parameters[S3QueryParameter.RequestAddress] = requestAddr;
-
-                // Submit the request and read response body
-                try
-                {
-                    // Accessing the Request Stream for operations other than PUT results
-                    // is a ProtocolViolationException. Good thing to test is whether
-                    // the request data length > 0 or the HTTP Verb is "PUT"
-                    if (reqDataLen > 0)
-                    {
-                        using (Stream requestStream = request.GetRequestStream())
-                        {
-                            if (fStream != null)
-                            {
-                                WriteStreamToService(userRequest, reqDataLen, fStream, requestStream);
-                            }
-                            else
-                            {
-                                using (MemoryStream ms = new MemoryStream(requestData))
-                                {
-                                    WriteStreamToService(userRequest, reqDataLen, ms, requestStream);
-                                }
-                            }
-                        }
-                        this.logger.DebugFormat("Processed parameters and making request for {0} with {1} of bytes in request to {2}.", actionName, reqDataLen, request.RequestUri);
-                    }
-                    else
-                    {
-                        this.logger.DebugFormat("Processed parameters and making request for {0} to {1}.", actionName, request.RequestUri);
-                    }
-
-                    DateTime requestSent = DateTime.UtcNow;
-                    httpResponse = request.GetResponse() as HttpWebResponse;
-                    DateTime responseReceived = DateTime.UtcNow;
-
-                    if (httpResponse != null)
-                    {
-                        respHdrs = httpResponse.Headers;
-                        this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", actionName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
-
-                        statusCode = httpResponse.StatusCode;
-                        if (!IsRedirect(httpResponse))
-                        {
-                            // The request submission has completed. Retrieve the response.
-                            shouldRetry = ProcessRequestResponse<T>(httpResponse, parameters, myType, out response, out cause);
-                        }
-                        else
-                        {
-                            shouldRetry = true;
-
-                            ProcessRedirect(userRequest, httpResponse);
-                            this.logger.InfoFormat("Request for {0} is being redirect to {1}.", actionName, userRequest.parameters[S3QueryParameter.Url]);
-
-                            PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, httpResponse.Headers, cause);
-
-                            // The HTTPResponse object needs to be closed. Once this is done, the request
-                            // is gracefully terminated. Mind you, if this response object is not closed,
-                            // the client will start getting timeout errors.
-                            // P.S. This sequence of close-response followed by abort-request
-                            // will be repeated through the exception handlers for this try block
-                            httpResponse.Close();
-                            httpResponse = null;
-                            request.Abort();
-                        }
-                    }
-                }
-                // Web exception is thrown on unsucessful responses
-                catch (WebException we)
-                {
-                    this.logger.Debug(string.Format("Error making request {0}.", actionName), we);
-
-                    using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
-                    {
-                        shouldRetry = ProcessRequestError(actionName, request, we, errorResponse, requestAddr, out respHdrs, myType, out cause);
-
-                        if (httpResponse != null)
-                        {
-                            httpResponse.Close();
-                            httpResponse = null;
-                        }
-                        // Abort the unsuccessful request regardless of whether we should
-                        // or shouldn't retry.
-                        request.Abort();
-
-                        if (errorResponse != null)
-                        {
-                            statusCode = errorResponse.StatusCode;
-                        }
-                        else
-                        {
-                            statusCode = HttpStatusCode.BadRequest;
-                        }
-                    }
-                }
-                catch (IOException e)
-                {
-                    if (this.isInnerExceptionThreadAbort(e))
-                        throw;
-
-                    this.logger.Error(string.Format("Error making request {0}.", actionName), e);
-                    if (httpResponse != null)
-                    {
-                        httpResponse.Close();
-                        httpResponse = null;
-                    }
-                    // Abort the unsuccessful request
-                    request.Abort();
-
-                    if (retries <= maxRetries)
-                        shouldRetry = true;
-                    else
-                        throw;
-                }
-
-                if (shouldRetry)
-                {
-                    if (retries <= maxRetries)
-                    {
-                        this.logger.InfoFormat("Retry number {0} for request {1}.", retries, actionName);
-                    }
-                    PauseOnRetry(++retries, maxRetries, statusCode, requestAddr, respHdrs, cause);
-                    // Reset the request so that streams are recreated,
-                    // removed headers are added back, etc
-                    PrepareRequestForRetry(userRequest, orignalStreamPosition);
-                }
-            } while (shouldRetry && retries <= maxRetries);
-
-            return response;
+            pauseOnRetry(retries, this.config.MaxErrorRetry, statusCode, requestAddr, respHdrs, cause);
+            // Reset the request so that streams are recreated,
+            // removed headers are added back, etc
+            prepareRequestForRetry(userRequest, orignalStreamPosition);
         }
 
-        private bool isInnerExceptionThreadAbort(Exception e)
+        bool handleIOException(S3Request userRequest, HttpWebRequest request, HttpWebResponse httpResponse, IOException e, int retries)
+        {
+            if (isInnerExceptionThreadAbort(e))
+                throw e;
+
+            string actionName = userRequest.parameters[S3QueryParameter.Action];
+            LOGGER.Error(string.Format("Error making request {0}.", actionName), e);
+            if (httpResponse != null)
+            {
+                httpResponse.Close();
+                httpResponse = null;
+            }
+            // Abort the unsuccessful request
+            request.Abort();
+
+            return retries <= this.config.MaxErrorRetry;
+        }
+
+        bool isInnerExceptionThreadAbort(Exception e)
         {
             if (e.InnerException is ThreadAbortException)
                 return true;
@@ -2916,7 +4571,88 @@ namespace Amazon.S3
             return false;
         }
 
-        private static void ProcessRedirect(S3Request userRequest, HttpWebResponse httpResponse)
+        bool handleHttpWebErrorResponse(S3Request userRequest, WebException we, HttpWebRequest request, HttpWebResponse httpResponse, out Exception cause, out HttpStatusCode statusCode)
+        {
+            WebHeaderCollection respHdrs;
+            string actionName = userRequest.parameters[S3QueryParameter.Action];
+            string requestAddr = request.Address.ToString();
+
+            LOGGER.Debug(string.Format("Error making request {0}.", actionName), we);
+
+
+            bool shouldRetry;
+            using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
+            {
+                shouldRetry = processRequestError(actionName, request, we, errorResponse, requestAddr, out respHdrs, typeof(AmazonS3Client), out cause);
+
+                if (httpResponse != null)
+                {
+                    httpResponse.Close();
+                    httpResponse = null;
+                }
+                // Abort the unsuccessful request regardless of whether we should
+                // or shouldn't retry.
+                request.Abort();
+
+                if (errorResponse != null)
+                {
+                    statusCode = errorResponse.StatusCode;
+                }
+                else
+                {
+                    statusCode = HttpStatusCode.BadRequest;
+                }
+            }
+
+            return shouldRetry;
+        }
+
+        bool handleHttpResponse<T>(S3Request userRequest, HttpWebRequest request, HttpWebResponse httpResponse,
+            int retries,
+            TimeSpan lengthOfRequest, out T response, out Exception cause, out HttpStatusCode statusCode)
+            where T : S3Response, new()
+        {
+            response = null;
+            cause = null;
+            WebHeaderCollection respHdrs = httpResponse.Headers;
+            statusCode = httpResponse.StatusCode;
+            Map parameters = userRequest.parameters;
+            string actionName = parameters[S3QueryParameter.Action];
+            string requestAddr = request.Address.ToString();
+
+            bool shouldRetry;
+            respHdrs = httpResponse.Headers;
+            LOGGER.InfoFormat("Received response for {0} with status code {1} in {2} ms.", actionName, httpResponse.StatusCode, lengthOfRequest.TotalMilliseconds);
+
+            statusCode = httpResponse.StatusCode;
+            if (!isRedirect(httpResponse))
+            {
+                // The request submission has completed. Retrieve the response.
+                shouldRetry = processRequestResponse<T>(httpResponse, parameters, myType, out response, out cause);
+            }
+            else
+            {
+                shouldRetry = true;
+
+                processRedirect(userRequest, httpResponse);
+                LOGGER.InfoFormat("Request for {0} is being redirect to {1}.", actionName, userRequest.parameters[S3QueryParameter.Url]);
+
+                pauseOnRetry(retries + 1, this.config.MaxErrorRetry, statusCode, requestAddr, httpResponse.Headers, cause);
+
+                // The HTTPResponse object needs to be closed. Once this is done, the request
+                // is gracefully terminated. Mind you, if this response object is not closed,
+                // the client will start getting timeout errors.
+                // P.S. This sequence of close-response followed by abort-request
+                // will be repeated through the exception handlers for this try block
+                httpResponse.Close();
+                httpResponse = null;
+                request.Abort();
+            }
+
+            return shouldRetry;
+        }
+
+        static void processRedirect(S3Request userRequest, HttpWebResponse httpResponse)
         {
             if (httpResponse == null)
             {
@@ -2936,7 +4672,7 @@ namespace Amazon.S3
             }
         }
 
-        private static bool IsRedirect(HttpWebResponse httpResponse)
+        static bool isRedirect(HttpWebResponse httpResponse)
         {
             if (httpResponse == null)
             {
@@ -2953,7 +4689,7 @@ namespace Amazon.S3
          * 1. Add removed headers back to the request's headers
          * 2. If the InputStream is not-null, reset its position to 0
          */
-        private void PrepareRequestForRetry(S3Request request, long orignalStreamPosition)
+        void prepareRequestForRetry(S3Request request, long orignalStreamPosition)
         {
             if (request.InputStream != null)
             {
@@ -2966,7 +4702,7 @@ namespace Amazon.S3
             }
         }
 
-        private static bool ProcessRequestResponse<T>(HttpWebResponse httpResponse, IDictionary<S3QueryParameter, string> parameters, Type t, out T response, out Exception cause)
+        bool processRequestResponse<T>(HttpWebResponse httpResponse, IDictionary<S3QueryParameter, string> parameters, Type t, out T response, out Exception cause)
             where T : S3Response, new()
         {
             response = default(T);
@@ -3055,13 +4791,12 @@ namespace Amazon.S3
                             responseBody = reader.ReadToEnd().Trim();
                         }
 
-#if TRACE
                         DateTime streamRead = DateTime.UtcNow;
-#endif
+
                         if (responseBody.EndsWith("/Error>"))
                         {
                             // Even though we received a 200 OK, there is a possibility of receiving an error
-                            string transformed = Transform(responseBody, "S3Error", t);
+                            string transformed = transform(responseBody, "S3Error", t);
                             // Attempt to deserialize response into S3ErrorResponse type
                             S3Error error;
                             XmlSerializer serializer = new XmlSerializer(typeof(S3Error));
@@ -3076,25 +4811,21 @@ namespace Amazon.S3
                         // Perform response transformation
                         else if (responseBody.EndsWith(">"))
                         {
-                            string transformed = Transform(responseBody, actionName, t);
+                            string transformed = transform(responseBody, actionName, t);
 
-#if TRACE
                             DateTime streamParsed = DateTime.UtcNow;
-#endif
+
                             // Attempt to deserialize response into <Action> Response type
                             XmlSerializer serializer = new XmlSerializer(typeof(T));
                             using (XmlTextReader sr = new XmlTextReader(new StringReader(transformed)))
                             {
                                 response = (T)serializer.Deserialize(sr);
                             }
-#if TRACE
                             DateTime objectCreated = DateTime.UtcNow;
-                            Trace.Write(
-                                String.Format("{0}, {1}, ",
+                            LOGGER.InfoFormat("{0}, {1}, ",
                                 (streamParsed - streamRead).TotalMilliseconds,
                                 (objectCreated - streamParsed).TotalMilliseconds
-                                ));
-#endif
+                                );
                         }
                         else
                         {
@@ -3138,7 +4869,7 @@ namespace Amazon.S3
             return shouldRetry;
         }
 
-        private bool ProcessRequestError(string actionName, HttpWebRequest request, WebException we, HttpWebResponse errorResponse, string requestAddr, out WebHeaderCollection respHdrs, Type t, out Exception cause)
+        private bool processRequestError(string actionName, HttpWebRequest request, WebException we, HttpWebResponse errorResponse, string requestAddr, out WebHeaderCollection respHdrs, Type t, out Exception cause)
         {
             bool shouldRetry = false;
             HttpStatusCode statusCode = default(HttpStatusCode);
@@ -3150,7 +4881,7 @@ namespace Amazon.S3
 
             if (errorResponse == null)
             {
-                this.logger.Error(string.Format("Error making request {0}.", actionName), we);
+                LOGGER.Error(string.Format("Error making request {0}.", actionName), we);
                 throw we;
             }
 
@@ -3186,7 +4917,7 @@ namespace Amazon.S3
                     respHdrs
                     );
 
-                this.logger.Error(string.Format("Error making request {0}.", actionName), excep);
+                LOGGER.Error(string.Format("Error making request {0}.", actionName), excep);
                 throw excep;
             }
 
@@ -3199,7 +4930,7 @@ namespace Amazon.S3
             else
             {
                 // Attempt to deserialize response into ErrorResponse type
-                using (XmlTextReader sr = new XmlTextReader(new StringReader(Transform(responseBody, "S3Error", t))))
+                using (XmlTextReader sr = new XmlTextReader(new StringReader(transform(responseBody, "S3Error", t))))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(S3Error));
                     S3Error error = (S3Error)serializer.Deserialize(sr);
@@ -3216,7 +4947,7 @@ namespace Amazon.S3
                         respHdrs
                         );
 
-                    this.logger.Error(string.Format("Error making request {0}.", actionName), excep);
+                    LOGGER.Error(string.Format("Error making request {0}.", actionName), excep);
                     throw excep;
                 }
             }
@@ -3233,7 +4964,7 @@ namespace Amazon.S3
          * - urlPrefix
          * - Query
          */
-        private static void AddUrlToParameters(S3Request request, AmazonS3Config config)
+        void addUrlToParameters(S3Request request, AmazonS3Config config)
         {
             Map parameters = request.parameters;
 
@@ -3281,7 +5012,7 @@ namespace Amazon.S3
          * Configure HttpClient with set of defaults as well as configuration
          * from AmazonEC2Config instance
          */
-        private HttpWebRequest ConfigureWebRequest(S3Request request, long contentLength)
+        HttpWebRequest configureWebRequest(S3Request request, long contentLength)
         {
             WebHeaderCollection headers = request.Headers;
             Map parameters = request.parameters;
@@ -3306,11 +5037,11 @@ namespace Amazon.S3
                             config.ProxyUsername,
                             config.ProxyPassword ?? String.Empty
                             );
-                        this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1} for user {2}.", config.ProxyHost, config.ProxyPort, config.ProxyUsername); 
+                        LOGGER.DebugFormat("Configured request to use proxy with host {0} and port {1} for user {2}.", config.ProxyHost, config.ProxyPort, config.ProxyUsername);
                     }
                     else
                     {
-                        this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
+                        LOGGER.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
                     }
                     httpRequest.Proxy = proxy;
                 }
@@ -3392,7 +5123,7 @@ namespace Amazon.S3
         /**
          * Exponential sleep on failed request
          */
-        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status, string requestAddr, WebHeaderCollection headers, Exception cause)
+        void pauseOnRetry(int retries, int maxRetries, HttpStatusCode status, string requestAddr, WebHeaderCollection headers, Exception cause)
         {
             if (retries <= maxRetries)
             {
@@ -3414,15 +5145,16 @@ namespace Amazon.S3
         /*
          *  Transforms response based on xslt template
          */
-        private static string Transform(string responseBody, string actionName, Type t)
+        string transform(string responseBody, string actionName, Type t)
         {
+            XslCompiledTransform transformer = new XslCompiledTransform();
             char[] seps = { ',' };
             Assembly assembly = Assembly.GetAssembly(t);
 
             string assemblyName = assembly.FullName;
             assemblyName = assemblyName.Split(seps)[0];
 
-            // Build the name of the xslt Transform to apply to the response
+            // Build the name of the xslt transform to apply to the response
             string ns = t.Namespace;
             string resourceName = String.Concat(
                 assemblyName,
@@ -3433,14 +5165,18 @@ namespace Amazon.S3
                 "Response.xslt"
                 );
 
-            XslCompiledTransform transformer = AWSSDKUtils.GetXslCompiledTransform(resourceName);
-            StringBuilder sb = new StringBuilder(1024);
-            using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
+            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
             {
-                using (StringWriter sw = new StringWriter(sb))
+                transformer.Load(xmlReader);
+
+                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
                 {
-                    transformer.Transform(xmlR, null, sw);
-                    return sb.ToString();
+                    StringBuilder sb = new StringBuilder(1024);
+                    using (StringWriter sw = new StringWriter(sb))
+                    {
+                        transformer.Transform(xmlR, null, sw);
+                        return sb.ToString();
+                    }
                 }
             }
         }
@@ -3450,7 +5186,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="acl">Enum for the type of canned acl wanted</param>
-        private static void SetCannedACLHeader(WebHeaderCollection headers, S3CannedACL acl)
+        void setCannedACLHeader(WebHeaderCollection headers, S3CannedACL acl)
         {
             headers[S3Constants.AmzAclHeader] = S3Constants.CannedAcls[(int)acl];
         }
@@ -3463,7 +5199,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="eTag">The ETag to match against</param>
-        private static void SetIfMatchHeader(WebHeaderCollection headers, string eTag)
+        void setIfMatchHeader(WebHeaderCollection headers, string eTag)
         {
             headers[AWSSDKUtils.IfMatchHeader] = eTag;
         }
@@ -3476,7 +5212,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="eTag">The ETag to match against</param>
-        private static void SetIfNoneMatchHeader(WebHeaderCollection headers, string eTag)
+        void setIfNoneMatchHeader(WebHeaderCollection headers, string eTag)
         {
             headers["If-None-Match"] = eTag;
         }
@@ -3489,7 +5225,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="date">DateTime Object representing the date to use</param>
-        private static void SetIfModifiedSinceHeader(WebHeaderCollection headers, DateTime date)
+        void setIfModifiedSinceHeader(WebHeaderCollection headers, DateTime date)
         {
             headers[AWSSDKUtils.IfModifiedSinceHeader] = date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat);
         }
@@ -3502,7 +5238,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="date">DateTime Object representing the date to use</param>
-        private static void SetIfUnmodifiedSinceHeader(WebHeaderCollection headers, DateTime date)
+        void setIfUnmodifiedSinceHeader(WebHeaderCollection headers, DateTime date)
         {
             headers["If-Unmodified-Since"] = date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat);
         }
@@ -3515,7 +5251,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="eTag">The ETag to match against</param>
-        private static void SetIfMatchCopyHeader(WebHeaderCollection headers, string eTag)
+        void setIfMatchCopyHeader(WebHeaderCollection headers, string eTag)
         {
             headers["x-amz-copy-source-if-match"] = eTag;
         }
@@ -3528,7 +5264,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="eTag">The ETag to match against</param>
-        private static void SetIfNoneMatchCopyHeader(WebHeaderCollection headers, string eTag)
+        void setIfNoneMatchCopyHeader(WebHeaderCollection headers, string eTag)
         {
             headers["x-amz-copy-source-if-none-match"] = eTag;
         }
@@ -3541,7 +5277,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="date">DateTime Object representing the date to use</param>
-        private static void SetIfModifiedSinceCopyHeader(WebHeaderCollection headers, DateTime date)
+        void setIfModifiedSinceCopyHeader(WebHeaderCollection headers, DateTime date)
         {
             headers["x-amz-copy-source-if-modified-since"] = date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat);
         }
@@ -3554,7 +5290,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="date">DateTime Object representing the date to use</param>
-        private static void SetIfUnmodifiedSinceCopyHeader(WebHeaderCollection headers, DateTime date)
+        void setIfUnmodifiedSinceCopyHeader(WebHeaderCollection headers, DateTime date)
         {
             headers["x-amz-copy-source-if-unmodified-since"] = date.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat);
         }
@@ -3567,7 +5303,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="directive">Either COPY or REPLACE</param>
-        private static void SetMetadataDirectiveHeader(WebHeaderCollection headers, S3MetadataDirective directive)
+        void setMetadataDirectiveHeader(WebHeaderCollection headers, S3MetadataDirective directive)
         {
             headers[S3Constants.AmzMetadataDirectiveHeader] = S3Constants.MetaDataDirectives[(int)directive];
         }
@@ -3579,7 +5315,7 @@ namespace Amazon.S3
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="bucket">The source bucket</param>
         /// <param name="key">The source key</param>
-        private static void SetCopySourceHeader(WebHeaderCollection headers, string bucket, string key)
+        void setCopySourceHeader(WebHeaderCollection headers, string bucket, string key)
         {
             string source = bucket;
             if (key != null)
@@ -3594,7 +5330,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="versionId">The versionId of the desired S3 object</param>
-        private static void SetVersionIdHeader(WebHeaderCollection headers, string versionId)
+        void setVersionIdHeader(WebHeaderCollection headers, string versionId)
         {
             headers[S3Constants.AmzVersionIdHeader] = versionId;
         }
@@ -3604,7 +5340,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="mfaCodes">The tuple of the authentication device codes</param>
-        private static void SetMfaHeader(WebHeaderCollection headers, Tuple<string, string> mfaCodes)
+        void setMfaHeader(WebHeaderCollection headers, Tuple<string, string> mfaCodes)
         {
             headers[S3Constants.AmzMfaHeader] = String.Concat(mfaCodes.First, " ", mfaCodes.Second);
         }
@@ -3613,7 +5349,7 @@ namespace Amazon.S3
          * Creates a string based on the parameters and encrypts it using
          * key. Returns the encrypted string.
          */
-        private static string BuildSigningString(IDictionary<S3QueryParameter, string> parameters, WebHeaderCollection webHeaders)
+        string buildSigningString(IDictionary<S3QueryParameter, string> parameters, WebHeaderCollection webHeaders)
         {
             StringBuilder sb = new StringBuilder("", 256);
             string value = null;
@@ -3651,7 +5387,7 @@ namespace Amazon.S3
             else
             {
                 sb.Append("\n");
-                sb.Append(BuildCanonicalizedHeaders(webHeaders));
+                sb.Append(buildCanonicalizedHeaders(webHeaders));
             }
             if (parameters.ContainsKey(S3QueryParameter.CanonicalizedResource))
             {
@@ -3671,7 +5407,7 @@ namespace Amazon.S3
         /**
          * Returns a string of all x-amz headers sorted by Ordinal.
          */
-        private static StringBuilder BuildCanonicalizedHeaders(WebHeaderCollection headers)
+        StringBuilder buildCanonicalizedHeaders(WebHeaderCollection headers)
         {
             // Build a sorted list of headers that start with x-amz
             List<string> list = new List<string>(headers.Count);
@@ -3697,6 +5433,221 @@ namespace Amazon.S3
             return sb;
         }
 
+        #endregion
+
+        #region Async Classes
+        class S3AsyncResult : IAsyncResult
+        {
+            bool _isComplete;
+            bool _completedSynchronously;
+            ManualResetEvent _waitHandle;
+            S3Request _s3Request;
+            AsyncCallback _callback;
+            RequestState _requestState;
+            long _orignalStreamPosition;
+            object _state;
+            int _retiresAttempt;
+            Exception _exception;
+            S3Response _finalResponse;
+            Dictionary<string, object> _parameters;
+            object _lockObj;
+
+            internal S3AsyncResult(S3Request s3Request, object state, AsyncCallback callback, bool completeSynchronized)
+            {
+                this._s3Request = s3Request;
+                this._callback = callback;
+                this._state = state;
+                this._completedSynchronously = completeSynchronized;
+
+                this._lockObj = new object();
+            }
+
+            internal S3Request S3Request
+            {
+                get { return this._s3Request; }
+                set { this._s3Request = value; }
+            }
+
+            internal Exception Exception
+            {
+                get { return this._exception; }
+                set { this._exception = value; }
+            }
+
+            internal long OrignalStreamPosition
+            {
+                get { return this._orignalStreamPosition; }
+                set { this._orignalStreamPosition = value; }
+            }
+
+            internal int RetriesAttempt
+            {
+                get { return this._retiresAttempt; }
+                set { this._retiresAttempt = value; }
+            }
+
+            internal AsyncCallback Callback
+            {
+                get { return this._callback; }
+            }
+
+            internal void SignalWaitHandle()
+            {
+                this._isComplete = true;
+
+                if (this._waitHandle != null)
+                {
+                    this._waitHandle.Set();
+                }
+            }
+
+            internal object State
+            {
+                get { return this._state; }
+            }
+
+            public bool CompletedSynchronously
+            {
+                get { return this._completedSynchronously; }
+            }
+
+            internal void SetCompletedSynchronously(bool completedSynchronously)
+            {
+                this._completedSynchronously = completedSynchronously;
+            }
+
+            public bool IsCompleted
+            {
+                get { return this._isComplete; }
+            }
+
+            internal void SetIsComplete(bool isComplete)
+            {
+                this._isComplete = isComplete;
+            }
+
+            public object AsyncState
+            {
+                get { return this._state; }
+            }
+
+            public WaitHandle AsyncWaitHandle
+            {
+                get
+                {
+                    if (this._waitHandle != null)
+                    {
+                        return this._waitHandle;
+                    }
+
+                    lock (this._lockObj)
+                    {
+                        if (this._waitHandle == null)
+                        {
+                            this._waitHandle = new ManualResetEvent(this._isComplete);
+                        }
+                    }
+
+                    return this._waitHandle;
+                }
+            }
+
+            internal RequestState RequestState
+            {
+                get { return this._requestState; }
+                set { this._requestState = value; }
+            }
+
+
+            internal S3Response FinalResponse
+            {
+                get { return this._finalResponse; }
+                set
+                {
+                    this._finalResponse = value;
+                }
+            }
+
+            internal Dictionary<string, object> Parameters
+            {
+                get
+                {
+                    if (this._parameters == null)
+                    {
+                        this._parameters = new Dictionary<string, object>();
+                    }
+
+                    return this._parameters;
+                }
+            }
+        }
+
+
+        class RequestState
+        {
+            Stream _inputStream;
+            byte[] _requestData;
+            long _requestDataLength;
+            HttpWebRequest _webRequest;
+            Map _parameters;
+            long _webRequestStart;
+            bool _getRequestStreamCallbackCalled;
+            bool _getResponseCallbackCalled;
+
+
+            public RequestState(HttpWebRequest webRequest, Map parameters, Stream inputStream, byte[] requestData, long requestDataLength)
+            {
+                this._webRequest = webRequest;
+                this._parameters = parameters;
+                this._inputStream = inputStream;
+                this._requestData = requestData;
+                this._requestDataLength = requestDataLength;
+                this._webRequestStart = DateTime.Now.Ticks;
+            }
+
+            internal HttpWebRequest WebRequest
+            {
+                get { return this._webRequest; }
+            }
+
+            internal Map Parameters
+            {
+                get { return this._parameters; }
+            }
+
+            internal Stream InputStream
+            {
+                get { return this._inputStream; }
+            }
+
+            internal byte[] RequestData
+            {
+                get { return this._requestData; }
+            }
+
+            internal long RequestDataLength
+            {
+                get { return this._requestDataLength; }
+            }
+
+            internal long WebRequestStart
+            {
+                get { return this._webRequestStart; }
+                set { this._webRequestStart = value; }
+            }
+
+            internal bool GetRequestStreamCallbackCalled
+            {
+                get { return this._getRequestStreamCallbackCalled; }
+                set { this._getRequestStreamCallbackCalled = value; }
+            }
+
+            internal bool GetResponseCallbackCalled
+            {
+                get { return this._getResponseCallbackCalled; }
+                set { this._getResponseCallbackCalled = value; }
+            }
+        }
         #endregion
     }
 }

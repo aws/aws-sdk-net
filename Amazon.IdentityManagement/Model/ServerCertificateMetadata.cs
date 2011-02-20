@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The ServerCertificateMetadata contains information about a
-    /// server certificate without its certificate body, certificate chain and
+    /// <para>ServerCertificateMetadata contains information about a server
+    /// certificate without its certificate body, certificate chain, and
     /// private key.</para> <para>This data type is used as a response element
     /// in the action UploadServerCertificate and
     /// ListServerCertificates.</para>
@@ -37,10 +37,9 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? uploadDate;
 
         /// <summary>
-        /// Path to the server certificate. For more information about paths, see
-        /// Identifiers for Users and Groups in <a
-        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
-        /// target="_blank">Using AWS Identity and Access Management</a>.
+        /// Path to the server certificate. For more information about paths, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
+        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -73,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
@@ -113,17 +113,17 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if ServerCertificateName property is set
         internal bool IsSetServerCertificateName()
         {
-            return this.serverCertificateName != null;      
+            return this.serverCertificateName != null;       
         }
 
         /// <summary>
-        /// The stable and unique string identifying the server certificate. For
-        /// more information about IDs, see Identifiers for Users and Groups in <a
-        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
-        /// target="_blank">Using AWS Identity and Access Management</a>.
+        /// The stable and unique string identifying the server certificate. For more information about IDs, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
+        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -156,18 +156,17 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if ServerCertificateId property is set
         internal bool IsSetServerCertificateId()
         {
-            return this.serverCertificateId != null;        
+            return this.serverCertificateId != null;       
         }
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) specifying the server certificate. For
-        /// more information about ARNs and how to use them in policies, see
-        /// Identifiers for Users and Groups in <a
-        /// href="http://aws.amazon.com/documentation/iam/" target="_blank">Using
-        /// AWS Identity and Access Management</a>.
+        /// The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
+        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -196,14 +195,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;        
+            return this.arn != null;       
         }
 
         /// <summary>
-        /// The date on which the server certificate was uploaded.
+        /// The date when the server certificate was uploaded.
         ///  
         /// </summary>
         public DateTime UploadDate
@@ -223,10 +223,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UploadDate property is set
         internal bool IsSetUploadDate()
         {
-            return this.uploadDate.HasValue;        
+            return this.uploadDate.HasValue;       
         }
     }
 }

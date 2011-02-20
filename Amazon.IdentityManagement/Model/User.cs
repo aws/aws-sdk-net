@@ -38,12 +38,12 @@ namespace Amazon.IdentityManagement.Model
         private string userName;
         private string userId;
         private string arn;
+        private DateTime? createDate;
 
         /// <summary>
-        /// Path to the User name. For more information about paths, see
-        /// Identifiers for Users and Groups in <a
-        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
-        /// target="_blank">Using AWS Identity and Access Management</a>.
+        /// Path to the User name. For more information about paths, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
+        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -76,6 +76,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
@@ -116,6 +117,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -123,10 +125,9 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The stable and unique string identifying the User. For more
-        /// information about IDs, see Identifiers for Users and Groups in <a
-        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
-        /// target="_blank">Using AWS Identity and Access Management</a>.
+        /// The stable and unique string identifying the User. For more information about IDs, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
+        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -159,18 +160,17 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserId property is set
         internal bool IsSetUserId()
         {
-            return this.userId != null;         
+            return this.userId != null;       
         }
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) specifying the User. For more
-        /// information about ARNs and how to use them in policies, see
-        /// Identifiers for Users and Groups in <a
-        /// href="http://docs.amazonwebservices.com/IAM/2010-05-08/UserGuide/"
-        /// target="_blank">Using AWS Identity and Access Management</a>.
+        /// The Amazon Resource Name (ARN) specifying the User. For more information about ARNs and how to use them in policies, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
+        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -199,10 +199,39 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;        
+            return this.arn != null;       
+        }
+
+        /// <summary>
+        /// The date when the User was created.
+        ///  
+        /// </summary>
+        public DateTime CreateDate
+        {
+            get { return this.createDate ?? default(DateTime); }
+            set { this.createDate = value; }
+        }
+
+        /// <summary>
+        /// Sets the CreateDate property
+        /// </summary>
+        /// <param name="createDate">The value to set for the CreateDate property </param>
+        /// <returns>this instance</returns>
+        public User WithCreateDate(DateTime createDate)
+        {
+            this.createDate = createDate;
+            return this;
+        }
+            
+
+        // Check to see if CreateDate property is set
+        internal bool IsSetCreateDate()
+        {
+            return this.createDate.HasValue;       
         }
     }
 }

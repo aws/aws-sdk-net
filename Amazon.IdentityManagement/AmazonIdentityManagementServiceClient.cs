@@ -27,31 +27,21 @@ namespace Amazon.IdentityManagement
     /// <summary>
     /// Implemenation for accessing AmazonIdentityManagementService.
     ///  
-    /// AWS Identity and Access Management <para>AWS Identity and Access
-    /// Management (IAM) is a web service that enables Amazon Web Services
-    /// (AWS) customers to manage Users and User permissions under their AWS
-    /// Account.</para> <para>This is the AWS Identity and Access Management
-    /// API Reference. This guide describes who should read this guide and
-    /// other resources related to IAM. </para> <para>Use of this guide
-    /// assumes you are familiar with the following:</para>
-    /// <ul>
-    /// <li>Basic understanding of web services (for information, go to W3
-    /// Schools Web Services Tutorial at
-    /// http://www.w3schools.com/webservices/default.asp).</li>
-    /// <li>XML (for information, go to W3 Schools XML Tutorial at
-    /// http://www.w3schools.com/xml/default.asp).</li>
-    /// <li>JSON (for information, go to http://json.org)</li>
-    /// <li>The specific AWS products you are using or plan to use (e.g.,
-    /// Amazon Elastic Compute Cloud (Amazon EC2), Amazon Simple Storage
-    /// Service (Amazon S3), etc.)</li>
-    /// 
-    /// </ul>
-    /// <para>If you're new to AWS and need additional technical information
-    /// about a specific AWS product, you can find the product's technical
-    /// documentation at http://aws.amazon.com/documentation/.</para> <para>We
-    /// will refer to Amazon AWS Identity and Access Management using the
-    /// abbreviated form IAM; all copyrights and legal protections still
-    /// apply.</para>
+    /// AWS Identity and Access Management <para>This is the AWS Identity and
+    /// Access Management (IAM) API Reference. This guide provides
+    /// descriptions of the IAM API as well as links to related content in the
+    /// guide, Using IAM.</para> <para>AWS Identity and Access Management
+    /// (IAM) is a web service that enables Amazon Web Services (AWS)
+    /// customers to manage Users and User permissions under their AWS
+    /// Account.</para> <para>For more information about this product go to
+    /// AWS Identity and Access Management (IAM). For specific information
+    /// about setting up signatures and authorization through the API, go to
+    /// Making Query Requests in the Using IAM guide.</para> <para>If you're
+    /// new to AWS and need additional technical information about a specific
+    /// AWS product, you can find the product's technical documentation at
+    /// http://aws.amazon.com/documentation/.</para> <para>We will refer to
+    /// Amazon AWS Identity and Access Management using the abbreviated form
+    /// IAM. All copyrights and legal protections still apply.</para>
     /// </summary>
     public class AmazonIdentityManagementServiceClient : AmazonWebServiceClient, AmazonIdentityManagementService
     {
@@ -130,6 +120,25 @@ namespace Amazon.IdentityManagement
     
 
          /// <summary>
+         /// <para>Deletes the specified AWS Account alias. For information about
+         /// using an AWS Account alias, see Using an Alias for Your AWS Account ID
+         /// in <i>Using AWS Identity and Access Management</i> .</para>
+         /// </summary>
+         /// 
+         /// <param name="deleteAccountAliasRequest">Container for the necessary
+         ///           parameters to execute the DeleteAccountAlias service method on
+         ///           AmazonIdentityManagementService.</param>
+         /// 
+         /// <exception cref="NoSuchEntityException"/>
+        public DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest deleteAccountAliasRequest) 
+        {           
+            IRequest<DeleteAccountAliasRequest> request = new DeleteAccountAliasRequestMarshaller().Marshall(deleteAccountAliasRequest);
+            DeleteAccountAliasResponse response = Invoke<DeleteAccountAliasRequest, DeleteAccountAliasResponse> (request, this.signer, DeleteAccountAliasResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
          /// <para>Returns information about the signing certificates associated
          /// with the specified User. If there are none, the action returns an
          /// empty list.</para> <para>Although each User is limited to a small
@@ -170,8 +179,8 @@ namespace Amazon.IdentityManagement
          /// the AWS Account has no associated Users.</para>
          /// <para><b>NOTE:</b>Because the body of a X.509 certificate can be
          /// large, you should use POST rather than GET when calling
-         /// UploadSigningCertificate. For more information, see Using the Query
-         /// API in Using AWS Identity and Access Management.</para>
+         /// UploadSigningCertificate. For more information, see Making Query
+         /// Requests in Using AWS Identity and Access Management.</para>
          /// </summary>
          /// 
          /// <param name="uploadSigningCertificateRequest">Container for the
@@ -215,14 +224,14 @@ namespace Amazon.IdentityManagement
 
          /// <summary>
          /// <para>Adds (or updates) a policy document associated with the
-         /// specified User. For information about how to write a policy, refer to
-         /// Using AWS Identity and Access Management.</para> <para>For information
-         /// about limits on the number of policies you can associate with a User,
-         /// see Limitations on IAM Entities in Using AWS Identity and Access
-         /// Management.</para> <para><b>NOTE:</b>Because policy documents can be
-         /// large, you should use POST rather than GET when calling PutUserPolicy.
-         /// For more information, see Using the Query API in Using AWS Identity
-         /// and Access Management.</para>
+         /// specified User. For information about policies, refer to Overview of
+         /// Policies in <i>Using AWS Identity and Access Management</i> .</para>
+         /// <para>For information about limits on the number of policies you can
+         /// associate with a User, see Limitations on IAM Entities in <i>Using AWS
+         /// Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because
+         /// policy documents can be large, you should use POST rather than GET
+         /// when calling PutUserPolicy. For more information, see Making Query
+         /// Requests in Using AWS Identity and Access Management.</para>
          /// </summary>
          /// 
          /// <param name="putUserPolicyRequest">Container for the necessary
@@ -242,7 +251,7 @@ namespace Amazon.IdentityManagement
 
          /// <summary>
          /// <para>Lists the server certificates that have the specified path
-         /// prefix. If there are none, the action returns an empty list.</para>
+         /// prefix. If none exist, the action returns an empty list.</para>
          /// <para>You can paginate the results using the <c>MaxItems</c> and
          /// <c>Marker</c> parameters.</para>
          /// </summary>
@@ -287,12 +296,7 @@ namespace Amazon.IdentityManagement
 
          /// <summary>
          /// <para>Updates the login profile for the specified User. Use this API
-         /// to change the User's password.</para> <para><b>NOTE:</b>In the full
-         /// release you will be able to use IAM to access your services through
-         /// the AWS Management Console. Although this feature is not currently
-         /// available, you can create login profiles for your Users now. Then,
-         /// when this feature is implemented, your Users can use IAM to access
-         /// your services through the AWS Management Console.</para>
+         /// to change the User's password.</para>
          /// </summary>
          /// 
          /// <param name="updateLoginProfileRequest">Container for the necessary
@@ -313,8 +317,8 @@ namespace Amazon.IdentityManagement
          /// <para>Updates the name and/or the path of the specified server
          /// certificate.</para> <para><b>IMPORTANT:</b> You should understand the
          /// implications of changing a server certificate's path or name. For more
-         /// information, see Renaming Users and Groups in Using AWS Identity and
-         /// Access Management. </para> <para><b>NOTE:</b>To change a server
+         /// information, see Managing Server Certificates in Using AWS Identity
+         /// and Access Management. </para> <para><b>NOTE:</b>To change a server
          /// certificate name the requester must have appropriate permissions on
          /// both the source object and the target object. For example, to change
          /// the name from ProductionCert to ProdCert, the entity making the
@@ -373,12 +377,7 @@ namespace Amazon.IdentityManagement
          /// line interface or the API. To prevent all User access you must also
          /// either make the access key inactive or delete it. For more
          /// information about making keys inactive or deleting them, see
-         /// UpdateAccessKey and DeleteAccessKey. </para> <para><b>NOTE:</b>In the
-         /// full release you will be able to use IAM to access your services
-         /// through the AWS Management Console. Although this feature is not
-         /// currently available, you can create login profiles for your Users now.
-         /// Then, when this feature is implemented, your Users can use IAM to
-         /// access your services through the AWS Management Console.</para>
+         /// UpdateAccessKey and DeleteAccessKey. </para>
          /// </summary>
          /// 
          /// <param name="deleteLoginProfileRequest">Container for the necessary
@@ -405,7 +404,8 @@ namespace Amazon.IdentityManagement
          /// under the AWS Account, this API can be used to manage root credentials
          /// even if the AWS Account has no associated Users.</para> <para>For
          /// information about rotating certificates, see Managing Keys and
-         /// Certificates in Using AWS Identity and Access Management.</para>
+         /// Certificates in <i>Using AWS Identity and Access Management</i>
+         /// .</para>
          /// </summary>
          /// 
          /// <param name="updateSigningCertificateRequest">Container for the
@@ -511,14 +511,15 @@ namespace Amazon.IdentityManagement
 
          /// <summary>
          /// <para>Adds (or updates) a policy document associated with the
-         /// specified group. For information about how to write a policy, refer to
-         /// Using AWS Identity and Access Management.</para> <para>For information
-         /// about limits on the number of policies you can associate with a group,
-         /// see Limitations on IAM Entities in Using AWS Identity and Access
-         /// Management.</para> <para><b>NOTE:</b>Because policy documents can be
-         /// large, you should use POST rather than GET when calling
-         /// PutGroupPolicy. For more information, see Using the Query API in Using
-         /// AWS Identity and Access Management.</para>
+         /// specified group. For information about policies, refer to Overview of
+         /// Policies in <i>Using AWS Identity and Access Management</i> .</para>
+         /// <para>For information about limits on the number of policies you can
+         /// associate with a group, see Limitations on IAM Entities in <i>Using
+         /// AWS Identity and Access Management</i> .</para>
+         /// <para><b>NOTE:</b>Because policy documents can be large, you should
+         /// use POST rather than GET when calling PutGroupPolicy. For more
+         /// information, see Making Query Requests in Using AWS Identity and
+         /// Access Management.</para>
          /// </summary>
          /// 
          /// <param name="putGroupPolicyRequest">Container for the necessary
@@ -539,8 +540,8 @@ namespace Amazon.IdentityManagement
          /// <summary>
          /// <para>Creates a new User for your AWS Account.</para> <para>For
          /// information about limitations on the number of Users you can create,
-         /// see Limitations on IAM Entities in Using AWS Identity and Access
-         /// Management.</para>
+         /// see Limitations on IAM Entities in <i>Using AWS Identity and Access
+         /// Management</i> .</para>
          /// </summary>
          /// 
          /// <param name="createUserRequest">Container for the necessary parameters
@@ -585,7 +586,7 @@ namespace Amazon.IdentityManagement
 
          /// <summary>
          /// <para>Enables the specified MFA device and associates it with the
-         /// specified User name. Once enabled, the MFA device is required for
+         /// specified User name. When enabled, the MFA device is required for
          /// every subsequent login by the User name associated with the
          /// device.</para>
          /// </summary>
@@ -663,12 +664,6 @@ namespace Amazon.IdentityManagement
 
          /// <summary>
          /// <para>Retrieves the login profile for the specified User.</para>
-         /// <para><b>NOTE:</b>In the full release you will be able to use IAM to
-         /// access your services through the AWS Management Console. Although this
-         /// feature is not currently available, you can create login profiles for
-         /// your Users now. Then, when this feature is implemented, your Users can
-         /// use IAM to access your services through the AWS Management
-         /// Console.</para>
          /// </summary>
          /// 
          /// <param name="getLoginProfileRequest">Container for the necessary
@@ -712,7 +707,7 @@ namespace Amazon.IdentityManagement
          /// <summary>
          /// <para>Creates a new group.</para> <para>For information about the
          /// number of groups you can create, see Limitations on IAM Entities in
-         /// Using AWS Identity and Access Management.</para>
+         /// <i>Using AWS Identity and Access Management</i> .</para>
          /// </summary>
          /// 
          /// <param name="createGroupRequest">Container for the necessary
@@ -734,17 +729,17 @@ namespace Amazon.IdentityManagement
     
 
          /// <summary>
-         /// <para>Uploads a server certificate entity for the AWS account. The
+         /// <para>Uploads a server certificate entity for the AWS Account. The
          /// server certificate entity includes a public key certificate, a private
-         /// key and an optional certificate chain. The uploaded public key
-         /// certificate, the private key and certificate chain should all be PEM
-         /// encoded.</para> <para>For information about the number of server
-         /// certificates you can upload, see Limitations on IAM Entities in Using
-         /// AWS Identity and Access Management.</para> <para><b>NOTE:</b>Because
-         /// the body of the public key certificate, private key and the
-         /// certificate chain can be large, you should use POST rather than GET
-         /// when calling UploadServerCertificate. For more information, see Using
-         /// the Query API in Using AWS Identity and Access Management.</para>
+         /// key, and an optional certificate chain, which should all be
+         /// PEM-encoded.</para> <para>For information about the number of server
+         /// certificates you can upload, see Limitations on IAM Entities in
+         /// <i>Using AWS Identity and Access Management</i> .</para>
+         /// <para><b>NOTE:</b>Because the body of the public key certificate,
+         /// private key, and the certificate chain can be large, you should use
+         /// POST rather than GET when calling UploadServerCertificate. For more
+         /// information, see Making Query Requests in Using AWS Identity and
+         /// Access Management.</para>
          /// </summary>
          /// 
          /// <param name="uploadServerCertificateRequest">Container for the
@@ -762,6 +757,26 @@ namespace Amazon.IdentityManagement
         {           
             IRequest<UploadServerCertificateRequest> request = new UploadServerCertificateRequestMarshaller().Marshall(uploadServerCertificateRequest);
             UploadServerCertificateResponse response = Invoke<UploadServerCertificateRequest, UploadServerCertificateResponse> (request, this.signer, UploadServerCertificateResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para>This action creates an alias for your AWS Account. For
+         /// information about using an AWS Account alias, see Using an Alias for
+         /// Your AWS Account ID in <i>Using AWS Identity and Access Management</i>
+         /// .</para>
+         /// </summary>
+         /// 
+         /// <param name="createAccountAliasRequest">Container for the necessary
+         ///           parameters to execute the CreateAccountAlias service method on
+         ///           AmazonIdentityManagementService.</param>
+         /// 
+         /// <exception cref="EntityAlreadyExistsException"/>
+        public CreateAccountAliasResponse CreateAccountAlias(CreateAccountAliasRequest createAccountAliasRequest) 
+        {           
+            IRequest<CreateAccountAliasRequest> request = new CreateAccountAliasRequestMarshaller().Marshall(createAccountAliasRequest);
+            CreateAccountAliasResponse response = Invoke<CreateAccountAliasRequest, CreateAccountAliasResponse> (request, this.signer, CreateAccountAliasResponseUnmarshaller.GetInstance());
             return response;
         }
     
@@ -848,11 +863,14 @@ namespace Amazon.IdentityManagement
 
          /// <summary>
          /// <para>Deletes the specified server certificate.</para>
-         /// <para><b>IMPORTANT:</b> You should understand the implications of
-         /// deleting a server certificate. If the server certificate is used in
-         /// other AWS services, it is recommended that you remove all the
-         /// references before using this API to delete the server certificate.
-         /// </para>
+         /// <para><b>IMPORTANT:</b>If your Elastic Load Balancing instances are
+         /// using a server certificate, deleting the certificate could have
+         /// implications for your application. If your Elastic Load Balancing
+         /// instances do not detect the deletion of bound certificates, they may
+         /// continue to use the certificates. This could cause them to stop
+         /// accepting traffic. We recommend that you remove the reference to the
+         /// certificate from your Elastic Load Balancing instances before using
+         /// this command to delete the certificate.</para>
          /// </summary>
          /// 
          /// <param name="deleteServerCertificateRequest">Container for the
@@ -896,13 +914,8 @@ namespace Amazon.IdentityManagement
          /// <para>Creates a login profile for the specified User, giving the User
          /// the ability to access AWS services such as the AWS Management Console.
          /// For more information about login profiles, see Managing Login
-         /// Profiles and MFA Devices in Using AWS Identity and Access
-         /// Management.</para> <para><b>NOTE:</b>In the full release you will be
-         /// able to use IAM to access your services through the AWS Management
-         /// Console. Although this feature is not currently available, you can
-         /// create login profiles for your Users now. Then, when this feature is
-         /// implemented, your Users can use IAM to access your services through
-         /// the AWS Management Console.</para>
+         /// Profiles and MFA Devices in <i>Using AWS Identity and Access
+         /// Management</i> .</para>
          /// </summary>
          /// 
          /// <param name="createLoginProfileRequest">Container for the necessary
@@ -931,10 +944,10 @@ namespace Amazon.IdentityManagement
          /// the AWS Account, you can use this API to manage root credentials even
          /// if the AWS Account has no associated Users.</para> <para>For
          /// information about limits on the number of keys you can create, see
-         /// Limitations on IAM Entities in Using AWS Identity and Access
-         /// Management.</para> <para><b>IMPORTANT:</b>To ensure the security of
-         /// your AWS Account, the Secret Access Key is accessible only during key
-         /// and User creation. You must save the key (for example, in a text
+         /// Limitations on IAM Entities in <i>Using AWS Identity and Access
+         /// Management</i> .</para> <para><b>IMPORTANT:</b>To ensure the security
+         /// of your AWS Account, the Secret Access Key is accessible only during
+         /// key and User creation. You must save the key (for example, in a text
          /// file) if you want to be able to access it again. If a secret key is
          /// lost, you can delete the access keys for the associated User and then
          /// create new keys.</para>
@@ -1029,8 +1042,8 @@ namespace Amazon.IdentityManagement
          /// Because this action works for access keys under the AWS Account, this
          /// API can be used to manage root credentials even if the AWS Account has
          /// no associated Users.</para> <para>For information about rotating keys,
-         /// see Managing Keys and Certificates in Using AWS Identity and Access
-         /// Management.</para>
+         /// see Managing Keys and Certificates in <i>Using AWS Identity and Access
+         /// Management</i> .</para>
          /// </summary>
          /// 
          /// <param name="updateAccessKeyRequest">Container for the necessary
@@ -1047,6 +1060,10 @@ namespace Amazon.IdentityManagement
     
 
          /// <summary>
+         /// <para>Retrieves account level information about account entity usage
+         /// and IAM quotas.</para> <para>For information about limitations on IAM
+         /// entities, see Limitations on IAM Entities in <i>Using AWS Identity and
+         /// Access Management</i> .</para>
          /// </summary>
          /// 
          /// <param name="getAccountSummaryRequest">Container for the necessary
@@ -1100,6 +1117,29 @@ namespace Amazon.IdentityManagement
         {           
             IRequest<GetGroupRequest> request = new GetGroupRequestMarshaller().Marshall(getGroupRequest);
             GetGroupResponse response = Invoke<GetGroupRequest, GetGroupResponse> (request, this.signer, GetGroupResponseUnmarshaller.GetInstance());
+            return response;
+        }
+    
+
+         /// <summary>
+         /// <para>Lists the account aliases associated with the account. For
+         /// information about using an AWS Account alias, see Using an Alias for
+         /// Your AWS Account ID in <i>Using AWS Identity and Access Management</i>
+         /// .</para> <para>You can paginate the results using the <c>MaxItems</c>
+         /// and <c>Marker</c> parameters.</para>
+         /// </summary>
+         /// 
+         /// <param name="listAccountAliasesRequest">Container for the necessary
+         ///           parameters to execute the ListAccountAliases service method on
+         ///           AmazonIdentityManagementService.</param>
+         /// 
+         /// <returns>The response from the ListAccountAliases service method, as
+         ///         returned by AmazonIdentityManagementService.</returns>
+         /// 
+        public ListAccountAliasesResponse ListAccountAliases(ListAccountAliasesRequest listAccountAliasesRequest) 
+        {           
+            IRequest<ListAccountAliasesRequest> request = new ListAccountAliasesRequestMarshaller().Marshall(listAccountAliasesRequest);
+            ListAccountAliasesResponse response = Invoke<ListAccountAliasesRequest, ListAccountAliasesResponse> (request, this.signer, ListAccountAliasesResponseUnmarshaller.GetInstance());
             return response;
         }
     

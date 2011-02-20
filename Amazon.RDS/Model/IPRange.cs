@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> This data type is used as a response element in the
+    /// DescribeDBSecurityGroups action. </para>
     /// </summary>
     public class IPRange  
     {
@@ -50,10 +51,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;         
+            return this.status != null;       
         }
 
         /// <summary>
@@ -77,10 +79,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this.cIDRIP != null;         
+            return this.cIDRIP != null;       
         }
     }
 }

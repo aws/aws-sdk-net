@@ -34,7 +34,8 @@ namespace Amazon.IdentityManagement.Model
     /// under the AWS Account, this API can be used to manage root credentials
     /// even if the AWS Account has no associated Users.</para> <para>For
     /// information about rotating certificates, see Managing Keys and
-    /// Certificates in Using AWS Identity and Access Management.</para>
+    /// Certificates in <i>Using AWS Identity and Access Management</i>
+    /// .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateSigningCertificate"/>
     public class UpdateSigningCertificateRequest : AmazonWebServiceRequest
@@ -77,6 +78,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -117,15 +119,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if CertificateId property is set
         internal bool IsSetCertificateId()
         {
-            return this.certificateId != null;      
+            return this.certificateId != null;       
         }
 
         /// <summary>
-        /// The status you want to assign to the certificate. <c>Active</c> means
-        /// the certificate can be used for API calls to AWS, while
+        /// The status you want to assign to the certificate. <c>Active</c> means the certificate can be used for API calls to AWS, while
         /// <c>Inactive</c> means the certificate cannot be used.
         ///  
         /// <para>
@@ -155,10 +157,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;         
+            return this.status != null;       
         }
     }
 }

@@ -33,10 +33,10 @@ namespace Amazon.IdentityManagement.Model
     /// the AWS Account, you can use this API to manage root credentials even
     /// if the AWS Account has no associated Users.</para> <para>For
     /// information about limits on the number of keys you can create, see
-    /// Limitations on IAM Entities in Using AWS Identity and Access
-    /// Management.</para> <para><b>IMPORTANT:</b>To ensure the security of
-    /// your AWS Account, the Secret Access Key is accessible only during key
-    /// and User creation. You must save the key (for example, in a text
+    /// Limitations on IAM Entities in <i>Using AWS Identity and Access
+    /// Management</i> .</para> <para><b>IMPORTANT:</b>To ensure the security
+    /// of your AWS Account, the Secret Access Key is accessible only during
+    /// key and User creation. You must save the key (for example, in a text
     /// file) if you want to be able to access it again. If a secret key is
     /// lost, you can delete the access keys for the associated User and then
     /// create new keys.</para>
@@ -80,6 +80,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {

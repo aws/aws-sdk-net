@@ -53,10 +53,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Group property is set
         internal bool IsSetGroup()
         {
-            return this.group != null;      
+            return this.group != null;       
         }
 
         /// <summary>
@@ -82,17 +83,31 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Users collection
+        /// </summary>
+        /// <param name="users">The values to add to the Users collection </param>
+        /// <returns>this instance</returns>
+        public GetGroupResult WithUsers(IEnumerable<User> users)
+        {
+            foreach (User element in users)
+            {
+                this.users.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this.users != null;      
+            return this.users.Count > 0;       
         }
 
         /// <summary>
-        /// A flag that indicates whether there are more User names to list. If
-        /// your results were truncated, you can make a subsequent pagination
-        /// request using the <c>Marker</c> request parameter to retrieve more
-        /// User names in the list.
+        /// A flag that indicates whether there are more User names to list. If your results were truncated, you can make a subsequent pagination
+        /// request using the <c>Marker</c> request parameter to retrieve more User names in the list.
         ///  
         /// </summary>
         public bool IsTruncated
@@ -112,6 +127,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
@@ -119,9 +135,8 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// If IsTruncated is <c>true</c>, then this element is present and
-        /// contains the value to use for the <c>Marker</c> parameter in a
-        /// subsequent pagination request.
+        /// If IsTruncated is <c>true</c>, then this element is present and contains the value to use for the <c>Marker</c> parameter in a subsequent
+        /// pagination request.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -154,10 +169,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
     }
 }

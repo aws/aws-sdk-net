@@ -20,12 +20,26 @@ using System.IO;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>Get Account Summary Result
+    /// <summary>
+    /// <para>Contains the result of a successful invocation of the
+    /// GetAccountSummary action.</para>
     /// </summary>
     public class GetAccountSummaryResult  
     {
         
         private Dictionary<string,int> summaryMap = new Dictionary<string,int>();
+
+        /// <summary>
+        /// A set of key value pairs containing account-level information. <c>SummaryMap</c> contains the following keys: <ul> <li><c>Users</c> - Number
+        /// of Users for the AWS Account</li> <li><c>UsersQuota</c> - Maximum Users allowed for the AWS Account</li> <li><c>Groups</c> - Number of
+        /// Groups for the AWS Account</li> <li><c>GroupsQuota</c> - Maximum Groups allowed for the AWS Account</li> <li><c>ServerCertificates</c> -
+        /// Number of Server Certificates for the AWS Account</li> <li><c>ServerCertificatesQuota</c> - Maximum Server Certificates allowed for the AWS
+        /// Account</li> <li><c>UserPolicySizeQuota</c> - Maximum allowed size for User policy documents (in kilobytes) </li>
+        /// <li><c>GroupPolicySizeQuota</c> - Maximum allowed size for Group policy documents (in kilobyes)</li> <li><c>GroupsPerUserQuota</c> - Maximum
+        /// number of groups a User can belong to</li> <li><c>SigningCertificatesPerUserQuota</c> - Maximum number of X509 certificates allowed for a
+        /// user</li> <li><c>AccessKeysPerUserQuota</c> - Maximum number of access keys that can be created per User</li> </ul>
+        ///  
+        /// </summary>
         public Dictionary<string,int> SummaryMap
         {
             get { return this.summaryMap; }
@@ -46,10 +60,11 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
+
         // Check to see if SummaryMap property is set
         internal bool IsSetSummaryMap()
         {
-            return this.summaryMap != null;         
+            return this.summaryMap != null;       
         }
     }
 }

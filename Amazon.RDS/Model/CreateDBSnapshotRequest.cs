@@ -35,7 +35,9 @@ namespace Amazon.RDS.Model
         private string dBInstanceIdentifier;
 
         /// <summary>
-        /// The identifier for the DB Snapshot.
+        /// The identifier for the DB Snapshot. Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
+        /// characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+        /// </ul> Example: <c>my-snapshot-id</c>
         ///  
         /// </summary>
         public string DBSnapshotIdentifier
@@ -55,6 +57,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {
@@ -62,8 +65,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Instance identifier. This is the unique key that identifies a
-        /// DB Instance. This parameter isn't case sensitive.
+        /// The DB Instance identifier. This is the unique key that identifies a DB Instance. This parameter isn't case sensitive. Constraints: <ul>
+        /// <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen
+        /// or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -83,6 +87,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {

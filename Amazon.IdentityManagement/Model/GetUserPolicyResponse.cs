@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the GetUserPolicyResult property.
-        /// Contains the result of a successful invocation of the GetUserPolicy
-        /// action.
+        /// Contains the result of a successful invocation of the GetUserPolicy action.
         /// </summary>
         public GetUserPolicyResult GetUserPolicyResult
         {

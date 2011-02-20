@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the ListSigningCertificatesResult property.
-        /// Contains the result of a successful invocation of the
-        /// ListSigningCertificates action.
+        /// Contains the result of a successful invocation of the ListSigningCertificates action.
         /// </summary>
         public ListSigningCertificatesResult ListSigningCertificatesResult
         {

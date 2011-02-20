@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the UploadSigningCertificateResult property.
-        /// Contains the result of a successful invocation of the
-        /// UploadSigningCertificate action.
+        /// Contains the result of a successful invocation of the UploadSigningCertificate action.
         /// </summary>
         public UploadSigningCertificateResult UploadSigningCertificateResult
         {

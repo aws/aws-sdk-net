@@ -26,14 +26,14 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the PutUserPolicy operation.
     /// <para>Adds (or updates) a policy document associated with the
-    /// specified User. For information about how to write a policy, refer to
-    /// Using AWS Identity and Access Management.</para> <para>For information
-    /// about limits on the number of policies you can associate with a User,
-    /// see Limitations on IAM Entities in Using AWS Identity and Access
-    /// Management.</para> <para><b>NOTE:</b>Because policy documents can be
-    /// large, you should use POST rather than GET when calling PutUserPolicy.
-    /// For more information, see Using the Query API in Using AWS Identity
-    /// and Access Management.</para>
+    /// specified User. For information about policies, refer to Overview of
+    /// Policies in <i>Using AWS Identity and Access Management</i> .</para>
+    /// <para>For information about limits on the number of policies you can
+    /// associate with a User, see Limitations on IAM Entities in <i>Using AWS
+    /// Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because
+    /// policy documents can be large, you should use POST rather than GET
+    /// when calling PutUserPolicy. For more information, see Making Query
+    /// Requests in Using AWS Identity and Access Management.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.PutUserPolicy"/>
     public class PutUserPolicyRequest : AmazonWebServiceRequest
@@ -76,6 +76,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -116,10 +117,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;         
+            return this.policyName != null;       
         }
 
         /// <summary>
@@ -156,10 +158,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if PolicyDocument property is set
         internal bool IsSetPolicyDocument()
         {
-            return this.policyDocument != null;         
+            return this.policyDocument != null;       
         }
     }
 }

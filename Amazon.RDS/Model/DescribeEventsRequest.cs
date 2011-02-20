@@ -44,8 +44,11 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// The identifier of the event source for which events will be returned.
-        /// If not specified, then all sources are included in the response.
+        /// The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.
+        /// Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType must also be provided.</li> <li>If the source type is DBInstance, then a
+        /// DBInstanceIdentifier must be supplied.</li> <li>If the source type is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li> <li>If
+        /// the source type is DBParameterGroup, a DBParameterGroupName must be supplied.</li> <li>If the source type is DBSnapshot, a
+        /// DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
         ///  
         /// </summary>
         public string SourceIdentifier
@@ -65,6 +68,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if SourceIdentifier property is set
         internal bool IsSetSourceIdentifier()
         {
@@ -72,8 +76,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The event source to retrieve events for. If no value is specified, all
-        /// events are returned.
+        /// The event source to retrieve events for. If no value is specified, all events are returned. Valid Values: <c>db-instance | db-security-group
+        /// | db-parameter-group | db-snapshot</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -102,15 +106,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if SourceType property is set
         internal bool IsSetSourceType()
         {
-            return this.sourceType != null;         
+            return this.sourceType != null;       
         }
 
         /// <summary>
-        /// The beginning of the time interval to retrieve events for, specified
-        /// in ISO 8601 format.
+        /// The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a
+        /// href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> Example: 2009-07-08T18:00Z
         ///  
         /// </summary>
         public DateTime StartTime
@@ -130,15 +135,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if StartTime property is set
         internal bool IsSetStartTime()
         {
-            return this.startTime.HasValue;         
+            return this.startTime.HasValue;       
         }
 
         /// <summary>
-        /// The end of the time interval for which to retrieve events, specified
-        /// in ISO 8601 format.
+        /// The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a
+        /// href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> Example: 2009-07-08T18:00Z
         ///  
         /// </summary>
         public DateTime EndTime
@@ -158,6 +164,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EndTime property is set
         internal bool IsSetEndTime()
         {
@@ -165,7 +172,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The number of minutes to retrieve events for.
+        /// The number of minutes to retrieve events for. Default: 60
         ///  
         /// </summary>
         public int Duration
@@ -185,17 +192,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Duration property is set
         internal bool IsSetDuration()
         {
-            return this.duration.HasValue;      
+            return this.duration.HasValue;       
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more
-        /// records exist than the specified <i>MaxRecords</i> value, a marker is
-        /// included in the response so that the remaining results may be
-        /// retrieved.
+        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
+        /// included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100
         ///  
         /// </summary>
         public int MaxRecords
@@ -215,17 +221,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;        
+            return this.maxRecords.HasValue;       
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeDBInstances
-        /// request. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by
-        /// <i>MaxRecords</i>.
+        /// An optional marker provided in the previous DescribeDBInstances request. If this parameter is specified, the response includes only records
+        /// beyond the marker, up to the value specified by <c>MaxRecords</c>.
         ///  
         /// </summary>
         public string Marker
@@ -245,10 +250,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
     }
 }

@@ -96,5 +96,6 @@ namespace Amazon.S3.Util
 
         // Error Codes
         internal const string NoSuchBucketPolicy = "NoSuchBucketPolicy";
+        internal const string NoSuchWebsiteConfiguration = "NoSuchWebsiteConfiguration";
     }
 }

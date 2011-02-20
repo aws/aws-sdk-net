@@ -33,8 +33,8 @@ namespace Amazon.IdentityManagement.Model
     /// Because this action works for access keys under the AWS Account, this
     /// API can be used to manage root credentials even if the AWS Account has
     /// no associated Users.</para> <para>For information about rotating keys,
-    /// see Managing Keys and Certificates in Using AWS Identity and Access
-    /// Management.</para>
+    /// see Managing Keys and Certificates in <i>Using AWS Identity and Access
+    /// Management</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateAccessKey"/>
     public class UpdateAccessKeyRequest : AmazonWebServiceRequest
@@ -77,6 +77,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -117,15 +118,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if AccessKeyId property is set
         internal bool IsSetAccessKeyId()
         {
-            return this.accessKeyId != null;        
+            return this.accessKeyId != null;       
         }
 
         /// <summary>
-        /// The status you want to assign to the Secret Access Key. <c>Active</c>
-        /// means the key can be used for API calls to AWS, while <c>Inactive</c>
+        /// The status you want to assign to the Secret Access Key. <c>Active</c> means the key can be used for API calls to AWS, while <c>Inactive</c>
         /// means the key cannot be used.
         ///  
         /// <para>
@@ -155,10 +156,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;         
+            return this.status != null;       
         }
     }
 }

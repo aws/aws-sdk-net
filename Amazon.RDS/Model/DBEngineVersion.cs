@@ -20,7 +20,9 @@ using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>D B Engine Version
+    /// <summary>
+    /// <para> This data type is used as a response element in the action
+    /// DescribeDBEngineVersions. </para>
     /// </summary>
     public class DBEngineVersion  
     {
@@ -28,6 +30,11 @@ namespace Amazon.RDS.Model
         private string engine;
         private string engineVersion;
         private string dBParameterGroupFamily;
+
+        /// <summary>
+        /// The name of the database engine.
+        ///  
+        /// </summary>
         public string Engine
         {
             get { return this.engine; }
@@ -45,11 +52,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;         
+            return this.engine != null;       
         }
+
+        /// <summary>
+        /// The version number of the database engine.
+        ///  
+        /// </summary>
         public string EngineVersion
         {
             get { return this.engineVersion; }
@@ -67,11 +80,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;      
+            return this.engineVersion != null;       
         }
+
+        /// <summary>
+        /// The name of the DBParameterGroupFamily for the database engine.
+        ///  
+        /// </summary>
         public string DBParameterGroupFamily
         {
             get { return this.dBParameterGroupFamily; }
@@ -89,10 +108,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this.dBParameterGroupFamily != null;         
+            return this.dBParameterGroupFamily != null;       
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the CreateGroup operation.
     /// <para>Creates a new group.</para> <para>For information about the
     /// number of groups you can create, see Limitations on IAM Entities in
-    /// Using AWS Identity and Access Management.</para>
+    /// <i>Using AWS Identity and Access Management</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateGroup"/>
     public class CreateGroupRequest : AmazonWebServiceRequest
@@ -36,11 +36,10 @@ namespace Amazon.IdentityManagement.Model
         private string groupName;
 
         /// <summary>
-        /// The path to the group. For more information about paths, see
-        /// Identifiers for Users and Groups in <a
-        /// href="http://aws.amazon.com/documentation/iam/" target="_blank">Using
-        /// AWS Identity and Access Management</a>. This parameter is optional. If
-        /// it is not included, it defaults to a slash (/).
+        /// The path to the group. For more information about paths, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
+        /// Entities</a> in <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash
+        /// (/).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -73,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
@@ -113,10 +113,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;      
+            return this.groupName != null;       
         }
     }
 }

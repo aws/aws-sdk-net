@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> Contains the result of a successful invocation of the
+    /// DescribeDBSnapshots action. </para>
     /// </summary>
     public class DescribeDBSnapshotsResult  
     {
@@ -50,10 +51,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
 
         /// <summary>
@@ -79,10 +81,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the DBSnapshots collection
+        /// </summary>
+        /// <param name="dBSnapshots">The values to add to the DBSnapshots collection </param>
+        /// <returns>this instance</returns>
+        public DescribeDBSnapshotsResult WithDBSnapshots(IEnumerable<DBSnapshot> dBSnapshots)
+        {
+            foreach (DBSnapshot element in dBSnapshots)
+            {
+                this.dBSnapshots.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if DBSnapshots property is set
         internal bool IsSetDBSnapshots()
         {
-            return this.dBSnapshots.Count > 0;      
+            return this.dBSnapshots.Count > 0;       
         }
     }
 }

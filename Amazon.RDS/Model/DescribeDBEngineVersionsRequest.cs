@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBEngineVersions operation.
-    /// 
+    /// <para> Returns a list of the available DB engines. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeDBEngineVersions"/>
     public class DescribeDBEngineVersionsRequest : AmazonWebServiceRequest
@@ -36,6 +36,11 @@ namespace Amazon.RDS.Model
         private int? maxRecords;
         private string marker;
         private bool? defaultOnly;
+
+        /// <summary>
+        /// The database engine to return.
+        ///  
+        /// </summary>
         public string Engine
         {
             get { return this.engine; }
@@ -53,11 +58,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;         
+            return this.engine != null;       
         }
+
+        /// <summary>
+        /// The database engine version to return.
+        ///  
+        /// </summary>
         public string EngineVersion
         {
             get { return this.engineVersion; }
@@ -75,11 +86,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;      
+            return this.engineVersion != null;       
         }
+
+        /// <summary>
+        /// The name of a specific database parameter group family to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+        /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        ///  
+        /// </summary>
         public string DBParameterGroupFamily
         {
             get { return this.dBParameterGroupFamily; }
@@ -97,11 +115,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this.dBParameterGroupFamily != null;         
+            return this.dBParameterGroupFamily != null;       
         }
+
+        /// <summary>
+        /// The maximum number of records to include in the response. If more than the <c>MaxRecords</c> value is available, a marker is included in the
+        /// response so that the following results can be retrieved. Default: 100 Constraints: minimum 20, maximum 100
+        ///  
+        /// </summary>
         public int MaxRecords
         {
             get { return this.maxRecords ?? default(int); }
@@ -119,11 +144,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;        
+            return this.maxRecords.HasValue;       
         }
+
+        /// <summary>
+        /// The marker provided in the previous request. If this parameter is specified, the response includes records beyond the marker only, up to
+        /// <c>MaxRecords</c>.
+        ///  
+        /// </summary>
         public string Marker
         {
             get { return this.marker; }
@@ -141,11 +173,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
+
+        /// <summary>
+        /// Indicates that only the default version of the specified engine or engine and major version combination is returned.
+        ///  
+        /// </summary>
         public bool DefaultOnly
         {
             get { return this.defaultOnly ?? default(bool); }
@@ -163,6 +201,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DefaultOnly property is set
         internal bool IsSetDefaultOnly()
         {

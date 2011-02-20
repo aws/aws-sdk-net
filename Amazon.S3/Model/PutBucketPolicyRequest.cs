@@ -81,35 +81,6 @@ namespace Amazon.S3.Model
             return !System.String.IsNullOrEmpty(this.BucketName);
         }
 
-        /// <summary>
-        /// Gets and sets the AspenPolicy property.
-        /// </summary>
-        [Obsolete("Use the Policy property instead.")]
-        public String AspenPolicy
-        {
-            get
-            {
-                return this.policy;
-            }
-            set
-            {
-                this.policy = value;
-            }
-        }
-
-        /// <summary>
-        /// Sets the AspenPolicy property for this request.
-        /// This is the JSON string representing the policy that will be applied to the S3 Bucket.
-        /// </summary>
-        /// <param name="policy">The JSON string for the policy</param>
-        /// <returns>this instance</returns>
-        [Obsolete("Use the WithPolicy method instead.")]
-        public PutBucketPolicyRequest WithAspenPolicy(string policy)
-        {
-            this.Policy = policy;
-            return this;
-        }
-
 
         /// <summary>
         /// Gets and sets the Policy property.

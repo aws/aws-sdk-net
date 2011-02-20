@@ -22,22 +22,22 @@ namespace Amazon.RDS
     /// <summary>
     /// Interface for accessing AmazonRDS.
     ///  
-    ///  <para> Amazon Relational Database Service (Amazon RDS) is a web
-    /// service that makes it easier to set up, operate, and scale a
-    /// relational database in the cloud. It provides cost-efficient,
-    /// resizable capacity for an industry-standard relational database and
-    /// manages common database administration tasks, freeing up developers to
-    /// focus on what makes their applications and businesses unique. </para>
-    /// <para> Amazon RDS gives you access to the capabilities of a familiar
-    /// MySQL database server. This means the code, applications, and tools
-    /// you already use today with your existing MySQL databases work with
-    /// Amazon RDS without modification. Amazon RDS automatically backs up
-    /// your database and maintains the database software that powers your DB
-    /// Instance. Amazon RDS is flexible: you can scale your database
-    /// instance's compute resources and storage capacity to meet your
-    /// application's demand. As with all Amazon Web Services, there are no
-    /// up-front investments, and you pay only for the resources you use.
-    /// </para>
+    ///  Amazon Relational Database Service <para> Amazon Relational Database
+    /// Service (Amazon RDS) is a web service that makes it easier to set up,
+    /// operate, and scale a relational database in the cloud. It provides
+    /// cost-efficient, resizable capacity for an industry-standard relational
+    /// database and manages common database administration tasks, freeing up
+    /// developers to focus on what makes their applications and businesses
+    /// unique. </para> <para> Amazon RDS gives you access to the capabilities
+    /// of a familiar MySQL database server. This means the code,
+    /// applications, and tools you already use today with your existing MySQL
+    /// databases work with Amazon RDS without modification. Amazon RDS
+    /// automatically backs up your database and maintains the database
+    /// software that powers your DB Instance. Amazon RDS is flexible: you can
+    /// scale your database instance's compute resources and storage capacity
+    /// to meet your application's demand. As with all Amazon Web Services,
+    /// there are no up-front investments, and you pay only for the resources
+    /// you use. </para>
     /// </summary>
     public interface AmazonRDS : IDisposable
     {
@@ -46,7 +46,8 @@ namespace Amazon.RDS
          /// <summary>
          /// <para> This API deletes a particular DBParameterGroup. The
          /// DBParameterGroup cannot be associated with any RDS instances to be
-         /// deleted. </para>
+         /// deleted. </para> <para><b>NOTE:</b> The specified database parameter
+         /// group cannot be associated with any DB Instances. </para>
          /// </summary>
          /// 
          /// <param name="deleteDBParameterGroupRequest">Container for the
@@ -58,8 +59,9 @@ namespace Amazon.RDS
         DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest); 
 
          /// <summary>
-         /// <para> This API is used to delete a DBSnapshot. The DBSnapshot must be
-         /// in the "available" state to be deleted. </para>
+         /// <para> This API is used to delete a DBSnapshot. </para>
+         /// <para><b>NOTE:</b>The DBSnapshot must be in the available state to be
+         /// deleted.</para>
          /// </summary>
          /// 
          /// <param name="deleteDBSnapshotRequest">Container for the necessary
@@ -209,6 +211,7 @@ namespace Amazon.RDS
         CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest); 
 
          /// <summary>
+         /// <para> Returns a list of the available DB engines. </para>
          /// </summary>
          /// 
          /// <param name="describeDBEngineVersionsRequest">Container for the
@@ -248,7 +251,10 @@ namespace Amazon.RDS
          /// on EC2 instances. Second, IP ranges are available if the application
          /// accessing your database is running on the Internet. Required
          /// parameters for this API are one of CIDR range or (EC2SecurityGroupName
-         /// AND EC2SecurityGroupOwnerId). </para>
+         /// AND EC2SecurityGroupOwnerId). </para> <para><b>NOTE:</b> You cannot
+         /// authorize ingress from an EC2 security group in one Region to an
+         /// Amazon RDS DB Instance in another. </para> <para>For an overview of
+         /// CIDR ranges, go to the Wikipedia Tutorial. </para>
          /// </summary>
          /// 
          /// <param name="authorizeDBSecurityGroupIngressRequest">Container for the
@@ -261,6 +267,7 @@ namespace Amazon.RDS
          /// <exception cref="DBSecurityGroupNotFoundException"/>
          /// <exception cref="InvalidDBSecurityGroupStateException"/>
          /// <exception cref="AuthorizationAlreadyExistsException"/>
+         /// <exception cref="AuthorizationQuotaExceededException"/>
         AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest); 
 
          /// <summary>
@@ -303,6 +310,7 @@ namespace Amazon.RDS
         DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest); 
 
          /// <summary>
+         /// <para> Lists available reserved DB Instance offerings. </para>
          /// </summary>
          /// 
          /// <param name="describeReservedDBInstancesOfferingsRequest">Container
@@ -355,7 +363,8 @@ namespace Amazon.RDS
          /// <summary>
          /// <para> This API returns a list of DBSecurityGroup descriptions. If a
          /// DBSecurityGroupName is specified, the list will contain only the
-         /// descriptions of the specified DBSecurityGroup. </para>
+         /// descriptions of the specified DBSecurityGroup. </para> <para>For an
+         /// overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
          /// </summary>
          /// 
          /// <param name="describeDBSecurityGroupsRequest">Container for the
@@ -456,6 +465,8 @@ namespace Amazon.RDS
         RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest); 
 
          /// <summary>
+         /// <para> Returns information about reserved DB Instances for this
+         /// account, or about a specified reserved DB Instance. </para>
          /// </summary>
          /// 
          /// <param name="describeReservedDBInstancesRequest">Container for the
@@ -484,8 +495,9 @@ namespace Amazon.RDS
         CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest); 
 
          /// <summary>
-         /// <para> This API deletes a database security group. Database security
-         /// group must not be associated with any RDS Instances. </para>
+         /// <para> This API deletes a database security group. </para>
+         /// <para><b>NOTE:</b>The specified database security group must not be
+         /// associated with any DB instances.</para>
          /// </summary>
          /// 
          /// <param name="deleteDBSecurityGroupRequest">Container for the necessary
@@ -497,6 +509,13 @@ namespace Amazon.RDS
         DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest); 
 
          /// <summary>
+         /// <para> Creates a DB Instance that acts as a Read Replica of a source
+         /// DB Instance. </para> <para> All Read Replica DB Instances are created
+         /// as Single-AZ deployments with backups disabled. All other DB Instance
+         /// attributes (including DB Security Groups and DB Parameter Groups) are
+         /// inherited from the source DB Instance, except as specified below.
+         /// </para> <para><b>IMPORTANT:</b> The source DB Instance must have
+         /// backup retention enabled. </para>
          /// </summary>
          /// 
          /// <param name="createDBInstanceReadReplicaRequest">Container for the
@@ -517,6 +536,7 @@ namespace Amazon.RDS
         CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest); 
 
          /// <summary>
+         /// <para> Purchases a reserved DB Instance offering. </para>
          /// </summary>
          /// 
          /// <param name="purchaseReservedDBInstancesOfferingRequest">Container for

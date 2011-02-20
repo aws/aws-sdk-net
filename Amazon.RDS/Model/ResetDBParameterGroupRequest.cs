@@ -42,7 +42,8 @@ namespace Amazon.RDS.Model
         private List<Parameter> parameters = new List<Parameter>();
 
         /// <summary>
-        /// The name of the DB Parameter Group.
+        /// The name of the DB Parameter Group. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a
+        /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string DBParameterGroupName
@@ -62,6 +63,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
@@ -69,8 +71,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
-        /// parameters in the DB Parameter Group to default values.
+        /// Specifies whether (<c>true</c>) or not (<c>false</c>) to reset all parameters in the DB Parameter Group to default values. Default:
+        /// <c>true</c>
         ///  
         /// </summary>
         public bool ResetAllParameters
@@ -90,17 +92,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ResetAllParameters property is set
         internal bool IsSetResetAllParameters()
         {
-            return this.resetAllParameters.HasValue;        
+            return this.resetAllParameters.HasValue;       
         }
 
         /// <summary>
-        /// An array of parameter names, values, and the apply method for the
-        /// parameter update. At least one parameter name, value, and apply method
-        /// must be supplied; subsequent arguments are optional. A maximum of 20
-        /// parameters may be modified in a single request.
+        /// An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method
+        /// must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. Valid Values (for Apply
+        /// method): <c>immediate | pending-reboot</c> You can use the immediate value with dynamic parameters only. You can use the
+        /// <c>pending-reboot</c> value for both dynamic and static parameters, and changes are applied when DB Instance reboots.
         ///  
         /// </summary>
         public List<Parameter> Parameters
@@ -122,6 +125,22 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Parameters collection
+        /// </summary>
+        /// <param name="parameters">The values to add to the Parameters collection </param>
+        /// <returns>this instance</returns>
+        public ResetDBParameterGroupRequest WithParameters(IEnumerable<Parameter> parameters)
+        {
+            foreach (Parameter element in parameters)
+            {
+                this.parameters.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {

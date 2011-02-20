@@ -50,6 +50,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if User property is set
         internal bool IsSetUser()
         {

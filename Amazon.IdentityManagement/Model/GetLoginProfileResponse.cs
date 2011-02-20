@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the GetLoginProfileResult property.
-        /// Contains the result of a successful invocation of the GetLoginProfile
-        /// action.
+        /// Contains the result of a successful invocation of the GetLoginProfile action.
         /// </summary>
         public GetLoginProfileResult GetLoginProfileResult
         {

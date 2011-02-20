@@ -35,7 +35,7 @@ namespace Amazon.S3.Transfer.Internal
     /// <summary>
     /// This command is for doing regular PutObject requests.
     /// </summary>
-    internal class SimpleUploadCommand
+    internal class SimpleUploadCommand : BaseCommand
     {
         AmazonS3 _s3Client;
         TransferUtilityConfig _config;
@@ -48,7 +48,7 @@ namespace Amazon.S3.Transfer.Internal
             this._fileTransporterRequest = fileTransporterRequest;
         }
 
-        internal void Execute()
+        public override void Execute()
         {
             int timeout = this._config.DefaultTimeout;
             if (this._fileTransporterRequest.Timeout != 0)

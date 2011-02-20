@@ -44,8 +44,7 @@ namespace Amazon.IdentityManagement.Model
         private string newGroupName;
 
         /// <summary>
-        /// Name of the group to update. If you're changing the name of the group,
-        /// this is the original name.
+        /// Name of the group to update. If you're changing the name of the group, this is the original name.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -78,15 +77,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;      
+            return this.groupName != null;       
         }
 
         /// <summary>
-        /// New path for the group. Only include this if changing the group's
-        /// path.
+        /// New path for the group. Only include this if changing the group's path.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -119,15 +118,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if NewPath property is set
         internal bool IsSetNewPath()
         {
-            return this.newPath != null;        
+            return this.newPath != null;       
         }
 
         /// <summary>
-        /// New name for the group. Only include this if changing the group's
-        /// name.
+        /// New name for the group. Only include this if changing the group's name.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -160,6 +159,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if NewGroupName property is set
         internal bool IsSetNewGroupName()
         {

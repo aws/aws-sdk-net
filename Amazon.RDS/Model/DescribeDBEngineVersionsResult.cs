@@ -20,13 +20,20 @@ using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>Describe D B Engine Versions Result
+    /// <summary>
+    /// <para> Contains the result of a successful invocation of the
+    /// DescribeDBEngineVersions action. </para>
     /// </summary>
     public class DescribeDBEngineVersionsResult  
     {
         
         private string marker;
         private List<DBEngineVersion> dBEngineVersions = new List<DBEngineVersion>();
+
+        /// <summary>
+        /// The identifier returned to allow retrieval of paginated results.
+        ///  
+        /// </summary>
         public string Marker
         {
             get { return this.marker; }
@@ -44,11 +51,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
+
+        /// <summary>
+        /// A list of <c>DBEngineVersion</c> elements.
+        ///  
+        /// </summary>
         public List<DBEngineVersion> DBEngineVersions
         {
             get { return this.dBEngineVersions; }
@@ -68,10 +81,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the DBEngineVersions collection
+        /// </summary>
+        /// <param name="dBEngineVersions">The values to add to the DBEngineVersions collection </param>
+        /// <returns>this instance</returns>
+        public DescribeDBEngineVersionsResult WithDBEngineVersions(IEnumerable<DBEngineVersion> dBEngineVersions)
+        {
+            foreach (DBEngineVersion element in dBEngineVersions)
+            {
+                this.dBEngineVersions.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if DBEngineVersions property is set
         internal bool IsSetDBEngineVersions()
         {
-            return this.dBEngineVersions.Count > 0;         
+            return this.dBEngineVersions.Count > 0;       
         }
     }
 }

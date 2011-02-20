@@ -72,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -112,10 +113,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if CertificateId property is set
         internal bool IsSetCertificateId()
         {
-            return this.certificateId != null;      
+            return this.certificateId != null;       
         }
     }
 }

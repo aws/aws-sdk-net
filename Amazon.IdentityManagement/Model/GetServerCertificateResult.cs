@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
         private ServerCertificate serverCertificate;
 
         /// <summary>
-        /// The information about the server certificate.
+        /// Information about the server certificate.
         ///  
         /// </summary>
         public ServerCertificate ServerCertificate
@@ -50,10 +50,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if ServerCertificate property is set
         internal bool IsSetServerCertificate()
         {
-            return this.serverCertificate != null;      
+            return this.serverCertificate != null;       
         }
     }
 }

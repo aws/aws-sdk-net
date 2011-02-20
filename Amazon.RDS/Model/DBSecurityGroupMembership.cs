@@ -21,7 +21,15 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> This data type is used as a response element in the following
+    /// actions: </para>
+    /// <ul>
+    /// <li> ModifyDBInstance </li>
+    /// <li> RebootDBInstance </li>
+    /// <li> RestoreDBInstanceFromDBSnapshot </li>
+    /// <li> RestoreDBInstanceToPointInTime </li>
+    /// 
+    /// </ul>
     /// </summary>
     public class DBSecurityGroupMembership  
     {
@@ -50,14 +58,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this.dBSecurityGroupName != null;        
+            return this.dBSecurityGroupName != null;       
         }
 
         /// <summary>
-        /// 
+        /// The status of the DB Security Group.
         ///  
         /// </summary>
         public string Status
@@ -77,10 +86,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;         
+            return this.status != null;       
         }
     }
 }

@@ -21,7 +21,17 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> Contains the result of a successful invocation of the following
+    /// actions: </para>
+    /// <ul>
+    /// <li> DescribeDBSecurityGroups </li>
+    /// <li> AuthorizeDBSecurityGroupIngress </li>
+    /// <li> CreateDBSecurityGroup </li>
+    /// <li> RevokeDBSecurityGroupIngress </li>
+    /// 
+    /// </ul>
+    /// <para>This data type is used as a response element in the
+    /// DescribeDBSecurityGroups action.</para>
     /// </summary>
     public class DBSecurityGroup  
     {
@@ -53,10 +63,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if OwnerId property is set
         internal bool IsSetOwnerId()
         {
-            return this.ownerId != null;        
+            return this.ownerId != null;       
         }
 
         /// <summary>
@@ -80,10 +91,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this.dBSecurityGroupName != null;        
+            return this.dBSecurityGroupName != null;       
         }
 
         /// <summary>
@@ -107,10 +119,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSecurityGroupDescription property is set
         internal bool IsSetDBSecurityGroupDescription()
         {
-            return this.dBSecurityGroupDescription != null;         
+            return this.dBSecurityGroupDescription != null;       
         }
 
         /// <summary>
@@ -136,10 +149,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the EC2SecurityGroups collection
+        /// </summary>
+        /// <param name="eC2SecurityGroups">The values to add to the EC2SecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public DBSecurityGroup WithEC2SecurityGroups(IEnumerable<EC2SecurityGroup> eC2SecurityGroups)
+        {
+            foreach (EC2SecurityGroup element in eC2SecurityGroups)
+            {
+                this.eC2SecurityGroups.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this.eC2SecurityGroups.Count > 0;        
+            return this.eC2SecurityGroups.Count > 0;       
         }
 
         /// <summary>
@@ -165,10 +194,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the IPRanges collection
+        /// </summary>
+        /// <param name="iPRanges">The values to add to the IPRanges collection </param>
+        /// <returns>this instance</returns>
+        public DBSecurityGroup WithIPRanges(IEnumerable<IPRange> iPRanges)
+        {
+            foreach (IPRange element in iPRanges)
+            {
+                this.iPRanges.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if IPRanges property is set
         internal bool IsSetIPRanges()
         {
-            return this.iPRanges.Count > 0;         
+            return this.iPRanges.Count > 0;       
         }
     }
 }

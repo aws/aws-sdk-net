@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> This data type is used as a response element in the
+    /// ModifyDBInstance action. </para>
     /// </summary>
     public class PendingModifiedValues  
     {
@@ -35,8 +36,7 @@ namespace Amazon.RDS.Model
         private string engineVersion;
 
         /// <summary>
-        /// Contains the new <i>DBInstanceClass</i> for the DB Instance that will
-        /// be applied or is in progress.
+        /// Contains the new <c>DBInstanceClass</c> for the DB Instance that will be applied or is in progress.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -56,15 +56,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;        
+            return this.dBInstanceClass != null;       
         }
 
         /// <summary>
-        /// Contains the new <i>AllocatedStorage</i> size for the DB Instance that
-        /// will be applied or is in progress.
+        /// Contains the new <c>AllocatedStorage</c> size for the DB Instance that will be applied or is in progress.
         ///  
         /// </summary>
         public int AllocatedStorage
@@ -84,15 +84,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AllocatedStorage property is set
         internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorage.HasValue;      
+            return this.allocatedStorage.HasValue;       
         }
 
         /// <summary>
-        /// Contains the pending or in-progress change of the master credentials
-        /// for the DB Instance.
+        /// Contains the pending or in-progress change of the master credentials for the DB Instance.
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -112,10 +112,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MasterUserPassword property is set
         internal bool IsSetMasterUserPassword()
         {
-            return this.masterUserPassword != null;         
+            return this.masterUserPassword != null;       
         }
 
         /// <summary>
@@ -139,15 +140,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;      
+            return this.port.HasValue;       
         }
 
         /// <summary>
-        /// Specifies the pending number of days for which automated backups are
-        /// retained.
+        /// Specifies the pending number of days for which automated backups are retained.
         ///  
         /// </summary>
         public int BackupRetentionPeriod
@@ -167,11 +168,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if BackupRetentionPeriod property is set
         internal bool IsSetBackupRetentionPeriod()
         {
-            return this.backupRetentionPeriod.HasValue;         
+            return this.backupRetentionPeriod.HasValue;       
         }
+
+        /// <summary>
+        /// Indicates that the Single-AZ DB Instance is to change to a Multi-AZ deployment.
+        ///  
+        /// </summary>
         public bool MultiAZ
         {
             get { return this.multiAZ ?? default(bool); }
@@ -189,11 +196,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
             return this.multiAZ.HasValue;       
         }
+
+        /// <summary>
+        /// Indicates the database engine version.
+        ///  
+        /// </summary>
         public string EngineVersion
         {
             get { return this.engineVersion; }
@@ -211,10 +224,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;      
+            return this.engineVersion != null;       
         }
     }
 }

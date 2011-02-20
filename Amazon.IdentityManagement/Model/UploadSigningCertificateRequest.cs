@@ -36,8 +36,8 @@ namespace Amazon.IdentityManagement.Model
     /// the AWS Account has no associated Users.</para>
     /// <para><b>NOTE:</b>Because the body of a X.509 certificate can be
     /// large, you should use POST rather than GET when calling
-    /// UploadSigningCertificate. For more information, see Using the Query
-    /// API in Using AWS Identity and Access Management.</para>
+    /// UploadSigningCertificate. For more information, see Making Query
+    /// Requests in Using AWS Identity and Access Management.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UploadSigningCertificate"/>
     public class UploadSigningCertificateRequest : AmazonWebServiceRequest
@@ -79,6 +79,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -119,10 +120,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;        
+            return this.certificateBody != null;       
         }
     }
 }

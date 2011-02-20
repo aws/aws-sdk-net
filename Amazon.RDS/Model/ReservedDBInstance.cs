@@ -20,7 +20,10 @@ using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>Reserved D B Instance
+    /// <summary>
+    /// <para> This data type is used as a response element in the
+    /// DescribeReservedDBInstances and PurchaseReservedDBInstancesOffering
+    /// actions. </para>
     /// </summary>
     public class ReservedDBInstance  
     {
@@ -36,6 +39,11 @@ namespace Amazon.RDS.Model
         private string productDescription;
         private bool? multiAZ;
         private string state;
+
+        /// <summary>
+        /// The unique identifier for the reservation.
+        ///  
+        /// </summary>
         public string ReservedDBInstanceId
         {
             get { return this.reservedDBInstanceId; }
@@ -53,11 +61,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ReservedDBInstanceId property is set
         internal bool IsSetReservedDBInstanceId()
         {
             return this.reservedDBInstanceId != null;       
         }
+
+        /// <summary>
+        /// The offering identifier.
+        ///  
+        /// </summary>
         public string ReservedDBInstancesOfferingId
         {
             get { return this.reservedDBInstancesOfferingId; }
@@ -75,11 +89,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ReservedDBInstancesOfferingId property is set
         internal bool IsSetReservedDBInstancesOfferingId()
         {
-            return this.reservedDBInstancesOfferingId != null;      
+            return this.reservedDBInstancesOfferingId != null;       
         }
+
+        /// <summary>
+        /// The DB instance class for the reserved DB Instance.
+        ///  
+        /// </summary>
         public string DBInstanceClass
         {
             get { return this.dBInstanceClass; }
@@ -97,11 +117,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;        
+            return this.dBInstanceClass != null;       
         }
+
+        /// <summary>
+        /// The time the reservation started.
+        ///  
+        /// </summary>
         public DateTime StartTime
         {
             get { return this.startTime ?? default(DateTime); }
@@ -119,11 +145,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if StartTime property is set
         internal bool IsSetStartTime()
         {
-            return this.startTime.HasValue;         
+            return this.startTime.HasValue;       
         }
+
+        /// <summary>
+        /// The duration of the reservation in seconds.
+        ///  
+        /// </summary>
         public int Duration
         {
             get { return this.duration ?? default(int); }
@@ -141,11 +173,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Duration property is set
         internal bool IsSetDuration()
         {
-            return this.duration.HasValue;      
+            return this.duration.HasValue;       
         }
+
+        /// <summary>
+        /// The fixed price charged for this reserved DB Instance.
+        ///  
+        /// </summary>
         public double FixedPrice
         {
             get { return this.fixedPrice ?? default(double); }
@@ -163,11 +201,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if FixedPrice property is set
         internal bool IsSetFixedPrice()
         {
-            return this.fixedPrice.HasValue;        
+            return this.fixedPrice.HasValue;       
         }
+
+        /// <summary>
+        /// The hourly price charged for this reserved DB Instance.
+        ///  
+        /// </summary>
         public double UsagePrice
         {
             get { return this.usagePrice ?? default(double); }
@@ -185,11 +229,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if UsagePrice property is set
         internal bool IsSetUsagePrice()
         {
-            return this.usagePrice.HasValue;        
+            return this.usagePrice.HasValue;       
         }
+
+        /// <summary>
+        /// The number of reserved DB Instances.
+        ///  
+        /// </summary>
         public int DBInstanceCount
         {
             get { return this.dBInstanceCount ?? default(int); }
@@ -207,11 +257,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceCount property is set
         internal bool IsSetDBInstanceCount()
         {
             return this.dBInstanceCount.HasValue;       
         }
+
+        /// <summary>
+        /// The description of the reserved DB Instance.
+        ///  
+        /// </summary>
         public string ProductDescription
         {
             get { return this.productDescription; }
@@ -229,11 +285,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ProductDescription property is set
         internal bool IsSetProductDescription()
         {
-            return this.productDescription != null;         
+            return this.productDescription != null;       
         }
+
+        /// <summary>
+        /// Indicates if the reservation applies to Multi-AZ deployments.
+        ///  
+        /// </summary>
         public bool MultiAZ
         {
             get { return this.multiAZ ?? default(bool); }
@@ -251,11 +313,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
             return this.multiAZ.HasValue;       
         }
+
+        /// <summary>
+        /// The state of the reserved DB Instance.
+        ///  
+        /// </summary>
         public string State
         {
             get { return this.state; }
@@ -273,10 +341,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;      
+            return this.state != null;       
         }
     }
 }

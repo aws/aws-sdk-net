@@ -21,7 +21,17 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> The status of the DP Parameter Group. </para>
+    /// <para> The status of the DB Parameter Group. </para> <para>This data
+    /// type is used as a response element in the following actions:</para>
+    /// <ul>
+    /// <li> CreateDBInstance </li>
+    /// <li> CreateDBInstanceReadReplica </li>
+    /// <li> DeleteDBInstance </li>
+    /// <li> ModifyDBInstance </li>
+    /// <li> RebootDBInstance </li>
+    /// <li> RestoreDBInstanceFromDBSnapshot </li>
+    /// 
+    /// </ul>
     /// </summary>
     public class DBParameterGroupStatus  
     {
@@ -50,6 +60,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBParameterGroupName property is set
         internal bool IsSetDBParameterGroupName()
         {
@@ -77,6 +88,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ParameterApplyStatus property is set
         internal bool IsSetParameterApplyStatus()
         {

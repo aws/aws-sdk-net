@@ -54,17 +54,31 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the PolicyNames collection
+        /// </summary>
+        /// <param name="policyNames">The values to add to the PolicyNames collection </param>
+        /// <returns>this instance</returns>
+        public ListGroupPoliciesResult WithPolicyNames(IEnumerable<string> policyNames)
+        {
+            foreach (string element in policyNames)
+            {
+                this.policyNames.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames != null;        
+            return this.policyNames.Count > 0;       
         }
 
         /// <summary>
-        /// A flag that indicates whether there are more policy names to list. If
-        /// your results were truncated, you can make a subsequent pagination
-        /// request using the <c>Marker</c> request parameter to retrieve more
-        /// policy names in the list.
+        /// A flag that indicates whether there are more policy names to list. If your results were truncated, you can make a subsequent pagination
+        /// request using the <c>Marker</c> request parameter to retrieve more policy names in the list.
         ///  
         /// </summary>
         public bool IsTruncated
@@ -84,6 +98,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
@@ -91,9 +106,8 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and
-        /// contains the value to use for the <c>Marker</c> parameter in a
-        /// subsequent pagination request.
+        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and contains the value to use for the <c>Marker</c> parameter in a subsequent
+        /// pagination request.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -126,10 +140,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
     }
 }

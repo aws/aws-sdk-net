@@ -67,6 +67,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -107,15 +108,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if AccessKeyId property is set
         internal bool IsSetAccessKeyId()
         {
-            return this.accessKeyId != null;        
+            return this.accessKeyId != null;       
         }
 
         /// <summary>
-        /// The status of the access key. <c>Active</c> means the key is valid for
-        /// API calls, while <c>Inactive</c> means it is not.
+        /// The status of the access key. <c>Active</c> means the key is valid for API calls, while <c>Inactive</c> means it is not.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -144,10 +145,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;         
+            return this.status != null;       
         }
 
         /// <summary>
@@ -171,10 +173,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if CreateDate property is set
         internal bool IsSetCreateDate()
         {
-            return this.createDate.HasValue;        
+            return this.createDate.HasValue;       
         }
     }
 }

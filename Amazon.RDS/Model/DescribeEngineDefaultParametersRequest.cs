@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// The name of the DB Parameter Group Family.
+        /// The name of the DB Parameter Group Family. Valid Values: <c>MySQL5.1</c> | <c>MySQL5.5</c>
         ///  
         /// </summary>
         public string DBParameterGroupFamily
@@ -56,17 +56,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBParameterGroupFamily property is set
         internal bool IsSetDBParameterGroupFamily()
         {
-            return this.dBParameterGroupFamily != null;         
+            return this.dBParameterGroupFamily != null;       
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more
-        /// records exist than the specified <i>MaxRecords</i> value, a marker is
-        /// included in the response so that the remaining results may be
-        /// retrieved.
+        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
+        /// included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100
         ///  
         /// </summary>
         public int MaxRecords
@@ -86,17 +85,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;        
+            return this.maxRecords.HasValue;       
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeDBInstances
-        /// request. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by
-        /// <i>MaxRecords</i>.
+        /// An optional marker provided in the previous DescribeDBInstances request. If this parameter is specified, the response includes only records
+        /// beyond the marker, up to the value specified by <c>MaxRecords</c>.
         ///  
         /// </summary>
         public string Marker
@@ -116,10 +114,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
     }
 }

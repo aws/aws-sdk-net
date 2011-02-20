@@ -25,8 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBSnapshot operation.
-    /// <para> This API is used to delete a DBSnapshot. The DBSnapshot must be
-    /// in the "available" state to be deleted. </para>
+    /// <para> This API is used to delete a DBSnapshot. </para>
+    /// <para><b>NOTE:</b>The DBSnapshot must be in the available state to be
+    /// deleted.</para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DeleteDBSnapshot"/>
     public class DeleteDBSnapshotRequest : AmazonWebServiceRequest
@@ -34,7 +35,7 @@ namespace Amazon.RDS.Model
         private string dBSnapshotIdentifier;
 
         /// <summary>
-        /// The DBSnapshot identifier.
+        /// The DBSnapshot identifier. Constraints: Must be the name of an existing DB Snapshot in the <c>available</c> state.
         ///  
         /// </summary>
         public string DBSnapshotIdentifier
@@ -54,6 +55,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSnapshotIdentifier property is set
         internal bool IsSetDBSnapshotIdentifier()
         {

@@ -30,6 +30,7 @@ namespace Amazon.IdentityManagement.Model
         
         private string userName;
         private string serialNumber;
+        private DateTime? enableDate;
 
         /// <summary>
         /// The User with whom the MFA device is associated.
@@ -65,6 +66,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -105,10 +107,39 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
             return this.serialNumber != null;       
+        }
+
+        /// <summary>
+        /// The date when the MFA device was enabled for the User.
+        ///  
+        /// </summary>
+        public DateTime EnableDate
+        {
+            get { return this.enableDate ?? default(DateTime); }
+            set { this.enableDate = value; }
+        }
+
+        /// <summary>
+        /// Sets the EnableDate property
+        /// </summary>
+        /// <param name="enableDate">The value to set for the EnableDate property </param>
+        /// <returns>this instance</returns>
+        public MFADevice WithEnableDate(DateTime enableDate)
+        {
+            this.enableDate = enableDate;
+            return this;
+        }
+            
+
+        // Check to see if EnableDate property is set
+        internal bool IsSetEnableDate()
+        {
+            return this.enableDate.HasValue;       
         }
     }
 }

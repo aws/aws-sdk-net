@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the GetAccountSummaryResult property.
-        /// 
+        /// Contains the result of a successful invocation of the GetAccountSummary action.
         /// </summary>
         public GetAccountSummaryResult GetAccountSummaryResult
         {

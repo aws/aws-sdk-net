@@ -30,7 +30,7 @@ namespace Amazon.S3.Transfer.Internal
     /// This command files all the files that meets the criteria specified in the TransferUtilityUploadDirectoryRequest request
     /// and uploads them.
     /// </summary>
-    internal class UploadDirectoryCommand
+    internal class UploadDirectoryCommand : BaseCommand
     {
         TransferUtilityUploadDirectoryRequest _request;
         TransferUtility _utility;
@@ -46,7 +46,7 @@ namespace Amazon.S3.Transfer.Internal
             this._request = request;
         }
 
-        internal void Execute()
+        public override void Execute()
         {
             string basePath = new DirectoryInfo(this._request.Directory).FullName;
             string searchPattern = string.IsNullOrEmpty(this._request.SearchPattern) ? "*" : this._request.SearchPattern;

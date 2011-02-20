@@ -53,7 +53,7 @@ namespace Amazon.Auth.AccessControlPolicy
         }
 
         /// <summary>
-        /// Returns the name of this action. For example, 'sqs:SendMessage' is the
+        /// Gets and sets the name of this action. For example, 'sqs:SendMessage' is the
         /// name corresponding to the SQS action that enables users to send a message
         /// to an SQS queue.
         /// </summary>
@@ -62,6 +62,10 @@ namespace Amazon.Auth.AccessControlPolicy
             get
             {
                 return this.actionName;
+            }
+            set
+            {
+                this.actionName = value;
             }
         }
     }

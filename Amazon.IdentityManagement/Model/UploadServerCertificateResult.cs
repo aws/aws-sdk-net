@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
         private ServerCertificateMetadata serverCertificateMetadata;
 
         /// <summary>
-        /// The meta information of the uploaded server certificate without its
-        /// certificate body, certificate chain and private key.
+        /// The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.
         ///  
         /// </summary>
         public ServerCertificateMetadata ServerCertificateMetadata
@@ -51,10 +50,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if ServerCertificateMetadata property is set
         internal bool IsSetServerCertificateMetadata()
         {
-            return this.serverCertificateMetadata != null;      
+            return this.serverCertificateMetadata != null;       
         }
     }
 }

@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> Contains the result of a successful invocation of the
+    /// DescribeDBInstances action. </para>
     /// </summary>
     public class DescribeDBInstancesResult  
     {
@@ -50,10 +51,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
 
         /// <summary>
@@ -79,10 +81,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the DBInstances collection
+        /// </summary>
+        /// <param name="dBInstances">The values to add to the DBInstances collection </param>
+        /// <returns>this instance</returns>
+        public DescribeDBInstancesResult WithDBInstances(IEnumerable<DBInstance> dBInstances)
+        {
+            foreach (DBInstance element in dBInstances)
+            {
+                this.dBInstances.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if DBInstances property is set
         internal bool IsSetDBInstances()
         {
-            return this.dBInstances.Count > 0;      
+            return this.dBInstances.Count > 0;       
         }
     }
 }

@@ -21,7 +21,16 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> Contains the result of a successful invocation of the following
+    /// actions: </para>
+    /// <ul>
+    /// <li> CreateDBInstance </li>
+    /// <li> DeleteDBInstance </li>
+    /// <li> ModifyDBInstance </li>
+    /// 
+    /// </ul>
+    /// <para>This data type is used as a response element in the
+    /// DescribeDBInstances action.</para>
     /// </summary>
     public class DBInstance  
     {
@@ -50,8 +59,7 @@ namespace Amazon.RDS.Model
         private List<string> readReplicaDBInstanceIdentifiers = new List<string>();
 
         /// <summary>
-        /// Specifies a user-supplied database identifier. This is the unique key
-        /// that identifies a DB Instance.
+        /// Specifies a user-supplied database identifier. This is the unique key that identifies a DB Instance.
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -71,6 +79,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
@@ -78,8 +87,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the name of the compute and memory capacity class of the DB
-        /// Instance.
+        /// Specifies the name of the compute and memory capacity class of the DB Instance.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -99,15 +107,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;        
+            return this.dBInstanceClass != null;       
         }
 
         /// <summary>
-        /// Provides the name of the database engine to be used for this DB
-        /// Instance.
+        /// Provides the name of the database engine to be used for this DB Instance.
         ///  
         /// </summary>
         public string Engine
@@ -127,10 +135,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Engine property is set
         internal bool IsSetEngine()
         {
-            return this.engine != null;         
+            return this.engine != null;       
         }
 
         /// <summary>
@@ -154,6 +163,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceStatus property is set
         internal bool IsSetDBInstanceStatus()
         {
@@ -181,15 +191,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MasterUsername property is set
         internal bool IsSetMasterUsername()
         {
-            return this.masterUsername != null;         
+            return this.masterUsername != null;       
         }
 
         /// <summary>
-        /// Specifies the name of the initial database of this instance that was
-        /// provided at create time, if one was specified when the DB Instance was
+        /// Specifies the name of the initial database of this instance that was provided at create time, if one was specified when the DB Instance was
         /// created. This same name is returned for the life of the DB Instance.
         ///  
         /// </summary>
@@ -210,10 +220,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBName property is set
         internal bool IsSetDBName()
         {
-            return this.dBName != null;         
+            return this.dBName != null;       
         }
 
         /// <summary>
@@ -237,6 +248,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Endpoint property is set
         internal bool IsSetEndpoint()
         {
@@ -264,10 +276,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AllocatedStorage property is set
         internal bool IsSetAllocatedStorage()
         {
-            return this.allocatedStorage.HasValue;      
+            return this.allocatedStorage.HasValue;       
         }
 
         /// <summary>
@@ -291,16 +304,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if InstanceCreateTime property is set
         internal bool IsSetInstanceCreateTime()
         {
-            return this.instanceCreateTime.HasValue;        
+            return this.instanceCreateTime.HasValue;       
         }
 
         /// <summary>
-        /// Specifies the daily time range during which automated backups are
-        /// created if automated backups are enabled, as determined by the
-        /// <i>BackupRetentionPeriod</i>.
+        /// Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the
+        /// <c>BackupRetentionPeriod</c>.
         ///  
         /// </summary>
         public string PreferredBackupWindow
@@ -320,15 +333,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if PreferredBackupWindow property is set
         internal bool IsSetPreferredBackupWindow()
         {
-            return this.preferredBackupWindow != null;      
+            return this.preferredBackupWindow != null;       
         }
 
         /// <summary>
-        /// Specifies the number of days for which automatic DB Snapshots are
-        /// retained.
+        /// Specifies the number of days for which automatic DB Snapshots are retained.
         ///  
         /// </summary>
         public int BackupRetentionPeriod
@@ -348,16 +361,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if BackupRetentionPeriod property is set
         internal bool IsSetBackupRetentionPeriod()
         {
-            return this.backupRetentionPeriod.HasValue;         
+            return this.backupRetentionPeriod.HasValue;       
         }
 
         /// <summary>
-        /// Provides List of DB Security Group elements containing only
-        /// <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
-        /// sub-elements.
+        /// Provides List of DB Security Group elements containing only <c>DBSecurityGroup.Name</c> and <c>DBSecurityGroup.Status</c> subelements.
         ///  
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroups
@@ -379,10 +391,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the DBSecurityGroups collection
+        /// </summary>
+        /// <param name="dBSecurityGroups">The values to add to the DBSecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithDBSecurityGroups(IEnumerable<DBSecurityGroupMembership> dBSecurityGroups)
+        {
+            foreach (DBSecurityGroupMembership element in dBSecurityGroups)
+            {
+                this.dBSecurityGroups.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this.dBSecurityGroups.Count > 0;         
+            return this.dBSecurityGroups.Count > 0;       
         }
 
         /// <summary>
@@ -408,15 +436,30 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the DBParameterGroups collection
+        /// </summary>
+        /// <param name="dBParameterGroups">The values to add to the DBParameterGroups collection </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithDBParameterGroups(IEnumerable<DBParameterGroupStatus> dBParameterGroups)
+        {
+            foreach (DBParameterGroupStatus element in dBParameterGroups)
+            {
+                this.dBParameterGroups.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if DBParameterGroups property is set
         internal bool IsSetDBParameterGroups()
         {
-            return this.dBParameterGroups.Count > 0;        
+            return this.dBParameterGroups.Count > 0;       
         }
 
         /// <summary>
-        /// Specifies the name of the Availability Zone the DB Instance is located
-        /// in.
+        /// Specifies the name of the Availability Zone the DB Instance is located in.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -436,6 +479,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
@@ -443,8 +487,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the weekly time range (in UTC) during which system
-        /// maintenance can occur.
+        /// Specifies the weekly time range (in UTC) during which system maintenance can occur.
         ///  
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -464,16 +507,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if PreferredMaintenanceWindow property is set
         internal bool IsSetPreferredMaintenanceWindow()
         {
-            return this.preferredMaintenanceWindow != null;         
+            return this.preferredMaintenanceWindow != null;       
         }
 
         /// <summary>
-        /// Specifies that changes to the DB Instance are pending. This element is
-        /// only included when changes are pending. Specific changes are
-        /// identified by sub-elements.
+        /// Specifies that changes to the DB Instance are pending. This element is only included when changes are pending. Specific changes are
+        /// identified by subelements.
         ///  
         /// </summary>
         public PendingModifiedValues PendingModifiedValues
@@ -493,15 +536,15 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if PendingModifiedValues property is set
         internal bool IsSetPendingModifiedValues()
         {
-            return this.pendingModifiedValues != null;      
+            return this.pendingModifiedValues != null;       
         }
 
         /// <summary>
-        /// Specifies the latest time to which a database can be restored with
-        /// point-in-time restore.
+        /// Specifies the latest time to which a database can be restored with point-in-time restore.
         ///  
         /// </summary>
         public DateTime LatestRestorableTime
@@ -521,11 +564,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if LatestRestorableTime property is set
         internal bool IsSetLatestRestorableTime()
         {
-            return this.latestRestorableTime.HasValue;      
+            return this.latestRestorableTime.HasValue;       
         }
+
+        /// <summary>
+        /// Specifies if the DB Instance is a Multi-AZ deployment.
+        ///  
+        /// </summary>
         public bool MultiAZ
         {
             get { return this.multiAZ ?? default(bool); }
@@ -543,11 +592,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if MultiAZ property is set
         internal bool IsSetMultiAZ()
         {
             return this.multiAZ.HasValue;       
         }
+
+        /// <summary>
+        /// Indicates the database engine version.
+        ///  
+        /// </summary>
         public string EngineVersion
         {
             get { return this.engineVersion; }
@@ -565,11 +620,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EngineVersion property is set
         internal bool IsSetEngineVersion()
         {
-            return this.engineVersion != null;      
+            return this.engineVersion != null;       
         }
+
+        /// <summary>
+        /// Indicates that minor version patches are applied automatically.
+        ///  
+        /// </summary>
         public bool AutoMinorVersionUpgrade
         {
             get { return this.autoMinorVersionUpgrade ?? default(bool); }
@@ -587,11 +648,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this.autoMinorVersionUpgrade.HasValue;       
         }
+
+        /// <summary>
+        /// Contains the identifier of the source DB Instance if this DB Instance is a Read Replica.
+        ///  
+        /// </summary>
         public string ReadReplicaSourceDBInstanceIdentifier
         {
             get { return this.readReplicaSourceDBInstanceIdentifier; }
@@ -609,11 +676,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if ReadReplicaSourceDBInstanceIdentifier property is set
         internal bool IsSetReadReplicaSourceDBInstanceIdentifier()
         {
-            return this.readReplicaSourceDBInstanceIdentifier != null;      
+            return this.readReplicaSourceDBInstanceIdentifier != null;       
         }
+
+        /// <summary>
+        /// Contains one or more identifiers of the Read Replicas associated with this DB Instance.
+        ///  
+        /// </summary>
         public List<string> ReadReplicaDBInstanceIdentifiers
         {
             get { return this.readReplicaDBInstanceIdentifiers; }
@@ -633,10 +706,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the ReadReplicaDBInstanceIdentifiers collection
+        /// </summary>
+        /// <param name="readReplicaDBInstanceIdentifiers">The values to add to the ReadReplicaDBInstanceIdentifiers collection </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithReadReplicaDBInstanceIdentifiers(IEnumerable<string> readReplicaDBInstanceIdentifiers)
+        {
+            foreach (string element in readReplicaDBInstanceIdentifiers)
+            {
+                this.readReplicaDBInstanceIdentifiers.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if ReadReplicaDBInstanceIdentifiers property is set
         internal bool IsSetReadReplicaDBInstanceIdentifiers()
         {
-            return this.readReplicaDBInstanceIdentifiers.Count > 0;         
+            return this.readReplicaDBInstanceIdentifiers.Count > 0;       
         }
     }
 }

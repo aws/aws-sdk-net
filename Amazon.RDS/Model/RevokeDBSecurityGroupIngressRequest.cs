@@ -59,14 +59,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBSecurityGroupName property is set
         internal bool IsSetDBSecurityGroupName()
         {
-            return this.dBSecurityGroupName != null;        
+            return this.dBSecurityGroupName != null;       
         }
 
         /// <summary>
-        /// The IP range to revoke access from.
+        /// The IP range to revoke access from. Must be a valid CIDR range. If <c>CIDRIP</c> is specified, <c>EC2SecurityGroupName</c> and
+        /// <c>EC2SecurityGroupOwnerId</c> cannot be provided.
         ///  
         /// </summary>
         public string CIDRIP
@@ -86,14 +88,16 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this.cIDRIP != null;         
+            return this.cIDRIP != null;       
         }
 
         /// <summary>
-        /// The name of the EC2 Security Group to revoke access from.
+        /// The name of the EC2 Security Group to revoke access from. If <c>EC2SecurityGroupName</c> is specified, <c>EC2SecurityGroupOwnerId</c> must
+        /// also be provided and <c>CIDRIP</c> cannot be provided.
         ///  
         /// </summary>
         public string EC2SecurityGroupName
@@ -113,6 +117,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EC2SecurityGroupName property is set
         internal bool IsSetEC2SecurityGroupName()
         {
@@ -120,9 +125,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The AWS Account Number of the owner of the security group specified in
-        /// the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-        /// not an acceptable value.
+        /// The AWS Account Number of the owner of the security group specified in the <c>EC2SecurityGroupName</c> parameter. The AWS Access Key ID is
+        /// not an acceptable value. If <c>EC2SecurityGroupOwnerId</c> is specified <c>EC2SecurityGroupName</c> must also be provided and <c>CIDRIP</c>
+        /// cannot be provided.
         ///  
         /// </summary>
         public string EC2SecurityGroupOwnerId
@@ -142,10 +147,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EC2SecurityGroupOwnerId property is set
         internal bool IsSetEC2SecurityGroupOwnerId()
         {
-            return this.eC2SecurityGroupOwnerId != null;        
+            return this.eC2SecurityGroupOwnerId != null;       
         }
     }
 }

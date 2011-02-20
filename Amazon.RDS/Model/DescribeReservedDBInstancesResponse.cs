@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Gets and sets the DescribeReservedDBInstancesResult property.
-        /// 
+        /// Contains the result of a successful invocation of the DescribeReservedDBInstances action.
         /// </summary>
         public DescribeReservedDBInstancesResult DescribeReservedDBInstancesResult
         {

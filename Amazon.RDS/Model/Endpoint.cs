@@ -21,7 +21,14 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> This data type is used as a response element in the following
+    /// actions: </para>
+    /// <ul>
+    /// <li> CreateDBInstance </li>
+    /// <li> DescribeDBInstances </li>
+    /// <li> DeleteDBInstance </li>
+    /// 
+    /// </ul>
     /// </summary>
     public class Endpoint  
     {
@@ -50,10 +57,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Address property is set
         internal bool IsSetAddress()
         {
-            return this.address != null;        
+            return this.address != null;       
         }
 
         /// <summary>
@@ -77,10 +85,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;      
+            return this.port.HasValue;       
         }
     }
 }

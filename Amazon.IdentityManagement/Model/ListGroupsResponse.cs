@@ -30,8 +30,7 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the ListGroupsResult property.
-        /// Contains the result of a successful invocation of the ListGroups
-        /// action.
+        /// Contains the result of a successful invocation of the ListGroups action.
         /// </summary>
         public ListGroupsResult ListGroupsResult
         {

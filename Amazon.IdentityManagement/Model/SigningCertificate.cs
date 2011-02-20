@@ -69,6 +69,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -109,10 +110,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if CertificateId property is set
         internal bool IsSetCertificateId()
         {
-            return this.certificateId != null;      
+            return this.certificateId != null;       
         }
 
         /// <summary>
@@ -149,15 +151,15 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;        
+            return this.certificateBody != null;       
         }
 
         /// <summary>
-        /// The status of the signing certificate. <c>Active</c> means the key is
-        /// valid for API calls, while <c>Inactive</c> means it is not.
+        /// The status of the signing certificate. <c>Active</c> means the key is valid for API calls, while <c>Inactive</c> means it is not.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -186,10 +188,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;         
+            return this.status != null;       
         }
 
         /// <summary>
@@ -213,10 +216,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UploadDate property is set
         internal bool IsSetUploadDate()
         {
-            return this.uploadDate.HasValue;        
+            return this.uploadDate.HasValue;       
         }
     }
 }

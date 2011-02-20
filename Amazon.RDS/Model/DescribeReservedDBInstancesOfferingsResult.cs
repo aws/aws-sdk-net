@@ -20,13 +20,20 @@ using System.IO;
 
 namespace Amazon.RDS.Model
 {
-    /// <summary>Describe Reserved D B Instances Offerings Result
+    /// <summary>
+    /// <para> Contains the result of a successful invocation of the
+    /// DescribeReservedDBInstancesOfferings action. </para>
     /// </summary>
     public class DescribeReservedDBInstancesOfferingsResult  
     {
         
         private string marker;
         private List<ReservedDBInstancesOffering> reservedDBInstancesOfferings = new List<ReservedDBInstancesOffering>();
+
+        /// <summary>
+        /// A marker provided for paginated results.
+        ///  
+        /// </summary>
         public string Marker
         {
             get { return this.marker; }
@@ -44,11 +51,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
+
+        /// <summary>
+        /// A list of DB Instance offerings.
+        ///  
+        /// </summary>
         public List<ReservedDBInstancesOffering> ReservedDBInstancesOfferings
         {
             get { return this.reservedDBInstancesOfferings; }
@@ -68,10 +81,26 @@ namespace Amazon.RDS.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the ReservedDBInstancesOfferings collection
+        /// </summary>
+        /// <param name="reservedDBInstancesOfferings">The values to add to the ReservedDBInstancesOfferings collection </param>
+        /// <returns>this instance</returns>
+        public DescribeReservedDBInstancesOfferingsResult WithReservedDBInstancesOfferings(IEnumerable<ReservedDBInstancesOffering> reservedDBInstancesOfferings)
+        {
+            foreach (ReservedDBInstancesOffering element in reservedDBInstancesOfferings)
+            {
+                this.reservedDBInstancesOfferings.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if ReservedDBInstancesOfferings property is set
         internal bool IsSetReservedDBInstancesOfferings()
         {
-            return this.reservedDBInstancesOfferings.Count > 0;         
+            return this.reservedDBInstancesOfferings.Count > 0;       
         }
     }
 }

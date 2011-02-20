@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -48,6 +48,34 @@ namespace Amazon.SimpleDB
     /// </summary>
     public interface AmazonSimpleDB : IDisposable
     {
+        #region CreateDomain Operation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDomain operation. 
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.CreateDomain"/>
+        /// </summary>
+        /// <param name="request">The CreateDomainRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndCreateDomain.</returns>
+        IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateDomain operation.
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.CreateDomain"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomain.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>Returns a CreateDomainResponse from S3.</returns>
+        CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult);
+
         /// <summary>
         /// Create Domain
         /// </summary>
@@ -59,6 +87,36 @@ namespace Amazon.SimpleDB
         /// operation may take 10 or more seconds to complete.
         /// </remarks>
         CreateDomainResponse CreateDomain(CreateDomainRequest request);
+
+        #endregion
+
+        #region ListDomains Operation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDomains operation. 
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.ListDomains"/>
+        /// </summary>
+        /// <param name="request">The ListDomainsRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndListDomains.</returns>
+        IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListDomains operation.
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.ListDomains"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomains.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>Returns a ListDomainsResponse from S3.</returns>
+        ListDomainsResponse EndListDomains(IAsyncResult asyncResult);
 
         /// <summary>
         /// List Domains
@@ -73,6 +131,36 @@ namespace Amazon.SimpleDB
         /// </remarks>
         ListDomainsResponse ListDomains(ListDomainsRequest request);
 
+        #endregion
+
+        #region DomainMetadata Operation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DomainMetadata operation. 
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.DomainMetadata"/>
+        /// </summary>
+        /// <param name="request">The DomainMetadataRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndDomainMetadata.</returns>
+        IAsyncResult BeginDomainMetadata(DomainMetadataRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DomainMetadata operation.
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.DomainMetadata"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDomainMetadata.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>Returns a DomainMetadataResponse from S3.</returns>
+        DomainMetadataResponse EndDomainMetadata(IAsyncResult asyncResult);
+
         /// <summary>
         /// Domain Metadata
         /// </summary>
@@ -84,6 +172,36 @@ namespace Amazon.SimpleDB
         /// </remarks>
         DomainMetadataResponse DomainMetadata(DomainMetadataRequest request);
 
+        #endregion
+
+        #region DeleteDomain Operation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDomain operation. 
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.DeleteDomain"/>
+        /// </summary>
+        /// <param name="request">The DeleteDomainRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndDeleteDomain.</returns>
+        IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteDomain operation.
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.DeleteDomain"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomain.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>Returns a DeleteDomainResponse from S3.</returns>
+        DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult);
+
         /// <summary>
         /// Delete Domain
         /// </summary>
@@ -94,6 +212,36 @@ namespace Amazon.SimpleDB
         /// are deleted as well. The DeleteDomain operation may take 10 or more seconds to complete.
         /// </remarks>
         DeleteDomainResponse DeleteDomain(DeleteDomainRequest request);
+
+        #endregion
+
+        #region PutAttributes Operation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAttributes operation. 
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.PutAttributes"/>
+        /// </summary>
+        /// <param name="request">The PutAttributesRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndPutAttributes.</returns>
+        IAsyncResult BeginPutAttributes(PutAttributesRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutAttributes operation.
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.PutAttributes"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAttributes.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>Returns a PutAttributesResponse from S3.</returns>
+        PutAttributesResponse EndPutAttributes(IAsyncResult asyncResult);
 
         /// <summary>
         /// Put Attributes
@@ -117,6 +265,36 @@ namespace Amazon.SimpleDB
         /// with the new value.
         /// </remarks>
         PutAttributesResponse PutAttributes(PutAttributesRequest request);
+
+        #endregion
+
+        #region BatchPutAttributes Operation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchPutAttributes operation. 
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.BatchPutAttributes"/>
+        /// </summary>
+        /// <param name="request">The BatchPutAttributesRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndBatchPutAttributes.</returns>
+        IAsyncResult BeginBatchPutAttributes(BatchPutAttributesRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the BatchPutAttributes operation.
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.BatchPutAttributes"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchPutAttributes.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>Returns a BatchPutAttributesResponse from S3.</returns>
+        BatchPutAttributesResponse EndBatchPutAttributes(IAsyncResult asyncResult);
 
         /// <summary>
         /// Batch Put Attributes
@@ -142,6 +320,36 @@ namespace Amazon.SimpleDB
         /// </remarks>
         BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request);
 
+        #endregion
+
+        #region GetAttributes Operation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAttributes operation. 
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.GetAttributes"/>
+        /// </summary>
+        /// <param name="request">The GetAttributesRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndGetAttributes.</returns>
+        IAsyncResult BeginGetAttributes(GetAttributesRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetAttributes operation.
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.GetAttributes"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAttributes.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>Returns a GetAttributesResponse from S3.</returns>
+        GetAttributesResponse EndGetAttributes(IAsyncResult asyncResult);
+
         /// <summary>
         /// Get Attributes
         /// </summary>
@@ -156,6 +364,36 @@ namespace Amazon.SimpleDB
         /// </remarks>
         GetAttributesResponse GetAttributes(GetAttributesRequest request);
 
+        #endregion
+
+        #region DeleteAttributes Operation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAttributes operation. 
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.DeleteAttributes"/>
+        /// </summary>
+        /// <param name="request">The DeleteAttributesRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndDeleteAttributes.</returns>
+        IAsyncResult BeginDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteAttributes operation.
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.DeleteAttributes"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAttributes.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>Returns a DeleteAttributesResponse from S3.</returns>
+        DeleteAttributesResponse EndDeleteAttributes(IAsyncResult asyncResult);
+
         /// <summary>
         /// Delete Attributes
         /// </summary>
@@ -166,6 +404,36 @@ namespace Amazon.SimpleDB
         /// deleted.
         /// </remarks>
         DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request);
+
+        #endregion
+
+        #region BatchDeleteAttributes Operation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteAttributes operation. 
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.BatchDeleteAttributes"/>
+        /// </summary>
+        /// <param name="request">The BatchDeleteAttributesRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndBatchDeleteAttributes.</returns>
+        IAsyncResult BeginBatchDeleteAttributes(BatchDeleteAttributesRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the BatchDeleteAttributes operation.
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.BatchDeleteAttributes"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteAttributes.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>Returns a BatchDeleteAttributesResponse from S3.</returns>
+        BatchDeleteAttributesResponse EndBatchDeleteAttributes(IAsyncResult asyncResult);
 
         /// <summary>
         /// Batch Delete Attributes
@@ -179,6 +447,36 @@ namespace Amazon.SimpleDB
         /// </remarks>
         BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request);
 
+        #endregion
+
+        #region Select Operation
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Select operation. 
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.Select"/>
+        /// </summary>
+        /// <param name="request">The SelectRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// this value is also needed when invoking EndSelect.</returns>
+        IAsyncResult BeginSelect(SelectRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the Select operation.
+        /// <seealso cref="M:Amazon.SimpleDB.AmazonSimpleDB.Select"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSelect.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
+        /// <returns>Returns a SelectResponse from S3.</returns>
+        SelectResponse EndSelect(IAsyncResult asyncResult);
+
         /// <summary>
         /// Select
         /// </summary>
@@ -190,6 +488,9 @@ namespace Amazon.SimpleDB
         /// and return a time-out error response.
         /// </remarks>
         SelectResponse Select(SelectRequest request);
+
+
+        #endregion
 
     }
 }

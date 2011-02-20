@@ -79,6 +79,7 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
@@ -86,10 +87,8 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Use this only when paginating results, and only in a subsequent
-        /// request after you've received a response where the results are
-        /// truncated. Set it to the value of the <c>Marker</c> element in the
-        /// response you just received.
+        /// Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are
+        /// truncated. Set it to the value of the <c>Marker</c> element in the response you just received.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -122,17 +121,16 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
 
         /// <summary>
-        /// Use this only when paginating results to indicate the maximum number
-        /// of keys you want in the response. If there are additional keys beyond
-        /// the maximum you specify, the <c>IsTruncated</c> response element is
-        /// <c>true</c>.
+        /// Use this parameter only when paginating results to indicate the maximum number of keys you want in the response. If there are additional
+        /// keys beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -161,10 +159,11 @@ namespace Amazon.IdentityManagement.Model
             return this;
         }
             
+
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;      
+            return this.maxItems.HasValue;       
         }
     }
 }

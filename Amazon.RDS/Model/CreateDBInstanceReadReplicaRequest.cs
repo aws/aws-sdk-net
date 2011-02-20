@@ -25,7 +25,13 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBInstanceReadReplica operation.
-    /// 
+    /// <para> Creates a DB Instance that acts as a Read Replica of a source
+    /// DB Instance. </para> <para> All Read Replica DB Instances are created
+    /// as Single-AZ deployments with backups disabled. All other DB Instance
+    /// attributes (including DB Security Groups and DB Parameter Groups) are
+    /// inherited from the source DB Instance, except as specified below.
+    /// </para> <para><b>IMPORTANT:</b> The source DB Instance must have
+    /// backup retention enabled. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBInstanceReadReplica"/>
     public class CreateDBInstanceReadReplicaRequest : AmazonWebServiceRequest
@@ -36,6 +42,12 @@ namespace Amazon.RDS.Model
         private string availabilityZone;
         private int? port;
         private bool? autoMinorVersionUpgrade;
+
+        /// <summary>
+        /// The DB Instance identifier of the Read Replica. This is the unique key that identifies a DB Instance. This parameter is stored as a
+        /// lowercase string.
+        ///  
+        /// </summary>
         public string DBInstanceIdentifier
         {
             get { return this.dBInstanceIdentifier; }
@@ -53,11 +65,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceIdentifier property is set
         internal bool IsSetDBInstanceIdentifier()
         {
             return this.dBInstanceIdentifier != null;       
         }
+
+        /// <summary>
+        /// The identifier of the DB Instance that will act as the source for the Read Replica. Each DB Instance can have up to five Read Replicas.
+        /// Constraints: Must be the identifier of an existing DB Instance that is not already a Read Replica DB Instance.
+        ///  
+        /// </summary>
         public string SourceDBInstanceIdentifier
         {
             get { return this.sourceDBInstanceIdentifier; }
@@ -75,11 +94,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if SourceDBInstanceIdentifier property is set
         internal bool IsSetSourceDBInstanceIdentifier()
         {
-            return this.sourceDBInstanceIdentifier != null;         
+            return this.sourceDBInstanceIdentifier != null;       
         }
+
+        /// <summary>
+        /// The compute and memory capacity of the Read Replica. Valid Values: <c>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge
+        /// | db.m2.4xlarge</c> Default: Inherits from the source DB Instance.
+        ///  
+        /// </summary>
         public string DBInstanceClass
         {
             get { return this.dBInstanceClass; }
@@ -97,11 +123,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if DBInstanceClass property is set
         internal bool IsSetDBInstanceClass()
         {
-            return this.dBInstanceClass != null;        
+            return this.dBInstanceClass != null;       
         }
+
+        /// <summary>
+        /// The Amazon EC2 Availability Zone that the Read Replica will be created in. Default: A random, system-chosen Availability Zone in the
+        /// endpoint's region. Example: <c>us-east-1d</c>
+        ///  
+        /// </summary>
         public string AvailabilityZone
         {
             get { return this.availabilityZone; }
@@ -119,11 +152,17 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
             return this.availabilityZone != null;       
         }
+
+        /// <summary>
+        /// The port number that the DB Instance uses for connections. Default: Inherits from the source DB Instance Valid Values: <c>1150-65535</c>
+        ///  
+        /// </summary>
         public int Port
         {
             get { return this.port ?? default(int); }
@@ -141,11 +180,18 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;      
+            return this.port.HasValue;       
         }
+
+        /// <summary>
+        /// Indicates that minor engine upgrades will be applied automatically to the Read Replica during the maintenance window. Default: Inherits from
+        /// the source DB Instance
+        ///  
+        /// </summary>
         public bool AutoMinorVersionUpgrade
         {
             get { return this.autoMinorVersionUpgrade ?? default(bool); }
@@ -163,6 +209,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {

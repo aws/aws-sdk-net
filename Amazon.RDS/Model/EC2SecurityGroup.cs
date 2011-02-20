@@ -21,7 +21,14 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para> This data type is used as a response element in the following
+    /// actions: </para>
+    /// <ul>
+    /// <li> AuthorizeDBSecurityGroupIngress </li>
+    /// <li> DescribeDBSecurityGroups </li>
+    /// <li> RevokeDBSecurityGroupIngress </li>
+    /// 
+    /// </ul>
     /// </summary>
     public class EC2SecurityGroup  
     {
@@ -51,10 +58,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;         
+            return this.status != null;       
         }
 
         /// <summary>
@@ -78,6 +86,7 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EC2SecurityGroupName property is set
         internal bool IsSetEC2SecurityGroupName()
         {
@@ -85,8 +94,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the AWS ID of the owner of the EC2 security group specified
-        /// in the <i>EC2SecurityGroupName</i> field.
+        /// Specifies the AWS ID of the owner of the EC2 security group specified in the <c>EC2SecurityGroupName</c> field.
         ///  
         /// </summary>
         public string EC2SecurityGroupOwnerId
@@ -106,10 +114,11 @@ namespace Amazon.RDS.Model
             return this;
         }
             
+
         // Check to see if EC2SecurityGroupOwnerId property is set
         internal bool IsSetEC2SecurityGroupOwnerId()
         {
-            return this.eC2SecurityGroupOwnerId != null;        
+            return this.eC2SecurityGroupOwnerId != null;       
         }
     }
 }

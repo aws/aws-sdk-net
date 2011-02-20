@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Gets and sets the DescribeDBSnapshotsResult property.
-        /// 
+        /// Contains the result of a successful invocation of the DescribeDBSnapshots action.
         /// </summary>
         public DescribeDBSnapshotsResult DescribeDBSnapshotsResult
         {
