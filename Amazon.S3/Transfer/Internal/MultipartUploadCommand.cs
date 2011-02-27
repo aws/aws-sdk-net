@@ -93,13 +93,13 @@ namespace Amazon.S3.Transfer.Internal
 
         private static long calculatePartSize(long fileSize)
         {
-            long partSize = fileSize / S3Constants.MaxNumberOfParts;
+            double partSize = Math.Ceiling((double)fileSize / S3Constants.MaxNumberOfParts);
             if (partSize < S3Constants.MinPartSize)
             {
                 partSize = S3Constants.MinPartSize;
             }
 
-            return partSize;
+            return (long)partSize;
         }
 
         private string determineContentType()

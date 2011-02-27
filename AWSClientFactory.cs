@@ -20,6 +20,7 @@
  */
 
 using Amazon.AutoScaling;
+using Amazon.CloudFormation;
 using Amazon.CloudFront;
 using Amazon.CloudWatch;
 using Amazon.EC2;
@@ -494,5 +495,39 @@ namespace Amazon
         {
             return new AmazonElasticBeanstalkClient(awsAccessKey, awsSecretAccessKey, config);
         }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFormation Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CloudFormation client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFormation CreateAmazonCloudFormationClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCloudFormationClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFormation Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CloudFormation client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFormation CreateAmazonCloudFormationClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCloudFormationConfig config
+            )
+        {
+            return new AmazonCloudFormationClient(awsAccessKey, awsSecretAccessKey, config);
+        }  
     }
 }
