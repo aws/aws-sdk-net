@@ -72,7 +72,8 @@ namespace Amazon.S3.Util
         internal static readonly string[] LocationConstraints = {"",
                                                 "EU",
                                                 "us-west-1",
-                                                "ap-southeast-1"};
+                                                "ap-southeast-1",
+                                                "ap-northeast-1"};
 
         // ACL related strings
         internal static readonly string[] CannedAcls = {"",

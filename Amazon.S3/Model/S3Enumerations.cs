@@ -123,7 +123,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Specifies that the S3 Bucket should use the AP-SOUTHEAST-1 locality.
         /// </summary>
-        APS1
+        APS1,
+        /// <summary>
+        /// Specifies that the S3 Bucket should use the AP-NORTHEAST-1 locality.
+        /// </summary>
+        APN1
     }
 
     /// <summary>
