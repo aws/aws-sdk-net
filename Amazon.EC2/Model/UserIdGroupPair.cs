@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -29,10 +29,11 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Security group and user ID pair.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class UserIdGroupPair
     {    
         private string userIdField;
+        private string groupIdField;
         private string groupNameField;
 
         /// <summary>
@@ -66,6 +67,39 @@ namespace Amazon.EC2.Model
         public bool IsSetUserId()
         {
             return this.userIdField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the GroupId property.
+        /// AWS Group ID of a Security Group. Cannot be used when
+        /// specifying a CIDR IP address.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupId")]
+        public string GroupId
+        {
+            get { return this.groupIdField; }
+            set { this.groupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupId property
+        /// </summary>
+        /// <param name="userId">AWS Group ID of a Security Group. Cannot be used when
+        /// specifying a CIDR IP address.</param>
+        /// <returns>this instance</returns>
+        public UserIdGroupPair WithGroupId(string userId)
+        {
+            this.groupIdField = userId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if GroupId property is set
+        /// </summary>
+        /// <returns>true if GroupId property is set</returns>
+        public bool IsSetGroupId()
+        {
+            return this.groupIdField != null;
         }
 
         /// <summary>

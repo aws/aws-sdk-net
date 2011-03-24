@@ -236,11 +236,11 @@ namespace Amazon.S3
         /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndListBuckets.</returns>
         public IAsyncResult BeginListBuckets(AsyncCallback callback, object state)
         {
@@ -254,11 +254,11 @@ namespace Amazon.S3
         /// <param name="request">The ListBucketsRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndListBuckets.</returns>
         public IAsyncResult BeginListBuckets(ListBucketsRequest request, AsyncCallback callback, object state)
         {
@@ -302,7 +302,7 @@ namespace Amazon.S3
             }
 
             ConvertListBuckets(request);
-            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);            
             invoke<ListBucketsResponse>(asyncResult);
             return asyncResult;
         }
@@ -318,11 +318,11 @@ namespace Amazon.S3
         /// <param name="request">The GetBucketLocationRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndGetBucketLocation.</returns>
         public IAsyncResult BeginGetBucketLocation(GetBucketLocationRequest request, AsyncCallback callback, object state)
         {
@@ -388,11 +388,11 @@ namespace Amazon.S3
         /// <param name="request">The GetBucketLoggingRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndGetBucketLogging.</returns>
         public IAsyncResult BeginGetBucketLogging(GetBucketLoggingRequest request, AsyncCallback callback, object state)
         {
@@ -460,11 +460,11 @@ namespace Amazon.S3
         /// <param name="request">The EnableBucketLoggingRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndEnableBucketLogging.</returns>
         public IAsyncResult BeginEnableBucketLogging(EnableBucketLoggingRequest request, AsyncCallback callback, object state)
         {
@@ -555,11 +555,11 @@ namespace Amazon.S3
         /// <param name="request">The DisableBucketLoggingRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDisableBucketLogging.</returns>
         public IAsyncResult BeginDisableBucketLogging(DisableBucketLoggingRequest request, AsyncCallback callback, object state)
         {
@@ -632,11 +632,11 @@ namespace Amazon.S3
         /// <param name="request">The GetBucketVersioningRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndGetBucketVersioning.</returns>
         public IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state)
         {
@@ -703,11 +703,11 @@ namespace Amazon.S3
         /// <param name="request">The SetBucketVersioningRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndSetBucketVersioning.</returns>
         public IAsyncResult BeginSetBucketVersioning(SetBucketVersioningRequest request, AsyncCallback callback, object state)
         {
@@ -785,7 +785,7 @@ namespace Amazon.S3
             }
 
             // Build out the request's parameters
-            ConvertSetBucketVersioning(request);
+            ConvertSetBucketVersioning(request); 
             S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
             invoke<SetBucketVersioningResponse>(asyncResult);
             return asyncResult;
@@ -802,11 +802,11 @@ namespace Amazon.S3
         /// <param name="request">The GetBucketPolicyRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndGetBucketPolicy.</returns>
         public IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state)
         {
@@ -822,7 +822,7 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a GetBucketPolicyResponse from S3.</returns>
         public GetBucketPolicyResponse EndGetBucketPolicy(IAsyncResult asyncResult)
-        {
+        {            
             try
             {
                 return endOperation<GetBucketPolicyResponse>(asyncResult);
@@ -905,11 +905,11 @@ namespace Amazon.S3
         /// <param name="request">The PutBucketPolicyRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndPutBucketPolicy.</returns>
         public IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state)
         {
@@ -990,11 +990,11 @@ namespace Amazon.S3
         /// <param name="request">The DeleteBucketPolicyRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDeleteBucketPolicy.</returns>
         public IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state)
         {
@@ -1073,11 +1073,11 @@ namespace Amazon.S3
         /// <param name="request">The SetNotificationConfigurationRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndSetNotificationConfiguration.</returns>
         public IAsyncResult BeginSetNotificationConfiguration(SetNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
@@ -1155,11 +1155,11 @@ namespace Amazon.S3
         /// <param name="request">The GetNotificationConfigurationRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndGetNotificationConfiguration.</returns>
         public IAsyncResult BeginGetNotificationConfiguration(GetNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
@@ -1226,11 +1226,11 @@ namespace Amazon.S3
         /// <param name="request">The ListObjectsRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndListObjects.</returns>
         public IAsyncResult BeginListObjects(ListObjectsRequest request, AsyncCallback callback, object state)
         {
@@ -1310,11 +1310,11 @@ namespace Amazon.S3
         /// <param name="request">The ListVersionsRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndListVersions.</returns>
         public IAsyncResult BeginListVersions(ListVersionsRequest request, AsyncCallback callback, object state)
         {
@@ -1403,11 +1403,11 @@ namespace Amazon.S3
         /// <param name="request">The GetACLRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndGetACL.</returns>
         public IAsyncResult BeginGetACL(GetACLRequest request, AsyncCallback callback, object state)
         {
@@ -1476,11 +1476,11 @@ namespace Amazon.S3
         /// <param name="request">The SetACLRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndSetACL.</returns>
         public IAsyncResult BeginSetACL(SetACLRequest request, AsyncCallback callback, object state)
         {
@@ -1563,11 +1563,11 @@ namespace Amazon.S3
         /// <param name="request">The PutBucketRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndPutBucket.</returns>
         public IAsyncResult BeginPutBucket(PutBucketRequest request, AsyncCallback callback, object state)
         {
@@ -1591,8 +1591,6 @@ namespace Amazon.S3
         /// The PutBucket operation creates a new S3 Bucket.
         /// Depending on your latency and legal requirements, you can specify a location
         /// constraint that will affect where your data physically resides.
-        /// You can currently specify either a Europe (EU) or a SFO (US-WEST-1)
-        /// location constraint.
         /// </summary>
         /// <param name="request">
         /// The PutBucketRequest that defines the parameters of the operation.
@@ -1665,11 +1663,11 @@ namespace Amazon.S3
         /// <param name="request">The DeleteBucketRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDeleteBucket.</returns>
         public IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state)
         {
@@ -1736,11 +1734,11 @@ namespace Amazon.S3
         /// <param name="request">The GetObjectRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndGetObject.</returns>
         public IAsyncResult BeginGetObject(GetObjectRequest request, AsyncCallback callback, object state)
         {
@@ -1837,11 +1835,11 @@ namespace Amazon.S3
         /// <param name="request">The GetObjectMetadataRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndGetObjectMetadata.</returns>
         public IAsyncResult BeginGetObjectMetadata(GetObjectMetadataRequest request, AsyncCallback callback, object state)
         {
@@ -1913,11 +1911,11 @@ namespace Amazon.S3
         /// <param name="request">The PutObjectRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndPutObject.</returns>
         public IAsyncResult BeginPutObject(PutObjectRequest request, AsyncCallback callback, object state)
         {
@@ -2086,11 +2084,11 @@ namespace Amazon.S3
         /// <param name="request">The DeleteObjectRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDeleteObject.</returns>
         public IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state)
         {
@@ -2170,11 +2168,11 @@ namespace Amazon.S3
         /// <param name="request">The CopyObjectRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndCopyObject.</returns>
         public IAsyncResult BeginCopyObject(CopyObjectRequest request, AsyncCallback callback, object state)
         {
@@ -2266,11 +2264,11 @@ namespace Amazon.S3
         /// <param name="request">The InitiateMultipartUploadRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndInitiateMultipartUpload.</returns>
         public IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
         {
@@ -2343,11 +2341,11 @@ namespace Amazon.S3
         /// <param name="request">The UploadPartRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndUploadPart.</returns>
         public IAsyncResult BeginUploadPart(UploadPartRequest request, AsyncCallback callback, object state)
         {
@@ -2504,11 +2502,11 @@ namespace Amazon.S3
         /// <param name="request">The ListPartsRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndListParts.</returns>
         public IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
         {
@@ -2591,11 +2589,11 @@ namespace Amazon.S3
         /// <param name="request">The AbortMultipartUploadRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndAbortMultipartUpload.</returns>
         public IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
         {
@@ -2670,11 +2668,11 @@ namespace Amazon.S3
         /// <param name="request">The CompleteMultipartUploadRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndCompleteMultipartUpload.</returns>
         public IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
         {
@@ -2763,11 +2761,11 @@ namespace Amazon.S3
         /// <param name="request">The ListMultipartUploadsRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndListMultipartUploads.</returns>
         public IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
         {
@@ -2840,11 +2838,11 @@ namespace Amazon.S3
         /// <param name="request">The PutBucketWebsiteRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndPutBucketWebsite.</returns>
         public IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
@@ -2865,20 +2863,20 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// Enables and configures an Amazon S3 website using the corresponding bucket as the content source. 
+        /// This operation enables/configures an S3 Website using the corresponding bucket as the content source. 
         /// The website will have one default domain name associated with it, which is the bucket name.
-        /// If you attempt to configure an Amazon S3 website for a bucket whose name is not a valid DNS name, 
+        /// If you attempt to configure an S3 website for a bucket whose name is not compatible with DNS, 
         /// Amazon S3 returns an InvalidBucketName error. For more information on bucket names and DNS, 
-        /// refer to Bucket Restrictions and Limitations.
+        /// refer to Bucket Restrictions and Limitations 
         /// 
-        /// To visit the Amazon S3 bucket as a website a new endpoint is created in the following pattern 
-        /// http://&lt;bucketName&gt;.s3-website-&lt;region&gt;.amazonaws.com/.  This is a sample URL for a bucket
-        /// called example-bucket in the <c>us-east-1</c> region. http://example-bucket.s3-website-us-east-1.amazonaws.com/
+        /// To visit the S3 bucket as a website a new endpoint is created in the following pattern 
+        /// http://&lt;bucketName&gt;.s3-website-&lt;region&gt;.amazonaws.com/.  This is a sample url for a bucket
+        /// called example-bucket in the us-east-1 region. http://example-bucket.s3-website-us-east-1.amazonaws.com/
         /// </summary>
         /// <param name="request">
         /// The PutBucketWebsiteRequest that defines the parameters of the operation.
         /// </param>
-        /// <returns>Returns a PutBucketWebsiteResponse from Amazon S3.</returns>
+        /// <returns>Returns a PutBucketWebsiteResponse from S3.</returns>
         public PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
         {
             IAsyncResult asyncResult = invokePutBucketWebsite(request, null, null, true);
@@ -2930,11 +2928,11 @@ namespace Amazon.S3
         /// <param name="request">The GetBucketWebsiteRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndGetBucketWebsite.</returns>
         public IAsyncResult BeginGetBucketWebsite(GetBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
@@ -2967,14 +2965,13 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// Retrieves the website configuration for a bucket. The contents of this response 
-        /// is identical to the content submitted by the user during the PutBucketWebsite operation 
-        /// if the bucket has ever been configured. 
+        /// This operation retrieves the website configuration for a bucket. The contents of this response 
+        /// is identical to the content submitted by the user during the PutBucketWebsite operation if it has ever been configured. 
         /// </summary>
         /// <param name="request">
         /// The GetBucketWebsiteRequest that defines the parameters of the operation.
         /// </param>
-        /// <returns>Returns a GetBucketWebsiteResponse from Amazon S3.</returns>
+        /// <returns>Returns a GetBucketWebsiteResponse from S3.</returns>
         public GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
         {
             IAsyncResult asyncResult = invokeGetBucketWebsite(request, null, null, true);
@@ -3020,11 +3017,11 @@ namespace Amazon.S3
         /// <param name="request">The DeleteBucketWebsiteRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDeleteBucketWebsite.</returns>
         public IAsyncResult BeginDeleteBucketWebsite(DeleteBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
@@ -3045,12 +3042,12 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// Removes the website configuration for a bucket. 
+        /// This operation removes the website configuration for a bucket. 
         /// </summary>
         /// <param name="request">
         /// The DeleteBucketWebsiteRequest that defines the parameters of the operation.
         /// </param>
-        /// <returns>Returns a DeleteBucketWebsiteResponse from Amazon S3.</returns>
+        /// <returns>Returns a DeleteBucketWebsiteResponse from S3.</returns>
         public DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
         {
             IAsyncResult asyncResult = invokeDeleteBucketWebsite(request, null, null, true);
@@ -3668,6 +3665,11 @@ namespace Amazon.S3
                 queryStr.Append("&max-keys=0");
             }
 
+            if (request.IsSetContentType())
+            {
+                parameters[S3QueryParameter.ContentType] = request.ContentType;
+            }
+
             if (queryStr.Length != 0)
             {
                 queryStr.Append("&");
@@ -4153,7 +4155,7 @@ namespace Amazon.S3
                 AWSSDKUtils.PreserveStackTrace(s3AsyncResult.Exception);
                 throw s3AsyncResult.Exception;
             }
-
+            
             T response = s3AsyncResult.FinalResponse as T;
             //s3AsyncResult.FinalResponse = null;
             return response;
@@ -5533,7 +5535,7 @@ namespace Amazon.S3
 
             public WaitHandle AsyncWaitHandle
             {
-                get
+                get 
                 {
                     if (this._waitHandle != null)
                     {
@@ -5548,7 +5550,7 @@ namespace Amazon.S3
                         }
                     }
 
-                    return this._waitHandle;
+                    return this._waitHandle; 
                 }
             }
 
@@ -5562,9 +5564,9 @@ namespace Amazon.S3
             internal S3Response FinalResponse
             {
                 get { return this._finalResponse; }
-                set
-                {
-                    this._finalResponse = value;
+                set 
+                { 
+                    this._finalResponse = value; 
                 }
             }
 

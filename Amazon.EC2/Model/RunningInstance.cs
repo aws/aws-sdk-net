@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Properties of a Launched EC2 Instance
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class RunningInstance
     {    
         private string instanceIdField;
@@ -52,6 +52,8 @@ namespace Amazon.EC2.Model
         private string vpcIdField;
         private string privateIpAddressField;
         private string ipAddressField;
+        private bool? sourceDestCheckField;
+        private List<string> groupIdField;
         private StateReason stateReasonField;
         private string architectureField;
         private string rootDeviceTypeField;
@@ -730,6 +732,90 @@ namespace Amazon.EC2.Model
         public bool IsSetIpAddress()
         {
             return this.ipAddressField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the SourceDestCheck property.
+        /// This attribute exists to enable a Network Address Translation (NAT)
+        /// instance in a VPC to perform NAT. The attribute controls whether
+        /// source/destination checking is enabled on the instance. A value of
+        /// true means checking is enabled, and false means checking is
+        /// disabled. The value must be false for the instance to perform NAT.
+        /// For more information, go to NAT Instances in the Amazon Virtual
+        /// Private Cloud User Guide.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "SourceDestCheck")]
+        public bool SourceDestCheck
+        {
+            get { return this.sourceDestCheckField.GetValueOrDefault(); }
+            set { this.sourceDestCheckField = value; }
+        }
+
+        /// <summary>
+        /// Sets the SourceDestCheck property
+        /// </summary>
+        /// <param name="sourceDestCheck">This attribute exists to enable a Network Address Translation (NAT)
+        /// instance in a VPC to perform NAT. The attribute controls whether
+        /// source/destination checking is enabled on the instance. A value of
+        /// true means checking is enabled, and false means checking is
+        /// disabled. The value must be false for the instance to perform NAT.
+        /// For more information, go to NAT Instances in the Amazon Virtual
+        /// Private Cloud User Guide.</param>
+        /// <returns>this instance</returns>
+        public RunningInstance WithSourceDestCheck(bool sourceDestCheck)
+        {
+            this.sourceDestCheckField = sourceDestCheck;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if SourceDestCheck property is set
+        /// </summary>
+        /// <returns>true if SourceDestCheck property is set</returns>
+        public bool IsSetSourceDestCheck()
+        {
+            return this.sourceDestCheckField.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the GroupId property.
+        /// A list of VPC security groups the instance is in.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupId")]
+        public List<string> GroupId
+        {
+            get
+            {
+                if (this.groupIdField == null)
+                {
+                    this.groupIdField = new List<string>();
+                }
+                return this.groupIdField;
+            }
+            set { this.groupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupId property
+        /// </summary>
+        /// <param name="list">A list of VPC security groups the instance is in.</param>
+        /// <returns>this instance</returns>
+        public RunningInstance WithGroupId(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                GroupId.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if GroupId property is set
+        /// </summary>
+        /// <returns>true if GroupId property is set</returns>
+        public bool IsSetGroupId()
+        {
+            return (GroupId.Count > 0);
         }
 
         /// <summary>

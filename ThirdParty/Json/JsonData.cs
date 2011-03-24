@@ -247,7 +247,9 @@ namespace ThirdParty.Json.LitJson
         public JsonData this[string prop_name] {
             get {
                 EnsureDictionary ();
-                return inst_object[prop_name];
+                JsonData data = null;
+                inst_object.TryGetValue(prop_name, out data);
+                return data;
             }
 
             set {

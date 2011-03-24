@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///A list of instance attributes.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class InstanceAttribute
     {    
         private string instanceIdField;
@@ -75,11 +75,9 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceType property.
-        /// The instance type. 
-        /// Valid values are:
-        /// m1.small | m1.large | m1.xlarge |
-        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
-        /// m2.4xlarge | cc1.4xlarge | t1.micro 
+        /// The instance type (e.g., m1.small, c1.medium,
+        /// m2.2xlarge, and so
+        /// on).
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceType")]
         public string InstanceType
@@ -90,12 +88,10 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Sets the InstanceType property
-        /// Valid values are:
-        /// m1.small | m1.large | m1.xlarge |
-        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
-        /// m2.4xlarge | cc1.4xlarge | t1.micro 
         /// </summary>
-        /// <param name="instanceType">The instance type</param>
+        /// <param name="instanceType">The instance type (e.g., m1.small, c1.medium,
+        /// m2.2xlarge, and so
+        /// on).</param>
         /// <returns>this instance</returns>
         public InstanceAttribute WithInstanceType(string instanceType)
         {

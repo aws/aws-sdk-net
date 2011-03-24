@@ -14,7 +14,6 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Text;
 using System.IO;
 
@@ -56,22 +55,22 @@ namespace Amazon.Runtime.Internal.Util
 
         public static string FromLong(long value)
         {
-            return value.ToString(CultureInfo.InvariantCulture);
+            return value.ToString();
         }
 
         public static string FromBool(bool value)
         {
-            return value.ToString(CultureInfo.InvariantCulture).ToLower();
+            return value.ToString().ToLower();
         }
 
         public static string FromDateTime(DateTime value)
         {
-            return value.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
+            return value.ToString(AWSSDKUtils.ISO8601DateFormat);
         }
 
         public static string FromDouble(double value)
         {
-            return value.ToString(CultureInfo.InvariantCulture);
+            return value.ToString();
         }
     }
 }

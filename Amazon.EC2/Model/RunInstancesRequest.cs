@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
     /// Elastic Compute Cloud
     /// Developer Guide
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class RunInstancesRequest
     {    
         private string imageIdField;
@@ -125,6 +125,7 @@ namespace Amazon.EC2.Model
         private Decimal? maxCountField;
         private string keyNameField;
         private List<string> securityGroupField;
+        private List<string> securityGroupIdField;
         private string userDataField;
         private string instanceTypeField;
         private Placement placementField;
@@ -139,6 +140,7 @@ namespace Amazon.EC2.Model
         private InstanceLicenseSpecification licenseField;
         private string privateIpAddressField;
         private string clientTokenField;
+        private string hypervisorField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
@@ -290,7 +292,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SecurityGroup property.
-        /// Name of the security group.
+        /// Names of the security group.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecurityGroup")]
         public List<string> SecurityGroup
@@ -309,7 +311,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SecurityGroup property
         /// </summary>
-        /// <param name="list">Name of the security group.</param>
+        /// <param name="list">Names of the security group.</param>
         /// <returns>this instance</returns>
         public RunInstancesRequest WithSecurityGroup(params string[] list)
         {
@@ -327,6 +329,47 @@ namespace Amazon.EC2.Model
         public bool IsSetSecurityGroup()
         {
             return (SecurityGroup.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the SecurityGroupId property.
+        /// IDs of the security group.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "SecurityGroupId")]
+        public List<string> SecurityGroupId
+        {
+            get
+            {
+                if (this.securityGroupIdField == null)
+                {
+                    this.securityGroupIdField = new List<string>();
+                }
+                return this.securityGroupIdField;
+            }
+            set { this.securityGroupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the SecurityGroupId property
+        /// </summary>
+        /// <param name="list">IDs of the security group.</param>
+        /// <returns>this instance</returns>
+        public RunInstancesRequest WithSecurityGroupId(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                SecurityGroupId.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if SecurityGroupId property is set
+        /// </summary>
+        /// <returns>true if SecurityGroupId property is set</returns>
+        public bool IsSetSecurityGroupId()
+        {
+            return (SecurityGroupId.Count > 0);
         }
 
         /// <summary>
@@ -364,10 +407,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the InstanceType property.
         /// Specifies the instance type.
         ///
-        /// Valid values are:
-        /// m1.small | m1.large | m1.xlarge |
-        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
-        /// m2.4xlarge | cc1.4xlarge | t1.micro 
+        /// Valid Values:
+        /// m1.small | m1.large | m1.xlarge | c1.medium |
+        /// c1.xlarge |
+        /// m2.2xlarge | m2.4xlarge
         ///
         /// Default: m1.small
         /// </summary>
@@ -383,10 +426,10 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceType">Specifies the instance type.
         ///
-        /// Valid values are:
-        /// m1.small | m1.large | m1.xlarge |
-        /// c1.medium | c1.xlarge | m2.xlarge | m2.2xlarge |
-        /// m2.4xlarge | cc1.4xlarge | t1.micro 
+        /// Valid Values:
+        /// m1.small | m1.large | m1.xlarge | c1.medium |
+        /// c1.xlarge |
+        /// m2.2xlarge | m2.4xlarge
         ///
         /// Default: m1.small</param>
         /// <returns>this instance</returns>
@@ -826,6 +869,36 @@ namespace Amazon.EC2.Model
         public bool IsSetClientToken()
         {
             return this.clientTokenField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the Hypervisor property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Hypervisor")]
+        public string Hypervisor
+        {
+            get { return this.hypervisorField; }
+            set { this.hypervisorField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Hypervisor property
+        /// </summary>
+        /// <param name="hypervisor">Hypervisor property</param>
+        /// <returns>this instance</returns>
+        public RunInstancesRequest WithHypervisor(string hypervisor)
+        {
+            this.hypervisorField = hypervisor;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Hypervisor property is set
+        /// </summary>
+        /// <returns>true if Hypervisor property is set</returns>
+        public bool IsSetHypervisor()
+        {
+            return this.hypervisorField != null;
         }
 
     }

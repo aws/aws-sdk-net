@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -40,11 +40,46 @@ namespace Amazon.EC2.Model
     /// AuthorizeSecurityGroupIngress and RevokeSecurityGroupIngress
     /// operations
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class CreateSecurityGroupRequest
     {    
+        private string groupIdField;
         private string groupNameField;
         private string groupDescriptionField;
+        private string vpcIdField;
+
+        /// <summary>
+        /// Gets and sets the GroupId property.
+        /// Id of the standard (EC2) or VPC security group to modify. Conditional
+        /// The group must belong to your account.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupId")]
+        public string GroupId
+        {
+            get { return this.groupIdField; }
+            set { this.groupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupId property
+        /// </summary>
+        /// <param name="groupId">Id of the standard (EC2) or VPC security group to modify. Conditional
+        /// The group must belong to your account.</param>
+        /// <returns>this instance</returns>
+        public CreateSecurityGroupRequest WithGroupId(string groupId)
+        {
+            this.groupIdField = groupId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if GroupId property is set
+        /// </summary>
+        /// <returns>true if GroupId property is set</returns>
+        public bool IsSetGroupId()
+        {
+            return this.groupIdField != null;
+        }
 
         /// <summary>
         /// Gets and sets the GroupName property.
@@ -122,6 +157,41 @@ namespace Amazon.EC2.Model
         public bool IsSetGroupDescription()
         {
             return this.groupDescriptionField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the VpcId property.
+        /// ID of the VPC.
+        ///
+        /// Condition: Required for VPC security groups
+        /// </summary>
+        [XmlElementAttribute(ElementName = "VpcId")]
+        public string VpcId
+        {
+            get { return this.vpcIdField; }
+            set { this.vpcIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcId property
+        /// </summary>
+        /// <param name="vpcId">ID of the VPC.
+        ///
+        /// Condition: Required for VPC security groups</param>
+        /// <returns>this instance</returns>
+        public CreateSecurityGroupRequest WithVpcId(string vpcId)
+        {
+            this.vpcIdField = vpcId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if VpcId property is set
+        /// </summary>
+        /// <returns>true if VpcId property is set</returns>
+        public bool IsSetVpcId()
+        {
+            return this.vpcIdField != null;
         }
 
     }

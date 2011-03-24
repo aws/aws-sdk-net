@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -174,6 +174,8 @@ namespace Amazon.EC2
             }
             this.awsAccessKeyId = awsAccessKeyId;
             this.config = config;
+            ServicePointManager.Expect100Continue = false;
+            ServicePointManager.UseNagleAlgorithm = false;
         }
 
         /// <summary>
@@ -188,6 +190,8 @@ namespace Amazon.EC2
             this.awsAccessKeyId = awsAccessKeyId;
             this.awsSecretAccessKey = awsSecretAccessKey;
             this.config = config;
+            ServicePointManager.Expect100Continue = false;
+            ServicePointManager.UseNagleAlgorithm = false;
         }
 
         #region Public API
@@ -1934,6 +1938,461 @@ namespace Amazon.EC2
             return Invoke<DeleteSpotDatafeedSubscriptionResponse>(ConvertDeleteSpotDatafeedSubscription(request));
         }
 
+        /// <summary>
+        /// Cancel Conversion Task 
+        /// </summary>
+        /// <param name="request">Cancel Conversion Task  request</param>
+        /// <returns>Cancel Conversion Task  Response from the service</returns>
+        /// <remarks>
+        /// Cancels an active conversion task. The task can be the import of an instance or volume. The command removes all artifacts of
+        /// the conversion, including a partially uploaded volume or instance. If the conversion is complete or is in the process of transferring the final disk image, the command fails and returns an exception.
+        /// </remarks>
+        public CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request)
+        {
+            return Invoke<CancelConversionTaskResponse>(ConvertCancelConversionTask(request));
+        }
+
+        /// <summary>
+        /// Describe Conversion Tasks 
+        /// </summary>
+        /// <param name="request">Describe Conversion Tasks  request</param>
+        /// <returns>Describe Conversion Tasks  Response from the service</returns>
+        /// <remarks>
+        /// Describes your conversion tasks. For more information, go to Importing Your Virtual Machines and Volumes into Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
+        /// </remarks>
+        public DescribeConversionTasksResponse DescribeConversionTasks(DescribeConversionTasksRequest request)
+        {
+            return Invoke<DescribeConversionTasksResponse>(ConvertDescribeConversionTasks(request));
+        }
+
+        /// <summary>
+        /// Import Instance 
+        /// </summary>
+        /// <param name="request">Import Instance  request</param>
+        /// <returns>Import Instance  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new import instance task using metadata from the specified disk image. For more information, go to Importing Your Virtual Machines and Volumes into Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
+        /// </remarks>
+        public ImportInstanceResponse ImportInstance(ImportInstanceRequest request)
+        {
+            return Invoke<ImportInstanceResponse>(ConvertImportInstance(request));
+        }
+
+        /// <summary>
+        /// Import Volume 
+        /// </summary>
+        /// <param name="request">Import Volume  request</param>
+        /// <returns>Import Volume  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new import volume task using metadata from the specified disk image. For more information, go to Importing Your Virtual Machines and Volumes into Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
+        /// </remarks>
+        public ImportVolumeResponse ImportVolume(ImportVolumeRequest request)
+        {
+            return Invoke<ImportVolumeResponse>(ConvertImportVolume(request));
+        }
+
+        /// <summary>
+        /// Authorize Security Group Egress 
+        /// </summary>
+        /// <param name="request">Authorize Security Group Egress  request</param>
+        /// <returns>Authorize Security Group Egress  Response from the service</returns>
+        /// <remarks>
+        /// This action applies only to security groups in a VPC; it's not supported for standard (EC2) security groups.
+        /// For information about Amazon Virtual Private Cloud and VPC security groups, go to the Amazon Virtual
+        /// Private Cloud User Guide.
+        /// The action adds one or more egress rules to a VPC security group. Specifically, this permits instances
+        /// in a security group to send traffic to either one or more destination CIDR IP address ranges, or to one or
+        /// more destination security groups in the same VPC.
+        /// Each rule consists of the protocol (e.g., TCP), plus either a CIDR range, or a source group. For the TCP
+        /// and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you
+        /// must also specify the ICMP type and code.You can use -1 as a wildcard for the ICMP type or code.
+        /// Rule changes are propagated to instances within the security group as quickly as possible. However, a
+        /// small delay might occur.
+        /// Adding hundreds of rules to a security group might cause problems when you access the instance.
+        /// We recommend you condense your rules as much as possible.
+        /// </remarks>
+        public AuthorizeSecurityGroupEgressResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request)
+        {
+            return Invoke<AuthorizeSecurityGroupEgressResponse>(ConvertAuthorizeSecurityGroupEgress(request));
+        }
+
+        /// <summary>
+        /// Revoke Security Group Egress 
+        /// </summary>
+        /// <param name="request">Revoke Security Group Egress  request</param>
+        /// <returns>Revoke Security Group Egress  Response from the service</returns>
+        /// <remarks>
+        /// This action applies only to security groups in a VPC. It doesn't work with standard (EC2) security groups.
+        /// For information about Amazon Virtual Private Cloud and VPC security groups, go to the Amazon Virtual
+        /// Private Cloud User Guide.
+        /// The action removes one or more egress rules from a VPC security group. The values that you specify in
+        /// the revoke request (e.g., ports, etc.) must match the existing rule's values in order for the rule to be
+        /// revoked.
+        /// Each rule consists of the protocol, and the CIDR range or destination security group. For the TCP and
+        /// UDP protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you
+        /// must also specify the ICMP type and code.
+        /// Rule changes are propagated to instances within the security group as quickly as possible. However, a
+        /// small delay might occur.
+        /// </remarks>
+        public RevokeSecurityGroupEgressResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request)
+        {
+            return Invoke<RevokeSecurityGroupEgressResponse>(ConvertRevokeSecurityGroupEgress(request));
+        }
+
+        /// <summary>
+        /// Create Internet Gateway 
+        /// </summary>
+        /// <param name="request">Create Internet Gateway  request</param>
+        /// <returns>Create Internet Gateway  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach
+        /// it to a VPC using AttachInternetGateway. For more information about your VPC and Internet gateway,
+        /// go to Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public CreateInternetGatewayResponse CreateInternetGateway(CreateInternetGatewayRequest request)
+        {
+            return Invoke<CreateInternetGatewayResponse>(ConvertCreateInternetGateway(request));
+        }
+
+        /// <summary>
+        /// Describe Internet Gateways 
+        /// </summary>
+        /// <param name="request">Describe Internet Gateways  request</param>
+        /// <returns>Describe Internet Gateways  Response from the service</returns>
+        /// <remarks>
+        /// Gives you information about your Internet gateways.You can filter the results to return information only
+        /// about Internet gateways that match criteria you specify. For example, you could get information only
+        /// about gateways with particular tags. The Internet gateway must match at least one of the specified values
+        /// for it to be included in the results.
+        /// You can specify multiple filters (e.g., the Internet gateway is attached to a particular VPC and is tagged
+        /// with a particular value). The result includes information for a particular Internet gateway only if the gateway
+        /// matches all your filters. If there's no match, no special message is returned; the response is simply empty.
+        /// You can use wildcards with the filter values: * matches zero or more characters, and ? matches exactly
+        /// one character.You can escape special characters using a backslash before the character. For example,
+        /// a value of \*amazon\?\\ searches for the literal string *amazon?\.
+        /// </remarks>
+        public DescribeInternetGatewaysResponse DescribeInternetGateways(DescribeInternetGatewaysRequest request)
+        {
+            return Invoke<DescribeInternetGatewaysResponse>(ConvertDescribeInternetGateways(request));
+        }
+
+        /// <summary>
+        /// Delete Internet Gateway 
+        /// </summary>
+        /// <param name="request">Delete Internet Gateway  request</param>
+        /// <returns>Delete Internet Gateway  Response from the service</returns>
+        /// <remarks>
+        /// Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC. For
+        /// more information about your VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public DeleteInternetGatewayResponse DeleteInternetGateway(DeleteInternetGatewayRequest request)
+        {
+            return Invoke<DeleteInternetGatewayResponse>(ConvertDeleteInternetGateway(request));
+        }
+
+        /// <summary>
+        /// Attach Internet Gateway 
+        /// </summary>
+        /// <param name="request">Attach Internet Gateway  request</param>
+        /// <returns>Attach Internet Gateway  Response from the service</returns>
+        /// <remarks>
+        /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC. For
+        /// more information about your VPC and Internet gateway, go to the Amazon Virtual Private Cloud User
+        /// Guide.
+        /// </remarks>
+        public AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request)
+        {
+            return Invoke<AttachInternetGatewayResponse>(ConvertAttachInternetGateway(request));
+        }
+
+        /// <summary>
+        /// Detach Internet Gateway 
+        /// </summary>
+        /// <param name="request">Detach Internet Gateway  request</param>
+        /// <returns>Detach Internet Gateway  Response from the service</returns>
+        /// <remarks>
+        /// Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC.The
+        /// VPC must not contain any running instances with elastic IP addresses. For more information about your
+        /// VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
+        /// For more information about Amazon Virtual Private Cloud and Internet gateways, go to the Amazon Virtual
+        /// Private Cloud User Guide.
+        /// </remarks>
+        public DetachInternetGatewayResponse DetachInternetGateway(DetachInternetGatewayRequest request)
+        {
+            return Invoke<DetachInternetGatewayResponse>(ConvertDetachInternetGateway(request));
+        }
+
+        /// <summary>
+        /// Create Route Table 
+        /// </summary>
+        /// <param name="request">Create Route Table  request</param>
+        /// <returns>Create Route Table  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new route table within a VPC. After you create a new route table, you can add routes and
+        /// associate the table with a subnet. For more information about route tables, go to Route Tables in the
+        /// Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public CreateRouteTableResponse CreateRouteTable(CreateRouteTableRequest request)
+        {
+            return Invoke<CreateRouteTableResponse>(ConvertCreateRouteTable(request));
+        }
+
+        /// <summary>
+        /// Describe Route Tables 
+        /// </summary>
+        /// <param name="request">Describe Route Tables  request</param>
+        /// <returns>Describe Route Tables  Response from the service</returns>
+        /// <remarks>
+        /// Gives you information about your route tables.You can filter the results to return information only about
+        /// tables that match criteria you specify. For example, you could get information only about a table associated
+        /// with a particular subnet.You can specify multiple values for the filter. The table must match at least one
+        /// of the specified values for it to be included in the results.
+        /// You can specify multiple filters (e.g., the table has a particular route, and is associated with a particular
+        /// subnet). The result includes information for a particular table only if it matches all your filters. If there's
+        /// no match, no special message is returned; the response is simply empty.
+        /// You can use wildcards with the filter values: * matches zero or more characters, and ? matches exactly
+        /// one character.You can escape special characters using a backslash before the character. For example,
+        /// a value of \*amazon\?\\ searches for the literal string *amazon?\.
+        /// </remarks>
+        public DescribeRouteTablesResponse DescribeRouteTables(DescribeRouteTablesRequest request)
+        {
+            return Invoke<DescribeRouteTablesResponse>(ConvertDescribeRouteTables(request));
+        }
+
+        /// <summary>
+        /// Delete Route Table 
+        /// </summary>
+        /// <param name="request">Delete Route Table  request</param>
+        /// <returns>Delete Route Table  Response from the service</returns>
+        /// <remarks>
+        /// Deletes a route table from a VPC. The route table must not be associated with a subnet.You can't delete
+        /// the main route table. For more information about route tables, go to Route Tables in the Amazon Virtual
+        /// Private Cloud User Guide.
+        /// </remarks>
+        public DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest request)
+        {
+            return Invoke<DeleteRouteTableResponse>(ConvertDeleteRouteTable(request));
+        }
+
+        /// <summary>
+        /// Associate Route Table 
+        /// </summary>
+        /// <param name="request">Associate Route Table  request</param>
+        /// <returns>Associate Route Table  Response from the service</returns>
+        /// <remarks>
+        /// Associates a subnet with a route table. The subnet and route table must be in the same VPC. This
+        /// association causes traffic originating from the subnet to be routed according to the routes in the route
+        /// table. The action returns an association ID, which you need if you want to disassociate the route table
+        /// from the subnet later. A route table can be associated with multiple subnets.
+        /// For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User
+        /// Guide.
+        /// </remarks>
+        public AssociateRouteTableResponse AssociateRouteTable(AssociateRouteTableRequest request)
+        {
+            return Invoke<AssociateRouteTableResponse>(ConvertAssociateRouteTable(request));
+        }
+
+        /// <summary>
+        /// Replace Route Table Association 
+        /// </summary>
+        /// <param name="request">Replace Route Table Association  request</param>
+        /// <returns>Replace Route Table Association  Response from the service</returns>
+        /// <remarks>
+        /// Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet
+        /// uses the routes in the new route table it's associated with. For more information about route tables, go
+        /// to Route Tables in the Amazon Virtual Private Cloud User Guide.
+        /// You can also use this to change which table is the main route table in the VPC.You just specify the main
+        /// route table's association ID and the route table that you want to be the new main route table.
+        /// </remarks>
+        public ReplaceRouteTableAssociationResponse ReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request)
+        {
+            return Invoke<ReplaceRouteTableAssociationResponse>(ConvertReplaceRouteTableAssociation(request));
+        }
+
+        /// <summary>
+        /// Disassociate Route Table 
+        /// </summary>
+        /// <param name="request">Disassociate Route Table  request</param>
+        /// <returns>Disassociate Route Table  Response from the service</returns>
+        /// <remarks>
+        /// Disassociates a subnet from a route table.
+        /// After you perform this action, the subnet no longer uses the routes in the route table. Instead it uses the
+        /// routes in the VPC's main route table. For more information about route tables, go to Route Tables in the
+        /// Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request)
+        {
+            return Invoke<DisassociateRouteTableResponse>(ConvertDisassociateRouteTable(request));
+        }
+
+        /// <summary>
+        /// Create Route 
+        /// </summary>
+        /// <param name="request">Create Route  request</param>
+        /// <returns>Create Route  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new route in a route table within a VPC. The route's target can be either a gateway attached
+        /// to the VPC or a NAT instance in the VPC.
+        /// When determining how to route traffic, we use the route with the most specific match. For example, let's
+        /// say the traffic is destined for 192.0.2.3, and the route table includes the following two routes:
+        /// 192.0.2.0/24 (goes to some target A)
+        /// 192.0.2.0/28 (goes to some target B)
+        /// Both routes apply to the traffic destined for 192.0.2.3. However, the second route in the list is more specific,
+        /// so we use that route to determine where to target the traffic.
+        /// For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User
+        /// Guide.
+        /// </remarks>
+        public CreateRouteResponse CreateRoute(CreateRouteRequest request)
+        {
+            return Invoke<CreateRouteResponse>(ConvertCreateRoute(request));
+        }
+
+        /// <summary>
+        /// Replace Route 
+        /// </summary>
+        /// <param name="request">Replace Route  request</param>
+        /// <returns>Replace Route  Response from the service</returns>
+        /// <remarks>
+        /// Replaces an existing route within a route table in a VPC. For more information about route tables, go to
+        /// Route Tables in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public ReplaceRouteResponse ReplaceRoute(ReplaceRouteRequest request)
+        {
+            return Invoke<ReplaceRouteResponse>(ConvertReplaceRoute(request));
+        }
+
+        /// <summary>
+        /// Delete Route 
+        /// </summary>
+        /// <param name="request">Delete Route  request</param>
+        /// <returns>Delete Route  Response from the service</returns>
+        /// <remarks>
+        /// Deletes a route from a route table in a VPC. For more information about route tables, go to Route Tables
+        /// in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
+        {
+            return Invoke<DeleteRouteResponse>(ConvertDeleteRoute(request));
+        }
+
+        /// <summary>
+        /// Create Network Acl 
+        /// </summary>
+        /// <param name="request">Create Network Acl  request</param>
+        /// <returns>Create Network Acl  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of
+        /// security groups) for the instances in your VPC. For more information about network ACLs, go to Network
+        /// ACLs in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request)
+        {
+            return Invoke<CreateNetworkAclResponse>(ConvertCreateNetworkAcl(request));
+        }
+
+        /// <summary>
+        /// Describe Network Acls 
+        /// </summary>
+        /// <param name="request">Describe Network Acls  request</param>
+        /// <returns>Describe Network Acls  Response from the service</returns>
+        /// <remarks>
+        /// Gives you information about the network ACLs in your VPC.You can filter the results to return information
+        /// only about ACLs that match criteria you specify. For example, you could get information only the ACL
+        /// associated with a particular subnet. The ACL must match at least one of the specified values for it to be
+        /// included in the results.
+        /// You can specify multiple filters (e.g., the ACL is associated with a particular subnet and has an egress
+        /// entry that denies traffic to a particular port). The result includes information for a particular ACL only if it
+        /// matches all your filters. If there's no match, no special message is returned; the response is simply empty.
+        /// You can use wildcards with the filter values: * matches zero or more characters, and ? matches exactly
+        /// one character.You can escape special characters using a backslash before the character. For example,
+        /// a value of \*amazon\?\\ searches for the literal string *amazon?\.
+        /// </remarks>
+        public DescribeNetworkAclsResponse DescribeNetworkAcls(DescribeNetworkAclsRequest request)
+        {
+            return Invoke<DescribeNetworkAclsResponse>(ConvertDescribeNetworkAcls(request));
+        }
+
+        /// <summary>
+        /// Delete Network Acl 
+        /// </summary>
+        /// <param name="request">Delete Network Acl  request</param>
+        /// <returns>Delete Network Acl  Response from the service</returns>
+        /// <remarks>
+        /// Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it.You can't
+        /// delete the default network ACL. For more information about network ACLs, go to Network ACLs in the
+        /// Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public DeleteNetworkAclResponse DeleteNetworkAcl(DeleteNetworkAclRequest request)
+        {
+            return Invoke<DeleteNetworkAclResponse>(ConvertDeleteNetworkAcl(request));
+        }
+
+        /// <summary>
+        /// Replace Network Acl Association 
+        /// </summary>
+        /// <param name="request">Replace Network Acl Association  request</param>
+        /// <returns>Replace Network Acl Association  Response from the service</returns>
+        /// <remarks>
+        /// Changes which network ACL a subnet is associated with. By default when you create a subnet, it's
+        /// automatically associated with the default network ACL. For more information about network ACLs, go to
+        /// Network ACLs in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public ReplaceNetworkAclAssociationResponse ReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request)
+        {
+            return Invoke<ReplaceNetworkAclAssociationResponse>(ConvertReplaceNetworkAclAssociation(request));
+        }
+
+        /// <summary>
+        /// Create Network Acl Entry 
+        /// </summary>
+        /// <param name="request">Create Network Acl Entry  request</param>
+        /// <returns>Create Network Acl Entry  Response from the service</returns>
+        /// <remarks>
+        /// Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL has a
+        /// set of numbered ingress rules and a separate set of numbered egress rules. When determining whether
+        /// a packet should be allowed in or out of a subnet associated with the ACL, Amazon VPC processes the
+        /// entries in the ACL according to the rule numbers, in ascending order.
+        /// We recommend that you leave room between the rules (e.g., 100, 110, 120, etc.), and not number
+        /// them sequentially (101, 102, 103, etc.). This allows you to easily add a new rule between existing
+        /// ones without having to renumber the rules.
+        /// After you add an entry, you can't modify it; you must either replace it, or create a new entry and delete
+        /// the old one.
+        /// For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User
+        /// Guide.
+        /// </remarks>
+        public CreateNetworkAclEntryResponse CreateNetworkAclEntry(CreateNetworkAclEntryRequest request)
+        {
+            return Invoke<CreateNetworkAclEntryResponse>(ConvertCreateNetworkAclEntry(request));
+        }
+
+        /// <summary>
+        /// Replace Network Acl Entry 
+        /// </summary>
+        /// <param name="request">Replace Network Acl Entry  request</param>
+        /// <returns>Replace Network Acl Entry  Response from the service</returns>
+        /// <remarks>
+        /// Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network
+        /// ACLs in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public ReplaceNetworkAclEntryResponse ReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request)
+        {
+            return Invoke<ReplaceNetworkAclEntryResponse>(ConvertReplaceNetworkAclEntry(request));
+        }
+
+        /// <summary>
+        /// Delete Network Acl Entry 
+        /// </summary>
+        /// <param name="request">Delete Network Acl Entry  request</param>
+        /// <returns>Delete Network Acl Entry  Response from the service</returns>
+        /// <remarks>
+        /// Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about network
+        /// ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
+        {
+            return Invoke<DeleteNetworkAclEntryResponse>(ConvertDeleteNetworkAclEntry(request));
+        }
+
         #endregion
 
         #region Private API
@@ -1965,9 +2424,6 @@ namespace Amazon.EC2
                 request.Timeout = 50000;
                 request.ContentType = AWSSDKUtils.UrlEncodedContent;
                 request.ContentLength = contentLength;
-
-                request.ServicePoint.Expect100Continue = false;
-                request.ServicePoint.UseNagleAlgorithm = false;
             }
 
             return request;
@@ -2238,6 +2694,10 @@ namespace Amazon.EC2
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters["Action"] = "AllocateAddress";
+            if (request.IsSetDomain())
+            {
+                parameters["Domain"] = request.Domain;
+            }
 
             return parameters;
         }
@@ -2295,6 +2755,10 @@ namespace Amazon.EC2
             {
                 parameters["PublicIp"] = request.PublicIp;
             }
+            if (request.IsSetAllocationId())
+            {
+                parameters["AllocationId"] = request.AllocationId;
+            }
 
             return parameters;
         }
@@ -2309,6 +2773,10 @@ namespace Amazon.EC2
             if (request.IsSetUserId())
             {
                 parameters["UserId"] = request.UserId;
+            }
+            if (request.IsSetGroupId())
+            {
+                parameters["GroupId"] = request.GroupId;
             }
             if (request.IsSetGroupName())
             {
@@ -2362,6 +2830,10 @@ namespace Amazon.EC2
                     {
                         parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "UserId")] = ipPermissionsGroups.UserId;
                     }
+                    if (ipPermissionsGroups.IsSetGroupId())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "GroupId")] = ipPermissionsGroups.GroupId;
+                    }
                     if (ipPermissionsGroups.IsSetGroupName())
                     {
                         parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "GroupName")] = ipPermissionsGroups.GroupName;
@@ -2373,7 +2845,7 @@ namespace Amazon.EC2
                 int ipPermissionsIpRangesListIndex = 1;
                 foreach (string ipPermissionsIpRanges in ipPermissionsIpRangesList)
                 {
-                    parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "IpRanges", ".", ipPermissionsIpRangesListIndex)] = ipPermissionsIpRanges;
+                    parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "IpRanges", ".", ipPermissionsIpRangesListIndex, ".", "CidrIp")] = ipPermissionsIpRanges;
                     ipPermissionsIpRangesListIndex++;
                 }
 
@@ -2774,6 +3246,10 @@ namespace Amazon.EC2
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters["Action"] = "CreateSecurityGroup";
+            if (request.IsSetGroupId())
+            {
+                parameters["GroupId"] = request.GroupId;
+            }
             if (request.IsSetGroupName())
             {
                 parameters["GroupName"] = request.GroupName;
@@ -2781,6 +3257,10 @@ namespace Amazon.EC2
             if (request.IsSetGroupDescription())
             {
                 parameters["GroupDescription"] = request.GroupDescription;
+            }
+            if (request.IsSetVpcId())
+            {
+                parameters["VpcId"] = request.VpcId;
             }
 
             return parameters;
@@ -2917,6 +3397,10 @@ namespace Amazon.EC2
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters["Action"] = "DeleteSecurityGroup";
+            if (request.IsSetGroupId())
+            {
+                parameters["GroupId"] = request.GroupId;
+            }
             if (request.IsSetGroupName())
             {
                 parameters["GroupName"] = request.GroupName;
@@ -3288,6 +3772,13 @@ namespace Amazon.EC2
                 parameters[String.Concat("PublicIp", ".", describeAddressesRequestPublicIpListIndex)] = describeAddressesRequestPublicIp;
                 describeAddressesRequestPublicIpListIndex++;
             }
+            List<string> describeAddressesRequestAllocationIdList = request.AllocationId;
+            int describeAddressesRequestAllocationIdListIndex = 1;
+            foreach (string describeAddressesRequestAllocationId in describeAddressesRequestAllocationIdList)
+            {
+                parameters[String.Concat("AllocationId", ".", describeAddressesRequestAllocationIdListIndex)] = describeAddressesRequestAllocationId;
+                describeAddressesRequestAllocationIdListIndex++;
+            }
             List<Filter> describeAddressesRequestFilterList = request.Filter;
             int describeAddressesRequestFilterListIndex = 1;
             foreach (Filter describeAddressesRequestFilter in describeAddressesRequestFilterList)
@@ -3647,6 +4138,13 @@ namespace Amazon.EC2
                 parameters[String.Concat("GroupName", ".", describeSecurityGroupsRequestGroupNameListIndex)] = describeSecurityGroupsRequestGroupName;
                 describeSecurityGroupsRequestGroupNameListIndex++;
             }
+            List<string> describeSecurityGroupsRequestGroupIdList = request.GroupId;
+            int describeSecurityGroupsRequestGroupIdListIndex = 1;
+            foreach (string describeSecurityGroupsRequestGroupId in describeSecurityGroupsRequestGroupIdList)
+            {
+                parameters[String.Concat("GroupId", ".", describeSecurityGroupsRequestGroupIdListIndex)] = describeSecurityGroupsRequestGroupId;
+                describeSecurityGroupsRequestGroupIdListIndex++;
+            }
             List<Filter> describeSecurityGroupsRequestFilterList = request.Filter;
             int describeSecurityGroupsRequestFilterListIndex = 1;
             foreach (Filter describeSecurityGroupsRequestFilter in describeSecurityGroupsRequestFilterList)
@@ -3679,6 +4177,10 @@ namespace Amazon.EC2
             if (request.IsSetPublicIp())
             {
                 parameters["PublicIp"] = request.PublicIp;
+            }
+            if (request.IsSetAssociationId())
+            {
+                parameters["AssociationId"] = request.AssociationId;
             }
 
             return parameters;
@@ -3812,6 +4314,13 @@ namespace Amazon.EC2
                 }
 
                 modifyInstanceAttributeRequestBlockDeviceMappingListIndex++;
+            }
+            List<string> modifyInstanceAttributeRequestGroupIdList = request.GroupId;
+            int modifyInstanceAttributeRequestGroupIdListIndex = 1;
+            foreach (string modifyInstanceAttributeRequestGroupId in modifyInstanceAttributeRequestGroupIdList)
+            {
+                parameters[String.Concat("GroupId", ".", modifyInstanceAttributeRequestGroupIdListIndex)] = modifyInstanceAttributeRequestGroupId;
+                modifyInstanceAttributeRequestGroupIdListIndex++;
             }
 
             return parameters;
@@ -3993,6 +4502,10 @@ namespace Amazon.EC2
             {
                 parameters["PublicIp"] = request.PublicIp;
             }
+            if (request.IsSetAllocationId())
+            {
+                parameters["AllocationId"] = request.AllocationId;
+            }
 
             return parameters;
         }
@@ -4117,6 +4630,10 @@ namespace Amazon.EC2
                     {
                         parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "UserId")] = ipPermissionsGroups.UserId;
                     }
+                    if (ipPermissionsGroups.IsSetGroupId())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "GroupId")] = ipPermissionsGroups.GroupId;
+                    }
                     if (ipPermissionsGroups.IsSetGroupName())
                     {
                         parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "GroupName")] = ipPermissionsGroups.GroupName;
@@ -4128,7 +4645,7 @@ namespace Amazon.EC2
                 int ipPermissionsIpRangesListIndex = 1;
                 foreach (string ipPermissionsIpRanges in ipPermissionsIpRangesList)
                 {
-                    parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "IpRanges", ".", ipPermissionsIpRangesListIndex)] = ipPermissionsIpRanges;
+                    parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupIngressRequestIpPermissionsListIndex, ".", "IpRanges", ".", ipPermissionsIpRangesListIndex, ".CidrIp")] = ipPermissionsIpRanges;
                     ipPermissionsIpRangesListIndex++;
                 }
 
@@ -4167,6 +4684,13 @@ namespace Amazon.EC2
             {
                 parameters[String.Concat("SecurityGroup", ".", runInstancesRequestSecurityGroupListIndex)] = runInstancesRequestSecurityGroup;
                 runInstancesRequestSecurityGroupListIndex++;
+            }
+            List<string> runInstancesRequestSecurityGroupIdList = request.SecurityGroupId;
+            int runInstancesRequestSecurityGroupIdListIndex = 1;
+            foreach (string runInstancesRequestSecurityGroupId in runInstancesRequestSecurityGroupIdList)
+            {
+                parameters[String.Concat("SecurityGroupId", ".", runInstancesRequestSecurityGroupIdListIndex)] = runInstancesRequestSecurityGroupId;
+                runInstancesRequestSecurityGroupIdListIndex++;
             }
             if (request.IsSetUserData())
             {
@@ -4270,6 +4794,10 @@ namespace Amazon.EC2
             if (request.IsSetClientToken())
             {
                 parameters["ClientToken"] = request.ClientToken;
+            }
+            if (request.IsSetHypervisor())
+            {
+                parameters["Hypervisor"] = request.Hypervisor;
             }
 
             return parameters;
@@ -4643,6 +5171,13 @@ namespace Amazon.EC2
                     parameters[String.Concat("LaunchSpecification", ".", "SecurityGroup", ".", launchSpecificationSecurityGroupListIndex)] = launchSpecificationSecurityGroup;
                     launchSpecificationSecurityGroupListIndex++;
                 }
+                List<string> launchSpecificationSecurityGroupIdList = requestSpotInstancesRequestLaunchSpecification.SecurityGroupId;
+                int launchSpecificationSecurityGroupIdListIndex = 1;
+                foreach (string launchSpecificationSecurityGroupId in launchSpecificationSecurityGroupIdList)
+                {
+                    parameters[String.Concat("LaunchSpecification", ".", "SecurityGroupId", ".", launchSpecificationSecurityGroupIdListIndex)] = launchSpecificationSecurityGroupId;
+                    launchSpecificationSecurityGroupIdListIndex++;
+                }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetUserData())
                 {
                     parameters[String.Concat("LaunchSpecification", ".", "UserData")] = requestSpotInstancesRequestLaunchSpecification.UserData;
@@ -4873,11 +5408,836 @@ namespace Amazon.EC2
             return parameters;
         }
 
+        /**
+         * Convert ImportInstanceRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertImportInstance(ImportInstanceRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ImportInstance";
+            if (request.IsSetDescription())
+            {
+                parameters["Description"] = request.Description;
+            }
+            if (request.IsSetLaunchSpecification())
+            {
+                ImportInstanceLaunchSpecificationType importInstanceRequestLaunchSpecification = request.LaunchSpecification;
+                if (importInstanceRequestLaunchSpecification.IsSetArchitecture())
+                {
+                    parameters[String.Concat("LaunchSpecification", ".", "Architecture")] = importInstanceRequestLaunchSpecification.Architecture;
+                }
+                List<string> launchSpecificationSecurityGroupList = importInstanceRequestLaunchSpecification.SecurityGroup;
+                int launchSpecificationSecurityGroupListIndex = 1;
+                foreach (string launchSpecificationSecurityGroup in launchSpecificationSecurityGroupList)
+                {
+                    parameters[String.Concat("LaunchSpecification", ".", "SecurityGroup", ".", launchSpecificationSecurityGroupListIndex)] = launchSpecificationSecurityGroup;
+                    launchSpecificationSecurityGroupListIndex++;
+                }
+                if (importInstanceRequestLaunchSpecification.IsSetUserData())
+                {
+                    parameters[String.Concat("LaunchSpecification", ".", "UserData")] = importInstanceRequestLaunchSpecification.UserData;
+                }
+                if (importInstanceRequestLaunchSpecification.IsSetInstanceType())
+                {
+                    parameters[String.Concat("LaunchSpecification", ".", "InstanceType")] = importInstanceRequestLaunchSpecification.InstanceType;
+                }
+                if (importInstanceRequestLaunchSpecification.IsSetPlacement())
+                {
+                    Placement launchSpecificationPlacement = importInstanceRequestLaunchSpecification.Placement;
+                    if (launchSpecificationPlacement.IsSetAvailabilityZone())
+                    {
+                        parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "AvailabilityZone")] = launchSpecificationPlacement.AvailabilityZone;
+                    }
+                    if (launchSpecificationPlacement.IsSetGroupName())
+                    {
+                        parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "GroupName")] = launchSpecificationPlacement.GroupName;
+                    }
+                }
+                if (importInstanceRequestLaunchSpecification.IsSetMonitoring())
+                {
+                    MonitoringSpecification launchSpecificationMonitoring = importInstanceRequestLaunchSpecification.Monitoring;
+                    if (launchSpecificationMonitoring.IsSetEnabled())
+                    {
+                        parameters[String.Concat("LaunchSpecification", ".", "Monitoring", ".", "Enabled")] = launchSpecificationMonitoring.Enabled.ToString().ToLower();
+                    }
+                }
+                if (importInstanceRequestLaunchSpecification.IsSetSubnetId())
+                {
+                    parameters[String.Concat("LaunchSpecification", ".", "SubnetId")] = importInstanceRequestLaunchSpecification.SubnetId;
+                }
+                if (importInstanceRequestLaunchSpecification.IsSetInstanceInitiatedShutdownBehavior())
+                {
+                    parameters[String.Concat("LaunchSpecification", ".", "InstanceInitiatedShutdownBehavior")] = importInstanceRequestLaunchSpecification.InstanceInitiatedShutdownBehavior;
+                }
+                if (importInstanceRequestLaunchSpecification.IsSetPrivateIpAddress())
+                {
+                    parameters[String.Concat("LaunchSpecification", ".", "PrivateIpAddress")] = importInstanceRequestLaunchSpecification.PrivateIpAddress;
+                }
+            }
+            List<DiskImageType> importInstanceRequestDiskImageList = request.DiskImage;
+            int importInstanceRequestDiskImageListIndex = 1;
+            foreach (DiskImageType importInstanceRequestDiskImage in importInstanceRequestDiskImageList)
+            {
+                if (importInstanceRequestDiskImage.IsSetImage())
+                {
+                    DiskImageDetailType diskImageImage = importInstanceRequestDiskImage.Image;
+                    if (diskImageImage.IsSetFormat())
+                    {
+                        parameters[String.Concat("DiskImage", ".", importInstanceRequestDiskImageListIndex, ".", "Image", ".", "Format")] = diskImageImage.Format;
+                    }
+                    if (diskImageImage.IsSetBytes())
+                    {
+                        parameters[String.Concat("DiskImage", ".", importInstanceRequestDiskImageListIndex, ".", "Image", ".", "Bytes")] = diskImageImage.Bytes.ToString();
+                    }
+                    if (diskImageImage.IsSetImportManifestUrl())
+                    {
+                        parameters[String.Concat("DiskImage", ".", importInstanceRequestDiskImageListIndex, ".", "Image", ".", "ImportManifestUrl")] = diskImageImage.ImportManifestUrl;
+                    }
+                }
+                if (importInstanceRequestDiskImage.IsSetDescription())
+                {
+                    parameters[String.Concat("DiskImage", ".", importInstanceRequestDiskImageListIndex, ".", "Description")] = importInstanceRequestDiskImage.Description;
+                }
+                if (importInstanceRequestDiskImage.IsSetVolume())
+                {
+                    DiskImageVolumeType diskImageVolume = importInstanceRequestDiskImage.Volume;
+                    if (diskImageVolume.IsSetSize())
+                    {
+                        parameters[String.Concat("DiskImage", ".", importInstanceRequestDiskImageListIndex, ".", "Volume", ".", "Size")] = diskImageVolume.Size.ToString();
+                    }
+                }
+
+                importInstanceRequestDiskImageListIndex++;
+            }
+            if (request.IsSetPlatform())
+            {
+                parameters["Platform"] = request.Platform;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert ImportVolumeRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertImportVolume(ImportVolumeRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ImportVolume";
+            if (request.IsSetAvailabilityZone())
+            {
+                parameters["AvailabilityZone"] = request.AvailabilityZone;
+            }
+            if (request.IsSetImage())
+            {
+                DiskImageDetailType importVolumeRequestImage = request.Image;
+                if (importVolumeRequestImage.IsSetFormat())
+                {
+                    parameters[String.Concat("Image", ".", "Format")] = importVolumeRequestImage.Format;
+                }
+                if (importVolumeRequestImage.IsSetBytes())
+                {
+                    parameters[String.Concat("Image", ".", "Bytes")] = importVolumeRequestImage.Bytes.ToString();
+                }
+                if (importVolumeRequestImage.IsSetImportManifestUrl())
+                {
+                    parameters[String.Concat("Image", ".", "ImportManifestUrl")] = importVolumeRequestImage.ImportManifestUrl;
+                }
+            }
+            if (request.IsSetDescription())
+            {
+                parameters["Description"] = request.Description;
+            }
+            if (request.IsSetVolume())
+            {
+                DiskImageVolumeType importVolumeRequestVolume = request.Volume;
+                if (importVolumeRequestVolume.IsSetSize())
+                {
+                    parameters[String.Concat("Volume", ".", "Size")] = importVolumeRequestVolume.Size.ToString();
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeConversionTasksRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeConversionTasks(DescribeConversionTasksRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeConversionTasks";
+            List<string> describeConversionTasksRequestConversionTaskIdList = request.ConversionTaskId;
+            int describeConversionTasksRequestConversionTaskIdListIndex = 1;
+            foreach (string describeConversionTasksRequestConversionTaskId in describeConversionTasksRequestConversionTaskIdList)
+            {
+                parameters[String.Concat("ConversionTaskId", ".", describeConversionTasksRequestConversionTaskIdListIndex)] = describeConversionTasksRequestConversionTaskId;
+                describeConversionTasksRequestConversionTaskIdListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CancelConversionTaskRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCancelConversionTask(CancelConversionTaskRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CancelConversionTask";
+            if (request.IsSetConversionTaskId())
+            {
+                parameters["ConversionTaskId"] = request.ConversionTaskId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert AuthorizeSecurityGroupEgressRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertAuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "AuthorizeSecurityGroupEgress";
+            if (request.IsSetGroupId())
+            {
+                parameters["GroupId"] = request.GroupId;
+            }
+            List<IpPermissionSpecification> authorizeSecurityGroupEgressRequestIpPermissionsList = request.IpPermissions;
+            int authorizeSecurityGroupEgressRequestIpPermissionsListIndex = 1;
+            foreach (IpPermissionSpecification authorizeSecurityGroupEgressRequestIpPermissions in authorizeSecurityGroupEgressRequestIpPermissionsList)
+            {
+                if (authorizeSecurityGroupEgressRequestIpPermissions.IsSetIpProtocol())
+                {
+                    parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "IpProtocol")] = authorizeSecurityGroupEgressRequestIpPermissions.IpProtocol;
+                }
+                if (authorizeSecurityGroupEgressRequestIpPermissions.IsSetFromPort())
+                {
+                    parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "FromPort")] = authorizeSecurityGroupEgressRequestIpPermissions.FromPort.ToString();
+                }
+                if (authorizeSecurityGroupEgressRequestIpPermissions.IsSetToPort())
+                {
+                    parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "ToPort")] = authorizeSecurityGroupEgressRequestIpPermissions.ToPort.ToString();
+                }
+                List<UserIdGroupPair> ipPermissionsGroupsList = authorizeSecurityGroupEgressRequestIpPermissions.Groups;
+                int ipPermissionsGroupsListIndex = 1;
+                foreach (UserIdGroupPair ipPermissionsGroups in ipPermissionsGroupsList)
+                {
+                    if (ipPermissionsGroups.IsSetUserId())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "UserId")] = ipPermissionsGroups.UserId;
+                    }
+                    if (ipPermissionsGroups.IsSetGroupId())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "GroupId")] = ipPermissionsGroups.GroupId;
+                    }
+                    if (ipPermissionsGroups.IsSetGroupName())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "GroupName")] = ipPermissionsGroups.GroupName;
+                    }
+
+                    ipPermissionsGroupsListIndex++;
+                }
+                List<string> ipPermissionsIpRangesList = authorizeSecurityGroupEgressRequestIpPermissions.IpRanges;
+                int ipPermissionsIpRangesListIndex = 1;
+                foreach (string ipPermissionsIpRanges in ipPermissionsIpRangesList)
+                {
+                    parameters[String.Concat("IpPermissions", ".", authorizeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "IpRanges", ".", ipPermissionsIpRangesListIndex, ".CidrIp")] = ipPermissionsIpRanges;
+                    ipPermissionsIpRangesListIndex++;
+                }
+
+                authorizeSecurityGroupEgressRequestIpPermissionsListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert RevokeSecurityGroupEgressRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertRevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "RevokeSecurityGroupEgress";
+            if (request.IsSetGroupId())
+            {
+                parameters["GroupId"] = request.GroupId;
+            }
+            List<IpPermissionSpecification> revokeSecurityGroupEgressRequestIpPermissionsList = request.IpPermissions;
+            int revokeSecurityGroupEgressRequestIpPermissionsListIndex = 1;
+            foreach (IpPermissionSpecification revokeSecurityGroupEgressRequestIpPermissions in revokeSecurityGroupEgressRequestIpPermissionsList)
+            {
+                if (revokeSecurityGroupEgressRequestIpPermissions.IsSetIpProtocol())
+                {
+                    parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "IpProtocol")] = revokeSecurityGroupEgressRequestIpPermissions.IpProtocol;
+                }
+                if (revokeSecurityGroupEgressRequestIpPermissions.IsSetFromPort())
+                {
+                    parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "FromPort")] = revokeSecurityGroupEgressRequestIpPermissions.FromPort.ToString();
+                }
+                if (revokeSecurityGroupEgressRequestIpPermissions.IsSetToPort())
+                {
+                    parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "ToPort")] = revokeSecurityGroupEgressRequestIpPermissions.ToPort.ToString();
+                }
+                List<UserIdGroupPair> ipPermissionsGroupsList = revokeSecurityGroupEgressRequestIpPermissions.Groups;
+                int ipPermissionsGroupsListIndex = 1;
+                foreach (UserIdGroupPair ipPermissionsGroups in ipPermissionsGroupsList)
+                {
+                    if (ipPermissionsGroups.IsSetUserId())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "UserId")] = ipPermissionsGroups.UserId;
+                    }
+                    if (ipPermissionsGroups.IsSetGroupId())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "GroupId")] = ipPermissionsGroups.GroupId;
+                    }
+                    if (ipPermissionsGroups.IsSetGroupName())
+                    {
+                        parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "Groups", ".", ipPermissionsGroupsListIndex, ".", "GroupName")] = ipPermissionsGroups.GroupName;
+                    }
+
+                    ipPermissionsGroupsListIndex++;
+                }
+                List<string> ipPermissionsIpRangesList = revokeSecurityGroupEgressRequestIpPermissions.IpRanges;
+                int ipPermissionsIpRangesListIndex = 1;
+                foreach (string ipPermissionsIpRanges in ipPermissionsIpRangesList)
+                {
+                    parameters[String.Concat("IpPermissions", ".", revokeSecurityGroupEgressRequestIpPermissionsListIndex, ".", "IpRanges", ".", ipPermissionsIpRangesListIndex, ".CidrIp")] = ipPermissionsIpRanges;
+                    ipPermissionsIpRangesListIndex++;
+                }
+
+                revokeSecurityGroupEgressRequestIpPermissionsListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateInternetGatewayRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateInternetGateway(CreateInternetGatewayRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateInternetGateway";
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeInternetGatewaysRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeInternetGateways(DescribeInternetGatewaysRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeInternetGateways";
+            List<string> describeInternetGatewaysRequestInternetGatewayIdList = request.InternetGatewayId;
+            int describeInternetGatewaysRequestInternetGatewayIdListIndex = 1;
+            foreach (string describeInternetGatewaysRequestInternetGatewayId in describeInternetGatewaysRequestInternetGatewayIdList)
+            {
+                parameters[String.Concat("InternetGatewayId", ".", describeInternetGatewaysRequestInternetGatewayIdListIndex)] = describeInternetGatewaysRequestInternetGatewayId;
+                describeInternetGatewaysRequestInternetGatewayIdListIndex++;
+            }
+            List<Filter> describeInternetGatewaysRequestFilterList = request.Filter;
+            int describeInternetGatewaysRequestFilterListIndex = 1;
+            foreach (Filter describeInternetGatewaysRequestFilter in describeInternetGatewaysRequestFilterList)
+            {
+                if (describeInternetGatewaysRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeInternetGatewaysRequestFilterListIndex, ".", "Name")] = describeInternetGatewaysRequestFilter.Name;
+                }
+                List<string> filterValueList = describeInternetGatewaysRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeInternetGatewaysRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeInternetGatewaysRequestFilterListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteInternetGatewayRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeleteInternetGateway(DeleteInternetGatewayRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeleteInternetGateway";
+            if (request.IsSetInternetGatewayId())
+            {
+                parameters["InternetGatewayId"] = request.InternetGatewayId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert AttachInternetGatewayRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertAttachInternetGateway(AttachInternetGatewayRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "AttachInternetGateway";
+            if (request.IsSetInternetGatewayId())
+            {
+                parameters["InternetGatewayId"] = request.InternetGatewayId;
+            }
+            if (request.IsSetVpcId())
+            {
+                parameters["VpcId"] = request.VpcId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DetachInternetGatewayRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDetachInternetGateway(DetachInternetGatewayRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DetachInternetGateway";
+            if (request.IsSetInternetGatewayId())
+            {
+                parameters["InternetGatewayId"] = request.InternetGatewayId;
+            }
+            if (request.IsSetVpcId())
+            {
+                parameters["VpcId"] = request.VpcId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateRouteTableRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateRouteTable(CreateRouteTableRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateRouteTable";
+            if (request.IsSetVpcId())
+            {
+                parameters["VpcId"] = request.VpcId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeRouteTablesRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeRouteTables(DescribeRouteTablesRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeRouteTables";
+            List<string> describeRouteTablesRequestRouteTableIdList = request.RouteTableId;
+            int describeRouteTablesRequestRouteTableIdListIndex = 1;
+            foreach (string describeRouteTablesRequestRouteTableId in describeRouteTablesRequestRouteTableIdList)
+            {
+                parameters[String.Concat("RouteTableId", ".", describeRouteTablesRequestRouteTableIdListIndex)] = describeRouteTablesRequestRouteTableId;
+                describeRouteTablesRequestRouteTableIdListIndex++;
+            }
+            List<Filter> describeRouteTablesRequestFilterList = request.Filter;
+            int describeRouteTablesRequestFilterListIndex = 1;
+            foreach (Filter describeRouteTablesRequestFilter in describeRouteTablesRequestFilterList)
+            {
+                if (describeRouteTablesRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeRouteTablesRequestFilterListIndex, ".", "Name")] = describeRouteTablesRequestFilter.Name;
+                }
+                List<string> filterValueList = describeRouteTablesRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeRouteTablesRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeRouteTablesRequestFilterListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteRouteTableRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeleteRouteTable(DeleteRouteTableRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeleteRouteTable";
+            if (request.IsSetRouteTableId())
+            {
+                parameters["RouteTableId"] = request.RouteTableId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert AssociateRouteTableRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertAssociateRouteTable(AssociateRouteTableRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "AssociateRouteTable";
+            if (request.IsSetRouteTableId())
+            {
+                parameters["RouteTableId"] = request.RouteTableId;
+            }
+            if (request.IsSetSubnetId())
+            {
+                parameters["SubnetId"] = request.SubnetId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert ReplaceRouteTableAssociationRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ReplaceRouteTableAssociation";
+            if (request.IsSetAssociationId())
+            {
+                parameters["AssociationId"] = request.AssociationId;
+            }
+            if (request.IsSetRouteTableId())
+            {
+                parameters["RouteTableId"] = request.RouteTableId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DisassociateRouteTableRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDisassociateRouteTable(DisassociateRouteTableRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DisassociateRouteTable";
+            if (request.IsSetAssociationId())
+            {
+                parameters["AssociationId"] = request.AssociationId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateRouteRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateRoute(CreateRouteRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateRoute";
+            if (request.IsSetRouteTableId())
+            {
+                parameters["RouteTableId"] = request.RouteTableId;
+            }
+            if (request.IsSetDestinationCidrBlock())
+            {
+                parameters["DestinationCidrBlock"] = request.DestinationCidrBlock;
+            }
+            if (request.IsSetGatewayId())
+            {
+                parameters["GatewayId"] = request.GatewayId;
+            }
+            if (request.IsSetInstanceId())
+            {
+                parameters["InstanceId"] = request.InstanceId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert ReplaceRouteRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertReplaceRoute(ReplaceRouteRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ReplaceRoute";
+            if (request.IsSetRouteTableId())
+            {
+                parameters["RouteTableId"] = request.RouteTableId;
+            }
+            if (request.IsSetDestinationCidrBlock())
+            {
+                parameters["DestinationCidrBlock"] = request.DestinationCidrBlock;
+            }
+            if (request.IsSetGatewayId())
+            {
+                parameters["GatewayId"] = request.GatewayId;
+            }
+            if (request.IsSetInstanceId())
+            {
+                parameters["InstanceId"] = request.InstanceId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteRouteRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeleteRoute(DeleteRouteRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeleteRoute";
+            if (request.IsSetRouteTableId())
+            {
+                parameters["RouteTableId"] = request.RouteTableId;
+            }
+            if (request.IsSetDestinationCidrBlock())
+            {
+                parameters["DestinationCidrBlock"] = request.DestinationCidrBlock;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateNetworkAclRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateNetworkAcl(CreateNetworkAclRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateNetworkAcl";
+            if (request.IsSetVpcId())
+            {
+                parameters["VpcId"] = request.VpcId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeNetworkAclsRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeNetworkAcls(DescribeNetworkAclsRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeNetworkAcls";
+            List<string> describeNetworkAclsRequestNetworkAclIdList = request.NetworkAclId;
+            int describeNetworkAclsRequestNetworkAclIdListIndex = 1;
+            foreach (string describeNetworkAclsRequestNetworkAclId in describeNetworkAclsRequestNetworkAclIdList)
+            {
+                parameters[String.Concat("NetworkAclId", ".", describeNetworkAclsRequestNetworkAclIdListIndex)] = describeNetworkAclsRequestNetworkAclId;
+                describeNetworkAclsRequestNetworkAclIdListIndex++;
+            }
+            List<Filter> describeNetworkAclsRequestFilterList = request.Filter;
+            int describeNetworkAclsRequestFilterListIndex = 1;
+            foreach (Filter describeNetworkAclsRequestFilter in describeNetworkAclsRequestFilterList)
+            {
+                if (describeNetworkAclsRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeNetworkAclsRequestFilterListIndex, ".", "Name")] = describeNetworkAclsRequestFilter.Name;
+                }
+                List<string> filterValueList = describeNetworkAclsRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeNetworkAclsRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeNetworkAclsRequestFilterListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteNetworkAclRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeleteNetworkAcl(DeleteNetworkAclRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeleteNetworkAcl";
+            if (request.IsSetNetworkAclId())
+            {
+                parameters["NetworkAclId"] = request.NetworkAclId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert ReplaceNetworkAclAssociationRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ReplaceNetworkAclAssociation";
+            if (request.IsSetAssociationId())
+            {
+                parameters["AssociationId"] = request.AssociationId;
+            }
+            if (request.IsSetNetworkAclId())
+            {
+                parameters["NetworkAclId"] = request.NetworkAclId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateNetworkAclEntryRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateNetworkAclEntry(CreateNetworkAclEntryRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateNetworkAclEntry";
+            if (request.IsSetNetworkAclId())
+            {
+                parameters["NetworkAclId"] = request.NetworkAclId;
+            }
+            if (request.IsSetRuleNumber())
+            {
+                parameters["RuleNumber"] = request.RuleNumber.ToString();
+            }
+            if (request.IsSetProtocol())
+            {
+                parameters["Protocol"] = request.Protocol;
+            }
+            if (request.IsSetRuleAction())
+            {
+                parameters["RuleAction"] = request.RuleAction;
+            }
+            if (request.IsSetEgress())
+            {
+                parameters["Egress"] = request.Egress.ToString().ToLower();
+            }
+            if (request.IsSetCidrBlock())
+            {
+                parameters["CidrBlock"] = request.CidrBlock;
+            }
+            if (request.IsSetIcmp())
+            {
+                Icmp createNetworkAclEntryRequestIcmp = request.Icmp;
+                if (createNetworkAclEntryRequestIcmp.IsSetCode())
+                {
+                    parameters[String.Concat("Icmp", ".", "Code")] = createNetworkAclEntryRequestIcmp.Code.ToString();
+                }
+                if (createNetworkAclEntryRequestIcmp.IsSetType())
+                {
+                    parameters[String.Concat("Icmp", ".", "Type")] = createNetworkAclEntryRequestIcmp.Type.ToString();
+                }
+            }
+            if (request.IsSetPortRange())
+            {
+                PortRange createNetworkAclEntryRequestPortRange = request.PortRange;
+                if (createNetworkAclEntryRequestPortRange.IsSetFrom())
+                {
+                    parameters[String.Concat("PortRange", ".", "From")] = createNetworkAclEntryRequestPortRange.From.ToString();
+                }
+                if (createNetworkAclEntryRequestPortRange.IsSetTo())
+                {
+                    parameters[String.Concat("PortRange", ".", "To")] = createNetworkAclEntryRequestPortRange.To.ToString();
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert ReplaceNetworkAclEntryRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ReplaceNetworkAclEntry";
+            if (request.IsSetNetworkAclId())
+            {
+                parameters["NetworkAclId"] = request.NetworkAclId;
+            }
+            if (request.IsSetRuleNumber())
+            {
+                parameters["RuleNumber"] = request.RuleNumber.ToString();
+            }
+            if (request.IsSetProtocol())
+            {
+                parameters["Protocol"] = request.Protocol;
+            }
+            if (request.IsSetRuleAction())
+            {
+                parameters["RuleAction"] = request.RuleAction;
+            }
+            if (request.IsSetEgress())
+            {
+                parameters["Egress"] = request.Egress.ToString().ToLower();
+            }
+            if (request.IsSetCidrBlock())
+            {
+                parameters["CidrBlock"] = request.CidrBlock;
+            }
+            if (request.IsSetIcmp())
+            {
+                Icmp replaceNetworkAclEntryRequestIcmp = request.Icmp;
+                if (replaceNetworkAclEntryRequestIcmp.IsSetCode())
+                {
+                    parameters[String.Concat("Icmp", ".", "Code")] = replaceNetworkAclEntryRequestIcmp.Code.ToString();
+                }
+                if (replaceNetworkAclEntryRequestIcmp.IsSetType())
+                {
+                    parameters[String.Concat("Icmp", ".", "Type")] = replaceNetworkAclEntryRequestIcmp.Type.ToString();
+                }
+            }
+            if (request.IsSetPortRange())
+            {
+                PortRange replaceNetworkAclEntryRequestPortRange = request.PortRange;
+                if (replaceNetworkAclEntryRequestPortRange.IsSetFrom())
+                {
+                    parameters[String.Concat("PortRange", ".", "From")] = replaceNetworkAclEntryRequestPortRange.From.ToString();
+                }
+                if (replaceNetworkAclEntryRequestPortRange.IsSetTo())
+                {
+                    parameters[String.Concat("PortRange", ".", "To")] = replaceNetworkAclEntryRequestPortRange.To.ToString();
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteNetworkAclEntryRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeleteNetworkAclEntry";
+            if (request.IsSetNetworkAclId())
+            {
+                parameters["NetworkAclId"] = request.NetworkAclId;
+            }
+            if (request.IsSetRuleNumber())
+            {
+                parameters["RuleNumber"] = request.RuleNumber.ToString();
+            }
+            if (request.IsSetEgress())
+            {
+                parameters["Egress"] = request.Egress.ToString().ToLower();
+            }
+
+            return parameters;
+        }
+
         /*
          *  Transforms response based on xslt template
          */
         private static string Transform(string responseBody, string action, Type t)
         {
+            XslCompiledTransform transformer = new XslCompiledTransform();
+
             // Build the name of the xslt transform to apply to the response
             char[] seps = { ',' };
 
@@ -4895,14 +6255,18 @@ namespace Amazon.EC2
                 "Response.xslt"
                 );
 
-            XslCompiledTransform transformer = AWSSDKUtils.GetXslCompiledTransform(resourceName);
-            StringBuilder sb = new StringBuilder(1024);
-            using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
+            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
             {
-                using (StringWriter sw = new StringWriter(sb))
+                transformer.Load(xmlReader);
+
+                StringBuilder sb = new StringBuilder(1024);
+                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
                 {
-                    transformer.Transform(xmlR, null, sw);
-                    return sb.ToString();
+                    using (StringWriter sw = new StringWriter(sb))
+                    {
+                        transformer.Transform(xmlR, null, sw);
+                        return sb.ToString();
+                    }
                 }
             }
         }

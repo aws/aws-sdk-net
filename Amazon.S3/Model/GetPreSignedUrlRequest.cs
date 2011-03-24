@@ -38,6 +38,7 @@ namespace Amazon.S3.Model
 
         ResponseHeaderOverrides _responseHeaders;
         string bucketName;
+        string contentType;
         string key;
         DateTime? expires;
         Protocol protocol;
@@ -114,6 +115,41 @@ namespace Amazon.S3.Model
         internal bool IsSetKey()
         {
             return !System.String.IsNullOrEmpty(this.key);
+        }
+
+        #endregion
+
+        #region ContentType
+        /// <summary>
+        /// Gets and sets the ContentType property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ContentType")]
+        public string ContentType
+        {
+            get { return this.contentType; }
+            set { this.contentType = value; }
+        }
+
+        /// <summary>
+        /// Sets the ContentType property for this request.
+        /// This property defaults to "binary/octet-stream",
+        /// but if you require something else you can set this property.
+        /// </summary>
+        /// <param name="contentType">the value the ContentType to be set to</param>
+        /// <returns>The request with the ContentType set</returns>
+        public GetPreSignedUrlRequest WithContentType(string contentType)
+        {
+            this.contentType = contentType;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ContentType property is set.
+        /// </summary>
+        /// <returns>true if ContentType property is set.</returns>
+        internal bool IsSetContentType()
+        {
+            return !System.String.IsNullOrEmpty(this.contentType);
         }
 
         #endregion

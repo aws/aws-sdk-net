@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -26,8 +26,13 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    ///<summary>
+    ///Represents metadata to associate with Amazon EC2 resources.
+    ///Each tag consists of a user-defined key and value. 
+    ///Use tags to categorize EC2 resources, such as by purpose,
+    ///owner, or environment.
+    ///</summary>
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class Tag
     {    
         private string keyField;

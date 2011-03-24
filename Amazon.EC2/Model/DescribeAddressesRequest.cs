@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -31,10 +31,11 @@ namespace Amazon.EC2.Model
     /// account or provides information about a
     /// specific address.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class DescribeAddressesRequest
     {    
         private List<string> publicIpField;
+        private List<string> allocationIdField;
         private List<Filter> filterField;
 
         /// <summary>
@@ -76,6 +77,49 @@ namespace Amazon.EC2.Model
         public bool IsSetPublicIp()
         {
             return (PublicIp.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the AllocationId property.
+        /// One or more allocation IDs corresponding to the address 
+        /// or addresses to describe. Applies only to VPC addresses.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "AllocationId")]
+        public List<string> AllocationId
+        {
+            get
+            {
+                if (this.allocationIdField == null)
+                {
+                    this.allocationIdField = new List<string>();
+                }
+                return this.allocationIdField;
+            }
+            set { this.allocationIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the AllocationId property
+        /// </summary>
+        /// <param name="list">One or more allocation IDs corresponding to the address 
+        /// or addresses to describe. Applies only to VPC addresses.</param>
+        /// <returns>this instance</returns>
+        public DescribeAddressesRequest WithAllocationId(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                AllocationId.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if AllocationId property is set
+        /// </summary>
+        /// <returns>true if AllocationId property is set</returns>
+        public bool IsSetAllocationId()
+        {
+            return (AllocationId.Count > 0);
         }
 
         /// <summary>

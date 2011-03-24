@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -50,10 +50,11 @@ namespace Amazon.EC2.Model
     /// to update your DNS records and any servers
     /// or devices that communicate with the address.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class ReleaseAddressRequest
     {    
         private string publicIpField;
+        private string allocationIdField;
 
         /// <summary>
         /// Gets and sets the PublicIp property.
@@ -86,6 +87,47 @@ namespace Amazon.EC2.Model
         public bool IsSetPublicIp()
         {
             return this.publicIpField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the AllocationId property.
+        /// The allocation ID that AWS provided when you allocated
+        /// the address for use with Amazon VPC.
+        /// 
+        /// Type: String
+        /// Default: None
+        /// Condition: Required for VPC elastic IP addresses
+        /// </summary>
+        [XmlElementAttribute(ElementName = "AllocationId")]
+        public string AllocationId
+        {
+            get { return this.allocationIdField; }
+            set { this.allocationIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the AllocationId property
+        /// </summary>
+        /// <param name="allocationId">The allocation ID that AWS provided when you allocated
+        /// the address for use with Amazon VPC.
+        /// 
+        /// Type: String
+        /// Default: None
+        /// Condition: Required for VPC elastic IP addresses</param>
+        /// <returns>this instance</returns>
+        public ReleaseAddressRequest WithAllocationId(string allocationId)
+        {
+            this.allocationIdField = allocationId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if AllocationId property is set
+        /// </summary>
+        /// <returns>true if AllocationId property is set</returns>
+        public bool IsSetAllocationId()
+        {
+            return this.allocationIdField != null;
         }
 
     }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -30,10 +30,54 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Allocate Address Result
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class AllocateAddressResult
     {    
+        private string domainField;
+        private string allocationIdField;
         private string publicIpField;
+
+        /// <summary>
+        /// Gets and sets the Domain property.
+        /// Whether this elastic IP address is for instances in EC2 (i.e., standard)
+        /// or instances in a VPC.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Domain")]
+        public string Domain
+        {
+            get { return this.domainField; }
+            set { this.domainField = value; }
+        }
+
+        /// <summary>
+        /// Checks if Domain property is set
+        /// </summary>
+        /// <returns>true if Domain property is set</returns>
+        public bool IsSetDomain()
+        {
+            return this.domainField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the AllocationId property.
+        /// ID that AWS assigns to represent the allocation of the address for
+        /// use with Amazon VPC. Returned only for VPC elastic IP addresses.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "AllocationId")]
+        public string AllocationId
+        {
+            get { return this.allocationIdField; }
+            set { this.allocationIdField = value; }
+        }
+
+        /// <summary>
+        /// Checks if AllocationId property is set
+        /// </summary>
+        /// <returns>true if AllocationId property is set</returns>
+        public bool IsSetAllocationId()
+        {
+            return this.allocationIdField != null;
+        }
 
         /// <summary>
         /// Gets and sets the PublicIp property.

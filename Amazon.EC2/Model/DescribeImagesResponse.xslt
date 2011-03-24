@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2010-08-31/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-01-01/" exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2010-08-31/'"/>
+  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-01-01/'"/>
   <xsl:template match="ec2:DescribeImagesResponse">
     <xsl:element name="DescribeImagesResponse" namespace="{$ns}">
       <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -70,6 +70,9 @@
           <xsl:value-of select="ec2:rootDeviceName"/>
         </xsl:element>
         <xsl:apply-templates select="ec2:blockDeviceMapping"/>
+        <xsl:element name="Hypervisor" namespace="{$ns}">
+          <xsl:value-of select="ec2:hypervisor"/>
+        </xsl:element>
         <xsl:element name="VirtualizationType" namespace="{$ns}">
           <xsl:value-of select="ec2:virtualizationType"/>
         </xsl:element>

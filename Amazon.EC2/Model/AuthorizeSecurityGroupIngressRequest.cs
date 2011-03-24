@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -44,10 +44,11 @@ namespace Amazon.EC2.Model
     /// must be specified. When authorizing a CIDR IP permission,
     /// GroupName, IpProtocol, FromPort, ToPort and CidrIp must be specified
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class AuthorizeSecurityGroupIngressRequest
     {    
         private string userIdField;
+        private string groupIdField;
         private string groupNameField;
         private string sourceSecurityGroupNameField;
         private string sourceSecurityGroupOwnerIdField;
@@ -86,6 +87,39 @@ namespace Amazon.EC2.Model
         public bool IsSetUserId()
         {
             return this.userIdField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the GroupId property.
+        /// Id of the standard (EC2) or VPC security group to modify. Conditional
+        /// The group must belong to your account.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupId")]
+        public string GroupId
+        {
+            get { return this.groupIdField; }
+            set { this.groupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupId property
+        /// </summary>
+        /// <param name="groupId">Id of the standard (EC2) or VPC security group to modify. Conditional
+        /// The group must belong to your account.</param>
+        /// <returns>this instance</returns>
+        public AuthorizeSecurityGroupIngressRequest WithGroupId(string groupId)
+        {
+            this.groupIdField = groupId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if GroupId property is set
+        /// </summary>
+        /// <returns>true if GroupId property is set</returns>
+        public bool IsSetGroupId()
+        {
+            return this.groupIdField != null;
         }
 
         /// <summary>

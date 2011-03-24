@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -29,9 +29,49 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Acquires an elastic IP address for use with your account.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class AllocateAddressRequest
     {    
+        private string domainField;
+
+        /// <summary>
+        /// Gets and sets the Domain property.
+        /// Set to vpc to allocate the address to your VPC.
+        ///
+        /// Default: Address is standard (allocated to EC2)
+        /// Valid Values: vpc | standard
+        /// Condition: Required when allocating an address to a VPC
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Domain")]
+        public string Domain
+        {
+            get { return this.domainField; }
+            set { this.domainField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Domain property
+        /// </summary>
+        /// <param name="domain">Set to vpc to allocate the address to your VPC.
+        ///
+        /// Default: Address is standard (allocated to EC2)
+        /// Valid Values: vpc | standard
+        /// Condition: Required when allocating an address to a VPC</param>
+        /// <returns>this instance</returns>
+        public AllocateAddressRequest WithDomain(string domain)
+        {
+            this.domainField = domain;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Domain property is set
+        /// </summary>
+        /// <returns>true if Domain property is set</returns>
+        public bool IsSetDomain()
+        {
+            return this.domainField != null;
+        }
 
     }
 }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -37,11 +37,14 @@ namespace Amazon.EC2.Model
     ///an Elastic IP associated with your account
     ///and the InstanceId of the instance it is associated with.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class Address
     {    
         private string instanceIdField;
         private string publicIpField;
+        private string allocationIdField;
+        private string associationIdField;
+        private string domainField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -103,6 +106,105 @@ namespace Amazon.EC2.Model
         public bool IsSetPublicIp()
         {
             return this.publicIpField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the AllocationId property.
+        /// The ID representing the allocation of the address for use with Amazon
+        /// VPC
+        /// </summary>
+        [XmlElementAttribute(ElementName = "AllocationId")]
+        public string AllocationId
+        {
+            get { return this.allocationIdField; }
+            set { this.allocationIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the AllocationId property
+        /// </summary>
+        /// <param name="allocationId">The ID representing the allocation of the address for use with Amazon
+        /// VPC</param>
+        /// <returns>this instance</returns>
+        public Address WithAllocationId(string allocationId)
+        {
+            this.allocationIdField = allocationId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if AllocationId property is set
+        /// </summary>
+        /// <returns>true if AllocationId property is set</returns>
+        public bool IsSetAllocationId()
+        {
+            return this.allocationIdField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the AssociationId property.
+        /// The ID representing the association of a VPC elastic IP address with
+        /// an instance in a VPC.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "AssociationId")]
+        public string AssociationId
+        {
+            get { return this.associationIdField; }
+            set { this.associationIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the AssociationId property
+        /// </summary>
+        /// <param name="associationId">The ID representing the association of a VPC elastic IP address with
+        /// an instance in a VPC.</param>
+        /// <returns>this instance</returns>
+        public Address WithAssociationId(string associationId)
+        {
+            this.associationIdField = associationId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if AssociationId property is set
+        /// </summary>
+        /// <returns>true if AssociationId property is set</returns>
+        public bool IsSetAssociationId()
+        {
+            return this.associationIdField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the Domain property.
+        /// Whether this elastic IP address is for instances in EC2 (i.e., standard)
+        /// or Amazon VPC.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Domain")]
+        public string Domain
+        {
+            get { return this.domainField; }
+            set { this.domainField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Domain property
+        /// </summary>
+        /// <param name="domain">Whether this elastic IP address is for instances in EC2 (i.e., standard)
+        /// or Amazon VPC.</param>
+        /// <returns>this instance</returns>
+        public Address WithDomain(string domain)
+        {
+            this.domainField = domain;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Domain property is set
+        /// </summary>
+        /// <returns>true if Domain property is set</returns>
+        public bool IsSetDomain()
+        {
+            return this.domainField != null;
         }
 
     }

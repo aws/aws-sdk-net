@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -30,10 +30,11 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Create Security Group Response
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class CreateSecurityGroupResponse
     {    
         private ResponseMetadata responseMetadataField;
+        private CreateSecurityGroupResult createSecurityGroupResultField;
 
         /// <summary>
         /// Gets and sets the ResponseMetadata property.
@@ -53,6 +54,26 @@ namespace Amazon.EC2.Model
         public bool IsSetResponseMetadata()
         {
             return this.responseMetadataField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the CreateSecurityGroupResult property.
+        /// CreateSecurityGroup Result
+        /// </summary>
+        [XmlElementAttribute(ElementName = "CreateSecurityGroupResult")]
+        public CreateSecurityGroupResult CreateSecurityGroupResult
+        {
+            get { return this.createSecurityGroupResultField; }
+            set { this.createSecurityGroupResultField = value; }
+        }
+
+        /// <summary>
+        /// Checks if CreateSecurityGroupResult property is set
+        /// </summary>
+        /// <returns>true if CreateSecurityGroupResult property is set</returns>
+        public bool IsSetCreateSecurityGroupResult()
+        {
+            return this.createSecurityGroupResultField != null;
         }
 
         /// <summary>

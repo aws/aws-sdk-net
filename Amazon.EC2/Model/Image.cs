@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///AMI
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class Image
     {    
         private string imageIdField;
@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         private List<BlockDeviceMapping> blockDeviceMappingField;
         private string virtualizationTypeField;
         private List<Tag> tagField;
+        private string hypervisorField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
@@ -717,6 +718,36 @@ namespace Amazon.EC2.Model
         public bool IsSetTag()
         {
             return (Tag.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the Hypervisor property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Hypervisor")]
+        public string Hypervisor
+        {
+            get { return this.hypervisorField; }
+            set { this.hypervisorField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Hypervisor property
+        /// </summary>
+        /// <param name="hypervisor">Hypervisor property</param>
+        /// <returns>this instance</returns>
+        public Image WithHypervisor(string hypervisor)
+        {
+            this.hypervisorField = hypervisor;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Hypervisor property is set
+        /// </summary>
+        /// <returns>true if Hypervisor property is set</returns>
+        public bool IsSetHypervisor()
+        {
+            return this.hypervisorField != null;
         }
 
     }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -34,10 +34,11 @@ namespace Amazon.EC2.Model
     /// than once, Amazon EC2 does not
     /// return an error.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class DisassociateAddressRequest
     {    
         private string publicIpField;
+        private string associationIdField;
 
         /// <summary>
         /// Gets and sets the PublicIp property.
@@ -70,6 +71,43 @@ namespace Amazon.EC2.Model
         public bool IsSetPublicIp()
         {
             return this.publicIpField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the AssociationId property.
+        /// Association ID corresponding to the VPC elastic IP address 
+        /// you want to disassociate.
+        ///
+        /// Condition: Required for VPC elastic IP addresses
+        /// </summary>
+        [XmlElementAttribute(ElementName = "AssociationId")]
+        public string AssociationId
+        {
+            get { return this.associationIdField; }
+            set { this.associationIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the AssociationId property
+        /// </summary>
+        /// <param name="associationId">Association ID corresponding to the VPC elastic IP address 
+        /// you want to disassociate.
+        ///
+        /// Condition: Required for VPC elastic IP addresses</param>
+        /// <returns>this instance</returns>
+        public DisassociateAddressRequest WithAssociationId(string associationId)
+        {
+            this.associationIdField = associationId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if AssociationId property is set
+        /// </summary>
+        /// <returns>true if AssociationId property is set</returns>
+        public bool IsSetAssociationId()
+        {
+            return this.associationIdField != null;
         }
 
     }

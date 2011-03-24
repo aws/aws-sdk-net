@@ -212,5 +212,16 @@ namespace Amazon.Auth.AccessControlPolicy
         {
             return new JsonPolicyWriter().WritePolicyToString(this);
         }
+
+        /// <summary>
+        /// Parses a JSON document of a policy and creates a Policy object.
+        /// </summary>
+        /// <param name="json">JSON document of a policy.</param>
+        /// <returns></returns>
+        public static Policy FromJson(string json)
+        {
+            JsonPolicyReader reader = new JsonPolicyReader();
+            return reader.ReadJsonStringToPolicy(json);
+        }
     }
 }

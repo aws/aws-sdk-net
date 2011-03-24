@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -38,10 +38,42 @@ namespace Amazon.EC2.Model
     /// security group A, security group A cannot be deleted until the
     /// allow rule is removed.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class DeleteSecurityGroupRequest
     {    
+        private string groupIdField;
         private string groupNameField;
+
+        /// <summary>
+        /// Gets and sets the GroupId property.
+        /// ID of the security group to delete.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupId")]
+        public string GroupId
+        {
+            get { return this.groupIdField; }
+            set { this.groupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupId property
+        /// </summary>
+        /// <param name="groupId">ID of the security group to delete.</param>
+        /// <returns>this instance</returns>
+        public DeleteSecurityGroupRequest WithGroupId(string groupId)
+        {
+            this.groupIdField = groupId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if GroupId property is set
+        /// </summary>
+        /// <returns>true if GroupId property is set</returns>
+        public bool IsSetGroupId()
+        {
+            return this.groupIdField != null;
+        }
 
         /// <summary>
         /// Gets and sets the GroupName property.

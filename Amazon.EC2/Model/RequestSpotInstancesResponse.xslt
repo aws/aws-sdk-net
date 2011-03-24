@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2010-08-31/"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-01-01/"
     exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
     <xsl:variable name="ns"
-        select="'http://ec2.amazonaws.com/doc/2010-08-31/'" />
+        select="'http://ec2.amazonaws.com/doc/2011-01-01/'" />
     <xsl:template match="ec2:RequestSpotInstancesResponse">
         <xsl:element name="RequestSpotInstancesResponse" namespace="{$ns}">
             <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -110,7 +110,10 @@
     </xsl:template>
     <xsl:template match="ec2:groupSet">
         <xsl:for-each select="ec2:item">
-            <xsl:element name="SecurityGroup" namespace="{$ns}">
+          <xsl:element name="SecurityGroup" namespace="{$ns}">
+            <xsl:value-of select="ec2:groupName"/>
+          </xsl:element>
+          <xsl:element name="SecurityGroupId" namespace="{$ns}">
                 <xsl:value-of select="ec2:groupId"/>
             </xsl:element>
         </xsl:for-each>

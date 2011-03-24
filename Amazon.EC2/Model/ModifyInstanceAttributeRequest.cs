@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -29,13 +29,14 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Modifies an attribute of an instance.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class ModifyInstanceAttributeRequest
     {    
         private string instanceIdField;
         private string attributeField;
         private string valueField;
         private List<InstanceBlockDeviceMappingParameter> blockDeviceMappingField;
+        private List<string> groupIdField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -74,6 +75,7 @@ namespace Amazon.EC2.Model
         /// "instanceType", "kernel", "ramdisk",
         /// "userData", "disableApiTermination",
         /// "instanceInitiatedShutdownBehavior",
+        /// "sourceDestCheck",
         /// "rootDeviceName", and "blockDeviceMapping"
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -90,6 +92,7 @@ namespace Amazon.EC2.Model
         /// "instanceType", "kernel", "ramdisk",
         /// "userData", "disableApiTermination",
         /// "instanceInitiatedShutdownBehavior",
+        /// "sourceDestCheck",
         /// "rootDeviceName", and "blockDeviceMapping"</param>
         /// <returns>this instance</returns>
         public ModifyInstanceAttributeRequest WithAttribute(string attribute)
@@ -179,6 +182,55 @@ namespace Amazon.EC2.Model
         public bool IsSetBlockDeviceMapping()
         {
             return (BlockDeviceMapping.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the GroupId property.
+        /// This is applicable only to instances running in a VPC. Use
+        /// this parameter when you want to change the security
+        /// groups an instance is in. The new set of groups you specify
+        /// replaces the current set. You must specify at least one
+        /// group, even if it's just the default security group in the VPC.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupId")]
+        public List<string> GroupId
+        {
+            get
+            {
+                if (this.groupIdField == null)
+                {
+                    this.groupIdField = new List<string>();
+                }
+                return this.groupIdField;
+            }
+            set { this.groupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupId property
+        /// </summary>
+        /// <param name="list">This is applicable only to instances running in a VPC. Use
+        /// this parameter when you want to change the security
+        /// groups an instance is in. The new set of groups you specify
+        /// replaces the current set. You must specify at least one
+        /// group, even if it's just the default security group in the VPC.</param>
+        /// <returns>this instance</returns>
+        public ModifyInstanceAttributeRequest WithGroupId(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                GroupId.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if GroupId property is set
+        /// </summary>
+        /// <returns>true if GroupId property is set</returns>
+        public bool IsSetGroupId()
+        {
+            return (GroupId.Count > 0);
         }
 
     }

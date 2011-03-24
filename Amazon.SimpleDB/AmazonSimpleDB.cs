@@ -57,11 +57,11 @@ namespace Amazon.SimpleDB
         /// <param name="request">The CreateDomainRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndCreateDomain.</returns>
         IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state);
 
@@ -99,11 +99,11 @@ namespace Amazon.SimpleDB
         /// <param name="request">The ListDomainsRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndListDomains.</returns>
         IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state);
 
@@ -142,11 +142,11 @@ namespace Amazon.SimpleDB
         /// <param name="request">The DomainMetadataRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDomainMetadata.</returns>
         IAsyncResult BeginDomainMetadata(DomainMetadataRequest request, AsyncCallback callback, object state);
 
@@ -183,11 +183,11 @@ namespace Amazon.SimpleDB
         /// <param name="request">The DeleteDomainRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDeleteDomain.</returns>
         IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state);
 
@@ -224,11 +224,11 @@ namespace Amazon.SimpleDB
         /// <param name="request">The PutAttributesRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndPutAttributes.</returns>
         IAsyncResult BeginPutAttributes(PutAttributesRequest request, AsyncCallback callback, object state);
 
@@ -277,11 +277,11 @@ namespace Amazon.SimpleDB
         /// <param name="request">The BatchPutAttributesRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndBatchPutAttributes.</returns>
         IAsyncResult BeginBatchPutAttributes(BatchPutAttributesRequest request, AsyncCallback callback, object state);
 
@@ -331,11 +331,11 @@ namespace Amazon.SimpleDB
         /// <param name="request">The GetAttributesRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndGetAttributes.</returns>
         IAsyncResult BeginGetAttributes(GetAttributesRequest request, AsyncCallback callback, object state);
 
@@ -375,11 +375,11 @@ namespace Amazon.SimpleDB
         /// <param name="request">The DeleteAttributesRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDeleteAttributes.</returns>
         IAsyncResult BeginDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state);
 
@@ -416,11 +416,11 @@ namespace Amazon.SimpleDB
         /// <param name="request">The BatchDeleteAttributesRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndBatchDeleteAttributes.</returns>
         IAsyncResult BeginBatchDeleteAttributes(BatchDeleteAttributesRequest request, AsyncCallback callback, object state);
 
@@ -458,11 +458,11 @@ namespace Amazon.SimpleDB
         /// <param name="request">The SelectRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the IAsyncResult.AsyncState property.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.SimpleDB.AmazonSimpleDBException"></exception>
-        /// <returns>An IAsyncResult that can be used to poll and wait for results; 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndSelect.</returns>
         IAsyncResult BeginSelect(SelectRequest request, AsyncCallback callback, object state);
 

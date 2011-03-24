@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -28,9 +28,10 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// TODO Add Docs
+    /// The Response for the
+    /// DescribeTags operation.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class DescribeTagsResponse
     {    
         private ResponseMetadata responseMetadataField;
@@ -58,7 +59,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the DescribeTagsResult property.
-        /// TODO Add Docs
+        /// DescribeTags Result
         /// </summary>
         [XmlElementAttribute(ElementName = "DescribeTagsResult")]
         public DescribeTagsResult DescribeTagsResult

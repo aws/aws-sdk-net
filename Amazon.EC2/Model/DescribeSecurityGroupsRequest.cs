@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -30,10 +30,11 @@ namespace Amazon.EC2.Model
     /// Returns information about security groups that
     /// you own.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class DescribeSecurityGroupsRequest
     {    
         private List<string> groupNameField;
+        private List<string> groupIdField;
         private List<Filter> filterField;
 
         /// <summary>
@@ -75,6 +76,47 @@ namespace Amazon.EC2.Model
         public bool IsSetGroupName()
         {
             return (GroupName.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the GroupId property.
+        /// ID of the security group.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupId")]
+        public List<string> GroupId
+        {
+            get
+            {
+                if (this.groupIdField == null)
+                {
+                    this.groupIdField = new List<string>();
+                }
+                return this.groupIdField;
+            }
+            set { this.groupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupId property
+        /// </summary>
+        /// <param name="list">ID of the security group.</param>
+        /// <returns>this instance</returns>
+        public DescribeSecurityGroupsRequest WithGroupId(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                GroupId.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if GroupId property is set
+        /// </summary>
+        /// <returns>true if GroupId property is set</returns>
+        public bool IsSetGroupId()
+        {
+            return (GroupId.Count > 0);
         }
 
         /// <summary>

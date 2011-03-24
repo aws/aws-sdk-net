@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -1499,6 +1499,380 @@ namespace Amazon.EC2
         /// Deletes the data feed for Spot Instances.
         /// </remarks>
         DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request);
+
+        /// <summary>
+        /// Cancel Conversion Task 
+        /// </summary>
+        /// <param name="request">Cancel Conversion Task  request</param>
+        /// <returns>Cancel Conversion Task  Response from the service</returns>
+        /// <remarks>
+        /// Cancels an active conversion task. The task can be the import of an instance or volume. The command removes all artifacts of
+        /// the conversion, including a partially uploaded volume or instance. If the conversion is complete or is in the process of transferring the final disk image, the command fails and returns an exception.
+        /// </remarks>
+        CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request);
+
+        /// <summary>
+        /// Describe Conversion Tasks 
+        /// </summary>
+        /// <param name="request">Describe Conversion Tasks  request</param>
+        /// <returns>Describe Conversion Tasks  Response from the service</returns>
+        /// <remarks>
+        /// Describes your conversion tasks. For more information, go to Importing Your Virtual Machines and Volumes into Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
+        /// </remarks>
+        DescribeConversionTasksResponse DescribeConversionTasks(DescribeConversionTasksRequest request);
+
+        /// <summary>
+        /// Import Instance 
+        /// </summary>
+        /// <param name="request">Import Instance  request</param>
+        /// <returns>Import Instance  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new import instance task using metadata from the specified disk image. For more information, go to Importing Your Virtual Machines and Volumes into Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
+        /// </remarks>
+        ImportInstanceResponse ImportInstance(ImportInstanceRequest request);
+
+        /// <summary>
+        /// Import Volume 
+        /// </summary>
+        /// <param name="request">Import Volume  request</param>
+        /// <returns>Import Volume  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new import volume task using metadata from the specified disk image. For more information, go to Importing Your Virtual Machines and Volumes into Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
+        /// </remarks>
+        ImportVolumeResponse ImportVolume(ImportVolumeRequest request);
+
+        /// <summary>
+        /// Authorize Security Group Egress 
+        /// </summary>
+        /// <param name="request">Authorize Security Group Egress  request</param>
+        /// <returns>Authorize Security Group Egress  Response from the service</returns>
+        /// <remarks>
+        /// This action applies only to security groups in a VPC; it's not supported for standard (EC2) security groups.
+        /// For information about Amazon Virtual Private Cloud and VPC security groups, go to the Amazon Virtual
+        /// Private Cloud User Guide.
+        /// The action adds one or more egress rules to a VPC security group. Specifically, this permits instances
+        /// in a security group to send traffic to either one or more destination CIDR IP address ranges, or to one or
+        /// more destination security groups in the same VPC.
+        /// Each rule consists of the protocol (e.g., TCP), plus either a CIDR range, or a source group. For the TCP
+        /// and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you
+        /// must also specify the ICMP type and code.You can use -1 as a wildcard for the ICMP type or code.
+        /// Rule changes are propagated to instances within the security group as quickly as possible. However, a
+        /// small delay might occur.
+        /// Adding hundreds of rules to a security group might cause problems when you access the instance.
+        /// We recommend you condense your rules as much as possible.
+        /// </remarks>
+        AuthorizeSecurityGroupEgressResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request);
+
+        /// <summary>
+        /// Revoke Security Group Egress 
+        /// </summary>
+        /// <param name="request">Revoke Security Group Egress  request</param>
+        /// <returns>Revoke Security Group Egress  Response from the service</returns>
+        /// <remarks>
+        /// This action applies only to security groups in a VPC. It doesn't work with standard (EC2) security groups.
+        /// For information about Amazon Virtual Private Cloud and VPC security groups, go to the Amazon Virtual
+        /// Private Cloud User Guide.
+        /// The action removes one or more egress rules from a VPC security group. The values that you specify in
+        /// the revoke request (e.g., ports, etc.) must match the existing rule's values in order for the rule to be
+        /// revoked.
+        /// Each rule consists of the protocol, and the CIDR range or destination security group. For the TCP and
+        /// UDP protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you
+        /// must also specify the ICMP type and code.
+        /// Rule changes are propagated to instances within the security group as quickly as possible. However, a
+        /// small delay might occur.
+        /// </remarks>
+        RevokeSecurityGroupEgressResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request);
+
+        /// <summary>
+        /// Create Internet Gateway 
+        /// </summary>
+        /// <param name="request">Create Internet Gateway  request</param>
+        /// <returns>Create Internet Gateway  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach
+        /// it to a VPC using AttachInternetGateway. For more information about your VPC and Internet gateway,
+        /// go to Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        CreateInternetGatewayResponse CreateInternetGateway(CreateInternetGatewayRequest request);
+
+        /// <summary>
+        /// Describe Internet Gateways 
+        /// </summary>
+        /// <param name="request">Describe Internet Gateways  request</param>
+        /// <returns>Describe Internet Gateways  Response from the service</returns>
+        /// <remarks>
+        /// Gives you information about your Internet gateways.You can filter the results to return information only
+        /// about Internet gateways that match criteria you specify. For example, you could get information only
+        /// about gateways with particular tags. The Internet gateway must match at least one of the specified values
+        /// for it to be included in the results.
+        /// You can specify multiple filters (e.g., the Internet gateway is attached to a particular VPC and is tagged
+        /// with a particular value). The result includes information for a particular Internet gateway only if the gateway
+        /// matches all your filters. If there's no match, no special message is returned; the response is simply empty.
+        /// You can use wildcards with the filter values: * matches zero or more characters, and ? matches exactly
+        /// one character.You can escape special characters using a backslash before the character. For example,
+        /// a value of \*amazon\?\\ searches for the literal string *amazon?\.
+        /// </remarks>
+        DescribeInternetGatewaysResponse DescribeInternetGateways(DescribeInternetGatewaysRequest request);
+
+        /// <summary>
+        /// Delete Internet Gateway 
+        /// </summary>
+        /// <param name="request">Delete Internet Gateway  request</param>
+        /// <returns>Delete Internet Gateway  Response from the service</returns>
+        /// <remarks>
+        /// Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC. For
+        /// more information about your VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        DeleteInternetGatewayResponse DeleteInternetGateway(DeleteInternetGatewayRequest request);
+
+        /// <summary>
+        /// Attach Internet Gateway 
+        /// </summary>
+        /// <param name="request">Attach Internet Gateway  request</param>
+        /// <returns>Attach Internet Gateway  Response from the service</returns>
+        /// <remarks>
+        /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC. For
+        /// more information about your VPC and Internet gateway, go to the Amazon Virtual Private Cloud User
+        /// Guide.
+        /// </remarks>
+        AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request);
+
+        /// <summary>
+        /// Detach Internet Gateway 
+        /// </summary>
+        /// <param name="request">Detach Internet Gateway  request</param>
+        /// <returns>Detach Internet Gateway  Response from the service</returns>
+        /// <remarks>
+        /// Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC.The
+        /// VPC must not contain any running instances with elastic IP addresses. For more information about your
+        /// VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
+        /// For more information about Amazon Virtual Private Cloud and Internet gateways, go to the Amazon Virtual
+        /// Private Cloud User Guide.
+        /// </remarks>
+        DetachInternetGatewayResponse DetachInternetGateway(DetachInternetGatewayRequest request);
+
+        /// <summary>
+        /// Create Route Table 
+        /// </summary>
+        /// <param name="request">Create Route Table  request</param>
+        /// <returns>Create Route Table  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new route table within a VPC. After you create a new route table, you can add routes and
+        /// associate the table with a subnet. For more information about route tables, go to Route Tables in the
+        /// Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        CreateRouteTableResponse CreateRouteTable(CreateRouteTableRequest request);
+
+        /// <summary>
+        /// Describe Route Tables 
+        /// </summary>
+        /// <param name="request">Describe Route Tables  request</param>
+        /// <returns>Describe Route Tables  Response from the service</returns>
+        /// <remarks>
+        /// Gives you information about your route tables.You can filter the results to return information only about
+        /// tables that match criteria you specify. For example, you could get information only about a table associated
+        /// with a particular subnet.You can specify multiple values for the filter. The table must match at least one
+        /// of the specified values for it to be included in the results.
+        /// You can specify multiple filters (e.g., the table has a particular route, and is associated with a particular
+        /// subnet). The result includes information for a particular table only if it matches all your filters. If there's
+        /// no match, no special message is returned; the response is simply empty.
+        /// You can use wildcards with the filter values: * matches zero or more characters, and ? matches exactly
+        /// one character.You can escape special characters using a backslash before the character. For example,
+        /// a value of \*amazon\?\\ searches for the literal string *amazon?\.
+        /// </remarks>
+        DescribeRouteTablesResponse DescribeRouteTables(DescribeRouteTablesRequest request);
+
+        /// <summary>
+        /// Delete Route Table 
+        /// </summary>
+        /// <param name="request">Delete Route Table  request</param>
+        /// <returns>Delete Route Table  Response from the service</returns>
+        /// <remarks>
+        /// Deletes a route table from a VPC. The route table must not be associated with a subnet.You can't delete
+        /// the main route table. For more information about route tables, go to Route Tables in the Amazon Virtual
+        /// Private Cloud User Guide.
+        /// </remarks>
+        DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest request);
+
+        /// <summary>
+        /// Associate Route Table 
+        /// </summary>
+        /// <param name="request">Associate Route Table  request</param>
+        /// <returns>Associate Route Table  Response from the service</returns>
+        /// <remarks>
+        /// Associates a subnet with a route table. The subnet and route table must be in the same VPC. This
+        /// association causes traffic originating from the subnet to be routed according to the routes in the route
+        /// table. The action returns an association ID, which you need if you want to disassociate the route table
+        /// from the subnet later. A route table can be associated with multiple subnets.
+        /// For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User
+        /// Guide.
+        /// </remarks>
+        AssociateRouteTableResponse AssociateRouteTable(AssociateRouteTableRequest request);
+
+        /// <summary>
+        /// Replace Route Table Association 
+        /// </summary>
+        /// <param name="request">Replace Route Table Association  request</param>
+        /// <returns>Replace Route Table Association  Response from the service</returns>
+        /// <remarks>
+        /// Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet
+        /// uses the routes in the new route table it's associated with. For more information about route tables, go
+        /// to Route Tables in the Amazon Virtual Private Cloud User Guide.
+        /// You can also use this to change which table is the main route table in the VPC.You just specify the main
+        /// route table's association ID and the route table that you want to be the new main route table.
+        /// </remarks>
+        ReplaceRouteTableAssociationResponse ReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request);
+
+        /// <summary>
+        /// Disassociate Route Table 
+        /// </summary>
+        /// <param name="request">Disassociate Route Table  request</param>
+        /// <returns>Disassociate Route Table  Response from the service</returns>
+        /// <remarks>
+        /// Disassociates a subnet from a route table.
+        /// After you perform this action, the subnet no longer uses the routes in the route table. Instead it uses the
+        /// routes in the VPC's main route table. For more information about route tables, go to Route Tables in the
+        /// Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request);
+
+        /// <summary>
+        /// Create Route 
+        /// </summary>
+        /// <param name="request">Create Route  request</param>
+        /// <returns>Create Route  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new route in a route table within a VPC. The route's target can be either a gateway attached
+        /// to the VPC or a NAT instance in the VPC.
+        /// When determining how to route traffic, we use the route with the most specific match. For example, let's
+        /// say the traffic is destined for 192.0.2.3, and the route table includes the following two routes:
+        /// 192.0.2.0/24 (goes to some target A)
+        /// 192.0.2.0/28 (goes to some target B)
+        /// Both routes apply to the traffic destined for 192.0.2.3. However, the second route in the list is more specific,
+        /// so we use that route to determine where to target the traffic.
+        /// For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User
+        /// Guide.
+        /// </remarks>
+        CreateRouteResponse CreateRoute(CreateRouteRequest request);
+
+        /// <summary>
+        /// Replace Route 
+        /// </summary>
+        /// <param name="request">Replace Route  request</param>
+        /// <returns>Replace Route  Response from the service</returns>
+        /// <remarks>
+        /// Replaces an existing route within a route table in a VPC. For more information about route tables, go to
+        /// Route Tables in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        ReplaceRouteResponse ReplaceRoute(ReplaceRouteRequest request);
+
+        /// <summary>
+        /// Delete Route 
+        /// </summary>
+        /// <param name="request">Delete Route  request</param>
+        /// <returns>Delete Route  Response from the service</returns>
+        /// <remarks>
+        /// Deletes a route from a route table in a VPC. For more information about route tables, go to Route Tables
+        /// in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        DeleteRouteResponse DeleteRoute(DeleteRouteRequest request);
+
+        /// <summary>
+        /// Create Network Acl 
+        /// </summary>
+        /// <param name="request">Create Network Acl  request</param>
+        /// <returns>Create Network Acl  Response from the service</returns>
+        /// <remarks>
+        /// Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of
+        /// security groups) for the instances in your VPC. For more information about network ACLs, go to Network
+        /// ACLs in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request);
+
+        /// <summary>
+        /// Describe Network Acls 
+        /// </summary>
+        /// <param name="request">Describe Network Acls  request</param>
+        /// <returns>Describe Network Acls  Response from the service</returns>
+        /// <remarks>
+        /// Gives you information about the network ACLs in your VPC.You can filter the results to return information
+        /// only about ACLs that match criteria you specify. For example, you could get information only the ACL
+        /// associated with a particular subnet. The ACL must match at least one of the specified values for it to be
+        /// included in the results.
+        /// You can specify multiple filters (e.g., the ACL is associated with a particular subnet and has an egress
+        /// entry that denies traffic to a particular port). The result includes information for a particular ACL only if it
+        /// matches all your filters. If there's no match, no special message is returned; the response is simply empty.
+        /// You can use wildcards with the filter values: * matches zero or more characters, and ? matches exactly
+        /// one character.You can escape special characters using a backslash before the character. For example,
+        /// a value of \*amazon\?\\ searches for the literal string *amazon?\.
+        /// </remarks>
+        DescribeNetworkAclsResponse DescribeNetworkAcls(DescribeNetworkAclsRequest request);
+
+        /// <summary>
+        /// Delete Network Acl 
+        /// </summary>
+        /// <param name="request">Delete Network Acl  request</param>
+        /// <returns>Delete Network Acl  Response from the service</returns>
+        /// <remarks>
+        /// Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it.You can't
+        /// delete the default network ACL. For more information about network ACLs, go to Network ACLs in the
+        /// Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        DeleteNetworkAclResponse DeleteNetworkAcl(DeleteNetworkAclRequest request);
+
+        /// <summary>
+        /// Replace Network Acl Association 
+        /// </summary>
+        /// <param name="request">Replace Network Acl Association  request</param>
+        /// <returns>Replace Network Acl Association  Response from the service</returns>
+        /// <remarks>
+        /// Changes which network ACL a subnet is associated with. By default when you create a subnet, it's
+        /// automatically associated with the default network ACL. For more information about network ACLs, go to
+        /// Network ACLs in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        ReplaceNetworkAclAssociationResponse ReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request);
+
+        /// <summary>
+        /// Create Network Acl Entry 
+        /// </summary>
+        /// <param name="request">Create Network Acl Entry  request</param>
+        /// <returns>Create Network Acl Entry  Response from the service</returns>
+        /// <remarks>
+        /// Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL has a
+        /// set of numbered ingress rules and a separate set of numbered egress rules. When determining whether
+        /// a packet should be allowed in or out of a subnet associated with the ACL, Amazon VPC processes the
+        /// entries in the ACL according to the rule numbers, in ascending order.
+        /// We recommend that you leave room between the rules (e.g., 100, 110, 120, etc.), and not number
+        /// them sequentially (101, 102, 103, etc.). This allows you to easily add a new rule between existing
+        /// ones without having to renumber the rules.
+        /// After you add an entry, you can't modify it; you must either replace it, or create a new entry and delete
+        /// the old one.
+        /// For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User
+        /// Guide.
+        /// </remarks>
+        CreateNetworkAclEntryResponse CreateNetworkAclEntry(CreateNetworkAclEntryRequest request);
+
+        /// <summary>
+        /// Replace Network Acl Entry 
+        /// </summary>
+        /// <param name="request">Replace Network Acl Entry  request</param>
+        /// <returns>Replace Network Acl Entry  Response from the service</returns>
+        /// <remarks>
+        /// Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network
+        /// ACLs in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        ReplaceNetworkAclEntryResponse ReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request);
+
+        /// <summary>
+        /// Delete Network Acl Entry 
+        /// </summary>
+        /// <param name="request">Delete Network Acl Entry  request</param>
+        /// <returns>Delete Network Acl Entry  Response from the service</returns>
+        /// <remarks>
+        /// Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about network
+        /// ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request);
 
     }
 }

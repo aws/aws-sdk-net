@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2010-08-31/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-01-01/" exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2010-08-31/'"/>
+    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-01-01/'"/>
     <xsl:template match="ec2:RunInstancesResponse">
         <xsl:element name="RunInstancesResponse" namespace="{$ns}">
             <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -26,14 +26,17 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-    <xsl:template match="ec2:groupSet">
-        <xsl:for-each select="ec2:item">
-            <xsl:element name="GroupName" namespace="{$ns}">
-                <xsl:value-of select="ec2:groupId"/>
-            </xsl:element>
-        </xsl:for-each>
-    </xsl:template>
-    <xsl:template match="ec2:instancesSet">
+  <xsl:template match="ec2:groupSet">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="GroupName" namespace="{$ns}">
+        <xsl:value-of select="ec2:groupName"/>
+      </xsl:element>
+      <xsl:element name="GroupId" namespace="{$ns}">
+        <xsl:value-of select="ec2:groupId"/>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+  <xsl:template match="ec2:instancesSet">
         <xsl:for-each select="ec2:item">
             <xsl:element name="RunningInstance" namespace="{$ns}">
                 <xsl:element name="InstanceId" namespace="{$ns}">
@@ -94,7 +97,8 @@
                 <xsl:element name="IpAddress" namespace="{$ns}">
                     <xsl:value-of select="ec2:ipAddress"/>
                 </xsl:element>
-                <xsl:element name="Monitoring" namespace="{$ns}">
+
+              <xsl:element name="Monitoring" namespace="{$ns}">
                     <xsl:element name="MonitoringState" namespace="{$ns}">
                         <xsl:value-of select="ec2:monitoring/ec2:state"/>
                     </xsl:element>
@@ -119,10 +123,19 @@
                 <xsl:element name="VirtualizationType" namespace="{$ns}">
                     <xsl:value-of select="ec2:virtualizationType"/>
                 </xsl:element>
-                <xsl:apply-templates select="ec2:license"/>
+              <xsl:apply-templates select="ec2:sourceDestCheck"/>
+              <xsl:apply-templates select="ec2:groupSet"/>
+              <xsl:apply-templates select="ec2:license"/>
             </xsl:element>
         </xsl:for-each>
     </xsl:template>
+
+  <xsl:template match="ec2:sourceDestCheck">
+    <xsl:element name="SourceDestCheck" namespace="{$ns}">
+      <xsl:value-of select="."/>
+    </xsl:element>
+  </xsl:template>
+  
     <xsl:template match="ec2:license">
         <xsl:element name="License" namespace="{$ns}">
 	         <xsl:element name="Pool" namespace="{$ns}">

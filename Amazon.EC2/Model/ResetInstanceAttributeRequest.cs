@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Resets an attribute of an instance to its default
     /// value.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class ResetInstanceAttributeRequest
     {    
         private string instanceIdField;
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the Attribute property.
         /// Name of the attribute to reset. Values are
-        /// "kernel" and "ramdisk".
+        /// "sourceDestCheck", "kernel" and "ramdisk".
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -85,7 +85,7 @@ namespace Amazon.EC2.Model
         /// Sets the Attribute property
         /// </summary>
         /// <param name="attribute">Name of the attribute to reset. Values are
-        /// "kernel" and "ramdisk".</param>
+        /// "sourceDestCheck", "kernel" and "ramdisk".</param>
         /// <returns>this instance</returns>
         public ResetInstanceAttributeRequest WithAttribute(string attribute)
         {

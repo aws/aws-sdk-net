@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -29,13 +29,17 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Security Group
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class SecurityGroup
     {    
         private string ownerIdField;
+        private string vpcIdField;
+        private string groupIdField;
         private string groupNameField;
         private string groupDescriptionField;
+        private List<Tag> tagField;
         private List<IpPermission> ipPermissionField;
+        private List<IpPermission> ipPermissionsEgressField;
 
         /// <summary>
         /// Gets and sets the OwnerId property.
@@ -68,6 +72,68 @@ namespace Amazon.EC2.Model
         public bool IsSetOwnerId()
         {
             return this.ownerIdField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the VpcId property.
+        /// The vpc to which the group belongs.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "VpcId")]
+        public string VpcId
+        {
+            get { return this.vpcIdField; }
+            set { this.vpcIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcId property
+        /// </summary>
+        /// <param name="vpcId">The vpc to which the group belongs.</param>
+        /// <returns>this instance</returns>
+        public SecurityGroup WithVpcId(string vpcId)
+        {
+            this.vpcIdField = vpcId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if VpcId property is set
+        /// </summary>
+        /// <returns>true if VpcId property is set</returns>
+        public bool IsSetVpcId()
+        {
+            return this.vpcIdField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the GroupId property.
+        /// Id of the security group.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupId")]
+        public string GroupId
+        {
+            get { return this.groupIdField; }
+            set { this.groupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupId property
+        /// </summary>
+        /// <param name="groupId">Id of the security group.</param>
+        /// <returns>this instance</returns>
+        public SecurityGroup WithGroupId(string groupId)
+        {
+            this.groupIdField = groupId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if GroupId property is set
+        /// </summary>
+        /// <returns>true if GroupId property is set</returns>
+        public bool IsSetGroupId()
+        {
+            return this.groupIdField != null;
         }
 
         /// <summary>
@@ -133,6 +199,47 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the Tag property.
+        /// A list of tags for the security group.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Tag")]
+        public List<Tag> Tag
+        {
+            get
+            {
+                if (this.tagField == null)
+                {
+                    this.tagField = new List<Tag>();
+                }
+                return this.tagField;
+            }
+            set { this.tagField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Tag property
+        /// </summary>
+        /// <param name="list">A list of tags for the security group.</param>
+        /// <returns>this instance</returns>
+        public SecurityGroup WithTag(params Tag[] list)
+        {
+            foreach (Tag item in list)
+            {
+                Tag.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Tag property is set
+        /// </summary>
+        /// <returns>true if Tag property is set</returns>
+        public bool IsSetTag()
+        {
+            return (Tag.Count > 0);
+        }
+
+        /// <summary>
         /// Gets and sets the IpPermission property.
         /// Set of IP permissions associated with the
         /// security group.
@@ -173,6 +280,47 @@ namespace Amazon.EC2.Model
         public bool IsSetIpPermission()
         {
             return (IpPermission.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the IpPermissionsEgress property.
+        /// A list of outbound rules associated with the security group (for VPC security groups).
+        /// </summary>
+        [XmlElementAttribute(ElementName = "IpPermissionsEgress")]
+        public List<IpPermission> IpPermissionsEgress
+        {
+            get
+            {
+                if (this.ipPermissionsEgressField == null)
+                {
+                    this.ipPermissionsEgressField = new List<IpPermission>();
+                }
+                return this.ipPermissionsEgressField;
+            }
+            set { this.ipPermissionsEgressField = value; }
+        }
+
+        /// <summary>
+        /// Sets the IpPermissionsEgress property
+        /// </summary>
+        /// <param name="list">A list of outbound rules associated with the security group (for VPC security groups).</param>
+        /// <returns>this instance</returns>
+        public SecurityGroup WithIpPermissionsEgress(params IpPermission[] list)
+        {
+            foreach (IpPermission item in list)
+            {
+                IpPermissionsEgress.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if IpPermissionsEgress property is set
+        /// </summary>
+        /// <returns>true if IpPermissionsEgress property is set</returns>
+        public bool IsSetIpPermissionsEgress()
+        {
+            return (IpPermissionsEgress.Count > 0);
         }
 
     }

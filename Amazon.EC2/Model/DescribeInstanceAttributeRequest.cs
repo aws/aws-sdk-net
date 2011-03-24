@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// instance. Only one attribute
     /// can be specified per call.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class DescribeInstanceAttributeRequest
     {    
         private string instanceIdField;
@@ -73,6 +73,7 @@ namespace Amazon.EC2.Model
         /// Specifies the attribute to return. Values are
         /// "instanceType", "kernel", "ramdisk", "userData",
         /// "disableApiTermination", "instanceInitiatedShutdownBehavior",
+        /// "sourceDestCheck", "groupSet",
         /// "rootDeviceName", and "blockDeviceMapping"
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -88,6 +89,7 @@ namespace Amazon.EC2.Model
         /// <param name="attribute">Specifies the attribute to return. Values are
         /// "instanceType", "kernel", "ramdisk", "userData",
         /// "disableApiTermination", "instanceInitiatedShutdownBehavior",
+        /// "sourceDestCheck", "groupSet",
         /// "rootDeviceName", and "blockDeviceMapping"</param>
         /// <returns>this instance</returns>
         public DescribeInstanceAttributeRequest WithAttribute(string attribute)

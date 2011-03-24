@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2010-08-31
+ *  API Version: 2011-01-01
  */
 
 using System;
@@ -30,10 +30,11 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Associate Address Response
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2010-08-31/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
     public class AssociateAddressResponse
     {    
         private ResponseMetadata responseMetadataField;
+        private AssociateAddressResult associateAddressResultField;
 
         /// <summary>
         /// Gets and sets the ResponseMetadata property.
@@ -53,6 +54,26 @@ namespace Amazon.EC2.Model
         public bool IsSetResponseMetadata()
         {
             return this.responseMetadataField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the AssociateAddressResult property.
+        /// AssociateAddress Result
+        /// </summary>
+        [XmlElementAttribute(ElementName = "AssociateAddressResult")]
+        public AssociateAddressResult AssociateAddressResult
+        {
+            get { return this.associateAddressResultField; }
+            set { this.associateAddressResultField = value; }
+        }
+
+        /// <summary>
+        /// Checks if AssociateAddressResult property is set
+        /// </summary>
+        /// <returns>true if AssociateAddressResult property is set</returns>
+        public bool IsSetAssociateAddressResult()
+        {
+            return this.associateAddressResultField != null;
         }
 
         /// <summary>
