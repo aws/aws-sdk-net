@@ -23,6 +23,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+using Amazon.S3.Model;
+
 namespace Amazon.S3.Transfer.Internal
 {
     internal abstract class BaseCommand
@@ -33,5 +35,26 @@ namespace Amazon.S3.Transfer.Internal
         {
             get { return null; }
         }
+
+        protected GetObjectRequest ConvertToGetObjectRequest(BaseDownloadRequest request)
+        {
+            GetObjectRequest getRequest = new GetObjectRequest()
+                .WithBucketName(request.BucketName)
+                .WithKey(request.Key)
+                .WithTimeout(request.Timeout)
+                .WithVersionId(request.VersionId);
+
+            if (request.IsSetModifiedSinceDate())
+            {
+                getRequest.ModifiedSinceDate = request.ModifiedSinceDate;
+            }
+            if (request.IsSetUnmodifiedSinceDate())
+            {
+                getRequest.UnmodifiedSinceDate = request.UnmodifiedSinceDate;
+            }
+
+            return getRequest;
+        }
+
     }
 }

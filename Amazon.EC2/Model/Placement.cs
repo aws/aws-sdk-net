@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-01-01
+ *  API Version: 2011-02-28
  */
 
 using System;
@@ -29,11 +29,12 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Specifies the placement constraints.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
     public class Placement
     {    
         private string availabilityZoneField;
         private string groupNameField;
+        private string tenancyField;
 
         /// <summary>
         /// Gets and sets the AvailabilityZone property.
@@ -97,5 +98,39 @@ namespace Amazon.EC2.Model
             return this.groupNameField != null;
         }
 
+        /// <summary>
+        /// Gets and sets the Tenancy property.
+        /// The tenancy of the instance.
+        /// 
+        /// Valid Values: default | dedicated
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Tenancy")]
+        public string Tenancy
+        {
+            get { return this.tenancyField; }
+            set { this.tenancyField = value; }
+        }
+
+        /// <summary>
+        /// Checks if Tenancy property is set
+        /// </summary>
+        /// <returns>true if Tenancy property is set</returns>
+        public bool IsSetTenancy()
+        {
+            return this.tenancyField != null;
+        }
+
+        /// <summary>
+        /// Sets the Tenancy property
+        /// 
+        /// Valid Values: default | dedicated
+        /// </summary>
+        /// <param name="tenancy">The tenancy of the instance.</param>
+        /// <returns>this instance</returns>
+        public Placement WithTenancy(string tenancy)
+        {
+            this.tenancyField = tenancy;
+            return this;
+        }
     }
 }

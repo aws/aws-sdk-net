@@ -175,6 +175,20 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Adds the elements from the array in the collection of PartETags for this request.
+        /// </summary>
+        /// <param name="partETags">PartETags that will added to this request.</param>
+        /// <returns>The request with the PartETags set</returns>
+        public CompleteMultipartUploadRequest WithPartETags(IEnumerable<PartETag> partETags)
+        {
+            foreach (PartETag part in partETags)
+            {
+                this.PartETags.Add(part);
+            }
+            return this;
+        }
+
+        /// <summary>
         /// Transforms the UploadPartResponses into PartETags and adds them to the request.
         /// </summary>
         /// <param name="responses">The list of response objects return from UploadParts.</param>

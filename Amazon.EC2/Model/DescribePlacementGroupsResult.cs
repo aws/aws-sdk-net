@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-01-01
+ *  API Version: 2011-02-28
  */
 
 using System;
@@ -28,7 +28,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
 
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
     public class DescribePlacementGroupsResult
     {    
         private List<PlacementGroupInfo> placementGroupInfoField;

@@ -4369,7 +4369,7 @@ namespace Amazon.S3
                 HttpStatusCode statusCode = HttpStatusCode.OK;
                 RequestState state = s3AsyncResult.RequestState;
                 HttpWebResponse httpResponse = null;
-                T response;
+                T response = null;
                 try
                 {
                     if (s3AsyncResult.CompletedSynchronously)
@@ -4395,7 +4395,13 @@ namespace Amazon.S3
                 if (shouldRetry)
                 {
                     s3AsyncResult.RetriesAttempt++;
-                    handleRetry(s3AsyncResult.S3Request, s3AsyncResult.RequestState.WebRequest, httpResponse, s3AsyncResult.OrignalStreamPosition,
+                    WebHeaderCollection respHeaders = null;
+                    if (response != null)
+                    {
+                        respHeaders = response.Headers;
+                    }
+
+                    handleRetry(s3AsyncResult.S3Request, s3AsyncResult.RequestState.WebRequest, respHeaders, s3AsyncResult.OrignalStreamPosition,
                         s3AsyncResult.RetriesAttempt, statusCode, cause);
                     invoke<T>(s3AsyncResult);
                 }
@@ -4530,9 +4536,8 @@ namespace Amazon.S3
         }
 
 
-        void handleRetry(S3Request userRequest, HttpWebRequest request, HttpWebResponse httpResponse, long orignalStreamPosition, int retries, HttpStatusCode statusCode, Exception cause)
+        void handleRetry(S3Request userRequest, HttpWebRequest request, WebHeaderCollection respHdrs, long orignalStreamPosition, int retries, HttpStatusCode statusCode, Exception cause)
         {
-            WebHeaderCollection respHdrs = httpResponse == null ? new WebHeaderCollection() : httpResponse.Headers;
             string actionName = userRequest.parameters[S3QueryParameter.Action];
             string requestAddr = request.Address.ToString();
 

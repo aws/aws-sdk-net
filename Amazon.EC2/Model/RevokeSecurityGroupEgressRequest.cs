@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-01-01
+ *  API Version: 2011-02-28
  */
 
 using System;
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
     /// Rule changes are propagated to instances within the security group as quickly as possible. However, a
     /// small delay might occur.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
     public class RevokeSecurityGroupEgressRequest
     {    
         private string groupIdField;

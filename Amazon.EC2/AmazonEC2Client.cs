@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-01-01
+ *  API Version: 2011-02-28
  */
 
 using System;
@@ -489,20 +489,9 @@ namespace Amazon.EC2
         /// <param name="request">Create Tags  request</param>
         /// <returns>Create Tags  Response from the service</returns>
         /// <remarks>
-        /// Create a snapshot of the volume identified by
-        /// volume ID. A volume does not have to be detached
-        /// at the time the snapshot is taken.
-        /// Important Note:
-        /// Snapshot creation requires that the
-        /// system is in a consistent state.
-        /// For instance, this means that if
-        /// taking a snapshot of a database, the
-        /// tables must be read-only locked
-        /// to ensure that the snapshot will not contain a
-        /// corrupted version of the database. Therefore,
-        /// be careful when using this API to ensure that
-        /// the system remains in the consistent state until the create
-        /// snapshot status has returned.
+        /// Adds or overwrites one or more tags for the specified resource or 
+        /// resources. Each resource can have a maximum of 10 tags. Each tag consists 
+        /// of a key and optional value. Tag keys must be unique per resource.
         /// </remarks>
         public CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
@@ -3212,6 +3201,10 @@ namespace Amazon.EC2
             {
                 parameters["CidrBlock"] = request.CidrBlock;
             }
+            if (request.IsSetInstanceTenancy())
+            {
+                parameters["InstanceTenancy"] = request.InstanceTenancy;
+            }
 
             return parameters;
         }
@@ -4711,6 +4704,10 @@ namespace Amazon.EC2
                 {
                     parameters[String.Concat("Placement", ".", "GroupName")] = runInstancesRequestPlacement.GroupName;
                 }
+                if (runInstancesRequestPlacement.IsSetTenancy())
+                {
+                    parameters[String.Concat("Placement", ".", "Tenancy")] = runInstancesRequestPlacement.Tenancy;
+                }
             }
             if (request.IsSetKernelId())
             {
@@ -5201,6 +5198,10 @@ namespace Amazon.EC2
                     {
                         parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "GroupName")] = launchSpecificationPlacement.GroupName;
                     }
+                    if (launchSpecificationPlacement.IsSetTenancy())
+                    {
+                        parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "Tenancy")] = launchSpecificationPlacement.Tenancy;
+                    }
                 }
                 if (requestSpotInstancesRequestLaunchSpecification.IsSetKernelId())
                 {
@@ -5451,6 +5452,10 @@ namespace Amazon.EC2
                     if (launchSpecificationPlacement.IsSetGroupName())
                     {
                         parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "GroupName")] = launchSpecificationPlacement.GroupName;
+                    }
+                    if (launchSpecificationPlacement.IsSetTenancy())
+                    {
+                        parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "Tenancy")] = launchSpecificationPlacement.Tenancy;
                     }
                 }
                 if (importInstanceRequestLaunchSpecification.IsSetMonitoring())

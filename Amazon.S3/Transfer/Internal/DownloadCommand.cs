@@ -54,24 +54,11 @@ namespace Amazon.S3.Transfer.Internal
                 throw new ArgumentNullException("key", "The Key Specified is null or empty!");
             }
 
-            GetObjectRequest getRequest = convertToGetObjectRequest(this._request);
+            GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
             GetObjectResponse response = this._s3Client.GetObject(getRequest);
             response.WriteObjectProgressEvent += this._request.EventHandler;
 
             response.WriteResponseStreamToFile(this._request.FilePath);
-        }
-
-        GetObjectRequest convertToGetObjectRequest(BaseDownloadRequest request)
-        {
-            GetObjectRequest getRequest = new GetObjectRequest()
-                .WithBucketName(request.BucketName)
-                .WithKey(request.Key)
-                .WithTimeout(request.Timeout)
-                .WithVersionId(request.VersionId)
-                .WithModifiedSinceDate(request.ModifiedSinceDate)
-                .WithUnmodifiedSinceDate(request.UnmodifiedSinceDate);
-
-            return getRequest;
         }
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-01-01/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-02-28/" exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-01-01/'"/>
+    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-02-28/'"/>
     <xsl:template match="ec2:DescribeReservedInstancesResponse">
         <xsl:element name="DescribeReservedInstancesResponse" namespace="{$ns}">
             <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -46,6 +46,12 @@
                 </xsl:element>
                 <xsl:element name="StartTime" namespace="{$ns}">
                     <xsl:value-of select="ec2:start"/>
+                </xsl:element>
+                <xsl:element name="InstanceTenancy" namespace="{$ns}">
+                  <xsl:value-of select="ec2:instanceTenancy"/>
+                </xsl:element>
+                <xsl:element name="CurrencyCode" namespace="{$ns}">
+                  <xsl:value-of select="ec2:currencyCode"/>
                 </xsl:element>
                 <xsl:apply-templates select="ec2:tagSet" />
             </xsl:element>

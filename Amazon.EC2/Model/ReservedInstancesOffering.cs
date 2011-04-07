@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-01-01
+ *  API Version: 2011-02-28
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Reserved Instances Offering
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
     public class ReservedInstancesOffering
     {    
         private string reservedInstancesOfferingIdField;
@@ -39,6 +39,8 @@ namespace Amazon.EC2.Model
         private string usagePriceField;
         private string fixedPriceField;
         private string productDescriptionField;
+        private string instanceTenancyField;
+        private string currencyCodeField;
 
         /// <summary>
         /// Gets and sets the ReservedInstancesOfferingId property.
@@ -265,5 +267,67 @@ namespace Amazon.EC2.Model
             return this.productDescriptionField != null;
         }
 
+
+        /// <summary>
+        /// Gets and sets the InstanceTenancy property.
+        /// The tenancy of the reserved instance.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "InstanceTenancy")]
+        public string InstanceTenancy
+        {
+            get { return this.instanceTenancyField; }
+            set { this.instanceTenancyField = value; }
+        }
+
+        /// <summary>
+        /// Checks if InstanceTenancy property is set
+        /// </summary>
+        /// <returns>true if InstanceTenancy property is set</returns>
+        public bool IsSetInstanceTenancy()
+        {
+            return this.instanceTenancyField != null;
+        }
+
+        /// <summary>
+        /// Sets the InstanceTenancy property
+        /// </summary>
+        /// <param name="instanceTenancy">The tenancy of the reserved instance.</param>
+        /// <returns>this instance</returns>
+        public ReservedInstancesOffering WithInstanceTenancy(string instanceTenancy)
+        {
+            this.instanceTenancyField = instanceTenancy;
+            return this;
+        }
+
+        /// <summary>
+        /// Gets and sets the CurrencyCode property.
+        /// The currency of the Reserved Instance offering you are purchasing. It's specified using ISO 4217 standard (e.g., USD, JPY).
+        /// </summary>
+        [XmlElementAttribute(ElementName = "CurrencyCode")]
+        public string CurrencyCode
+        {
+            get { return this.currencyCodeField; }
+            set { this.currencyCodeField = value; }
+        }
+
+        /// <summary>
+        /// Checks if CurrencyCode property is set
+        /// </summary>
+        /// <returns>true if InstanceTenancy property is set</returns>
+        public bool IsSetCurrencyCode()
+        {
+            return this.currencyCodeField != null;
+        }
+
+        /// <summary>
+        /// Sets the CurrencyCode property
+        /// </summary>
+        /// <param name="currencyCode">The ISO 4217 CurrencyCode (e.g., USD, JPY).</param>
+        /// <returns>this instance</returns>
+        public ReservedInstancesOffering WithCurrencyCode(string currencyCode)
+        {
+            this.currencyCodeField = currencyCode;
+            return this;
+        }
     }
 }

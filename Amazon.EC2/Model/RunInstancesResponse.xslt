@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-01-01/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-02-28/" exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-01-01/'"/>
+    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-02-28/'"/>
     <xsl:template match="ec2:RunInstancesResponse">
         <xsl:element name="RunInstancesResponse" namespace="{$ns}">
             <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -75,6 +75,9 @@
                     <xsl:element name="GroupName" namespace="{$ns}">
                       <xsl:value-of select="ec2:placement/ec2:groupName"/>
                     </xsl:element>
+                  <xsl:element name="Tenancy" namespace="{$ns}">
+                    <xsl:value-of select="ec2:placement/ec2:tenancy"/>
+                  </xsl:element>
                 </xsl:element>
                 <xsl:element name="KernelId" namespace="{$ns}">
                     <xsl:value-of select="ec2:kernelId"/>

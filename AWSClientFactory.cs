@@ -32,6 +32,7 @@ using Amazon.RDS;
 using Amazon.S3;
 using Amazon.SQS;
 using Amazon.SimpleDB;
+using Amazon.SimpleEmail;
 using Amazon.SimpleNotificationService;
 
 namespace Amazon
@@ -494,6 +495,36 @@ namespace Amazon
             )
         {
             return new AmazonElasticBeanstalkClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Simple Email Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon Simple Email Service client</returns>
+        public static AmazonSimpleEmailService CreateAmazonSimpleEmailServiceClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonSimpleEmailServiceClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Simple Email Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service</param>
+        /// <returns>An Amazon Simple Email Service client</returns>
+        public static AmazonSimpleEmailService CreateAmazonSimpleEmailServiceClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonSimpleEmailServiceConfig config
+            )
+        {
+            return new AmazonSimpleEmailServiceClient(awsAccessKey, awsSecretAccessKey, config);
         }
 
         /// <summary>

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-01-01
+ *  API Version: 2011-02-28
  */
 
 using System;
@@ -42,10 +42,11 @@ namespace Amazon.EC2.Model
     /// if you leave it inactive for an extended period of time (inactive
     /// means that there are no running Amazon EC2 instances in the VPC).
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-01-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
     public class CreateVpcRequest
     {    
         private string cidrBlockField;
+        private string instanceTenancyField;
 
         /// <summary>
         /// Gets and sets the CidrBlock property.
@@ -82,5 +83,42 @@ namespace Amazon.EC2.Model
             return this.cidrBlockField != null;
         }
 
+        /// <summary>
+        /// Gets and sets the InstanceTenancy property.
+        /// The allowed tenancy of instances launched into the VPC. A value of default means instances 
+        /// can be launched with any tenancy; a value of dedicated means instances must be launched 
+        /// with tenancy as dedicated.
+        /// 
+        /// Valid Values: default | dedicated
+        /// </summary>
+        [XmlElementAttribute(ElementName = "InstanceTenancy")]
+        public string InstanceTenancy
+        {
+            get { return this.instanceTenancyField; }
+            set { this.instanceTenancyField = value; }
+        }
+
+
+        /// <summary>
+        /// Checks if InstanceTenancy property is set
+        /// </summary>
+        /// <returns>true if InstanceTenancy property is set</returns>
+        public bool IsSetInstanceTenancy()
+        {
+            return this.instanceTenancyField != null;
+        }
+
+        /// <summary>
+        /// Sets the InstanceTenancy property
+        /// 
+        /// Valid Values: default | dedicated
+        /// </summary>
+        /// <param name="instanceTenancy">The allowed tenancy of instances launched into the VPC.</param>
+        /// <returns>this instance</returns>
+        public CreateVpcRequest WithInstanceTenancy(string instanceTenancy)
+        {
+            this.instanceTenancyField = instanceTenancy;
+            return this;
+        }
     }
 }
