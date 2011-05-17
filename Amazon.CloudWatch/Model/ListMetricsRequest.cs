@@ -30,7 +30,9 @@ namespace Amazon.CloudWatch.Model
     /// obtain statistical data for a given metric. </para> <para><b>NOTE:</b>
     /// Up to 500 results are returned for any one call. To retrieve further
     /// results, use returned NextToken values with subsequent ListMetrics
-    /// operations. </para>
+    /// operations. </para> <para><b>NOTE:</b> If you create a metric with the
+    /// PutMetricData action, allow up to fifteen minutes for the metric to
+    /// appear in calls to the ListMetrics action. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.ListMetrics"/>
     public class ListMetricsRequest : AmazonWebServiceRequest

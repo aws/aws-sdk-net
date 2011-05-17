@@ -75,6 +75,9 @@ namespace Amazon.S3.Util
                                                 "ap-southeast-1",
                                                 "ap-northeast-1"};
 
+        internal const string REGION_US_EAST_1 = "us-east-1";
+        internal const string REGION_EU_WEST_1 = "eu-west-1";
+
         // ACL related strings
         internal static readonly string[] CannedAcls = {"",
                                                 "private",

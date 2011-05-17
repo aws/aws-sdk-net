@@ -36,6 +36,7 @@ namespace Amazon.S3.Model
 
         private string bucketName;
         private S3Region bucketRegion;
+        private string bucketRegionName;
 
         #endregion
 
@@ -108,6 +109,35 @@ namespace Amazon.S3.Model
         public PutBucketRequest WithBucketRegion(S3Region bucketRegion)
         {
             BucketRegion = bucketRegion;
+            return this;
+        }
+
+        /// <summary>
+        /// Alternative to setting bucket region by using the region's name.
+        /// When set, this will determine where your data will
+        /// reside in S3.
+        /// Valid values: us-east-1, us-west-1, eu-west-1, ap-southeast-1, ap-northeast-1
+        /// </summary>
+        public string BucketRegionName
+        {
+            get { return this.bucketRegionName; }
+            set
+            {
+                this.bucketRegionName = value;
+            }
+        }
+
+        /// <summary>
+        /// Alternative to setting bucket region by using the region's name.
+        /// When set, this will determine where your data will
+        /// reside in S3.
+        /// Valid values: us-east-1, us-west-1, eu-west-1, ap-southeast-1, ap-northeast-1
+        /// </summary>
+        /// <param name="bucketRegionName">The value that BucketRegionName is set to</param>
+        /// <returns>the request with the BucketRegionName set</returns>
+        public PutBucketRequest WithBucketRegionName(string bucketRegionName)
+        {
+            BucketRegionName = bucketRegionName;
             return this;
         }
 

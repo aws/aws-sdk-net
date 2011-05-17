@@ -22,8 +22,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml.Serialization;
+using System.Security.Cryptography;
 using System.Text;
+using System.Xml.Serialization;
+
+using ThirdParty.BouncyCastle.OpenSsl;
 
 namespace Amazon.EC2.Model
 {
@@ -77,6 +80,35 @@ namespace Amazon.EC2.Model
         public override string ToString()
         {
             return this.ToXML();
+        }
+
+        /// <summary>
+        /// Gets the decrypted password using the RSA private key which can be found in the
+        /// PEM file for the key pair.
+        /// </summary>
+        /// <param name="rsaPrivateKey">The RSA private key from the PEM file</param>
+        /// <returns>The decrypted password</returns>
+        public string GetDecryptedPassword(string rsaPrivateKey)
+        {
+            RSAParameters rsaParams;
+            try
+            {
+                rsaParams = new PemReader(new StringReader(rsaPrivateKey.Trim())).ReadPrivatekey();
+            }
+            catch (Exception e)
+            {
+                throw new AmazonEC2Exception("Invalid RSA Private Key", e);
+            }
+
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            rsa.ImportParameters(rsaParams);
+
+            byte[] encryptedBytes = Convert.FromBase64String(this.PasswordData.Data);
+            var decryptedBytes = rsa.Decrypt(encryptedBytes, false);
+
+            UTF8Encoding enc = new UTF8Encoding();
+            string decrypted = enc.GetString(decryptedBytes);
+            return decrypted;
         }
     }
 }

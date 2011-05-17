@@ -193,6 +193,10 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <returns>this instance</returns>
         public Statement WithActionIdentifiers(params ActionIdentifier[] actions) 
         {
+            if (this.actions == null)
+            {
+                this.actions = new List<ActionIdentifier>();
+            }
             foreach (ActionIdentifier element in actions)
             {
                 this.actions.Add(element);
@@ -239,6 +243,10 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <returns>this instance</returns>
         public Statement WithResources(params Resource[] resources) 
         {
+            if (this.resources == null)
+            {
+                this.resources = new List<Resource>();
+            }
             foreach(Resource element in resources)
             {
                 this.resources.Add(element);
@@ -299,6 +307,10 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <returns>this instance</returns>
         public Statement WithConditions(params Condition[] conditions) 
         {
+            if (this.Conditions == null)
+            {
+                this.Conditions = new List<Condition>();
+            }
             foreach(Condition element in conditions)
             {
                 this.Conditions.Add(element);
@@ -337,6 +349,10 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <returns>this instance</returns>
         public Statement WithPrincipals(params Principal[] principals) 
         {
+            if (this.principals == null)
+            {
+                this.principals = new List<Principal>();
+            }
             foreach (Principal element in principals)
             {
                 this.principals.Add(element);

@@ -265,6 +265,22 @@ namespace Amazon.CloudWatch.Model
         {
             return this.alarmActions.Count > 0;       
         }
+
+        /// <summary>
+        /// The list of actions to execute when this alarm transitions into an <c>INSUFFICIENT_DATA</c> state from any other state. Each action is
+        /// specified as an Amazon Resource Number (ARN). Currently the only action supported is publishing to an Amazon SNS topic or an Amazon Auto
+        /// Scaling policy.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 5</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public List<string> InsufficientDataActions
         {
             get { return this.insufficientDataActions; }

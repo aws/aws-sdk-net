@@ -29,9 +29,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("AWSSDK")]
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Amazon Web Services LLC")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
-[assembly: AssemblyCopyright("Copyright © Amazon Web Services 2008-2011")]
+[assembly: AssemblyCompany("Amazon.com, Inc")]
+[assembly: AssemblyCopyright("Copyright 2009-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -53,8 +53,8 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.3.4.0")]
-[assembly: AssemblyFileVersion("1.3.4.0")]
+[assembly: AssemblyVersion("1.3.5.0")]
+[assembly: AssemblyFileVersion("1.3.5.0")]
 
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Security.AllowPartiallyTrustedCallers]

@@ -68,7 +68,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The value of the dimension to be matched. <note> Specifying a <c>Name</c> without specifying a <c>Value</c> is returns all values associated
+        /// The value of the dimension to be matched. <note> Specifying a <c>Name</c> without specifying a <c>Value</c> returns all values associated
         /// with that <c>Name</c>. </note>
         ///  
         /// <para>

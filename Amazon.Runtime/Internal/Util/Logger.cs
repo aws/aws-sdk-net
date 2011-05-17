@@ -14,11 +14,33 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Reflection;
+using System.Globalization;
+using System.Text;
 
 namespace Amazon.Runtime.Internal.Util
 {
+    public class LogMessage
+    {
+        public object[] Args { get; private set; }
+        public IFormatProvider Provider { get; private set; }
+        public string Format { get; private set; }
+
+        public LogMessage(string message) : this(CultureInfo.InvariantCulture, message) { }
+        public LogMessage(string format, params object[] args) : this(CultureInfo.InvariantCulture, format, args) { }
+        public LogMessage(IFormatProvider provider, string format, params object[] args)
+        {
+            Args = args;
+            Format = format;
+            Provider = provider;
+        }
+
+        public override string ToString()
+        {
+            return string.Format(Provider, Format, Args);
+        }
+    }
+
     /// <summary>
     /// This is a dynamic wrapper around log4net so we can avoid log4net being required
     /// to be distributed with the SDK.
@@ -35,13 +57,21 @@ namespace Amazon.Runtime.Internal.Util
         static MethodInfo getLoggerWithTypeMethod;
 
         static Type logType;
-        static MethodInfo debugFormatMethod;
-        static MethodInfo debugWithExceptionMethod;
-        static MethodInfo errorWithExceptionMethod;
-        static MethodInfo infoFormatMethod;
+        static MethodInfo logMethod;
+
+        static Type levelType;
+        static object debugLevelPropertyValue;
+        static object infoLevelPropertyValue;
+        static object errorLevelPropertyValue;
+
+        static Type systemStringFormatType;
+
+        static Type loggerType;
+
         #endregion
 
         object internalLogger;
+        Type declaringType;
 
         public Logger(Type type)
         {
@@ -53,7 +83,9 @@ namespace Amazon.Runtime.Internal.Util
             if (logMangerType == null)
                 return;
 
-            this.internalLogger = getLoggerWithTypeMethod.Invoke(null, new object[] { type });
+            declaringType = type;
+
+            this.internalLogger = getLoggerWithTypeMethod.Invoke(null, new object[] { Assembly.GetCallingAssembly(), type }); //Assembly.GetCallingAssembly()
         }
 
         /// <summary>
@@ -70,28 +102,32 @@ namespace Amazon.Runtime.Internal.Util
                 loadState = LoadState.Loading;
                 try
                 {
+                    loggerType = Type.GetType("Amazon.Runtime.Internal.Util.Logger");
+
                     // The LogManager and its methods
-                    logMangerType = Type.GetType("log4net.LogManager, log4net");
+                    logMangerType = Type.GetType("log4net.Core.LoggerManager, log4net");
                     if (logMangerType == null)
                     {
                         loadState = LoadState.Failed;
                         return;
                     }
-                    getLoggerWithTypeMethod = logMangerType.GetMethod("GetLogger", new Type[] { typeof(Type) });
+                    getLoggerWithTypeMethod = logMangerType.GetMethod("GetLogger", new Type[] { typeof(Assembly), typeof(Type) });
 
                     // The ILog and its methdods
-                    logType = Type.GetType("log4net.ILog, log4net");
-                    debugFormatMethod = logType.GetMethod("DebugFormat", new Type[] { typeof(string), typeof(object[]) });
-                    debugWithExceptionMethod = logType.GetMethod("Debug", new Type[] { typeof(string), typeof(Exception) });
-                    errorWithExceptionMethod = logType.GetMethod("Error", new Type[] { typeof(string), typeof(Exception) });
-                    infoFormatMethod = logType.GetMethod("InfoFormat", new Type[] { typeof(string), typeof(object[]) });
+                    logType = Type.GetType("log4net.Core.ILogger, log4net");
+                    levelType = Type.GetType("log4net.Core.Level, log4net");
+                    debugLevelPropertyValue = levelType.GetField("Debug").GetValue(null);
+                    infoLevelPropertyValue = levelType.GetField("Info").GetValue(null);
+                    errorLevelPropertyValue = levelType.GetField("Error").GetValue(null);
+
+                    systemStringFormatType = Type.GetType("log4net.Util.SystemStringFormat, log4net");
+
+                    logMethod = logType.GetMethod("Log", new Type[] { typeof(Type), levelType, typeof(object), typeof(Exception) });
 
                     if (getLoggerWithTypeMethod == null ||
                         logType == null ||
-                        debugFormatMethod == null ||
-                        debugWithExceptionMethod == null ||
-                        errorWithExceptionMethod == null ||
-                        infoFormatMethod == null)
+                        levelType == null ||
+                        logMethod == null)
                     {
                         loadState = LoadState.Failed;
                         return;
@@ -107,6 +143,7 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
+
         /// <summary>
         /// Simple wrapper around the log4net Error method.
         /// </summary>
@@ -114,10 +151,17 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="exception"></param>
         public void Error(string message, Exception exception)
         {
-            if (loadState != LoadState.Success || this.internalLogger == null || errorWithExceptionMethod == null)
+            if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || errorLevelPropertyValue == null)
                 return;
 
-            errorWithExceptionMethod.Invoke(this.internalLogger, new object[] { message, exception });
+            logMethod.Invoke(
+                this.internalLogger,
+                new object[]
+                {
+                    loggerType, errorLevelPropertyValue,
+                    new LogMessage(CultureInfo.InvariantCulture, message),
+                    exception
+                });
         }
 
         /// <summary>
@@ -127,10 +171,17 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="exception"></param>
         public void Debug(string message, Exception exception)
         {
-            if (loadState != LoadState.Success || this.internalLogger == null || debugWithExceptionMethod == null)
+            if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || debugLevelPropertyValue == null)
                 return;
 
-            debugWithExceptionMethod.Invoke(this.internalLogger, new object[] { message, exception });
+            logMethod.Invoke(
+                this.internalLogger,
+                new object[]
+                {
+                    loggerType, debugLevelPropertyValue,
+                    new LogMessage(CultureInfo.InvariantCulture, message),
+                    exception
+                });
         }
 
         /// <summary>
@@ -140,10 +191,18 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="arguments"></param>
         public void DebugFormat(string message, params object[] arguments)
         {
-            if (loadState != LoadState.Success || this.internalLogger == null || debugFormatMethod == null)
+            if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || debugLevelPropertyValue == null)
                 return;
 
-            debugFormatMethod.Invoke(this.internalLogger, new object[] { message, arguments });
+            logMethod.Invoke(
+                this.internalLogger,
+                new object[]
+                {
+                    loggerType, debugLevelPropertyValue,
+                    new LogMessage(CultureInfo.InvariantCulture, message, arguments),
+                    null
+                });
+
         }
 
         /// <summary>
@@ -153,10 +212,17 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="arguments"></param>
         public void InfoFormat(string message, params object[] arguments)
         {
-            if (loadState != LoadState.Success || this.internalLogger == null || infoFormatMethod == null)
+            if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || infoLevelPropertyValue == null)
                 return;
 
-            infoFormatMethod.Invoke(this.internalLogger, new object[] { message, arguments });
+            logMethod.Invoke(
+                this.internalLogger,
+                new object[]
+                {
+                    loggerType, infoLevelPropertyValue,
+                    new LogMessage(CultureInfo.InvariantCulture, message, arguments),
+                    null
+                });
         }
     }
 }

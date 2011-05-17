@@ -66,7 +66,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\AWSSDK.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
-    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <DebugSymbols>false</DebugSymbols>
     <NoWarn>1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -513,12 +513,16 @@
     <Compile Include="Amazon.CloudWatch\Model\ListMetricsResult.cs" />
     <Compile Include="Amazon.CloudWatch\Model\Metric.cs" />
     <Compile Include="Amazon.CloudWatch\Model\MetricAlarm.cs" />
+    <Compile Include="Amazon.CloudWatch\Model\MetricDatum.cs" />
     <Compile Include="Amazon.CloudWatch\Model\MissingRequiredParameterException.cs" />
     <Compile Include="Amazon.CloudWatch\Model\PutMetricAlarmRequest.cs" />
     <Compile Include="Amazon.CloudWatch\Model\PutMetricAlarmResponse.cs" />
+    <Compile Include="Amazon.CloudWatch\Model\PutMetricDataRequest.cs" />
+    <Compile Include="Amazon.CloudWatch\Model\PutMetricDataResponse.cs" />
     <Compile Include="Amazon.CloudWatch\Model\ResourceNotFoundException.cs" />
     <Compile Include="Amazon.CloudWatch\Model\SetAlarmStateRequest.cs" />
     <Compile Include="Amazon.CloudWatch\Model\SetAlarmStateResponse.cs" />
+    <Compile Include="Amazon.CloudWatch\Model\StatisticSet.cs" />
     <Compile Include="Amazon.CloudWatch\Model\Transform\AlarmHistoryItemUnmarshaller.cs" />
     <Compile Include="Amazon.CloudWatch\Model\Transform\DatapointUnmarshaller.cs" />
     <Compile Include="Amazon.CloudWatch\Model\Transform\DeleteAlarmsRequestMarshaller.cs" />
@@ -547,6 +551,8 @@
     <Compile Include="Amazon.CloudWatch\Model\Transform\MetricUnmarshaller.cs" />
     <Compile Include="Amazon.CloudWatch\Model\Transform\PutMetricAlarmRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudWatch\Model\Transform\PutMetricAlarmResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudWatch\Model\Transform\PutMetricDataRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudWatch\Model\Transform\PutMetricDataResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudWatch\Model\Transform\SetAlarmStateRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudWatch\Model\Transform\SetAlarmStateResponseUnmarshaller.cs" />
     <Compile Include="Amazon.EC2\AmazonEC2.cs" />
@@ -2217,6 +2223,22 @@
     <Compile Include="AWSClientFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1Encodable.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1EncodableVector.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1InputStream.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1Object.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1Sequence.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\DerInteger.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\DerSequence.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Utilities\FilterStream.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Math\BigInteger.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\PEMReader.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemGenerationException.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemHeader.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemObject.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemObjectGenerator.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemObjectParser.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemReader.cs" />
     <Compile Include="ThirdParty\Json\IJsonWrapper.cs" />
     <Compile Include="ThirdParty\Json\JsonData.cs" />
     <Compile Include="ThirdParty\Json\JsonException.cs" />

@@ -26,7 +26,6 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public class ConfigurationOptionDescription  
     {
-        
         private string namespaceValue;
         private string name;
         private string defaultValue;
@@ -405,7 +404,7 @@ namespace Amazon.ElasticBeanstalk.Model
             
 
         // Check to see if MaxLength property is set
-        internal bool IsSetMaxLength()
+        public bool IsSetMaxLength()
         {
             return this.maxLength.HasValue;       
         }

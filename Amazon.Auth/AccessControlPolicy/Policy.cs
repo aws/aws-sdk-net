@@ -194,6 +194,10 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <returns>this instance</returns>
         public Policy WithStatements(params Statement[] statements)
         {
+            if (this.Statements == null)
+            {
+                this.Statements = new List<Statement>();
+            }
             foreach (Statement element in statements)
             {
                 this.Statements.Add(element);

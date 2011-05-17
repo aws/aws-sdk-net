@@ -20,6 +20,7 @@
  *
  */
 
+using System;
 using System.Net;
 using System.Collections.Specialized;
 using System.Collections.Generic;
@@ -133,6 +134,47 @@ namespace Amazon.S3.Model
 
         #endregion
 
+        #region Properties
+
+        private Guid id = Guid.NewGuid();
+        public Guid Id { get { return this.id; } }
+
+        public TimeSpan TotalRequestTime { get; set; }
+        public TimeSpan ResponseReadTime { get; set; }
+        public TimeSpan ResponseProcessingTime { get; set; }
+        public TimeSpan ResponseTime { get; set; }
+        public long BytesProcessed { get; set; }
+
+        public TimeSpan MissingTime
+        {
+            get
+            {
+                return (TotalRequestTime - (ResponseReadTime + ResponseProcessingTime + ResponseTime));
+            }
+        }
+
+        #endregion
+
+        #region Overrides
+
+        public override string ToString()
+        {
+            string contents = string.Format("S3Request: Type - {0}, ID - {1}, ResponseTime - {2}, ResponseReadTime - {3}, ResponseProcessingTime - {4}, TotalRequestTime - {5}, Unaccounted time - {6}, Bytes processed - {7}",
+                this.GetType().FullName,
+                this.Id,
+                this.ResponseTime,
+                this.ResponseReadTime,
+                this.ResponseProcessingTime,
+                this.TotalRequestTime,
+                this.MissingTime,
+                this.BytesProcessed);
+            return contents;
+        }
+
+        #endregion
+
+        #region Virtual methods
+
         internal virtual bool SupportTimeout
         {
             get { return false; }
@@ -146,5 +188,7 @@ namespace Amazon.S3.Model
         internal virtual void OnRaiseProgressEvent(long incrementTransferred, long transferred, long total)
         {
         }
+
+        #endregion
     }
 }

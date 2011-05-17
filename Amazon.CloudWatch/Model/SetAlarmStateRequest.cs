@@ -40,7 +40,7 @@ namespace Amazon.CloudWatch.Model
         private string stateReasonData;
 
         /// <summary>
-        /// The descriptive name for the alarm. This name must be unique within the user's AWS account
+        /// The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is 255 characters.
         ///  
         /// <para>
         /// <b>Constraints:</b>
