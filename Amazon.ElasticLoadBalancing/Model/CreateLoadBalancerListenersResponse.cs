@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the CreateLoadBalancerListenersResult property.
-        /// 
+        /// The output for the CreateLoadBalancerListeners action.
         /// </summary>
         public CreateLoadBalancerListenersResult CreateLoadBalancerListenersResult
         {

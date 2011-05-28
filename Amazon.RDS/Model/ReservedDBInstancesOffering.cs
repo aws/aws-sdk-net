@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the
-    /// DescribeReservedDBInstancesOfferings action. </para>
+    /// <para> This data type is used as a response element in the DescribeReservedDBInstancesOfferings action. </para>
     /// </summary>
     public class ReservedDBInstancesOffering  
     {
@@ -32,6 +31,7 @@ namespace Amazon.RDS.Model
         private int? duration;
         private double? fixedPrice;
         private double? usagePrice;
+        private string currencyCode;
         private string productDescription;
         private bool? multiAZ;
 
@@ -173,6 +173,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetUsagePrice()
         {
             return this.usagePrice.HasValue;       
+        }
+
+        /// <summary>
+        /// The currency code for the reserved DB Instance offering.
+        ///  
+        /// </summary>
+        public string CurrencyCode
+        {
+            get { return this.currencyCode; }
+            set { this.currencyCode = value; }
+        }
+
+        /// <summary>
+        /// Sets the CurrencyCode property
+        /// </summary>
+        /// <param name="currencyCode">The value to set for the CurrencyCode property </param>
+        /// <returns>this instance</returns>
+        public ReservedDBInstancesOffering WithCurrencyCode(string currencyCode)
+        {
+            this.currencyCode = currencyCode;
+            return this;
+        }
+            
+
+        // Check to see if CurrencyCode property is set
+        internal bool IsSetCurrencyCode()
+        {
+            return this.currencyCode != null;       
         }
 
         /// <summary>

@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the action
-    /// DescribeDBEngineVersions. </para>
+    /// <para> This data type is used as a response element in the action DescribeDBEngineVersions. </para>
     /// </summary>
     public class DBEngineVersion  
     {
@@ -30,6 +29,8 @@ namespace Amazon.RDS.Model
         private string engine;
         private string engineVersion;
         private string dBParameterGroupFamily;
+        private string dBEngineDescription;
+        private string dBEngineVersionDescription;
 
         /// <summary>
         /// The name of the database engine.
@@ -113,6 +114,62 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBParameterGroupFamily()
         {
             return this.dBParameterGroupFamily != null;       
+        }
+
+        /// <summary>
+        /// The description of the database engine.
+        ///  
+        /// </summary>
+        public string DBEngineDescription
+        {
+            get { return this.dBEngineDescription; }
+            set { this.dBEngineDescription = value; }
+        }
+
+        /// <summary>
+        /// Sets the DBEngineDescription property
+        /// </summary>
+        /// <param name="dBEngineDescription">The value to set for the DBEngineDescription property </param>
+        /// <returns>this instance</returns>
+        public DBEngineVersion WithDBEngineDescription(string dBEngineDescription)
+        {
+            this.dBEngineDescription = dBEngineDescription;
+            return this;
+        }
+            
+
+        // Check to see if DBEngineDescription property is set
+        internal bool IsSetDBEngineDescription()
+        {
+            return this.dBEngineDescription != null;       
+        }
+
+        /// <summary>
+        /// The description of the database engine version.
+        ///  
+        /// </summary>
+        public string DBEngineVersionDescription
+        {
+            get { return this.dBEngineVersionDescription; }
+            set { this.dBEngineVersionDescription = value; }
+        }
+
+        /// <summary>
+        /// Sets the DBEngineVersionDescription property
+        /// </summary>
+        /// <param name="dBEngineVersionDescription">The value to set for the DBEngineVersionDescription property </param>
+        /// <returns>this instance</returns>
+        public DBEngineVersion WithDBEngineVersionDescription(string dBEngineVersionDescription)
+        {
+            this.dBEngineVersionDescription = dBEngineVersionDescription;
+            return this;
+        }
+            
+
+        // Check to see if DBEngineVersionDescription property is set
+        internal bool IsSetDBEngineVersionDescription()
+        {
+            return this.dBEngineVersionDescription != null;       
         }
     }
 }

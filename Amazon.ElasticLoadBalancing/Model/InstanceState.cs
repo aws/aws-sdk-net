@@ -58,10 +58,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;         
+            return this.instanceId != null;       
         }
 
         /// <summary>
@@ -85,16 +86,16 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;      
+            return this.state != null;       
         }
 
         /// <summary>
-        /// Provides information about the cause of <i>OutOfService</i> instances.
-        /// Specifically, it indicates whether the cause is Elastic Load Balancing
-        /// or the instance behind the Load Balancer.
+        /// Provides information about the cause of <i>OutOfService</i> instances. Specifically, it indicates whether the cause is Elastic Load
+        /// Balancing or the instance behind the Load Balancer.
         ///  
         /// </summary>
         public string ReasonCode
@@ -114,11 +115,17 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if ReasonCode property is set
         internal bool IsSetReasonCode()
         {
-            return this.reasonCode != null;         
+            return this.reasonCode != null;       
         }
+
+        /// <summary>
+        /// Provides a description of the instance.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -136,10 +143,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;        
+            return this.description != null;       
         }
     }
 }

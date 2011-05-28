@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<DescribeDBSecurityGroupsRequest> request = new DefaultRequest<DescribeDBSecurityGroupsRequest>(describeDBSecurityGroupsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeDBSecurityGroups");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (describeDBSecurityGroupsRequest != null && describeDBSecurityGroupsRequest.IsSetDBSecurityGroupName()) 
             {
                 request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(describeDBSecurityGroupsRequest.DBSecurityGroupName));

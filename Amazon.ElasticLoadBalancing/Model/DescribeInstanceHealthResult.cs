@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Describe Instance Health Result
+    /// <summary>
+    /// <para> The output for the DescribeInstanceHealth action. </para>
     /// </summary>
     public class DescribeInstanceHealthResult  
     {
@@ -50,6 +51,22 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the InstanceStates collection
+        /// </summary>
+        /// <param name="instanceStates">The values to add to the InstanceStates collection </param>
+        /// <returns>this instance</returns>
+        public DescribeInstanceHealthResult WithInstanceStates(IEnumerable<InstanceState> instanceStates)
+        {
+            foreach (InstanceState element in instanceStates)
+            {
+                this.instanceStates.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if InstanceStates property is set
         internal bool IsSetInstanceStates()
         {

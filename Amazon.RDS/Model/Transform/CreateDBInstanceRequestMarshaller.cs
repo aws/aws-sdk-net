@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<CreateDBInstanceRequest> request = new DefaultRequest<CreateDBInstanceRequest>(createDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBInstance");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetDBName()) 
             {
                 request.Parameters.Add("DBName", StringUtils.FromString(createDBInstanceRequest.DBName));
@@ -67,6 +67,7 @@ namespace Amazon.RDS.Model.Transform
             if (createDBInstanceRequest != null) 
             {
                 List<string> dBSecurityGroupsList = createDBInstanceRequest.DBSecurityGroups;
+
                 int dBSecurityGroupsListIndex = 1;
                 foreach (string dBSecurityGroupsListValue in dBSecurityGroupsList) 
                 { 
@@ -109,6 +110,10 @@ namespace Amazon.RDS.Model.Transform
             if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetAutoMinorVersionUpgrade()) 
             {
                 request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(createDBInstanceRequest.AutoMinorVersionUpgrade));
+            }
+            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetLicenseModel()) 
+            {
+                request.Parameters.Add("LicenseModel", StringUtils.FromString(createDBInstanceRequest.LicenseModel));
             }
 
 

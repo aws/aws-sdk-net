@@ -25,9 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBSnapshot operation.
-    /// <para> This API is used to delete a DBSnapshot. </para>
-    /// <para><b>NOTE:</b>The DBSnapshot must be in the available state to be
-    /// deleted.</para>
+    /// <para> Deletes a DBSnapshot. </para> <para><b>NOTE:</b>The DBSnapshot must be in the available state to be deleted.</para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DeleteDBSnapshot"/>
     public class DeleteDBSnapshotRequest : AmazonWebServiceRequest

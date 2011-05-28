@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
         {
             IRequest<CreateLoadBalancerListenersRequest> request = new DefaultRequest<CreateLoadBalancerListenersRequest>(createLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateLoadBalancerListeners");
-            request.Parameters.Add("Version", "2010-07-01");
+            request.Parameters.Add("Version", "2011-04-05");
             if (createLoadBalancerListenersRequest != null && createLoadBalancerListenersRequest.IsSetLoadBalancerName()) 
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createLoadBalancerListenersRequest.LoadBalancerName));

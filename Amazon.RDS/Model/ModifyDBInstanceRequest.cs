@@ -25,10 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBInstance operation.
-    /// <para> This API is used to change RDS Instance settings. Users call
-    /// the ModifyDBInstance API to change one or more database configuration
-    /// parameters by specifying these parameters and the new values in the
-    /// request. </para>
+    /// <para> Modify settings for a DB Instance. You can change one or more database configuration parameters by specifying these parameters and
+    /// the new values in the request. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.ModifyDBInstance"/>
     public class ModifyDBInstanceRequest : AmazonWebServiceRequest
@@ -49,9 +47,9 @@ namespace Amazon.RDS.Model
         private bool? autoMinorVersionUpgrade;
 
         /// <summary>
-        /// The DB Instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
-        /// characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul> Example: <copy>mydbinstance</copy>
+        /// The DB Instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must be the identifier for an existing DB
+        /// Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+        /// with a hyphen or contain two consecutive hyphens</li> </ul> Example: <copy>mydbinstance</copy>
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -80,9 +78,11 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The new storage capacity of the RDS instance. This change does not result in an outage and is applied during the next maintenance window
-        /// unless the <c>ApplyImmediately</c> parameter is specified as <c>true</c> for this request. Default: Uses existing setting Valid Values:
-        /// 5-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the
-        /// existing value are rounded up so that they are 10% greater than the current value.
+        /// unless the <c>ApplyImmediately</c> parameter is specified as <c>true</c> for this request. <b>MySQL</b> Default: Uses existing setting Valid
+        /// Values: 5-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater
+        /// than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer <b>MySQL</b> Default: Uses
+        /// existing setting Valid Values: 10-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are not
+        /// at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.
         ///  
         /// </summary>
         public int AllocatedStorage
@@ -311,7 +311,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// The daily time range during which automated backups are created if automated backups are enabled, as determined by the
         /// <c>BackupRetentionPeriod</c>. Constraints: <ul> <li>Must be in the format hh24:mi-hh24:mi</li> <li>Times should be Universal Time
-        /// Coordinated (UTC)</li> <li>Must not conflict with the preferred maintenance window</li> <li>Must be at least 2 hours</li> </ul>
+        /// Coordinated (UTC)</li> <li>Must not conflict with the preferred maintenance window</li> <li>Must be at least 30 minutes</li> </ul>
         ///  
         /// </summary>
         public string PreferredBackupWindow
@@ -342,7 +342,7 @@ namespace Amazon.RDS.Model
         /// The weekly time range (in UTC) during which system maintenance can occur, which may result in an outage. This change is made immediately. If
         /// moving this window to the current time, there must be at least 120 minutes between the current time and end of the window to ensure pending
         /// changes are applied. Default: Uses existing setting Format: ddd:hh24:mi-ddd:hh24:mi Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-        /// Constraints: Minimum four-hour period
+        /// Constraints: Must be at least 30 minutes
         ///  
         /// </summary>
         public string PreferredMaintenanceWindow

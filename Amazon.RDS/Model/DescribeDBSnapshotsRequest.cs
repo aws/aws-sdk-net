@@ -25,8 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBSnapshots operation.
-    /// <para> This API is used to retrieve information about DBSnapshots.
-    /// This API supports pagination. </para>
+    /// <para> Returns information about DBSnapshots. This API supports pagination. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeDBSnapshots"/>
     public class DescribeDBSnapshotsRequest : AmazonWebServiceRequest

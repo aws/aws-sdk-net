@@ -25,21 +25,14 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancer operation.
-    /// <para> Creates a new LoadBalancer. </para> <para> Once the call has
-    /// completed successfully, a new LoadBalancer is created; however, it
-    /// will not be usable until at least one instance has been registered.
-    /// When the LoadBalancer creation is completed, the client can check
-    /// whether or not it is usable by using the DescribeInstanceHealth API.
-    /// The LoadBalancer is usable as soon as any registered instance is
-    /// <i>InService</i> .
-    /// </para> <para><b>NOTE:</b> Currently, the client's quota of
-    /// LoadBalancers is limited to five per Region. </para>
-    /// <para><b>NOTE:</b> Load balancer DNS names vary depending on the
-    /// Region they're created in. For load balancers created in the United
-    /// States, the DNS name ends with: us-east-1.elb.amazonaws.com (for the
-    /// US Standard Region) us-west-1.elb.amazonaws.com (for the Northern
-    /// California Region) For load balancers created in the EU (Ireland)
-    /// Region, the DNS name ends with: eu-west-1.elb.amazonaws.com </para>
+    /// <para> Creates a new LoadBalancer. </para> <para> Once the call has completed successfully, a new LoadBalancer is created; however, it will
+    /// not be usable until at least one instance has been registered. When the LoadBalancer creation is completed, the client can check whether or
+    /// not it is usable by using the DescribeInstanceHealth API. The LoadBalancer is usable as soon as any registered instance is <i>InService</i>
+    /// .
+    /// </para> <para><b>NOTE:</b> Currently, the client's quota of LoadBalancers is limited to five per Region. </para> <para><b>NOTE:</b>
+    /// Load balancer DNS names vary depending on the Region they're created in. For load balancers created in the United States, the DNS name ends
+    /// with: us-east-1.elb.amazonaws.com (for the US Standard Region) us-west-1.elb.amazonaws.com (for the Northern California Region) For load
+    /// balancers created in the EU (Ireland) Region, the DNS name ends with: eu-west-1.elb.amazonaws.com </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateLoadBalancer"/>
     public class CreateLoadBalancerRequest : AmazonWebServiceRequest
@@ -59,11 +52,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the
-        /// LoadBalancer. The name must be unique within your set of LoadBalancers
-        /// requests on the specified protocol and received by Elastic Load
-        /// Balancing on the LoadBalancerPort are load balanced across the
-        /// registered instances and sent to port InstancePort. </param>
+        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within your set of LoadBalancers.
+        /// </param>
         public CreateLoadBalancerRequest(string loadBalancerName) 
         {
             this.loadBalancerName = loadBalancerName;
@@ -75,17 +65,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the
-        /// LoadBalancer. The name must be unique within your set of LoadBalancers
-        /// requests on the specified protocol and received by Elastic Load
-        /// Balancing on the LoadBalancerPort are load balanced across the
-        /// registered instances and sent to port InstancePort. </param>
-        /// <param name="listeners"> A list of the following tuples:
-        /// LoadBalancerPort, InstancePort, and Protocol. </param>
-        /// <param name="availabilityZones"> A list of Availability Zones. At
-        /// least one Availability Zone must be specified. Specified Availability
-        /// Zones must be in the same EC2 Region as the LoadBalancer. Traffic will
-        /// be equally distributed across all zones. This list can be modified
+        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within your set of LoadBalancers.
+        /// </param>
+        /// <param name="listeners"> A list of the following tuples: LoadBalancerPort, InstancePort, and Protocol. </param>
+        /// <param name="availabilityZones"> A list of Availability Zones. At least one Availability Zone must be specified. Specified Availability
+        /// Zones must be in the same EC2 Region as the LoadBalancer. Traffic will be equally distributed across all zones. This list can be modified
         /// after the creation of the LoadBalancer. </param>
         public CreateLoadBalancerRequest(string loadBalancerName, List<Listener> listeners, List<string> availabilityZones) 
         {
@@ -96,11 +80,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique
-        /// within your set of LoadBalancers requests on the specified protocol
-        /// and received by Elastic Load Balancing on the LoadBalancerPort are
-        /// load balanced across the registered instances and sent to port
-        /// InstancePort.
+        /// The name associated with the LoadBalancer. The name must be unique within your set of LoadBalancers.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -120,6 +100,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
@@ -127,8 +108,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of the following tuples: LoadBalancerPort, InstancePort, and
-        /// Protocol.
+        /// A list of the following tuples: LoadBalancerPort, InstancePort, and Protocol.
         ///  
         /// </summary>
         public List<Listener> Listeners
@@ -150,18 +130,31 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Listeners collection
+        /// </summary>
+        /// <param name="listeners">The values to add to the Listeners collection </param>
+        /// <returns>this instance</returns>
+        public CreateLoadBalancerRequest WithListeners(IEnumerable<Listener> listeners)
+        {
+            foreach (Listener element in listeners)
+            {
+                this.listeners.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this.listeners.Count > 0;        
+            return this.listeners.Count > 0;       
         }
 
         /// <summary>
-        /// A list of Availability Zones. At least one Availability Zone must be
-        /// specified. Specified Availability Zones must be in the same EC2 Region
-        /// as the LoadBalancer. Traffic will be equally distributed across all
-        /// zones. This list can be modified after the creation of the
-        /// LoadBalancer.
+        /// A list of Availability Zones. At least one Availability Zone must be specified. Specified Availability Zones must be in the same EC2 Region
+        /// as the LoadBalancer. Traffic will be equally distributed across all zones. This list can be modified after the creation of the LoadBalancer.
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -183,10 +176,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the AvailabilityZones collection
+        /// </summary>
+        /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
+        /// <returns>this instance</returns>
+        public CreateLoadBalancerRequest WithAvailabilityZones(IEnumerable<string> availabilityZones)
+        {
+            foreach (string element in availabilityZones)
+            {
+                this.availabilityZones.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;        
+            return this.availabilityZones.Count > 0;       
         }
     }
 }

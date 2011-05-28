@@ -25,19 +25,12 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterInstancesWithLoadBalancer operation.
-    /// <para> Adds new instances to the LoadBalancer. </para> <para> Once the
-    /// instance is registered, it starts receiving traffic and requests from
-    /// the LoadBalancer. Any instance that is not in any of the Availability
-    /// Zones registered for the LoadBalancer will be moved to the
-    /// <i>OutOfService</i> state. It will move to the <i>InService</i> state
-    /// when the Availability Zone is added to the LoadBalancer. </para>
-    /// <para><b>NOTE:</b> In order for this call to be successful, the client
-    /// must have created the LoadBalancer. The client must provide the same
-    /// account credentials as those that were used to create the
-    /// LoadBalancer. </para> <para><b>NOTE:</b> Completion of this API does
-    /// not guarantee that operation has completed. Rather, it means that the
-    /// request has been registered and the changes will happen shortly.
-    /// </para>
+    /// <para> Adds new instances to the LoadBalancer. </para> <para> Once the instance is registered, it starts receiving traffic and requests from
+    /// the LoadBalancer. Any instance that is not in any of the Availability Zones registered for the LoadBalancer will be moved to the
+    /// <i>OutOfService</i> state. It will move to the <i>InService</i> state when the Availability Zone is added to the LoadBalancer. </para>
+    /// <para><b>NOTE:</b> In order for this call to be successful, the client must have created the LoadBalancer. The client must provide the same
+    /// account credentials as those that were used to create the LoadBalancer. </para> <para><b>NOTE:</b> Completion of this API does not guarantee
+    /// that operation has completed. Rather, it means that the request has been registered and the changes will happen shortly. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.RegisterInstancesWithLoadBalancer"/>
     public class RegisterInstancesWithLoadBalancerRequest : AmazonWebServiceRequest
@@ -56,11 +49,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the
-        /// LoadBalancer. The name must be unique within the client AWS account.
-        /// </param>
-        /// <param name="instances"> A list of instances IDs that should be
-        /// registered with the LoadBalancer. </param>
+        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
+        /// <param name="instances"> A list of instances IDs that should be registered with the LoadBalancer. </param>
         public RegisterInstancesWithLoadBalancerRequest(string loadBalancerName, List<Instance> instances) 
         {
             this.loadBalancerName = loadBalancerName;
@@ -69,8 +59,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique
-        /// within the client AWS account.
+        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -90,6 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
@@ -97,8 +87,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of instances IDs that should be registered with the
-        /// LoadBalancer.
+        /// A list of instances IDs that should be registered with the LoadBalancer.
         ///  
         /// </summary>
         public List<Instance> Instances
@@ -120,10 +109,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Instances collection
+        /// </summary>
+        /// <param name="instances">The values to add to the Instances collection </param>
+        /// <returns>this instance</returns>
+        public RegisterInstancesWithLoadBalancerRequest WithInstances(IEnumerable<Instance> instances)
+        {
+            foreach (Instance element in instances)
+            {
+                this.instances.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;        
+            return this.instances.Count > 0;       
         }
     }
 }

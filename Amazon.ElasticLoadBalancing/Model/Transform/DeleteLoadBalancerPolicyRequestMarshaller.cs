@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
         {
             IRequest<DeleteLoadBalancerPolicyRequest> request = new DefaultRequest<DeleteLoadBalancerPolicyRequest>(deleteLoadBalancerPolicyRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DeleteLoadBalancerPolicy");
-            request.Parameters.Add("Version", "2010-07-01");
+            request.Parameters.Add("Version", "2011-04-05");
             if (deleteLoadBalancerPolicyRequest != null && deleteLoadBalancerPolicyRequest.IsSetLoadBalancerName()) 
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(deleteLoadBalancerPolicyRequest.LoadBalancerName));

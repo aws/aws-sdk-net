@@ -39,6 +39,7 @@ namespace Amazon.S3.Transfer
         string _directory;
         string _bucketname;
         string _searchPattern = "*";
+        string _keyPrefix;
         SearchOption _searchOption = SearchOption.TopDirectoryOnly;
         S3CannedACL _cannedACL;
         S3StorageClass _storageClass;
@@ -77,6 +78,41 @@ namespace Amazon.S3.Transfer
         internal bool IsSetDirectory()
         {
             return !System.String.IsNullOrEmpty(this._directory);
+        }
+
+        /// <summary>
+        /// 	Gets or sets the KeyPrefix property.  As object keys are generated for the
+        /// 	files being uploaded this value will prefix the key.  This is useful when a directory
+        /// 	needs to be uploaded into sub directory in the S3 Bucket.
+        /// </summary>
+        /// <value>
+        /// 	The directory where files are uploaded from.
+        /// </value>
+        public string KeyPrefix
+        {
+            get { return this._keyPrefix; }
+            set { this._keyPrefix = value; }
+        }
+
+        /// <summary>
+        /// Sets the KeyPrefix property for this request.
+        /// This value prefixed the generated object keys.
+        /// </summary>
+        /// <param name="keyPrefix">The value that KeyPrefix is set to</param>
+        /// <returns>The request with the KeyPrefix set</returns>
+        public TransferUtilityUploadDirectoryRequest WithKeyPrefix(string keyPrefix)
+        {
+            this._keyPrefix = keyPrefix;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if KeyPrefix property is set.
+        /// </summary>
+        /// <returns>true if KeyPrefix property is set.</returns>
+        internal bool IsSetKeyPrefix()
+        {
+            return !System.String.IsNullOrEmpty(this._keyPrefix);
         }
 
         /// <summary>

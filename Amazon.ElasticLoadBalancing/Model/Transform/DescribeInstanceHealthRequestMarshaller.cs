@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
         {
             IRequest<DescribeInstanceHealthRequest> request = new DefaultRequest<DescribeInstanceHealthRequest>(describeInstanceHealthRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeInstanceHealth");
-            request.Parameters.Add("Version", "2010-07-01");
+            request.Parameters.Add("Version", "2011-04-05");
             if (describeInstanceHealthRequest != null && describeInstanceHealthRequest.IsSetLoadBalancerName()) 
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(describeInstanceHealthRequest.LoadBalancerName));

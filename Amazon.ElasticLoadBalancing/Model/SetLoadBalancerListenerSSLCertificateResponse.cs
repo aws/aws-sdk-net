@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the SetLoadBalancerListenerSSLCertificateResult property.
-        /// 
+        /// The output for the SetLoadBalancerListenerSSLCertificate action.
         /// </summary>
         public SetLoadBalancerListenerSSLCertificateResult SetLoadBalancerListenerSSLCertificateResult
         {

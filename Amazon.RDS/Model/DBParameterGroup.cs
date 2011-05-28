@@ -21,10 +21,8 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the
-    /// CreateDBParameterGroup action. </para> <para> This data type is used
-    /// as a request parameter in the DeleteDBParameterGroup action, and as a
-    /// response element in the DescribeDBParameterGroups action. </para>
+    /// <para> Contains the result of a successful invocation of the CreateDBParameterGroup action. </para> <para> This data type is used as a
+    /// request parameter in the DeleteDBParameterGroup action, and as a response element in the DescribeDBParameterGroups action. </para>
     /// </summary>
     public class DBParameterGroup  
     {

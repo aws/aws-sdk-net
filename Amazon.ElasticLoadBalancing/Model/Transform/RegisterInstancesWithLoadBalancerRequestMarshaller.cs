@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
         {
             IRequest<RegisterInstancesWithLoadBalancerRequest> request = new DefaultRequest<RegisterInstancesWithLoadBalancerRequest>(registerInstancesWithLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "RegisterInstancesWithLoadBalancer");
-            request.Parameters.Add("Version", "2010-07-01");
+            request.Parameters.Add("Version", "2011-04-05");
             if (registerInstancesWithLoadBalancerRequest != null && registerInstancesWithLoadBalancerRequest.IsSetLoadBalancerName()) 
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(registerInstancesWithLoadBalancerRequest.LoadBalancerName));

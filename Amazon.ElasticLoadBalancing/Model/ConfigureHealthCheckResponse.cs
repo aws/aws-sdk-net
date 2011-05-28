@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the ConfigureHealthCheckResult property.
-        /// 
+        /// The output for the ConfigureHealthCheck action.
         /// </summary>
         public ConfigureHealthCheckResult ConfigureHealthCheckResult
         {

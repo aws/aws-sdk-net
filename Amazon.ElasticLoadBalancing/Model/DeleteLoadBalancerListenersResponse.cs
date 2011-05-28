@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the DeleteLoadBalancerListenersResult property.
-        /// 
+        /// The output for the DeleteLoadBalancerListeners action.
         /// </summary>
         public DeleteLoadBalancerListenersResult DeleteLoadBalancerListenersResult
         {

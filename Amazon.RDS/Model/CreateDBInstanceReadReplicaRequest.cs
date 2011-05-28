@@ -25,13 +25,10 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBInstanceReadReplica operation.
-    /// <para> Creates a DB Instance that acts as a Read Replica of a source
-    /// DB Instance. </para> <para> All Read Replica DB Instances are created
-    /// as Single-AZ deployments with backups disabled. All other DB Instance
-    /// attributes (including DB Security Groups and DB Parameter Groups) are
-    /// inherited from the source DB Instance, except as specified below.
-    /// </para> <para><b>IMPORTANT:</b> The source DB Instance must have
-    /// backup retention enabled. </para>
+    /// <para> Creates a DB Instance that acts as a Read Replica of a source DB Instance. </para> <para> All Read Replica DB Instances are created
+    /// as Single-AZ deployments with backups disabled. All other DB Instance attributes (including DB Security Groups and DB Parameter Groups) are
+    /// inherited from the source DB Instance, except as specified below. </para> <para><b>IMPORTANT:</b> The source DB Instance must have backup
+    /// retention enabled. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBInstanceReadReplica"/>
     public class CreateDBInstanceReadReplicaRequest : AmazonWebServiceRequest

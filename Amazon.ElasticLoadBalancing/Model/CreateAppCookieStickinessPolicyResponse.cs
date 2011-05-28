@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the CreateAppCookieStickinessPolicyResult property.
-        /// 
+        /// The output for the CreateAppCookieStickinessPolicy action.
         /// </summary>
         public CreateAppCookieStickinessPolicyResult CreateAppCookieStickinessPolicyResult
         {

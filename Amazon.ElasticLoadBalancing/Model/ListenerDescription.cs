@@ -56,6 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if Listener property is set
         internal bool IsSetListener()
         {
@@ -63,8 +64,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of policies enabled for this listener. An empty list indicates
-        /// that no policies are enabled.
+        /// A list of policies enabled for this listener. An empty list indicates that no policies are enabled.
         ///  
         /// </summary>
         public List<string> PolicyNames
@@ -86,10 +86,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the PolicyNames collection
+        /// </summary>
+        /// <param name="policyNames">The values to add to the PolicyNames collection </param>
+        /// <returns>this instance</returns>
+        public ListenerDescription WithPolicyNames(IEnumerable<string> policyNames)
+        {
+            foreach (string element in policyNames)
+            {
+                this.policyNames.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;      
+            return this.policyNames.Count > 0;       
         }
     }
 }

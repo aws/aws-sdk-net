@@ -25,11 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceToPointInTime operation.
-    /// <para> This API creates a new RDS instance from a point-in-time system
-    /// snapshot. The target database is created from the source database
-    /// restore point with the same configuration as the original source
-    /// database, except that the new RDS instance is created with the default
-    /// security group. </para>
+    /// <para> Creates a new DB Instance from a point-in-time system snapshot. The target database is created from the source database restore point
+    /// with the same configuration as the original source database, except that the new RDS instance is created with the default security group.
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.RestoreDBInstanceToPointInTime"/>
     public class RestoreDBInstanceToPointInTimeRequest : AmazonWebServiceRequest
@@ -43,10 +41,14 @@ namespace Amazon.RDS.Model
         private string availabilityZone;
         private bool? multiAZ;
         private bool? autoMinorVersionUpgrade;
+        private string licenseModel;
+        private string dBName;
+        private string engine;
 
         /// <summary>
-        /// The identifier of the source DB Instance from which to restore. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or
-        /// hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        /// The identifier of the source DB Instance from which to restore. Constraints: <ul> <li>Must be the identifier of an existing database
+        /// instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+        /// with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string SourceDBInstanceIdentifier
@@ -303,6 +305,92 @@ namespace Amazon.RDS.Model
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this.autoMinorVersionUpgrade.HasValue;       
+        }
+
+        /// <summary>
+        /// License model information for the restored DB Instance. Default: Same as source. Valid values: <c>license-included</c> |
+        /// <c>bring-your-own-license</c> | <c>general-public-license</c>
+        ///  
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this.licenseModel; }
+            set { this.licenseModel = value; }
+        }
+
+        /// <summary>
+        /// Sets the LicenseModel property
+        /// </summary>
+        /// <param name="licenseModel">The value to set for the LicenseModel property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceToPointInTimeRequest WithLicenseModel(string licenseModel)
+        {
+            this.licenseModel = licenseModel;
+            return this;
+        }
+            
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this.licenseModel != null;       
+        }
+
+        /// <summary>
+        /// The database name for the restored DB Instance. <note> This parameter is not used for the MySQL engine. </note>
+        ///  
+        /// </summary>
+        public string DBName
+        {
+            get { return this.dBName; }
+            set { this.dBName = value; }
+        }
+
+        /// <summary>
+        /// Sets the DBName property
+        /// </summary>
+        /// <param name="dBName">The value to set for the DBName property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceToPointInTimeRequest WithDBName(string dBName)
+        {
+            this.dBName = dBName;
+            return this;
+        }
+            
+
+        // Check to see if DBName property is set
+        internal bool IsSetDBName()
+        {
+            return this.dBName != null;       
+        }
+
+        /// <summary>
+        /// The database engine to use for the new instance. Default: The same as source Constraint: Must be compatible with the engine of the source
+        /// Example: <c>oracle-ee</c>
+        ///  
+        /// </summary>
+        public string Engine
+        {
+            get { return this.engine; }
+            set { this.engine = value; }
+        }
+
+        /// <summary>
+        /// Sets the Engine property
+        /// </summary>
+        /// <param name="engine">The value to set for the Engine property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceToPointInTimeRequest WithEngine(string engine)
+        {
+            this.engine = engine;
+            return this;
+        }
+            
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this.engine != null;       
         }
     }
 }

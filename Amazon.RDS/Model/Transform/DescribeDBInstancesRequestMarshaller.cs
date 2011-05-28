@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<DescribeDBInstancesRequest> request = new DefaultRequest<DescribeDBInstancesRequest>(describeDBInstancesRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeDBInstances");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (describeDBInstancesRequest != null && describeDBInstancesRequest.IsSetDBInstanceIdentifier()) 
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(describeDBInstancesRequest.DBInstanceIdentifier));

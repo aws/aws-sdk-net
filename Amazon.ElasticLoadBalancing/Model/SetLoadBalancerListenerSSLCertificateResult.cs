@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Set Load Balancer Listener S S L Certificate Result
+    /// <summary>
+    /// <para> The output for the SetLoadBalancerListenerSSLCertificate action. </para>
     /// </summary>
     public class SetLoadBalancerListenerSSLCertificateResult  
     {

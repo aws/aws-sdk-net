@@ -25,8 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBSnapshot operation.
-    /// <para> This API is used to create a DBSnapshot. The source DBInstance
-    /// must be in "available" state. </para>
+    /// <para> Creates a DBSnapshot. The source DBInstance must be in "available" state. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBSnapshot"/>
     public class CreateDBSnapshotRequest : AmazonWebServiceRequest

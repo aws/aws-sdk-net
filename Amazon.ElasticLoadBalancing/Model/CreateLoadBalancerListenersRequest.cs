@@ -25,10 +25,8 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancerListeners operation.
-    /// <para> Creates one or more listeners on a LoadBalancer for the
-    /// specified port. If a listener with the given port does not already
-    /// exist, it will be created; otherwise, the properties of the new
-    /// listener must match the properties of the existing listener. </para>
+    /// <para> Creates one or more listeners on a LoadBalancer for the specified port. If a listener with the given port does not already exist, it
+    /// will be created; otherwise, the properties of the new listener must match the properties of the existing listener. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateLoadBalancerListeners"/>
     public class CreateLoadBalancerListenersRequest : AmazonWebServiceRequest
@@ -47,11 +45,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name of the new LoadBalancer. The
-        /// name must be unique within your AWS account. </param>
-        /// <param name="listeners"> A list of LoadBalancerPort,
-        /// <c>InstancePort</c>, <c>Protocol</c>, and <c>SSLCertificateID</c>
-        /// items. </param>
+        /// <param name="loadBalancerName"> The name of the new LoadBalancer. The name must be unique within your AWS account. </param>
+        /// <param name="listeners"> A list of LoadBalancerPort, <c>InstancePort</c>, <c>Protocol</c>, and <c>SSLCertificateId</c> items. </param>
         public CreateLoadBalancerListenersRequest(string loadBalancerName, List<Listener> listeners) 
         {
             this.loadBalancerName = loadBalancerName;
@@ -60,8 +55,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name of the new LoadBalancer. The name must be unique within your
-        /// AWS account.
+        /// The name of the new LoadBalancer. The name must be unique within your AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -81,6 +75,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
@@ -88,8 +83,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of LoadBalancerPort, <c>InstancePort</c>, <c>Protocol</c>, and
-        /// <c>SSLCertificateID</c> items.
+        /// A list of LoadBalancerPort, <c>InstancePort</c>, <c>Protocol</c>, and <c>SSLCertificateId</c> items.
         ///  
         /// </summary>
         public List<Listener> Listeners
@@ -111,10 +105,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Listeners collection
+        /// </summary>
+        /// <param name="listeners">The values to add to the Listeners collection </param>
+        /// <returns>this instance</returns>
+        public CreateLoadBalancerListenersRequest WithListeners(IEnumerable<Listener> listeners)
+        {
+            foreach (Listener element in listeners)
+            {
+                this.listeners.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this.listeners.Count > 0;        
+            return this.listeners.Count > 0;       
         }
     }
 }

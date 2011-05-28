@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Register Instances With Load Balancer Result
+    /// <summary>
+    /// <para> The output for the RegisterInstancesWithLoadBalancer action. </para>
     /// </summary>
     public class RegisterInstancesWithLoadBalancerResult  
     {
@@ -50,10 +51,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Instances collection
+        /// </summary>
+        /// <param name="instances">The values to add to the Instances collection </param>
+        /// <returns>this instance</returns>
+        public RegisterInstancesWithLoadBalancerResult WithInstances(IEnumerable<Instance> instances)
+        {
+            foreach (Instance element in instances)
+            {
+                this.instances.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;        
+            return this.instances.Count > 0;       
         }
     }
 }

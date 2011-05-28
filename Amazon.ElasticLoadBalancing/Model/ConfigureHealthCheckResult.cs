@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Configure Health Check Result
+    /// <summary>
+    /// <para> The output for the ConfigureHealthCheck action. </para>
     /// </summary>
     public class ConfigureHealthCheckResult  
     {
@@ -48,10 +49,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;        
+            return this.healthCheck != null;       
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.3.5.0";
+        internal const string SDKVersionNumber = "1.3.6.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -277,6 +277,30 @@ namespace Amazon.Util
             {
                 _preserveStackTrace.Invoke(exception, null);
             }
+        }
+
+        /// <summary>
+        /// Returns a new string created by joining each of the strings in the
+        /// specified list together, with a comma between them.
+        /// </summary>
+        /// <parma name="strings">The list of strings to join into a single, comma delimited
+        /// string list.</parma>
+        /// <returns> A new string created by joining each of the strings in the
+        /// specified list together, with a comma between strings.</returns>
+        internal static String Join(List<String> strings)
+        {
+            StringBuilder result = new StringBuilder();
+
+            Boolean first = true;
+            foreach (String s in strings)
+            {
+                if (!first) result.Append(", ");
+
+                result.Append(s);
+                first = false;
+            }
+
+            return result.ToString();
         }
 
         #endregion

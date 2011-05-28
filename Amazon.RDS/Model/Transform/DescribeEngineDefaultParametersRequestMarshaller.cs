@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<DescribeEngineDefaultParametersRequest> request = new DefaultRequest<DescribeEngineDefaultParametersRequest>(describeEngineDefaultParametersRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeEngineDefaultParameters");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (describeEngineDefaultParametersRequest != null && describeEngineDefaultParametersRequest.IsSetDBParameterGroupFamily()) 
             {
                 request.Parameters.Add("DBParameterGroupFamily", StringUtils.FromString(describeEngineDefaultParametersRequest.DBParameterGroupFamily));

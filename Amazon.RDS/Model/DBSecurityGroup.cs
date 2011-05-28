@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the following
-    /// actions: </para>
+    /// <para> Contains the result of a successful invocation of the following actions: </para>
     /// <ul>
     /// <li> DescribeDBSecurityGroups </li>
     /// <li> AuthorizeDBSecurityGroupIngress </li>
@@ -30,8 +29,7 @@ namespace Amazon.RDS.Model
     /// <li> RevokeDBSecurityGroupIngress </li>
     /// 
     /// </ul>
-    /// <para>This data type is used as a response element in the
-    /// DescribeDBSecurityGroups action.</para>
+    /// <para>This data type is used as a response element in the DescribeDBSecurityGroups action.</para>
     /// </summary>
     public class DBSecurityGroup  
     {

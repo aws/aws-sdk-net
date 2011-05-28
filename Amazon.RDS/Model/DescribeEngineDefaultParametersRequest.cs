@@ -25,8 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEngineDefaultParameters operation.
-    /// <para> This API returns the default engine and system parameter
-    /// information for the specified database engine. </para>
+    /// <para> Returns the default engine and system parameter information for the specified database engine. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeEngineDefaultParameters"/>
     public class DescribeEngineDefaultParametersRequest : AmazonWebServiceRequest
@@ -36,7 +35,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// The name of the DB Parameter Group Family. Valid Values: <c>MySQL5.1</c> | <c>MySQL5.5</c>
+        /// The name of the DB Parameter Group Family.
         ///  
         /// </summary>
         public string DBParameterGroupFamily

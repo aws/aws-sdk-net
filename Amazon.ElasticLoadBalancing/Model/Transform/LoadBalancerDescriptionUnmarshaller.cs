@@ -48,6 +48,18 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
                             
                         continue;
                     }
+                    if (context.TestExpression("CanonicalHostedZoneName", targetDepth))
+                    {
+                        loadBalancerDescription.CanonicalHostedZoneName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("CanonicalHostedZoneNameID", targetDepth))
+                    {
+                        loadBalancerDescription.CanonicalHostedZoneNameID = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                     if (context.TestExpression("ListenerDescriptions/member", targetDepth))
                     {
                         loadBalancerDescription.ListenerDescriptions.Add(ListenerDescriptionUnmarshaller.GetInstance().Unmarshall(context));
@@ -75,6 +87,12 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
                     if (context.TestExpression("HealthCheck", targetDepth))
                     {
                         loadBalancerDescription.HealthCheck = HealthCheckUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("SourceSecurityGroup", targetDepth))
+                    {
+                        loadBalancerDescription.SourceSecurityGroup = SourceSecurityGroupUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

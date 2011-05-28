@@ -84,10 +84,21 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="distributionId">The distribution's id</param>
         /// <returns>The request with the DistributionId property set</returns>
-        public GetInvalidationRequest WithDistribtionId(string distributionId)
+        public GetInvalidationRequest WithDistributionId(string distributionId)
         {
             this.distributionId = distributionId;
             return this;
+        }
+
+        /// <summary>
+        /// Sets the DistributionId property of this request to the value passed in.
+        /// </summary>
+        /// <param name="distributionId">The distribution's id</param>
+        /// <returns>The request with the DistributionId property set</returns>
+        [Obsolete("This method will be removed in a future release, clients should use WithDistributionId")]
+        public GetInvalidationRequest WithDistribtionId(string distributionId)
+        {
+            return WithDistributionId(distributionId);
         }
         #endregion
     }

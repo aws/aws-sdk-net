@@ -67,10 +67,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;         
+            return this.instanceId != null;       
         }
     }
 }

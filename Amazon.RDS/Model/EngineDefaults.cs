@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the
-    /// DescribeEngineDefaultParameters action. </para>
+    /// <para> Contains the result of a successful invocation of the DescribeEngineDefaultParameters action. </para>
     /// </summary>
     public class EngineDefaults  
     {

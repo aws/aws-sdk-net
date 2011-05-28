@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Disable Availability Zones For Load Balancer Result
+    /// <summary>
+    /// <para> The output for the DisableAvailabilityZonesForLoadBalancer action. </para>
     /// </summary>
     public class DisableAvailabilityZonesForLoadBalancerResult  
     {
@@ -50,10 +51,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the AvailabilityZones collection
+        /// </summary>
+        /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
+        /// <returns>this instance</returns>
+        public DisableAvailabilityZonesForLoadBalancerResult WithAvailabilityZones(IEnumerable<string> availabilityZones)
+        {
+            foreach (string element in availabilityZones)
+            {
+                this.availabilityZones.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;        
+            return this.availabilityZones.Count > 0;       
         }
     }
 }

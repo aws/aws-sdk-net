@@ -25,18 +25,12 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancer operation.
-    /// <para> Deletes the specified LoadBalancer. </para> <para> If
-    /// attempting to recreate the LoadBalancer, the client must reconfigure
-    /// all the settings. The DNS name associated with a deleted LoadBalancer
-    /// will no longer be usable. Once deleted, the name and associated DNS
-    /// record of the LoadBalancer no longer exist and traffic sent to any of
-    /// its IP addresses will no longer be delivered to client instances. The
-    /// client will not receive the same DNS name even if a new LoadBalancer
-    /// with same LoadBalancerName is created. </para> <para> To successfully
-    /// call this API, the client must provide the same account credentials as
-    /// were used to create the LoadBalancer. </para> <para><b>NOTE:</b> By
-    /// design, if the LoadBalancer does not exist or has already been
-    /// deleted, DeleteLoadBalancer still succeeds. </para>
+    /// <para> Deletes the specified LoadBalancer. </para> <para> If attempting to recreate the LoadBalancer, the client must reconfigure all the
+    /// settings. The DNS name associated with a deleted LoadBalancer will no longer be usable. Once deleted, the name and associated DNS record of
+    /// the LoadBalancer no longer exist and traffic sent to any of its IP addresses will no longer be delivered to client instances. The client
+    /// will not receive the same DNS name even if a new LoadBalancer with same LoadBalancerName is created. </para> <para> To successfully call
+    /// this API, the client must provide the same account credentials as were used to create the LoadBalancer. </para> <para><b>NOTE:</b> By
+    /// design, if the LoadBalancer does not exist or has already been deleted, DeleteLoadBalancer still succeeds. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancer"/>
     public class DeleteLoadBalancerRequest : AmazonWebServiceRequest
@@ -54,9 +48,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the
-        /// LoadBalancer. The name must be unique within the client AWS account.
-        /// </param>
+        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
         public DeleteLoadBalancerRequest(string loadBalancerName) 
         {
             this.loadBalancerName = loadBalancerName;
@@ -64,8 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique
-        /// within the client AWS account.
+        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -85,6 +76,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {

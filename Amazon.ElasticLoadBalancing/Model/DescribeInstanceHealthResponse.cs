@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the DescribeInstanceHealthResult property.
-        /// 
+        /// The output for the DescribeInstanceHealth action.
         /// </summary>
         public DescribeInstanceHealthResult DescribeInstanceHealthResult
         {

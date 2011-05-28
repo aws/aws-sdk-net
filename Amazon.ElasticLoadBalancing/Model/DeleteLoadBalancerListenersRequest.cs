@@ -25,8 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancerListeners operation.
-    /// <para> Deletes listeners from the LoadBalancer for the specified port.
-    /// </para>
+    /// <para> Deletes listeners from the LoadBalancer for the specified port. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancerListeners"/>
     public class DeleteLoadBalancerListenersRequest : AmazonWebServiceRequest
@@ -45,10 +44,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The mnemonic name associated with the
-        /// LoadBalancer. </param>
-        /// <param name="loadBalancerPorts"> The client port number(s) of the
-        /// LoadBalancerListener(s) to be removed. </param>
+        /// <param name="loadBalancerName"> The mnemonic name associated with the LoadBalancer. </param>
+        /// <param name="loadBalancerPorts"> The client port number(s) of the LoadBalancerListener(s) to be removed. </param>
         public DeleteLoadBalancerListenersRequest(string loadBalancerName, List<int> loadBalancerPorts) 
         {
             this.loadBalancerName = loadBalancerName;
@@ -77,6 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
@@ -84,8 +82,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The client port number(s) of the LoadBalancerListener(s) to be
-        /// removed.
+        /// The client port number(s) of the LoadBalancerListener(s) to be removed.
         ///  
         /// </summary>
         public List<int> LoadBalancerPorts
@@ -107,10 +104,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the LoadBalancerPorts collection
+        /// </summary>
+        /// <param name="loadBalancerPorts">The values to add to the LoadBalancerPorts collection </param>
+        /// <returns>this instance</returns>
+        public DeleteLoadBalancerListenersRequest WithLoadBalancerPorts(IEnumerable<int> loadBalancerPorts)
+        {
+            foreach (int element in loadBalancerPorts)
+            {
+                this.loadBalancerPorts.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if LoadBalancerPorts property is set
         internal bool IsSetLoadBalancerPorts()
         {
-            return this.loadBalancerPorts.Count > 0;        
+            return this.loadBalancerPorts.Count > 0;       
         }
     }
 }

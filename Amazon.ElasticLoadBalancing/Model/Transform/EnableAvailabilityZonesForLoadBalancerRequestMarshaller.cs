@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
         {
             IRequest<EnableAvailabilityZonesForLoadBalancerRequest> request = new DefaultRequest<EnableAvailabilityZonesForLoadBalancerRequest>(enableAvailabilityZonesForLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "EnableAvailabilityZonesForLoadBalancer");
-            request.Parameters.Add("Version", "2010-07-01");
+            request.Parameters.Add("Version", "2011-04-05");
             if (enableAvailabilityZonesForLoadBalancerRequest != null && enableAvailabilityZonesForLoadBalancerRequest.IsSetLoadBalancerName()) 
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(enableAvailabilityZonesForLoadBalancerRequest.LoadBalancerName));
@@ -43,6 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
             if (enableAvailabilityZonesForLoadBalancerRequest != null) 
             {
                 List<string> availabilityZonesList = enableAvailabilityZonesForLoadBalancerRequest.AvailabilityZones;
+
                 int availabilityZonesListIndex = 1;
                 foreach (string availabilityZonesListValue in availabilityZonesList) 
                 { 

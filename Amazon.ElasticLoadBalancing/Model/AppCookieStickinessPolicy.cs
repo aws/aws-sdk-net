@@ -40,11 +40,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="policyName"> The mnemonic name for the policy being
-        /// created. The name must be unique within the set of policies for this
+        /// <param name="policyName"> The mnemonic name for the policy being created. The name must be unique within the set of policies for this
         /// LoadBalancer. </param>
-        /// <param name="cookieName"> The name of the application cookie used for
-        /// stickiness. </param>
+        /// <param name="cookieName"> The name of the application cookie used for stickiness. </param>
         public AppCookieStickinessPolicy(string policyName, string cookieName) 
         {
             this.policyName = policyName;
@@ -53,8 +51,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The mnemonic name for the policy being created. The name must be
-        /// unique within the set of policies for this LoadBalancer.
+        /// The mnemonic name for the policy being created. The name must be unique within the set of policies for this LoadBalancer.
         ///  
         /// </summary>
         public string PolicyName
@@ -74,10 +71,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;         
+            return this.policyName != null;       
         }
 
         /// <summary>
@@ -101,10 +99,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if CookieName property is set
         internal bool IsSetCookieName()
         {
-            return this.cookieName != null;         
+            return this.cookieName != null;       
         }
     }
 }

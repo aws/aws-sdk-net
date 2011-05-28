@@ -25,16 +25,11 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeDBSecurityGroupIngress operation.
-    /// <para> This API allows for ingress to a DBSecurityGroup using one of
-    /// two forms of authorization. First, EC2 Security Groups can be added to
-    /// the DBSecurityGroup if the application using the database is running
-    /// on EC2 instances. Second, IP ranges are available if the application
-    /// accessing your database is running on the Internet. Required
-    /// parameters for this API are one of CIDR range or (EC2SecurityGroupName
-    /// AND EC2SecurityGroupOwnerId). </para> <para><b>NOTE:</b> You cannot
-    /// authorize ingress from an EC2 security group in one Region to an
-    /// Amazon RDS DB Instance in another. </para> <para>For an overview of
-    /// CIDR ranges, go to the Wikipedia Tutorial. </para>
+    /// <para> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 Security Groups can be added to the
+    /// DBSecurityGroup if the application using the database is running on EC2 instances. Second, IP ranges are available if the application
+    /// accessing your database is running on the Internet. Required parameters for this API are one of CIDR range or (EC2SecurityGroupName AND
+    /// EC2SecurityGroupOwnerId). </para> <para><b>NOTE:</b> You cannot authorize ingress from an EC2 security group in one Region to an Amazon RDS
+    /// DB Instance in another. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.AuthorizeDBSecurityGroupIngress"/>
     public class AuthorizeDBSecurityGroupIngressRequest : AmazonWebServiceRequest

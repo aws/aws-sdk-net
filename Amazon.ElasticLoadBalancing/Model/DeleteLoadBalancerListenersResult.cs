@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Delete Load Balancer Listeners Result
+    /// <summary>
+    /// <para> The output for the DeleteLoadBalancerListeners action. </para>
     /// </summary>
     public class DeleteLoadBalancerListenersResult  
     {

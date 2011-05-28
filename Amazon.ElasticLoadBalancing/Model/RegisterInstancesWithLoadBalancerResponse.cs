@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the RegisterInstancesWithLoadBalancerResult property.
-        /// 
+        /// The output for the RegisterInstancesWithLoadBalancer action.
         /// </summary>
         public RegisterInstancesWithLoadBalancerResult RegisterInstancesWithLoadBalancerResult
         {

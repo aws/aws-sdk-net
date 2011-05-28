@@ -25,10 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBSecurityGroups operation.
-    /// <para> This API returns a list of DBSecurityGroup descriptions. If a
-    /// DBSecurityGroupName is specified, the list will contain only the
-    /// descriptions of the specified DBSecurityGroup. </para> <para>For an
-    /// overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
+    /// <para> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of
+    /// the specified DBSecurityGroup. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeDBSecurityGroups"/>
     public class DescribeDBSecurityGroupsRequest : AmazonWebServiceRequest

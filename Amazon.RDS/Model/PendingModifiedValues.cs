@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the
-    /// ModifyDBInstance action. </para>
+    /// <para> This data type is used as a response element in the ModifyDBInstance action. </para>
     /// </summary>
     public class PendingModifiedValues  
     {

@@ -39,7 +39,7 @@ namespace Amazon.RDS
         {
             get
             {
-                return "2010-07-28";
+                return "2011-04-01";
             }
         }
     }

@@ -21,18 +21,21 @@ using System.IO;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The LoadBalancerDescription data type. </para>
+    /// <para> Contains the result of a successful invocation of DescribeLoadBalancers. </para>
     /// </summary>
     public class LoadBalancerDescription  
     {
         
         private string loadBalancerName;
         private string dNSName;
+        private string canonicalHostedZoneName;
+        private string canonicalHostedZoneNameID;
         private List<ListenerDescription> listenerDescriptions = new List<ListenerDescription>();
         private Policies policies;
         private List<string> availabilityZones = new List<string>();
         private List<Instance> instances = new List<Instance>();
         private HealthCheck healthCheck;
+        private SourceSecurityGroup sourceSecurityGroup;
         private DateTime? createdTime;
         /// <summary>
         /// Default constructor for a new LoadBalancerDescription object.  Callers should use the
@@ -62,6 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
@@ -89,15 +93,77 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this.dNSName != null;        
+            return this.dNSName != null;       
         }
 
         /// <summary>
-        /// LoadBalancerPort, InstancePort, Protocol, and PolicyNames are returned
-        /// in a list of tuples in the ListenerDescriptions element.
+        /// Provides the name of the Amazon Route 53 hosted zone that is associated with the load balancer. For information on how to associate your
+        /// load balancer with a hosted zone, go to <a
+        /// href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
+        /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        ///  
+        /// </summary>
+        public string CanonicalHostedZoneName
+        {
+            get { return this.canonicalHostedZoneName; }
+            set { this.canonicalHostedZoneName = value; }
+        }
+
+        /// <summary>
+        /// Sets the CanonicalHostedZoneName property
+        /// </summary>
+        /// <param name="canonicalHostedZoneName">The value to set for the CanonicalHostedZoneName property </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithCanonicalHostedZoneName(string canonicalHostedZoneName)
+        {
+            this.canonicalHostedZoneName = canonicalHostedZoneName;
+            return this;
+        }
+            
+
+        // Check to see if CanonicalHostedZoneName property is set
+        internal bool IsSetCanonicalHostedZoneName()
+        {
+            return this.canonicalHostedZoneName != null;       
+        }
+
+        /// <summary>
+        /// Provides the ID of the Amazon Route 53 hosted zone name that is associated with the load balancer. For information on how to associate or
+        /// disassociate your load balancer with a hosted zone, go to <a
+        /// href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
+        /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        ///  
+        /// </summary>
+        public string CanonicalHostedZoneNameID
+        {
+            get { return this.canonicalHostedZoneNameID; }
+            set { this.canonicalHostedZoneNameID = value; }
+        }
+
+        /// <summary>
+        /// Sets the CanonicalHostedZoneNameID property
+        /// </summary>
+        /// <param name="canonicalHostedZoneNameID">The value to set for the CanonicalHostedZoneNameID property </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithCanonicalHostedZoneNameID(string canonicalHostedZoneNameID)
+        {
+            this.canonicalHostedZoneNameID = canonicalHostedZoneNameID;
+            return this;
+        }
+            
+
+        // Check to see if CanonicalHostedZoneNameID property is set
+        internal bool IsSetCanonicalHostedZoneNameID()
+        {
+            return this.canonicalHostedZoneNameID != null;       
+        }
+
+        /// <summary>
+        /// LoadBalancerPort, InstancePort, Protocol, and PolicyNames are returned in a list of tuples in the ListenerDescriptions element.
         ///  
         /// </summary>
         public List<ListenerDescription> ListenerDescriptions
@@ -119,10 +185,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the ListenerDescriptions collection
+        /// </summary>
+        /// <param name="listenerDescriptions">The values to add to the ListenerDescriptions collection </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithListenerDescriptions(IEnumerable<ListenerDescription> listenerDescriptions)
+        {
+            foreach (ListenerDescription element in listenerDescriptions)
+            {
+                this.listenerDescriptions.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if ListenerDescriptions property is set
         internal bool IsSetListenerDescriptions()
         {
-            return this.listenerDescriptions.Count > 0;         
+            return this.listenerDescriptions.Count > 0;       
         }
 
         /// <summary>
@@ -146,6 +228,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
@@ -175,10 +258,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the AvailabilityZones collection
+        /// </summary>
+        /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithAvailabilityZones(IEnumerable<string> availabilityZones)
+        {
+            foreach (string element in availabilityZones)
+            {
+                this.availabilityZones.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;        
+            return this.availabilityZones.Count > 0;       
         }
 
         /// <summary>
@@ -204,15 +303,30 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Instances collection
+        /// </summary>
+        /// <param name="instances">The values to add to the Instances collection </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithInstances(IEnumerable<Instance> instances)
+        {
+            foreach (Instance element in instances)
+            {
+                this.instances.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;        
+            return this.instances.Count > 0;       
         }
 
         /// <summary>
-        /// Specifies information regarding the various health probes conducted on
-        /// the LoadBalancer.
+        /// Specifies information regarding the various health probes conducted on the LoadBalancer.
         ///  
         /// </summary>
         public HealthCheck HealthCheck
@@ -232,10 +346,41 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;        
+            return this.healthCheck != null;       
+        }
+
+        /// <summary>
+        /// The security group that you can use as part of your inbound rules for your load balancer's back-end Amazon EC2 application instances. To
+        /// disallow traffic from sources other than your load balancer, add a security group rule to your back end instance that specifies this source
+        /// security group as the inbound source.
+        ///  
+        /// </summary>
+        public SourceSecurityGroup SourceSecurityGroup
+        {
+            get { return this.sourceSecurityGroup; }
+            set { this.sourceSecurityGroup = value; }
+        }
+
+        /// <summary>
+        /// Sets the SourceSecurityGroup property
+        /// </summary>
+        /// <param name="sourceSecurityGroup">The value to set for the SourceSecurityGroup property </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithSourceSecurityGroup(SourceSecurityGroup sourceSecurityGroup)
+        {
+            this.sourceSecurityGroup = sourceSecurityGroup;
+            return this;
+        }
+            
+
+        // Check to see if SourceSecurityGroup property is set
+        internal bool IsSetSourceSecurityGroup()
+        {
+            return this.sourceSecurityGroup != null;       
         }
 
         /// <summary>
@@ -259,6 +404,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if CreatedTime property is set
         internal bool IsSetCreatedTime()
         {

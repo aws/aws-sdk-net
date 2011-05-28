@@ -25,8 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBParameters operation.
-    /// <para> This API returns the detailed parameter list for a particular
-    /// DBParameterGroup. </para>
+    /// <para> Returns the detailed parameter list for a particular DBParameterGroup. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeDBParameters"/>
     public class DescribeDBParametersRequest : AmazonWebServiceRequest

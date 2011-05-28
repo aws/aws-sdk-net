@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
         {
             IRequest<DeregisterInstancesFromLoadBalancerRequest> request = new DefaultRequest<DeregisterInstancesFromLoadBalancerRequest>(deregisterInstancesFromLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DeregisterInstancesFromLoadBalancer");
-            request.Parameters.Add("Version", "2010-07-01");
+            request.Parameters.Add("Version", "2011-04-05");
             if (deregisterInstancesFromLoadBalancerRequest != null && deregisterInstancesFromLoadBalancerRequest.IsSetLoadBalancerName()) 
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(deregisterInstancesFromLoadBalancerRequest.LoadBalancerName));

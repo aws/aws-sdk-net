@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> The status of the DB Parameter Group. </para> <para>This data
-    /// type is used as a response element in the following actions:</para>
+    /// <para> The status of the DB Parameter Group. </para> <para>This data type is used as a response element in the following actions:</para>
     /// <ul>
     /// <li> CreateDBInstance </li>
     /// <li> CreateDBInstanceReadReplica </li>

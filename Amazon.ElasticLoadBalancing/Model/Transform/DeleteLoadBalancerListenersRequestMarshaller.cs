@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
         {
             IRequest<DeleteLoadBalancerListenersRequest> request = new DefaultRequest<DeleteLoadBalancerListenersRequest>(deleteLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DeleteLoadBalancerListeners");
-            request.Parameters.Add("Version", "2010-07-01");
+            request.Parameters.Add("Version", "2011-04-05");
             if (deleteLoadBalancerListenersRequest != null && deleteLoadBalancerListenersRequest.IsSetLoadBalancerName()) 
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(deleteLoadBalancerListenersRequest.LoadBalancerName));
@@ -43,6 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
             if (deleteLoadBalancerListenersRequest != null) 
             {
                 List<int> loadBalancerPortsList = deleteLoadBalancerListenersRequest.LoadBalancerPorts;
+
                 int loadBalancerPortsListIndex = 1;
                 foreach (int loadBalancerPortsListValue in loadBalancerPortsList) 
                 { 

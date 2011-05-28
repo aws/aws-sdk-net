@@ -20,7 +20,7 @@ namespace Amazon.ElasticLoadBalancing
 {
 
     /// <summary>
-    /// Configuration for accessing  service
+    /// Configuration for accessing Elastic Load Balancing service
     /// </summary>
     public class AmazonElasticLoadBalancingConfig : ClientConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.ElasticLoadBalancing
         {
             get
             {
-                return "2010-07-01";
+                return "2011-04-05";
             }
         }
     }

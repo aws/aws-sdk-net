@@ -40,13 +40,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="policyName"> The name name for the policy being created.
-        /// The name must be unique within the set of policies for this
-        /// LoadBalancer. </param>
-        /// <param name="cookieExpirationPeriod"> The time period in seconds after
-        /// which the cookie should be considered stale. Not specifying this
-        /// parameter indicates that the sticky session will last for the duration
-        /// of the browser session. </param>
+        /// <param name="policyName"> The name for the policy being created. The name must be unique within the set of policies for this LoadBalancer.
+        /// </param>
+        /// <param name="cookieExpirationPeriod"> The time period in seconds after which the cookie should be considered stale. Not specifying this
+        /// parameter indicates that the sticky session will last for the duration of the browser session. </param>
         public LBCookieStickinessPolicy(string policyName, long cookieExpirationPeriod) 
         {
             this.policyName = policyName;
@@ -55,8 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name name for the policy being created. The name must be unique
-        /// within the set of policies for this LoadBalancer.
+        /// The name for the policy being created. The name must be unique within the set of policies for this LoadBalancer.
         ///  
         /// </summary>
         public string PolicyName
@@ -76,16 +72,16 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;         
+            return this.policyName != null;       
         }
 
         /// <summary>
-        /// The time period in seconds after which the cookie should be considered
-        /// stale. Not specifying this parameter indicates that the sticky session
-        /// will last for the duration of the browser session.
+        /// The time period in seconds after which the cookie should be considered stale. Not specifying this parameter indicates that the sticky
+        /// session will last for the duration of the browser session.
         ///  
         /// </summary>
         public long CookieExpirationPeriod
@@ -105,10 +101,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if CookieExpirationPeriod property is set
         internal bool IsSetCookieExpirationPeriod()
         {
-            return this.cookieExpirationPeriod.HasValue;        
+            return this.cookieExpirationPeriod.HasValue;       
         }
     }
 }

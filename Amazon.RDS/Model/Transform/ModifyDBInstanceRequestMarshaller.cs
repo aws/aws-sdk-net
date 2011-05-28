@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<ModifyDBInstanceRequest> request = new DefaultRequest<ModifyDBInstanceRequest>(modifyDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "ModifyDBInstance");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (modifyDBInstanceRequest != null && modifyDBInstanceRequest.IsSetDBInstanceIdentifier()) 
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(modifyDBInstanceRequest.DBInstanceIdentifier));
@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model.Transform
             if (modifyDBInstanceRequest != null) 
             {
                 List<string> dBSecurityGroupsList = modifyDBInstanceRequest.DBSecurityGroups;
+
                 int dBSecurityGroupsListIndex = 1;
                 foreach (string dBSecurityGroupsListValue in dBSecurityGroupsList) 
                 { 

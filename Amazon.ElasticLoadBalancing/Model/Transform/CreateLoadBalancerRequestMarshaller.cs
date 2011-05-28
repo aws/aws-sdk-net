@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
         {
             IRequest<CreateLoadBalancerRequest> request = new DefaultRequest<CreateLoadBalancerRequest>(createLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateLoadBalancer");
-            request.Parameters.Add("Version", "2010-07-01");
+            request.Parameters.Add("Version", "2011-04-05");
             if (createLoadBalancerRequest != null && createLoadBalancerRequest.IsSetLoadBalancerName()) 
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createLoadBalancerRequest.LoadBalancerName));
@@ -70,6 +70,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
             if (createLoadBalancerRequest != null) 
             {
                 List<string> availabilityZonesList = createLoadBalancerRequest.AvailabilityZones;
+
                 int availabilityZonesListIndex = 1;
                 foreach (string availabilityZonesListValue in availabilityZonesList) 
                 { 

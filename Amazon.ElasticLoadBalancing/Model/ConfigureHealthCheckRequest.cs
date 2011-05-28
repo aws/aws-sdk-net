@@ -25,8 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfigureHealthCheck operation.
-    /// <para> Enables the client to define an application healthcheck for the
-    /// instances. </para>
+    /// <para> Enables the client to define an application healthcheck for the instances. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.ConfigureHealthCheck"/>
     public class ConfigureHealthCheckRequest : AmazonWebServiceRequest
@@ -45,11 +44,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The mnemonic name associated with the
-        /// LoadBalancer. This name must be unique within the client AWS account.
+        /// <param name="loadBalancerName"> The mnemonic name associated with the LoadBalancer. This name must be unique within the client AWS account.
         /// </param>
-        /// <param name="healthCheck"> A structure containing the configuration
-        /// information for the new healthcheck. </param>
+        /// <param name="healthCheck"> A structure containing the configuration information for the new healthcheck. </param>
         public ConfigureHealthCheckRequest(string loadBalancerName, HealthCheck healthCheck) 
         {
             this.loadBalancerName = loadBalancerName;
@@ -58,8 +55,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The mnemonic name associated with the LoadBalancer. This name must be
-        /// unique within the client AWS account.
+        /// The mnemonic name associated with the LoadBalancer. This name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -79,6 +75,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
@@ -86,8 +83,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A structure containing the configuration information for the new
-        /// healthcheck.
+        /// A structure containing the configuration information for the new healthcheck.
         ///  
         /// </summary>
         public HealthCheck HealthCheck
@@ -107,10 +103,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;        
+            return this.healthCheck != null;       
         }
     }
 }

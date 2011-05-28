@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<CreateDBParameterGroupRequest> request = new DefaultRequest<CreateDBParameterGroupRequest>(createDBParameterGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBParameterGroup");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (createDBParameterGroupRequest != null && createDBParameterGroupRequest.IsSetDBParameterGroupName()) 
             {
                 request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(createDBParameterGroupRequest.DBParameterGroupName));

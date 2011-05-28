@@ -25,8 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedDBInstances operation.
-    /// <para> Returns information about reserved DB Instances for this
-    /// account, or about a specified reserved DB Instance. </para>
+    /// <para> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeReservedDBInstances"/>
     public class DescribeReservedDBInstancesRequest : AmazonWebServiceRequest

@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Describe Load Balancers Result
+    /// <summary>
+    /// <para> The output for the DescribeLoadBalancers action. </para>
     /// </summary>
     public class DescribeLoadBalancersResult  
     {
@@ -50,10 +51,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the LoadBalancerDescriptions collection
+        /// </summary>
+        /// <param name="loadBalancerDescriptions">The values to add to the LoadBalancerDescriptions collection </param>
+        /// <returns>this instance</returns>
+        public DescribeLoadBalancersResult WithLoadBalancerDescriptions(IEnumerable<LoadBalancerDescription> loadBalancerDescriptions)
+        {
+            foreach (LoadBalancerDescription element in loadBalancerDescriptions)
+            {
+                this.loadBalancerDescriptions.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if LoadBalancerDescriptions property is set
         internal bool IsSetLoadBalancerDescriptions()
         {
-            return this.loadBalancerDescriptions.Count > 0;         
+            return this.loadBalancerDescriptions.Count > 0;       
         }
     }
 }

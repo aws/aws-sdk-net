@@ -25,17 +25,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAppCookieStickinessPolicy operation.
-    /// <para> Generates a stickiness policy with sticky session lifetimes
-    /// that follow that of an application-generated cookie. This policy can
-    /// only be associated with HTTP listeners. </para> <para> This policy is
-    /// similar to the policy created by CreateLBCookieStickinessPolicy,
-    /// except that the lifetime of the special Elastic Load Balancing cookie
-    /// follows the lifetime of the application-generated cookie specified in
-    /// the policy configuration. The load balancer only inserts a new
-    /// stickiness cookie when the application response includes a new
-    /// application cookie. </para> <para> If the application cookie is
-    /// explicitly removed or expires, the session stops being sticky until a
-    /// new application cookie is issued. </para>
+    /// <para> Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be
+    /// associated only with HTTP/HTTPS listeners. </para> <para> This policy is similar to the policy created by CreateLBCookieStickinessPolicy,
+    /// except that the lifetime of the special Elastic Load Balancing cookie follows the lifetime of the application-generated cookie specified in
+    /// the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application
+    /// cookie. </para> <para> If the application cookie is explicitly removed or expires, the session stops being sticky until a new application
+    /// cookie is issued. </para> <para><b>NOTE:</b> An application client must receive and send two cookies: the application-generated cookie and
+    /// the special Elastic Load Balancing cookie named AWSELB. This is the default behavior for many common web browsers. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateAppCookieStickinessPolicy"/>
     public class CreateAppCookieStickinessPolicyRequest : AmazonWebServiceRequest
@@ -55,14 +51,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the
-        /// LoadBalancer. The name must be unique within the client AWS account.
+        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
+        /// <param name="policyName"> The name of the policy being created. The name must be unique within the set of policies for this Load Balancer.
         /// </param>
-        /// <param name="policyName"> The name of the policy being created. The
-        /// name must be unique within the set of policies for this Load Balancer.
-        /// </param>
-        /// <param name="cookieName"> Name of the application cookie used for
-        /// stickiness. </param>
+        /// <param name="cookieName"> Name of the application cookie used for stickiness. </param>
         public CreateAppCookieStickinessPolicyRequest(string loadBalancerName, string policyName, string cookieName) 
         {
             this.loadBalancerName = loadBalancerName;
@@ -72,8 +64,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique
-        /// within the client AWS account.
+        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -93,6 +84,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
@@ -100,8 +92,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The name of the policy being created. The name must be unique within
-        /// the set of policies for this Load Balancer.
+        /// The name of the policy being created. The name must be unique within the set of policies for this Load Balancer.
         ///  
         /// </summary>
         public string PolicyName
@@ -121,10 +112,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;         
+            return this.policyName != null;       
         }
 
         /// <summary>
@@ -148,10 +140,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if CookieName property is set
         internal bool IsSetCookieName()
         {
-            return this.cookieName != null;         
+            return this.cookieName != null;       
         }
     }
 }

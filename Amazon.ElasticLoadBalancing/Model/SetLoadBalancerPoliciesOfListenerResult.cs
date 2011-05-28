@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Set Load Balancer Policies Of Listener Result
+    /// <summary>
+    /// <para> The output for the SetLoadBalancerPoliciesOfListener action. </para>
     /// </summary>
     public class SetLoadBalancerPoliciesOfListenerResult  
     {

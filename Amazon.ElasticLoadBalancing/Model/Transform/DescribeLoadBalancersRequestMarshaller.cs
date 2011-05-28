@@ -35,10 +35,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
         {
             IRequest<DescribeLoadBalancersRequest> request = new DefaultRequest<DescribeLoadBalancersRequest>(describeLoadBalancersRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeLoadBalancers");
-            request.Parameters.Add("Version", "2010-07-01");
+            request.Parameters.Add("Version", "2011-04-05");
             if (describeLoadBalancersRequest != null) 
             {
                 List<string> loadBalancerNamesList = describeLoadBalancersRequest.LoadBalancerNames;
+
                 int loadBalancerNamesListIndex = 1;
                 foreach (string loadBalancerNamesListValue in loadBalancerNamesList) 
                 { 

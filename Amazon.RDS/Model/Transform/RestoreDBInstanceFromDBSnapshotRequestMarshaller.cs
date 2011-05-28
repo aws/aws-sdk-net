@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<RestoreDBInstanceFromDBSnapshotRequest> request = new DefaultRequest<RestoreDBInstanceFromDBSnapshotRequest>(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RestoreDBInstanceFromDBSnapshot");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetDBInstanceIdentifier()) 
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.DBInstanceIdentifier));
@@ -63,6 +63,18 @@ namespace Amazon.RDS.Model.Transform
             if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetAutoMinorVersionUpgrade()) 
             {
                 request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(restoreDBInstanceFromDBSnapshotRequest.AutoMinorVersionUpgrade));
+            }
+            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetLicenseModel()) 
+            {
+                request.Parameters.Add("LicenseModel", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.LicenseModel));
+            }
+            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetDBName()) 
+            {
+                request.Parameters.Add("DBName", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.DBName));
+            }
+            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetEngine()) 
+            {
+                request.Parameters.Add("Engine", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.Engine));
             }
 
 

@@ -42,15 +42,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="protocol"> Specifies the LoadBalancer transport protocol
-        /// to use for routing - TCP or HTTP. This property cannot be modified for
+        /// <param name="protocol"> Specifies the LoadBalancer transport protocol to use for routing - TCP or HTTP. This property cannot be modified for
         /// the life of the LoadBalancer. </param>
-        /// <param name="loadBalancerPort"> Specifies the LoadBalancer transport
-        /// protocol to use for routing - TCP or HTTP. This property cannot be
-        /// modified for the life of the LoadBalancer. </param>
-        /// <param name="instancePort"> Specifies the TCP port on which the
-        /// instance server is listening. This property cannot be modified for the
-        /// life of the LoadBalancer. </param>
+        /// <param name="loadBalancerPort"> Specifies the external LoadBalancer port number. This property cannot be modified for the life of the
+        /// LoadBalancer. </param>
+        /// <param name="instancePort"> Specifies the TCP port on which the instance server is listening. This property cannot be modified for the life
+        /// of the LoadBalancer. </param>
         public Listener(string protocol, int loadBalancerPort, int instancePort) 
         {
             this.protocol = protocol;
@@ -60,8 +57,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// Specifies the LoadBalancer transport protocol to use for routing - TCP
-        /// or HTTP. This property cannot be modified for the life of the
+        /// Specifies the LoadBalancer transport protocol to use for routing - TCP or HTTP. This property cannot be modified for the life of the
         /// LoadBalancer.
         ///  
         /// </summary>
@@ -82,6 +78,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if Protocol property is set
         internal bool IsSetProtocol()
         {
@@ -89,9 +86,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Specifies the LoadBalancer transport protocol to use for routing - TCP
-        /// or HTTP. This property cannot be modified for the life of the
-        /// LoadBalancer.
+        /// Specifies the external LoadBalancer port number. This property cannot be modified for the life of the LoadBalancer.
         ///  
         /// </summary>
         public int LoadBalancerPort
@@ -111,15 +106,15 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if LoadBalancerPort property is set
         internal bool IsSetLoadBalancerPort()
         {
-            return this.loadBalancerPort.HasValue;      
+            return this.loadBalancerPort.HasValue;       
         }
 
         /// <summary>
-        /// Specifies the TCP port on which the instance server is listening. This
-        /// property cannot be modified for the life of the LoadBalancer.
+        /// Specifies the TCP port on which the instance server is listening. This property cannot be modified for the life of the LoadBalancer.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -148,17 +143,17 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if InstancePort property is set
         internal bool IsSetInstancePort()
         {
-            return this.instancePort.HasValue;      
+            return this.instancePort.HasValue;       
         }
 
         /// <summary>
-        /// The ID of the SSL certificate chain to use. For more information on
-        /// SSL certificates, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingServerCerts.html">
-        /// Managing Keys and Certificates </a> in the AWS Identity and Access
-        /// Management documentation.
+        /// The ID of the SSL certificate chain to use. For more information on SSL certificates, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html"> Managing Keys and Certificates </a> in
+        /// the AWS Identity and Access Management documentation.
         ///  
         /// </summary>
         public string SSLCertificateId
@@ -178,6 +173,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if SSLCertificateId property is set
         internal bool IsSetSSLCertificateId()
         {

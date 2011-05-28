@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Deregister Instances From Load Balancer Result
+    /// <summary>
+    /// <para> The output for the DeregisterInstancesFromLoadBalancer action. </para>
     /// </summary>
     public class DeregisterInstancesFromLoadBalancerResult  
     {
@@ -28,8 +29,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<Instance> instances = new List<Instance>();
 
         /// <summary>
-        /// An updated list of remaining instances registered with the
-        /// LoadBalancer.
+        /// An updated list of remaining instances registered with the LoadBalancer.
         ///  
         /// </summary>
         public List<Instance> Instances
@@ -51,10 +51,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Instances collection
+        /// </summary>
+        /// <param name="instances">The values to add to the Instances collection </param>
+        /// <returns>this instance</returns>
+        public DeregisterInstancesFromLoadBalancerResult WithInstances(IEnumerable<Instance> instances)
+        {
+            foreach (Instance element in instances)
+            {
+                this.instances.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;        
+            return this.instances.Count > 0;       
         }
     }
 }

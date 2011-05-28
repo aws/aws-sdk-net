@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the
-    /// DescribeDBSecurityGroups action. </para>
+    /// <para> This data type is used as a response element in the DescribeDBSecurityGroups action. </para>
     /// </summary>
     public class IPRange  
     {

@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the EnableAvailabilityZonesForLoadBalancerResult property.
-        /// 
+        /// The output for the EnableAvailabilityZonesForLoadBalancer action.
         /// </summary>
         public EnableAvailabilityZonesForLoadBalancerResult EnableAvailabilityZonesForLoadBalancerResult
         {

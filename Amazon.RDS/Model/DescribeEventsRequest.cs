@@ -25,12 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// <para> This API returns events related to DB Instances, DB Security
-    /// Groups, DB Snapshots and DB Parameter Groups for the past 14 das.
-    /// Events specific to a particular DB Instance, database security group,
-    /// database snapshot or database parameter group can be obtained by
-    /// providing the name as a parameter. By default, the past hour of events
-    /// are returned. </para>
+    /// <para> Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events
+    /// specific to a particular DB Instance, database security group, database snapshot or database parameter group can be obtained by providing
+    /// the name as a parameter. By default, the past hour of events are returned. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeEvents"/>
     public class DescribeEventsRequest : AmazonWebServiceRequest
@@ -76,8 +73,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The event source to retrieve events for. If no value is specified, all events are returned. Valid Values: <c>db-instance | db-security-group
-        /// | db-parameter-group | db-snapshot</c>
+        /// The event source to retrieve events for. If no value is specified, all events are returned.
         ///  
         /// <para>
         /// <b>Constraints:</b>

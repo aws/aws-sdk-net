@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<RestoreDBInstanceToPointInTimeRequest> request = new DefaultRequest<RestoreDBInstanceToPointInTimeRequest>(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RestoreDBInstanceToPointInTime");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetSourceDBInstanceIdentifier()) 
             {
                 request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.SourceDBInstanceIdentifier));
@@ -71,6 +71,18 @@ namespace Amazon.RDS.Model.Transform
             if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetAutoMinorVersionUpgrade()) 
             {
                 request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(restoreDBInstanceToPointInTimeRequest.AutoMinorVersionUpgrade));
+            }
+            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetLicenseModel()) 
+            {
+                request.Parameters.Add("LicenseModel", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.LicenseModel));
+            }
+            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetDBName()) 
+            {
+                request.Parameters.Add("DBName", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.DBName));
+            }
+            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetEngine()) 
+            {
+                request.Parameters.Add("Engine", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.Engine));
             }
 
 

@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBInstance operation.
-    /// <para> This API creates a new DB instance. </para>
+    /// <para> Creates a new DB instance. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBInstance"/>
     public class CreateDBInstanceRequest : AmazonWebServiceRequest
@@ -47,11 +47,13 @@ namespace Amazon.RDS.Model
         private bool? multiAZ;
         private string engineVersion;
         private bool? autoMinorVersionUpgrade;
+        private string licenseModel;
 
         /// <summary>
-        /// The name of the database to create when the DB Instance is created. If this parameter is not specified, no database is created in the DB
-        /// Instance. Constraints: <ul> <li>Must contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word reserved by the specified database
-        /// engine</li> </ul>
+        /// The meaning of this parameter differs according to the database engine you use. <b>MySQL</b> The name of the database to create when the DB
+        /// Instance is created. If this parameter is not specified, no database is created in the DB Instance. Constraints: <ul> <li>Must contain 1 to
+        /// 64 alphanumeric characters</li> <li>Cannot be a word reserved by the specified database engine</li> </ul> Type: String <b>Oracle</b> The
+        /// Oracle System ID (SID) of the created DB Instance. Default: <c>ORACL</c> Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
         ///  
         /// </summary>
         public string DBName
@@ -109,7 +111,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The amount of storage (in gigabytes) to be initially allocated for the database instance. Must be an integer from 5 to 1024.
+        /// The amount of storage (in gigabytes) to be initially allocated for the database instance. <b>MySQL</b> Constraints: Must be an integer from
+        /// 5 to 1024. Type: Integer <b>Oracle</b> Constraints: Must be an integer from 10 to 1024.
         ///  
         /// </summary>
         public int AllocatedStorage
@@ -166,7 +169,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the database engine to be used for this instance. Valid Values: <c>MySQL</c>
+        /// The name of the database engine to be used for this instance. Valid Values: <c>MySQL</c> | <c>oracle-se1</c> | <c>oracle-se</c> |
+        /// <c>oracle-ee</c>
         ///  
         /// </summary>
         public string Engine
@@ -194,8 +198,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of master user for the client DB Instance. Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First character
-        /// must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul>
+        /// The name of master user for the client DB Instance. <b>MySQL</b> Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
+        /// <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> Type: String
+        /// <b>Oracle</b> Constraints: <ul> <li>Must be 1 to 30 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a
+        /// reserved word for the chosen database engine.</li> </ul>
         ///  
         /// </summary>
         public string MasterUsername
@@ -223,7 +229,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The password for the master DB Instance user. Constraints: Must contain 4 to 41 alphanumeric characters.
+        /// The password for the master DB Instance user. <b>MySQL</b> Constraints: Cannot contain more than 41 alphanumeric characters. Type: String
+        /// <b>Oracle</b> Constraints: Cannot contain more than 30 alphanumeric characters.
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -326,11 +333,12 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The weekly time range (in UTC) during which system maintenance can occur. Format: ddd:hh24:mi-ddd:hh24:mi Default: Depends on the Region the
-        /// database was created in. These are the default maintenance windows for each Region: <ul> <li><b>US-East (Northern Virginia) Region:</b>
-        /// Sun:05:00-Sun:09:00 UTC</li> <li><b>US-West (Northern California) Region:</b> Sun:08:00-Sun:12:00 UTC</li> <li><b>EU (Ireland) Region:</b>
-        /// Sun:00:00-Sun:04:00 UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> Sat:16:00-Sat:20:00 UTC</li> </ul> Valid Days: Mon, Tue, Wed, Thu,
-        /// Fri, Sat, Sun Constraints: Minimum four-hour period.
+        /// The weekly time range (in UTC) during which system maintenance can occur. Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> Default: A 30-minute window
+        /// selected at random from an 8-hour block of time per region, occurring on a random day of the week. The following list shows the time blocks
+        /// for each region from which the default maintenance windows are assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b> 03:00-11:00
+        /// UTC</li> <li><b>US-West (Northern California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00 UTC</li>
+        /// <li><b>Asia Pacific (Singapore) Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li> </ul> Valid
+        /// Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun Constraints: Minimum 30-minute window.
         ///  
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -418,12 +426,13 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The daily time range during which automated backups are created if automated backups are enabled, as determined by the
-        /// <c>BackupRetentionPeriod</c>. Default: Depends on the Region the database was created in. These are the default backup windows for each
-        /// Region: <ul> <li><b>US-East (Northern Virginia) Region:</b> 03:00-05:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-        /// 06:00-08:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-00:00 UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-16:00 UTC</li>
-        /// </ul> Constraints: Must be in the format hh24:mi-hh24:mi. Times should be Universal Time Coordinated (UTC). Must not conflict with the
-        /// preferred maintenance window. Must be at least two hours.
+        /// The daily time range during which automated backups are created if automated backups are enabled, using the <c>BackupRetentionPeriod</c>
+        /// parameter. Default: A 30-minute window selected at random from an 8-hour block of time per region. The following list shows the time blocks
+        /// for each region from which the default backup windows are assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b> 03:00-11:00 UTC</li>
+        /// <li><b>US-West (Northern California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00 UTC</li> <li><b>Asia
+        /// Pacific (Singapore) Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li> </ul> Constraints: Must
+        /// be in the format <c>hh24:mi-hh24:mi</c>. Times should be Universal Time Coordinated (UTC). Must not conflict with the preferred maintenance
+        /// window. Must be at least 30 minutes.
         ///  
         /// </summary>
         public string PreferredBackupWindow
@@ -451,7 +460,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The port number on which the database accepts connections. Default: <c>3306</c> Valid Values: <c>1150-65535</c>
+        /// The port number on which the database accepts connections. <b>MySQL</b> Default: <c>3306</c> Valid Values: <c>1150-65535</c> Type: Integer
+        /// <b>Oracle</b> Default: <c>1521</c> Valid Values: <c>1150-65535</c>
         ///  
         /// </summary>
         public int Port
@@ -508,7 +518,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The version number of the database engine to use. Example: <c>5.1.42</c>
+        /// The version number of the database engine to use. <b>MySQL</b> Example: <c>5.1.42</c> Type: String <b>Oracle</b> Example: <c>11.2.0.2.v2</c>
         ///  
         /// </summary>
         public string EngineVersion
@@ -561,6 +571,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this.autoMinorVersionUpgrade.HasValue;       
+        }
+
+        /// <summary>
+        /// License model information for this DB Instance. Valid values: <c>license-included</c> | <c>bring-your-own-license</c> |
+        /// <c>general-public-license</c>
+        ///  
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this.licenseModel; }
+            set { this.licenseModel = value; }
+        }
+
+        /// <summary>
+        /// Sets the LicenseModel property
+        /// </summary>
+        /// <param name="licenseModel">The value to set for the LicenseModel property </param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceRequest WithLicenseModel(string licenseModel)
+        {
+            this.licenseModel = licenseModel;
+            return this;
+        }
+            
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this.licenseModel != null;       
         }
     }
 }

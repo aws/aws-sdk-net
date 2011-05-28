@@ -48,6 +48,20 @@ namespace Amazon.S3.Transfer.Internal
 
         public override void Execute()
         {
+            string prefix = string.Empty;
+            if (this._request.IsSetKeyPrefix())
+            {
+                prefix = this._request.KeyPrefix;
+                prefix = prefix.Replace(@"\", "/");
+                if (prefix.StartsWith("/"))
+                    prefix = prefix.Substring(1);
+
+                if (!prefix.EndsWith("/"))
+                {
+                    prefix += "/";
+                }
+            }
+
             string basePath = new DirectoryInfo(this._request.Directory).FullName;
             string searchPattern = string.IsNullOrEmpty(this._request.SearchPattern) ? "*" : this._request.SearchPattern;
             string[] filePaths = Directory.GetFiles(this._request.Directory, searchPattern, this._request.SearchOption);
@@ -60,6 +74,8 @@ namespace Amazon.S3.Transfer.Internal
                 key = key.Replace(@"\", "/");
                 if(key.StartsWith("/"))
                     key = key.Substring(1);
+
+                key = prefix + key;
 
                 TransferUtilityUploadRequest uploadRequest = new TransferUtilityUploadRequest()
                     .WithBucketName(this._request.BucketName)

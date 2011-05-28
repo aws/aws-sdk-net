@@ -25,8 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBSecurityGroup operation.
-    /// <para> This API creates a new database security group. Database
-    /// Security groups control access to a database instance. </para>
+    /// <para> Creates a new database security group. Database Security groups control access to a database instance. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBSecurityGroup"/>
     public class CreateDBSecurityGroupRequest : AmazonWebServiceRequest

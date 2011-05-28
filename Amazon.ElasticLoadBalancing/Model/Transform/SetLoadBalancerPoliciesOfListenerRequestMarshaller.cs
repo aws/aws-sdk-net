@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
         {
             IRequest<SetLoadBalancerPoliciesOfListenerRequest> request = new DefaultRequest<SetLoadBalancerPoliciesOfListenerRequest>(setLoadBalancerPoliciesOfListenerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "SetLoadBalancerPoliciesOfListener");
-            request.Parameters.Add("Version", "2010-07-01");
+            request.Parameters.Add("Version", "2011-04-05");
             if (setLoadBalancerPoliciesOfListenerRequest != null && setLoadBalancerPoliciesOfListenerRequest.IsSetLoadBalancerName()) 
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(setLoadBalancerPoliciesOfListenerRequest.LoadBalancerName));
@@ -47,6 +47,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
             if (setLoadBalancerPoliciesOfListenerRequest != null) 
             {
                 List<string> policyNamesList = setLoadBalancerPoliciesOfListenerRequest.PolicyNames;
+
+                if (policyNamesList.Count == 0) request.Parameters.Add("PolicyNames", "");
                 int policyNamesListIndex = 1;
                 foreach (string policyNamesListValue in policyNamesList) 
                 { 

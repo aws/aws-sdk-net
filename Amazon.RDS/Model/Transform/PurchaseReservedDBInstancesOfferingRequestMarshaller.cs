@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<PurchaseReservedDBInstancesOfferingRequest> request = new DefaultRequest<PurchaseReservedDBInstancesOfferingRequest>(purchaseReservedDBInstancesOfferingRequest, "AmazonRDS");
             request.Parameters.Add("Action", "PurchaseReservedDBInstancesOffering");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (purchaseReservedDBInstancesOfferingRequest != null && purchaseReservedDBInstancesOfferingRequest.IsSetReservedDBInstancesOfferingId()) 
             {
                 request.Parameters.Add("ReservedDBInstancesOfferingId", StringUtils.FromString(purchaseReservedDBInstancesOfferingRequest.ReservedDBInstancesOfferingId));

@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The database engine version to return.
+        /// The database engine version to return. Example: <c>5.1.49</c>
         ///  
         /// </summary>
         public string EngineVersion

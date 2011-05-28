@@ -25,13 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootDBInstance operation.
-    /// <para> The RebootDBInstance API reboots a previously provisioned RDS
-    /// instance. This API results in the application of modified
-    /// DBParameterGroup parameters with ApplyStatus of pending-reboot to the
-    /// RDS instance. This action is taken as soon as possible, and results in
-    /// a momentary outage to the RDS instance during which the RDS instance
-    /// status is set to rebooting. A DBInstance event is created when the
-    /// reboot is completed. </para>
+    /// <para> Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with
+    /// ApplyStatus of pending-reboot to the RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS
+    /// instance during which the RDS instance status is set to rebooting. A DBInstance event is created when the reboot is completed. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.RebootDBInstance"/>
     public class RebootDBInstanceRequest : AmazonWebServiceRequest

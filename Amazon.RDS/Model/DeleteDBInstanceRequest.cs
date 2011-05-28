@@ -25,12 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBInstance operation.
-    /// <para> The DeleteDBInstance API deletes a previously provisioned RDS
-    /// instance. A successful response from the web service indicates the
-    /// request was received correctly. If a final DBSnapshot is requested the
-    /// status of the RDS instance will be "deleting" until the DBSnapshot is
-    /// created. DescribeDBInstance is used to monitor the status of this
-    /// operation. This cannot be canceled or reverted once submitted. </para>
+    /// <para> The DeleteDBInstance API deletes a previously provisioned RDS instance. A successful response from the web service indicates the
+    /// request was received correctly. If a final DBSnapshot is requested the status of the RDS instance will be "deleting" until the DBSnapshot is
+    /// created. DescribeDBInstance is used to monitor the status of this operation. This cannot be canceled or reverted once submitted. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DeleteDBInstance"/>
     public class DeleteDBInstanceRequest : AmazonWebServiceRequest

@@ -25,10 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeDBSecurityGroupIngress operation.
-    /// <para> This API revokes ingress from a DBSecurityGroup for previously
-    /// authorized IP ranges or EC2 Security Groups. Required parameters for
-    /// this API are one of CIDRIP or (EC2SecurityGroupName AND
-    /// EC2SecurityGroupOwnerId). </para>
+    /// <para> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 Security Groups. Required parameters for this API
+    /// are one of CIDRIP or (EC2SecurityGroupName AND EC2SecurityGroupOwnerId). </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.RevokeDBSecurityGroupIngress"/>
     public class RevokeDBSecurityGroupIngressRequest : AmazonWebServiceRequest

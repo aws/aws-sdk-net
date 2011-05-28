@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the DeregisterInstancesFromLoadBalancerResult property.
-        /// 
+        /// The output for the DeregisterInstancesFromLoadBalancer action.
         /// </summary>
         public DeregisterInstancesFromLoadBalancerResult DeregisterInstancesFromLoadBalancerResult
         {

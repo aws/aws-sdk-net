@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Create App Cookie Stickiness Policy Result
+    /// <summary>
+    /// <para> The output for the CreateAppCookieStickinessPolicy action. </para>
     /// </summary>
     public class CreateAppCookieStickinessPolicyResult  
     {

@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
-    /// <summary>Create Load Balancer Result
+    /// <summary>
+    /// <para> The output for the CreateLoadBalancer action. </para>
     /// </summary>
     public class CreateLoadBalancerResult  
     {
@@ -48,10 +49,11 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this.dNSName != null;        
+            return this.dNSName != null;       
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the DeleteLoadBalancerPolicyResult property.
-        /// 
+        /// The output for the DeleteLoadBalancerPolicy action.
         /// </summary>
         public DeleteLoadBalancerPolicyResult DeleteLoadBalancerPolicyResult
         {

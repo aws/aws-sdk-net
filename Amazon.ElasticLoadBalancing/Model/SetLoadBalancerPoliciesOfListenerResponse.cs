@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the SetLoadBalancerPoliciesOfListenerResult property.
-        /// 
+        /// The output for the SetLoadBalancerPoliciesOfListener action.
         /// </summary>
         public SetLoadBalancerPoliciesOfListenerResult SetLoadBalancerPoliciesOfListenerResult
         {

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<DescribeDBEngineVersionsRequest> request = new DefaultRequest<DescribeDBEngineVersionsRequest>(describeDBEngineVersionsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeDBEngineVersions");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetEngine()) 
             {
                 request.Parameters.Add("Engine", StringUtils.FromString(describeDBEngineVersionsRequest.Engine));

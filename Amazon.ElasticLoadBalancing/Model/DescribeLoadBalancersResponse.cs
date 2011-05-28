@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the DescribeLoadBalancersResult property.
-        /// 
+        /// The output for the DescribeLoadBalancers action.
         /// </summary>
         public DescribeLoadBalancersResult DescribeLoadBalancersResult
         {

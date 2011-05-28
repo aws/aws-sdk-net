@@ -25,13 +25,10 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancers operation.
-    /// <para> Returns detailed configuration information for the specified
-    /// LoadBalancers. If no LoadBalancers are specified, the operation
-    /// returns configuration information for all LoadBalancers created by the
-    /// caller. </para> <para><b>NOTE:</b> The client must have created the
-    /// specified input LoadBalancers in order to retrieve this information;
-    /// the client must provide the same account credentials as those that
-    /// were used to create the LoadBalancer. </para>
+    /// <para> Returns detailed configuration information for the specified LoadBalancers. If no LoadBalancers are specified, the operation returns
+    /// configuration information for all LoadBalancers created by the caller. </para> <para><b>NOTE:</b> The client must have created the specified
+    /// input LoadBalancers in order to retrieve this information; the client must provide the same account credentials as those that were used to
+    /// create the LoadBalancer. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DescribeLoadBalancers"/>
     public class DescribeLoadBalancersRequest : AmazonWebServiceRequest
@@ -49,8 +46,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerNames"> A list of names associated with the
-        /// LoadBalancers at creation time. </param>
+        /// <param name="loadBalancerNames"> A list of names associated with the LoadBalancers at creation time. </param>
         public DescribeLoadBalancersRequest(List<string> loadBalancerNames) 
         {
             this.loadBalancerNames = loadBalancerNames;
@@ -80,10 +76,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the LoadBalancerNames collection
+        /// </summary>
+        /// <param name="loadBalancerNames">The values to add to the LoadBalancerNames collection </param>
+        /// <returns>this instance</returns>
+        public DescribeLoadBalancersRequest WithLoadBalancerNames(IEnumerable<string> loadBalancerNames)
+        {
+            foreach (string element in loadBalancerNames)
+            {
+                this.loadBalancerNames.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if LoadBalancerNames property is set
         internal bool IsSetLoadBalancerNames()
         {
-            return this.loadBalancerNames.Count > 0;        
+            return this.loadBalancerNames.Count > 0;       
         }
     }
 }

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<RevokeDBSecurityGroupIngressRequest> request = new DefaultRequest<RevokeDBSecurityGroupIngressRequest>(revokeDBSecurityGroupIngressRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RevokeDBSecurityGroupIngress");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (revokeDBSecurityGroupIngressRequest != null && revokeDBSecurityGroupIngressRequest.IsSetDBSecurityGroupName()) 
             {
                 request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(revokeDBSecurityGroupIngressRequest.DBSecurityGroupName));

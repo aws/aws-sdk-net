@@ -25,12 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceFromDBSnapshot operation.
-    /// <para> This API creates a new DB Instance to an arbitrary
-    /// point-in-time. Users can restore to any point in time before the
-    /// latestRestorableTime for up to backupRetentionPeriod days. The target
-    /// database is created from the source database with the same
-    /// configuration as the original database except that the DB instance is
-    /// created with the default DB security group. </para>
+    /// <para> Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up
+    /// to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database
+    /// except that the DB instance is created with the default DB security group. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.RestoreDBInstanceFromDBSnapshot"/>
     public class RestoreDBInstanceFromDBSnapshotRequest : AmazonWebServiceRequest
@@ -42,6 +39,9 @@ namespace Amazon.RDS.Model
         private string availabilityZone;
         private bool? multiAZ;
         private bool? autoMinorVersionUpgrade;
+        private string licenseModel;
+        private string dBName;
+        private string engine;
 
         /// <summary>
         /// The identifier for the DB Snapshot to restore from. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
@@ -244,6 +244,92 @@ namespace Amazon.RDS.Model
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this.autoMinorVersionUpgrade.HasValue;       
+        }
+
+        /// <summary>
+        /// License model information for the restored DB Instance. Default: Same as source. Valid values: <c>license-included</c> |
+        /// <c>bring-your-own-license</c> | <c>general-public-license</c>
+        ///  
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this.licenseModel; }
+            set { this.licenseModel = value; }
+        }
+
+        /// <summary>
+        /// Sets the LicenseModel property
+        /// </summary>
+        /// <param name="licenseModel">The value to set for the LicenseModel property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceFromDBSnapshotRequest WithLicenseModel(string licenseModel)
+        {
+            this.licenseModel = licenseModel;
+            return this;
+        }
+            
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this.licenseModel != null;       
+        }
+
+        /// <summary>
+        /// The database name for the restored DB Instance. <note> This parameter doesn't apply to the MySQL engine. </note>
+        ///  
+        /// </summary>
+        public string DBName
+        {
+            get { return this.dBName; }
+            set { this.dBName = value; }
+        }
+
+        /// <summary>
+        /// Sets the DBName property
+        /// </summary>
+        /// <param name="dBName">The value to set for the DBName property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceFromDBSnapshotRequest WithDBName(string dBName)
+        {
+            this.dBName = dBName;
+            return this;
+        }
+            
+
+        // Check to see if DBName property is set
+        internal bool IsSetDBName()
+        {
+            return this.dBName != null;       
+        }
+
+        /// <summary>
+        /// The database engine to use for the new instance. Default: The same as source Constraint: Must be compatible with the engine of the source
+        /// Example: <c>oracle-ee</c>
+        ///  
+        /// </summary>
+        public string Engine
+        {
+            get { return this.engine; }
+            set { this.engine = value; }
+        }
+
+        /// <summary>
+        /// Sets the Engine property
+        /// </summary>
+        /// <param name="engine">The value to set for the Engine property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceFromDBSnapshotRequest WithEngine(string engine)
+        {
+            this.engine = engine;
+            return this;
+        }
+            
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this.engine != null;       
         }
     }
 }

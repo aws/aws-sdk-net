@@ -25,8 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBInstances operation.
-    /// <para> This API is used to retrieve information about provisioned RDS
-    /// instances. DescribeDBInstances supports pagination. </para>
+    /// <para> Returns information about provisioned RDS instances. This API supports pagination. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeDBInstances"/>
     public class DescribeDBInstancesRequest : AmazonWebServiceRequest

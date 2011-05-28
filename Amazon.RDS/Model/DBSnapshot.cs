@@ -21,15 +21,13 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the following
-    /// actions: </para>
+    /// <para> Contains the result of a successful invocation of the following actions: </para>
     /// <ul>
     /// <li> CreateDBSnapshot </li>
     /// <li> DeleteDBSnapshot </li>
     /// 
     /// </ul>
-    /// <para>This data type is used as a response element in the
-    /// DescribeDBSnapshots action.</para>
+    /// <para>This data type is used as a response element in the DescribeDBSnapshots action.</para>
     /// </summary>
     public class DBSnapshot  
     {
@@ -45,6 +43,7 @@ namespace Amazon.RDS.Model
         private DateTime? instanceCreateTime;
         private string masterUsername;
         private string engineVersion;
+        private string licenseModel;
 
         /// <summary>
         /// Specifies the identifier for the DB Snapshot.
@@ -352,6 +351,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngineVersion()
         {
             return this.engineVersion != null;       
+        }
+
+        /// <summary>
+        /// License model information for the restored DB Instance.
+        ///  
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this.licenseModel; }
+            set { this.licenseModel = value; }
+        }
+
+        /// <summary>
+        /// Sets the LicenseModel property
+        /// </summary>
+        /// <param name="licenseModel">The value to set for the LicenseModel property </param>
+        /// <returns>this instance</returns>
+        public DBSnapshot WithLicenseModel(string licenseModel)
+        {
+            this.licenseModel = licenseModel;
+            return this;
+        }
+            
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this.licenseModel != null;       
         }
     }
 }

@@ -815,7 +815,7 @@
     <Compile Include="Amazon.EC2\Model\DiskImageVolumeDescriptionType.cs" />
     <Compile Include="Amazon.EC2\Model\DiskImageVolumeType.cs" />
     <Compile Include="Amazon.EC2\Model\EbsBlockDevice.cs" />
-    <Compile Include="Amazon.EC2\Model\EC2Contants.cs" />
+    <Compile Include="Amazon.EC2\Model\EC2Constants.cs" />
     <Compile Include="Amazon.EC2\Model\Error.cs" />
     <Compile Include="Amazon.EC2\Model\ErrorResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Filter.cs" />
@@ -1231,6 +1231,7 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\SetLoadBalancerPoliciesOfListenerRequest.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\SetLoadBalancerPoliciesOfListenerResponse.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\SetLoadBalancerPoliciesOfListenerResult.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\SourceSecurityGroup.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\TooManyLoadBalancersException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\TooManyPoliciesException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\AppCookieStickinessPolicyUnmarshaller.cs" />
@@ -1290,6 +1291,7 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerPoliciesOfListenerRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerPoliciesOfListenerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SourceSecurityGroupUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduce.cs" />
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduceClient.cs" />
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduceConfig.cs" />
@@ -1695,6 +1697,7 @@
     <Compile Include="Amazon.RDS\Model\AuthorizeDBSecurityGroupIngressRequest.cs" />
     <Compile Include="Amazon.RDS\Model\AuthorizeDBSecurityGroupIngressResponse.cs" />
     <Compile Include="Amazon.RDS\Model\AuthorizeDBSecurityGroupIngressResult.cs" />
+    <Compile Include="Amazon.RDS\Model\AvailabilityZone.cs" />
     <Compile Include="Amazon.RDS\Model\CreateDBInstanceReadReplicaRequest.cs" />
     <Compile Include="Amazon.RDS\Model\CreateDBInstanceReadReplicaResponse.cs" />
     <Compile Include="Amazon.RDS\Model\CreateDBInstanceReadReplicaResult.cs" />
@@ -1761,6 +1764,9 @@
     <Compile Include="Amazon.RDS\Model\DescribeEventsRequest.cs" />
     <Compile Include="Amazon.RDS\Model\DescribeEventsResponse.cs" />
     <Compile Include="Amazon.RDS\Model\DescribeEventsResult.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeOrderableDBInstanceOptionsRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeOrderableDBInstanceOptionsResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeOrderableDBInstanceOptionsResult.cs" />
     <Compile Include="Amazon.RDS\Model\DescribeReservedDBInstancesOfferingsRequest.cs" />
     <Compile Include="Amazon.RDS\Model\DescribeReservedDBInstancesOfferingsResponse.cs" />
     <Compile Include="Amazon.RDS\Model\DescribeReservedDBInstancesOfferingsResult.cs" />
@@ -1784,6 +1790,7 @@
     <Compile Include="Amazon.RDS\Model\ModifyDBParameterGroupRequest.cs" />
     <Compile Include="Amazon.RDS\Model\ModifyDBParameterGroupResponse.cs" />
     <Compile Include="Amazon.RDS\Model\ModifyDBParameterGroupResult.cs" />
+    <Compile Include="Amazon.RDS\Model\OrderableDBInstanceOption.cs" />
     <Compile Include="Amazon.RDS\Model\Parameter.cs" />
     <Compile Include="Amazon.RDS\Model\PendingModifiedValues.cs" />
     <Compile Include="Amazon.RDS\Model\PointInTimeRestoreNotEnabledException.cs" />
@@ -1816,6 +1823,7 @@
     <Compile Include="Amazon.RDS\Model\Transform\AuthorizeDBSecurityGroupIngressRequestMarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\AuthorizeDBSecurityGroupIngressResponseUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\AuthorizeDBSecurityGroupIngressResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Transform\AvailabilityZoneUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\CreateDBInstanceReadReplicaRequestMarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\CreateDBInstanceReadReplicaResponseUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\CreateDBInstanceReadReplicaResultUnmarshaller.cs" />
@@ -1872,6 +1880,9 @@
     <Compile Include="Amazon.RDS\Model\Transform\DescribeEventsRequestMarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\DescribeEventsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\DescribeEventsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Transform\DescribeOrderableDBInstanceOptionsRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Transform\DescribeOrderableDBInstanceOptionsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Transform\DescribeOrderableDBInstanceOptionsResultUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\DescribeReservedDBInstancesOfferingsRequestMarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\DescribeReservedDBInstancesOfferingsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\DescribeReservedDBInstancesOfferingsResultUnmarshaller.cs" />
@@ -1889,6 +1900,7 @@
     <Compile Include="Amazon.RDS\Model\Transform\ModifyDBParameterGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\ModifyDBParameterGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\ModifyDBParameterGroupResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Transform\OrderableDBInstanceOptionUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\ParameterUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\PendingModifiedValuesUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\PurchaseReservedDBInstancesOfferingRequestMarshaller.cs" />

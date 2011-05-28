@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<CreateDBSnapshotRequest> request = new DefaultRequest<CreateDBSnapshotRequest>(createDBSnapshotRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBSnapshot");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (createDBSnapshotRequest != null && createDBSnapshotRequest.IsSetDBSnapshotIdentifier()) 
             {
                 request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(createDBSnapshotRequest.DBSnapshotIdentifier));

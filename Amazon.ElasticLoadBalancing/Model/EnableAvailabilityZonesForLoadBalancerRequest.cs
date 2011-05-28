@@ -25,14 +25,10 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableAvailabilityZonesForLoadBalancer operation.
-    /// <para> Adds one or more EC2 Availability Zones to the LoadBalancer.
-    /// </para> <para> The LoadBalancer evenly distributes requests across all
-    /// its registered Availability Zones that contain instances. As a result,
-    /// the client must ensure that its LoadBalancer is appropriately scaled
-    /// for each registered Availability Zone. </para> <para><b>NOTE:</b> The
-    /// new EC2 Availability Zones to be added must be in the same EC2 Region
-    /// as the Availability Zones for which the LoadBalancer was created.
-    /// </para>
+    /// <para> Adds one or more EC2 Availability Zones to the LoadBalancer. </para> <para> The LoadBalancer evenly distributes requests across all
+    /// its registered Availability Zones that contain instances. As a result, the client must ensure that its LoadBalancer is appropriately scaled
+    /// for each registered Availability Zone. </para> <para><b>NOTE:</b> The new EC2 Availability Zones to be added must be in the same EC2 Region
+    /// as the Availability Zones for which the LoadBalancer was created. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.EnableAvailabilityZonesForLoadBalancer"/>
     public class EnableAvailabilityZonesForLoadBalancerRequest : AmazonWebServiceRequest
@@ -51,11 +47,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the
-        /// LoadBalancer. The name must be unique within the client AWS account.
-        /// </param>
-        /// <param name="availabilityZones"> A list of new Availability Zones for
-        /// the LoadBalancer. Each Availability Zone must be in the same Region as
+        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
+        /// <param name="availabilityZones"> A list of new Availability Zones for the LoadBalancer. Each Availability Zone must be in the same Region as
         /// the LoadBalancer. </param>
         public EnableAvailabilityZonesForLoadBalancerRequest(string loadBalancerName, List<string> availabilityZones) 
         {
@@ -65,8 +58,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique
-        /// within the client AWS account.
+        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -86,6 +78,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             return this;
         }
             
+
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
@@ -93,8 +86,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of new Availability Zones for the LoadBalancer. Each
-        /// Availability Zone must be in the same Region as the LoadBalancer.
+        /// A list of new Availability Zones for the LoadBalancer. Each Availability Zone must be in the same Region as the LoadBalancer.
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -116,10 +108,26 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the AvailabilityZones collection
+        /// </summary>
+        /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
+        /// <returns>this instance</returns>
+        public EnableAvailabilityZonesForLoadBalancerRequest WithAvailabilityZones(IEnumerable<string> availabilityZones)
+        {
+            foreach (string element in availabilityZones)
+            {
+                this.availabilityZones.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;        
+            return this.availabilityZones.Count > 0;       
         }
     }
 }

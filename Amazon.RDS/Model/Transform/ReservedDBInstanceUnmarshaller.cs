@@ -81,6 +81,12 @@ namespace Amazon.RDS.Model.Transform
                             
                         continue;
                     }
+                    if (context.TestExpression("CurrencyCode", targetDepth))
+                    {
+                        reservedDBInstance.CurrencyCode = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                     if (context.TestExpression("DBInstanceCount", targetDepth))
                     {
                         reservedDBInstance.DBInstanceCount = IntUnmarshaller.GetInstance().Unmarshall(context);

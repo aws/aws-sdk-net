@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Gets and sets the CreateLBCookieStickinessPolicyResult property.
-        /// 
+        /// The output for the CreateLBCookieStickinessPolicy action.
         /// </summary>
         public CreateLBCookieStickinessPolicyResult CreateLBCookieStickinessPolicyResult
         {

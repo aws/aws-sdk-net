@@ -105,6 +105,12 @@ namespace Amazon.RDS.Model.Transform
                             
                         continue;
                     }
+                    if (context.TestExpression("LicenseModel", targetDepth))
+                    {
+                        dBSnapshot.LicenseModel = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

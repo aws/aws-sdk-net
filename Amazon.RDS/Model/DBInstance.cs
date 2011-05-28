@@ -21,16 +21,14 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the following
-    /// actions: </para>
+    /// <para> Contains the result of a successful invocation of the following actions: </para>
     /// <ul>
     /// <li> CreateDBInstance </li>
     /// <li> DeleteDBInstance </li>
     /// <li> ModifyDBInstance </li>
     /// 
     /// </ul>
-    /// <para>This data type is used as a response element in the
-    /// DescribeDBInstances action.</para>
+    /// <para>This data type is used as a response element in the DescribeDBInstances action.</para>
     /// </summary>
     public class DBInstance  
     {
@@ -57,9 +55,10 @@ namespace Amazon.RDS.Model
         private bool? autoMinorVersionUpgrade;
         private string readReplicaSourceDBInstanceIdentifier;
         private List<string> readReplicaDBInstanceIdentifiers = new List<string>();
+        private string licenseModel;
 
         /// <summary>
-        /// Specifies a user-supplied database identifier. This is the unique key that identifies a DB Instance.
+        /// Contains a user-supplied database identifier. This is the unique key that identifies a DB Instance.
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -87,7 +86,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the name of the compute and memory capacity class of the DB Instance.
+        /// Contains the name of the compute and memory capacity class of the DB Instance.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -199,8 +198,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the name of the initial database of this instance that was provided at create time, if one was specified when the DB Instance was
-        /// created. This same name is returned for the life of the DB Instance.
+        /// The meaning of this parameter differs according to the database engine you use. <b>MySQL</b> Contains the name of the initial database of
+        /// this instance that was provided at create time, if one was specified when the DB Instance was created. This same name is returned for the
+        /// life of the DB Instance. Type: String <b>Oracle</b> Contains the Oracle System ID (SID) of the created DB Instance.
         ///  
         /// </summary>
         public string DBName
@@ -228,7 +228,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the endpoint type.
+        /// Specifies the connection endpoint.
         ///  
         /// </summary>
         public Endpoint Endpoint
@@ -726,6 +726,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetReadReplicaDBInstanceIdentifiers()
         {
             return this.readReplicaDBInstanceIdentifiers.Count > 0;       
+        }
+
+        /// <summary>
+        /// License model information for this DB Instance.
+        ///  
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this.licenseModel; }
+            set { this.licenseModel = value; }
+        }
+
+        /// <summary>
+        /// Sets the LicenseModel property
+        /// </summary>
+        /// <param name="licenseModel">The value to set for the LicenseModel property </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithLicenseModel(string licenseModel)
+        {
+            this.licenseModel = licenseModel;
+            return this;
+        }
+            
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this.licenseModel != null;       
         }
     }
 }

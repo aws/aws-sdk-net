@@ -36,8 +36,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// A list of the <a>AppCookieStickinessPolicies</a> created with
-        /// <a>CreateAppCookieStickinessPolicy</a>.
+        /// A list of the <a>AppCookieStickinessPolicy</a> objects created with <a>CreateAppCookieStickinessPolicy</a>.
         ///  
         /// </summary>
         public List<AppCookieStickinessPolicy> AppCookieStickinessPolicies
@@ -59,15 +58,30 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the AppCookieStickinessPolicies collection
+        /// </summary>
+        /// <param name="appCookieStickinessPolicies">The values to add to the AppCookieStickinessPolicies collection </param>
+        /// <returns>this instance</returns>
+        public Policies WithAppCookieStickinessPolicies(IEnumerable<AppCookieStickinessPolicy> appCookieStickinessPolicies)
+        {
+            foreach (AppCookieStickinessPolicy element in appCookieStickinessPolicies)
+            {
+                this.appCookieStickinessPolicies.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if AppCookieStickinessPolicies property is set
         internal bool IsSetAppCookieStickinessPolicies()
         {
-            return this.appCookieStickinessPolicies.Count > 0;      
+            return this.appCookieStickinessPolicies.Count > 0;       
         }
 
         /// <summary>
-        /// A list of the <a>LBCookieStickinessPolicies</a> created with
-        /// <a>CreateAppCookieStickinessPolicy</a>.
+        /// A list of the <a>LBCookieStickinessPolicy</a> objects created with <a>CreateAppCookieStickinessPolicy</a>.
         ///  
         /// </summary>
         public List<LBCookieStickinessPolicy> LBCookieStickinessPolicies
@@ -89,6 +103,22 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the LBCookieStickinessPolicies collection
+        /// </summary>
+        /// <param name="lBCookieStickinessPolicies">The values to add to the LBCookieStickinessPolicies collection </param>
+        /// <returns>this instance</returns>
+        public Policies WithLBCookieStickinessPolicies(IEnumerable<LBCookieStickinessPolicy> lBCookieStickinessPolicies)
+        {
+            foreach (LBCookieStickinessPolicy element in lBCookieStickinessPolicies)
+            {
+                this.lBCookieStickinessPolicies.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if LBCookieStickinessPolicies property is set
         internal bool IsSetLBCookieStickinessPolicies()
         {

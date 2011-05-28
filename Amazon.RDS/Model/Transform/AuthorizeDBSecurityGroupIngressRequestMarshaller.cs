@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<AuthorizeDBSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeDBSecurityGroupIngressRequest>(authorizeDBSecurityGroupIngressRequest, "AmazonRDS");
             request.Parameters.Add("Action", "AuthorizeDBSecurityGroupIngress");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (authorizeDBSecurityGroupIngressRequest != null && authorizeDBSecurityGroupIngressRequest.IsSetDBSecurityGroupName()) 
             {
                 request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(authorizeDBSecurityGroupIngressRequest.DBSecurityGroupName));

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Transform
         {
             IRequest<DeleteDBSnapshotRequest> request = new DefaultRequest<DeleteDBSnapshotRequest>(deleteDBSnapshotRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteDBSnapshot");
-            request.Parameters.Add("Version", "2010-07-28");
+            request.Parameters.Add("Version", "2011-04-01");
             if (deleteDBSnapshotRequest != null && deleteDBSnapshotRequest.IsSetDBSnapshotIdentifier()) 
             {
                 request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(deleteDBSnapshotRequest.DBSnapshotIdentifier));

@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBParameterGroup operation.
-    /// <para> This API creates a new database parameter group. </para>
+    /// <para> Creates a new database parameter group. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBParameterGroup"/>
     public class CreateDBParameterGroupRequest : AmazonWebServiceRequest
@@ -66,8 +66,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be
-        /// applied only to a DB instance running a database engine compatible with that DB parameter group family and version. Valid Values:
-        /// <c>MySQL5.1</c> | <c>MySQL5.5</c>
+        /// applied only to a DB instance running a database engine compatible with that DB parameter group family and version.
         ///  
         /// </summary>
         public string DBParameterGroupFamily

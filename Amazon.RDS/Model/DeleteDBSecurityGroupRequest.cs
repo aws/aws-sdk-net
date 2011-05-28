@@ -25,9 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBSecurityGroup operation.
-    /// <para> This API deletes a database security group. </para>
-    /// <para><b>NOTE:</b>The specified database security group must not be
-    /// associated with any DB instances.</para>
+    /// <para> Deletes a database security group. </para> <para><b>NOTE:</b>The specified database security group must not be associated with any DB
+    /// instances.</para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DeleteDBSecurityGroup"/>
     public class DeleteDBSecurityGroupRequest : AmazonWebServiceRequest
