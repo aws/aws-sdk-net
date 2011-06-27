@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-02-28
+ *  API Version: 2011-05-15
  */
 
 using System;
@@ -30,10 +30,11 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// The Result containing the Spot Price history data.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
     public class DescribeSpotPriceHistoryResult
     {    
         private List<SpotPriceHistory> spotPriceHistoryField;
+        private string nextTokenField;
 
         /// <summary>
         /// Gets and sets the SpotPriceHistory property.
@@ -60,6 +61,26 @@ namespace Amazon.EC2.Model
         public bool IsSetSpotPriceHistory()
         {
             return (SpotPriceHistory.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the NextToken property.
+        /// The string marking the next set of results returned. Displays empty
+        /// if there are no more results to be returned.
+        /// </summary>
+        public string NextToken
+        {
+            get { return this.nextTokenField; }
+            set { this.nextTokenField = value; }
+        }
+
+        /// <summary>
+        /// Checks if NextToken property is set
+        /// </summary>
+        /// <returns>true if NextToken property is set</returns>
+        public bool IsSetNextToken()
+        {
+            return this.nextTokenField != null;
         }
 
         /// <summary>

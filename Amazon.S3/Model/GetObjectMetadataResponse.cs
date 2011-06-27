@@ -30,11 +30,21 @@ namespace Amazon.S3.Model
     /// </summary>
     public class GetObjectMetadataResponse : S3Response
     {
+        private DateTime? lastModified;
         private string etag;
         private long contentLength;
         private string contentType;
         private string versionId;
 
+        /// <summary>
+        /// Gets and sets the lastModified property.
+        /// </summary>
+        public DateTime LastModified
+        {
+            get { return this.lastModified.GetValueOrDefault(); }
+            set { this.lastModified = value; }
+        }
+        
         /// <summary>
         /// Gets and sets the ETag property.
         /// </summary>
@@ -82,6 +92,14 @@ namespace Amazon.S3.Model
                 base.Headers = value;
 
                 string hdr = null;
+                if (!String.IsNullOrEmpty(hdr = value.Get("Last-Modified")))
+                {
+                    this.LastModified = DateTime.SpecifyKind(DateTime.ParseExact(hdr,
+                                                                                 AWSSDKUtils.GMTDateFormat, 
+                                                                                 System.Globalization.CultureInfo.InvariantCulture),
+                                                             DateTimeKind.Utc);
+                }
+
                 if (!String.IsNullOrEmpty(hdr = value.Get(AWSSDKUtils.ETagHeader)))
                 {
                     this.ETag = hdr;

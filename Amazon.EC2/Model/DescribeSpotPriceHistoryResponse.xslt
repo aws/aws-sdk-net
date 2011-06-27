@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-02-28/"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-05-15/"
     exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
     <xsl:variable name="ns"
-        select="'http://ec2.amazonaws.com/doc/2011-02-28/'" />
+        select="'http://ec2.amazonaws.com/doc/2011-05-15/'" />
     <xsl:template match="ec2:DescribeSpotPriceHistoryResponse">
         <xsl:element name="DescribeSpotPriceHistoryResponse" namespace="{$ns}">
             <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -14,6 +14,9 @@
             </xsl:element>
             <xsl:element name="DescribeSpotPriceHistoryResult" namespace="{$ns}">
                 <xsl:apply-templates select="ec2:spotPriceHistorySet"/>
+                <xsl:element name="NextToken" namespace="{$ns}">
+                  <xsl:value-of select="ec2:nextToken"/>
+                </xsl:element>
             </xsl:element>
         </xsl:element>
     </xsl:template>
@@ -32,6 +35,9 @@
                 <xsl:element name="Timestamp" namespace="{$ns}">
                     <xsl:value-of select="ec2:timestamp"/>
                 </xsl:element>
+                <xsl:element name="AvailabilityZone" namespace="{$ns}">
+                  <xsl:value-of select="ec2:availabilityZone"/>
+                </xsl:element>              
             </xsl:element>
         </xsl:for-each>
     </xsl:template>

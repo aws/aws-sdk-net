@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-02-28/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-05-15/" exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-02-28/'"/>
+    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-05-15/'"/>
     <xsl:template match="ec2:MonitorInstancesResponse">
         <xsl:element name="MonitorInstancesResponse" namespace="{$ns}">
             <xsl:element name="ResponseMetadata" namespace="{$ns}">

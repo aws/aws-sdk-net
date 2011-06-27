@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-02-28
+ *  API Version: 2011-05-15
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Properties of a Launched EC2 Instance
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
     public class RunningInstance
     {    
         private string instanceIdField;
@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         private string ipAddressField;
         private bool? sourceDestCheckField;
         private List<string> groupIdField;
+        private List<string> groupNameField;
         private StateReason stateReasonField;
         private string architectureField;
         private string rootDeviceTypeField;
@@ -816,6 +817,47 @@ namespace Amazon.EC2.Model
         public bool IsSetGroupId()
         {
             return (GroupId.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the GroupName property.
+        /// A list of security groups the instance is in.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupName")]
+        public List<string> GroupName
+        {
+            get
+            {
+                if (this.groupNameField == null)
+                {
+                    this.groupNameField = new List<string>();
+                }
+                return this.groupNameField;
+            }
+            set { this.groupNameField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupName property
+        /// </summary>
+        /// <param name="list">A list of security groups the instance is in.</param>
+        /// <returns>this instance</returns>
+        public RunningInstance WithGroupName(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                GroupName.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if GroupName property is set
+        /// </summary>
+        /// <returns>true if GroupId property is set</returns>
+        public bool IsSetGroupName()
+        {
+            return (GroupName.Count > 0);
         }
 
         /// <summary>

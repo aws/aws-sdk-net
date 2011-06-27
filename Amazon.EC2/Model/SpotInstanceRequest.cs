@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-02-28
+ *  API Version: 2011-05-15
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Describes the components of a Spot Instance request.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
     public class SpotInstanceRequest
     {    
         private string spotInstanceRequestIdField;
@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         private string createTimeField;
         private string productDescriptionField;
         private List<Tag> tagField;
+        private string launchedAvailabilityZoneField;
 
         /// <summary>
         /// Gets and sets the SpotInstanceRequestId property.
@@ -543,6 +544,36 @@ namespace Amazon.EC2.Model
         public bool IsSetTag()
         {
             return (Tag.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the LaunchedAvailabilityZone property.
+        /// The Availability Zone in which the bid is launched.
+        /// </summary>
+        public string LaunchedAvailabilityZone
+        {
+            get { return this.launchedAvailabilityZoneField; }
+            set { this.launchedAvailabilityZoneField = value; }
+        }
+
+        /// <summary>
+        /// Sets the LaunchedAvailabilityZone property
+        /// </summary>
+        /// <param name="launchedAvailabilityZone">The Availability Zone in which the bid is launched.</param>
+        /// <returns>this instance</returns>
+        public SpotInstanceRequest WithLaunchedAvailabilityZone(string launchedAvailabilityZone)
+        {
+            this.launchedAvailabilityZoneField = launchedAvailabilityZone;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if LaunchedAvailabilityZone property is set
+        /// </summary>
+        /// <returns>true if LaunchedAvailabilityZone property is set</returns>
+        public bool IsSetLaunchedAvailabilityZone()
+        {
+            return this.launchedAvailabilityZoneField != null;
         }
 
     }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-02-28
+ *  API Version: 2011-05-15
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Request to describe historical pricing for Spot
     /// Instances.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
     public class DescribeSpotPriceHistoryRequest
     {    
         private string startTimeField;
@@ -38,6 +38,9 @@ namespace Amazon.EC2.Model
         private List<string> instanceTypeField;
         private List<string> productDescriptionField;
         private List<Filter> filterField;
+        private string availabilityZoneField;
+        private int? maxResultsField;
+        private string nextTokenField;
 
         /// <summary>
         /// Gets and sets the StartTime property.
@@ -234,5 +237,95 @@ namespace Amazon.EC2.Model
             return (Filter.Count > 0);
         }
 
+
+        /// <summary>
+        /// Gets and sets the AvailabilityZone property.
+        /// Filters the results by availability zone.
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
+        }
+
+        /// <summary>
+        /// Sets the AvailabilityZone property.
+        /// </summary>
+        /// <param name="availabilityZone">Filters the results by availability zone.</param>
+        /// <returns>this instance</returns>
+        public DescribeSpotPriceHistoryRequest WithAvailabilityZone(string availabilityZone)
+        {
+            this.availabilityZoneField = availabilityZone;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if AvailabilityZone property is set
+        /// </summary>
+        /// <returns>true if AvailabilityZone property is set</returns>
+        public bool IsSetAvailabilityZone()
+        {
+            return this.availabilityZoneField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the MaxResults property.
+        /// Specifies the number of rows to return.
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this.maxResultsField.GetValueOrDefault(); }
+            set { this.maxResultsField = value; }
+        }
+
+        /// <summary>
+        /// Sets the MaxResults property.
+        /// </summary>
+        /// <param name="maxResults">Specifies the number of rows to return.</param>
+        /// <returns>this instance</returns>
+        public DescribeSpotPriceHistoryRequest WithMaxResults(int maxResults)
+        {
+            this.maxResultsField = maxResults;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if MaxResults property is set
+        /// </summary>
+        /// <returns>true if MaxResults property is set</returns>
+        public bool IsSetMaxResults()
+        {
+            return this.maxResultsField.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the NextToken property.
+        /// Specifies the next set of rows to return.
+        /// </summary>
+        public string NextToken
+        {
+            get { return this.nextTokenField; }
+            set { this.nextTokenField = value; }
+        }
+
+        /// <summary>
+        /// Sets the NextToken property.
+        /// </summary>
+        /// <param name="nextToken">Specifies the next set of rows to return.</param>
+        /// <returns>this instance</returns>
+        public DescribeSpotPriceHistoryRequest WithNextToken(string nextToken)
+        {
+            this.nextTokenField = nextToken;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if NextToken property is set
+        /// </summary>
+        /// <returns>true if NextToken property is set</returns>
+        public bool IsSetNextToken()
+        {
+            return this.nextTokenField != null;
+        }
     }
 }

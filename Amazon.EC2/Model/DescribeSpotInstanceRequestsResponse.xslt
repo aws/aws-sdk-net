@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-02-28/"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-05-15/"
   exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
   <xsl:variable name="ns"
-    select="'http://ec2.amazonaws.com/doc/2011-02-28/'" />
+    select="'http://ec2.amazonaws.com/doc/2011-05-15/'" />
   <xsl:template match="ec2:DescribeSpotInstanceRequestsResponse">
     <xsl:element name="DescribeSpotInstanceRequestsResponse" namespace="{$ns}">
       <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -56,9 +56,14 @@
           <xsl:value-of select="ec2:productDescription"/>
         </xsl:element>
         <xsl:apply-templates select="ec2:tagSet" />
+        <xsl:element name="LaunchedAvailabilityZone" namespace="{$ns}">
+          <xsl:value-of select="ec2:launchedAvailabilityZone"/>
+        </xsl:element>
+
       </xsl:element>
     </xsl:for-each>
   </xsl:template>
+
   <xsl:template match="ec2:fault">
     <xsl:element name="Fault" namespace="{$ns}">
       <xsl:element name="Code" namespace="{$ns}">

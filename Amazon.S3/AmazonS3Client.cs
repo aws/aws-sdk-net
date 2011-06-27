@@ -2398,8 +2398,8 @@ namespace Amazon.S3
         /// multipart upload. Part number can be any number between 1 and
         /// 10,000, inclusive. A part number uniquely identifies a part and also 
         /// defines its position within the object being uploaded. If you 
-        /// upload a new part using the same part number that was specified in uploading a
-        /// previous part, the previously uploaded part is overwritten.
+        /// upload a new part using the same part number as an existing part, 
+        /// that part is overwritten.
         /// </para>
         /// <para>
         /// To ensure data is not corrupted traversing the network, specify the 
@@ -2493,6 +2493,116 @@ namespace Amazon.S3
 
 
         #endregion
+
+        #region CopyPart
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyPart operation. 
+        /// </summary>
+        /// <param name="request">The CopyPartRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndCopyPart.</returns>
+        public IAsyncResult BeginCopyPart(CopyPartRequest request, AsyncCallback callback, object state)
+        {
+            return invokeCopyPart(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CopyPart operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyPart.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a CopyPartResponse from S3.</returns>
+        public CopyPartResponse EndCopyPart(IAsyncResult asyncResult)
+        {
+            S3AsyncResult s3AsyncResult = asyncResult as S3AsyncResult;
+            if (s3AsyncResult == null)
+                return null;
+
+            CopyPartRequest request = s3AsyncResult.S3Request as CopyPartRequest;
+            CopyPartResponse response = endOperation<CopyPartResponse>(asyncResult);
+            response.PartNumber = request.PartNumber;
+            return response;
+        }
+
+        /// <summary>
+        /// This method creates a part in a multipart upload from an existing Amazon S3 Object.  
+        /// You must initiate a multipart upload before you can copy a part.
+        /// <para>
+        /// Your CopyPart request must include an upload ID and a part number. 
+        /// The upload ID is the ID returned by Amazon S3 in response to your 
+        /// Initiate Multipart Upload request. Part number can be any number between 1 and
+        /// 10,000, inclusive. A part number uniquely identifies a part and also 
+        /// defines its position within the object being uploaded. If you 
+        /// copy a part using the same part number as an existing part, that part is overwritten.
+        /// </para>
+        /// <para>
+        /// When you copy a part, the CopyPartResponse response contains an ETag property.
+        /// You should record this ETag property value and the part 
+        /// number. After uploading all parts, you must send a CompleteMultipartUpload
+        /// request. At that time Amazon S3 constructs a complete object by 
+        /// concatenating all the parts you uploaded, in ascending order based on 
+        /// the part numbers. The CompleteMultipartUpload request requires you to
+        /// send all the part numbers and the corresponding ETag values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">
+        /// The CopyPartRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a CopyPartResponse from S3.</returns>
+        public CopyPartResponse CopyPart(CopyPartRequest request)
+        {
+            IAsyncResult asyncResult = invokeCopyPart(request, null, null, true);
+            return EndCopyPart(asyncResult);
+        }
+
+        IAsyncResult invokeCopyPart(CopyPartRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The CopyPartRequest is null!");
+            }
+            if (!request.IsSetSourceBucket())
+            {
+                throw new ArgumentException("The Source S3 BucketName specified is null or empty!");
+            }
+            if (!request.IsSetSourceKey())
+            {
+                throw new ArgumentException("The Source Key Specified is null or empty!");
+            } 
+            if (!request.IsSetDestinationBucket())
+            {
+                throw new ArgumentException("The Destination S3 BucketName specified is null or empty!");
+            }
+            if (!request.IsSetDestinationKey())
+            {
+                throw new ArgumentException("The Destination Key Specified is null or empty!");
+            }
+            if (!request.IsSetUploadID())
+            {
+                throw new ArgumentException("The UploadId Specified is null or empty!");
+            } 
+            if (!request.IsSetPartNumber())
+            {
+                throw new ArgumentException("The PartNumber Specified is null or empty!");
+            }
+
+            ConvertCopyPart(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<CopyPartResponse>(asyncResult);
+            return asyncResult;
+        }
+
+
+        #endregion //CopyPart
 
         #region ListParts
 
@@ -4155,6 +4265,62 @@ namespace Amazon.S3
             addS3QueryParameters(request, request.BucketName);
         }
 
+        /**
+        * Convert CopyPartRequest for enable logging, to key/value pairs.
+        */
+        private void ConvertCopyPart(CopyPartRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
+            parameters[S3QueryParameter.Action] = "CopyPart";
+            parameters[S3QueryParameter.Key] = request.DestinationKey;
+            parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = string.Format("?partNumber={1}&uploadId={0}", request.UploadID, request.PartNumber);
+
+            // Add the Copy Source header
+            string sourceKey = request.SourceKey;
+            if (request.IsSetSourceVersionId())
+            {
+                sourceKey = String.Concat(
+                    sourceKey,
+                    "?versionId=",
+                    request.SourceVersionId
+                    );
+            }
+            setCopySourceHeader(webHeaders, request.SourceBucket, sourceKey);
+
+            // Add the copy range header
+            if (request.IsSetFirstByte() && request.IsSetLastByte())
+            {
+                setCopySourceRangeHeader(webHeaders, request.FirstByte, request.LastByte);
+            }
+
+            // Add the conditional copy headers to the request
+            if (request.IsSetETagToMatch())
+            {
+                setIfMatchCopyHeader(webHeaders, AWSSDKUtils.Join(request.ETagToMatch));
+            }
+            if (request.IsSetETagToNotMatch())
+            {
+                setIfNoneMatchCopyHeader(webHeaders, AWSSDKUtils.Join(request.ETagsToNotMatch));
+            }
+            if (request.IsSetModifiedSinceDate())
+            {
+                setIfModifiedSinceCopyHeader(webHeaders, request.ModifiedSinceDate);
+            }
+            if (request.IsSetUnmodifiedSinceDate())
+            {
+                setIfUnmodifiedSinceCopyHeader(webHeaders, request.UnmodifiedSinceDate);
+            }
+
+            // Add the Timeout parameter
+            parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
+
+
+            // Finally, add the S3 specific parameters and headers
+            addS3QueryParameters(request, request.DestinationBucket);
+        }
         #endregion
 
         #region Private Methods
@@ -4179,7 +4345,7 @@ namespace Amazon.S3
             T response = s3AsyncResult.FinalResponse as T;
             //s3AsyncResult.FinalResponse = null;
             return response;
-        }
+        } 
 
         void invoke<T>(S3AsyncResult s3AsyncResult) where T : S3Response, new()
         {
@@ -5028,7 +5194,11 @@ namespace Amazon.S3
             }
             else if (parameters.ContainsKey(S3QueryParameter.DestinationBucket))
             {
-                url = String.Concat(parameters[S3QueryParameter.DestinationBucket], ".", url, "/");
+                string bucketName = parameters[S3QueryParameter.DestinationBucket];
+                if(bucketName.Contains("."))
+                    url = String.Concat(url, "/", bucketName, "/");
+                else
+                    url = String.Concat(bucketName, ".", url, "/");
 
                 if (parameters.ContainsKey(S3QueryParameter.Key))
                 {
@@ -5370,6 +5540,18 @@ namespace Amazon.S3
                 source = String.Concat("/", bucket, "/", key);
             }
             headers["x-amz-copy-source"] = AmazonS3Util.UrlEncode(source, true);
+        }
+
+        /// <summary>
+        /// Sets the x-amz-copy-source-range header based on the firstByte and lastByte passed
+        /// as input.
+        /// </summary>
+        /// <param name="headers">The header collection to add the new header to</param>
+        /// <param name="firstByte">The position of the first byte to copy</param>
+        /// <param name="lastByte">The position of the last byte to copy</param>
+        void setCopySourceRangeHeader(WebHeaderCollection headers, long firstByte, long lastByte)
+        {
+            headers["x-amz-copy-source-range"] = String.Format("bytes={0}-{1}", firstByte, lastByte);
         }
 
         /// <summary>

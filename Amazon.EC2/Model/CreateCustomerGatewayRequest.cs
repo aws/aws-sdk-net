@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-02-28
+ *  API Version: 2011-05-15
  */
 
 using System;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// assigned to your network. If you don't have an ASN already, you can
     /// use a private ASN (in the 64512 - 65534 range)
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
     public class CreateCustomerGatewayRequest
     {    
         private string typeField;

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-02-28
+ *  API Version: 2011-05-15
  */
 
 using System;
@@ -65,6 +65,8 @@ namespace Amazon.EC2
         /// Activate License 
         /// </summary>
         /// <param name="request">Activate License  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Activate License  Response from the service</returns>
         /// <remarks>
         /// Activates a specific number of licenses for a 90-day period.
@@ -76,6 +78,8 @@ namespace Amazon.EC2
         /// Allocate Address 
         /// </summary>
         /// <param name="request">Allocate Address  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Allocate Address  Response from the service</returns>
         /// <remarks>
         /// The AllocateAddress operation acquires an elastic
@@ -87,6 +91,8 @@ namespace Amazon.EC2
         /// Associate Address 
         /// </summary>
         /// <param name="request">Associate Address  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Associate Address  Response from the service</returns>
         /// <remarks>
         /// The AssociateAddress operation associates an
@@ -103,6 +109,8 @@ namespace Amazon.EC2
         /// Attach Volume 
         /// </summary>
         /// <param name="request">Attach Volume  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Attach Volume  Response from the service</returns>
         /// <remarks>
         /// Attach a previously created volume to a running
@@ -114,6 +122,8 @@ namespace Amazon.EC2
         /// Authorize Security Group Ingress 
         /// </summary>
         /// <param name="request">Authorize Security Group Ingress  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Authorize Security Group Ingress  Response from the service</returns>
         /// <remarks>
         /// The AuthorizeSecurityGroupIngress operation adds
@@ -144,6 +154,8 @@ namespace Amazon.EC2
         /// Bundle Instance 
         /// </summary>
         /// <param name="request">Bundle Instance  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Bundle Instance  Response from the service</returns>
         /// <remarks>
         /// The BundleInstance operation request that an
@@ -158,6 +170,8 @@ namespace Amazon.EC2
         /// Cancel Bundle Task 
         /// </summary>
         /// <param name="request">Cancel Bundle Task  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Cancel Bundle Task  Response from the service</returns>
         /// <remarks>
         /// CancelBundleTask operation cancels a pending or
@@ -176,6 +190,8 @@ namespace Amazon.EC2
         /// Confirm Product Instance 
         /// </summary>
         /// <param name="request">Confirm Product Instance  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Confirm Product Instance  Response from the service</returns>
         /// <remarks>
         /// The ConfirmProductInstance operation returns true
@@ -196,6 +212,8 @@ namespace Amazon.EC2
         /// Create Image 
         /// </summary>
         /// <param name="request">Create Image  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Image  Response from the service</returns>
         /// <remarks>
         /// Creates an AMI that uses an Amazon EBS root
@@ -211,6 +229,8 @@ namespace Amazon.EC2
         /// Create Key Pair 
         /// </summary>
         /// <param name="request">Create Key Pair  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Key Pair  Response from the service</returns>
         /// <remarks>
         /// The CreateKeyPair operation creates a new 2048
@@ -226,6 +246,8 @@ namespace Amazon.EC2
         /// Create Placement Group 
         /// </summary>
         /// <param name="request">Create Placement Group  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Placement Group  Response from the service</returns>
         /// <remarks>
         /// The CreateKeyPair operation creates a new 2048
@@ -241,6 +263,8 @@ namespace Amazon.EC2
         /// Create Security Group 
         /// </summary>
         /// <param name="request">Create Security Group  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Security Group  Response from the service</returns>
         /// <remarks>
         /// The CreateSecurityGroup operation creates a new
@@ -260,6 +284,8 @@ namespace Amazon.EC2
         /// Create Snapshot 
         /// </summary>
         /// <param name="request">Create Snapshot  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Snapshot  Response from the service</returns>
         /// <remarks>
         /// Create a snapshot of the volume identified by
@@ -283,6 +309,8 @@ namespace Amazon.EC2
         /// Create Tags 
         /// </summary>
         /// <param name="request">Create Tags  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Tags  Response from the service</returns>
         /// <remarks>
         /// Adds or overwrites one or more tags for the specified resource or 
@@ -295,6 +323,8 @@ namespace Amazon.EC2
         /// Create Volume 
         /// </summary>
         /// <param name="request">Create Volume  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Volume  Response from the service</returns>
         /// <remarks>
         /// Initializes an empty volume of a given size
@@ -305,6 +335,8 @@ namespace Amazon.EC2
         /// Deactivate License 
         /// </summary>
         /// <param name="request">Deactivate License  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Deactivate License  Response from the service</returns>
         /// <remarks>
         /// Deactivates a specific number of licenses.
@@ -317,6 +349,8 @@ namespace Amazon.EC2
         /// Delete Key Pair 
         /// </summary>
         /// <param name="request">Delete Key Pair  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Key Pair  Response from the service</returns>
         /// <remarks>
         /// The DeleteKeyPair operation deletes a key pair.
@@ -327,6 +361,8 @@ namespace Amazon.EC2
         /// Delete Placement Group 
         /// </summary>
         /// <param name="request">Delete Placement Group  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Placement Group  Response from the service</returns>
         /// <remarks>
         /// The DeletePlacementGroup operation deletes a placement group.
@@ -337,6 +373,8 @@ namespace Amazon.EC2
         /// Delete Security Group 
         /// </summary>
         /// <param name="request">Delete Security Group  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Security Group  Response from the service</returns>
         /// <remarks>
         /// The DeleteSecurityGroup operation deletes a
@@ -357,6 +395,8 @@ namespace Amazon.EC2
         /// Delete Snapshot 
         /// </summary>
         /// <param name="request">Delete Snapshot  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Snapshot  Response from the service</returns>
         /// <remarks>
         /// Deletes the snapshot identitied by snapshotId.
@@ -367,6 +407,8 @@ namespace Amazon.EC2
         /// Delete Tags 
         /// </summary>
         /// <param name="request">Delete Tags  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Tags  Response from the service</returns>
         /// <remarks>
         /// Deletes the snapshot identitied by snapshotId.
@@ -377,6 +419,8 @@ namespace Amazon.EC2
         /// Delete Volume 
         /// </summary>
         /// <param name="request">Delete Volume  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Volume  Response from the service</returns>
         /// <remarks>
         /// Deletes a previously created volume. Once
@@ -389,6 +433,8 @@ namespace Amazon.EC2
         /// Deregister Image 
         /// </summary>
         /// <param name="request">Deregister Image  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Deregister Image  Response from the service</returns>
         /// <remarks>
         /// The DeregisterImage operation deregisters an AMI.
@@ -401,6 +447,8 @@ namespace Amazon.EC2
         /// Describe Addresses 
         /// </summary>
         /// <param name="request">Describe Addresses  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Addresses  Response from the service</returns>
         /// <remarks>
         /// The DescribeAddresses operation lists elastic IP
@@ -412,6 +460,8 @@ namespace Amazon.EC2
         /// Describe Availability Zones 
         /// </summary>
         /// <param name="request">Describe Availability Zones  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Availability Zones  Response from the service</returns>
         /// <remarks>
         /// The DescribeAvailabilityZones operation describes
@@ -431,6 +481,8 @@ namespace Amazon.EC2
         /// Describe Bundle Tasks 
         /// </summary>
         /// <param name="request">Describe Bundle Tasks  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Bundle Tasks  Response from the service</returns>
         /// <remarks>
         /// The DescribeBundleTasks operation describes in-progress
@@ -444,6 +496,8 @@ namespace Amazon.EC2
         /// Describe Licenses 
         /// </summary>
         /// <param name="request">Describe Licenses  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Licenses  Response from the service</returns>
         /// <remarks>
         /// Provides details of a user's registered licenses. Zero or more IDs
@@ -456,6 +510,8 @@ namespace Amazon.EC2
         /// Describe Placement Groups 
         /// </summary>
         /// <param name="request">Describe Placement Groups  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Placement Groups  Response from the service</returns>
         /// <remarks>
         /// Returns information about one or more PlacementGroup instances in a
@@ -467,6 +523,8 @@ namespace Amazon.EC2
         /// Describe Snapshot Attribute 
         /// </summary>
         /// <param name="request">Describe Snapshot Attribute  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Snapshot Attribute  Response from the service</returns>
         /// <remarks>
         /// Returns information about an attribute of a snapshot.
@@ -478,6 +536,8 @@ namespace Amazon.EC2
         /// Describe Image Attribute 
         /// </summary>
         /// <param name="request">Describe Image Attribute  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Image Attribute  Response from the service</returns>
         /// <remarks>
         /// The DescribeImageAttribute operation returns
@@ -491,6 +551,8 @@ namespace Amazon.EC2
         /// Describe Images 
         /// </summary>
         /// <param name="request">Describe Images  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Images  Response from the service</returns>
         /// <remarks>
         /// The DescribeImages operation returns information
@@ -545,6 +607,8 @@ namespace Amazon.EC2
         /// Describe Instances 
         /// </summary>
         /// <param name="request">Describe Instances  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Instances  Response from the service</returns>
         /// <remarks>
         /// The DescribeInstances operation returns
@@ -565,6 +629,8 @@ namespace Amazon.EC2
         /// Describe Regions 
         /// </summary>
         /// <param name="request">Describe Regions  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Regions  Response from the service</returns>
         /// <remarks>
         /// The DescribeRegions operation describes regions
@@ -578,6 +644,8 @@ namespace Amazon.EC2
         /// </summary>
         /// <param name="request">Describe Reserved Instances  request</param>
         /// <returns>Describe Reserved Instances  Response from the service</returns>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <remarks>
         /// The DescribeReservedInstances operation describes
         /// Reserved Instances
@@ -589,6 +657,8 @@ namespace Amazon.EC2
         /// Describe Reserved Instances Offerings 
         /// </summary>
         /// <param name="request">Describe Reserved Instances Offerings  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Reserved Instances Offerings  Response from the service</returns>
         /// <remarks>
         /// The DescribeReservedInstancesOfferings operation
@@ -608,6 +678,8 @@ namespace Amazon.EC2
         /// Describe Key Pairs 
         /// </summary>
         /// <param name="request">Describe Key Pairs  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Key Pairs  Response from the service</returns>
         /// <remarks>
         /// The DescribeKeyPairs operation returns information about key pairs
@@ -621,6 +693,8 @@ namespace Amazon.EC2
         /// Describe Security Groups 
         /// </summary>
         /// <param name="request">Describe Security Groups  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Security Groups  Response from the service</returns>
         /// <remarks>
         /// The DescribeSecurityGroups operation returns
@@ -636,6 +710,8 @@ namespace Amazon.EC2
         /// Describe Snapshots 
         /// </summary>
         /// <param name="request">Describe Snapshots  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Snapshots  Response from the service</returns>
         /// <remarks>
         /// Describes the indicated snapshots, or in lieu of
@@ -647,6 +723,8 @@ namespace Amazon.EC2
         /// Describe Tags 
         /// </summary>
         /// <param name="request">Describe Tags  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Tags  Response from the service</returns>
         /// <remarks>
         /// Describes the indicated snapshots, or in lieu of
@@ -658,6 +736,8 @@ namespace Amazon.EC2
         /// Describe Volumes 
         /// </summary>
         /// <param name="request">Describe Volumes  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Volumes  Response from the service</returns>
         /// <remarks>
         /// Describes the status of the indicated or, in lieu
@@ -672,6 +752,8 @@ namespace Amazon.EC2
         /// Detach Volume 
         /// </summary>
         /// <param name="request">Detach Volume  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Detach Volume  Response from the service</returns>
         /// <remarks>
         /// Detach a previously attached volume from a
@@ -683,6 +765,8 @@ namespace Amazon.EC2
         /// Disassociate Address 
         /// </summary>
         /// <param name="request">Disassociate Address  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Disassociate Address  Response from the service</returns>
         /// <remarks>
         /// The DisassociateAddress operation disassociates
@@ -699,6 +783,8 @@ namespace Amazon.EC2
         /// Get Password Data 
         /// </summary>
         /// <param name="request">Get Password Data  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Get Password Data  Response from the service</returns>
         /// <remarks>
         /// Retrieves the encrypted administrator password
@@ -711,6 +797,8 @@ namespace Amazon.EC2
         /// Get Console Output 
         /// </summary>
         /// <param name="request">Get Console Output  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Get Console Output  Response from the service</returns>
         /// <remarks>
         /// The GetConsoleOutput operation retrieves console
@@ -727,6 +815,8 @@ namespace Amazon.EC2
         /// Import Key Pair 
         /// </summary>
         /// <param name="request">Import Key Pair  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Import Key Pair  Response from the service</returns>
         /// <remarks>
         /// The GetConsoleOutput operation retrieves console
@@ -743,6 +833,8 @@ namespace Amazon.EC2
         /// Modify Snapshot Attribute 
         /// </summary>
         /// <param name="request">Modify Snapshot Attribute  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Modify Snapshot Attribute  Response from the service</returns>
         /// <remarks>
         /// Adds or remove permission settings for the
@@ -754,6 +846,8 @@ namespace Amazon.EC2
         /// Modify Image Attribute 
         /// </summary>
         /// <param name="request">Modify Image Attribute  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Modify Image Attribute  Response from the service</returns>
         /// <remarks>
         /// The ModifyImageAttribute operation modifies an
@@ -765,6 +859,8 @@ namespace Amazon.EC2
         /// Purchase Reserved Instances Offering 
         /// </summary>
         /// <param name="request">Purchase Reserved Instances Offering  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Purchase Reserved Instances Offering  Response from the service</returns>
         /// <remarks>
         /// The PurchaseReservedInstancesOffering operation
@@ -780,6 +876,8 @@ namespace Amazon.EC2
         /// Reboot Instances 
         /// </summary>
         /// <param name="request">Reboot Instances  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Reboot Instances  Response from the service</returns>
         /// <remarks>
         /// The RebootInstances operation requests a reboot
@@ -797,6 +895,8 @@ namespace Amazon.EC2
         /// Register Image 
         /// </summary>
         /// <param name="request">Register Image  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Register Image  Response from the service</returns>
         /// <remarks>
         /// The RegisterImage operation registers an AMI with
@@ -822,6 +922,8 @@ namespace Amazon.EC2
         /// Release Address 
         /// </summary>
         /// <param name="request">Release Address  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Release Address  Response from the service</returns>
         /// <remarks>
         /// The ReleaseAddress operation releases an elastic
@@ -848,6 +950,8 @@ namespace Amazon.EC2
         /// Reset Snapshot Attribute 
         /// </summary>
         /// <param name="request">Reset Snapshot Attribute  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Reset Snapshot Attribute  Response from the service</returns>
         /// <remarks>
         /// Resets permission settings for the specified
@@ -859,6 +963,8 @@ namespace Amazon.EC2
         /// Reset Image Attribute 
         /// </summary>
         /// <param name="request">Reset Image Attribute  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Reset Image Attribute  Response from the service</returns>
         /// <remarks>
         /// The ResetImageAttribute operation resets an
@@ -873,6 +979,8 @@ namespace Amazon.EC2
         /// Revoke Security Group Ingress 
         /// </summary>
         /// <param name="request">Revoke Security Group Ingress  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Revoke Security Group Ingress  Response from the service</returns>
         /// <remarks>
         /// The RevokeSecurityGroupIngress operation revokes
@@ -903,6 +1011,8 @@ namespace Amazon.EC2
         /// Run Instances 
         /// </summary>
         /// <param name="request">Run Instances  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Run Instances  Response from the service</returns>
         /// <remarks>
         /// The RunInstances operation launches a specified
@@ -956,6 +1066,8 @@ namespace Amazon.EC2
         /// Stop Instances 
         /// </summary>
         /// <param name="request">Stop Instances  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Stop Instances  Response from the service</returns>
         /// <remarks>
         /// Stops an instance that uses an Amazon EBS volume
@@ -974,6 +1086,8 @@ namespace Amazon.EC2
         /// Start Instances 
         /// </summary>
         /// <param name="request">Start Instances  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Start Instances  Response from the service</returns>
         /// <remarks>
         /// Starts an instance that uses an Amazon EBS volume as its root device.
@@ -991,6 +1105,8 @@ namespace Amazon.EC2
         /// Modify Instance Attribute 
         /// </summary>
         /// <param name="request">Modify Instance Attribute  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Modify Instance Attribute  Response from the service</returns>
         /// <remarks>
         /// Modifies an attribute of an instance.
@@ -1001,6 +1117,8 @@ namespace Amazon.EC2
         /// Reset Instance Attribute 
         /// </summary>
         /// <param name="request">Reset Instance Attribute  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Reset Instance Attribute  Response from the service</returns>
         /// <remarks>
         /// Resets an attribute of an instance to its default
@@ -1012,6 +1130,8 @@ namespace Amazon.EC2
         /// Describe Instance Attribute 
         /// </summary>
         /// <param name="request">Describe Instance Attribute  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Instance Attribute  Response from the service</returns>
         /// <remarks>
         /// Returns information about an attribute of an
@@ -1024,6 +1144,8 @@ namespace Amazon.EC2
         /// Terminate Instances 
         /// </summary>
         /// <param name="request">Terminate Instances  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Terminate Instances  Response from the service</returns>
         /// <remarks>
         /// The TerminateInstances operation shuts down one
@@ -1041,6 +1163,8 @@ namespace Amazon.EC2
         /// Monitor Instances 
         /// </summary>
         /// <param name="request">Monitor Instances  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Monitor Instances  Response from the service</returns>
         /// <remarks>
         /// Enables monitoring for a running instance.
@@ -1051,6 +1175,8 @@ namespace Amazon.EC2
         /// Unmonitor Instances 
         /// </summary>
         /// <param name="request">Unmonitor Instances  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Unmonitor Instances  Response from the service</returns>
         /// <remarks>
         /// Disables monitoring for a running instance.
@@ -1061,6 +1187,8 @@ namespace Amazon.EC2
         /// Describe Vpn Connections 
         /// </summary>
         /// <param name="request">Describe Vpn Connections  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Vpn Connections  Response from the service</returns>
         /// <remarks>
         /// Gives you information about your VPN connections.
@@ -1083,6 +1211,8 @@ namespace Amazon.EC2
         /// Describe Subnets 
         /// </summary>
         /// <param name="request">Describe Subnets  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Subnets  Response from the service</returns>
         /// <remarks>
         /// Gives you information about your subnets. You can filter the results to
@@ -1101,6 +1231,8 @@ namespace Amazon.EC2
         /// Detach Vpn Gateway 
         /// </summary>
         /// <param name="request">Detach Vpn Gateway  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Detach Vpn Gateway  Response from the service</returns>
         /// <remarks>
         /// Detaches a VPN gateway from a VPC. You do this if you're planning to
@@ -1116,6 +1248,8 @@ namespace Amazon.EC2
         /// Describe Vpcs 
         /// </summary>
         /// <param name="request">Describe Vpcs  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Vpcs  Response from the service</returns>
         /// <remarks>
         /// Gives you information about your VPCs. You can filter the results to return
@@ -1133,6 +1267,8 @@ namespace Amazon.EC2
         /// Delete Customer Gateway 
         /// </summary>
         /// <param name="request">Delete Customer Gateway  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Customer Gateway  Response from the service</returns>
         /// <remarks>
         /// Deletes a customer gateway. You must delete the VPN connection before
@@ -1147,6 +1283,8 @@ namespace Amazon.EC2
         /// Attach Vpn Gateway 
         /// </summary>
         /// <param name="request">Attach Vpn Gateway  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Attach Vpn Gateway  Response from the service</returns>
         /// <remarks>
         /// Attaches a VPN gateway to a VPC. This is the last step required to get your
@@ -1160,6 +1298,8 @@ namespace Amazon.EC2
         /// Delete Dhcp Options 
         /// </summary>
         /// <param name="request">Delete Dhcp Options  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Dhcp Options  Response from the service</returns>
         /// <remarks>
         /// Deletes a set of DHCP options that you specify. Amazon VPC returns an error if the
@@ -1172,6 +1312,8 @@ namespace Amazon.EC2
         /// Delete Subnet 
         /// </summary>
         /// <param name="request">Delete Subnet  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Subnet  Response from the service</returns>
         /// <remarks>
         /// Deletes a subnet from a VPC. You must terminate all running instances in the
@@ -1185,6 +1327,8 @@ namespace Amazon.EC2
         /// Create Vpc 
         /// </summary>
         /// <param name="request">Create Vpc  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Vpc  Response from the service</returns>
         /// <remarks>
         /// Creates a VPC with the CIDR block you specify. The smallest VPC you can create
@@ -1205,6 +1349,8 @@ namespace Amazon.EC2
         /// Create Customer Gateway 
         /// </summary>
         /// <param name="request">Create Customer Gateway  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Customer Gateway  Response from the service</returns>
         /// <remarks>
         /// Provides information to AWS about your customer gateway device.
@@ -1228,6 +1374,8 @@ namespace Amazon.EC2
         /// Create Vpn Gateway 
         /// </summary>
         /// <param name="request">Create Vpn Gateway  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Vpn Gateway  Response from the service</returns>
         /// <remarks>
         /// Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for
@@ -1242,6 +1390,8 @@ namespace Amazon.EC2
         /// Delete Vpc 
         /// </summary>
         /// <param name="request">Delete Vpc  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Vpc  Response from the service</returns>
         /// <remarks>
         /// Deletes a VPC. You must terminate all running instances and delete all
@@ -1255,6 +1405,8 @@ namespace Amazon.EC2
         /// Associate Dhcp Options 
         /// </summary>
         /// <param name="request">Associate Dhcp Options  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Associate Dhcp Options  Response from the service</returns>
         /// <remarks>
         /// Associates a set of DHCP options (that you've previously created) with the specified VPC.
@@ -1271,6 +1423,8 @@ namespace Amazon.EC2
         /// Describe Vpn Gateways 
         /// </summary>
         /// <param name="request">Describe Vpn Gateways  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Vpn Gateways  Response from the service</returns>
         /// <remarks>
         /// Gives you information about your VPN gateways. You can filter the results to return
@@ -1288,6 +1442,8 @@ namespace Amazon.EC2
         /// Create Subnet 
         /// </summary>
         /// <param name="request">Create Subnet  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Subnet  Response from the service</returns>
         /// <remarks>
         /// Creates a subnet in an existing VPC. You can create up to 20 subnets in a VPC.
@@ -1314,6 +1470,8 @@ namespace Amazon.EC2
         /// Delete Vpn Connection 
         /// </summary>
         /// <param name="request">Delete Vpn Connection  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Vpn Connection  Response from the service</returns>
         /// <remarks>
         /// Deletes a VPN connection. Use this if you want to delete a VPC and
@@ -1334,6 +1492,8 @@ namespace Amazon.EC2
         /// Delete Vpn Gateway 
         /// </summary>
         /// <param name="request">Delete Vpn Gateway  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Vpn Gateway  Response from the service</returns>
         /// <remarks>
         /// Deletes a VPN gateway. Use this when you want to delete a VPC and all
@@ -1351,6 +1511,8 @@ namespace Amazon.EC2
         /// Describe Customer Gateways 
         /// </summary>
         /// <param name="request">Describe Customer Gateways  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Customer Gateways  Response from the service</returns>
         /// <remarks>
         /// Gives you information about your customer gateways. You can filter the results to return
@@ -1368,6 +1530,8 @@ namespace Amazon.EC2
         /// Create Vpn Connection 
         /// </summary>
         /// <param name="request">Create Vpn Connection  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Vpn Connection  Response from the service</returns>
         /// <remarks>
         /// Creates a new VPN connection between an existing VPN gateway and customer
@@ -1391,6 +1555,8 @@ namespace Amazon.EC2
         /// Describe Dhcp Options 
         /// </summary>
         /// <param name="request">Describe Dhcp Options  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Dhcp Options  Response from the service</returns>
         /// <remarks>
         /// Gives you information about one or more sets of DHCP options. You can specify
@@ -1405,6 +1571,8 @@ namespace Amazon.EC2
         /// Create Dhcp Options 
         /// </summary>
         /// <param name="request">Create Dhcp Options  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Dhcp Options  Response from the service</returns>
         /// <remarks>
         /// Creates a set of DHCP options that you can then associate with one or more VPCs,
@@ -1418,6 +1586,8 @@ namespace Amazon.EC2
         /// Request Spot Instances 
         /// </summary>
         /// <param name="request">Request Spot Instances  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Request Spot Instances  Response from the service</returns>
         /// <remarks>
         /// Creates a Spot Instance request. Spot Instances are instances that automatically launch when your
@@ -1429,6 +1599,8 @@ namespace Amazon.EC2
         /// Describe Spot Instance Requests 
         /// </summary>
         /// <param name="request">Describe Spot Instance Requests  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Spot Instance Requests  Response from the service</returns>
         /// <remarks>
         /// Describes Spot Instance requests. Spot Instances are instances that automatically launch when your
@@ -1440,6 +1612,8 @@ namespace Amazon.EC2
         /// Cancel Spot Instance Requests 
         /// </summary>
         /// <param name="request">Cancel Spot Instance Requests  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Cancel Spot Instance Requests  Response from the service</returns>
         /// <remarks>
         /// Cancels Spot Instance requests. Spot Instances are instances that automatically launch when your
@@ -1451,6 +1625,8 @@ namespace Amazon.EC2
         /// Describe Spot Price History 
         /// </summary>
         /// <param name="request">Describe Spot Price History  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Spot Price History  Response from the service</returns>
         /// <remarks>
         /// Describes historical pricing for Spot Instances. Spot Instances are instances that automatically launch
@@ -1462,6 +1638,8 @@ namespace Amazon.EC2
         /// Create Spot Datafeed Subscription 
         /// </summary>
         /// <param name="request">Create Spot Datafeed Subscription  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Spot Datafeed Subscription  Response from the service</returns>
         /// <remarks>
         /// Creates the data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can
@@ -1473,6 +1651,8 @@ namespace Amazon.EC2
         /// Describe Spot Datafeed Subscription 
         /// </summary>
         /// <param name="request">Describe Spot Datafeed Subscription  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Spot Datafeed Subscription  Response from the service</returns>
         /// <remarks>
         /// Describes the data feed for Spot Instances.
@@ -1483,6 +1663,8 @@ namespace Amazon.EC2
         /// Delete Spot Datafeed Subscription 
         /// </summary>
         /// <param name="request">Delete Spot Datafeed Subscription  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Spot Datafeed Subscription  Response from the service</returns>
         /// <remarks>
         /// Deletes the data feed for Spot Instances.
@@ -1493,6 +1675,8 @@ namespace Amazon.EC2
         /// Cancel Conversion Task 
         /// </summary>
         /// <param name="request">Cancel Conversion Task  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Cancel Conversion Task  Response from the service</returns>
         /// <remarks>
         /// Cancels an active conversion task. The task can be the import of an instance or volume. The command removes all artifacts of
@@ -1504,6 +1688,8 @@ namespace Amazon.EC2
         /// Describe Conversion Tasks 
         /// </summary>
         /// <param name="request">Describe Conversion Tasks  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Conversion Tasks  Response from the service</returns>
         /// <remarks>
         /// Describes your conversion tasks. For more information, go to Importing Your Virtual Machines and Volumes into Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
@@ -1514,6 +1700,8 @@ namespace Amazon.EC2
         /// Import Instance 
         /// </summary>
         /// <param name="request">Import Instance  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Import Instance  Response from the service</returns>
         /// <remarks>
         /// Creates a new import instance task using metadata from the specified disk image. For more information, go to Importing Your Virtual Machines and Volumes into Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
@@ -1524,6 +1712,8 @@ namespace Amazon.EC2
         /// Import Volume 
         /// </summary>
         /// <param name="request">Import Volume  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Import Volume  Response from the service</returns>
         /// <remarks>
         /// Creates a new import volume task using metadata from the specified disk image. For more information, go to Importing Your Virtual Machines and Volumes into Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
@@ -1534,6 +1724,8 @@ namespace Amazon.EC2
         /// Authorize Security Group Egress 
         /// </summary>
         /// <param name="request">Authorize Security Group Egress  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Authorize Security Group Egress  Response from the service</returns>
         /// <remarks>
         /// This action applies only to security groups in a VPC; it's not supported for standard (EC2) security groups.
@@ -1556,6 +1748,8 @@ namespace Amazon.EC2
         /// Revoke Security Group Egress 
         /// </summary>
         /// <param name="request">Revoke Security Group Egress  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Revoke Security Group Egress  Response from the service</returns>
         /// <remarks>
         /// This action applies only to security groups in a VPC. It doesn't work with standard (EC2) security groups.
@@ -1576,6 +1770,8 @@ namespace Amazon.EC2
         /// Create Internet Gateway 
         /// </summary>
         /// <param name="request">Create Internet Gateway  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Internet Gateway  Response from the service</returns>
         /// <remarks>
         /// Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach
@@ -1588,6 +1784,8 @@ namespace Amazon.EC2
         /// Describe Internet Gateways 
         /// </summary>
         /// <param name="request">Describe Internet Gateways  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Internet Gateways  Response from the service</returns>
         /// <remarks>
         /// Gives you information about your Internet gateways.You can filter the results to return information only
@@ -1607,6 +1805,8 @@ namespace Amazon.EC2
         /// Delete Internet Gateway 
         /// </summary>
         /// <param name="request">Delete Internet Gateway  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Internet Gateway  Response from the service</returns>
         /// <remarks>
         /// Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC. For
@@ -1618,6 +1818,8 @@ namespace Amazon.EC2
         /// Attach Internet Gateway 
         /// </summary>
         /// <param name="request">Attach Internet Gateway  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Attach Internet Gateway  Response from the service</returns>
         /// <remarks>
         /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC. For
@@ -1630,6 +1832,8 @@ namespace Amazon.EC2
         /// Detach Internet Gateway 
         /// </summary>
         /// <param name="request">Detach Internet Gateway  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Detach Internet Gateway  Response from the service</returns>
         /// <remarks>
         /// Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC.The
@@ -1644,6 +1848,8 @@ namespace Amazon.EC2
         /// Create Route Table 
         /// </summary>
         /// <param name="request">Create Route Table  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Route Table  Response from the service</returns>
         /// <remarks>
         /// Creates a new route table within a VPC. After you create a new route table, you can add routes and
@@ -1656,6 +1862,8 @@ namespace Amazon.EC2
         /// Describe Route Tables 
         /// </summary>
         /// <param name="request">Describe Route Tables  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Route Tables  Response from the service</returns>
         /// <remarks>
         /// Gives you information about your route tables.You can filter the results to return information only about
@@ -1675,6 +1883,8 @@ namespace Amazon.EC2
         /// Delete Route Table 
         /// </summary>
         /// <param name="request">Delete Route Table  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Route Table  Response from the service</returns>
         /// <remarks>
         /// Deletes a route table from a VPC. The route table must not be associated with a subnet.You can't delete
@@ -1687,6 +1897,8 @@ namespace Amazon.EC2
         /// Associate Route Table 
         /// </summary>
         /// <param name="request">Associate Route Table  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Associate Route Table  Response from the service</returns>
         /// <remarks>
         /// Associates a subnet with a route table. The subnet and route table must be in the same VPC. This
@@ -1702,6 +1914,8 @@ namespace Amazon.EC2
         /// Replace Route Table Association 
         /// </summary>
         /// <param name="request">Replace Route Table Association  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Replace Route Table Association  Response from the service</returns>
         /// <remarks>
         /// Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet
@@ -1716,6 +1930,8 @@ namespace Amazon.EC2
         /// Disassociate Route Table 
         /// </summary>
         /// <param name="request">Disassociate Route Table  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Disassociate Route Table  Response from the service</returns>
         /// <remarks>
         /// Disassociates a subnet from a route table.
@@ -1729,6 +1945,8 @@ namespace Amazon.EC2
         /// Create Route 
         /// </summary>
         /// <param name="request">Create Route  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Route  Response from the service</returns>
         /// <remarks>
         /// Creates a new route in a route table within a VPC. The route's target can be either a gateway attached
@@ -1748,6 +1966,8 @@ namespace Amazon.EC2
         /// Replace Route 
         /// </summary>
         /// <param name="request">Replace Route  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Replace Route  Response from the service</returns>
         /// <remarks>
         /// Replaces an existing route within a route table in a VPC. For more information about route tables, go to
@@ -1759,6 +1979,8 @@ namespace Amazon.EC2
         /// Delete Route 
         /// </summary>
         /// <param name="request">Delete Route  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Route  Response from the service</returns>
         /// <remarks>
         /// Deletes a route from a route table in a VPC. For more information about route tables, go to Route Tables
@@ -1770,6 +1992,8 @@ namespace Amazon.EC2
         /// Create Network Acl 
         /// </summary>
         /// <param name="request">Create Network Acl  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Network Acl  Response from the service</returns>
         /// <remarks>
         /// Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of
@@ -1782,6 +2006,8 @@ namespace Amazon.EC2
         /// Describe Network Acls 
         /// </summary>
         /// <param name="request">Describe Network Acls  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Network Acls  Response from the service</returns>
         /// <remarks>
         /// Gives you information about the network ACLs in your VPC.You can filter the results to return information
@@ -1801,6 +2027,8 @@ namespace Amazon.EC2
         /// Delete Network Acl 
         /// </summary>
         /// <param name="request">Delete Network Acl  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Network Acl  Response from the service</returns>
         /// <remarks>
         /// Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it.You can't
@@ -1813,6 +2041,8 @@ namespace Amazon.EC2
         /// Replace Network Acl Association 
         /// </summary>
         /// <param name="request">Replace Network Acl Association  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Replace Network Acl Association  Response from the service</returns>
         /// <remarks>
         /// Changes which network ACL a subnet is associated with. By default when you create a subnet, it's
@@ -1825,6 +2055,8 @@ namespace Amazon.EC2
         /// Create Network Acl Entry 
         /// </summary>
         /// <param name="request">Create Network Acl Entry  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Create Network Acl Entry  Response from the service</returns>
         /// <remarks>
         /// Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL has a
@@ -1845,6 +2077,8 @@ namespace Amazon.EC2
         /// Replace Network Acl Entry 
         /// </summary>
         /// <param name="request">Replace Network Acl Entry  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Replace Network Acl Entry  Response from the service</returns>
         /// <remarks>
         /// Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network
@@ -1856,6 +2090,8 @@ namespace Amazon.EC2
         /// Delete Network Acl Entry 
         /// </summary>
         /// <param name="request">Delete Network Acl Entry  request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Delete Network Acl Entry  Response from the service</returns>
         /// <remarks>
         /// Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about network

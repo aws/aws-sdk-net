@@ -134,18 +134,20 @@ namespace Amazon.S3.Model
 
         #endregion
 
-        #region Properties
+
+        #region Metric properties
 
         private Guid id = Guid.NewGuid();
-        public Guid Id { get { return this.id; } }
+        internal Guid Id { get { return this.id; } }
 
-        public TimeSpan TotalRequestTime { get; set; }
-        public TimeSpan ResponseReadTime { get; set; }
-        public TimeSpan ResponseProcessingTime { get; set; }
-        public TimeSpan ResponseTime { get; set; }
-        public long BytesProcessed { get; set; }
 
-        public TimeSpan MissingTime
+        internal TimeSpan TotalRequestTime { get; set; }
+        internal TimeSpan ResponseReadTime { get; set; }
+        internal TimeSpan ResponseProcessingTime { get; set; }
+        internal TimeSpan ResponseTime { get; set; }
+        internal long BytesProcessed { get; set; }
+
+        internal TimeSpan MissingTime
         {
             get
             {

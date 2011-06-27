@@ -1324,12 +1324,11 @@ namespace Amazon.S3
         /// <para>
         /// Your UploadPart request must include an upload ID and a part number. 
         /// The upload ID is the ID returned by Amazon S3 in response to your 
-        /// Initiate Multipart Upload request. For more information on initiating a
-        /// multipart upload. Part number can be any number between 1 and
+        /// Initiate Multipart Upload request. Part number can be any number between 1 and
         /// 10,000, inclusive. A part number uniquely identifies a part and also 
         /// defines its position within the object being uploaded. If you 
-        /// upload a new part using the same part number that was specified in uploading a
-        /// previous part, the previously uploaded part is overwritten.
+        /// upload a new part using the same part number as an existing
+        /// part, that part is overwritten.
         /// </para>
         /// <para>
         /// To ensure data is not corrupted traversing the network, specify the 
@@ -1352,6 +1351,62 @@ namespace Amazon.S3
         /// </param>
         /// <returns>Returns a UploadPartResponse from S3.</returns>
         UploadPartResponse UploadPart(UploadPartRequest request);
+
+        #endregion
+
+        #region CopyPart
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyPart operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.UploadPart"/>
+        /// </summary>
+        /// <param name="request">The CopyPartRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndCopyPart.</returns>
+        IAsyncResult BeginCopyPart(CopyPartRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CopyPart operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyPart.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a CopyPartResponse from S3.</returns>
+        CopyPartResponse EndCopyPart(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// This method creates a part in a multipart upload from an existing Amazon S3 Object.  
+        /// You must initiate a multipart upload before you can copy a part.
+        /// <para>
+        /// Your CopyPart request must include an upload ID and a part number. 
+        /// The upload ID is the ID returned by Amazon S3 in response to your 
+        /// Initiate Multipart Upload request. Part number can be any number between 1 and
+        /// 10,000, inclusive. A part number uniquely identifies a part and also 
+        /// defines its position within the object being uploaded. If you 
+        /// copy a part using the same part number as an existing part, that part is overwritten.
+        /// </para>
+        /// <para>
+        /// When you copy a part, the CopyPartResponse response contains an ETag property.
+        /// You should record this ETag property value and the part 
+        /// number. After uploading all parts, you must send a CompleteMultipartUpload
+        /// request. At that time Amazon S3 constructs a complete object by 
+        /// concatenating all the parts you uploaded, in ascending order based on 
+        /// the part numbers. The CompleteMultipartUpload request requires you to
+        /// send all the part numbers and the corresponding ETag values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">
+        /// The CopyPartRequest that defines the parameters of the operation.
+        /// </param>
+        /// <returns>Returns a CopyPartResponse from S3.</returns>
+        CopyPartResponse CopyPart(CopyPartRequest request);
 
         #endregion
 

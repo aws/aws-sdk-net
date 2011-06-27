@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-02-28
+ *  API Version: 2011-05-15
  */
 
 using System;
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// the main route table. For more information about route tables, go to Route Tables in the Amazon Virtual
     /// Private Cloud User Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
     public class DeleteRouteTableRequest
     {    
         private string routeTableIdField;

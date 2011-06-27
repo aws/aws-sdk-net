@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-02-28
+ *  API Version: 2011-05-15
  */
 
 using System;
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Get Password Data Result
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
     public class GetPasswordDataResult
     {    
         private PasswordData passwordDataField;
@@ -82,6 +82,12 @@ namespace Amazon.EC2.Model
             return this.ToXML();
         }
 
+        /// <summary>
+        /// Gets the decrypted password using the RSA private key which can be found in the
+        /// PEM file for the key pair.
+        /// </summary>
+        /// <param name="rsaPrivateKey">The RSA private key from the PEM file</param>
+        /// <returns>The decrypted password</returns>
         public string GetDecryptedPassword(string rsaPrivateKey)
         {
             RSAParameters rsaParams;

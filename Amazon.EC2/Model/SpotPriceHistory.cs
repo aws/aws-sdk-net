@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-02-28
+ *  API Version: 2011-05-15
  */
 
 using System;
@@ -29,13 +29,14 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///A single Spot Price history data point.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
     public class SpotPriceHistory
     {    
         private string instanceTypeField;
         private string productDescriptionField;
         private string spotPriceField;
         private string timestampField;
+        private string availabilityZoneField;
 
         /// <summary>
         /// Gets and sets the InstanceType property.
@@ -165,5 +166,34 @@ namespace Amazon.EC2.Model
             return this.timestampField != null;
         }
 
+        /// <summary>
+        /// Gets and sets the AvailabilityZone property.
+        /// The Availability Zone.
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this.availabilityZoneField; }
+            set { this.availabilityZoneField = value; }
+        }
+
+        /// <summary>
+        /// Sets the AvailabilityZone property
+        /// </summary>
+        /// <param name="availabilityZone">The Availability Zone.</param>
+        /// <returns>this instance</returns>
+        public SpotPriceHistory WithAvailabilityZone(string availabilityZone)
+        {
+            this.availabilityZoneField = availabilityZone;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if AvailabilityZone property is set
+        /// </summary>
+        /// <returns>true if AvailabilityZone property is set</returns>
+        public bool IsSetAvailabilityZone()
+        {
+            return this.availabilityZoneField != null;
+        }
     }
 }

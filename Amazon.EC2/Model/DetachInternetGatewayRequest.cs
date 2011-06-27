@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-02-28
+ *  API Version: 2011-05-15
  */
 
 using System;
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// For more information about Amazon Virtual Private Cloud and Internet gateways, go to the Amazon Virtual
     /// Private Cloud User Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-02-28/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
     public class DetachInternetGatewayRequest
     {    
         private string internetGatewayIdField;
