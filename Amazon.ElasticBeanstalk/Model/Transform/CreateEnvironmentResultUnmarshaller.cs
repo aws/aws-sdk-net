@@ -114,6 +114,12 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                             
                         continue;
                     }
+                    if (context.TestExpression("Resources", targetDepth))
+                    {
+                        createEnvironmentResult.Resources = EnvironmentResourcesDescriptionUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -25,7 +25,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEnvironmentResources operation.
-    /// <para>Returns AWS resources for this environment. </para>
+    /// <para>Returns AWS resources for this environment.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.DescribeEnvironmentResources"/>
     public class DescribeEnvironmentResourcesRequest : AmazonWebServiceRequest

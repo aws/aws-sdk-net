@@ -129,8 +129,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The release label for the application version associated with this
-        /// event.
+        /// The release label for the application version associated with this event.
         ///  
         /// <para>
         /// <b>Constraints:</b>

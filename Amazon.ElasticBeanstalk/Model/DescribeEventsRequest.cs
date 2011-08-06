@@ -25,9 +25,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// <para>Returns list of event descriptions matching criteria.</para>
-    /// <para><b>NOTE:</b> This action returns the most recent 1,000 events
-    /// from the specified NextToken. </para>
+    /// <para>Returns list of event descriptions matching criteria up to the last 6 weeks.</para> <para><b>NOTE:</b> This action returns the most
+    /// recent 1,000 events from the specified NextToken. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.DescribeEvents"/>
     public class DescribeEventsRequest : AmazonWebServiceRequest
@@ -44,8 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string nextToken;
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to include only those associated with this application.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -82,8 +80,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to those associated with this application version.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -120,9 +117,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to those that are associated with this environment
-        /// configuration.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -159,8 +154,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to those associated with this environment.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.
         ///  
         /// </summary>
         public string EnvironmentId
@@ -188,8 +182,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to those associated with this environment.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -226,8 +219,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the described events
-        /// to include only those associated with this request ID.
+        /// If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.
         ///  
         /// </summary>
         public string RequestId
@@ -255,8 +247,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, limits the events returned from this call to include
-        /// only those with the specified severity or higher.
+        /// If specified, limits the events returned from this call to include only those with the specified severity or higher.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -293,8 +284,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to those that occur on or after this time.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.
         ///  
         /// </summary>
         public DateTime StartTime
@@ -322,9 +312,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to those that occur up to but not including the
-        /// <c>EndTime</c>.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <c>EndTime</c>.
         ///  
         /// </summary>
         public DateTime EndTime
@@ -352,8 +340,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Pagination token. If specified, the events return the next batch of
-        /// results.
+        /// Pagination token. If specified, the events return the next batch of results.
         ///  
         /// </summary>
         public string NextToken

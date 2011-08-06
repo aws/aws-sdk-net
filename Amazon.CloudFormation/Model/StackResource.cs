@@ -37,7 +37,7 @@ namespace Amazon.CloudFormation.Model
         private string description;
 
         /// <summary>
-        /// The name associated with the Stack.
+        /// The name associated with the stack.
         ///  
         /// </summary>
         public string StackName
@@ -149,7 +149,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Type of the resource. (For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+        /// Type of the resource. (For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
         /// CloudFormation User Guide</a>.)
         ///  
         /// </summary>

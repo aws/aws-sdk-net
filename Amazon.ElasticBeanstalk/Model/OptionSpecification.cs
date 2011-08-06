@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para> A specification identifying an individual configuration option.
-    /// </para>
+    /// <para> A specification identifying an individual configuration option. </para>
     /// </summary>
     public class OptionSpecification  
     {

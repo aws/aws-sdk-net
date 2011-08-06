@@ -25,16 +25,13 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackResources operation.
-    /// <para> Returns AWS resource descriptions. If <c>StackName</c> is
-    /// specified, all the associated resources that are part of the stack are
-    /// returned. If <c>PhysicalResourceId</c> is specified, all the
-    /// associated resources of the stack the resource belongs to are
-    /// returned. </para> <para> You can use <c>LogicalResourceId</c> to
-    /// filter the returned result. For more information about resources, the
-    /// <c>LogicalResourceId</c> and <c>PhysicalResourceId</c> , go to the AWS
-    /// CloudFormation User Guide. </para> <para><b>NOTE:</b> If the stack
-    /// does not exist or the stack has been successfully deleted, a
-    /// ValidationError is returned. </para>
+    /// <para> Returns AWS resource descriptions for running and deleted stacks. If <c>StackName</c> is specified, all the associated resources that
+    /// are part of the stack are returned. If <c>PhysicalResourceId</c> is specified, all the associated resources of the stack the resource
+    /// belongs to are returned. </para> <para>For deleted stacks, DescribeStackResources returns resource information for up to 90 days after the
+    /// stack has been deleted. </para> <para> You must specify <c>StackName</c> or <c>PhysicalResourceId.</c> In addition, you can specify
+    /// <c>LogicalResourceId</c> to filter the returned result. For more information about resources, the <c>LogicalResourceId</c> and
+    /// <c>PhysicalResourceId</c> , go to the AWS CloudFormation User Guide. </para> <para><b>NOTE:</b> A ValidationError is returned if you specify
+    /// both StackName and PhysicalResourceId in the same request. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStackResources"/>
     public class DescribeStackResourcesRequest : AmazonWebServiceRequest
@@ -44,7 +41,7 @@ namespace Amazon.CloudFormation.Model
         private string physicalResourceId;
 
         /// <summary>
-        /// The name or the unique identifier associated with the stack. Default: <c>null</c>
+        /// The name or the unique identifier associated with the stack. Default: There is no default value.
         ///  
         /// </summary>
         public string StackName
@@ -72,7 +69,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// The logical name of the resource specified in the template. Default: <c>null</c>
+        /// The logical name of the resource as specified in the template.<br></br> Default: There is on default value.
         ///  
         /// </summary>
         public string LogicalResourceId
@@ -102,8 +99,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// The name or unique identifier that corresponds to a physical instance ID of a resource supported by AWS CloudFormation. For example, for an
         /// Amazon Elastic Compute Cloud (EC2) instance, <c>PhysicalResourceId</c> corresponds to the <c>InstanceId</c>. You can pass the EC2
-        /// <c>InstanceId</c> to <c>DescribeStackResources</c> to find what stack the instance belongs to and what other resources are part of the
-        /// stack. Default: <c>null</c>
+        /// <c>InstanceId</c> to <c>DescribeStackResources</c> to find which stack the instance belongs to and what other resources are part of the
+        /// stack. Default: There is no default value.
         ///  
         /// </summary>
         public string PhysicalResourceId

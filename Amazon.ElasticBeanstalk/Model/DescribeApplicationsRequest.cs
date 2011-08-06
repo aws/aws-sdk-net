@@ -33,8 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<string> applicationNames = new List<string>();
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to only include those with the specified names.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.
         ///  
         /// </summary>
         public List<string> ApplicationNames

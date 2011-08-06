@@ -25,11 +25,9 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConfigurationTemplate operation.
-    /// <para>Deletes the specified configuration template.</para>
-    /// <para><b>NOTE:</b>When you launch an environment using a configuration
-    /// template, the environment gets a copy of the template. You can delete
-    /// or modify the environment's copy of the template without affecting the
-    /// running environment.</para>
+    /// <para>Deletes the specified configuration template.</para> <para><b>NOTE:</b>When you launch an environment using a configuration template,
+    /// the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running
+    /// environment.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.DeleteConfigurationTemplate"/>
     public class DeleteConfigurationTemplateRequest : AmazonWebServiceRequest

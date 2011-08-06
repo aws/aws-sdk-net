@@ -209,8 +209,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The names of the configuration templates associated with this
-        /// application.
+        /// The names of the configuration templates associated with this application.
         ///  
         /// </summary>
         public List<string> ConfigurationTemplates

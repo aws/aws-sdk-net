@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes the AWS resources in use by this environment.</para>
+    /// <para>Describes the AWS resources in use by this environment. This data is live.</para>
     /// </summary>
     public class EnvironmentResourceDescription  
     {
@@ -206,7 +206,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The load balancers in use by this environment.
+        /// The LoadBalancers in use by this environment.
         ///  
         /// </summary>
         public List<LoadBalancer> LoadBalancers

@@ -25,12 +25,9 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestEnvironmentInfo operation.
-    /// <para> Initiates a request to compile the specified type of
-    /// information of the deployed environment. </para> <para> Setting the
-    /// <c>InfoType</c> to <c>tail</c> compiles the last lines from the
-    /// application server log files of every Amazon EC2 instance in your
-    /// environment. Use RetrieveEnvironmentInfo to access the compiled
-    /// information. </para> <para>Related Topics</para>
+    /// <para> Initiates a request to compile the specified type of information of the deployed environment. </para> <para> Setting the
+    /// <c>InfoType</c> to <c>tail</c> compiles the last lines from the application server log files of every Amazon EC2 instance in your
+    /// environment. Use RetrieveEnvironmentInfo to access the compiled information. </para> <para>Related Topics</para>
     /// <ul>
     /// <li> RetrieveEnvironmentInfo </li>
     /// 
@@ -44,8 +41,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private string infoType;
 
         /// <summary>
-        /// The ID of the environment of the requested data. If no such
-        /// environment is found, returns an <c>InvalidParameterValue</c> error.
+        /// The ID of the environment of the requested data. If no such environment is found, <c>RequestEnvironmentInfo</c> returns an
+        /// <c>InvalidParameterValue</c> error.
         ///  
         /// </summary>
         public string EnvironmentId
@@ -73,8 +70,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the environment of the requested data. If no such
-        /// environment is found, returns an <c>InvalidParameterValue</c> error.
+        /// The name of the environment of the requested data. If no such environment is found, <c>RequestEnvironmentInfo</c> returns an
+        /// <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>

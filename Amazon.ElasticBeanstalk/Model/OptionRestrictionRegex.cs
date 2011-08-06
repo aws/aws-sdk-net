@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para> A regular expression representing a restriction on a string
-    /// configuration option value. </para>
+    /// <para> A regular expression representing a restriction on a string configuration option value. </para>
     /// </summary>
     public class OptionRestrictionRegex  
     {
@@ -31,8 +30,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string label;
 
         /// <summary>
-        /// The regular expression pattern that a string configuration option
-        /// value with this restriction must match.
+        /// The regular expression pattern that a string configuration option value with this restriction must match.
         ///  
         /// </summary>
         public string Pattern

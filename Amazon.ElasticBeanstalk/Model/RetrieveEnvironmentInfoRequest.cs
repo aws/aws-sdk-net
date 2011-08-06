@@ -25,8 +25,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the RetrieveEnvironmentInfo operation.
-    /// <para> Retrieves the compiled information from a
-    /// RequestEnvironmentInfo request. </para> <para>Related Topics</para>
+    /// <para> Retrieves the compiled information from a RequestEnvironmentInfo request. </para> <para>Related Topics</para>
     /// <ul>
     /// <li> RequestEnvironmentInfo </li>
     /// 
@@ -40,8 +39,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string infoType;
 
         /// <summary>
-        /// The ID of the data's environment. If no such environment is found,
-        /// returns an <c>InvalidParameterValue</c> error.
+        /// The ID of the data's environment. If no such environment is found, returns an <c>InvalidParameterValue</c> error.
         ///  
         /// </summary>
         public string EnvironmentId
@@ -69,8 +67,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the data's environment. If no such environment is found,
-        /// returns an <c>InvalidParameterValue</c> error.
+        /// The name of the data's environment. If no such environment is found, returns an <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>

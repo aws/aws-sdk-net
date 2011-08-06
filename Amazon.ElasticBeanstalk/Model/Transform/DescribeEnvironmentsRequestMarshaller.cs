@@ -47,6 +47,7 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
             if (describeEnvironmentsRequest != null) 
             {
                 List<string> environmentIdsList = describeEnvironmentsRequest.EnvironmentIds;
+
                 int environmentIdsListIndex = 1;
                 foreach (string environmentIdsListValue in environmentIdsList) 
                 { 
@@ -57,6 +58,7 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
             if (describeEnvironmentsRequest != null) 
             {
                 List<string> environmentNamesList = describeEnvironmentsRequest.EnvironmentNames;
+
                 int environmentNamesListIndex = 1;
                 foreach (string environmentNamesListValue in environmentNamesList) 
                 { 

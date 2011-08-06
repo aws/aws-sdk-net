@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para> A specification identifying an individual configuration option
-    /// along with its current value. </para>
+    /// <para> A specification identifying an individual configuration option along with its current value. </para>
     /// </summary>
     public class ConfigurationOptionSetting  
     {
@@ -113,7 +112,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>0 - 100</description>
+        ///         <description>0 - 200</description>
         ///     </item>
         /// </list>
         /// </para>

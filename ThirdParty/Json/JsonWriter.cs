@@ -217,7 +217,7 @@ namespace ThirdParty.Json.LitJson
                 writer.Write (',');
 
             if (pretty_print && ! context.ExpectingValue)
-                writer.Write ('\n');
+                writer.Write ("\r\n");
         }
 
         private void PutString (string str)

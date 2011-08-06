@@ -25,12 +25,9 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplicationVersion operation.
-    /// <para>Creates an application version for the specified
-    /// application.</para> <para><b>NOTE:</b>Once you create an application
-    /// version with a specified Amazon S3 bucket and key location, you cannot
-    /// change that Amazon S3 location. If you change the Amazon S3 location,
-    /// you receive an exception when you attempt to launch an environment
-    /// from the application version. </para>
+    /// <para>Creates an application version for the specified application.</para> <para><b>NOTE:</b>Once you create an application version with a
+    /// specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an
+    /// exception when you attempt to launch an environment from the application version. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.CreateApplicationVersion"/>
     public class CreateApplicationVersionRequest : AmazonWebServiceRequest
@@ -42,8 +39,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private bool? autoCreateApplication;
 
         /// <summary>
-        /// The name of the application. If no application is found with this
-        /// name, and <c>AutoCreateApplication</c> is <c>false</c> , returns an
+        /// The name of the application. If no application is found with this name, and <c>AutoCreateApplication</c> is <c>false</c>, returns an
         /// <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
@@ -81,10 +77,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// A label identifying this version. Constraint: Must be unique per
-        /// application. If an application version already exists with this label
-        /// for the specified application, Amazon ElasticBeanstalk returns an
-        /// <c>InvalidParameterValue</c> error.
+        /// A label identifying this version. Constraint: Must be unique per application. If an application version already exists with this label for
+        /// the specified application, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -158,15 +152,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The Amazon S3 bucket and key that identify the location of the source
-        /// bundle for this version. If data found at the Amazon S3 location
-        /// exceeds the maximum allowed source bundle size, Amazon
-        /// ElasticBeanstalk returns an <c>InvalidParameterValue</c> error.
-        /// Default: If not specified, Amazon ElasticBeanstalk uses a sample
-        /// application. If only partially specified (for example, a bucket is
-        /// provided but not the key) or if no data is found at the Amazon S3
-        /// location, Amazon ElasticBeanstalk returns an
-        /// <c>InvalidParameterCombination</c> error.
+        /// The Amazon S3 bucket and key that identify the location of the source bundle for this version. If data found at the Amazon S3 location
+        /// exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c> error. Default: If not
+        /// specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for example, a bucket is provided but not the key)
+        /// or if no data is found at the Amazon S3 location, AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error.
         ///  
         /// </summary>
         public S3Location SourceBundle
@@ -194,18 +183,12 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Determines how the system behaves if the specified application for
-        /// this version does not already exist: <enumValues> <value name="true">
-        /// <c>true</c> : Automatically creates the specified application for this
-        /// version if it does not already exist. </value> <value name="false">
-        /// <c>false</c> : Throws an <c>InvalidParameterValue</c> if the specified
-        /// application for this version does not already exist. </value>
-        /// </enumValues> <ul> <li> <c>true</c> : Automatically creates the
-        /// specified application for this release if it does not already exist.
-        /// </li> <li> <c>false</c> : Throws an <c>InvalidParameterValue</c> if
-        /// the specified application for this release does not already exist.
-        /// </li> </ul> Default: <c>false</c> Valid Values: <c>true</c> |
-        /// <c>false</c>
+        /// Determines how the system behaves if the specified application for this version does not already exist: <enumValues> <value name="true">
+        /// <c>true</c>: Automatically creates the specified application for this version if it does not already exist. </value> <value name="false">
+        /// <c>false</c>: Returns an <c>InvalidParameterValue</c> if the specified application for this version does not already exist. </value>
+        /// </enumValues> <ul> <li> <c>true</c> : Automatically creates the specified application for this release if it does not already exist. </li>
+        /// <li> <c>false</c> : Throws an <c>InvalidParameterValue</c> if the specified application for this release does not already exist. </li> </ul>
+        /// Default: <c>false</c> Valid Values: <c>true</c> | <c>false</c>
         ///  
         /// </summary>
         public bool AutoCreateApplication

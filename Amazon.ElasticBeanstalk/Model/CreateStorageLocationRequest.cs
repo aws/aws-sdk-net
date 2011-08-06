@@ -25,8 +25,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStorageLocation operation.
-    /// <para> Creates the Amazon S3 storage location for the account. </para>
-    /// <para> This location is used to store user log files. </para>
+    /// <para> Creates the Amazon S3 storage location for the account. </para> <para> This location is used to store user log files. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.CreateStorageLocation"/>
     public class CreateStorageLocationRequest : AmazonWebServiceRequest

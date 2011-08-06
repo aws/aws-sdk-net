@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes an Amazon Trigger.</para>
+    /// <para>Describes a trigger.</para>
     /// </summary>
     public class Trigger  
     {
@@ -29,7 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string name;
 
         /// <summary>
-        /// The name of the Amazon Trigger.
+        /// The name of the trigger.
         ///  
         /// </summary>
         public string Name

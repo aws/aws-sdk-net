@@ -39,6 +39,7 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
             if (describeApplicationsRequest != null) 
             {
                 List<string> applicationNamesList = describeApplicationsRequest.ApplicationNames;
+
                 int applicationNamesListIndex = 1;
                 foreach (string applicationNamesListValue in applicationNamesList) 
                 { 

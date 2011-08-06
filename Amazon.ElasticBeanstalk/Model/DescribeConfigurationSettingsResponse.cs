@@ -30,8 +30,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
         /// <summary>
         /// Gets and sets the DescribeConfigurationSettingsResult property.
-        /// The results from a request to change the configuration settings of an
-        /// environment.
+        /// The results from a request to change the configuration settings of an environment.
         /// </summary>
         public DescribeConfigurationSettingsResult DescribeConfigurationSettingsResult
         {

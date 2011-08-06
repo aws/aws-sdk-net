@@ -42,6 +42,12 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                             
                         continue;
                     }
+                    if (context.TestExpression("SolutionStackDetails/member", targetDepth))
+                    {
+                        listAvailableSolutionStacksResult.SolutionStackDetails.Add(SolutionStackDescriptionUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -30,11 +30,9 @@ namespace Amazon.ElasticBeanstalk.Model
         private string fullyQualifiedCNAME;
 
         /// <summary>
-        /// Indicates if the specified CNAME is available: <enumValues> <value
-        /// name="true"> <c>true</c> : The CNAME is available. </value> <value
-        /// name="false"> <c>true</c> : The CNAME is not available. </value>
-        /// </enumValues> <ul> <li> <c>true</c> : The CNAME is available. </li>
-        /// <li> <c>false</c> : The CNAME is not available. </li> </ul>
+        /// Indicates if the specified CNAME is available: <enumValues> <value name="true"> <c>true</c> : The CNAME is available. </value> <value
+        /// name="false"> <c>true</c> : The CNAME is not available. </value> </enumValues> <ul> <li> <c>true</c> : The CNAME is available. </li> <li>
+        /// <c>false</c> : The CNAME is not available. </li> </ul>
         ///  
         /// </summary>
         public bool Available
@@ -62,8 +60,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is
-        /// called with the provided prefix.
+        /// The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.
         ///  
         /// <para>
         /// <b>Constraints:</b>

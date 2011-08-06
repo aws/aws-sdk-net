@@ -108,8 +108,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// A label uniquely identifying the version for the associated
-        /// application.
+        /// A label uniquely identifying the version for the associated application.
         ///  
         /// <para>
         /// <b>Constraints:</b>

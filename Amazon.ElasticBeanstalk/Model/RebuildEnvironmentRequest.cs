@@ -25,9 +25,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the RebuildEnvironment operation.
-    /// <para> Deletes and recreates all of the AWS resources (for example:
-    /// the Auto Scaling group, load balancer, etc.) for a specified
-    /// environment and forces a restart. </para>
+    /// <para> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment
+    /// and forces a restart. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.RebuildEnvironment"/>
     public class RebuildEnvironmentRequest : AmazonWebServiceRequest

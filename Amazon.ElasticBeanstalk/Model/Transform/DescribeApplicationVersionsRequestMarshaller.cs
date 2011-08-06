@@ -43,6 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
             if (describeApplicationVersionsRequest != null) 
             {
                 List<string> versionLabelsList = describeApplicationVersionsRequest.VersionLabels;
+
                 int versionLabelsListIndex = 1;
                 foreach (string versionLabelsListValue in versionLabelsList) 
                 { 

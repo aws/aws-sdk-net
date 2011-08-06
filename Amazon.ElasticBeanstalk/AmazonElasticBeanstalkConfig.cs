@@ -20,7 +20,7 @@ namespace Amazon.ElasticBeanstalk
 {
 
     /// <summary>
-    /// Configuration for accessing Amazon ElasticBeanstalk service
+    /// Configuration for accessing AWS Elastic Beanstalk service
     /// </summary>
     public class AmazonElasticBeanstalkConfig : ClientConfig
     {

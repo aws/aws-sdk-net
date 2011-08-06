@@ -111,8 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If not <c>null</c> , the name of the configuration template for this
-        /// configuration set.
+        /// If not <c>null</c>, the name of the configuration template for this configuration set.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -186,8 +185,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If not <c>null</c> , the name of the environment for this
-        /// configuration set.
+        /// If not <c>null</c>, the name of the environment for this configuration set.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -224,24 +222,15 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If this configuration set is associated with an environment, this
-        /// indicates the deployment status of this configuration set:
-        /// <enumValues> <value name="null"> <c>null</c> : This configuration is
-        /// not associated with a running environment. </value> <value
-        /// name="pending"> <c>pending</c> : This is a draft configuration that is
-        /// not deployed to the associated environment but is in the process of
-        /// deploying. </value> <value name="deployed"> <c>deployed</c> : This is
-        /// the configuration that is currently deployed to the associated running
-        /// environment. </value> <value name="failed"> <c>failed</c> : This is a
-        /// draft configuration, that failed to successfully deploy. </value>
-        /// </enumValues> <ul> <li> <c>null</c> : This configuration is not
-        /// associated with a running environment. </li> <li> <c>pending</c> :
-        /// This is a draft configuration that is not deployed to the associated
-        /// environment but is in the process of deploying. </li> <li>
-        /// <c>deployed</c> : This is the configuration that is currently deployed
-        /// to the associated running environment. </li> <li> <c>failed</c> : This
-        /// is a draft configuration that failed to successfully deploy. </li>
-        /// </ul>
+        /// If this configuration set is associated with an environment, the <c>DeploymentStatus</c> parameter indicates the deployment status of this
+        /// configuration set: <enumValues> <value name="null"> <c>null</c>: This configuration is not associated with a running environment. </value>
+        /// <value name="pending"> <c>pending</c>: This is a draft configuration that is not deployed to the associated environment but is in the
+        /// process of deploying. </value> <value name="deployed"> <c>deployed</c>: This is the configuration that is currently deployed to the
+        /// associated running environment. </value> <value name="failed"> <c>failed</c>: This is a draft configuration, that failed to successfully
+        /// deploy. </value> </enumValues> <ul> <li> <c>null</c>: This configuration is not associated with a running environment. </li> <li>
+        /// <c>pending</c>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </li>
+        /// <li> <c>deployed</c>: This is the configuration that is currently deployed to the associated running environment. </li> <li> <c>failed</c>:
+        /// This is a draft configuration that failed to successfully deploy. </li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -334,8 +323,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// A list of the configuration options and their values in this
-        /// configuration set.
+        /// A list of the configuration options and their values in this configuration set.
         ///  
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings

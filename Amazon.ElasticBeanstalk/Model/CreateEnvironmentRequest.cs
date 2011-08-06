@@ -25,8 +25,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironment operation.
-    /// <para> Launches an environment for the specified application using the
-    /// specified configuration. </para>
+    /// <para> Launches an environment for the specified application using the specified configuration. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.CreateEnvironment"/>
     public class CreateEnvironmentRequest : AmazonWebServiceRequest
@@ -42,9 +41,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<OptionSpecification> optionsToRemove = new List<OptionSpecification>();
 
         /// <summary>
-        /// The name of the application that contains the version to be deployed.
-        /// If no application is found with this name, returns an
-        /// <c>InvalidParameterValue</c> error.
+        /// The name of the application that contains the version to be deployed. If no application is found with this name, <c>CreateEnvironment</c>
+        /// returns an <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -81,10 +79,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the application version to deploy. If the specified
-        /// application has no associated application versions, Amazon
-        /// ElasticBeanstalk returns an <c>InvalidParameterValue</c> error.
-        /// Default: If not specified, Amazon ElasticBeanstalk attempts to launch
+        /// The name of the application version to deploy. If the specified application has no associated application versions, AWS Elastic Beanstalk
+        /// <c>UpdateEnvironment</c> returns an <c>InvalidParameterValue</c> error. Default: If not specified, AWS Elastic Beanstalk attempts to launch
         /// the most recently created application version.
         ///  
         /// <para>
@@ -122,14 +118,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// A unique name for the deployment environment. Used in the application
-        /// URL. Constraint: Must be from 4 to 23 characters in length. The name
-        /// can contain only letters, numbers, and hyphens. It cannot start or end
-        /// with a hyphen. Constraint: This name must be unique in your account.
-        /// If the specified name already exists, Amazon ElasticBeanstalk returns
-        /// an <c>InvalidParameterValue</c> error. Default: If the CNAME parameter
-        /// is not specified, the environment name becomes part of the CNAME, and
-        /// therefore part of the visible URL for your application.
+        /// A unique name for the deployment environment. Used in the application URL. Constraint: Must be from 4 to 23 characters in length. The name
+        /// can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the
+        /// specified name already exists, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c> error. Default: If the CNAME parameter is not
+        /// specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -166,14 +158,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the configuration template to use in deployment. If no
-        /// configuration template is found with this name, Amazon
-        /// ElasticBeanstalk returns an <c>InvalidParameterValue</c> error. This
-        /// parameter is optional. You must specify either this parameter or a
-        /// <c>SolutionStackName</c>, but not both. If you specify both, Amazon
-        /// ElasticBeanstalk returns an <c>InvalidParameterCombination</c> error.
-        /// If you do not specify either, Amazon ElasticBeanstalk returns a
-        /// <c>MissingRequiredParameter</c> error.
+        /// The name of the configuration template to use in deployment. If no configuration template is found with this name, AWS Elastic Beanstalk
+        /// returns an <c>InvalidParameterValue</c> error. Conditional: You must specify either this parameter or a <c>SolutionStackName</c>, but not
+        /// both. If you specify both, AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. If you do not specify either, AWS
+        /// Elastic Beanstalk returns a <c>MissingRequiredParameter</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -210,14 +198,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// This is an alternative to specifying a configuration name. If
-        /// specified, Amazon ElasticBeanstalk sets the configuration values to
-        /// the default values associated with the specified solution stack. This
-        /// parameter is optional. You must specify either this or a
-        /// <c>TemplateName</c>, but not both. If you specify both, Amazon
-        /// ElasticBeanstalk returns an <c>InvalidParameterCombination</c> error.
-        /// If you do not specify either, Amazon ElasticBeanstalk returns a
-        /// <c>MissingRequiredParameter</c> error.
+        /// This is an alternative to specifying a configuration name. If specified, AWS Elastic Beanstalk sets the configuration values to the default
+        /// values associated with the specified solution stack. Condition: You must specify either this or a <c>TemplateName</c>, but not both. If you
+        /// specify both, AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. If you do not specify either, AWS Elastic Beanstalk
+        /// returns a <c>MissingRequiredParameter</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -254,8 +238,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, the environment attempts to use this value as the prefix
-        /// for the CNAME. If not specified, the environment uses the environment
+        /// If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified, the environment uses the environment
         /// name.
         ///  
         /// <para>
@@ -330,10 +313,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk sets the specified configuration
-        /// options to the requested value in the configuration set for the new
-        /// environment. These override the values obtained from the solution
-        /// stack or the configuration template.
+        /// If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new
+        /// environment. These override the values obtained from the solution stack or the configuration template.
         ///  
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -378,8 +359,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// A list of custom user-defined configuration options to remove from the
-        /// configuration set for this new environment.
+        /// A list of custom user-defined configuration options to remove from the configuration set for this new environment.
         ///  
         /// </summary>
         public List<OptionSpecification> OptionsToRemove

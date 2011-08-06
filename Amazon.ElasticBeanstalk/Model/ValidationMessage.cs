@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para> An error or warning for a desired configuration option value.
-    /// </para>
+    /// <para> An error or warning for a desired configuration option value. </para>
     /// </summary>
     public class ValidationMessage  
     {
@@ -61,14 +60,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// An indication of the severity of this message: <enumValues> <value
-        /// name="error"> error - This message indicates that this is not a valid
-        /// setting for an option. </value> <value name="warning"> warning - This
-        /// message is providing information you should take into account.
-        /// </value> </enumValues> <ul> <li> error - This message indicates that
-        /// this is not a valid setting for an option. </li> <li> warning - This
-        /// message is providing information you should take into account. </li>
-        /// </ul>
+        /// An indication of the severity of this message: <enumValues> <value name="error"> error: This message indicates that this is not a valid
+        /// setting for an option. </value> <value name="warning"> warning: This message is providing information you should take into account. </value>
+        /// </enumValues> <ul> <li> error: This message indicates that this is not a valid setting for an option. </li> <li> warning: This message is
+        /// providing information you should take into account. </li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>

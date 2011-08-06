@@ -96,175 +96,513 @@
     <Compile Include="Amazon.Auth\AccessControlPolicy\Resource.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ResourceFactory.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\Statement.cs" />
-    <Compile Include="Amazon.AutoScaling\AmazonAutoScaling.cs" />
-    <Compile Include="Amazon.AutoScaling\AmazonAutoScalingClient.cs" />
-    <Compile Include="Amazon.AutoScaling\AmazonAutoScalingConfig.cs" />
-    <Compile Include="Amazon.AutoScaling\AmazonAutoScalingException.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Activity.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\AdjustmentType.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Alarm.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\AlreadyExistsException.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\AutoScalingGroup.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\AutoScalingInstanceDetails.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\BlockDeviceMapping.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\CreateAutoScalingGroupRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\CreateAutoScalingGroupResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\CreateLaunchConfigurationRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\CreateLaunchConfigurationResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DeleteAutoScalingGroupRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DeleteAutoScalingGroupResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DeleteLaunchConfigurationRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DeleteLaunchConfigurationResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DeletePolicyRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DeletePolicyResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DeleteScheduledActionRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DeleteScheduledActionResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAdjustmentTypesRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAdjustmentTypesResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAdjustmentTypesResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingGroupsRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingGroupsResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingGroupsResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingInstancesRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingInstancesResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingInstancesResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeLaunchConfigurationsRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeLaunchConfigurationsResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeLaunchConfigurationsResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeMetricCollectionTypesRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeMetricCollectionTypesResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeMetricCollectionTypesResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribePoliciesRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribePoliciesResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribePoliciesResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingActivitiesRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingActivitiesResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingActivitiesResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingProcessTypesRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingProcessTypesResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingProcessTypesResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeScheduledActionsRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeScheduledActionsResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeScheduledActionsResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DisableMetricsCollectionRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DisableMetricsCollectionResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Ebs.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\EnabledMetric.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\EnableMetricsCollectionRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\EnableMetricsCollectionResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\ExecutePolicyRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\ExecutePolicyResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Instance.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\InstanceMonitoring.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\InvalidNextTokenException.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\LaunchConfiguration.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\LimitExceededException.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\MetricCollectionType.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\MetricGranularityType.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\ProcessType.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\PutScalingPolicyRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\PutScalingPolicyResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\PutScalingPolicyResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\PutScheduledUpdateGroupActionRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\PutScheduledUpdateGroupActionResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\ResourceInUseException.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\ResumeProcessesRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\ResumeProcessesResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\ScalingActivityInProgressException.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\ScalingPolicy.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\ScheduledUpdateGroupAction.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\SetDesiredCapacityRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\SetDesiredCapacityResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\SetInstanceHealthRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\SetInstanceHealthResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\SuspendedProcess.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\SuspendProcessesRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\SuspendProcessesResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\TerminateInstanceInAutoScalingGroupRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\TerminateInstanceInAutoScalingGroupResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\TerminateInstanceInAutoScalingGroupResult.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ActivityUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\AdjustmentTypeUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\AlarmUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\AutoScalingGroupUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\AutoScalingInstanceDetailsUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\BlockDeviceMappingUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateAutoScalingGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateAutoScalingGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateLaunchConfigurationRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateLaunchConfigurationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteAutoScalingGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteAutoScalingGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteLaunchConfigurationRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteLaunchConfigurationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeletePolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeletePolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteScheduledActionRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteScheduledActionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAdjustmentTypesRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAdjustmentTypesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAdjustmentTypesResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingGroupsRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingGroupsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingGroupsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingInstancesRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingInstancesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingInstancesResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingActivitiesRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingActivitiesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingActivitiesResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingProcessTypesRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingProcessTypesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingProcessTypesResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScheduledActionsRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScheduledActionsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScheduledActionsResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DisableMetricsCollectionRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DisableMetricsCollectionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\EbsUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\EnabledMetricUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\EnableMetricsCollectionRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\EnableMetricsCollectionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ExecutePolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ExecutePolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\InstanceMonitoringUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\InstanceUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\LaunchConfigurationUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\MetricCollectionTypeUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\MetricGranularityTypeUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ProcessTypeUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScheduledUpdateGroupActionRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScheduledUpdateGroupActionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ResumeProcessesRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ResumeProcessesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ScalingPolicyUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ScheduledUpdateGroupActionUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SetDesiredCapacityRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SetDesiredCapacityResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SetInstanceHealthRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SetInstanceHealthResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SuspendedProcessUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SuspendProcessesRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SuspendProcessesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\TerminateInstanceInAutoScalingGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\TerminateInstanceInAutoScalingGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\TerminateInstanceInAutoScalingGroupResultUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\UpdateAutoScalingGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\UpdateAutoScalingGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\UpdateAutoScalingGroupRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\UpdateAutoScalingGroupResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\AmazonAutoScaling.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\AmazonAutoScalingClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\AmazonAutoScalingConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\AmazonAutoScalingException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Activity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\AdjustmentType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Alarm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\AlreadyExistsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\AutoScalingGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\AutoScalingInstanceDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\BlockDeviceMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\CreateAutoScalingGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\CreateAutoScalingGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\CreateLaunchConfigurationRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\CreateLaunchConfigurationResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeleteAutoScalingGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeleteAutoScalingGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeleteLaunchConfigurationRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeleteLaunchConfigurationResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeletePolicyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeletePolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeleteScheduledActionRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeleteScheduledActionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAdjustmentTypesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAdjustmentTypesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAdjustmentTypesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingGroupsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingGroupsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingGroupsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingInstancesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingInstancesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingInstancesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeLaunchConfigurationsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeLaunchConfigurationsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeLaunchConfigurationsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeMetricCollectionTypesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeMetricCollectionTypesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeMetricCollectionTypesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribePoliciesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribePoliciesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribePoliciesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingActivitiesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingActivitiesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingActivitiesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingProcessTypesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingProcessTypesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeScalingProcessTypesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeScheduledActionsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeScheduledActionsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeScheduledActionsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DisableMetricsCollectionRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DisableMetricsCollectionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Ebs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\EnabledMetric.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\EnableMetricsCollectionRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\EnableMetricsCollectionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\ExecutePolicyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\ExecutePolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Instance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\InstanceMonitoring.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\InvalidNextTokenException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\LaunchConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\LimitExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\MetricCollectionType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\MetricGranularityType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\ProcessType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\PutScalingPolicyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\PutScalingPolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\PutScalingPolicyResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\PutScheduledUpdateGroupActionRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\PutScheduledUpdateGroupActionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\ResourceInUseException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\ResumeProcessesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\ResumeProcessesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\ScalingActivityInProgressException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\ScalingPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\ScheduledUpdateGroupAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\SetDesiredCapacityRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\SetDesiredCapacityResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\SetInstanceHealthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\SetInstanceHealthResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\SuspendedProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\SuspendProcessesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\SuspendProcessesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\TerminateInstanceInAutoScalingGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\TerminateInstanceInAutoScalingGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\TerminateInstanceInAutoScalingGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\ActivityUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\AdjustmentTypeUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\AlarmUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\AutoScalingGroupUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\AutoScalingInstanceDetailsUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\BlockDeviceMappingUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateAutoScalingGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateAutoScalingGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateLaunchConfigurationRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateLaunchConfigurationResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteAutoScalingGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteAutoScalingGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteLaunchConfigurationRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteLaunchConfigurationResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeletePolicyRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeletePolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteScheduledActionRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteScheduledActionResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAdjustmentTypesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAdjustmentTypesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAdjustmentTypesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingGroupsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingGroupsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingGroupsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingInstancesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingInstancesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingInstancesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingActivitiesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingActivitiesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingActivitiesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingProcessTypesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingProcessTypesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingProcessTypesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScheduledActionsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScheduledActionsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScheduledActionsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DisableMetricsCollectionRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DisableMetricsCollectionResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\EbsUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\EnabledMetricUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\EnableMetricsCollectionRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\EnableMetricsCollectionResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\ExecutePolicyRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\ExecutePolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\InstanceMonitoringUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\InstanceUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\LaunchConfigurationUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\MetricCollectionTypeUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\MetricGranularityTypeUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\ProcessTypeUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScheduledUpdateGroupActionRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScheduledUpdateGroupActionResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\ResumeProcessesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\ResumeProcessesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\ScalingPolicyUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\ScheduledUpdateGroupActionUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\SetDesiredCapacityRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\SetDesiredCapacityResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\SetInstanceHealthRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\SetInstanceHealthResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\SuspendedProcessUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\SuspendProcessesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\SuspendProcessesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\TerminateInstanceInAutoScalingGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\TerminateInstanceInAutoScalingGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\TerminateInstanceInAutoScalingGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\UpdateAutoScalingGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\UpdateAutoScalingGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\UpdateAutoScalingGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\UpdateAutoScalingGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.CloudFormation\AmazonCloudFormation.cs" />
     <Compile Include="Amazon.CloudFormation\AmazonCloudFormationClient.cs" />
     <Compile Include="Amazon.CloudFormation\AmazonCloudFormationConfig.cs" />
@@ -296,6 +634,9 @@
     <Compile Include="Amazon.CloudFormation\Model\DescribeStackEventsResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\DescribeStackResourceRequest.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\DescribeStackResourceResponse.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\DescribeStackResourceResult.cs" />
     <Compile Include="Amazon.CloudFormation\Model\DescribeStackResourcesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -326,6 +667,12 @@
     <Compile Include="Amazon.CloudFormation\Model\LimitExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\ListStackResourcesRequest.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\ListStackResourcesResponse.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\ListStackResourcesResult.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\ListStacksRequest.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\ListStacksResponse.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\ListStacksResult.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Output.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Parameter.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Stack.cs">
@@ -337,6 +684,9 @@
     <Compile Include="Amazon.CloudFormation\Model\StackResource.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\StackResourceDetail.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\StackResourceSummary.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\StackSummary.cs" />
     <Compile Include="Amazon.CloudFormation\Model\TemplateParameter.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Transform\CreateStackRequestMarshaller.cs">
       <SubType>Code</SubType>
@@ -362,6 +712,9 @@
     <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackEventsResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackResourceRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackResourceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackResourceResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackResourcesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -389,14 +742,23 @@
     <Compile Include="Amazon.CloudFormation\Model\Transform\GetTemplateResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStackResourcesRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStackResourcesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStackResourcesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStacksRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStacksResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStacksResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Transform\OutputUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Transform\ParameterUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Transform\StackEventUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\Transform\StackResourceDetailUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Transform\StackResourceSummaryUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Transform\StackResourceUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\Transform\StackSummaryUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Transform\StackUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -407,6 +769,7 @@
     <Compile Include="Amazon.CloudFormation\Model\ValidateTemplateRequest.cs" />
     <Compile Include="Amazon.CloudFormation\Model\ValidateTemplateResponse.cs" />
     <Compile Include="Amazon.CloudFormation\Model\ValidateTemplateResult.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\ValidationErrorException.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFront.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontClient.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontConfig.cs" />
@@ -562,9 +925,7 @@
     <Compile Include="Amazon.EC2\Model\ActivateLicenseRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ActivateLicenseResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Address.cs" />
-    <Compile Include="Amazon.EC2\Model\AllocateAddressRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\AllocateAddressRequest.cs" />
     <Compile Include="Amazon.EC2\Model\AllocateAddressResponse.cs" />
     <Compile Include="Amazon.EC2\Model\AllocateAddressResult.cs" />
     <Compile Include="Amazon.EC2\Model\AssociateAddressRequest.cs" />
@@ -575,34 +936,24 @@
     <Compile Include="Amazon.EC2\Model\AssociateRouteTableRequest.cs" />
     <Compile Include="Amazon.EC2\Model\AssociateRouteTableResponse.cs" />
     <Compile Include="Amazon.EC2\Model\AssociateRouteTableResult.cs" />
-    <Compile Include="Amazon.EC2\Model\AttachInternetGatewayRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\AttachInternetGatewayRequest.cs" />
     <Compile Include="Amazon.EC2\Model\AttachInternetGatewayResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Attachment.cs" />
     <Compile Include="Amazon.EC2\Model\AttachVolumeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\AttachVolumeResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\AttachVolumeResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\AttachVolumeResult.cs" />
     <Compile Include="Amazon.EC2\Model\AttachVpnGatewayRequest.cs" />
     <Compile Include="Amazon.EC2\Model\AttachVpnGatewayResponse.cs" />
     <Compile Include="Amazon.EC2\Model\AttachVpnGatewayResult.cs" />
     <Compile Include="Amazon.EC2\Model\AuthorizeSecurityGroupEgressRequest.cs" />
     <Compile Include="Amazon.EC2\Model\AuthorizeSecurityGroupEgressResponse.cs" />
     <Compile Include="Amazon.EC2\Model\AuthorizeSecurityGroupIngressRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\AuthorizeSecurityGroupIngressResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\AvailabilityZone.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\AuthorizeSecurityGroupIngressResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\AvailabilityZone.cs" />
     <Compile Include="Amazon.EC2\Model\BlockDeviceMapping.cs" />
     <Compile Include="Amazon.EC2\Model\BundleInstanceRequest.cs" />
     <Compile Include="Amazon.EC2\Model\BundleInstanceResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\BundleInstanceResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\BundleInstanceResult.cs" />
     <Compile Include="Amazon.EC2\Model\BundleTask.cs" />
     <Compile Include="Amazon.EC2\Model\BundleTaskError.cs" />
     <Compile Include="Amazon.EC2\Model\CancelBundleTaskRequest.cs" />
@@ -615,63 +966,43 @@
     <Compile Include="Amazon.EC2\Model\CancelSpotInstanceRequestsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CancelSpotInstanceRequestsResult.cs" />
     <Compile Include="Amazon.EC2\Model\ConfirmProductInstanceRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\ConfirmProductInstanceResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\ConfirmProductInstanceResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\ConfirmProductInstanceResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\ConfirmProductInstanceResult.cs" />
     <Compile Include="Amazon.EC2\Model\ConsoleOutput.cs" />
     <Compile Include="Amazon.EC2\Model\ConversionTaskType.cs" />
     <Compile Include="Amazon.EC2\Model\CreateCustomerGatewayRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateCustomerGatewayResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\CreateCustomerGatewayResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateCustomerGatewayResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateDhcpOptionsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateDhcpOptionsResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\CreateDhcpOptionsResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateDhcpOptionsResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateImageRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateImageResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateImageResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateInternetGatewayRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\CreateInternetGatewayResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateInternetGatewayResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateInternetGatewayResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateKeyPairRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateKeyPairResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateKeyPairResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateNetworkAclEntryRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\CreateNetworkAclEntryResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateNetworkAclEntryResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateNetworkAclRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateNetworkAclResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateNetworkAclResult.cs" />
-    <Compile Include="Amazon.EC2\Model\CreatePlacementGroupRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\CreatePlacementGroupRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreatePlacementGroupResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateRouteRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateRouteResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\CreateRouteTableRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateRouteTableRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateRouteTableResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateRouteTableResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSecurityGroupRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSecurityGroupResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSecurityGroupResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSnapshotRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\CreateSnapshotResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\CreateSnapshotResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateSnapshotResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateSnapshotResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSpotDatafeedSubscriptionRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSpotDatafeedSubscriptionResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateSpotDatafeedSubscriptionResult.cs" />
@@ -682,26 +1013,18 @@
     <Compile Include="Amazon.EC2\Model\CreateTagsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVolumePermission.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVolumeRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\CreateVolumeResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateVolumeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVolumeResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVpcRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\CreateVpcResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateVpcResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVpcResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVpnConnectionRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVpnConnectionResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVpnConnectionResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVpnGatewayRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVpnGatewayResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\CreateVpnGatewayResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\CustomerGateway.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateVpnGatewayResult.cs" />
+    <Compile Include="Amazon.EC2\Model\CustomerGateway.cs" />
     <Compile Include="Amazon.EC2\Model\DeactivateLicenseRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeactivateLicenseResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteCustomerGatewayRequest.cs" />
@@ -710,22 +1033,14 @@
     <Compile Include="Amazon.EC2\Model\DeleteDhcpOptionsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteInternetGatewayRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteInternetGatewayResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DeleteKeyPairRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DeleteKeyPairRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteKeyPairResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteNetworkAclEntryRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteNetworkAclEntryResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DeleteNetworkAclRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\DeleteNetworkAclResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DeleteNetworkAclRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DeleteNetworkAclResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeletePlacementGroupRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\DeletePlacementGroupResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DeletePlacementGroupResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteRouteRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteRouteResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteRouteTableRequest.cs" />
@@ -733,51 +1048,31 @@
     <Compile Include="Amazon.EC2\Model\DeleteSecurityGroupRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteSecurityGroupResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteSnapshotRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\DeleteSnapshotResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\DeleteSpotDatafeedSubscriptionRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DeleteSnapshotResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DeleteSpotDatafeedSubscriptionRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteSpotDatafeedSubscriptionResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteSubnetRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\DeleteSubnetResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DeleteSubnetResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteTags.cs" />
-    <Compile Include="Amazon.EC2\Model\DeleteTagsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DeleteTagsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteTagsResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DeleteVolumeRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DeleteVolumeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteVolumeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteVpcRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteVpcResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteVpnConnectionRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteVpnConnectionResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DeleteVpnGatewayRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\DeleteVpnGatewayResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DeleteVpnGatewayRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DeleteVpnGatewayResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeregisterImageRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeregisterImageResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeAddressesRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\DescribeAddressesResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeAddressesRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeAddressesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeAddressesResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeAvailabilityZonesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeAvailabilityZonesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeAvailabilityZonesResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeBundleTasksRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeBundleTasksRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeBundleTasksResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeBundleTasksResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeConversionTasksRequest.cs" />
@@ -786,9 +1081,7 @@
     <Compile Include="Amazon.EC2\Model\DescribeCustomerGatewaysRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeCustomerGatewaysResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeCustomerGatewaysResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeDhcpOptionsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeDhcpOptionsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeDhcpOptionsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeDhcpOptionsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeImageAttributeRequest.cs" />
@@ -797,13 +1090,9 @@
     <Compile Include="Amazon.EC2\Model\DescribeImagesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeImagesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeImagesResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeInstanceAttributeRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeInstanceAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeInstanceAttributeResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeInstanceAttributeResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeInstanceAttributeResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeInstancesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeInstancesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeInstancesResult.cs" />
@@ -813,32 +1102,20 @@
     <Compile Include="Amazon.EC2\Model\DescribeKeyPairsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeKeyPairsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeKeyPairsResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeLicensesRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeLicensesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeLicensesResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeLicensesResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeLicensesResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeNetworkAclsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeNetworkAclsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeNetworkAclsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribePlacementGroupsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribePlacementGroupsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribePlacementGroupsResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeRegionsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\DescribeRegionsResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeRegionsRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeRegionsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeRegionsResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesResponse.cs" />
@@ -847,36 +1124,24 @@
     <Compile Include="Amazon.EC2\Model\DescribeRouteTablesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeRouteTablesResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSecurityGroupsRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeSecurityGroupsResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeSecurityGroupsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSecurityGroupsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSnapshotAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSnapshotAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSnapshotAttributeResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeSnapshotsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeSnapshotsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSnapshotsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSnapshotsResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeSpotDatafeedSubscriptionRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeSpotDatafeedSubscriptionRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSpotDatafeedSubscriptionResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeSpotDatafeedSubscriptionResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\DescribeSpotInstanceRequestsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeSpotDatafeedSubscriptionResult.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeSpotInstanceRequestsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSpotInstanceRequestsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSpotInstanceRequestsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSpotPriceHistoryRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSpotPriceHistoryResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSpotPriceHistoryResult.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeSubnetsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeSubnetsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSubnetsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeSubnetsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeTagsRequest.cs" />
@@ -893,21 +1158,15 @@
     <Compile Include="Amazon.EC2\Model\DescribeVpnConnectionsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVpnGatewaysRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVpnGatewaysResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DescribeVpnGatewaysResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeVpnGatewaysResult.cs" />
     <Compile Include="Amazon.EC2\Model\DetachInternetGatewayRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DetachInternetGatewayResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DetachVolumeRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\DetachVolumeResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DetachVolumeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DetachVolumeResult.cs" />
     <Compile Include="Amazon.EC2\Model\DetachVpnGatewayRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DetachVpnGatewayResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\DhcpConfiguration.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DhcpConfiguration.cs" />
     <Compile Include="Amazon.EC2\Model\DhcpOptions.cs" />
     <Compile Include="Amazon.EC2\Model\DisassociateAddressRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DisassociateAddressResponse.cs" />
@@ -915,40 +1174,26 @@
     <Compile Include="Amazon.EC2\Model\DisassociateRouteTableResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DiskImageDescriptionType.cs" />
     <Compile Include="Amazon.EC2\Model\DiskImageDetailType.cs" />
-    <Compile Include="Amazon.EC2\Model\DiskImageType.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DiskImageType.cs" />
     <Compile Include="Amazon.EC2\Model\DiskImageVolumeDescriptionType.cs" />
-    <Compile Include="Amazon.EC2\Model\DiskImageVolumeType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\EbsBlockDevice.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\DiskImageVolumeType.cs" />
+    <Compile Include="Amazon.EC2\Model\EbsBlockDevice.cs" />
     <Compile Include="Amazon.EC2\Model\EC2Constants.cs" />
-    <Compile Include="Amazon.EC2\Model\Error.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\Error.cs" />
     <Compile Include="Amazon.EC2\Model\ErrorResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\Filter.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\Filter.cs" />
     <Compile Include="Amazon.EC2\Model\GetConsoleOutputRequest.cs" />
     <Compile Include="Amazon.EC2\Model\GetConsoleOutputResponse.cs" />
     <Compile Include="Amazon.EC2\Model\GetConsoleOutputResult.cs" />
     <Compile Include="Amazon.EC2\Model\GetPasswordDataRequest.cs" />
     <Compile Include="Amazon.EC2\Model\GetPasswordDataResponse.cs" />
     <Compile Include="Amazon.EC2\Model\GetPasswordDataResult.cs" />
-    <Compile Include="Amazon.EC2\Model\Icmp.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\Icmp.cs" />
     <Compile Include="Amazon.EC2\Model\Image.cs" />
     <Compile Include="Amazon.EC2\Model\ImageAttribute.cs" />
     <Compile Include="Amazon.EC2\Model\ImportInstanceLaunchSpecificationType.cs" />
     <Compile Include="Amazon.EC2\Model\ImportInstanceRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\ImportInstanceResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\ImportInstanceResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ImportInstanceResult.cs" />
     <Compile Include="Amazon.EC2\Model\ImportInstanceTaskDetailsType.cs" />
     <Compile Include="Amazon.EC2\Model\ImportInstanceVolumeDetailItemType.cs" />
@@ -956,28 +1201,20 @@
     <Compile Include="Amazon.EC2\Model\ImportKeyPairResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ImportKeyPairResult.cs" />
     <Compile Include="Amazon.EC2\Model\ImportVolumeRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\ImportVolumeResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\ImportVolumeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ImportVolumeResult.cs" />
-    <Compile Include="Amazon.EC2\Model\ImportVolumeTaskDetailsType.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\ImportVolumeTaskDetailsType.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceAttribute.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceBlockDeviceMapping.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceBlockDeviceMappingParameter.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceEbsBlockDevice.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceEbsBlockDeviceParameter.cs" />
-    <Compile Include="Amazon.EC2\Model\InstanceLicense.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\InstanceLicense.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceLicenseSpecification.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceMonitoring.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceState.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceStateChange.cs" />
-    <Compile Include="Amazon.EC2\Model\InternetGateway.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\InternetGateway.cs" />
     <Compile Include="Amazon.EC2\Model\InternetGatewayAttachment.cs" />
     <Compile Include="Amazon.EC2\Model\IpPermission.cs" />
     <Compile Include="Amazon.EC2\Model\IpPermissionSpecification.cs" />
@@ -985,13 +1222,9 @@
     <Compile Include="Amazon.EC2\Model\LaunchPermission.cs" />
     <Compile Include="Amazon.EC2\Model\LaunchSpecification.cs" />
     <Compile Include="Amazon.EC2\Model\License.cs" />
-    <Compile Include="Amazon.EC2\Model\LicenseCapacity.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\LicenseCapacity.cs" />
     <Compile Include="Amazon.EC2\Model\ModifyImageAttributeRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\ModifyImageAttributeResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\ModifyImageAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ModifyInstanceAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ModifyInstanceAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ModifySnapshotAttributeRequest.cs" />
@@ -1015,18 +1248,12 @@
     <Compile Include="Amazon.EC2\Model\RebootInstancesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Region.cs" />
     <Compile Include="Amazon.EC2\Model\RegisterImageRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\RegisterImageResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\RegisterImageResponse.cs" />
     <Compile Include="Amazon.EC2\Model\RegisterImageResult.cs" />
-    <Compile Include="Amazon.EC2\Model\ReleaseAddressRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\ReleaseAddressRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ReleaseAddressResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ReplaceNetworkAclAssociationRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\ReplaceNetworkAclAssociationResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\ReplaceNetworkAclAssociationResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ReplaceNetworkAclAssociationResult.cs" />
     <Compile Include="Amazon.EC2\Model\ReplaceNetworkAclEntryRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ReplaceNetworkAclEntryResponse.cs" />
@@ -1037,74 +1264,48 @@
     <Compile Include="Amazon.EC2\Model\ReplaceRouteTableAssociationResult.cs" />
     <Compile Include="Amazon.EC2\Model\RequestSpotInstancesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\RequestSpotInstancesResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\RequestSpotInstancesResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\RequestSpotInstancesResult.cs" />
     <Compile Include="Amazon.EC2\Model\Reservation.cs" />
     <Compile Include="Amazon.EC2\Model\ReservedInstances.cs" />
     <Compile Include="Amazon.EC2\Model\ReservedInstancesOffering.cs" />
-    <Compile Include="Amazon.EC2\Model\ResetImageAttributeRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\ResetImageAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ResetImageAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ResetInstanceAttributeRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\ResetInstanceAttributeResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\ResetInstanceAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ResetSnapshotAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ResetSnapshotAttributeResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\ResourceTag.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\ResourceTag.cs" />
     <Compile Include="Amazon.EC2\Model\ResponseMetadata.cs" />
     <Compile Include="Amazon.EC2\Model\RevokeSecurityGroupEgressRequest.cs" />
     <Compile Include="Amazon.EC2\Model\RevokeSecurityGroupEgressResponse.cs" />
     <Compile Include="Amazon.EC2\Model\RevokeSecurityGroupIngressRequest.cs" />
     <Compile Include="Amazon.EC2\Model\RevokeSecurityGroupIngressResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\Route.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\Route.cs" />
     <Compile Include="Amazon.EC2\Model\RouteTable.cs" />
     <Compile Include="Amazon.EC2\Model\RouteTableAssociation.cs" />
     <Compile Include="Amazon.EC2\Model\RunInstancesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\RunInstancesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\RunInstancesResult.cs" />
     <Compile Include="Amazon.EC2\Model\RunningInstance.cs" />
-    <Compile Include="Amazon.EC2\Model\S3Storage.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\S3Storage.cs" />
     <Compile Include="Amazon.EC2\Model\SecurityGroup.cs" />
     <Compile Include="Amazon.EC2\Model\Snapshot.cs" />
     <Compile Include="Amazon.EC2\Model\SnapshotAttribute.cs" />
     <Compile Include="Amazon.EC2\Model\SpotDatafeedSubscription.cs" />
-    <Compile Include="Amazon.EC2\Model\SpotInstanceRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\SpotInstanceRequest.cs" />
     <Compile Include="Amazon.EC2\Model\SpotInstanceStateFault.cs" />
     <Compile Include="Amazon.EC2\Model\SpotPriceHistory.cs" />
     <Compile Include="Amazon.EC2\Model\StartInstancesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\StartInstancesResponse.cs" />
-    <Compile Include="Amazon.EC2\Model\StartInstancesResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\StateReason.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\StartInstancesResult.cs" />
+    <Compile Include="Amazon.EC2\Model\StateReason.cs" />
     <Compile Include="Amazon.EC2\Model\StopInstancesRequest.cs" />
-    <Compile Include="Amazon.EC2\Model\StopInstancesResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\StopInstancesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\StopInstancesResult.cs" />
     <Compile Include="Amazon.EC2\Model\Storage.cs" />
-    <Compile Include="Amazon.EC2\Model\Subnet.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\Tag.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Model\TagType.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.EC2\Model\Subnet.cs" />
+    <Compile Include="Amazon.EC2\Model\Tag.cs" />
+    <Compile Include="Amazon.EC2\Model\TagType.cs" />
     <Compile Include="Amazon.EC2\Model\TerminateInstancesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\TerminateInstancesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\TerminateInstancesResult.cs" />
@@ -1178,6 +1379,7 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\EnvironmentDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\EnvironmentInfoDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\EnvironmentResourceDescription.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\EnvironmentResourcesDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\EventDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Instance.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\InvalidParameterCombinationException.cs" />
@@ -1186,7 +1388,9 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\ListAvailableSolutionStacksRequest.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\ListAvailableSolutionStacksResponse.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\ListAvailableSolutionStacksResult.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\Listener.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\LoadBalancer.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\LoadBalancerDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\MissingRequiredParameterException.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\OptionRestrictionRegex.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\OptionSpecification.cs" />
@@ -1201,8 +1405,11 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\RetrieveEnvironmentInfoResult.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\S3Location.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\S3SubscriptionRequiredException.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\SolutionStackDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\SourceBundleDeletionException.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\SourceConfiguration.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\SwapEnvironmentCNAMEsRequest.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\SwapEnvironmentCNAMEsResponse.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\TerminateEnvironmentRequest.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\TerminateEnvironmentResponse.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\TerminateEnvironmentResult.cs" />
@@ -1267,12 +1474,15 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\EnvironmentDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\EnvironmentInfoDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\EnvironmentResourceDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\EnvironmentResourcesDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\EventDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\InstanceUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\LaunchConfigurationUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\ListAvailableSolutionStacksRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\ListAvailableSolutionStacksResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\ListAvailableSolutionStacksResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\ListenerUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\LoadBalancerDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\LoadBalancerUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\OptionRestrictionRegexUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\RebuildEnvironmentRequestMarshaller.cs" />
@@ -1285,6 +1495,9 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\RetrieveEnvironmentInfoResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\RetrieveEnvironmentInfoResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\S3LocationUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\SolutionStackDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\SwapEnvironmentCNAMEsRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\SwapEnvironmentCNAMEsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\TerminateEnvironmentRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\TerminateEnvironmentResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Transform\TerminateEnvironmentResultUnmarshaller.cs" />
@@ -2110,282 +2323,124 @@
     <Compile Include="Amazon.Runtime\Internal\Util\StringUtils.cs" />
     <Compile Include="Amazon.Runtime\ResponseMetadata.cs" />
     <Compile Include="Amazon.Runtime\SignatureException.cs" />
-    <Compile Include="Amazon.S3\AmazonS3.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\AmazonS3.cs" />
     <Compile Include="Amazon.S3\AmazonS3Client.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.S3\AmazonS3Config.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\AmazonS3Exception.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\AmazonS3Config.cs" />
+    <Compile Include="Amazon.S3\AmazonS3Exception.cs" />
     <Compile Include="Amazon.S3\Model\AbortMultipartUploadRequest.cs" />
     <Compile Include="Amazon.S3\Model\AbortMultipartUploadResponse.cs" />
-    <Compile Include="Amazon.S3\Model\CompleteMultipartUploadRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\CompleteMultipartUploadResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\CopyObjectRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\CopyObjectResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\Model\CompleteMultipartUploadRequest.cs" />
+    <Compile Include="Amazon.S3\Model\CompleteMultipartUploadResponse.cs" />
     <Compile Include="Amazon.S3\Model\CopyPartRequest.cs" />
     <Compile Include="Amazon.S3\Model\CopyPartResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteBucketPolicyRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\DeleteBucketPolicyResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\DeleteBucketRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\DeleteBucketResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\Model\DeleteBucketPolicyRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketPolicyResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteRequest.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteResponse.cs" />
-    <Compile Include="Amazon.S3\Model\DeleteObjectRequest.cs">
+    <Compile Include="Amazon.S3\Model\GetBucketPolicyRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketPolicyResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketVersioningRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketVersioningResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketWebsiteRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketWebsiteResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetNotificationConfigurationRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetNotificationConfigurationResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetPreSignedUrlRequest.cs" />
+    <Compile Include="Amazon.S3\Model\InitiateMultipartUploadRequest.cs" />
+    <Compile Include="Amazon.S3\Model\InitiateMultipartUploadResponse.cs" />
+    <Compile Include="Amazon.S3\Model\ListMultipartUploadsRequest.cs" />
+    <Compile Include="Amazon.S3\Model\ListMultipartUploadsResponse.cs" />
+    <Compile Include="Amazon.S3\Model\ListPartsRequest.cs" />
+    <Compile Include="Amazon.S3\Model\ListPartsResponse.cs" />
+    <Compile Include="Amazon.S3\Model\ListVersionsRequest.cs" />
+    <Compile Include="Amazon.S3\Model\ListVersionsResponse.cs" />
+    <Compile Include="Amazon.S3\Model\MultiPartUpload.cs" />
+    <Compile Include="Amazon.S3\Model\NotificationConfigurationList.cs" />
+    <Compile Include="Amazon.S3\Model\PartDetail.cs" />
+    <Compile Include="Amazon.S3\Model\PartEtag.cs" />
+    <Compile Include="Amazon.S3\Model\PartStreamWrapper.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketPolicyRequest.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketWebsiteRequest.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketWebsiteResponse.cs" />
+    <Compile Include="Amazon.S3\Model\ResponseHeaderOverrides.cs" />
+    <Compile Include="Amazon.S3\Model\S3AccessControlList.cs" />
+    <Compile Include="Amazon.S3\Model\S3Bucket.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.S3\Model\DeleteObjectResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\DisableBucketLoggingRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\DisableBucketLoggingResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\EnableBucketLoggingRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\EnableBucketLoggingResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\Model\S3BucketLoggingConfig.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteObjectRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteObjectResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DisableBucketLoggingResponse.cs" />
+    <Compile Include="Amazon.S3\Model\EnableBucketLoggingRequest.cs" />
+    <Compile Include="Amazon.S3\Model\S3Error.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketLoggingRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketLoggingResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DisableBucketLoggingRequest.cs" />
+    <Compile Include="Amazon.S3\Model\EnableBucketLoggingResponse.cs" />
+    <Compile Include="Amazon.S3\Model\S3ObjectVersion.cs" />
+    <Compile Include="Amazon.S3\Model\S3BucketVersioningConfig.cs" />
+    <Compile Include="Amazon.S3\Model\SetBucketVersioningRequest.cs" />
+    <Compile Include="Amazon.S3\Model\SetBucketVersioningResponse.cs" />
+    <Compile Include="Amazon.S3\Model\SetNotificationConfigurationRequest.cs" />
+    <Compile Include="Amazon.S3\Model\SetNotificationConfigurationResponse.cs" />
+    <Compile Include="Amazon.S3\Model\TopicConfiguration.cs" />
+    <Compile Include="Amazon.S3\Model\TransferProgressArgs.cs" />
+    <Compile Include="Amazon.S3\Model\Tuple.cs" />
+    <Compile Include="Amazon.S3\Model\S3Enumerations.cs" />
+    <Compile Include="Amazon.S3\Model\CopyObjectRequest.cs" />
+    <Compile Include="Amazon.S3\Model\CopyObjectResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetACLRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetACLResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketLocationRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.S3\Model\GetBucketLocationResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\GetBucketLoggingRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\GetBucketLoggingResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketPolicyRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\GetBucketPolicyResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketVersioningRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\GetBucketVersioningResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\GetBucketWebsiteRequest.cs" />
-    <Compile Include="Amazon.S3\Model\GetBucketWebsiteResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetNotificationConfigurationRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\GetNotificationConfigurationResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\Model\GetBucketLocationResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetObjectMetadataRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetObjectMetadataResponse.cs" />
-    <Compile Include="Amazon.S3\Model\GetObjectRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\GetObjectResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\GetPreSignedUrlRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\InitiateMultipartUploadRequest.cs" />
-    <Compile Include="Amazon.S3\Model\InitiateMultipartUploadResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\ListBucketsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\Model\GetObjectRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetObjectResponse.cs" />
+    <Compile Include="Amazon.S3\Model\S3Grant.cs" />
+    <Compile Include="Amazon.S3\Model\S3Grantee.cs" />
+    <Compile Include="Amazon.S3\Model\ListObjectsRequest.cs" />
+    <Compile Include="Amazon.S3\Model\ListBucketsRequest.cs" />
     <Compile Include="Amazon.S3\Model\ListBucketsResponse.cs" />
-    <Compile Include="Amazon.S3\Model\ListMultipartUploadsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\ListMultipartUploadsResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\ListObjectsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\ListObjectsResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\ListPartsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\ListPartsResponse.cs" />
-    <Compile Include="Amazon.S3\Model\ListVersionsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\ListVersionsResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\MultiPartUpload.cs" />
-    <Compile Include="Amazon.S3\Model\NotificationConfigurationList.cs" />
-    <Compile Include="Amazon.S3\Model\Owner.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\PartDetail.cs" />
-    <Compile Include="Amazon.S3\Model\PartEtag.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\PartStreamWrapper.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\PutBucketPolicyRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\PutBucketRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\PutBucketResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\PutBucketWebsiteRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\PutBucketWebsiteResponse.cs" />
+    <Compile Include="Amazon.S3\Model\ListObjectsResponse.cs" />
+    <Compile Include="Amazon.S3\Model\Owner.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketRequest.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketResponse.cs" />
     <Compile Include="Amazon.S3\Model\PutObjectRequest.cs" />
-    <Compile Include="Amazon.S3\Model\PutObjectResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\ResponseHeaderOverrides.cs" />
-    <Compile Include="Amazon.S3\Model\S3AccessControlList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\S3Bucket.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\S3BucketLoggingConfig.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\S3BucketVersioningConfig.cs" />
-    <Compile Include="Amazon.S3\Model\S3Enumerations.cs" />
-    <Compile Include="Amazon.S3\Model\S3Error.cs" />
-    <Compile Include="Amazon.S3\Model\S3Grant.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\S3Grantee.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\S3Object.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\S3ObjectVersion.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\S3Request.cs" />
-    <Compile Include="Amazon.S3\Model\S3Response.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\SetACLRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\SetACLResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\SetBucketVersioningRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\SetBucketVersioningResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\SetNotificationConfigurationRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\SetNotificationConfigurationResponse.cs" />
-    <Compile Include="Amazon.S3\Model\TopicConfiguration.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\TransferProgressArgs.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\Tuple.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\UploadPartRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\UploadPartResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Model\WebsiteConfiguration.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\BaseDownloadRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\AbortMultipartUploadsCommand.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\BaseCommand.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\DownloadCommand.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\Executer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\MultipartUploadCommand.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\OpenStreamCommand.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\SimpleUploadCommand.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\TransferAsyncResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\Internal\UploadDirectoryCommand.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\Model\PutObjectResponse.cs" />
+    <Compile Include="Amazon.S3\Model\S3Object.cs" />
+    <Compile Include="Amazon.S3\Model\S3Response.cs" />
+    <Compile Include="Amazon.S3\Model\UploadPartRequest.cs" />
+    <Compile Include="Amazon.S3\Model\UploadPartResponse.cs" />
+    <Compile Include="Amazon.S3\Model\WebsiteConfiguration.cs" />
+    <Compile Include="Amazon.S3\Transfer\BaseDownloadRequest.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\AbortMultipartUploadsCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\BaseCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\DownloadCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\Executer.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\MultipartUploadCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\OpenStreamCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\SimpleUploadCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\TransferAsyncResult.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\UploadDirectoryCommand.cs" />
     <Compile Include="Amazon.S3\Transfer\TransferUtility.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityConfig.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityConfig.cs" />
     <Compile Include="Amazon.S3\Transfer\TransferUtilityDownloadRequest.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityOpenStreamRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityUploadDirectoryRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityOpenStreamRequest.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityUploadDirectoryRequest.cs" />
     <Compile Include="Amazon.S3\Transfer\TransferUtilityUploadRequest.cs" />
-    <Compile Include="Amazon.S3\Util\AmazonS3Util.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.S3\Util\S3Constants.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Amazon.S3\Util\S3Constants.cs" />
+    <Compile Include="Amazon.S3\Util\AmazonS3Util.cs" />
+    <Compile Include="Amazon.S3\Model\S3Request.cs" />
+    <Compile Include="Amazon.S3\Model\SetACLRequest.cs" />
+    <Compile Include="Amazon.S3\Model\SetACLResponse.cs" />
     <Compile Include="Amazon.SimpleDB\AmazonSimpleDB.cs" />
     <Compile Include="Amazon.SimpleDB\AmazonSimpleDBClient.cs" />
     <Compile Include="Amazon.SimpleDB\AmazonSimpleDBConfig.cs" />
@@ -2615,12 +2670,104 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\AllocateAddressResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\AssociateAddressResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\AttachVolumeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\AuthorizeSecurityGroupIngressResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\BundleInstanceResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CancelBundleTaskResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ConfirmProductInstanceResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateKeyPairResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateSecurityGroupResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateSnapshotResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateVolumeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteKeyPairResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteSecurityGroupResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteSnapshotResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteVolumeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeregisterImageResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeAddressesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeAvailabilityZonesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeBundleTasksResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeImageAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeImagesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeInstancesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeKeyPairsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeRegionsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeReservedInstancesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSecurityGroupsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSnapshotsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVolumesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DetachVolumeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DisassociateAddressResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\GetConsoleOutputResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ModifyImageAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\MonitorInstancesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\PurchaseReservedInstancesOfferingResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\RebootInstancesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\RegisterImageResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ReleaseAddressResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ResetImageAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\RevokeSecurityGroupIngressResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\RunInstancesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\TerminateInstancesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\UnmonitorInstancesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\ListBucketsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\GetBucketLocationResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\GetACLResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\S3ErrorResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\GetBucketLoggingResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\CopyObjectResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\ListObjectsResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront\Model\CreateDistributionResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront\Model\GetDistributionConfigResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront\Model\GetDistributionInfoResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront\Model\ListDistributionsResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront\Model\SetDistributionConfigResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\AssociateDhcpOptionsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\AttachVpnGatewayResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateCustomerGatewayResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateDhcpOptionsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateSubnetResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateVpcResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateVpnConnectionResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateVpnGatewayResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteCustomerGatewayResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteDhcpOptionsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteSubnetResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteVpcResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteVpnConnectionResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteVpnGatewayResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeCustomerGatewaysResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeDhcpOptionsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSnapshotAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSubnetsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVpcsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVpnConnectionsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVpnGatewaysResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DetachVpnGatewayResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\GetPasswordDataResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ModifySnapshotAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ResetSnapshotAttributeResponse.xslt" />
     <EmbeddedResource Include="amazonaws.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateImageResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeInstanceAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ModifyInstanceAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ResetInstanceAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\StartInstancesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\StopInstancesResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\CancelSpotInstanceRequestsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateSpotDatafeedSubscriptionResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteSpotDatafeedSubscriptionResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSpotDatafeedSubscriptionResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSpotInstanceRequestsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSpotPriceHistoryResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\RequestSpotInstancesResponse.xslt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.CloudFront\Model\CreateOriginAccessIdentityResponse.xslt" />
@@ -2644,150 +2791,76 @@
     <EmbeddedResource Include="Amazon.SimpleDB\Model\ResponseTransformer.xslt" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Amazon.S3\Model\GetBucketVersioningResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.S3\Model\ListVersionsResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="awssdk.dll.snk" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.SimpleNotificationService\Model\ResponseTransformer.xslt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Amazon.CloudFront\Model\PostInvalidationResponse.xslt" />
-    <EmbeddedResource Include="Amazon.CloudFront\Model\GetInvalidationListResponse.xslt" />
-    <EmbeddedResource Include="Amazon.CloudFront\Model\GetInvalidationResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\GetNotificationConfigurationResponse.xslt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.EC2\Model\ActivateLicenseResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\AllocateAddressResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\AssociateAddressResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\AssociateDhcpOptionsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\AssociateRouteTableResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\AttachInternetGatewayResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\AttachVolumeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\AttachVpnGatewayResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\AuthorizeSecurityGroupEgressResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\AuthorizeSecurityGroupIngressResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\BundleInstanceResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CancelBundleTaskResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CancelConversionTaskResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CancelSpotInstanceRequestsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ConfirmProductInstanceResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateCustomerGatewayResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateDhcpOptionsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateImageResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateInternetGatewayResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateKeyPairResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateNetworkAclEntryResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateNetworkAclResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\CreatePlacementGroupResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateRouteResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateRouteTableResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateSecurityGroupResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateSnapshotResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateSpotDatafeedSubscriptionResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateSubnetResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateTagsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateVolumeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateVpcResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateVpnConnectionResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateVpnGatewayResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\DeactivateLicenseResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteCustomerGatewayResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteDhcpOptionsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeletePlacementGroupResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeLicensesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribePlacementGroupsResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.CloudFront\Model\PostInvalidationResponse.xslt" />
+    <EmbeddedResource Include="Amazon.CloudFront\Model\GetInvalidationListResponse.xslt" />
+    <EmbeddedResource Include="Amazon.CloudFront\Model\GetInvalidationResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateTagsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteTagsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeTagsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ImportKeyPairResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\CompleteMultipartUploadResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\InitiateMultipartUploadResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\ListMultipartUploadsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\ListPartsResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\CancelConversionTaskResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeConversionTasksResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ImportInstanceResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ImportVolumeResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\AssociateRouteTableResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateInternetGatewayResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateNetworkAclResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateRouteTableResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeInternetGatewaysResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeNetworkAclsResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeRouteTablesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ReplaceNetworkAclAssociationResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ReplaceRouteTableAssociationResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\AttachInternetGatewayResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\AuthorizeSecurityGroupEgressResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateNetworkAclEntryResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateRouteResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\DeleteInternetGatewayResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteKeyPairResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\DeleteNetworkAclEntryResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\DeleteNetworkAclResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeletePlacementGroupResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\DeleteRouteResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\DeleteRouteTableResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteSecurityGroupResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteSnapshotResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteSpotDatafeedSubscriptionResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteSubnetResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteTagsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteVolumeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteVpcResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteVpnConnectionResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeleteVpnGatewayResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DeregisterImageResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeAddressesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeAvailabilityZonesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeBundleTasksResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeConversionTasksResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeCustomerGatewaysResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeDhcpOptionsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeImageAttributeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeImagesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeInstanceAttributeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeInstancesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeInternetGatewaysResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeKeyPairsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeLicensesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeNetworkAclsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribePlacementGroupsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeRegionsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeReservedInstancesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeRouteTablesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSecurityGroupsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSnapshotAttributeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSnapshotsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSpotDatafeedSubscriptionResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSpotInstanceRequestsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSpotPriceHistoryResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeSubnetsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeTagsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVolumesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVpcsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVpnConnectionsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVpnGatewaysResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\DetachInternetGatewayResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DetachVolumeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DetachVpnGatewayResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DisassociateAddressResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\DisassociateRouteTableResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\GetConsoleOutputResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\GetPasswordDataResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ImportInstanceResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ImportKeyPairResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ImportVolumeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ModifyImageAttributeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ModifyInstanceAttributeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ModifySnapshotAttributeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\MonitorInstancesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\PurchaseReservedInstancesOfferingResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\RebootInstancesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\RegisterImageResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ReleaseAddressResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ReplaceNetworkAclAssociationResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\ReplaceNetworkAclEntryResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\ReplaceRouteResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ReplaceRouteTableAssociationResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\RequestSpotInstancesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ResetImageAttributeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ResetInstanceAttributeResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\ResetSnapshotAttributeResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\RevokeSecurityGroupEgressResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\RevokeSecurityGroupIngressResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\RunInstancesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\StartInstancesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\StopInstancesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\TerminateInstancesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\UnmonitorInstancesResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\CompleteMultipartUploadResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\CopyObjectResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\GetACLResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\GetBucketLocationResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\GetBucketLoggingResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\GetBucketVersioningResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Amazon.S3\Model\GetBucketWebsiteResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\GetNotificationConfigurationResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\InitiateMultipartUploadResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\ListBucketsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\ListMultipartUploadsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\ListObjectsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\ListPartsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\ListVersionsResponse.xslt" />
-    <EmbeddedResource Include="Amazon.S3\Model\S3ErrorResponse.xslt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.S3\Model\CopyPartResponse.xslt" />

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes an Amazon Elastic Load Balancer.</para>
+    /// <para>Describes a LoadBalancer.</para>
     /// </summary>
     public class LoadBalancer  
     {
@@ -29,7 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string name;
 
         /// <summary>
-        /// The name of the Amazon Elastic Load Balancer.
+        /// The name of the LoadBalancer.
         ///  
         /// </summary>
         public string Name

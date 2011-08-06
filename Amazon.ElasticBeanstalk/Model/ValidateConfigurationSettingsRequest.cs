@@ -25,11 +25,9 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the ValidateConfigurationSettings operation.
-    /// <para> Takes a set of configuration settings and either a
-    /// configuration template or environment, and determines whether those
-    /// values are valid. </para> <para> This action returns a list of
-    /// messages indicating any errors or warnings associated with the
-    /// selection of option values. </para>
+    /// <para> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are
+    /// valid. </para> <para> This action returns a list of messages indicating any errors or warnings associated with the selection of option
+    /// values. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.ValidateConfigurationSettings"/>
     public class ValidateConfigurationSettingsRequest : AmazonWebServiceRequest
@@ -40,8 +38,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
 
         /// <summary>
-        /// The name of the application that the configuration template or
-        /// environment belongs to.
+        /// The name of the application that the configuration template or environment belongs to.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -78,8 +75,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the configuration template to validate the settings
-        /// against. You cannot specify both this and an environment name.
+        /// The name of the configuration template to validate the settings against. Condition: You cannot specify both this and an environment name.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -116,8 +112,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the environment to validate the settings against. You
-        /// cannot specify both this and a configuration template name.
+        /// The name of the environment to validate the settings against. Condition: You cannot specify both this and a configuration template name.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -30,8 +30,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
         /// <summary>
         /// Gets and sets the RetrieveEnvironmentInfoResult property.
-        /// Result message containing a description of the requested environment
-        /// info.
+        /// Result message containing a description of the requested environment info.
         /// </summary>
         public RetrieveEnvironmentInfoResult RetrieveEnvironmentInfoResult
         {

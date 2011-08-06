@@ -34,8 +34,9 @@ namespace Amazon.CloudFormation.Model
         private string templateURL;
 
         /// <summary>
-        /// Structure containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS CloudFormation User Guide</a>.)
+        /// String containing the template body. (For more information, go to the <a
+        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass
+        /// <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -72,8 +73,9 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Location of file containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS CloudFormation User Guide</a>.)
+        /// Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For
+        /// more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User
+        /// Guide</a>. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
         /// <b>Constraints:</b>

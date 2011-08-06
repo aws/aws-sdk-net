@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>The results from a request to change the configuration settings
-    /// of an environment.</para>
+    /// <para>The results from a request to change the configuration settings of an environment.</para>
     /// </summary>
     public class DescribeConfigurationSettingsResult  
     {
@@ -30,7 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<ConfigurationSettingsDescription> configurationSettings = new List<ConfigurationSettingsDescription>();
 
         /// <summary>
-        /// A list of <a>ConfigurationSettingsDescription</a> .
+        /// A list of <a>ConfigurationSettingsDescription</a>.
         ///  
         /// </summary>
         public List<ConfigurationSettingsDescription> ConfigurationSettings

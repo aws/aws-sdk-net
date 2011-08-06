@@ -25,16 +25,11 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEnvironment operation.
-    /// <para> Updates the environment description, deploys a new application
-    /// version, updates the configuration settings to an entirely new
-    /// configuration template, or updates select configuration option values
-    /// in the running environment. </para> <para> Attempting to update both
-    /// the release and configuration is not allowed and Amazon
-    /// ElasticBeanstalk throws an <c>InvalidParameterCombination</c> error.
-    /// </para> <para> When updating the configuration settings to a new
-    /// template or individual settings, a draft configuration is created and
-    /// DescribeConfigurationSettings for this environment returns two setting
-    /// descriptions with different <c>DeploymentStatus</c> values. </para>
+    /// <para> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new
+    /// configuration template, or updates select configuration option values in the running environment. </para> <para> Attempting to update both
+    /// the release and configuration is not allowed and AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. </para> <para>
+    /// When updating the configuration settings to a new template or individual settings, a draft configuration is created and
+    /// DescribeConfigurationSettings for this environment returns two setting descriptions with different <c>DeploymentStatus</c> values. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.UpdateEnvironment"/>
     public class UpdateEnvironmentRequest : AmazonWebServiceRequest
@@ -48,9 +43,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<OptionSpecification> optionsToRemove = new List<OptionSpecification>();
 
         /// <summary>
-        /// The ID of the environment to update. If no environment with this ID
-        /// exists, Amazon ElasticBeanstalk returns an
-        /// <c>InvalidParameterValue</c> error.
+        /// The ID of the environment to update. If no environment with this ID exists, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c>
+        /// error.
         ///  
         /// </summary>
         public string EnvironmentId
@@ -78,8 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the environment to update. If no environment with this
-        /// name exists, Amazon ElasticBeanstalk returns an
+        /// The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an
         /// <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
@@ -117,8 +110,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If this parameter is specified, Amazon ElasticBeanstalk deploys the
-        /// named application version to the environment. If no such application
+        /// If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application
         /// version is found, returns an <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
@@ -156,10 +148,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If this parameter is specified, Amazon ElasticBeanstalk deploys this
-        /// configuration template to the environment. If no such configuration
-        /// template is found, Amazon ElasticBeanstalk returns an
-        /// <c>InvalidParameterValue</c> error.
+        /// If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration
+        /// template is found, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -196,8 +186,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If this parameter is specified, Amazon ElasticBeanstalk updates the
-        /// description of this environment.
+        /// If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -234,8 +223,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk updates the configuration set
-        /// associated with the running environment and sets the specified
+        /// If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified
         /// configuration options to the requested value.
         ///  
         /// </summary>
@@ -281,8 +269,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// A list of custom user-defined configuration options to remove from the
-        /// configuration set for this environment.
+        /// A list of custom user-defined configuration options to remove from the configuration set for this environment.
         ///  
         /// </summary>
         public List<OptionSpecification> OptionsToRemove

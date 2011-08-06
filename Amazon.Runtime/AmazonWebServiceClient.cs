@@ -259,6 +259,13 @@ namespace Amazon.Runtime
                 {
                     // Abort the unsuccessful request
                     webRequest.Abort();
+
+                    // If it is a keep alive error then attempt a retry
+                    if (we != null && retries <= config.MaxErrorRetry && we.Status == WebExceptionStatus.KeepAliveFailure)
+                    {
+                        pauseExponentially(retries);
+                        return;
+                    }
                     throw new AmazonServiceException(we);
                 }
                 statusCode = httpErrorResponse.StatusCode;
@@ -333,6 +340,12 @@ namespace Amazon.Runtime
              */
             if (statusCode == HttpStatusCode.InternalServerError ||
                 statusCode == HttpStatusCode.ServiceUnavailable)
+            {
+                return true;
+            }
+
+            if (errorResponseException.InnerException is WebException && 
+                (((WebException)(errorResponseException.InnerException)).Status == WebExceptionStatus.KeepAliveFailure))
             {
                 return true;
             }

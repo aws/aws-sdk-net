@@ -25,10 +25,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConfigurationTemplate operation.
-    /// <para> Updates the specified configuration template to have the
-    /// specified properties or configuration option values. </para>
-    /// <para><b>NOTE:</b> If a property (for example, ApplicationName ) is
-    /// not provided, its value remains unchanged. To clear such properties,
+    /// <para> Updates the specified configuration template to have the specified properties or configuration option values. </para>
+    /// <para><b>NOTE:</b> If a property (for example, ApplicationName) is not provided, its value remains unchanged. To clear such properties,
     /// specify an empty string. </para> <para>Related Topics</para>
     /// <ul>
     /// <li> DescribeConfigurationOptions </li>
@@ -45,9 +43,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<OptionSpecification> optionsToRemove = new List<OptionSpecification>();
 
         /// <summary>
-        /// The name of the application associated with the configuration template
-        /// to update. If no application is found with this name, returns an
-        /// <c>InvalidParameterValue</c> error.
+        /// The name of the application associated with the configuration template to update. If no application is found with this name,
+        /// <c>UpdateConfigurationTemplate</c> returns an <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -84,9 +81,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the configuration template to update. If no configuration
-        /// template is found with this name, returns an
-        /// <c>InvalidParameterValue</c> error.
+        /// The name of the configuration template to update. If no configuration template is found with this name, <c>UpdateConfigurationTemplate</c>
+        /// returns an <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -160,8 +156,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// A list of configuration option settings to update with the new
-        /// specified option value.
+        /// A list of configuration option settings to update with the new specified option value.
         ///  
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -206,8 +201,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// A list of configuration options to remove from the configuration set.
-        /// Constraint: You can remove only <c>UserDefined</c> configuration
+        /// A list of configuration options to remove from the configuration set. Constraint: You can remove only <c>UserDefined</c> configuration
         /// options.
         ///  
         /// </summary>

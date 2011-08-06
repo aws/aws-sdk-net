@@ -60,6 +60,10 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                     request.Parameters.Add("SourceConfiguration.TemplateName", StringUtils.FromString(sourceConfiguration.TemplateName));
                 }
             }
+            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetEnvironmentId()) 
+            {
+                request.Parameters.Add("EnvironmentId", StringUtils.FromString(createConfigurationTemplateRequest.EnvironmentId));
+            }
             if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetDescription()) 
             {
                 request.Parameters.Add("Description", StringUtils.FromString(createConfigurationTemplateRequest.Description));

@@ -39,6 +39,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private DateTime? dateUpdated;
         private string status;
         private string health;
+        private EnvironmentResourcesDescription resources;
 
         /// <summary>
         /// The name of this environment.
@@ -217,8 +218,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the configuration template used to originally launch this
-        /// environment.
+        /// The name of the configuration template used to originally launch this environment.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -292,7 +292,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The URL to the load balancer for this environment.
+        /// The URL to the LoadBalancer for this environment.
         ///  
         /// </summary>
         public string EndpointURL
@@ -413,14 +413,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The current operational status of the environment: <ul> <li>
-        /// <c>Launching</c> : Environment is in the process of initial
-        /// deployment. </li> <li> <c>Updating</c> : Environment is in the process
-        /// of updating its configuration settings or application version. </li>
-        /// <li> <c>Ready</c> : Environment is available to have an action
-        /// performed on it, such as update or terminate. </li> <li>
-        /// <c>Terminating</c> : Environment is in the shut-down process. </li>
-        /// <li> <c>Terminated</c> : Environment is not running. </li> </ul>
+        /// The current operational status of the environment: <ul> <li> <c>Launching</c>: Environment is in the process of initial deployment. </li>
+        /// <li> <c>Updating</c>: Environment is in the process of updating its configuration settings or application version. </li> <li> <c>Ready</c>:
+        /// Environment is available to have an action performed on it, such as update or terminate. </li> <li> <c>Terminating</c>: Environment is in
+        /// the shut-down process. </li> <li> <c>Terminated</c>: Environment is not running. </li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -457,24 +453,15 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Describes the health status of the environment. Amazon
-        /// ElasticBeanstalk indicates the failure levels for a running
-        /// environment: <enumValues> <value name="Red"> <c>Red</c> : Indicates
-        /// the environment is not working. </value> <value name="Yellow">
-        /// <c>Yellow</c> : Indicates that something is wrong, the application
-        /// might not be available, but the instances appear running. </value>
-        /// <value name="Green"> <c>Green</c> : Indicates the environment is
-        /// healthy and fully functional. </value> </enumValues> <ul> <li>
-        /// <c>Red</c> : Indicates the environment is not responsive. Occurs when
-        /// three or more consecutive failures occur for an environment. </li>
-        /// <li> <c>Yellow</c> : Indicates that something is wrong. Occurs when
-        /// two consecutive failures occur for an environment. </li> <li>
-        /// <c>Green</c> : Indicates the environment is healthy and fully
-        /// functional. </li> <li> <c>Grey</c> : Default health for a new
-        /// environment. The environment is not fully launched and health checks
-        /// have not started or health checks are suspended during an
-        /// <c>UpdateEnvironment</c> or <c>RestartEnvironement</c> request. </li>
-        /// </ul> Default: <c>Grey</c> .
+        /// Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment: <enumValues>
+        /// <value name="Red"> <c>Red</c> : Indicates the environment is not working. </value> <value name="Yellow"> <c>Yellow</c>: Indicates that
+        /// something is wrong, the application might not be available, but the instances appear running. </value> <value name="Green"> <c>Green</c>:
+        /// Indicates the environment is healthy and fully functional. </value> </enumValues> <ul> <li> <c>Red</c>: Indicates the environment is not
+        /// responsive. Occurs when three or more consecutive failures occur for an environment. </li> <li> <c>Yellow</c>: Indicates that something is
+        /// wrong. Occurs when two consecutive failures occur for an environment. </li> <li> <c>Green</c>: Indicates the environment is healthy and
+        /// fully functional. </li> <li> <c>Grey</c>: Default health for a new environment. The environment is not fully launched and health checks have
+        /// not started or health checks are suspended during an <c>UpdateEnvironment</c> or <c>RestartEnvironement</c> request. </li> </ul> Default:
+        /// <c>Grey</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -508,6 +495,34 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetHealth()
         {
             return this.health != null;       
+        }
+
+        /// <summary>
+        /// The description of the AWS resources used by this environment.
+        ///  
+        /// </summary>
+        public EnvironmentResourcesDescription Resources
+        {
+            get { return this.resources; }
+            set { this.resources = value; }
+        }
+
+        /// <summary>
+        /// Sets the Resources property
+        /// </summary>
+        /// <param name="resources">The value to set for the Resources property </param>
+        /// <returns>this instance</returns>
+        public TerminateEnvironmentResult WithResources(EnvironmentResourcesDescription resources)
+        {
+            this.resources = resources;
+            return this;
+        }
+            
+
+        // Check to see if Resources property is set
+        internal bool IsSetResources()
+        {
+            return this.resources != null;       
         }
     }
 }

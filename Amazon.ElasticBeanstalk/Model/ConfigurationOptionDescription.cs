@@ -21,11 +21,11 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para> Describes the possible values for a configuration option.
-    /// </para>
+    /// <para> Describes the possible values for a configuration option. </para>
     /// </summary>
     public class ConfigurationOptionDescription  
     {
+        
         private string namespaceValue;
         private string name;
         private string defaultValue;
@@ -141,25 +141,15 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// An indication of which action is required if the value for this
-        /// configuration option changes: <enumValues> <value
-        /// name="NoInterruption"> NoInterruption - There is no interruption to
-        /// the environment or application availability. </value> <value
-        /// name="RestartEnvironment"> RestartEnvironment - The environment is
-        /// restarted, all AWS resources are deleted and recreated, and the
-        /// environment is unavailable during the process. </value> <value
-        /// name="RestartApplicationServer"> RestartApplicationServer - The
-        /// environment is available the entire time. However, a short application
-        /// outage occurs when the application servers on the running Amazon EC2
-        /// instances are restarted. </value> </enumValues> <ul> <li>
-        /// <c>NoInterruption</c> : There is no interruption to the environment or
-        /// application availability. </li> <li> <c>RestartEnvironment</c> : The
-        /// environment is entirely restarted, all AWS resources are deleted and
-        /// recreated, and the environment is unavailable during the process.
-        /// </li> <li> <c>RestartApplicationServer</c> : The environment is
-        /// available the entire time. However, a short application outage occurs
-        /// when the application servers on the running Amazon EC2 instances are
-        /// restarted. </li> </ul>
+        /// An indication of which action is required if the value for this configuration option changes: <enumValues> <value name="NoInterruption">
+        /// NoInterruption - There is no interruption to the environment or application availability. </value> <value name="RestartEnvironment">
+        /// RestartEnvironment - The environment is restarted, all AWS resources are deleted and recreated, and the environment is unavailable during
+        /// the process. </value> <value name="RestartApplicationServer"> RestartApplicationServer - The environment is available the entire time.
+        /// However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </value>
+        /// </enumValues> <ul> <li> <c>NoInterruption</c> : There is no interruption to the environment or application availability. </li> <li>
+        /// <c>RestartEnvironment</c> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is
+        /// unavailable during the process. </li> <li> <c>RestartApplicationServer</c> : The environment is available the entire time. However, a short
+        /// application outage occurs when the application servers on the running Amazon EC2 instances are restarted. </li> </ul>
         ///  
         /// </summary>
         public string ChangeSeverity
@@ -187,18 +177,12 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// An indication of whether the user defined this configuration option:
-        /// <enumValues> <value name="true"> <c>true</c> : This configuration
-        /// option was defined by the user. It is a valid choice for specifying
-        /// this as an Option to Remove when updating configuration settings.
-        /// </value> <value name="false"> <c>false</c> : This configuration was
-        /// not defined by the user. </value> </enumValues> <ul> <li> <c>true</c>
-        /// : This configuration option was defined by the user. It is a valid
-        /// choice for specifying if this as an <c>Option to Remove</c> when
-        /// updating configuration settings. </li> <li> <c>false</c> : This
-        /// configuration was not defined by the user. </li> </ul> Constraint: You
-        /// can remove only <c>UserDefined</c> options from a configuration. Valid
-        /// Values: <c>true</c> | <c>false</c>
+        /// An indication of whether the user defined this configuration option: <enumValues> <value name="true"> <c>true</c> : This configuration
+        /// option was defined by the user. It is a valid choice for specifying this as an Option to Remove when updating configuration settings.
+        /// </value> <value name="false"> <c>false</c> : This configuration was not defined by the user. </value> </enumValues> <ul> <li> <c>true</c> :
+        /// This configuration option was defined by the user. It is a valid choice for specifying if this as an <c>Option to Remove</c> when updating
+        /// configuration settings. </li> <li> <c>false</c> : This configuration was not defined by the user. </li> </ul> Constraint: You can remove
+        /// only <c>UserDefined</c> options from a configuration. Valid Values: <c>true</c> | <c>false</c>
         ///  
         /// </summary>
         public bool UserDefined
@@ -226,21 +210,14 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// An indication of which type of values this option has and whether it
-        /// is allowable to select one or more than one of the possible values:
-        /// <enumValues> <value name="Scalar"> <c>Scalar</c> : Values for this
-        /// option are a single selection from the possible values, or a
-        /// unformatted string or numeric value governed by the MIN/MAX/Regex
-        /// constraints: </value> <value name="List"> <c>List</c> : Values for
-        /// this option are multiple selections of the possible values. </value>
-        /// <value name="Boolean"> <c>Boolean</c> : Values for this option are
-        /// either <c>true</c> or <c>false</c> . </value> </enumValues> <ul> <li>
-        /// <c>Scalar</c> : Values for this option are a single selection from the
-        /// possible values, or an unformatted string, or numeric value governed
-        /// by the <c>MIN/MAX/Regex</c> constraints. </li> <li> <c>List</c> :
-        /// Values for this option are multiple selections from the possible
-        /// values. </li> <li> <c>Boolean</c> : Values for this option are either
-        /// <c>true</c> or <c>false</c> . </li> </ul>
+        /// An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:
+        /// <enumValues> <value name="Scalar"> <c>Scalar</c> : Values for this option are a single selection from the possible values, or a unformatted
+        /// string or numeric value governed by the MIN/MAX/Regex constraints: </value> <value name="List"> <c>List</c> : Values for this option are
+        /// multiple selections of the possible values. </value> <value name="Boolean"> <c>Boolean</c> : Values for this option are either <c>true</c>
+        /// or <c>false</c> . </value> </enumValues> <ul> <li> <c>Scalar</c> : Values for this option are a single selection from the possible values,
+        /// or an unformatted string, or numeric value governed by the <c>MIN/MAX/Regex</c> constraints. </li> <li> <c>List</c> : Values for this option
+        /// are multiple selections from the possible values. </li> <li> <c>Boolean</c> : Values for this option are either <c>true</c> or <c>false</c>
+        /// . </li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -277,8 +254,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, values for the configuration option are selected from
-        /// this list.
+        /// If specified, values for the configuration option are selected from this list.
         ///  
         /// </summary>
         public List<string> ValueOptions
@@ -323,8 +299,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, the configuration option must be a numeric value greater
-        /// than this value.
+        /// If specified, the configuration option must be a numeric value greater than this value.
         ///  
         /// </summary>
         public int MinValue
@@ -352,8 +327,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, the configuration option must be a numeric value less
-        /// than this value.
+        /// If specified, the configuration option must be a numeric value less than this value.
         ///  
         /// </summary>
         public int MaxValue
@@ -381,8 +355,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, the configuration option must be a string value no
-        /// longer than this value.
+        /// If specified, the configuration option must be a string value no longer than this value.
         ///  
         /// </summary>
         public int MaxLength
@@ -404,14 +377,13 @@ namespace Amazon.ElasticBeanstalk.Model
             
 
         // Check to see if MaxLength property is set
-        public bool IsSetMaxLength()
+        internal bool IsSetMaxLength()
         {
             return this.maxLength.HasValue;       
         }
 
         /// <summary>
-        /// If specified, the configuration option must be a string value that
-        /// satisfies this regular expression.
+        /// If specified, the configuration option must be a string value that satisfies this regular expression.
         ///  
         /// </summary>
         public OptionRestrictionRegex Regex

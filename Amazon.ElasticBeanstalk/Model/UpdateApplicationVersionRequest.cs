@@ -25,10 +25,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplicationVersion operation.
-    /// <para> Updates the specified application version to have the specified
-    /// properties. </para> <para><b>NOTE:</b> If a property (for example,
-    /// description ) is not provided, the value remains unchanged. To clear
-    /// properties, specify an empty string. </para>
+    /// <para> Updates the specified application version to have the specified properties. </para> <para><b>NOTE:</b> If a property (for example,
+    /// description) is not provided, the value remains unchanged. To clear properties, specify an empty string. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.UpdateApplicationVersion"/>
     public class UpdateApplicationVersionRequest : AmazonWebServiceRequest
@@ -38,8 +36,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string description;
 
         /// <summary>
-        /// The name of the application associated with this version. If no
-        /// application is found with this name, returns an
+        /// The name of the application associated with this version. If no application is found with this name, <c>UpdateApplication</c> returns an
         /// <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
@@ -77,8 +74,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the version to update. If no application version is found
-        /// with this label, returns an <c>InvalidParameterValue</c> error.
+        /// The name of the version to update. If no application version is found with this label, <c>UpdateApplication</c> returns an
+        /// <c>InvalidParameterValue</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>

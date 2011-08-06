@@ -439,9 +439,7 @@ namespace Amazon.CloudFront.Model
         /// <returns>true if the Logging property is set.</returns>
         internal bool IsSetLogging()
         {
-            return (this.logging != null) &&
-                (!System.String.IsNullOrEmpty(Logging.First)) &&
-                (!System.String.IsNullOrEmpty(Logging.Second));
+            return this.logging != null && !System.String.IsNullOrEmpty(Logging.First);
         }
 
         #endregion

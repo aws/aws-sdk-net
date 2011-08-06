@@ -25,9 +25,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationVersion operation.
-    /// <para> Deletes the specified version from the specified application.
-    /// </para> <para><b>NOTE:</b>You cannot delete an application version
-    /// that is associated with a running environment.</para>
+    /// <para> Deletes the specified version from the specified application. </para> <para><b>NOTE:</b>You cannot delete an application version that
+    /// is associated with a running environment.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.DeleteApplicationVersion"/>
     public class DeleteApplicationVersionRequest : AmazonWebServiceRequest
@@ -111,12 +110,9 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Indicates whether to delete associated source bundle from Amazon S3:
-        /// <ul> <li> <c>true</c> : An attempt is made to delete the associated
-        /// Amazon S3 source bundle specified at time of creation. </li> <li>
-        /// <c>false</c> : No action is taken on the Amazon S3 source bundle
-        /// specified at time of creation. </li> </ul> Valid Values: <c>true</c> |
-        /// <c>false</c>
+        /// Indicates whether to delete the associated source bundle from Amazon S3: <ul> <li> <c>true</c>: An attempt is made to delete the associated
+        /// Amazon S3 source bundle specified at time of creation. </li> <li> <c>false</c>: No action is taken on the Amazon S3 source bundle specified
+        /// at time of creation. </li> </ul> Valid Values: <c>true</c> | <c>false</c>
         ///  
         /// </summary>
         public bool DeleteSourceBundle

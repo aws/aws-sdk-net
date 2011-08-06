@@ -20,7 +20,7 @@ namespace Amazon.CloudFormation
 {
 
     /// <summary>
-    /// Configuration for accessing  service
+    /// Configuration for accessing AWS CloudFormation service
     /// </summary>
     public class AmazonCloudFormationConfig : ClientConfig
     {

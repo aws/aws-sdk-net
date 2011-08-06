@@ -51,7 +51,7 @@ namespace Amazon.SimpleDB.Util
         /// <returns>A string representation of the zero-padded integer</returns>
         public static string EncodeZeroPadding(int number, int maxNumDigits)
         {
-            return number.ToString().PadLeft(maxNumDigits, '0');
+            return number.ToString(CultureInfo.InvariantCulture).PadLeft(maxNumDigits, '0');
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SimpleDB.Util
         /// <returns>A string representation of the zero-padded floating point value</returns>
         public static string EncodeZeroPadding(float number, int maxNumDigits)
         {
-            string fltStr = number.ToString();
+            string fltStr = number.ToString(CultureInfo.InvariantCulture);
             int decPt = fltStr.IndexOf('.');
             if (decPt == -1)
             {
@@ -94,7 +94,7 @@ namespace Amazon.SimpleDB.Util
         /// <returns>A string representation of the integer</returns>
         public static string EncodeRealNumberRange(int number, int maxNumDigits, int offsetValue)
         {
-            return (number + offsetValue).ToString().PadLeft(maxNumDigits, '0');
+            return (number + offsetValue).ToString(CultureInfo.InvariantCulture).PadLeft(maxNumDigits, '0');
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.SimpleDB.Util
         {
             long shiftMultiplier = (long)Math.Pow(10, maxDigitsRight);
             long shiftedNumber = (long)Math.Round((number + offsetValue) * shiftMultiplier);
-            return shiftedNumber.ToString().PadLeft(maxDigitsLeft + maxDigitsRight, '0');
+            return shiftedNumber.ToString(CultureInfo.InvariantCulture).PadLeft(maxDigitsLeft + maxDigitsRight, '0');
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.SimpleDB.Util
         /// <returns>original float value</returns>
         public static float DecodeZeroPaddingFloat(string value)
         {
-            return float.Parse(value);
+            return float.Parse(value, CultureInfo.InvariantCulture);
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.SimpleDB.Util
         /// <returns>original integer value</returns>
         public static int DecodeZeroPaddingInt(string value)
         {
-            return int.Parse(value);
+            return int.Parse(value, CultureInfo.InvariantCulture);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.SimpleDB.Util
         /// <returns>original integer value</returns>
         public static int DecodeRealNumberRangeInt(string value, int offsetValue)
         {
-            return (int)(long.Parse(value) - offsetValue);
+            return (int)(long.Parse(value, CultureInfo.InvariantCulture) - offsetValue);
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.SimpleDB.Util
         /// <returns>original float value</returns>
         public static float DecodeRealNumberRangeFloat(string value, int maxDigitsRight, int offsetValue)
         {
-            return (float)(long.Parse(value) / Math.Pow(10, maxDigitsRight) - offsetValue);
+            return (float)(long.Parse(value, CultureInfo.InvariantCulture) / Math.Pow(10, maxDigitsRight) - offsetValue);
         }
 
         /// <summary>

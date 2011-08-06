@@ -25,14 +25,10 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackEvents operation.
-    /// <para> Returns all the stack related events for the AWS account. If
-    /// <c>StackName</c> is specified, returns events related to all the
-    /// stacks with the given name. If <c>StackName</c> is not specified,
-    /// returns all the events for the account. For more information about a
-    /// stack's event history, go to the AWS CloudFormation User Guide.
-    /// </para> <para><b>NOTE:</b> Events are returned, even if the stack has
-    /// been successfully deleted. If the stack never existed, a
-    /// ValidationError is returned. </para>
+    /// <para> Returns all the stack related events for the AWS account. If <c>StackName</c> is specified, returns events related to all the stacks
+    /// with the given name. If <c>StackName</c> is not specified, returns all the events for the account. For more information about a stack's
+    /// event history, go to the AWS CloudFormation User Guide. </para> <para><b>NOTE:</b>Events are returned, even if the stack never existed or
+    /// has been successfully deleted.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStackEvents"/>
     public class DescribeStackEventsRequest : AmazonWebServiceRequest
@@ -41,7 +37,7 @@ namespace Amazon.CloudFormation.Model
         private string nextToken;
 
         /// <summary>
-        /// The name or the unique identifier associated with the stack. Default: <c>null</c>
+        /// The name or the unique identifier associated with the stack.<br></br> Default: There is no default value.
         ///  
         /// </summary>
         public string StackName
@@ -69,7 +65,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// String that identifies the start of the next list of events, if there is one. Default: <c>null</c>
+        /// String that identifies the start of the next list of events, if there is one.<br></br> Default: There is no default value.
         ///  
         /// <para>
         /// <b>Constraints:</b>

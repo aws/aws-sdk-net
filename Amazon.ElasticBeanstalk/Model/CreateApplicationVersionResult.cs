@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para> Result message wrapping a single description of an application
-    /// version. </para>
+    /// <para> Result message wrapping a single description of an application version. </para>
     /// </summary>
     public class CreateApplicationVersionResult  
     {

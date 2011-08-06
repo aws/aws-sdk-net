@@ -30,7 +30,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
         /// <summary>
         /// Gets and sets the ListAvailableSolutionStacksResult property.
-        /// A list of available Amazon ElasticBeanstalk solution stacks.
+        /// A list of available AWS Elastic Beanstalk solution stacks.
         /// </summary>
         public ListAvailableSolutionStacksResult ListAvailableSolutionStacksResult
         {

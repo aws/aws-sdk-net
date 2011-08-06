@@ -178,7 +178,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Type of the resource. (For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+        /// Type of the resource. (For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
         /// CloudFormation User Guide</a>.)
         ///  
         /// </summary>
@@ -300,7 +300,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Blob of the properties used to create the resource.
+        /// BLOB of the properties used to create the resource.
         ///  
         /// </summary>
         public string ResourceProperties

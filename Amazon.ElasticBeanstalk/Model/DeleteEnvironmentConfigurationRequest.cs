@@ -25,14 +25,10 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEnvironmentConfiguration operation.
-    /// <para> Deletes the draft configuration associated with the running
-    /// environment. </para> <para> Updating a running environment with any
-    /// configuration changes creates a draft configuration set. You can get
-    /// the draft configuration using DescribeConfigurationSettings while the
-    /// update is in progress or if the update fails. The
-    /// <c>DeploymentStatus</c> for the draft configuration indicates whether
-    /// the deployment is in process or has failed. The draft configuration
-    /// remains in existence until it is deleted with this action. </para>
+    /// <para> Deletes the draft configuration associated with the running environment. </para> <para> Updating a running environment with any
+    /// configuration changes creates a draft configuration set. You can get the draft configuration using DescribeConfigurationSettings while the
+    /// update is in progress or if the update fails. The <c>DeploymentStatus</c> for the draft configuration indicates whether the deployment is in
+    /// process or has failed. The draft configuration remains in existence until it is deleted with this action. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.DeleteEnvironmentConfiguration"/>
     public class DeleteEnvironmentConfigurationRequest : AmazonWebServiceRequest

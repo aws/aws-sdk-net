@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message containing a single description of an
-    /// application.</para>
+    /// <para>Result message containing a single description of an application.</para>
     /// </summary>
     public class UpdateApplicationResult  
     {

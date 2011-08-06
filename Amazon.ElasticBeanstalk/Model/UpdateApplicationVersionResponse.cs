@@ -30,8 +30,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
         /// <summary>
         /// Gets and sets the UpdateApplicationVersionResult property.
-        /// Result message wrapping a single description of an application
-        /// version.
+        /// Result message wrapping a single description of an application version.
         /// </summary>
         public UpdateApplicationVersionResult UpdateApplicationVersionResult
         {

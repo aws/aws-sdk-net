@@ -25,11 +25,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStacks operation.
-    /// <para> Returns the description for the specified stack; if no stack
-    /// name was specified, then it returns the description for all the stacks
-    /// created. </para> <para><b>NOTE:</b> If a specified stack does not
-    /// exist or has been successfully deleted, a ValidationError is returned.
-    /// </para>
+    /// <para> Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks
+    /// created. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStacks"/>
     public class DescribeStacksRequest : AmazonWebServiceRequest
@@ -37,7 +34,7 @@ namespace Amazon.CloudFormation.Model
         private string stackName;
 
         /// <summary>
-        /// The name or the unique identifier associated with the stack. Default: <c>null</c>
+        /// The name or the unique identifier associated with the stack. Default: There is no default value.
         ///  
         /// </summary>
         public string StackName

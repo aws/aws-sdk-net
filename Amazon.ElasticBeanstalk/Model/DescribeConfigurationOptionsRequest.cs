@@ -25,11 +25,9 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConfigurationOptions operation.
-    /// <para> Describes the configuration options that are used in a
-    /// particular configuration template or environment, or that a specified
-    /// solution stack defines. The description includes the values the
-    /// options, their default values, and an indication of the required
-    /// action on a running environment if an option value is changed. </para>
+    /// <para> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution
+    /// stack defines. The description includes the values the options, their default values, and an indication of the required action on a running
+    /// environment if an option value is changed. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.DescribeConfigurationOptions"/>
     public class DescribeConfigurationOptionsRequest : AmazonWebServiceRequest
@@ -41,10 +39,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<OptionSpecification> options = new List<OptionSpecification>();
 
         /// <summary>
-        /// The name of the application associated with the configuration template
-        /// or environment. Only needed if you want to describe the configuration
-        /// options associated with either the configuration template or
-        /// environment.
+        /// The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration
+        /// options associated with either the configuration template or environment.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -81,8 +77,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the configuration template whose configuration options you
-        /// want to describe.
+        /// The name of the configuration template whose configuration options you want to describe.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -119,8 +114,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the environment whose configuration options you want to
-        /// describe.
+        /// The name of the environment whose configuration options you want to describe.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -157,8 +151,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the solution stack whose configuration options you want to
-        /// describe.
+        /// The name of the solution stack whose configuration options you want to describe.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -195,8 +188,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, restricts the descriptions to only the specified
-        /// options.
+        /// If specified, restricts the descriptions to only the specified options.
         ///  
         /// </summary>
         public List<OptionSpecification> Options

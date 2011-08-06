@@ -67,7 +67,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// A list of <a>ConfigurationOptionDescription</a> .
+        /// A list of <a>ConfigurationOptionDescription</a>.
         ///  
         /// </summary>
         public List<ConfigurationOptionDescription> Options

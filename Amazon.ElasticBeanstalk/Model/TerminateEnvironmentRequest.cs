@@ -100,20 +100,13 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Indicates whether the associated AWS resources should shut down when
-        /// the environment is terminated: <enumValues> <value name="true">
-        /// <c>true</c> : (default) The user AWS resources (for example, the Auto
-        /// Scaling group, load balancer, etc.) are terminated along with the
-        /// environment. </value> <value name="false"> <c>false</c>: The
-        /// environment is removed from the Amazon ElasticBeanstalk but the AWS
-        /// resources continue to operate. </value> </enumValues> <ul> <li>
-        /// <c>true</c> : The specified environment as well as the associated AWS
-        /// resources, such as Auto Scaling group and load balancer, are
-        /// terminated. </li> <li> <c>false</c>: Amazon ElasticBeanstalk resource
-        /// management is removed from the environment but the AWS resources
-        /// continue to operate. </li> </ul> For more information, see the <a
-        /// href="http://docs.amazonwebservices.com/elasticbeanstalk/latest/ug/">
-        /// Amazon ElasticBeanstalk User Guide. </a> Default: <c>true</c> Valid
+        /// Indicates whether the associated AWS resources should shut down when the environment is terminated: <enumValues> <value name="true">
+        /// <c>true</c>: (default) The user AWS resources (for example, the Auto Scaling group, LoadBalancer, etc.) are terminated along with the
+        /// environment. </value> <value name="false"> <c>false</c>: The environment is removed from the AWS Elastic Beanstalk but the AWS resources
+        /// continue to operate. </value> </enumValues> <ul> <li> <c>true</c>: The specified environment as well as the associated AWS resources, such
+        /// as Auto Scaling group and LoadBalancer, are terminated. </li> <li> <c>false</c>: AWS Elastic Beanstalk resource management is removed from
+        /// the environment, but the AWS resources continue to operate. </li> </ul> For more information, see the <a
+        /// href="http://docs.amazonwebservices.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a> Default: <c>true</c> Valid
         /// Values: <c>true</c> | <c>false</c>
         ///  
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string nextToken;
 
         /// <summary>
-        /// A list of <a>EventDescription</a> .
+        /// A list of <a>EventDescription</a>.
         ///  
         /// </summary>
         public List<EventDescription> Events
@@ -75,8 +75,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, this indicates that there are more results to obtain.
-        /// Use this token in the next <a>DescribeEvents</a> call to get the next
+        /// If returned, this indicates that there are more results to obtain. Use this token in the next <a>DescribeEvents</a> call to get the next
         /// batch of events.
         ///  
         /// </summary>

@@ -3857,6 +3857,29 @@ namespace Amazon.S3
                 }
             }
 
+            //sign the request
+            string toSign = buildSigningString(parameters, request.Headers);
+            string auth;
+            if (config.UseSecureStringForAwsSecretKey)
+            {
+                KeyedHashAlgorithm algorithm = new HMACSHA1();
+                auth = AWSSDKUtils.HMACSign(
+                    toSign,
+                    awsSecretAccessKey,
+                    algorithm
+                    );
+            }
+            else
+            {
+                KeyedHashAlgorithm algorithm = new HMACSHA1();
+                auth = AWSSDKUtils.HMACSign(
+                    toSign,
+                    clearAwsSecretAccessKey,
+                    algorithm
+                    );
+            }
+            parameters[S3QueryParameter.Authorization] = auth;
+
             parameters[S3QueryParameter.Url] = String.Concat(
                 url,
                 "&Signature=",
@@ -4358,6 +4381,32 @@ namespace Amazon.S3
             Map parameters = s3AsyncResult.S3Request.parameters;
             Stream fStream = s3AsyncResult.S3Request.InputStream;
 
+            //sign the request
+            if (!string.IsNullOrEmpty(this.awsAccessKeyId))
+            {
+                string toSign = buildSigningString(parameters, headers);
+                string auth;
+                if (config.UseSecureStringForAwsSecretKey)
+                {
+                    KeyedHashAlgorithm algorithm = new HMACSHA1();
+                    auth = AWSSDKUtils.HMACSign(
+                        toSign,
+                        awsSecretAccessKey,
+                        algorithm
+                        );
+                }
+                else
+                {
+                    KeyedHashAlgorithm algorithm = new HMACSHA1();
+                    auth = AWSSDKUtils.HMACSign(
+                        toSign,
+                        clearAwsSecretAccessKey,
+                        algorithm
+                        );
+                }
+                parameters[S3QueryParameter.Authorization] = auth;
+            }
+
             string actionName = parameters[S3QueryParameter.Action];
             string verb = parameters[S3QueryParameter.Verb];
 
@@ -4366,11 +4415,6 @@ namespace Amazon.S3
             // Variables that pertain to PUT requests
             byte[] requestData = Encoding.UTF8.GetBytes("");
             long reqDataLen = 0;
-
-            if (String.IsNullOrEmpty(this.awsAccessKeyId))
-            {
-                throw new AmazonS3Exception("The AWS Access Key ID cannot be NULL or a Zero length string");
-            }
 
             validateVerb(verb);
 
@@ -4682,28 +4726,6 @@ namespace Amazon.S3
                 parameters[S3QueryParameter.ContentType] = value;
                 webHeaders.Remove(AWSSDKUtils.ContentTypeHeader);
             }
-
-            string toSign = buildSigningString(parameters, webHeaders);
-            string auth;
-            if (config.UseSecureStringForAwsSecretKey)
-            {
-                KeyedHashAlgorithm algorithm = new HMACSHA1();
-                auth = AWSSDKUtils.HMACSign(
-                    toSign,
-                    awsSecretAccessKey,
-                    algorithm
-                    );
-            }
-            else
-            {
-                KeyedHashAlgorithm algorithm = new HMACSHA1();
-                auth = AWSSDKUtils.HMACSign(
-                    toSign,
-                    clearAwsSecretAccessKey,
-                    algorithm
-                    );
-            }
-            parameters[S3QueryParameter.Authorization] = auth;
 
             // Insert the S3 Url into the parameters
             addUrlToParameters(request, config);
@@ -5300,11 +5322,14 @@ namespace Amazon.S3
                 }
 
                 // Add the AWS Authorization header.
-                httpRequest.Headers[S3Constants.AuthorizationHeader] = String.Concat(
-                    "AWS ",
-                    this.awsAccessKeyId,
-                    ":",
-                    parameters[S3QueryParameter.Authorization]);
+                if (!string.IsNullOrEmpty(this.awsAccessKeyId))
+                {
+                    httpRequest.Headers[S3Constants.AuthorizationHeader] = String.Concat(
+                        "AWS ",
+                        this.awsAccessKeyId,
+                        ":",
+                        parameters[S3QueryParameter.Authorization]);
+                }
 
                 if (config.IsSetUserAgent())
                 {

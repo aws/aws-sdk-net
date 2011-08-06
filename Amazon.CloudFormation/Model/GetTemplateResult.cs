@@ -29,7 +29,8 @@ namespace Amazon.CloudFormation.Model
         private string templateBody;
 
         /// <summary>
-        /// Structure containing the template body. (For more information, go to the AWS CloudFormation User Guide.)
+        /// Structure containing the template body. (For more information, go to the <a
+        /// href="http://docs.amazonwebservices.com/AmazonCloudFormation/latest/UserGuide/">AWS CloudFormation User Guide</a>.)
         ///  
         /// <para>
         /// <b>Constraints:</b>

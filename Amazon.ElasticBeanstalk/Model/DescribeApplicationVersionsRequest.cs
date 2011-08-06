@@ -34,9 +34,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<string> versionLabels = new List<string>();
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to only include ones that are associated with the
-        /// specified application.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include ones that are associated with the specified
+        /// application.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -73,8 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, restricts the returned descriptions to only include ones
-        /// that have the specified version labels.
+        /// If specified, restricts the returned descriptions to only include ones that have the specified version labels.
         ///  
         /// </summary>
         public List<string> VersionLabels

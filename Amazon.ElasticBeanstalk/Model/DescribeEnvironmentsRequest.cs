@@ -38,9 +38,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private DateTime? includedDeletedBackTo;
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to include only those that are associated with this
-        /// application.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -77,9 +75,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to include only those that are associated with this
-        /// application version.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application
+        /// version.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -116,8 +113,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to includes only those that have the specified IDs.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.
         ///  
         /// </summary>
         public List<string> EnvironmentIds
@@ -162,8 +158,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// If specified, Amazon ElasticBeanstalk restricts the returned
-        /// descriptions to includes only those that have the specified names.
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.
         ///  
         /// </summary>
         public List<string> EnvironmentNames
@@ -208,9 +203,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Indicates whether to include deleted environments: <c>true</c> :
-        /// Environments that have been deleted after <c>IncludedDeletedBackTo</c>
-        /// is displayed. <c>false</c> : Do not include deleted environments.
+        /// Indicates whether to include deleted environments: <c>true</c>: Environments that have been deleted after <c>IncludedDeletedBackTo</c> are
+        /// displayed. <c>false</c>: Do not include deleted environments.
         ///  
         /// </summary>
         public bool IncludeDeleted
@@ -238,9 +232,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// This parameter is conditional. If specified when <c>IncludeDeleted</c>
-        /// is set to <c>true</c> , then environments deleted after this date are
-        /// displayed.
+        /// If specified when <c>IncludeDeleted</c> is set to <c>true</c>, then environments deleted after this date are displayed.
         ///  
         /// </summary>
         public DateTime IncludedDeletedBackTo

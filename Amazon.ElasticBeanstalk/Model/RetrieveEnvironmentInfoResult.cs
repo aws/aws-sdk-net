@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message containing a description of the requested
-    /// environment info.</para>
+    /// <para>Result message containing a description of the requested environment info.</para>
     /// </summary>
     public class RetrieveEnvironmentInfoResult  
     {

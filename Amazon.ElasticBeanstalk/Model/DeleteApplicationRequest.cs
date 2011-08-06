@@ -25,9 +25,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
-    /// <para> Deletes the specified application along with all associated
-    /// versions and configurations. </para> <para><b>NOTE:</b>You cannot
-    /// delete an application that has a running environment. </para>
+    /// <para> Deletes the specified application along with all associated versions and configurations. </para> <para><b>NOTE:</b>You cannot delete
+    /// an application that has a running environment. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.DeleteApplication"/>
     public class DeleteApplicationRequest : AmazonWebServiceRequest

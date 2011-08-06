@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message containing a list of environment
-    /// descriptions.</para>
+    /// <para>Result message containing a list of environment descriptions.</para>
     /// </summary>
     public class DescribeEnvironmentsResult  
     {

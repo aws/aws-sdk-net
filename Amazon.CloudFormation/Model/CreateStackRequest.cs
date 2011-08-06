@@ -25,15 +25,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStack operation.
-    /// <para> Creates a stack as specified in the template. Once the call
-    /// completes successfully, the stack creation starts. You can check the
-    /// status of the stack via the DescribeStacks API. </para> <para> AWS
-    /// CloudFormation allows you to create and delete related AWS resources
-    /// together as a unit called a stack. You define the characteristics of a
-    /// stack using a template, which is a JSON-compliant text file. For more
-    /// information, go to the AWS CloudFormation User Guide. </para>
-    /// <para><b>NOTE:</b> Currently, the quota for stacks is 20 per region.
-    /// </para>
+    /// <para> Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the
+    /// status of the stack via the DescribeStacks API. </para> <para><b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account per
+    /// region. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.CreateStack"/>
     public class CreateStackRequest : AmazonWebServiceRequest
@@ -47,7 +41,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> notificationARNs = new List<string>();
 
         /// <summary>
-        /// The name associated with the Stack. The name must be unique within your AWS account. <note> Must contain only alphanumeric characters (case
+        /// The name associated with the stack. The name must be unique within your AWS account. <note> Must contain only alphanumeric characters (case
         /// sensitive) and start with an alpha character. Maximum length of the name is 255 characters. </note>
         ///  
         /// </summary>
@@ -77,8 +71,8 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// Structure containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS CloudFormation User Guide</a>.) <note> You must pass
-        /// <c>TemplateBody</c> or <c>TemplateURL</c>. If both are passed, only <c>TemplateBody</c> is used. </note>
+        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Condition: You must pass
+        /// <c>TemplateBody</c> or <c>TemplateURL</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -115,9 +109,9 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Location of file containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS CloudFormation User Guide</a>.) <note> You must pass
-        /// <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used. </note>
+        /// Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For
+        /// more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User
+        /// Guide</a>. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -199,7 +193,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Boolean to enable or disable rollback on stack creation failures. Default: <c>false</c>
+        /// Boolean to enable or disable rollback on stack creation failures.<br></br> Default: <c>false</c>
         ///  
         /// </summary>
         public bool DisableRollback
@@ -227,7 +221,8 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// If the time limit is exceeded, the stack is marked CREATE_FAILED; if <c>RollbackOnFailure</c> is set, the stack will be rolled back.
+        /// The amount of time that can pass before the stack status becomes CREATE_FAILED; if <c>DisableRollback</c> is not set or is set to
+        /// <c>false</c>, the stack will be rolled back.
         ///  
         /// <para>
         /// <b>Constraints:</b>

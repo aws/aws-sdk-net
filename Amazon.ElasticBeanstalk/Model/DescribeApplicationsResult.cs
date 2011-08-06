@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message containing a list of application
-    /// descriptions.</para>
+    /// <para>Result message containing a list of application descriptions.</para>
     /// </summary>
     public class DescribeApplicationsResult  
     {
@@ -30,7 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<ApplicationDescription> applications = new List<ApplicationDescription>();
 
         /// <summary>
-        /// This parameter contains a list of <a>ApplicationDescription</a> .
+        /// This parameter contains a list of <a>ApplicationDescription</a>.
         ///  
         /// </summary>
         public List<ApplicationDescription> Applications

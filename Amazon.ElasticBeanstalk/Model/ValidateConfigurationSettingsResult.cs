@@ -29,7 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<ValidationMessage> messages = new List<ValidationMessage>();
 
         /// <summary>
-        /// A list of <a>ValidationMessage</a>
+        /// A list of <a>ValidationMessage</a>.
         ///  
         /// </summary>
         public List<ValidationMessage> Messages

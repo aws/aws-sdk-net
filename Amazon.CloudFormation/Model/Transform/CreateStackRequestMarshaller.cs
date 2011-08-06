@@ -78,6 +78,7 @@ namespace Amazon.CloudFormation.Model.Transform
             if (createStackRequest != null) 
             {
                 List<string> notificationARNsList = createStackRequest.NotificationARNs;
+
                 int notificationARNsListIndex = 1;
                 foreach (string notificationARNsListValue in notificationARNsList) 
                 { 
