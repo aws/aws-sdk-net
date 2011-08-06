@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DeletePolicyRequest> request = new DefaultRequest<DeletePolicyRequest>(deletePolicyRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DeletePolicy");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (deletePolicyRequest != null && deletePolicyRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(deletePolicyRequest.AutoScalingGroupName));

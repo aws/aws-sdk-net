@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DescribeAdjustmentTypesRequest> request = new DefaultRequest<DescribeAdjustmentTypesRequest>(describeAdjustmentTypesRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribeAdjustmentTypes");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
 
 
             return request;

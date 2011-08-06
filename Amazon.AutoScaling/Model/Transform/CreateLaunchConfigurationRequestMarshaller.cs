@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<CreateLaunchConfigurationRequest> request = new DefaultRequest<CreateLaunchConfigurationRequest>(createLaunchConfigurationRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "CreateLaunchConfiguration");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (createLaunchConfigurationRequest != null && createLaunchConfigurationRequest.IsSetLaunchConfigurationName()) 
             {
                 request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(createLaunchConfigurationRequest.LaunchConfigurationName));
@@ -51,6 +51,7 @@ namespace Amazon.AutoScaling.Model.Transform
             if (createLaunchConfigurationRequest != null) 
             {
                 List<string> securityGroupsList = createLaunchConfigurationRequest.SecurityGroups;
+
                 int securityGroupsListIndex = 1;
                 foreach (string securityGroupsListValue in securityGroupsList) 
                 { 

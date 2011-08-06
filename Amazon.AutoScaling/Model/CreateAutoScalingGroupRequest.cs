@@ -25,10 +25,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAutoScalingGroup operation.
-    /// <para> Creates a new Auto Scaling group with the specified name. Once
-    /// the creation request is completed, the AutoScalingGroup is ready to be
-    /// used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group
-    /// name must be unique within the scope of your AWS account, and under
+    /// <para> Creates a new Auto Scaling group with the specified name. Once the creation request is completed, the AutoScalingGroup is ready to be
+    /// used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of your AWS account, and under
     /// the quota of Auto Scaling groups allowed for your account. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateAutoScalingGroup"/>
@@ -89,8 +87,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The name of the launch configuration to use with the Auto Scaling
-        /// group.
+        /// The name of the launch configuration to use with the Auto Scaling group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -215,8 +212,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The amount of time, in seconds, after a scaling activity completes
-        /// before any further trigger-related scaling activities can start.
+        /// The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.
         ///  
         /// </summary>
         public int DefaultCooldown
@@ -343,8 +339,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The service you want the health status from, Amazon EC2 or Elastic
-        /// Load Balancer.
+        /// The service you want the health status from, Amazon EC2 or Elastic Load Balancer. Valid values are "EC2" or "ELB."
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -385,8 +380,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Length of time in seconds after a new EC2 instance comes into service
-        /// that Auto Scaling starts checking its health.
+        /// Length of time in seconds after a new EC2 instance comes into service that Auto Scaling starts checking its health.
         ///  
         /// </summary>
         public int HealthCheckGracePeriod
@@ -414,8 +408,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Physical location of your cluster placement group created in Amazon
-        /// EC2.
+        /// Physical location of your cluster placement group created in Amazon EC2.
         ///  
         /// <para>
         /// <b>Constraints:</b>

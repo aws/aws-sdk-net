@@ -25,10 +25,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateInstanceInAutoScalingGroup operation.
-    /// <para> Terminates the specified instance. Optionally, the desired
-    /// group size can be adjusted. </para> <para><b>NOTE:</b> This call
-    /// simply registers a termination request. The termination of the
-    /// instance cannot happen immediately. </para>
+    /// <para> Terminates the specified instance. Optionally, the desired group size can be adjusted. </para> <para><b>NOTE:</b> This call simply
+    /// registers a termination request. The termination of the instance cannot happen immediately. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.TerminateInstanceInAutoScalingGroup"/>
     public class TerminateInstanceInAutoScalingGroupRequest : AmazonWebServiceRequest
@@ -78,8 +76,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
-        /// instance should also decrement the size of the
+        /// Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this instance should also decrement the size of the
         /// <a>AutoScalingGroup</a>.
         ///  
         /// </summary>

@@ -25,8 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the ExecutePolicy operation.
-    /// <para>Runs the policy you create for your Auto Scaling group in
-    /// PutScalingPolicy.</para>
+    /// <para>Runs the policy you create for your Auto Scaling group in PutScalingPolicy.</para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.ExecutePolicy"/>
     public class ExecutePolicyRequest : AmazonWebServiceRequest
@@ -118,8 +117,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Set to True if you want Auto Scaling to reject this request if the
-        /// Auto Scaling group is in cooldown.
+        /// Set to True if you want Auto Scaling to reject this request if the Auto Scaling group is in cooldown.
         ///  
         /// </summary>
         public bool HonorCooldown

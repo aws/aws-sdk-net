@@ -39,7 +39,7 @@ namespace Amazon.AutoScaling
         {
             get
             {
-                return "2010-08-01";
+                return "2011-01-01";
             }
         }
     }

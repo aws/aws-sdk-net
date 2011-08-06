@@ -30,8 +30,7 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// Gets and sets the DescribeScheduledActionsResult property.
-        /// A scaling action that is scheduled for a future time and date. An
-        /// action can be scheduled up to thirty days in advance.
+        /// A scaling action that is scheduled for a future time and date. An action can be scheduled up to thirty days in advance.
         /// </summary>
         public DescribeScheduledActionsResult DescribeScheduledActionsResult
         {

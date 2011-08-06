@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
         private string alarmARN;
 
         /// <summary>
-        /// The name of the alaram
+        /// The name of the alarm
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -153,6 +153,8 @@
     <Compile Include="Amazon.AutoScaling\Model\DeleteLaunchConfigurationResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeleteNotificationConfigurationRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DeleteNotificationConfigurationResponse.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DeletePolicyRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -192,6 +194,9 @@
     <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingInstancesResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingNotificationTypesRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingNotificationTypesResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingNotificationTypesResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DescribeLaunchConfigurationsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -210,6 +215,9 @@
     <Compile Include="Amazon.AutoScaling\Model\DescribeMetricCollectionTypesResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeNotificationConfigurationsRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeNotificationConfigurationsResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeNotificationConfigurationsResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DescribePoliciesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -291,9 +299,12 @@
     <Compile Include="Amazon.AutoScaling\Model\MetricGranularityType.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\NotificationConfiguration.cs" />
     <Compile Include="Amazon.AutoScaling\Model\ProcessType.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\PutNotificationConfigurationRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\PutNotificationConfigurationResponse.cs" />
     <Compile Include="Amazon.AutoScaling\Model\PutScalingPolicyRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -399,6 +410,8 @@
     <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteLaunchConfigurationResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteNotificationConfigurationRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteNotificationConfigurationResponseUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Transform\DeletePolicyRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -438,6 +451,9 @@
     <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingInstancesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -456,6 +472,9 @@
     <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -531,9 +550,12 @@
     <Compile Include="Amazon.AutoScaling\Model\Transform\MetricGranularityTypeUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\NotificationConfigurationUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Transform\ProcessTypeUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\PutNotificationConfigurationRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\PutNotificationConfigurationResponseUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>

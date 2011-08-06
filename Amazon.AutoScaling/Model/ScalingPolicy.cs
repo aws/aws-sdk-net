@@ -35,8 +35,7 @@ namespace Amazon.AutoScaling.Model
         private List<Alarm> alarms = new List<Alarm>();
 
         /// <summary>
-        /// The name of the Auto Scaling group associated with this scaling
-        /// policy.
+        /// The name of the Auto Scaling group associated with this scaling policy.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -118,9 +117,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number associated with the specified AdjustmentType. A positive
-        /// value adds to the current capacity and a negative value removes from
-        /// the current capacity.
+        /// The number associated with the specified AdjustmentType. A positive value adds to the current capacity and a negative value removes from the
+        /// current capacity.
         ///  
         /// </summary>
         public int ScalingAdjustment
@@ -148,10 +146,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Specifies whether the ScalingAdjustment is an absolute number or a
-        /// percentage of the current capacity. Valid values are
-        /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and
-        /// <c>PercentOfCapacity</c>.
+        /// Specifies whether the ScalingAdjustment is an absolute number or a percentage of the current capacity. Valid values are
+        /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentOfCapacity</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -192,8 +188,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The amount of time, in seconds, after a scaling activity completes
-        /// before any further trigger-related scaling activities can start.
+        /// The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.
         ///  
         /// </summary>
         public int Cooldown

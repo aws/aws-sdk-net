@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<ResumeProcessesRequest> request = new DefaultRequest<ResumeProcessesRequest>(resumeProcessesRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "ResumeProcesses");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (resumeProcessesRequest != null && resumeProcessesRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(resumeProcessesRequest.AutoScalingGroupName));
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model.Transform
             if (resumeProcessesRequest != null) 
             {
                 List<string> scalingProcessesList = resumeProcessesRequest.ScalingProcesses;
+
                 int scalingProcessesListIndex = 1;
                 foreach (string scalingProcessesListValue in scalingProcessesList) 
                 { 

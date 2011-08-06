@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DeleteScheduledActionRequest> request = new DefaultRequest<DeleteScheduledActionRequest>(deleteScheduledActionRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DeleteScheduledAction");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (deleteScheduledActionRequest != null && deleteScheduledActionRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(deleteScheduledActionRequest.AutoScalingGroupName));

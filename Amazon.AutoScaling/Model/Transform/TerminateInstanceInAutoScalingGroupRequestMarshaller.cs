@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<TerminateInstanceInAutoScalingGroupRequest> request = new DefaultRequest<TerminateInstanceInAutoScalingGroupRequest>(terminateInstanceInAutoScalingGroupRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "TerminateInstanceInAutoScalingGroup");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (terminateInstanceInAutoScalingGroupRequest != null && terminateInstanceInAutoScalingGroupRequest.IsSetInstanceId()) 
             {
                 request.Parameters.Add("InstanceId", StringUtils.FromString(terminateInstanceInAutoScalingGroupRequest.InstanceId));

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<UpdateAutoScalingGroupRequest> request = new DefaultRequest<UpdateAutoScalingGroupRequest>(updateAutoScalingGroupRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "UpdateAutoScalingGroup");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (updateAutoScalingGroupRequest != null && updateAutoScalingGroupRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(updateAutoScalingGroupRequest.AutoScalingGroupName));
@@ -63,6 +63,7 @@ namespace Amazon.AutoScaling.Model.Transform
             if (updateAutoScalingGroupRequest != null) 
             {
                 List<string> availabilityZonesList = updateAutoScalingGroupRequest.AvailabilityZones;
+
                 int availabilityZonesListIndex = 1;
                 foreach (string availabilityZonesListValue in availabilityZonesList) 
                 { 

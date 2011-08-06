@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DescribePoliciesRequest> request = new DefaultRequest<DescribePoliciesRequest>(describePoliciesRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribePolicies");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (describePoliciesRequest != null && describePoliciesRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(describePoliciesRequest.AutoScalingGroupName));
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model.Transform
             if (describePoliciesRequest != null) 
             {
                 List<string> policyNamesList = describePoliciesRequest.PolicyNames;
+
                 int policyNamesListIndex = 1;
                 foreach (string policyNamesListValue in policyNamesList) 
                 { 

@@ -76,8 +76,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The health status of the instance. "Healthy" means that the instance
-        /// is healthy and should remain in service. "Unhealthy" means that the
+        /// The health status of the instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the
         /// instance is unhealthy. Auto Scaling should terminate and replace it.
         ///  
         /// <para>
@@ -119,8 +118,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// If True, this call should respect the grace period associated with the
-        /// group.
+        /// If True, this call should respect the grace period associated with the group.
         ///  
         /// </summary>
         public bool ShouldRespectGracePeriod

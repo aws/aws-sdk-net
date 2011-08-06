@@ -25,9 +25,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScheduledActions operation.
-    /// <para> Lists all the actions scheduled for your Auto Scaling group
-    /// that haven't been executed. To see a list of action already executed,
-    /// see the activity record returned in DescribeScalingActivities. </para>
+    /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of action already executed, see
+    /// the activity record returned in DescribeScalingActivities. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeScheduledActions"/>
     public class DescribeScheduledActionsRequest : AmazonWebServiceRequest
@@ -81,10 +80,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of scheduled actions to be described. If this list is omitted,
-        /// all scheduled actions are described. The list of requested scheduled
-        /// actions cannot contain more than 50 items. If an auto scaling group
-        /// name is provided, the results are limited to that group. If unknown
+        /// A list of scheduled actions to be described. If this list is omitted, all scheduled actions are described. The list of requested scheduled
+        /// actions cannot contain more than 50 items. If an auto scaling group name is provided, the results are limited to that group. If unknown
         /// scheduled actions are requested, they are ignored with no error.
         ///  
         /// </summary>
@@ -130,8 +127,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The earliest scheduled start time to return. If scheduled action names
-        /// are provided, this field will be ignored.
+        /// The earliest scheduled start time to return. If scheduled action names are provided, this field will be ignored.
         ///  
         /// </summary>
         public DateTime StartTime
@@ -159,8 +155,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The latest scheduled start time to return. If scheduled action names
-        /// are provided, this field will be ignored.
+        /// The latest scheduled start time to return. If scheduled action names are provided, this field will be ignored.
         ///  
         /// </summary>
         public DateTime EndTime

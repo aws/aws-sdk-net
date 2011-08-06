@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DeleteAutoScalingGroupRequest> request = new DefaultRequest<DeleteAutoScalingGroupRequest>(deleteAutoScalingGroupRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DeleteAutoScalingGroup");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (deleteAutoScalingGroupRequest != null && deleteAutoScalingGroupRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(deleteAutoScalingGroupRequest.AutoScalingGroupName));

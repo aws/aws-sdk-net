@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DeleteLaunchConfigurationRequest> request = new DefaultRequest<DeleteLaunchConfigurationRequest>(deleteLaunchConfigurationRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DeleteLaunchConfiguration");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (deleteLaunchConfigurationRequest != null && deleteLaunchConfigurationRequest.IsSetLaunchConfigurationName()) 
             {
                 request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(deleteLaunchConfigurationRequest.LaunchConfigurationName));

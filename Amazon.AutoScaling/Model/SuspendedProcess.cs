@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> An Auto Scaling process that has been suspended. For more
-    /// information, see ProcessType. </para>
+    /// <para> An Auto Scaling process that has been suspended. For more information, see ProcessType. </para>
     /// </summary>
     public class SuspendedProcess  
     {

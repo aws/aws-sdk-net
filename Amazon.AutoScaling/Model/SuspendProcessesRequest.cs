@@ -25,14 +25,10 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SuspendProcesses operation.
-    /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To
-    /// suspend specific process types, specify them by name with the
-    /// <c>ScalingProcesses.member.N</c> parameter. To suspend all process
-    /// types, omit the <c>ScalingProcesses.member.N</c> parameter. </para>
-    /// <para><b>IMPORTANT:</b> Suspending either of the two primary process
-    /// types, Launch or Terminate, can prevent other process types from
-    /// functioning properly. For more information about processes and their
-    /// dependencies, see ProcessType. </para> <para> To resume processes that
+    /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process types, specify them by name with the
+    /// <c>ScalingProcesses.member.N</c> parameter. To suspend all process types, omit the <c>ScalingProcesses.member.N</c> parameter. </para>
+    /// <para><b>IMPORTANT:</b> Suspending either of the two primary process types, Launch or Terminate, can prevent other process types from
+    /// functioning properly. For more information about processes and their dependencies, see ProcessType. </para> <para> To resume processes that
     /// have been suspended, use ResumeProcesses. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.SuspendProcesses"/>
@@ -83,10 +79,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The processes that you want to suspend or resume, which can include
-        /// one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-        /// <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-        /// <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> To suspend
+        /// The processes that you want to suspend or resume, which can include one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
+        /// <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li> <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> To suspend
         /// all process types, omit this parameter.
         ///  
         /// </summary>

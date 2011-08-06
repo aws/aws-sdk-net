@@ -25,8 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteScheduledAction operation.
-    /// <para>Deletes a scheduled action previously created using the
-    /// PutScheduledUpdateGroupAction.</para>
+    /// <para>Deletes a scheduled action previously created using the PutScheduledUpdateGroupAction.</para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteScheduledAction"/>
     public class DeleteScheduledActionRequest : AmazonWebServiceRequest

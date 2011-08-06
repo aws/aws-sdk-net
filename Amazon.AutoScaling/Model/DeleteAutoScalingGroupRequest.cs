@@ -25,34 +25,14 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAutoScalingGroup operation.
-    /// <para> Deletes the specified auto scaling group if the group has no
-    /// instances and no scaling activities in progress. </para>
-    /// <para><b>NOTE:</b> To remove all instances before calling
-    /// DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the
-    /// minimum and maximum size of the AutoScalingGroup to zero. </para>
+    /// <para> Deletes the specified auto scaling group if the group has no instances and no scaling activities in progress. </para>
+    /// <para><b>NOTE:</b> To remove all instances before calling DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the minimum and
+    /// maximum size of the AutoScalingGroup to zero. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteAutoScalingGroup"/>
     public class DeleteAutoScalingGroupRequest : AmazonWebServiceRequest
     {
         private string autoScalingGroupName;
-
-        /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string AutoScalingGroupName
         {
             get { return this.autoScalingGroupName; }

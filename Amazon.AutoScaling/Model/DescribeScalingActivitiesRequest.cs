@@ -25,14 +25,10 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingActivities operation.
-    /// <para> Returns the scaling activities for the specified Auto Scaling
-    /// group. </para> <para> If the specified <i>ActivityIds</i> list is
-    /// empty, all the activities from the past six weeks are returned.
-    /// Activities are sorted by completion time. Activities still in progress
-    /// appear first on the list. </para> <para> This action supports
-    /// pagination. If the response includes a token, there are more records
-    /// available. To get the additional records, repeat the request with the
-    /// response token as the NextToken parameter. </para>
+    /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <i>ActivityIds</i> list is
+    /// empty, all the activities from the past six weeks are returned. Activities are sorted by completion time. Activities still in progress
+    /// appear first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records
+    /// available. To get the additional records, repeat the request with the response token as the NextToken parameter. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeScalingActivities"/>
     public class DescribeScalingActivitiesRequest : AmazonWebServiceRequest
@@ -43,12 +39,9 @@ namespace Amazon.AutoScaling.Model
         private string nextToken;
 
         /// <summary>
-        /// A list containing the activity IDs of the desired scaling activities.
-        /// If this list is omitted, all activities are described. If an
-        /// AutoScalingGroupName is provided, the results are limited to that
-        /// group. The list of requested activities cannot contain more than 50
-        /// items. If unknown activities are requested, they are ignored with no
-        /// error.
+        /// A list containing the activity IDs of the desired scaling activities. If this list is omitted, all activities are described. If an
+        /// AutoScalingGroupName is provided, the results are limited to that group. The list of requested activities cannot contain more than 50 items.
+        /// If unknown activities are requested, they are ignored with no error.
         ///  
         /// </summary>
         public List<string> ActivityIds
@@ -171,8 +164,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A string that marks the start of the next batch of returned results
-        /// for pagination.
+        /// A string that marks the start of the next batch of returned results for pagination.
         ///  
         /// <para>
         /// <b>Constraints:</b>

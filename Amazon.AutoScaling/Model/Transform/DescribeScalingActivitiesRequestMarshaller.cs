@@ -35,10 +35,11 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DescribeScalingActivitiesRequest> request = new DefaultRequest<DescribeScalingActivitiesRequest>(describeScalingActivitiesRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribeScalingActivities");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (describeScalingActivitiesRequest != null) 
             {
                 List<string> activityIdsList = describeScalingActivitiesRequest.ActivityIds;
+
                 int activityIdsListIndex = 1;
                 foreach (string activityIdsListValue in activityIdsList) 
                 { 

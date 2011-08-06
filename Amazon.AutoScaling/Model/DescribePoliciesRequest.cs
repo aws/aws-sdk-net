@@ -25,10 +25,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePolicies operation.
-    /// <para> Returns descriptions of what each policy does. This action
-    /// supports pagination. If the response includes a token, there are more
-    /// records available. To get the additional records, repeat the request
-    /// with the response token as the NextToken parameter. </para>
+    /// <para> Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more
+    /// records available. To get the additional records, repeat the request with the response token as the NextToken parameter. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribePolicies"/>
     public class DescribePoliciesRequest : AmazonWebServiceRequest
@@ -80,10 +78,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of policy names or policy ARNs to be described. If this list is
-        /// omitted, all policy names are described. If an auto scaling group name
-        /// is provided, the results are limited to that group.The list of
-        /// requested policy names cannot contain more than 50 items. If unknown
+        /// A list of policy names or policy ARNs to be described. If this list is omitted, all policy names are described. If an auto scaling group
+        /// name is provided, the results are limited to that group.The list of requested policy names cannot contain more than 50 items. If unknown
         /// policy names are requested, they are ignored with no error.
         ///  
         /// </summary>
@@ -129,8 +125,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A string that is used to mark the start of the next batch of returned
-        /// results for pagination.
+        /// A string that is used to mark the start of the next batch of returned results for pagination.
         ///  
         /// <para>
         /// <b>Constraints:</b>

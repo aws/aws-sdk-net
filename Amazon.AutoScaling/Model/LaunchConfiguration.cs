@@ -122,8 +122,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Provides the unique ID of the <i>Amazon Machine Image</i> (AMI) that
-        /// was assigned during registration.
+        /// Provides the unique ID of the <i>Amazon Machine Image</i> (AMI) that was assigned during registration.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -205,8 +204,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A description of the security groups to associate with the EC2
-        /// instances.
+        /// A description of the security groups to associate with the EC2 instances.
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -415,8 +413,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Specifies how block devices are exposed to the instance. Each mapping
-        /// is made up of a <i>virtualName</i> and a <i>deviceName</i>.
+        /// Specifies how block devices are exposed to the instance. Each mapping is made up of a <i>virtualName</i> and a <i>deviceName</i>.
         ///  
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -461,8 +458,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Controls whether instances in this group are launched with detailed
-        /// monitoring or not.
+        /// Controls whether instances in this group are launched with detailed monitoring or not.
         ///  
         /// </summary>
         public InstanceMonitoring InstanceMonitoring

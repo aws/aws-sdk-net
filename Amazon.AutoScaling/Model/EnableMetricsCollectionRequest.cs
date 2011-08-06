@@ -25,12 +25,9 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableMetricsCollection operation.
-    /// <para> Enables monitoring of group metrics for the Auto Scaling group
-    /// specified in AutoScalingGroupName. You can specify the list of enabled
-    /// metrics with the Metrics parameter. </para> <para> Auto scaling
-    /// metrics collection can be turned on only if the
-    /// <c>InstanceMonitoring.Enabled</c> flag, in the Auto Scaling group's
-    /// launch configuration, is set to <c>true</c> .
+    /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in AutoScalingGroupName. You can specify the list of enabled
+    /// metrics with the Metrics parameter. </para> <para> Auto scaling metrics collection can be turned on only if the
+    /// <c>InstanceMonitoring.Enabled</c> flag, in the Auto Scaling group's launch configuration, is set to <c>true</c> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.EnableMetricsCollection"/>
@@ -82,12 +79,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The list of metrics to collect. If no metrics are specified, all
-        /// metrics are enabled. The following metrics are supported: <ul>
-        /// <li>GroupMinSize</li> <li>GroupMaxSize</li>
-        /// <li>GroupDesiredCapacity</li> <li>GroupInServiceInstances</li>
-        /// <li>GroupPendingInstances</li> <li>GroupTerminatingInstances</li>
-        /// <li>GroupTotalInstances</li> </ul>
+        /// The list of metrics to collect. If no metrics are specified, all metrics are enabled. The following metrics are supported: <ul>
+        /// <li>GroupMinSize</li> <li>GroupMaxSize</li> <li>GroupDesiredCapacity</li> <li>GroupInServiceInstances</li> <li>GroupPendingInstances</li>
+        /// <li>GroupTerminatingInstances</li> <li>GroupTotalInstances</li> </ul>
         ///  
         /// </summary>
         public List<string> Metrics
@@ -132,8 +126,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The granularity to associate with the metrics to collect. Currently,
-        /// the only legal granularity is "1Minute".
+        /// The granularity to associate with the metrics to collect. Currently, the only legal granularity is "1Minute".
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DescribeMetricCollectionTypesRequest> request = new DefaultRequest<DescribeMetricCollectionTypesRequest>(describeMetricCollectionTypesRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribeMetricCollectionTypes");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
 
 
             return request;

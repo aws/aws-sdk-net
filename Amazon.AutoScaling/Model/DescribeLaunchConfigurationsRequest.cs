@@ -25,9 +25,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLaunchConfigurations operation.
-    /// <para> Returns a full description of the launch configurations given
-    /// the specified names. </para> <para> If no names are specified, then
-    /// the full details of all launch configurations are returned. </para>
+    /// <para> Returns a full description of the launch configurations given the specified names. </para> <para> If no names are specified, then the
+    /// full details of all launch configurations are returned. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeLaunchConfigurations"/>
     public class DescribeLaunchConfigurationsRequest : AmazonWebServiceRequest

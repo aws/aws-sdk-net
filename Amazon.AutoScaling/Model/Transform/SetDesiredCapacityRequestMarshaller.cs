@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<SetDesiredCapacityRequest> request = new DefaultRequest<SetDesiredCapacityRequest>(setDesiredCapacityRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "SetDesiredCapacity");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (setDesiredCapacityRequest != null && setDesiredCapacityRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(setDesiredCapacityRequest.AutoScalingGroupName));

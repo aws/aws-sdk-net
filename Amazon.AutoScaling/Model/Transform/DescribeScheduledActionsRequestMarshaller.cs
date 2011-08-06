@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DescribeScheduledActionsRequest> request = new DefaultRequest<DescribeScheduledActionsRequest>(describeScheduledActionsRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribeScheduledActions");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (describeScheduledActionsRequest != null && describeScheduledActionsRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(describeScheduledActionsRequest.AutoScalingGroupName));
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model.Transform
             if (describeScheduledActionsRequest != null) 
             {
                 List<string> scheduledActionNamesList = describeScheduledActionsRequest.ScheduledActionNames;
+
                 int scheduledActionNamesListIndex = 1;
                 foreach (string scheduledActionNamesListValue in scheduledActionNamesList) 
                 { 

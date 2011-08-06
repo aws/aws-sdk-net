@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<SuspendProcessesRequest> request = new DefaultRequest<SuspendProcessesRequest>(suspendProcessesRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "SuspendProcesses");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (suspendProcessesRequest != null && suspendProcessesRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(suspendProcessesRequest.AutoScalingGroupName));
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model.Transform
             if (suspendProcessesRequest != null) 
             {
                 List<string> scalingProcessesList = suspendProcessesRequest.ScalingProcesses;
+
                 int scalingProcessesListIndex = 1;
                 foreach (string scalingProcessesListValue in scalingProcessesList) 
                 { 

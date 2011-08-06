@@ -25,21 +25,14 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAutoScalingGroup operation.
-    /// <para> Updates the configuration for the specified AutoScalingGroup.
-    /// </para> <para><b>NOTE:</b> To update an Auto Scaling group with a
-    /// launch configuration that has the InstanceMonitoring.enabled flag set
-    /// to false, you must first ensure that collection of group metrics is
-    /// disabled. Otherwise, calls to UpdateAutoScalingGroup will fail. If you
-    /// have previously enabled group metrics collection, you can disable
-    /// collection of all group metrics by calling DisableMetricsCollection.
-    /// </para> <para> The new settings are registered upon the completion of
-    /// this call. Any launch configuration settings take effect on any
-    /// triggers after this call returns. Triggers that are currently in
-    /// progress aren't affected. </para> <para><b>NOTE:</b> If the new values
-    /// are specified for the MinSize or MaxSize parameters, then there will
-    /// be an implicit call to SetDesiredCapacity to set the group to the new
-    /// MaxSize. All optional parameters are left unchanged if not passed in
-    /// the request. </para>
+    /// <para> Updates the configuration for the specified AutoScalingGroup. </para> <para><b>NOTE:</b> To update an Auto Scaling group with a
+    /// launch configuration that has the InstanceMonitoring.enabled flag set to false, you must first ensure that collection of group metrics is
+    /// disabled. Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics collection, you can disable
+    /// collection of all group metrics by calling DisableMetricsCollection. </para> <para> The new settings are registered upon the completion of
+    /// this call. Any launch configuration settings take effect on any triggers after this call returns. Triggers that are currently in progress
+    /// aren't affected. </para> <para><b>NOTE:</b> If the new values are specified for the MinSize or MaxSize parameters, then there will be an
+    /// implicit call to SetDesiredCapacity to set the group to the new MaxSize. All optional parameters are left unchanged if not passed in the
+    /// request. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.UpdateAutoScalingGroup"/>
     public class UpdateAutoScalingGroupRequest : AmazonWebServiceRequest
@@ -223,8 +216,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The amount of time, in seconds, after a scaling activity completes
-        /// before any further trigger-related scaling activities can start.
+        /// The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.
         ///  
         /// </summary>
         public int DefaultCooldown
@@ -306,8 +298,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The service of interest for the health status check, either "EC2" for
-        /// Amazon EC2 or "ELB" for Elastic Load Balancing.
+        /// The service of interest for the health status check, either "EC2" for Amazon EC2 or "ELB" for Elastic Load Balancing.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -348,9 +339,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The length of time that Auto Scaling waits before checking an
-        /// instance's health status. The grace period begins when an instance
-        /// comes into service.
+        /// The length of time that Auto Scaling waits before checking an instance's health status. The grace period begins when an instance comes into
+        /// service.
         ///  
         /// </summary>
         public int HealthCheckGracePeriod
@@ -378,10 +368,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The name of the cluster placement group, if applicable. For more
-        /// information, go to <a href="http://docs.amazonwebservices.com/AWSEC2/latest/DeveloperGuide/concepts_cluster_compute.html">
-        /// Cluster Compute Instance Concepts</a> in the Amazon EC2 Developer
-        /// Guide.
+        /// The name of the cluster placement group, if applicable. For more information, go to <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Using Cluster Instances</a> in the Amazon EC2
+        /// User Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>

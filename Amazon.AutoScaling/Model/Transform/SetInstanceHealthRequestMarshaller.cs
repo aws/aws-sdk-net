@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<SetInstanceHealthRequest> request = new DefaultRequest<SetInstanceHealthRequest>(setInstanceHealthRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "SetInstanceHealth");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (setInstanceHealthRequest != null && setInstanceHealthRequest.IsSetInstanceId()) 
             {
                 request.Parameters.Add("InstanceId", StringUtils.FromString(setInstanceHealthRequest.InstanceId));

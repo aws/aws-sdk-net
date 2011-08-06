@@ -75,8 +75,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Acts as a paging mechanism for large result sets. Set to a non-empty
-        /// string if there are additional results waiting to be returned. Pass
+        /// Acts as a paging mechanism for large result sets. Set to a non-empty string if there are additional results waiting to be returned. Pass
         /// this in to subsequent calls to return additional results.
         ///  
         /// <para>

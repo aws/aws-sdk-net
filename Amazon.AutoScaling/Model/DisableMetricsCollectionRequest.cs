@@ -25,8 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableMetricsCollection operation.
-    /// <para> Disables monitoring of group metrics for the Auto Scaling group
-    /// specified in AutoScalingGroupName. You can specify the list of
+    /// <para> Disables monitoring of group metrics for the Auto Scaling group specified in AutoScalingGroupName. You can specify the list of
     /// affected metrics with the Metrics parameter. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DisableMetricsCollection"/>
@@ -77,12 +76,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The list of metrics to disable. If no metrics are specified, all
-        /// metrics are disabled. The following metrics are supported: <ul>
-        /// <li>GroupMinSize</li> <li>GroupMaxSize</li>
-        /// <li>GroupDesiredCapacity</li> <li>GroupInServiceInstances</li>
-        /// <li>GroupPendingInstances</li> <li>GroupTerminatingInstances</li>
-        /// <li>GroupTotalInstances</li> </ul>
+        /// The list of metrics to disable. If no metrics are specified, all metrics are disabled. The following metrics are supported: <ul>
+        /// <li>GroupMinSize</li> <li>GroupMaxSize</li> <li>GroupDesiredCapacity</li> <li>GroupInServiceInstances</li> <li>GroupPendingInstances</li>
+        /// <li>GroupTerminatingInstances</li> <li>GroupTotalInstances</li> </ul>
         ///  
         /// </summary>
         public List<string> Metrics

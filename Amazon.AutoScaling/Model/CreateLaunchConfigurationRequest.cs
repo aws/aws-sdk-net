@@ -25,12 +25,9 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLaunchConfiguration operation.
-    /// <para> Creates a new launch configuration. Once created, the new
-    /// launch configuration is available for immediate use. </para>
-    /// <para><b>NOTE:</b> The launch configuration name used must be unique,
-    /// within the scope of the client's AWS account, and the maximum limit of
-    /// launch configurations must not yet have been met, or else the call
-    /// will fail. </para>
+    /// <para> Creates a new launch configuration. Once created, the new launch configuration is available for immediate use. </para>
+    /// <para><b>NOTE:</b> The launch configuration name used must be unique, within the scope of the client's AWS account, and the maximum limit of
+    /// launch configurations must not yet have been met, or else the call will fail. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateLaunchConfiguration"/>
     public class CreateLaunchConfigurationRequest : AmazonWebServiceRequest
@@ -88,10 +85,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
-        /// during registration. For more information about Amazon EC2 images,
-        /// please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-        /// documentation</a>
+        /// Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned during registration. For more information about Amazon EC2 images,
+        /// please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -173,10 +168,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The names of the security groups with which to associate EC2
-        /// instances. For more information about Amazon EC2 security groups, go
-        /// to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-        /// documentation.</a>
+        /// The names of the security groups with which to associate EC2 instances. For more information about Amazon EC2 security groups, go to the <a
+        /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation.</a>
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -221,10 +214,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The user data available to the launched EC2 instances. For more
-        /// information about Amazon EC2 user data, please see <a
-        /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-        /// documentation</a>.
+        /// The user data available to the launched EC2 instances. For more information about Amazon EC2 user data, please see <a
+        /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -265,10 +256,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The instance type of the EC2 instance. For more information about
-        /// Amazon EC2 instance types, please see <a
-        /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-        /// documentation</a>
+        /// The instance type of the EC2 instance. For more information about Amazon EC2 instance types, please see <a
+        /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -391,11 +380,11 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of mappings that specify how block devices are exposed to the
-        /// instance. Each mapping is made up of a <i>VirtualName</i> and a
-        /// <i>DeviceName</i>. For more information about Amazon EC2
-        /// BlockDeviceMappings, please see <a href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
-        /// Block Device Mapping</a> in the Amazon EC2 product documentation.
+        /// A list of mappings that specify how block devices are exposed to the instance. Each mapping is made up of a <i>VirtualName</i>, a
+        /// <i>DeviceName</i>, and an <i>ebs</i> data structure that contains information about the associated Elastic Block Storage volume. For more
+        /// information about Amazon EC2 BlockDeviceMappings, please go to <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html"> Block Device Mapping</a> in
+        /// the Amazon EC2 product documentation.
         ///  
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings

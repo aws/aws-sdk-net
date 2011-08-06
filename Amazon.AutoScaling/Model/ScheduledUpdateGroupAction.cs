@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> This data type stores information about an scheduled update to
-    /// an Auto Scaling group. </para>
+    /// <para> This data type stores information about an scheduled update to an Auto Scaling group. </para>
     /// </summary>
     public class ScheduledUpdateGroupAction  
     {
@@ -159,8 +158,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The time that the action is scheduled to occur. This value can be up
-        /// to one month in the future.
+        /// The time that the action is scheduled to occur. This value can be up to one month in the future.
         ///  
         /// </summary>
         public DateTime Time
@@ -244,10 +242,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number of instances you prefer to maintain in your Auto Scaling
-        /// group. The desired capacity must be no less than
-        /// <a>ScheduledUpdateGroupAction$MinSize</a> and no greater than
-        /// <a>ScheduledUpdateGroupAction$MaxSize</a>.
+        /// The number of instances you prefer to maintain in your Auto Scaling group. The desired capacity must be no less than
+        /// <a>ScheduledUpdateGroupAction$MinSize</a> and no greater than <a>ScheduledUpdateGroupAction$MaxSize</a>.
         ///  
         /// </summary>
         public int DesiredCapacity

@@ -25,11 +25,9 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutScalingPolicy operation.
-    /// <para> Creates or updates a policy for an Auto Scaling group. To
-    /// update an existing policy, use the existing policy name and set the
-    /// parameter(s) you want to change. Any existing parameter not changed in
-    /// an update to an existing policy is not changed in this update request.
-    /// </para>
+    /// <para> Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the
+    /// parameter(s) you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update
+    /// request. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.PutScalingPolicy"/>
     public class PutScalingPolicyRequest : AmazonWebServiceRequest
@@ -123,11 +121,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number of instances by which to scale. AdjustmentType determines
-        /// the interpretation of this number (e.g., as an absolute number or as a
-        /// percentage of the existing Auto Scaling group size). A positive
-        /// increment adds to the current capacity and a negative value removes
-        /// from the current capacity.
+        /// The number of instances by which to scale. AdjustmentType determines the interpretation of this number (e.g., as an absolute number or as a
+        /// percentage of the existing Auto Scaling group size). A positive increment adds to the current capacity and a negative value removes from the
+        /// current capacity.
         ///  
         /// </summary>
         public int ScalingAdjustment
@@ -155,10 +151,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Specifies whether the <c>ScalingAdjustment</c> is an absolute number
-        /// or a percentage of the current capacity. Valid values are
-        /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and
-        /// <c>PercentChangeInCapacity</c>.
+        /// Specifies whether the <c>ScalingAdjustment</c> is an absolute number or a percentage of the current capacity. Valid values are
+        /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -199,8 +193,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The amount of time, in seconds, after a scaling activity completes
-        /// before any further trigger-related scaling activities can start.
+        /// The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.
         ///  
         /// </summary>
         public int Cooldown

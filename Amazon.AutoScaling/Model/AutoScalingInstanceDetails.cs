@@ -198,8 +198,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The health status of this instance. "Healthy" means that the instance
-        /// is healthy and should remain in service. "Unhealthy" means that the
+        /// The health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the
         /// instance is unhealthy. Auto Scaling should terminate and replace it.
         ///  
         /// <para>

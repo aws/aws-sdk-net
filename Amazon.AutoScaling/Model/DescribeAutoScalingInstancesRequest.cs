@@ -25,12 +25,9 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingInstances operation.
-    /// <para> Returns a description of each Auto Scaling instance in the
-    /// InstanceIds list. If a list is not provided, the service returns the
-    /// full details of all instances up to a maximum of fifty. </para> <para>
-    /// This action supports pagination by returning a token if there are more
-    /// pages to retrieve. To get the next page, call this action again with
-    /// the returned token as the NextToken parameter. </para>
+    /// <para> Returns a description of each Auto Scaling instance in the InstanceIds list. If a list is not provided, the service returns the full
+    /// details of all instances up to a maximum of fifty. </para> <para> This action supports pagination by returning a token if there are more
+    /// pages to retrieve. To get the next page, call this action again with the returned token as the NextToken parameter. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeAutoScalingInstances"/>
     public class DescribeAutoScalingInstancesRequest : AmazonWebServiceRequest
@@ -40,10 +37,8 @@ namespace Amazon.AutoScaling.Model
         private string nextToken;
 
         /// <summary>
-        /// The list of Auto Scaling instances to describe. If this list is
-        /// omitted, all auto scaling instances are described. The list of
-        /// requested instances cannot contain more than 50 items. If unknown
-        /// instances are requested, they are ignored with no error.
+        /// The list of Auto Scaling instances to describe. If this list is omitted, all auto scaling instances are described. The list of requested
+        /// instances cannot contain more than 50 items. If unknown instances are requested, they are ignored with no error.
         ///  
         /// </summary>
         public List<string> InstanceIds
@@ -88,8 +83,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The maximum number of Auto Scaling instances to be described with each
-        /// call.
+        /// The maximum number of Auto Scaling instances to be described with each call.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -126,8 +120,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The token returned by a previous call to indicate that there is more
-        /// data available.
+        /// The token returned by a previous call to indicate that there is more data available.
         ///  
         /// <para>
         /// <b>Constraints:</b>

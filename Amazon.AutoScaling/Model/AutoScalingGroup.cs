@@ -252,8 +252,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number of seconds after a scaling activity completes before any
-        /// further scaling activities can start.
+        /// The number of seconds after a scaling activity completes before any further scaling activities can start.
         ///  
         /// </summary>
         public int DefaultCooldown
@@ -380,8 +379,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The service of interest for the health status check, either "EC2" for
-        /// Amazon EC2 or "ELB" for Elastic Load Balancing.
+        /// The service of interest for the health status check, either "EC2" for Amazon EC2 or "ELB" for Elastic Load Balancing.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -422,9 +420,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The length of time that Auto Scaling waits before checking an
-        /// instance's health status. The grace period begins when an instance
-        /// comes into service.
+        /// The length of time that Auto Scaling waits before checking an instance's health status. The grace period begins when an instance comes into
+        /// service.
         ///  
         /// </summary>
         public int HealthCheckGracePeriod
@@ -570,10 +567,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The name of the cluster placement group, if applicable. For more
-        /// information, go to <a href="http://docs.amazonwebservices.com/AWSEC2/latest/DeveloperGuide/concepts_cluster_compute.html">
-        /// Cluster Compute Instance Concepts</a> in the Amazon EC2 Developer
-        /// Guide.
+        /// The name of the cluster placement group, if applicable. For more information, go to <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Using Cluster Instances</a> in the Amazon EC2
+        /// User Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>

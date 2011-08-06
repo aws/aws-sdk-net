@@ -21,10 +21,8 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> A Scaling Activity is a long-running process that represents a
-    /// change to your AutoScalingGroup, such as changing the size of the
-    /// group. It can also be a process to replace an instance, or a process
-    /// to perform any other long-running operations supported by the API.
+    /// <para> A Scaling Activity is a long-running process that represents a change to your AutoScalingGroup, such as changing the size of the
+    /// group. It can also be a process to replace an instance, or a process to perform any other long-running operations supported by the API.
     /// </para>
     /// </summary>
     public class Activity  
@@ -331,8 +329,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Specifies a value between 0 and 100 that indicates the progress of the
-        /// activity.
+        /// Specifies a value between 0 and 100 that indicates the progress of the activity.
         ///  
         /// </summary>
         public int Progress

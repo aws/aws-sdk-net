@@ -35,10 +35,11 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DescribeLaunchConfigurationsRequest> request = new DefaultRequest<DescribeLaunchConfigurationsRequest>(describeLaunchConfigurationsRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribeLaunchConfigurations");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (describeLaunchConfigurationsRequest != null) 
             {
                 List<string> launchConfigurationNamesList = describeLaunchConfigurationsRequest.LaunchConfigurationNames;
+
                 int launchConfigurationNamesListIndex = 1;
                 foreach (string launchConfigurationNamesListValue in launchConfigurationNamesList) 
                 { 

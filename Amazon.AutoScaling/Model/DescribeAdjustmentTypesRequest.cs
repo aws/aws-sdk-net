@@ -25,8 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAdjustmentTypes operation.
-    /// <para> Returns policy adjustment types for use in the PutScalingPolicy
-    /// action. </para>
+    /// <para> Returns policy adjustment types for use in the PutScalingPolicy action. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeAdjustmentTypes"/>
     public class DescribeAdjustmentTypesRequest : AmazonWebServiceRequest

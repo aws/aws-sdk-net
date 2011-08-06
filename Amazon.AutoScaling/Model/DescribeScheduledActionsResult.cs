@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> A scaling action that is scheduled for a future time and date.
-    /// An action can be scheduled up to thirty days in advance. </para>
+    /// <para> A scaling action that is scheduled for a future time and date. An action can be scheduled up to thirty days in advance. </para>
     /// </summary>
     public class DescribeScheduledActionsResult  
     {

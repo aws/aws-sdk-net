@@ -25,8 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the ResumeProcesses operation.
-    /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For
-    /// more information, see SuspendProcesses and ProcessType. </para>
+    /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For more information, see SuspendProcesses and ProcessType. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.ResumeProcesses"/>
     public class ResumeProcessesRequest : AmazonWebServiceRequest
@@ -76,10 +75,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The processes that you want to suspend or resume, which can include
-        /// one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
-        /// <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-        /// <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> To suspend
+        /// The processes that you want to suspend or resume, which can include one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
+        /// <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li> <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> To suspend
         /// all process types, omit this parameter.
         ///  
         /// </summary>

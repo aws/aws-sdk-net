@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> Specifies whether the PutScalingPolicy <c>ScalingAdjustment</c>
-    /// parameter is an absolute number or a percentage of the current
+    /// <para> Specifies whether the PutScalingPolicy <c>ScalingAdjustment</c> parameter is an absolute number or a percentage of the current
     /// capacity. </para>
     /// </summary>
     public class AdjustmentType  
@@ -31,8 +30,7 @@ namespace Amazon.AutoScaling.Model
         private string adjustmentType;
 
         /// <summary>
-        /// A policy adjustment type. Valid values are <c>ChangeInCapacity</c>,
-        /// <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>.
+        /// A policy adjustment type. Valid values are <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

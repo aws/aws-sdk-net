@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<PutScheduledUpdateGroupActionRequest> request = new DefaultRequest<PutScheduledUpdateGroupActionRequest>(putScheduledUpdateGroupActionRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "PutScheduledUpdateGroupAction");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(putScheduledUpdateGroupActionRequest.AutoScalingGroupName));

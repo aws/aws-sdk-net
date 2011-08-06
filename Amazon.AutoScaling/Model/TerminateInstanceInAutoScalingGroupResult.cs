@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The output for the TerminateInstanceInAutoScalingGroup action.
-    /// </para>
+    /// <para> The output for the TerminateInstanceInAutoScalingGroup action. </para>
     /// </summary>
     public class TerminateInstanceInAutoScalingGroupResult  
     {

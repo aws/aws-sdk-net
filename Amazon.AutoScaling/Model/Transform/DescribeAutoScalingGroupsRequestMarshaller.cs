@@ -35,10 +35,11 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<DescribeAutoScalingGroupsRequest> request = new DefaultRequest<DescribeAutoScalingGroupsRequest>(describeAutoScalingGroupsRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribeAutoScalingGroups");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (describeAutoScalingGroupsRequest != null) 
             {
                 List<string> autoScalingGroupNamesList = describeAutoScalingGroupsRequest.AutoScalingGroupNames;
+
                 int autoScalingGroupNamesListIndex = 1;
                 foreach (string autoScalingGroupNamesListValue in autoScalingGroupNamesList) 
                 { 

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Transform
         {
             IRequest<EnableMetricsCollectionRequest> request = new DefaultRequest<EnableMetricsCollectionRequest>(enableMetricsCollectionRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "EnableMetricsCollection");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Parameters.Add("Version", "2011-01-01");
             if (enableMetricsCollectionRequest != null && enableMetricsCollectionRequest.IsSetAutoScalingGroupName()) 
             {
                 request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(enableMetricsCollectionRequest.AutoScalingGroupName));
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model.Transform
             if (enableMetricsCollectionRequest != null) 
             {
                 List<string> metricsList = enableMetricsCollectionRequest.Metrics;
+
                 int metricsListIndex = 1;
                 foreach (string metricsListValue in metricsList) 
                 { 
