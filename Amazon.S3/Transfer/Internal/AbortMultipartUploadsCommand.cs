@@ -54,7 +54,8 @@ namespace Amazon.S3.Transfer.Internal
                 ListMultipartUploadsRequest listRequest = new ListMultipartUploadsRequest()
                     .WithBucketName(this._bucketName)
                     .WithKeyMarker(listResponse.KeyMarker)
-                    .WithUploadIdMarker(listResponse.NextUploadIdMarker);
+                    .WithUploadIdMarker(listResponse.NextUploadIdMarker)
+                    .WithBeforeRequestHandler(RequestEventHandler) as ListMultipartUploadsRequest;
 
                 listResponse = this._s3Client.ListMultipartUploads(listRequest);
                 foreach (MultipartUpload upload in listResponse.MultipartUploads)
@@ -64,7 +65,8 @@ namespace Amazon.S3.Transfer.Internal
                         this._s3Client.AbortMultipartUpload(new AbortMultipartUploadRequest()
                             .WithBucketName(this._bucketName)
                             .WithKey(upload.Key)
-                            .WithUploadId(upload.UploadId));
+                            .WithUploadId(upload.UploadId)
+                            .WithBeforeRequestHandler(RequestEventHandler) as AbortMultipartUploadRequest);
                     }
                 }
             }

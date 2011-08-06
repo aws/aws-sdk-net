@@ -37,6 +37,8 @@ namespace Amazon.Runtime
     /// </summary>
     public abstract class AmazonWebServiceClient : IDisposable
     {
+        #region Private members
+
         const int MAX_BACKOFF_IN_MILLISECONDS = 30 * 1000;
         string awsAccessKeyId;
         SecureString awsSecretAccessKey;
@@ -45,6 +47,16 @@ namespace Amazon.Runtime
 
         bool disposed;
         Logger logger;
+
+        #endregion
+
+
+        #region Events
+
+        internal event RequestEventHandler BeforeRequestEvent;
+
+        #endregion
+
 
         #region Dispose Pattern Implementation
 
@@ -141,16 +153,16 @@ namespace Amazon.Runtime
                     }
                     request.Proxy = proxy;
                 }
-                request.UserAgent = this.config.UserAgent;
+
+                // Setting of these properties is moved to before signing
+                //request.UserAgent = this.config.UserAgent;
+                //request.ContentType = AWSSDKUtils.UrlEncodedContent;
+
                 request.Method = "POST";
                 request.Timeout = 50000;
-                request.ContentType = AWSSDKUtils.UrlEncodedContent;
                 request.ContentLength = requestData.Length;
 
-                foreach (KeyValuePair<string, string> pair in wrappedRequest.Headers)
-                {
-                    request.Headers.Add(pair.Key, pair.Value);
-                }
+                AddHeaders(request, wrappedRequest.Headers);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
@@ -159,6 +171,63 @@ namespace Amazon.Runtime
             }
 
             return request;
+        }
+
+        // As per MSDN documentation (http://msdn.microsoft.com/en-us/library/system.net.webheadercollection%28v=VS.80%29.aspx)
+        // some headers are restricted, cannot be set through the request.Headers property and must be
+        // set through properties on the HttpWebRequest
+        private void AddHeaders(HttpWebRequest request, IDictionary<string, string> headersToAdd)
+        {
+            var headers = request.Headers;
+            foreach (var kvp in headersToAdd)
+            {
+                if (WebHeaderCollection.IsRestricted(kvp.Key))
+                {
+                    if (string.Equals(kvp.Key, "Accept", StringComparison.OrdinalIgnoreCase))
+                        request.Accept = kvp.Value;
+                    else if (string.Equals(kvp.Key, "Connection", StringComparison.OrdinalIgnoreCase))
+                        request.Connection = kvp.Value;
+                    else if (string.Equals(kvp.Key, "Content-Type", StringComparison.OrdinalIgnoreCase))
+                        request.ContentType = kvp.Value;
+                    else if (string.Equals(kvp.Key, "Expect", StringComparison.OrdinalIgnoreCase))
+                        request.Expect = kvp.Value;
+                    else if (string.Equals(kvp.Key, "User-Agent", StringComparison.OrdinalIgnoreCase))
+                        request.UserAgent = kvp.Value;
+                    else
+                        throw new NotSupportedException("Header with name " + kvp.Key + " is not suppored");
+
+                    /*
+                    // Content-Length is not supported because it is one of the headers known AFTER signing
+                    else if (string.Equals(kvp.Key, "Content-Length", StringComparison.OrdinalIgnoreCase))
+                        throw new NotSupportedException();
+                    // Date is not supported because the Date property on HttpWebRequest is only present in .NET 4.0
+                    else if (string.Equals(kvp.Key, "Date", StringComparison.OrdinalIgnoreCase))
+                        throw new NotSupportedException();
+                    // Host is not supported because the Host property on HttpWebRequest is only present in .NET 4.0
+                    else if (string.Equals(kvp.Key, "Host", StringComparison.OrdinalIgnoreCase))
+                        throw new NotSupportedException();
+                    // If-Modified-Since is not supported because the required parsing methods are internal
+                    else if (string.Equals(kvp.Key, "If-Modified-Since", StringComparison.OrdinalIgnoreCase))
+                        throw new NotSupportedException();
+                    // Range is not supported for SDK requests
+                    else if (string.Equals(kvp.Key, "Range", StringComparison.OrdinalIgnoreCase))
+                        throw new NotSupportedException();
+                    // Referer is not supported for SDK requests
+                    else if (string.Equals(kvp.Key, "Referer", StringComparison.OrdinalIgnoreCase))
+                        throw new NotSupportedException();
+                    // Transfer-Encoding is not supported for SDK requests
+                    else if (string.Equals(kvp.Key, "Transfer-Encoding", StringComparison.OrdinalIgnoreCase))
+                        throw new NotSupportedException();
+                    // Proxy-Connection is not supported, proxy must be set using config object
+                    else if (string.Equals(kvp.Key, "Proxy-Connection", StringComparison.OrdinalIgnoreCase))
+                        throw new NotSupportedException();
+                     */
+                }
+                else
+                {
+                    headers[kvp.Key] = kvp.Value;
+                }
+            }
         }
 
         /// <summary>
@@ -171,13 +240,18 @@ namespace Amazon.Runtime
         /// <param name="signer">The type of signer to use for the request.</param>
         /// <param name="unmarshaller">The object used to unmarshall the response body.</param>
         /// <returns>The response object for the request</returns>
-        internal Y Invoke<X, Y>(IRequest<X> request, AbstractAWSSigner signer, IResponseUnmarshaller<Y, UnmarshallerContext> unmarshaller)
+        internal Y Invoke<X, Y>(IRequest<X> request, AbstractAWSSigner signer, IResponseUnmarshaller<Y, UnmarshallerContext> unmarshaller) where X : AmazonWebServiceRequest
         {
             Type requestType = typeof(X);
             string requestName = requestType.Name;
 
-            this.logger.DebugFormat("Starting request {0} at {1}", requestName, this.config.ServiceURL);
             request.Endpoint = new Uri(this.config.ServiceURL);
+            request.Headers["User-Agent"] = this.config.UserAgent;
+            request.Headers["Content-Type"] = AWSSDKUtils.UrlEncodedContent;
+
+            ProcessRequestHandlers(request);
+
+            this.logger.DebugFormat("Starting request {0} at {1}", requestName, this.config.ServiceURL);
             signer.Sign(request, this.config, this.awsAccessKeyId, this.clearAwsSecretAccessKey, this.awsSecretAccessKey);
 
             string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
@@ -238,6 +312,19 @@ namespace Amazon.Runtime
                     throw;
                 }
             }
+        }
+
+        private void ProcessRequestHandlers<X>(IRequest<X> request) where X : AmazonWebServiceRequest
+        {
+            if (request == null) throw new ArgumentNullException("request");
+
+            WebServiceRequestEventArgs args = WebServiceRequestEventArgs.Create(request);
+
+            if (request.OriginalRequest != null)
+                request.OriginalRequest.FireBeforeRequestEvent(this, args);
+
+            if (BeforeRequestEvent != null)
+                BeforeRequestEvent(this, args);
         }
 
         private bool isInnerExceptionThreadAbort(Exception e)

@@ -84,7 +84,8 @@ namespace Amazon.S3.Transfer.Internal
                     .WithCannedACL(this._request.CannedACL)
                     .WithTimeout(this._request.Timeout)
                     .WithMetadata(this._request.Metadata)
-                    .WithStorageClass(this._request.StorageClass);
+                    .WithStorageClass(this._request.StorageClass)
+                    .WithBeforeRequestHandler(RequestEventHandler) as TransferUtilityUploadRequest;
                 uploadRequest.UploadProgressEvent += new EventHandler<UploadProgressArgs>(uploadProgressEventCallback);
 
                 this._utility.Upload(uploadRequest);

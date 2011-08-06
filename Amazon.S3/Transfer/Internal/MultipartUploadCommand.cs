@@ -172,7 +172,8 @@ namespace Amazon.S3.Transfer.Internal
                 .WithKey(this._fileTransporterRequest.Key)
                 .WithCannedACL(this._fileTransporterRequest.CannedACL)
                 .WithContentType(determineContentType())
-                .WithStorageClass(this._fileTransporterRequest.StorageClass);
+                .WithStorageClass(this._fileTransporterRequest.StorageClass)
+                .WithBeforeRequestHandler(RequestEventHandler) as InitiateMultipartUploadRequest;
 
             if (this._fileTransporterRequest.metadata != null && this._fileTransporterRequest.metadata.Count > 0)
                 initRequest.WithMetaData(this._fileTransporterRequest.metadata);
@@ -195,7 +196,8 @@ namespace Amazon.S3.Transfer.Internal
                         .WithTimeout(timeout)
                         .WithPartNumber(i)
                         .WithPartSize(this._partSize)
-                        .WithSubscriber(new EventHandler<UploadPartProgressArgs>(this.uploadPartProgressEventCallback));
+                        .WithSubscriber(new EventHandler<UploadPartProgressArgs>(this.uploadPartProgressEventCallback))
+                        .WithBeforeRequestHandler(RequestEventHandler) as UploadPartRequest;
 
                     if (this._fileTransporterRequest.IsSetFilePath())
                     {
@@ -224,7 +226,8 @@ namespace Amazon.S3.Transfer.Internal
                     .WithBucketName(this._fileTransporterRequest.BucketName)
                     .WithKey(this._fileTransporterRequest.Key)
                     .WithUploadId(initResponse.UploadId)
-                    .WithPartETags(this._uploadResponses);
+                    .WithPartETags(this._uploadResponses)
+                    .WithBeforeRequestHandler(RequestEventHandler) as CompleteMultipartUploadRequest;
                 this._s3Client.CompleteMultipartUpload(compRequest);
                 this._logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
 

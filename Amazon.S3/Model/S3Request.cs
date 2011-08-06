@@ -21,11 +21,12 @@
  */
 
 using System;
-using System.Net;
-using System.Collections.Specialized;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Collections.Specialized;
 using System.IO;
+using System.Net;
+using System.Xml.Serialization;
+using Amazon.Runtime;
 
 namespace Amazon.S3.Model
 {
@@ -131,6 +132,31 @@ namespace Amazon.S3.Model
         {
             return this.inputStream != null;
         }
+
+        #endregion
+
+        #region Request events
+
+        internal event RequestEventHandler BeforeRequestEvent;
+
+        internal S3Request WithBeforeRequestHandler(RequestEventHandler handler)
+        {
+            BeforeRequestEvent += handler;
+            return this;
+        }
+
+        internal void FireBeforeRequestEvent(object sender, RequestEventArgs args)
+        {
+            if (BeforeRequestEvent != null)
+                BeforeRequestEvent(sender, args);
+        }
+
+        #endregion
+
+
+        #region Internal properties
+
+        internal string RequestDestinationBucket { get; set; }
 
         #endregion
 

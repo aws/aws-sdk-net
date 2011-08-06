@@ -146,11 +146,26 @@ namespace Amazon.S3.Model
         /// <param name="filePath">The location where to write the ResponseStream</param>
         public void WriteResponseStreamToFile(string filePath)
         {
+            WriteResponseStreamToFile(filePath, false);
+        }
+
+        /// <summary>
+        /// Writes the content of the ResponseStream a file indicated by the filePath argument.
+        /// </summary>
+        /// <param name="filePath">The location where to write the ResponseStream</param>
+        /// <param name="append">Whether or not to append to the file if it exists</param>
+        public void WriteResponseStreamToFile(string filePath, bool append)
+        {
             // Make sure the directory exists to write too.
             FileInfo fi = new FileInfo(filePath);
             Directory.CreateDirectory(fi.DirectoryName);
 
-            Stream downloadStream = new BufferedStream(new FileStream(filePath, FileMode.Create));
+            Stream downloadStream;
+            if(append && File.Exists(filePath))
+                downloadStream= new BufferedStream(new FileStream(filePath, FileMode.Append));
+            else
+                downloadStream = new BufferedStream(new FileStream(filePath, FileMode.Create));
+
             try
             {
                 long current = 0;

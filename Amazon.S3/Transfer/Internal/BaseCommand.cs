@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -42,7 +43,8 @@ namespace Amazon.S3.Transfer.Internal
                 .WithBucketName(request.BucketName)
                 .WithKey(request.Key)
                 .WithTimeout(request.Timeout)
-                .WithVersionId(request.VersionId);
+                .WithVersionId(request.VersionId)
+                .WithBeforeRequestHandler(RequestEventHandler) as GetObjectRequest;
 
             if (request.IsSetModifiedSinceDate())
             {
@@ -56,5 +58,15 @@ namespace Amazon.S3.Transfer.Internal
             return getRequest;
         }
 
+        protected void RequestEventHandler(object sender, RequestEventArgs args)
+        {
+            S3RequestEventArgs s3args = args as S3RequestEventArgs;
+            if (s3args != null)
+            {
+                string currentUserAgent = s3args.Headers[System.Net.HttpRequestHeader.UserAgent];
+                s3args.Headers[System.Net.HttpRequestHeader.UserAgent] =
+                    currentUserAgent + " TransferManager/" + this.GetType().Name;
+            }
+        }
     }
 }

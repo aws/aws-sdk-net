@@ -36,6 +36,7 @@ using Amazon.EC2.Model;
 using Amazon.EC2.Util;
 
 using Amazon.Util;
+using Amazon.Runtime;
 
 namespace Amazon.EC2
 {
@@ -83,11 +84,10 @@ namespace Amazon.EC2
     /// <seealso cref="P:Amazon.EC2.AmazonEC2Config.UseSecureStringForAwsSecretKey"/>
     public class AmazonEC2Client : AmazonEC2
     {
-        private string awsAccessKeyId;
-        private SecureString awsSecretAccessKey;
+        private bool ownCredentials;
+        private AWSCredentials credentials; 
         private AmazonEC2Config config;
         private bool disposed;
-        private string clearAwsSecretAccessKey;
 
         #region Dispose Pattern Implementation
 
@@ -102,13 +102,13 @@ namespace Amazon.EC2
             {
                 if (fDisposing)
                 {
-                    //Remove Unmanaged Resources
-                    // I.O.W. remove resources that have to be explicitly
-                    // "Dispose"d or Closed
-                    if (awsSecretAccessKey != null)
+                    if (credentials != null)
                     {
-                        awsSecretAccessKey.Dispose();
-                        awsSecretAccessKey = null;
+                        if (ownCredentials && credentials is IDisposable)
+                        {
+                            (credentials as IDisposable).Dispose();
+                        }
+                        credentials = null;
                     }
                 }
                 this.disposed = true;
@@ -140,9 +140,7 @@ namespace Amazon.EC2
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonEC2Client(string awsAccessKeyId, string awsSecretAccessKey)
-            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonEC2Config())
-        {
-        }
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonEC2Config(), true) { }
 
         /// <summary>
         /// Constructs AmazonEC2Client with AWS Access Key ID, AWS Secret Key and an
@@ -155,28 +153,7 @@ namespace Amazon.EC2
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="config">The AmazonEC2 Configuration Object</param>
         public AmazonEC2Client(string awsAccessKeyId, string awsSecretAccessKey, AmazonEC2Config config)
-        {
-            if (!String.IsNullOrEmpty(awsSecretAccessKey))
-            {
-                if (config.UseSecureStringForAwsSecretKey)
-                {
-                    this.awsSecretAccessKey = new SecureString();
-                    foreach (char ch in awsSecretAccessKey.ToCharArray())
-                    {
-                        this.awsSecretAccessKey.AppendChar(ch);
-                    }
-                    this.awsSecretAccessKey.MakeReadOnly();
-                }
-                else
-                {
-                    clearAwsSecretAccessKey = awsSecretAccessKey;
-                }
-            }
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.config = config;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
-        }
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true) { }
 
         /// <summary>
         /// Constructs an AmazonEC2Client with AWS Access Key ID, AWS Secret Key and an
@@ -186,12 +163,30 @@ namespace Amazon.EC2
         /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
         /// <param name="config">The AmazonEC2 Configuration Object</param>
         public AmazonEC2Client(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonEC2Config config)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true) { }
+
+        /// <summary>
+        /// Constructs an AmazonEC2Client with AWSCredentials
+        /// </summary>
+        /// <param name="credentials"></param>
+        public AmazonEC2Client(AWSCredentials credentials)
+            : this(credentials, new AmazonEC2Config(), false) { }
+
+        /// <summary>
+        /// Constructs an AmazonEC2Client with AWSCredentials and an AmazonEC2 Configuration object
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="config"></param>
+        public AmazonEC2Client(AWSCredentials credentials, AmazonEC2Config config)
+            : this(credentials, config, false) { }
+
+        // Constructs an AmazonEC2Client with credentials, config and flag which
+        // specifies if the credentials are owned by the client or not
+        private AmazonEC2Client(AWSCredentials credentials, AmazonEC2Config config, bool ownCredentials)
         {
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.awsSecretAccessKey = awsSecretAccessKey;
+            this.credentials = credentials;
             this.config = config;
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.UseNagleAlgorithm = false;
+            this.ownCredentials = ownCredentials;
         }
 
         #region Public API
@@ -316,37 +311,47 @@ namespace Amazon.EC2
         /// </remarks>
         public BundleInstanceResponse BundleInstance(BundleInstanceRequest request)
         {
-            S3Storage s3 = request.Storage.S3;
-            // Check to see if S3 upload policy was set on request.
-            // If not, generate. Set expiration to 24 hours.
-            if (!s3.IsSetUploadPolicy())
+            ImmutableCredentials immutableCredentials = null;
+            try
             {
-                s3.AWSAccessKeyId = this.awsAccessKeyId;
-                S3UploadPolicy policy;
-                if (config.UseSecureStringForAwsSecretKey)
+                S3Storage s3 = request.Storage.S3;
+                // Check to see if S3 upload policy was set on request.
+                // If not, generate. Set expiration to 24 hours.
+                if (!s3.IsSetUploadPolicy())
                 {
-                    policy = new S3UploadPolicy(
-                        this.awsAccessKeyId,
-                        this.awsSecretAccessKey,
-                        s3.Bucket,
-                        s3.Prefix,
-                        1440
-                        );
-                }
-                else
-                {
-                    policy = new S3UploadPolicy(
-                        this.clearAwsSecretAccessKey,
-                        s3.Bucket,
-                        s3.Prefix,
-                        1440
-                        );
-                }
+                    immutableCredentials = credentials.GetCredentials();
+                    s3.AWSAccessKeyId = immutableCredentials.AccessKey;
+                    S3UploadPolicy policy;
+                    if (config.UseSecureStringForAwsSecretKey)
+                    {
+                        policy = new S3UploadPolicy(
+                            immutableCredentials.AccessKey,
+                            immutableCredentials.SecureSecretKey,
+                            s3.Bucket,
+                            s3.Prefix,
+                            1440
+                            );
+                    }
+                    else
+                    {
+                        policy = new S3UploadPolicy(
+                            immutableCredentials.ClearSecretKey,
+                            s3.Bucket,
+                            s3.Prefix,
+                            1440
+                            );
+                    }
 
-                s3.UploadPolicy = policy.PolicyString;
-                s3.UploadPolicySignature = policy.PolicySignature;
+                    s3.UploadPolicy = policy.PolicyString;
+                    s3.UploadPolicySignature = policy.PolicySignature;
+                }
+                return Invoke<BundleInstanceResponse>(ConvertBundleInstance(request), immutableCredentials);
             }
-            return Invoke<BundleInstanceResponse>(ConvertBundleInstance(request));
+            finally
+            {
+                if (immutableCredentials != null)
+                    immutableCredentials.Dispose();
+            }
         }
 
         /// <summary>
@@ -2659,12 +2664,22 @@ namespace Amazon.EC2
          */
         private T Invoke<T>(IDictionary<string, string> parameters)
         {
+            return Invoke<T>(parameters, null);
+        }
+
+        /**
+         * Invoke request and return response
+         * Allows caller to pass in ImmutableCredentials. This way, if ImmutableCredentials were
+         * needed before Invoke, the same credentials will be used in Invoke.
+         */
+        private T Invoke<T>(IDictionary<string, string> parameters, ImmutableCredentials credentials)
+        {
             string actionName = parameters["Action"];
             T response = default(T);
             HttpStatusCode statusCode = default(HttpStatusCode);
 
             /* Add required request parameters */
-            AddRequiredParameters(parameters);
+            AddRequiredParameters(parameters, credentials);
 
             string queryString = AWSSDKUtils.GetParametersAsString(parameters);
 
@@ -2861,36 +2876,46 @@ namespace Amazon.EC2
         /**
          * Add authentication related and version parameters
          */
-        private void AddRequiredParameters(IDictionary<string, string> parameters)
+        private void AddRequiredParameters(IDictionary<string, string> parameters, ImmutableCredentials immutableCredentials)
         {
-            if (String.IsNullOrEmpty(this.awsAccessKeyId))
+            bool shouldDisposeCredentials = credentials == null;
+            if (immutableCredentials == null)
+                immutableCredentials = credentials.GetCredentials();
+            try
             {
-                throw new AmazonEC2Exception("The AWS Access Key ID cannot be NULL or a Zero length string");
-            }
+                if (immutableCredentials.UseToken)
+                {
+                    parameters["SecurityToken"] = immutableCredentials.Token;
+                }
+                parameters["AWSAccessKeyId"] = immutableCredentials.AccessKey;
+                parameters["SignatureVersion"] = config.SignatureVersion;
+                parameters["SignatureMethod"] = config.SignatureMethod;
+                parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
+                parameters["Version"] = config.ServiceVersion;
+                if (!config.SignatureVersion.Equals("2"))
+                {
+                    throw new AmazonEC2Exception("Invalid Signature Version specified");
+                }
+                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
 
-            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
-            parameters["SignatureVersion"] = config.SignatureVersion;
-            parameters["SignatureMethod"] = config.SignatureMethod;
-            parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
-            parameters["Version"] = config.ServiceVersion;
-            if (!config.SignatureVersion.Equals("2"))
-            {
-                throw new AmazonEC2Exception("Invalid Signature Version specified");
-            }
-            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
+                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
+                string auth;
 
-            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
-            string auth;
-
-            if (config.UseSecureStringForAwsSecretKey)
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
+                if (immutableCredentials.UseSecureStringForSecretKey)
+                {
+                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.SecureSecretKey, algorithm);
+                }
+                else
+                {
+                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
+                }
+                parameters["Signature"] = auth;
             }
-            else
+            finally
             {
-                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
+                if (shouldDisposeCredentials)
+                    immutableCredentials.Dispose();
             }
-            parameters["Signature"] = auth;
         }
 
         /**

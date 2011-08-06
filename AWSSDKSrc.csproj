@@ -53,7 +53,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\AWSSDK.xml</DocumentationFile>
     <UseVSHostingProcess>true</UseVSHostingProcess>
-    <NoWarn>1591</NoWarn>
+    <NoWarn>419,1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -68,7 +68,7 @@
     <RegisterForComInterop>false</RegisterForComInterop>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <DebugSymbols>false</DebugSymbols>
-    <NoWarn>1591</NoWarn>
+    <NoWarn>419,1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
@@ -153,8 +153,12 @@
     <Compile Include="Amazon.AutoScaling\Model\DeleteLaunchConfigurationResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\DeleteNotificationConfigurationRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DeleteNotificationConfigurationResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DeleteNotificationConfigurationRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeleteNotificationConfigurationResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\Model\DeletePolicyRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -195,8 +199,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingNotificationTypesRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingNotificationTypesResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingNotificationTypesResult.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingNotificationTypesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAutoScalingNotificationTypesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\Model\DescribeLaunchConfigurationsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -215,9 +223,15 @@
     <Compile Include="Amazon.AutoScaling\Model\DescribeMetricCollectionTypesResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\DescribeNotificationConfigurationsRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeNotificationConfigurationsResponse.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\DescribeNotificationConfigurationsResult.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeNotificationConfigurationsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeNotificationConfigurationsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeNotificationConfigurationsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\Model\DescribePoliciesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -299,12 +313,18 @@
     <Compile Include="Amazon.AutoScaling\Model\MetricGranularityType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\NotificationConfiguration.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\NotificationConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\Model\ProcessType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\PutNotificationConfigurationRequest.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\PutNotificationConfigurationResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\PutNotificationConfigurationRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\PutNotificationConfigurationResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\Model\PutScalingPolicyRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -410,8 +430,12 @@
     <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteLaunchConfigurationResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteNotificationConfigurationRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteNotificationConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteNotificationConfigurationRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteNotificationConfigurationResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\Model\Transform\DeletePolicyRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -452,8 +476,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -472,9 +500,15 @@
     <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -550,12 +584,18 @@
     <Compile Include="Amazon.AutoScaling\Model\Transform\MetricGranularityTypeUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\NotificationConfigurationUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\NotificationConfigurationUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\Model\Transform\ProcessTypeUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutNotificationConfigurationRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutNotificationConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Transform\PutNotificationConfigurationRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Transform\PutNotificationConfigurationResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2324,6 +2364,7 @@
     <Compile Include="Amazon.Runtime\AmazonWebServiceClient.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceRequest.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceResponse.cs" />
+    <Compile Include="Amazon.Runtime\AWSCredentials.cs" />
     <Compile Include="Amazon.Runtime\ClientConfig.cs" />
     <Compile Include="Amazon.Runtime\Enumerations.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\AbstractAWSSigner.cs" />
@@ -2343,6 +2384,7 @@
     <Compile Include="Amazon.Runtime\Internal\Transform\UnmarshallerContext.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\Logger.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\StringUtils.cs" />
+    <Compile Include="Amazon.Runtime\RequestHandler.cs" />
     <Compile Include="Amazon.Runtime\ResponseMetadata.cs" />
     <Compile Include="Amazon.Runtime\SignatureException.cs" />
     <Compile Include="Amazon.S3\AmazonS3.cs" />
@@ -2463,6 +2505,28 @@
     <Compile Include="Amazon.S3\Model\S3Request.cs" />
     <Compile Include="Amazon.S3\Model\SetACLRequest.cs" />
     <Compile Include="Amazon.S3\Model\SetACLResponse.cs" />
+    <Compile Include="Amazon.SecurityToken\AmazonSecurityTokenService.cs" />
+    <Compile Include="Amazon.SecurityToken\AmazonSecurityTokenServiceClient.cs" />
+    <Compile Include="Amazon.SecurityToken\AmazonSecurityTokenServiceConfig.cs" />
+    <Compile Include="Amazon.SecurityToken\AmazonSecurityTokenServiceException.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Credentials.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\FederatedUser.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\GetFederationTokenRequest.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\GetFederationTokenResponse.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\GetFederationTokenResult.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\GetSessionTokenRequest.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\GetSessionTokenResponse.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\GetSessionTokenResult.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\MalformedPolicyDocumentException.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\PackedPolicyTooLargeException.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Transform\CredentialsUnmarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Transform\FederatedUserUnmarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Transform\GetFederationTokenRequestMarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Transform\GetFederationTokenResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Transform\GetFederationTokenResultUnmarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Transform\GetSessionTokenRequestMarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Transform\GetSessionTokenResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Transform\GetSessionTokenResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\AmazonSimpleDB.cs" />
     <Compile Include="Amazon.SimpleDB\AmazonSimpleDBClient.cs" />
     <Compile Include="Amazon.SimpleDB\AmazonSimpleDBConfig.cs" />

@@ -40,7 +40,7 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.3.9.0";
+        internal const string SDKVersionNumber = "1.3.10.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -48,6 +48,7 @@ namespace Amazon.Util
         internal const string ContentLengthHeader = "Content-Length";
         internal const string ContentMD5Header = "Content-MD5";
         internal const string ETagHeader = "ETag";
+        internal const string UserAgentHeader = "User-Agent";
         internal const int DefaultMaxRetry = 3;
 
         #endregion

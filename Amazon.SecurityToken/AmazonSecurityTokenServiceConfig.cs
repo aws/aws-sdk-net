@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,28 +13,36 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Amazon.Runtime
+using Amazon.Runtime;
+
+namespace Amazon.SecurityToken
 {
-    /// <summary>
-    /// Base class for request used by some of the services.
-    /// </summary>
-    public abstract class AmazonWebServiceRequest
-    {
-        internal event RequestEventHandler BeforeRequestEvent;
 
-        internal AmazonWebServiceRequest WithBeforeRequestHandler(RequestEventHandler handler)
+    /// <summary>
+    /// Configuration for accessing  service
+    /// </summary>
+    public class AmazonSecurityTokenServiceConfig : ClientConfig
+    {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public AmazonSecurityTokenServiceConfig()
         {
-            BeforeRequestEvent += handler;
-            return this;
+            this.ServiceURL = "https://sts.amazonaws.com";
         }
 
-        internal void FireBeforeRequestEvent(object sender, RequestEventArgs args)
+        /// <summary>
+        /// Gets the ServiceVersion property.
+        /// </summary>
+        public override string ServiceVersion
         {
-            if (BeforeRequestEvent != null)
-                BeforeRequestEvent(sender, args);
+            get
+            {
+                return "2011-06-15";
+            }
         }
     }
 }
+
+    

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,27 +14,29 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
 
-namespace Amazon.Runtime
+using Amazon.Runtime;
+
+namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Base class for request used by some of the services.
+    /// Returns information about the  GetSessionTokenResult response and response metadata.
     /// </summary>
-    public abstract class AmazonWebServiceRequest
+    public class GetSessionTokenResponse : AmazonWebServiceResponse
     {
-        internal event RequestEventHandler BeforeRequestEvent;
+        private GetSessionTokenResult getSessionTokenResult;
 
-        internal AmazonWebServiceRequest WithBeforeRequestHandler(RequestEventHandler handler)
+        /// <summary>
+        /// Gets and sets the GetSessionTokenResult property.
+        /// 
+        /// </summary>
+        public GetSessionTokenResult GetSessionTokenResult
         {
-            BeforeRequestEvent += handler;
-            return this;
-        }
-
-        internal void FireBeforeRequestEvent(object sender, RequestEventArgs args)
-        {
-            if (BeforeRequestEvent != null)
-                BeforeRequestEvent(sender, args);
+            get { return this.getSessionTokenResult; }
+            set { this.getSessionTokenResult = value; }
         }
     }
 }
+    

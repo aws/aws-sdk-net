@@ -40,6 +40,7 @@ using Amazon.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 
 using Map = System.Collections.Generic.IDictionary<Amazon.S3.Model.S3QueryParameter, string>;
@@ -50,17 +51,22 @@ namespace Amazon.S3
     {
         #region Private Members
 
-        protected internal readonly string awsAccessKeyId;
-        protected internal SecureString awsSecretAccessKey;
-        protected internal AmazonS3Config config;
-        protected internal bool disposed;
-        protected internal Type myType;
-        protected internal readonly string clearAwsSecretAccessKey;
+        private AmazonS3Config config;
+        private bool disposed;
+        private Type myType;
+        private bool ownCredentials;
+        private AWSCredentials credentials;
 
         #endregion
 
         static Logger LOGGER = new Logger(typeof(AmazonS3Client));
+        static MethodInfo ADD_RANGE_METHODINFO;
 
+        #region Events
+
+        internal event RequestEventHandler BeforeRequestEvent;
+
+        #endregion
 
         #region Dispose Pattern
 
@@ -75,14 +81,14 @@ namespace Amazon.S3
             {
                 if (fDisposing)
                 {
-                    //Remove Unmanaged Resources
-                    // I.O.W. remove resources that have to be explicitly
-                    // "Dispose"d or Closed
-                    if (awsSecretAccessKey != null)
+                    if (credentials != null)
                     {
-                        awsSecretAccessKey.Dispose();
-                        awsSecretAccessKey = null;
+                        if (ownCredentials && (credentials is IDisposable))
+                        {
+                            (credentials as IDisposable).Dispose();
                     }
+                        credentials = null;
+                }
                 }
                 this.disposed = true;
             }
@@ -110,15 +116,19 @@ namespace Amazon.S3
 
         #region Constructors
 
+        static AmazonS3Client()
+        {
+            Type t = typeof(HttpWebRequest);
+            ADD_RANGE_METHODINFO = t.GetMethod("AddRange", BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[]{typeof(string), typeof(string), typeof(string)}, null);
+        }
+
         /// <summary>
         /// Constructs AmazonS3Client with AWS Access Key ID and AWS Secret Key
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonS3Client(string awsAccessKeyId, string awsSecretAccessKey)
-            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonS3Config())
-        {
-        }
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonS3Config()) { }
 
         /// <summary>
         /// Constructs AmazonS3Client with AWS Access Key ID, AWS Secret Key and an
@@ -132,26 +142,18 @@ namespace Amazon.S3
         /// <param name="config">The S3 Configuration Object</param>
         public AmazonS3Client(string awsAccessKeyId, string awsSecretAccessKey, AmazonS3Config config)
         {
-            if (!String.IsNullOrEmpty(awsSecretAccessKey))
-            {
-                if (config.UseSecureStringForAwsSecretKey)
-                {
-                    this.awsSecretAccessKey = new SecureString();
-                    foreach (char ch in awsSecretAccessKey.ToCharArray())
-                    {
-                        this.awsSecretAccessKey.AppendChar(ch);
-                    }
-                    this.awsSecretAccessKey.MakeReadOnly();
-                }
-                else
-                {
-                    clearAwsSecretAccessKey = awsSecretAccessKey;
-                }
-            }
-            this.awsAccessKeyId = awsAccessKeyId;
             this.config = config;
             this.myType = this.GetType();
-        }
+            if (string.IsNullOrEmpty(awsAccessKeyId))
+            {
+                this.credentials = null; // anonymous access, no credentials specified
+                    }
+                else
+                {
+                this.credentials = new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey, config.UseSecureStringForAwsSecretKey);
+                }
+            this.ownCredentials = true;
+            }
 
         /// <summary>
         /// Constructs an AmazonS3Client with AWS Access Key ID, AWS Secret Key and an
@@ -162,11 +164,42 @@ namespace Amazon.S3
         /// <param name="config">The S3 Configuration Object</param>
         public AmazonS3Client(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonS3Config config)
         {
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.awsSecretAccessKey = awsSecretAccessKey;
             this.config = config;
             this.myType = this.GetType();
+            if (string.IsNullOrEmpty(awsAccessKeyId))
+            {
+                this.credentials = null; // anonymous access, no credentials specified
         }
+            else
+            {
+                this.credentials = new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey);
+            }
+            this.ownCredentials = true;
+        }
+
+        /// <summary>
+        /// Constructs an AmazonS3Client with AWSCredentials
+        /// </summary>
+        /// <param name="credentials"></param>
+        public AmazonS3Client(AWSCredentials credentials)
+            : this(credentials, new AmazonS3Config())
+        {
+        }
+
+        /// <summary>
+        /// Constructs an AmazonS3Client with AWSCredentials and an
+        /// Amazon S3 Configuration object
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="config"></param>
+        public AmazonS3Client(AWSCredentials credentials, AmazonS3Config config)
+        {
+            this.config = config;
+            this.myType = this.GetType();
+            this.credentials = credentials;
+            this.ownCredentials = false;
+        }
+
         #endregion
 
         #region GetPreSignedURL
@@ -189,9 +222,9 @@ namespace Amazon.S3
         /// <exception cref="T:System.ArgumentNullException" />
         public string GetPreSignedURL(GetPreSignedUrlRequest request)
         {
-            if (String.IsNullOrEmpty(this.awsAccessKeyId))
+            if (credentials == null)
             {
-                throw new AmazonS3Exception("The AWS Access Key ID cannot be NULL or a Zero length string");
+                throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
             }
 
             if (request == null)
@@ -3025,7 +3058,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.ContentBody] = request.WebsiteConfiguration.ToXML();
             parameters[S3QueryParameter.ContentType] = "application/xml";
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         #endregion
@@ -3113,7 +3146,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "GetBucketWebsite";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?website";
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         #endregion
@@ -3189,7 +3222,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "DeleteBucketWebsite";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?website";
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         #endregion
@@ -3205,7 +3238,7 @@ namespace Amazon.S3
 
             parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
             parameters[S3QueryParameter.Action] = "ListBuckets";
-            addS3QueryParameters(request, null);
+            request.RequestDestinationBucket = null;
         }
 
         /**
@@ -3219,7 +3252,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "GetBucketLocation";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?location";
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3234,7 +3267,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = "?logging";
             parameters[S3QueryParameter.QueryToSign] = "?logging";
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
 
         }
 
@@ -3253,7 +3286,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = "?logging";
             parameters[S3QueryParameter.QueryToSign] = "?logging";
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3308,7 +3341,7 @@ namespace Amazon.S3
 
             parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
             parameters[S3QueryParameter.Action] = "ListObjects";
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3348,7 +3381,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = sb.ToString();
             parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
             parameters[S3QueryParameter.Action] = "ListVersions";
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3378,7 +3411,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = queryStr;
             parameters[S3QueryParameter.QueryToSign] = queryStr;
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3420,7 +3453,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = queryStr;
             parameters[S3QueryParameter.QueryToSign] = queryStr;
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3461,7 +3494,7 @@ namespace Amazon.S3
             }
 
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3473,7 +3506,7 @@ namespace Amazon.S3
 
             parameters[S3QueryParameter.Verb] = S3Constants.DeleteVerb;
             parameters[S3QueryParameter.Action] = "DeleteBucket";
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3486,7 +3519,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "GetBucketPolicy";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?policy";
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3502,7 +3535,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.ContentBody] = request.Policy;
             parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3515,7 +3548,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "DeleteBucketPolicy";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?policy";
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3541,7 +3574,7 @@ namespace Amazon.S3
                 parameters[S3QueryParameter.ContentBody] = request.NotificationConfiguration.ToXML();
             }
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3554,7 +3587,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "GetNotificationConfiguration";
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = "?notification";
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
 
@@ -3617,7 +3650,7 @@ namespace Amazon.S3
             // Add the Timeout parameter
             parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         void addParameter(StringBuilder queryStr, string key, string value)
@@ -3662,7 +3695,7 @@ namespace Amazon.S3
                 parameters[S3QueryParameter.QueryToSign] = queryStr;
             }
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3771,7 +3804,7 @@ namespace Amazon.S3
             webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
 
             // Finally, add the S3 specific parameters and headers
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -3779,12 +3812,19 @@ namespace Amazon.S3
          */
         private void ConvertGetPreSignedUrl(GetPreSignedUrlRequest request)
         {
+            using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
+            {
+                if (immutableCredentials.UseToken)
+                {
+                    throw new AmazonS3Exception("Cannot get presigned url with temporary credentials");
+                }
+
             Map parameters = request.parameters;
 
             parameters[S3QueryParameter.Verb] = S3Constants.Verbs[(int)request.Verb];
             parameters[S3QueryParameter.Action] = "GetPreSignedUrl";
             StringBuilder queryStr = new StringBuilder("?AWSAccessKeyId=", 512);
-            queryStr.Append(this.awsAccessKeyId);
+                queryStr.Append(immutableCredentials.AccessKey);
 
             if (request.IsSetKey())
             {
@@ -3833,7 +3873,8 @@ namespace Amazon.S3
             }
 
             parameters[S3QueryParameter.Query] = queryStr.ToString();
-            addS3QueryParameters(request, request.BucketName);
+                request.RequestDestinationBucket = request.BucketName;
+                addS3QueryParameters(request, immutableCredentials);
 
             // the url needs to be modified so that:
             // 1. The right http protocol is used
@@ -3860,12 +3901,12 @@ namespace Amazon.S3
             //sign the request
             string toSign = buildSigningString(parameters, request.Headers);
             string auth;
-            if (config.UseSecureStringForAwsSecretKey)
+                if (immutableCredentials.UseSecureStringForSecretKey)
             {
                 KeyedHashAlgorithm algorithm = new HMACSHA1();
                 auth = AWSSDKUtils.HMACSign(
                     toSign,
-                    awsSecretAccessKey,
+                        immutableCredentials.SecureSecretKey,
                     algorithm
                     );
             }
@@ -3874,7 +3915,7 @@ namespace Amazon.S3
                 KeyedHashAlgorithm algorithm = new HMACSHA1();
                 auth = AWSSDKUtils.HMACSign(
                     toSign,
-                    clearAwsSecretAccessKey,
+                        immutableCredentials.ClearSecretKey,
                     algorithm
                     );
             }
@@ -3885,6 +3926,7 @@ namespace Amazon.S3
                 "&Signature=",
                 AmazonS3Util.UrlEncode(request.parameters[S3QueryParameter.Authorization], false)
                 );
+        }
         }
 
         /**
@@ -3909,7 +3951,7 @@ namespace Amazon.S3
                 setMfaHeader(request.Headers, request.MfaCodes);
             }
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -4028,7 +4070,7 @@ namespace Amazon.S3
             // Add the storage class header
             webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
 
-            addS3QueryParameters(request, request.DestinationBucket);
+            request.RequestDestinationBucket = request.DestinationBucket;
         }
 
         /**
@@ -4043,7 +4085,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = "?versioning";
             parameters[S3QueryParameter.QueryToSign] = "?versioning";
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -4066,7 +4108,7 @@ namespace Amazon.S3
                 setMfaHeader(webHeaders, request.MfaCodes);
             }
 
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -4120,7 +4162,7 @@ namespace Amazon.S3
             webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
 
             // Finally, add the S3 specific parameters and headers
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -4138,7 +4180,7 @@ namespace Amazon.S3
 
 
             // Finally, add the S3 specific parameters and headers
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -4187,7 +4229,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = query;
 
             // Finally, add the S3 specific parameters and headers
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -4225,7 +4267,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = query;
 
             // Finally, add the S3 specific parameters and headers
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -4245,7 +4287,7 @@ namespace Amazon.S3
 
 
             // Finally, add the S3 specific parameters and headers
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -4285,7 +4327,7 @@ namespace Amazon.S3
 
 
             // Finally, add the S3 specific parameters and headers
-            addS3QueryParameters(request, request.BucketName);
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         /**
@@ -4342,7 +4384,7 @@ namespace Amazon.S3
 
 
             // Finally, add the S3 specific parameters and headers
-            addS3QueryParameters(request, request.DestinationBucket);
+            request.RequestDestinationBucket = request.DestinationBucket;
         }
         #endregion
 
@@ -4377,21 +4419,30 @@ namespace Amazon.S3
                 throw new AmazonS3Exception("No request specified for the S3 operation!");
             }
 
+            s3AsyncResult.S3Request.Headers[AWSSDKUtils.UserAgentHeader] = config.UserAgent;
+
+            ProcessRequestHandlers(s3AsyncResult.S3Request);
+
+            ImmutableCredentials immutableCredentials = credentials == null ? null : credentials.GetCredentials();
+            try
+            {
+                addS3QueryParameters(s3AsyncResult.S3Request, immutableCredentials);
+
             WebHeaderCollection headers = s3AsyncResult.S3Request.Headers;
             Map parameters = s3AsyncResult.S3Request.parameters;
             Stream fStream = s3AsyncResult.S3Request.InputStream;
 
-            //sign the request
-            if (!string.IsNullOrEmpty(this.awsAccessKeyId))
+                // if credentials are present (non-anonymous) sign the request
+                if (immutableCredentials != null)
             {
                 string toSign = buildSigningString(parameters, headers);
                 string auth;
-                if (config.UseSecureStringForAwsSecretKey)
+                    if (immutableCredentials.UseSecureStringForSecretKey)
                 {
                     KeyedHashAlgorithm algorithm = new HMACSHA1();
                     auth = AWSSDKUtils.HMACSign(
                         toSign,
-                        awsSecretAccessKey,
+                            immutableCredentials.SecureSecretKey,
                         algorithm
                         );
                 }
@@ -4400,7 +4451,7 @@ namespace Amazon.S3
                     KeyedHashAlgorithm algorithm = new HMACSHA1();
                     auth = AWSSDKUtils.HMACSign(
                         toSign,
-                        clearAwsSecretAccessKey,
+                            immutableCredentials.ClearSecretKey,
                         algorithm
                         );
                 }
@@ -4446,7 +4497,7 @@ namespace Amazon.S3
                 s3AsyncResult.OrignalStreamPosition = fStream.Position;
             }
 
-            HttpWebRequest request = configureWebRequest(s3AsyncResult.S3Request, reqDataLen);
+                HttpWebRequest request = configureWebRequest(s3AsyncResult.S3Request, reqDataLen, immutableCredentials);
 
             parameters[S3QueryParameter.RequestAddress] = request.Address.ToString();
 
@@ -4496,6 +4547,14 @@ namespace Amazon.S3
             {
                 LOGGER.Error("Error starting async http operation", e);
                 throw;
+            }
+        }
+            finally
+            {
+                if (immutableCredentials != null)
+                {
+                    immutableCredentials.Dispose();
+                }
             }
         }
 
@@ -4669,12 +4728,14 @@ namespace Amazon.S3
         /**
          * Add authentication related and version parameters
          */
-        void addS3QueryParameters(S3Request request, string destinationBucket)
+        void addS3QueryParameters(S3Request request, ImmutableCredentials immutableCredentials)
         {
             if (request == null)
             {
                 return;
             }
+
+            string destinationBucket = request.RequestDestinationBucket;
 
             Map parameters = request.parameters;
             WebHeaderCollection webHeaders = request.Headers;
@@ -4725,6 +4786,12 @@ namespace Amazon.S3
                 // and add it to the parameters
                 parameters[S3QueryParameter.ContentType] = value;
                 webHeaders.Remove(AWSSDKUtils.ContentTypeHeader);
+            }
+
+            // Add token if available
+            if (credentials != null && immutableCredentials.UseToken)
+            {
+                webHeaders[S3Constants.AmzSecurityTokenHeader] = immutableCredentials.Token;
             }
 
             // Insert the S3 Url into the parameters
@@ -5251,7 +5318,7 @@ namespace Amazon.S3
          * Configure HttpClient with set of defaults as well as configuration
          * from AmazonEC2Config instance
          */
-        HttpWebRequest configureWebRequest(S3Request request, long contentLength)
+        HttpWebRequest configureWebRequest(S3Request request, long contentLength, ImmutableCredentials credentials)
         {
             WebHeaderCollection headers = request.Headers;
             Map parameters = request.parameters;
@@ -5285,8 +5352,6 @@ namespace Amazon.S3
                     httpRequest.Proxy = proxy;
                 }
 
-                httpRequest.UserAgent = config.UserAgent;
-
                 string value = headers[AWSSDKUtils.IfModifiedSinceHeader];
                 if (!String.IsNullOrEmpty(value))
                 {
@@ -5308,6 +5373,18 @@ namespace Amazon.S3
                     request.removedHeaders[AWSSDKUtils.ContentTypeHeader] = value;
                 }
 
+                // The User-Agent header could have been specified using
+                // the S3Request.AddHeader method. If User-Agent was specified,
+                // it needs to be removed and set as an explicit property
+                // of the HttpWebRequest.
+                value = headers[AWSSDKUtils.UserAgentHeader];
+                if (!String.IsNullOrEmpty(value))
+                {
+                    httpRequest.UserAgent = value;
+                    headers.Remove(AWSSDKUtils.UserAgentHeader);
+                    request.removedHeaders[AWSSDKUtils.UserAgentHeader] = value;
+                }
+
                 if (parameters.ContainsKey(S3QueryParameter.ContentType))
                 {
                     httpRequest.ContentType = parameters[S3QueryParameter.ContentType];
@@ -5318,22 +5395,17 @@ namespace Amazon.S3
                     string rangeHeader = parameters[S3QueryParameter.Range];
                     char[] splitter = { ':' };
                     string[] myRange = rangeHeader.Split(splitter);
-                    httpRequest.AddRange(int.Parse(myRange[0]), int.Parse(myRange[1]));
+                    addHttpRange(httpRequest, long.Parse(myRange[0]), long.Parse(myRange[1]));
                 }
 
                 // Add the AWS Authorization header.
-                if (!string.IsNullOrEmpty(this.awsAccessKeyId))
+                if (credentials != null && !string.IsNullOrEmpty(credentials.AccessKey))
                 {
                     httpRequest.Headers[S3Constants.AuthorizationHeader] = String.Concat(
                         "AWS ",
-                        this.awsAccessKeyId,
+                        credentials.AccessKey,
                         ":",
                         parameters[S3QueryParameter.Authorization]);
-                }
-
-                if (config.IsSetUserAgent())
-                {
-                    httpRequest.UserAgent = config.UserAgent;
                 }
 
                 // Let's enable Expect100Continue only for PutObject requests
@@ -5685,6 +5757,41 @@ namespace Amazon.S3
             }
 
             return sb;
+        }
+
+        private void ProcessRequestHandlers(S3Request request)
+        {
+            if (request == null) throw new ArgumentNullException("request");
+
+            S3RequestEventArgs args = S3RequestEventArgs.Create(request, config);
+
+            if (request != null)
+                request.FireBeforeRequestEvent(this, args);
+
+            if (BeforeRequestEvent != null)
+                BeforeRequestEvent(this, args);
+        }
+
+        void addHttpRange(HttpWebRequest request, long start, long end)
+        {
+            if (ADD_RANGE_METHODINFO != null)
+            {
+                string rangeSpecifier = "bytes";
+                string fromString = start.ToString();
+                string toString = end.ToString();
+
+                object[] args = new object[3];
+
+                args[0] = rangeSpecifier;
+                args[1] = fromString;
+                args[2] = toString;
+
+                ADD_RANGE_METHODINFO.Invoke(request, args);
+            }
+            else
+            {
+                request.AddRange(Convert.ToInt32(start), Convert.ToInt32(end));
+            }
         }
 
         #endregion

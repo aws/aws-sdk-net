@@ -35,6 +35,7 @@ using System.Xml.Serialization;
 using Amazon.Util;
 
 using Amazon.SimpleNotificationService.Model;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleNotificationService
 {
@@ -52,11 +53,10 @@ namespace Amazon.SimpleNotificationService
     /// <seealso cref="P:Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceConfig.UseSecureStringForAwsSecretKey"/>
     public class AmazonSimpleNotificationServiceClient : AmazonSimpleNotificationService
     {
-        private string awsAccessKeyId;
-        private SecureString awsSecretAccessKey;
+        private bool ownCredentials;
+        private AWSCredentials credentials;
         private AmazonSimpleNotificationServiceConfig config;
         private bool disposed;
-        private string clearAwsSecretAccessKey;
 
         #region Dispose Pattern Implementation
 
@@ -71,13 +71,13 @@ namespace Amazon.SimpleNotificationService
             {
                 if (fDisposing)
                 {
-                    //Remove Unmanaged Resources
-                    // I.O.W. remove resources that have to be explicitly
-                    // "Dispose"d or Closed
-                    if (awsSecretAccessKey != null)
+                    if (credentials != null)
                     {
-                        awsSecretAccessKey.Dispose();
-                        awsSecretAccessKey = null;
+                        if (ownCredentials && credentials is IDisposable)
+                        {
+                            (credentials as IDisposable).Dispose();
+                        }
+                        credentials = null;
                     }
                 }
                 this.disposed = true;
@@ -109,9 +109,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonSimpleNotificationServiceClient(string awsAccessKeyId, string awsSecretAccessKey)
-            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonSimpleNotificationServiceConfig())
-        {
-        }
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonSimpleNotificationServiceConfig(), true) { }
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with AWS Access Key ID, AWS Secret Key and an
@@ -124,26 +122,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="config">The AmazonSimpleNotificationService Configuration Object</param>
         public AmazonSimpleNotificationServiceClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonSimpleNotificationServiceConfig config)
-        {
-            if (!String.IsNullOrEmpty(awsSecretAccessKey))
-            {
-                if (config.UseSecureStringForAwsSecretKey)
-                {
-                    this.awsSecretAccessKey = new SecureString();
-                    foreach (char ch in awsSecretAccessKey.ToCharArray())
-                    {
-                        this.awsSecretAccessKey.AppendChar(ch);
-                    }
-                    this.awsSecretAccessKey.MakeReadOnly();
-                }
-                else
-                {
-                    clearAwsSecretAccessKey = awsSecretAccessKey;
-                }
-            }
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.config = config;
-        }
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true) { }
 
         /// <summary>
         /// Constructs an AmazonSimpleNotificationServiceClient with AWS Access Key ID, AWS Secret Key and an
@@ -153,10 +132,31 @@ namespace Amazon.SimpleNotificationService
         /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
         /// <param name="config">The AmazonSimpleNotificationService Configuration Object</param>
         public AmazonSimpleNotificationServiceClient(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonSimpleNotificationServiceConfig config)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true) { }
+
+        /// <summary>
+        /// Constructs an AmazonSimpleNotificationServiceClient with AWSCredentials
+        /// </summary>
+        /// <param name="credentials"></param>
+        public AmazonSimpleNotificationServiceClient(AWSCredentials credentials)
+            : this(credentials, new AmazonSimpleNotificationServiceConfig()) { }
+
+        /// <summary>
+        /// Constructs an AmazonSimpleNotificationServiceClient with AWSCredentials and an
+        /// AmazonSimpleNotificationService Configuration object
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="config"></param>
+        public AmazonSimpleNotificationServiceClient(AWSCredentials credentials, AmazonSimpleNotificationServiceConfig config)
+            : this(credentials, config, false) { }
+
+        // Constructs an AmazonSimpleNotificationServiceClient with credentials, config and flag which
+        // specifies if the credentials are owned by the client or not
+        private AmazonSimpleNotificationServiceClient(AWSCredentials credentials, AmazonSimpleNotificationServiceConfig config, bool ownCredentials)
         {
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.awsSecretAccessKey = awsSecretAccessKey;
+            this.credentials = credentials;
             this.config = config;
+            this.ownCredentials = ownCredentials;
         }
 
         #region Public API
@@ -606,34 +606,41 @@ namespace Amazon.SimpleNotificationService
          */
         private void AddRequiredParameters(IDictionary<string, string> parameters)
         {
-            if (String.IsNullOrEmpty(this.awsAccessKeyId))
+            using (ImmutableCredentials immutableCredentials = this.credentials.GetCredentials())
             {
-                throw new AmazonSimpleNotificationServiceException("The AWS Access Key ID cannot be NULL or a Zero length string");
-            }
+                if (String.IsNullOrEmpty(immutableCredentials.AccessKey))
+                {
+                    throw new AmazonSimpleNotificationServiceException("The AWS Access Key ID cannot be NULL or a Zero length string");
+                }
 
-            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
-            parameters["SignatureVersion"] = config.SignatureVersion;
-            parameters["SignatureMethod"] = config.SignatureMethod;
-            parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
-            parameters["Version"] = config.ServiceVersion;
-            if (!config.SignatureVersion.Equals("2"))
-            {
-                throw new AmazonSimpleNotificationServiceException("Invalid Signature Version specified");
-            }
-            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
+                if (immutableCredentials.UseToken)
+                {
+                    parameters["SecurityToken"] = immutableCredentials.Token;
+                }
+                parameters["AWSAccessKeyId"] = immutableCredentials.AccessKey;
+                parameters["SignatureVersion"] = config.SignatureVersion;
+                parameters["SignatureMethod"] = config.SignatureMethod;
+                parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
+                parameters["Version"] = config.ServiceVersion;
+                if (!config.SignatureVersion.Equals("2"))
+                {
+                    throw new AmazonSimpleNotificationServiceException("Invalid Signature Version specified");
+                }
+                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
 
-            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
-            string auth;
+                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
+                string auth;
 
-            if (config.UseSecureStringForAwsSecretKey)
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
+                if (immutableCredentials.UseSecureStringForSecretKey)
+                {
+                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.SecureSecretKey, algorithm);
+                }
+                else
+                {
+                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
+                }
+                parameters["Signature"] = auth;
             }
-            else
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
-            }
-            parameters["Signature"] = auth;
         }
 
         /**
