@@ -60,9 +60,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
                 return new TooManyLoadBalancersException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidConfigurationRequest"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateLoadBalancerName"))
             {
-                return new InvalidConfigurationRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DuplicateLoadBalancerNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             if (errorResponse.Code != null && errorResponse.Code.Equals("CertificateNotFound"))
@@ -70,9 +70,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
                 return new CertificateNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateLoadBalancerName"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidConfigurationRequest"))
             {
-                return new DuplicateLoadBalancerNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidConfigurationRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             return new AmazonElasticLoadBalancingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

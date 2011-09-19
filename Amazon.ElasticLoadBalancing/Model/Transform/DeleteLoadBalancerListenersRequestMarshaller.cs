@@ -28,30 +28,28 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Delete Load Balancer Listeners Request Marshaller
     /// </summary>       
-    public class DeleteLoadBalancerListenersRequestMarshaller : IMarshaller<IRequest<DeleteLoadBalancerListenersRequest>, DeleteLoadBalancerListenersRequest> 
+    public class DeleteLoadBalancerListenersRequestMarshaller : IMarshaller<IRequest<DeleteLoadBalancerListenersRequest>, DeleteLoadBalancerListenersRequest>
     {
-
-        public IRequest<DeleteLoadBalancerListenersRequest> Marshall(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest) 
+        public IRequest<DeleteLoadBalancerListenersRequest> Marshall(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest)
         {
             IRequest<DeleteLoadBalancerListenersRequest> request = new DefaultRequest<DeleteLoadBalancerListenersRequest>(deleteLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DeleteLoadBalancerListeners");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (deleteLoadBalancerListenersRequest != null && deleteLoadBalancerListenersRequest.IsSetLoadBalancerName()) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (deleteLoadBalancerListenersRequest != null && deleteLoadBalancerListenersRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(deleteLoadBalancerListenersRequest.LoadBalancerName));
             }
-            if (deleteLoadBalancerListenersRequest != null) 
+            if (deleteLoadBalancerListenersRequest != null)
             {
                 List<int> loadBalancerPortsList = deleteLoadBalancerListenersRequest.LoadBalancerPorts;
 
                 int loadBalancerPortsListIndex = 1;
-                foreach (int loadBalancerPortsListValue in loadBalancerPortsList) 
+                foreach (int loadBalancerPortsListValue in loadBalancerPortsList)
                 { 
                     request.Parameters.Add("LoadBalancerPorts.member." + loadBalancerPortsListIndex, StringUtils.FromInt(loadBalancerPortsListValue));
                     loadBalancerPortsListIndex++;
                 }
             }
-
 
             return request;
         }

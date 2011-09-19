@@ -28,38 +28,41 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Create Load Balancer Listeners Request Marshaller
     /// </summary>       
-    public class CreateLoadBalancerListenersRequestMarshaller : IMarshaller<IRequest<CreateLoadBalancerListenersRequest>, CreateLoadBalancerListenersRequest> 
+    public class CreateLoadBalancerListenersRequestMarshaller : IMarshaller<IRequest<CreateLoadBalancerListenersRequest>, CreateLoadBalancerListenersRequest>
     {
-
-        public IRequest<CreateLoadBalancerListenersRequest> Marshall(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest) 
+        public IRequest<CreateLoadBalancerListenersRequest> Marshall(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest)
         {
             IRequest<CreateLoadBalancerListenersRequest> request = new DefaultRequest<CreateLoadBalancerListenersRequest>(createLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateLoadBalancerListeners");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (createLoadBalancerListenersRequest != null && createLoadBalancerListenersRequest.IsSetLoadBalancerName()) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (createLoadBalancerListenersRequest != null && createLoadBalancerListenersRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createLoadBalancerListenersRequest.LoadBalancerName));
             }
 
-            if (createLoadBalancerListenersRequest != null) 
+            if (createLoadBalancerListenersRequest != null)
             {
                 List<Listener> listenersList = createLoadBalancerListenersRequest.Listeners;
                 int listenersListIndex = 1;
-                foreach (Listener listenersListValue in listenersList) 
-                { 
-                    if (listenersListValue != null && listenersListValue.IsSetProtocol()) 
+                foreach (Listener listenersListValue in listenersList)
+                {
+                    if (listenersListValue != null && listenersListValue.IsSetProtocol())
                     {
                         request.Parameters.Add("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.FromString(listenersListValue.Protocol));
                     }
-                    if (listenersListValue != null && listenersListValue.IsSetLoadBalancerPort()) 
+                    if (listenersListValue != null && listenersListValue.IsSetLoadBalancerPort())
                     {
                         request.Parameters.Add("Listeners.member." + listenersListIndex + ".LoadBalancerPort", StringUtils.FromInt(listenersListValue.LoadBalancerPort));
                     }
-                    if (listenersListValue != null && listenersListValue.IsSetInstancePort()) 
+                    if (listenersListValue != null && listenersListValue.IsSetInstanceProtocol())
+                    {
+                        request.Parameters.Add("Listeners.member." + listenersListIndex + ".InstanceProtocol", StringUtils.FromString(listenersListValue.InstanceProtocol));
+                    }
+                    if (listenersListValue != null && listenersListValue.IsSetInstancePort())
                     {
                         request.Parameters.Add("Listeners.member." + listenersListIndex + ".InstancePort", StringUtils.FromInt(listenersListValue.InstancePort));
                     }
-                    if (listenersListValue != null && listenersListValue.IsSetSSLCertificateId()) 
+                    if (listenersListValue != null && listenersListValue.IsSetSSLCertificateId())
                     {
                         request.Parameters.Add("Listeners.member." + listenersListIndex + ".SSLCertificateId", StringUtils.FromString(listenersListValue.SSLCertificateId));
                     }
@@ -67,7 +70,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
                     listenersListIndex++;
                 }
             }
-
 
             return request;
         }

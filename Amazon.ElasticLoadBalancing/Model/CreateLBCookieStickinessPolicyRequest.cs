@@ -26,12 +26,12 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Container for the parameters to the CreateLBCookieStickinessPolicy operation.
     /// <para> Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified
-    /// expiration period. This policy can be associated only with HTTP/HTTPS listeners. </para> <para> When a load balancer implements this policy,
-    /// the load balancer uses a special cookie to track the backend server instance for each request. When the load balancer receives a request, it
-    /// first checks to see if this cookie is present in the request. If so, the load balancer sends the request to the application server specified
-    /// in the cookie. If not, the load balancer sends the request to a server that is chosen based on the existing load balancing algorithm.
-    /// </para> <para> A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the
-    /// cookie is based on the cookie expiration time, which is specified in the policy configuration. </para>
+    /// expiration period. This policy can be associated only with HTTP/HTTPS listeners. </para> <para> When a LoadBalancer implements this policy,
+    /// the LoadBalancer uses a special cookie to track the backend server instance for each request. When the LoadBalancer receives a request, it
+    /// first checks to see if this cookie is present in the request. If so, the LoadBalancer sends the request to the application server specified
+    /// in the cookie. If not, the LoadBalancer sends the request to a server that is chosen based on the existing load balancing algorithm. </para>
+    /// <para> A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the cookie
+    /// is based on the cookie expiration time, which is specified in the policy configuration. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateLBCookieStickinessPolicy"/>
     public class CreateLBCookieStickinessPolicyRequest : AmazonWebServiceRequest
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// 
         /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
-        /// <param name="policyName"> The name of the policy being created. The name must be unique within the set of policies for this Load Balancer.
+        /// <param name="policyName"> The name of the policy being created. The name must be unique within the set of policies for this LoadBalancer.
         /// </param>
         public CreateLBCookieStickinessPolicyRequest(string loadBalancerName, string policyName) 
         {
@@ -90,7 +90,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The name of the policy being created. The name must be unique within the set of policies for this Load Balancer.
+        /// The name of the policy being created. The name must be unique within the set of policies for this LoadBalancer.
         ///  
         /// </summary>
         public string PolicyName

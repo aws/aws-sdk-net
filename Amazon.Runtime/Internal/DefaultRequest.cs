@@ -35,6 +35,7 @@ namespace Amazon.Runtime.Internal
         Uri endpoint;
         string serviceName;
         readonly AmazonWebServiceRequest originalRequest;
+        byte[] content;
 
         /// <summary>
         /// Constructs a new DefaultRequest with the specified service name and the
@@ -98,6 +99,20 @@ namespace Amazon.Runtime.Internal
             }
         }
 
+        /// <summary>
+        /// Gets and Sets the content for this request.
+        /// </summary>
+        public byte[] Content
+        {
+            get
+            {
+                return this.content;
+            }
+            set
+            {
+                this.content = value;
+            }
+        }
 
         /// <summary>
         /// The name of the service to which this request is being sent.

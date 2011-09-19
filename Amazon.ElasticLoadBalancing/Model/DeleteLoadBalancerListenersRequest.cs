@@ -87,7 +87,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public List<int> LoadBalancerPorts
         {
-            get { return this.loadBalancerPorts ?? default(List<int>); }
+            get { return this.loadBalancerPorts; }
             set { this.loadBalancerPorts = value; }
         }
         /// <summary>

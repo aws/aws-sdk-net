@@ -28,30 +28,28 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Enable Availability Zones For Load Balancer Request Marshaller
     /// </summary>       
-    public class EnableAvailabilityZonesForLoadBalancerRequestMarshaller : IMarshaller<IRequest<EnableAvailabilityZonesForLoadBalancerRequest>, EnableAvailabilityZonesForLoadBalancerRequest> 
+    public class EnableAvailabilityZonesForLoadBalancerRequestMarshaller : IMarshaller<IRequest<EnableAvailabilityZonesForLoadBalancerRequest>, EnableAvailabilityZonesForLoadBalancerRequest>
     {
-
-        public IRequest<EnableAvailabilityZonesForLoadBalancerRequest> Marshall(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest) 
+        public IRequest<EnableAvailabilityZonesForLoadBalancerRequest> Marshall(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest)
         {
             IRequest<EnableAvailabilityZonesForLoadBalancerRequest> request = new DefaultRequest<EnableAvailabilityZonesForLoadBalancerRequest>(enableAvailabilityZonesForLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "EnableAvailabilityZonesForLoadBalancer");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (enableAvailabilityZonesForLoadBalancerRequest != null && enableAvailabilityZonesForLoadBalancerRequest.IsSetLoadBalancerName()) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (enableAvailabilityZonesForLoadBalancerRequest != null && enableAvailabilityZonesForLoadBalancerRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(enableAvailabilityZonesForLoadBalancerRequest.LoadBalancerName));
             }
-            if (enableAvailabilityZonesForLoadBalancerRequest != null) 
+            if (enableAvailabilityZonesForLoadBalancerRequest != null)
             {
                 List<string> availabilityZonesList = enableAvailabilityZonesForLoadBalancerRequest.AvailabilityZones;
 
                 int availabilityZonesListIndex = 1;
-                foreach (string availabilityZonesListValue in availabilityZonesList) 
+                foreach (string availabilityZonesListValue in availabilityZonesList)
                 { 
                     request.Parameters.Add("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.FromString(availabilityZonesListValue));
                     availabilityZonesListIndex++;
                 }
             }
-
 
             return request;
         }

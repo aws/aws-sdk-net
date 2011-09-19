@@ -39,11 +39,18 @@ namespace Amazon.Runtime
     {
         #region Private members
 
+        [Flags]
+        internal enum AuthenticationTypes
+        {
+            User = 0x0,
+            Session = 0x1
+        }
+
         const int MAX_BACKOFF_IN_MILLISECONDS = 30 * 1000;
-        string awsAccessKeyId;
-        SecureString awsSecretAccessKey;
         ClientConfig config;
-        string clearAwsSecretAccessKey;
+        AWSCredentials credentials;
+        bool ownCredentials;
+        AuthenticationTypes authenticationType;
 
         bool disposed;
         Logger logger;
@@ -71,10 +78,13 @@ namespace Amazon.Runtime
             {
                 if (disposing)
                 {
-                    if (awsSecretAccessKey != null)
+                    if (credentials != null)
                     {
-                        awsSecretAccessKey.Dispose();
-                        awsSecretAccessKey = null;
+                        if (ownCredentials && (credentials is IDisposable))
+                        {
+                            (credentials as IDisposable).Dispose();
+                        }
+                        credentials = null;
                     }
                 }
                 this.disposed = true;
@@ -100,29 +110,44 @@ namespace Amazon.Runtime
 
         #endregion
 
-        internal AmazonWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, ClientConfig config)
+        internal AmazonWebServiceClient(AWSCredentials credentials, ClientConfig config, bool ownCredentials, AuthenticationTypes authenticationType)
         {
             this.logger = new Logger(this.GetType());
             this.config = config;
+            this.credentials = credentials;
+            this.ownCredentials = ownCredentials;
+            this.authenticationType = authenticationType;
+        }
 
-            if (!String.IsNullOrEmpty(awsSecretAccessKey))
-            {
-                if (config.UseSecureStringForAwsSecretKey)
-                {
-                    this.awsSecretAccessKey = new SecureString();
-                    foreach (char ch in awsSecretAccessKey.ToCharArray())
-                    {
-                        this.awsSecretAccessKey.AppendChar(ch);
-                    }
-                    this.awsSecretAccessKey.MakeReadOnly();
-                }
-                else
-                {
-                    clearAwsSecretAccessKey = awsSecretAccessKey;
-                }
-            }
-            this.awsAccessKeyId = awsAccessKeyId;
+        internal AmazonWebServiceClient(string awsAccessKeyId, SecureString awsSecretAccessKey, ClientConfig config, AuthenticationTypes authenticationType)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true, authenticationType)
+        {
+        }
 
+        internal AmazonWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, ClientConfig config, AuthenticationTypes authenticationType)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey, config.UseSecureStringForAwsSecretKey), config, true, authenticationType)
+        {
+        }
+
+        internal AmazonWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, ClientConfig config, AuthenticationTypes authenticationType)
+            : this(new SessionAWSCredentials(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, config.UseSecureStringForAwsSecretKey), config, true, authenticationType)
+        {
+        }
+
+
+        internal AmazonWebServiceClient(string awsAccessKeyId, SecureString awsSecretAccessKey, ClientConfig config)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true, AuthenticationTypes.User)
+        {
+        }
+
+        internal AmazonWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, ClientConfig config)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey, config.UseSecureStringForAwsSecretKey), config, true, AuthenticationTypes.User)
+        {
+        }
+
+        internal AmazonWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, ClientConfig config)
+            : this(new SessionAWSCredentials(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, config.UseSecureStringForAwsSecretKey), config, true, AuthenticationTypes.User)
+        {
         }
 
         /// <summary>
@@ -230,6 +255,20 @@ namespace Amazon.Runtime
             }
         }
 
+        private void ValidateAuthentication(ImmutableCredentials immutableCredentials)
+        {
+            if (immutableCredentials.UseToken)  // token supplied
+            {
+                if ((authenticationType & AuthenticationTypes.Session) != AuthenticationTypes.Session)
+                    throw new AmazonServiceException("Client does not support session authentication");
+            }
+            else  // no token supplied
+            {
+                if ((authenticationType & AuthenticationTypes.User) != AuthenticationTypes.User)
+                    throw new AmazonServiceException("Client does not support user authentication");
+            }
+        }
+
         /// <summary>
         /// This method makes the actual web request and marshalls the response body or error returned from the service.
         /// For some error response a retry will be attempted after an exponential pause.
@@ -252,7 +291,15 @@ namespace Amazon.Runtime
             ProcessRequestHandlers(request);
 
             this.logger.DebugFormat("Starting request {0} at {1}", requestName, this.config.ServiceURL);
-            signer.Sign(request, this.config, this.awsAccessKeyId, this.clearAwsSecretAccessKey, this.awsSecretAccessKey);
+
+            using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
+            {
+                ValidateAuthentication(immutableCredentials);
+
+                if (immutableCredentials.UseToken)
+                    request.Parameters.Add("SecurityToken", immutableCredentials.Token);
+                signer.Sign(request, this.config, immutableCredentials.AccessKey, immutableCredentials.ClearSecretKey, immutableCredentials.SecureSecretKey);
+            }
 
             string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
@@ -461,9 +508,10 @@ namespace Amazon.Runtime
         /// <param name="retries">Current retry count.</param>
         private static void pauseExponentially(int retries)
         {
-            long delay = (long)(Math.Pow(4, retries) * 100L);
+            int delay = (int)(Math.Pow(4, retries) * 100);
             delay = Math.Min(delay, MAX_BACKOFF_IN_MILLISECONDS);
-            Thread.Sleep(new TimeSpan(delay));
+            Console.WriteLine(retries + " Pausing for retry: " + delay);
+            Thread.Sleep(delay);
         }
     }
 }

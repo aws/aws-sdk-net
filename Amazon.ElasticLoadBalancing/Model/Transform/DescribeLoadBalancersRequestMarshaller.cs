@@ -28,26 +28,24 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Describe Load Balancers Request Marshaller
     /// </summary>       
-    public class DescribeLoadBalancersRequestMarshaller : IMarshaller<IRequest<DescribeLoadBalancersRequest>, DescribeLoadBalancersRequest> 
+    public class DescribeLoadBalancersRequestMarshaller : IMarshaller<IRequest<DescribeLoadBalancersRequest>, DescribeLoadBalancersRequest>
     {
-
-        public IRequest<DescribeLoadBalancersRequest> Marshall(DescribeLoadBalancersRequest describeLoadBalancersRequest) 
+        public IRequest<DescribeLoadBalancersRequest> Marshall(DescribeLoadBalancersRequest describeLoadBalancersRequest)
         {
             IRequest<DescribeLoadBalancersRequest> request = new DefaultRequest<DescribeLoadBalancersRequest>(describeLoadBalancersRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeLoadBalancers");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (describeLoadBalancersRequest != null) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (describeLoadBalancersRequest != null)
             {
                 List<string> loadBalancerNamesList = describeLoadBalancersRequest.LoadBalancerNames;
 
                 int loadBalancerNamesListIndex = 1;
-                foreach (string loadBalancerNamesListValue in loadBalancerNamesList) 
+                foreach (string loadBalancerNamesListValue in loadBalancerNamesList)
                 { 
                     request.Parameters.Add("LoadBalancerNames.member." + loadBalancerNamesListIndex, StringUtils.FromString(loadBalancerNamesListValue));
                     loadBalancerNamesListIndex++;
                 }
             }
-
 
             return request;
         }

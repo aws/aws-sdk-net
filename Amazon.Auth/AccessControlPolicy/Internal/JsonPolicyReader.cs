@@ -54,7 +54,7 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
 
         private Statement convertStatement(JsonData jStatement)
         {
-            if (!jStatement[JsonDocumentFields.STATEMENT_EFFECT].IsString)
+            if (jStatement[JsonDocumentFields.STATEMENT_EFFECT] == null || !jStatement[JsonDocumentFields.STATEMENT_EFFECT].IsString)
                 return null;
 
 
@@ -67,7 +67,7 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
 
             Statement statement = new Statement(effect);
 
-            if (jStatement[JsonDocumentFields.STATEMENT_ID].IsString)
+            if (jStatement[JsonDocumentFields.STATEMENT_ID] != null && jStatement[JsonDocumentFields.STATEMENT_ID].IsString)
                 statement.Id = (string)jStatement[JsonDocumentFields.STATEMENT_ID];
 
             convertActions(statement, jStatement);

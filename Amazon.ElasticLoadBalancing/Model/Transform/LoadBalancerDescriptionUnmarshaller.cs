@@ -72,6 +72,12 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
                             
                         continue;
                     }
+                    if (context.TestExpression("BackendServerDescriptions/member", targetDepth))
+                    {
+                        loadBalancerDescription.BackendServerDescriptions.Add(BackendServerDescriptionUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
+                    }
                     if (context.TestExpression("AvailabilityZones/member", targetDepth))
                     {
                         loadBalancerDescription.AvailabilityZones.Add(StringUnmarshaller.GetInstance().Unmarshall(context));

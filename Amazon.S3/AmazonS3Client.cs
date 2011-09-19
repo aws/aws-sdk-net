@@ -2086,7 +2086,7 @@ namespace Amazon.S3
                 // Create a stream from the filename specified
                 if (File.Exists(request.FilePath))
                 {
-                    request.InputStream = new FileStream(request.FilePath, FileMode.Open, FileAccess.Read);
+                    request.InputStream = new FileStream(request.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
                 }
                 else
                 {
@@ -3999,16 +3999,7 @@ namespace Amazon.S3
             }
 
             // Add the Copy Source header which makes this a COPY request
-            string sourceKey = request.SourceKey;
-            if (request.IsSetSourceVersionId())
-            {
-                sourceKey = String.Concat(
-                    sourceKey,
-                    "?versionId=",
-                    request.SourceVersionId
-                    );
-            }
-            setCopySourceHeader(webHeaders, request.SourceBucket, sourceKey);
+            setCopySourceHeader(webHeaders, request.SourceBucket, request.SourceKey, request.SourceVersionId);
 
             // there is always a directive associated with the request
             setMetadataDirectiveHeader(webHeaders, request.Directive);
@@ -4344,16 +4335,7 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Query] = parameters[S3QueryParameter.QueryToSign] = string.Format("?partNumber={1}&uploadId={0}", request.UploadID, request.PartNumber);
 
             // Add the Copy Source header
-            string sourceKey = request.SourceKey;
-            if (request.IsSetSourceVersionId())
-            {
-                sourceKey = String.Concat(
-                    sourceKey,
-                    "?versionId=",
-                    request.SourceVersionId
-                    );
-            }
-            setCopySourceHeader(webHeaders, request.SourceBucket, sourceKey);
+            setCopySourceHeader(webHeaders, request.SourceBucket, request.SourceKey, request.SourceVersionId);
 
             // Add the copy range header
             if (request.IsSetFirstByte() && request.IsSetLastByte())
@@ -5270,6 +5252,10 @@ namespace Amazon.S3
         {
             Map parameters = request.parameters;
 
+            if (parameters.ContainsKey(S3QueryParameter.Url) && !string.IsNullOrEmpty(parameters[S3QueryParameter.Url]))
+                return;
+
+
             if (!config.IsSetServiceURL())
             {
                 throw new AmazonS3Exception("The Amazon S3 Service URL is either null or empty");
@@ -5629,14 +5615,23 @@ namespace Amazon.S3
         /// <param name="headers">The header collection to add the new header to</param>
         /// <param name="bucket">The source bucket</param>
         /// <param name="key">The source key</param>
-        void setCopySourceHeader(WebHeaderCollection headers, string bucket, string key)
+        /// <param name="version">The version of the object to copy (or null if most recent)</param>
+        void setCopySourceHeader(WebHeaderCollection headers, string bucket, string key, string version)
         {
-            string source = bucket;
-            if (key != null)
+            string source;
+            if (!String.IsNullOrEmpty(key))
             {
-                source = String.Concat("/", bucket, "/", key);
+                source = AmazonS3Util.UrlEncode(String.Concat("/", bucket, "/", key), true);
+                if (!String.IsNullOrEmpty(version))
+                {
+                    source = String.Format("{0}?versionId={1}", source, AmazonS3Util.UrlEncode(version, true));
+                }
             }
-            headers["x-amz-copy-source"] = AmazonS3Util.UrlEncode(source, true);
+            else
+            {
+                source = AmazonS3Util.UrlEncode(bucket, true);
+            }
+            headers["x-amz-copy-source"] = source;
         }
 
         /// <summary>

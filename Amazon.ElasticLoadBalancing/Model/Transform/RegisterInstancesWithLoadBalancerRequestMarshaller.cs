@@ -28,26 +28,25 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Register Instances With Load Balancer Request Marshaller
     /// </summary>       
-    public class RegisterInstancesWithLoadBalancerRequestMarshaller : IMarshaller<IRequest<RegisterInstancesWithLoadBalancerRequest>, RegisterInstancesWithLoadBalancerRequest> 
+    public class RegisterInstancesWithLoadBalancerRequestMarshaller : IMarshaller<IRequest<RegisterInstancesWithLoadBalancerRequest>, RegisterInstancesWithLoadBalancerRequest>
     {
-
-        public IRequest<RegisterInstancesWithLoadBalancerRequest> Marshall(RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest) 
+        public IRequest<RegisterInstancesWithLoadBalancerRequest> Marshall(RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest)
         {
             IRequest<RegisterInstancesWithLoadBalancerRequest> request = new DefaultRequest<RegisterInstancesWithLoadBalancerRequest>(registerInstancesWithLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "RegisterInstancesWithLoadBalancer");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (registerInstancesWithLoadBalancerRequest != null && registerInstancesWithLoadBalancerRequest.IsSetLoadBalancerName()) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (registerInstancesWithLoadBalancerRequest != null && registerInstancesWithLoadBalancerRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(registerInstancesWithLoadBalancerRequest.LoadBalancerName));
             }
 
-            if (registerInstancesWithLoadBalancerRequest != null) 
+            if (registerInstancesWithLoadBalancerRequest != null)
             {
                 List<Instance> instancesList = registerInstancesWithLoadBalancerRequest.Instances;
                 int instancesListIndex = 1;
-                foreach (Instance instancesListValue in instancesList) 
-                { 
-                    if (instancesListValue != null && instancesListValue.IsSetInstanceId()) 
+                foreach (Instance instancesListValue in instancesList)
+                {
+                    if (instancesListValue != null && instancesListValue.IsSetInstanceId())
                     {
                         request.Parameters.Add("Instances.member." + instancesListIndex + ".InstanceId", StringUtils.FromString(instancesListValue.InstanceId));
                     }
@@ -55,7 +54,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
                     instancesListIndex++;
                 }
             }
-
 
             return request;
         }

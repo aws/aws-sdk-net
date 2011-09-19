@@ -48,6 +48,12 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
                             
                         continue;
                     }
+                    if (context.TestExpression("InstanceProtocol", targetDepth))
+                    {
+                        listener.InstanceProtocol = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                     if (context.TestExpression("InstancePort", targetDepth))
                     {
                         listener.InstancePort = IntUnmarshaller.GetInstance().Unmarshall(context);

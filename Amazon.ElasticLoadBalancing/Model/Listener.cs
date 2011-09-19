@@ -28,6 +28,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         
         private string protocol;
         private int? loadBalancerPort;
+        private string instanceProtocol;
         private int? instancePort;
         private string sSLCertificateId;
         /// <summary>
@@ -111,6 +112,37 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetLoadBalancerPort()
         {
             return this.loadBalancerPort.HasValue;       
+        }
+
+        /// <summary>
+        /// Specifies the protocol to use for routing traffic to back-end instances - HTTP, HTTPS, TCP, or SSL. This property cannot be modified for the
+        /// life of the LoadBalancer. <note> If the front-end protocol is L7, i.e., HTTP or HTTPS, <c>InstanceProtocol</c> has to be at the same layer,
+        /// i.e., HTTP or HTTPS. </note> <note> If there is another listener with the same <c>InstancePort</c> whose <c>InstanceProtocol</c> is secure,
+        /// i.e., HTTPS or SSL, the listener's <c>InstanceProtocol</c> has to be secure, i.e., HTTPS or SSL. </note>
+        ///  
+        /// </summary>
+        public string InstanceProtocol
+        {
+            get { return this.instanceProtocol; }
+            set { this.instanceProtocol = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstanceProtocol property
+        /// </summary>
+        /// <param name="instanceProtocol">The value to set for the InstanceProtocol property </param>
+        /// <returns>this instance</returns>
+        public Listener WithInstanceProtocol(string instanceProtocol)
+        {
+            this.instanceProtocol = instanceProtocol;
+            return this;
+        }
+            
+
+        // Check to see if InstanceProtocol property is set
+        internal bool IsSetInstanceProtocol()
+        {
+            return this.instanceProtocol != null;       
         }
 
         /// <summary>

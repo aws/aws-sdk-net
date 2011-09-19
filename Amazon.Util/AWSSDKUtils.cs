@@ -40,7 +40,7 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.3.10.0";
+        internal const string SDKVersionNumber = "1.3.13.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -159,6 +159,19 @@ namespace Amazon.Util
         #endregion
 
         #region Internal Methods
+
+        internal static void ForceCanonicalPathAndQuery(Uri uri)
+        {
+            try
+            {
+                string paq = uri.PathAndQuery; // need to access PathAndQuery
+                FieldInfo flagsFieldInfo = typeof(Uri).GetField("m_Flags", BindingFlags.Instance | BindingFlags.NonPublic);
+                ulong flags = (ulong)flagsFieldInfo.GetValue(uri);
+                flags &= ~((ulong)0x30); // Flags.PathNotCanonical|Flags.QueryNotCanonical
+                flagsFieldInfo.SetValue(uri, flags);
+            }
+            catch { }
+        }
 
         /*
          * Determines the string to be signed based on the input parameters for

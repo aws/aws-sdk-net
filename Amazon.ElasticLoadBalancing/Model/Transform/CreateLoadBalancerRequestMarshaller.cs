@@ -28,38 +28,41 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Create Load Balancer Request Marshaller
     /// </summary>       
-    public class CreateLoadBalancerRequestMarshaller : IMarshaller<IRequest<CreateLoadBalancerRequest>, CreateLoadBalancerRequest> 
+    public class CreateLoadBalancerRequestMarshaller : IMarshaller<IRequest<CreateLoadBalancerRequest>, CreateLoadBalancerRequest>
     {
-
-        public IRequest<CreateLoadBalancerRequest> Marshall(CreateLoadBalancerRequest createLoadBalancerRequest) 
+        public IRequest<CreateLoadBalancerRequest> Marshall(CreateLoadBalancerRequest createLoadBalancerRequest)
         {
             IRequest<CreateLoadBalancerRequest> request = new DefaultRequest<CreateLoadBalancerRequest>(createLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateLoadBalancer");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (createLoadBalancerRequest != null && createLoadBalancerRequest.IsSetLoadBalancerName()) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (createLoadBalancerRequest != null && createLoadBalancerRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createLoadBalancerRequest.LoadBalancerName));
             }
 
-            if (createLoadBalancerRequest != null) 
+            if (createLoadBalancerRequest != null)
             {
                 List<Listener> listenersList = createLoadBalancerRequest.Listeners;
                 int listenersListIndex = 1;
-                foreach (Listener listenersListValue in listenersList) 
-                { 
-                    if (listenersListValue != null && listenersListValue.IsSetProtocol()) 
+                foreach (Listener listenersListValue in listenersList)
+                {
+                    if (listenersListValue != null && listenersListValue.IsSetProtocol())
                     {
                         request.Parameters.Add("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.FromString(listenersListValue.Protocol));
                     }
-                    if (listenersListValue != null && listenersListValue.IsSetLoadBalancerPort()) 
+                    if (listenersListValue != null && listenersListValue.IsSetLoadBalancerPort())
                     {
                         request.Parameters.Add("Listeners.member." + listenersListIndex + ".LoadBalancerPort", StringUtils.FromInt(listenersListValue.LoadBalancerPort));
                     }
-                    if (listenersListValue != null && listenersListValue.IsSetInstancePort()) 
+                    if (listenersListValue != null && listenersListValue.IsSetInstanceProtocol())
+                    {
+                        request.Parameters.Add("Listeners.member." + listenersListIndex + ".InstanceProtocol", StringUtils.FromString(listenersListValue.InstanceProtocol));
+                    }
+                    if (listenersListValue != null && listenersListValue.IsSetInstancePort())
                     {
                         request.Parameters.Add("Listeners.member." + listenersListIndex + ".InstancePort", StringUtils.FromInt(listenersListValue.InstancePort));
                     }
-                    if (listenersListValue != null && listenersListValue.IsSetSSLCertificateId()) 
+                    if (listenersListValue != null && listenersListValue.IsSetSSLCertificateId())
                     {
                         request.Parameters.Add("Listeners.member." + listenersListIndex + ".SSLCertificateId", StringUtils.FromString(listenersListValue.SSLCertificateId));
                     }
@@ -67,18 +70,17 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
                     listenersListIndex++;
                 }
             }
-            if (createLoadBalancerRequest != null) 
+            if (createLoadBalancerRequest != null)
             {
                 List<string> availabilityZonesList = createLoadBalancerRequest.AvailabilityZones;
 
                 int availabilityZonesListIndex = 1;
-                foreach (string availabilityZonesListValue in availabilityZonesList) 
+                foreach (string availabilityZonesListValue in availabilityZonesList)
                 { 
                     request.Parameters.Add("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.FromString(availabilityZonesListValue));
                     availabilityZonesListIndex++;
                 }
             }
-
 
             return request;
         }

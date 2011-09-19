@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The LBCookieStickinessPolicy data type. </para>
+    /// <para>The LBCookieStickinessPolicy data type. </para>
     /// </summary>
     public class LBCookieStickinessPolicy  
     {
@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <param name="policyName"> The name for the policy being created. The name must be unique within the set of policies for this LoadBalancer.
         /// </param>
         /// <param name="cookieExpirationPeriod"> The time period in seconds after which the cookie should be considered stale. Not specifying this
-        /// parameter indicates that the sticky session will last for the duration of the browser session. </param>
+        /// parameter indicates that the stickiness session will last for the duration of the browser session. </param>
         public LBCookieStickinessPolicy(string policyName, long cookieExpirationPeriod) 
         {
             this.policyName = policyName;
@@ -80,7 +80,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The time period in seconds after which the cookie should be considered stale. Not specifying this parameter indicates that the sticky
+        /// The time period in seconds after which the cookie should be considered stale. Not specifying this parameter indicates that the stickiness
         /// session will last for the duration of the browser session.
         ///  
         /// </summary>

@@ -28,43 +28,41 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Configure Health Check Request Marshaller
     /// </summary>       
-    public class ConfigureHealthCheckRequestMarshaller : IMarshaller<IRequest<ConfigureHealthCheckRequest>, ConfigureHealthCheckRequest> 
+    public class ConfigureHealthCheckRequestMarshaller : IMarshaller<IRequest<ConfigureHealthCheckRequest>, ConfigureHealthCheckRequest>
     {
-
-        public IRequest<ConfigureHealthCheckRequest> Marshall(ConfigureHealthCheckRequest configureHealthCheckRequest) 
+        public IRequest<ConfigureHealthCheckRequest> Marshall(ConfigureHealthCheckRequest configureHealthCheckRequest)
         {
             IRequest<ConfigureHealthCheckRequest> request = new DefaultRequest<ConfigureHealthCheckRequest>(configureHealthCheckRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "ConfigureHealthCheck");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (configureHealthCheckRequest != null && configureHealthCheckRequest.IsSetLoadBalancerName()) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (configureHealthCheckRequest != null && configureHealthCheckRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(configureHealthCheckRequest.LoadBalancerName));
             }
-            if (configureHealthCheckRequest != null) 
+            if (configureHealthCheckRequest != null)
             {
                 HealthCheck healthCheck = configureHealthCheckRequest.HealthCheck;
-                if (healthCheck != null && healthCheck.IsSetTarget()) 
+                if (healthCheck != null && healthCheck.IsSetTarget())
                 {
                     request.Parameters.Add("HealthCheck.Target", StringUtils.FromString(healthCheck.Target));
                 }
-                if (healthCheck != null && healthCheck.IsSetInterval()) 
+                if (healthCheck != null && healthCheck.IsSetInterval())
                 {
                     request.Parameters.Add("HealthCheck.Interval", StringUtils.FromInt(healthCheck.Interval));
                 }
-                if (healthCheck != null && healthCheck.IsSetTimeout()) 
+                if (healthCheck != null && healthCheck.IsSetTimeout())
                 {
                     request.Parameters.Add("HealthCheck.Timeout", StringUtils.FromInt(healthCheck.Timeout));
                 }
-                if (healthCheck != null && healthCheck.IsSetUnhealthyThreshold()) 
+                if (healthCheck != null && healthCheck.IsSetUnhealthyThreshold())
                 {
                     request.Parameters.Add("HealthCheck.UnhealthyThreshold", StringUtils.FromInt(healthCheck.UnhealthyThreshold));
                 }
-                if (healthCheck != null && healthCheck.IsSetHealthyThreshold()) 
+                if (healthCheck != null && healthCheck.IsSetHealthyThreshold())
                 {
                     request.Parameters.Add("HealthCheck.HealthyThreshold", StringUtils.FromInt(healthCheck.HealthyThreshold));
                 }
             }
-
 
             return request;
         }

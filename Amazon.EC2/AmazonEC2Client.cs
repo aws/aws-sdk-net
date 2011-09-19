@@ -4836,6 +4836,10 @@ namespace Amazon.EC2
             {
                 parameters["GroupName"] = request.GroupName;
             }
+            if (request.IsSetGroupId())
+            {
+                parameters["GroupId"] = request.GroupId;
+            }
             if (request.IsSetSourceSecurityGroupName())
             {
                 parameters["SourceSecurityGroupName"] = request.SourceSecurityGroupName;

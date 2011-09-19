@@ -28,35 +28,33 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Set Load Balancer Policies Of Listener Request Marshaller
     /// </summary>       
-    public class SetLoadBalancerPoliciesOfListenerRequestMarshaller : IMarshaller<IRequest<SetLoadBalancerPoliciesOfListenerRequest>, SetLoadBalancerPoliciesOfListenerRequest> 
+    public class SetLoadBalancerPoliciesOfListenerRequestMarshaller : IMarshaller<IRequest<SetLoadBalancerPoliciesOfListenerRequest>, SetLoadBalancerPoliciesOfListenerRequest>
     {
-
-        public IRequest<SetLoadBalancerPoliciesOfListenerRequest> Marshall(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest) 
+        public IRequest<SetLoadBalancerPoliciesOfListenerRequest> Marshall(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest)
         {
             IRequest<SetLoadBalancerPoliciesOfListenerRequest> request = new DefaultRequest<SetLoadBalancerPoliciesOfListenerRequest>(setLoadBalancerPoliciesOfListenerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "SetLoadBalancerPoliciesOfListener");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (setLoadBalancerPoliciesOfListenerRequest != null && setLoadBalancerPoliciesOfListenerRequest.IsSetLoadBalancerName()) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (setLoadBalancerPoliciesOfListenerRequest != null && setLoadBalancerPoliciesOfListenerRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(setLoadBalancerPoliciesOfListenerRequest.LoadBalancerName));
             }
-            if (setLoadBalancerPoliciesOfListenerRequest != null && setLoadBalancerPoliciesOfListenerRequest.IsSetLoadBalancerPort()) 
+            if (setLoadBalancerPoliciesOfListenerRequest != null && setLoadBalancerPoliciesOfListenerRequest.IsSetLoadBalancerPort())
             {
                 request.Parameters.Add("LoadBalancerPort", StringUtils.FromInt(setLoadBalancerPoliciesOfListenerRequest.LoadBalancerPort));
             }
-            if (setLoadBalancerPoliciesOfListenerRequest != null) 
+            if (setLoadBalancerPoliciesOfListenerRequest != null)
             {
                 List<string> policyNamesList = setLoadBalancerPoliciesOfListenerRequest.PolicyNames;
 
                 if (policyNamesList.Count == 0) request.Parameters.Add("PolicyNames", "");
                 int policyNamesListIndex = 1;
-                foreach (string policyNamesListValue in policyNamesList) 
+                foreach (string policyNamesListValue in policyNamesList)
                 { 
                     request.Parameters.Add("PolicyNames.member." + policyNamesListIndex, StringUtils.FromString(policyNamesListValue));
                     policyNamesListIndex++;
                 }
             }
-
 
             return request;
         }

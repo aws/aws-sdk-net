@@ -21,13 +21,14 @@ using System.IO;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The Policies data type. </para>
+    /// <para> The policies data type. </para>
     /// </summary>
     public class Policies  
     {
         
         private List<AppCookieStickinessPolicy> appCookieStickinessPolicies = new List<AppCookieStickinessPolicy>();
         private List<LBCookieStickinessPolicy> lBCookieStickinessPolicies = new List<LBCookieStickinessPolicy>();
+        private List<string> otherPolicies = new List<string>();
         /// <summary>
         /// Default constructor for a new Policies object.  Callers should use the
         /// properties or fluent setter (With...) methods to initialize this object after creating it.
@@ -81,7 +82,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of the <a>LBCookieStickinessPolicy</a> objects created with <a>CreateAppCookieStickinessPolicy</a>.
+        /// A list of <a>LBCookieStickinessPolicy</a> objects created with <a>CreateAppCookieStickinessPolicy</a>.
         ///  
         /// </summary>
         public List<LBCookieStickinessPolicy> LBCookieStickinessPolicies
@@ -123,6 +124,51 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetLBCookieStickinessPolicies()
         {
             return this.lBCookieStickinessPolicies.Count > 0;       
+        }
+
+        /// <summary>
+        /// A list of policy names other than the stickiness policies.
+        ///  
+        /// </summary>
+        public List<string> OtherPolicies
+        {
+            get { return this.otherPolicies; }
+            set { this.otherPolicies = value; }
+        }
+        /// <summary>
+        /// Adds elements to the OtherPolicies collection
+        /// </summary>
+        /// <param name="otherPolicies">The values to add to the OtherPolicies collection </param>
+        /// <returns>this instance</returns>
+        public Policies WithOtherPolicies(params string[] otherPolicies)
+        {
+            foreach (string element in otherPolicies)
+            {
+                this.otherPolicies.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the OtherPolicies collection
+        /// </summary>
+        /// <param name="otherPolicies">The values to add to the OtherPolicies collection </param>
+        /// <returns>this instance</returns>
+        public Policies WithOtherPolicies(IEnumerable<string> otherPolicies)
+        {
+            foreach (string element in otherPolicies)
+            {
+                this.otherPolicies.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if OtherPolicies property is set
+        internal bool IsSetOtherPolicies()
+        {
+            return this.otherPolicies.Count > 0;       
         }
     }
 }

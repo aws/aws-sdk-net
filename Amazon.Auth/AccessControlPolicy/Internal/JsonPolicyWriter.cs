@@ -212,8 +212,11 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                 generator.WriteObjectStart();
                 foreach (KeyValuePair<string, List<string>> keyEntry in typeEntry.Value)
                 {
-                    generator.WritePropertyName(keyEntry.Key);
                     IList<string> conditionValues = keyEntry.Value;
+                    if (conditionValues.Count == 0)
+                        continue;
+
+                    generator.WritePropertyName(keyEntry.Key);
 
                     if (conditionValues.Count > 1)
                     {
@@ -265,9 +268,12 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                     keys[conditionKey] = values;
                 }
 
-                foreach (string value in condition.Values)
+                if (condition.Values != null)
                 {
-                    values.Add(value);
+                    foreach (string value in condition.Values)
+                    {
+                        values.Add(value);
+                    }
                 }
             }
 

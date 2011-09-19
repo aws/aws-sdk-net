@@ -505,7 +505,10 @@ namespace ThirdParty.Json.LitJson
 
                 while (true) {
                     IJsonWrapper item = ReadValue (factory, reader);
-                    if (reader.Token == JsonToken.ArrayEnd)
+                    // nij - added check to see if the item is not null.  This is to handle arrays within arrays.
+                    // In those cases when the outer array read the inner array an item was returned back the current
+                    // reader.Token is at the ArrayEnd for the inner array.
+                    if (item == null && reader.Token == JsonToken.ArrayEnd)
                         break;
 
                     ((IList) instance).Add (item);

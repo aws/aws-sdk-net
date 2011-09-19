@@ -28,19 +28,17 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Delete Load Balancer Request Marshaller
     /// </summary>       
-    public class DeleteLoadBalancerRequestMarshaller : IMarshaller<IRequest<DeleteLoadBalancerRequest>, DeleteLoadBalancerRequest> 
+    public class DeleteLoadBalancerRequestMarshaller : IMarshaller<IRequest<DeleteLoadBalancerRequest>, DeleteLoadBalancerRequest>
     {
-
-        public IRequest<DeleteLoadBalancerRequest> Marshall(DeleteLoadBalancerRequest deleteLoadBalancerRequest) 
+        public IRequest<DeleteLoadBalancerRequest> Marshall(DeleteLoadBalancerRequest deleteLoadBalancerRequest)
         {
             IRequest<DeleteLoadBalancerRequest> request = new DefaultRequest<DeleteLoadBalancerRequest>(deleteLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DeleteLoadBalancer");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (deleteLoadBalancerRequest != null && deleteLoadBalancerRequest.IsSetLoadBalancerName()) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (deleteLoadBalancerRequest != null && deleteLoadBalancerRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(deleteLoadBalancerRequest.LoadBalancerName));
             }
-
 
             return request;
         }

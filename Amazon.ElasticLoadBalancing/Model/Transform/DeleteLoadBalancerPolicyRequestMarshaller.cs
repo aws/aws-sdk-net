@@ -28,23 +28,21 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Delete Load Balancer Policy Request Marshaller
     /// </summary>       
-    public class DeleteLoadBalancerPolicyRequestMarshaller : IMarshaller<IRequest<DeleteLoadBalancerPolicyRequest>, DeleteLoadBalancerPolicyRequest> 
+    public class DeleteLoadBalancerPolicyRequestMarshaller : IMarshaller<IRequest<DeleteLoadBalancerPolicyRequest>, DeleteLoadBalancerPolicyRequest>
     {
-
-        public IRequest<DeleteLoadBalancerPolicyRequest> Marshall(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest) 
+        public IRequest<DeleteLoadBalancerPolicyRequest> Marshall(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest)
         {
             IRequest<DeleteLoadBalancerPolicyRequest> request = new DefaultRequest<DeleteLoadBalancerPolicyRequest>(deleteLoadBalancerPolicyRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DeleteLoadBalancerPolicy");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (deleteLoadBalancerPolicyRequest != null && deleteLoadBalancerPolicyRequest.IsSetLoadBalancerName()) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (deleteLoadBalancerPolicyRequest != null && deleteLoadBalancerPolicyRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(deleteLoadBalancerPolicyRequest.LoadBalancerName));
             }
-            if (deleteLoadBalancerPolicyRequest != null && deleteLoadBalancerPolicyRequest.IsSetPolicyName()) 
+            if (deleteLoadBalancerPolicyRequest != null && deleteLoadBalancerPolicyRequest.IsSetPolicyName())
             {
                 request.Parameters.Add("PolicyName", StringUtils.FromString(deleteLoadBalancerPolicyRequest.PolicyName));
             }
-
 
             return request;
         }

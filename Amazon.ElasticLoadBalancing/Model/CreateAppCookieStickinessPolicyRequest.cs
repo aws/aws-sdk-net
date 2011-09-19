@@ -28,7 +28,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <para> Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be
     /// associated only with HTTP/HTTPS listeners. </para> <para> This policy is similar to the policy created by CreateLBCookieStickinessPolicy,
     /// except that the lifetime of the special Elastic Load Balancing cookie follows the lifetime of the application-generated cookie specified in
-    /// the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application
+    /// the policy configuration. The LoadBalancer only inserts a new stickiness cookie when the application response includes a new application
     /// cookie. </para> <para> If the application cookie is explicitly removed or expires, the session stops being sticky until a new application
     /// cookie is issued. </para> <para><b>NOTE:</b> An application client must receive and send two cookies: the application-generated cookie and
     /// the special Elastic Load Balancing cookie named AWSELB. This is the default behavior for many common web browsers. </para>
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// 
         /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
-        /// <param name="policyName"> The name of the policy being created. The name must be unique within the set of policies for this Load Balancer.
+        /// <param name="policyName"> The name of the policy being created. The name must be unique within the set of policies for this LoadBalancer.
         /// </param>
         /// <param name="cookieName"> Name of the application cookie used for stickiness. </param>
         public CreateAppCookieStickinessPolicyRequest(string loadBalancerName, string policyName, string cookieName) 
@@ -92,7 +92,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The name of the policy being created. The name must be unique within the set of policies for this Load Balancer.
+        /// The name of the policy being created. The name must be unique within the set of policies for this LoadBalancer.
         ///  
         /// </summary>
         public string PolicyName

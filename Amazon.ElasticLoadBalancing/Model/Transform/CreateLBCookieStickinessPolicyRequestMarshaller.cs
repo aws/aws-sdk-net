@@ -28,27 +28,25 @@ namespace Amazon.ElasticLoadBalancing.Model.Transform
     /// <summary>
     /// Create L B Cookie Stickiness Policy Request Marshaller
     /// </summary>       
-    public class CreateLBCookieStickinessPolicyRequestMarshaller : IMarshaller<IRequest<CreateLBCookieStickinessPolicyRequest>, CreateLBCookieStickinessPolicyRequest> 
+    public class CreateLBCookieStickinessPolicyRequestMarshaller : IMarshaller<IRequest<CreateLBCookieStickinessPolicyRequest>, CreateLBCookieStickinessPolicyRequest>
     {
-
-        public IRequest<CreateLBCookieStickinessPolicyRequest> Marshall(CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest) 
+        public IRequest<CreateLBCookieStickinessPolicyRequest> Marshall(CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest)
         {
             IRequest<CreateLBCookieStickinessPolicyRequest> request = new DefaultRequest<CreateLBCookieStickinessPolicyRequest>(createLBCookieStickinessPolicyRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateLBCookieStickinessPolicy");
-            request.Parameters.Add("Version", "2011-04-05");
-            if (createLBCookieStickinessPolicyRequest != null && createLBCookieStickinessPolicyRequest.IsSetLoadBalancerName()) 
+            request.Parameters.Add("Version", "2011-08-15");
+            if (createLBCookieStickinessPolicyRequest != null && createLBCookieStickinessPolicyRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createLBCookieStickinessPolicyRequest.LoadBalancerName));
             }
-            if (createLBCookieStickinessPolicyRequest != null && createLBCookieStickinessPolicyRequest.IsSetPolicyName()) 
+            if (createLBCookieStickinessPolicyRequest != null && createLBCookieStickinessPolicyRequest.IsSetPolicyName())
             {
                 request.Parameters.Add("PolicyName", StringUtils.FromString(createLBCookieStickinessPolicyRequest.PolicyName));
             }
-            if (createLBCookieStickinessPolicyRequest != null && createLBCookieStickinessPolicyRequest.IsSetCookieExpirationPeriod()) 
+            if (createLBCookieStickinessPolicyRequest != null && createLBCookieStickinessPolicyRequest.IsSetCookieExpirationPeriod())
             {
                 request.Parameters.Add("CookieExpirationPeriod", StringUtils.FromLong(createLBCookieStickinessPolicyRequest.CookieExpirationPeriod));
             }
-
 
             return request;
         }

@@ -56,6 +56,15 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Gets and Sets the content for this request.
+        /// </summary>
+        byte[] Content
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// The name of the service to which this request is being sent.
         /// </summary>
         string ServiceName

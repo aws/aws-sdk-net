@@ -32,6 +32,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string canonicalHostedZoneNameID;
         private List<ListenerDescription> listenerDescriptions = new List<ListenerDescription>();
         private Policies policies;
+        private List<BackendServerDescription> backendServerDescriptions = new List<BackendServerDescription>();
         private List<string> availabilityZones = new List<string>();
         private List<Instance> instances = new List<Instance>();
         private HealthCheck healthCheck;
@@ -101,8 +102,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Provides the name of the Amazon Route 53 hosted zone that is associated with the load balancer. For information on how to associate your
-        /// load balancer with a hosted zone, go to <a
+        /// Provides the name of the Amazon Route 53 hosted zone that is associated with the LoadBalancer. For information on how to associate your load
+        /// balancer with a hosted zone, go to <a
         /// href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
         /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         ///  
@@ -132,7 +133,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Provides the ID of the Amazon Route 53 hosted zone name that is associated with the load balancer. For information on how to associate or
+        /// Provides the ID of the Amazon Route 53 hosted zone name that is associated with the LoadBalancer. For information on how to associate or
         /// disassociate your load balancer with a hosted zone, go to <a
         /// href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
         /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
@@ -163,7 +164,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// LoadBalancerPort, InstancePort, Protocol, and PolicyNames are returned in a list of tuples in the ListenerDescriptions element.
+        /// LoadBalancerPort, InstancePort, Protocol, InstanceProtocol, and PolicyNames are returned in a list of tuples in the ListenerDescriptions
+        /// element.
         ///  
         /// </summary>
         public List<ListenerDescription> ListenerDescriptions
@@ -233,6 +235,51 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetPolicies()
         {
             return this.policies != null;       
+        }
+
+        /// <summary>
+        /// Contains a list of back-end server descriptions.
+        ///  
+        /// </summary>
+        public List<BackendServerDescription> BackendServerDescriptions
+        {
+            get { return this.backendServerDescriptions; }
+            set { this.backendServerDescriptions = value; }
+        }
+        /// <summary>
+        /// Adds elements to the BackendServerDescriptions collection
+        /// </summary>
+        /// <param name="backendServerDescriptions">The values to add to the BackendServerDescriptions collection </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithBackendServerDescriptions(params BackendServerDescription[] backendServerDescriptions)
+        {
+            foreach (BackendServerDescription element in backendServerDescriptions)
+            {
+                this.backendServerDescriptions.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the BackendServerDescriptions collection
+        /// </summary>
+        /// <param name="backendServerDescriptions">The values to add to the BackendServerDescriptions collection </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithBackendServerDescriptions(IEnumerable<BackendServerDescription> backendServerDescriptions)
+        {
+            foreach (BackendServerDescription element in backendServerDescriptions)
+            {
+                this.backendServerDescriptions.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if BackendServerDescriptions property is set
+        internal bool IsSetBackendServerDescriptions()
+        {
+            return this.backendServerDescriptions.Count > 0;       
         }
 
         /// <summary>
@@ -354,9 +401,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The security group that you can use as part of your inbound rules for your load balancer's back-end Amazon EC2 application instances. To
-        /// disallow traffic from sources other than your load balancer, add a security group rule to your back end instance that specifies this source
-        /// security group as the inbound source.
+        /// The security group that you can use as part of your inbound rules for your LoadBalancer's back-end Amazon EC2 application instances. To only
+        /// allow traffic from LoadBalancers, add a security group rule to your back end instance that specifies this source security group as the
+        /// inbound source.
         ///  
         /// </summary>
         public SourceSecurityGroup SourceSecurityGroup
