@@ -25,8 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
-    /// <para>Creates a new group.</para> <para>For information about the
-    /// number of groups you can create, see Limitations on IAM Entities in
+    /// <para>Creates a new group.</para> <para>For information about the number of groups you can create, see Limitations on IAM Entities in
     /// <i>Using AWS Identity and Access Management</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateGroup"/>

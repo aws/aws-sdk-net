@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Create Login Profile Request Marshaller
     /// </summary>       
-    public class CreateLoginProfileRequestMarshaller : IMarshaller<IRequest<CreateLoginProfileRequest>, CreateLoginProfileRequest> 
+    public class CreateLoginProfileRequestMarshaller : IMarshaller<IRequest<CreateLoginProfileRequest>, CreateLoginProfileRequest>
     {
-
-        public IRequest<CreateLoginProfileRequest> Marshall(CreateLoginProfileRequest createLoginProfileRequest) 
+        public IRequest<CreateLoginProfileRequest> Marshall(CreateLoginProfileRequest createLoginProfileRequest)
         {
             IRequest<CreateLoginProfileRequest> request = new DefaultRequest<CreateLoginProfileRequest>(createLoginProfileRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "CreateLoginProfile");
             request.Parameters.Add("Version", "2010-05-08");
-            if (createLoginProfileRequest != null && createLoginProfileRequest.IsSetUserName()) 
+            if (createLoginProfileRequest != null && createLoginProfileRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(createLoginProfileRequest.UserName));
             }
-            if (createLoginProfileRequest != null && createLoginProfileRequest.IsSetPassword()) 
+            if (createLoginProfileRequest != null && createLoginProfileRequest.IsSetPassword())
             {
                 request.Parameters.Add("Password", StringUtils.FromString(createLoginProfileRequest.Password));
             }
-
 
             return request;
         }

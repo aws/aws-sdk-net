@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the
-    /// ListSigningCertificates action.</para>
+    /// <para>Contains the result of a successful invocation of the ListSigningCertificates action.</para>
     /// </summary>
     public class ListSigningCertificatesResult  
     {
@@ -32,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
         private string marker;
 
         /// <summary>
-        /// A list of the User's signing certificate information.
+        /// A list of the user's signing certificate information.
         ///  
         /// </summary>
         public List<SigningCertificate> Certificates

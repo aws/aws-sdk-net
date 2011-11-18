@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Update Login Profile Request Marshaller
     /// </summary>       
-    public class UpdateLoginProfileRequestMarshaller : IMarshaller<IRequest<UpdateLoginProfileRequest>, UpdateLoginProfileRequest> 
+    public class UpdateLoginProfileRequestMarshaller : IMarshaller<IRequest<UpdateLoginProfileRequest>, UpdateLoginProfileRequest>
     {
-
-        public IRequest<UpdateLoginProfileRequest> Marshall(UpdateLoginProfileRequest updateLoginProfileRequest) 
+        public IRequest<UpdateLoginProfileRequest> Marshall(UpdateLoginProfileRequest updateLoginProfileRequest)
         {
             IRequest<UpdateLoginProfileRequest> request = new DefaultRequest<UpdateLoginProfileRequest>(updateLoginProfileRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "UpdateLoginProfile");
             request.Parameters.Add("Version", "2010-05-08");
-            if (updateLoginProfileRequest != null && updateLoginProfileRequest.IsSetUserName()) 
+            if (updateLoginProfileRequest != null && updateLoginProfileRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(updateLoginProfileRequest.UserName));
             }
-            if (updateLoginProfileRequest != null && updateLoginProfileRequest.IsSetPassword()) 
+            if (updateLoginProfileRequest != null && updateLoginProfileRequest.IsSetPassword())
             {
                 request.Parameters.Add("Password", StringUtils.FromString(updateLoginProfileRequest.Password));
             }
-
 
             return request;
         }

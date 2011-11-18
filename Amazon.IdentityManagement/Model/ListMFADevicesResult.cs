@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the
-    /// ListMFADevices action.</para>
+    /// <para>Contains the result of a successful invocation of the ListMFADevices action.</para>
     /// </summary>
     public class ListMFADevicesResult  
     {
@@ -77,8 +76,8 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// A flag that indicates whether there are more User names to list. If your results were truncated, you can make a subsequent pagination
-        /// request using the <c>Marker</c> request parameter to retrieve more User names in the list.
+        /// A flag that indicates whether there are more MFA devices to list. If your results were truncated, you can make a subsequent pagination
+        /// request using the <c>Marker</c> request parameter to retrieve more MFA devices in the list.
         ///  
         /// </summary>
         public bool IsTruncated

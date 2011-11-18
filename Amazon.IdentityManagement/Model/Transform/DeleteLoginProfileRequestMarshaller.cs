@@ -28,19 +28,17 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Delete Login Profile Request Marshaller
     /// </summary>       
-    public class DeleteLoginProfileRequestMarshaller : IMarshaller<IRequest<DeleteLoginProfileRequest>, DeleteLoginProfileRequest> 
+    public class DeleteLoginProfileRequestMarshaller : IMarshaller<IRequest<DeleteLoginProfileRequest>, DeleteLoginProfileRequest>
     {
-
-        public IRequest<DeleteLoginProfileRequest> Marshall(DeleteLoginProfileRequest deleteLoginProfileRequest) 
+        public IRequest<DeleteLoginProfileRequest> Marshall(DeleteLoginProfileRequest deleteLoginProfileRequest)
         {
             IRequest<DeleteLoginProfileRequest> request = new DefaultRequest<DeleteLoginProfileRequest>(deleteLoginProfileRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "DeleteLoginProfile");
             request.Parameters.Add("Version", "2010-05-08");
-            if (deleteLoginProfileRequest != null && deleteLoginProfileRequest.IsSetUserName()) 
+            if (deleteLoginProfileRequest != null && deleteLoginProfileRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(deleteLoginProfileRequest.UserName));
             }
-
 
             return request;
         }

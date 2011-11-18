@@ -25,10 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUserPolicies operation.
-    /// <para>Lists the names of the policies associated with the specified
-    /// User. If there are none, the action returns an empty list.</para>
-    /// <para>You can paginate the results using the <c>MaxItems</c> and
-    /// <c>Marker</c> parameters.</para>
+    /// <para>Lists the names of the policies associated with the specified user. If there are none, the action returns an empty list.</para>
+    /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListUserPolicies"/>
     public class ListUserPoliciesRequest : AmazonWebServiceRequest
@@ -38,14 +36,14 @@ namespace Amazon.IdentityManagement.Model
         private int? maxItems;
 
         /// <summary>
-        /// The name of the User to list policies for.
+        /// The name of the user to list policies for.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

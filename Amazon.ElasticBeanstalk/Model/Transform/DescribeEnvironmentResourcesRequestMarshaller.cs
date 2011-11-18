@@ -28,23 +28,21 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Describe Environment Resources Request Marshaller
     /// </summary>       
-    public class DescribeEnvironmentResourcesRequestMarshaller : IMarshaller<IRequest<DescribeEnvironmentResourcesRequest>, DescribeEnvironmentResourcesRequest> 
+    public class DescribeEnvironmentResourcesRequestMarshaller : IMarshaller<IRequest<DescribeEnvironmentResourcesRequest>, DescribeEnvironmentResourcesRequest>
     {
-
-        public IRequest<DescribeEnvironmentResourcesRequest> Marshall(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) 
+        public IRequest<DescribeEnvironmentResourcesRequest> Marshall(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest)
         {
             IRequest<DescribeEnvironmentResourcesRequest> request = new DefaultRequest<DescribeEnvironmentResourcesRequest>(describeEnvironmentResourcesRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DescribeEnvironmentResources");
             request.Parameters.Add("Version", "2010-12-01");
-            if (describeEnvironmentResourcesRequest != null && describeEnvironmentResourcesRequest.IsSetEnvironmentId()) 
+            if (describeEnvironmentResourcesRequest != null && describeEnvironmentResourcesRequest.IsSetEnvironmentId())
             {
                 request.Parameters.Add("EnvironmentId", StringUtils.FromString(describeEnvironmentResourcesRequest.EnvironmentId));
             }
-            if (describeEnvironmentResourcesRequest != null && describeEnvironmentResourcesRequest.IsSetEnvironmentName()) 
+            if (describeEnvironmentResourcesRequest != null && describeEnvironmentResourcesRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(describeEnvironmentResourcesRequest.EnvironmentName));
             }
-
 
             return request;
         }

@@ -28,50 +28,49 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Update Environment Request Marshaller
     /// </summary>       
-    public class UpdateEnvironmentRequestMarshaller : IMarshaller<IRequest<UpdateEnvironmentRequest>, UpdateEnvironmentRequest> 
+    public class UpdateEnvironmentRequestMarshaller : IMarshaller<IRequest<UpdateEnvironmentRequest>, UpdateEnvironmentRequest>
     {
-
-        public IRequest<UpdateEnvironmentRequest> Marshall(UpdateEnvironmentRequest updateEnvironmentRequest) 
+        public IRequest<UpdateEnvironmentRequest> Marshall(UpdateEnvironmentRequest updateEnvironmentRequest)
         {
             IRequest<UpdateEnvironmentRequest> request = new DefaultRequest<UpdateEnvironmentRequest>(updateEnvironmentRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "UpdateEnvironment");
             request.Parameters.Add("Version", "2010-12-01");
-            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetEnvironmentId()) 
+            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetEnvironmentId())
             {
                 request.Parameters.Add("EnvironmentId", StringUtils.FromString(updateEnvironmentRequest.EnvironmentId));
             }
-            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetEnvironmentName()) 
+            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(updateEnvironmentRequest.EnvironmentName));
             }
-            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetVersionLabel()) 
+            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetVersionLabel())
             {
                 request.Parameters.Add("VersionLabel", StringUtils.FromString(updateEnvironmentRequest.VersionLabel));
             }
-            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetTemplateName()) 
+            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetTemplateName())
             {
                 request.Parameters.Add("TemplateName", StringUtils.FromString(updateEnvironmentRequest.TemplateName));
             }
-            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetDescription()) 
+            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetDescription())
             {
                 request.Parameters.Add("Description", StringUtils.FromString(updateEnvironmentRequest.Description));
             }
 
-            if (updateEnvironmentRequest != null) 
+            if (updateEnvironmentRequest != null)
             {
                 List<ConfigurationOptionSetting> optionSettingsList = updateEnvironmentRequest.OptionSettings;
                 int optionSettingsListIndex = 1;
-                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList) 
-                { 
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace()) 
+                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList)
+                {
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.FromString(optionSettingsListValue.Namespace));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName()) 
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.FromString(optionSettingsListValue.OptionName));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue()) 
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.FromString(optionSettingsListValue.Value));
                     }
@@ -80,17 +79,17 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                 }
             }
 
-            if (updateEnvironmentRequest != null) 
+            if (updateEnvironmentRequest != null)
             {
                 List<OptionSpecification> optionsToRemoveList = updateEnvironmentRequest.OptionsToRemove;
                 int optionsToRemoveListIndex = 1;
-                foreach (OptionSpecification optionsToRemoveListValue in optionsToRemoveList) 
-                { 
-                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetNamespace()) 
+                foreach (OptionSpecification optionsToRemoveListValue in optionsToRemoveList)
+                {
+                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetNamespace())
                     {
                         request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace", StringUtils.FromString(optionsToRemoveListValue.Namespace));
                     }
-                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetOptionName()) 
+                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetOptionName())
                     {
                         request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName", StringUtils.FromString(optionsToRemoveListValue.OptionName));
                     }
@@ -98,7 +97,6 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                     optionsToRemoveListIndex++;
                 }
             }
-
 
             return request;
         }

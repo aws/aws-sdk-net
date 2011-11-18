@@ -80,7 +80,9 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the configuration template to describe.
+        /// The name of the configuration template to describe. Conditional: You must specify either this parameter or an EnvironmentName, but not both.
+        /// If you specify both, AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. If you do not specify either, AWS Elastic
+        /// Beanstalk returns a <c>MissingRequiredParameter</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -117,7 +119,9 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the environment to describe.
+        /// The name of the environment to describe. Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS
+        /// Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. If you do not specify either, AWS Elastic Beanstalk returns
+        /// <c>MissingRequiredParameter</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>

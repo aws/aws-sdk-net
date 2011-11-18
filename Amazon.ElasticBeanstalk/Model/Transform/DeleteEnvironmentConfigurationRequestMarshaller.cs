@@ -28,23 +28,21 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Delete Environment Configuration Request Marshaller
     /// </summary>       
-    public class DeleteEnvironmentConfigurationRequestMarshaller : IMarshaller<IRequest<DeleteEnvironmentConfigurationRequest>, DeleteEnvironmentConfigurationRequest> 
+    public class DeleteEnvironmentConfigurationRequestMarshaller : IMarshaller<IRequest<DeleteEnvironmentConfigurationRequest>, DeleteEnvironmentConfigurationRequest>
     {
-
-        public IRequest<DeleteEnvironmentConfigurationRequest> Marshall(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) 
+        public IRequest<DeleteEnvironmentConfigurationRequest> Marshall(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest)
         {
             IRequest<DeleteEnvironmentConfigurationRequest> request = new DefaultRequest<DeleteEnvironmentConfigurationRequest>(deleteEnvironmentConfigurationRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DeleteEnvironmentConfiguration");
             request.Parameters.Add("Version", "2010-12-01");
-            if (deleteEnvironmentConfigurationRequest != null && deleteEnvironmentConfigurationRequest.IsSetApplicationName()) 
+            if (deleteEnvironmentConfigurationRequest != null && deleteEnvironmentConfigurationRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(deleteEnvironmentConfigurationRequest.ApplicationName));
             }
-            if (deleteEnvironmentConfigurationRequest != null && deleteEnvironmentConfigurationRequest.IsSetEnvironmentName()) 
+            if (deleteEnvironmentConfigurationRequest != null && deleteEnvironmentConfigurationRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(deleteEnvironmentConfigurationRequest.EnvironmentName));
             }
-
 
             return request;
         }

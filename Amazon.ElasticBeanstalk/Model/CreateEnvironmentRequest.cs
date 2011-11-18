@@ -159,7 +159,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
         /// <summary>
         /// The name of the configuration template to use in deployment. If no configuration template is found with this name, AWS Elastic Beanstalk
-        /// returns an <c>InvalidParameterValue</c> error. Conditional: You must specify either this parameter or a <c>SolutionStackName</c>, but not
+        /// returns an <c>InvalidParameterValue</c> error. Condition: You must specify either this parameter or a <c>SolutionStackName</c>, but not
         /// both. If you specify both, AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. If you do not specify either, AWS
         /// Elastic Beanstalk returns a <c>MissingRequiredParameter</c> error.
         ///  

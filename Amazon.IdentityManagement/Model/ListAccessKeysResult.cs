@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the
-    /// ListAccessKeys action.</para>
+    /// <para>Contains the result of a successful invocation of the ListAccessKeys action.</para>
     /// </summary>
     public class ListAccessKeysResult  
     {

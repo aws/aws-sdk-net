@@ -2014,6 +2014,9 @@
     <Compile Include="Amazon.IdentityManagement\Model\CreateUserRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\CreateUserResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\CreateUserResult.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\CreateVirtualMFADeviceRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\CreateVirtualMFADeviceResponse.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\CreateVirtualMFADeviceResult.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeactivateMFADeviceRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeactivateMFADeviceResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteAccessKeyRequest.cs" />
@@ -2025,7 +2028,9 @@
     <Compile Include="Amazon.IdentityManagement\Model\DeleteGroupPolicyResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteGroupRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteGroupResponse.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\DeleteLoginProfileRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteLoginProfileRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\DeleteLoginProfileResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteServerCertificateRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteServerCertificateResponse.cs" />
@@ -2035,6 +2040,8 @@
     <Compile Include="Amazon.IdentityManagement\Model\DeleteUserPolicyResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteUserRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteUserResponse.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteVirtualMFADeviceRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteVirtualMFADeviceResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DuplicateCertificateException.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\EnableMFADeviceRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\EnableMFADeviceResponse.cs" />
@@ -2048,7 +2055,9 @@
     <Compile Include="Amazon.IdentityManagement\Model\GetGroupPolicyResult.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\GetGroupRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\GetGroupResponse.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\GetGroupResult.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\GetGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\GetLoginProfileRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\GetLoginProfileResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\GetLoginProfileResult.cs" />
@@ -2096,6 +2105,9 @@
     <Compile Include="Amazon.IdentityManagement\Model\ListUsersRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\ListUsersResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\ListUsersResult.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\ListVirtualMFADevicesRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\ListVirtualMFADevicesResponse.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\ListVirtualMFADevicesResult.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\LoginProfile.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\MalformedCertificateException.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\MalformedPolicyDocumentException.cs" />
@@ -2130,26 +2142,37 @@
     <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateUserRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateUserResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateUserResultUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateVirtualMFADeviceRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateVirtualMFADeviceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\CreateVirtualMFADeviceResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeactivateMFADeviceRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeactivateMFADeviceResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteAccessKeyRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteAccessKeyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteAccountAliasRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteAccountAliasRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteAccountAliasResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteGroupPolicyRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteGroupPolicyResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteLoginProfileRequestMarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteLoginProfileResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteLoginProfileResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteServerCertificateRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteServerCertificateResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteSigningCertificateRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteSigningCertificateResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteUserPolicyRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteUserPolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteUserRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteUserRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteUserResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteVirtualMFADeviceRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\DeleteVirtualMFADeviceResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\EnableMFADeviceRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\EnableMFADeviceResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\GetAccountSummaryRequestMarshaller.cs" />
@@ -2159,7 +2182,9 @@
     <Compile Include="Amazon.IdentityManagement\Model\Transform\GetGroupPolicyResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\GetGroupPolicyResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\GetGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Transform\GetGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\GetGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Transform\GetGroupResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\GetLoginProfileRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\GetLoginProfileResponseUnmarshaller.cs" />
@@ -2202,18 +2227,27 @@
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ListUserPoliciesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ListUserPoliciesResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ListUsersRequestMarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Transform\ListUsersResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\ListUsersResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ListUsersResultUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\ListVirtualMFADevicesRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\ListVirtualMFADevicesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\ListVirtualMFADevicesResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\LoginProfileUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\MFADeviceUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\PutGroupPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Transform\PutGroupPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\PutGroupPolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Transform\PutUserPolicyRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\PutUserPolicyResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\RemoveUserFromGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\RemoveUserFromGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ResyncMFADeviceRequestMarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Transform\ResyncMFADeviceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\ResyncMFADeviceResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ServerCertificateMetadataUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\ServerCertificateUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\SigningCertificateUnmarshaller.cs" />
@@ -2221,7 +2255,9 @@
     <Compile Include="Amazon.IdentityManagement\Model\Transform\UpdateAccessKeyResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\UpdateGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\UpdateGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Transform\UpdateLoginProfileRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\UpdateLoginProfileRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Transform\UpdateLoginProfileResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\UpdateServerCertificateRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\UpdateServerCertificateResponseUnmarshaller.cs" />
@@ -2236,6 +2272,7 @@
     <Compile Include="Amazon.IdentityManagement\Model\Transform\UploadSigningCertificateResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\UploadSigningCertificateResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Transform\UserUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Transform\VirtualMFADeviceUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\UpdateAccessKeyRequest.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\UpdateAccessKeyResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\UpdateGroupRequest.cs" />
@@ -2252,9 +2289,12 @@
     <Compile Include="Amazon.IdentityManagement\Model\UploadServerCertificateResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\UploadServerCertificateResult.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\UploadSigningCertificateRequest.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\UploadSigningCertificateResponse.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\UploadSigningCertificateResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\UploadSigningCertificateResult.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\User.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\VirtualMFADevice.cs" />
     <Compile Include="Amazon.IdentityManagement\Util\IdentityManagementConstants.cs" />
     <Compile Include="Amazon.ImportExport\AmazonImportExport.cs" />
     <Compile Include="Amazon.ImportExport\AmazonImportExportClient.cs" />

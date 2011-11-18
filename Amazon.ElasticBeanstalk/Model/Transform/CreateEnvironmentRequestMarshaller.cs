@@ -28,58 +28,57 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Create Environment Request Marshaller
     /// </summary>       
-    public class CreateEnvironmentRequestMarshaller : IMarshaller<IRequest<CreateEnvironmentRequest>, CreateEnvironmentRequest> 
+    public class CreateEnvironmentRequestMarshaller : IMarshaller<IRequest<CreateEnvironmentRequest>, CreateEnvironmentRequest>
     {
-
-        public IRequest<CreateEnvironmentRequest> Marshall(CreateEnvironmentRequest createEnvironmentRequest) 
+        public IRequest<CreateEnvironmentRequest> Marshall(CreateEnvironmentRequest createEnvironmentRequest)
         {
             IRequest<CreateEnvironmentRequest> request = new DefaultRequest<CreateEnvironmentRequest>(createEnvironmentRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "CreateEnvironment");
             request.Parameters.Add("Version", "2010-12-01");
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetApplicationName()) 
+            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(createEnvironmentRequest.ApplicationName));
             }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetVersionLabel()) 
+            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetVersionLabel())
             {
                 request.Parameters.Add("VersionLabel", StringUtils.FromString(createEnvironmentRequest.VersionLabel));
             }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetEnvironmentName()) 
+            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(createEnvironmentRequest.EnvironmentName));
             }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetTemplateName()) 
+            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetTemplateName())
             {
                 request.Parameters.Add("TemplateName", StringUtils.FromString(createEnvironmentRequest.TemplateName));
             }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetSolutionStackName()) 
+            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetSolutionStackName())
             {
                 request.Parameters.Add("SolutionStackName", StringUtils.FromString(createEnvironmentRequest.SolutionStackName));
             }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetCNAMEPrefix()) 
+            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetCNAMEPrefix())
             {
                 request.Parameters.Add("CNAMEPrefix", StringUtils.FromString(createEnvironmentRequest.CNAMEPrefix));
             }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetDescription()) 
+            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetDescription())
             {
                 request.Parameters.Add("Description", StringUtils.FromString(createEnvironmentRequest.Description));
             }
 
-            if (createEnvironmentRequest != null) 
+            if (createEnvironmentRequest != null)
             {
                 List<ConfigurationOptionSetting> optionSettingsList = createEnvironmentRequest.OptionSettings;
                 int optionSettingsListIndex = 1;
-                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList) 
-                { 
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace()) 
+                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList)
+                {
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.FromString(optionSettingsListValue.Namespace));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName()) 
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.FromString(optionSettingsListValue.OptionName));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue()) 
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.FromString(optionSettingsListValue.Value));
                     }
@@ -88,17 +87,17 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                 }
             }
 
-            if (createEnvironmentRequest != null) 
+            if (createEnvironmentRequest != null)
             {
                 List<OptionSpecification> optionsToRemoveList = createEnvironmentRequest.OptionsToRemove;
                 int optionsToRemoveListIndex = 1;
-                foreach (OptionSpecification optionsToRemoveListValue in optionsToRemoveList) 
-                { 
-                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetNamespace()) 
+                foreach (OptionSpecification optionsToRemoveListValue in optionsToRemoveList)
+                {
+                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetNamespace())
                     {
                         request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace", StringUtils.FromString(optionsToRemoveListValue.Namespace));
                     }
-                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetOptionName()) 
+                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetOptionName())
                     {
                         request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName", StringUtils.FromString(optionsToRemoveListValue.OptionName));
                     }
@@ -106,7 +105,6 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                     optionsToRemoveListIndex++;
                 }
             }
-
 
             return request;
         }

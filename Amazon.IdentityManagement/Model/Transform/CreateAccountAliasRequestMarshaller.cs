@@ -28,19 +28,17 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Create Account Alias Request Marshaller
     /// </summary>       
-    public class CreateAccountAliasRequestMarshaller : IMarshaller<IRequest<CreateAccountAliasRequest>, CreateAccountAliasRequest> 
+    public class CreateAccountAliasRequestMarshaller : IMarshaller<IRequest<CreateAccountAliasRequest>, CreateAccountAliasRequest>
     {
-
-        public IRequest<CreateAccountAliasRequest> Marshall(CreateAccountAliasRequest createAccountAliasRequest) 
+        public IRequest<CreateAccountAliasRequest> Marshall(CreateAccountAliasRequest createAccountAliasRequest)
         {
             IRequest<CreateAccountAliasRequest> request = new DefaultRequest<CreateAccountAliasRequest>(createAccountAliasRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "CreateAccountAlias");
             request.Parameters.Add("Version", "2010-05-08");
-            if (createAccountAliasRequest != null && createAccountAliasRequest.IsSetAccountAlias()) 
+            if (createAccountAliasRequest != null && createAccountAliasRequest.IsSetAccountAlias())
             {
                 request.Parameters.Add("AccountAlias", StringUtils.FromString(createAccountAliasRequest.AccountAlias));
             }
-
 
             return request;
         }

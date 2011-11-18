@@ -25,10 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGroupPolicies operation.
-    /// <para>Lists the names of the policies associated with the specified
-    /// group. If there are none, the action returns an empty list.</para>
-    /// <para>You can paginate the results using the <c>MaxItems</c> and
-    /// <c>Marker</c> parameters.</para>
+    /// <para>Lists the names of the policies associated with the specified group. If there are none, the action returns an empty list.</para>
+    /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListGroupPolicies"/>
     public class ListGroupPoliciesRequest : AmazonWebServiceRequest

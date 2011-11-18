@@ -28,31 +28,29 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Resync M F A Device Request Marshaller
     /// </summary>       
-    public class ResyncMFADeviceRequestMarshaller : IMarshaller<IRequest<ResyncMFADeviceRequest>, ResyncMFADeviceRequest> 
+    public class ResyncMFADeviceRequestMarshaller : IMarshaller<IRequest<ResyncMFADeviceRequest>, ResyncMFADeviceRequest>
     {
-
-        public IRequest<ResyncMFADeviceRequest> Marshall(ResyncMFADeviceRequest resyncMFADeviceRequest) 
+        public IRequest<ResyncMFADeviceRequest> Marshall(ResyncMFADeviceRequest resyncMFADeviceRequest)
         {
             IRequest<ResyncMFADeviceRequest> request = new DefaultRequest<ResyncMFADeviceRequest>(resyncMFADeviceRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "ResyncMFADevice");
             request.Parameters.Add("Version", "2010-05-08");
-            if (resyncMFADeviceRequest != null && resyncMFADeviceRequest.IsSetUserName()) 
+            if (resyncMFADeviceRequest != null && resyncMFADeviceRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(resyncMFADeviceRequest.UserName));
             }
-            if (resyncMFADeviceRequest != null && resyncMFADeviceRequest.IsSetSerialNumber()) 
+            if (resyncMFADeviceRequest != null && resyncMFADeviceRequest.IsSetSerialNumber())
             {
                 request.Parameters.Add("SerialNumber", StringUtils.FromString(resyncMFADeviceRequest.SerialNumber));
             }
-            if (resyncMFADeviceRequest != null && resyncMFADeviceRequest.IsSetAuthenticationCode1()) 
+            if (resyncMFADeviceRequest != null && resyncMFADeviceRequest.IsSetAuthenticationCode1())
             {
                 request.Parameters.Add("AuthenticationCode1", StringUtils.FromString(resyncMFADeviceRequest.AuthenticationCode1));
             }
-            if (resyncMFADeviceRequest != null && resyncMFADeviceRequest.IsSetAuthenticationCode2()) 
+            if (resyncMFADeviceRequest != null && resyncMFADeviceRequest.IsSetAuthenticationCode2())
             {
                 request.Parameters.Add("AuthenticationCode2", StringUtils.FromString(resyncMFADeviceRequest.AuthenticationCode2));
             }
-
 
             return request;
         }

@@ -25,10 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServerCertificates operation.
-    /// <para>Lists the server certificates that have the specified path
-    /// prefix. If none exist, the action returns an empty list.</para>
-    /// <para>You can paginate the results using the <c>MaxItems</c> and
-    /// <c>Marker</c> parameters.</para>
+    /// <para>Lists the server certificates that have the specified path prefix. If none exist, the action returns an empty list.</para> <para>You
+    /// can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListServerCertificates"/>
     public class ListServerCertificatesRequest : AmazonWebServiceRequest

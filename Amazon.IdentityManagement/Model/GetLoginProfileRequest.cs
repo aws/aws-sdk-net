@@ -25,7 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLoginProfile operation.
-    /// <para>Retrieves the login profile for the specified User.</para>
+    /// <para>Retrieves the login profile for the specified user.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetLoginProfile"/>
     public class GetLoginProfileRequest : AmazonWebServiceRequest
@@ -33,14 +33,14 @@ namespace Amazon.IdentityManagement.Model
         private string userName;
 
         /// <summary>
-        /// Name of the User whose login profile you want to retrieve.
+        /// Name of the user whose login profile you want to retrieve.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

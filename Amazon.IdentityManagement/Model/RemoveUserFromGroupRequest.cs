@@ -25,7 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveUserFromGroup operation.
-    /// <para>Removes the specified User from the specified group.</para>
+    /// <para>Removes the specified user from the specified group.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.RemoveUserFromGroup"/>
     public class RemoveUserFromGroupRequest : AmazonWebServiceRequest
@@ -75,14 +75,14 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Name of the User to remove.
+        /// Name of the user to remove.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

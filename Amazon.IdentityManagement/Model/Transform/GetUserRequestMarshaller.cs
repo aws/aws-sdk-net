@@ -28,19 +28,17 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Get User Request Marshaller
     /// </summary>       
-    public class GetUserRequestMarshaller : IMarshaller<IRequest<GetUserRequest>, GetUserRequest> 
+    public class GetUserRequestMarshaller : IMarshaller<IRequest<GetUserRequest>, GetUserRequest>
     {
-
-        public IRequest<GetUserRequest> Marshall(GetUserRequest getUserRequest) 
+        public IRequest<GetUserRequest> Marshall(GetUserRequest getUserRequest)
         {
             IRequest<GetUserRequest> request = new DefaultRequest<GetUserRequest>(getUserRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "GetUser");
             request.Parameters.Add("Version", "2010-05-08");
-            if (getUserRequest != null && getUserRequest.IsSetUserName()) 
+            if (getUserRequest != null && getUserRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(getUserRequest.UserName));
             }
-
 
             return request;
         }

@@ -28,19 +28,17 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Create Access Key Request Marshaller
     /// </summary>       
-    public class CreateAccessKeyRequestMarshaller : IMarshaller<IRequest<CreateAccessKeyRequest>, CreateAccessKeyRequest> 
+    public class CreateAccessKeyRequestMarshaller : IMarshaller<IRequest<CreateAccessKeyRequest>, CreateAccessKeyRequest>
     {
-
-        public IRequest<CreateAccessKeyRequest> Marshall(CreateAccessKeyRequest createAccessKeyRequest) 
+        public IRequest<CreateAccessKeyRequest> Marshall(CreateAccessKeyRequest createAccessKeyRequest)
         {
             IRequest<CreateAccessKeyRequest> request = new DefaultRequest<CreateAccessKeyRequest>(createAccessKeyRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "CreateAccessKey");
             request.Parameters.Add("Version", "2010-05-08");
-            if (createAccessKeyRequest != null && createAccessKeyRequest.IsSetUserName()) 
+            if (createAccessKeyRequest != null && createAccessKeyRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(createAccessKeyRequest.UserName));
             }
-
 
             return request;
         }

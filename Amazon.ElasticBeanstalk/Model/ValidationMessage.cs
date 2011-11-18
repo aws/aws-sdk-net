@@ -102,15 +102,6 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// 
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Namespace
         {
@@ -139,15 +130,6 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// 
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string OptionName
         {

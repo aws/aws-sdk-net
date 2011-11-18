@@ -25,14 +25,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoginProfile operation.
-    /// <para>Deletes the login profile for the specified User, which
-    /// terminates the User's ability to access AWS services through the IAM
-    /// login page.</para> <para><b>IMPORTANT:</b>Deleting a User's login
-    /// profile does not prevent a User from accessing IAM through the command
-    /// line interface or the API. To prevent all User access you must also
-    /// either make the access key inactive or delete it. For more
-    /// information about making keys inactive or deleting them, see
-    /// UpdateAccessKey and DeleteAccessKey. </para>
+    /// <para>Deletes the login profile for the specified user, which terminates the user's ability to access AWS services through the IAM login
+    /// page.</para> <para><b>IMPORTANT:</b>Deleting a user's login profile does not prevent a user from accessing IAM through the command line
+    /// interface or the API. To prevent all user access you must also either make the access key inactive or delete it. For more information
+    /// about making keys inactive or deleting them, see UpdateAccessKey and DeleteAccessKey. </para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteLoginProfile"/>
     public class DeleteLoginProfileRequest : AmazonWebServiceRequest
@@ -40,14 +36,14 @@ namespace Amazon.IdentityManagement.Model
         private string userName;
 
         /// <summary>
-        /// Name of the User whose login profile you want to delete.
+        /// Name of the user whose login profile you want to delete.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

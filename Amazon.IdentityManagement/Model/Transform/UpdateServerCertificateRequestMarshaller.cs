@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Update Server Certificate Request Marshaller
     /// </summary>       
-    public class UpdateServerCertificateRequestMarshaller : IMarshaller<IRequest<UpdateServerCertificateRequest>, UpdateServerCertificateRequest> 
+    public class UpdateServerCertificateRequestMarshaller : IMarshaller<IRequest<UpdateServerCertificateRequest>, UpdateServerCertificateRequest>
     {
-
-        public IRequest<UpdateServerCertificateRequest> Marshall(UpdateServerCertificateRequest updateServerCertificateRequest) 
+        public IRequest<UpdateServerCertificateRequest> Marshall(UpdateServerCertificateRequest updateServerCertificateRequest)
         {
             IRequest<UpdateServerCertificateRequest> request = new DefaultRequest<UpdateServerCertificateRequest>(updateServerCertificateRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "UpdateServerCertificate");
             request.Parameters.Add("Version", "2010-05-08");
-            if (updateServerCertificateRequest != null && updateServerCertificateRequest.IsSetServerCertificateName()) 
+            if (updateServerCertificateRequest != null && updateServerCertificateRequest.IsSetServerCertificateName())
             {
                 request.Parameters.Add("ServerCertificateName", StringUtils.FromString(updateServerCertificateRequest.ServerCertificateName));
             }
-            if (updateServerCertificateRequest != null && updateServerCertificateRequest.IsSetNewPath()) 
+            if (updateServerCertificateRequest != null && updateServerCertificateRequest.IsSetNewPath())
             {
                 request.Parameters.Add("NewPath", StringUtils.FromString(updateServerCertificateRequest.NewPath));
             }
-            if (updateServerCertificateRequest != null && updateServerCertificateRequest.IsSetNewServerCertificateName()) 
+            if (updateServerCertificateRequest != null && updateServerCertificateRequest.IsSetNewServerCertificateName())
             {
                 request.Parameters.Add("NewServerCertificateName", StringUtils.FromString(updateServerCertificateRequest.NewServerCertificateName));
             }
-
 
             return request;
         }

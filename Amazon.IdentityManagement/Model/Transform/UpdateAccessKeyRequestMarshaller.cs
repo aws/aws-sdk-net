@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Update Access Key Request Marshaller
     /// </summary>       
-    public class UpdateAccessKeyRequestMarshaller : IMarshaller<IRequest<UpdateAccessKeyRequest>, UpdateAccessKeyRequest> 
+    public class UpdateAccessKeyRequestMarshaller : IMarshaller<IRequest<UpdateAccessKeyRequest>, UpdateAccessKeyRequest>
     {
-
-        public IRequest<UpdateAccessKeyRequest> Marshall(UpdateAccessKeyRequest updateAccessKeyRequest) 
+        public IRequest<UpdateAccessKeyRequest> Marshall(UpdateAccessKeyRequest updateAccessKeyRequest)
         {
             IRequest<UpdateAccessKeyRequest> request = new DefaultRequest<UpdateAccessKeyRequest>(updateAccessKeyRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "UpdateAccessKey");
             request.Parameters.Add("Version", "2010-05-08");
-            if (updateAccessKeyRequest != null && updateAccessKeyRequest.IsSetUserName()) 
+            if (updateAccessKeyRequest != null && updateAccessKeyRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(updateAccessKeyRequest.UserName));
             }
-            if (updateAccessKeyRequest != null && updateAccessKeyRequest.IsSetAccessKeyId()) 
+            if (updateAccessKeyRequest != null && updateAccessKeyRequest.IsSetAccessKeyId())
             {
                 request.Parameters.Add("AccessKeyId", StringUtils.FromString(updateAccessKeyRequest.AccessKeyId));
             }
-            if (updateAccessKeyRequest != null && updateAccessKeyRequest.IsSetStatus()) 
+            if (updateAccessKeyRequest != null && updateAccessKeyRequest.IsSetStatus())
             {
                 request.Parameters.Add("Status", StringUtils.FromString(updateAccessKeyRequest.Status));
             }
-
 
             return request;
         }

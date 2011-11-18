@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the
-    /// ListAccountAliases action.</para>
+    /// <para>Contains the result of a successful invocation of the ListAccountAliases action.</para>
     /// </summary>
     public class ListAccountAliasesResult  
     {
@@ -32,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
         private string marker;
 
         /// <summary>
-        /// 
+        /// A list of aliases associated with the account.
         ///  
         /// </summary>
         public List<string> AccountAliases
@@ -106,7 +105,8 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// 
+        /// Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated.
+        /// Set it to the value of the <c>Marker</c> element in the response you just received.
         ///  
         /// <para>
         /// <b>Constraints:</b>

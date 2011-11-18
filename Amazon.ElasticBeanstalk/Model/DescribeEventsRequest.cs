@@ -40,6 +40,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string severity;
         private DateTime? startTime;
         private DateTime? endTime;
+        private int? maxRecords;
         private string nextToken;
 
         /// <summary>
@@ -337,6 +338,43 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetEndTime()
         {
             return this.endTime.HasValue;       
+        }
+
+        /// <summary>
+        /// Specifies the maximum number of events that can be returned, beginning with the most recent event.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>1 - 1000</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this.maxRecords ?? default(int); }
+            set { this.maxRecords = value; }
+        }
+
+        /// <summary>
+        /// Sets the MaxRecords property
+        /// </summary>
+        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
+        /// <returns>this instance</returns>
+        public DescribeEventsRequest WithMaxRecords(int maxRecords)
+        {
+            this.maxRecords = maxRecords;
+            return this;
+        }
+            
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this.maxRecords.HasValue;       
         }
 
         /// <summary>

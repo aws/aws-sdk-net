@@ -21,11 +21,8 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>ServerCertificateMetadata contains information about a server
-    /// certificate without its certificate body, certificate chain, and
-    /// private key.</para> <para>This data type is used as a response element
-    /// in the action UploadServerCertificate and
-    /// ListServerCertificates.</para>
+    /// <para>ServerCertificateMetadata contains information about a server certificate without its certificate body, certificate chain, and private
+    /// key.</para> <para>This data type is used as a response element in the action UploadServerCertificate and ListServerCertificates.</para>
     /// </summary>
     public class ServerCertificateMetadata  
     {

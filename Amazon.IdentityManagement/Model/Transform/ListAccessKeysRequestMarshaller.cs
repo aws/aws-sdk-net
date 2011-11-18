@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// List Access Keys Request Marshaller
     /// </summary>       
-    public class ListAccessKeysRequestMarshaller : IMarshaller<IRequest<ListAccessKeysRequest>, ListAccessKeysRequest> 
+    public class ListAccessKeysRequestMarshaller : IMarshaller<IRequest<ListAccessKeysRequest>, ListAccessKeysRequest>
     {
-
-        public IRequest<ListAccessKeysRequest> Marshall(ListAccessKeysRequest listAccessKeysRequest) 
+        public IRequest<ListAccessKeysRequest> Marshall(ListAccessKeysRequest listAccessKeysRequest)
         {
             IRequest<ListAccessKeysRequest> request = new DefaultRequest<ListAccessKeysRequest>(listAccessKeysRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "ListAccessKeys");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listAccessKeysRequest != null && listAccessKeysRequest.IsSetUserName()) 
+            if (listAccessKeysRequest != null && listAccessKeysRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(listAccessKeysRequest.UserName));
             }
-            if (listAccessKeysRequest != null && listAccessKeysRequest.IsSetMarker()) 
+            if (listAccessKeysRequest != null && listAccessKeysRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(listAccessKeysRequest.Marker));
             }
-            if (listAccessKeysRequest != null && listAccessKeysRequest.IsSetMaxItems()) 
+            if (listAccessKeysRequest != null && listAccessKeysRequest.IsSetMaxItems())
             {
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(listAccessKeysRequest.MaxItems));
             }
-
 
             return request;
         }

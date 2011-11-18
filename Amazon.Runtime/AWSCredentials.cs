@@ -202,7 +202,7 @@ namespace Amazon.Runtime
     /// <summary>
     /// Basic set of credentials consisting of an AccessKey and SecretKey
     /// </summary>
-    public class BasicAWSCredentials : AWSCredentials, IDisposable
+    public class BasicAWSCredentials : AWSCredentials
     {
         #region Private members
 
@@ -253,7 +253,7 @@ namespace Amazon.Runtime
         #region Abstract class overrides
 
         /// <summary>
-        /// Returns an instance of ImmutableCredentials for the 
+        /// Returns an instance of ImmutableCredentials for this instance
         /// </summary>
         /// <returns></returns>
         public override ImmutableCredentials GetCredentials()
@@ -288,7 +288,10 @@ namespace Amazon.Runtime
         #endregion
     }
 
-    public class SessionAWSCredentials : AWSCredentials, IDisposable
+    /// <summary>
+    /// Session credentials consisting of AccessKey, SecretKey and Token
+    /// </summary>
+    public class SessionAWSCredentials : AWSCredentials
     {
         #region Public constructors
 
@@ -350,7 +353,7 @@ namespace Amazon.Runtime
         #region Abstract class overrides
 
         /// <summary>
-        /// Returns an instance of ImmutableCredentials for the 
+        /// Returns an instance of ImmutableCredentials for this instance
         /// </summary>
         /// <returns></returns>
         public override ImmutableCredentials GetCredentials()

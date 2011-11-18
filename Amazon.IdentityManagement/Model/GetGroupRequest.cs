@@ -25,8 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGroup operation.
-    /// <para>Returns a list of Users that are in the specified group. You can
-    /// paginate the results using the <c>MaxItems</c> and <c>Marker</c>
+    /// <para>Returns a list of users that are in the specified group. You can paginate the results using the <c>MaxItems</c> and <c>Marker</c>
     /// parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetGroup"/>
@@ -120,7 +119,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Use this only when paginating results to indicate the maximum number of User names you want in the response. If there are additional User
+        /// Use this only when paginating results to indicate the maximum number of user names you want in the response. If there are additional user
         /// names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
         ///  
         /// <para>

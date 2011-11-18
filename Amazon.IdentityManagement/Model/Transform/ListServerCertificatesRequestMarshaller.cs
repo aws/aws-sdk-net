@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// List Server Certificates Request Marshaller
     /// </summary>       
-    public class ListServerCertificatesRequestMarshaller : IMarshaller<IRequest<ListServerCertificatesRequest>, ListServerCertificatesRequest> 
+    public class ListServerCertificatesRequestMarshaller : IMarshaller<IRequest<ListServerCertificatesRequest>, ListServerCertificatesRequest>
     {
-
-        public IRequest<ListServerCertificatesRequest> Marshall(ListServerCertificatesRequest listServerCertificatesRequest) 
+        public IRequest<ListServerCertificatesRequest> Marshall(ListServerCertificatesRequest listServerCertificatesRequest)
         {
             IRequest<ListServerCertificatesRequest> request = new DefaultRequest<ListServerCertificatesRequest>(listServerCertificatesRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "ListServerCertificates");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listServerCertificatesRequest != null && listServerCertificatesRequest.IsSetPathPrefix()) 
+            if (listServerCertificatesRequest != null && listServerCertificatesRequest.IsSetPathPrefix())
             {
                 request.Parameters.Add("PathPrefix", StringUtils.FromString(listServerCertificatesRequest.PathPrefix));
             }
-            if (listServerCertificatesRequest != null && listServerCertificatesRequest.IsSetMarker()) 
+            if (listServerCertificatesRequest != null && listServerCertificatesRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(listServerCertificatesRequest.Marker));
             }
-            if (listServerCertificatesRequest != null && listServerCertificatesRequest.IsSetMaxItems()) 
+            if (listServerCertificatesRequest != null && listServerCertificatesRequest.IsSetMaxItems())
             {
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(listServerCertificatesRequest.MaxItems));
             }
-
 
             return request;
         }

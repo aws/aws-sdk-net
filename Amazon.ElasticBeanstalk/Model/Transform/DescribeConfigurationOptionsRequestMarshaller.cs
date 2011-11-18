@@ -28,42 +28,41 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Describe Configuration Options Request Marshaller
     /// </summary>       
-    public class DescribeConfigurationOptionsRequestMarshaller : IMarshaller<IRequest<DescribeConfigurationOptionsRequest>, DescribeConfigurationOptionsRequest> 
+    public class DescribeConfigurationOptionsRequestMarshaller : IMarshaller<IRequest<DescribeConfigurationOptionsRequest>, DescribeConfigurationOptionsRequest>
     {
-
-        public IRequest<DescribeConfigurationOptionsRequest> Marshall(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) 
+        public IRequest<DescribeConfigurationOptionsRequest> Marshall(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest)
         {
             IRequest<DescribeConfigurationOptionsRequest> request = new DefaultRequest<DescribeConfigurationOptionsRequest>(describeConfigurationOptionsRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DescribeConfigurationOptions");
             request.Parameters.Add("Version", "2010-12-01");
-            if (describeConfigurationOptionsRequest != null && describeConfigurationOptionsRequest.IsSetApplicationName()) 
+            if (describeConfigurationOptionsRequest != null && describeConfigurationOptionsRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(describeConfigurationOptionsRequest.ApplicationName));
             }
-            if (describeConfigurationOptionsRequest != null && describeConfigurationOptionsRequest.IsSetTemplateName()) 
+            if (describeConfigurationOptionsRequest != null && describeConfigurationOptionsRequest.IsSetTemplateName())
             {
                 request.Parameters.Add("TemplateName", StringUtils.FromString(describeConfigurationOptionsRequest.TemplateName));
             }
-            if (describeConfigurationOptionsRequest != null && describeConfigurationOptionsRequest.IsSetEnvironmentName()) 
+            if (describeConfigurationOptionsRequest != null && describeConfigurationOptionsRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(describeConfigurationOptionsRequest.EnvironmentName));
             }
-            if (describeConfigurationOptionsRequest != null && describeConfigurationOptionsRequest.IsSetSolutionStackName()) 
+            if (describeConfigurationOptionsRequest != null && describeConfigurationOptionsRequest.IsSetSolutionStackName())
             {
                 request.Parameters.Add("SolutionStackName", StringUtils.FromString(describeConfigurationOptionsRequest.SolutionStackName));
             }
 
-            if (describeConfigurationOptionsRequest != null) 
+            if (describeConfigurationOptionsRequest != null)
             {
                 List<OptionSpecification> optionsList = describeConfigurationOptionsRequest.Options;
                 int optionsListIndex = 1;
-                foreach (OptionSpecification optionsListValue in optionsList) 
-                { 
-                    if (optionsListValue != null && optionsListValue.IsSetNamespace()) 
+                foreach (OptionSpecification optionsListValue in optionsList)
+                {
+                    if (optionsListValue != null && optionsListValue.IsSetNamespace())
                     {
                         request.Parameters.Add("Options.member." + optionsListIndex + ".Namespace", StringUtils.FromString(optionsListValue.Namespace));
                     }
-                    if (optionsListValue != null && optionsListValue.IsSetOptionName()) 
+                    if (optionsListValue != null && optionsListValue.IsSetOptionName())
                     {
                         request.Parameters.Add("Options.member." + optionsListIndex + ".OptionName", StringUtils.FromString(optionsListValue.OptionName));
                     }
@@ -71,7 +70,6 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                     optionsListIndex++;
                 }
             }
-
 
             return request;
         }

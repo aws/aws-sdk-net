@@ -28,19 +28,17 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Delete Group Request Marshaller
     /// </summary>       
-    public class DeleteGroupRequestMarshaller : IMarshaller<IRequest<DeleteGroupRequest>, DeleteGroupRequest> 
+    public class DeleteGroupRequestMarshaller : IMarshaller<IRequest<DeleteGroupRequest>, DeleteGroupRequest>
     {
-
-        public IRequest<DeleteGroupRequest> Marshall(DeleteGroupRequest deleteGroupRequest) 
+        public IRequest<DeleteGroupRequest> Marshall(DeleteGroupRequest deleteGroupRequest)
         {
             IRequest<DeleteGroupRequest> request = new DefaultRequest<DeleteGroupRequest>(deleteGroupRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "DeleteGroup");
             request.Parameters.Add("Version", "2010-05-08");
-            if (deleteGroupRequest != null && deleteGroupRequest.IsSetGroupName()) 
+            if (deleteGroupRequest != null && deleteGroupRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(deleteGroupRequest.GroupName));
             }
-
 
             return request;
         }

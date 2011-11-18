@@ -25,9 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeactivateMFADevice operation.
-    /// <para>Deactivates the specified MFA device and removes it from
-    /// association with the User name for which it was originally
-    /// enabled.</para>
+    /// <para>Deactivates the specified MFA device and removes it from association with the user name for which it was originally enabled.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeactivateMFADevice"/>
     public class DeactivateMFADeviceRequest : AmazonWebServiceRequest
@@ -36,14 +34,14 @@ namespace Amazon.IdentityManagement.Model
         private string serialNumber;
 
         /// <summary>
-        /// Name of the User whose MFA device you want to deactivate.
+        /// Name of the user whose MFA device you want to deactivate.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
@@ -77,18 +75,18 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The serial number that uniquely identifies the MFA device.
+        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>9 - 48</description>
+        ///         <description>9 - 256</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>[\w]*</description>
+        ///         <description>[\w+=/:,.@-]*</description>
         ///     </item>
         /// </list>
         /// </para>

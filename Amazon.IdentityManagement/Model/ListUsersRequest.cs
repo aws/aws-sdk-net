@@ -25,10 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// <para>Lists the Users that have the specified path prefix. If there
-    /// are none, the action returns an empty list.</para> <para>You can
-    /// paginate the results using the <c>MaxItems</c> and <c>Marker</c>
-    /// parameters.</para>
+    /// <para>Lists the users that have the specified path prefix. If there are none, the action returns an empty list.</para> <para>You can
+    /// paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListUsers"/>
     public class ListUsersRequest : AmazonWebServiceRequest
@@ -38,9 +36,9 @@ namespace Amazon.IdentityManagement.Model
         private int? maxItems;
 
         /// <summary>
-        /// The path prefix for filtering the results. For example: <c>/division_abc/subdivision_xyz/</c>, which would get all User names whose path
+        /// The path prefix for filtering the results. For example: <c>/division_abc/subdivision_xyz/</c>, which would get all user names whose path
         /// starts with <c>/division_abc/subdivision_xyz/</c>. This parameter is optional. If it is not included, it defaults to a slash (/), listing
-        /// all User names.
+        /// all user names.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -123,8 +121,8 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Use this parameter only when paginating results to indicate the maximum number of User names you want in the response. If there are
-        /// additional User names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are
+        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

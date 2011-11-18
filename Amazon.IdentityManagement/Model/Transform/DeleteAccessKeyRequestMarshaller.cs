@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Delete Access Key Request Marshaller
     /// </summary>       
-    public class DeleteAccessKeyRequestMarshaller : IMarshaller<IRequest<DeleteAccessKeyRequest>, DeleteAccessKeyRequest> 
+    public class DeleteAccessKeyRequestMarshaller : IMarshaller<IRequest<DeleteAccessKeyRequest>, DeleteAccessKeyRequest>
     {
-
-        public IRequest<DeleteAccessKeyRequest> Marshall(DeleteAccessKeyRequest deleteAccessKeyRequest) 
+        public IRequest<DeleteAccessKeyRequest> Marshall(DeleteAccessKeyRequest deleteAccessKeyRequest)
         {
             IRequest<DeleteAccessKeyRequest> request = new DefaultRequest<DeleteAccessKeyRequest>(deleteAccessKeyRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "DeleteAccessKey");
             request.Parameters.Add("Version", "2010-05-08");
-            if (deleteAccessKeyRequest != null && deleteAccessKeyRequest.IsSetUserName()) 
+            if (deleteAccessKeyRequest != null && deleteAccessKeyRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(deleteAccessKeyRequest.UserName));
             }
-            if (deleteAccessKeyRequest != null && deleteAccessKeyRequest.IsSetAccessKeyId()) 
+            if (deleteAccessKeyRequest != null && deleteAccessKeyRequest.IsSetAccessKeyId())
             {
                 request.Parameters.Add("AccessKeyId", StringUtils.FromString(deleteAccessKeyRequest.AccessKeyId));
             }
-
 
             return request;
         }

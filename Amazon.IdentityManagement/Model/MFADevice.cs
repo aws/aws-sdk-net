@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The MFADevice data type contains information about an MFA
-    /// Device.</para> <para> This data type is used as a response element in
+    /// <para>The <c>MFADevice</c> data type contains information about an MFA device.</para> <para> This data type is used as a response element in
     /// the action ListMFADevices. </para>
     /// </summary>
     public class MFADevice  
@@ -33,14 +32,14 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? enableDate;
 
         /// <summary>
-        /// The User with whom the MFA device is associated.
+        /// The user with whom the MFA device is associated.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
@@ -74,18 +73,18 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Serial number that uniquely identifies the MFA device.
+        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>9 - 48</description>
+        ///         <description>9 - 256</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>[\w]*</description>
+        ///         <description>[\w+=/:,.@-]*</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -115,7 +114,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The date when the MFA device was enabled for the User.
+        /// The date when the MFA device was enabled for the user.
         ///  
         /// </summary>
         public DateTime EnableDate

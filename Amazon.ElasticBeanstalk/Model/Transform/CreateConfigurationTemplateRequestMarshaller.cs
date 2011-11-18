@@ -28,62 +28,61 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Create Configuration Template Request Marshaller
     /// </summary>       
-    public class CreateConfigurationTemplateRequestMarshaller : IMarshaller<IRequest<CreateConfigurationTemplateRequest>, CreateConfigurationTemplateRequest> 
+    public class CreateConfigurationTemplateRequestMarshaller : IMarshaller<IRequest<CreateConfigurationTemplateRequest>, CreateConfigurationTemplateRequest>
     {
-
-        public IRequest<CreateConfigurationTemplateRequest> Marshall(CreateConfigurationTemplateRequest createConfigurationTemplateRequest) 
+        public IRequest<CreateConfigurationTemplateRequest> Marshall(CreateConfigurationTemplateRequest createConfigurationTemplateRequest)
         {
             IRequest<CreateConfigurationTemplateRequest> request = new DefaultRequest<CreateConfigurationTemplateRequest>(createConfigurationTemplateRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "CreateConfigurationTemplate");
             request.Parameters.Add("Version", "2010-12-01");
-            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetApplicationName()) 
+            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(createConfigurationTemplateRequest.ApplicationName));
             }
-            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetTemplateName()) 
+            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetTemplateName())
             {
                 request.Parameters.Add("TemplateName", StringUtils.FromString(createConfigurationTemplateRequest.TemplateName));
             }
-            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetSolutionStackName()) 
+            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetSolutionStackName())
             {
                 request.Parameters.Add("SolutionStackName", StringUtils.FromString(createConfigurationTemplateRequest.SolutionStackName));
             }
-            if (createConfigurationTemplateRequest != null) 
+            if (createConfigurationTemplateRequest != null)
             {
                 SourceConfiguration sourceConfiguration = createConfigurationTemplateRequest.SourceConfiguration;
-                if (sourceConfiguration != null && sourceConfiguration.IsSetApplicationName()) 
+                if (sourceConfiguration != null && sourceConfiguration.IsSetApplicationName())
                 {
                     request.Parameters.Add("SourceConfiguration.ApplicationName", StringUtils.FromString(sourceConfiguration.ApplicationName));
                 }
-                if (sourceConfiguration != null && sourceConfiguration.IsSetTemplateName()) 
+                if (sourceConfiguration != null && sourceConfiguration.IsSetTemplateName())
                 {
                     request.Parameters.Add("SourceConfiguration.TemplateName", StringUtils.FromString(sourceConfiguration.TemplateName));
                 }
             }
-            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetEnvironmentId()) 
+            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetEnvironmentId())
             {
                 request.Parameters.Add("EnvironmentId", StringUtils.FromString(createConfigurationTemplateRequest.EnvironmentId));
             }
-            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetDescription()) 
+            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetDescription())
             {
                 request.Parameters.Add("Description", StringUtils.FromString(createConfigurationTemplateRequest.Description));
             }
 
-            if (createConfigurationTemplateRequest != null) 
+            if (createConfigurationTemplateRequest != null)
             {
                 List<ConfigurationOptionSetting> optionSettingsList = createConfigurationTemplateRequest.OptionSettings;
                 int optionSettingsListIndex = 1;
-                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList) 
-                { 
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace()) 
+                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList)
+                {
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.FromString(optionSettingsListValue.Namespace));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName()) 
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.FromString(optionSettingsListValue.OptionName));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue()) 
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.FromString(optionSettingsListValue.Value));
                     }
@@ -91,7 +90,6 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                     optionSettingsListIndex++;
                 }
             }
-
 
             return request;
         }

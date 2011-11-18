@@ -28,30 +28,28 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Describe Application Versions Request Marshaller
     /// </summary>       
-    public class DescribeApplicationVersionsRequestMarshaller : IMarshaller<IRequest<DescribeApplicationVersionsRequest>, DescribeApplicationVersionsRequest> 
+    public class DescribeApplicationVersionsRequestMarshaller : IMarshaller<IRequest<DescribeApplicationVersionsRequest>, DescribeApplicationVersionsRequest>
     {
-
-        public IRequest<DescribeApplicationVersionsRequest> Marshall(DescribeApplicationVersionsRequest describeApplicationVersionsRequest) 
+        public IRequest<DescribeApplicationVersionsRequest> Marshall(DescribeApplicationVersionsRequest describeApplicationVersionsRequest)
         {
             IRequest<DescribeApplicationVersionsRequest> request = new DefaultRequest<DescribeApplicationVersionsRequest>(describeApplicationVersionsRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DescribeApplicationVersions");
             request.Parameters.Add("Version", "2010-12-01");
-            if (describeApplicationVersionsRequest != null && describeApplicationVersionsRequest.IsSetApplicationName()) 
+            if (describeApplicationVersionsRequest != null && describeApplicationVersionsRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(describeApplicationVersionsRequest.ApplicationName));
             }
-            if (describeApplicationVersionsRequest != null) 
+            if (describeApplicationVersionsRequest != null)
             {
                 List<string> versionLabelsList = describeApplicationVersionsRequest.VersionLabels;
 
                 int versionLabelsListIndex = 1;
-                foreach (string versionLabelsListValue in versionLabelsList) 
+                foreach (string versionLabelsListValue in versionLabelsList)
                 { 
                     request.Parameters.Add("VersionLabels.member." + versionLabelsListIndex, StringUtils.FromString(versionLabelsListValue));
                     versionLabelsListIndex++;
                 }
             }
-
 
             return request;
         }

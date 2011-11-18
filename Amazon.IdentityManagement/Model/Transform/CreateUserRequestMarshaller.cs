@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Create User Request Marshaller
     /// </summary>       
-    public class CreateUserRequestMarshaller : IMarshaller<IRequest<CreateUserRequest>, CreateUserRequest> 
+    public class CreateUserRequestMarshaller : IMarshaller<IRequest<CreateUserRequest>, CreateUserRequest>
     {
-
-        public IRequest<CreateUserRequest> Marshall(CreateUserRequest createUserRequest) 
+        public IRequest<CreateUserRequest> Marshall(CreateUserRequest createUserRequest)
         {
             IRequest<CreateUserRequest> request = new DefaultRequest<CreateUserRequest>(createUserRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "CreateUser");
             request.Parameters.Add("Version", "2010-05-08");
-            if (createUserRequest != null && createUserRequest.IsSetPath()) 
+            if (createUserRequest != null && createUserRequest.IsSetPath())
             {
                 request.Parameters.Add("Path", StringUtils.FromString(createUserRequest.Path));
             }
-            if (createUserRequest != null && createUserRequest.IsSetUserName()) 
+            if (createUserRequest != null && createUserRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(createUserRequest.UserName));
             }
-
 
             return request;
         }

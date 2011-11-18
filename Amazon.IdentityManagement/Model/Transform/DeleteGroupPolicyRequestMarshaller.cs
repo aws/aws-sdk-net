@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Delete Group Policy Request Marshaller
     /// </summary>       
-    public class DeleteGroupPolicyRequestMarshaller : IMarshaller<IRequest<DeleteGroupPolicyRequest>, DeleteGroupPolicyRequest> 
+    public class DeleteGroupPolicyRequestMarshaller : IMarshaller<IRequest<DeleteGroupPolicyRequest>, DeleteGroupPolicyRequest>
     {
-
-        public IRequest<DeleteGroupPolicyRequest> Marshall(DeleteGroupPolicyRequest deleteGroupPolicyRequest) 
+        public IRequest<DeleteGroupPolicyRequest> Marshall(DeleteGroupPolicyRequest deleteGroupPolicyRequest)
         {
             IRequest<DeleteGroupPolicyRequest> request = new DefaultRequest<DeleteGroupPolicyRequest>(deleteGroupPolicyRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "DeleteGroupPolicy");
             request.Parameters.Add("Version", "2010-05-08");
-            if (deleteGroupPolicyRequest != null && deleteGroupPolicyRequest.IsSetGroupName()) 
+            if (deleteGroupPolicyRequest != null && deleteGroupPolicyRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(deleteGroupPolicyRequest.GroupName));
             }
-            if (deleteGroupPolicyRequest != null && deleteGroupPolicyRequest.IsSetPolicyName()) 
+            if (deleteGroupPolicyRequest != null && deleteGroupPolicyRequest.IsSetPolicyName())
             {
                 request.Parameters.Add("PolicyName", StringUtils.FromString(deleteGroupPolicyRequest.PolicyName));
             }
-
 
             return request;
         }

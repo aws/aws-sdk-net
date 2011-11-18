@@ -28,23 +28,21 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Restart App Server Request Marshaller
     /// </summary>       
-    public class RestartAppServerRequestMarshaller : IMarshaller<IRequest<RestartAppServerRequest>, RestartAppServerRequest> 
+    public class RestartAppServerRequestMarshaller : IMarshaller<IRequest<RestartAppServerRequest>, RestartAppServerRequest>
     {
-
-        public IRequest<RestartAppServerRequest> Marshall(RestartAppServerRequest restartAppServerRequest) 
+        public IRequest<RestartAppServerRequest> Marshall(RestartAppServerRequest restartAppServerRequest)
         {
             IRequest<RestartAppServerRequest> request = new DefaultRequest<RestartAppServerRequest>(restartAppServerRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "RestartAppServer");
             request.Parameters.Add("Version", "2010-12-01");
-            if (restartAppServerRequest != null && restartAppServerRequest.IsSetEnvironmentId()) 
+            if (restartAppServerRequest != null && restartAppServerRequest.IsSetEnvironmentId())
             {
                 request.Parameters.Add("EnvironmentId", StringUtils.FromString(restartAppServerRequest.EnvironmentId));
             }
-            if (restartAppServerRequest != null && restartAppServerRequest.IsSetEnvironmentName()) 
+            if (restartAppServerRequest != null && restartAppServerRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(restartAppServerRequest.EnvironmentName));
             }
-
 
             return request;
         }

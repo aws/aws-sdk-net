@@ -510,7 +510,6 @@ namespace Amazon.Runtime
         {
             int delay = (int)(Math.Pow(4, retries) * 100);
             delay = Math.Min(delay, MAX_BACKOFF_IN_MILLISECONDS);
-            Console.WriteLine(retries + " Pausing for retry: " + delay);
             Thread.Sleep(delay);
         }
     }

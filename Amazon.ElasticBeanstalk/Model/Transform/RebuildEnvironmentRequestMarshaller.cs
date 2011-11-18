@@ -28,23 +28,21 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Rebuild Environment Request Marshaller
     /// </summary>       
-    public class RebuildEnvironmentRequestMarshaller : IMarshaller<IRequest<RebuildEnvironmentRequest>, RebuildEnvironmentRequest> 
+    public class RebuildEnvironmentRequestMarshaller : IMarshaller<IRequest<RebuildEnvironmentRequest>, RebuildEnvironmentRequest>
     {
-
-        public IRequest<RebuildEnvironmentRequest> Marshall(RebuildEnvironmentRequest rebuildEnvironmentRequest) 
+        public IRequest<RebuildEnvironmentRequest> Marshall(RebuildEnvironmentRequest rebuildEnvironmentRequest)
         {
             IRequest<RebuildEnvironmentRequest> request = new DefaultRequest<RebuildEnvironmentRequest>(rebuildEnvironmentRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "RebuildEnvironment");
             request.Parameters.Add("Version", "2010-12-01");
-            if (rebuildEnvironmentRequest != null && rebuildEnvironmentRequest.IsSetEnvironmentId()) 
+            if (rebuildEnvironmentRequest != null && rebuildEnvironmentRequest.IsSetEnvironmentId())
             {
                 request.Parameters.Add("EnvironmentId", StringUtils.FromString(rebuildEnvironmentRequest.EnvironmentId));
             }
-            if (rebuildEnvironmentRequest != null && rebuildEnvironmentRequest.IsSetEnvironmentName()) 
+            if (rebuildEnvironmentRequest != null && rebuildEnvironmentRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(rebuildEnvironmentRequest.EnvironmentName));
             }
-
 
             return request;
         }

@@ -25,13 +25,12 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ElasticBeanstalk
 {
     /// <summary>
-    /// Implemenation for accessing AmazonElasticBeanstalk.
+    /// Implementation for accessing AmazonElasticBeanstalk.
     ///  
     /// AWS Elastic Beanstalk <para> This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information about AWS Elastic
     /// Beanstalk actions, data types, parameters, and errors. </para> <para>AWS Elastic Beanstalk is a tool that makes it easy for you to create,
     /// deploy, and manage scalable, fault-tolerant applications running on Amazon Web Services cloud resources. </para> <para> For more information
-    /// about this product, go to the AWS Elastic Beanstalk details page. For specific information about setting up signatures and authorization
-    /// through the API, go to the AWS Elastic Beanstalk User Guide. The location of the lastest AWS Elastic Beanstalk WSDL is
+    /// about this product, go to the AWS Elastic Beanstalk details page. The location of the lastest AWS Elastic Beanstalk WSDL is
     /// http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl. </para> <para> <b>Endpoints</b> </para> <para>AWS Elastic
     /// Beanstalk supports the following region-specific endpoint:</para>
     /// <ul>
@@ -42,8 +41,8 @@ namespace Amazon.ElasticBeanstalk
     public class AmazonElasticBeanstalkClient : AmazonWebServiceClient, AmazonElasticBeanstalk
     {
     
-    
         AbstractAWSSigner signer = new QueryStringSigner();
+
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with the credentials defined in the App.config.
@@ -78,10 +77,31 @@ namespace Amazon.ElasticBeanstalk
         /// </code>
         ///
         /// </summary>
-        /// <param name="config">The AmazonElasticBeanstalkClient Configuration Object</param>
+        /// <param name="config">The AmazonElasticBeanstalk Configuration Object</param>
         public AmazonElasticBeanstalkClient(AmazonElasticBeanstalkConfig config)
             : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
 
+        /// <summary>
+        /// Constructs AmazonElasticBeanstalkClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public AmazonElasticBeanstalkClient(AWSCredentials credentials)
+            : this(credentials, new AmazonElasticBeanstalkConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElasticBeanstalkClient with AWS Credentials and an
+        /// AmazonElasticBeanstalkClient Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
+        public AmazonElasticBeanstalkClient(AWSCredentials credentials, AmazonElasticBeanstalkConfig clientConfig)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User)
+        {
+        }
+
+        
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with AWS Access Key ID and AWS Secret Key
         /// </summary>
@@ -107,7 +127,6 @@ namespace Amazon.ElasticBeanstalk
         {
         }
         
-   
 
          /// <summary>
          /// <para> Checks if the specified CNAME is available. </para>
@@ -119,7 +138,7 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the CheckDNSAvailability service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public CheckDNSAvailabilityResponse CheckDNSAvailability(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest) 
-        {           
+        {
             IRequest<CheckDNSAvailabilityRequest> request = new CheckDNSAvailabilityRequestMarshaller().Marshall(checkDNSAvailabilityRequest);
             CheckDNSAvailabilityResponse response = Invoke<CheckDNSAvailabilityRequest, CheckDNSAvailabilityResponse> (request, this.signer, CheckDNSAvailabilityResponseUnmarshaller.GetInstance());
             return response;
@@ -138,12 +157,26 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the DescribeConfigurationOptions service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) 
-        {           
+        {
             IRequest<DescribeConfigurationOptionsRequest> request = new DescribeConfigurationOptionsRequestMarshaller().Marshall(describeConfigurationOptionsRequest);
             DescribeConfigurationOptionsResponse response = Invoke<DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResponse> (request, this.signer, DescribeConfigurationOptionsResponseUnmarshaller.GetInstance());
             return response;
         }
     
+
+         /// <summary>
+         /// <para> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution
+         /// stack defines. The description includes the values the options, their default values, and an indication of the required action on a running
+         /// environment if an option value is changed. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by AmazonElasticBeanstalk.</returns>
+         /// 
+        public DescribeConfigurationOptionsResponse DescribeConfigurationOptions()
+        {
+            return DescribeConfigurationOptions(new DescribeConfigurationOptionsRequest());
+        }
+        
 
          /// <summary>
          /// <para>Deletes the specified configuration template.</para> <para><b>NOTE:</b>When you launch an environment using a configuration template,
@@ -155,7 +188,7 @@ namespace Amazon.ElasticBeanstalk
          ///           method on AmazonElasticBeanstalk.</param>
          /// 
         public DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) 
-        {           
+        {
             IRequest<DeleteConfigurationTemplateRequest> request = new DeleteConfigurationTemplateRequestMarshaller().Marshall(deleteConfigurationTemplateRequest);
             DeleteConfigurationTemplateResponse response = Invoke<DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResponse> (request, this.signer, DeleteConfigurationTemplateResponseUnmarshaller.GetInstance());
             return response;
@@ -173,7 +206,7 @@ namespace Amazon.ElasticBeanstalk
          /// 
          /// <exception cref="TooManyEnvironmentsException"/>
         public CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest createEnvironmentRequest) 
-        {           
+        {
             IRequest<CreateEnvironmentRequest> request = new CreateEnvironmentRequestMarshaller().Marshall(createEnvironmentRequest);
             CreateEnvironmentResponse response = Invoke<CreateEnvironmentRequest, CreateEnvironmentResponse> (request, this.signer, CreateEnvironmentResponseUnmarshaller.GetInstance());
             return response;
@@ -192,12 +225,26 @@ namespace Amazon.ElasticBeanstalk
          /// <exception cref="S3SubscriptionRequiredException"/>
          /// <exception cref="TooManyBucketsException"/>
         public CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest createStorageLocationRequest) 
-        {           
+        {
             IRequest<CreateStorageLocationRequest> request = new CreateStorageLocationRequestMarshaller().Marshall(createStorageLocationRequest);
             CreateStorageLocationResponse response = Invoke<CreateStorageLocationRequest, CreateStorageLocationResponse> (request, this.signer, CreateStorageLocationResponseUnmarshaller.GetInstance());
             return response;
         }
     
+
+         /// <summary>
+         /// <para> Creates the Amazon S3 storage location for the account. </para> <para> This location is used to store user log files. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the CreateStorageLocation service method, as returned by AmazonElasticBeanstalk.</returns>
+         /// 
+         /// <exception cref="S3SubscriptionRequiredException"/>
+         /// <exception cref="TooManyBucketsException"/>
+        public CreateStorageLocationResponse CreateStorageLocation()
+        {
+            return CreateStorageLocation(new CreateStorageLocationRequest());
+        }
+        
 
          /// <summary>
          /// <para> Initiates a request to compile the specified type of information of the deployed environment. </para> <para> Setting the
@@ -213,7 +260,7 @@ namespace Amazon.ElasticBeanstalk
          ///           AmazonElasticBeanstalk.</param>
          /// 
         public RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest) 
-        {           
+        {
             IRequest<RequestEnvironmentInfoRequest> request = new RequestEnvironmentInfoRequestMarshaller().Marshall(requestEnvironmentInfoRequest);
             RequestEnvironmentInfoResponse response = Invoke<RequestEnvironmentInfoRequest, RequestEnvironmentInfoResponse> (request, this.signer, RequestEnvironmentInfoResponseUnmarshaller.GetInstance());
             return response;
@@ -234,7 +281,7 @@ namespace Amazon.ElasticBeanstalk
          /// <exception cref="TooManyApplicationsException"/>
          /// <exception cref="TooManyApplicationVersionsException"/>
         public CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest createApplicationVersionRequest) 
-        {           
+        {
             IRequest<CreateApplicationVersionRequest> request = new CreateApplicationVersionRequestMarshaller().Marshall(createApplicationVersionRequest);
             CreateApplicationVersionResponse response = Invoke<CreateApplicationVersionRequest, CreateApplicationVersionResponse> (request, this.signer, CreateApplicationVersionResponseUnmarshaller.GetInstance());
             return response;
@@ -251,7 +298,7 @@ namespace Amazon.ElasticBeanstalk
          /// 
          /// <exception cref="SourceBundleDeletionException"/>
         public DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest deleteApplicationVersionRequest) 
-        {           
+        {
             IRequest<DeleteApplicationVersionRequest> request = new DeleteApplicationVersionRequestMarshaller().Marshall(deleteApplicationVersionRequest);
             DeleteApplicationVersionResponse response = Invoke<DeleteApplicationVersionRequest, DeleteApplicationVersionResponse> (request, this.signer, DeleteApplicationVersionResponseUnmarshaller.GetInstance());
             return response;
@@ -268,12 +315,24 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the DescribeApplicationVersions service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public DescribeApplicationVersionsResponse DescribeApplicationVersions(DescribeApplicationVersionsRequest describeApplicationVersionsRequest) 
-        {           
+        {
             IRequest<DescribeApplicationVersionsRequest> request = new DescribeApplicationVersionsRequestMarshaller().Marshall(describeApplicationVersionsRequest);
             DescribeApplicationVersionsResponse response = Invoke<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResponse> (request, this.signer, DescribeApplicationVersionsResponseUnmarshaller.GetInstance());
             return response;
         }
     
+
+         /// <summary>
+         /// <para>Returns descriptions for existing application versions.</para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeApplicationVersions service method, as returned by AmazonElasticBeanstalk.</returns>
+         /// 
+        public DescribeApplicationVersionsResponse DescribeApplicationVersions()
+        {
+            return DescribeApplicationVersions(new DescribeApplicationVersionsRequest());
+        }
+        
 
          /// <summary>
          /// <para> Deletes the specified application along with all associated versions and configurations. </para> <para><b>NOTE:</b>You cannot delete
@@ -284,7 +343,7 @@ namespace Amazon.ElasticBeanstalk
          ///           AmazonElasticBeanstalk.</param>
          /// 
         public DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest deleteApplicationRequest) 
-        {           
+        {
             IRequest<DeleteApplicationRequest> request = new DeleteApplicationRequestMarshaller().Marshall(deleteApplicationRequest);
             DeleteApplicationResponse response = Invoke<DeleteApplicationRequest, DeleteApplicationResponse> (request, this.signer, DeleteApplicationResponseUnmarshaller.GetInstance());
             return response;
@@ -302,7 +361,7 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the UpdateApplicationVersion service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest updateApplicationVersionRequest) 
-        {           
+        {
             IRequest<UpdateApplicationVersionRequest> request = new UpdateApplicationVersionRequestMarshaller().Marshall(updateApplicationVersionRequest);
             UpdateApplicationVersionResponse response = Invoke<UpdateApplicationVersionRequest, UpdateApplicationVersionResponse> (request, this.signer, UpdateApplicationVersionResponseUnmarshaller.GetInstance());
             return response;
@@ -322,7 +381,7 @@ namespace Amazon.ElasticBeanstalk
          /// 
          /// <exception cref="TooManyApplicationsException"/>
         public CreateApplicationResponse CreateApplication(CreateApplicationRequest createApplicationRequest) 
-        {           
+        {
             IRequest<CreateApplicationRequest> request = new CreateApplicationRequestMarshaller().Marshall(createApplicationRequest);
             CreateApplicationResponse response = Invoke<CreateApplicationRequest, CreateApplicationResponse> (request, this.signer, CreateApplicationResponseUnmarshaller.GetInstance());
             return response;
@@ -330,13 +389,14 @@ namespace Amazon.ElasticBeanstalk
     
 
          /// <summary>
+         /// <para> Swaps the CNAMEs of two environments. </para>
          /// </summary>
          /// 
          /// <param name="swapEnvironmentCNAMEsRequest">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs service method on
          ///           AmazonElasticBeanstalk.</param>
          /// 
         public SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) 
-        {           
+        {
             IRequest<SwapEnvironmentCNAMEsRequest> request = new SwapEnvironmentCNAMEsRequestMarshaller().Marshall(swapEnvironmentCNAMEsRequest);
             SwapEnvironmentCNAMEsResponse response = Invoke<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResponse> (request, this.signer, SwapEnvironmentCNAMEsResponseUnmarshaller.GetInstance());
             return response;
@@ -359,7 +419,7 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the UpdateConfigurationTemplate service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) 
-        {           
+        {
             IRequest<UpdateConfigurationTemplateRequest> request = new UpdateConfigurationTemplateRequestMarshaller().Marshall(updateConfigurationTemplateRequest);
             UpdateConfigurationTemplateResponse response = Invoke<UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResponse> (request, this.signer, UpdateConfigurationTemplateResponseUnmarshaller.GetInstance());
             return response;
@@ -380,7 +440,7 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the RetrieveEnvironmentInfo service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public RetrieveEnvironmentInfoResponse RetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest) 
-        {           
+        {
             IRequest<RetrieveEnvironmentInfoRequest> request = new RetrieveEnvironmentInfoRequestMarshaller().Marshall(retrieveEnvironmentInfoRequest);
             RetrieveEnvironmentInfoResponse response = Invoke<RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResponse> (request, this.signer, RetrieveEnvironmentInfoResponseUnmarshaller.GetInstance());
             return response;
@@ -397,12 +457,24 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public ListAvailableSolutionStacksResponse ListAvailableSolutionStacks(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) 
-        {           
+        {
             IRequest<ListAvailableSolutionStacksRequest> request = new ListAvailableSolutionStacksRequestMarshaller().Marshall(listAvailableSolutionStacksRequest);
             ListAvailableSolutionStacksResponse response = Invoke<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResponse> (request, this.signer, ListAvailableSolutionStacksResponseUnmarshaller.GetInstance());
             return response;
         }
     
+
+         /// <summary>
+         /// <para> Returns a list of the available solution stack names. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by AmazonElasticBeanstalk.</returns>
+         /// 
+        public ListAvailableSolutionStacksResponse ListAvailableSolutionStacks()
+        {
+            return ListAvailableSolutionStacks(new ListAvailableSolutionStacksRequest());
+        }
+        
 
          /// <summary>
          /// <para>Updates the specified application to have the specified properties. </para> <para><b>NOTE:</b> If a property (for example,
@@ -415,7 +487,7 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the UpdateApplication service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest updateApplicationRequest) 
-        {           
+        {
             IRequest<UpdateApplicationRequest> request = new UpdateApplicationRequestMarshaller().Marshall(updateApplicationRequest);
             UpdateApplicationResponse response = Invoke<UpdateApplicationRequest, UpdateApplicationResponse> (request, this.signer, UpdateApplicationResponseUnmarshaller.GetInstance());
             return response;
@@ -432,12 +504,24 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the DescribeEnvironments service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public DescribeEnvironmentsResponse DescribeEnvironments(DescribeEnvironmentsRequest describeEnvironmentsRequest) 
-        {           
+        {
             IRequest<DescribeEnvironmentsRequest> request = new DescribeEnvironmentsRequestMarshaller().Marshall(describeEnvironmentsRequest);
             DescribeEnvironmentsResponse response = Invoke<DescribeEnvironmentsRequest, DescribeEnvironmentsResponse> (request, this.signer, DescribeEnvironmentsResponseUnmarshaller.GetInstance());
             return response;
         }
     
+
+         /// <summary>
+         /// <para>Returns descriptions for existing environments.</para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeEnvironments service method, as returned by AmazonElasticBeanstalk.</returns>
+         /// 
+        public DescribeEnvironmentsResponse DescribeEnvironments()
+        {
+            return DescribeEnvironments(new DescribeEnvironmentsRequest());
+        }
+        
 
          /// <summary>
          /// <para>Returns AWS resources for this environment.</para>
@@ -449,7 +533,7 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the DescribeEnvironmentResources service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) 
-        {           
+        {
             IRequest<DescribeEnvironmentResourcesRequest> request = new DescribeEnvironmentResourcesRequestMarshaller().Marshall(describeEnvironmentResourcesRequest);
             DescribeEnvironmentResourcesResponse response = Invoke<DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResponse> (request, this.signer, DescribeEnvironmentResourcesResponseUnmarshaller.GetInstance());
             return response;
@@ -466,7 +550,7 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the TerminateEnvironment service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest terminateEnvironmentRequest) 
-        {           
+        {
             IRequest<TerminateEnvironmentRequest> request = new TerminateEnvironmentRequestMarshaller().Marshall(terminateEnvironmentRequest);
             TerminateEnvironmentResponse response = Invoke<TerminateEnvironmentRequest, TerminateEnvironmentResponse> (request, this.signer, TerminateEnvironmentResponseUnmarshaller.GetInstance());
             return response;
@@ -485,7 +569,7 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the ValidateConfigurationSettings service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) 
-        {           
+        {
             IRequest<ValidateConfigurationSettingsRequest> request = new ValidateConfigurationSettingsRequestMarshaller().Marshall(validateConfigurationSettingsRequest);
             ValidateConfigurationSettingsResponse response = Invoke<ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResponse> (request, this.signer, ValidateConfigurationSettingsResponseUnmarshaller.GetInstance());
             return response;
@@ -500,7 +584,7 @@ namespace Amazon.ElasticBeanstalk
          ///           AmazonElasticBeanstalk.</param>
          /// 
         public RestartAppServerResponse RestartAppServer(RestartAppServerRequest restartAppServerRequest) 
-        {           
+        {
             IRequest<RestartAppServerRequest> request = new RestartAppServerRequestMarshaller().Marshall(restartAppServerRequest);
             RestartAppServerResponse response = Invoke<RestartAppServerRequest, RestartAppServerResponse> (request, this.signer, RestartAppServerResponseUnmarshaller.GetInstance());
             return response;
@@ -518,7 +602,7 @@ namespace Amazon.ElasticBeanstalk
          ///           service method on AmazonElasticBeanstalk.</param>
          /// 
         public DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) 
-        {           
+        {
             IRequest<DeleteEnvironmentConfigurationRequest> request = new DeleteEnvironmentConfigurationRequestMarshaller().Marshall(deleteEnvironmentConfigurationRequest);
             DeleteEnvironmentConfigurationResponse response = Invoke<DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResponse> (request, this.signer, DeleteEnvironmentConfigurationResponseUnmarshaller.GetInstance());
             return response;
@@ -539,7 +623,7 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the UpdateEnvironment service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest) 
-        {           
+        {
             IRequest<UpdateEnvironmentRequest> request = new UpdateEnvironmentRequestMarshaller().Marshall(updateEnvironmentRequest);
             UpdateEnvironmentResponse response = Invoke<UpdateEnvironmentRequest, UpdateEnvironmentResponse> (request, this.signer, UpdateEnvironmentResponseUnmarshaller.GetInstance());
             return response;
@@ -564,7 +648,7 @@ namespace Amazon.ElasticBeanstalk
          /// 
          /// <exception cref="TooManyConfigurationTemplatesException"/>
         public CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest createConfigurationTemplateRequest) 
-        {           
+        {
             IRequest<CreateConfigurationTemplateRequest> request = new CreateConfigurationTemplateRequestMarshaller().Marshall(createConfigurationTemplateRequest);
             CreateConfigurationTemplateResponse response = Invoke<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse> (request, this.signer, CreateConfigurationTemplateResponseUnmarshaller.GetInstance());
             return response;
@@ -589,7 +673,7 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the DescribeConfigurationSettings service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) 
-        {           
+        {
             IRequest<DescribeConfigurationSettingsRequest> request = new DescribeConfigurationSettingsRequestMarshaller().Marshall(describeConfigurationSettingsRequest);
             DescribeConfigurationSettingsResponse response = Invoke<DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResponse> (request, this.signer, DescribeConfigurationSettingsResponseUnmarshaller.GetInstance());
             return response;
@@ -606,12 +690,24 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the DescribeApplications service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest describeApplicationsRequest) 
-        {           
+        {
             IRequest<DescribeApplicationsRequest> request = new DescribeApplicationsRequestMarshaller().Marshall(describeApplicationsRequest);
             DescribeApplicationsResponse response = Invoke<DescribeApplicationsRequest, DescribeApplicationsResponse> (request, this.signer, DescribeApplicationsResponseUnmarshaller.GetInstance());
             return response;
         }
     
+
+         /// <summary>
+         /// <para>Returns the descriptions of existing applications.</para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeApplications service method, as returned by AmazonElasticBeanstalk.</returns>
+         /// 
+        public DescribeApplicationsResponse DescribeApplications()
+        {
+            return DescribeApplications(new DescribeApplicationsRequest());
+        }
+        
 
          /// <summary>
          /// <para> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment
@@ -622,7 +718,7 @@ namespace Amazon.ElasticBeanstalk
          ///           AmazonElasticBeanstalk.</param>
          /// 
         public RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest) 
-        {           
+        {
             IRequest<RebuildEnvironmentRequest> request = new RebuildEnvironmentRequestMarshaller().Marshall(rebuildEnvironmentRequest);
             RebuildEnvironmentResponse response = Invoke<RebuildEnvironmentRequest, RebuildEnvironmentResponse> (request, this.signer, RebuildEnvironmentResponseUnmarshaller.GetInstance());
             return response;
@@ -640,12 +736,25 @@ namespace Amazon.ElasticBeanstalk
          /// <returns>The response from the DescribeEvents service method, as returned by AmazonElasticBeanstalk.</returns>
          /// 
         public DescribeEventsResponse DescribeEvents(DescribeEventsRequest describeEventsRequest) 
-        {           
+        {
             IRequest<DescribeEventsRequest> request = new DescribeEventsRequestMarshaller().Marshall(describeEventsRequest);
             DescribeEventsResponse response = Invoke<DescribeEventsRequest, DescribeEventsResponse> (request, this.signer, DescribeEventsResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para>Returns list of event descriptions matching criteria up to the last 6 weeks.</para> <para><b>NOTE:</b> This action returns the most
+         /// recent 1,000 events from the specified NextToken. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeEvents service method, as returned by AmazonElasticBeanstalk.</returns>
+         /// 
+        public DescribeEventsResponse DescribeEvents()
+        {
+            return DescribeEvents(new DescribeEventsRequest());
+        }
+        
     }
-}   
+}
     

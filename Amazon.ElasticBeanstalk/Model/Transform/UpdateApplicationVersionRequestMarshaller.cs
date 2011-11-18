@@ -28,27 +28,25 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Update Application Version Request Marshaller
     /// </summary>       
-    public class UpdateApplicationVersionRequestMarshaller : IMarshaller<IRequest<UpdateApplicationVersionRequest>, UpdateApplicationVersionRequest> 
+    public class UpdateApplicationVersionRequestMarshaller : IMarshaller<IRequest<UpdateApplicationVersionRequest>, UpdateApplicationVersionRequest>
     {
-
-        public IRequest<UpdateApplicationVersionRequest> Marshall(UpdateApplicationVersionRequest updateApplicationVersionRequest) 
+        public IRequest<UpdateApplicationVersionRequest> Marshall(UpdateApplicationVersionRequest updateApplicationVersionRequest)
         {
             IRequest<UpdateApplicationVersionRequest> request = new DefaultRequest<UpdateApplicationVersionRequest>(updateApplicationVersionRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "UpdateApplicationVersion");
             request.Parameters.Add("Version", "2010-12-01");
-            if (updateApplicationVersionRequest != null && updateApplicationVersionRequest.IsSetApplicationName()) 
+            if (updateApplicationVersionRequest != null && updateApplicationVersionRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(updateApplicationVersionRequest.ApplicationName));
             }
-            if (updateApplicationVersionRequest != null && updateApplicationVersionRequest.IsSetVersionLabel()) 
+            if (updateApplicationVersionRequest != null && updateApplicationVersionRequest.IsSetVersionLabel())
             {
                 request.Parameters.Add("VersionLabel", StringUtils.FromString(updateApplicationVersionRequest.VersionLabel));
             }
-            if (updateApplicationVersionRequest != null && updateApplicationVersionRequest.IsSetDescription()) 
+            if (updateApplicationVersionRequest != null && updateApplicationVersionRequest.IsSetDescription())
             {
                 request.Parameters.Add("Description", StringUtils.FromString(updateApplicationVersionRequest.Description));
             }
-
 
             return request;
         }

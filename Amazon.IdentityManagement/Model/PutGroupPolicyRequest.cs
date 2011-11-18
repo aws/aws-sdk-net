@@ -25,16 +25,11 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutGroupPolicy operation.
-    /// <para>Adds (or updates) a policy document associated with the
-    /// specified group. For information about policies, refer to Overview of
-    /// Policies in <i>Using AWS Identity and Access Management</i> .</para>
-    /// <para>For information about limits on the number of policies you can
-    /// associate with a group, see Limitations on IAM Entities in <i>Using
-    /// AWS Identity and Access Management</i> .</para>
-    /// <para><b>NOTE:</b>Because policy documents can be large, you should
-    /// use POST rather than GET when calling PutGroupPolicy. For more
-    /// information, see Making Query Requests in Using AWS Identity and
-    /// Access Management.</para>
+    /// <para>Adds (or updates) a policy document associated with the specified group. For information about policies, refer to Overview of Policies
+    /// in <i>Using AWS Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate
+    /// with a group, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy
+    /// documents can be large, you should use POST rather than GET when calling PutGroupPolicy. For more information, see Making Query Requests in
+    /// Using AWS Identity and Access Management.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.PutGroupPolicy"/>
     public class PutGroupPolicyRequest : AmazonWebServiceRequest

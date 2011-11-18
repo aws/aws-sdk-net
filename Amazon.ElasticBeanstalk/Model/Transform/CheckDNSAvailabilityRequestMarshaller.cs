@@ -28,19 +28,17 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Check D N S Availability Request Marshaller
     /// </summary>       
-    public class CheckDNSAvailabilityRequestMarshaller : IMarshaller<IRequest<CheckDNSAvailabilityRequest>, CheckDNSAvailabilityRequest> 
+    public class CheckDNSAvailabilityRequestMarshaller : IMarshaller<IRequest<CheckDNSAvailabilityRequest>, CheckDNSAvailabilityRequest>
     {
-
-        public IRequest<CheckDNSAvailabilityRequest> Marshall(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest) 
+        public IRequest<CheckDNSAvailabilityRequest> Marshall(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest)
         {
             IRequest<CheckDNSAvailabilityRequest> request = new DefaultRequest<CheckDNSAvailabilityRequest>(checkDNSAvailabilityRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "CheckDNSAvailability");
             request.Parameters.Add("Version", "2010-12-01");
-            if (checkDNSAvailabilityRequest != null && checkDNSAvailabilityRequest.IsSetCNAMEPrefix()) 
+            if (checkDNSAvailabilityRequest != null && checkDNSAvailabilityRequest.IsSetCNAMEPrefix())
             {
                 request.Parameters.Add("CNAMEPrefix", StringUtils.FromString(checkDNSAvailabilityRequest.CNAMEPrefix));
             }
-
 
             return request;
         }

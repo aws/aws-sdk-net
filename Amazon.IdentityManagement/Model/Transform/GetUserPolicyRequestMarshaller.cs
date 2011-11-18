@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Get User Policy Request Marshaller
     /// </summary>       
-    public class GetUserPolicyRequestMarshaller : IMarshaller<IRequest<GetUserPolicyRequest>, GetUserPolicyRequest> 
+    public class GetUserPolicyRequestMarshaller : IMarshaller<IRequest<GetUserPolicyRequest>, GetUserPolicyRequest>
     {
-
-        public IRequest<GetUserPolicyRequest> Marshall(GetUserPolicyRequest getUserPolicyRequest) 
+        public IRequest<GetUserPolicyRequest> Marshall(GetUserPolicyRequest getUserPolicyRequest)
         {
             IRequest<GetUserPolicyRequest> request = new DefaultRequest<GetUserPolicyRequest>(getUserPolicyRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "GetUserPolicy");
             request.Parameters.Add("Version", "2010-05-08");
-            if (getUserPolicyRequest != null && getUserPolicyRequest.IsSetUserName()) 
+            if (getUserPolicyRequest != null && getUserPolicyRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(getUserPolicyRequest.UserName));
             }
-            if (getUserPolicyRequest != null && getUserPolicyRequest.IsSetPolicyName()) 
+            if (getUserPolicyRequest != null && getUserPolicyRequest.IsSetPolicyName())
             {
                 request.Parameters.Add("PolicyName", StringUtils.FromString(getUserPolicyRequest.PolicyName));
             }
-
 
             return request;
         }

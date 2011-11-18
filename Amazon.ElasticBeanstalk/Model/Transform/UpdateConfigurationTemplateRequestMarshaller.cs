@@ -28,42 +28,41 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Update Configuration Template Request Marshaller
     /// </summary>       
-    public class UpdateConfigurationTemplateRequestMarshaller : IMarshaller<IRequest<UpdateConfigurationTemplateRequest>, UpdateConfigurationTemplateRequest> 
+    public class UpdateConfigurationTemplateRequestMarshaller : IMarshaller<IRequest<UpdateConfigurationTemplateRequest>, UpdateConfigurationTemplateRequest>
     {
-
-        public IRequest<UpdateConfigurationTemplateRequest> Marshall(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) 
+        public IRequest<UpdateConfigurationTemplateRequest> Marshall(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest)
         {
             IRequest<UpdateConfigurationTemplateRequest> request = new DefaultRequest<UpdateConfigurationTemplateRequest>(updateConfigurationTemplateRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "UpdateConfigurationTemplate");
             request.Parameters.Add("Version", "2010-12-01");
-            if (updateConfigurationTemplateRequest != null && updateConfigurationTemplateRequest.IsSetApplicationName()) 
+            if (updateConfigurationTemplateRequest != null && updateConfigurationTemplateRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(updateConfigurationTemplateRequest.ApplicationName));
             }
-            if (updateConfigurationTemplateRequest != null && updateConfigurationTemplateRequest.IsSetTemplateName()) 
+            if (updateConfigurationTemplateRequest != null && updateConfigurationTemplateRequest.IsSetTemplateName())
             {
                 request.Parameters.Add("TemplateName", StringUtils.FromString(updateConfigurationTemplateRequest.TemplateName));
             }
-            if (updateConfigurationTemplateRequest != null && updateConfigurationTemplateRequest.IsSetDescription()) 
+            if (updateConfigurationTemplateRequest != null && updateConfigurationTemplateRequest.IsSetDescription())
             {
                 request.Parameters.Add("Description", StringUtils.FromString(updateConfigurationTemplateRequest.Description));
             }
 
-            if (updateConfigurationTemplateRequest != null) 
+            if (updateConfigurationTemplateRequest != null)
             {
                 List<ConfigurationOptionSetting> optionSettingsList = updateConfigurationTemplateRequest.OptionSettings;
                 int optionSettingsListIndex = 1;
-                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList) 
-                { 
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace()) 
+                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList)
+                {
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.FromString(optionSettingsListValue.Namespace));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName()) 
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.FromString(optionSettingsListValue.OptionName));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue()) 
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.FromString(optionSettingsListValue.Value));
                     }
@@ -72,17 +71,17 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                 }
             }
 
-            if (updateConfigurationTemplateRequest != null) 
+            if (updateConfigurationTemplateRequest != null)
             {
                 List<OptionSpecification> optionsToRemoveList = updateConfigurationTemplateRequest.OptionsToRemove;
                 int optionsToRemoveListIndex = 1;
-                foreach (OptionSpecification optionsToRemoveListValue in optionsToRemoveList) 
-                { 
-                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetNamespace()) 
+                foreach (OptionSpecification optionsToRemoveListValue in optionsToRemoveList)
+                {
+                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetNamespace())
                     {
                         request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace", StringUtils.FromString(optionsToRemoveListValue.Namespace));
                     }
-                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetOptionName()) 
+                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetOptionName())
                     {
                         request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName", StringUtils.FromString(optionsToRemoveListValue.OptionName));
                     }
@@ -90,7 +89,6 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                     optionsToRemoveListIndex++;
                 }
             }
-
 
             return request;
         }

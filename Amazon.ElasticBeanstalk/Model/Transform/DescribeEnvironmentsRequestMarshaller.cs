@@ -28,53 +28,51 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Describe Environments Request Marshaller
     /// </summary>       
-    public class DescribeEnvironmentsRequestMarshaller : IMarshaller<IRequest<DescribeEnvironmentsRequest>, DescribeEnvironmentsRequest> 
+    public class DescribeEnvironmentsRequestMarshaller : IMarshaller<IRequest<DescribeEnvironmentsRequest>, DescribeEnvironmentsRequest>
     {
-
-        public IRequest<DescribeEnvironmentsRequest> Marshall(DescribeEnvironmentsRequest describeEnvironmentsRequest) 
+        public IRequest<DescribeEnvironmentsRequest> Marshall(DescribeEnvironmentsRequest describeEnvironmentsRequest)
         {
             IRequest<DescribeEnvironmentsRequest> request = new DefaultRequest<DescribeEnvironmentsRequest>(describeEnvironmentsRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DescribeEnvironments");
             request.Parameters.Add("Version", "2010-12-01");
-            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetApplicationName()) 
+            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(describeEnvironmentsRequest.ApplicationName));
             }
-            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetVersionLabel()) 
+            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetVersionLabel())
             {
                 request.Parameters.Add("VersionLabel", StringUtils.FromString(describeEnvironmentsRequest.VersionLabel));
             }
-            if (describeEnvironmentsRequest != null) 
+            if (describeEnvironmentsRequest != null)
             {
                 List<string> environmentIdsList = describeEnvironmentsRequest.EnvironmentIds;
 
                 int environmentIdsListIndex = 1;
-                foreach (string environmentIdsListValue in environmentIdsList) 
+                foreach (string environmentIdsListValue in environmentIdsList)
                 { 
                     request.Parameters.Add("EnvironmentIds.member." + environmentIdsListIndex, StringUtils.FromString(environmentIdsListValue));
                     environmentIdsListIndex++;
                 }
             }
-            if (describeEnvironmentsRequest != null) 
+            if (describeEnvironmentsRequest != null)
             {
                 List<string> environmentNamesList = describeEnvironmentsRequest.EnvironmentNames;
 
                 int environmentNamesListIndex = 1;
-                foreach (string environmentNamesListValue in environmentNamesList) 
+                foreach (string environmentNamesListValue in environmentNamesList)
                 { 
                     request.Parameters.Add("EnvironmentNames.member." + environmentNamesListIndex, StringUtils.FromString(environmentNamesListValue));
                     environmentNamesListIndex++;
                 }
             }
-            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetIncludeDeleted()) 
+            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetIncludeDeleted())
             {
                 request.Parameters.Add("IncludeDeleted", StringUtils.FromBool(describeEnvironmentsRequest.IncludeDeleted));
             }
-            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetIncludedDeletedBackTo()) 
+            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetIncludedDeletedBackTo())
             {
                 request.Parameters.Add("IncludedDeletedBackTo", StringUtils.FromDateTime(describeEnvironmentsRequest.IncludedDeletedBackTo));
             }
-
 
             return request;
         }

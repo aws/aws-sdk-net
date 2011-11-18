@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Upload Signing Certificate Request Marshaller
     /// </summary>       
-    public class UploadSigningCertificateRequestMarshaller : IMarshaller<IRequest<UploadSigningCertificateRequest>, UploadSigningCertificateRequest> 
+    public class UploadSigningCertificateRequestMarshaller : IMarshaller<IRequest<UploadSigningCertificateRequest>, UploadSigningCertificateRequest>
     {
-
-        public IRequest<UploadSigningCertificateRequest> Marshall(UploadSigningCertificateRequest uploadSigningCertificateRequest) 
+        public IRequest<UploadSigningCertificateRequest> Marshall(UploadSigningCertificateRequest uploadSigningCertificateRequest)
         {
             IRequest<UploadSigningCertificateRequest> request = new DefaultRequest<UploadSigningCertificateRequest>(uploadSigningCertificateRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "UploadSigningCertificate");
             request.Parameters.Add("Version", "2010-05-08");
-            if (uploadSigningCertificateRequest != null && uploadSigningCertificateRequest.IsSetUserName()) 
+            if (uploadSigningCertificateRequest != null && uploadSigningCertificateRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(uploadSigningCertificateRequest.UserName));
             }
-            if (uploadSigningCertificateRequest != null && uploadSigningCertificateRequest.IsSetCertificateBody()) 
+            if (uploadSigningCertificateRequest != null && uploadSigningCertificateRequest.IsSetCertificateBody())
             {
                 request.Parameters.Add("CertificateBody", StringUtils.FromString(uploadSigningCertificateRequest.CertificateBody));
             }
-
 
             return request;
         }

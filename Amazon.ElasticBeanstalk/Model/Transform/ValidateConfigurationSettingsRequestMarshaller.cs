@@ -28,42 +28,41 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Validate Configuration Settings Request Marshaller
     /// </summary>       
-    public class ValidateConfigurationSettingsRequestMarshaller : IMarshaller<IRequest<ValidateConfigurationSettingsRequest>, ValidateConfigurationSettingsRequest> 
+    public class ValidateConfigurationSettingsRequestMarshaller : IMarshaller<IRequest<ValidateConfigurationSettingsRequest>, ValidateConfigurationSettingsRequest>
     {
-
-        public IRequest<ValidateConfigurationSettingsRequest> Marshall(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) 
+        public IRequest<ValidateConfigurationSettingsRequest> Marshall(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest)
         {
             IRequest<ValidateConfigurationSettingsRequest> request = new DefaultRequest<ValidateConfigurationSettingsRequest>(validateConfigurationSettingsRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "ValidateConfigurationSettings");
             request.Parameters.Add("Version", "2010-12-01");
-            if (validateConfigurationSettingsRequest != null && validateConfigurationSettingsRequest.IsSetApplicationName()) 
+            if (validateConfigurationSettingsRequest != null && validateConfigurationSettingsRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(validateConfigurationSettingsRequest.ApplicationName));
             }
-            if (validateConfigurationSettingsRequest != null && validateConfigurationSettingsRequest.IsSetTemplateName()) 
+            if (validateConfigurationSettingsRequest != null && validateConfigurationSettingsRequest.IsSetTemplateName())
             {
                 request.Parameters.Add("TemplateName", StringUtils.FromString(validateConfigurationSettingsRequest.TemplateName));
             }
-            if (validateConfigurationSettingsRequest != null && validateConfigurationSettingsRequest.IsSetEnvironmentName()) 
+            if (validateConfigurationSettingsRequest != null && validateConfigurationSettingsRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(validateConfigurationSettingsRequest.EnvironmentName));
             }
 
-            if (validateConfigurationSettingsRequest != null) 
+            if (validateConfigurationSettingsRequest != null)
             {
                 List<ConfigurationOptionSetting> optionSettingsList = validateConfigurationSettingsRequest.OptionSettings;
                 int optionSettingsListIndex = 1;
-                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList) 
-                { 
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace()) 
+                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList)
+                {
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.FromString(optionSettingsListValue.Namespace));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName()) 
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.FromString(optionSettingsListValue.OptionName));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue()) 
+                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue())
                     {
                         request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.FromString(optionSettingsListValue.Value));
                     }
@@ -71,7 +70,6 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
                     optionSettingsListIndex++;
                 }
             }
-
 
             return request;
         }

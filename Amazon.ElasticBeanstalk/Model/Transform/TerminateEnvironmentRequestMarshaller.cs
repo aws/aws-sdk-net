@@ -28,27 +28,25 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Terminate Environment Request Marshaller
     /// </summary>       
-    public class TerminateEnvironmentRequestMarshaller : IMarshaller<IRequest<TerminateEnvironmentRequest>, TerminateEnvironmentRequest> 
+    public class TerminateEnvironmentRequestMarshaller : IMarshaller<IRequest<TerminateEnvironmentRequest>, TerminateEnvironmentRequest>
     {
-
-        public IRequest<TerminateEnvironmentRequest> Marshall(TerminateEnvironmentRequest terminateEnvironmentRequest) 
+        public IRequest<TerminateEnvironmentRequest> Marshall(TerminateEnvironmentRequest terminateEnvironmentRequest)
         {
             IRequest<TerminateEnvironmentRequest> request = new DefaultRequest<TerminateEnvironmentRequest>(terminateEnvironmentRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "TerminateEnvironment");
             request.Parameters.Add("Version", "2010-12-01");
-            if (terminateEnvironmentRequest != null && terminateEnvironmentRequest.IsSetEnvironmentId()) 
+            if (terminateEnvironmentRequest != null && terminateEnvironmentRequest.IsSetEnvironmentId())
             {
                 request.Parameters.Add("EnvironmentId", StringUtils.FromString(terminateEnvironmentRequest.EnvironmentId));
             }
-            if (terminateEnvironmentRequest != null && terminateEnvironmentRequest.IsSetEnvironmentName()) 
+            if (terminateEnvironmentRequest != null && terminateEnvironmentRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(terminateEnvironmentRequest.EnvironmentName));
             }
-            if (terminateEnvironmentRequest != null && terminateEnvironmentRequest.IsSetTerminateResources()) 
+            if (terminateEnvironmentRequest != null && terminateEnvironmentRequest.IsSetTerminateResources())
             {
                 request.Parameters.Add("TerminateResources", StringUtils.FromBool(terminateEnvironmentRequest.TerminateResources));
             }
-
 
             return request;
         }

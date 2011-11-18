@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Delete User Policy Request Marshaller
     /// </summary>       
-    public class DeleteUserPolicyRequestMarshaller : IMarshaller<IRequest<DeleteUserPolicyRequest>, DeleteUserPolicyRequest> 
+    public class DeleteUserPolicyRequestMarshaller : IMarshaller<IRequest<DeleteUserPolicyRequest>, DeleteUserPolicyRequest>
     {
-
-        public IRequest<DeleteUserPolicyRequest> Marshall(DeleteUserPolicyRequest deleteUserPolicyRequest) 
+        public IRequest<DeleteUserPolicyRequest> Marshall(DeleteUserPolicyRequest deleteUserPolicyRequest)
         {
             IRequest<DeleteUserPolicyRequest> request = new DefaultRequest<DeleteUserPolicyRequest>(deleteUserPolicyRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "DeleteUserPolicy");
             request.Parameters.Add("Version", "2010-05-08");
-            if (deleteUserPolicyRequest != null && deleteUserPolicyRequest.IsSetUserName()) 
+            if (deleteUserPolicyRequest != null && deleteUserPolicyRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(deleteUserPolicyRequest.UserName));
             }
-            if (deleteUserPolicyRequest != null && deleteUserPolicyRequest.IsSetPolicyName()) 
+            if (deleteUserPolicyRequest != null && deleteUserPolicyRequest.IsSetPolicyName())
             {
                 request.Parameters.Add("PolicyName", StringUtils.FromString(deleteUserPolicyRequest.PolicyName));
             }
-
 
             return request;
         }

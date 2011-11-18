@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Update User Request Marshaller
     /// </summary>       
-    public class UpdateUserRequestMarshaller : IMarshaller<IRequest<UpdateUserRequest>, UpdateUserRequest> 
+    public class UpdateUserRequestMarshaller : IMarshaller<IRequest<UpdateUserRequest>, UpdateUserRequest>
     {
-
-        public IRequest<UpdateUserRequest> Marshall(UpdateUserRequest updateUserRequest) 
+        public IRequest<UpdateUserRequest> Marshall(UpdateUserRequest updateUserRequest)
         {
             IRequest<UpdateUserRequest> request = new DefaultRequest<UpdateUserRequest>(updateUserRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "UpdateUser");
             request.Parameters.Add("Version", "2010-05-08");
-            if (updateUserRequest != null && updateUserRequest.IsSetUserName()) 
+            if (updateUserRequest != null && updateUserRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(updateUserRequest.UserName));
             }
-            if (updateUserRequest != null && updateUserRequest.IsSetNewPath()) 
+            if (updateUserRequest != null && updateUserRequest.IsSetNewPath())
             {
                 request.Parameters.Add("NewPath", StringUtils.FromString(updateUserRequest.NewPath));
             }
-            if (updateUserRequest != null && updateUserRequest.IsSetNewUserName()) 
+            if (updateUserRequest != null && updateUserRequest.IsSetNewUserName())
             {
                 request.Parameters.Add("NewUserName", StringUtils.FromString(updateUserRequest.NewUserName));
             }
-
 
             return request;
         }

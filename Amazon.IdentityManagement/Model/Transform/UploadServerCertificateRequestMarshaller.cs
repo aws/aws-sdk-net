@@ -28,35 +28,33 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Upload Server Certificate Request Marshaller
     /// </summary>       
-    public class UploadServerCertificateRequestMarshaller : IMarshaller<IRequest<UploadServerCertificateRequest>, UploadServerCertificateRequest> 
+    public class UploadServerCertificateRequestMarshaller : IMarshaller<IRequest<UploadServerCertificateRequest>, UploadServerCertificateRequest>
     {
-
-        public IRequest<UploadServerCertificateRequest> Marshall(UploadServerCertificateRequest uploadServerCertificateRequest) 
+        public IRequest<UploadServerCertificateRequest> Marshall(UploadServerCertificateRequest uploadServerCertificateRequest)
         {
             IRequest<UploadServerCertificateRequest> request = new DefaultRequest<UploadServerCertificateRequest>(uploadServerCertificateRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "UploadServerCertificate");
             request.Parameters.Add("Version", "2010-05-08");
-            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetPath()) 
+            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetPath())
             {
                 request.Parameters.Add("Path", StringUtils.FromString(uploadServerCertificateRequest.Path));
             }
-            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetServerCertificateName()) 
+            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetServerCertificateName())
             {
                 request.Parameters.Add("ServerCertificateName", StringUtils.FromString(uploadServerCertificateRequest.ServerCertificateName));
             }
-            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetCertificateBody()) 
+            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetCertificateBody())
             {
                 request.Parameters.Add("CertificateBody", StringUtils.FromString(uploadServerCertificateRequest.CertificateBody));
             }
-            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetPrivateKey()) 
+            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetPrivateKey())
             {
                 request.Parameters.Add("PrivateKey", StringUtils.FromString(uploadServerCertificateRequest.PrivateKey));
             }
-            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetCertificateChain()) 
+            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetCertificateChain())
             {
                 request.Parameters.Add("CertificateChain", StringUtils.FromString(uploadServerCertificateRequest.CertificateChain));
             }
-
 
             return request;
         }

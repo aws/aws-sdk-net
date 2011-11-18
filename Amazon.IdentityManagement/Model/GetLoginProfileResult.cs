@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the
-    /// GetLoginProfile action.</para>
+    /// <para>Contains the result of a successful invocation of the GetLoginProfile action.</para>
     /// </summary>
     public class GetLoginProfileResult  
     {
@@ -30,7 +29,7 @@ namespace Amazon.IdentityManagement.Model
         private LoginProfile loginProfile;
 
         /// <summary>
-        /// Login profile for the User name.
+        /// Login profile for the user name.
         ///  
         /// </summary>
         public LoginProfile LoginProfile

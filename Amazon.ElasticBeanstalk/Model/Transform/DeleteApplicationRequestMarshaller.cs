@@ -28,19 +28,17 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Delete Application Request Marshaller
     /// </summary>       
-    public class DeleteApplicationRequestMarshaller : IMarshaller<IRequest<DeleteApplicationRequest>, DeleteApplicationRequest> 
+    public class DeleteApplicationRequestMarshaller : IMarshaller<IRequest<DeleteApplicationRequest>, DeleteApplicationRequest>
     {
-
-        public IRequest<DeleteApplicationRequest> Marshall(DeleteApplicationRequest deleteApplicationRequest) 
+        public IRequest<DeleteApplicationRequest> Marshall(DeleteApplicationRequest deleteApplicationRequest)
         {
             IRequest<DeleteApplicationRequest> request = new DefaultRequest<DeleteApplicationRequest>(deleteApplicationRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DeleteApplication");
             request.Parameters.Add("Version", "2010-12-01");
-            if (deleteApplicationRequest != null && deleteApplicationRequest.IsSetApplicationName()) 
+            if (deleteApplicationRequest != null && deleteApplicationRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(deleteApplicationRequest.ApplicationName));
             }
-
 
             return request;
         }

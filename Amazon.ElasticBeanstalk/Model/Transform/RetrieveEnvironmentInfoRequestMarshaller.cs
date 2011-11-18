@@ -28,27 +28,25 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Retrieve Environment Info Request Marshaller
     /// </summary>       
-    public class RetrieveEnvironmentInfoRequestMarshaller : IMarshaller<IRequest<RetrieveEnvironmentInfoRequest>, RetrieveEnvironmentInfoRequest> 
+    public class RetrieveEnvironmentInfoRequestMarshaller : IMarshaller<IRequest<RetrieveEnvironmentInfoRequest>, RetrieveEnvironmentInfoRequest>
     {
-
-        public IRequest<RetrieveEnvironmentInfoRequest> Marshall(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest) 
+        public IRequest<RetrieveEnvironmentInfoRequest> Marshall(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest)
         {
             IRequest<RetrieveEnvironmentInfoRequest> request = new DefaultRequest<RetrieveEnvironmentInfoRequest>(retrieveEnvironmentInfoRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "RetrieveEnvironmentInfo");
             request.Parameters.Add("Version", "2010-12-01");
-            if (retrieveEnvironmentInfoRequest != null && retrieveEnvironmentInfoRequest.IsSetEnvironmentId()) 
+            if (retrieveEnvironmentInfoRequest != null && retrieveEnvironmentInfoRequest.IsSetEnvironmentId())
             {
                 request.Parameters.Add("EnvironmentId", StringUtils.FromString(retrieveEnvironmentInfoRequest.EnvironmentId));
             }
-            if (retrieveEnvironmentInfoRequest != null && retrieveEnvironmentInfoRequest.IsSetEnvironmentName()) 
+            if (retrieveEnvironmentInfoRequest != null && retrieveEnvironmentInfoRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(retrieveEnvironmentInfoRequest.EnvironmentName));
             }
-            if (retrieveEnvironmentInfoRequest != null && retrieveEnvironmentInfoRequest.IsSetInfoType()) 
+            if (retrieveEnvironmentInfoRequest != null && retrieveEnvironmentInfoRequest.IsSetInfoType())
             {
                 request.Parameters.Add("InfoType", StringUtils.FromString(retrieveEnvironmentInfoRequest.InfoType));
             }
-
 
             return request;
         }

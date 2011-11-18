@@ -25,8 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroupPolicy operation.
-    /// <para>Deletes the specified policy that is associated with the
-    /// specified group.</para>
+    /// <para>Deletes the specified policy that is associated with the specified group.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteGroupPolicy"/>
     public class DeleteGroupPolicyRequest : AmazonWebServiceRequest

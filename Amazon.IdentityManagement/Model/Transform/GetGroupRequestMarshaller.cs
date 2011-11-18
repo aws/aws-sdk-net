@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Get Group Request Marshaller
     /// </summary>       
-    public class GetGroupRequestMarshaller : IMarshaller<IRequest<GetGroupRequest>, GetGroupRequest> 
+    public class GetGroupRequestMarshaller : IMarshaller<IRequest<GetGroupRequest>, GetGroupRequest>
     {
-
-        public IRequest<GetGroupRequest> Marshall(GetGroupRequest getGroupRequest) 
+        public IRequest<GetGroupRequest> Marshall(GetGroupRequest getGroupRequest)
         {
             IRequest<GetGroupRequest> request = new DefaultRequest<GetGroupRequest>(getGroupRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "GetGroup");
             request.Parameters.Add("Version", "2010-05-08");
-            if (getGroupRequest != null && getGroupRequest.IsSetGroupName()) 
+            if (getGroupRequest != null && getGroupRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(getGroupRequest.GroupName));
             }
-            if (getGroupRequest != null && getGroupRequest.IsSetMarker()) 
+            if (getGroupRequest != null && getGroupRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(getGroupRequest.Marker));
             }
-            if (getGroupRequest != null && getGroupRequest.IsSetMaxItems()) 
+            if (getGroupRequest != null && getGroupRequest.IsSetMaxItems())
             {
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(getGroupRequest.MaxItems));
             }
-
 
             return request;
         }

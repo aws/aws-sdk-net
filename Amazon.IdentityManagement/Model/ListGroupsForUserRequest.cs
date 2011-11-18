@@ -25,8 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGroupsForUser operation.
-    /// <para>Lists the groups the specified User belongs to.</para> <para>You
-    /// can paginate the results using the <c>MaxItems</c> and <c>Marker</c>
+    /// <para>Lists the groups the specified user belongs to.</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c>
     /// parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListGroupsForUser"/>
@@ -37,14 +36,14 @@ namespace Amazon.IdentityManagement.Model
         private int? maxItems;
 
         /// <summary>
-        /// The name of the User to list groups for.
+        /// The name of the user to list groups for.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

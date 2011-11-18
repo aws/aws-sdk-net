@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Get Group Policy Request Marshaller
     /// </summary>       
-    public class GetGroupPolicyRequestMarshaller : IMarshaller<IRequest<GetGroupPolicyRequest>, GetGroupPolicyRequest> 
+    public class GetGroupPolicyRequestMarshaller : IMarshaller<IRequest<GetGroupPolicyRequest>, GetGroupPolicyRequest>
     {
-
-        public IRequest<GetGroupPolicyRequest> Marshall(GetGroupPolicyRequest getGroupPolicyRequest) 
+        public IRequest<GetGroupPolicyRequest> Marshall(GetGroupPolicyRequest getGroupPolicyRequest)
         {
             IRequest<GetGroupPolicyRequest> request = new DefaultRequest<GetGroupPolicyRequest>(getGroupPolicyRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "GetGroupPolicy");
             request.Parameters.Add("Version", "2010-05-08");
-            if (getGroupPolicyRequest != null && getGroupPolicyRequest.IsSetGroupName()) 
+            if (getGroupPolicyRequest != null && getGroupPolicyRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(getGroupPolicyRequest.GroupName));
             }
-            if (getGroupPolicyRequest != null && getGroupPolicyRequest.IsSetPolicyName()) 
+            if (getGroupPolicyRequest != null && getGroupPolicyRequest.IsSetPolicyName())
             {
                 request.Parameters.Add("PolicyName", StringUtils.FromString(getGroupPolicyRequest.PolicyName));
             }
-
 
             return request;
         }

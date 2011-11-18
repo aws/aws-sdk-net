@@ -44,7 +44,8 @@ namespace Amazon.ElasticBeanstalk.Model
 
         /// <summary>
         /// The ID of the environment to update. If no environment with this ID exists, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c>
-        /// error.
+        /// error. Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns
+        /// <c>MissingRequiredParameter</c> error.
         ///  
         /// </summary>
         public string EnvironmentId
@@ -73,7 +74,8 @@ namespace Amazon.ElasticBeanstalk.Model
 
         /// <summary>
         /// The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an
-        /// <c>InvalidParameterValue</c> error.
+        /// <c>InvalidParameterValue</c> error. Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS
+        /// Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>

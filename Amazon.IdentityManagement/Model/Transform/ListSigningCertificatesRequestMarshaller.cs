@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// List Signing Certificates Request Marshaller
     /// </summary>       
-    public class ListSigningCertificatesRequestMarshaller : IMarshaller<IRequest<ListSigningCertificatesRequest>, ListSigningCertificatesRequest> 
+    public class ListSigningCertificatesRequestMarshaller : IMarshaller<IRequest<ListSigningCertificatesRequest>, ListSigningCertificatesRequest>
     {
-
-        public IRequest<ListSigningCertificatesRequest> Marshall(ListSigningCertificatesRequest listSigningCertificatesRequest) 
+        public IRequest<ListSigningCertificatesRequest> Marshall(ListSigningCertificatesRequest listSigningCertificatesRequest)
         {
             IRequest<ListSigningCertificatesRequest> request = new DefaultRequest<ListSigningCertificatesRequest>(listSigningCertificatesRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "ListSigningCertificates");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listSigningCertificatesRequest != null && listSigningCertificatesRequest.IsSetUserName()) 
+            if (listSigningCertificatesRequest != null && listSigningCertificatesRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(listSigningCertificatesRequest.UserName));
             }
-            if (listSigningCertificatesRequest != null && listSigningCertificatesRequest.IsSetMarker()) 
+            if (listSigningCertificatesRequest != null && listSigningCertificatesRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(listSigningCertificatesRequest.Marker));
             }
-            if (listSigningCertificatesRequest != null && listSigningCertificatesRequest.IsSetMaxItems()) 
+            if (listSigningCertificatesRequest != null && listSigningCertificatesRequest.IsSetMaxItems())
             {
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(listSigningCertificatesRequest.MaxItems));
             }
-
 
             return request;
         }

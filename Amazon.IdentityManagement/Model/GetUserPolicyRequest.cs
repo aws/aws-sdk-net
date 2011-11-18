@@ -25,10 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUserPolicy operation.
-    /// <para>Retrieves the specified policy document for the specified User.
-    /// The returned policy is URL-encoded according to RFC 3986. For more
-    /// information about RFC 3986, go to
-    /// http://www.faqs.org/rfcs/rfc3986.html.</para>
+    /// <para>Retrieves the specified policy document for the specified user. The returned policy is URL-encoded according to RFC 3986. For more
+    /// information about RFC 3986, go to http://www.faqs.org/rfcs/rfc3986.html.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetUserPolicy"/>
     public class GetUserPolicyRequest : AmazonWebServiceRequest
@@ -37,14 +35,14 @@ namespace Amazon.IdentityManagement.Model
         private string policyName;
 
         /// <summary>
-        /// Name of the User who the policy is associated with.
+        /// Name of the user who the policy is associated with.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Add User To Group Request Marshaller
     /// </summary>       
-    public class AddUserToGroupRequestMarshaller : IMarshaller<IRequest<AddUserToGroupRequest>, AddUserToGroupRequest> 
+    public class AddUserToGroupRequestMarshaller : IMarshaller<IRequest<AddUserToGroupRequest>, AddUserToGroupRequest>
     {
-
-        public IRequest<AddUserToGroupRequest> Marshall(AddUserToGroupRequest addUserToGroupRequest) 
+        public IRequest<AddUserToGroupRequest> Marshall(AddUserToGroupRequest addUserToGroupRequest)
         {
             IRequest<AddUserToGroupRequest> request = new DefaultRequest<AddUserToGroupRequest>(addUserToGroupRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "AddUserToGroup");
             request.Parameters.Add("Version", "2010-05-08");
-            if (addUserToGroupRequest != null && addUserToGroupRequest.IsSetGroupName()) 
+            if (addUserToGroupRequest != null && addUserToGroupRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(addUserToGroupRequest.GroupName));
             }
-            if (addUserToGroupRequest != null && addUserToGroupRequest.IsSetUserName()) 
+            if (addUserToGroupRequest != null && addUserToGroupRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(addUserToGroupRequest.UserName));
             }
-
 
             return request;
         }

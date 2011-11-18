@@ -28,26 +28,24 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Describe Applications Request Marshaller
     /// </summary>       
-    public class DescribeApplicationsRequestMarshaller : IMarshaller<IRequest<DescribeApplicationsRequest>, DescribeApplicationsRequest> 
+    public class DescribeApplicationsRequestMarshaller : IMarshaller<IRequest<DescribeApplicationsRequest>, DescribeApplicationsRequest>
     {
-
-        public IRequest<DescribeApplicationsRequest> Marshall(DescribeApplicationsRequest describeApplicationsRequest) 
+        public IRequest<DescribeApplicationsRequest> Marshall(DescribeApplicationsRequest describeApplicationsRequest)
         {
             IRequest<DescribeApplicationsRequest> request = new DefaultRequest<DescribeApplicationsRequest>(describeApplicationsRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DescribeApplications");
             request.Parameters.Add("Version", "2010-12-01");
-            if (describeApplicationsRequest != null) 
+            if (describeApplicationsRequest != null)
             {
                 List<string> applicationNamesList = describeApplicationsRequest.ApplicationNames;
 
                 int applicationNamesListIndex = 1;
-                foreach (string applicationNamesListValue in applicationNamesList) 
+                foreach (string applicationNamesListValue in applicationNamesList)
                 { 
                     request.Parameters.Add("ApplicationNames.member." + applicationNamesListIndex, StringUtils.FromString(applicationNamesListValue));
                     applicationNamesListIndex++;
                 }
             }
-
 
             return request;
         }

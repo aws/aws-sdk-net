@@ -28,19 +28,17 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Delete Account Alias Request Marshaller
     /// </summary>       
-    public class DeleteAccountAliasRequestMarshaller : IMarshaller<IRequest<DeleteAccountAliasRequest>, DeleteAccountAliasRequest> 
+    public class DeleteAccountAliasRequestMarshaller : IMarshaller<IRequest<DeleteAccountAliasRequest>, DeleteAccountAliasRequest>
     {
-
-        public IRequest<DeleteAccountAliasRequest> Marshall(DeleteAccountAliasRequest deleteAccountAliasRequest) 
+        public IRequest<DeleteAccountAliasRequest> Marshall(DeleteAccountAliasRequest deleteAccountAliasRequest)
         {
             IRequest<DeleteAccountAliasRequest> request = new DefaultRequest<DeleteAccountAliasRequest>(deleteAccountAliasRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "DeleteAccountAlias");
             request.Parameters.Add("Version", "2010-05-08");
-            if (deleteAccountAliasRequest != null && deleteAccountAliasRequest.IsSetAccountAlias()) 
+            if (deleteAccountAliasRequest != null && deleteAccountAliasRequest.IsSetAccountAlias())
             {
                 request.Parameters.Add("AccountAlias", StringUtils.FromString(deleteAccountAliasRequest.AccountAlias));
             }
-
 
             return request;
         }

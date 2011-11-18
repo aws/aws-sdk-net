@@ -25,11 +25,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccountAliases operation.
-    /// <para>Lists the account aliases associated with the account. For
-    /// information about using an AWS Account alias, see Using an Alias for
-    /// Your AWS Account ID in <i>Using AWS Identity and Access Management</i>
-    /// .</para> <para>You can paginate the results using the <c>MaxItems</c>
-    /// and <c>Marker</c> parameters.</para>
+    /// <para>Lists the account aliases associated with the account. For information about using an AWS account alias, see Using an Alias for Your
+    /// AWS Account ID in <i>Using AWS Identity and Access Management</i> .</para> <para>You can paginate the results using the <c>MaxItems</c> and
+    /// <c>Marker</c> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListAccountAliases"/>
     public class ListAccountAliasesRequest : AmazonWebServiceRequest

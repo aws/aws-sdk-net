@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Deactivate M F A Device Request Marshaller
     /// </summary>       
-    public class DeactivateMFADeviceRequestMarshaller : IMarshaller<IRequest<DeactivateMFADeviceRequest>, DeactivateMFADeviceRequest> 
+    public class DeactivateMFADeviceRequestMarshaller : IMarshaller<IRequest<DeactivateMFADeviceRequest>, DeactivateMFADeviceRequest>
     {
-
-        public IRequest<DeactivateMFADeviceRequest> Marshall(DeactivateMFADeviceRequest deactivateMFADeviceRequest) 
+        public IRequest<DeactivateMFADeviceRequest> Marshall(DeactivateMFADeviceRequest deactivateMFADeviceRequest)
         {
             IRequest<DeactivateMFADeviceRequest> request = new DefaultRequest<DeactivateMFADeviceRequest>(deactivateMFADeviceRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "DeactivateMFADevice");
             request.Parameters.Add("Version", "2010-05-08");
-            if (deactivateMFADeviceRequest != null && deactivateMFADeviceRequest.IsSetUserName()) 
+            if (deactivateMFADeviceRequest != null && deactivateMFADeviceRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(deactivateMFADeviceRequest.UserName));
             }
-            if (deactivateMFADeviceRequest != null && deactivateMFADeviceRequest.IsSetSerialNumber()) 
+            if (deactivateMFADeviceRequest != null && deactivateMFADeviceRequest.IsSetSerialNumber())
             {
                 request.Parameters.Add("SerialNumber", StringUtils.FromString(deactivateMFADeviceRequest.SerialNumber));
             }
-
 
             return request;
         }

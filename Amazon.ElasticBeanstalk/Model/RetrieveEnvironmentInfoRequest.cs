@@ -39,7 +39,9 @@ namespace Amazon.ElasticBeanstalk.Model
         private string infoType;
 
         /// <summary>
-        /// The ID of the data's environment. If no such environment is found, returns an <c>InvalidParameterValue</c> error.
+        /// The ID of the data's environment. If no such environment is found, returns an <c>InvalidParameterValue</c> error. Condition: You must
+        /// specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns
+        /// <c>MissingRequiredParameter</c> error.
         ///  
         /// </summary>
         public string EnvironmentId
@@ -67,7 +69,9 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the data's environment. If no such environment is found, returns an <c>InvalidParameterValue</c> error.
+        /// The name of the data's environment. If no such environment is found, returns an <c>InvalidParameterValue</c> error. Condition: You must
+        /// specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns
+        /// <c>MissingRequiredParameter</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>

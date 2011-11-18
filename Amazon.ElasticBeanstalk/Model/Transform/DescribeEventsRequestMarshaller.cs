@@ -28,55 +28,57 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Describe Events Request Marshaller
     /// </summary>       
-    public class DescribeEventsRequestMarshaller : IMarshaller<IRequest<DescribeEventsRequest>, DescribeEventsRequest> 
+    public class DescribeEventsRequestMarshaller : IMarshaller<IRequest<DescribeEventsRequest>, DescribeEventsRequest>
     {
-
-        public IRequest<DescribeEventsRequest> Marshall(DescribeEventsRequest describeEventsRequest) 
+        public IRequest<DescribeEventsRequest> Marshall(DescribeEventsRequest describeEventsRequest)
         {
             IRequest<DescribeEventsRequest> request = new DefaultRequest<DescribeEventsRequest>(describeEventsRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DescribeEvents");
             request.Parameters.Add("Version", "2010-12-01");
-            if (describeEventsRequest != null && describeEventsRequest.IsSetApplicationName()) 
+            if (describeEventsRequest != null && describeEventsRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(describeEventsRequest.ApplicationName));
             }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetVersionLabel()) 
+            if (describeEventsRequest != null && describeEventsRequest.IsSetVersionLabel())
             {
                 request.Parameters.Add("VersionLabel", StringUtils.FromString(describeEventsRequest.VersionLabel));
             }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetTemplateName()) 
+            if (describeEventsRequest != null && describeEventsRequest.IsSetTemplateName())
             {
                 request.Parameters.Add("TemplateName", StringUtils.FromString(describeEventsRequest.TemplateName));
             }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetEnvironmentId()) 
+            if (describeEventsRequest != null && describeEventsRequest.IsSetEnvironmentId())
             {
                 request.Parameters.Add("EnvironmentId", StringUtils.FromString(describeEventsRequest.EnvironmentId));
             }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetEnvironmentName()) 
+            if (describeEventsRequest != null && describeEventsRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(describeEventsRequest.EnvironmentName));
             }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetRequestId()) 
+            if (describeEventsRequest != null && describeEventsRequest.IsSetRequestId())
             {
                 request.Parameters.Add("RequestId", StringUtils.FromString(describeEventsRequest.RequestId));
             }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetSeverity()) 
+            if (describeEventsRequest != null && describeEventsRequest.IsSetSeverity())
             {
                 request.Parameters.Add("Severity", StringUtils.FromString(describeEventsRequest.Severity));
             }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetStartTime()) 
+            if (describeEventsRequest != null && describeEventsRequest.IsSetStartTime())
             {
                 request.Parameters.Add("StartTime", StringUtils.FromDateTime(describeEventsRequest.StartTime));
             }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetEndTime()) 
+            if (describeEventsRequest != null && describeEventsRequest.IsSetEndTime())
             {
                 request.Parameters.Add("EndTime", StringUtils.FromDateTime(describeEventsRequest.EndTime));
             }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetNextToken()) 
+            if (describeEventsRequest != null && describeEventsRequest.IsSetMaxRecords())
+            {
+                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeEventsRequest.MaxRecords));
+            }
+            if (describeEventsRequest != null && describeEventsRequest.IsSetNextToken())
             {
                 request.Parameters.Add("NextToken", StringUtils.FromString(describeEventsRequest.NextToken));
             }
-
 
             return request;
         }

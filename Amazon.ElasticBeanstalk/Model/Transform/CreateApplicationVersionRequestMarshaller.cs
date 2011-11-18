@@ -28,43 +28,41 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Create Application Version Request Marshaller
     /// </summary>       
-    public class CreateApplicationVersionRequestMarshaller : IMarshaller<IRequest<CreateApplicationVersionRequest>, CreateApplicationVersionRequest> 
+    public class CreateApplicationVersionRequestMarshaller : IMarshaller<IRequest<CreateApplicationVersionRequest>, CreateApplicationVersionRequest>
     {
-
-        public IRequest<CreateApplicationVersionRequest> Marshall(CreateApplicationVersionRequest createApplicationVersionRequest) 
+        public IRequest<CreateApplicationVersionRequest> Marshall(CreateApplicationVersionRequest createApplicationVersionRequest)
         {
             IRequest<CreateApplicationVersionRequest> request = new DefaultRequest<CreateApplicationVersionRequest>(createApplicationVersionRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "CreateApplicationVersion");
             request.Parameters.Add("Version", "2010-12-01");
-            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetApplicationName()) 
+            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(createApplicationVersionRequest.ApplicationName));
             }
-            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetVersionLabel()) 
+            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetVersionLabel())
             {
                 request.Parameters.Add("VersionLabel", StringUtils.FromString(createApplicationVersionRequest.VersionLabel));
             }
-            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetDescription()) 
+            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetDescription())
             {
                 request.Parameters.Add("Description", StringUtils.FromString(createApplicationVersionRequest.Description));
             }
-            if (createApplicationVersionRequest != null) 
+            if (createApplicationVersionRequest != null)
             {
                 S3Location sourceBundle = createApplicationVersionRequest.SourceBundle;
-                if (sourceBundle != null && sourceBundle.IsSetS3Bucket()) 
+                if (sourceBundle != null && sourceBundle.IsSetS3Bucket())
                 {
                     request.Parameters.Add("SourceBundle.S3Bucket", StringUtils.FromString(sourceBundle.S3Bucket));
                 }
-                if (sourceBundle != null && sourceBundle.IsSetS3Key()) 
+                if (sourceBundle != null && sourceBundle.IsSetS3Key())
                 {
                     request.Parameters.Add("SourceBundle.S3Key", StringUtils.FromString(sourceBundle.S3Key));
                 }
             }
-            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetAutoCreateApplication()) 
+            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetAutoCreateApplication())
             {
                 request.Parameters.Add("AutoCreateApplication", StringUtils.FromBool(createApplicationVersionRequest.AutoCreateApplication));
             }
-
 
             return request;
         }

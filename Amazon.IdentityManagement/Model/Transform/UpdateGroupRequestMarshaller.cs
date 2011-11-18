@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Update Group Request Marshaller
     /// </summary>       
-    public class UpdateGroupRequestMarshaller : IMarshaller<IRequest<UpdateGroupRequest>, UpdateGroupRequest> 
+    public class UpdateGroupRequestMarshaller : IMarshaller<IRequest<UpdateGroupRequest>, UpdateGroupRequest>
     {
-
-        public IRequest<UpdateGroupRequest> Marshall(UpdateGroupRequest updateGroupRequest) 
+        public IRequest<UpdateGroupRequest> Marshall(UpdateGroupRequest updateGroupRequest)
         {
             IRequest<UpdateGroupRequest> request = new DefaultRequest<UpdateGroupRequest>(updateGroupRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "UpdateGroup");
             request.Parameters.Add("Version", "2010-05-08");
-            if (updateGroupRequest != null && updateGroupRequest.IsSetGroupName()) 
+            if (updateGroupRequest != null && updateGroupRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(updateGroupRequest.GroupName));
             }
-            if (updateGroupRequest != null && updateGroupRequest.IsSetNewPath()) 
+            if (updateGroupRequest != null && updateGroupRequest.IsSetNewPath())
             {
                 request.Parameters.Add("NewPath", StringUtils.FromString(updateGroupRequest.NewPath));
             }
-            if (updateGroupRequest != null && updateGroupRequest.IsSetNewGroupName()) 
+            if (updateGroupRequest != null && updateGroupRequest.IsSetNewGroupName())
             {
                 request.Parameters.Add("NewGroupName", StringUtils.FromString(updateGroupRequest.NewGroupName));
             }
-
 
             return request;
         }

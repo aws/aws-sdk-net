@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the
-    /// GetServerCertificate action.</para>
+    /// <para>Contains the result of a successful invocation of the GetServerCertificate action.</para>
     /// </summary>
     public class GetServerCertificateResult  
     {

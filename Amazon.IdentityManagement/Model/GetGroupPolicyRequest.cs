@@ -25,10 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGroupPolicy operation.
-    /// <para>Retrieves the specified policy document for the specified group.
-    /// The returned policy is URL-encoded according to RFC 3986. For more
-    /// information about RFC 3986, go to
-    /// http://www.faqs.org/rfcs/rfc3986.html.</para>
+    /// <para>Retrieves the specified policy document for the specified group. The returned policy is URL-encoded according to RFC 3986. For more
+    /// information about RFC 3986, go to http://www.faqs.org/rfcs/rfc3986.html.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetGroupPolicy"/>
     public class GetGroupPolicyRequest : AmazonWebServiceRequest

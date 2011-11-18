@@ -32,15 +32,6 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// A unique namespace identifying the option's associated AWS resource.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Namespace
         {
@@ -69,15 +60,6 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// The name of the configuration option.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string OptionName
         {

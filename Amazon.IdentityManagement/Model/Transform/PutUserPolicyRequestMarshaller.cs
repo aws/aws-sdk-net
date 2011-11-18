@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Put User Policy Request Marshaller
     /// </summary>       
-    public class PutUserPolicyRequestMarshaller : IMarshaller<IRequest<PutUserPolicyRequest>, PutUserPolicyRequest> 
+    public class PutUserPolicyRequestMarshaller : IMarshaller<IRequest<PutUserPolicyRequest>, PutUserPolicyRequest>
     {
-
-        public IRequest<PutUserPolicyRequest> Marshall(PutUserPolicyRequest putUserPolicyRequest) 
+        public IRequest<PutUserPolicyRequest> Marshall(PutUserPolicyRequest putUserPolicyRequest)
         {
             IRequest<PutUserPolicyRequest> request = new DefaultRequest<PutUserPolicyRequest>(putUserPolicyRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "PutUserPolicy");
             request.Parameters.Add("Version", "2010-05-08");
-            if (putUserPolicyRequest != null && putUserPolicyRequest.IsSetUserName()) 
+            if (putUserPolicyRequest != null && putUserPolicyRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(putUserPolicyRequest.UserName));
             }
-            if (putUserPolicyRequest != null && putUserPolicyRequest.IsSetPolicyName()) 
+            if (putUserPolicyRequest != null && putUserPolicyRequest.IsSetPolicyName())
             {
                 request.Parameters.Add("PolicyName", StringUtils.FromString(putUserPolicyRequest.PolicyName));
             }
-            if (putUserPolicyRequest != null && putUserPolicyRequest.IsSetPolicyDocument()) 
+            if (putUserPolicyRequest != null && putUserPolicyRequest.IsSetPolicyDocument())
             {
                 request.Parameters.Add("PolicyDocument", StringUtils.FromString(putUserPolicyRequest.PolicyDocument));
             }
-
 
             return request;
         }

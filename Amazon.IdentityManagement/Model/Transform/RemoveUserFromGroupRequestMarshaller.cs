@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Remove User From Group Request Marshaller
     /// </summary>       
-    public class RemoveUserFromGroupRequestMarshaller : IMarshaller<IRequest<RemoveUserFromGroupRequest>, RemoveUserFromGroupRequest> 
+    public class RemoveUserFromGroupRequestMarshaller : IMarshaller<IRequest<RemoveUserFromGroupRequest>, RemoveUserFromGroupRequest>
     {
-
-        public IRequest<RemoveUserFromGroupRequest> Marshall(RemoveUserFromGroupRequest removeUserFromGroupRequest) 
+        public IRequest<RemoveUserFromGroupRequest> Marshall(RemoveUserFromGroupRequest removeUserFromGroupRequest)
         {
             IRequest<RemoveUserFromGroupRequest> request = new DefaultRequest<RemoveUserFromGroupRequest>(removeUserFromGroupRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "RemoveUserFromGroup");
             request.Parameters.Add("Version", "2010-05-08");
-            if (removeUserFromGroupRequest != null && removeUserFromGroupRequest.IsSetGroupName()) 
+            if (removeUserFromGroupRequest != null && removeUserFromGroupRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(removeUserFromGroupRequest.GroupName));
             }
-            if (removeUserFromGroupRequest != null && removeUserFromGroupRequest.IsSetUserName()) 
+            if (removeUserFromGroupRequest != null && removeUserFromGroupRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(removeUserFromGroupRequest.UserName));
             }
-
 
             return request;
         }

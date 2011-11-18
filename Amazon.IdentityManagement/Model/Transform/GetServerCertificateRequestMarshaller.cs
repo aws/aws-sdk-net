@@ -28,19 +28,17 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Get Server Certificate Request Marshaller
     /// </summary>       
-    public class GetServerCertificateRequestMarshaller : IMarshaller<IRequest<GetServerCertificateRequest>, GetServerCertificateRequest> 
+    public class GetServerCertificateRequestMarshaller : IMarshaller<IRequest<GetServerCertificateRequest>, GetServerCertificateRequest>
     {
-
-        public IRequest<GetServerCertificateRequest> Marshall(GetServerCertificateRequest getServerCertificateRequest) 
+        public IRequest<GetServerCertificateRequest> Marshall(GetServerCertificateRequest getServerCertificateRequest)
         {
             IRequest<GetServerCertificateRequest> request = new DefaultRequest<GetServerCertificateRequest>(getServerCertificateRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "GetServerCertificate");
             request.Parameters.Add("Version", "2010-05-08");
-            if (getServerCertificateRequest != null && getServerCertificateRequest.IsSetServerCertificateName()) 
+            if (getServerCertificateRequest != null && getServerCertificateRequest.IsSetServerCertificateName())
             {
                 request.Parameters.Add("ServerCertificateName", StringUtils.FromString(getServerCertificateRequest.ServerCertificateName));
             }
-
 
             return request;
         }

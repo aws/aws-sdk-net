@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The Group data type contains information about a group.</para>
-    /// <para> This data type is used as a response element in the following
+    /// <para>The Group data type contains information about a group.</para> <para> This data type is used as a response element in the following
     /// actions:</para>
     /// <ul>
     /// <li> CreateGroup </li>

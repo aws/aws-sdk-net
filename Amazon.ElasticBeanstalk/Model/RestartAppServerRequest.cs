@@ -34,7 +34,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private string environmentName;
 
         /// <summary>
-        /// The ID of the environment to restart the server for.
+        /// The ID of the environment to restart the server for. Condition: You must specify either this or an EnvironmentName, or both. If you do not
+        /// specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
         ///  
         /// </summary>
         public string EnvironmentId
@@ -62,7 +63,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the environment to restart the server for.
+        /// The name of the environment to restart the server for. Condition: You must specify either this or an EnvironmentId, or both. If you do not
+        /// specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>

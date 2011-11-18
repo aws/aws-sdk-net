@@ -28,15 +28,13 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Get Account Summary Request Marshaller
     /// </summary>       
-    public class GetAccountSummaryRequestMarshaller : IMarshaller<IRequest<GetAccountSummaryRequest>, GetAccountSummaryRequest> 
+    public class GetAccountSummaryRequestMarshaller : IMarshaller<IRequest<GetAccountSummaryRequest>, GetAccountSummaryRequest>
     {
-
-        public IRequest<GetAccountSummaryRequest> Marshall(GetAccountSummaryRequest getAccountSummaryRequest) 
+        public IRequest<GetAccountSummaryRequest> Marshall(GetAccountSummaryRequest getAccountSummaryRequest)
         {
             IRequest<GetAccountSummaryRequest> request = new DefaultRequest<GetAccountSummaryRequest>(getAccountSummaryRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "GetAccountSummary");
             request.Parameters.Add("Version", "2010-05-08");
-
 
             return request;
         }

@@ -28,19 +28,17 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Get Login Profile Request Marshaller
     /// </summary>       
-    public class GetLoginProfileRequestMarshaller : IMarshaller<IRequest<GetLoginProfileRequest>, GetLoginProfileRequest> 
+    public class GetLoginProfileRequestMarshaller : IMarshaller<IRequest<GetLoginProfileRequest>, GetLoginProfileRequest>
     {
-
-        public IRequest<GetLoginProfileRequest> Marshall(GetLoginProfileRequest getLoginProfileRequest) 
+        public IRequest<GetLoginProfileRequest> Marshall(GetLoginProfileRequest getLoginProfileRequest)
         {
             IRequest<GetLoginProfileRequest> request = new DefaultRequest<GetLoginProfileRequest>(getLoginProfileRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "GetLoginProfile");
             request.Parameters.Add("Version", "2010-05-08");
-            if (getLoginProfileRequest != null && getLoginProfileRequest.IsSetUserName()) 
+            if (getLoginProfileRequest != null && getLoginProfileRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(getLoginProfileRequest.UserName));
             }
-
 
             return request;
         }

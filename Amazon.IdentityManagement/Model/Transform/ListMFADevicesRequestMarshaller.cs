@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// List M F A Devices Request Marshaller
     /// </summary>       
-    public class ListMFADevicesRequestMarshaller : IMarshaller<IRequest<ListMFADevicesRequest>, ListMFADevicesRequest> 
+    public class ListMFADevicesRequestMarshaller : IMarshaller<IRequest<ListMFADevicesRequest>, ListMFADevicesRequest>
     {
-
-        public IRequest<ListMFADevicesRequest> Marshall(ListMFADevicesRequest listMFADevicesRequest) 
+        public IRequest<ListMFADevicesRequest> Marshall(ListMFADevicesRequest listMFADevicesRequest)
         {
             IRequest<ListMFADevicesRequest> request = new DefaultRequest<ListMFADevicesRequest>(listMFADevicesRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "ListMFADevices");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listMFADevicesRequest != null && listMFADevicesRequest.IsSetUserName()) 
+            if (listMFADevicesRequest != null && listMFADevicesRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(listMFADevicesRequest.UserName));
             }
-            if (listMFADevicesRequest != null && listMFADevicesRequest.IsSetMarker()) 
+            if (listMFADevicesRequest != null && listMFADevicesRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(listMFADevicesRequest.Marker));
             }
-            if (listMFADevicesRequest != null && listMFADevicesRequest.IsSetMaxItems()) 
+            if (listMFADevicesRequest != null && listMFADevicesRequest.IsSetMaxItems())
             {
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(listMFADevicesRequest.MaxItems));
             }
-
 
             return request;
         }

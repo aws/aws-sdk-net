@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// List Account Aliases Request Marshaller
     /// </summary>       
-    public class ListAccountAliasesRequestMarshaller : IMarshaller<IRequest<ListAccountAliasesRequest>, ListAccountAliasesRequest> 
+    public class ListAccountAliasesRequestMarshaller : IMarshaller<IRequest<ListAccountAliasesRequest>, ListAccountAliasesRequest>
     {
-
-        public IRequest<ListAccountAliasesRequest> Marshall(ListAccountAliasesRequest listAccountAliasesRequest) 
+        public IRequest<ListAccountAliasesRequest> Marshall(ListAccountAliasesRequest listAccountAliasesRequest)
         {
             IRequest<ListAccountAliasesRequest> request = new DefaultRequest<ListAccountAliasesRequest>(listAccountAliasesRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "ListAccountAliases");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listAccountAliasesRequest != null && listAccountAliasesRequest.IsSetMarker()) 
+            if (listAccountAliasesRequest != null && listAccountAliasesRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(listAccountAliasesRequest.Marker));
             }
-            if (listAccountAliasesRequest != null && listAccountAliasesRequest.IsSetMaxItems()) 
+            if (listAccountAliasesRequest != null && listAccountAliasesRequest.IsSetMaxItems())
             {
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(listAccountAliasesRequest.MaxItems));
             }
-
 
             return request;
         }

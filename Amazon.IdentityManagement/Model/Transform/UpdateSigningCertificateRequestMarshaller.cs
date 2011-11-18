@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Update Signing Certificate Request Marshaller
     /// </summary>       
-    public class UpdateSigningCertificateRequestMarshaller : IMarshaller<IRequest<UpdateSigningCertificateRequest>, UpdateSigningCertificateRequest> 
+    public class UpdateSigningCertificateRequestMarshaller : IMarshaller<IRequest<UpdateSigningCertificateRequest>, UpdateSigningCertificateRequest>
     {
-
-        public IRequest<UpdateSigningCertificateRequest> Marshall(UpdateSigningCertificateRequest updateSigningCertificateRequest) 
+        public IRequest<UpdateSigningCertificateRequest> Marshall(UpdateSigningCertificateRequest updateSigningCertificateRequest)
         {
             IRequest<UpdateSigningCertificateRequest> request = new DefaultRequest<UpdateSigningCertificateRequest>(updateSigningCertificateRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "UpdateSigningCertificate");
             request.Parameters.Add("Version", "2010-05-08");
-            if (updateSigningCertificateRequest != null && updateSigningCertificateRequest.IsSetUserName()) 
+            if (updateSigningCertificateRequest != null && updateSigningCertificateRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(updateSigningCertificateRequest.UserName));
             }
-            if (updateSigningCertificateRequest != null && updateSigningCertificateRequest.IsSetCertificateId()) 
+            if (updateSigningCertificateRequest != null && updateSigningCertificateRequest.IsSetCertificateId())
             {
                 request.Parameters.Add("CertificateId", StringUtils.FromString(updateSigningCertificateRequest.CertificateId));
             }
-            if (updateSigningCertificateRequest != null && updateSigningCertificateRequest.IsSetStatus()) 
+            if (updateSigningCertificateRequest != null && updateSigningCertificateRequest.IsSetStatus())
             {
                 request.Parameters.Add("Status", StringUtils.FromString(updateSigningCertificateRequest.Status));
             }
-
 
             return request;
         }

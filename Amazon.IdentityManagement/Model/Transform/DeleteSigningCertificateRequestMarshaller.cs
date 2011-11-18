@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Delete Signing Certificate Request Marshaller
     /// </summary>       
-    public class DeleteSigningCertificateRequestMarshaller : IMarshaller<IRequest<DeleteSigningCertificateRequest>, DeleteSigningCertificateRequest> 
+    public class DeleteSigningCertificateRequestMarshaller : IMarshaller<IRequest<DeleteSigningCertificateRequest>, DeleteSigningCertificateRequest>
     {
-
-        public IRequest<DeleteSigningCertificateRequest> Marshall(DeleteSigningCertificateRequest deleteSigningCertificateRequest) 
+        public IRequest<DeleteSigningCertificateRequest> Marshall(DeleteSigningCertificateRequest deleteSigningCertificateRequest)
         {
             IRequest<DeleteSigningCertificateRequest> request = new DefaultRequest<DeleteSigningCertificateRequest>(deleteSigningCertificateRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "DeleteSigningCertificate");
             request.Parameters.Add("Version", "2010-05-08");
-            if (deleteSigningCertificateRequest != null && deleteSigningCertificateRequest.IsSetUserName()) 
+            if (deleteSigningCertificateRequest != null && deleteSigningCertificateRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(deleteSigningCertificateRequest.UserName));
             }
-            if (deleteSigningCertificateRequest != null && deleteSigningCertificateRequest.IsSetCertificateId()) 
+            if (deleteSigningCertificateRequest != null && deleteSigningCertificateRequest.IsSetCertificateId())
             {
                 request.Parameters.Add("CertificateId", StringUtils.FromString(deleteSigningCertificateRequest.CertificateId));
             }
-
 
             return request;
         }

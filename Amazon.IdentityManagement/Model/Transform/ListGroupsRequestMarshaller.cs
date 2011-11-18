@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// List Groups Request Marshaller
     /// </summary>       
-    public class ListGroupsRequestMarshaller : IMarshaller<IRequest<ListGroupsRequest>, ListGroupsRequest> 
+    public class ListGroupsRequestMarshaller : IMarshaller<IRequest<ListGroupsRequest>, ListGroupsRequest>
     {
-
-        public IRequest<ListGroupsRequest> Marshall(ListGroupsRequest listGroupsRequest) 
+        public IRequest<ListGroupsRequest> Marshall(ListGroupsRequest listGroupsRequest)
         {
             IRequest<ListGroupsRequest> request = new DefaultRequest<ListGroupsRequest>(listGroupsRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "ListGroups");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listGroupsRequest != null && listGroupsRequest.IsSetPathPrefix()) 
+            if (listGroupsRequest != null && listGroupsRequest.IsSetPathPrefix())
             {
                 request.Parameters.Add("PathPrefix", StringUtils.FromString(listGroupsRequest.PathPrefix));
             }
-            if (listGroupsRequest != null && listGroupsRequest.IsSetMarker()) 
+            if (listGroupsRequest != null && listGroupsRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(listGroupsRequest.Marker));
             }
-            if (listGroupsRequest != null && listGroupsRequest.IsSetMaxItems()) 
+            if (listGroupsRequest != null && listGroupsRequest.IsSetMaxItems())
             {
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(listGroupsRequest.MaxItems));
             }
-
 
             return request;
         }

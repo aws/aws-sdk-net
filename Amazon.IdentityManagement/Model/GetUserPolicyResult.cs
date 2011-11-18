@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the
-    /// GetUserPolicy action.</para>
+    /// <para>Contains the result of a successful invocation of the GetUserPolicy action.</para>
     /// </summary>
     public class GetUserPolicyResult  
     {
@@ -32,14 +31,14 @@ namespace Amazon.IdentityManagement.Model
         private string policyDocument;
 
         /// <summary>
-        /// The User the policy is associated with.
+        /// The user the policy is associated with.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

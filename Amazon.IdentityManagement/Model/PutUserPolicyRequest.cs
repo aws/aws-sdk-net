@@ -25,15 +25,11 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutUserPolicy operation.
-    /// <para>Adds (or updates) a policy document associated with the
-    /// specified User. For information about policies, refer to Overview of
-    /// Policies in <i>Using AWS Identity and Access Management</i> .</para>
-    /// <para>For information about limits on the number of policies you can
-    /// associate with a User, see Limitations on IAM Entities in <i>Using AWS
-    /// Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because
-    /// policy documents can be large, you should use POST rather than GET
-    /// when calling PutUserPolicy. For more information, see Making Query
-    /// Requests in Using AWS Identity and Access Management.</para>
+    /// <para>Adds (or updates) a policy document associated with the specified user. For information about policies, refer to Overview of Policies
+    /// in <i>Using AWS Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate
+    /// with a user, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy
+    /// documents can be large, you should use POST rather than GET when calling PutUserPolicy. For more information, see Making Query Requests in
+    /// Using AWS Identity and Access Management.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.PutUserPolicy"/>
     public class PutUserPolicyRequest : AmazonWebServiceRequest
@@ -43,14 +39,14 @@ namespace Amazon.IdentityManagement.Model
         private string policyDocument;
 
         /// <summary>
-        /// Name of the User to associate the policy with.
+        /// Name of the user to associate the policy with.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// List Users Request Marshaller
     /// </summary>       
-    public class ListUsersRequestMarshaller : IMarshaller<IRequest<ListUsersRequest>, ListUsersRequest> 
+    public class ListUsersRequestMarshaller : IMarshaller<IRequest<ListUsersRequest>, ListUsersRequest>
     {
-
-        public IRequest<ListUsersRequest> Marshall(ListUsersRequest listUsersRequest) 
+        public IRequest<ListUsersRequest> Marshall(ListUsersRequest listUsersRequest)
         {
             IRequest<ListUsersRequest> request = new DefaultRequest<ListUsersRequest>(listUsersRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "ListUsers");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listUsersRequest != null && listUsersRequest.IsSetPathPrefix()) 
+            if (listUsersRequest != null && listUsersRequest.IsSetPathPrefix())
             {
                 request.Parameters.Add("PathPrefix", StringUtils.FromString(listUsersRequest.PathPrefix));
             }
-            if (listUsersRequest != null && listUsersRequest.IsSetMarker()) 
+            if (listUsersRequest != null && listUsersRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(listUsersRequest.Marker));
             }
-            if (listUsersRequest != null && listUsersRequest.IsSetMaxItems()) 
+            if (listUsersRequest != null && listUsersRequest.IsSetMaxItems())
             {
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(listUsersRequest.MaxItems));
             }
-
 
             return request;
         }

@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The ServerCertificate data type contains information about a
-    /// server certificate.</para> <para>This data type is used as a response
+    /// <para>The ServerCertificate data type contains information about a server certificate.</para> <para>This data type is used as a response
     /// element in the action GetServerCertificate.</para>
     /// </summary>
     public class ServerCertificate  

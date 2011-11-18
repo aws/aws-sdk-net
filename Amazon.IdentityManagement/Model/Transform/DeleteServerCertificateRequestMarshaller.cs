@@ -28,19 +28,17 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Delete Server Certificate Request Marshaller
     /// </summary>       
-    public class DeleteServerCertificateRequestMarshaller : IMarshaller<IRequest<DeleteServerCertificateRequest>, DeleteServerCertificateRequest> 
+    public class DeleteServerCertificateRequestMarshaller : IMarshaller<IRequest<DeleteServerCertificateRequest>, DeleteServerCertificateRequest>
     {
-
-        public IRequest<DeleteServerCertificateRequest> Marshall(DeleteServerCertificateRequest deleteServerCertificateRequest) 
+        public IRequest<DeleteServerCertificateRequest> Marshall(DeleteServerCertificateRequest deleteServerCertificateRequest)
         {
             IRequest<DeleteServerCertificateRequest> request = new DefaultRequest<DeleteServerCertificateRequest>(deleteServerCertificateRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "DeleteServerCertificate");
             request.Parameters.Add("Version", "2010-05-08");
-            if (deleteServerCertificateRequest != null && deleteServerCertificateRequest.IsSetServerCertificateName()) 
+            if (deleteServerCertificateRequest != null && deleteServerCertificateRequest.IsSetServerCertificateName())
             {
                 request.Parameters.Add("ServerCertificateName", StringUtils.FromString(deleteServerCertificateRequest.ServerCertificateName));
             }
-
 
             return request;
         }

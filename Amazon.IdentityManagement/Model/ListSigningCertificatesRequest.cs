@@ -25,16 +25,11 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSigningCertificates operation.
-    /// <para>Returns information about the signing certificates associated
-    /// with the specified User. If there are none, the action returns an
-    /// empty list.</para> <para>Although each User is limited to a small
-    /// number of signing certificates, you can still paginate the results
-    /// using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
-    /// <para>If the <c>UserName</c> field is not specified, the UserName is
-    /// determined implicitly based on the AWS Access Key ID used to sign the
-    /// request. Because this action works for access keys under the AWS
-    /// Account, this API can be used to manage root credentials even if the
-    /// AWS Account has no associated Users.</para>
+    /// <para>Returns information about the signing certificates associated with the specified user. If there are none, the action returns an empty
+    /// list.</para> <para>Although each user is limited to a small number of signing certificates, you can still paginate the results using the
+    /// <c>MaxItems</c> and <c>Marker</c> parameters.</para> <para>If the <c>UserName</c> field is not specified, the user name is determined
+    /// implicitly based on the AWS Access Key ID used to sign the request. Because this action works for access keys under the AWS account, this
+    /// API can be used to manage root credentials even if the AWS account has no associated users.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListSigningCertificates"/>
     public class ListSigningCertificatesRequest : AmazonWebServiceRequest
@@ -44,14 +39,14 @@ namespace Amazon.IdentityManagement.Model
         private int? maxItems;
 
         /// <summary>
-        /// The name of the User.
+        /// The name of the user.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

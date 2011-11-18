@@ -28,27 +28,25 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Delete Application Version Request Marshaller
     /// </summary>       
-    public class DeleteApplicationVersionRequestMarshaller : IMarshaller<IRequest<DeleteApplicationVersionRequest>, DeleteApplicationVersionRequest> 
+    public class DeleteApplicationVersionRequestMarshaller : IMarshaller<IRequest<DeleteApplicationVersionRequest>, DeleteApplicationVersionRequest>
     {
-
-        public IRequest<DeleteApplicationVersionRequest> Marshall(DeleteApplicationVersionRequest deleteApplicationVersionRequest) 
+        public IRequest<DeleteApplicationVersionRequest> Marshall(DeleteApplicationVersionRequest deleteApplicationVersionRequest)
         {
             IRequest<DeleteApplicationVersionRequest> request = new DefaultRequest<DeleteApplicationVersionRequest>(deleteApplicationVersionRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DeleteApplicationVersion");
             request.Parameters.Add("Version", "2010-12-01");
-            if (deleteApplicationVersionRequest != null && deleteApplicationVersionRequest.IsSetApplicationName()) 
+            if (deleteApplicationVersionRequest != null && deleteApplicationVersionRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(deleteApplicationVersionRequest.ApplicationName));
             }
-            if (deleteApplicationVersionRequest != null && deleteApplicationVersionRequest.IsSetVersionLabel()) 
+            if (deleteApplicationVersionRequest != null && deleteApplicationVersionRequest.IsSetVersionLabel())
             {
                 request.Parameters.Add("VersionLabel", StringUtils.FromString(deleteApplicationVersionRequest.VersionLabel));
             }
-            if (deleteApplicationVersionRequest != null && deleteApplicationVersionRequest.IsSetDeleteSourceBundle()) 
+            if (deleteApplicationVersionRequest != null && deleteApplicationVersionRequest.IsSetDeleteSourceBundle())
             {
                 request.Parameters.Add("DeleteSourceBundle", StringUtils.FromBool(deleteApplicationVersionRequest.DeleteSourceBundle));
             }
-
 
             return request;
         }

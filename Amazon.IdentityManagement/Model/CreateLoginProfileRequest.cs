@@ -25,11 +25,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoginProfile operation.
-    /// <para>Creates a login profile for the specified User, giving the User
-    /// the ability to access AWS services such as the AWS Management Console.
-    /// For more information about login profiles, see Managing Login
-    /// Profiles and MFA Devices in <i>Using AWS Identity and Access
-    /// Management</i> .</para>
+    /// <para>Creates a login profile for the specified user, giving the user the ability to access AWS services such as the AWS Management Console.
+    /// For more information about login profiles, see Creating or Deleting a User Login Profile in <i>Using AWS Identity and Access Management</i>
+    /// .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateLoginProfile"/>
     public class CreateLoginProfileRequest : AmazonWebServiceRequest
@@ -38,14 +36,14 @@ namespace Amazon.IdentityManagement.Model
         private string password;
 
         /// <summary>
-        /// Name of the User to create a login profile for.
+        /// Name of the user to create a login profile for.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
@@ -79,7 +77,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The new password for the User name.
+        /// The new password for the user name.
         ///  
         /// <para>
         /// <b>Constraints:</b>

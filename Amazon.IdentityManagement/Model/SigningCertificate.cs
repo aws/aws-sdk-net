@@ -21,10 +21,8 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The SigningCertificate data type contains information about an
-    /// X.509 signing certificate.</para> <para> This data type is used as a
-    /// response element in the actions UploadSigningCertificate and
-    /// ListSigningCertificates. </para>
+    /// <para>The SigningCertificate data type contains information about an X.509 signing certificate.</para> <para> This data type is used as a
+    /// response element in the actions UploadSigningCertificate and ListSigningCertificates. </para>
     /// </summary>
     public class SigningCertificate  
     {
@@ -36,14 +34,14 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? uploadDate;
 
         /// <summary>
-        /// Name of the User the signing certificate is associated with.
+        /// Name of the user the signing certificate is associated with.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

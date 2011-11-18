@@ -28,15 +28,13 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// List Available Solution Stacks Request Marshaller
     /// </summary>       
-    public class ListAvailableSolutionStacksRequestMarshaller : IMarshaller<IRequest<ListAvailableSolutionStacksRequest>, ListAvailableSolutionStacksRequest> 
+    public class ListAvailableSolutionStacksRequestMarshaller : IMarshaller<IRequest<ListAvailableSolutionStacksRequest>, ListAvailableSolutionStacksRequest>
     {
-
-        public IRequest<ListAvailableSolutionStacksRequest> Marshall(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) 
+        public IRequest<ListAvailableSolutionStacksRequest> Marshall(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest)
         {
             IRequest<ListAvailableSolutionStacksRequest> request = new DefaultRequest<ListAvailableSolutionStacksRequest>(listAvailableSolutionStacksRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "ListAvailableSolutionStacks");
             request.Parameters.Add("Version", "2010-12-01");
-
 
             return request;
         }

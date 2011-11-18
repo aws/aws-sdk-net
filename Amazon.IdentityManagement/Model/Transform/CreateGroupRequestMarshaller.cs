@@ -28,23 +28,21 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Create Group Request Marshaller
     /// </summary>       
-    public class CreateGroupRequestMarshaller : IMarshaller<IRequest<CreateGroupRequest>, CreateGroupRequest> 
+    public class CreateGroupRequestMarshaller : IMarshaller<IRequest<CreateGroupRequest>, CreateGroupRequest>
     {
-
-        public IRequest<CreateGroupRequest> Marshall(CreateGroupRequest createGroupRequest) 
+        public IRequest<CreateGroupRequest> Marshall(CreateGroupRequest createGroupRequest)
         {
             IRequest<CreateGroupRequest> request = new DefaultRequest<CreateGroupRequest>(createGroupRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "CreateGroup");
             request.Parameters.Add("Version", "2010-05-08");
-            if (createGroupRequest != null && createGroupRequest.IsSetPath()) 
+            if (createGroupRequest != null && createGroupRequest.IsSetPath())
             {
                 request.Parameters.Add("Path", StringUtils.FromString(createGroupRequest.Path));
             }
-            if (createGroupRequest != null && createGroupRequest.IsSetGroupName()) 
+            if (createGroupRequest != null && createGroupRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(createGroupRequest.GroupName));
             }
-
 
             return request;
         }

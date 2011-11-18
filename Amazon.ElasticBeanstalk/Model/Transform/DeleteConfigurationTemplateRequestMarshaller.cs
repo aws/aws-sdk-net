@@ -28,23 +28,21 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Delete Configuration Template Request Marshaller
     /// </summary>       
-    public class DeleteConfigurationTemplateRequestMarshaller : IMarshaller<IRequest<DeleteConfigurationTemplateRequest>, DeleteConfigurationTemplateRequest> 
+    public class DeleteConfigurationTemplateRequestMarshaller : IMarshaller<IRequest<DeleteConfigurationTemplateRequest>, DeleteConfigurationTemplateRequest>
     {
-
-        public IRequest<DeleteConfigurationTemplateRequest> Marshall(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) 
+        public IRequest<DeleteConfigurationTemplateRequest> Marshall(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest)
         {
             IRequest<DeleteConfigurationTemplateRequest> request = new DefaultRequest<DeleteConfigurationTemplateRequest>(deleteConfigurationTemplateRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DeleteConfigurationTemplate");
             request.Parameters.Add("Version", "2010-12-01");
-            if (deleteConfigurationTemplateRequest != null && deleteConfigurationTemplateRequest.IsSetApplicationName()) 
+            if (deleteConfigurationTemplateRequest != null && deleteConfigurationTemplateRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(deleteConfigurationTemplateRequest.ApplicationName));
             }
-            if (deleteConfigurationTemplateRequest != null && deleteConfigurationTemplateRequest.IsSetTemplateName()) 
+            if (deleteConfigurationTemplateRequest != null && deleteConfigurationTemplateRequest.IsSetTemplateName())
             {
                 request.Parameters.Add("TemplateName", StringUtils.FromString(deleteConfigurationTemplateRequest.TemplateName));
             }
-
 
             return request;
         }

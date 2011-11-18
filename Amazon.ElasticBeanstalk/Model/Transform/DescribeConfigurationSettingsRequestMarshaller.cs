@@ -28,27 +28,25 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Describe Configuration Settings Request Marshaller
     /// </summary>       
-    public class DescribeConfigurationSettingsRequestMarshaller : IMarshaller<IRequest<DescribeConfigurationSettingsRequest>, DescribeConfigurationSettingsRequest> 
+    public class DescribeConfigurationSettingsRequestMarshaller : IMarshaller<IRequest<DescribeConfigurationSettingsRequest>, DescribeConfigurationSettingsRequest>
     {
-
-        public IRequest<DescribeConfigurationSettingsRequest> Marshall(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) 
+        public IRequest<DescribeConfigurationSettingsRequest> Marshall(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest)
         {
             IRequest<DescribeConfigurationSettingsRequest> request = new DefaultRequest<DescribeConfigurationSettingsRequest>(describeConfigurationSettingsRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "DescribeConfigurationSettings");
             request.Parameters.Add("Version", "2010-12-01");
-            if (describeConfigurationSettingsRequest != null && describeConfigurationSettingsRequest.IsSetApplicationName()) 
+            if (describeConfigurationSettingsRequest != null && describeConfigurationSettingsRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(describeConfigurationSettingsRequest.ApplicationName));
             }
-            if (describeConfigurationSettingsRequest != null && describeConfigurationSettingsRequest.IsSetTemplateName()) 
+            if (describeConfigurationSettingsRequest != null && describeConfigurationSettingsRequest.IsSetTemplateName())
             {
                 request.Parameters.Add("TemplateName", StringUtils.FromString(describeConfigurationSettingsRequest.TemplateName));
             }
-            if (describeConfigurationSettingsRequest != null && describeConfigurationSettingsRequest.IsSetEnvironmentName()) 
+            if (describeConfigurationSettingsRequest != null && describeConfigurationSettingsRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(describeConfigurationSettingsRequest.EnvironmentName));
             }
-
 
             return request;
         }

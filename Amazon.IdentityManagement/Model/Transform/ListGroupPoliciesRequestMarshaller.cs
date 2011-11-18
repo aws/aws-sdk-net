@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// List Group Policies Request Marshaller
     /// </summary>       
-    public class ListGroupPoliciesRequestMarshaller : IMarshaller<IRequest<ListGroupPoliciesRequest>, ListGroupPoliciesRequest> 
+    public class ListGroupPoliciesRequestMarshaller : IMarshaller<IRequest<ListGroupPoliciesRequest>, ListGroupPoliciesRequest>
     {
-
-        public IRequest<ListGroupPoliciesRequest> Marshall(ListGroupPoliciesRequest listGroupPoliciesRequest) 
+        public IRequest<ListGroupPoliciesRequest> Marshall(ListGroupPoliciesRequest listGroupPoliciesRequest)
         {
             IRequest<ListGroupPoliciesRequest> request = new DefaultRequest<ListGroupPoliciesRequest>(listGroupPoliciesRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "ListGroupPolicies");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listGroupPoliciesRequest != null && listGroupPoliciesRequest.IsSetGroupName()) 
+            if (listGroupPoliciesRequest != null && listGroupPoliciesRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(listGroupPoliciesRequest.GroupName));
             }
-            if (listGroupPoliciesRequest != null && listGroupPoliciesRequest.IsSetMarker()) 
+            if (listGroupPoliciesRequest != null && listGroupPoliciesRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(listGroupPoliciesRequest.Marker));
             }
-            if (listGroupPoliciesRequest != null && listGroupPoliciesRequest.IsSetMaxItems()) 
+            if (listGroupPoliciesRequest != null && listGroupPoliciesRequest.IsSetMaxItems())
             {
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(listGroupPoliciesRequest.MaxItems));
             }
-
 
             return request;
         }

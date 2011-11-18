@@ -28,19 +28,17 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Delete User Request Marshaller
     /// </summary>       
-    public class DeleteUserRequestMarshaller : IMarshaller<IRequest<DeleteUserRequest>, DeleteUserRequest> 
+    public class DeleteUserRequestMarshaller : IMarshaller<IRequest<DeleteUserRequest>, DeleteUserRequest>
     {
-
-        public IRequest<DeleteUserRequest> Marshall(DeleteUserRequest deleteUserRequest) 
+        public IRequest<DeleteUserRequest> Marshall(DeleteUserRequest deleteUserRequest)
         {
             IRequest<DeleteUserRequest> request = new DefaultRequest<DeleteUserRequest>(deleteUserRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "DeleteUser");
             request.Parameters.Add("Version", "2010-05-08");
-            if (deleteUserRequest != null && deleteUserRequest.IsSetUserName()) 
+            if (deleteUserRequest != null && deleteUserRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(deleteUserRequest.UserName));
             }
-
 
             return request;
         }

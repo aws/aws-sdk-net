@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Put Group Policy Request Marshaller
     /// </summary>       
-    public class PutGroupPolicyRequestMarshaller : IMarshaller<IRequest<PutGroupPolicyRequest>, PutGroupPolicyRequest> 
+    public class PutGroupPolicyRequestMarshaller : IMarshaller<IRequest<PutGroupPolicyRequest>, PutGroupPolicyRequest>
     {
-
-        public IRequest<PutGroupPolicyRequest> Marshall(PutGroupPolicyRequest putGroupPolicyRequest) 
+        public IRequest<PutGroupPolicyRequest> Marshall(PutGroupPolicyRequest putGroupPolicyRequest)
         {
             IRequest<PutGroupPolicyRequest> request = new DefaultRequest<PutGroupPolicyRequest>(putGroupPolicyRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "PutGroupPolicy");
             request.Parameters.Add("Version", "2010-05-08");
-            if (putGroupPolicyRequest != null && putGroupPolicyRequest.IsSetGroupName()) 
+            if (putGroupPolicyRequest != null && putGroupPolicyRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(putGroupPolicyRequest.GroupName));
             }
-            if (putGroupPolicyRequest != null && putGroupPolicyRequest.IsSetPolicyName()) 
+            if (putGroupPolicyRequest != null && putGroupPolicyRequest.IsSetPolicyName())
             {
                 request.Parameters.Add("PolicyName", StringUtils.FromString(putGroupPolicyRequest.PolicyName));
             }
-            if (putGroupPolicyRequest != null && putGroupPolicyRequest.IsSetPolicyDocument()) 
+            if (putGroupPolicyRequest != null && putGroupPolicyRequest.IsSetPolicyDocument())
             {
                 request.Parameters.Add("PolicyDocument", StringUtils.FromString(putGroupPolicyRequest.PolicyDocument));
             }
-
 
             return request;
         }

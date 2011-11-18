@@ -28,27 +28,25 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// List Groups For User Request Marshaller
     /// </summary>       
-    public class ListGroupsForUserRequestMarshaller : IMarshaller<IRequest<ListGroupsForUserRequest>, ListGroupsForUserRequest> 
+    public class ListGroupsForUserRequestMarshaller : IMarshaller<IRequest<ListGroupsForUserRequest>, ListGroupsForUserRequest>
     {
-
-        public IRequest<ListGroupsForUserRequest> Marshall(ListGroupsForUserRequest listGroupsForUserRequest) 
+        public IRequest<ListGroupsForUserRequest> Marshall(ListGroupsForUserRequest listGroupsForUserRequest)
         {
             IRequest<ListGroupsForUserRequest> request = new DefaultRequest<ListGroupsForUserRequest>(listGroupsForUserRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "ListGroupsForUser");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listGroupsForUserRequest != null && listGroupsForUserRequest.IsSetUserName()) 
+            if (listGroupsForUserRequest != null && listGroupsForUserRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(listGroupsForUserRequest.UserName));
             }
-            if (listGroupsForUserRequest != null && listGroupsForUserRequest.IsSetMarker()) 
+            if (listGroupsForUserRequest != null && listGroupsForUserRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(listGroupsForUserRequest.Marker));
             }
-            if (listGroupsForUserRequest != null && listGroupsForUserRequest.IsSetMaxItems()) 
+            if (listGroupsForUserRequest != null && listGroupsForUserRequest.IsSetMaxItems())
             {
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(listGroupsForUserRequest.MaxItems));
             }
-
 
             return request;
         }

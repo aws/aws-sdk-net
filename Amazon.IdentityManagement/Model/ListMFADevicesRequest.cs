@@ -25,9 +25,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMFADevices operation.
-    /// <para>Lists the MFA devices associated with the specified User
-    /// name.</para> <para>You can paginate the results using the
-    /// <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+    /// <para>Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified
+    /// user name. If you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the
+    /// request.</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListMFADevices"/>
     public class ListMFADevicesRequest : AmazonWebServiceRequest
@@ -37,14 +37,14 @@ namespace Amazon.IdentityManagement.Model
         private int? maxItems;
 
         /// <summary>
-        /// Name of the User whose MFA devices you want to list.
+        /// Name of the user whose MFA devices you want to list.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
@@ -120,8 +120,8 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Use this only when paginating results to indicate the maximum number of keys you want in the response. If there are additional keys beyond
-        /// the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// Use this only when paginating results to indicate the maximum number of MFA devices you want in the response. If there are additional MFA
+        /// devices beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

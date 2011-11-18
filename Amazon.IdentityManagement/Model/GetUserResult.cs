@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the GetUser
-    /// action.</para>
+    /// <para>Contains the result of a successful invocation of the GetUser action.</para>
     /// </summary>
     public class GetUserResult  
     {
@@ -30,7 +29,7 @@ namespace Amazon.IdentityManagement.Model
         private User user;
 
         /// <summary>
-        /// Information about the User.
+        /// Information about the user.
         ///  
         /// </summary>
         public User User

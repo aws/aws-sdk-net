@@ -28,23 +28,21 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Create Application Request Marshaller
     /// </summary>       
-    public class CreateApplicationRequestMarshaller : IMarshaller<IRequest<CreateApplicationRequest>, CreateApplicationRequest> 
+    public class CreateApplicationRequestMarshaller : IMarshaller<IRequest<CreateApplicationRequest>, CreateApplicationRequest>
     {
-
-        public IRequest<CreateApplicationRequest> Marshall(CreateApplicationRequest createApplicationRequest) 
+        public IRequest<CreateApplicationRequest> Marshall(CreateApplicationRequest createApplicationRequest)
         {
             IRequest<CreateApplicationRequest> request = new DefaultRequest<CreateApplicationRequest>(createApplicationRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "CreateApplication");
             request.Parameters.Add("Version", "2010-12-01");
-            if (createApplicationRequest != null && createApplicationRequest.IsSetApplicationName()) 
+            if (createApplicationRequest != null && createApplicationRequest.IsSetApplicationName())
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(createApplicationRequest.ApplicationName));
             }
-            if (createApplicationRequest != null && createApplicationRequest.IsSetDescription()) 
+            if (createApplicationRequest != null && createApplicationRequest.IsSetDescription())
             {
                 request.Parameters.Add("Description", StringUtils.FromString(createApplicationRequest.Description));
             }
-
 
             return request;
         }

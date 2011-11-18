@@ -25,10 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableMFADevice operation.
-    /// <para>Enables the specified MFA device and associates it with the
-    /// specified User name. When enabled, the MFA device is required for
-    /// every subsequent login by the User name associated with the
-    /// device.</para>
+    /// <para>Enables the specified MFA device and associates it with the specified user name. When enabled, the MFA device is required for every
+    /// subsequent login by the user name associated with the device.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.EnableMFADevice"/>
     public class EnableMFADeviceRequest : AmazonWebServiceRequest
@@ -39,14 +37,14 @@ namespace Amazon.IdentityManagement.Model
         private string authenticationCode2;
 
         /// <summary>
-        /// Name of the User for whom you want to enable the MFA device.
+        /// Name of the user for whom you want to enable the MFA device.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
@@ -80,18 +78,18 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The serial number that uniquely identifies the MFA device.
+        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>9 - 48</description>
+        ///         <description>9 - 256</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>[\w]*</description>
+        ///         <description>[\w+=/:,.@-]*</description>
         ///     </item>
         /// </list>
         /// </para>

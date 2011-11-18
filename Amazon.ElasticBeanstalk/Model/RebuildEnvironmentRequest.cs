@@ -35,7 +35,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private string environmentName;
 
         /// <summary>
-        /// The ID of the environment to rebuild.
+        /// The ID of the environment to rebuild. Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either,
+        /// AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
         ///  
         /// </summary>
         public string EnvironmentId
@@ -63,7 +64,8 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the environment to rebuild.
+        /// The name of the environment to rebuild. Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either,
+        /// AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>

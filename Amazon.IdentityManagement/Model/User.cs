@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The User data type contains information about a User.</para>
-    /// <para> This data type is used as a response element in the following
+    /// <para>The User data type contains information about a user.</para> <para> This data type is used as a response element in the following
     /// actions:</para>
     /// <ul>
     /// <li> <para> CreateUser </para> </li>
@@ -41,7 +40,7 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? createDate;
 
         /// <summary>
-        /// Path to the User name. For more information about paths, see <a
+        /// Path to the user name. For more information about paths, see <a
         /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
         /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
         ///  
@@ -84,14 +83,14 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The name identifying the User.
+        /// The name identifying the user.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>
@@ -125,7 +124,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The stable and unique string identifying the User. For more information about IDs, see <a
+        /// The stable and unique string identifying the user. For more information about IDs, see <a
         /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
         /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
         ///  
@@ -168,7 +167,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) specifying the User. For more information about ARNs and how to use them in policies, see <a
+        /// The Amazon Resource Name (ARN) specifying the user. For more information about ARNs and how to use them in policies, see <a
         /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
         /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
         ///  
@@ -207,7 +206,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The date when the User was created.
+        /// The date when the user was created.
         ///  
         /// </summary>
         public DateTime CreateDate

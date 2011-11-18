@@ -28,15 +28,13 @@ namespace Amazon.ElasticBeanstalk.Model.Transform
     /// <summary>
     /// Create Storage Location Request Marshaller
     /// </summary>       
-    public class CreateStorageLocationRequestMarshaller : IMarshaller<IRequest<CreateStorageLocationRequest>, CreateStorageLocationRequest> 
+    public class CreateStorageLocationRequestMarshaller : IMarshaller<IRequest<CreateStorageLocationRequest>, CreateStorageLocationRequest>
     {
-
-        public IRequest<CreateStorageLocationRequest> Marshall(CreateStorageLocationRequest createStorageLocationRequest) 
+        public IRequest<CreateStorageLocationRequest> Marshall(CreateStorageLocationRequest createStorageLocationRequest)
         {
             IRequest<CreateStorageLocationRequest> request = new DefaultRequest<CreateStorageLocationRequest>(createStorageLocationRequest, "AmazonElasticBeanstalk");
             request.Parameters.Add("Action", "CreateStorageLocation");
             request.Parameters.Add("Version", "2010-12-01");
-
 
             return request;
         }

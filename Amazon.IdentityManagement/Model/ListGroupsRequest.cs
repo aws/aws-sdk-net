@@ -25,8 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGroups operation.
-    /// <para>Lists the groups that have the specified path prefix.</para>
-    /// <para>You can paginate the results using the <c>MaxItems</c> and
+    /// <para>Lists the groups that have the specified path prefix.</para> <para>You can paginate the results using the <c>MaxItems</c> and
     /// <c>Marker</c> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListGroups"/>

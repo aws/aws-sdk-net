@@ -21,9 +21,8 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The AccessKey data type contains information about an AWS access
-    /// key.</para> <para> This data type is used as a response element in the
-    /// actions CreateAccessKey and ListAccessKeys. </para>
+    /// <para>The AccessKey data type contains information about an AWS access key.</para> <para> This data type is used as a response element in
+    /// the actions CreateAccessKey and ListAccessKeys. </para>
     /// </summary>
     public class AccessKey  
     {
@@ -35,14 +34,14 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? createDate;
 
         /// <summary>
-        /// Name of the User the key is associated with.
+        /// Name of the user the key is associated with.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 128</description>
+        ///         <description>1 - 64</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

@@ -28,31 +28,29 @@ namespace Amazon.IdentityManagement.Model.Transform
     /// <summary>
     /// Enable M F A Device Request Marshaller
     /// </summary>       
-    public class EnableMFADeviceRequestMarshaller : IMarshaller<IRequest<EnableMFADeviceRequest>, EnableMFADeviceRequest> 
+    public class EnableMFADeviceRequestMarshaller : IMarshaller<IRequest<EnableMFADeviceRequest>, EnableMFADeviceRequest>
     {
-
-        public IRequest<EnableMFADeviceRequest> Marshall(EnableMFADeviceRequest enableMFADeviceRequest) 
+        public IRequest<EnableMFADeviceRequest> Marshall(EnableMFADeviceRequest enableMFADeviceRequest)
         {
             IRequest<EnableMFADeviceRequest> request = new DefaultRequest<EnableMFADeviceRequest>(enableMFADeviceRequest, "AmazonIdentityManagementService");
             request.Parameters.Add("Action", "EnableMFADevice");
             request.Parameters.Add("Version", "2010-05-08");
-            if (enableMFADeviceRequest != null && enableMFADeviceRequest.IsSetUserName()) 
+            if (enableMFADeviceRequest != null && enableMFADeviceRequest.IsSetUserName())
             {
                 request.Parameters.Add("UserName", StringUtils.FromString(enableMFADeviceRequest.UserName));
             }
-            if (enableMFADeviceRequest != null && enableMFADeviceRequest.IsSetSerialNumber()) 
+            if (enableMFADeviceRequest != null && enableMFADeviceRequest.IsSetSerialNumber())
             {
                 request.Parameters.Add("SerialNumber", StringUtils.FromString(enableMFADeviceRequest.SerialNumber));
             }
-            if (enableMFADeviceRequest != null && enableMFADeviceRequest.IsSetAuthenticationCode1()) 
+            if (enableMFADeviceRequest != null && enableMFADeviceRequest.IsSetAuthenticationCode1())
             {
                 request.Parameters.Add("AuthenticationCode1", StringUtils.FromString(enableMFADeviceRequest.AuthenticationCode1));
             }
-            if (enableMFADeviceRequest != null && enableMFADeviceRequest.IsSetAuthenticationCode2()) 
+            if (enableMFADeviceRequest != null && enableMFADeviceRequest.IsSetAuthenticationCode2())
             {
                 request.Parameters.Add("AuthenticationCode2", StringUtils.FromString(enableMFADeviceRequest.AuthenticationCode2));
             }
-
 
             return request;
         }

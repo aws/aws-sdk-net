@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the GetGroup
-    /// action.</para>
+    /// <para>Contains the result of a successful invocation of the GetGroup action.</para>
     /// </summary>
     public class GetGroupResult  
     {
@@ -61,7 +60,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// A list of Users in the group.
+        /// A list of users in the group.
         ///  
         /// </summary>
         public List<User> Users
@@ -106,8 +105,8 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// A flag that indicates whether there are more User names to list. If your results were truncated, you can make a subsequent pagination
-        /// request using the <c>Marker</c> request parameter to retrieve more User names in the list.
+        /// A flag that indicates whether there are more user names to list. If your results were truncated, you can make a subsequent pagination
+        /// request using the <c>Marker</c> request parameter to retrieve more user names in the list.
         ///  
         /// </summary>
         public bool IsTruncated
