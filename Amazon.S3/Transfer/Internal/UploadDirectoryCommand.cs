@@ -64,7 +64,7 @@ namespace Amazon.S3.Transfer.Internal
 
             string basePath = new DirectoryInfo(this._request.Directory).FullName;
             string searchPattern = string.IsNullOrEmpty(this._request.SearchPattern) ? "*" : this._request.SearchPattern;
-            string[] filePaths = Directory.GetFiles(this._request.Directory, searchPattern, this._request.SearchOption);
+            string[] filePaths = Directory.GetFiles(basePath, searchPattern, this._request.SearchOption);
             this._totalNumberOfFiles = filePaths.Length;
 
             foreach (string filepath in filePaths)
@@ -85,6 +85,7 @@ namespace Amazon.S3.Transfer.Internal
                     .WithTimeout(this._request.Timeout)
                     .WithMetadata(this._request.Metadata)
                     .WithStorageClass(this._request.StorageClass)
+                    .WithServerSideEncryptionMethod(this._request.ServerSideEncryptionMethod)
                     .WithBeforeRequestHandler(RequestEventHandler) as TransferUtilityUploadRequest;
                 uploadRequest.UploadProgressEvent += new EventHandler<UploadProgressArgs>(uploadProgressEventCallback);
 

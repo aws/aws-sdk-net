@@ -275,4 +275,13 @@ namespace Amazon.S3.Model
         {
         }
     }
+
+    /// <summary>
+    /// The enumeration of all server-side encryption methods.
+    /// </summary>
+    public enum ServerSideEncryptionMethod
+    {
+        None,
+        AES256
+    }
 }

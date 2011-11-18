@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Amazon.S3.Util;
 
 namespace Amazon.S3.Model
 {
@@ -36,6 +37,7 @@ namespace Amazon.S3.Model
         private string bucketName;
         private string key;
         private string uploadId;
+        private ServerSideEncryptionMethod serverSideEncryptionMethod;
 
         #endregion
 
@@ -66,5 +68,35 @@ namespace Amazon.S3.Model
             set { this.uploadId = value; }
         }
 
+        /// <summary>
+        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// Default is None.
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.serverSideEncryptionMethod; }
+            set { this.serverSideEncryptionMethod = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the Headers property.
+        /// </summary>
+        public override System.Net.WebHeaderCollection Headers
+        {
+            set
+            {
+                base.Headers = value;
+
+                string hdr = null;
+
+                ServerSideEncryptionMethod = ServerSideEncryptionMethod.None;
+                if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzServerSideEncryptionHeader)))
+                {
+                    this.ServerSideEncryptionMethod = (ServerSideEncryptionMethod)Enum.Parse(typeof(ServerSideEncryptionMethod), hdr);
+                }
+            }
+        }
     }
 }

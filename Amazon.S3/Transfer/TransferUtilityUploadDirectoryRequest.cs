@@ -45,6 +45,7 @@ namespace Amazon.S3.Transfer
         S3StorageClass _storageClass;
         int _timeout = 0;
         NameValueCollection _metadata;
+        ServerSideEncryptionMethod encryption;
 
 
         /// <summary>
@@ -444,7 +445,41 @@ namespace Amazon.S3.Transfer
             return this;
         }
 
-        #endregion    
+        #endregion
+
+        #region ServerSideEncryptionMethod
+
+        /// <summary>
+        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.encryption; }
+            set { this.encryption = value; }
+        }
+
+        /// <summary>
+        /// Sets the ServerSideEncryptionMethod property for this request.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// Default is None.
+        /// </summary>
+        /// <param name="encryption">
+        /// The value of the ServerSideEncryptionMethod to set.
+        /// </param>
+        /// <returns>
+        /// The response with the ServerSideEncryptionMethod set.
+        /// </returns>
+        public TransferUtilityUploadDirectoryRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
+        {
+            this.ServerSideEncryptionMethod = encryption;
+            return this;
+        }
+
+        #endregion
+
 
         /// <summary>
         /// 	Gets or sets the timeout property in milliseconds.

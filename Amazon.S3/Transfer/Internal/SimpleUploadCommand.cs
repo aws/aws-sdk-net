@@ -63,6 +63,7 @@ namespace Amazon.S3.Transfer.Internal
                 .WithTimeout(timeout)
                 .WithStorageClass(this._fileTransporterRequest.StorageClass)
                 .WithAutoCloseStream(this._fileTransporterRequest.AutoCloseStream)
+                    .WithServerSideEncryptionMethod(this._fileTransporterRequest.ServerSideEncryptionMethod)
                 .WithSubscriber(new EventHandler<PutObjectProgressArgs>(this.putObjectProgressEventCallback));
 
             putRequest.InputStream = this._fileTransporterRequest.InputStream;

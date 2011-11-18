@@ -53,6 +53,7 @@ namespace Amazon.S3.Util
         internal const string AmzMfaHeader = "x-amz-mfa";
         internal const string AmzStorageClassHeader = "x-amz-storage-class";
         internal const string AmzSecurityTokenHeader = "x-amz-security-token";
+        internal const string AmzServerSideEncryptionHeader = "x-amz-server-side-encryption";
 
         // Accepted HTTP Verbs
         internal static readonly string[] Verbs = { "GET", "HEAD", "PUT", "DELETE", "POST" };

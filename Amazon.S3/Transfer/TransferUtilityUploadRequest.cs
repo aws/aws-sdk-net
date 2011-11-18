@@ -45,6 +45,7 @@ namespace Amazon.S3.Transfer
         private int timeout = 0;
         private long? partSize;
         private bool autoCloseStream = true;
+        private ServerSideEncryptionMethod encryption;
 
         private string filePath;
 
@@ -362,6 +363,39 @@ namespace Amazon.S3.Transfer
         }
 
         #endregion    
+
+        #region ServerSideEncryption
+
+        /// <summary>
+        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.encryption; }
+            set { this.encryption = value; }
+        }
+
+        /// <summary>
+        /// Sets the ServerSideEncryptionMethod property for this request.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// Default is None.
+        /// </summary>
+        /// <param name="encryption">
+        /// The value of the ServerSideEncryptionMethod to set.
+        /// </param>
+        /// <returns>
+        /// The response with the ServerSideEncryptionMethod set.
+        /// </returns>
+        public TransferUtilityUploadRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
+        {
+            this.ServerSideEncryptionMethod = encryption;
+            return this;
+        }
+
+        #endregion
 
         /// <summary>
         /// 	Gets or sets the file path

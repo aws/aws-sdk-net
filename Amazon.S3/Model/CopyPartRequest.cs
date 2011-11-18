@@ -54,6 +54,7 @@ namespace Amazon.S3.Model
         private int? partNumber;
         private long? firstByte;
         private long? lastByte;
+        private ServerSideEncryptionMethod serverSideEncryption;
 
         #endregion
 
@@ -615,6 +616,39 @@ namespace Amazon.S3.Model
         internal bool IsSetLastByte()
         {
             return this.lastByte.HasValue;
+        }
+
+        #endregion
+
+        #region ServerSideEncryption
+
+        /// <summary>
+        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// Default is None.
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.serverSideEncryption; }
+            set { this.serverSideEncryption = value; }
+        }
+
+        /// <summary>
+        /// Sets the ServerSideEncryptionMethod property for this request.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// </summary>
+        /// <param name="serverSideEncryption">
+        /// The value of the ServerSideEncryptionMethod to set.
+        /// </param>
+        /// <returns>
+        /// The response with the ServerSideEncryptionMethod set.
+        /// </returns>
+        public CopyPartRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod serverSideEncryption)
+        {
+            this.serverSideEncryption = serverSideEncryption;
+            return this;
         }
 
         #endregion

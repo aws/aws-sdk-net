@@ -119,7 +119,7 @@ namespace Amazon.S3
         static AmazonS3Client()
         {
             Type t = typeof(HttpWebRequest);
-            ADD_RANGE_METHODINFO = t.GetMethod("AddRange", BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[]{typeof(string), typeof(string), typeof(string)}, null);
+            ADD_RANGE_METHODINFO = t.GetMethod("AddRange", BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[] { typeof(string), typeof(string), typeof(string) }, null);
         }
 
         /// <summary>
@@ -336,7 +336,7 @@ namespace Amazon.S3
             }
 
             ConvertListBuckets(request);
-            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);            
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
             invoke<ListBucketsResponse>(asyncResult);
             return asyncResult;
         }
@@ -819,7 +819,7 @@ namespace Amazon.S3
             }
 
             // Build out the request's parameters
-            ConvertSetBucketVersioning(request); 
+            ConvertSetBucketVersioning(request);
             S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
             invoke<SetBucketVersioningResponse>(asyncResult);
             return asyncResult;
@@ -856,7 +856,7 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a GetBucketPolicyResponse from S3.</returns>
         public GetBucketPolicyResponse EndGetBucketPolicy(IAsyncResult asyncResult)
-        {            
+        {
             try
             {
                 return endOperation<GetBucketPolicyResponse>(asyncResult);
@@ -2610,7 +2610,7 @@ namespace Amazon.S3
             if (!request.IsSetSourceKey())
             {
                 throw new ArgumentException("The Source Key Specified is null or empty!");
-            } 
+            }
             if (!request.IsSetDestinationBucket())
             {
                 throw new ArgumentException("The Destination S3 BucketName specified is null or empty!");
@@ -2622,7 +2622,7 @@ namespace Amazon.S3
             if (!request.IsSetUploadID())
             {
                 throw new ArgumentException("The UploadId Specified is null or empty!");
-            } 
+            }
             if (!request.IsSetPartNumber())
             {
                 throw new ArgumentException("The PartNumber Specified is null or empty!");
@@ -3803,6 +3803,12 @@ namespace Amazon.S3
             // Add the storage class header
             webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
 
+            // Add server side encryption
+            if (request.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
+            {
+                webHeaders[S3Constants.AmzServerSideEncryptionHeader] = request.ServerSideEncryptionMethod.ToString();
+            }
+
             // Finally, add the S3 specific parameters and headers
             request.RequestDestinationBucket = request.BucketName;
         }
@@ -3898,26 +3904,24 @@ namespace Amazon.S3
                 }
             }
 
+                // Add server side encryption
+                if (request.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
+                {
+                    request.Headers[S3Constants.AmzServerSideEncryptionHeader] = request.ServerSideEncryptionMethod.ToString();
+                }
+
             //sign the request
             string toSign = buildSigningString(parameters, request.Headers);
             string auth;
                 if (immutableCredentials.UseSecureStringForSecretKey)
             {
                 KeyedHashAlgorithm algorithm = new HMACSHA1();
-                auth = AWSSDKUtils.HMACSign(
-                    toSign,
-                        immutableCredentials.SecureSecretKey,
-                    algorithm
-                    );
+                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.SecureSecretKey, algorithm);
             }
             else
             {
                 KeyedHashAlgorithm algorithm = new HMACSHA1();
-                auth = AWSSDKUtils.HMACSign(
-                    toSign,
-                        immutableCredentials.ClearSecretKey,
-                    algorithm
-                    );
+                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
             }
             parameters[S3QueryParameter.Authorization] = auth;
 
@@ -4061,6 +4065,12 @@ namespace Amazon.S3
             // Add the storage class header
             webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
 
+            // Add server side encryption, even if method is None
+            if (request.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
+            {
+                webHeaders[S3Constants.AmzServerSideEncryptionHeader] = request.ServerSideEncryptionMethod.ToString();
+            }
+
             request.RequestDestinationBucket = request.DestinationBucket;
         }
 
@@ -4151,6 +4161,12 @@ namespace Amazon.S3
 
             // Add the storage class header
             webHeaders[S3Constants.AmzStorageClassHeader] = S3Constants.StorageClasses[(int)request.StorageClass];
+
+            // Add server side encryption
+            if (request.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
+            {
+                webHeaders[S3Constants.AmzServerSideEncryptionHeader] = request.ServerSideEncryptionMethod.ToString();
+            }
 
             // Finally, add the S3 specific parameters and headers
             request.RequestDestinationBucket = request.BucketName;
@@ -4364,6 +4380,11 @@ namespace Amazon.S3
             // Add the Timeout parameter
             parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
 
+            // Add server side encryption
+            if (request.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
+            {
+                webHeaders[S3Constants.AmzServerSideEncryptionHeader] = request.ServerSideEncryptionMethod.ToString();
+            }
 
             // Finally, add the S3 specific parameters and headers
             request.RequestDestinationBucket = request.DestinationBucket;
@@ -4388,13 +4409,18 @@ namespace Amazon.S3
                 AWSSDKUtils.PreserveStackTrace(s3AsyncResult.Exception);
                 throw s3AsyncResult.Exception;
             }
-            
+
             T response = s3AsyncResult.FinalResponse as T;
             //s3AsyncResult.FinalResponse = null;
             return response;
-        } 
+        }
 
         void invoke<T>(S3AsyncResult s3AsyncResult) where T : S3Response, new()
+        {
+            invoke<T>(s3AsyncResult, false);
+        }
+
+        void invoke<T>(S3AsyncResult s3AsyncResult, bool isRedirect) where T : S3Response, new()
         {
             if (s3AsyncResult.S3Request == null)
             {
@@ -4408,35 +4434,30 @@ namespace Amazon.S3
             ImmutableCredentials immutableCredentials = credentials == null ? null : credentials.GetCredentials();
             try
             {
-                addS3QueryParameters(s3AsyncResult.S3Request, immutableCredentials);
+                if (!isRedirect)
+                {
+                    addS3QueryParameters(s3AsyncResult.S3Request, immutableCredentials);
+                }
 
-            WebHeaderCollection headers = s3AsyncResult.S3Request.Headers;
-            Map parameters = s3AsyncResult.S3Request.parameters;
-            Stream fStream = s3AsyncResult.S3Request.InputStream;
+                WebHeaderCollection headers = s3AsyncResult.S3Request.Headers;
+                Map parameters = s3AsyncResult.S3Request.parameters;
+                Stream fStream = s3AsyncResult.S3Request.InputStream;
 
                 // if credentials are present (non-anonymous) sign the request
                 if (immutableCredentials != null)
-            {
-                string toSign = buildSigningString(parameters, headers);
-                string auth;
+                {
+                    string toSign = buildSigningString(parameters, headers);
+                    string auth;
                     if (immutableCredentials.UseSecureStringForSecretKey)
-                {
-                    KeyedHashAlgorithm algorithm = new HMACSHA1();
-                    auth = AWSSDKUtils.HMACSign(
-                        toSign,
-                            immutableCredentials.SecureSecretKey,
-                        algorithm
-                        );
-                }
-                else
-                {
-                    KeyedHashAlgorithm algorithm = new HMACSHA1();
-                    auth = AWSSDKUtils.HMACSign(
-                        toSign,
-                            immutableCredentials.ClearSecretKey,
-                        algorithm
-                        );
-                }
+                    {
+                        KeyedHashAlgorithm algorithm = new HMACSHA1();
+                        auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.SecureSecretKey, algorithm);
+                    }
+                    else
+                    {
+                        KeyedHashAlgorithm algorithm = new HMACSHA1();
+                        auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
+                    }
                 parameters[S3QueryParameter.Authorization] = auth;
             }
 
@@ -4683,7 +4704,8 @@ namespace Amazon.S3
 
                     handleRetry(s3AsyncResult.S3Request, s3AsyncResult.RequestState.WebRequest, respHeaders, s3AsyncResult.OrignalStreamPosition,
                         s3AsyncResult.RetriesAttempt, statusCode, cause);
-                    invoke<T>(s3AsyncResult);
+
+                    invoke<T>(s3AsyncResult, isRedirect(httpResponse));
                 }
                 else if (cause != null)
                 {
@@ -5252,10 +5274,6 @@ namespace Amazon.S3
         {
             Map parameters = request.parameters;
 
-            if (parameters.ContainsKey(S3QueryParameter.Url) && !string.IsNullOrEmpty(parameters[S3QueryParameter.Url]))
-                return;
-
-
             if (!config.IsSetServiceURL())
             {
                 throw new AmazonS3Exception("The Amazon S3 Service URL is either null or empty");
@@ -5270,7 +5288,7 @@ namespace Amazon.S3
             else if (parameters.ContainsKey(S3QueryParameter.DestinationBucket))
             {
                 string bucketName = parameters[S3QueryParameter.DestinationBucket];
-                if(bucketName.Contains("."))
+                if (config.CommunicationProtocol == Protocol.HTTPS && bucketName.Contains("."))
                     url = String.Concat(url, "/", bucketName, "/");
                 else
                     url = String.Concat(bucketName, ".", url, "/");
@@ -5703,13 +5721,12 @@ namespace Amazon.S3
             if (parameters.ContainsKey(S3QueryParameter.Expires))
             {
                 sb.Append(parameters[S3QueryParameter.Expires]);
-                sb.Append("\n");
+                webHeaders.Remove(S3Constants.AmzDateHeader);
             }
-            else
-            {
+
                 sb.Append("\n");
                 sb.Append(buildCanonicalizedHeaders(webHeaders));
-            }
+
             if (parameters.ContainsKey(S3QueryParameter.CanonicalizedResource))
             {
                 sb.Append(AmazonS3Util.UrlEncode(parameters[S3QueryParameter.CanonicalizedResource], true));
@@ -5895,7 +5912,7 @@ namespace Amazon.S3
 
             public WaitHandle AsyncWaitHandle
             {
-                get 
+                get
                 {
                     if (this._waitHandle != null)
                     {
@@ -5910,7 +5927,7 @@ namespace Amazon.S3
                         }
                     }
 
-                    return this._waitHandle; 
+                    return this._waitHandle;
                 }
             }
 
@@ -5924,8 +5941,8 @@ namespace Amazon.S3
             internal S3Response FinalResponse
             {
                 get { return this._finalResponse; }
-                set 
-                { 
+                set
+                {
                     this._finalResponse = value;
                     DateTime endTime = DateTime.Now;
                     TimeSpan timeToComplete = endTime - this._startTime;

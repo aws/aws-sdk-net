@@ -21,6 +21,8 @@
  */
 
 using System.Xml.Serialization;
+using Amazon.S3.Util;
+using System;
 
 namespace Amazon.S3.Model
 {
@@ -38,6 +40,7 @@ namespace Amazon.S3.Model
         private string eTag;
         private string srcVersionId;
         private int partNumber;
+        private ServerSideEncryptionMethod serverSideEncryptionMethod;
 
         #endregion
 
@@ -100,6 +103,23 @@ namespace Amazon.S3.Model
 
         #endregion
 
+        #region ServerSideEncryption
+
+        /// <summary>
+        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// Default is None.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ServerSideEncryptionMethod")]
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.serverSideEncryptionMethod; }
+            set { this.serverSideEncryptionMethod = value; }
+        }
+
+        #endregion
+
         #region Headers
 
         /// <summary>
@@ -115,6 +135,12 @@ namespace Amazon.S3.Model
                 if (!System.String.IsNullOrEmpty(hdr = value.Get("x-amz-copy-source-version-id")))
                 {
                     this.SourceVersionId = hdr;
+                }
+
+                ServerSideEncryptionMethod = ServerSideEncryptionMethod.None;
+                if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzServerSideEncryptionHeader)))
+                {
+                    this.ServerSideEncryptionMethod = (ServerSideEncryptionMethod)Enum.Parse(typeof(ServerSideEncryptionMethod), hdr);
                 }
             }
         }

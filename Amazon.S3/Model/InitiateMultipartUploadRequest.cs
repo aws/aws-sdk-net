@@ -39,7 +39,7 @@ namespace Amazon.S3.Model
         private string contentType;
         internal NameValueCollection metaData;
         private S3StorageClass storageClass;
-
+        private ServerSideEncryptionMethod encryption;
         
 
         #region BucketName
@@ -305,6 +305,38 @@ namespace Amazon.S3.Model
         public InitiateMultipartUploadRequest WithStorageClass(S3StorageClass sClass)
         {
             this.storageClass = sClass;
+            return this;
+        }
+
+        #endregion
+
+        #region ServerSideEncryption
+
+        /// <summary>
+        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.encryption; }
+            set { this.encryption = value; }
+        }
+
+        /// <summary>
+        /// Sets the ServerSideEncryptionMethod property for this request.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// </summary>
+        /// <param name="encryption">
+        /// The value of the ServerSideEncryptionMethod to set.
+        /// </param>
+        /// <returns>
+        /// The response with the ServerSideEncryptionMethod set.
+        /// </returns>
+        public InitiateMultipartUploadRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
+        {
+            this.ServerSideEncryptionMethod = encryption;
             return this;
         }
 

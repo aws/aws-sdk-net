@@ -44,6 +44,7 @@ namespace Amazon.S3.Model
         Protocol protocol;
         HttpVerb verb;
         string versionId;
+        ServerSideEncryptionMethod encryption;
 
         #endregion
 
@@ -284,6 +285,49 @@ namespace Amazon.S3.Model
         internal bool IsSetVersionId()
         {
             return !System.String.IsNullOrEmpty(this.versionId);
+        }
+
+        #endregion
+
+        #region ServerSideEncryption
+
+        /// <summary>
+        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// Default is None.
+        /// 
+        /// Note: if specifying encryption (not None), the
+        /// corresponding request must include header
+        /// "x-amz-server-side-encryption" with the value of
+        /// the encryption.
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.encryption; }
+            set { this.encryption = value; }
+        }
+
+        /// <summary>
+        /// Sets the ServerSideEncryptionMethod property for this request.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// 
+        /// Note: if specifying encryption (not None), the
+        /// corresponding request must include header
+        /// "x-amz-server-side-encryption" with the value of
+        /// the encryption.
+        /// </summary>
+        /// <param name="encryption">
+        /// The value of the ServerSideEncryptionMethod to set.
+        /// </param>
+        /// <returns>
+        /// The response with the ServerSideEncryptionMethod set.
+        /// </returns>
+        public GetPreSignedUrlRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
+        {
+            this.ServerSideEncryptionMethod = encryption;
+            return this;
         }
 
         #endregion

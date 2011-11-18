@@ -22,6 +22,7 @@
 
 using Amazon.Util;
 using Amazon.S3.Util;
+using System;
 
 namespace Amazon.S3.Model
 {
@@ -32,6 +33,7 @@ namespace Amazon.S3.Model
     {
         private string etag;
         private string versionId;
+        private ServerSideEncryptionMethod serverSideEncryptionMethod;
 
         /// <summary>
         /// Gets and sets the ETag property.
@@ -53,6 +55,18 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Specifies the encryption used on the server to
+        /// store the content.
+        /// Default is None.
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
+        {
+            get { return this.serverSideEncryptionMethod; }
+            set { this.serverSideEncryptionMethod = value; }
+        }
+
+        /// <summary>
         /// Gets and sets the Headers property.
         /// </summary>
         public override System.Net.WebHeaderCollection Headers
@@ -70,6 +84,12 @@ namespace Amazon.S3.Model
                 if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzVersionIdHeader)))
                 {
                     this.VersionId = hdr;
+                }
+
+                ServerSideEncryptionMethod = ServerSideEncryptionMethod.None;
+                if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzServerSideEncryptionHeader)))
+                {
+                    this.ServerSideEncryptionMethod = (ServerSideEncryptionMethod)Enum.Parse(typeof(ServerSideEncryptionMethod), hdr);
                 }
             }
         }

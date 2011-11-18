@@ -173,6 +173,7 @@ namespace Amazon.S3.Transfer.Internal
                 .WithCannedACL(this._fileTransporterRequest.CannedACL)
                 .WithContentType(determineContentType())
                 .WithStorageClass(this._fileTransporterRequest.StorageClass)
+                .WithServerSideEncryptionMethod(this._fileTransporterRequest.ServerSideEncryptionMethod)
                 .WithBeforeRequestHandler(RequestEventHandler) as InitiateMultipartUploadRequest;
 
             if (this._fileTransporterRequest.metadata != null && this._fileTransporterRequest.metadata.Count > 0)
