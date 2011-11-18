@@ -116,7 +116,7 @@ namespace Amazon.S3.Model
         /// Alternative to setting bucket region by using the region's name.
         /// When set, this will determine where your data will
         /// reside in S3.
-        /// Valid values: us-east-1, us-west-1, eu-west-1, ap-southeast-1, ap-northeast-1
+        /// Valid values: us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1
         /// </summary>
         public string BucketRegionName
         {
@@ -131,7 +131,7 @@ namespace Amazon.S3.Model
         /// Alternative to setting bucket region by using the region's name.
         /// When set, this will determine where your data will
         /// reside in S3.
-        /// Valid values: us-east-1, us-west-1, eu-west-1, ap-southeast-1, ap-northeast-1
+        /// Valid values: us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1
         /// </summary>
         /// <param name="bucketRegionName">The value that BucketRegionName is set to</param>
         /// <returns>the request with the BucketRegionName set</returns>

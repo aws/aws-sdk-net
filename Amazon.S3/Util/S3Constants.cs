@@ -74,6 +74,7 @@ namespace Amazon.S3.Util
         internal static readonly string[] LocationConstraints = {"",
                                                 "EU",
                                                 "us-west-1",
+                                                "us-west-2",
                                                 "ap-southeast-1",
                                                 "ap-northeast-1"};
 
