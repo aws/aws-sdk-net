@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-02-01
+ *  API Version: 2011-10-01
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Gets one or all attributes of a queue.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class GetQueueAttributesRequest
     {    
         private string queueUrlField;

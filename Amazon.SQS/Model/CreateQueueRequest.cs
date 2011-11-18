@@ -16,13 +16,17 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-02-01
+ *  API Version: 2011-10-01
  */
 
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+
+using Amazon.SQS.Util;
+
+using Attribute = Amazon.SQS.Model.Attribute;
 
 namespace Amazon.SQS.Model
 {
@@ -36,11 +40,10 @@ namespace Amazon.SQS.Model
     /// DefaultVisibilityTimeout that is different from the value for the existing queue,
     /// you receive an error.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class CreateQueueRequest
     {    
         private string queueNameField;
-        private Decimal? defaultVisibilityTimeoutField;
         private List<Attribute> attributeField;
 
         /// <summary>
@@ -81,8 +84,14 @@ namespace Amazon.SQS.Model
         [XmlElementAttribute(ElementName = "DefaultVisibilityTimeout")]
         public Decimal DefaultVisibilityTimeout
         {
-            get { return this.defaultVisibilityTimeoutField.GetValueOrDefault(); }
-            set { this.defaultVisibilityTimeoutField = value; }
+            get 
+            {
+                return getAttributeValue<Decimal>(SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT);
+            }
+            set 
+            {
+                setAttributeValue(SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT, value);
+            }
         }
 
         /// <summary>
@@ -92,7 +101,7 @@ namespace Amazon.SQS.Model
         /// <returns>this instance</returns>
         public CreateQueueRequest WithDefaultVisibilityTimeout(Decimal defaultVisibilityTimeout)
         {
-            this.defaultVisibilityTimeoutField = defaultVisibilityTimeout;
+            this.DefaultVisibilityTimeout = defaultVisibilityTimeout;
             return this;
         }
 
@@ -102,7 +111,45 @@ namespace Amazon.SQS.Model
         /// <returns>true if DefaultVisibilityTimeout property is set</returns>
         public bool IsSetDefaultVisibilityTimeout()
         {
-            return this.defaultVisibilityTimeoutField.HasValue;
+            return AmazonSQSUtil.FindAttribute(this.Attribute, SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT) != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the DelaySeconds property.
+        /// The default number of seconds for which the message has to be delayed.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "DelaySeconds")]
+        public int DelaySeconds
+        {
+            get
+            {
+                return getAttributeValue<int>(SQSConstants.ATTRIBUTE_DELAY_SECONDS);
+            }
+            set
+            {
+                setAttributeValue(SQSConstants.ATTRIBUTE_DELAY_SECONDS, value);
+            }
+        }
+
+        /// <summary>
+        /// Sets the DelaySeconds property
+        /// </summary>
+        /// <param name="delaySeconds">The default number of seconds for which the message has to be delayed.</param>
+        /// <returns>this instance</returns>
+        public CreateQueueRequest WithDelaySeconds(int delaySeconds)
+        {
+            this.DelaySeconds = delaySeconds;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if DelaySeconds property is set
+        /// </summary>
+        /// <returns>true if DelaySeconds property is set</returns>
+        public bool IsSetDelaySeconds()
+        {
+            return AmazonSQSUtil.FindAttribute(this.Attribute, SQSConstants.ATTRIBUTE_DELAY_SECONDS) != null;
         }
 
         /// <summary>
@@ -146,5 +193,30 @@ namespace Amazon.SQS.Model
             return (Attribute.Count > 0);
         }
 
+        private T getAttributeValue<T>(string name)
+        {
+            Attribute attr = AmazonSQSUtil.FindAttribute(this.Attribute, SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT);
+            if (attr == null)
+            {
+                return default(T);
+            }
+            return (T)Convert.ChangeType(attr.Value, typeof(T));
+        }
+
+        private void setAttributeValue(string name, object value)
+        {
+            Attribute attr = AmazonSQSUtil.FindAttribute(this.Attribute, name);
+            if (attr == null)
+            {
+                Attribute newAttr = new Attribute()
+                    .WithName(name)
+                    .WithValue(value.ToString());
+                this.Attribute.Add(newAttr);
+            }
+            else
+            {
+                attr.Value = value.ToString();
+            }
+        }
     }
 }

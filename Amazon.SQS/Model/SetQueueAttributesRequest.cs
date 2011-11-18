@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-02-01
+ *  API Version: 2011-10-01
  */
 
 using System;
@@ -24,12 +24,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 
+using Amazon.SQS.Util;
+
 namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Sets an attribute of a queue. Currently, you can set only one attribute per request.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class SetQueueAttributesRequest
     {    
         private string queueUrlField;
@@ -107,5 +109,65 @@ namespace Amazon.SQS.Model
             return (Attribute.Count > 0);
         }
 
+
+        /// <summary>
+        /// Adds the attribute for setting the policy and returns back this for chaining operations.
+        /// </summary>
+        /// <param name="policy">The policy to set</param>
+        /// <returns>This instances for chaining operations.</returns>
+        public SetQueueAttributesRequest WithPolicy(string policy)
+        {
+            this.WithAttribute(new Attribute()
+                        .WithName(SQSConstants.ATTRIBUTE_POLICY).WithValue(policy));
+            return this;
+        }
+
+        /// <summary>
+        /// Adds the attribute for setting the visibility timeout and returns back this for chaining operations.
+        /// </summary>
+        /// <param name="visibilityTimeout">The visibility timeout to set</param>
+        /// <returns>This instances for chaining operations.</returns>
+        public SetQueueAttributesRequest WithVisibilityTimeout(int visibilityTimeout)
+        {
+            this.WithAttribute(new Attribute()
+                        .WithName(SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT).WithValue(visibilityTimeout.ToString()));
+            return this;
+        }
+
+        /// <summary>
+        /// Adds the attribute for setting the maximum message size and returns back this for chaining operations.
+        /// </summary>
+        /// <param name="maximumMessageSize">The maximum message size to set</param>
+        /// <returns>This instances for chaining operations.</returns>
+        public SetQueueAttributesRequest WithMaximumMessageSize(int maximumMessageSize)
+        {
+            this.WithAttribute(new Attribute()
+                        .WithName(SQSConstants.ATTRIBUTE_MAXIMUM_MESSAGE_SIZE).WithValue(maximumMessageSize.ToString()));
+            return this;
+        }
+
+        /// <summary>
+        /// Adds the attribute for setting the message retention period and returns back this for chaining operations.
+        /// </summary>
+        /// <param name="messageRetentionPeriod">The message retention period to set</param>
+        /// <returns>This instances for chaining operations.</returns>
+        public SetQueueAttributesRequest WithMessageRetentionPeriod(int messageRetentionPeriod)
+        {
+            this.WithAttribute(new Attribute()
+                        .WithName(SQSConstants.ATTRIBUTE_MESSAGE_RETENTION_PERIOD).WithValue(messageRetentionPeriod.ToString()));
+            return this;
+        }
+
+        /// <summary>
+        /// Adds the attribute for setting the delay in seconds and returns back this for chaining operations.
+        /// </summary>
+        /// <param name="delaySeconds">The delay in seconds to set</param>
+        /// <returns>This instances for chaining operations.</returns>
+        public SetQueueAttributesRequest WithDeplaySeconds(int delaySeconds)
+        {
+            this.WithAttribute(new Attribute()
+                        .WithName(SQSConstants.ATTRIBUTE_DELAY_SECONDS).WithValue(delaySeconds.ToString()));
+            return this;
+        }
     }
 }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-02-01
+ *  API Version: 2011-10-01
  */
 
 using System;
@@ -27,11 +27,11 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// he ListQueues action returns a list of your queues. The maximum number of queues that can be returned is 1000.
+    /// The ListQueues action returns a list of your queues. The maximum number of queues that can be returned is 1000.
     /// If you specify a value for the optional QueueNamePrefix parameter, only queues with a name beginning with the
     /// specified value are returned.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class ListQueuesRequest
     {    
         private string queueNamePrefixField;

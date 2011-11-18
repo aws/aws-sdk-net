@@ -38,6 +38,7 @@ using Amazon.SimpleDB.Model;
 using Amazon.SimpleDB.Util;
 using Attribute = Amazon.SimpleDB.Model.Attribute;
 using Amazon.Util;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleDB
 {
@@ -45,11 +46,10 @@ namespace Amazon.SimpleDB
     {
         static Logger LOGGER = new Logger(typeof(AmazonSimpleDBClient));
 
-        private string awsAccessKeyId;
-        private SecureString awsSecretAccessKey;
+        private bool ownCredentials;
+        private AWSCredentials credentials;
         private AmazonSimpleDBConfig config;
         private bool disposed;
-        private string clearAwsSecretAccessKey;
 
         #region Dispose Pattern Implementation
 
@@ -62,16 +62,13 @@ namespace Amazon.SimpleDB
         {
             if (!this.disposed)
             {
-                if (fDisposing)
+                if (fDisposing && credentials != null)
                 {
-                    //Remove Unmanaged Resources
-                    // I.O.W. remove resources that have to be explicitly
-                    // "Dispose"d or Closed
-                    if (awsSecretAccessKey != null)
+                    if (ownCredentials)
                     {
-                        awsSecretAccessKey.Dispose();
-                        awsSecretAccessKey = null;
+                        credentials.Dispose();
                     }
+                    credentials = null;
                 }
                 this.disposed = true;
             }
@@ -97,15 +94,51 @@ namespace Amazon.SimpleDB
         #endregion
 
         #region Constructors
+
+        /// <summary>
+        /// Constructs AmazonSimpleDBClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonSimpleDBClient()
+            : this(new EnvironmentAWSCredentials(), new AmazonSimpleDBConfig(), true) { }
+
+        /// <summary>
+        /// Constructs AmazonSimpleDBClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonSimpleDB Configuration Object</param>
+        public AmazonSimpleDBClient(AmazonSimpleDBConfig config)
+            : this(new EnvironmentAWSCredentials(), config, true) { }
+
         /// <summary>
         /// Constructs AmazonSimpleDBClient with AWS Access Key ID and AWS Secret Key
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonSimpleDBClient(string awsAccessKeyId, string awsSecretAccessKey)
-            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonSimpleDBConfig())
-        {
-        }
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonSimpleDBConfig(), true) { }
 
         /// <summary>
         /// Constructs AmazonSimpleDBClient with AWS Access Key ID, AWS Secret Key and an
@@ -118,26 +151,7 @@ namespace Amazon.SimpleDB
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="config">The AmazonSimpleDB Configuration Object</param>
         public AmazonSimpleDBClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonSimpleDBConfig config)
-        {
-            if (!String.IsNullOrEmpty(awsSecretAccessKey))
-            {
-                if (config.UseSecureStringForAwsSecretKey)
-                {
-                    this.awsSecretAccessKey = new SecureString();
-                    foreach (char ch in awsSecretAccessKey.ToCharArray())
-                    {
-                        this.awsSecretAccessKey.AppendChar(ch);
-                    }
-                    this.awsSecretAccessKey.MakeReadOnly();
-                }
-                else
-                {
-                    clearAwsSecretAccessKey = awsSecretAccessKey;
-                }
-            }
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.config = config;
-        }
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true) { }
 
         /// <summary>
         /// Constructs an AmazonSimpleDBClient with AWS Access Key ID, AWS Secret Key and an
@@ -147,10 +161,31 @@ namespace Amazon.SimpleDB
         /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
         /// <param name="config">The AmazonSimpleDB Configuration Object</param>
         public AmazonSimpleDBClient(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonSimpleDBConfig config)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true) { }
+
+        /// <summary>
+        /// Constructs an AmazonSimpleDBClient with AWSCredentials
+        /// </summary>
+        /// <param name="credentials"></param>
+        public AmazonSimpleDBClient(AWSCredentials credentials)
+            : this(credentials, new AmazonSimpleDBConfig()) { }
+
+        /// <summary>
+        /// Constructs an AmazonSimpleDBClient with AWSCredentials and an
+        /// AmazonSimpleDBClient Configuration object
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="config"></param>
+        public AmazonSimpleDBClient(AWSCredentials credentials, AmazonSimpleDBConfig config)
+            : this(credentials, config, false) { }
+
+        // Constructs an AmazonSimpleDBClient with credentials, config and flag which
+        // specifies if the credentials are owned by the client or not
+        private AmazonSimpleDBClient(AWSCredentials credentials, AmazonSimpleDBConfig config, bool ownCredentials)
         {
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.awsSecretAccessKey = awsSecretAccessKey;
+            this.credentials = credentials;
             this.config = config;
+            this.ownCredentials = ownCredentials;
         }
         #endregion
 
@@ -1441,39 +1476,46 @@ namespace Amazon.SimpleDB
          */
         private void addRequiredParameters(IDictionary<string, string> parameters)
         {
-            if (String.IsNullOrEmpty(this.awsAccessKeyId))
+            using (ImmutableCredentials immutableCredentials = this.credentials.GetCredentials())
             {
-                throw new AmazonSimpleDBException("The AWS Access Key ID cannot be NULL or a Zero length string");
-            }
+                if (String.IsNullOrEmpty(immutableCredentials.AccessKey))
+                {
+                    throw new AmazonSimpleDBException("The AWS Access Key ID cannot be NULL or a Zero length string");
+                }
 
-            if (parameters.ContainsKey("Signature"))
-            {
-                parameters.Remove("Signature");
-            }
+                if (parameters.ContainsKey("Signature"))
+                {
+                    parameters.Remove("Signature");
+                }
 
-            parameters["AWSAccessKeyId"] = this.awsAccessKeyId;
-            parameters["SignatureVersion"] = config.SignatureVersion;
-            parameters["SignatureMethod"] = config.SignatureMethod;
-            parameters["Timestamp"] = AmazonSimpleDBUtil.FormattedCurrentTimestamp;
-            parameters["Version"] = config.ServiceVersion;
-            if (!config.SignatureVersion.Equals("2"))
-            {
-                throw new AmazonSimpleDBException("Invalid Signature Version specified");
-            }
-            string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
+                if (immutableCredentials.UseToken)
+                {
+                    parameters["SecurityToken"] = immutableCredentials.Token;
+                }
+                parameters["AWSAccessKeyId"] = immutableCredentials.AccessKey;
+                parameters["SignatureVersion"] = config.SignatureVersion;
+                parameters["SignatureMethod"] = config.SignatureMethod;
+                parameters["Timestamp"] = AmazonSimpleDBUtil.FormattedCurrentTimestamp;
+                parameters["Version"] = config.ServiceVersion;
+                if (!config.SignatureVersion.Equals("2"))
+                {
+                    throw new AmazonSimpleDBException("Invalid Signature Version specified");
+                }
+                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
 
-            KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
-            string auth;
+                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
+                string auth;
 
-            if (config.UseSecureStringForAwsSecretKey)
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, awsSecretAccessKey, algorithm);
+                if (immutableCredentials.UseSecureStringForSecretKey)
+                {
+                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.SecureSecretKey, algorithm);
+                }
+                else
+                {
+                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
+                }
+                parameters["Signature"] = auth;
             }
-            else
-            {
-                auth = AWSSDKUtils.HMACSign(toSign, clearAwsSecretAccessKey, algorithm);
-            }
-            parameters["Signature"] = auth;
         }
 
         /*

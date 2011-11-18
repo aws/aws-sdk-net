@@ -38,6 +38,43 @@ namespace Amazon.ElasticMapReduce
         AbstractAWSSigner signer = new QueryStringSigner();
 
         /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonElasticMapReduceClient()
+            : base(new EnvironmentAWSCredentials(), new AmazonElasticMapReduceConfig(), true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonElasticMapReduce Configuration Object</param>
+        public AmazonElasticMapReduceClient(AmazonElasticMapReduceConfig config)
+            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+
+        /// <summary>
         /// Constructs AmazonElasticMapReduceClient with AWS Access Key ID and AWS Secret Key
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>

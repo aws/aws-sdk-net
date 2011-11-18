@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-02-01
+ *  API Version: 2011-10-01
  */
 
 using System;
@@ -84,6 +84,20 @@ namespace Amazon.SQS
         ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request);
 
         /// <summary>
+        /// This is a batch version of ChangeMessageVisibility. It takes
+        /// multiple receipt handles and performs the operation on each of the them. The
+        /// result of the operation on each message is reported individually in the
+        /// response.
+        /// </summary>
+        /// <param name="request">Change Message Visibility Batch request</param>
+        /// <returns>Change Message Visibility Response from the service</returns>
+        /// <remarks>
+        /// The ChangeMessageVisibilityBatch action extends the read lock timeout of the specified message from the specified queue to the specified value.
+        /// </remarks>
+        ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request);
+
+
+        /// <summary>
         /// Delete Message 
         /// </summary>
         /// <param name="request">Delete Message  request</param>
@@ -92,6 +106,15 @@ namespace Amazon.SQS
         /// The DeleteMessage action unconditionally removes the specified message from the specified queue. Even if the message is locked by another reader due to the visibility timeout setting, it is still deleted from the queue.
         /// </remarks>
         DeleteMessageResponse DeleteMessage(DeleteMessageRequest request);
+
+        /// <summary>
+        /// This is a batch version of <c>DeleteMessage</c>. It takes multiple
+        /// receipt handles and deletes each one of the messages. The result of the delete
+        /// operation on each message is reported individually in the response.
+        /// </summary>
+        /// <param name="request">DeleteMessageBatch request</param>
+        /// <returns>DeleteMessageBatch Response from the service</returns>
+        DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request);
 
         /// <summary>
         /// Delete Queue 
@@ -109,9 +132,67 @@ namespace Amazon.SQS
         /// <param name="request">Get Queue Attributes  request</param>
         /// <returns>Get Queue Attributes  Response from the service</returns>
         /// <remarks>
-        /// Gets one or all attributes of a queue. Queues currently have two attributes you can get: ApproximateNumberOfMessages and VisibilityTimeout.
+        /// Gets one or all attributes of a queue. The following table lists the valid values for attributes to be returned.
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>All</term>
+        ///         <description>All values.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>ApproximateNumberOfMessages</term>
+        ///         <description>The approximate number of visible messages in a queue.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>ApproximateNumberOfMessagesNotVisible</term>
+        ///         <description>The approximate number of messages that are not timed-out and not deleted.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>VisibilityTimeout</term>
+        ///         <description>The visibility timeout for the queue.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>CreatedTimestamp</term>
+        ///         <description>The time when the queue was created (epoch time in seconds).</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>LastModifiedTimestamp</term>
+        ///         <description>The time when the queue was last changed (epoch time in seconds).</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Policy</term>
+        ///         <description>The queue's policy.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>MaximumMessageSize</term>
+        ///         <description>The limit of how many bytes a message can contain before Amazon SQS rejects it.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>MessageRetentionPeriod</term>
+        ///         <description>The number of seconds Amazon SQS retains a message.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>QueueArn</term>
+        ///         <description>The queue's Amazon resource name (ARN).</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>DelaySeconds</term>
+        ///         <description>The default delay for messages to be delivered.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>ApproximateNumberOfMessagesDelayed</term>
+        ///         <description>The approximate number of messages that are delayed from delivery.</description>
+        ///     </item>
+        /// </list>
         /// </remarks>
         GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request);
+
+
+        /// <summary>
+        /// The <c>GetQueueUrl</c> action returns the URL of an existing queue.
+        /// </summary>
+        /// <param name="request">GetQueueUrl  request</param>
+        /// <returns>GetQueueUrl Response from the service</returns>
+        GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request);
 
         /// <summary>
         /// Remove Permission 
@@ -147,6 +228,15 @@ namespace Amazon.SQS
         /// The SendMessage action delivers a message to the specified queue.
         /// </remarks>
         SendMessageResponse SendMessage(SendMessageRequest request);
+
+        /// <summary>
+        /// This is a batch version of <c>SendMessage</c>. It takes
+        /// multiple messages and adds each of them to the queue. The result of each 
+        /// add operation is reported individually in the response.
+        /// </summary>
+        /// <param name="request">SendMessageBatch  request</param>
+        /// <returns>SendMessageBatch Response from the service</returns>
+        SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request);
 
         /// <summary>
         /// Set Queue Attributes 

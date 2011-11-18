@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-02-01
+ *  API Version: 2011-10-01
  */
 
 using System;
@@ -24,12 +24,15 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 
+using Amazon.SQS.Util;
+using Amazon.Util;
+
 namespace Amazon.SQS.Model
 {
     /// <summary>
     /// A list of attributes returned by the GetQueueAttributesRequest.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class GetQueueAttributesResult
     {    
         private List<Attribute> attributeField;
@@ -61,5 +64,159 @@ namespace Amazon.SQS.Model
             return (Attribute.Count > 0);
         }
 
+        /// <summary>
+        /// Gets the visibility timeout from the Attributes collection.
+        /// </summary>
+        public int VisibilityTimeout
+        {
+            get
+            {
+                int value = 0;
+                int.TryParse(getAttributeValue(SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT), out value);
+                return value;
+            }
+        }
+
+        /// <summary>
+        /// Gets the delay in seconds from the Attributes collection.
+        /// </summary>
+        public int DelaySeconds
+        {
+            get
+            {
+                int value = 0;
+                int.TryParse(getAttributeValue(SQSConstants.ATTRIBUTE_DELAY_SECONDS), out value);
+                return value;
+            }
+        }
+
+        /// <summary>
+        /// Gets the maximum message size from the Attributes collection.
+        /// </summary>
+        public int MaximumMessageSize
+        {
+            get
+            {
+                int value = 0;
+                int.TryParse(getAttributeValue(SQSConstants.ATTRIBUTE_MAXIMUM_MESSAGE_SIZE), out value);
+                return value;
+            }
+        }
+
+        /// <summary>
+        /// Returns the message retention period from the Attributes collection.
+        /// </summary>
+        public int MessageRetentionPeriod
+        {
+            get
+            {
+                int value = 0;
+                int.TryParse(getAttributeValue(SQSConstants.ATTRIBUTE_MESSAGE_RETENTION_PERIOD), out value);
+                return value;
+            }
+        }
+
+
+        /// <summary>
+        /// Gets the approximate number of messages from the Attributes collection.
+        /// </summary>
+        public int ApproximateNumberOfMessages
+        {
+            get
+            {
+                int value = 0;
+                int.TryParse(getAttributeValue(SQSConstants.ATTRIBUTE_APPROXIMATE_NUMBER_OF_MESSAGES), out value);
+                return value;
+            }
+        }
+
+        /// <summary>
+        /// Gets the approximate number of messages not visible from the Attributes collection.
+        /// </summary>
+        public int ApproximateNumberOfMessagesNotVisible
+        {
+            get
+            {
+                int value = 0;
+                int.TryParse(getAttributeValue(SQSConstants.ATTRIBUTE_APPROXIMATE_NUMBER_OF_MESSAGES_NOT_VISIBLE), out value);
+                return value;
+            }
+        }
+
+        /// <summary>
+        /// Gets the approximate number of messages delayed from the Attributes collection.
+        /// </summary>
+        public int ApproximateNumberOfMessagesDelayed
+        {
+            get
+            {
+                int value = 0;
+                int.TryParse(getAttributeValue(SQSConstants.ATTRIBUTE_APPROXIMATE_NUMBER_OF_MESSAGES_DELAYED), out value);
+                return value;
+            }
+        }
+
+        /// <summary>
+        /// Gets the created timestamp from the Attributes collection.
+        /// </summary>
+        public DateTime CreatedTimestamp
+        {
+            get
+            {
+                int value = 0;
+                int.TryParse(getAttributeValue(SQSConstants.ATTRIBUTE_CREATED_TIMESTAMP), out value);
+                return AWSSDKUtils.ConvertFromUnixEpochSeconds(value);
+            }
+        }
+
+        /// <summary>
+        /// Gets the last modified timestamp from the Attributes collection.
+        /// </summary>
+        public DateTime LastModifiedTimestamp
+        {
+            get
+            {
+                int value = 0;
+                int.TryParse(getAttributeValue(SQSConstants.ATTRIBUTE_LAST_MODIFIED_TIMESTAMP), out value);
+                return AWSSDKUtils.ConvertFromUnixEpochSeconds(value);
+            }
+        }
+
+        /// <summary>
+        /// Gets the queue arn from the Attributes collection.
+        /// </summary>
+        public string QueueARN
+        {
+            get
+            {
+                return getAttributeValue(SQSConstants.ATTRIBUTE_QUEUE_ARN);
+            }
+        }
+
+        /// <summary>
+        /// Gets the queue access policy from the Attributes collection.
+        /// </summary>
+        public string Policy
+        {
+            get
+            {
+                return getAttributeValue(SQSConstants.ATTRIBUTE_POLICY);
+            }
+        }
+
+        private string getAttributeValue(string field)
+        {
+            foreach (Attribute attr in this.Attribute)
+            {
+                if (string.Equals(attr.Name, field))
+                {
+                    if (string.IsNullOrEmpty(attr.Value))
+                        return null;
+                    return attr.Value;
+                }
+            }
+
+            return null;
+        }
     }
 }

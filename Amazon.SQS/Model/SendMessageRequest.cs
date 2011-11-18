@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-02-01
+ *  API Version: 2011-10-01
  */
 
 using System;
@@ -29,11 +29,12 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// The SendMessage action delivers a message to the specified queue.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2009-02-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class SendMessageRequest
     {    
         private string queueUrlField;
         private string messageBodyField;
+        private int? delaySecondsField;
 
         /// <summary>
         /// Gets and sets the QueueUrl property.
@@ -107,5 +108,34 @@ namespace Amazon.SQS.Model
             return this.messageBodyField != null;
         }
 
+        /// <summary>
+        /// Gets and sets the DelaySeconds property.
+        /// The number of seconds to delay the message from being available for processing.
+        /// </summary>
+        public int DelaySeconds
+        {
+            get { return this.delaySecondsField.GetValueOrDefault(); }
+            set { this.delaySecondsField = value; }
+        }
+
+        /// <summary>
+        /// Sets the DelaySeconds property
+        /// </summary>
+        /// <param name="delaySeconds">The number of seconds to delay the message from being available for processing.</param>
+        /// <returns>this instance</returns>
+        public SendMessageRequest WithDelaySeconds(int delaySeconds)
+        {
+            this.delaySecondsField = delaySeconds;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if DelaySeconds property is set
+        /// </summary>
+        /// <returns>true if DelaySeconds property is set</returns>
+        public bool IsSetDelaySeconds()
+        {
+            return this.delaySecondsField.HasValue;
+        }
     }
 }

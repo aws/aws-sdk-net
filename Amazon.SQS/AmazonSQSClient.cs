@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-02-01
+ *  API Version: 2011-10-01
  */
 
 using System;
@@ -107,6 +107,43 @@ namespace Amazon.SQS
         }
 
         #endregion
+
+        /// <summary>
+        /// Constructs AmazonSQSClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonSQSClient()
+            : this(new EnvironmentAWSCredentials(), new AmazonSQSConfig(), true) { }
+
+        /// <summary>
+        /// Constructs AmazonSQSClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonSQS Configuration Object</param>
+        public AmazonSQSClient(AmazonSQSConfig config)
+            : this(new EnvironmentAWSCredentials(), config, true) { }
 
         /// <summary>
         /// Constructs AmazonSQSClient with AWS Access Key ID and AWS Secret Key
@@ -225,6 +262,22 @@ namespace Amazon.SQS
         }
 
         /// <summary>
+        /// This is a batch version of ChangeMessageVisibility. It takes
+        /// multiple receipt handles and performs the operation on each of the them. The
+        /// result of the operation on each message is reported individually in the
+        /// response.
+        /// </summary>
+        /// <param name="request">Change Message Visibility Batch request</param>
+        /// <returns>Change Message Visibility Response from the service</returns>
+        /// <remarks>
+        /// The ChangeMessageVisibilityBatch action extends the read lock timeout of the specified message from the specified queue to the specified value.
+        /// </remarks>
+        public ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
+        {
+            return Invoke<ChangeMessageVisibilityBatchResponse>(ConvertChangeMessageVisibilityBatch(request));
+        }
+
+        /// <summary>
         /// Delete Message 
         /// </summary>
         /// <param name="request">Delete Message  request</param>
@@ -235,6 +288,18 @@ namespace Amazon.SQS
         public DeleteMessageResponse DeleteMessage(DeleteMessageRequest request)
         {
             return Invoke<DeleteMessageResponse>(ConvertDeleteMessage(request));
+        }
+
+        /// <summary>
+        /// This is a batch version of <c>DeleteMessage</c>. It takes multiple
+        /// receipt handles and deletes each one of the messages. The result of the delete
+        /// operation on each message is reported individually in the response.
+        /// </summary>
+        /// <param name="request">DeleteMessageBatch request</param>
+        /// <returns>DeleteMessageBatch Response from the service</returns>
+        public DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request)
+        {
+            return Invoke<DeleteMessageBatchResponse>(ConvertDeleteMessageBatch(request));
         }
 
         /// <summary>
@@ -256,11 +321,71 @@ namespace Amazon.SQS
         /// <param name="request">Get Queue Attributes  request</param>
         /// <returns>Get Queue Attributes  Response from the service</returns>
         /// <remarks>
-        /// Gets one or all attributes of a queue. Queues currently have two attributes you can get: ApproximateNumberOfMessages and VisibilityTimeout.
+        /// Gets one or all attributes of a queue. The following table lists the valid values for attributes to be returned.
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>All</term>
+        ///         <description>All values.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>ApproximateNumberOfMessages</term>
+        ///         <description>The approximate number of visible messages in a queue.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>ApproximateNumberOfMessagesNotVisible</term>
+        ///         <description>The approximate number of messages that are not timed-out and not deleted.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>VisibilityTimeout</term>
+        ///         <description>The visibility timeout for the queue.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>CreatedTimestamp</term>
+        ///         <description>The time when the queue was created (epoch time in seconds).</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>LastModifiedTimestamp</term>
+        ///         <description>The time when the queue was last changed (epoch time in seconds).</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Policy</term>
+        ///         <description>The queue's policy.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>MaximumMessageSize</term>
+        ///         <description>The limit of how many bytes a message can contain before Amazon SQS rejects it.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>MessageRetentionPeriod</term>
+        ///         <description>The number of seconds Amazon SQS retains a message.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>QueueArn</term>
+        ///         <description>The queue's Amazon resource name (ARN).</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>DelaySeconds</term>
+        ///         <description>The default delay for messages to be delivered.</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>ApproximateNumberOfMessagesDelayed</term>
+        ///         <description>The approximate number of messages that are delayed from delivery.</description>
+        ///     </item>
+        /// </list>
         /// </remarks>
         public GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request)
         {
             return Invoke<GetQueueAttributesResponse>(ConvertGetQueueAttributes(request));
+        }
+
+        /// <summary>
+        /// The <c>GetQueueUrl</c> action returns the URL of an existing queue.
+        /// </summary>
+        /// <param name="request">GetQueueUrl  request</param>
+        /// <returns>GetQueueUrl Response from the service</returns>
+        public GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request)
+        {
+            return Invoke<GetQueueUrlResponse>(ConvertGetQueueUrl(request));
         }
 
         /// <summary>
@@ -305,6 +430,18 @@ namespace Amazon.SQS
         public SendMessageResponse SendMessage(SendMessageRequest request)
         {
             return Invoke<SendMessageResponse>(ConvertSendMessage(request));
+        }
+
+        /// <summary>
+        /// This is a batch version of <c>SendMessage</c>. It takes
+        /// multiple messages and adds each of them to the queue. The result of each 
+        /// add operation is reported individually in the response.
+        /// </summary>
+        /// <param name="request">SendMessageBatch  request</param>
+        /// <returns>SendMessageBatch Response from the service</returns>
+        public SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request)
+        {
+            return Invoke<SendMessageBatchResponse>(ConvertSendMessageBatch(request));
         }
 
         /// <summary>
@@ -700,6 +837,41 @@ namespace Amazon.SQS
             return parameters;
         }
 
+        private static IDictionary<string, string> ConvertChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ChangeMessageVisibilityBatch";
+            if (request.IsSetQueueUrl())
+            {
+                parameters["QueueUrl"] = request.QueueUrl;
+            }
+
+            int changeMessageVisibilityBatchRequestEntryListIndex = 1;
+            foreach (ChangeMessageVisibilityBatchRequestEntry changeMessageVisibilityBatchRequestEntry in request.Entries)
+            {
+                if (changeMessageVisibilityBatchRequestEntry.IsSetId())
+                {
+                    parameters[String.Concat("ChangeMessageVisibilityBatchRequestEntry", ".", changeMessageVisibilityBatchRequestEntryListIndex, ".Id")] = changeMessageVisibilityBatchRequestEntry.Id;
+                }
+
+                if (changeMessageVisibilityBatchRequestEntry.IsSetReceiptHandle())
+                {
+                    parameters[String.Concat("ChangeMessageVisibilityBatchRequestEntry", ".", changeMessageVisibilityBatchRequestEntryListIndex, ".ReceiptHandle")] = changeMessageVisibilityBatchRequestEntry.ReceiptHandle;
+                }
+
+                if (changeMessageVisibilityBatchRequestEntry.IsSetVisibilityTimeout())
+                {
+                    parameters[String.Concat("ChangeMessageVisibilityBatchRequestEntry", ".", changeMessageVisibilityBatchRequestEntryListIndex, ".VisibilityTimeout")] = changeMessageVisibilityBatchRequestEntry.VisibilityTimeout.ToString();
+                }
+
+                changeMessageVisibilityBatchRequestEntryListIndex++;
+            }
+
+
+
+            return parameters;
+        }
+
         /**
          * Convert DeleteMessageRequest to name value pairs
          */
@@ -729,6 +901,34 @@ namespace Amazon.SQS
                 }
 
                 deleteMessageRequestAttributeListIndex++;
+            }
+
+            return parameters;
+        }
+
+        private static IDictionary<string, string> ConvertDeleteMessageBatch(DeleteMessageBatchRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeleteMessageBatch";
+            if (request.IsSetQueueUrl())
+            {
+                parameters["QueueUrl"] = request.QueueUrl;
+            }
+
+            int deleteMessageBatchRequestEntryListIndex = 1;
+            foreach (DeleteMessageBatchRequestEntry deleteMessageBatchRequestEntry in request.Entries)
+            {
+                if (deleteMessageBatchRequestEntry.IsSetId())
+                {
+                    parameters[String.Concat("DeleteMessageBatchRequestEntry", ".", deleteMessageBatchRequestEntryListIndex, ".Id")] = deleteMessageBatchRequestEntry.Id;
+                }
+
+                if (deleteMessageBatchRequestEntry.IsSetReceiptHandle())
+                {
+                    parameters[String.Concat("DeleteMessageBatchRequestEntry", ".", deleteMessageBatchRequestEntryListIndex, ".ReceiptHandle")] = deleteMessageBatchRequestEntry.ReceiptHandle;
+                }
+
+                deleteMessageBatchRequestEntryListIndex++;
             }
 
             return parameters;
@@ -786,6 +986,26 @@ namespace Amazon.SQS
             return parameters;
         }
 
+
+        /**
+         * Convert GetQueueAttributesRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertGetQueueUrl(GetQueueUrlRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "GetQueueUrl";
+            if (request.IsSetQueueName())
+            {
+                parameters["QueueName"] = request.QueueName;
+            }
+            if (request.IsSetQueueOwnerAWSAccountId())
+            {
+                parameters["QueueOwnerAWSAccountId"] = request.QueueOwnerAWSAccountId;
+            }
+
+            return parameters;
+        }
+
         /**
          * Convert ReceiveMessageRequest to name value pairs
          */
@@ -830,6 +1050,43 @@ namespace Amazon.SQS
             if (request.IsSetMessageBody())
             {
                 parameters["MessageBody"] = request.MessageBody;
+            }
+            if (request.IsSetDelaySeconds())
+            {
+                parameters["DelaySeconds"] = request.DelaySeconds.ToString();
+            }
+
+            return parameters;
+        }
+
+        private static IDictionary<string, string> ConvertSendMessageBatch(SendMessageBatchRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "SendMessageBatch";
+            if (request.IsSetQueueUrl())
+            {
+                parameters["QueueUrl"] = request.QueueUrl;
+            }
+
+            int sendMessageBatchRequestEntryListIndex = 1;
+            foreach (SendMessageBatchRequestEntry sendMessageBatchRequestEntry in request.Entries)
+            {
+                if (sendMessageBatchRequestEntry.IsSetId())
+                {
+                    parameters[String.Concat("SendMessageBatchRequestEntry", ".", sendMessageBatchRequestEntryListIndex, ".Id")] = sendMessageBatchRequestEntry.Id;
+                }
+
+                if (sendMessageBatchRequestEntry.IsSetMessageBody())
+                {
+                    parameters[String.Concat("SendMessageBatchRequestEntry", ".", sendMessageBatchRequestEntryListIndex, ".MessageBody")] = sendMessageBatchRequestEntry.MessageBody;
+                }
+
+                if (sendMessageBatchRequestEntry.IsSetDelaySeconds())
+                {
+                    parameters[String.Concat("SendMessageBatchRequestEntry", ".", sendMessageBatchRequestEntryListIndex, ".DelaySeconds")] = sendMessageBatchRequestEntry.DelaySeconds.ToString();
+                }
+
+                sendMessageBatchRequestEntryListIndex++;
             }
 
             return parameters;

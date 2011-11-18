@@ -43,6 +43,43 @@ namespace Amazon.RDS
         AbstractAWSSigner signer = new QueryStringSigner();
 
         /// <summary>
+        /// Constructs AmazonRDSClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonRDSClient()
+            : base(new EnvironmentAWSCredentials(), new AmazonRDSConfig(), true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonRDSClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonRDSClient Configuration Object</param>
+        public AmazonRDSClient(AmazonRDSConfig config)
+            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+
+        /// <summary>
         /// Constructs AmazonRDSClient with AWS Access Key ID and AWS Secret Key
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>

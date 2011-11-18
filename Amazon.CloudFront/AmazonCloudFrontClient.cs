@@ -36,6 +36,7 @@ using System.Xml.Serialization;
 using System.Xml.Xsl;
 
 using Amazon.Util;
+using Amazon.Runtime;
 using Amazon.CloudFront.Model;
 using Amazon.CloudFront.Util;
 
@@ -58,19 +59,18 @@ namespace Amazon.CloudFront
     {
         #region Private Members
 
-        private string awsAccessKeyId;
-        private SecureString awsSecretAccessKey;
+        private bool ownCredentials;
+        private AWSCredentials credentials;
         private AmazonCloudFrontConfig config;
         private bool disposed;
         private static int defaultRetry = 3;
-        private string clearAwsSecretAccessKey;
 
         #endregion
 
         #region Dispose Pattern
 
         /// <summary>
-        /// Implements the Dispose pattern for the AmazonS3Client
+        /// Implements the Dispose pattern for the AmazonCloudFrontClient
         /// </summary>
         /// <param name="fDisposing">Whether this object is being disposed via a call to Dispose
         /// or garbage collected.</param>
@@ -78,16 +78,13 @@ namespace Amazon.CloudFront
         {
             if (!this.disposed)
             {
-                if (fDisposing)
+                if (fDisposing && credentials != null)
                 {
-                    //Remove Unmanaged Resources
-                    // I.O.W. remove resources that have to be explicitly
-                    // "Dispose"d or Closed
-                    if (awsSecretAccessKey != null)
+                    if (ownCredentials)
                     {
-                        awsSecretAccessKey.Dispose();
-                        awsSecretAccessKey = null;
+                        credentials.Dispose();
                     }
+                    credentials = null;
                 }
                 this.disposed = true;
             }
@@ -113,13 +110,51 @@ namespace Amazon.CloudFront
         #endregion
 
         #region Constructors
+
+        /// <summary>
+        /// Constructs AmazonCloudFrontClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonCloudFrontClient()
+            : this(new EnvironmentAWSCredentials(), new AmazonCloudFrontConfig(), true) { }
+
+        /// <summary>
+        /// Constructs AmazonCloudFrontClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonEC2 Configuration Object</param>
+        public AmazonCloudFrontClient(AmazonCloudFrontConfig config)
+            : this(new EnvironmentAWSCredentials(), config, true) { }
+
         /// <summary>
         /// Constructs AmazonCloudFrontClient with AWS Access Key ID and AWS Secret Key
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonCloudFrontClient(string awsAccessKeyId, string awsSecretAccessKey)
-            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonCloudFrontConfig())
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey, true), new AmazonCloudFrontConfig(), true)
         {
         }
 
@@ -134,25 +169,8 @@ namespace Amazon.CloudFront
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="config">The CloudFront Configuration Object</param>
         public AmazonCloudFrontClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudFrontConfig config)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey, config.UseSecureStringForAwsSecretKey), config, true)
         {
-            if (!String.IsNullOrEmpty(awsSecretAccessKey))
-            {
-                if (config.UseSecureStringForAwsSecretKey)
-                {
-                    this.awsSecretAccessKey = new SecureString();
-                    foreach (char ch in awsSecretAccessKey.ToCharArray())
-                    {
-                        this.awsSecretAccessKey.AppendChar(ch);
-                    }
-                    this.awsSecretAccessKey.MakeReadOnly();
-                }
-            }
-            else
-            {
-                clearAwsSecretAccessKey = awsSecretAccessKey;
-            }
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.config = config;
         }
 
         /// <summary>
@@ -163,10 +181,32 @@ namespace Amazon.CloudFront
         /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
         /// <param name="config">The CloudFront Configuration Object</param>
         public AmazonCloudFrontClient(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonCloudFrontConfig config)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true)
         {
-            this.awsAccessKeyId = awsAccessKeyId;
-            this.awsSecretAccessKey = awsSecretAccessKey;
+        }
+
+        /// <summary>
+        /// Constructs an AmazonCloudFrontClient with AWSCredentials
+        /// </summary>
+        /// <param name="credentials"></param>
+        public AmazonCloudFrontClient(AWSCredentials credentials)
+            : this(credentials, new AmazonCloudFrontConfig(), false) { }
+
+        /// <summary>
+        /// Constructs an AmazonCloudFrontClient with AWSCredentials and an AmazonCloudFront Configuration object
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="config"></param>
+        public AmazonCloudFrontClient(AWSCredentials credentials, AmazonCloudFrontConfig config)
+            : this(credentials, config, false) { }
+
+        // Constructs an AmazonEC2Client with credentials, config and flag which
+        // specifies if the credentials are owned by the client or not
+        private AmazonCloudFrontClient(AWSCredentials credentials, AmazonCloudFrontConfig config, bool ownCredentials)
+        {
+            this.credentials = credentials;
             this.config = config;
+            this.ownCredentials = ownCredentials;
         }
 
         #endregion
@@ -393,7 +433,7 @@ namespace Amazon.CloudFront
 
             if (!request.IsSetETag())
             {
-                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The Distribution ETag specified is null or empty!");
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The Distribution ETag specified is null or empty. It is required for the if-match header.");
             }
 
             return Invoke<SetDistributionConfigResponse>(ConvertSetDistributionConfig(request), request.Headers);
@@ -480,7 +520,7 @@ namespace Amazon.CloudFront
 
             if (!request.IsSetETag())
             {
-                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The Distribution ETag specified is null or empty!");
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The Distribution ETag specified is null or empty. It is required for the if-match header.");
             }
 
             return Invoke<DeleteDistributionResponse>(ConvertDeleteDistribution(request), request.Headers);
@@ -549,7 +589,7 @@ namespace Amazon.CloudFront
 
             if (!request.IsSetETag())
             {
-                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The OriginAccessIdentity ETag specified is null or empty!");
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The OriginAccessIdentity ETag specified is null or empty. It is required for the if-match header.");
             }
 
             return Invoke<DeleteOriginAccessIdentityResponse>(ConvertDeleteOriginAccessIdentity(request), request.Headers);
@@ -669,7 +709,7 @@ namespace Amazon.CloudFront
 
             if (!request.IsSetETag())
             {
-                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The OriginAccessIdentity ETag specified is null or empty!");
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The OriginAccessIdentity ETag specified is null or empty. It is required for the if-match header.");
             }
 
             return Invoke<SetOriginAccessIdentityConfigResponse>(ConvertSetOriginAccessIdentityConfig(request), request.Headers);
@@ -793,7 +833,7 @@ namespace Amazon.CloudFront
 
             if (!request.IsSetETag())
             {
-                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The StreamingDistribution ETag specified is null or empty!");
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The StreamingDistribution ETag specified is null or empty. It is required for the if-match header.");
             }
 
             return Invoke<SetStreamingDistributionConfigResponse>(ConvertSetStreamingDistributionConfig(request), request.Headers);
@@ -862,7 +902,7 @@ namespace Amazon.CloudFront
 
             if (!request.IsSetETag())
             {
-                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The StreamingDistribution ETag specified is null or empty!");
+                throw new ArgumentNullException(CloudFrontConstants.RequestParam, "The StreamingDistribution ETag specified is null or empty. It is required for the if-match header.");
             }
 
             return Invoke<DeleteStreamingDistributionResponse>(ConvertDeleteStreamingDistribution(request), request.Headers);
@@ -1357,8 +1397,8 @@ namespace Amazon.CloudFront
             {
                 canonicalResource.Append("origin-access-identity/cloudfront");
             }
-            else if(action.Equals("PostInvalidation"))
-            {                
+            else if (action.Equals("PostInvalidation"))
+            {
                 canonicalResource.AppendFormat("distribution/{0}/invalidation", parameters[CloudFrontQueryParameter.DistributionId]);
             }
             else if (action.Equals("GetInvalidationList"))
@@ -1367,7 +1407,7 @@ namespace Amazon.CloudFront
             }
             else if (action.Equals("GetInvalidation"))
             {
-                canonicalResource.AppendFormat("distribution/{0}/invalidation/{1}", 
+                canonicalResource.AppendFormat("distribution/{0}/invalidation/{1}",
                     parameters[CloudFrontQueryParameter.DistributionId], parameters[CloudFrontQueryParameter.InvalidationId]);
             }
 
@@ -1386,17 +1426,6 @@ namespace Amazon.CloudFront
                 CloudFrontQueryParameter.CanonicalizedResource,
                 canonicalResource.ToString()
                 );
-
-            string auth;
-            if (config.UseSecureStringForAwsSecretKey)
-            {
-                auth = BuildSigningString(webHeaders, awsSecretAccessKey);
-            }
-            else
-            {
-                auth = BuildSigningString(webHeaders, clearAwsSecretAccessKey);
-            }
-            parameters.Add(CloudFrontQueryParameter.Authorization, auth);
         }
 
         /**
@@ -1404,6 +1433,20 @@ namespace Amazon.CloudFront
         */
         private T Invoke<T>(IDictionary<CloudFrontQueryParameter, string> parameters, WebHeaderCollection headers) where T : CloudFrontResponse, new()
         {
+            ImmutableCredentials immutableCredentials = credentials.GetCredentials();
+            string auth;
+            if (config.UseSecureStringForAwsSecretKey)
+            {
+                auth = BuildSigningString(headers, immutableCredentials.SecureSecretKey);
+            }
+            else
+            {
+                auth = BuildSigningString(headers, immutableCredentials.ClearSecretKey);
+            }
+            parameters.Add(CloudFrontQueryParameter.Authorization, auth);
+
+
+
             string actionName = parameters[CloudFrontQueryParameter.Action];
             T response = default(T);
             HttpStatusCode statusCode = default(HttpStatusCode);
@@ -1412,11 +1455,6 @@ namespace Amazon.CloudFront
             // Variables that pertain to PUT requests
             byte[] requestData = Encoding.UTF8.GetBytes("");
             long reqDataLen = 0;
-
-            if (String.IsNullOrEmpty(this.awsAccessKeyId))
-            {
-                throw new AmazonCloudFrontException("The AWS Access Key ID cannot be NULL or a Zero length string");
-            }
 
             // The HTTP operation specified has to be one of the operations
             // the Amazon CloudFront service explicitly supports
@@ -1445,7 +1483,7 @@ namespace Amazon.CloudFront
             int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
             do
             {
-                request = ConfigureWebRequest(parameters, headers, reqDataLen);
+                request = ConfigureWebRequest(parameters, headers, reqDataLen, immutableCredentials);
                 requestAddr = request.Address.ToString();
                 // Submit the request and read response body
                 try
@@ -1638,7 +1676,7 @@ namespace Amazon.CloudFront
          * Configure HttpClient with set of defaults as well as configuration
          * from AmazonEC2Config instance
          */
-        private HttpWebRequest ConfigureWebRequest(IDictionary<CloudFrontQueryParameter, string> parameters, WebHeaderCollection headers, long contentLength)
+        private HttpWebRequest ConfigureWebRequest(IDictionary<CloudFrontQueryParameter, string> parameters, WebHeaderCollection headers, long contentLength, ImmutableCredentials immutableCredentials)
         {
             string url = config.ServiceURL;
 
@@ -1672,7 +1710,7 @@ namespace Amazon.CloudFront
                 // Add the AWS Authorization header.
                 httpRequest.Headers[CloudFrontConstants.AuthorizationHeader] = String.Concat(
                     "AWS ",
-                    this.awsAccessKeyId,
+                    immutableCredentials.AccessKey,
                     ":",
                     parameters[CloudFrontQueryParameter.Authorization]
                     );

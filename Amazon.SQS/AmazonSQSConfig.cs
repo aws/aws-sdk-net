@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2009-02-01
+ *  API Version: 2011-10-01
  */
 
 namespace Amazon.SQS
@@ -26,7 +26,7 @@ namespace Amazon.SQS
     /// </summary>
     public class AmazonSQSConfig
     {
-        private string serviceVersion = "2009-02-01";
+        private string serviceVersion = "2011-10-01";
         private string serviceURL = "https://queue.amazonaws.com";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
         private string signatureVersion = "2";

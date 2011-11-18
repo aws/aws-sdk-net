@@ -47,6 +47,7 @@ namespace Amazon.S3.Model
         private string md5Digest;
         private bool fGenerateMD5Digest;
         private int timeout = 0;
+        private int readWriteTimeout = 0;
 
         private string filePath;
         private long? filePosition;
@@ -392,6 +393,49 @@ namespace Amazon.S3.Model
 
         #endregion
 
+        #region ReadWriteTimeout
+
+        /// <summary>
+        /// Gets and sets of the ReadWriteTimeout property (in milliseconds).
+        /// The value of this property is assigned to the
+        /// ReadWriteTimeout property of the HTTPWebRequest object
+        /// used for S3 PUT Object requests.
+        /// </summary>
+        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        public int ReadWriteTimeout
+        {
+            get { return this.readWriteTimeout; }
+            set
+            {
+                if (value > 0 || value == System.Threading.Timeout.Infinite)
+                {
+                    this.readWriteTimeout = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets the ReadWriteTimeout property (in milliseconds). 
+        /// The value of this property is assigned to the
+        /// ReadWriteTimeout property of the HttpWebRequest.
+        /// </summary>
+        /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
+        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <returns>this instance</returns>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        public UploadPartRequest WithReadWriteTimeout(int readWriteTimeout)
+        {
+            ReadWriteTimeout = readWriteTimeout;
+            return this;
+        }
+
+        internal override bool SupportReadWriteTimeout
+        {
+            get { return true; }
+        }
+
+        #endregion
 
         /// <summary>
         /// The event for Put Object progress notifications. All

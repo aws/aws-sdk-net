@@ -77,7 +77,7 @@ namespace Amazon.S3.Model
         /// <returns>true if Headers property is set</returns>
         internal bool IsSetHeaders()
         {
-            return (this.headers != null && 
+            return (this.headers != null &&
                 this.headers.Count > 0);
         }
 
@@ -202,6 +202,11 @@ namespace Amazon.S3.Model
         #endregion
 
         #region Virtual methods
+
+        internal virtual bool SupportReadWriteTimeout
+        {
+            get { return false; }
+        }
 
         internal virtual bool SupportTimeout
         {

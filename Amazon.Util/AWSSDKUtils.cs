@@ -40,7 +40,7 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.3.14.0";
+        internal const string SDKVersionNumber = "1.3.15.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -315,6 +315,16 @@ namespace Amazon.Util
             }
 
             return result.ToString();
+        }
+
+        /// <summary>
+        /// Utilitly method for converting Unix epoch seconds to DateTime structure.
+        /// </summary>
+        /// <param name="seconds">The number of seconds since January 1, 1970.</param>
+        /// <returns>Converted DateTime structure</returns>
+        public static DateTime ConvertFromUnixEpochSeconds(int seconds)
+        {
+            return new DateTime(seconds * 10000000L + new DateTime(1970, 1, 1).Ticks, DateTimeKind.Utc).ToLocalTime();
         }
 
         #endregion

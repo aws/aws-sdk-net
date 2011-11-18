@@ -147,6 +147,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the ActionNames property.
         /// The action you want to allow for the specified principal(s).
+		/// Valid values: any Amazon SNS action name. Go to the 
+		/// <a href="http://docs.amazonwebservices.com/sns/latest/api/API_Operations.html">Amazon SNS API docs</a> for a list of action names.
         /// </summary>
         [XmlElementAttribute(ElementName = "ActionNames")]
         public List<string> ActionNames

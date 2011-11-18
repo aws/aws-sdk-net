@@ -92,6 +92,7 @@ namespace Amazon.S3.Model
         Range,
         RequestAddress,
         RequestTimeout,
+        RequestReadWriteTimeout,
         Url,
         Verb,
         VerifyChecksum,
@@ -236,21 +237,21 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Specifies the Storage Class of of an S3 object. Possible values
     /// are: <list type="bullet">
-    /// <item>ReducedRedundancy: provides a 99.9% durability guarantee</item>
-    /// <item>Standard: provides a 999999999% durability guarantee</item>
+    /// <item>ReducedRedundancy: provides a 99.99% durability guarantee</item>
+    /// <item>Standard: provides a 99.999999999% durability guarantee</item>
     /// </list>
     /// </summary>
     public enum S3StorageClass
     {
         /// <summary>
         /// The STANDARD storage class, which is the default
-        /// storage class for S3 objects. Provides a 999999999%
+        /// storage class for S3 objects. Provides a 99.999999999%
         /// durability guarantee.
         /// </summary>
         Standard,
         /// <summary>
         /// The REDUCED_REDUNDANCY storage class for S3 objects. This
-        /// provides a reduced (99.9%) durability guarantee at a lower
+        /// provides a reduced (99.99%) durability guarantee at a lower
         /// cost as compared to the STANDARD storage class. Use this
         /// storage class for non-mission critical data or for data 
         /// that doesn’t require the higher level of durability that S3

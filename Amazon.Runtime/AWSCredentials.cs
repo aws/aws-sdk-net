@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Amazon.SecurityToken;
-using Amazon.SecurityToken.Model;
-using System.Security;
+using System.Collections.Specialized;
+using System.Configuration;
 using System.Runtime.InteropServices;
+using System.Security;
+using System.Text;
+
 
 namespace Amazon.Runtime
 {
@@ -175,13 +176,27 @@ namespace Amazon.Runtime
     /// <summary>
     /// Abstract class that represents a credentials object for AWS services.
     /// </summary>
-    public abstract class AWSCredentials
+    public abstract class AWSCredentials : IDisposable
     {
         /// <summary>
         /// Returns a copy of ImmutableCredentials
         /// </summary>
         /// <returns></returns>
         public abstract ImmutableCredentials GetCredentials();
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+        }
+
+        #endregion
     }
 
     /// <summary>
@@ -253,14 +268,7 @@ namespace Amazon.Runtime
 
         private bool _disposed = false;
 
-        public void Dispose()
-        {
-            Dispose(true);
-
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (!_disposed)
             {
@@ -357,14 +365,7 @@ namespace Amazon.Runtime
 
         private bool _disposed = false;
 
-        public void Dispose()
-        {
-            Dispose(true);
-
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (!_disposed)
             {
@@ -374,6 +375,83 @@ namespace Amazon.Runtime
                     {
                         _lastCredentials.Dispose();
                         _lastCredentials = null;
+                    }
+                }
+
+                _disposed = true;
+            }
+        }
+
+        #endregion
+    }
+
+    /// <summary>
+    /// Credentials that are retrieved from ConfigurationManager.AppSettings
+    /// </summary>
+    public class EnvironmentAWSCredentials : AWSCredentials
+    {
+        #region Private members
+
+        private const string ACCESSKEY = "AWSAccessKey";
+        private const string SECRETKEY = "AWSSecretKey";
+
+        private ImmutableCredentials _wrappedCredentials;
+
+        #endregion
+
+
+        #region Public constructors
+
+        /// <summary>
+        /// Constructs an instance of EnvironmentAWSCredentials and attempts
+        /// to load AccessKey and SecretKey from ConfigurationManager.AppSettings
+        /// </summary>
+        public EnvironmentAWSCredentials()
+        {
+            NameValueCollection appConfig = ConfigurationManager.AppSettings;
+
+            var accessKey = appConfig[ACCESSKEY];
+            var secretKey = appConfig[SECRETKEY];
+
+            if (string.IsNullOrEmpty(accessKey))
+                throw new ArgumentException(string.Format("Access Key could not be found.  Add an appsetting to your App.config with the name {0} with a value of your access key.", ACCESSKEY));
+            if (string.IsNullOrEmpty(secretKey))
+                throw new ArgumentException(string.Format("Secret Key could not be found.  Add an appsetting to your App.config with the name {0} with a value of your secret key.", SECRETKEY));
+
+            this._wrappedCredentials = new ImmutableCredentials(accessKey, secretKey, null, false);
+        }
+
+        #endregion
+
+
+        #region Abstract class overrides
+
+        /// <summary>
+        /// Returns an instance of ImmutableCredentials for this instance
+        /// </summary>
+        /// <returns></returns>
+        public override ImmutableCredentials GetCredentials()
+        {
+            return this._wrappedCredentials.Copy();
+        }
+
+        #endregion
+
+
+        #region IDisposable Members
+
+        private bool _disposed = false;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    if (_wrappedCredentials != null)
+                    {
+                        _wrappedCredentials.Dispose();
+                        _wrappedCredentials = null;
                     }
                 }
 

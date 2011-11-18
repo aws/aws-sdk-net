@@ -46,6 +46,7 @@ namespace Amazon.S3.Model
         string etagToNotMatch;
         Tuple<long, long> byteRange;
         int timeout = 0;
+        private int readWriteTimeout = 0;
         ResponseHeaderOverrides _responseHeaders;
 
         #endregion
@@ -446,6 +447,50 @@ namespace Amazon.S3.Model
         }
 
         internal override bool SupportTimeout
+        {
+            get { return true; }
+        }
+
+        #endregion
+
+        #region ReadWriteTimeout
+
+        /// <summary>
+        /// Gets and sets of the ReadWriteTimeout property (in milliseconds).
+        /// The value of this property is assigned to the
+        /// ReadWriteTimeout property of the HTTPWebRequest object
+        /// used for S3 GET Object requests.
+        /// </summary>
+        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        public int ReadWriteTimeout
+        {
+            get { return this.readWriteTimeout; }
+            set
+            {
+                if (value > 0 || value == System.Threading.Timeout.Infinite)
+                {
+                    this.readWriteTimeout = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets the ReadWriteTimeout property (in milliseconds). 
+        /// The value of this property is assigned to the
+        /// ReadWriteTimeout property of the HttpWebRequest.
+        /// </summary>
+        /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
+        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <returns>this instance</returns>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        public GetObjectRequest WithReadWriteTimeout(int readWriteTimeout)
+        {
+            ReadWriteTimeout = readWriteTimeout;
+            return this;
+        }
+
+        internal override bool SupportReadWriteTimeout
         {
             get { return true; }
         }

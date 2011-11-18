@@ -73,6 +73,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -2861,11 +2862,22 @@
     <Compile Include="Amazon.SQS\Model\AddPermissionRequest.cs" />
     <Compile Include="Amazon.SQS\Model\AddPermissionResponse.cs" />
     <Compile Include="Amazon.SQS\Model\Attribute.cs" />
+    <Compile Include="Amazon.SQS\Model\BatchResultErrorEntry.cs" />
+    <Compile Include="Amazon.SQS\Model\ChangeMessageVisibilityBatchRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\ChangeMessageVisibilityBatchRequestEntry.cs" />
+    <Compile Include="Amazon.SQS\Model\ChangeMessageVisibilityBatchResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\ChangeMessageVisibilityBatchResult.cs" />
+    <Compile Include="Amazon.SQS\Model\ChangeMessageVisibilityBatchResultEntry.cs" />
     <Compile Include="Amazon.SQS\Model\ChangeMessageVisibilityRequest.cs" />
     <Compile Include="Amazon.SQS\Model\ChangeMessageVisibilityResponse.cs" />
     <Compile Include="Amazon.SQS\Model\CreateQueueRequest.cs" />
     <Compile Include="Amazon.SQS\Model\CreateQueueResponse.cs" />
     <Compile Include="Amazon.SQS\Model\CreateQueueResult.cs" />
+    <Compile Include="Amazon.SQS\Model\DeleteMessageBatchRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\DeleteMessageBatchRequestEntry.cs" />
+    <Compile Include="Amazon.SQS\Model\DeleteMessageBatchResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\DeleteMessageBatchResult.cs" />
+    <Compile Include="Amazon.SQS\Model\DeleteMessageBatchResultEntry.cs" />
     <Compile Include="Amazon.SQS\Model\DeleteMessageRequest.cs" />
     <Compile Include="Amazon.SQS\Model\DeleteMessageResponse.cs" />
     <Compile Include="Amazon.SQS\Model\DeleteQueueRequest.cs" />
@@ -2875,6 +2887,9 @@
     <Compile Include="Amazon.SQS\Model\GetQueueAttributesRequest.cs" />
     <Compile Include="Amazon.SQS\Model\GetQueueAttributesResponse.cs" />
     <Compile Include="Amazon.SQS\Model\GetQueueAttributesResult.cs" />
+    <Compile Include="Amazon.SQS\Model\GetQueueUrlRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\GetQueueUrlResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\GetQueueUrlResult.cs" />
     <Compile Include="Amazon.SQS\Model\ListQueuesRequest.cs" />
     <Compile Include="Amazon.SQS\Model\ListQueuesResponse.cs" />
     <Compile Include="Amazon.SQS\Model\ListQueuesResult.cs" />
@@ -2885,11 +2900,18 @@
     <Compile Include="Amazon.SQS\Model\RemovePermissionRequest.cs" />
     <Compile Include="Amazon.SQS\Model\RemovePermissionResponse.cs" />
     <Compile Include="Amazon.SQS\Model\ResponseMetadata.cs" />
+    <Compile Include="Amazon.SQS\Model\SendMessageBatchRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\SendMessageBatchRequestEntry.cs" />
+    <Compile Include="Amazon.SQS\Model\SendMessageBatchResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\SendMessageBatchResult.cs" />
+    <Compile Include="Amazon.SQS\Model\SendMessageBatchResultEntry.cs" />
     <Compile Include="Amazon.SQS\Model\SendMessageRequest.cs" />
     <Compile Include="Amazon.SQS\Model\SendMessageResponse.cs" />
     <Compile Include="Amazon.SQS\Model\SendMessageResult.cs" />
     <Compile Include="Amazon.SQS\Model\SetQueueAttributesRequest.cs" />
     <Compile Include="Amazon.SQS\Model\SetQueueAttributesResponse.cs" />
+    <Compile Include="Amazon.SQS\Util\AmazonSQSUtil.cs" />
+    <Compile Include="Amazon.SQS\Util\SQSConstants.cs" />
     <Compile Include="AWSClientFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.cs" />

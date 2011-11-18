@@ -69,16 +69,13 @@ namespace Amazon.SimpleNotificationService
         {
             if (!this.disposed)
             {
-                if (fDisposing)
+                if (fDisposing && credentials != null)
                 {
-                    if (credentials != null)
+                    if (ownCredentials)
                     {
-                        if (ownCredentials && credentials is IDisposable)
-                        {
-                            (credentials as IDisposable).Dispose();
-                        }
-                        credentials = null;
+                        credentials.Dispose();
                     }
+                    credentials = null;
                 }
                 this.disposed = true;
             }
@@ -102,6 +99,43 @@ namespace Amazon.SimpleNotificationService
         }
 
         #endregion
+
+        /// <summary>
+        /// Constructs AmazonSimpleNotificationServiceClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonSimpleNotificationServiceClient()
+            : this(new EnvironmentAWSCredentials(), new AmazonSimpleNotificationServiceConfig(), true) { }
+
+        /// <summary>
+        /// Constructs AmazonSimpleNotificationServiceClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonSimpleNotificationService Configuration Object</param>
+        public AmazonSimpleNotificationServiceClient(AmazonSimpleNotificationServiceConfig config)
+            : this(new EnvironmentAWSCredentials(), config, true) { }
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with AWS Access Key ID and AWS Secret Key

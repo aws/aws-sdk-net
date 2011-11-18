@@ -576,13 +576,118 @@ namespace Amazon.S3.Util
                 getACLRequest.VersionId = version;
             GetACLResponse getACLResponse = s3Client.GetACL(getACLRequest);
 
+            GetObjectMetadataResponse getMetadataResponse = s3Client.GetObjectMetadata(new GetObjectMetadataRequest()
+                .WithBucketName(bucketName)
+                .WithKey(key));
+
+
             // Set the storage class on the object
             CopyObjectRequest copyRequest = new CopyObjectRequest();
             copyRequest.SourceBucket = copyRequest.DestinationBucket = bucketName;
             copyRequest.SourceKey = copyRequest.DestinationKey = key;
+            copyRequest.ServerSideEncryptionMethod = getMetadataResponse.ServerSideEncryptionMethod;
             if (version != null)
                 copyRequest.SourceVersionId = version;
+
             copyRequest.StorageClass = sClass;
+            // The copyRequest's Metadata directive is COPY by default
+            CopyObjectResponse copyResponse = s3Client.CopyObject(copyRequest);
+
+            // Set the object's original ACL back onto it because a COPY
+            // operation resets the ACL on the destination object.
+            SetACLRequest setACLRequest = new SetACLRequest();
+            setACLRequest.BucketName = bucketName;
+            setACLRequest.Key = key;
+            if (version != null)
+                setACLRequest.VersionId = copyResponse.VersionId;
+            setACLRequest.ACL = getACLResponse.AccessControlList;
+            s3Client.SetACL(setACLRequest);
+        }
+
+        /// <summary>
+        /// Sets the server side encryption method for the S3 Object to the value
+        /// specified.
+        /// </summary>
+        /// <param name="s3Object">The S3 Object</param>
+        /// <param name="method">The server side encryption method</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        public static void SetServerSideEncryption(S3Object s3Object, ServerSideEncryptionMethod method, AmazonS3 s3Client)
+        {
+            SetServerSideEncryption(s3Object.BucketName, s3Object.Key, method, s3Client);
+        }
+
+        /// <summary>
+        /// Sets the server side encryption method for the S3 Object to the value
+        /// specified.
+        /// </summary>
+        /// <param name="bucketName">The name of the bucket in which the key is stored</param>
+        /// <param name="key">The key of the S3 Object</param>
+        /// <param name="method">The server side encryption method</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        public static void SetServerSideEncryption(string bucketName, string key, ServerSideEncryptionMethod method, AmazonS3 s3Client)
+        {
+            SetServerSideEncryption(bucketName, key, null, method, s3Client);
+        }
+
+        /// <summary>
+        /// Sets the server side encryption method for the S3 Object Version to the value
+        /// specified.
+        /// </summary>
+        /// <param name="s3ObjectVer">The S3 Object Version</param>
+        /// <param name="method">The server side encryption method</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        public static void SetServerSideEncryption(S3ObjectVersion s3ObjectVer, ServerSideEncryptionMethod method, AmazonS3 s3Client)
+        {
+            SetServerSideEncryption(s3ObjectVer.BucketName, s3ObjectVer.Key, s3ObjectVer.VersionId, method, s3Client);
+        }
+
+        /// <summary>
+        /// Sets the server side encryption method for the S3 Object's Version to the value
+        /// specified.
+        /// </summary>
+        /// <param name="bucketName">The name of the bucket in which the key is stored</param>
+        /// <param name="key">The key of the S3 Object</param>
+        /// <param name="version">The version of the S3 Object</param>
+        /// <param name="method">The server side encryption method</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <seealso cref="T:Amazon.S3.Model.S3StorageClass"/>
+        public static void SetServerSideEncryption(string bucketName, string key, string version, ServerSideEncryptionMethod method, AmazonS3 s3Client)
+        {
+            if (null == s3Client)
+            {
+                throw new ArgumentNullException("s3Client", "Please specify an S3 Client to make service requests.");
+            }
+
+            // Get the existing ACL of the object
+            GetACLRequest getACLRequest = new GetACLRequest();
+            getACLRequest.BucketName = bucketName;
+            getACLRequest.Key = key;
+            if (version != null)
+                getACLRequest.VersionId = version;
+            GetACLResponse getACLResponse = s3Client.GetACL(getACLRequest);
+
+            ListObjectsResponse listObjectResponse = s3Client.ListObjects(new ListObjectsRequest()
+                .WithBucketName(bucketName)
+                .WithPrefix(key)
+                .WithMaxKeys(1));
+
+            if (listObjectResponse.S3Objects.Count != 1)
+            {
+                throw new ArgumentNullException("No object exists with this bucket name and key.");
+            }
+
+            // Set the storage class on the object
+            CopyObjectRequest copyRequest = new CopyObjectRequest();
+            copyRequest.SourceBucket = copyRequest.DestinationBucket = bucketName;
+            copyRequest.SourceKey = copyRequest.DestinationKey = key;
+            copyRequest.StorageClass = listObjectResponse.S3Objects[0].StorageClass == "STANDARD" ? S3StorageClass.Standard : S3StorageClass.ReducedRedundancy;
+            if (version != null)
+                copyRequest.SourceVersionId = version;
+
+            copyRequest.ServerSideEncryptionMethod = method;
             // The copyRequest's Metadata directive is COPY by default
             CopyObjectResponse copyResponse = s3Client.CopyObject(copyRequest);
 
