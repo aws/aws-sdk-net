@@ -76,7 +76,8 @@ namespace Amazon.S3.Util
                                                 "us-west-1",
                                                 "us-west-2",
                                                 "ap-southeast-1",
-                                                "ap-northeast-1"};
+                                                "ap-northeast-1",
+                                                "sa-east-1"};
 
         internal const string REGION_US_EAST_1 = "us-east-1";
         internal const string REGION_EU_WEST_1 = "eu-west-1";

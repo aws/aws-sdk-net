@@ -63,10 +63,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;        
+            return this.key != null;       
         }
 
         /// <summary>
@@ -103,10 +104,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;      
+            return this.value != null;       
         }
     }
 }

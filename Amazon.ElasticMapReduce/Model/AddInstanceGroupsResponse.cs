@@ -34,7 +34,15 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         public AddInstanceGroupsResult AddInstanceGroupsResult
         {
-            get { return this.addInstanceGroupsResult; }
+            get 
+            {
+                if(this.addInstanceGroupsResult == null)
+                {
+                    this.addInstanceGroupsResult = new AddInstanceGroupsResult();
+                }
+
+                return this.addInstanceGroupsResult; 
+            }
             set { this.addInstanceGroupsResult = value; }
         }
     }

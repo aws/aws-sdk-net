@@ -25,10 +25,8 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateJobFlows operation.
-    /// <para> TerminateJobFlows shuts a list of job flows down. When a job
-    /// flow is shut down, any step not yet completed is canceled and the EC2
-    /// instances on which the job flow is running are stopped. Any log files
-    /// not already saved are uploaded to Amazon S3 if a LogUri was specified
+    /// <para> TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2
+    /// instances on which the job flow is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified
     /// when the job flow was created. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.TerminateJobFlows"/>
@@ -59,6 +57,22 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the JobFlowIds collection
+        /// </summary>
+        /// <param name="jobFlowIds">The values to add to the JobFlowIds collection </param>
+        /// <returns>this instance</returns>
+        public TerminateJobFlowsRequest WithJobFlowIds(IEnumerable<string> jobFlowIds)
+        {
+            foreach (string element in jobFlowIds)
+            {
+                this.jobFlowIds.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if JobFlowIds property is set
         internal bool IsSetJobFlowIds()
         {

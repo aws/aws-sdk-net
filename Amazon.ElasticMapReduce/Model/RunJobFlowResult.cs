@@ -62,10 +62,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if JobFlowId property is set
         internal bool IsSetJobFlowId()
         {
-            return this.jobFlowId != null;      
+            return this.jobFlowId != null;       
         }
     }
 }

@@ -62,6 +62,7 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {

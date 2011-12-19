@@ -51,10 +51,26 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the JobFlows collection
+        /// </summary>
+        /// <param name="jobFlows">The values to add to the JobFlows collection </param>
+        /// <returns>this instance</returns>
+        public DescribeJobFlowsResult WithJobFlows(IEnumerable<JobFlowDetail> jobFlows)
+        {
+            foreach (JobFlowDetail element in jobFlows)
+            {
+                this.jobFlows.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if JobFlows property is set
         internal bool IsSetJobFlows()
         {
-            return this.jobFlows.Count > 0;         
+            return this.jobFlows.Count > 0;       
         }
     }
 }

@@ -21,9 +21,8 @@ using System.IO;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>A job flow step consisting of a JAR file whose main function
-    /// will be executed. The main function submits a job for Hadoop to
-    /// execute and waits for the job to finish or fail. </para>
+    /// <para>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute
+    /// and waits for the job to finish or fail. </para>
     /// </summary>
     public class HadoopJarStepConfig  
     {
@@ -34,8 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<string> args = new List<string>();
 
         /// <summary>
-        /// A list of Java properties that are set when the step runs. You can use
-        /// these properties to pass key value pairs to your main function.
+        /// A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.
         ///  
         /// </summary>
         public List<KeyValue> Properties
@@ -57,6 +55,22 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Properties collection
+        /// </summary>
+        /// <param name="properties">The values to add to the Properties collection </param>
+        /// <returns>this instance</returns>
+        public HadoopJarStepConfig WithProperties(IEnumerable<KeyValue> properties)
+        {
+            foreach (KeyValue element in properties)
+            {
+                this.properties.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
@@ -97,16 +111,15 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Jar property is set
         internal bool IsSetJar()
         {
-            return this.jar != null;        
+            return this.jar != null;       
         }
 
         /// <summary>
-        /// The name of the main class in the specified Java file. If not
-        /// specified, the JAR file should specify a Main-Class in its manifest
-        /// file.
+        /// The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -139,15 +152,15 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if MainClass property is set
         internal bool IsSetMainClass()
         {
-            return this.mainClass != null;      
+            return this.mainClass != null;       
         }
 
         /// <summary>
-        /// A list of command line arguments passed to the JAR file's main
-        /// function when executed.
+        /// A list of command line arguments passed to the JAR file's main function when executed.
         ///  
         /// </summary>
         public List<string> Args
@@ -169,10 +182,26 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Args collection
+        /// </summary>
+        /// <param name="args">The values to add to the Args collection </param>
+        /// <returns>this instance</returns>
+        public HadoopJarStepConfig WithArgs(IEnumerable<string> args)
+        {
+            foreach (string element in args)
+            {
+                this.args.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this.args.Count > 0;         
+            return this.args.Count > 0;       
         }
     }
 }

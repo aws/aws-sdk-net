@@ -34,7 +34,15 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         public RunJobFlowResult RunJobFlowResult
         {
-            get { return this.runJobFlowResult; }
+            get 
+            {
+                if(this.runJobFlowResult == null)
+                {
+                    this.runJobFlowResult = new RunJobFlowResult();
+                }
+
+                return this.runJobFlowResult; 
+            }
             set { this.runJobFlowResult = value; }
         }
     }

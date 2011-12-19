@@ -63,6 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Name property is set
         internal bool IsSetName()
         {
@@ -90,10 +91,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if ScriptBootstrapAction property is set
         internal bool IsSetScriptBootstrapAction()
         {
-            return this.scriptBootstrapAction != null;      
+            return this.scriptBootstrapAction != null;       
         }
     }
 }

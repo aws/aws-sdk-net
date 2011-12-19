@@ -50,10 +50,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if StepConfig property is set
         internal bool IsSetStepConfig()
         {
-            return this.stepConfig != null;         
+            return this.stepConfig != null;       
         }
 
         /// <summary>
@@ -77,10 +78,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if ExecutionStatusDetail property is set
         internal bool IsSetExecutionStatusDetail()
         {
-            return this.executionStatusDetail != null;      
+            return this.executionStatusDetail != null;       
         }
     }
 }

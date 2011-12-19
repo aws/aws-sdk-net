@@ -63,10 +63,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if InstanceGroupId property is set
         internal bool IsSetInstanceGroupId()
         {
-            return this.instanceGroupId != null;        
+            return this.instanceGroupId != null;       
         }
 
         /// <summary>
@@ -90,10 +91,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if InstanceCount property is set
         internal bool IsSetInstanceCount()
         {
-            return this.instanceCount.HasValue;         
+            return this.instanceCount.HasValue;       
         }
     }
 }

@@ -25,8 +25,7 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the AddInstanceGroups operation.
-    /// <para>AddInstanceGroups adds an instance group to a running
-    /// cluster.</para>
+    /// <para>AddInstanceGroups adds an instance group to a running cluster.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.AddInstanceGroups"/>
     public class AddInstanceGroupsRequest : AmazonWebServiceRequest
@@ -57,6 +56,22 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the InstanceGroups collection
+        /// </summary>
+        /// <param name="instanceGroups">The values to add to the InstanceGroups collection </param>
+        /// <returns>this instance</returns>
+        public AddInstanceGroupsRequest WithInstanceGroups(IEnumerable<InstanceGroupConfig> instanceGroups)
+        {
+            foreach (InstanceGroupConfig element in instanceGroups)
+            {
+                this.instanceGroups.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
@@ -97,10 +112,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if JobFlowId property is set
         internal bool IsSetJobFlowId()
         {
-            return this.jobFlowId != null;      
+            return this.jobFlowId != null;       
         }
     }
 }

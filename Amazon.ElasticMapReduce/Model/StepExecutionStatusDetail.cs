@@ -62,10 +62,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;      
+            return this.state != null;       
         }
 
         /// <summary>
@@ -89,10 +90,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if CreationDateTime property is set
         internal bool IsSetCreationDateTime()
         {
-            return this.creationDateTime.HasValue;      
+            return this.creationDateTime.HasValue;       
         }
 
         /// <summary>
@@ -116,10 +118,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if StartDateTime property is set
         internal bool IsSetStartDateTime()
         {
-            return this.startDateTime.HasValue;         
+            return this.startDateTime.HasValue;       
         }
 
         /// <summary>
@@ -143,6 +146,7 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if EndDateTime property is set
         internal bool IsSetEndDateTime()
         {
@@ -183,10 +187,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if LastStateChangeReason property is set
         internal bool IsSetLastStateChangeReason()
         {
-            return this.lastStateChangeReason != null;      
+            return this.lastStateChangeReason != null;       
         }
     }
 }

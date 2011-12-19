@@ -64,6 +64,7 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Name property is set
         internal bool IsSetName()
         {
@@ -100,10 +101,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if ActionOnFailure property is set
         internal bool IsSetActionOnFailure()
         {
-            return this.actionOnFailure != null;        
+            return this.actionOnFailure != null;       
         }
 
         /// <summary>
@@ -127,10 +129,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if HadoopJarStep property is set
         internal bool IsSetHadoopJarStep()
         {
-            return this.hadoopJarStep != null;      
+            return this.hadoopJarStep != null;       
         }
     }
 }

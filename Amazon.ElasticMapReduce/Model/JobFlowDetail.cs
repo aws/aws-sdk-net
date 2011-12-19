@@ -29,10 +29,12 @@ namespace Amazon.ElasticMapReduce.Model
         private string jobFlowId;
         private string name;
         private string logUri;
+        private string amiVersion;
         private JobFlowExecutionStatusDetail executionStatusDetail;
         private JobFlowInstancesDetail instances;
         private List<StepDetail> steps = new List<StepDetail>();
         private List<BootstrapActionDetail> bootstrapActions = new List<BootstrapActionDetail>();
+        private List<string> supportedProducts = new List<string>();
 
         /// <summary>
         /// The job flow identifier.
@@ -68,10 +70,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if JobFlowId property is set
         internal bool IsSetJobFlowId()
         {
-            return this.jobFlowId != null;      
+            return this.jobFlowId != null;       
         }
 
         /// <summary>
@@ -108,6 +111,7 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Name property is set
         internal bool IsSetName()
         {
@@ -148,10 +152,55 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if LogUri property is set
         internal bool IsSetLogUri()
         {
-            return this.logUri != null;         
+            return this.logUri != null;       
+        }
+
+        /// <summary>
+        /// The verison of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions currently supported by Amazon
+        /// ElasticMapReduce, go to <a
+        /// href="http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+        /// Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 256</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string AmiVersion
+        {
+            get { return this.amiVersion; }
+            set { this.amiVersion = value; }
+        }
+
+        /// <summary>
+        /// Sets the AmiVersion property
+        /// </summary>
+        /// <param name="amiVersion">The value to set for the AmiVersion property </param>
+        /// <returns>this instance</returns>
+        public JobFlowDetail WithAmiVersion(string amiVersion)
+        {
+            this.amiVersion = amiVersion;
+            return this;
+        }
+            
+
+        // Check to see if AmiVersion property is set
+        internal bool IsSetAmiVersion()
+        {
+            return this.amiVersion != null;       
         }
 
         /// <summary>
@@ -175,10 +224,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if ExecutionStatusDetail property is set
         internal bool IsSetExecutionStatusDetail()
         {
-            return this.executionStatusDetail != null;      
+            return this.executionStatusDetail != null;       
         }
 
         /// <summary>
@@ -202,10 +252,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances != null;      
+            return this.instances != null;       
         }
 
         /// <summary>
@@ -231,10 +282,26 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Steps collection
+        /// </summary>
+        /// <param name="steps">The values to add to the Steps collection </param>
+        /// <returns>this instance</returns>
+        public JobFlowDetail WithSteps(IEnumerable<StepDetail> steps)
+        {
+            foreach (StepDetail element in steps)
+            {
+                this.steps.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this.steps.Count > 0;        
+            return this.steps.Count > 0;       
         }
 
         /// <summary>
@@ -260,10 +327,72 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the BootstrapActions collection
+        /// </summary>
+        /// <param name="bootstrapActions">The values to add to the BootstrapActions collection </param>
+        /// <returns>this instance</returns>
+        public JobFlowDetail WithBootstrapActions(IEnumerable<BootstrapActionDetail> bootstrapActions)
+        {
+            foreach (BootstrapActionDetail element in bootstrapActions)
+            {
+                this.bootstrapActions.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if BootstrapActions property is set
         internal bool IsSetBootstrapActions()
         {
-            return this.bootstrapActions.Count > 0;         
+            return this.bootstrapActions.Count > 0;       
+        }
+
+        /// <summary>
+        /// A list of strings set by third party software when the job flow is launched. If you are not using third party software to manage the job
+        /// flow this value is empty.
+        ///  
+        /// </summary>
+        public List<string> SupportedProducts
+        {
+            get { return this.supportedProducts; }
+            set { this.supportedProducts = value; }
+        }
+        /// <summary>
+        /// Adds elements to the SupportedProducts collection
+        /// </summary>
+        /// <param name="supportedProducts">The values to add to the SupportedProducts collection </param>
+        /// <returns>this instance</returns>
+        public JobFlowDetail WithSupportedProducts(params string[] supportedProducts)
+        {
+            foreach (string element in supportedProducts)
+            {
+                this.supportedProducts.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the SupportedProducts collection
+        /// </summary>
+        /// <param name="supportedProducts">The values to add to the SupportedProducts collection </param>
+        /// <returns>this instance</returns>
+        public JobFlowDetail WithSupportedProducts(IEnumerable<string> supportedProducts)
+        {
+            foreach (string element in supportedProducts)
+            {
+                this.supportedProducts.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if SupportedProducts property is set
+        internal bool IsSetSupportedProducts()
+        {
+            return this.supportedProducts.Count > 0;       
         }
     }
 }

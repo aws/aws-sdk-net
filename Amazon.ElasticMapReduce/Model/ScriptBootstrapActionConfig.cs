@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Configuration of the script to run during a bootstrap
-    /// action.</para>
+    /// <para>Configuration of the script to run during a bootstrap action.</para>
     /// </summary>
     public class ScriptBootstrapActionConfig  
     {
@@ -31,8 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<string> args = new List<string>();
 
         /// <summary>
-        /// Location of the script to run during a bootstrap action. Can be either
-        /// a location in Amazon S3 or on a local file system.
+        /// Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on a local file system.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -65,6 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
@@ -72,8 +71,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// A list of command line arguments to pass to the bootstrap action
-        /// script.
+        /// A list of command line arguments to pass to the bootstrap action script.
         ///  
         /// </summary>
         public List<string> Args
@@ -95,10 +93,26 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Args collection
+        /// </summary>
+        /// <param name="args">The values to add to the Args collection </param>
+        /// <returns>this instance</returns>
+        public ScriptBootstrapActionConfig WithArgs(IEnumerable<string> args)
+        {
+            foreach (string element in args)
+            {
+                this.args.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this.args.Count > 0;         
+            return this.args.Count > 0;       
         }
     }
 }

@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>A description of the Amazon EC2 instance running the job flow.
-    /// </para>
+    /// <para>A description of the Amazon EC2 instance running the job flow. </para>
     /// </summary>
     public class JobFlowInstancesConfig  
     {
@@ -34,7 +33,9 @@ namespace Amazon.ElasticMapReduce.Model
         private string ec2KeyName;
         private PlacementType placement;
         private bool? keepJobFlowAliveWhenNoSteps;
+        private bool? terminationProtected;
         private string hadoopVersion;
+        private string ec2SubnetId;
 
         /// <summary>
         /// The EC2 instance type of the master node.
@@ -70,10 +71,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if MasterInstanceType property is set
         internal bool IsSetMasterInstanceType()
         {
-            return this.masterInstanceType != null;         
+            return this.masterInstanceType != null;       
         }
 
         /// <summary>
@@ -110,10 +112,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if SlaveInstanceType property is set
         internal bool IsSetSlaveInstanceType()
         {
-            return this.slaveInstanceType != null;      
+            return this.slaveInstanceType != null;       
         }
 
         /// <summary>
@@ -137,10 +140,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if InstanceCount property is set
         internal bool IsSetInstanceCount()
         {
-            return this.instanceCount.HasValue;         
+            return this.instanceCount.HasValue;       
         }
 
         /// <summary>
@@ -166,6 +170,22 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the InstanceGroups collection
+        /// </summary>
+        /// <param name="instanceGroups">The values to add to the InstanceGroups collection </param>
+        /// <returns>this instance</returns>
+        public JobFlowInstancesConfig WithInstanceGroups(IEnumerable<InstanceGroupConfig> instanceGroups)
+        {
+            foreach (InstanceGroupConfig element in instanceGroups)
+            {
+                this.instanceGroups.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
@@ -173,8 +193,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Specifies the name of the Amazon EC2 key pair that can be used to ssh
-        /// to the master node as the user called "hadoop."
+        /// Specifies the name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -207,10 +226,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Ec2KeyName property is set
         internal bool IsSetEc2KeyName()
         {
-            return this.ec2KeyName != null;         
+            return this.ec2KeyName != null;       
         }
 
         /// <summary>
@@ -234,15 +254,15 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Placement property is set
         internal bool IsSetPlacement()
         {
-            return this.placement != null;      
+            return this.placement != null;       
         }
 
         /// <summary>
-        /// Specifies whether the job flow should terminate after completing all
-        /// steps.
+        /// Specifies whether the job flow should terminate after completing all steps.
         ///  
         /// </summary>
         public bool KeepJobFlowAliveWhenNoSteps
@@ -262,6 +282,7 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if KeepJobFlowAliveWhenNoSteps property is set
         internal bool IsSetKeepJobFlowAliveWhenNoSteps()
         {
@@ -269,8 +290,37 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
-        /// or "0.20".
+        /// Specifies whether to lock the job flow to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the
+        /// event of a job flow error.
+        ///  
+        /// </summary>
+        public bool TerminationProtected
+        {
+            get { return this.terminationProtected ?? default(bool); }
+            set { this.terminationProtected = value; }
+        }
+
+        /// <summary>
+        /// Sets the TerminationProtected property
+        /// </summary>
+        /// <param name="terminationProtected">The value to set for the TerminationProtected property </param>
+        /// <returns>this instance</returns>
+        public JobFlowInstancesConfig WithTerminationProtected(bool terminationProtected)
+        {
+            this.terminationProtected = terminationProtected;
+            return this;
+        }
+            
+
+        // Check to see if TerminationProtected property is set
+        internal bool IsSetTerminationProtected()
+        {
+            return this.terminationProtected.HasValue;       
+        }
+
+        /// <summary>
+        /// Specifies the Hadoop version for the job flow. Valid inputs are "0.18", "0.20", or "0.20.205". If you do not set this value, the default of
+        /// 0.20 is used, unless overridden by setting the AmiVersion parameter in the RunJobFlow call.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -303,10 +353,54 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if HadoopVersion property is set
         internal bool IsSetHadoopVersion()
         {
-            return this.hadoopVersion != null;      
+            return this.hadoopVersion != null;       
+        }
+
+        /// <summary>
+        /// To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you
+        /// want the job flow to launch. If you do not specify this value, the job flow is launched in the normal Amazon Web Services cloud, outside of
+        /// an Amazon VPC.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 256</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Ec2SubnetId
+        {
+            get { return this.ec2SubnetId; }
+            set { this.ec2SubnetId = value; }
+        }
+
+        /// <summary>
+        /// Sets the Ec2SubnetId property
+        /// </summary>
+        /// <param name="ec2SubnetId">The value to set for the Ec2SubnetId property </param>
+        /// <returns>this instance</returns>
+        public JobFlowInstancesConfig WithEc2SubnetId(string ec2SubnetId)
+        {
+            this.ec2SubnetId = ec2SubnetId;
+            return this;
+        }
+            
+
+        // Check to see if Ec2SubnetId property is set
+        internal bool IsSetEc2SubnetId()
+        {
+            return this.ec2SubnetId != null;       
         }
     }
 }

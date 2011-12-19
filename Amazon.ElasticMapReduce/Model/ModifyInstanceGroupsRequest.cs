@@ -25,10 +25,8 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyInstanceGroups operation.
-    /// <para>ModifyInstanceGroups modifies the number of nodes and
-    /// configuration settings of an instance group. The input parameters
-    /// include the new target instance count for the group and the instance
-    /// group ID. The call will either succeed or fail atomically.</para>
+    /// <para>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the
+    /// new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.ModifyInstanceGroups"/>
     public class ModifyInstanceGroupsRequest : AmazonWebServiceRequest
@@ -58,6 +56,22 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the InstanceGroups collection
+        /// </summary>
+        /// <param name="instanceGroups">The values to add to the InstanceGroups collection </param>
+        /// <returns>this instance</returns>
+        public ModifyInstanceGroupsRequest WithInstanceGroups(IEnumerable<InstanceGroupModifyConfig> instanceGroups)
+        {
+            foreach (InstanceGroupModifyConfig element in instanceGroups)
+            {
+                this.instanceGroups.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {

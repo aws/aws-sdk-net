@@ -63,10 +63,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if JobFlowId property is set
         internal bool IsSetJobFlowId()
         {
-            return this.jobFlowId != null;      
+            return this.jobFlowId != null;       
         }
 
         /// <summary>
@@ -92,10 +93,26 @@ namespace Amazon.ElasticMapReduce.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the InstanceGroupIds collection
+        /// </summary>
+        /// <param name="instanceGroupIds">The values to add to the InstanceGroupIds collection </param>
+        /// <returns>this instance</returns>
+        public AddInstanceGroupsResult WithInstanceGroupIds(IEnumerable<string> instanceGroupIds)
+        {
+            foreach (string element in instanceGroupIds)
+            {
+                this.instanceGroupIds.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if InstanceGroupIds property is set
         internal bool IsSetInstanceGroupIds()
         {
-            return this.instanceGroupIds.Count > 0;         
+            return this.instanceGroupIds.Count > 0;       
         }
     }
 }

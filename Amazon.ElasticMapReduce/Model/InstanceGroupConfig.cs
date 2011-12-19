@@ -29,6 +29,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string name;
         private string market;
         private string instanceRole;
+        private string bidPrice;
         private string instanceType;
         private int? instanceCount;
 
@@ -66,6 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Name property is set
         internal bool IsSetName()
         {
@@ -80,7 +82,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>ON_DEMAND</description>
+        ///         <description>ON_DEMAND, SPOT</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -102,10 +104,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if Market property is set
         internal bool IsSetMarket()
         {
-            return this.market != null;         
+            return this.market != null;       
         }
 
         /// <summary>
@@ -138,10 +141,52 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if InstanceRole property is set
         internal bool IsSetInstanceRole()
         {
             return this.instanceRole != null;       
+        }
+
+        /// <summary>
+        /// Bid price for each Amazon EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 256</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string BidPrice
+        {
+            get { return this.bidPrice; }
+            set { this.bidPrice = value; }
+        }
+
+        /// <summary>
+        /// Sets the BidPrice property
+        /// </summary>
+        /// <param name="bidPrice">The value to set for the BidPrice property </param>
+        /// <returns>this instance</returns>
+        public InstanceGroupConfig WithBidPrice(string bidPrice)
+        {
+            this.bidPrice = bidPrice;
+            return this;
+        }
+            
+
+        // Check to see if BidPrice property is set
+        internal bool IsSetBidPrice()
+        {
+            return this.bidPrice != null;       
         }
 
         /// <summary>
@@ -178,6 +223,7 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if InstanceType property is set
         internal bool IsSetInstanceType()
         {
@@ -205,10 +251,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if InstanceCount property is set
         internal bool IsSetInstanceCount()
         {
-            return this.instanceCount.HasValue;         
+            return this.instanceCount.HasValue;       
         }
     }
 }

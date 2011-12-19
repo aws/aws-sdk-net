@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Reports the configuration of a bootstrap action in a job
-    /// flow.</para>
+    /// <para>Reports the configuration of a bootstrap action in a job flow.</para>
     /// </summary>
     public class BootstrapActionDetail  
     {
@@ -50,10 +49,11 @@ namespace Amazon.ElasticMapReduce.Model
             return this;
         }
             
+
         // Check to see if BootstrapActionConfig property is set
         internal bool IsSetBootstrapActionConfig()
         {
-            return this.bootstrapActionConfig != null;      
+            return this.bootstrapActionConfig != null;       
         }
     }
 }
