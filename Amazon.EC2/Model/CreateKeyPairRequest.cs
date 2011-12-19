@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-05-15
+ *  API Version: 2011-11-01
  */
 
 using System;
@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// The private key is returned as an unencrypted PEM encoded PKCS#8 private key.
     /// If a key with the specified name already exists, Amazon EC2 returns an error.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
     public class CreateKeyPairRequest
     {    
         private string keyNameField;

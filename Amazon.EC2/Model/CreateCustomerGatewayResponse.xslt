@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-05-15/"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-11-01/"
 	exclude-result-prefixes="ec2">
 	<xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
 	<xsl:variable name="ns"
-		select="'http://ec2.amazonaws.com/doc/2011-05-15/'" />
+		select="'http://ec2.amazonaws.com/doc/2011-11-01/'" />
 	<xsl:template match="ec2:CreateCustomerGatewayResponse">
 		<xsl:element name="CreateCustomerGatewayResponse"
 			namespace="{$ns}">

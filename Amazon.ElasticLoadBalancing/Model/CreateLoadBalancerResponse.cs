@@ -34,7 +34,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public CreateLoadBalancerResult CreateLoadBalancerResult
         {
-            get { return this.createLoadBalancerResult; }
+            get 
+            {
+                if(this.createLoadBalancerResult == null)
+                {
+                    this.createLoadBalancerResult = new CreateLoadBalancerResult();
+                }
+
+                return this.createLoadBalancerResult; 
+            }
             set { this.createLoadBalancerResult = value; }
         }
     }

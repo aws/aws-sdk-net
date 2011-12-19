@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
+using System.IO;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Security;
-using System.Text;
 
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime
 {
@@ -262,7 +266,7 @@ namespace Amazon.Runtime
         }
 
         #endregion
-        
+
 
         #region IDisposable Members
 

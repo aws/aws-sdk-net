@@ -34,7 +34,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public SetLoadBalancerListenerSSLCertificateResult SetLoadBalancerListenerSSLCertificateResult
         {
-            get { return this.setLoadBalancerListenerSSLCertificateResult; }
+            get 
+            {
+                if(this.setLoadBalancerListenerSSLCertificateResult == null)
+                {
+                    this.setLoadBalancerListenerSSLCertificateResult = new SetLoadBalancerListenerSSLCertificateResult();
+                }
+
+                return this.setLoadBalancerListenerSSLCertificateResult; 
+            }
             set { this.setLoadBalancerListenerSSLCertificateResult = value; }
         }
     }

@@ -30,8 +30,10 @@ namespace Amazon.CloudFormation.Model
         private string stackName;
         private string templateDescription;
         private DateTime? creationTime;
+        private DateTime? lastUpdatedTime;
         private DateTime? deletionTime;
         private string stackStatus;
+        private string stackStatusReason;
 
         /// <summary>
         /// Unique stack identifier.
@@ -144,6 +146,29 @@ namespace Amazon.CloudFormation.Model
         {
             return this.creationTime.HasValue;       
         }
+        public DateTime LastUpdatedTime
+        {
+            get { return this.lastUpdatedTime ?? default(DateTime); }
+            set { this.lastUpdatedTime = value; }
+        }
+
+        /// <summary>
+        /// Sets the LastUpdatedTime property
+        /// </summary>
+        /// <param name="lastUpdatedTime">The value to set for the LastUpdatedTime property </param>
+        /// <returns>this instance</returns>
+        public StackSummary WithLastUpdatedTime(DateTime lastUpdatedTime)
+        {
+            this.lastUpdatedTime = lastUpdatedTime;
+            return this;
+        }
+            
+
+        // Check to see if LastUpdatedTime property is set
+        internal bool IsSetLastUpdatedTime()
+        {
+            return this.lastUpdatedTime.HasValue;       
+        }
 
         /// <summary>
         /// The time the stack was deleted.
@@ -181,7 +206,7 @@ namespace Amazon.CloudFormation.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE</description>
+        ///         <description>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -208,6 +233,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackStatus()
         {
             return this.stackStatus != null;       
+        }
+        public string StackStatusReason
+        {
+            get { return this.stackStatusReason; }
+            set { this.stackStatusReason = value; }
+        }
+
+        /// <summary>
+        /// Sets the StackStatusReason property
+        /// </summary>
+        /// <param name="stackStatusReason">The value to set for the StackStatusReason property </param>
+        /// <returns>this instance</returns>
+        public StackSummary WithStackStatusReason(string stackStatusReason)
+        {
+            this.stackStatusReason = stackStatusReason;
+            return this;
+        }
+            
+
+        // Check to see if StackStatusReason property is set
+        internal bool IsSetStackStatusReason()
+        {
+            return this.stackStatusReason != null;       
         }
     }
 }

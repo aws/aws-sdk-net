@@ -31,11 +31,13 @@ namespace Amazon.CloudFormation.Model
         private string description;
         private List<Parameter> parameters = new List<Parameter>();
         private DateTime? creationTime;
+        private DateTime? lastUpdatedTime;
         private string stackStatus;
         private string stackStatusReason;
         private bool? disableRollback;
         private List<string> notificationARNs = new List<string>();
         private int? timeoutInMinutes;
+        private List<string> capabilities = new List<string>();
         private List<Output> outputs = new List<Output>();
 
         /// <summary>
@@ -194,6 +196,29 @@ namespace Amazon.CloudFormation.Model
         {
             return this.creationTime.HasValue;       
         }
+        public DateTime LastUpdatedTime
+        {
+            get { return this.lastUpdatedTime ?? default(DateTime); }
+            set { this.lastUpdatedTime = value; }
+        }
+
+        /// <summary>
+        /// Sets the LastUpdatedTime property
+        /// </summary>
+        /// <param name="lastUpdatedTime">The value to set for the LastUpdatedTime property </param>
+        /// <returns>this instance</returns>
+        public Stack WithLastUpdatedTime(DateTime lastUpdatedTime)
+        {
+            this.lastUpdatedTime = lastUpdatedTime;
+            return this;
+        }
+            
+
+        // Check to see if LastUpdatedTime property is set
+        internal bool IsSetLastUpdatedTime()
+        {
+            return this.lastUpdatedTime.HasValue;       
+        }
 
         /// <summary>
         /// Current status of the stack.
@@ -203,7 +228,7 @@ namespace Amazon.CloudFormation.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE</description>
+        ///         <description>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -378,6 +403,51 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetTimeoutInMinutes()
         {
             return this.timeoutInMinutes.HasValue;       
+        }
+
+        /// <summary>
+        /// The capabilities allowed in the stack.
+        ///  
+        /// </summary>
+        public List<string> Capabilities
+        {
+            get { return this.capabilities; }
+            set { this.capabilities = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Capabilities collection
+        /// </summary>
+        /// <param name="capabilities">The values to add to the Capabilities collection </param>
+        /// <returns>this instance</returns>
+        public Stack WithCapabilities(params string[] capabilities)
+        {
+            foreach (string element in capabilities)
+            {
+                this.capabilities.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Capabilities collection
+        /// </summary>
+        /// <param name="capabilities">The values to add to the Capabilities collection </param>
+        /// <returns>this instance</returns>
+        public Stack WithCapabilities(IEnumerable<string> capabilities)
+        {
+            foreach (string element in capabilities)
+            {
+                this.capabilities.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Capabilities property is set
+        internal bool IsSetCapabilities()
+        {
+            return this.capabilities.Count > 0;       
         }
 
         /// <summary>

@@ -43,8 +43,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="protocol"> Specifies the LoadBalancer transport protocol to use for routing - TCP or HTTP. This property cannot be modified for
-        /// the life of the LoadBalancer. </param>
+        /// <param name="protocol"> Specifies the LoadBalancer transport protocol to use for routing - HTTP, HTTPS, TCP or SSL. This property cannot be
+        /// modified for the life of the LoadBalancer. </param>
         /// <param name="loadBalancerPort"> Specifies the external LoadBalancer port number. This property cannot be modified for the life of the
         /// LoadBalancer. </param>
         /// <param name="instancePort"> Specifies the TCP port on which the instance server is listening. This property cannot be modified for the life
@@ -58,8 +58,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// Specifies the LoadBalancer transport protocol to use for routing - TCP or HTTP. This property cannot be modified for the life of the
-        /// LoadBalancer.
+        /// Specifies the LoadBalancer transport protocol to use for routing - HTTP, HTTPS, TCP or SSL. This property cannot be modified for the life of
+        /// the LoadBalancer.
         ///  
         /// </summary>
         public string Protocol
@@ -116,9 +116,11 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// Specifies the protocol to use for routing traffic to back-end instances - HTTP, HTTPS, TCP, or SSL. This property cannot be modified for the
-        /// life of the LoadBalancer. <note> If the front-end protocol is L7, i.e., HTTP or HTTPS, <c>InstanceProtocol</c> has to be at the same layer,
-        /// i.e., HTTP or HTTPS. </note> <note> If there is another listener with the same <c>InstancePort</c> whose <c>InstanceProtocol</c> is secure,
-        /// i.e., HTTPS or SSL, the listener's <c>InstanceProtocol</c> has to be secure, i.e., HTTPS or SSL. </note>
+        /// life of the LoadBalancer. <note> If the front-end protocol is HTTP or HTTPS, <c>InstanceProtocol</c> has to be at the same protocol layer,
+        /// i.e., HTTP or HTTPS. Likewise, if the front-end protocol is TCP or SSL, InstanceProtocol has to be TCP or SSL. </note> <note> If there is
+        /// another listener with the same <c>InstancePort</c> whose <c>InstanceProtocol</c> is secure, i.e., HTTPS or SSL, the listener's
+        /// <c>InstanceProtocol</c> has to be secure, i.e., HTTPS or SSL. If there is another listener with the same <c>InstancePort</c> whose
+        /// <c>InstanceProtocol</c> is HTTP or TCP, the listener's <c>InstanceProtocol</c> must be either HTTP or TCP. </note>
         ///  
         /// </summary>
         public string InstanceProtocol
@@ -183,9 +185,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The ID of the SSL certificate chain to use. For more information on SSL certificates, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html"> Managing Keys and Certificates </a> in
-        /// the AWS Identity and Access Management documentation.
+        /// The ARN string of the server certificate. To get the ARN of the server certificate, call the AWS Identity and Access Management <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate </a>
+        /// API.
         ///  
         /// </summary>
         public string SSLCertificateId

@@ -28,6 +28,8 @@ namespace Amazon.CloudFormation.Model
         
         private List<TemplateParameter> parameters = new List<TemplateParameter>();
         private string description;
+        private List<string> capabilities = new List<string>();
+        private string capabilitiesReason;
 
         /// <summary>
         /// A list of <c>TemplateParameter</c> structures.
@@ -100,6 +102,81 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this.description != null;       
+        }
+
+        /// <summary>
+        /// The capabitilites found within the template. Currently, CAPABILITY_IAM is the only capability detected. If your template contains IAM
+        /// resources, you must specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
+        /// with your template; otherwise, those actions return an InsufficientCapabilities error.
+        ///  
+        /// </summary>
+        public List<string> Capabilities
+        {
+            get { return this.capabilities; }
+            set { this.capabilities = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Capabilities collection
+        /// </summary>
+        /// <param name="capabilities">The values to add to the Capabilities collection </param>
+        /// <returns>this instance</returns>
+        public ValidateTemplateResult WithCapabilities(params string[] capabilities)
+        {
+            foreach (string element in capabilities)
+            {
+                this.capabilities.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Capabilities collection
+        /// </summary>
+        /// <param name="capabilities">The values to add to the Capabilities collection </param>
+        /// <returns>this instance</returns>
+        public ValidateTemplateResult WithCapabilities(IEnumerable<string> capabilities)
+        {
+            foreach (string element in capabilities)
+            {
+                this.capabilities.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Capabilities property is set
+        internal bool IsSetCapabilities()
+        {
+            return this.capabilities.Count > 0;       
+        }
+
+        /// <summary>
+        /// The capabilities reason found within the template.
+        ///  
+        /// </summary>
+        public string CapabilitiesReason
+        {
+            get { return this.capabilitiesReason; }
+            set { this.capabilitiesReason = value; }
+        }
+
+        /// <summary>
+        /// Sets the CapabilitiesReason property
+        /// </summary>
+        /// <param name="capabilitiesReason">The value to set for the CapabilitiesReason property </param>
+        /// <returns>this instance</returns>
+        public ValidateTemplateResult WithCapabilitiesReason(string capabilitiesReason)
+        {
+            this.capabilitiesReason = capabilitiesReason;
+            return this;
+        }
+            
+
+        // Check to see if CapabilitiesReason property is set
+        internal bool IsSetCapabilitiesReason()
+        {
+            return this.capabilitiesReason != null;       
         }
     }
 }

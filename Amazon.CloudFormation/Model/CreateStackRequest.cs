@@ -39,6 +39,7 @@ namespace Amazon.CloudFormation.Model
         private bool? disableRollback;
         private int? timeoutInMinutes;
         private List<string> notificationARNs = new List<string>();
+        private List<string> capabilities = new List<string>();
 
         /// <summary>
         /// The name associated with the stack. The name must be unique within your AWS account. <note> Must contain only alphanumeric characters (case
@@ -71,7 +72,7 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// Structure containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Condition: You must pass
+        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass
         /// <c>TemplateBody</c> or <c>TemplateURL</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
@@ -148,7 +149,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// A list of <c>Parameter</c> structures.
+        /// A list of <c>Parameter</c> structures that specify input parameters for the stack.
         ///  
         /// </summary>
         public List<Parameter> Parameters
@@ -311,6 +312,57 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetNotificationARNs()
         {
             return this.notificationARNs.Count > 0;       
+        }
+
+        /// <summary>
+        /// The list of capabilities that you want to allow in the stack. If your template contains IAM resources, you must specify the CAPABILITY_IAM
+        /// value for this parameter; otherwise, this action returns an InsufficientCapabilities error. IAM resources are the following: 
+        /// <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>, 
+        /// <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, 
+        /// <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>, 
+        /// <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>, and 
+        /// <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+        ///  
+        /// </summary>
+        public List<string> Capabilities
+        {
+            get { return this.capabilities; }
+            set { this.capabilities = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Capabilities collection
+        /// </summary>
+        /// <param name="capabilities">The values to add to the Capabilities collection </param>
+        /// <returns>this instance</returns>
+        public CreateStackRequest WithCapabilities(params string[] capabilities)
+        {
+            foreach (string element in capabilities)
+            {
+                this.capabilities.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Capabilities collection
+        /// </summary>
+        /// <param name="capabilities">The values to add to the Capabilities collection </param>
+        /// <returns>this instance</returns>
+        public CreateStackRequest WithCapabilities(IEnumerable<string> capabilities)
+        {
+            foreach (string element in capabilities)
+            {
+                this.capabilities.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Capabilities property is set
+        internal bool IsSetCapabilities()
+        {
+            return this.capabilities.Count > 0;       
         }
     }
 }

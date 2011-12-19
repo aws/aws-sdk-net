@@ -34,9 +34,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         private Policies policies;
         private List<BackendServerDescription> backendServerDescriptions = new List<BackendServerDescription>();
         private List<string> availabilityZones = new List<string>();
+        private List<string> subnets = new List<string>();
+        private string vPCId;
         private List<Instance> instances = new List<Instance>();
         private HealthCheck healthCheck;
         private SourceSecurityGroup sourceSecurityGroup;
+        private List<string> securityGroups = new List<string>();
         private DateTime? createdTime;
         /// <summary>
         /// Default constructor for a new LoadBalancerDescription object.  Callers should use the
@@ -328,6 +331,79 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
+        /// Provides a list of VPC subnet IDs for the LoadBalancer.
+        ///  
+        /// </summary>
+        public List<string> Subnets
+        {
+            get { return this.subnets; }
+            set { this.subnets = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Subnets collection
+        /// </summary>
+        /// <param name="subnets">The values to add to the Subnets collection </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithSubnets(params string[] subnets)
+        {
+            foreach (string element in subnets)
+            {
+                this.subnets.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Subnets collection
+        /// </summary>
+        /// <param name="subnets">The values to add to the Subnets collection </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithSubnets(IEnumerable<string> subnets)
+        {
+            foreach (string element in subnets)
+            {
+                this.subnets.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Subnets property is set
+        internal bool IsSetSubnets()
+        {
+            return this.subnets.Count > 0;       
+        }
+
+        /// <summary>
+        /// Provides the ID of the VPC attached to the LoadBalancer.
+        ///  
+        /// </summary>
+        public string VPCId
+        {
+            get { return this.vPCId; }
+            set { this.vPCId = value; }
+        }
+
+        /// <summary>
+        /// Sets the VPCId property
+        /// </summary>
+        /// <param name="vPCId">The value to set for the VPCId property </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithVPCId(string vPCId)
+        {
+            this.vPCId = vPCId;
+            return this;
+        }
+            
+
+        // Check to see if VPCId property is set
+        internal bool IsSetVPCId()
+        {
+            return this.vPCId != null;       
+        }
+
+        /// <summary>
         /// Provides a list of EC2 instance IDs for the LoadBalancer.
         ///  
         /// </summary>
@@ -428,6 +504,51 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetSourceSecurityGroup()
         {
             return this.sourceSecurityGroup != null;       
+        }
+
+        /// <summary>
+        /// The security groups the LoadBalancer is a memeber of (VPC only).
+        ///  
+        /// </summary>
+        public List<string> SecurityGroups
+        {
+            get { return this.securityGroups; }
+            set { this.securityGroups = value; }
+        }
+        /// <summary>
+        /// Adds elements to the SecurityGroups collection
+        /// </summary>
+        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithSecurityGroups(params string[] securityGroups)
+        {
+            foreach (string element in securityGroups)
+            {
+                this.securityGroups.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the SecurityGroups collection
+        /// </summary>
+        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithSecurityGroups(IEnumerable<string> securityGroups)
+        {
+            foreach (string element in securityGroups)
+            {
+                this.securityGroups.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if SecurityGroups property is set
+        internal bool IsSetSecurityGroups()
+        {
+            return this.securityGroups.Count > 0;       
         }
 
         /// <summary>

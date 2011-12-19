@@ -27,9 +27,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Container for the parameters to the DescribeLoadBalancerPolicies operation.
     /// <para>Returns detailed descriptions of the policies. If you specify a LoadBalancer name, the operation returns either the descriptions of
     /// the specified policies, or descriptions of all the policies created for the LoadBalancer. If you don't specify a LoadBalancer name, the
-    /// operation returns descriptions of the specified policies, or descriptions of all the policies created by default for the LoadBalancer. The
-    /// names of the sample policies have the <c>ELBSample-</c> prefix. The attributes of the pre-defined sample policies can be changed to create
-    /// your own policy for your LoadBalancer. </para>
+    /// operation returns descriptions of the specified sample policies, or descriptions of all the sample policies. The names of the sample
+    /// policies have the <c>ELBSample-</c> prefix. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DescribeLoadBalancerPolicies"/>
     public class DescribeLoadBalancerPoliciesRequest : AmazonWebServiceRequest
@@ -39,7 +38,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// The mnemonic name associated with the LoadBalancer. If no name is specified, the operation returns the attributes of either all the sample
-        /// policies pre-defined by the Elastic Load Balancing service or the specified sample polices.
+        /// policies pre-defined by Elastic Load Balancing or the specified sample polices.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -67,8 +66,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The names of the LoadBalancer polices created, including the sample policies pre-defined by the Elastic Load Balancing service or the
-        /// specified sample policies.
+        /// The names of LoadBalancer policies you've created or Elastic Load Balancing sample policy names.
         ///  
         /// </summary>
         public List<string> PolicyNames

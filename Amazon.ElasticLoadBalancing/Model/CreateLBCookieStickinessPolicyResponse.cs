@@ -34,7 +34,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public CreateLBCookieStickinessPolicyResult CreateLBCookieStickinessPolicyResult
         {
-            get { return this.createLBCookieStickinessPolicyResult; }
+            get 
+            {
+                if(this.createLBCookieStickinessPolicyResult == null)
+                {
+                    this.createLBCookieStickinessPolicyResult = new CreateLBCookieStickinessPolicyResult();
+                }
+
+                return this.createLBCookieStickinessPolicyResult; 
+            }
             set { this.createLBCookieStickinessPolicyResult = value; }
         }
     }

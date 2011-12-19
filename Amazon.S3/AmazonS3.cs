@@ -1190,6 +1190,58 @@ namespace Amazon.S3
 
         #endregion
 
+        #region DeleteObjects
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteObjects operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteObjects"/>
+        /// </summary>
+        /// <param name="request">The DeleteObjectsRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndDeleteObjects.</returns>
+        IAsyncResult BeginDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteObjects operation.
+        /// 
+        /// DeleteObjectsException will be thrown if any of the deletes fail.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjects.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <exception cref="T:Amazon.S3.Model.DeleteObjectsException">
+        /// If any objects are not deleted during the operation.
+        /// </exception>
+        /// <returns>Returns a DeleteObjectsResponse from S3.</returns>
+        DeleteObjectsResponse EndDeleteObjects(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// The DeleteObjects operation removes the specified object from Amazon S3.
+        /// Once deleted, there is no method to restore or undelete the objects.
+        ///
+        /// DeleteObjectsException will be thrown if any of the deletes fail.
+        /// </summary>
+        /// <param name="request">
+        /// The DeleteObjectsRequest that defines the parameters of the operation.
+        /// </param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <exception cref="T:Amazon.S3.Model.DeleteObjectsException">
+        /// If any objects are not deleted during the operation.
+        /// </exception>
+        /// <returns>Returns a DeleteObjectsResponse from S3.</returns>
+        DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request);
+
+        #endregion
+
         #region CopyObject
 
         /// <summary>

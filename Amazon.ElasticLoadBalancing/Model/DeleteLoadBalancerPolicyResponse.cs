@@ -34,7 +34,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public DeleteLoadBalancerPolicyResult DeleteLoadBalancerPolicyResult
         {
-            get { return this.deleteLoadBalancerPolicyResult; }
+            get 
+            {
+                if(this.deleteLoadBalancerPolicyResult == null)
+                {
+                    this.deleteLoadBalancerPolicyResult = new DeleteLoadBalancerPolicyResult();
+                }
+
+                return this.deleteLoadBalancerPolicyResult; 
+            }
             set { this.deleteLoadBalancerPolicyResult = value; }
         }
     }

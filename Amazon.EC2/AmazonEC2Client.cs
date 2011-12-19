@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-05-15
+ *  API Version: 2011-11-01
  */
 
 using System;
@@ -360,7 +360,7 @@ namespace Amazon.EC2
                     immutableCredentials = credentials.GetCredentials();
                     s3.AWSAccessKeyId = immutableCredentials.AccessKey;
                     S3UploadPolicy policy;
-                    if (config.UseSecureStringForAwsSecretKey)
+                    if (immutableCredentials.UseSecureStringForSecretKey)
                     {
                         policy = new S3UploadPolicy(
                             immutableCredentials.AccessKey,
@@ -902,6 +902,23 @@ namespace Amazon.EC2
         public DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
             return Invoke<DescribeImagesResponse>(ConvertDescribeImages(request));
+        }
+
+        /// <summary>
+        /// Describe Instance Status
+        /// </summary>
+        /// <param name="request">Describe Instance Status request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Instance Status response from the service</returns>
+        /// <remarks>
+        /// Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance. Instance status provides information about two 
+        /// types of scheduled events for an instance that may require your attention, Scheduled Reboot and Scheduled Retirement.
+        /// DescribeInstanceStatus returns information only for instances in the running state.
+        /// </remarks>
+        public DescribeInstanceStatusResponse DescribeInstanceStatus(DescribeInstanceStatusRequest request)
+        {
+            return Invoke<DescribeInstanceStatusResponse>(ConvertDescribeInstanceStatus(request));
         }
 
         /// <summary>
@@ -4267,6 +4284,42 @@ namespace Amazon.EC2
                 }
 
                 describeImagesRequestFilterListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeInstanceStatusRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeInstanceStatus(DescribeInstanceStatusRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeInstanceStatus";
+            List<string> describeInstanceStatusRequestInstanceIdList = request.InstanceId;
+            int describeInstanceStatusRequestInstanceIdListIndex = 1;
+            foreach (string describeInstanceStatusRequestInstanceId in describeInstanceStatusRequestInstanceIdList)
+            {
+                parameters[String.Concat("InstanceId", ".", describeInstanceStatusRequestInstanceIdListIndex)] = describeInstanceStatusRequestInstanceId;
+                describeInstanceStatusRequestInstanceIdListIndex++;
+            }
+            List<Filter> describeInstanceStatusRequestFilterList = request.Filter;
+            int describeInstanceStatusRequestFilterListIndex = 1;
+            foreach (Filter describeInstanceStatusRequestFilter in describeInstanceStatusRequestFilterList)
+            {
+                if (describeInstanceStatusRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeInstanceStatusRequestFilterListIndex, ".", "Name")] = describeInstanceStatusRequestFilter.Name;
+                }
+                List<string> filterValueList = describeInstanceStatusRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeInstanceStatusRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeInstanceStatusRequestFilterListIndex++;
             }
 
             return parameters;

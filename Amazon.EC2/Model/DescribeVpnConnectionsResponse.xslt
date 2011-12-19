@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-05-15/"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-11-01/"
 	exclude-result-prefixes="ec2">
 	<xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
 	<xsl:variable name="ns"
-		select="'http://ec2.amazonaws.com/doc/2011-05-15/'" />
+		select="'http://ec2.amazonaws.com/doc/2011-11-01/'" />
 	<xsl:template match="ec2:DescribeVpnConnectionsResponse">
 		<xsl:element name="DescribeVpnConnectionsResponse"
 			namespace="{$ns}">
@@ -42,7 +42,8 @@
 					<xsl:value-of select="ec2:vpnGatewayId" />
 				</xsl:element>
         <xsl:apply-templates select="ec2:tagSet" />
-			</xsl:element>
+        <xsl:apply-templates select="ec2:vgwTelemetry" />
+      </xsl:element>
 		</xsl:for-each>
 	</xsl:template>
   <xsl:template match="ec2:tagSet">
@@ -53,6 +54,27 @@
         </xsl:element>
         <xsl:element name="Value" namespace="{$ns}">
           <xsl:value-of select="ec2:value" />
+        </xsl:element>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+  <xsl:template match="ec2:vgwTelemetry">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="VpnTunnelTelemetry" namespace="{$ns}">
+        <xsl:element name="OutsideIpAddress" namespace="{$ns}">
+          <xsl:value-of select="ec2:outsideIpAddress" />
+        </xsl:element>
+        <xsl:element name="Status" namespace="{$ns}">
+          <xsl:value-of select="ec2:status" />
+        </xsl:element>
+        <xsl:element name="LastStatusChange" namespace="{$ns}">
+          <xsl:value-of select="ec2:lastStatusChange" />
+        </xsl:element>
+        <xsl:element name="StatusMessage" namespace="{$ns}">
+          <xsl:value-of select="ec2:statusMessage" />
+        </xsl:element>
+        <xsl:element name="AcceptedRouteCount" namespace="{$ns}">
+          <xsl:value-of select="ec2:acceptedRouteCount" />
         </xsl:element>
       </xsl:element>
     </xsl:for-each>

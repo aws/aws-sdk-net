@@ -28,6 +28,26 @@ namespace Amazon.ElasticLoadBalancing.Model
         
         private string attributeName;
         private string attributeValue;
+        /// <summary>
+        /// Default constructor for a new PolicyAttribute object.  Callers should use the
+        /// properties or fluent setter (With...) methods to initialize this object after creating it.
+        /// </summary>
+        public PolicyAttribute() {}
+    
+        /// <summary>
+        /// Constructs a new PolicyAttribute object.
+        /// Callers should use the properties or fluent setter (With...) methods to
+        /// initialize any additional object members.
+        /// </summary>
+        /// 
+        /// <param name="attributeName"> The name of the attribute associated with the policy. </param>
+        /// <param name="attributeValue"> The value of the attribute associated with the policy. </param>
+        public PolicyAttribute(string attributeName, string attributeValue) 
+        {
+            this.attributeName = attributeName;
+            this.attributeValue = attributeValue;
+        }
+    
 
         /// <summary>
         /// The name of the attribute associated with the policy.

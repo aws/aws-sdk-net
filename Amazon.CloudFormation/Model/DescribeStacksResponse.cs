@@ -34,7 +34,15 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         public DescribeStacksResult DescribeStacksResult
         {
-            get { return this.describeStacksResult; }
+            get 
+            {
+                if(this.describeStacksResult == null)
+                {
+                    this.describeStacksResult = new DescribeStacksResult();
+                }
+
+                return this.describeStacksResult; 
+            }
             set { this.describeStacksResult = value; }
         }
     }

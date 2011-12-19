@@ -34,7 +34,15 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         public CreateStackResult CreateStackResult
         {
-            get { return this.createStackResult; }
+            get 
+            {
+                if(this.createStackResult == null)
+                {
+                    this.createStackResult = new CreateStackResult();
+                }
+
+                return this.createStackResult; 
+            }
             set { this.createStackResult = value; }
         }
     }

@@ -40,6 +40,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string loadBalancerName;
         private List<Listener> listeners = new List<Listener>();
         private List<string> availabilityZones = new List<string>();
+        private List<string> subnets = new List<string>();
+        private List<string> securityGroups = new List<string>();
         /// <summary>
         /// Default constructor for a new CreateLoadBalancerRequest object.  Callers should use the
         /// properties or fluent setter (With...) methods to initialize this object after creating it.
@@ -196,6 +198,96 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetAvailabilityZones()
         {
             return this.availabilityZones.Count > 0;       
+        }
+
+        /// <summary>
+        /// A list of subnet IDs in your VPC to attach to your LoadBalancer.
+        ///  
+        /// </summary>
+        public List<string> Subnets
+        {
+            get { return this.subnets; }
+            set { this.subnets = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Subnets collection
+        /// </summary>
+        /// <param name="subnets">The values to add to the Subnets collection </param>
+        /// <returns>this instance</returns>
+        public CreateLoadBalancerRequest WithSubnets(params string[] subnets)
+        {
+            foreach (string element in subnets)
+            {
+                this.subnets.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Subnets collection
+        /// </summary>
+        /// <param name="subnets">The values to add to the Subnets collection </param>
+        /// <returns>this instance</returns>
+        public CreateLoadBalancerRequest WithSubnets(IEnumerable<string> subnets)
+        {
+            foreach (string element in subnets)
+            {
+                this.subnets.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Subnets property is set
+        internal bool IsSetSubnets()
+        {
+            return this.subnets.Count > 0;       
+        }
+
+        /// <summary>
+        /// The security groups assigned to your LoadBalancer within your VPC.
+        ///  
+        /// </summary>
+        public List<string> SecurityGroups
+        {
+            get { return this.securityGroups; }
+            set { this.securityGroups = value; }
+        }
+        /// <summary>
+        /// Adds elements to the SecurityGroups collection
+        /// </summary>
+        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public CreateLoadBalancerRequest WithSecurityGroups(params string[] securityGroups)
+        {
+            foreach (string element in securityGroups)
+            {
+                this.securityGroups.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the SecurityGroups collection
+        /// </summary>
+        /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        public CreateLoadBalancerRequest WithSecurityGroups(IEnumerable<string> securityGroups)
+        {
+            foreach (string element in securityGroups)
+            {
+                this.securityGroups.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if SecurityGroups property is set
+        internal bool IsSetSecurityGroups()
+        {
+            return this.securityGroups.Count > 0;       
         }
     }
 }

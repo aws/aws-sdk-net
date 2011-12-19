@@ -39,7 +39,7 @@ namespace Amazon.ElasticLoadBalancing
         {
             get
             {
-                return "2011-08-15";
+                return "2011-11-15";
             }
         }
     }

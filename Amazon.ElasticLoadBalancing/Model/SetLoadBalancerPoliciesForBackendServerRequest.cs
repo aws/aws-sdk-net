@@ -94,7 +94,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// List of policy names to be set. If the list is blank, then all current polices are removed from the back-end server.
+        /// List of policy names to be set. If the list is empty, then all current polices are removed from the back-end server.
         ///  
         /// </summary>
         public List<string> PolicyNames

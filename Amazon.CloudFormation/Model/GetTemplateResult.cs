@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// Structure containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AmazonCloudFormation/latest/UserGuide/">AWS CloudFormation User Guide</a>.)
+        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS CloudFormation User Guide</a>.)
         ///  
         /// <para>
         /// <b>Constraints:</b>

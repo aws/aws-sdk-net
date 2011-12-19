@@ -34,7 +34,15 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         public GetTemplateResult GetTemplateResult
         {
-            get { return this.getTemplateResult; }
+            get 
+            {
+                if(this.getTemplateResult == null)
+                {
+                    this.getTemplateResult = new GetTemplateResult();
+                }
+
+                return this.getTemplateResult; 
+            }
             set { this.getTemplateResult = value; }
         }
     }

@@ -718,6 +718,9 @@
     <Compile Include="Amazon.CloudFormation\Model\DescribeStacksResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\EstimateTemplateCostRequest.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\EstimateTemplateCostResponse.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\EstimateTemplateCostResult.cs" />
     <Compile Include="Amazon.CloudFormation\Model\GetTemplateRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -727,6 +730,51 @@
     <Compile Include="Amazon.CloudFormation\Model\GetTemplateResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\InsufficientCapabilitiesException.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\CreateStackRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\CreateStackResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\CreateStackResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DeleteStackRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DeleteStackResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStackEventsRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStackEventsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStackEventsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStackResourceRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStackResourceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStackResourceResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStackResourcesRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStackResourcesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStackResourcesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStacksRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStacksResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\DescribeStacksResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\EstimateTemplateCostRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\EstimateTemplateCostResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\EstimateTemplateCostResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\GetTemplateRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\GetTemplateResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\GetTemplateResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ListStackResourcesRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ListStackResourcesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ListStackResourcesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ListStacksRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ListStacksResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ListStacksResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\OutputUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ParameterUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\StackEventUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\StackResourceDetailUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\StackResourceSummaryUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\StackResourceUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\StackSummaryUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\StackUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\TemplateParameterUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\UpdateStackRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\UpdateStackResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\UpdateStackResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ValidateTemplateRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ValidateTemplateResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ValidateTemplateResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\LimitExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -751,88 +799,12 @@
     <Compile Include="Amazon.CloudFormation\Model\StackResourceSummary.cs" />
     <Compile Include="Amazon.CloudFormation\Model\StackSummary.cs" />
     <Compile Include="Amazon.CloudFormation\Model\TemplateParameter.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\CreateStackRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\CreateStackResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\CreateStackResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DeleteStackRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DeleteStackResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackEventsRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackEventsResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackEventsResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackResourceRequestMarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackResourceResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackResourceResultUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackResourcesRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackResourcesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStackResourcesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStacksRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStacksResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\DescribeStacksResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\GetTemplateRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\GetTemplateResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\GetTemplateResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStackResourcesRequestMarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStackResourcesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStackResourcesResultUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStacksRequestMarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStacksResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\ListStacksResultUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\OutputUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\ParameterUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\StackEventUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\StackResourceDetailUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\StackResourceSummaryUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\StackResourceUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\StackSummaryUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\StackUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.CloudFormation\Model\Transform\TemplateParameterUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\ValidateTemplateRequestMarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\ValidateTemplateResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\Transform\ValidateTemplateResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\UpdateStackRequest.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\UpdateStackResponse.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\UpdateStackResult.cs" />
     <Compile Include="Amazon.CloudFormation\Model\ValidateTemplateRequest.cs" />
     <Compile Include="Amazon.CloudFormation\Model\ValidateTemplateResponse.cs" />
     <Compile Include="Amazon.CloudFormation\Model\ValidateTemplateResult.cs" />
-    <Compile Include="Amazon.CloudFormation\Model\ValidationErrorException.cs" />
     <Compile Include="Amazon.CloudFormation\Util\AmazonCloudFormationUtil.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFront.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontClient.cs" />
@@ -1157,6 +1129,9 @@
     <Compile Include="Amazon.EC2\Model\DescribeInstanceAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeInstanceAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeInstanceAttributeResult.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeInstanceStatusRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeInstanceStatusResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeInstanceStatusResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeInstancesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeInstancesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeInstancesResult.cs" />
@@ -1273,6 +1248,8 @@
     <Compile Include="Amazon.EC2\Model\InstanceBlockDeviceMappingParameter.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceEbsBlockDevice.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceEbsBlockDeviceParameter.cs" />
+    <Compile Include="Amazon.EC2\Model\InstanceStatus.cs" />
+    <Compile Include="Amazon.EC2\Model\InstanceStatusEvent.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceLicense.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceLicenseSpecification.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceMonitoring.cs" />
@@ -1310,6 +1287,7 @@
     <Compile Include="Amazon.EC2\Model\PurchaseReservedInstancesOfferingResult.cs" />
     <Compile Include="Amazon.EC2\Model\RebootInstancesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\RebootInstancesResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\RecurringCharges.cs" />
     <Compile Include="Amazon.EC2\Model\Region.cs" />
     <Compile Include="Amazon.EC2\Model\RegisterImageRequest.cs" />
     <Compile Include="Amazon.EC2\Model\RegisterImageResponse.cs" />
@@ -1382,6 +1360,7 @@
     <Compile Include="Amazon.EC2\Model\VpcAttachment.cs" />
     <Compile Include="Amazon.EC2\Model\VpnConnection.cs" />
     <Compile Include="Amazon.EC2\Model\VpnGateway.cs" />
+    <Compile Include="Amazon.EC2\Model\VpnTunnelTelemetry.cs" />
     <Compile Include="Amazon.EC2\Util\S3UploadPolicy.cs" />
     <Compile Include="Amazon.ElastiCache\AmazonElastiCache.cs" />
     <Compile Include="Amazon.ElastiCache\AmazonElastiCacheClient.cs" />
@@ -1763,6 +1742,12 @@
     <Compile Include="Amazon.ElasticLoadBalancing\AmazonElasticLoadBalancingConfig.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\AmazonElasticLoadBalancingException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\AppCookieStickinessPolicy.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\ApplySecurityGroupsToLoadBalancerRequest.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\ApplySecurityGroupsToLoadBalancerResponse.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\ApplySecurityGroupsToLoadBalancerResult.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\AttachLoadBalancerToSubnetsRequest.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\AttachLoadBalancerToSubnetsResponse.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\AttachLoadBalancerToSubnetsResult.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\BackendServerDescription.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\CertificateNotFoundException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\ConfigureHealthCheckRequest.cs" />
@@ -1807,6 +1792,9 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DescribeLoadBalancersRequest.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DescribeLoadBalancersResponse.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DescribeLoadBalancersResult.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\DetachLoadBalancerFromSubnetsRequest.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\DetachLoadBalancerFromSubnetsResponse.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\DetachLoadBalancerFromSubnetsResult.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DisableAvailabilityZonesForLoadBalancerRequest.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DisableAvailabilityZonesForLoadBalancerResponse.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DisableAvailabilityZonesForLoadBalancerResult.cs" />
@@ -1819,8 +1807,94 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\HealthCheck.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Instance.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\InstanceState.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\AppCookieStickinessPolicyUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ApplySecurityGroupsToLoadBalancerRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ApplySecurityGroupsToLoadBalancerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ApplySecurityGroupsToLoadBalancerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\AttachLoadBalancerToSubnetsRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\AttachLoadBalancerToSubnetsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\AttachLoadBalancerToSubnetsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\BackendServerDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ConfigureHealthCheckRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ConfigureHealthCheckResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ConfigureHealthCheckResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateAppCookieStickinessPolicyRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateAppCookieStickinessPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateAppCookieStickinessPolicyResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLBCookieStickinessPolicyRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLBCookieStickinessPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLBCookieStickinessPolicyResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLoadBalancerListenersRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLoadBalancerListenersResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLoadBalancerListenersResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLoadBalancerPolicyRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLoadBalancerPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLoadBalancerPolicyResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLoadBalancerRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLoadBalancerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLoadBalancerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerListenersRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerListenersResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerListenersResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerPolicyRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerPolicyResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeregisterInstancesFromLoadBalancerRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeregisterInstancesFromLoadBalancerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeregisterInstancesFromLoadBalancerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeInstanceHealthRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeInstanceHealthResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeInstanceHealthResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerPoliciesRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerPoliciesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerPoliciesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerPolicyTypesRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerPolicyTypesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerPolicyTypesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancersRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancersResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancersResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DetachLoadBalancerFromSubnetsRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DetachLoadBalancerFromSubnetsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DetachLoadBalancerFromSubnetsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DisableAvailabilityZonesForLoadBalancerRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DisableAvailabilityZonesForLoadBalancerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\EnableAvailabilityZonesForLoadBalancerRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\EnableAvailabilityZonesForLoadBalancerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\HealthCheckUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\InstanceStateUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\InstanceUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\LBCookieStickinessPolicyUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ListenerDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ListenerUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\LoadBalancerDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\PoliciesUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\PolicyAttributeDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\PolicyAttributeTypeDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\PolicyDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\PolicyTypeDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\RegisterInstancesWithLoadBalancerRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\RegisterInstancesWithLoadBalancerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\RegisterInstancesWithLoadBalancerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\SetLoadBalancerListenerSSLCertificateRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\SetLoadBalancerListenerSSLCertificateResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\SetLoadBalancerPoliciesForBackendServerRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\SetLoadBalancerPoliciesForBackendServerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\SetLoadBalancerPoliciesOfListenerRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\SetLoadBalancerPoliciesOfListenerResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\SourceSecurityGroupUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\InvalidConfigurationRequestException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\InvalidInstanceException.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\InvalidSecurityGroupException.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\InvalidSubnetException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\LBCookieStickinessPolicy.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Listener.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\ListenerDescription.cs" />
@@ -1848,83 +1922,9 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\SetLoadBalancerPoliciesOfListenerResponse.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\SetLoadBalancerPoliciesOfListenerResult.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\SourceSecurityGroup.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\SubnetNotFoundException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\TooManyLoadBalancersException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\TooManyPoliciesException.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\AppCookieStickinessPolicyUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\BackendServerDescriptionUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\ConfigureHealthCheckRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\ConfigureHealthCheckResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\ConfigureHealthCheckResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateAppCookieStickinessPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateAppCookieStickinessPolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateAppCookieStickinessPolicyResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLBCookieStickinessPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLBCookieStickinessPolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLBCookieStickinessPolicyResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLoadBalancerListenersRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLoadBalancerListenersResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLoadBalancerListenersResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLoadBalancerPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLoadBalancerPolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLoadBalancerPolicyResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLoadBalancerRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLoadBalancerResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\CreateLoadBalancerResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeleteLoadBalancerListenersRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeleteLoadBalancerListenersResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeleteLoadBalancerListenersResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeleteLoadBalancerPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeleteLoadBalancerPolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeleteLoadBalancerPolicyResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeleteLoadBalancerRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeleteLoadBalancerResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeleteLoadBalancerResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeregisterInstancesFromLoadBalancerRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeregisterInstancesFromLoadBalancerResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DeregisterInstancesFromLoadBalancerResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeInstanceHealthRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeInstanceHealthResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeInstanceHealthResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeLoadBalancerPoliciesRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeLoadBalancerPoliciesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeLoadBalancerPoliciesResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeLoadBalancerPolicyTypesRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeLoadBalancerPolicyTypesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeLoadBalancerPolicyTypesResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeLoadBalancersRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeLoadBalancersResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DescribeLoadBalancersResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DisableAvailabilityZonesForLoadBalancerRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\DisableAvailabilityZonesForLoadBalancerResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\EnableAvailabilityZonesForLoadBalancerRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\EnableAvailabilityZonesForLoadBalancerResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\HealthCheckUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\InstanceStateUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\InstanceUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\LBCookieStickinessPolicyUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\ListenerDescriptionUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\ListenerUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\LoadBalancerDescriptionUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\PoliciesUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\PolicyAttributeDescriptionUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\PolicyAttributeTypeDescriptionUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\PolicyDescriptionUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\PolicyTypeDescriptionUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\RegisterInstancesWithLoadBalancerRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\RegisterInstancesWithLoadBalancerResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\RegisterInstancesWithLoadBalancerResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerListenerSSLCertificateRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerListenerSSLCertificateResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerPoliciesForBackendServerRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerPoliciesForBackendServerResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerPoliciesOfListenerRequestMarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SetLoadBalancerPoliciesOfListenerResultUnmarshaller.cs" />
-    <Compile Include="Amazon.ElasticLoadBalancing\Model\Transform\SourceSecurityGroupUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduce.cs" />
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduceClient.cs" />
     <Compile Include="Amazon.ElasticMapReduce\AmazonElasticMapReduceConfig.cs" />
@@ -2639,6 +2639,11 @@
     <Compile Include="Amazon.S3\Model\DeleteBucketPolicyResponse.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteRequest.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DeletedObject.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteError.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteObjectsException.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteObjectsRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteObjectsResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketPolicyResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketVersioningRequest.cs" />
@@ -2650,6 +2655,7 @@
     <Compile Include="Amazon.S3\Model\GetPreSignedUrlRequest.cs" />
     <Compile Include="Amazon.S3\Model\InitiateMultipartUploadRequest.cs" />
     <Compile Include="Amazon.S3\Model\InitiateMultipartUploadResponse.cs" />
+    <Compile Include="Amazon.S3\Model\KeyVersion.cs" />
     <Compile Include="Amazon.S3\Model\ListMultipartUploadsRequest.cs" />
     <Compile Include="Amazon.S3\Model\ListMultipartUploadsResponse.cs" />
     <Compile Include="Amazon.S3\Model\ListPartsRequest.cs" />
@@ -3207,6 +3213,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.S3\Model\CopyPartResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeInstanceStatusResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.S3\Model\DeleteObjectsResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

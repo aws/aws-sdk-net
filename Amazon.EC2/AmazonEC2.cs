@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-05-15
+ *  API Version: 2011-11-01
  */
 
 using System;
@@ -602,6 +602,20 @@ namespace Amazon.EC2
         /// interval after deregistration.
         /// </remarks>
         DescribeImagesResponse DescribeImages(DescribeImagesRequest request);
+
+        /// <summary>
+        /// Describe Instance Status
+        /// </summary>
+        /// <param name="request">Describe Instance Status request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Instance Status response from the service</returns>
+        /// <remarks>
+        /// Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance. Instance status provides information about two 
+        /// types of scheduled events for an instance that may require your attention, Scheduled Reboot and Scheduled Retirement.
+        /// DescribeInstanceStatus returns information only for instances in the running state.
+        /// </remarks>
+        DescribeInstanceStatusResponse DescribeInstanceStatus(DescribeInstanceStatusRequest request);
 
         /// <summary>
         /// Describe Instances 

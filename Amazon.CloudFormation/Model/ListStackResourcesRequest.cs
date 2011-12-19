@@ -25,7 +25,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStackResources operation.
-    /// <para> Returns descriptions for all resources of the specified stack. </para> <para>For deleted stacks, ListStackResources returns resource
+    /// <para> Returns descriptions of all resources of the specified stack. </para> <para>For deleted stacks, ListStackResources returns resource
     /// information for up to 90 days after the stack has been deleted. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.ListStackResources"/>
@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// String that identifies the start of the next list of events, if there is one.<br></br> Default: There is no default value.
+        /// String that identifies the start of the next list of events, if there is one. Default: There is no default value.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-05-15
+ *  API Version: 2011-11-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Reserved Instances
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
     public class ReservedInstances
     {    
         private string reservedInstancesIdField;
@@ -45,7 +45,8 @@ namespace Amazon.EC2.Model
         private List<Tag> tagField;
         private string instanceTenancyField;
         private string currencyCodeField;
-
+        private string offeringTypeField;
+        private List<RecurringCharges> recurringChargesField;
         /// <summary>
         /// Gets and sets the ReservedInstancesId property.
         /// The ID of the Reserved Instances.
@@ -409,6 +410,64 @@ namespace Amazon.EC2.Model
         public bool IsSetTag()
         {
             return (Tag.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the CurrencyCode property.
+        /// The Reserved Instance Offering type.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "OfferingType")]
+        public string OfferingType
+        {
+            get { return this.offeringTypeField; }
+            set { this.offeringTypeField = value; }
+        }
+
+        /// <summary>
+        /// Checks if OfferingType property is set
+        /// </summary>
+        /// <returns>true if OfferingType property is set</returns>
+        public bool IsSetOfferingType()
+        {
+            return this.offeringTypeField != null;
+        }
+
+        /// <summary>
+        /// Sets the OfferingType property
+        /// </summary>
+        /// <param name="offeringType">The Reserved Instance Offering type</param>
+        /// <returns>this instance</returns>
+        public ReservedInstances WithOfferingType(string offeringType)
+        {
+            this.offeringTypeField = offeringType;
+            return this;
+        }
+
+        /// <summary>
+        /// Gets and sets the RecurringCharges property.
+        /// Zero or more recurring charges associated with the Reserved Instance.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "RecurringCharges")]
+        public List<RecurringCharges> RecurringCharges
+        {
+            get
+            {
+                if (this.recurringChargesField == null)
+                {
+                    this.recurringChargesField = new List<RecurringCharges>();
+                }
+                return this.recurringChargesField;
+            }
+            set { this.recurringChargesField = value; }
+        }
+
+        /// <summary>
+        /// Checks if RecurringCharges property is set
+        /// </summary>
+        /// <returns>true if RecurringCharges property is set</returns>
+        public bool IsSetRecurringCharges()
+        {
+            return (RecurringCharges.Count > 0);
         }
 
 

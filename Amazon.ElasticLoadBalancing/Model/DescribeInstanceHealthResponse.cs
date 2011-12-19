@@ -34,7 +34,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public DescribeInstanceHealthResult DescribeInstanceHealthResult
         {
-            get { return this.describeInstanceHealthResult; }
+            get 
+            {
+                if(this.describeInstanceHealthResult == null)
+                {
+                    this.describeInstanceHealthResult = new DescribeInstanceHealthResult();
+                }
+
+                return this.describeInstanceHealthResult; 
+            }
             set { this.describeInstanceHealthResult = value; }
         }
     }

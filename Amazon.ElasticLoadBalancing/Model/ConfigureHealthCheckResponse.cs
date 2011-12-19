@@ -34,7 +34,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public ConfigureHealthCheckResult ConfigureHealthCheckResult
         {
-            get { return this.configureHealthCheckResult; }
+            get 
+            {
+                if(this.configureHealthCheckResult == null)
+                {
+                    this.configureHealthCheckResult = new ConfigureHealthCheckResult();
+                }
+
+                return this.configureHealthCheckResult; 
+            }
             set { this.configureHealthCheckResult = value; }
         }
     }

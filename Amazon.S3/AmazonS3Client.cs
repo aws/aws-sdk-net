@@ -2204,6 +2204,96 @@ namespace Amazon.S3
 
         #endregion
 
+        #region DeleteObjects
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteObjects operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteObjects"/>
+        /// </summary>
+        /// <param name="request">The DeleteObjectsRequest that defines the parameters of
+        /// the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndDeleteObjects.</returns>
+        public IAsyncResult BeginDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state)
+        {
+            return invokeDeleteObjects(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteObjects operation.
+        /// 
+        /// DeleteObjectsException will be thrown if any of the deletes fail.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjects.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <exception cref="T:Amazon.S3.Model.DeleteObjectsException">
+        /// If any objects are not deleted during the operation.
+        /// </exception>
+        /// <returns>Returns a DeleteObjectsResponse from S3.</returns>
+        public DeleteObjectsResponse EndDeleteObjects(IAsyncResult asyncResult)
+        {
+            DeleteObjectsErrorResponse response = endOperation<DeleteObjectsErrorResponse>(asyncResult);
+
+            if (response != null && response.DeleteErrors != null && response.DeleteErrors.Count > 0)
+            {
+                throw new DeleteObjectsException(response);
+            }
+
+            return response;
+        }
+
+        /// <summary>
+        /// The DeleteObjects operation removes the specified object from Amazon S3.
+        /// Once deleted, there is no method to restore or undelete the objects.
+        ///
+        /// DeleteObjectsException will be thrown if any of the deletes fail.
+        /// </summary>
+        /// <param name="request">
+        /// The DeleteObjectsRequest that defines the parameters of the operation.
+        /// </param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <exception cref="T:Amazon.S3.Model.DeleteObjectsException">
+        /// If any objects are not deleted during the operation.
+        /// </exception>
+        /// <returns>Returns a DeleteObjectsResponse from S3.</returns>
+        public DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
+        {
+            IAsyncResult asyncResult = invokeDeleteObjects(request, null, null, true);
+            return EndDeleteObjects(asyncResult);
+        }
+
+        IAsyncResult invokeDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The DeleteObjectsRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+            if (request.Keys == null || request.Keys.Count == 0)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "No S3 keys specified!");
+            }
+
+            ConvertDeleteObjects(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<DeleteObjectsErrorResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
         #region CopyObject
 
         /// <summary>
@@ -3833,18 +3923,20 @@ namespace Amazon.S3
         {
             using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
             {
-                if (immutableCredentials.UseToken)
-                {
-                    throw new AmazonS3Exception("Cannot get presigned url with temporary credentials");
-                }
-
                 Map parameters = request.parameters;
 
                 parameters[S3QueryParameter.Verb] = S3Constants.Verbs[(int)request.Verb];
                 parameters[S3QueryParameter.Action] = "GetPreSignedUrl";
-                StringBuilder queryStr = new StringBuilder("?AWSAccessKeyId=", 512);
-                queryStr.Append(immutableCredentials.AccessKey);
+                StringBuilder queryStr = new StringBuilder("?", 512);
 
+                if (immutableCredentials.UseToken)
+                {
+                    queryStr.Append("x-amz-security-token=");
+                    queryStr.Append(immutableCredentials.Token);
+                    queryStr.Append("&");
+                }
+
+                queryStr.Append("AWSAccessKeyId=" + immutableCredentials.AccessKey);
                 if (request.IsSetKey())
                 {
                     parameters[S3QueryParameter.Key] = request.Key;
@@ -3937,6 +4029,13 @@ namespace Amazon.S3
                     auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
                 }
                 parameters[S3QueryParameter.Authorization] = auth;
+
+                if (immutableCredentials.UseToken)
+                {
+                    // Token must be as-is for the signature code, but must be url-encoded in the url
+                    string urlEncodedToken = AmazonS3Util.UrlEncode(immutableCredentials.Token, false);
+                    url = url.Replace(immutableCredentials.Token, urlEncodedToken);
+                }
 
                 parameters[S3QueryParameter.Url] = String.Concat(
                     url,
@@ -4405,6 +4504,34 @@ namespace Amazon.S3
             // Finally, add the S3 specific parameters and headers
             request.RequestDestinationBucket = request.DestinationBucket;
         }
+
+        /**
+         * Convert DeleteObjectsRequest to key/value pairs.
+         */
+        private void ConvertDeleteObjects(DeleteObjectsRequest request)
+        {
+            WebHeaderCollection webHeaders = request.Headers;
+            Map parameters = request.parameters;
+
+            string content = request.ContentXML;
+            string queryStr = "?delete";
+            parameters[S3QueryParameter.Action] = "DeleteObjects";
+            parameters[S3QueryParameter.Verb] = S3Constants.PostVerb;
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+            parameters[S3QueryParameter.ContentBody] = content;
+            parameters[S3QueryParameter.ContentType] = "application/xml";
+
+            string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+            webHeaders[AWSSDKUtils.ContentMD5Header] = checksum;
+            request.RequestDestinationBucket = request.BucketName;
+
+            if (request.IsSetMfaCodes())
+            {
+                setMfaHeader(request.Headers, request.MfaCodes);
+            }
+        }
+
         #endregion
 
         #region Private Methods

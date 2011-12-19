@@ -34,7 +34,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public DescribeLoadBalancerPolicyTypesResult DescribeLoadBalancerPolicyTypesResult
         {
-            get { return this.describeLoadBalancerPolicyTypesResult; }
+            get 
+            {
+                if(this.describeLoadBalancerPolicyTypesResult == null)
+                {
+                    this.describeLoadBalancerPolicyTypesResult = new DescribeLoadBalancerPolicyTypesResult();
+                }
+
+                return this.describeLoadBalancerPolicyTypesResult; 
+            }
             set { this.describeLoadBalancerPolicyTypesResult = value; }
         }
     }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-05-15
+ *  API Version: 2011-11-01
  */
 
 using System;
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// extended period of time (inactive means that there's no VPN connection in
     /// use with the customer gateway).
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
     public class DeleteCustomerGatewayRequest
     {    
         private string customerGatewayIdField;

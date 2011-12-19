@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-05-15
+ *  API Version: 2011-11-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///VPN Connection
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-05-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
     public class VpnConnection
     {    
         private string vpnConnectionIdField;
@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string customerGatewayIdField;
         private string vpnGatewayIdField;
         private List<Tag> tagField;
+        private List<VpnTunnelTelemetry> vgwTelemetryField;
 
         /// <summary>
         /// Gets and sets the VpnConnectionId property.
@@ -276,5 +277,46 @@ namespace Amazon.EC2.Model
             return (Tag.Count > 0);
         }
 
+        /// <summary>
+        /// Gets and sets information about the virtual private gateways.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "VgwTelemetry")]
+        public List<VpnTunnelTelemetry> VgwTelemetry
+        {
+            get 
+            {
+                if (this.vgwTelemetryField == null)
+                {
+                    this.vgwTelemetryField = new List<VpnTunnelTelemetry>();
+                }
+                
+                return this.vgwTelemetryField; 
+            }
+            set { this.vgwTelemetryField = value; }
+        }
+
+        /// <summary>
+        /// Sets information about the virtual private gateways.
+        /// </summary>
+        /// <param name="list">The virtual private gateways.</param>
+        /// <returns>this instance</returns>
+        public VpnConnection WithVgwTelemetry(params VpnTunnelTelemetry[] list)
+        {
+            foreach (VpnTunnelTelemetry item in list)
+            {
+                VgwTelemetry.Add(item);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if VgwTelemetry property is set
+        /// </summary>
+        /// <returns>True if the VgwTelemetry property is set</returns>
+        public bool IsSetVgwTelemetry()
+        {
+            return (VgwTelemetry.Count > 0);
+        }
     }
 }

@@ -34,7 +34,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public SetLoadBalancerPoliciesForBackendServerResult SetLoadBalancerPoliciesForBackendServerResult
         {
-            get { return this.setLoadBalancerPoliciesForBackendServerResult; }
+            get 
+            {
+                if(this.setLoadBalancerPoliciesForBackendServerResult == null)
+                {
+                    this.setLoadBalancerPoliciesForBackendServerResult = new SetLoadBalancerPoliciesForBackendServerResult();
+                }
+
+                return this.setLoadBalancerPoliciesForBackendServerResult; 
+            }
             set { this.setLoadBalancerPoliciesForBackendServerResult = value; }
         }
     }
