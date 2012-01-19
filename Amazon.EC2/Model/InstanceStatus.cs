@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- * Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -103,7 +103,7 @@ namespace Amazon.EC2.Model
         /// <remarks>
         /// Reports impaired functionality that arises from problems internal to the instance .
         /// </remarks>
-        [XmlElement(ElementName = "EventsSet")]
+        [XmlElement(ElementName = "InstanceStatusEvent")]
         public List<InstanceStatusEvent> InstanceStatusEvent
         {
             get { return this.instanceStatusEventField; }

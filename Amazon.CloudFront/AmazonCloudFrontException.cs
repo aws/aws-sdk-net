@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -157,8 +157,10 @@ namespace Amazon.CloudFront
         /// <param name="type">Error Type</param>
         /// <param name="xml">Compete xml found in response</param>
         /// <param name="requestAddr">The CloudFront request url</param>
-        /// <param name="responseHeaders">The response headers containing CloudFront specific information
-        /// </param>
+        /// <param name="responseHeaders">The response headers containing CloudFront specific information</param>
+        /// <param name="innerException">The exception that is the cause of the current exception.
+        /// If the innerException parameter is not a null reference, the current exception is
+        /// raised in a catch block that handles the inner exception.</param>
         public AmazonCloudFrontException(
             string message,
             HttpStatusCode statusCode,
@@ -167,8 +169,9 @@ namespace Amazon.CloudFront
             string type,
             string xml,
             string requestAddr,
-            WebHeaderCollection responseHeaders)
-            : this(message, statusCode)
+            WebHeaderCollection responseHeaders,
+            Exception innerException)
+            : this(message, innerException)
         {
             this.errorCode = errorCode;
             this.type = type;
@@ -176,6 +179,7 @@ namespace Amazon.CloudFront
             this.xml = xml;
             this.requestAddr = requestAddr;
             this.responseHeaders = responseHeaders;
+            this.statusCode = statusCode;
         }
 
         /// <summary>

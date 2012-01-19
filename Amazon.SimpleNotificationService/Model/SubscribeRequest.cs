@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -78,6 +78,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
         /// <li>email -- delivery of message via SMTP</li>
         /// <li>email-json -- delivery of JSON-encoded message via SMTP</li>
+        /// <li>sms -- delivery of message via SMS</li>
         /// <li>sqs -- delivery of JSON-encoded message to an Amazon SQS queue</li>
         /// </ul>
         /// </summary>
@@ -97,6 +98,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
         /// <li>email -- delivery of message via SMTP</li>
         /// <li>email-json -- delivery of JSON-encoded message via SMTP</li>
+        /// <li>sms -- delivery of message via SMS</li>
         /// <li>sqs -- delivery of JSON-encoded message to an Amazon SQS queue</li>
         /// </ul></param>
         /// <returns>this instance</returns>
@@ -123,6 +125,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <li>For the https protocol, the endpoint is a URL beginning with "https://"</li>
         /// <li>For the email protocol, the endpoint is an e-mail address</li>
         /// <li>For the email-json protocol, the endpoint is an e-mail address</li>
+        /// <li>For the sms protocol, the endpoint is a phone number of an SMS-enabled device</li>
         /// <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS queue</li>
         /// </ul>
         /// </summary>
@@ -142,6 +145,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <li>For the https protocol, the endpoint is a URL beginning with "https://"</li>
         /// <li>For the email protocol, the endpoint is an e-mail address</li>
         /// <li>For the email-json protocol, the endpoint is an e-mail address</li>
+        /// <li>For the sms protocol, the endpoint is a phone number of an SMS-enabled device</li>
         /// <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS queue</li>
         /// </ul></param>
         /// <returns>this instance</returns>

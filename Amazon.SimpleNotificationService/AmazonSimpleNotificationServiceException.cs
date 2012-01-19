@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -122,7 +122,7 @@ namespace Amazon.SimpleNotificationService
         /// Constructs AmazonSimpleNotificationServiceException with message and wrapped exception
         /// </summary>
         /// <param name="message">A message that describes the error</param>
-        /// <param name="innerException">The nested exception that caused the AmazonS3Exception</param>
+        /// <param name="innerException">The nested exception that caused the AmazonSimpleNotificationServiceException</param>
         public AmazonSimpleNotificationServiceException(string message, Exception innerException)
             : base (message, innerException)
         {
@@ -137,6 +137,20 @@ namespace Amazon.SimpleNotificationService
                 this.xml = ex.XML;
             }
         }
+
+        /// <summary>
+        /// Initializes a new AmazonSimpleNotificationServiceException with a specified error message
+        /// and HTTP status code
+        /// </summary>
+        /// <param name="message">A message that describes the error</param>
+        /// <param name="statusCode">HTTP status code for error response</param>
+        /// <param name="innerException">The nested exception that caused the AmazonSimpleNotificationServiceException</param>
+        public AmazonSimpleNotificationServiceException(string message, HttpStatusCode statusCode, Exception innerException)
+            : this(message, innerException)
+        {
+            this.statusCode = statusCode;
+        }
+
 
         /// <summary>
         /// Initializes an AmazonSimpleNotificationServiceException with error information provided in an

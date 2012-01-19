@@ -227,8 +227,10 @@ namespace ThirdParty.Json.LitJson
             writer.Write ('"');
 
             int n = str.Length;
-            for (int i = 0; i < n; i++) {
-                switch (str[i]) {
+            for (int i = 0; i < n; i++)
+            {
+                char c = str[i];
+                switch (c) {
                 case '\n':
                     writer.Write ("\\n");
                     continue;
@@ -244,7 +246,7 @@ namespace ThirdParty.Json.LitJson
                 case '"':
                 case '\\':
                     writer.Write ('\\');
-                    writer.Write (str[i]);
+                    writer.Write (c);
                     continue;
 
                 case '\f':
@@ -256,15 +258,22 @@ namespace ThirdParty.Json.LitJson
                     continue;
                 }
 
-                if ((int) str[i] >= 32 && (int) str[i] <= 126) {
-                    writer.Write (str[i]);
+                if ((int) c >= 32 && (int) c <= 126) {
+                    writer.Write (c);
                     continue;
                 }
 
-                // Default, turn into a \uXXXX sequence
-                IntToHex ((int) str[i], hex_seq);
-                writer.Write ("\\u");
-                writer.Write (hex_seq);
+                if (c < ' ' || (c >= '\u0080' && c < '\u00a0'))
+                {
+                    // Turn into a \uXXXX sequence
+                    IntToHex((int)c, hex_seq);
+                    writer.Write("\\u");
+                    writer.Write(hex_seq);
+                }
+                else
+                {
+                    writer.Write(c);
+                }
             }
 
             writer.Write ('"');
@@ -348,7 +357,7 @@ namespace ThirdParty.Json.LitJson
             DoValidation (Condition.Value);
             PutNewline ();
 
-            Put (Convert.ToString (number, number_format));
+            Put (Convert.ToString (number));
 
             context.ExpectingValue = false;
         }
@@ -373,6 +382,16 @@ namespace ThirdParty.Json.LitJson
             PutNewline ();
 
             Put (Convert.ToString (number, number_format));
+
+            context.ExpectingValue = false;
+        }
+
+        public void Write(DateTime date)
+        {
+            DoValidation(Condition.Value);
+            PutNewline();
+
+            Put(date.ToString(Amazon.Util.AWSSDKUtils.ISO8601DateFormat));
 
             context.ExpectingValue = false;
         }

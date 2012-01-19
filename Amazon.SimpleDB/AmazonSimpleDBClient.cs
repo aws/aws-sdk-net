@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -1241,14 +1241,14 @@ namespace Amazon.SimpleDB
                 catch (WebException we)
                 {
                     shouldRetry = handleHttpWebErrorResponse(sdbAsyncResult, we, out statusCode);
-                }
 
-                if (shouldRetry)
-                {
-                    sdbAsyncResult.RequestState.WebRequest.Abort();
-                    sdbAsyncResult.RetriesAttempt++;
-                    handleRetry(sdbAsyncResult, statusCode);
-                    invoke<T>(sdbAsyncResult);
+                    if (shouldRetry)
+                    {
+                        sdbAsyncResult.RequestState.WebRequest.Abort();
+                        sdbAsyncResult.RetriesAttempt++;
+                        handleRetry(sdbAsyncResult, statusCode, we);
+                        invoke<T>(sdbAsyncResult);
+                    }
                 }
             }
             catch (Exception e)
@@ -1337,7 +1337,7 @@ namespace Amazon.SimpleDB
             {
                 shouldRetry = true;
                 sdbAsyncResult.RetriesAttempt++;
-                pauseOnRetry(sdbAsyncResult.RetriesAttempt, this.config.MaxErrorRetry, statusCode);
+                pauseOnRetry(sdbAsyncResult.RetriesAttempt, this.config.MaxErrorRetry, statusCode, we);
             }
             else
             {
@@ -1348,14 +1348,14 @@ namespace Amazon.SimpleDB
         }
 
 
-        void handleRetry(SDBAsyncResult sdbAsyncResult, HttpStatusCode statusCode)
+        void handleRetry(SDBAsyncResult sdbAsyncResult, HttpStatusCode statusCode, Exception cause)
         {
             int retries = sdbAsyncResult.RetriesAttempt;
             if (retries <= this.config.MaxErrorRetry)
             {
                 LOGGER.InfoFormat("Retry number {0} for request {1}.", retries, sdbAsyncResult.ActionName);
             }
-            pauseOnRetry(retries, this.config.MaxErrorRetry, statusCode);
+            pauseOnRetry(retries, this.config.MaxErrorRetry, statusCode, cause);
         }
 
         /**
@@ -1455,7 +1455,7 @@ namespace Amazon.SimpleDB
         /**
          * Exponential sleep on failed request
          */
-        private static void pauseOnRetry(int retries, int maxRetries, HttpStatusCode status)
+        private static void pauseOnRetry(int retries, int maxRetries, HttpStatusCode status, Exception cause)
         {
             if (retries <= maxRetries)
             {
@@ -1466,7 +1466,8 @@ namespace Amazon.SimpleDB
             {
                 throw new AmazonSimpleDBException(
                     "Maximum number of retry attempts reached : " + (retries - 1),
-                    status
+                    status,
+                    cause
                     );
             }
         }

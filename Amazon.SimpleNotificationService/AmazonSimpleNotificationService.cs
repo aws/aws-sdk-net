@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -64,7 +64,7 @@ namespace Amazon.SimpleNotificationService
         /// The Subscribe action prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a
         /// subscription, the endpoint owner must call the ConfirmSubscription
         /// action with the token from the confirmation message. Confirmation tokens are
-        /// valid for twenty-four hours.
+        /// valid for three days.
         /// </remarks>
         SubscribeResponse Subscribe(SubscribeRequest request);
 
@@ -77,6 +77,28 @@ namespace Amazon.SimpleNotificationService
         /// The SetTopicAttributes action allows a topic owner to set an attribute of the topic to a new value.
         /// </remarks>
         SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request);
+
+        /// <summary>
+        /// The GetSubscriptionAttribtues action returns all of the properties of a subscription.
+        /// </summary>
+        /// <param name="request">Get Subscription Attributes  request</param>
+        /// <returns>Get Subscription Attributes  Response from the service</returns>
+        /// <remarks>
+        /// The GetSubscriptionAttribtues action returns all of the properties of a subscription customers have created. Subscription
+        /// properties returned might differ based on the authorization of the user.
+        /// </remarks>
+        GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request);
+
+        /// <summary>
+        /// The SetSubscriptionAttributes action allows a subscription owner to set an attribute of the subscription to a new value.
+        /// </summary>
+        /// <param name="request">Set Subscription Attributes  request</param>
+        /// <returns>Set Subscription Attributes  Response from the service</returns>
+        /// <remarks>
+        /// The SetSubscriptionAttributes action allows a subscription owner to set an attribute of the subscription to a new value.
+        /// </remarks>
+        SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request);
+
 
         /// <summary>
         /// Delete Topic
@@ -108,7 +130,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>List Subscriptions  Response from the service</returns>
         /// <remarks>
         /// The ListSubscriptions action returns a list of the requester's subscriptions. Each call returns a limited list
-        /// of subscriptions. If there are more subscriptions, a NextToken is also returned. Use the NextToken parameter in a
+        /// of subscriptions, up to 100. If there are more subscriptions, a NextToken is also returned. Use the NextToken parameter in a
         /// new ListSubscriptions call to get further results.
         /// </remarks>
         ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request);
@@ -142,7 +164,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">List Topics  request</param>
         /// <returns>List Topics  Response from the service</returns>
         /// <remarks>
-        /// The ListTopics action returns a list of the requester's topics. Each call returns a limited list of topics. If
+        /// The ListTopics action returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If
         /// there are more topics, a NextToken is also returned. Use the NextToken parameter in a new ListTopics call to get
         /// further results.
         /// </remarks>
@@ -171,7 +193,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>List Subscriptions By Topic  Response from the service</returns>
         /// <remarks>
         /// The ListSubscriptionsByTopic action returns a list of the subscriptions to a specific topic. Each call returns
-        /// a limited list of subscriptions. If there are more subscriptions, a NextToken is also returned. Use the NextToken
+        /// a limited list of subscriptions, up to 100. If there are more subscriptions, a NextToken is also returned. Use the NextToken
         /// parameter in a new ListSubscriptionsByTopic call to get further results.
         /// </remarks>
         ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request);

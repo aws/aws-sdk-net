@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -1435,7 +1435,7 @@ namespace Amazon.CloudFront
         {
             ImmutableCredentials immutableCredentials = credentials.GetCredentials();
             string auth;
-            if (config.UseSecureStringForAwsSecretKey)
+            if (immutableCredentials.UseSecureStringForSecretKey)
             {
                 auth = BuildSigningString(headers, immutableCredentials.SecureSecretKey);
             }
@@ -1524,7 +1524,8 @@ namespace Amazon.CloudFront
                             config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : defaultRetry,
                             statusCode,
                             requestAddr,
-                            respHdrs
+                            respHdrs,
+                            we
                             );
                     }
                 }
@@ -1649,7 +1650,7 @@ namespace Amazon.CloudFront
                     CloudFrontError error = errorResponse.Error[0];
 
                     // Throw formatted exception with information available from the error response
-                    throw new AmazonCloudFrontException(error.Message, statusCode, error.Code, error.RequestId, error.Type, responseBody, requestAddr, respHdrs);
+                    throw new AmazonCloudFrontException(error.Message, statusCode, error.Code, error.RequestId, error.Type, responseBody, requestAddr, respHdrs, null);
                 }
             }
             return shouldRetry;
@@ -1736,7 +1737,7 @@ namespace Amazon.CloudFront
         /**
          * Exponential sleep on failed request
          */
-        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status, string requestAddr, WebHeaderCollection headers)
+        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status, string requestAddr, WebHeaderCollection headers, Exception cause)
         {
             if (retries <= maxRetries)
             {
@@ -1753,7 +1754,8 @@ namespace Amazon.CloudFront
                     "",
                     "",
                     requestAddr,
-                    headers
+                    headers,
+                    cause
                     );
             }
         }

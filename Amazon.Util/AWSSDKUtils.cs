@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -40,7 +40,7 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.3.19.0";
+        internal const string SDKVersionNumber = "1.4.0.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -49,7 +49,10 @@ namespace Amazon.Util
         internal const string ContentMD5Header = "Content-MD5";
         internal const string ETagHeader = "ETag";
         internal const string UserAgentHeader = "User-Agent";
+        internal const string RequestIdHeader = "x-amzn-RequestId";
         internal const int DefaultMaxRetry = 3;
+
+        private static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
         #endregion
 
@@ -324,7 +327,14 @@ namespace Amazon.Util
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixEpochSeconds(int seconds)
         {
-            return new DateTime(seconds * 10000000L + new DateTime(1970, 1, 1).Ticks, DateTimeKind.Utc).ToLocalTime();
+            return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc).ToLocalTime();
+        }
+
+        public static double ConvertToUnixEpochMilliSeconds(DateTime dateTime)
+        {
+            TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
+            double milli = Math.Round(ts.TotalMilliseconds, 0) / 1000.0;
+            return milli;
         }
 
         #endregion
@@ -494,6 +504,51 @@ namespace Amazon.Util
         /// <param name="algorithm">The algorithm to sign the data with</param>
         /// <exception cref="T:System.ArgumentNullException"/>
         /// <returns>A string representing the HMAC signature</returns>
+        public static string HMACSign(byte[] data, System.Security.SecureString key, KeyedHashAlgorithm algorithm)
+        {
+            if (null == key)
+            {
+                throw new ArgumentNullException("key", "The AWS Secret Access Key specified is NULL!");
+            }
+
+            if (data == null || data.Length == 0)
+            {
+                throw new ArgumentNullException("data", "Please specify data to sign.");
+            }
+
+            if (null == algorithm)
+            {
+                throw new ArgumentNullException("algorithm", "Please specify a KeyedHashAlgorithm to use.");
+            }
+
+            // pointer to hold unmanaged reference to SecureString instance
+            IntPtr bstr = IntPtr.Zero;
+            char[] charArray = new char[key.Length];
+            try
+            {
+                // Marshal SecureString into byte array
+                bstr = Marshal.SecureStringToBSTR(key);
+                Marshal.Copy(bstr, charArray, 0, charArray.Length);
+                algorithm.Key = Encoding.UTF8.GetBytes(charArray);
+                return Convert.ToBase64String(algorithm.ComputeHash(data));
+            }
+            finally
+            {
+                // Make sure that the clear text data is zeroed out
+                Marshal.ZeroFreeBSTR(bstr);
+                algorithm.Clear();
+                Array.Clear(charArray, 0, charArray.Length);
+            }
+        }
+
+        /// <summary>
+        /// Computes RFC 2104-compliant HMAC signature
+        /// </summary>
+        /// <param name="data">The data to be signed</param>
+        /// <param name="key">The secret signing key</param>
+        /// <param name="algorithm">The algorithm to sign the data with</param>
+        /// <exception cref="T:System.ArgumentNullException"/>
+        /// <returns>A string representing the HMAC signature</returns>
         public static string HMACSign(string data, string key, KeyedHashAlgorithm algorithm)
         {
             if (String.IsNullOrEmpty(key))
@@ -517,6 +572,43 @@ namespace Amazon.Util
                 return Convert.ToBase64String(algorithm.ComputeHash(
                     Encoding.UTF8.GetBytes(data))
                     );
+            }
+            finally
+            {
+                algorithm.Clear();
+            }
+        }
+
+        /// <summary>
+        /// Computes RFC 2104-compliant HMAC signature
+        /// </summary>
+        /// <param name="data">The data to be signed</param>
+        /// <param name="key">The secret signing key</param>
+        /// <param name="algorithm">The algorithm to sign the data with</param>
+        /// <exception cref="T:System.ArgumentNullException"/>
+        /// <returns>A string representing the HMAC signature</returns>
+        public static string HMACSign(byte[] data, string key, KeyedHashAlgorithm algorithm)
+        {
+            if (String.IsNullOrEmpty(key))
+            {
+                throw new ArgumentNullException("key", "Please specify a Secret Signing Key.");
+            }
+
+            if (data == null || data.Length == 0)
+            {
+                throw new ArgumentNullException("data", "Please specify data to sign.");
+            }
+
+            if (null == algorithm)
+            {
+                throw new ArgumentNullException("algorithm", "Please specify a KeyedHashAlgorithm to use.");
+            }
+
+            try
+            {
+                algorithm.Key = Encoding.UTF8.GetBytes(key);
+                byte[] bytes = algorithm.ComputeHash(data);
+                return Convert.ToBase64String(bytes);
             }
             finally
             {

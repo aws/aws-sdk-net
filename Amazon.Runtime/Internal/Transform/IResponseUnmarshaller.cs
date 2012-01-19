@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,15 +29,8 @@ namespace Amazon.Runtime.Internal.Transform
     /// <typeparam name="R">The type of the XML unmashaller context, which contains the
     /// state of parsing the XML stream. Uaually an instance of 
     /// <c>Amazon.Runtime.Internal.Transform.UnmarshallerContext</c>.</typeparam>
-    public interface IResponseUnmarshaller<T, R>
+    public interface IResponseUnmarshaller<T, R> : IUnmarshaller<T, R>
     {
-        /// <summary>
-        /// Given the current position in the XML stream, extract a T.
-        /// </summary>
-        /// <param name="input">The XML parsing context</param>
-        /// <returns>An object of type T populated with data from the XML stream.</returns>
-        T Unmarshall(R input);
-
         /// <summary>
         /// Extracts an exeption with data from an ErrorResponse.
         /// </summary>

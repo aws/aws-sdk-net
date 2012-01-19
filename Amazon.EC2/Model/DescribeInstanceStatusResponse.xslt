@@ -30,23 +30,10 @@
         <xsl:element name="AvailabilityZone" namespace="{$ns}">
           <xsl:value-of select="ec2:availabilityZone"/>
         </xsl:element>
-        <xsl:element name="InstanceStatusEvent" namespace="{$ns}">
-          <xsl:apply-templates select="ec2:eventsSet" />
-        </xsl:element>
+        <xsl:apply-templates select="ec2:eventsSet" />
         <xsl:apply-templates select="ec2:instanceState"/>
       </xsl:element>
     </xsl:for-each>
-  </xsl:template>
-
-  <xsl:template match="ec2:instanceState">
-    <xsl:element name="InstanceState" namespace="{$ns}">
-      <xsl:element name="Code" namespace="{$ns}">
-        <xsl:value-of select="ec2:code"/>
-      </xsl:element>
-      <xsl:element name="Name" namespace="{$ns}">
-        <xsl:value-of select="ec2:name"/>
-      </xsl:element>
-    </xsl:element>
   </xsl:template>
 
   <xsl:template match="ec2:eventsSet">
@@ -66,6 +53,17 @@
         </xsl:element>
       </xsl:element>
     </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="ec2:instanceState">
+    <xsl:element name="InstanceState" namespace="{$ns}">
+      <xsl:element name="Code" namespace="{$ns}">
+        <xsl:value-of select="ec2:code"/>
+      </xsl:element>
+      <xsl:element name="Name" namespace="{$ns}">
+        <xsl:value-of select="ec2:name"/>
+      </xsl:element>
+    </xsl:element>
   </xsl:template>
 
 </xsl:stylesheet>

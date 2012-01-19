@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -234,7 +234,7 @@ namespace Amazon.SimpleNotificationService
         /// The Subscribe action prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a
         /// subscription, the endpoint owner must call the ConfirmSubscription
         /// action with the token from the confirmation message. Confirmation tokens are
-        /// valid for twenty-four hours.
+        /// valid for three days.
         /// </remarks>
         public SubscribeResponse Subscribe(SubscribeRequest request)
         {
@@ -252,6 +252,33 @@ namespace Amazon.SimpleNotificationService
         public SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request)
         {
             return Invoke<SetTopicAttributesResponse>(ConvertSetTopicAttributes(request));
+        }
+
+        /// <summary>
+        /// Get Subscription Attributes
+        /// </summary>
+        /// <param name="request">Get Subscription Attributes  request</param>
+        /// <returns>Get Subscription Attributes  Response from the service</returns>
+        /// <remarks>
+        /// The GetSubscriptionAttribtues action returns all of the properties of a subscription customers have created. Subscription
+        /// properties returned might differ based on the authorization of the user.
+        /// </remarks>
+        public GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
+        {
+            return Invoke<GetSubscriptionAttributesResponse>(ConvertGetSubscriptionAttributes(request));
+        }
+
+        /// <summary>
+        /// Set Subscription Attributes
+        /// </summary>
+        /// <param name="request">Set Subscription Attributes  request</param>
+        /// <returns>Set Subscription Attributes  Response from the service</returns>
+        /// <remarks>
+        /// The SetSubscriptionAttributes action allows a subscription owner to set an attribute of the subscription to a new value.
+        /// </remarks>
+        public SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
+        {
+            return Invoke<SetSubscriptionAttributesResponse>(ConvertSetSubscriptionAttributes(request));
         }
 
         /// <summary>
@@ -290,7 +317,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>List Subscriptions  Response from the service</returns>
         /// <remarks>
         /// The ListSubscriptions action returns a list of the requester's subscriptions. Each call returns a limited list
-        /// of subscriptions. If there are more subscriptions, a NextToken is also returned. Use the NextToken parameter in a
+        /// of subscriptions, up to 100. If there are more subscriptions, a NextToken is also returned. Use the NextToken parameter in a
         /// new ListSubscriptions call to get further results.
         /// </remarks>
         public ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
@@ -333,7 +360,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="request">List Topics  request</param>
         /// <returns>List Topics  Response from the service</returns>
         /// <remarks>
-        /// The ListTopics action returns a list of the requester's topics. Each call returns a limited list of topics. If
+        /// The ListTopics action returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If
         /// there are more topics, a NextToken is also returned. Use the NextToken parameter in a new ListTopics call to get
         /// further results.
         /// </remarks>
@@ -368,7 +395,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>List Subscriptions By Topic  Response from the service</returns>
         /// <remarks>
         /// The ListSubscriptionsByTopic action returns a list of the subscriptions to a specific topic. Each call returns
-        /// a limited list of subscriptions. If there are more subscriptions, a NextToken is also returned. Use the NextToken
+        /// a limited list of subscriptions, up to 100. If there are more subscriptions, a NextToken is also returned. Use the NextToken
         /// parameter in a new ListSubscriptionsByTopic call to get further results.
         /// </remarks>
         public ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request)
@@ -516,7 +543,7 @@ namespace Amazon.SimpleNotificationService
                         statusCode == HttpStatusCode.ServiceUnavailable)
                     {
                         shouldRetry = true;
-                        PauseOnRetry(++retries, maxRetries, statusCode);
+                        PauseOnRetry(++retries, maxRetries, statusCode, we);
                     }
                     else
                     {
@@ -619,7 +646,7 @@ namespace Amazon.SimpleNotificationService
         /**
          * Exponential sleep on failed request
          */
-        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status)
+        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status, Exception cause)
         {
             if (retries <= maxRetries)
             {
@@ -630,7 +657,8 @@ namespace Amazon.SimpleNotificationService
             {
                 throw new AmazonSimpleNotificationServiceException(
                     "Maximum number of retry attempts reached : " + (retries - 1),
-                    status
+                    status,
+                    cause
                     );
             }
         }
@@ -716,6 +744,21 @@ namespace Amazon.SimpleNotificationService
         }
 
         /**
+         * Convert GetSubscriptionAttributesRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertGetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "GetSubscriptionAttributes";
+            if (request.IsSetSubscriptionArn())
+            {
+                parameters["SubscriptionArn"] = request.SubscriptionArn;
+            }
+
+            return parameters;
+        }
+
+        /**
          * Convert SubscribeRequest to name value pairs
          */
         private static IDictionary<string, string> ConvertSubscribe(SubscribeRequest request)
@@ -748,6 +791,29 @@ namespace Amazon.SimpleNotificationService
             if (request.IsSetTopicArn())
             {
                 parameters["TopicArn"] = request.TopicArn;
+            }
+            if (request.IsSetAttributeName())
+            {
+                parameters["AttributeName"] = request.AttributeName;
+            }
+            if (request.IsSetAttributeValue())
+            {
+                parameters["AttributeValue"] = request.AttributeValue;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert SetSubscriptionAttributesRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertSetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "SetSubscriptionAttributes";
+            if (request.IsSetSubscriptionArn())
+            {
+                parameters["SubscriptionArn"] = request.SubscriptionArn;
             }
             if (request.IsSetAttributeName())
             {
@@ -921,6 +987,10 @@ namespace Amazon.SimpleNotificationService
             if (request.IsSetMessage())
             {
                 parameters["Message"] = request.Message;
+            }
+            if (request.IsSetMessageStructure())
+            {
+                parameters["MessageStructure"] = request.MessageStructure;
             }
             if (request.IsSetSubject())
             {

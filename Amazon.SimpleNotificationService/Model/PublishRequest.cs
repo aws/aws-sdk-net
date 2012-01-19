@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -37,6 +37,7 @@ namespace Amazon.SimpleNotificationService.Model
     {    
         private string topicArnField;
         private string messageField;
+        private string messageStructureField;
         private string subjectField;
 
         /// <summary>
@@ -99,6 +100,57 @@ namespace Amazon.SimpleNotificationService.Model
         public bool IsSetMessage()
         {
             return this.messageField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the MessageStructure property.
+        /// Optional parameter. It will have one valid value: "json".
+        /// <para>
+        /// If this option, Message is present and set to "json", the value of Message must:
+        /// be a syntactically valid JSON object. It must contain at least a top level JSON
+        /// key of "default" with a value that is a string. For any other top level key that
+        /// matches one of our transport protocols (e.g. "http"), then the corresponding value
+        /// (if it is a string) will be used for the message published for that protocol
+        /// </para>
+        /// <para>
+        /// Constraints: Keys in the JSON object that correspond to supported transport
+        /// protocols must have simple JSON string values. The values will be parsed (unescaped)
+        /// before they are used in outgoing messages. Typically, outbound notifications are JSON
+        /// encoded (meaning, the characters will be reescaped for sending). JSON strings are 
+        /// UTF-8. Values have a minimum length of 0 (the empty string, "", is allowed).
+        /// Values have a maximum length bounded by the overall message size (so, including
+        /// multiple protocols may limit message sizes). Non-string values will cause the key
+        /// to be ignored. Keys that do not correspond to supported transport protocols will be
+        /// ignored. Duplicate keys are not allowed. Failure to parse or validate any key or
+        /// value in the message will cause the Publish call to return an error (no partial
+        /// delivery).
+        /// </para>
+        /// </summary>
+        public string MessageStructure
+        {
+            get { return this.messageStructureField; }
+            set { this.messageStructureField = value; }
+        }
+
+        /// <summary>
+        /// Sets the MessageStructure property
+        /// Valid values: "json"
+        /// </summary>
+        /// <param name="messageStructure">Identifies the structure of the message.</param>
+        /// <returns>this instance</returns>
+        public PublishRequest WithMessageStructure(string messageStructure)
+        {
+            this.messageStructureField = messageStructure;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if MessageStructure property is set
+        /// </summary>
+        /// <returns>true if MessageStructure property is set</returns>
+        public bool IsSetMessageStructure()
+        {
+            return this.messageStructureField != null;
         }
 
         /// <summary>

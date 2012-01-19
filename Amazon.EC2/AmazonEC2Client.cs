@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -2810,7 +2810,7 @@ namespace Amazon.EC2
                         statusCode == HttpStatusCode.ServiceUnavailable)
                     {
                         shouldRetry = true;
-                        PauseOnRetry(++retries, maxRetries, statusCode);
+                        PauseOnRetry(++retries, maxRetries, statusCode, we);
                     }
                     else
                     {
@@ -2912,7 +2912,7 @@ namespace Amazon.EC2
         /**
          * Exponential sleep on failed request
          */
-        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status)
+        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status, Exception cause)
         {
             if (retries <= maxRetries)
             {
@@ -2923,7 +2923,8 @@ namespace Amazon.EC2
             {
                 throw new AmazonEC2Exception(
                     "Maximum number of retry attempts reached : " + (retries - 1),
-                    status
+                    status,
+                    cause
                     );
             }
         }

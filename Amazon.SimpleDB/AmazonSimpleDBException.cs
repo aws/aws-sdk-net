@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -68,7 +68,20 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="message">A message that describes the error</param>
         /// <param name="statusCode">HTTP status code for error response</param>
-        public AmazonSimpleDBException(string message, HttpStatusCode statusCode) : this (message)
+        public AmazonSimpleDBException(string message, HttpStatusCode statusCode)
+            : this (message)
+        {
+            this.statusCode = statusCode;
+        }
+
+        /// <summary>
+        /// Constructs AmazonSimpleDBException with message and status code
+        /// </summary>
+        /// <param name="message">A message that describes the error</param>
+        /// <param name="statusCode">HTTP status code for error response</param>
+        /// <param name="innerException">The nested exception that caused the AmazonS3Exception</param>
+        public AmazonSimpleDBException(string message, HttpStatusCode statusCode, Exception innerException)
+            : this(message, innerException)
         {
             this.statusCode = statusCode;
         }

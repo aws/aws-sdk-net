@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -67,7 +67,20 @@ namespace Amazon.EC2
         /// </summary>
         /// <param name="message">A message that describes the error</param>
         /// <param name="statusCode">HTTP status code for error response</param>
-        public AmazonEC2Exception(string message, HttpStatusCode statusCode) : this (message)
+        public AmazonEC2Exception(string message, HttpStatusCode statusCode)
+            : this(message, statusCode, null)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new AmazonEC2Exception with a specified error message
+        /// and HTTP status code
+        /// </summary>
+        /// <param name="message">A message that describes the error</param>
+        /// <param name="statusCode">HTTP status code for error response</param>
+        /// <param name="innerException">The nested exception that caused the AmazonS3Exception</param>
+        public AmazonEC2Exception(string message, HttpStatusCode statusCode, Exception innerException)
+            : this(message, innerException)
         {
             this.statusCode = statusCode;
         }
@@ -149,7 +162,7 @@ namespace Amazon.EC2
         /// <param name="requestId">Request ID returned by the service</param>
         /// <param name="xml">Compete xml found in response</param>
         public AmazonEC2Exception(string message, HttpStatusCode statusCode, string errorCode, string errorType, string requestId, string xml)
-            : this (message, statusCode)
+            : this (message, statusCode, null)
         {
             this.errorCode = errorCode;
             this.errorType = errorType;

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,7 +46,13 @@ namespace Amazon.Runtime
             Session = 0x1
         }
 
-        const int MAX_BACKOFF_IN_MILLISECONDS = 30 * 1000;
+        internal static List<string> ErrorCodesToRetryOn = new List<string>
+        {
+            "Throttling",
+            "ProvisionedThroughputExceededException"
+        };
+
+        protected const int MAX_BACKOFF_IN_MILLISECONDS = 30 * 1000;
         ClientConfig config;
         AWSCredentials credentials;
         bool ownCredentials;
@@ -76,16 +82,13 @@ namespace Amazon.Runtime
         {
             if (!this.disposed)
             {
-                if (disposing)
+                if (disposing && credentials != null)
                 {
-                    if (credentials != null)
+                    if (ownCredentials)
                     {
-                        if (ownCredentials && (credentials is IDisposable))
-                        {
-                            (credentials as IDisposable).Dispose();
-                        }
-                        credentials = null;
+                        credentials.Dispose();
                     }
+                    credentials = null;
                 }
                 this.disposed = true;
             }
@@ -125,7 +128,10 @@ namespace Amazon.Runtime
         }
 
         internal AmazonWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, ClientConfig config, AuthenticationTypes authenticationType)
-            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey, config.UseSecureStringForAwsSecretKey), config, true, authenticationType)
+            : this(authenticationType == AuthenticationTypes.Session ? 
+                    (AWSCredentials)new RefreshingSessionAWSCredentials(awsAccessKeyId, awsSecretAccessKey) : 
+                    (AWSCredentials)new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey, config.UseSecureStringForAwsSecretKey), 
+                config, true, authenticationType)
         {
         }
 
@@ -184,7 +190,6 @@ namespace Amazon.Runtime
                 //request.ContentType = AWSSDKUtils.UrlEncodedContent;
 
                 request.Method = "POST";
-                request.Timeout = 50000;
                 request.ContentLength = requestData.Length;
 
                 AddHeaders(request, wrappedRequest.Headers);
@@ -197,6 +202,9 @@ namespace Amazon.Runtime
 
             return request;
         }
+
+        private static System.Reflection.MethodInfo _addWithoutValidateHeadersMethod =
+            typeof(WebHeaderCollection).GetMethod("AddWithoutValidate", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
 
         // As per MSDN documentation (http://msdn.microsoft.com/en-us/library/system.net.webheadercollection%28v=VS.80%29.aspx)
         // some headers are restricted, cannot be set through the request.Headers property and must be
@@ -218,18 +226,18 @@ namespace Amazon.Runtime
                         request.Expect = kvp.Value;
                     else if (string.Equals(kvp.Key, "User-Agent", StringComparison.OrdinalIgnoreCase))
                         request.UserAgent = kvp.Value;
+                    // Date accessor is only present in .NET 4.0, so using reflection
+                    else if (string.Equals(kvp.Key, "Date", StringComparison.OrdinalIgnoreCase))
+                        _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { "Date", kvp.Value });
+                    // Host accessor is only present in .NET 4.0, so using reflection
+                    else if (string.Equals(kvp.Key, "Host", StringComparison.OrdinalIgnoreCase))
+                        _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { "Host", kvp.Value });
                     else
                         throw new NotSupportedException("Header with name " + kvp.Key + " is not suppored");
 
                     /*
                     // Content-Length is not supported because it is one of the headers known AFTER signing
                     else if (string.Equals(kvp.Key, "Content-Length", StringComparison.OrdinalIgnoreCase))
-                        throw new NotSupportedException();
-                    // Date is not supported because the Date property on HttpWebRequest is only present in .NET 4.0
-                    else if (string.Equals(kvp.Key, "Date", StringComparison.OrdinalIgnoreCase))
-                        throw new NotSupportedException();
-                    // Host is not supported because the Host property on HttpWebRequest is only present in .NET 4.0
-                    else if (string.Equals(kvp.Key, "Host", StringComparison.OrdinalIgnoreCase))
                         throw new NotSupportedException();
                     // If-Modified-Since is not supported because the required parsing methods are internal
                     else if (string.Equals(kvp.Key, "If-Modified-Since", StringComparison.OrdinalIgnoreCase))
@@ -269,6 +277,42 @@ namespace Amazon.Runtime
             }
         }
 
+        private enum ClientProtocol { QueryStringProtocol, RestProtocol, Unknown }
+        private static ClientProtocol DetermineProtocol(AbstractAWSSigner signer)
+        {
+            if (signer is AWS3Signer)
+                return ClientProtocol.RestProtocol;
+            if (signer is QueryStringSigner)
+                return ClientProtocol.QueryStringProtocol;
+            return ClientProtocol.Unknown;
+        }
+
+        private void SignRequest<X>(IRequest<X> request, AbstractAWSSigner signer) where X : AmazonWebServiceRequest
+        {
+            using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
+            {
+                ValidateAuthentication(immutableCredentials);
+
+                if (immutableCredentials.UseToken)
+                {
+                    ClientProtocol protocol = DetermineProtocol(signer);
+                    switch (protocol)
+                    {
+                        case ClientProtocol.QueryStringProtocol:
+                            request.Parameters.Add("SecurityToken", immutableCredentials.Token);
+                            break;
+                        case ClientProtocol.RestProtocol:
+                            request.Headers.Add("x-amz-security-token", immutableCredentials.Token);
+                            break;
+                        default:
+                            throw new InvalidDataException("Cannot determine protocol");
+                    }
+                }
+                signer.Sign(request, this.config, immutableCredentials.AccessKey, immutableCredentials.ClearSecretKey, immutableCredentials.SecureSecretKey);
+            }
+        }
+
+
         /// <summary>
         /// This method makes the actual web request and marshalls the response body or error returned from the service.
         /// For some error response a retry will be attempted after an exponential pause.
@@ -279,31 +323,37 @@ namespace Amazon.Runtime
         /// <param name="signer">The type of signer to use for the request.</param>
         /// <param name="unmarshaller">The object used to unmarshall the response body.</param>
         /// <returns>The response object for the request</returns>
-        internal Y Invoke<X, Y>(IRequest<X> request, AbstractAWSSigner signer, IResponseUnmarshaller<Y, UnmarshallerContext> unmarshaller) where X : AmazonWebServiceRequest
+        internal Y Invoke<X, Y>(IRequest<X> request, AbstractAWSSigner signer, IResponseUnmarshaller<Y, UnmarshallerContext> unmarshaller)
+            where X : AmazonWebServiceRequest
+            where Y : AmazonWebServiceResponse
         {
             Type requestType = typeof(X);
             string requestName = requestType.Name;
 
             request.Endpoint = new Uri(this.config.ServiceURL);
             request.Headers["User-Agent"] = this.config.UserAgent;
-            request.Headers["Content-Type"] = AWSSDKUtils.UrlEncodedContent;
+            if (!request.Headers.ContainsKey(AWSSDKUtils.ContentTypeHeader))
+            {
+                request.Headers[AWSSDKUtils.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
+            }
 
             ProcessRequestHandlers(request);
 
             this.logger.DebugFormat("Starting request {0} at {1}", requestName, this.config.ServiceURL);
+            SignRequest<X>(request, signer);
 
-            using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
+            byte[] requestData;
+            if (request.Content == null)
             {
-                ValidateAuthentication(immutableCredentials);
-
-                if (immutableCredentials.UseToken)
-                    request.Parameters.Add("SecurityToken", immutableCredentials.Token);
-                signer.Sign(request, this.config, immutableCredentials.AccessKey, immutableCredentials.ClearSecretKey, immutableCredentials.SecureSecretKey);
+                string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
+                requestData = Encoding.UTF8.GetBytes(queryString);
+            }
+            else
+            {
+                requestData = request.Content;
             }
 
-            string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
-            byte[] requestData = Encoding.UTF8.GetBytes(queryString);
-            this.logger.DebugFormat("Request body's content [{0}] with size {1}", queryString, requestData.Length);
+            this.logger.DebugFormat("Request body's content size {0}", requestData.Length);
 
             int retries = 0;
             while (true)
@@ -321,18 +371,122 @@ namespace Amazon.Runtime
                         {
                             DateTime responseReceived = DateTime.UtcNow;
                             this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", requestName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
+
                             XmlTextReader reader;
 
                             // Using NOSTREAM is the less effcient way of dealing with the response body but it is helpful 
                             // for debug purposes to see the entire xml body coming back from the server.
 #if NOSTREAM
-                            string responseBody = new StreamReader(httpResponse.GetResponseStream()).ReadToEnd(); ;
+                            string responseBody = new StreamReader(httpResponse.GetResponseStream()).ReadToEnd();
                             reader = new XmlTextReader(new StringReader(responseBody));
 #else
                             reader = new XmlTextReader(new StreamReader(httpResponse.GetResponseStream()));
 #endif
                             UnmarshallerContext context = new UnmarshallerContext(reader);
                             result = unmarshaller.Unmarshall(context);
+                        }
+
+                        return result;
+                    }
+                    catch (WebException we)
+                    {
+                        processWebException<X, Y>(requestName, we, webRequest, unmarshaller, request, retries);
+                    }
+                }
+                catch (IOException e)
+                {
+                    if (this.isInnerExceptionThreadAbort(e))
+                        throw;
+
+                    this.logger.Error(string.Format("IOException making request {0} to {1}.", requestName, request.Endpoint.ToString()), e);
+                    if (retries > this.config.MaxErrorRetry)
+                        throw;
+                    else
+                        this.logger.Error(string.Format("IOException making request {0} to {1}. Attempting retry {2}.", requestName, request.Endpoint.ToString(), retries), e);
+                }
+                catch (Exception e)
+                {
+                    this.logger.Error(string.Format("Error configuring web request {0} to {1}.", requestName, request.Endpoint.ToString()), e);
+                    throw;
+                }
+            }
+        }
+
+        /// <summary>
+        /// This method makes the actual web request and marshalls the response body or error returned from the service.
+        /// For some error response a retry will be attempted after an exponential pause.
+        /// </summary>
+        /// <typeparam name="X">The user facing request type.</typeparam>
+        /// <typeparam name="Y">The user facing response type.</typeparam>
+        /// <param name="request">The wrapper around the user facing request.</param>
+        /// <param name="signer">The type of signer to use for the request.</param>
+        /// <param name="unmarshaller">The object used to unmarshall the response body.</param>
+        /// <returns>The response object for the request</returns>
+        internal Y Invoke<X, Y>(IRequest<X> request, AbstractAWSSigner signer, IResponseUnmarshaller<Y, JsonUnmarshallerContext> unmarshaller)
+            where X : AmazonWebServiceRequest
+            where Y : AmazonWebServiceResponse
+        {
+            Type requestType = typeof(X);
+            string requestName = requestType.Name;
+
+            request.Endpoint = new Uri(this.config.ServiceURL);
+            request.Headers["User-Agent"] = this.config.UserAgent;
+            if (!request.Headers.ContainsKey(AWSSDKUtils.ContentTypeHeader))
+            {
+                request.Headers[AWSSDKUtils.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
+            }
+
+            ProcessRequestHandlers(request);
+
+            this.logger.DebugFormat("Starting request {0} at {1}", requestName, this.config.ServiceURL);
+            SignRequest<X>(request, signer);
+
+            byte[] requestData;
+            if (request.Content == null)
+            {
+                string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
+                requestData = Encoding.UTF8.GetBytes(queryString);
+                //this.logger.DebugFormat("Request body's content [{0}] with size {1}", queryString, requestData.Length);
+            }
+            else
+            {
+                requestData = request.Content;
+                //this.logger.DebugFormat("Request content size {0}", requestData.Length);
+            }
+
+            this.logger.DebugFormat("Request body's content size {0}", requestData.Length);
+
+            int retries = 0;
+            while (true)
+            {
+                retries++;
+
+                try
+                {
+                    HttpWebRequest webRequest = this.ConfigureWebRequest<X>(request, requestData);
+                    try
+                    {
+                        Y result;
+                        DateTime requestSent = DateTime.UtcNow;
+                        using (HttpWebResponse httpResponse = webRequest.GetResponse() as HttpWebResponse)
+                        {
+                            DateTime responseReceived = DateTime.UtcNow;
+                            this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", requestName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
+
+                            StreamReader reader;
+
+                            // Using NOSTREAM is the less effcient way of dealing with the response body but it is helpful 
+                            // for debug purposes to see the entire xml body coming back from the server.
+#if NOSTREAM
+                            string responseBody = new StreamReader(httpResponse.GetResponseStream()).ReadToEnd();
+                            reader = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(responseBody)));
+#else
+                            reader = new StreamReader(httpResponse.GetResponseStream());
+#endif
+                            JsonUnmarshallerContext context = new JsonUnmarshallerContext(reader);
+                            result = unmarshaller.Unmarshall(context);
+                            result.ResponseMetadata = new ResponseMetadata();
+                            result.ResponseMetadata.RequestId = httpResponse.Headers[AWSSDKUtils.RequestIdHeader];
                         }
 
                         return result;
@@ -444,6 +598,67 @@ namespace Amazon.Runtime
             throw excep;
         }
 
+        private void processWebException<X, Y>(string requestName, WebException we, HttpWebRequest webRequest, IResponseUnmarshaller<Y, JsonUnmarshallerContext> unmarshaller, IRequest<X> request, int retries)
+        {
+            HttpStatusCode statusCode;
+            AmazonServiceException errorResponseException = null;
+            using (HttpWebResponse httpErrorResponse = we.Response as HttpWebResponse)
+            {
+                if (httpErrorResponse == null)
+                {
+                    // Abort the unsuccessful request
+                    webRequest.Abort();
+
+                    // If it is a keep alive error then attempt a retry
+                    if (we != null && retries <= config.MaxErrorRetry && we.Status == WebExceptionStatus.KeepAliveFailure)
+                    {
+                        pauseExponentially(retries);
+                        return;
+                    }
+                    throw new AmazonServiceException(we);
+                }
+                statusCode = httpErrorResponse.StatusCode;
+
+                StreamReader errorReader;
+#if NOSTREAM
+                string responseBody = new StreamReader(httpErrorResponse.GetResponseStream()).ReadToEnd();
+                errorReader = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(responseBody)));
+#else
+                errorReader = new StreamReader(httpErrorResponse.GetResponseStream());
+#endif
+
+                JsonUnmarshallerContext errorContext = new JsonUnmarshallerContext(errorReader);
+                errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
+
+                httpErrorResponse.Close();
+                webRequest.Abort();
+
+                if (isTemporaryRedirect(httpErrorResponse))
+                {
+                    string redirectedLocation = httpErrorResponse.Headers["location"];
+                    this.logger.InfoFormat("Request {0} is being redirected to {1}.", requestName, redirectedLocation);
+                    request.Endpoint = new Uri(redirectedLocation);
+                    return;
+                }
+                else if (ShouldRetry(statusCode, this.config, errorResponseException, retries))
+                {
+                    this.logger.InfoFormat("Retry number {0} for request {1}.", retries, requestName);
+                    pauseExponentially(retries);
+                    return;
+                }
+            }
+
+            if (errorResponseException != null)
+            {
+                this.logger.Error(string.Format("Error making request {0}.", requestName), errorResponseException);
+                throw errorResponseException;
+            }
+
+            AmazonServiceException excep = new AmazonServiceException("Unable to make request", we, statusCode);
+            this.logger.Error(string.Format("Error making request {0}.", requestName), excep);
+            throw excep;
+        }
+
         private static bool isTemporaryRedirect(HttpWebResponse response)
         {
             return response.StatusCode == HttpStatusCode.TemporaryRedirect && response.Headers["location"] != null;
@@ -478,7 +693,7 @@ namespace Amazon.Runtime
                 return true;
             }
 
-            if (errorResponseException.InnerException is WebException && 
+            if (errorResponseException.InnerException is WebException &&
                 (((WebException)(errorResponseException.InnerException)).Status == WebExceptionStatus.KeepAliveFailure))
             {
                 return true;
@@ -491,11 +706,13 @@ namespace Amazon.Runtime
              * the next time.
              */
             if ((statusCode == HttpStatusCode.BadRequest || statusCode == HttpStatusCode.ServiceUnavailable) &&
-                errorResponseException != null &&
-                errorResponseException.ErrorCode != null &&
-                errorResponseException.ErrorCode.Equals("Throttling"))
+                errorResponseException != null)
             {
-                return true;
+                string errorCode = errorResponseException.ErrorCode;
+                if (ErrorCodesToRetryOn.Contains(errorCode))
+                {
+                    return true;
+                }
             }
 
             return false;
@@ -506,7 +723,7 @@ namespace Amazon.Runtime
         /// retries.
         /// </summary>
         /// <param name="retries">Current retry count.</param>
-        private static void pauseExponentially(int retries)
+        protected virtual void pauseExponentially(int retries)
         {
             int delay = (int)(Math.Pow(4, retries) * 100);
             delay = Math.Min(delay, MAX_BACKOFF_IN_MILLISECONDS);

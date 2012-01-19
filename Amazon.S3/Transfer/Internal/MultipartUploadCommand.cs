@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -241,7 +241,7 @@ namespace Amazon.S3.Transfer.Internal
             }
             finally
             {
-                if (this._fileTransporterRequest.InputStream != null && !this._fileTransporterRequest.IsSetFilePath())
+                if (this._fileTransporterRequest.InputStream != null && !this._fileTransporterRequest.IsSetFilePath() && this._fileTransporterRequest.AutoCloseStream)
                 {
                     this._fileTransporterRequest.InputStream.Close();
                 }

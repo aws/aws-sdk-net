@@ -1,4 +1,18 @@
-﻿using System;
+﻿/*
+ * Copyright 2011-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
@@ -463,6 +477,336 @@ namespace Amazon.Runtime
                 }
 
                 _disposed = true;
+            }
+        }
+
+        #endregion
+    }
+
+
+    /// <summary>
+    /// Abstract class for automatically refreshing AWS credentials
+    /// </summary>
+    public abstract class RefreshingAWSCredentials : AWSCredentials
+    {
+        #region Refresh data
+
+        /// <summary>
+        /// Refresh state container consisting of credentials
+        /// and the date of the their expiration
+        /// </summary>
+        protected class CredentialsRefreshState : IDisposable
+        {
+            public ImmutableCredentials Credentials { get; set; }
+            public DateTime Expiration { get; set; }
+
+            #region IDisposable Members
+
+            public void Dispose()
+            {
+                if (Credentials != null)
+                {
+                    Credentials.Dispose();
+                }
+            }
+
+            #endregion
+        }
+
+
+        private CredentialsRefreshState _currentState = null;
+        private object _refreshLock = new object();
+
+        #endregion
+
+
+        #region Override methods
+
+        /// <summary>
+        /// Returns an instance of ImmutableCredentials for this instance
+        /// </summary>
+        /// <returns></returns>
+        public override ImmutableCredentials GetCredentials()
+        {
+            lock (this._refreshLock)
+            {
+                // If credentials are expired, update
+                if (ShouldUpdate)
+                {
+                    if (_currentState != null)
+                    {
+                        _currentState.Dispose();
+                    }
+                    _currentState = GenerateNewCredentials();
+                }
+
+                return _currentState.Credentials.Copy();
+            }
+        }
+
+        #endregion
+
+
+        #region Private/protected credential update methods
+
+        // Test credentials existence and expiration time
+        private bool ShouldUpdate
+        {
+            get
+            {
+                return
+                    (                                                   // should update if:
+                        _currentState == null ||                        //  credentials have not been loaded yet
+                        DateTime.Now >= this._currentState.Expiration   //  past the expiration time
+                    );
+            }
+        }
+
+        /// <summary>
+        /// When overridden in a derived class, generates new credentials and new expiration date.
+        /// 
+        /// Called on first credentials request and when expiration date is in the past.
+        /// </summary>
+        /// <returns></returns>
+        protected virtual CredentialsRefreshState GenerateNewCredentials()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+
+        #region IDisposable Members
+
+        private bool _disposed = false;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    if (_currentState != null)
+                    {
+                        _currentState.Dispose();
+                        _currentState = null;
+                    }
+                }
+
+                _disposed = true;
+            }
+        }
+
+        #endregion
+    }
+
+    /// <summary>
+    /// Session credentials retrieved and automatically refreshed from
+    /// an instance of the AmazonSecurityTokenService
+    /// </summary>
+    public class RefreshingSessionAWSCredentials : RefreshingAWSCredentials
+    {
+        #region Private members
+
+        private bool _ownStsClient;
+        private AmazonSecurityTokenService _stsClient;
+        private TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(15);
+
+        #endregion
+
+
+        #region Properties
+
+        /// <summary>
+        /// The time before actual expiration to expire the credentials.
+        /// Default PreemptExpiryTime is 15 minutes.
+        /// Property cannot be set to a negative TimeSpan.
+        /// </summary>
+        public TimeSpan PreemptExpiryTime
+        {
+            get { return _preemptExpiryTime; }
+            set
+            {
+                if (value < TimeSpan.Zero) throw new ArgumentOutOfRangeException("PreemptExpiryTime cannot be negative");
+                _preemptExpiryTime = value;
+            }
+        }
+
+        #endregion
+
+
+        #region Constructors
+
+        // Constructs refreshing credentials from STS client
+        private RefreshingSessionAWSCredentials(AmazonSecurityTokenService stsClient, bool ownStsClient)
+        {
+            _stsClient = stsClient;
+            _ownStsClient = ownStsClient;
+        }
+
+        /// <summary>
+        /// Constructs a RefreshingSessionAWSCredentials object.
+        /// The passed-in AmazonSecurityTokenService is used to refresh credentials.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        public RefreshingSessionAWSCredentials(string awsAccessKeyId, string awsSecretAccessKey)
+            : this(ConstructSTSClient(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey))) { }
+
+        /// <summary>
+        /// Constructs a RefreshingSessionAWSCredentials object.
+        /// The passed-in AmazonSecurityTokenService is used to refresh credentials.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="stsConfig">Config object used for the constructed AmazonSecurityTokenService.</param>
+        public RefreshingSessionAWSCredentials(string awsAccessKeyId, string awsSecretAccessKey, AmazonSecurityTokenServiceConfig stsConfig)
+            : this(ConstructSTSClient(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), stsConfig)) { }
+
+        /// <summary>
+        /// Constructs a RefreshingSessionAWSCredentials object.
+        /// The passed-in AmazonSecurityTokenService is used to refresh credentials.
+        /// </summary>
+        /// <param name="stsClient">STS client to use</param>
+        public RefreshingSessionAWSCredentials(AmazonSecurityTokenService stsClient)
+            : this(stsClient, false) { }
+
+        /// <summary>
+        /// Constructs a RefreshingSessionAWSCredentials object.
+        /// AmazonSecurityTokenService is created from passed-in credentials and
+        /// is used to refresh credentials.
+        /// 
+        /// Passed-in AWSCredentials cannot be session credentials.
+        /// </summary>
+        /// <param name="stsCredentials">Credentials to use to create STS client</param>
+        public RefreshingSessionAWSCredentials(AWSCredentials stsCredentials)
+            : this(ConstructSTSClient(stsCredentials), true) { }
+
+        /// <summary>
+        /// Constructs a RefreshingSessionAWSCredentials object.
+        /// AmazonSecurityTokenService is created from passed-in credentials and
+        /// config object and is used to refresh credentials.
+        /// 
+        /// Passed-in AWSCredentials cannot be session credentials.
+        /// </summary>
+        /// <param name="stsCredentials"></param>
+        /// <param name="stsConfig">Config object used for the constructed AmazonSecurityTokenService.</param>
+        public RefreshingSessionAWSCredentials(AWSCredentials stsCredentials, AmazonSecurityTokenServiceConfig stsConfig)
+            : this(ConstructSTSClient(stsCredentials, stsConfig), true) { }
+
+        /// <summary>
+        /// Constructs a RefreshingSessionAWSCredentials object.
+        /// AccessKey and SecretKey are taken from the app.config for the application.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        public RefreshingSessionAWSCredentials()
+            : this(new EnvironmentAWSCredentials()) { }
+
+        /// <summary>
+        /// Constructs a RefreshingSessionAWSCredentials object.
+        /// AccessKey and SecretKey are taken from the app.config for the application.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="stsConfig">Config object used for the constructed AmazonSecurityTokenService.</param>
+        public RefreshingSessionAWSCredentials(AmazonSecurityTokenServiceConfig stsConfig)
+            : this(new EnvironmentAWSCredentials(), stsConfig) { }
+
+        #endregion
+
+
+        #region Private methods
+
+        private static AmazonSecurityTokenService ConstructSTSClient(AWSCredentials credentials)
+        {
+            return ConstructSTSClient(credentials, new AmazonSecurityTokenServiceConfig());
+        }
+
+        private static AmazonSecurityTokenService ConstructSTSClient(AWSCredentials credentials, AmazonSecurityTokenServiceConfig config)
+        {
+            using (ImmutableCredentials immmutableCredentials = credentials.GetCredentials())
+            {
+                if (immmutableCredentials.UseToken)
+                    throw new ArgumentException("Session credentials cannot be used to create refreshing session credentials");
+
+                AmazonSecurityTokenServiceClient stsClient;
+                if (immmutableCredentials.UseSecureStringForSecretKey)
+                {
+                    stsClient = new AmazonSecurityTokenServiceClient(immmutableCredentials.AccessKey, GetClearSecretKey(immmutableCredentials.SecureSecretKey), config);
+                }
+                else
+                {
+                    stsClient = new AmazonSecurityTokenServiceClient(immmutableCredentials.AccessKey, immmutableCredentials.ClearSecretKey, config);
+                }
+                return stsClient;
+            }
+        }
+
+        private static string GetClearSecretKey(SecureString secureSecretKey)
+        {
+            if (secureSecretKey == null)
+                throw new ArgumentNullException("securePassword");
+
+            IntPtr unmanagedString = IntPtr.Zero;
+            try
+            {
+                unmanagedString = Marshal.SecureStringToGlobalAllocUnicode(secureSecretKey);
+                return Marshal.PtrToStringUni(unmanagedString);
+            }
+            finally
+            {
+                Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
+            }
+        }
+
+        #endregion
+
+
+        #region Overrides
+
+        protected override CredentialsRefreshState GenerateNewCredentials()
+        {
+            var sessionCredentials = _stsClient.GetSessionToken(new GetSessionTokenRequest()).GetSessionTokenResult.Credentials;
+
+            var state = new CredentialsRefreshState
+            {
+                Credentials = new ImmutableCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey, sessionCredentials.SessionToken, false),
+                Expiration = sessionCredentials.Expiration - PreemptExpiryTime
+            };
+
+            return state;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            if (_stsClient != null)
+            {
+                if (_ownStsClient)
+                {
+                    _stsClient.Dispose();
+                }
+                _stsClient = null;
             }
         }
 
