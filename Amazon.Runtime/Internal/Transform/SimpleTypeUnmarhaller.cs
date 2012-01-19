@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -235,7 +235,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             DateTime ret;
             Double seconds;
-            if (Double.TryParse(context.ReadText(), NumberStyles.Any, CultureInfo.InvariantCulture, out seconds))
+            if (Double.TryParse(context.ReadText(), out seconds))
             {
                 ret = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                 ret = ret.AddSeconds(seconds);
