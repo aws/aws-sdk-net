@@ -34,7 +34,15 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         public DescribeScalingProcessTypesResult DescribeScalingProcessTypesResult
         {
-            get { return this.describeScalingProcessTypesResult; }
+            get 
+            {
+                if(this.describeScalingProcessTypesResult == null)
+                {
+                    this.describeScalingProcessTypesResult = new DescribeScalingProcessTypesResult();
+                }
+
+                return this.describeScalingProcessTypesResult; 
+            }
             set { this.describeScalingProcessTypesResult = value; }
         }
     }

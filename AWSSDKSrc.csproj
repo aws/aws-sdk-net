@@ -155,6 +155,8 @@
     <Compile Include="Amazon.AutoScaling\Model\CreateLaunchConfigurationResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\CreateOrUpdateTagsRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\CreateOrUpdateTagsResponse.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DeleteAutoScalingGroupRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -185,6 +187,8 @@
     <Compile Include="Amazon.AutoScaling\Model\DeleteScheduledActionResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DeleteTagsRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DeleteTagsResponse.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DescribeAdjustmentTypesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -282,6 +286,9 @@
     <Compile Include="Amazon.AutoScaling\Model\DescribeScheduledActionsResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeTagsRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeTagsResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeTagsResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DisableMetricsCollectionRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -306,12 +313,112 @@
     <Compile Include="Amazon.AutoScaling\Model\ExecutePolicyResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Filter.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Instance.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.AutoScaling\Model\InstanceMonitoring.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ActivityUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\AdjustmentTypeUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\AlarmUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\AutoScalingGroupUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\AutoScalingInstanceDetailsUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\BlockDeviceMappingUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\CreateAutoScalingGroupRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\CreateAutoScalingGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\CreateLaunchConfigurationRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\CreateLaunchConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\CreateOrUpdateTagsRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\CreateOrUpdateTagsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteAutoScalingGroupRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteAutoScalingGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteLaunchConfigurationRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteLaunchConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteNotificationConfigurationRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteNotificationConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeletePolicyRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeletePolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteScheduledActionRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteScheduledActionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteTagsRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteTagsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAdjustmentTypesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAdjustmentTypesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAdjustmentTypesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAutoScalingGroupsRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAutoScalingGroupsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAutoScalingGroupsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAutoScalingInstancesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAutoScalingInstancesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAutoScalingInstancesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAutoScalingNotificationTypesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAutoScalingNotificationTypesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAutoScalingNotificationTypesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeLaunchConfigurationsRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeLaunchConfigurationsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeLaunchConfigurationsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeMetricCollectionTypesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeMetricCollectionTypesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeMetricCollectionTypesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeNotificationConfigurationsRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeNotificationConfigurationsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeNotificationConfigurationsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribePoliciesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribePoliciesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribePoliciesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeScalingActivitiesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeScalingActivitiesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeScalingActivitiesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeScalingProcessTypesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeScalingProcessTypesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeScalingProcessTypesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeScheduledActionsRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeScheduledActionsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeScheduledActionsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeTagsRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeTagsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeTagsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DisableMetricsCollectionRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DisableMetricsCollectionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\EbsUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\EnabledMetricUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\EnableMetricsCollectionRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\EnableMetricsCollectionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ExecutePolicyRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ExecutePolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\InstanceMonitoringUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\InstanceUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\LaunchConfigurationUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\MetricCollectionTypeUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\MetricGranularityTypeUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\NotificationConfigurationUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ProcessTypeUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutNotificationConfigurationRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutNotificationConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutScalingPolicyRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutScalingPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutScalingPolicyResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutScheduledUpdateGroupActionRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\PutScheduledUpdateGroupActionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ResumeProcessesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ResumeProcessesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ScalingPolicyUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\ScheduledUpdateGroupActionUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\SetDesiredCapacityRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\SetDesiredCapacityResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\SetInstanceHealthRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\SetInstanceHealthResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\SuspendedProcessUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\SuspendProcessesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\SuspendProcessesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\TagDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\TerminateInstanceInAutoScalingGroupRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\TerminateInstanceInAutoScalingGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\TerminateInstanceInAutoScalingGroupResultUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\UpdateAutoScalingGroupRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\UpdateAutoScalingGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\InvalidNextTokenException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -393,6 +500,8 @@
     <Compile Include="Amazon.AutoScaling\Model\SuspendProcessesResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Tag.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\TagDescription.cs" />
     <Compile Include="Amazon.AutoScaling\Model\TerminateInstanceInAutoScalingGroupRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -400,277 +509,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.AutoScaling\Model\TerminateInstanceInAutoScalingGroupResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ActivityUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\AdjustmentTypeUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\AlarmUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\AutoScalingGroupUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\AutoScalingInstanceDetailsUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\BlockDeviceMappingUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateAutoScalingGroupRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateAutoScalingGroupResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateLaunchConfigurationRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\CreateLaunchConfigurationResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteAutoScalingGroupRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteAutoScalingGroupResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteLaunchConfigurationRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteLaunchConfigurationResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteNotificationConfigurationRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteNotificationConfigurationResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeletePolicyRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeletePolicyResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteScheduledActionRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DeleteScheduledActionResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAdjustmentTypesRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAdjustmentTypesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAdjustmentTypesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingGroupsRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingGroupsResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingGroupsResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingInstancesRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingInstancesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingInstancesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesRequestMarshaller.cs" />
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeAutoScalingNotificationTypesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeLaunchConfigurationsResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeMetricCollectionTypesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeNotificationConfigurationsResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribePoliciesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingActivitiesRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingActivitiesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingActivitiesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingProcessTypesRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingProcessTypesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScalingProcessTypesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScheduledActionsRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScheduledActionsResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DescribeScheduledActionsResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DisableMetricsCollectionRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\DisableMetricsCollectionResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\EbsUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\EnabledMetricUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\EnableMetricsCollectionRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\EnableMetricsCollectionResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ExecutePolicyRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ExecutePolicyResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\InstanceMonitoringUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\InstanceUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\LaunchConfigurationUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\MetricCollectionTypeUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\MetricGranularityTypeUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\NotificationConfigurationUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ProcessTypeUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutNotificationConfigurationRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutNotificationConfigurationResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScalingPolicyResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScheduledUpdateGroupActionRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\PutScheduledUpdateGroupActionResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ResumeProcessesRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ResumeProcessesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ScalingPolicyUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\ScheduledUpdateGroupActionUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SetDesiredCapacityRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SetDesiredCapacityResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SetInstanceHealthRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SetInstanceHealthResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SuspendedProcessUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SuspendProcessesRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\SuspendProcessesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\TerminateInstanceInAutoScalingGroupRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\TerminateInstanceInAutoScalingGroupResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\TerminateInstanceInAutoScalingGroupResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\UpdateAutoScalingGroupRequestMarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.AutoScaling\Model\Transform\UpdateAutoScalingGroupResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.AutoScaling\Model\UpdateAutoScalingGroupRequest.cs">
@@ -2734,6 +2572,75 @@
     <Compile Include="Amazon.RDS\Model\Transform\RevokeDBSecurityGroupIngressRequestMarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\RevokeDBSecurityGroupIngressResponseUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Transform\RevokeDBSecurityGroupIngressResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\AmazonRoute53.cs" />
+    <Compile Include="Amazon.Route53\AmazonRoute53Client.cs" />
+    <Compile Include="Amazon.Route53\AmazonRoute53Config.cs" />
+    <Compile Include="Amazon.Route53\AmazonRoute53Exception.cs" />
+    <Compile Include="Amazon.Route53\Model\AliasTarget.cs" />
+    <Compile Include="Amazon.Route53\Model\Change.cs" />
+    <Compile Include="Amazon.Route53\Model\ChangeBatch.cs" />
+    <Compile Include="Amazon.Route53\Model\ChangeInfo.cs" />
+    <Compile Include="Amazon.Route53\Model\ChangeResourceRecordSetsRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\ChangeResourceRecordSetsResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\ChangeResourceRecordSetsResult.cs" />
+    <Compile Include="Amazon.Route53\Model\CreateHostedZoneRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\CreateHostedZoneResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\CreateHostedZoneResult.cs" />
+    <Compile Include="Amazon.Route53\Model\DelegationSet.cs" />
+    <Compile Include="Amazon.Route53\Model\DelegationSetNotAvailableException.cs" />
+    <Compile Include="Amazon.Route53\Model\DeleteHostedZoneRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\DeleteHostedZoneResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\DeleteHostedZoneResult.cs" />
+    <Compile Include="Amazon.Route53\Model\GetChangeRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\GetChangeResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\GetChangeResult.cs" />
+    <Compile Include="Amazon.Route53\Model\GetHostedZoneRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\GetHostedZoneResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\GetHostedZoneResult.cs" />
+    <Compile Include="Amazon.Route53\Model\HostedZone.cs" />
+    <Compile Include="Amazon.Route53\Model\HostedZoneAlreadyExistsException.cs" />
+    <Compile Include="Amazon.Route53\Model\HostedZoneConfig.cs" />
+    <Compile Include="Amazon.Route53\Model\HostedZoneNotEmptyException.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\AliasTargetUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ChangeInfoUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ChangeResourceRecordSetsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ChangeResourceRecordSetsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ChangeResourceRecordSetsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\CreateHostedZoneRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\CreateHostedZoneResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\CreateHostedZoneResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DelegationSetUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DeleteHostedZoneRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DeleteHostedZoneResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\DeleteHostedZoneResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetChangeRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetChangeResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetChangeResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetHostedZoneRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetHostedZoneResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\GetHostedZoneResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\HostedZoneConfigUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\HostedZoneUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListHostedZonesRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListHostedZonesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListHostedZonesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListResourceRecordSetsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListResourceRecordSetsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ListResourceRecordSetsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ResourceRecordSetUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ResourceRecordUnmarshaller.cs" />
+    <Compile Include="Amazon.Route53\Model\InvalidChangeBatchException.cs" />
+    <Compile Include="Amazon.Route53\Model\InvalidDomainNameException.cs" />
+    <Compile Include="Amazon.Route53\Model\InvalidInputException.cs" />
+    <Compile Include="Amazon.Route53\Model\ListHostedZonesRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\ListHostedZonesResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\ListHostedZonesResult.cs" />
+    <Compile Include="Amazon.Route53\Model\ListResourceRecordSetsRequest.cs" />
+    <Compile Include="Amazon.Route53\Model\ListResourceRecordSetsResponse.cs" />
+    <Compile Include="Amazon.Route53\Model\ListResourceRecordSetsResult.cs" />
+    <Compile Include="Amazon.Route53\Model\ResourceRecord.cs" />
+    <Compile Include="Amazon.Route53\Model\ResourceRecordSet.cs" />
+    <Compile Include="Amazon.Route53\Model\TooManyHostedZonesException.cs" />
     <Compile Include="Amazon.Runtime\AmazonServiceException.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceClient.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceRequest.cs" />
@@ -2782,21 +2689,39 @@
     <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteResponse.cs" />
     <Compile Include="Amazon.S3\Model\DeletedObject.cs" />
     <Compile Include="Amazon.S3\Model\DeleteError.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteLifecycleConfigurationRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Model\DeleteLifecycleConfigurationResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.S3\Model\DeleteObjectsException.cs" />
     <Compile Include="Amazon.S3\Model\DeleteObjectsRequest.cs" />
     <Compile Include="Amazon.S3\Model\DeleteObjectsResponse.cs" />
+    <Compile Include="Amazon.S3\Model\Expiration.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketPolicyResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketVersioningRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketVersioningResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketWebsiteRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketWebsiteResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetLifecycleConfigurationRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Model\GetLifecycleConfigurationResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.S3\Model\GetNotificationConfigurationRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetNotificationConfigurationResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetPreSignedUrlRequest.cs" />
     <Compile Include="Amazon.S3\Model\InitiateMultipartUploadRequest.cs" />
     <Compile Include="Amazon.S3\Model\InitiateMultipartUploadResponse.cs" />
     <Compile Include="Amazon.S3\Model\KeyVersion.cs" />
+    <Compile Include="Amazon.S3\Model\LifecycleConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Model\LifecycleRule.cs" />
+    <Compile Include="Amazon.S3\Model\LifecycleRuleExpiration.cs" />
     <Compile Include="Amazon.S3\Model\ListMultipartUploadsRequest.cs" />
     <Compile Include="Amazon.S3\Model\ListMultipartUploadsResponse.cs" />
     <Compile Include="Amazon.S3\Model\ListPartsRequest.cs" />
@@ -2812,6 +2737,12 @@
     <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketWebsiteRequest.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketWebsiteResponse.cs" />
+    <Compile Include="Amazon.S3\Model\PutLifecycleConfigurationRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.S3\Model\PutLifecycleConfigurationResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.S3\Model\ResponseHeaderOverrides.cs" />
     <Compile Include="Amazon.S3\Model\S3AccessControlList.cs" />
     <Compile Include="Amazon.S3\Model\S3Bucket.cs">
@@ -3366,6 +3297,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.S3\Model\DeleteObjectsResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.S3\Model\GetLifecycleConfigurationResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

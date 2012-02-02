@@ -41,6 +41,7 @@ namespace Amazon.S3.Model
         private string versionId;
         private string srcVersionId;
         private ServerSideEncryptionMethod serverSideEncryptionMethod;
+        private Expiration expiration;
 
         #endregion
 
@@ -119,6 +120,22 @@ namespace Amazon.S3.Model
 
         #endregion
 
+        #region Expiration
+
+        /// <summary>
+        /// Gets and sets the Expiration property.
+        /// Specifies the expiration date for the object and the
+        /// rule governing the expiration.
+        /// Is null if expiration is not applicable.
+        /// </summary>
+        public Expiration Expiration
+        {
+            get { return this.expiration; }
+            set { this.expiration = value; }
+        }
+
+        #endregion
+
         #region Headers
 
         /// <summary>
@@ -139,6 +156,11 @@ namespace Amazon.S3.Model
                 if (!System.String.IsNullOrEmpty(hdr = value.Get(Util.S3Constants.AmzVersionIdHeader)))
                 {
                     this.VersionId = hdr;
+                }
+
+                if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzExpirationHeader)))
+                {
+                    this.Expiration = new Expiration(hdr);
                 }
 
                 ServerSideEncryptionMethod = ServerSideEncryptionMethod.None;

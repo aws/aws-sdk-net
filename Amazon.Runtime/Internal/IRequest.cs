@@ -47,9 +47,27 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Gets and sets the type of http request to make, whether it should be POST,GET or DELETE
+        /// </summary>
+        string HttpMethod
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets and Sets the endpoint for this request.
         /// </summary>
         Uri Endpoint
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets and Sets the resource path added on to the endpoint.
+        /// </summary>
+        string ResourcePath
         {
             get;
             set;

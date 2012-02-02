@@ -25,9 +25,12 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLaunchConfiguration operation.
-    /// <para> Creates a new launch configuration. Once created, the new launch configuration is available for immediate use. </para>
-    /// <para><b>NOTE:</b> The launch configuration name used must be unique, within the scope of the client's AWS account, and the maximum limit of
-    /// launch configurations must not yet have been met, or else the call will fail. </para>
+    /// <para> Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The
+    /// maximum limit of launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created,
+    /// the new launch configuration is available for immediate use. </para> <para>You can create a launch configuration with Amazon EC2 security
+    /// groups or with Amazon VPC security groups. However, you can't use Amazon EC2 security groups together with Amazon VPC security groups, or
+    /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data
+    /// files. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateLaunchConfiguration"/>
     public class CreateLaunchConfigurationRequest : AmazonWebServiceRequest
@@ -86,7 +89,7 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned during registration. For more information about Amazon EC2 images,
-        /// please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>
+        /// please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -127,7 +130,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The name of the EC2 key pair.
+        /// The name of the Amazon EC2 key pair.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -168,8 +171,13 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The names of the security groups with which to associate EC2 instances. For more information about Amazon EC2 security groups, go to the <a
-        /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation.</a>
+        /// The names of the security groups with which to associate Amazon EC2 or Amazon VPC instances. Specify Amazon EC2 security groups using
+        /// security group names, such as <c>websrv</c>. Specify Amazon VPC security groups using security group IDs, such as <c>sg-12345678</c>. For
+        /// more information about Amazon EC2 security groups, go to <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html"> Using Security Groups</a> in the
+        /// Amazon EC2 product documentation. For more information about Amazon VPC security groups, go to <a
+        /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html"> Security Groups</a> in the Amazon
+        /// VPC product documentation.
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -214,7 +222,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The user data available to the launched EC2 instances. For more information about Amazon EC2 user data, please see <a
+        /// The user data available to the launched Amazon EC2 instances. For more information about Amazon EC2 user data, please see <a
         /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>.
         ///  
         /// <para>
@@ -256,7 +264,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The instance type of the EC2 instance. For more information about Amazon EC2 instance types, please see <a
+        /// The instance type of the Amazon EC2 instance. For more information about Amazon EC2 instance types, please see <a
         /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>
         ///  
         /// <para>
@@ -298,7 +306,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The ID of the kernel associated with the EC2 AMI.
+        /// The ID of the kernel associated with the Amazon EC2 AMI.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -339,7 +347,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The ID of the RAM disk associated with the EC2 AMI.
+        /// The ID of the RAM disk associated with the Amazon EC2 AMI.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -382,7 +390,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// A list of mappings that specify how block devices are exposed to the instance. Each mapping is made up of a <i>VirtualName</i>, a
         /// <i>DeviceName</i>, and an <i>ebs</i> data structure that contains information about the associated Elastic Block Storage volume. For more
-        /// information about Amazon EC2 BlockDeviceMappings, please go to <a
+        /// information about Amazon EC2 BlockDeviceMappings, go to <a
         /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html"> Block Device Mapping</a> in
         /// the Amazon EC2 product documentation.
         ///  
@@ -429,7 +437,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Enables detailed monitoring.
+        /// Enables detailed monitoring, which is enabled by default. When detailed monitoring is enabled, CloudWatch will generate metrics every minute
+        /// and your account will be charged a fee. When you disable detailed monitoring, by specifying <c>False</c>, Cloudwatch will generate metrics
+        /// every 5 minutes. For information about monitoring, see the <a href="http://aws.amazon.com/cloudwatch/">Amazon CloudWatch</a> product page.
         ///  
         /// </summary>
         public InstanceMonitoring InstanceMonitoring

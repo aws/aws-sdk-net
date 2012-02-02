@@ -23,6 +23,7 @@ using Amazon.AutoScaling;
 using Amazon.CloudFormation;
 using Amazon.CloudFront;
 using Amazon.CloudWatch;
+using Amazon.DynamoDB;
 using Amazon.EC2;
 using Amazon.ElastiCache;
 using Amazon.ElasticBeanstalk;
@@ -31,6 +32,7 @@ using Amazon.ElasticMapReduce;
 using Amazon.IdentityManagement;
 using Amazon.ImportExport;
 using Amazon.RDS;
+using Amazon.Route53;
 using Amazon.S3;
 using Amazon.SQS;
 using Amazon.SecurityToken;
@@ -1439,6 +1441,162 @@ namespace Amazon
             )
         {
             return new AmazonSecurityTokenServiceClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDynamoDB CreateAmazonDynamoDBClient()
+        {
+            return new AmazonDynamoDBClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        public static AmazonDynamoDB CreateAmazonDynamoDBClient(AmazonDynamoDBConfig config)
+        {
+            return new AmazonDynamoDBClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDynamoDB CreateAmazonDynamoDBClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonDynamoDBClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDynamoDB CreateAmazonDynamoDBClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonDynamoDBConfig config
+            )
+        {
+            return new AmazonDynamoDBClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53 Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon Route53 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRoute53 CreateAmazonRoute53Client()
+        {
+            return new AmazonRoute53Client();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53 Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon Route53 client</returns>
+        public static AmazonRoute53 CreateAmazonRoute53Client(AmazonRoute53Config config)
+        {
+            return new AmazonRoute53Client(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53 service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon Route53 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRoute53 CreateAmazonRoute53Client(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonRoute53Client(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53 service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon Route53 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRoute53 CreateAmazonRoute53Client(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonRoute53Config config
+            )
+        {
+            return new AmazonRoute53Client(awsAccessKey, awsSecretAccessKey, config);
         }
     }
 }

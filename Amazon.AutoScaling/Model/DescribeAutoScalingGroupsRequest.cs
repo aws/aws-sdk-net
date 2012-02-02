@@ -28,7 +28,7 @@ namespace Amazon.AutoScaling.Model
     /// <para> Returns a full description of each Auto Scaling group in the given list. This includes all Amazon EC2 instances that are members of
     /// the group. If a list of names is not provided, the service returns the full details of all Auto Scaling groups. </para> <para> This action
     /// supports pagination by returning a token if there are more pages to retrieve. To get the next page, call this action again with the returned
-    /// token as the NextToken parameter. </para>
+    /// token as the <c>NextToken</c> parameter. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeAutoScalingGroups"/>
     public class DescribeAutoScalingGroupsRequest : AmazonWebServiceRequest

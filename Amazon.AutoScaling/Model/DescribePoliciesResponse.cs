@@ -34,7 +34,15 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         public DescribePoliciesResult DescribePoliciesResult
         {
-            get { return this.describePoliciesResult; }
+            get 
+            {
+                if(this.describePoliciesResult == null)
+                {
+                    this.describePoliciesResult = new DescribePoliciesResult();
+                }
+
+                return this.describePoliciesResult; 
+            }
             set { this.describePoliciesResult = value; }
         }
     }

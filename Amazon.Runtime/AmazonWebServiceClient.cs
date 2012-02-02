@@ -39,6 +39,9 @@ namespace Amazon.Runtime
     {
         #region Private members
 
+        static IDictionary<string, RefreshingSessionAWSCredentials> cachedRefreshingCredentials = new Dictionary<string, RefreshingSessionAWSCredentials>();
+
+
         [Flags]
         internal enum AuthenticationTypes
         {
@@ -117,9 +120,32 @@ namespace Amazon.Runtime
         {
             this.logger = new Logger(this.GetType());
             this.config = config;
-            this.credentials = credentials;
             this.ownCredentials = ownCredentials;
             this.authenticationType = authenticationType;
+
+            // Lookup cached version of refreshing credentials to reduce calls to STS.
+            if (credentials is RefreshingSessionAWSCredentials)
+            {
+                RefreshingSessionAWSCredentials refreshCredentials = credentials as RefreshingSessionAWSCredentials;
+
+                if (string.IsNullOrEmpty(refreshCredentials.UniqueIdentifier))
+                {
+                    this.credentials = credentials;
+                }
+                else if (cachedRefreshingCredentials.ContainsKey(refreshCredentials.UniqueIdentifier))
+                {
+                    this.credentials = cachedRefreshingCredentials[refreshCredentials.UniqueIdentifier];
+                }
+                else
+                {
+                    this.credentials = refreshCredentials;
+                    cachedRefreshingCredentials[refreshCredentials.UniqueIdentifier] = refreshCredentials;
+                }
+            }
+            else
+            {
+                this.credentials = credentials;
+            }
         }
 
         internal AmazonWebServiceClient(string awsAccessKeyId, SecureString awsSecretAccessKey, ClientConfig config, AuthenticationTypes authenticationType)
@@ -157,6 +183,22 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Gets the service url endpoint used by this client.
+        /// </summary>
+        internal string ServiceURL
+        {
+            get { return this.config.ServiceURL; }
+        }
+
+        /// <summary>
+        /// Gets the AWSCredentials object used for signing requests.
+        /// </summary>
+        internal AWSCredentials Credentials
+        {
+            get { return this.credentials; }
+        }
+
+        /// <summary>
         /// Creates the HttpWebRequest and configures the end point, content, user agent and proxy settings.
         /// </summary>
         /// <param name="wrappedRequest">The internal wrapped request.</param>
@@ -164,7 +206,11 @@ namespace Amazon.Runtime
         /// <returns>The web request that actually makes the call.</returns>
         protected virtual HttpWebRequest ConfigureWebRequest<X>(IRequest<X> wrappedRequest, byte[] requestData)
         {
-            HttpWebRequest request = WebRequest.Create(wrappedRequest.Endpoint) as HttpWebRequest;
+            Uri url = wrappedRequest.Endpoint;
+            if (!string.IsNullOrEmpty(wrappedRequest.ResourcePath))
+                url = new Uri(wrappedRequest.Endpoint, wrappedRequest.ResourcePath);
+
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             if (request != null)
             {
                 if (this.config.ProxyHost != null && this.config.ProxyPort != 0)
@@ -189,14 +235,17 @@ namespace Amazon.Runtime
                 //request.UserAgent = this.config.UserAgent;
                 //request.ContentType = AWSSDKUtils.UrlEncodedContent;
 
-                request.Method = "POST";
+                request.Method = wrappedRequest.HttpMethod;
                 request.ContentLength = requestData.Length;
 
                 AddHeaders(request, wrappedRequest.Headers);
 
-                using (Stream requestStream = request.GetRequestStream())
+                if (requestData.Length > 0 && request.Method == "POST")
                 {
-                    requestStream.Write(requestData, 0, requestData.Length);
+                    using (Stream requestStream = request.GetRequestStream())
+                    {
+                        requestStream.Write(requestData, 0, requestData.Length);
+                    }
                 }
             }
 
@@ -382,7 +431,7 @@ namespace Amazon.Runtime
 #else
                             reader = new XmlTextReader(new StreamReader(httpResponse.GetResponseStream()));
 #endif
-                            UnmarshallerContext context = new UnmarshallerContext(reader);
+                            UnmarshallerContext context = new UnmarshallerContext(reader, httpResponse.Headers);
                             result = unmarshaller.Unmarshall(context);
                         }
 
@@ -515,7 +564,7 @@ namespace Amazon.Runtime
             }
         }
 
-        private void ProcessRequestHandlers<X>(IRequest<X> request) where X : AmazonWebServiceRequest
+        protected virtual void ProcessRequestHandlers<X>(IRequest<X> request) where X : AmazonWebServiceRequest
         {
             if (request == null) throw new ArgumentNullException("request");
 
@@ -566,7 +615,7 @@ namespace Amazon.Runtime
                 errorReader = new XmlTextReader(new StreamReader(httpErrorResponse.GetResponseStream()));
 #endif
 
-                UnmarshallerContext errorContext = new UnmarshallerContext(errorReader);
+                UnmarshallerContext errorContext = new UnmarshallerContext(errorReader, httpErrorResponse.Headers);
                 errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
 
                 httpErrorResponse.Close();
