@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///A list of instance attributes.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class InstanceAttribute
     {    
         private string instanceIdField;
@@ -41,6 +41,9 @@ namespace Amazon.EC2.Model
         private string instanceInitiatedShutdownBehaviorField;
         private string rootDeviceNameField;
         private List<InstanceBlockDeviceMapping> blockDeviceMappingField;
+        private bool? sourceDestCheckField;
+        private List<string> groupNameField;
+        private List<string> groupIdField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -345,6 +348,124 @@ namespace Amazon.EC2.Model
         public bool IsSetBlockDeviceMapping()
         {
             return (BlockDeviceMapping.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the SourceDestCheck property.
+        /// Controls whether source/destination checking is enabled on the instance.
+        /// A value of true means checking is enabled, and false means checking is disabled. 
+        /// The value must be false for the instance to perform NAT. 
+        /// </summary>
+        [XmlElementAttribute(ElementName = "SourceDestCheck")]
+        public bool SourceDestCheck
+        {
+            get { return this.sourceDestCheckField.GetValueOrDefault(); }
+            set { this.sourceDestCheckField = value; }
+        }
+
+        /// <summary>
+        /// Sets the SourceDestCheck property.
+        /// </summary>
+        /// <param name="sourceDestCheck">
+        /// A value of true means checking is enabled, and false means checking is disabled. 
+        /// The value must be false for the instance to perform NAT.
+        /// </param>
+        /// <returns>this instance</returns>
+        public InstanceAttribute WithSourceDestCheck(bool sourceDestCheck)
+        {
+            this.sourceDestCheckField = sourceDestCheck;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the SourceDestCheck property is set
+        /// </summary>
+        /// <returns>true if the SourceDestCheck property is set</returns>
+        public bool IsSetSourceDestCheck()
+        {
+            return this.sourceDestCheckField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the SecurityGroup property.
+        /// Names of the security group.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupName")]
+        public List<string> GroupName
+        {
+            get
+            {
+                if (this.groupNameField == null)
+                {
+                    this.groupNameField = new List<string>();
+                }
+                return this.groupNameField;
+            }
+            set { this.groupNameField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupName property
+        /// </summary>
+        /// <param name="list">Names of the security groups.</param>
+        /// <returns>this instance</returns>
+        public InstanceAttribute WithGroupName(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                GroupName.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the GroupName property is set
+        /// </summary>
+        /// <returns>true if the GroupName property is set</returns>
+        public bool IsSetGroupName()
+        {
+            return (GroupName.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the GroupId property.
+        /// IDs of the security groups.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupId")]
+        public List<string> GroupId
+        {
+            get
+            {
+                if (this.groupIdField == null)
+                {
+                    this.groupIdField = new List<string>();
+                }
+                return this.groupIdField;
+            }
+            set { this.groupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupId property
+        /// </summary>
+        /// <param name="list">IDs of the security groups.</param>
+        /// <returns>this instance</returns>
+        public InstanceAttribute WithGroupId(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                GroupId.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the GroupId property is set
+        /// </summary>
+        /// <returns>true if the GroupId property is set</returns>
+        public bool IsSetGroupId()
+        {
+            return (GroupId.Count > 0);
         }
 
     }

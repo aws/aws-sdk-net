@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -41,13 +41,14 @@ namespace Amazon.EC2.Model
     /// For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User
     /// Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class CreateRouteRequest
     {    
         private string routeTableIdField;
         private string destinationCidrBlockField;
         private string gatewayIdField;
         private string instanceIdField;
+        private string networkInterfaceIdField;
 
         /// <summary>
         /// Gets and sets the RouteTableId property.
@@ -179,6 +180,36 @@ namespace Amazon.EC2.Model
         public bool IsSetInstanceId()
         {
             return this.instanceIdField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the NetworkInterfaceId property
+        /// </summary>
+        [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
+        public string NetworkInterfaceId
+        {
+            get { return this.networkInterfaceIdField; }
+            set { this.networkInterfaceIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the NetworkInterfaceId property
+        /// </summary>
+        /// <param name="networkInterfaceId">Network interface ID</param>
+        /// <returns>this instance</returns>
+        public CreateRouteRequest WithNetworkInterfaceId(string networkInterfaceId)
+        {
+            this.networkInterfaceIdField = networkInterfaceId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the NetworkInterfaceId property is set
+        /// </summary>
+        /// <returns>true if the NetworkInterfaceId property is set</returns>
+        public bool IsSetNetworkInterfaceId()
+        {
+            return !string.IsNullOrEmpty(this.networkInterfaceIdField);
         }
 
     }

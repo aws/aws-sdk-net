@@ -944,6 +944,9 @@
     <Compile Include="Amazon.EC2\Model\AttachInternetGatewayRequest.cs" />
     <Compile Include="Amazon.EC2\Model\AttachInternetGatewayResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Attachment.cs" />
+    <Compile Include="Amazon.EC2\Model\AttachNetworkInterfaceRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\AttachNetworkInterfaceResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\AttachNetworkInterfaceResult.cs" />
     <Compile Include="Amazon.EC2\Model\AttachVolumeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\AttachVolumeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\AttachVolumeResult.cs" />
@@ -995,6 +998,9 @@
     <Compile Include="Amazon.EC2\Model\CreateNetworkAclRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreateNetworkAclResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateNetworkAclResult.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateNetworkInterfaceRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateNetworkInterfaceResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateNetworkInterfaceResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreatePlacementGroupRequest.cs" />
     <Compile Include="Amazon.EC2\Model\CreatePlacementGroupResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateRouteRequest.cs" />
@@ -1044,6 +1050,8 @@
     <Compile Include="Amazon.EC2\Model\DeleteNetworkAclEntryResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteNetworkAclRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteNetworkAclResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DeleteNetworkInterfaceRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DeleteNetworkInterfaceResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeletePlacementGroupRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DeletePlacementGroupResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteRouteRequest.cs" />
@@ -1116,6 +1124,12 @@
     <Compile Include="Amazon.EC2\Model\DescribeNetworkAclsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeNetworkAclsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeNetworkAclsResult.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeNetworkInterfaceAttributeRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeNetworkInterfaceAttributeResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeNetworkInterfaceAttributeResult.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeNetworkInterfacesRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeNetworkInterfacesResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeNetworkInterfacesResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribePlacementGroupsRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DescribePlacementGroupsResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DescribePlacementGroupsResult.cs" />
@@ -1169,6 +1183,8 @@
     <Compile Include="Amazon.EC2\Model\DescribeVpnGatewaysResult.cs" />
     <Compile Include="Amazon.EC2\Model\DetachInternetGatewayRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DetachInternetGatewayResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DetachNetworkInterfaceRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DetachNetworkInterfaceResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DetachVolumeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\DetachVolumeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DetachVolumeResult.cs" />
@@ -1217,13 +1233,19 @@
     <Compile Include="Amazon.EC2\Model\InstanceBlockDeviceMappingParameter.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceEbsBlockDevice.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceEbsBlockDeviceParameter.cs" />
+    <Compile Include="Amazon.EC2\Model\InstanceNetworkInterface.cs" />
+    <Compile Include="Amazon.EC2\Model\InstanceNetworkInterfaceAssociation.cs" />
+    <Compile Include="Amazon.EC2\Model\InstanceNetworkInterfaceAttachment.cs" />
+    <Compile Include="Amazon.EC2\Model\InstanceNetworkInterfaceSpecification.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceStatus.cs" />
+    <Compile Include="Amazon.EC2\Model\InstanceStatusDetail.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceStatusEvent.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceLicense.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceLicenseSpecification.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceMonitoring.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceState.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceStateChange.cs" />
+    <Compile Include="Amazon.EC2\Model\InstanceStatusDetailType.cs" />
     <Compile Include="Amazon.EC2\Model\InternetGateway.cs" />
     <Compile Include="Amazon.EC2\Model\InternetGatewayAttachment.cs" />
     <Compile Include="Amazon.EC2\Model\IpPermission.cs" />
@@ -1237,6 +1259,9 @@
     <Compile Include="Amazon.EC2\Model\ModifyImageAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ModifyInstanceAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ModifyInstanceAttributeResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyNetworkInterfaceAttachment.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyNetworkInterfaceAttributeRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyNetworkInterfaceAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ModifySnapshotAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ModifySnapshotAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Monitoring.cs" />
@@ -1247,6 +1272,10 @@
     <Compile Include="Amazon.EC2\Model\NetworkAcl.cs" />
     <Compile Include="Amazon.EC2\Model\NetworkAclAssociation.cs" />
     <Compile Include="Amazon.EC2\Model\NetworkAclEntry.cs" />
+    <Compile Include="Amazon.EC2\Model\NetworkInterface.cs" />
+    <Compile Include="Amazon.EC2\Model\NetworkInterfaceAssociation.cs" />
+    <Compile Include="Amazon.EC2\Model\NetworkInterfaceAttachment.cs" />
+    <Compile Include="Amazon.EC2\Model\NetworkInterfaceAttribute.cs" />
     <Compile Include="Amazon.EC2\Model\PasswordData.cs" />
     <Compile Include="Amazon.EC2\Model\Placement.cs" />
     <Compile Include="Amazon.EC2\Model\PlacementGroupInfo.cs" />
@@ -1273,6 +1302,8 @@
     <Compile Include="Amazon.EC2\Model\ReplaceRouteTableAssociationRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ReplaceRouteTableAssociationResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ReplaceRouteTableAssociationResult.cs" />
+    <Compile Include="Amazon.EC2\Model\ReportInstanceStatusRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\ReportInstanceStatusResponse.cs" />
     <Compile Include="Amazon.EC2\Model\RequestSpotInstancesRequest.cs" />
     <Compile Include="Amazon.EC2\Model\RequestSpotInstancesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\RequestSpotInstancesResult.cs" />
@@ -1283,6 +1314,8 @@
     <Compile Include="Amazon.EC2\Model\ResetImageAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ResetInstanceAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ResetInstanceAttributeResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\ResetNetworkInterfaceAttributeRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\ResetNetworkInterfaceAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ResetSnapshotAttributeRequest.cs" />
     <Compile Include="Amazon.EC2\Model\ResetSnapshotAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\ResourceTag.cs" />
@@ -3300,6 +3333,17 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.S3\Model\GetLifecycleConfigurationResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\AttachNetworkInterfaceResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateNetworkInterfaceResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteNetworkInterfaceResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeNetworkInterfaceAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeNetworkInterfacesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DetachNetworkInterfaceResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ModifyNetworkInterfaceAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ReportInstanceStatusResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ResetNetworkInterfaceAttributeResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

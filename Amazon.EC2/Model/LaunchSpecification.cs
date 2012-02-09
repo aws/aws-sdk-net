@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Specifies additional launch instance information.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class LaunchSpecification
     {    
         private string imageIdField;
@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private List<BlockDeviceMapping> blockDeviceMappingField;
         private MonitoringSpecification monitoringField;
         private string subnetIdField;
+        private List<InstanceNetworkInterfaceSpecification> networkInterfaceSetField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
@@ -503,5 +504,44 @@ namespace Amazon.EC2.Model
             return this.subnetIdField != null;
         }
 
+        /// <summary>
+        /// Gets and sets the NetworkInterfaceSet property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "InstanceNetworkInterfaceSpecification")]
+        public List<InstanceNetworkInterfaceSpecification> NetworkInterfaceSet
+        {
+            get
+            {
+                if (this.networkInterfaceSetField == null)
+                {
+                    this.networkInterfaceSetField = new List<InstanceNetworkInterfaceSpecification>();
+                }
+                return this.networkInterfaceSetField;
+            }
+            set { this.networkInterfaceSetField = value; }
+        }
+
+        /// <summary>
+        /// Sets the NetworkInterfaceSet property.
+        /// </summary>
+        /// <param name="list">Collection of NetworkInterfaceSet</param>
+        /// <returns>this instance</returns>
+        public LaunchSpecification WithNetworkInterfaceSet(params InstanceNetworkInterfaceSpecification[] list)
+        {
+            foreach (InstanceNetworkInterfaceSpecification item in list)
+            {
+                NetworkInterfaceSet.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the NetworkInterfaceSet property is set
+        /// </summary>
+        /// <returns>true if the NetworkInterfaceSet is set</returns>
+        public bool IsSetNetworkInterfaceSet()
+        {
+            return (this.NetworkInterfaceSet.Count > 0);
+        }
     }
 }

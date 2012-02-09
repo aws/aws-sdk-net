@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -29,12 +29,13 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Reservation
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class Reservation
     {    
         private string reservationIdField;
         private string ownerIdField;
         private string requesterIdField;
+        private List<string> groupIdField;
         private List<string> groupNameField;
         private List<RunningInstance> runningInstanceField;
 
@@ -131,6 +132,47 @@ namespace Amazon.EC2.Model
         public bool IsSetRequesterId()
         {
             return this.requesterIdField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the GroupId property.
+        /// Ids of the security groups.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GroupId")]
+        public List<string> GroupId
+        {
+            get
+            {
+                if (this.groupIdField == null)
+                {
+                    this.groupIdField = new List<string>();
+                }
+                return this.groupIdField;
+            }
+            set { this.groupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the GroupId property
+        /// </summary>
+        /// <param name="list">Ids of the security groups.</param>
+        /// <returns>this instance</returns>
+        public Reservation WithGroupId(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                GroupId.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if GroupId property is set
+        /// </summary>
+        /// <returns>true if GroupId property is set</returns>
+        public bool IsSetGroupId()
+        {
+            return (GroupId.Count > 0);
         }
 
         /// <summary>

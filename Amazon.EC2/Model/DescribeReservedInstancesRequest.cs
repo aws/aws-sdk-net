@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -32,11 +32,12 @@ namespace Amazon.EC2.Model
     /// Instances, go to the Amazon
     /// Elastic Compute Cloud Developer Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class DescribeReservedInstancesRequest
     {    
         private List<string> reservedInstancesIdField;
         private List<Filter> filterField;
+        private string offeringTypeField;
 
         /// <summary>
         /// Gets and sets the ReservedInstancesId property.
@@ -126,5 +127,35 @@ namespace Amazon.EC2.Model
             return (Filter.Count > 0);
         }
 
+        /// <summary>
+        /// Gets and sets the Reserved Instance offering type.
+        /// Valid Values: Heavy Utilization | Medium Utilization | Light Utilization
+        /// </summary>
+        [XmlElementAttribute(ElementName = "OfferingType")]
+        public string OfferingType
+        {
+            get { return this.offeringTypeField; }
+            set { this.offeringTypeField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Reserved Instance offering type.
+        /// </summary>
+        /// <param name="offeringType">Offering type. Valid values: Heavy Utilization | Medium Utilization | Light Utilization</param>
+        /// <returns>this instance</returns>
+        public DescribeReservedInstancesRequest WithOfferingType(string offeringType)
+        {
+            this.offeringTypeField = offeringType;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the OfferingType property is set.
+        /// </summary>
+        /// <returns>true if the OfferingType property is set</returns>
+        public bool IsSetOfferingType()
+        {
+            return !string.IsNullOrEmpty(this.offeringTypeField);
+        }
     }
 }

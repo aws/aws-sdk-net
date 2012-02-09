@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-11-01/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-12-15/" exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-11-01/'"/>
+  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-12-15/'"/>
   <xsl:template match="ec2:DescribeInstanceAttributeResponse">
     <xsl:element name="DescribeInstanceAttributeResponse" namespace="{$ns}">
       <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -22,10 +22,30 @@
           <xsl:apply-templates select="ec2:instanceInitiatedShutdownBehavior"/>
           <xsl:apply-templates select="ec2:rootDeviceName"/>
           <xsl:apply-templates select="ec2:blockDeviceMapping"/>
+          <xsl:apply-templates select="ec2:sourceDestCheck"/>
+          <xsl:apply-templates select="ec2:groupSet"/>
         </xsl:element>
       </xsl:element>
     </xsl:element>
   </xsl:template>
+
+  <xsl:template match="ec2:sourceDestCheck">
+    <xsl:element name="SourceDestCheck" namespace="{$ns}">
+      <xsl:value-of select="."/>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="ec2:groupSet">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="GroupName" namespace="{$ns}">
+        <xsl:value-of select="ec2:groupName"/>
+      </xsl:element>
+      <xsl:element name="GroupId" namespace="{$ns}">
+        <xsl:value-of select="ec2:groupId"/>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+
   <xsl:template match="ec2:instanceType">
     <xsl:element name="InstanceType" namespace="{$ns}">
       <xsl:value-of select="ec2:value"/>
