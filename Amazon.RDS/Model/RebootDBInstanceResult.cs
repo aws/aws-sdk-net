@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the RebootDBInstance action.
     /// </summary>
-    public class RebootDBInstanceResult : AmazonWebServiceResponse
+    public class RebootDBInstanceResult
     {
         private DBInstance dBInstanceValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the RebootDBInstanceResult property.
         /// Contains the result of a successful invocation of the RebootDBInstance
         /// action.
-        /// 
+        /// </summary>
         public DBInstance DBInstance
         {
             get { return this.dBInstanceValue; }

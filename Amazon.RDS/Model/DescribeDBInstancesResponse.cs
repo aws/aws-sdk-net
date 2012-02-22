@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// </summary>
         public DescribeDBInstancesResult DescribeDBInstancesResult
         {
-            get { return this.describeDBInstancesResult; }
+            get 
+            {
+                if(this.describeDBInstancesResult == null)
+                {
+                    this.describeDBInstancesResult = new DescribeDBInstancesResult();
+                }
+
+                return this.describeDBInstancesResult; 
+            }
             set { this.describeDBInstancesResult = value; }
         }
     }

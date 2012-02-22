@@ -210,6 +210,12 @@ namespace Amazon.Runtime
             if (!string.IsNullOrEmpty(wrappedRequest.ResourcePath))
                 url = new Uri(wrappedRequest.Endpoint, wrappedRequest.ResourcePath);
 
+            if (wrappedRequest.HttpMethod == "GET" && wrappedRequest.Parameters.Count > 0)
+            {
+                string queryString = AWSSDKUtils.GetParametersAsString(wrappedRequest.Parameters);
+                url = new Uri(string.Format("{0}?{1}", url.AbsoluteUri, queryString));
+            }
+
             HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             if (request != null)
             {

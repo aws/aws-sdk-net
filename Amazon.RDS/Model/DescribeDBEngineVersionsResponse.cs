@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// </summary>
         public DescribeDBEngineVersionsResult DescribeDBEngineVersionsResult
         {
-            get { return this.describeDBEngineVersionsResult; }
+            get 
+            {
+                if(this.describeDBEngineVersionsResult == null)
+                {
+                    this.describeDBEngineVersionsResult = new DescribeDBEngineVersionsResult();
+                }
+
+                return this.describeDBEngineVersionsResult; 
+            }
             set { this.describeDBEngineVersionsResult = value; }
         }
     }

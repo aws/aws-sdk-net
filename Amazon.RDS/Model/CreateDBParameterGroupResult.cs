@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the CreateDBParameterGroup action.
     /// </summary>
-    public class CreateDBParameterGroupResult : AmazonWebServiceResponse
+    public class CreateDBParameterGroupResult
     {
         private DBParameterGroup dBParameterGroupValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateDBParameterGroupResult property.
         /// Contains the result of a successful invocation of the CreateDBParameterGroup
         /// action.
-        /// 
+        /// </summary>
         public DBParameterGroup DBParameterGroup
         {
             get { return this.dBParameterGroupValue; }

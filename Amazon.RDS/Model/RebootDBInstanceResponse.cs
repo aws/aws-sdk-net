@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public RebootDBInstanceResult RebootDBInstanceResult
         {
-            get { return this.rebootDBInstanceResult; }
+            get 
+            {
+                if(this.rebootDBInstanceResult == null)
+                {
+                    this.rebootDBInstanceResult = new RebootDBInstanceResult();
+                }
+
+                return this.rebootDBInstanceResult; 
+            }
             set { this.rebootDBInstanceResult = value; }
         }
     }

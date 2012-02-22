@@ -5910,7 +5910,6 @@ namespace Amazon.S3
                 httpRequest.Headers.Add(headers);
                 httpRequest.Method = parameters[S3QueryParameter.Verb];
                 httpRequest.ContentLength = contentLength;
-                httpRequest.KeepAlive = false;
                 httpRequest.AllowWriteStreamBuffering = false;
                 httpRequest.AllowAutoRedirect = false;
             }

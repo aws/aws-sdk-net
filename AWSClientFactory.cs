@@ -39,6 +39,7 @@ using Amazon.SecurityToken;
 using Amazon.SimpleDB;
 using Amazon.SimpleEmail;
 using Amazon.SimpleNotificationService;
+using Amazon.SimpleWorkflow;
 
 namespace Amazon
 {
@@ -1443,6 +1444,84 @@ namespace Amazon
             return new AmazonSecurityTokenServiceClient(awsAccessKey, awsSecretAccessKey, config);
         }
 
+        /// <summary>
+        /// Create a client for the Amazon SimpleWorkflow Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon SimpleWorkflow client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleWorkflow CreateAmazonSimpleWorkflowClient()
+        {
+            return new AmazonSimpleWorkflowClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleWorkflow Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon SimpleWorkflow client</returns>
+        public static AmazonSimpleWorkflow CreateAmazonSimpleWorkflowClient(AmazonSimpleWorkflowConfig config)
+        {
+            return new AmazonSimpleWorkflowClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleWorkflow service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon SimpleWorkflow client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleWorkflow CreateAmazonSimpleWorkflowClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonSimpleWorkflowClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleWorkflow service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon SimpleWorkflow client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleWorkflow CreateAmazonSimpleWorkflowClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonSimpleWorkflowConfig config
+            )
+        {
+            return new AmazonSimpleWorkflowClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+		
         /// <summary>
         /// Create a client for the Amazon DynamoDB Service with the credentials defined in the App.config.
         /// 

@@ -80,10 +80,16 @@ namespace Amazon.S3.Model
             if (!ruleMatches.Success || !ruleMatches.Groups[1].Success)
                 throw new InvalidOperationException("No Rule Id match");
             string ruleIdValue = ruleMatches.Groups[1].Value;
-            string ruleId = System.Web.HttpUtility.UrlDecode(ruleIdValue);
+            string ruleId = UrlDecode(ruleIdValue);
 
             this.expiryDate = expiryDate;
             this.ruleId = ruleId;
+        }
+
+        private static string UrlDecode(string url)
+        {
+            string decoded = Uri.UnescapeDataString(url).Replace("+", " ");
+            return decoded;
         }
     }
 }

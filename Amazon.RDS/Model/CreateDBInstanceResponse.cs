@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public CreateDBInstanceResult CreateDBInstanceResult
         {
-            get { return this.createDBInstanceResult; }
+            get 
+            {
+                if(this.createDBInstanceResult == null)
+                {
+                    this.createDBInstanceResult = new CreateDBInstanceResult();
+                }
+
+                return this.createDBInstanceResult; 
+            }
             set { this.createDBInstanceResult = value; }
         }
     }

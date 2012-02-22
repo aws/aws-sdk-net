@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public PurchaseReservedDBInstancesOfferingResult PurchaseReservedDBInstancesOfferingResult
         {
-            get { return this.purchaseReservedDBInstancesOfferingResult; }
+            get 
+            {
+                if(this.purchaseReservedDBInstancesOfferingResult == null)
+                {
+                    this.purchaseReservedDBInstancesOfferingResult = new PurchaseReservedDBInstancesOfferingResult();
+                }
+
+                return this.purchaseReservedDBInstancesOfferingResult; 
+            }
             set { this.purchaseReservedDBInstancesOfferingResult = value; }
         }
     }

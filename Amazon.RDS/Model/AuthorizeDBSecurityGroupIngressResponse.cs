@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public AuthorizeDBSecurityGroupIngressResult AuthorizeDBSecurityGroupIngressResult
         {
-            get { return this.authorizeDBSecurityGroupIngressResult; }
+            get 
+            {
+                if(this.authorizeDBSecurityGroupIngressResult == null)
+                {
+                    this.authorizeDBSecurityGroupIngressResult = new AuthorizeDBSecurityGroupIngressResult();
+                }
+
+                return this.authorizeDBSecurityGroupIngressResult; 
+            }
             set { this.authorizeDBSecurityGroupIngressResult = value; }
         }
     }

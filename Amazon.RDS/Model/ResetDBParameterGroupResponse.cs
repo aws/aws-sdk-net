@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// </summary>
         public ResetDBParameterGroupResult ResetDBParameterGroupResult
         {
-            get { return this.resetDBParameterGroupResult; }
+            get 
+            {
+                if(this.resetDBParameterGroupResult == null)
+                {
+                    this.resetDBParameterGroupResult = new ResetDBParameterGroupResult();
+                }
+
+                return this.resetDBParameterGroupResult; 
+            }
             set { this.resetDBParameterGroupResult = value; }
         }
     }

@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the RevokeDBSecurityGroupIngress action.
     /// </summary>
-    public class RevokeDBSecurityGroupIngressResult : AmazonWebServiceResponse
+    public class RevokeDBSecurityGroupIngressResult
     {
         private DBSecurityGroup dBSecurityGroupValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the RevokeDBSecurityGroupIngressResult property.
         /// Contains the result of a successful invocation of the RevokeDBSecurityGroupIngress
         /// action.
-        /// 
+        /// </summary>
         public DBSecurityGroup DBSecurityGroup
         {
             get { return this.dBSecurityGroupValue; }

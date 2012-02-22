@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// </summary>
         public ModifyDBParameterGroupResult ModifyDBParameterGroupResult
         {
-            get { return this.modifyDBParameterGroupResult; }
+            get 
+            {
+                if(this.modifyDBParameterGroupResult == null)
+                {
+                    this.modifyDBParameterGroupResult = new ModifyDBParameterGroupResult();
+                }
+
+                return this.modifyDBParameterGroupResult; 
+            }
             set { this.modifyDBParameterGroupResult = value; }
         }
     }
