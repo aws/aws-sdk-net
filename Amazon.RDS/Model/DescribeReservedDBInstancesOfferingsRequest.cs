@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
         private string dBInstanceClass;
         private string duration;
         private string productDescription;
+        private string offeringType;
         private bool? multiAZ;
         private int? maxRecords;
         private string marker;
@@ -150,6 +151,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetProductDescription()
         {
             return this.productDescription != null;       
+        }
+
+        /// <summary>
+        /// The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. Valid
+        /// Values: <c>"Light Utilization" | "Medium Utilization" | "Heavy Utilization" </c>
+        ///  
+        /// </summary>
+        public string OfferingType
+        {
+            get { return this.offeringType; }
+            set { this.offeringType = value; }
+        }
+
+        /// <summary>
+        /// Sets the OfferingType property
+        /// </summary>
+        /// <param name="offeringType">The value to set for the OfferingType property </param>
+        /// <returns>this instance</returns>
+        public DescribeReservedDBInstancesOfferingsRequest WithOfferingType(string offeringType)
+        {
+            this.offeringType = offeringType;
+            return this;
+        }
+            
+
+        // Check to see if OfferingType property is set
+        internal bool IsSetOfferingType()
+        {
+            return this.offeringType != null;       
         }
 
         /// <summary>

@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the PurchaseReservedDBInstancesOffering action.
     /// </summary>
-    public class PurchaseReservedDBInstancesOfferingResult : AmazonWebServiceResponse
+    public class PurchaseReservedDBInstancesOfferingResult
     {
         private ReservedDBInstance reservedDBInstanceValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the PurchaseReservedDBInstancesOfferingResult property.
         /// Contains the result of a successful invocation of the PurchaseReservedDBInstancesOffering
         /// action.
-        /// 
+        /// </summary>
         public ReservedDBInstance ReservedDBInstance
         {
             get { return this.reservedDBInstanceValue; }

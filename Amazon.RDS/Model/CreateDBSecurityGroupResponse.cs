@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public CreateDBSecurityGroupResult CreateDBSecurityGroupResult
         {
-            get { return this.createDBSecurityGroupResult; }
+            get 
+            {
+                if(this.createDBSecurityGroupResult == null)
+                {
+                    this.createDBSecurityGroupResult = new CreateDBSecurityGroupResult();
+                }
+
+                return this.createDBSecurityGroupResult; 
+            }
             set { this.createDBSecurityGroupResult = value; }
         }
     }

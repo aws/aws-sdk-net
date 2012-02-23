@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Threading;
 
 using Amazon.AutoScaling.Model;
-using Amazon.AutoScaling.Model.Transform;
+using Amazon.AutoScaling.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -25,23 +26,21 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.AutoScaling
 {
     /// <summary>
-    /// Implemenation for accessing AmazonAutoScaling.
+    /// Implementation for accessing AmazonAutoScaling.
     ///  
-    /// Auto Scaling <para> Auto Scaling is a web service designed to automatically launch or terminate EC2 instances based on user-defined
-    /// policies, schedules, and health checks. Auto Scaling responds automatically to changing conditions. All you need to do is specify how it
-    /// should respond to those changes. </para> <para> Auto Scaling groups can work across multiple Availability Zones - distinct physical
-    /// locations for the hosted Amazon EC2 instances - so that if an Availability Zone becomes unavailable, Auto Scaling will automatically
-    /// redistribute applications to a different Availability Zone. </para> <para> Every API call returns a response meta data object that contains
-    /// a request identifier. Successful requests return an HTTP 200 status code. Unsuccessful requests return an error object and an HTTP status
-    /// code of 400 or 500. </para> <para>The current WSDL is available at:</para> <para>
-    /// http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl </para> <para> <b>Endpoints</b> </para> <para>For information about this
-    /// product's regions and endpoints, go to Regions and Endpoints in the Amazon Web Services General Reference. </para>
+    /// Auto Scaling <para> This is the <i>Auto Scaling API Reference</i> . This guide provides detailed information about Auto Scaling actions,
+    /// data types, parameters, and errors. For detailed information about Auto Scaling features and their associated API calls, go to the Auto
+    /// Scaling Developer Guide. </para> <para> Auto Scaling is a web service designed to automatically launch or terminate Amazon Elastic Compute
+    /// Cloud (Amazon EC2) instances based on user-defined policies, schedules, and health checks. This service is used in conjunction with Amazon
+    /// CloudWatch and Elastic Load Balancing services. </para> <para>This reference is based on the current WSDL, which is available at:</para>
+    /// <para> http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl </para> <para> <b>Endpoints</b> </para> <para>For information about
+    /// this product's regions and endpoints, go to Regions and Endpoints in the Amazon Web Services General Reference. </para>
     /// </summary>
     public class AmazonAutoScalingClient : AmazonWebServiceClient, AmazonAutoScaling
     {
     
-    
         AbstractAWSSigner signer = new QueryStringSigner();
+
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with the credentials defined in the App.config.
@@ -80,6 +79,25 @@ namespace Amazon.AutoScaling
         public AmazonAutoScalingClient(AmazonAutoScalingConfig config)
             : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
 
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public AmazonAutoScalingClient(AWSCredentials credentials)
+            : this(credentials, new AmazonAutoScalingConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with AWS Credentials and an
+        /// AmazonAutoScalingClient Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
+        public AmazonAutoScalingClient(AWSCredentials credentials, AmazonAutoScalingConfig clientConfig)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User)
+        {
+        }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with AWS Access Key ID and AWS Secret Key
@@ -102,17 +120,16 @@ namespace Amazon.AutoScaling
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
         public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonAutoScalingConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User)
         {
         }
         
-   
 
          /// <summary>
          /// <para> Returns a full description of each Auto Scaling group in the given list. This includes all Amazon EC2 instances that are members of
          /// the group. If a list of names is not provided, the service returns the full details of all Auto Scaling groups. </para> <para> This action
          /// supports pagination by returning a token if there are more pages to retrieve. To get the next page, call this action again with the returned
-         /// token as the NextToken parameter. </para>
+         /// token as the <c>NextToken</c> parameter. </para>
          /// </summary>
          /// 
          /// <param name="describeAutoScalingGroupsRequest">Container for the necessary parameters to execute the DescribeAutoScalingGroups service
@@ -122,17 +139,33 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="InvalidNextTokenException"/>
         public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) 
-        {           
+        {
             IRequest<DescribeAutoScalingGroupsRequest> request = new DescribeAutoScalingGroupsRequestMarshaller().Marshall(describeAutoScalingGroupsRequest);
             DescribeAutoScalingGroupsResponse response = Invoke<DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResponse> (request, this.signer, DescribeAutoScalingGroupsResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in AutoScalingGroupName. You can specify the list of enabled
-         /// metrics with the Metrics parameter. </para> <para> Auto scaling metrics collection can be turned on only if the
-         /// <c>InstanceMonitoring.Enabled</c> flag, in the Auto Scaling group's launch configuration, is set to <c>true</c> .
+         /// <para> Returns a full description of each Auto Scaling group in the given list. This includes all Amazon EC2 instances that are members of
+         /// the group. If a list of names is not provided, the service returns the full details of all Auto Scaling groups. </para> <para> This action
+         /// supports pagination by returning a token if there are more pages to retrieve. To get the next page, call this action again with the returned
+         /// token as the <c>NextToken</c> parameter. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups()
+        {
+            return DescribeAutoScalingGroups(new DescribeAutoScalingGroupsRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
+         /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto scaling metrics collection
+         /// can be turned on only if the <c>InstanceMonitoring</c> flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
          /// </para>
          /// </summary>
          /// 
@@ -140,12 +173,12 @@ namespace Amazon.AutoScaling
          ///           AmazonAutoScaling.</param>
          /// 
         public EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest enableMetricsCollectionRequest) 
-        {           
+        {
             IRequest<EnableMetricsCollectionRequest> request = new EnableMetricsCollectionRequestMarshaller().Marshall(enableMetricsCollectionRequest);
             EnableMetricsCollectionResponse response = Invoke<EnableMetricsCollectionRequest, EnableMetricsCollectionResponse> (request, this.signer, EnableMetricsCollectionResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
          /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For more information, see SuspendProcesses and ProcessType. </para>
@@ -155,16 +188,16 @@ namespace Amazon.AutoScaling
          ///           AmazonAutoScaling.</param>
          /// 
         public ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest resumeProcessesRequest) 
-        {           
+        {
             IRequest<ResumeProcessesRequest> request = new ResumeProcessesRequestMarshaller().Marshall(resumeProcessesRequest);
             ResumeProcessesResponse response = Invoke<ResumeProcessesRequest, ResumeProcessesResponse> (request, this.signer, ResumeProcessesResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
          /// <para> Deletes the specified LaunchConfiguration. </para> <para> The specified launch configuration must not be attached to an Auto Scaling
-         /// group. Once this call completes, the launch configuration is no longer available for use. </para>
+         /// group. When this call completes, the launch configuration is no longer available for use. </para>
          /// </summary>
          /// 
          /// <param name="deleteLaunchConfigurationRequest">Container for the necessary parameters to execute the DeleteLaunchConfiguration service
@@ -172,16 +205,16 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="ResourceInUseException"/>
         public DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest) 
-        {           
+        {
             IRequest<DeleteLaunchConfigurationRequest> request = new DeleteLaunchConfigurationRequestMarshaller().Marshall(deleteLaunchConfigurationRequest);
             DeleteLaunchConfigurationResponse response = Invoke<DeleteLaunchConfigurationRequest, DeleteLaunchConfigurationResponse> (request, this.signer, DeleteLaunchConfigurationResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
          /// <para> Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more
-         /// records available. To get the additional records, repeat the request with the response token as the NextToken parameter. </para>
+         /// records available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
          /// </summary>
          /// 
          /// <param name="describePoliciesRequest">Container for the necessary parameters to execute the DescribePolicies service method on
@@ -191,12 +224,26 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="InvalidNextTokenException"/>
         public DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest describePoliciesRequest) 
-        {           
+        {
             IRequest<DescribePoliciesRequest> request = new DescribePoliciesRequestMarshaller().Marshall(describePoliciesRequest);
             DescribePoliciesResponse response = Invoke<DescribePoliciesRequest, DescribePoliciesResponse> (request, this.signer, DescribePoliciesResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para> Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more
+         /// records available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribePolicies service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribePoliciesResponse DescribePolicies()
+        {
+            return DescribePolicies(new DescribePoliciesRequest());
+        }
+        
 
          /// <summary>
          /// <para>Returns scaling process types for use in the ResumeProcesses and SuspendProcesses actions.</para>
@@ -208,17 +255,29 @@ namespace Amazon.AutoScaling
          /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AmazonAutoScaling.</returns>
          /// 
         public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest) 
-        {           
+        {
             IRequest<DescribeScalingProcessTypesRequest> request = new DescribeScalingProcessTypesRequestMarshaller().Marshall(describeScalingProcessTypesRequest);
             DescribeScalingProcessTypesResponse response = Invoke<DescribeScalingProcessTypesRequest, DescribeScalingProcessTypesResponse> (request, this.signer, DescribeScalingProcessTypesResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Creates a new Auto Scaling group with the specified name. Once the creation request is completed, the AutoScalingGroup is ready to be
-         /// used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of your AWS account, and under
-         /// the quota of Auto Scaling groups allowed for your account. </para>
+         /// <para>Returns scaling process types for use in the ResumeProcesses and SuspendProcesses actions.</para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+        public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes()
+        {
+            return DescribeScalingProcessTypes(new DescribeScalingProcessTypesRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto
+         /// Scaling group is ready to be used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of
+         /// your AWS account, and under the quota of Auto Scaling groups allowed for your account. </para>
          /// </summary>
          /// 
          /// <param name="createAutoScalingGroupRequest">Container for the necessary parameters to execute the CreateAutoScalingGroup service method on
@@ -227,18 +286,18 @@ namespace Amazon.AutoScaling
          /// <exception cref="LimitExceededException"/>
          /// <exception cref="AlreadyExistsException"/>
         public CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest createAutoScalingGroupRequest) 
-        {           
+        {
             IRequest<CreateAutoScalingGroupRequest> request = new CreateAutoScalingGroupRequestMarshaller().Marshall(createAutoScalingGroupRequest);
             CreateAutoScalingGroupResponse response = Invoke<CreateAutoScalingGroupRequest, CreateAutoScalingGroupResponse> (request, this.signer, CreateAutoScalingGroupResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <i>ActivityIds</i> list is
+         /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <c>ActivityIds</c> list is
          /// empty, all the activities from the past six weeks are returned. Activities are sorted by completion time. Activities still in progress
          /// appear first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records
-         /// available. To get the additional records, repeat the request with the response token as the NextToken parameter. </para>
+         /// available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
          /// </summary>
          /// 
          /// <param name="describeScalingActivitiesRequest">Container for the necessary parameters to execute the DescribeScalingActivities service
@@ -248,12 +307,28 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="InvalidNextTokenException"/>
         public DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) 
-        {           
+        {
             IRequest<DescribeScalingActivitiesRequest> request = new DescribeScalingActivitiesRequestMarshaller().Marshall(describeScalingActivitiesRequest);
             DescribeScalingActivitiesResponse response = Invoke<DescribeScalingActivitiesRequest, DescribeScalingActivitiesResponse> (request, this.signer, DescribeScalingActivitiesResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <c>ActivityIds</c> list is
+         /// empty, all the activities from the past six weeks are returned. Activities are sorted by completion time. Activities still in progress
+         /// appear first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records
+         /// available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeScalingActivities service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeScalingActivitiesResponse DescribeScalingActivities()
+        {
+            return DescribeScalingActivities(new DescribeScalingActivitiesRequest());
+        }
+        
 
          /// <summary>
          /// <para> Returns a list of notification actions associated with Auto Scaling groups for specified events. </para>
@@ -266,12 +341,62 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="InvalidNextTokenException"/>
         public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest) 
-        {           
+        {
             IRequest<DescribeNotificationConfigurationsRequest> request = new DescribeNotificationConfigurationsRequestMarshaller().Marshall(describeNotificationConfigurationsRequest);
             DescribeNotificationConfigurationsResponse response = Invoke<DescribeNotificationConfigurationsRequest, DescribeNotificationConfigurationsResponse> (request, this.signer, DescribeNotificationConfigurationsResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para> Returns a list of notification actions associated with Auto Scaling groups for specified events. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations()
+        {
+            return DescribeNotificationConfigurations(new DescribeNotificationConfigurationsRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Lists the Auto Scaling group tags. </para> <para> You can use filters to limit results when describing tags. For example, you can
+         /// query for tags of a particular Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the
+         /// specified values for it to be included in the results. </para> <para> You can also specify multiple filters. The result includes information
+         /// for a particular tag only if it matches all your filters. If there's no match, no special message is returned. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeTagsRequest">Container for the necessary parameters to execute the DescribeTags service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <returns>The response from the DescribeTags service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeTagsResponse DescribeTags(DescribeTagsRequest describeTagsRequest) 
+        {
+            IRequest<DescribeTagsRequest> request = new DescribeTagsRequestMarshaller().Marshall(describeTagsRequest);
+            DescribeTagsResponse response = Invoke<DescribeTagsRequest, DescribeTagsResponse> (request, this.signer, DescribeTagsResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Lists the Auto Scaling group tags. </para> <para> You can use filters to limit results when describing tags. For example, you can
+         /// query for tags of a particular Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the
+         /// specified values for it to be included in the results. </para> <para> You can also specify multiple filters. The result includes information
+         /// for a particular tag only if it matches all your filters. If there's no match, no special message is returned. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeTags service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeTagsResponse DescribeTags()
+        {
+            return DescribeTags(new DescribeTagsRequest());
+        }
+        
 
          /// <summary>
          /// <para>Runs the policy you create for your Auto Scaling group in PutScalingPolicy.</para>
@@ -282,12 +407,27 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="ScalingActivityInProgressException"/>
         public ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest executePolicyRequest) 
-        {           
+        {
             IRequest<ExecutePolicyRequest> request = new ExecutePolicyRequestMarshaller().Marshall(executePolicyRequest);
             ExecutePolicyResponse response = Invoke<ExecutePolicyRequest, ExecutePolicyResponse> (request, this.signer, ExecutePolicyResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para>Removes the specified tags or a set of tags from a set of resources.</para>
+         /// </summary>
+         /// 
+         /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+        public DeleteTagsResponse DeleteTags(DeleteTagsRequest deleteTagsRequest) 
+        {
+            IRequest<DeleteTagsRequest> request = new DeleteTagsRequestMarshaller().Marshall(deleteTagsRequest);
+            DeleteTagsResponse response = Invoke<DeleteTagsRequest, DeleteTagsResponse> (request, this.signer, DeleteTagsResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
 
          /// <summary>
          /// <para> Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the
@@ -302,15 +442,17 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="LimitExceededException"/>
         public PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) 
-        {           
+        {
             IRequest<PutScalingPolicyRequest> request = new PutScalingPolicyRequestMarshaller().Marshall(putScalingPolicyRequest);
             PutScalingPolicyResponse response = Invoke<PutScalingPolicyRequest, PutScalingPolicyResponse> (request, this.signer, PutScalingPolicyResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Creates a notification action for an Auto Scaling group when a specified event takes place. </para>
+         /// <para> Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages
+         /// for events delivered to an endpoint such as a web server or email address. </para> <para> A new <c>PutNotificationConfiguration</c>
+         /// overwrites an existing configuration.</para>
          /// </summary>
          /// 
          /// <param name="putNotificationConfigurationRequest">Container for the necessary parameters to execute the PutNotificationConfiguration service
@@ -318,27 +460,27 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="LimitExceededException"/>
         public PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest putNotificationConfigurationRequest) 
-        {           
+        {
             IRequest<PutNotificationConfigurationRequest> request = new PutNotificationConfigurationRequestMarshaller().Marshall(putNotificationConfigurationRequest);
             PutNotificationConfigurationResponse response = Invoke<PutNotificationConfigurationRequest, PutNotificationConfigurationResponse> (request, this.signer, PutNotificationConfigurationResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para>Deletes a policy created by PutScalingPolicy </para>
+         /// <para>Deletes a policy created by PutScalingPolicy.</para>
          /// </summary>
          /// 
          /// <param name="deletePolicyRequest">Container for the necessary parameters to execute the DeletePolicy service method on
          ///           AmazonAutoScaling.</param>
          /// 
         public DeletePolicyResponse DeletePolicy(DeletePolicyRequest deletePolicyRequest) 
-        {           
+        {
             IRequest<DeletePolicyRequest> request = new DeletePolicyRequestMarshaller().Marshall(deletePolicyRequest);
             DeletePolicyResponse response = Invoke<DeletePolicyRequest, DeletePolicyResponse> (request, this.signer, DeletePolicyResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
          /// <para>Deletes notifications created by PutNotificationConfiguration.</para>
@@ -348,12 +490,12 @@ namespace Amazon.AutoScaling
          ///           service method on AmazonAutoScaling.</param>
          /// 
         public DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) 
-        {           
+        {
             IRequest<DeleteNotificationConfigurationRequest> request = new DeleteNotificationConfigurationRequestMarshaller().Marshall(deleteNotificationConfigurationRequest);
             DeleteNotificationConfigurationResponse response = Invoke<DeleteNotificationConfigurationRequest, DeleteNotificationConfigurationResponse> (request, this.signer, DeleteNotificationConfigurationResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
          /// <para>Deletes a scheduled action previously created using the PutScheduledUpdateGroupAction.</para>
@@ -363,12 +505,12 @@ namespace Amazon.AutoScaling
          ///           AmazonAutoScaling.</param>
          /// 
         public DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest) 
-        {           
+        {
             IRequest<DeleteScheduledActionRequest> request = new DeleteScheduledActionRequestMarshaller().Marshall(deleteScheduledActionRequest);
             DeleteScheduledActionResponse response = Invoke<DeleteScheduledActionRequest, DeleteScheduledActionResponse> (request, this.signer, DeleteScheduledActionResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
          /// <para> Sets the health status of an instance. </para>
@@ -378,16 +520,15 @@ namespace Amazon.AutoScaling
          ///           AmazonAutoScaling.</param>
          /// 
         public SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest) 
-        {           
+        {
             IRequest<SetInstanceHealthRequest> request = new SetInstanceHealthRequestMarshaller().Marshall(setInstanceHealthRequest);
             SetInstanceHealthResponse response = Invoke<SetInstanceHealthRequest, SetInstanceHealthResponse> (request, this.signer, SetInstanceHealthResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Returns a list of all notification types that are supported by Auto Scaling. </para> <para> <i>What if the input is empty?</i>
-         /// </para>
+         /// <para> Returns a list of all notification types that are supported by Auto Scaling. </para>
          /// </summary>
          /// 
          /// <param name="describeAutoScalingNotificationTypesRequest">Container for the necessary parameters to execute the
@@ -396,12 +537,43 @@ namespace Amazon.AutoScaling
          /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AmazonAutoScaling.</returns>
          /// 
         public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest) 
-        {           
+        {
             IRequest<DescribeAutoScalingNotificationTypesRequest> request = new DescribeAutoScalingNotificationTypesRequestMarshaller().Marshall(describeAutoScalingNotificationTypesRequest);
             DescribeAutoScalingNotificationTypesResponse response = Invoke<DescribeAutoScalingNotificationTypesRequest, DescribeAutoScalingNotificationTypesResponse> (request, this.signer, DescribeAutoScalingNotificationTypesResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para> Returns a list of all notification types that are supported by Auto Scaling. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+        public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes()
+        {
+            return DescribeAutoScalingNotificationTypes(new DescribeAutoScalingNotificationTypesRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Creates new tags or updates existing tags for an Auto Scaling group. </para> <para><b>NOTE:</b> A tag's definition is composed of a
+         /// resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request
+         /// Parameters for more information. </para>
+         /// </summary>
+         /// 
+         /// <param name="createOrUpdateTagsRequest">Container for the necessary parameters to execute the CreateOrUpdateTags service method on
+         ///           AmazonAutoScaling.</param>
+         /// 
+         /// <exception cref="LimitExceededException"/>
+         /// <exception cref="AlreadyExistsException"/>
+        public CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest) 
+        {
+            IRequest<CreateOrUpdateTagsRequest> request = new CreateOrUpdateTagsRequestMarshaller().Marshall(createOrUpdateTagsRequest);
+            CreateOrUpdateTagsResponse response = Invoke<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse> (request, this.signer, CreateOrUpdateTagsResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
 
          /// <summary>
          /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process types, specify them by name with the
@@ -415,17 +587,18 @@ namespace Amazon.AutoScaling
          ///           AmazonAutoScaling.</param>
          /// 
         public SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest suspendProcessesRequest) 
-        {           
+        {
             IRequest<SuspendProcessesRequest> request = new SuspendProcessesRequestMarshaller().Marshall(suspendProcessesRequest);
             SuspendProcessesResponse response = Invoke<SuspendProcessesRequest, SuspendProcessesResponse> (request, this.signer, SuspendProcessesResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Returns a description of each Auto Scaling instance in the InstanceIds list. If a list is not provided, the service returns the full
-         /// details of all instances up to a maximum of fifty. </para> <para> This action supports pagination by returning a token if there are more
-         /// pages to retrieve. To get the next page, call this action again with the returned token as the NextToken parameter. </para>
+         /// <para> Returns a description of each Auto Scaling instance in the <c>InstanceIds</c> list. If a list is not provided, the service returns
+         /// the full details of all instances up to a maximum of 50. By default, the service returns a list of 20 items. </para> <para> This action
+         /// supports pagination by returning a token if there are more pages to retrieve. To get the next page, call this action again with the returned
+         /// token as the <c>NextToken</c> parameter. </para>
          /// </summary>
          /// 
          /// <param name="describeAutoScalingInstancesRequest">Container for the necessary parameters to execute the DescribeAutoScalingInstances service
@@ -435,17 +608,36 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="InvalidNextTokenException"/>
         public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest) 
-        {           
+        {
             IRequest<DescribeAutoScalingInstancesRequest> request = new DescribeAutoScalingInstancesRequestMarshaller().Marshall(describeAutoScalingInstancesRequest);
             DescribeAutoScalingInstancesResponse response = Invoke<DescribeAutoScalingInstancesRequest, DescribeAutoScalingInstancesResponse> (request, this.signer, DescribeAutoScalingInstancesResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Creates a new launch configuration. Once created, the new launch configuration is available for immediate use. </para>
-         /// <para><b>NOTE:</b> The launch configuration name used must be unique, within the scope of the client's AWS account, and the maximum limit of
-         /// launch configurations must not yet have been met, or else the call will fail. </para>
+         /// <para> Returns a description of each Auto Scaling instance in the <c>InstanceIds</c> list. If a list is not provided, the service returns
+         /// the full details of all instances up to a maximum of 50. By default, the service returns a list of 20 items. </para> <para> This action
+         /// supports pagination by returning a token if there are more pages to retrieve. To get the next page, call this action again with the returned
+         /// token as the <c>NextToken</c> parameter. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances()
+        {
+            return DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The
+         /// maximum limit of launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created,
+         /// the new launch configuration is available for immediate use. </para> <para>You can create a launch configuration with Amazon EC2 security
+         /// groups or with Amazon VPC security groups. However, you can't use Amazon EC2 security groups together with Amazon VPC security groups, or
+         /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data
+         /// files. </para>
          /// </summary>
          /// 
          /// <param name="createLaunchConfigurationRequest">Container for the necessary parameters to execute the CreateLaunchConfiguration service
@@ -454,15 +646,15 @@ namespace Amazon.AutoScaling
          /// <exception cref="LimitExceededException"/>
          /// <exception cref="AlreadyExistsException"/>
         public CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) 
-        {           
+        {
             IRequest<CreateLaunchConfigurationRequest> request = new CreateLaunchConfigurationRequestMarshaller().Marshall(createLaunchConfigurationRequest);
             CreateLaunchConfigurationResponse response = Invoke<CreateLaunchConfigurationRequest, CreateLaunchConfigurationResponse> (request, this.signer, CreateLaunchConfigurationResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Deletes the specified auto scaling group if the group has no instances and no scaling activities in progress. </para>
+         /// <para> Deletes the specified Auto Scaling group if the group has no instances and no scaling activities in progress. </para>
          /// <para><b>NOTE:</b> To remove all instances before calling DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the minimum and
          /// maximum size of the AutoScalingGroup to zero. </para>
          /// </summary>
@@ -473,38 +665,37 @@ namespace Amazon.AutoScaling
          /// <exception cref="ResourceInUseException"/>
          /// <exception cref="ScalingActivityInProgressException"/>
         public DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) 
-        {           
+        {
             IRequest<DeleteAutoScalingGroupRequest> request = new DeleteAutoScalingGroupRequestMarshaller().Marshall(deleteAutoScalingGroupRequest);
             DeleteAutoScalingGroupResponse response = Invoke<DeleteAutoScalingGroupRequest, DeleteAutoScalingGroupResponse> (request, this.signer, DeleteAutoScalingGroupResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Disables monitoring of group metrics for the Auto Scaling group specified in AutoScalingGroupName. You can specify the list of
-         /// affected metrics with the Metrics parameter. </para>
+         /// <para> Disables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
+         /// You can specify the list of affected metrics with the <c>Metrics</c> parameter. </para>
          /// </summary>
          /// 
          /// <param name="disableMetricsCollectionRequest">Container for the necessary parameters to execute the DisableMetricsCollection service method
          ///           on AmazonAutoScaling.</param>
          /// 
         public DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest disableMetricsCollectionRequest) 
-        {           
+        {
             IRequest<DisableMetricsCollectionRequest> request = new DisableMetricsCollectionRequestMarshaller().Marshall(disableMetricsCollectionRequest);
             DisableMetricsCollectionResponse response = Invoke<DisableMetricsCollectionRequest, DisableMetricsCollectionResponse> (request, this.signer, DisableMetricsCollectionResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
          /// <para> Updates the configuration for the specified AutoScalingGroup. </para> <para><b>NOTE:</b> To update an Auto Scaling group with a
-         /// launch configuration that has the InstanceMonitoring.enabled flag set to false, you must first ensure that collection of group metrics is
-         /// disabled. Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics collection, you can disable
-         /// collection of all group metrics by calling DisableMetricsCollection. </para> <para> The new settings are registered upon the completion of
-         /// this call. Any launch configuration settings take effect on any triggers after this call returns. Triggers that are currently in progress
-         /// aren't affected. </para> <para><b>NOTE:</b> If the new values are specified for the MinSize or MaxSize parameters, then there will be an
-         /// implicit call to SetDesiredCapacity to set the group to the new MaxSize. All optional parameters are left unchanged if not passed in the
-         /// request. </para>
+         /// launch configuration that has the InstanceMonitoring flag set to False, you must first ensure that collection of group metrics is disabled.
+         /// Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics collection, you can disable collection of
+         /// all group metrics by calling DisableMetricsCollection. </para> <para> The new settings are registered upon the completion of this call. Any
+         /// launch configuration settings take effect on any triggers after this call returns. Triggers that are currently in progress aren't affected.
+         /// </para> <para><b>NOTE:</b> If the new values are specified for the MinSize or MaxSize parameters, then there will be an implicit call to
+         /// SetDesiredCapacity to set the group to the new MaxSize. All optional parameters are left unchanged if not passed in the request. </para>
          /// </summary>
          /// 
          /// <param name="updateAutoScalingGroupRequest">Container for the necessary parameters to execute the UpdateAutoScalingGroup service method on
@@ -512,16 +703,16 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="ScalingActivityInProgressException"/>
         public UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest) 
-        {           
+        {
             IRequest<UpdateAutoScalingGroupRequest> request = new UpdateAutoScalingGroupRequestMarshaller().Marshall(updateAutoScalingGroupRequest);
             UpdateAutoScalingGroupResponse response = Invoke<UpdateAutoScalingGroupRequest, UpdateAutoScalingGroupResponse> (request, this.signer, UpdateAutoScalingGroupResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Returns a full description of the launch configurations given the specified names. </para> <para> If no names are specified, then the
-         /// full details of all launch configurations are returned. </para>
+         /// <para> Returns a full description of the launch configurations, or the specified launch configurations, if they exist. </para> <para> If no
+         /// name is specified, then the full details of all launch configurations are returned. </para>
          /// </summary>
          /// 
          /// <param name="describeLaunchConfigurationsRequest">Container for the necessary parameters to execute the DescribeLaunchConfigurations service
@@ -531,12 +722,26 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="InvalidNextTokenException"/>
         public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest) 
-        {           
+        {
             IRequest<DescribeLaunchConfigurationsRequest> request = new DescribeLaunchConfigurationsRequestMarshaller().Marshall(describeLaunchConfigurationsRequest);
             DescribeLaunchConfigurationsResponse response = Invoke<DescribeLaunchConfigurationsRequest, DescribeLaunchConfigurationsResponse> (request, this.signer, DescribeLaunchConfigurationsResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para> Returns a full description of the launch configurations, or the specified launch configurations, if they exist. </para> <para> If no
+         /// name is specified, then the full details of all launch configurations are returned. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations()
+        {
+            return DescribeLaunchConfigurations(new DescribeLaunchConfigurationsRequest());
+        }
+        
 
          /// <summary>
          /// <para> Returns policy adjustment types for use in the PutScalingPolicy action. </para>
@@ -548,16 +753,28 @@ namespace Amazon.AutoScaling
          /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AmazonAutoScaling.</returns>
          /// 
         public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest) 
-        {           
+        {
             IRequest<DescribeAdjustmentTypesRequest> request = new DescribeAdjustmentTypesRequestMarshaller().Marshall(describeAdjustmentTypesRequest);
             DescribeAdjustmentTypesResponse response = Invoke<DescribeAdjustmentTypesRequest, DescribeAdjustmentTypesResponse> (request, this.signer, DescribeAdjustmentTypesResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of action already executed, see
-         /// the activity record returned in DescribeScalingActivities. </para>
+         /// <para> Returns policy adjustment types for use in the PutScalingPolicy action. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+        public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes()
+        {
+            return DescribeAdjustmentTypes(new DescribeAdjustmentTypesRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
+         /// see the activity record returned in DescribeScalingActivities. </para>
          /// </summary>
          /// 
          /// <param name="describeScheduledActionsRequest">Container for the necessary parameters to execute the DescribeScheduledActions service method
@@ -567,15 +784,29 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="InvalidNextTokenException"/>
         public DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest describeScheduledActionsRequest) 
-        {           
+        {
             IRequest<DescribeScheduledActionsRequest> request = new DescribeScheduledActionsRequestMarshaller().Marshall(describeScheduledActionsRequest);
             DescribeScheduledActionsResponse response = Invoke<DescribeScheduledActionsRequest, DescribeScheduledActionsResponse> (request, this.signer, DescribeScheduledActionsResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Creates a scheduled scaling action for a Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
+         /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
+         /// see the activity record returned in DescribeScalingActivities. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeScheduledActions service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+         /// <exception cref="InvalidNextTokenException"/>
+        public DescribeScheduledActionsResponse DescribeScheduledActions()
+        {
+            return DescribeScheduledActions(new DescribeScheduledActionsRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Creates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
          /// unchanged in the affected Auto Scaling group. </para>
          /// </summary>
          /// 
@@ -585,12 +816,12 @@ namespace Amazon.AutoScaling
          /// <exception cref="LimitExceededException"/>
          /// <exception cref="AlreadyExistsException"/>
         public PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest) 
-        {           
+        {
             IRequest<PutScheduledUpdateGroupActionRequest> request = new PutScheduledUpdateGroupActionRequestMarshaller().Marshall(putScheduledUpdateGroupActionRequest);
             PutScheduledUpdateGroupActionResponse response = Invoke<PutScheduledUpdateGroupActionRequest, PutScheduledUpdateGroupActionResponse> (request, this.signer, PutScheduledUpdateGroupActionResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
          /// <para> Returns a list of metrics and a corresponding list of granularities for each metric. </para>
@@ -602,22 +833,34 @@ namespace Amazon.AutoScaling
          /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AmazonAutoScaling.</returns>
          /// 
         public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest) 
-        {           
+        {
             IRequest<DescribeMetricCollectionTypesRequest> request = new DescribeMetricCollectionTypesRequestMarshaller().Marshall(describeMetricCollectionTypesRequest);
             DescribeMetricCollectionTypesResponse response = Invoke<DescribeMetricCollectionTypesRequest, DescribeMetricCollectionTypesResponse> (request, this.signer, DescribeMetricCollectionTypesResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para> Returns a list of metrics and a corresponding list of granularities for each metric. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AmazonAutoScaling.</returns>
+         /// 
+        public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes()
+        {
+            return DescribeMetricCollectionTypes(new DescribeMetricCollectionTypesRequest());
+        }
+        
 
          /// <summary>
          /// <para> Adjusts the desired size of the AutoScalingGroup by initiating scaling activities. When reducing the size of the group, it is not
-         /// possible to define which EC2 instances will be terminated. This applies to any auto-scaling decisions that might result in terminating
-         /// instances. </para> <para> There are two common use cases for <c>SetDesiredCapacity</c> :
+         /// possible to define which Amazon EC2 instances will be terminated. This applies to any Auto Scaling decisions that might result in
+         /// terminating instances. </para> <para> There are two common use cases for <c>SetDesiredCapacity</c> :
          /// one for users of the Auto Scaling triggering system, and another for developers who write their own triggering systems. Both use
          /// cases relate to the concept of cooldown. </para> <para> In the first case, if you use the Auto Scaling triggering system,
          /// <c>SetDesiredCapacity</c> changes the size of your Auto Scaling group without regard to the cooldown period. This could be useful, for
          /// example, if Auto Scaling did something unexpected for some reason. If your cooldown period is 10 minutes, Auto Scaling would normally reject
-         /// requests to change the size of the group for that entire 10 minute period. The <c>SetDesiredCapacity</c> command allows you to circumvent
+         /// requests to change the size of the group for that entire 10-minute period. The <c>SetDesiredCapacity</c> command allows you to circumvent
          /// this restriction and change the size of the group before the end of the cooldown period. </para> <para> In the second case, if you write
          /// your own triggering system, you can use <c>SetDesiredCapacity</c> to control the size of your Auto Scaling group. If you want the same
          /// cooldown functionality that Auto Scaling offers, you can configure <c>SetDesiredCapacity</c> to honor cooldown by setting the
@@ -630,12 +873,12 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="ScalingActivityInProgressException"/>
         public SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest) 
-        {           
+        {
             IRequest<SetDesiredCapacityRequest> request = new SetDesiredCapacityRequestMarshaller().Marshall(setDesiredCapacityRequest);
             SetDesiredCapacityResponse response = Invoke<SetDesiredCapacityRequest, SetDesiredCapacityResponse> (request, this.signer, SetDesiredCapacityResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
          /// <para> Terminates the specified instance. Optionally, the desired group size can be adjusted. </para> <para><b>NOTE:</b> This call simply
@@ -649,12 +892,12 @@ namespace Amazon.AutoScaling
          /// 
          /// <exception cref="ScalingActivityInProgressException"/>
         public TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest) 
-        {           
+        {
             IRequest<TerminateInstanceInAutoScalingGroupRequest> request = new TerminateInstanceInAutoScalingGroupRequestMarshaller().Marshall(terminateInstanceInAutoScalingGroupRequest);
             TerminateInstanceInAutoScalingGroupResponse response = Invoke<TerminateInstanceInAutoScalingGroupRequest, TerminateInstanceInAutoScalingGroupResponse> (request, this.signer, TerminateInstanceInAutoScalingGroupResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
     }
-}   
+}
     

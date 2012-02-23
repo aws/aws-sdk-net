@@ -29,8 +29,8 @@ namespace Amazon.AutoScaling.Model
         private List<string> autoScalingNotificationTypes = new List<string>();
 
         /// <summary>
-        /// <i>Eric's doc mentions the following: autoscaling:EC2_Instance_Launch, autoscaling:EC2_Instance_Terminate, autoscaling:Error. Should we list
-        /// them? Where can I get a complete list to add here or refer users to?</i>>
+        /// Notification types supported by Auto Scaling. They are: autoscaling:EC2_INSTANCE_LAUNCH, autoscaling:EC2_INSTANCE_LAUNCH_ERROR,
+        /// autoscaling:EC2_INSTANCE_TERMINATE, autoscaling:EC2_INSTANCE_TERMINATE_ERROR, autoscaling:TEST_NOTIFICATION
         ///  
         /// </summary>
         public List<string> AutoScalingNotificationTypes

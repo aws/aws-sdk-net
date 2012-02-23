@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private string ownerId;
         private string dBSecurityGroupName;
         private string dBSecurityGroupDescription;
+        private string vpcId;
         private List<EC2SecurityGroup> eC2SecurityGroups = new List<EC2SecurityGroup>();
         private List<IPRange> iPRanges = new List<IPRange>();
 
@@ -97,7 +98,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the description of the database security group.
+        /// Provides the description of the DB Security Group.
         ///  
         /// </summary>
         public string DBSecurityGroupDescription
@@ -122,6 +123,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSecurityGroupDescription()
         {
             return this.dBSecurityGroupDescription != null;       
+        }
+
+        /// <summary>
+        /// Provides the VpcId of the DB Security Group.
+        ///  
+        /// </summary>
+        public string VpcId
+        {
+            get { return this.vpcId; }
+            set { this.vpcId = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcId property
+        /// </summary>
+        /// <param name="vpcId">The value to set for the VpcId property </param>
+        /// <returns>this instance</returns>
+        public DBSecurityGroup WithVpcId(string vpcId)
+        {
+            this.vpcId = vpcId;
+            return this;
+        }
+            
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this.vpcId != null;       
         }
 
         /// <summary>

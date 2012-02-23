@@ -25,8 +25,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScheduledActions operation.
-    /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of action already executed, see
-    /// the activity record returned in DescribeScalingActivities. </para>
+    /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
+    /// see the activity record returned in DescribeScalingActivities. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeScheduledActions"/>
     public class DescribeScheduledActionsRequest : AmazonWebServiceRequest
@@ -155,7 +155,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The latest scheduled start time to return. If scheduled action names are provided, this field will be ignored.
+        /// The latest scheduled start time to return. If scheduled action names are provided, this field is ignored.
         ///  
         /// </summary>
         public DateTime EndTime

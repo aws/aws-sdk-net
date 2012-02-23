@@ -39,7 +39,7 @@ namespace Amazon.AutoScaling.Model
         private int? cooldown;
 
         /// <summary>
-        /// The name or ARN of the Auto Scaling Group.
+        /// The name or ARN of the Auto Scaling group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -121,9 +121,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number of instances by which to scale. AdjustmentType determines the interpretation of this number (e.g., as an absolute number or as a
-        /// percentage of the existing Auto Scaling group size). A positive increment adds to the current capacity and a negative value removes from the
-        /// current capacity.
+        /// The number of instances by which to scale. <c>AdjustmentType</c> determines the interpretation of this number (e.g., as an absolute number
+        /// or as a percentage of the existing Auto Scaling group size). A positive increment adds to the current capacity and a negative value removes
+        /// from the current capacity.
         ///  
         /// </summary>
         public int ScalingAdjustment

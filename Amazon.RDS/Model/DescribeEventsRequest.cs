@@ -26,8 +26,8 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
     /// <para> Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events
-    /// specific to a particular DB Instance, database security group, database snapshot or database parameter group can be obtained by providing
-    /// the name as a parameter. By default, the past hour of events are returned. </para>
+    /// specific to a particular DB Instance, DB Security Group, database snapshot or DB Parameter Group can be obtained by providing the name as a
+    /// parameter. By default, the past hour of events are returned. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeEvents"/>
     public class DescribeEventsRequest : AmazonWebServiceRequest
@@ -225,7 +225,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeDBInstances request. If this parameter is specified, the response includes only records
+        /// An optional marker provided in the previous DescribeEvents request. If this parameter is specified, the response includes only records
         /// beyond the marker, up to the value specified by <c>MaxRecords</c>.
         ///  
         /// </summary>

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -26,14 +26,18 @@ using System.Text;
 
 namespace Amazon.EC2.Model
 {
-
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    /// <summary>
+    /// Route description
+    /// </summary>
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class Route
     {    
         private string destinationCidrBlockField;
         private string gatewayIdField;
         private string instanceIdField;
         private string stateField;
+        private string instanceOwnerIdField;
+        private string networkInterfaceIdField;
 
         /// <summary>
         /// Gets and sets the DestinationCidrBlock property.
@@ -163,6 +167,66 @@ namespace Amazon.EC2.Model
         public bool IsSetState()
         {
             return this.stateField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the InstanceOwnerId property
+        /// </summary>
+        [XmlElementAttribute(ElementName = "InstanceOwnerId")]
+        public string InstanceOwnerId
+        {
+            get { return this.instanceOwnerIdField; }
+            set { this.instanceOwnerIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstanceOwnerId property
+        /// </summary>
+        /// <param name="instanceOwnerId">The owner of the instance.</param>
+        /// <returns>this instance</returns>
+        public Route WithInstanceOwnerId(string instanceOwnerId)
+        {
+            this.instanceOwnerIdField = instanceOwnerId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the InstanceOwnerId property is set
+        /// </summary>
+        /// <returns>true if the InstanceOwnerId property is set</returns>
+        public bool IsSetInstanceOwnerId()
+        {
+            return !string.IsNullOrEmpty(this.instanceOwnerIdField);
+        }
+
+        /// <summary>
+        /// Gets and sets the NetworkInterfaceId property
+        /// </summary>
+        [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
+        public string NetworkInterfaceId
+        {
+            get { return this.networkInterfaceIdField; }
+            set { this.networkInterfaceIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the NetworkInterfaceId property
+        /// </summary>
+        /// <param name="networkInterfaceId">Network interface ID</param>
+        /// <returns>this instance</returns>
+        public Route WithNetworkInterfaceId(string networkInterfaceId)
+        {
+            this.networkInterfaceIdField = networkInterfaceId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the NetworkInterfaceId property is set
+        /// </summary>
+        /// <returns>true if the NetworkInterfaceId property is set</returns>
+        public bool IsSetNetworkInterfaceId()
+        {
+            return !string.IsNullOrEmpty(this.networkInterfaceIdField);
         }
 
     }

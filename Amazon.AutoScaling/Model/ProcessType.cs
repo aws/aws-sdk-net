@@ -25,6 +25,7 @@ namespace Amazon.AutoScaling.Model
     /// Amazon EC2 instance for an Auto Scaling group, and the <c>Terminate</c> process removes an existing Amazon EC2 instance. </para> <para> The
     /// remaining Auto Scaling process types relate to specific Auto Scaling features:
     /// <ul>
+    /// <li>AddToLoadBalancer</li>
     /// <li>AlarmNotifications</li>
     /// <li>AZRebalance</li>
     /// <li>HealthCheck</li>
@@ -33,11 +34,16 @@ namespace Amazon.AutoScaling.Model
     /// 
     /// </ul>
     /// </para> <para><b>IMPORTANT:</b> If you suspend Launch or Terminate, all other process types are affected to varying degrees. The following
-    /// descriptions discuss how each process type is affected by a suspension of Launch or Terminate. </para> <para> The <c>AlarmNotifications</c>
-    /// process type accepts notifications from Amazon CloudWatch alarms that are associated with the Auto Scaling group. If you suspend the
-    /// <c>AlarmNotifications</c> process type, Auto Scaling will not automatically execute scaling policies that would be triggered by alarms.
-    /// </para> <para> Although the <c>AlarmNotifications</c> process type is not directly affected by a suspension of <c>Launch</c> or
-    /// <c>Terminate</c> ,
+    /// descriptions discuss how each process type is affected by a suspension of Launch or Terminate. </para> <para> The <c>AddToLoadBalancer</c>
+    /// process type adds instances to the the load balancer when the instances are launched. If you suspend this process, Auto Scaling will launch
+    /// the instances but will not add them to the load balancer. If you resume the <c>AddToLoadBalancer</c> process, Auto Scaling will also resume
+    /// adding new instances to the load balancer when they are launched. However, Auto Scaling will not add running instances that were launched
+    /// while the process was suspended; those instances must be added manually using the the RegisterInstancesWithLoadBalancer call in the
+    /// <i>Elastic Load Balancing API Reference</i> .
+    /// </para> <para> The <c>AlarmNotifications</c> process type accepts notifications from Amazon CloudWatch alarms that are associated
+    /// with the Auto Scaling group. If you suspend the <c>AlarmNotifications</c> process type, Auto Scaling will not automatically execute scaling
+    /// policies that would be triggered by alarms. </para> <para> Although the <c>AlarmNotifications</c> process type is not directly affected by a
+    /// suspension of <c>Launch</c> or <c>Terminate</c> ,
     /// alarm notifications are often used to signal that a change in the size of the Auto Scaling group is warranted. If you suspend
     /// <c>Launch</c> or <c>Terminate</c> , Auto Scaling might not be able to implement the alarm's associated policy. </para> <para> The
     /// <c>AZRebalance</c> process type seeks to maintain a balanced number of instances across Availability Zones within a Region. If you remove an

@@ -32,13 +32,14 @@ namespace Amazon.RDS.Model
     {
         private string dBInstanceIdentifier;
         private string dBSnapshotIdentifier;
+        private string snapshotType;
         private int? maxRecords;
         private string marker;
 
         /// <summary>
-        /// The unique identifier for the Amazon RDS DB snapshot. This value is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1
-        /// to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two
-        /// consecutive hyphens</li> </ul>
+        /// A DB Instance Identifier to retrieve the list of DB Snapshots for. Cannot be used in conjunction with DBSnapshotIdentifier. This parameter
+        /// isn't case sensitive. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a
+        /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -66,8 +67,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Instance identifier. This parameter isn't case sensitive. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-        /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        /// A specific DB Snapshot Identifier to describe. Cannot be used in conjunction with DBInstanceIdentifier. This value is stored as a lowercase
+        /// string. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a
+        /// hyphen or contain two consecutive hyphens</li> <li>If this is the identifier of an automated snapshot, the <c>SnapshotType</c> parameter
+        /// must also be specified.</li> </ul>
         ///  
         /// </summary>
         public string DBSnapshotIdentifier
@@ -92,6 +95,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSnapshotIdentifier()
         {
             return this.dBSnapshotIdentifier != null;       
+        }
+
+        /// <summary>
+        /// An optional snapshot type for which snapshots will be returned. If not specified, the returned results will include snapshots of all types.
+        ///  
+        /// </summary>
+        public string SnapshotType
+        {
+            get { return this.snapshotType; }
+            set { this.snapshotType = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotType property
+        /// </summary>
+        /// <param name="snapshotType">The value to set for the SnapshotType property </param>
+        /// <returns>this instance</returns>
+        public DescribeDBSnapshotsRequest WithSnapshotType(string snapshotType)
+        {
+            this.snapshotType = snapshotType;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotType property is set
+        internal bool IsSetSnapshotType()
+        {
+            return this.snapshotType != null;       
         }
 
         /// <summary>
@@ -124,7 +155,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeDBInstances request. If this parameter is specified, the response includes only records
+        /// An optional marker provided in the previous DescribeDBSnapshots request. If this parameter is specified, the response includes only records
         /// beyond the marker, up to the value specified by <c>MaxRecords</c>.
         ///  
         /// </summary>

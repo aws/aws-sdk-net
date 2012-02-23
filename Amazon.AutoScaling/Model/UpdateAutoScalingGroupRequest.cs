@@ -26,13 +26,12 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the UpdateAutoScalingGroup operation.
     /// <para> Updates the configuration for the specified AutoScalingGroup. </para> <para><b>NOTE:</b> To update an Auto Scaling group with a
-    /// launch configuration that has the InstanceMonitoring.enabled flag set to false, you must first ensure that collection of group metrics is
-    /// disabled. Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics collection, you can disable
-    /// collection of all group metrics by calling DisableMetricsCollection. </para> <para> The new settings are registered upon the completion of
-    /// this call. Any launch configuration settings take effect on any triggers after this call returns. Triggers that are currently in progress
-    /// aren't affected. </para> <para><b>NOTE:</b> If the new values are specified for the MinSize or MaxSize parameters, then there will be an
-    /// implicit call to SetDesiredCapacity to set the group to the new MaxSize. All optional parameters are left unchanged if not passed in the
-    /// request. </para>
+    /// launch configuration that has the InstanceMonitoring flag set to False, you must first ensure that collection of group metrics is disabled.
+    /// Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics collection, you can disable collection of
+    /// all group metrics by calling DisableMetricsCollection. </para> <para> The new settings are registered upon the completion of this call. Any
+    /// launch configuration settings take effect on any triggers after this call returns. Triggers that are currently in progress aren't affected.
+    /// </para> <para><b>NOTE:</b> If the new values are specified for the MinSize or MaxSize parameters, then there will be an implicit call to
+    /// SetDesiredCapacity to set the group to the new MaxSize. All optional parameters are left unchanged if not passed in the request. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.UpdateAutoScalingGroup"/>
     public class UpdateAutoScalingGroupRequest : AmazonWebServiceRequest
@@ -244,7 +243,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Availability zones for the group.
+        /// Availability Zones for the group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -411,7 +410,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The identifier for the VPC connection, if applicable.
+        /// The subnet identifier for the Amazon VPC connection, if applicable. You can specify several subnets in a comma-separated list. When you
+        /// specify <c>VPCZoneIdentifier</c> with <c>AvailabilityZones</c>, ensure that the subnets' Availability Zones match the values you specify for
+        /// <c>AvailabilityZones</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

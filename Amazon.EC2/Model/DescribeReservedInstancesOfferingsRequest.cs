@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// about Reserved Instances, go to the Amazon
     /// Elastic Compute Cloud Developer Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class DescribeReservedInstancesOfferingsRequest
     {    
         private List<string> reservedInstancesIdField;
@@ -46,6 +46,8 @@ namespace Amazon.EC2.Model
         private string availabilityZoneField;
         private string productDescriptionField;
         private List<Filter> filterField;
+        private string instanceTenancyField;
+        private string offeringTypeField;
 
         /// <summary>
         /// Gets and sets the ReservedInstancesId property.
@@ -232,5 +234,68 @@ namespace Amazon.EC2.Model
             return (Filter.Count > 0);
         }
 
+        /// <summary>
+        /// The tenancy of the Reserved Instance offering. A Reserved Instance with tenancy of dedicated will run on 
+        /// single-tenant hardware and can only be launched within a VPC.
+        /// Valid Values: default | dedicated
+        /// </summary>
+        [XmlElementAttribute(ElementName = "InstanceTenancy")]
+        public string InstanceTenancy
+        {
+            get { return this.instanceTenancyField; }
+            set { this.instanceTenancyField = value; }
+        }
+
+        /// <summary>
+        /// Sets the tenancy of the Reserved Instance offering. A Reserved Instance with tenancy of dedicated will run on 
+        /// single-tenant hardware and can only be launched within a VPC.
+        /// </summary>
+        /// <param name="instanceTenancy">Instance Tenancy. Valid Values: default | dedicated</param>
+        /// <returns>this instance</returns>
+        public DescribeReservedInstancesOfferingsRequest WithInstanceTenancy(string instanceTenancy)
+        {
+            this.instanceTenancyField = instanceTenancy;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the InstanceTenancy property is set.
+        /// </summary>
+        /// <returns>true if the InstanceTenancy property is set</returns>
+        public bool IsSetInstanceTenancy()
+        {
+            return !string.IsNullOrEmpty(this.instanceTenancyField);
+        }
+
+        /// <summary>
+        /// Gets and sets the Reserved Instance offering type.
+        /// Valid Values: Heavy Utilization | Medium Utilization | Light Utilization
+        /// </summary>
+        [XmlElementAttribute(ElementName = "OfferingType")]
+        public string OfferingType
+        {
+            get { return this.offeringTypeField; }
+            set { this.offeringTypeField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Reserved Instance offering type.
+        /// </summary>
+        /// <param name="offeringType">Offering type. Valid values: Heavy Utilization | Medium Utilization | Light Utilization</param>
+        /// <returns>this instance</returns>
+        public DescribeReservedInstancesOfferingsRequest WithOfferingType(string offeringType)
+        {
+            this.offeringTypeField = offeringType;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the OfferingType property is set.
+        /// </summary>
+        /// <returns>true if the OfferingType property is set</returns>
+        public bool IsSetOfferingType()
+        {
+            return !string.IsNullOrEmpty(this.offeringTypeField);
+        }
     }
 }

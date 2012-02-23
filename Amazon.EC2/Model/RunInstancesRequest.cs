@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
     /// Elastic Compute Cloud
     /// Developer Guide
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class RunInstancesRequest
     {    
         private string imageIdField;
@@ -140,7 +140,7 @@ namespace Amazon.EC2.Model
         private InstanceLicenseSpecification licenseField;
         private string privateIpAddressField;
         private string clientTokenField;
-        private string hypervisorField;
+        private List<InstanceNetworkInterfaceSpecification> networkInterfaceSetField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
@@ -872,34 +872,44 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the Hypervisor property.
+        /// Gets and sets the NetworkInterfaceSet property.
+        /// A set of one or more existing network interfaces to attach to the instance.
         /// </summary>
-        [XmlElementAttribute(ElementName = "Hypervisor")]
-        public string Hypervisor
+        [XmlElementAttribute(ElementName = "NetworkInterfaceSet")]
+        public List<InstanceNetworkInterfaceSpecification> NetworkInterfaceSet
         {
-            get { return this.hypervisorField; }
-            set { this.hypervisorField = value; }
+            get
+            {
+                if (this.networkInterfaceSetField == null)
+                {
+                    this.networkInterfaceSetField = new List<InstanceNetworkInterfaceSpecification>();
+                }
+                return this.networkInterfaceSetField;
+            }
+            set { this.networkInterfaceSetField = value; }
         }
 
         /// <summary>
-        /// Sets the Hypervisor property
+        /// Sets the NetworkInterfaceSet property.
         /// </summary>
-        /// <param name="hypervisor">Hypervisor property</param>
+        /// <param name="list">A set of one or more existing network interfaces to attach to the instance.</param>
         /// <returns>this instance</returns>
-        public RunInstancesRequest WithHypervisor(string hypervisor)
+        public RunInstancesRequest WithNetworkInterfaceSet(params InstanceNetworkInterfaceSpecification[] list)
         {
-            this.hypervisorField = hypervisor;
+            foreach (InstanceNetworkInterfaceSpecification item in list)
+            {
+                this.NetworkInterfaceSet.Add(item);
+            }
             return this;
         }
 
         /// <summary>
-        /// Checks if Hypervisor property is set
+        /// Checks if the NetworkInterfaceSet property is set
         /// </summary>
-        /// <returns>true if Hypervisor property is set</returns>
-        public bool IsSetHypervisor()
+        /// <returns>true if the NetworkInterfaceSet property is set</returns>
+        public bool IsSetNetworkInterfaceSet()
         {
-            return this.hypervisorField != null;
+            return (this.NetworkInterfaceSet.Count > 0);
         }
-
     }
 }

@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAutoScalingGroup operation.
-    /// <para> Deletes the specified auto scaling group if the group has no instances and no scaling activities in progress. </para>
+    /// <para> Deletes the specified Auto Scaling group if the group has no instances and no scaling activities in progress. </para>
     /// <para><b>NOTE:</b> To remove all instances before calling DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the minimum and
     /// maximum size of the AutoScalingGroup to zero. </para>
     /// </summary>
@@ -33,6 +33,25 @@ namespace Amazon.AutoScaling.Model
     public class DeleteAutoScalingGroupRequest : AmazonWebServiceRequest
     {
         private string autoScalingGroupName;
+        private bool? forceDelete;
+
+        /// <summary>
+        /// The name of the Auto Scaling group.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1600</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string AutoScalingGroupName
         {
             get { return this.autoScalingGroupName; }
@@ -55,6 +74,35 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this.autoScalingGroupName != null;       
+        }
+
+        /// <summary>
+        /// Starting with API version 2011-01-01, specifies that the Auto Scaling group will be deleted along with all instances associated with the
+        /// group, without waiting for all instances to be terminated.
+        ///  
+        /// </summary>
+        public bool ForceDelete
+        {
+            get { return this.forceDelete ?? default(bool); }
+            set { this.forceDelete = value; }
+        }
+
+        /// <summary>
+        /// Sets the ForceDelete property
+        /// </summary>
+        /// <param name="forceDelete">The value to set for the ForceDelete property </param>
+        /// <returns>this instance</returns>
+        public DeleteAutoScalingGroupRequest WithForceDelete(bool forceDelete)
+        {
+            this.forceDelete = forceDelete;
+            return this;
+        }
+            
+
+        // Check to see if ForceDelete property is set
+        internal bool IsSetForceDelete()
+        {
+            return this.forceDelete.HasValue;       
         }
     }
 }

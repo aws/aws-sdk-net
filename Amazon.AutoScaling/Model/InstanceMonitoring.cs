@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The InstanceMonitoring Data Type. </para>
+    /// <para> The <c>InstanceMonitoring</c> data type. </para>
     /// </summary>
     public class InstanceMonitoring  
     {
@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
         private bool? enabled;
 
         /// <summary>
-        /// If true, instance monitoring is enabled.
+        /// If <c>True</c>, instance monitoring is enabled.
         ///  
         /// </summary>
         public bool Enabled

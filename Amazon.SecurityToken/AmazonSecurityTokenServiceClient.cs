@@ -73,6 +73,26 @@ namespace Amazon.SecurityToken
             : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
+        /// Constructs AmazonSecurityTokenServiceClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public AmazonSecurityTokenServiceClient(AWSCredentials credentials)
+            : this(credentials, new AmazonSecurityTokenServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSecurityTokenServiceClient with AWS Credentials and an
+        /// AmazonSecurityTokenServiceClient Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The AmazonSecurityTokenServiceClient Configuration Object</param>
+        public AmazonSecurityTokenServiceClient(AWSCredentials credentials, AmazonSecurityTokenServiceConfig clientConfig)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User)
+        {
+        }
+
+        /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with AWS Access Key ID and AWS Secret Key
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>

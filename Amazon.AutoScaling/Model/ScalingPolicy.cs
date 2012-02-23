@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The ScalingPolicy data type. </para>
+    /// <para> The <c>ScalingPolicy</c> data type. </para>
     /// </summary>
     public class ScalingPolicy  
     {
@@ -117,8 +117,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number associated with the specified AdjustmentType. A positive value adds to the current capacity and a negative value removes from the
-        /// current capacity.
+        /// The number associated with the specified adjustment type. A positive value adds to the current capacity and a negative value removes from
+        /// the current capacity.
         ///  
         /// </summary>
         public int ScalingAdjustment
@@ -146,7 +146,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Specifies whether the ScalingAdjustment is an absolute number or a percentage of the current capacity. Valid values are
+        /// Specifies whether the <c>ScalingAdjustment</c> is an absolute number or a percentage of the current capacity. Valid values are
         /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentOfCapacity</c>.
         ///  
         /// <para>

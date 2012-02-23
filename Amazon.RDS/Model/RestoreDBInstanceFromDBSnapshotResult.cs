@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the RestoreDBInstanceFromDBSnapshot action.
     /// </summary>
-    public class RestoreDBInstanceFromDBSnapshotResult : AmazonWebServiceResponse
+    public class RestoreDBInstanceFromDBSnapshotResult
     {
         private DBInstance dBInstanceValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the RestoreDBInstanceFromDBSnapshotResult property.
         /// Contains the result of a successful invocation of the RestoreDBInstanceFromDBSnapshot
         /// action.
-        /// 
+        /// </summary>
         public DBInstance DBInstance
         {
             get { return this.dBInstanceValue; }

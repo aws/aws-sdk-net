@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -922,6 +922,22 @@ namespace Amazon.EC2
         }
 
         /// <summary>
+        /// Submit feedback about an instance's status. This action works only for instances that are in the running state. 
+        /// If your experience with the instance differs from the instance status returned by the DescribeInstanceStatus 
+        /// action, use ReportInstanceStatus to report your experience with the instance. Amazon EC2 collects this 
+        /// information to improve the accuracy of status checks.
+        /// </summary>
+        /// <param name="request">Report Instance Status request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Report Instance Status response from the service</returns>
+        /// <remarks>Use of this action does not change the value returned by DescribeInstanceStatus.</remarks>
+        public ReportInstanceStatusResponse ReportInstanceStatus(ReportInstanceStatusRequest request)
+        {
+            return Invoke<ReportInstanceStatusResponse>(ConvertReportInstanceStatus(request));
+        }
+
+        /// <summary>
         /// Describe Instances 
         /// </summary>
         /// <param name="request">Describe Instances  request</param>
@@ -1639,8 +1655,7 @@ namespace Amazon.EC2
         /// filters (e.g., the subnet is in a particular VPC, and the subnet's state is
         /// available). The result includes information for a particular subnet only
         /// if the subnet matches all your filters. If there's no match, no special
-        /// message is returned; the response is simply empty. The following table
-        /// shows the available filters.
+        /// message is returned; the response is simply empty.
         /// </remarks>
         public DescribeSubnetsResponse DescribeSubnets(DescribeSubnetsRequest request)
         {
@@ -2051,8 +2066,8 @@ namespace Amazon.EC2
         /// <remarks>
         /// Creates a set of DHCP options that you can then associate with one or more VPCs,
         /// causing all existing and new instances that you launch in those VPCs to use the
-        /// set of DHCP options. The following table lists the individual DHCP options you can
-        /// specify. For more information about the options, go to RFC 2132 - http://www.ietf.org/rfc/rfc2132.txt
+        /// set of DHCP options. 
+        /// For more information about the options, go to RFC 2132 - http://www.ietf.org/rfc/rfc2132.txt
         /// </remarks>
         public CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request)
         {
@@ -2678,6 +2693,105 @@ namespace Amazon.EC2
             return Invoke<DeleteNetworkAclEntryResponse>(ConvertDeleteNetworkAclEntry(request));
         }
 
+        /// <summary>
+        /// Attaches a network interface to an instance.
+        /// </summary>
+        /// <param name="request">Attach Network Interface request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Attach Network Interface response from the service</returns>
+        public AttachNetworkInterfaceResponse AttachNetworkInterface(AttachNetworkInterfaceRequest request)
+        {
+            return Invoke<AttachNetworkInterfaceResponse>(ConvertAttachNetworkInterface(request));
+        }
+
+        /// <summary>
+        /// Creates a network interface in the specified subnet.
+        /// </summary>
+        /// <param name="request">Create Network Interface request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Create Network Interface response from the service</returns>
+        public CreateNetworkInterfaceResponse CreateNetworkInterface(CreateNetworkInterfaceRequest request)
+        {
+            return Invoke<CreateNetworkInterfaceResponse>(ConvertCreateNetworkInterface(request));
+        }
+
+        /// <summary>
+        /// Deletes the specified network interface.
+        /// </summary>
+        /// <param name="request">Delete Network Interface request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Delete Network Interface response from the service</returns>
+        public DeleteNetworkInterfaceResponse DeleteNetworkInterface(DeleteNetworkInterfaceRequest request)
+        {
+            return Invoke<DeleteNetworkInterfaceResponse>(ConvertDeleteNetworkInterface(request));
+        }
+
+        /// <summary>
+        /// Describes a network interface attribute. 
+        /// </summary>
+        /// <param name="request">Describe Network Interface Attribute request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Network Interface Attribute response from the service</returns>
+        /// <remarks>Only one attribute can be specified per call.</remarks>
+        public DescribeNetworkInterfaceAttributeResponse DescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request)
+        {
+            return Invoke<DescribeNetworkInterfaceAttributeResponse>(ConvertDescribeNetworkInterfaceAttribute(request));
+        }
+
+        /// <summary>
+        /// Provides information about one or more network interfaces.
+        /// </summary>
+        /// <param name="request">Describe Network Interfaces request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Network Interfaces response from the service</returns>
+        public DescribeNetworkInterfacesResponse DescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request)
+        {                         
+            return Invoke<DescribeNetworkInterfacesResponse>(ConvertDescribeNetworkInterfaces(request));
+        }
+
+        /// <summary>
+        /// Detaches a network interface from an instance.
+        /// </summary>
+        /// <param name="request">Detach Network Interface request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Detach Network Interface response from the service</returns>
+        public DetachNetworkInterfaceResponse DetachNetworkInterface(DetachNetworkInterfaceRequest request)
+        {
+            return Invoke<DetachNetworkInterfaceResponse>(ConvertDetachNetworkInterface(request));
+        }
+
+        /// <summary>
+        /// Modifies a network interface attribute. 
+        /// </summary>
+        /// <param name="request">Modify Network Interface Attribute request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Modify Network Interface Attribute response from the service</returns>
+        /// <remarks>Only one attribute can be specified per call.</remarks>
+        public ModifyNetworkInterfaceAttributeResponse ModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request)
+        {
+            return Invoke<ModifyNetworkInterfaceAttributeResponse>(ConvertModifyNetworkInterfaceAttribute(request));
+        }
+
+        /// <summary>
+        /// Resets a network interface attribute. 
+        /// </summary>
+        /// <param name="request">Reset Network Interface Attribute request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Reset Network Interface Attribute response from the service</returns>
+        /// <remarks>Only one attribute can be specified per call.</remarks>
+        public ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request)
+        {
+            return Invoke<ResetNetworkInterfaceAttributeResponse>(ConvertResetNetworkInterfaceAttribute(request));
+        }
+
         #endregion
 
         #region Private API
@@ -2810,7 +2924,7 @@ namespace Amazon.EC2
                         statusCode == HttpStatusCode.ServiceUnavailable)
                     {
                         shouldRetry = true;
-                        PauseOnRetry(++retries, maxRetries, statusCode, we);
+                        PauseOnRetry(++retries, maxRetries, statusCode, we, responseBody);
                     }
                     else
                     {
@@ -2843,7 +2957,7 @@ namespace Amazon.EC2
                             }
                             else
                             {
-                                throw ReportAnyErrors(responseBody, statusCode);
+                                throw ReportAnyErrors(responseBody, statusCode, we);
                             }
                         }
                     }
@@ -2864,7 +2978,7 @@ namespace Amazon.EC2
         /**
          * Look for additional error strings in the response and return formatted exception
          */
-        private static AmazonEC2Exception ReportAnyErrors(string responseBody, HttpStatusCode status)
+        private static AmazonEC2Exception ReportAnyErrors(string responseBody, HttpStatusCode status, Exception innerException)
         {
             AmazonEC2Exception ex = null;
 
@@ -2899,12 +3013,12 @@ namespace Amazon.EC2
                 }
                 else
                 {
-                    ex = new AmazonEC2Exception("Internal Error", status);
+                    ex = new AmazonEC2Exception("Internal Error", status, innerException);
                 }
             }
             else
             {
-                ex = new AmazonEC2Exception("Internal Error", status);
+                ex = new AmazonEC2Exception("Internal Error", status, innerException);
             }
             return ex;
         }
@@ -2912,7 +3026,7 @@ namespace Amazon.EC2
         /**
          * Exponential sleep on failed request
          */
-        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status, Exception cause)
+        private static void PauseOnRetry(int retries, int maxRetries, HttpStatusCode status, Exception cause, string responseBody)
         {
             if (retries <= maxRetries)
             {
@@ -2921,11 +3035,7 @@ namespace Amazon.EC2
             }
             else
             {
-                throw new AmazonEC2Exception(
-                    "Maximum number of retry attempts reached : " + (retries - 1),
-                    status,
-                    cause
-                    );
+                throw ReportAnyErrors(responseBody, status, cause);
             }
         }
 
@@ -3064,6 +3174,10 @@ namespace Amazon.EC2
             if (request.IsSetAllocationId())
             {
                 parameters["AllocationId"] = request.AllocationId;
+            }
+            if (request.IsSetNetworkInterfaceId())
+            {
+                parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
             }
 
             return parameters;
@@ -3556,10 +3670,6 @@ namespace Amazon.EC2
         {
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters["Action"] = "CreateSecurityGroup";
-            if (request.IsSetGroupId())
-            {
-                parameters["GroupId"] = request.GroupId;
-            }
             if (request.IsSetGroupName())
             {
                 parameters["GroupName"] = request.GroupName;
@@ -3958,7 +4068,14 @@ namespace Amazon.EC2
 
                 describeReservedInstancesOfferingsRequestFilterListIndex++;
             }
-
+            if (request.IsSetInstanceTenancy())
+            {
+                parameters["InstanceTenancy"] = request.InstanceTenancy;
+            }
+            if (request.IsSetOfferingType())
+            {
+                parameters["OfferingType"] = request.OfferingType;
+            }
             return parameters;
         }
 
@@ -3993,6 +4110,10 @@ namespace Amazon.EC2
                 }
 
                 describeReservedInstancesRequestFilterListIndex++;
+            }
+            if (request.IsSetOfferingType())
+            {
+                parameters["OfferingType"] = request.OfferingType;
             }
 
             return parameters;
@@ -4322,6 +4443,43 @@ namespace Amazon.EC2
 
                 describeInstanceStatusRequestFilterListIndex++;
             }
+
+            return parameters;
+        }
+
+        /**
+         * Convert ReportInstanceStatusRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertReportInstanceStatus(ReportInstanceStatusRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ReportInstanceStatus";
+
+            List<string> reportInstanceStatusRequestInstanceIdList = request.InstanceId;
+            int reportInstanceStatusRequestInstanceIdListIndex = 1;
+            foreach (string reportInstanceStatusRequestInstanceId in reportInstanceStatusRequestInstanceIdList)
+            {
+                parameters[String.Concat("InstanceId", ".", reportInstanceStatusRequestInstanceIdListIndex)] = reportInstanceStatusRequestInstanceId;
+                reportInstanceStatusRequestInstanceIdListIndex++;
+            }
+
+            if (request.IsSetStatus())
+                parameters["Status"] = request.Status;
+            if (request.IsSetStartTime())
+                parameters["StartTime"] = request.StartTime;
+            if (request.IsSetEndTime())
+                parameters["EndTime"] = request.EndTime;
+
+            List<string> reportInstanceStatusReasonCodeList = request.ReasonCode;
+            int reportInstanceStatusReasonCodeListIndex = 1;
+            foreach (string reportInstanceStatusReasonCode in reportInstanceStatusReasonCodeList)
+            {
+                parameters[String.Concat("ReasonCode", ".", reportInstanceStatusReasonCodeListIndex)] = reportInstanceStatusReasonCode;
+                reportInstanceStatusReasonCodeListIndex++;
+            }
+
+            if (request.IsSetDescription())
+                parameters["Description"] = request.Description;
 
             return parameters;
         }
@@ -5149,9 +5307,49 @@ namespace Amazon.EC2
             {
                 parameters["ClientToken"] = request.ClientToken;
             }
-            if (request.IsSetHypervisor())
+            if (request.IsSetNetworkInterfaceSet())
             {
-                parameters["Hypervisor"] = request.Hypervisor;
+                List<InstanceNetworkInterfaceSpecification> instanceNetworkInterfaceList = request.NetworkInterfaceSet;
+                int instanceNetworkInterfaceListIndex = 1;
+                foreach (InstanceNetworkInterfaceSpecification instanceNetworkInterface in instanceNetworkInterfaceList)
+                {
+                    if (instanceNetworkInterface.IsSetNetworkInterfaceId())
+                    {
+                        parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "NetworkInterfaceId")] = instanceNetworkInterface.NetworkInterfaceId;
+                    }
+                    if (instanceNetworkInterface.IsSetDeviceIndex())
+                    {
+                        parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "DeviceIndex")] = instanceNetworkInterface.DeviceIndex.ToString();
+                    }
+                    if (instanceNetworkInterface.IsSetSubnetId())
+                    {
+                        parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "SubnetId")] = instanceNetworkInterface.SubnetId;
+                    }
+                    if (instanceNetworkInterface.IsSetDescription())
+                    {
+                        parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "Description")] = instanceNetworkInterface.Description;
+                    }
+                    if (instanceNetworkInterface.IsSetPrivateIpAddress())
+                    {
+                        parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "PrivateIpAddress")] = instanceNetworkInterface.PrivateIpAddress;
+                    }
+                    if (instanceNetworkInterface.IsSetDeleteOnTermination())
+                    {
+                        parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "DeleteOnTermination")] = instanceNetworkInterface.DeleteOnTermination.ToString();
+                    }
+                    if (instanceNetworkInterface.IsSetGroupId())
+                    {
+                        List<string> groupIdList = instanceNetworkInterface.GroupId;
+                        int groupIdIndex = 1;
+                        foreach (string groupId in groupIdList)
+                        {
+                            parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "SecurityGroupId", ".", groupIdIndex)] = groupId;
+                            groupIdIndex++;
+                        }
+                    }
+
+                    instanceNetworkInterfaceListIndex++;
+                }
             }
 
             return parameters;
@@ -5615,6 +5813,50 @@ namespace Amazon.EC2
                 {
                     parameters[String.Concat("LaunchSpecification", ".", "SubnetId")] = requestSpotInstancesRequestLaunchSpecification.SubnetId;
                 }
+                if (requestSpotInstancesRequestLaunchSpecification.IsSetNetworkInterfaceSet())
+                {
+                    List<InstanceNetworkInterfaceSpecification> instanceNetworkInterfaceList = requestSpotInstancesRequestLaunchSpecification.NetworkInterfaceSet;
+                    int instanceNetworkInterfaceListIndex = 1;
+                    foreach (InstanceNetworkInterfaceSpecification instanceNetworkInterface in instanceNetworkInterfaceList)
+                    {
+                        if (instanceNetworkInterface.IsSetNetworkInterfaceId())
+                        {
+                            parameters[String.Concat("LaunchSpecification", ".", "NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "NetworkInterfaceId")] = instanceNetworkInterface.NetworkInterfaceId;
+                        }
+                        if (instanceNetworkInterface.IsSetDeviceIndex())
+                        {
+                            parameters[String.Concat("LaunchSpecification", ".", "NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "DeviceIndex")] = instanceNetworkInterface.DeviceIndex.ToString();
+                        }
+                        if (instanceNetworkInterface.IsSetSubnetId())
+                        {
+                            parameters[String.Concat("LaunchSpecification", ".", "NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "SubnetId")] = instanceNetworkInterface.SubnetId;
+                        }
+                        if (instanceNetworkInterface.IsSetDescription())
+                        {
+                            parameters[String.Concat("LaunchSpecification", ".", "NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "Description")] = instanceNetworkInterface.Description;
+                        }
+                        if (instanceNetworkInterface.IsSetPrivateIpAddress())
+                        {
+                            parameters[String.Concat("LaunchSpecification", ".", "NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "PrivateIpAddress")] = instanceNetworkInterface.PrivateIpAddress;
+                        }
+                        if (instanceNetworkInterface.IsSetDeleteOnTermination())
+                        {
+                            parameters[String.Concat("LaunchSpecification", ".", "NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "DeleteOnTermination")] = instanceNetworkInterface.DeleteOnTermination.ToString();
+                        }
+                        if (instanceNetworkInterface.IsSetGroupId())
+                        {
+                            List<string> groupIdList = instanceNetworkInterface.GroupId;
+                            int groupIdIndex = 1;
+                            foreach (string groupId in groupIdList)
+                            {
+                                parameters[String.Concat("LaunchSpecification", ".", "NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "SecurityGroupId", ".", groupIdIndex)] = groupId;
+                                groupIdIndex++;
+                            }
+                        }
+
+                        instanceNetworkInterfaceListIndex++;
+                    }
+                }
             }
 
             return parameters;
@@ -5796,12 +6038,19 @@ namespace Amazon.EC2
                 {
                     parameters[String.Concat("LaunchSpecification", ".", "Architecture")] = importInstanceRequestLaunchSpecification.Architecture;
                 }
-                List<string> launchSpecificationSecurityGroupList = importInstanceRequestLaunchSpecification.SecurityGroup;
+                List<string> launchSpecificationSecurityGroupList = request.LaunchSpecification.SecurityGroup;
                 int launchSpecificationSecurityGroupListIndex = 1;
                 foreach (string launchSpecificationSecurityGroup in launchSpecificationSecurityGroupList)
                 {
-                    parameters[String.Concat("LaunchSpecification", ".", "SecurityGroup", ".", launchSpecificationSecurityGroupListIndex)] = launchSpecificationSecurityGroup;
+                    parameters[String.Concat("LaunchSpecification", ".", "GroupName", ".", launchSpecificationSecurityGroupListIndex)] = launchSpecificationSecurityGroup;
                     launchSpecificationSecurityGroupListIndex++;
+                }
+                List<string> launchSpecificationSecurityGroupIdList = request.LaunchSpecification.SecurityGroupId;
+                int launchSpecificationSecurityGroupIdListIndex = 1;
+                foreach (string launchSpecificationSecurityGroupId in launchSpecificationSecurityGroupIdList)
+                {
+                    parameters[String.Concat("LaunchSpecification", ".", "GroupId", ".", launchSpecificationSecurityGroupIdListIndex)] = launchSpecificationSecurityGroupId;
+                    launchSpecificationSecurityGroupIdListIndex++;
                 }
                 if (importInstanceRequestLaunchSpecification.IsSetUserData())
                 {
@@ -5821,10 +6070,6 @@ namespace Amazon.EC2
                     if (launchSpecificationPlacement.IsSetGroupName())
                     {
                         parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "GroupName")] = launchSpecificationPlacement.GroupName;
-                    }
-                    if (launchSpecificationPlacement.IsSetTenancy())
-                    {
-                        parameters[String.Concat("LaunchSpecification", ".", "Placement", ".", "Tenancy")] = launchSpecificationPlacement.Tenancy;
                     }
                 }
                 if (importInstanceRequestLaunchSpecification.IsSetMonitoring())
@@ -6329,6 +6574,10 @@ namespace Amazon.EC2
             {
                 parameters["InstanceId"] = request.InstanceId;
             }
+            if (request.IsSetNetworkInterfaceId())
+            {
+                parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+            }
 
             return parameters;
         }
@@ -6355,6 +6604,10 @@ namespace Amazon.EC2
             if (request.IsSetInstanceId())
             {
                 parameters["InstanceId"] = request.InstanceId;
+            }
+            if (request.IsSetNetworkInterfaceId())
+            {
+                parameters["NetworkInterfaceid"] = request.NetworkInterfaceId;
             }
 
             return parameters;
@@ -6600,6 +6853,207 @@ namespace Amazon.EC2
             if (request.IsSetEgress())
             {
                 parameters["Egress"] = request.Egress.ToString().ToLower();
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert AttachNetworkInterfaceRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertAttachNetworkInterface(AttachNetworkInterfaceRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "AttachNetworkInterface";
+
+            if (request.IsSetNetworkInterfaceId())
+                parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+            if (request.IsSetInstanceId())
+                parameters["InstanceId"] = request.InstanceId;
+            if (request.IsSetDeviceIndex())
+                parameters["DeviceIndex"] = request.DeviceIndex.ToString();
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateNetworkInterfaceRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateNetworkInterface(CreateNetworkInterfaceRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateNetworkInterface";
+
+            if (request.IsSetSubnetId())
+                parameters["SubnetId"] = request.SubnetId;
+            if (request.IsSetDescription())
+                parameters["Description"] = request.Description;
+            if (request.IsSetPrivateIpAddress())
+                parameters["PrivateIpAddress"] = request.PrivateIpAddress;
+
+            if (request.IsSetGroupId())
+            {
+                List<string> securityGroupIdList = request.GroupId;
+                int securityGroupIdListListIndex = 1;
+                foreach (string securityGroupId in securityGroupIdList)
+                {
+                    parameters[String.Concat("SecurityGroupId", ".", securityGroupIdListListIndex)] = securityGroupId;
+                    securityGroupIdListListIndex++;
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteNetworkInterfaceRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeleteNetworkInterface(DeleteNetworkInterfaceRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeleteNetworkInterface";
+
+            if (request.IsSetNetworkInterfaceId())
+                parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeNetworkInterfaceAttributeRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeNetworkInterfaceAttribute";
+
+            if (request.IsSetNetworkInterfaceId())
+            {
+                parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+            }
+            if (request.IsSetAttribute())
+            {
+                parameters["Attribute"] = request.Attribute;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeNetworkInterfacesRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeNetworkInterfaces";
+
+            List<string> describeNetworkInterfacesRequestIdList = request.NetworkInterfaceId;
+            int describeNetworkInterfacesRequestListIndex = 1;
+            foreach (string describeNetworkInterfacesRequestInterfaceId in describeNetworkInterfacesRequestIdList)
+            {
+                parameters[String.Concat("NetworkInterfaceId", ".", describeNetworkInterfacesRequestListIndex)] = describeNetworkInterfacesRequestInterfaceId;
+                describeNetworkInterfacesRequestListIndex++;
+            }
+
+            List<Filter> describeNetworkInterfacesRequestFilterList = request.Filter;
+            int describeNetworkInterfacesRequestFilterListIndex = 1;
+            foreach (Filter describeNetworkInterfacesRequestFilter in describeNetworkInterfacesRequestFilterList)
+            {
+                if (describeNetworkInterfacesRequestFilter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeNetworkInterfacesRequestFilterListIndex, ".", "Name")] = describeNetworkInterfacesRequestFilter.Name;
+                }
+                List<string> filterValueList = describeNetworkInterfacesRequestFilter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", describeNetworkInterfacesRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                describeNetworkInterfacesRequestFilterListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DetachNetworkInterfaceRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDetachNetworkInterface(DetachNetworkInterfaceRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DetachNetworkInterface";
+
+            if (request.IsSetAttachmentId())
+                parameters["AttachmentId"] = request.AttachmentId;
+            if (request.IsSetForce())
+                parameters["Force"] = request.Force.ToString();
+
+            return parameters;
+        }
+
+        /**
+         * Convert ModifyNetworkInterfaceAttributeRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ModifyNetworkInterfaceAttribute";
+
+            if (request.IsSetNetworkInterfaceId())
+            {
+                parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+            }
+            if (request.IsSetDescription())
+            {
+                parameters["Description"] = request.Description;
+            }
+            if (request.IsSetSourceDestCheck())
+            {
+                parameters["SourceDestCheck"] = request.SourceDestCheck.ToString();
+            }
+            if (request.IsSetGroupId())
+            {
+                List<string> groupIdList = request.GroupId;
+                int groupIdListListIndex = 1;
+                foreach (string groupId in groupIdList)
+                {
+                    parameters[String.Concat("SecurityGroupId", ".", groupIdListListIndex)] = groupId;
+                    groupIdListListIndex++;
+                }
+            }
+            if (request.IsSetAttachment())
+            {
+                ModifyNetworkInterfaceAttachment attachment = request.Attachment;
+                if (attachment.IsSetAttachmentId())
+                {
+                    parameters[String.Concat("Attachment", ".", "AttachmentId")] = attachment.AttachmentId;
+                }
+                if (attachment.IsSetDeleteOnTermination())
+                {
+                    parameters[String.Concat("Attachment", ".", "DeleteOnTermination")] = attachment.DeleteOnTermination.ToString();
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert ResetNetworkInterfaceAttributeRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ResetNetworkInterfaceAttribute";
+
+            if (request.IsSetNetworkInterfaceId())
+            {
+                parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+            }
+            if (request.IsSetAttribute())
+            {
+                parameters["Attribute"] = request.Attribute;
             }
 
             return parameters;

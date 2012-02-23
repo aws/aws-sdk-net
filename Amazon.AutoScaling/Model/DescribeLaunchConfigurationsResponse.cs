@@ -34,7 +34,15 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         public DescribeLaunchConfigurationsResult DescribeLaunchConfigurationsResult
         {
-            get { return this.describeLaunchConfigurationsResult; }
+            get 
+            {
+                if(this.describeLaunchConfigurationsResult == null)
+                {
+                    this.describeLaunchConfigurationsResult = new DescribeLaunchConfigurationsResult();
+                }
+
+                return this.describeLaunchConfigurationsResult; 
+            }
             set { this.describeLaunchConfigurationsResult = value; }
         }
     }

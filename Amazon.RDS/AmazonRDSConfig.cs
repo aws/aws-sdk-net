@@ -30,6 +30,7 @@ namespace Amazon.RDS
         public AmazonRDSConfig()
         {
             this.ServiceURL = "https://rds.amazonaws.com";
+            
         }
 
         /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.RDS
         {
             get
             {
-                return "2011-04-01";
+                return "2012-01-15";
             }
         }
     }

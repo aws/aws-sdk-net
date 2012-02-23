@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public CreateDBSnapshotResult CreateDBSnapshotResult
         {
-            get { return this.createDBSnapshotResult; }
+            get 
+            {
+                if(this.createDBSnapshotResult == null)
+                {
+                    this.createDBSnapshotResult = new CreateDBSnapshotResult();
+                }
+
+                return this.createDBSnapshotResult; 
+            }
             set { this.createDBSnapshotResult = value; }
         }
     }

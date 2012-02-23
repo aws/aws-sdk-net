@@ -92,8 +92,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeDBInstances request. If this parameter is specified, the response includes only records
-        /// beyond the marker, up to the value specified by <c>MaxRecords</c>.
+        /// An optional marker provided in the previous DescribeEngineDefaultParameters request. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
         ///  
         /// </summary>
         public string Marker

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-11-01/"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-12-15/"
     exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
     <xsl:variable name="ns"
-        select="'http://ec2.amazonaws.com/doc/2011-11-01/'" />
+        select="'http://ec2.amazonaws.com/doc/2011-12-15/'" />
     <xsl:template match="ec2:DeleteSpotDatafeedSubscriptionResponse">
         <xsl:element name="DeleteSpotDatafeedSubscriptionResponse" namespace="{$ns}">
             <xsl:element name="ResponseMetadata" namespace="{$ns}">

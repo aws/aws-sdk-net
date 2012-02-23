@@ -30,7 +30,9 @@ namespace Amazon.AutoScaling.Model
         private List<MetricGranularityType> granularities = new List<MetricGranularityType>();
 
         /// <summary>
-        /// The list of Metrics collected.
+        /// The list of Metrics collected.The following metrics are supported: <ul> <li>GroupMinSize</li> <li>GroupMaxSize</li>
+        /// <li>GroupDesiredCapacity</li> <li>GroupInServiceInstances</li> <li>GroupPendingInstances</li> <li>GroupTerminatingInstances</li>
+        /// <li>GroupTotalInstances</li> </ul>
         ///  
         /// </summary>
         public List<MetricCollectionType> Metrics
@@ -75,7 +77,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of Granularities for the listed Metrics.
+        /// A list of granularities for the listed Metrics.
         ///  
         /// </summary>
         public List<MetricGranularityType> Granularities

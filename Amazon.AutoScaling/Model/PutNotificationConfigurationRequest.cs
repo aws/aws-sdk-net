@@ -25,7 +25,9 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutNotificationConfiguration operation.
-    /// <para> Creates a notification action for an Auto Scaling group when a specified event takes place. </para>
+    /// <para> Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages
+    /// for events delivered to an endpoint such as a web server or email address. </para> <para> A new <c>PutNotificationConfiguration</c>
+    /// overwrites an existing configuration.</para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.PutNotificationConfiguration"/>
     public class PutNotificationConfigurationRequest : AmazonWebServiceRequest
@@ -35,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         private List<string> notificationTypes = new List<string>();
 
         /// <summary>
-        /// The name of the Auto Scaling Group.
+        /// The name of the Auto Scaling group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -117,7 +119,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The type of events for this action to start.
+        /// The type of events that will trigger the notification. For more information, go to <a>DescribeAutoScalingNotificationTypes</a>.
         ///  
         /// </summary>
         public List<string> NotificationTypes

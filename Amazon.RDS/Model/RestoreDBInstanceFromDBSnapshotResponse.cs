@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public RestoreDBInstanceFromDBSnapshotResult RestoreDBInstanceFromDBSnapshotResult
         {
-            get { return this.restoreDBInstanceFromDBSnapshotResult; }
+            get 
+            {
+                if(this.restoreDBInstanceFromDBSnapshotResult == null)
+                {
+                    this.restoreDBInstanceFromDBSnapshotResult = new RestoreDBInstanceFromDBSnapshotResult();
+                }
+
+                return this.restoreDBInstanceFromDBSnapshotResult; 
+            }
             set { this.restoreDBInstanceFromDBSnapshotResult = value; }
         }
     }

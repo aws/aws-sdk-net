@@ -25,13 +25,14 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBSecurityGroup operation.
-    /// <para> Creates a new database security group. Database Security groups control access to a database instance. </para>
+    /// <para> Creates a new DB Security Group. DB Security Groups control access to a DB Instance. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBSecurityGroup"/>
     public class CreateDBSecurityGroupRequest : AmazonWebServiceRequest
     {
         private string dBSecurityGroupName;
         private string dBSecurityGroupDescription;
+        private string eC2VpcId;
 
         /// <summary>
         /// The name for the DB Security Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
@@ -88,6 +89,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSecurityGroupDescription()
         {
             return this.dBSecurityGroupDescription != null;       
+        }
+
+        /// <summary>
+        /// The Id of VPC. Indicates which VPC this DB Security Group should belong to. Must be specified to create a DB Security Group for a VPC; may
+        /// not be specified otherwise.
+        ///  
+        /// </summary>
+        public string EC2VpcId
+        {
+            get { return this.eC2VpcId; }
+            set { this.eC2VpcId = value; }
+        }
+
+        /// <summary>
+        /// Sets the EC2VpcId property
+        /// </summary>
+        /// <param name="eC2VpcId">The value to set for the EC2VpcId property </param>
+        /// <returns>this instance</returns>
+        public CreateDBSecurityGroupRequest WithEC2VpcId(string eC2VpcId)
+        {
+            this.eC2VpcId = eC2VpcId;
+            return this;
+        }
+            
+
+        // Check to see if EC2VpcId property is set
+        internal bool IsSetEC2VpcId()
+        {
+            return this.eC2VpcId != null;       
         }
     }
 }

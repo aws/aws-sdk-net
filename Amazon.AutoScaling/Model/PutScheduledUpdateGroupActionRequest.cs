@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutScheduledUpdateGroupAction operation.
-    /// <para> Creates a scheduled scaling action for a Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
+    /// <para> Creates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
     /// unchanged in the affected Auto Scaling group. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.PutScheduledUpdateGroupAction"/>
@@ -34,12 +34,15 @@ namespace Amazon.AutoScaling.Model
         private string autoScalingGroupName;
         private string scheduledActionName;
         private DateTime? time;
+        private DateTime? startTime;
+        private DateTime? endTime;
+        private string recurrence;
         private int? minSize;
         private int? maxSize;
         private int? desiredCapacity;
 
         /// <summary>
-        /// The name or ARN of the Auto Scaling Group.
+        /// The name or ARN of the Auto Scaling group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -121,7 +124,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The time for this action to start.
+        /// <c>Time</c> is deprecated. The time for this action to start. <c>Time</c> is an alias for <c>StartTime</c> and can be specified instead of
+        /// <c>StartTime</c>, or vice versa. If both <c>Time</c> and <c>StartTime</c> are specified, their values should be identical. Otherwise,
+        /// <c>PutScheduledUpdateGroupAction</c> will return an error.
         ///  
         /// </summary>
         public DateTime Time
@@ -146,6 +151,106 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetTime()
         {
             return this.time.HasValue;       
+        }
+
+        /// <summary>
+        /// The time for this action to start, as in <c>--start-time 2010-06-01T00:00:00Z</c>. When <c>StartTime</c> and <c>EndTime</c> are specified
+        /// with <c>Recurrence</c>, they form the boundaries of when the recurring action will start and stop.
+        ///  
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this.startTime ?? default(DateTime); }
+            set { this.startTime = value; }
+        }
+
+        /// <summary>
+        /// Sets the StartTime property
+        /// </summary>
+        /// <param name="startTime">The value to set for the StartTime property </param>
+        /// <returns>this instance</returns>
+        public PutScheduledUpdateGroupActionRequest WithStartTime(DateTime startTime)
+        {
+            this.startTime = startTime;
+            return this;
+        }
+            
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this.startTime.HasValue;       
+        }
+
+        /// <summary>
+        /// The time for this action to end.
+        ///  
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this.endTime ?? default(DateTime); }
+            set { this.endTime = value; }
+        }
+
+        /// <summary>
+        /// Sets the EndTime property
+        /// </summary>
+        /// <param name="endTime">The value to set for the EndTime property </param>
+        /// <returns>this instance</returns>
+        public PutScheduledUpdateGroupActionRequest WithEndTime(DateTime endTime)
+        {
+            this.endTime = endTime;
+            return this;
+        }
+            
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this.endTime.HasValue;       
+        }
+
+        /// <summary>
+        /// The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. For
+        /// information about cron syntax, go to <a href="http://en.wikipedia.org/wiki/Cron">Wikipedia, The Free Encyclopedia</a>. When <c>StartTime</c>
+        /// and <c>EndTime</c> are specified with <c>Recurrence</c>, they form the boundaries of when the recurring action will start and stop.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Recurrence
+        {
+            get { return this.recurrence; }
+            set { this.recurrence = value; }
+        }
+
+        /// <summary>
+        /// Sets the Recurrence property
+        /// </summary>
+        /// <param name="recurrence">The value to set for the Recurrence property </param>
+        /// <returns>this instance</returns>
+        public PutScheduledUpdateGroupActionRequest WithRecurrence(string recurrence)
+        {
+            this.recurrence = recurrence;
+            return this;
+        }
+            
+
+        // Check to see if Recurrence property is set
+        internal bool IsSetRecurrence()
+        {
+            return this.recurrence != null;       
         }
 
         /// <summary>
@@ -205,7 +310,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number of EC2 instances that should be running in the group.
+        /// The number of Amazon EC2 instances that should be running in the group.
         ///  
         /// </summary>
         public int DesiredCapacity

@@ -1787,5 +1787,164 @@ namespace Amazon.S3
 
 
         #endregion
+
+
+        #region PutLifecycleConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLifecycleConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutLifecycleConfiguration"/>
+        /// </summary>
+        /// <param name="request">The PutLifecycleConfigurationRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndPutLifecycleConfiguration.</returns>
+        IAsyncResult BeginPutLifecycleConfiguration(PutLifecycleConfigurationRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutLifecycleConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLifecycleConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a PutLifecycleConfigurationResponse from S3.</returns>
+        PutLifecycleConfigurationResponse EndPutLifecycleConfiguration(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>
+        /// Sets the lifecycle configuration that should be applied for the bucket.
+        /// If a configuration already exists for the specified bucket, the new
+        /// configuration will replace the existing configuration.
+        /// </para>
+        /// <para>
+        /// Lifecycle configuration provides a way to define the lifetime of
+        /// objects for a keyspace. Objects are automatically deleted after the
+        /// predefined lifetime.
+        /// </para>
+        /// <para>
+        /// For more information on lifecycle configurations, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The PutLifecycleConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a PutLifecycleConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request);
+
+        #endregion
+
+        #region GetLifecycleConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLifecycleConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetLifecycleConfiguration"/>
+        /// </summary>
+        /// <param name="request">The GetLifecycleConfigurationRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndGetLifecycleConfiguration.</returns>
+        IAsyncResult BeginGetLifecycleConfiguration(GetLifecycleConfigurationRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetLifecycleConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLifecycleConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetLifecycleConfigurationResponse from S3.</returns>
+        GetLifecycleConfigurationResponse EndGetLifecycleConfiguration(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>
+        /// Retrieves the lifecycle configuration for the specified bucket.
+        /// If no configuration has been set for the bucket, the Configuration
+        /// property of the response will be null.
+        /// </para>
+        /// <para>
+        /// Lifecycle configuration provides a way to define the lifetime of
+        /// objects for a keyspace. Objects are automatically deleted after the
+        /// predefined lifetime.
+        /// </para>
+        /// <para>
+        /// For more information on lifecycle configurations, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The GetLifecycleConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a GetLifecycleConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request);
+
+        #endregion
+
+        #region DeleteLifecycleConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLifecycleConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteLifecycleConfiguration"/>
+        /// </summary>
+        /// <param name="request">The DeleteLifecycleConfigurationRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndDeleteLifecycleConfiguration.</returns>
+        IAsyncResult BeginDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteLifecycleConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLifecycleConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a DeleteLifecycleConfigurationResponse from S3.</returns>
+        DeleteLifecycleConfigurationResponse EndDeleteLifecycleConfiguration(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>
+        /// Deletes the lifecycle configuration for the specified bucket.
+        /// </para>
+        /// <para>
+        /// If you delete a configuration that does not exist, Amazon S3 will return a
+        /// success (not an error message).
+        /// </para>
+        /// <para>
+        /// Lifecycle configuration provides a way to define the lifetime of
+        /// objects for a keyspace. Objects are automatically deleted after the
+        /// predefined lifetime.
+        /// </para>
+        /// <para>
+        /// For more information on lifecycle configurations, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The DeleteLifecycleConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a DeleteLifecycleConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request);
+
+        #endregion
     }
 }

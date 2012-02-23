@@ -33,9 +33,11 @@ namespace Amazon.Runtime.Internal
         IDictionary<string, string> parameters = new Dictionary<string, string>();
         IDictionary<string, string> headers = new Dictionary<string, string>();
         Uri endpoint;
+        string resourcePath;
         string serviceName;
         readonly AmazonWebServiceRequest originalRequest;
         byte[] content;
+        string httpMethod = "POST";
 
         /// <summary>
         /// Constructs a new DefaultRequest with the specified service name and the
@@ -47,6 +49,22 @@ namespace Amazon.Runtime.Internal
         {
             this.serviceName = serviceName;
             this.originalRequest = originalRequest;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the type of http request to make, whether it should be POST,GET or DELETE
+        /// </summary>
+        public string HttpMethod
+        {
+            get
+            {
+                return this.httpMethod;
+            }
+            set
+            {
+                this.httpMethod = value;
+            }
         }
 
         /// <summary>
@@ -96,6 +114,21 @@ namespace Amazon.Runtime.Internal
             set
             {
                 this.endpoint = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets and Sets the resource path added on to the endpoint.
+        /// </summary>
+        public string ResourcePath
+        {
+            get
+            {
+                return this.resourcePath;
+            }
+            set
+            {
+                this.resourcePath = value;
             }
         }
 

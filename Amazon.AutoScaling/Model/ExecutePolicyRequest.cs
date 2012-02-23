@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
         private bool? honorCooldown;
 
         /// <summary>
-        /// The name or ARN of the Auto Scaling Group.
+        /// The name or ARN of the Auto Scaling group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -117,7 +117,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Set to True if you want Auto Scaling to reject this request if the Auto Scaling group is in cooldown.
+        /// Set to <c>True</c> if you want Auto Scaling to reject this request when the Auto Scaling group is in cooldown.
         ///  
         /// </summary>
         public bool HonorCooldown
