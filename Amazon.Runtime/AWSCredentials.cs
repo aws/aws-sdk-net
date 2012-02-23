@@ -632,6 +632,18 @@ namespace Amazon.Runtime
             }
         }
 
+        internal string UniqueIdentifier
+        {
+            get
+            {
+                AmazonWebServiceClient baseClient = this._stsClient as AmazonWebServiceClient;
+                if (baseClient == null)
+                    return null;
+
+                return string.Format("{0} - {1}", baseClient.Credentials.GetCredentials().AccessKey, baseClient.ServiceURL);
+            }
+        }
+
         #endregion
 
 

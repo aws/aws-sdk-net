@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public RestoreDBInstanceToPointInTimeResult RestoreDBInstanceToPointInTimeResult
         {
-            get { return this.restoreDBInstanceToPointInTimeResult; }
+            get 
+            {
+                if(this.restoreDBInstanceToPointInTimeResult == null)
+                {
+                    this.restoreDBInstanceToPointInTimeResult = new RestoreDBInstanceToPointInTimeResult();
+                }
+
+                return this.restoreDBInstanceToPointInTimeResult; 
+            }
             set { this.restoreDBInstanceToPointInTimeResult = value; }
         }
     }

@@ -25,9 +25,10 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingInstances operation.
-    /// <para> Returns a description of each Auto Scaling instance in the InstanceIds list. If a list is not provided, the service returns the full
-    /// details of all instances up to a maximum of fifty. </para> <para> This action supports pagination by returning a token if there are more
-    /// pages to retrieve. To get the next page, call this action again with the returned token as the NextToken parameter. </para>
+    /// <para> Returns a description of each Auto Scaling instance in the <c>InstanceIds</c> list. If a list is not provided, the service returns
+    /// the full details of all instances up to a maximum of 50. By default, the service returns a list of 20 items. </para> <para> This action
+    /// supports pagination by returning a token if there are more pages to retrieve. To get the next page, call this action again with the returned
+    /// token as the <c>NextToken</c> parameter. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeAutoScalingInstances"/>
     public class DescribeAutoScalingInstancesRequest : AmazonWebServiceRequest

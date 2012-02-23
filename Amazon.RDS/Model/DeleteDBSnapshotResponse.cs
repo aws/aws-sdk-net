@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public DeleteDBSnapshotResult DeleteDBSnapshotResult
         {
-            get { return this.deleteDBSnapshotResult; }
+            get 
+            {
+                if(this.deleteDBSnapshotResult == null)
+                {
+                    this.deleteDBSnapshotResult = new DeleteDBSnapshotResult();
+                }
+
+                return this.deleteDBSnapshotResult; 
+            }
             set { this.deleteDBSnapshotResult = value; }
         }
     }

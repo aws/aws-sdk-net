@@ -25,9 +25,9 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAutoScalingGroup operation.
-    /// <para> Creates a new Auto Scaling group with the specified name. Once the creation request is completed, the AutoScalingGroup is ready to be
-    /// used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of your AWS account, and under
-    /// the quota of Auto Scaling groups allowed for your account. </para>
+    /// <para> Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto
+    /// Scaling group is ready to be used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of
+    /// your AWS account, and under the quota of Auto Scaling groups allowed for your account. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateAutoScalingGroup"/>
     public class CreateAutoScalingGroupRequest : AmazonWebServiceRequest
@@ -44,6 +44,7 @@ namespace Amazon.AutoScaling.Model
         private int? healthCheckGracePeriod;
         private string placementGroup;
         private string vPCZoneIdentifier;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
         /// The name of the Auto Scaling group.
@@ -184,7 +185,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number of EC2 instances that should be running in the group.
+        /// The number of Amazon EC2 instances that should be running in the group.
         ///  
         /// </summary>
         public int DesiredCapacity
@@ -240,7 +241,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of availability zones for the Auto Scaling group.
+        /// A list of Availability Zones for the Auto Scaling group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -294,7 +295,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of LoadBalancers to use.
+        /// A list of load balancers to use.
         ///  
         /// </summary>
         public List<string> LoadBalancerNames
@@ -339,7 +340,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The service you want the health status from, Amazon EC2 or Elastic Load Balancer. Valid values are "EC2" or "ELB."
+        /// The service you want the health status from, Amazon EC2 or Elastic Load Balancer. Valid values are <c>EC2</c> or <c>ELB</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -380,7 +381,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Length of time in seconds after a new EC2 instance comes into service that Auto Scaling starts checking its health.
+        /// Length of time in seconds after a new Amazon EC2 instance comes into service that Auto Scaling starts checking its health.
         ///  
         /// </summary>
         public int HealthCheckGracePeriod
@@ -408,7 +409,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Physical location of your cluster placement group created in Amazon EC2.
+        /// Physical location of your cluster placement group created in Amazon EC2. For more information about cluster placement group, see <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Using Cluster Instances</a>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -449,7 +451,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The subnet identifier of the Virtual Private Cloud.
+        /// A comma-separated list of subnet identifiers of Amazon Virtual Private Clouds (Amazon VPCs). When you specify subnets and Availability Zones
+        /// with this call, ensure that the subnets' Availability Zones match the Availability Zones specified.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -487,6 +490,52 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetVPCZoneIdentifier()
         {
             return this.vPCZoneIdentifier != null;       
+        }
+
+        /// <summary>
+        /// The tag to be created or updated. Each tag should be defined by its resource type, resource ID, key, value, and a propagate flag. Valid
+        /// values are: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or <i>false</i>. Value and propagate are optional parameters.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        public CreateAutoScalingGroupRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        public CreateAutoScalingGroupRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;       
         }
     }
 }

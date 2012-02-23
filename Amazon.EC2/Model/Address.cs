@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     ///an Elastic IP associated with your account
     ///and the InstanceId of the instance it is associated with.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class Address
     {    
         private string instanceIdField;
@@ -45,6 +45,8 @@ namespace Amazon.EC2.Model
         private string allocationIdField;
         private string associationIdField;
         private string domainField;
+        private string networkInterfaceIdField;
+        private string networkInterfaceOwnerIdField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -207,5 +209,64 @@ namespace Amazon.EC2.Model
             return this.domainField != null;
         }
 
+        /// <summary>
+        /// Gets and sets the NetworkInterfaceId property
+        /// </summary>
+        [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
+        public string NetworkInterfaceId
+        {
+            get { return this.networkInterfaceIdField; }
+            set { this.networkInterfaceIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the NetworkInterfaceId property
+        /// </summary>
+        /// <param name="networkInterfaceId">Network interface ID</param>
+        /// <returns>this instance</returns>
+        public Address WithNetworkInterfaceId(string networkInterfaceId)
+        {
+            this.networkInterfaceIdField = networkInterfaceId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the NetworkInterfaceId property is set
+        /// </summary>
+        /// <returns>true if the NetworkInterfaceId property is set</returns>
+        public bool IsSetNetworkInterfaceId()
+        {
+            return !string.IsNullOrEmpty(this.networkInterfaceIdField);
+        }
+
+        /// <summary>
+        /// Gets and sets the NetworkInterfaceOwnerId property
+        /// </summary>
+        [XmlElementAttribute(ElementName = "NetworkInterfaceOwnerId")]
+        public string NetworkInterfaceOwnerId
+        {
+            get { return this.networkInterfaceOwnerIdField; }
+            set { this.networkInterfaceOwnerIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the NetworkInterfaceOwnerId property
+        /// </summary>
+        /// <param name="networkInterfaceOwnerId">Network interface owner ID</param>
+        /// <returns>this instance</returns>
+        public Address WithNetworkInterfaceOwnerId(string networkInterfaceOwnerId)
+        {
+            this.networkInterfaceOwnerIdField = networkInterfaceOwnerId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the NetworkInterfaceOwnerId property is set
+        /// </summary>
+        /// <returns>true if the NetworkInterfaceOwnerId property is set</returns>
+        public bool IsSetNetworkInterfaceOwnerId()
+        {
+            return !string.IsNullOrEmpty(this.networkInterfaceOwnerIdField);
+        }
     }
 }

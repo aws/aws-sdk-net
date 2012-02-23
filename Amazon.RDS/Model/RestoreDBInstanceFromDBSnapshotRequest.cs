@@ -25,9 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceFromDBSnapshot operation.
-    /// <para> Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up
-    /// to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database
-    /// except that the DB instance is created with the default DB security group. </para>
+    /// <para> Creates a new DB Instance from a DB snapshot. The target database is created from the source database restore point with the same
+    /// configuration as the original source database, except that the new RDS instance is created with the default security group. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.RestoreDBInstanceFromDBSnapshot"/>
     public class RestoreDBInstanceFromDBSnapshotRequest : AmazonWebServiceRequest
@@ -37,6 +36,7 @@ namespace Amazon.RDS.Model
         private string dBInstanceClass;
         private int? port;
         private string availabilityZone;
+        private string dBSubnetGroupName;
         private bool? multiAZ;
         private bool? autoMinorVersionUpgrade;
         private string licenseModel;
@@ -133,7 +133,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The port number on which the database accepts connections. Default: The same port as the original DB Instance Constraints: Value must be
-        /// <c>1115-65535</c>
+        /// <c>1150-65535</c>
         ///  
         /// </summary>
         public int Port
@@ -187,6 +187,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZone()
         {
             return this.availabilityZone != null;       
+        }
+
+        /// <summary>
+        /// The DB Subnet Group name to use for the new instance.
+        ///  
+        /// </summary>
+        public string DBSubnetGroupName
+        {
+            get { return this.dBSubnetGroupName; }
+            set { this.dBSubnetGroupName = value; }
+        }
+
+        /// <summary>
+        /// Sets the DBSubnetGroupName property
+        /// </summary>
+        /// <param name="dBSubnetGroupName">The value to set for the DBSubnetGroupName property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceFromDBSnapshotRequest WithDBSubnetGroupName(string dBSubnetGroupName)
+        {
+            this.dBSubnetGroupName = dBSubnetGroupName;
+            return this;
+        }
+            
+
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
+        {
+            return this.dBSubnetGroupName != null;       
         }
 
         /// <summary>

@@ -30,6 +30,7 @@ namespace Amazon.AutoScaling
         public AmazonAutoScalingConfig()
         {
             this.ServiceURL = "https://autoscaling.amazonaws.com";
+            
         }
 
         /// <summary>

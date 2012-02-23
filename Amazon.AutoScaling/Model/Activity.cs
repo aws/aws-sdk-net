@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> A Scaling Activity is a long-running process that represents a change to your AutoScalingGroup, such as changing the size of the
+    /// <para> A scaling Activity is a long-running process that represents a change to your AutoScalingGroup, such as changing the size of the
     /// group. It can also be a process to replace an instance, or a process to perform any other long-running operations supported by the API.
     /// </para>
     /// </summary>
@@ -37,6 +37,7 @@ namespace Amazon.AutoScaling.Model
         private string statusCode;
         private string statusMessage;
         private int? progress;
+        private string details;
 
         /// <summary>
         /// Specifies the ID of the activity.
@@ -354,6 +355,43 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetProgress()
         {
             return this.progress.HasValue;       
+        }
+
+        /// <summary>
+        /// Contains details of the scaling activity.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Details
+        {
+            get { return this.details; }
+            set { this.details = value; }
+        }
+
+        /// <summary>
+        /// Sets the Details property
+        /// </summary>
+        /// <param name="details">The value to set for the Details property </param>
+        /// <returns>this instance</returns>
+        public Activity WithDetails(string details)
+        {
+            this.details = details;
+            return this;
+        }
+            
+
+        // Check to see if Details property is set
+        internal bool IsSetDetails()
+        {
+            return this.details != null;       
         }
     }
 }

@@ -40,10 +40,12 @@ namespace Amazon.RDS.Model
         private string status;
         private int? port;
         private string availabilityZone;
+        private string vpcId;
         private DateTime? instanceCreateTime;
         private string masterUsername;
         private string engineVersion;
         private string licenseModel;
+        private string snapshotType;
 
         /// <summary>
         /// Specifies the identifier for the DB Snapshot.
@@ -270,6 +272,34 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Provides the Vpc Id associated with the DB Snapshot.
+        ///  
+        /// </summary>
+        public string VpcId
+        {
+            get { return this.vpcId; }
+            set { this.vpcId = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcId property
+        /// </summary>
+        /// <param name="vpcId">The value to set for the VpcId property </param>
+        /// <returns>this instance</returns>
+        public DBSnapshot WithVpcId(string vpcId)
+        {
+            this.vpcId = vpcId;
+            return this;
+        }
+            
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this.vpcId != null;       
+        }
+
+        /// <summary>
         /// Specifies the time (UTC) when the snapshot was taken.
         ///  
         /// </summary>
@@ -379,6 +409,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetLicenseModel()
         {
             return this.licenseModel != null;       
+        }
+
+        /// <summary>
+        /// Provides the type of the DB Snapshot.
+        ///  
+        /// </summary>
+        public string SnapshotType
+        {
+            get { return this.snapshotType; }
+            set { this.snapshotType = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotType property
+        /// </summary>
+        /// <param name="snapshotType">The value to set for the SnapshotType property </param>
+        /// <returns>this instance</returns>
+        public DBSnapshot WithSnapshotType(string snapshotType)
+        {
+            this.snapshotType = snapshotType;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotType property is set
+        internal bool IsSetSnapshotType()
+        {
+            return this.snapshotType != null;       
         }
     }
 }

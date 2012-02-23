@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+﻿/*
  * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -29,13 +29,15 @@ namespace Amazon.EC2.Model
     ///<summary>
     /// Information about the status of an instance.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class InstanceStatus
     {
         private string instanceIdField;
         private string availabilityZoneField;
         private List<InstanceStatusEvent> instanceStatusEventField;
         private InstanceState instanceStateField;
+        private InstanceStatusDetail systemStatusDetailField;
+        private InstanceStatusDetail instanceStatusDetailField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -159,6 +161,66 @@ namespace Amazon.EC2.Model
         public bool IsSetInstanceState()
         {
             return this.instanceStateField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the SystemStatusDetail property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "SystemStatusDetail")]
+        public InstanceStatusDetail SystemStatusDetail
+        {
+            get { return this.systemStatusDetailField; }
+            set { this.systemStatusDetailField = value; }
+        }
+
+        /// <summary>
+        /// Sets the SystemStatusDetail property.
+        /// </summary>
+        /// <param name="systemStatusDetail">System status</param>
+        /// <returns>this instance</returns>
+        public InstanceStatus WithSystemStatusDetail(InstanceStatusDetail systemStatusDetail)
+        {
+            this.systemStatusDetailField = systemStatusDetail;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the SystemStatusDetail property is set
+        /// </summary>
+        /// <returns>true if the SystemStatusDetail property is set</returns>
+        public bool IsSetSystemStatusDetail()
+        {
+            return this.systemStatusDetailField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the InstanceStatusDetail property
+        /// </summary>
+        [XmlElementAttribute(ElementName = "InstanceStatusDetail")]
+        public InstanceStatusDetail InstanceStatusDetail
+        {
+            get { return this.instanceStatusDetailField; }
+            set { this.instanceStatusDetailField = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstanceStatusDetail property.
+        /// </summary>
+        /// <param name="instanceStatusDetail">Instance status</param>
+        /// <returns>this instance</returns>
+        public InstanceStatus WithInstanceStatusDetail(InstanceStatusDetail instanceStatusDetail)
+        {
+            this.instanceStatusDetailField = instanceStatusDetail;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the InstanceStatusDetail property is set
+        /// </summary>
+        /// <returns>true if the InstanceStatusDetail property is set</returns>
+        public bool IsSetInstanceStatusDetail()
+        {
+            return this.instanceStatusDetailField != null;
         }
     }
 }

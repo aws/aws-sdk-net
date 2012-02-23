@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// </summary>
         public DescribeEventsResult DescribeEventsResult
         {
-            get { return this.describeEventsResult; }
+            get 
+            {
+                if(this.describeEventsResult == null)
+                {
+                    this.describeEventsResult = new DescribeEventsResult();
+                }
+
+                return this.describeEventsResult; 
+            }
             set { this.describeEventsResult = value; }
         }
     }

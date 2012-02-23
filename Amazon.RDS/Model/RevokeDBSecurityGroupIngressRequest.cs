@@ -25,8 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeDBSecurityGroupIngress operation.
-    /// <para> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 Security Groups. Required parameters for this API
-    /// are one of CIDRIP or (EC2SecurityGroupName AND EC2SecurityGroupOwnerId). </para>
+    /// <para> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for
+    /// this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.RevokeDBSecurityGroupIngress"/>
     public class RevokeDBSecurityGroupIngressRequest : AmazonWebServiceRequest
@@ -34,6 +35,7 @@ namespace Amazon.RDS.Model
         private string dBSecurityGroupName;
         private string cIDRIP;
         private string eC2SecurityGroupName;
+        private string eC2SecurityGroupId;
         private string eC2SecurityGroupOwnerId;
 
         /// <summary>
@@ -65,8 +67,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The IP range to revoke access from. Must be a valid CIDR range. If <c>CIDRIP</c> is specified, <c>EC2SecurityGroupName</c> and
-        /// <c>EC2SecurityGroupOwnerId</c> cannot be provided.
+        /// The IP range to revoke access from. Must be a valid CIDR range. If <c>CIDRIP</c> is specified, <c>EC2SecurityGroupName</c>,
+        /// <c>EC2SecurityGroupId</c> and <c>EC2SecurityGroupOwnerId</c> cannot be provided.
         ///  
         /// </summary>
         public string CIDRIP
@@ -94,8 +96,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the EC2 Security Group to revoke access from. If <c>EC2SecurityGroupName</c> is specified, <c>EC2SecurityGroupOwnerId</c> must
-        /// also be provided and <c>CIDRIP</c> cannot be provided.
+        /// The name of the EC2 Security Group to revoke access from. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
+        /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
         public string EC2SecurityGroupName
@@ -123,9 +125,38 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The AWS Account Number of the owner of the security group specified in the <c>EC2SecurityGroupName</c> parameter. The AWS Access Key ID is
-        /// not an acceptable value. If <c>EC2SecurityGroupOwnerId</c> is specified <c>EC2SecurityGroupName</c> must also be provided and <c>CIDRIP</c>
-        /// cannot be provided.
+        /// The id of the EC2 Security Group to revoke access from. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
+        /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
+        ///  
+        /// </summary>
+        public string EC2SecurityGroupId
+        {
+            get { return this.eC2SecurityGroupId; }
+            set { this.eC2SecurityGroupId = value; }
+        }
+
+        /// <summary>
+        /// Sets the EC2SecurityGroupId property
+        /// </summary>
+        /// <param name="eC2SecurityGroupId">The value to set for the EC2SecurityGroupId property </param>
+        /// <returns>this instance</returns>
+        public RevokeDBSecurityGroupIngressRequest WithEC2SecurityGroupId(string eC2SecurityGroupId)
+        {
+            this.eC2SecurityGroupId = eC2SecurityGroupId;
+            return this;
+        }
+            
+
+        // Check to see if EC2SecurityGroupId property is set
+        internal bool IsSetEC2SecurityGroupId()
+        {
+            return this.eC2SecurityGroupId != null;       
+        }
+
+        /// <summary>
+        /// The AWS Account Number of the owner of the EC2 security group specified in the <c>EC2SecurityGroupName</c> parameter. The AWS Access Key ID
+        /// is not an acceptable value. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise, EC2SecurityGroupOwnerId and
+        /// either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
         public string EC2SecurityGroupOwnerId

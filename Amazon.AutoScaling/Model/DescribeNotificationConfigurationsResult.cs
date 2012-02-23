@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
         private string nextToken;
 
         /// <summary>
-        /// The list of notification configurations.<i>Should we be clearer?</i>>
+        /// The list of notification configurations.
         ///  
         /// </summary>
         public List<NotificationConfiguration> NotificationConfigurations

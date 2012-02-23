@@ -28,8 +28,8 @@ namespace Amazon.DynamoDB
     /// <summary>
     /// Implementation for accessing AmazonDynamoDB.
     ///  
-    /// <para>Amazon DynamoDB is a fast, highly scalable, highly available, cost-effective non-relational database service.</para> <para>Amazon
-    /// DynamoDB removes traditional scalability limitations on data storage while maintaining low latency and predictable performance.</para>
+    /// <para> Amazon DynamoDB is a fast, highly scalable, highly available, cost-effective non-relational database service. Amazon DynamoDB removes
+    /// traditional scalability limitations on data storage while maintaining low latency and predictable performance. </para>
     /// </summary>
     public class AmazonDynamoDBClient : AmazonWebServiceClient, AmazonDynamoDB
     {
@@ -148,8 +148,8 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Retrieves one or more items and its attributes by performing a full scan of a table.</para> <para>Provide a <c>ScanFilter</c> to get
-         /// more specific results.</para>
+         /// <para> The Scan operation returns one or more items and its attributes by performing a full scan of a table. Limit the returned results by
+         /// specifying a filter. </para>
          /// </summary>
          /// 
          /// <param name="scanRequest">Container for the necessary parameters to execute the Scan service method on AmazonDynamoDB.</param>
@@ -168,10 +168,10 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Adds a new table to your account.</para> <para>The table name must be unique among those associated with the AWS Account issuing the
-         /// request, and the AWS Region that receives the request (e.g. <c>us-east-1</c> ).</para> <para>The <c>CreateTable</c> operation triggers an
-         /// asynchronous workflow to begin creating the table. Amazon DynamoDB immediately returns the state of the table ( <c>CREATING</c> ) until the
-         /// table is in the <c>ACTIVE</c> state. Once the table is in the <c>ACTIVE</c> state, you can perform data plane operations.</para>
+         /// <para> The CreateTable operation adds a new table to your account. The table name must be unique among those associated with the AWS Account
+         /// issuing the request, and the AWS Region that receives the request (e.g. us-east-1). The CreateTable operation triggers an asynchronous
+         /// workflow to begin creating the table. Amazon DynamoDB immediately returns the state of the table (CREATING) until the table is in the ACTIVE
+         /// state. Once the table is in the ACTIVE state, you can perform data plane operations. </para>
          /// </summary>
          /// 
          /// <param name="createTableRequest">Container for the necessary parameters to execute the CreateTable service method on AmazonDynamoDB.</param>
@@ -190,7 +190,7 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Retrieves a paginated list of table names created by the AWS Account of the caller in the AWS Region (e.g. <c>us-east-1</c> ).</para>
+         /// <para> Returns a paginated list of table names created by the AWS Account of the caller in the AWS Region (e.g. us-east-1). </para>
          /// </summary>
          /// 
          /// <param name="listTablesRequest">Container for the necessary parameters to execute the ListTables service method on AmazonDynamoDB.</param>
@@ -207,7 +207,7 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Retrieves a paginated list of table names created by the AWS Account of the caller in the AWS Region (e.g. <c>us-east-1</c> ).</para>
+         /// <para> Returns a paginated list of table names created by the AWS Account of the caller in the AWS Region (e.g. us-east-1). </para>
          /// </summary>
          /// 
          /// <returns>The response from the ListTables service method, as returned by AmazonDynamoDB.</returns>
@@ -220,9 +220,9 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Gets the values of one or more items and its attributes by primary key (composite primary key, only).</para> <para>Narrow the scope of
-         /// the query using comparison operators on the <c>RangeKeyValue</c> of the composite key. Use the <c>ScanIndexForward</c> parameter to get
-         /// results in forward or reverse order by range key.</para>
+         /// <para> The Query operation gets the values of one or more items and its attributes by primary key (composite primary key, only). Narrow the
+         /// scope of the query using comparison operators on the RangeKeyValue of the composite key. Use the ScanIndexForward parameter to get results
+         /// in forward or reverse order by range key. </para>
          /// </summary>
          /// 
          /// <param name="queryRequest">Container for the necessary parameters to execute the Query service method on AmazonDynamoDB.</param>
@@ -241,8 +241,8 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Edits an existing item's attributes.</para> <para>You can perform a conditional update (insert a new attribute name-value pair if it
-         /// doesn't exist, or replace an existing name-value pair if it has certain expected attribute values).</para>
+         /// <para> Edits an existing item's attributes. You can perform a conditional update (insert a new attribute name-value pair if it doesn't
+         /// exist, or replace an existing name-value pair if it has certain expected attribute values). </para>
          /// </summary>
          /// 
          /// <param name="updateItemRequest">Container for the necessary parameters to execute the UpdateItem service method on AmazonDynamoDB.</param>
@@ -262,8 +262,8 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Updates the provisioned throughput for the given table.</para> <para>Setting the throughput for a table helps you manage performance
-         /// and is part of the Provisioned Throughput feature of Amazon DynamoDB.</para>
+         /// <para> Updates the provisioned throughput for the given table. Setting the throughput for a table helps you manage performance and is part
+         /// of the Provisioned Capacity feature of Amazon DynamoDB. </para>
          /// </summary>
          /// 
          /// <param name="updateTableRequest">Container for the necessary parameters to execute the UpdateTable service method on AmazonDynamoDB.</param>
@@ -283,9 +283,9 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Creates a new item, or replaces an old item with a new item (including all the attributes).</para> <para>If an item already exists in
-         /// the specified table with the same primary key, the new item completely replaces the existing item. You can perform a conditional put (insert
-         /// a new item if one with the specified primary key doesn't exist), or replace an existing item if it has certain attribute values.</para>
+         /// <para> Creates a new item, or replaces an old item with a new item (including all the attributes). If an item already exists in the
+         /// specified table with the same primary key, the new item completely replaces the existing item. You can perform a conditional put (insert a
+         /// new item if one with the specified primary key doesn't exist), or replace an existing item if it has certain attribute values. </para>
          /// </summary>
          /// 
          /// <param name="putItemRequest">Container for the necessary parameters to execute the PutItem service method on AmazonDynamoDB.</param>
@@ -305,9 +305,9 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Deletes a table and all of its items.</para> <para>If the table is in the <c>ACTIVE</c> state, you can delete it. If a table is in
-         /// <c>CREATING</c> or <c>UPDATING</c> states then Amazon DynamoDB returns a <c>ResourceInUseException</c> . If the specified table does not
-         /// exist, Amazon DynamoDB returns a <c>ResourceNotFoundException</c> .</para>
+         /// <para> The DeleteTable operation deletes a table and all of its items. If the table is in the ACTIVE state, you can delete it. If a table is
+         /// in CREATING or UPDATING states, then DeleteTable returns a ResourceInUseException. If the specified table does not exist, Amazon DynamoDB
+         /// returns a ResourceNotFoundException. </para>
          /// </summary>
          /// 
          /// <param name="deleteTableRequest">Container for the necessary parameters to execute the DeleteTable service method on AmazonDynamoDB.</param>
@@ -327,8 +327,8 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Deletes a single item in a table by primary key.</para> <para>You can perform a conditional delete operation that deletes the item if
-         /// it exists, or if it has an expected attribute value.</para>
+         /// <para> Deletes a single item in a table by primary key. You can perform a conditional delete operation that deletes the item if it exists,
+         /// or if it has an expected attribute value. </para>
          /// </summary>
          /// 
          /// <param name="deleteItemRequest">Container for the necessary parameters to execute the DeleteItem service method on AmazonDynamoDB.</param>
@@ -348,8 +348,8 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Retrieves information about the table, including the current status of the table, the primary key schema and when the table was
-         /// created.</para> <para>If the table does not exist, Amazon DynamoDB returns a <c>ResourceNotFoundException</c> .</para>
+         /// <para> Returns information about the table, including the current status of the table, the primary key schema and when the table was
+         /// created. If the table does not exist, the server returns a ResourceNotFoundException. </para>
          /// </summary>
          /// 
          /// <param name="describeTableRequest">Container for the necessary parameters to execute the DescribeTable service method on
@@ -368,9 +368,9 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Retrieves a set of Attributes for an item that matches the primary key.</para> <para>The <c>GetItem</c> operation provides an
-         /// eventually-consistent read by default. If eventually-consistent reads are not acceptable for your application, use <c>ConsistentRead</c> .
-         /// Although this operation might take longer than a standard read, it always returns the last updated value.</para>
+         /// <para> The GetItem operation returns a set of Attributes for an item that matches the primary key. The GetItem operation provides an
+         /// eventually consistent read by default. If eventually consistent reads are not acceptable for your application, use ConsistentRead. Although
+         /// this operation might take longer than a standard read, it always returns the last updated value. </para>
          /// </summary>
          /// 
          /// <param name="getItemRequest">Container for the necessary parameters to execute the GetItem service method on AmazonDynamoDB.</param>
@@ -389,13 +389,13 @@ namespace Amazon.DynamoDB
         
 
          /// <summary>
-         /// <para>Retrieves the attributes for multiple items from multiple tables using their primary keys.</para> <para>The maximum number of item
-         /// attributes that can be retrieved for a single operation is 100. Also, the number of items retrieved is constrained by a 1 MB the size limit.
-         /// If the response size limit is exceeded or a partial result is returned due to an internal processing failure, Amazon DynamoDB returns an
-         /// <c>UnprocessedKeys</c> value so you can retry the operation starting with the next item to get.</para> <para>Amazon DynamoDB automatically
+         /// <para> The BatchGetItem operation returns the attributes for multiple items from multiple tables using their primary keys. The maximum
+         /// number of item attributes that can be retrieved for a single operation is 100. Also, the number of items retrieved is constrained by a 1 MB
+         /// the size limit. If the response size limit is exceeded or a partial result is returned due to an internal processing failure, Amazon
+         /// DynamoDB returns an UnprocessedKeys value so you can retry the operation starting with the next item to get. Amazon DynamoDB automatically
          /// adjusts the number of items returned per page to enforce this limit. For example, even if you ask to retrieve 100 items, but each individual
-         /// item is 50k in size, the system returns 20 items and an appropriate <c>UnprocessedKeys</c> value so you can get the next page of results. If
-         /// necessary, your application needs its own logic to assemble the pages of results into one set.</para>
+         /// item is 50 KB in size, the system returns 20 items and an appropriate UnprocessedKeys value so you can get the next page of results. If
+         /// necessary, your application needs its own logic to assemble the pages of results into one set. </para>
          /// </summary>
          /// 
          /// <param name="batchGetItemRequest">Container for the necessary parameters to execute the BatchGetItem service method on
@@ -419,7 +419,7 @@ namespace Amazon.DynamoDB
         /// <param name="retries">Current number of retries.</param>
         protected override void pauseExponentially(int retries)
         {
-            int delay = (int)(200 * Math.Pow(2, retries - 1));
+            int delay = (retries == 0) ? 0 : 50 * (int)Math.Pow(2, retries - 1);
             delay = Math.Min(delay, MAX_BACKOFF_IN_MILLISECONDS);
             Thread.Sleep(delay);
         }

@@ -26,7 +26,9 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the ModifyDBParameterGroup operation.
     /// <para> Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName,
-    /// ParameterValue, and ApplyMethod. A maximum of 20 parameters can be modified in a single request. </para>
+    /// ParameterValue, and ApplyMethod. A maximum of 20 parameters can be modified in a single request. </para> <para><b>NOTE:</b> The
+    /// apply-immediate method can only be used for dynamic parameters; the pending-reboot method can be used for either dynamic or static
+    /// parameters. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.ModifyDBParameterGroup"/>
     public class ModifyDBParameterGroupRequest : AmazonWebServiceRequest
@@ -35,9 +37,9 @@ namespace Amazon.RDS.Model
         private List<Parameter> parameters = new List<Parameter>();
 
         /// <summary>
-        /// The name of the database parameter group. Constraints: <ul> <li>Must be the name of an existing database parameter group</li> <li>Must be 1
-        /// to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        /// The name of the DB Parameter Group. Constraints: <ul> <li>Must be the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+        /// alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+        /// </ul>
         ///  
         /// </summary>
         public string DBParameterGroupName

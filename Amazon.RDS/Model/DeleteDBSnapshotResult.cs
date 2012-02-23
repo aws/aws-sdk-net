@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the DeleteDBSnapshot action.
     /// </summary>
-    public class DeleteDBSnapshotResult : AmazonWebServiceResponse
+    public class DeleteDBSnapshotResult
     {
         private DBSnapshot dBSnapshotValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the DeleteDBSnapshotResult property.
         /// Contains the result of a successful invocation of the DeleteDBSnapshot
         /// action.
-        /// 
+        /// </summary>
         public DBSnapshot DBSnapshot
         {
             get { return this.dBSnapshotValue; }

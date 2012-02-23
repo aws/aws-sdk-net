@@ -20,9 +20,9 @@
  *
  */
 
-using Amazon.Util;
 using System;
 using Amazon.S3.Util;
+using Amazon.Util;
 
 namespace Amazon.S3.Model
 {
@@ -37,6 +37,7 @@ namespace Amazon.S3.Model
         private string contentType;
         private string versionId;
         private ServerSideEncryptionMethod serverSideEncryptionMethod;
+        private Expiration expiration;
 
         /// <summary>
         /// Gets and sets the lastModified property.
@@ -97,6 +98,18 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the Expiration property.
+        /// Specifies the expiration date for the object and the
+        /// rule governing the expiration.
+        /// Is null if expiration is not applicable.
+        /// </summary>
+        public Expiration Expiration
+        {
+            get { return this.expiration; }
+            set { this.expiration = value; }
+        }
+
+        /// <summary>
         /// Gets and sets the Headers property.
         /// </summary>
         public override System.Net.WebHeaderCollection Headers
@@ -132,6 +145,11 @@ namespace Amazon.S3.Model
                 if (!System.String.IsNullOrEmpty(hdr = value.Get(Util.S3Constants.AmzVersionIdHeader)))
                 {
                     this.VersionId = hdr;
+                }
+
+                if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzExpirationHeader)))
+                {
+                    this.Expiration = new Expiration(hdr);
                 }
 
                 ServerSideEncryptionMethod = ServerSideEncryptionMethod.None;

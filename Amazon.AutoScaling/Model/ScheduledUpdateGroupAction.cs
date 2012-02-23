@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> This data type stores information about an scheduled update to an Auto Scaling group. </para>
+    /// <para> This data type stores information about a scheduled update to an Auto Scaling group. </para>
     /// </summary>
     public class ScheduledUpdateGroupAction  
     {
@@ -30,6 +30,9 @@ namespace Amazon.AutoScaling.Model
         private string scheduledActionName;
         private string scheduledActionARN;
         private DateTime? time;
+        private DateTime? startTime;
+        private DateTime? endTime;
+        private string recurrence;
         private int? minSize;
         private int? maxSize;
         private int? desiredCapacity;
@@ -158,7 +161,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The time that the action is scheduled to occur. This value can be up to one month in the future.
+        /// <c>Time</c> is deprecated. The time that the action is scheduled to begin. <c>Time</c> is an alias for <c>StartTime</c>.
         ///  
         /// </summary>
         public DateTime Time
@@ -183,6 +186,104 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetTime()
         {
             return this.time.HasValue;       
+        }
+
+        /// <summary>
+        /// The time that the action is scheduled to begin. This value can be up to one month in the future. When <c>StartTime</c> and <c>EndTime</c>
+        /// are specified with <c>Recurrence</c>, they form the boundaries of when the recurring action will start and stop.
+        ///  
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this.startTime ?? default(DateTime); }
+            set { this.startTime = value; }
+        }
+
+        /// <summary>
+        /// Sets the StartTime property
+        /// </summary>
+        /// <param name="startTime">The value to set for the StartTime property </param>
+        /// <returns>this instance</returns>
+        public ScheduledUpdateGroupAction WithStartTime(DateTime startTime)
+        {
+            this.startTime = startTime;
+            return this;
+        }
+            
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this.startTime.HasValue;       
+        }
+
+        /// <summary>
+        /// The time that the action is scheduled to end. This value can be up to one month in the future.
+        ///  
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this.endTime ?? default(DateTime); }
+            set { this.endTime = value; }
+        }
+
+        /// <summary>
+        /// Sets the EndTime property
+        /// </summary>
+        /// <param name="endTime">The value to set for the EndTime property </param>
+        /// <returns>this instance</returns>
+        public ScheduledUpdateGroupAction WithEndTime(DateTime endTime)
+        {
+            this.endTime = endTime;
+            return this;
+        }
+            
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this.endTime.HasValue;       
+        }
+
+        /// <summary>
+        /// The regular schedule that an action occurs.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Recurrence
+        {
+            get { return this.recurrence; }
+            set { this.recurrence = value; }
+        }
+
+        /// <summary>
+        /// Sets the Recurrence property
+        /// </summary>
+        /// <param name="recurrence">The value to set for the Recurrence property </param>
+        /// <returns>this instance</returns>
+        public ScheduledUpdateGroupAction WithRecurrence(string recurrence)
+        {
+            this.recurrence = recurrence;
+            return this;
+        }
+            
+
+        // Check to see if Recurrence property is set
+        internal bool IsSetRecurrence()
+        {
+            return this.recurrence != null;       
         }
 
         /// <summary>
@@ -242,8 +343,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number of instances you prefer to maintain in your Auto Scaling group. The desired capacity must be no less than
-        /// <a>ScheduledUpdateGroupAction$MinSize</a> and no greater than <a>ScheduledUpdateGroupAction$MaxSize</a>.
+        /// The number of instances you prefer to maintain in your Auto Scaling group.
         ///  
         /// </summary>
         public int DesiredCapacity

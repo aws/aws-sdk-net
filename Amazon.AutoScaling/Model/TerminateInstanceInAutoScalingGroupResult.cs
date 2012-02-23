@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
         private Activity activity;
 
         /// <summary>
-        /// A Scaling Activity.
+        /// A scaling Activity.
         ///  
         /// </summary>
         public Activity Activity

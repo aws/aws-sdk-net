@@ -3252,6 +3252,257 @@ namespace Amazon.S3
 
         #endregion
 
+        #region PutLifecycleConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLifecycleConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutLifecycleConfiguration"/>
+        /// </summary>
+        /// <param name="request">The PutLifecycleConfigurationRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndPutLifecycleConfiguration.</returns>
+        public IAsyncResult BeginPutLifecycleConfiguration(PutLifecycleConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            return invokePutLifecycleConfiguration(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutLifecycleConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLifecycleConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a PutLifecycleConfigurationResponse from S3.</returns>
+        public PutLifecycleConfigurationResponse EndPutLifecycleConfiguration(IAsyncResult asyncResult)
+        {
+            return endOperation<PutLifecycleConfigurationResponse>(asyncResult);
+        }
+
+        /// <summary>
+        /// <para>
+        /// Sets the lifecycle configuration that should be applied for the bucket.
+        /// If a configuration already exists for the specified bucket, the new
+        /// configuration will replace the existing configuration.
+        /// </para>
+        /// <para>
+        /// Lifecycle configuration provides a way to define the lifetime of
+        /// objects for a keyspace. Objects are automatically deleted after the
+        /// predefined lifetime.
+        /// </para>
+        /// <para>
+        /// For more information on lifecycle configurations, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The PutLifecycleConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a PutLifecycleConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
+        {
+            IAsyncResult asyncResult = invokePutLifecycleConfiguration(request, null, null, true);
+            return EndPutLifecycleConfiguration(asyncResult);
+        }
+
+        IAsyncResult invokePutLifecycleConfiguration(PutLifecycleConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The PutLifecycleConfigurationRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertPutLifecycleConfiguration(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<PutLifecycleConfigurationResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region GetLifecycleConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLifecycleConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetLifecycleConfiguration"/>
+        /// </summary>
+        /// <param name="request">The GetLifecycleConfigurationRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndGetLifecycleConfiguration.</returns>
+        public IAsyncResult BeginGetLifecycleConfiguration(GetLifecycleConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetLifecycleConfiguration(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetLifecycleConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLifecycleConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetLifecycleConfigurationResponse from S3.</returns>
+        public GetLifecycleConfigurationResponse EndGetLifecycleConfiguration(IAsyncResult asyncResult)
+        {
+            try
+            {
+                return endOperation<GetLifecycleConfigurationResponse>(asyncResult);
+            }
+            catch (AmazonS3Exception e)
+            {
+                if (e.ErrorCode == S3Constants.NoSuchLifecycleConfiguration)
+                {
+                    return new GetLifecycleConfigurationResponse();
+                }
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// <para>
+        /// Retrieves the lifecycle configuration for the specified bucket.
+        /// If no configuration has been set for the bucket, the Configuration
+        /// property of the response will be null.
+        /// </para>
+        /// <para>
+        /// Lifecycle configuration provides a way to define the lifetime of
+        /// objects for a keyspace. Objects are automatically deleted after the
+        /// predefined lifetime.
+        /// </para>
+        /// <para>
+        /// For more information on lifecycle configurations, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The GetLifecycleConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a GetLifecycleConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
+        {
+            IAsyncResult asyncResult = invokeGetLifecycleConfiguration(request, null, null, true);
+            return EndGetLifecycleConfiguration(asyncResult);
+        }
+
+        IAsyncResult invokeGetLifecycleConfiguration(GetLifecycleConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The GetLifecycleConfigurationRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertGetLifecycleConfiguration(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetLifecycleConfigurationResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region DeleteLifecycleConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLifecycleConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteLifecycleConfiguration"/>
+        /// </summary>
+        /// <param name="request">The DeleteLifecycleConfigurationRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndDeleteLifecycleConfiguration.</returns>
+        public IAsyncResult BeginDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            return invokeDeleteLifecycleConfiguration(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteLifecycleConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLifecycleConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a DeleteLifecycleConfigurationResponse from S3.</returns>
+        public DeleteLifecycleConfigurationResponse EndDeleteLifecycleConfiguration(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteLifecycleConfigurationResponse>(asyncResult);
+        }
+
+        /// <summary>
+        /// <para>
+        /// Deletes the lifecycle configuration for the specified bucket.
+        /// </para>
+        /// <para>
+        /// If you delete a configuration that does not exist, Amazon S3 will return a
+        /// success (not an error message).
+        /// </para>
+        /// <para>
+        /// Lifecycle configuration provides a way to define the lifetime of
+        /// objects for a keyspace. Objects are automatically deleted after the
+        /// predefined lifetime.
+        /// </para>
+        /// <para>
+        /// For more information on lifecycle configurations, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The DeleteLifecycleConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a DeleteLifecycleConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
+        {
+            IAsyncResult asyncResult = invokeDeleteLifecycleConfiguration(request, null, null, true);
+            return EndDeleteLifecycleConfiguration(asyncResult);
+        }
+
+        IAsyncResult invokeDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The DeleteLifecycleConfigurationRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertDeleteLifecycleConfiguration(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<DeleteLifecycleConfigurationResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
 
         #region DeleteBucketWebsite
 
@@ -3757,12 +4008,21 @@ namespace Amazon.S3
 
         void addParameter(StringBuilder queryStr, string key, string value)
         {
+            addParameter(queryStr, null, key, value);
+        }
+        void addParameter(StringBuilder queryStr, StringBuilder encodedQueryStr, string key, string value)
+        {
             if (!string.IsNullOrEmpty(value))
             {
-                if (queryStr.Length > 0)
+                if (queryStr != null && queryStr.Length > 0)
                     queryStr.Append("&");
+                if (encodedQueryStr != null && encodedQueryStr.Length > 0)
+                    encodedQueryStr.Append("&");
 
-                queryStr.AppendFormat("{0}={1}", key, value);
+                if (queryStr != null)
+                    queryStr.AppendFormat("{0}={1}", key, value);
+                if (encodedQueryStr != null)
+                    encodedQueryStr.AppendFormat("{0}={1}", key, AmazonS3Util.UrlEncode(value, true));
             }
         }
 
@@ -3932,7 +4192,8 @@ namespace Amazon.S3
                 if (immutableCredentials.UseToken)
                 {
                     queryStr.Append("x-amz-security-token=");
-                    queryStr.Append(immutableCredentials.Token);
+                    // Token must be as-is for the signature code, but must be url-encoded in the url
+                    queryStr.Append(AmazonS3Util.UrlEncode(immutableCredentials.Token, false));
                     queryStr.Append("&");
                 }
 
@@ -3961,26 +4222,27 @@ namespace Amazon.S3
                 queryStr.Append(value);
                 parameters[S3QueryParameter.Expires] = value;
 
+
+                StringBuilder encodedQueryStrToSign = new StringBuilder();
                 StringBuilder queryStrToSign = new StringBuilder();
                 if (request.IsSetKey() &&
                     request.IsSetVersionId() &&
                     request.Verb < HttpVerb.PUT)
                 {
-                    queryStrToSign.AppendFormat("versionId={0}", request.VersionId);
+                    addParameter(queryStrToSign, encodedQueryStrToSign, "versionId", request.VersionId);
                 }
 
-                addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_CACHE_CONTROL, request.ResponseHeaderOverrides.CacheControl);
-                addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_DISPOSITION, request.ResponseHeaderOverrides.ContentDisposition);
-                addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_ENCODING, request.ResponseHeaderOverrides.ContentEncoding);
-                addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_LANGUAGE, request.ResponseHeaderOverrides.ContentLanguage);
-                addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_TYPE, request.ResponseHeaderOverrides.ContentType);
-                addParameter(queryStrToSign, ResponseHeaderOverrides.RESPONSE_EXPIRES, request.ResponseHeaderOverrides.Expires);
-
+                addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CACHE_CONTROL, request.ResponseHeaderOverrides.CacheControl);
+                addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_DISPOSITION, request.ResponseHeaderOverrides.ContentDisposition);
+                addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_ENCODING, request.ResponseHeaderOverrides.ContentEncoding);
+                addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_LANGUAGE, request.ResponseHeaderOverrides.ContentLanguage);
+                addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_TYPE, request.ResponseHeaderOverrides.ContentType);
+                addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_EXPIRES, request.ResponseHeaderOverrides.Expires);
 
                 if (queryStrToSign.Length > 0)
                 {
                     parameters[S3QueryParameter.QueryToSign] = "?" + queryStrToSign.ToString();
-                    queryStr.Append("&" + queryStrToSign.ToString());
+                    queryStr.Append("&" + encodedQueryStrToSign.ToString());
                 }
 
                 parameters[S3QueryParameter.Query] = queryStr.ToString();
@@ -4029,13 +4291,6 @@ namespace Amazon.S3
                     auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
                 }
                 parameters[S3QueryParameter.Authorization] = auth;
-
-                if (immutableCredentials.UseToken)
-                {
-                    // Token must be as-is for the signature code, but must be url-encoded in the url
-                    string urlEncodedToken = AmazonS3Util.UrlEncode(immutableCredentials.Token, false);
-                    url = url.Replace(immutableCredentials.Token, urlEncodedToken);
-                }
 
                 parameters[S3QueryParameter.Url] = String.Concat(
                     url,
@@ -4530,6 +4785,67 @@ namespace Amazon.S3
             {
                 setMfaHeader(request.Headers, request.MfaCodes);
             }
+        }
+
+
+
+        /**
+         *  Convert PutLifecycleConfigurationRequest to key/value pairs.
+         */
+        private void ConvertPutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
+            parameters[S3QueryParameter.Action] = "PutLifecycleConfiguration";
+
+            string queryStr = "?lifecycle";
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            string content = request.ContentXML;
+            parameters[S3QueryParameter.ContentBody] = content;
+            parameters[S3QueryParameter.ContentType] = "application/xml";
+
+            string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+            webHeaders[AWSSDKUtils.ContentMD5Header] = checksum;
+
+            request.RequestDestinationBucket = request.BucketName;
+        }
+        /**
+         *  Convert GetLifecycleConfigurationRequest to key/value pairs.
+         */
+        private void ConvertGetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
+            parameters[S3QueryParameter.Action] = "GetLifecycleConfiguration";
+
+            string queryStr = "?lifecycle";
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            request.RequestDestinationBucket = request.BucketName;
+        }
+        /**
+         *  Convert DeleteLifecycleConfigurationRequest to key/value pairs.
+         */
+        private void ConvertDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.DeleteVerb;
+            parameters[S3QueryParameter.Action] = "DeleteLifecycleConfiguration";
+
+            string queryStr = "?lifecycle";
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            request.RequestDestinationBucket = request.BucketName;
         }
 
         #endregion
@@ -5594,7 +5910,6 @@ namespace Amazon.S3
                 httpRequest.Headers.Add(headers);
                 httpRequest.Method = parameters[S3QueryParameter.Verb];
                 httpRequest.ContentLength = contentLength;
-                httpRequest.KeepAlive = false;
                 httpRequest.AllowWriteStreamBuffering = false;
                 httpRequest.AllowAutoRedirect = false;
             }

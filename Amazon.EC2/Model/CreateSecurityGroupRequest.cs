@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -40,46 +40,12 @@ namespace Amazon.EC2.Model
     /// AuthorizeSecurityGroupIngress and RevokeSecurityGroupIngress
     /// operations
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class CreateSecurityGroupRequest
     {    
-        private string groupIdField;
         private string groupNameField;
         private string groupDescriptionField;
         private string vpcIdField;
-
-        /// <summary>
-        /// Gets and sets the GroupId property.
-        /// Id of the standard (EC2) or VPC security group to modify. Conditional
-        /// The group must belong to your account.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "GroupId")]
-        public string GroupId
-        {
-            get { return this.groupIdField; }
-            set { this.groupIdField = value; }
-        }
-
-        /// <summary>
-        /// Sets the GroupId property
-        /// </summary>
-        /// <param name="groupId">Id of the standard (EC2) or VPC security group to modify. Conditional
-        /// The group must belong to your account.</param>
-        /// <returns>this instance</returns>
-        public CreateSecurityGroupRequest WithGroupId(string groupId)
-        {
-            this.groupIdField = groupId;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if GroupId property is set
-        /// </summary>
-        /// <returns>true if GroupId property is set</returns>
-        public bool IsSetGroupId()
-        {
-            return this.groupIdField != null;
-        }
 
         /// <summary>
         /// Gets and sets the GroupName property.

@@ -40,7 +40,7 @@ namespace Amazon.Runtime.Internal.Transform
                 ErrorResponseUnmarshaller xmlUnmarshaller = new ErrorResponseUnmarshaller();
                 context.Stream.Position = 0;
                 XmlTextReader reader = new XmlTextReader(context.Stream);
-                UnmarshallerContext xmlContext = new UnmarshallerContext(reader);
+                UnmarshallerContext xmlContext = new UnmarshallerContext(reader, null);
                 response = xmlUnmarshaller.Unmarshall(xmlContext);
             }
             else

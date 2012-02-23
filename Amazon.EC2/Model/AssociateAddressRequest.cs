@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -32,12 +32,13 @@ namespace Amazon.EC2.Model
     /// to the new instance. This is an idempotent operation. If you enter it more than once,
     /// Amazon EC2 does not return an error.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class AssociateAddressRequest
     {    
         private string instanceIdField;
         private string publicIpField;
         private string allocationIdField;
+        private string networkInterfaceIdField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -138,6 +139,36 @@ namespace Amazon.EC2.Model
         public bool IsSetAllocationId()
         {
             return this.allocationIdField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the NetworkInterfaceId property
+        /// </summary>
+        [XmlElementAttribute(ElementName = "NetworkInterfaceId")]
+        public string NetworkInterfaceId
+        {
+            get { return this.networkInterfaceIdField; }
+            set { this.networkInterfaceIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the NetworkInterfaceId property
+        /// </summary>
+        /// <param name="networkInterfaceId">Network interface ID</param>
+        /// <returns>this instance</returns>
+        public AssociateAddressRequest WithNetworkInterfaceId(string networkInterfaceId)
+        {
+            this.networkInterfaceIdField = networkInterfaceId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the NetworkInterfaceId property is set
+        /// </summary>
+        /// <returns>true if the NetworkInterfaceId property is set</returns>
+        public bool IsSetNetworkInterfaceId()
+        {
+            return !string.IsNullOrEmpty(this.networkInterfaceIdField);
         }
 
     }

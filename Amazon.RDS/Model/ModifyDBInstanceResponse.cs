@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public ModifyDBInstanceResult ModifyDBInstanceResult
         {
-            get { return this.modifyDBInstanceResult; }
+            get 
+            {
+                if(this.modifyDBInstanceResult == null)
+                {
+                    this.modifyDBInstanceResult = new ModifyDBInstanceResult();
+                }
+
+                return this.modifyDBInstanceResult; 
+            }
             set { this.modifyDBInstanceResult = value; }
         }
     }

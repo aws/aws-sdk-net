@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private string masterUserPassword;
         private List<string> dBSecurityGroups = new List<string>();
         private string availabilityZone;
+        private string dBSubnetGroupName;
         private string preferredMaintenanceWindow;
         private string dBParameterGroupName;
         private int? backupRetentionPeriod;
@@ -333,6 +334,34 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// A DB Subnet Group to associate with this DB Instance. If there is no DB Subnet Group, then it is a non-VPC DB instance.
+        ///  
+        /// </summary>
+        public string DBSubnetGroupName
+        {
+            get { return this.dBSubnetGroupName; }
+            set { this.dBSubnetGroupName = value; }
+        }
+
+        /// <summary>
+        /// Sets the DBSubnetGroupName property
+        /// </summary>
+        /// <param name="dBSubnetGroupName">The value to set for the DBSubnetGroupName property </param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceRequest WithDBSubnetGroupName(string dBSubnetGroupName)
+        {
+            this.dBSubnetGroupName = dBSubnetGroupName;
+            return this;
+        }
+            
+
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
+        {
+            return this.dBSubnetGroupName != null;       
+        }
+
+        /// <summary>
         /// The weekly time range (in UTC) during which system maintenance can occur. Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> Default: A 30-minute window
         /// selected at random from an 8-hour block of time per region, occurring on a random day of the week. The following list shows the time blocks
         /// for each region from which the default maintenance windows are assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b> 03:00-11:00
@@ -366,9 +395,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the database parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for
-        /// the specified engine will be used. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a
-        /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        /// The name of the DB Parameter Group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the
+        /// specified engine will be used. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li>
+        /// <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string DBParameterGroupName

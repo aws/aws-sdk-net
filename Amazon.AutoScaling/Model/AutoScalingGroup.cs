@@ -43,6 +43,8 @@ namespace Amazon.AutoScaling.Model
         private string placementGroup;
         private string vPCZoneIdentifier;
         private List<EnabledMetric> enabledMetrics = new List<EnabledMetric>();
+        private string status;
+        private List<TagDescription> tags = new List<TagDescription>();
 
         /// <summary>
         /// Specifies the name of the group.
@@ -168,7 +170,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Contains the minimum size of the AutoScalingGroup.
+        /// Contains the minimum size of the Auto Scaling group.
         ///  
         /// </summary>
         public int MinSize
@@ -196,7 +198,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Contains the maximum size of the AutoScalingGroup.
+        /// Contains the maximum size of the Auto Scaling group.
         ///  
         /// </summary>
         public int MaxSize
@@ -224,7 +226,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Specifies the desired capacity for the AutoScalingGroup.
+        /// Specifies the desired capacity for the Auto Scaling group.
         ///  
         /// </summary>
         public int DesiredCapacity
@@ -280,7 +282,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Contains a list of availability zones for the group.
+        /// Contains a list of Availability Zones for the group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -449,7 +451,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Provides a summary list of EC2 instances.
+        /// Provides a summary list of Amazon EC2 instances.
         ///  
         /// </summary>
         public List<Instance> Instances
@@ -610,7 +612,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The identifier for the VPC connection, if applicable.
+        /// The subnet identifier for the Amazon VPC connection, if applicable. You can specify several subnets in a comma-separated list. When you
+        /// specify <c>VPCZoneIdentifier</c> with <c>AvailabilityZones</c>, ensure that the subnets' Availability Zones match the values you specify for
+        /// <c>AvailabilityZones</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -693,6 +697,92 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetEnabledMetrics()
         {
             return this.enabledMetrics.Count > 0;       
+        }
+
+        /// <summary>
+        /// A list of status conditions for the Auto Scaling group.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this.status; }
+            set { this.status = value; }
+        }
+
+        /// <summary>
+        /// Sets the Status property
+        /// </summary>
+        /// <param name="status">The value to set for the Status property </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithStatus(string status)
+        {
+            this.status = status;
+            return this;
+        }
+            
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this.status != null;       
+        }
+
+        /// <summary>
+        /// A list of tags for the Auto Scaling group.
+        ///  
+        /// </summary>
+        public List<TagDescription> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithTags(params TagDescription[] tags)
+        {
+            foreach (TagDescription element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithTags(IEnumerable<TagDescription> tags)
+        {
+            foreach (TagDescription element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;       
         }
     }
 }

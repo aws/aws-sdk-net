@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-11-01/"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-12-15/"
 	exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
   <xsl:variable name="ns"
-		select="'http://ec2.amazonaws.com/doc/2011-11-01/'" />
+		select="'http://ec2.amazonaws.com/doc/2011-12-15/'" />
   <xsl:template match="ec2:CreateRouteTableResponse">
     <xsl:element name="CreateRouteTableResponse"
 			namespace="{$ns}">
@@ -44,6 +44,12 @@
         </xsl:element>
         <xsl:element name="State" namespace="{$ns}">
           <xsl:value-of select="ec2:state" />
+        </xsl:element>
+        <xsl:element name="NetworkInterfaceId" namespace="{$ns}">
+          <xsl:value-of select="ec2:networkInterfaceId" />
+        </xsl:element>
+        <xsl:element name="InstanceOwnerId" namespace="{$ns}">
+          <xsl:value-of select="ec2:instanceOwnerId" />
         </xsl:element>
       </xsl:element>
     </xsl:for-each>

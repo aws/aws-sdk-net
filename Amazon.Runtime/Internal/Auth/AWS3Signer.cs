@@ -116,8 +116,12 @@ namespace Amazon.Runtime.Internal.Auth
             }
             else
             {
-                stringToSign = "POST\n"
-                    + GetCanonicalizedResourcePath(request.Endpoint) + "\n"
+                Uri url = request.Endpoint;
+                if (!string.IsNullOrEmpty(request.ResourcePath))
+                    url = new Uri(request.Endpoint, request.ResourcePath);
+
+                stringToSign = request.HttpMethod + "\n"
+                    + GetCanonicalizedResourcePath(url) + "\n"
                     + GetCanonicalizedQueryString(request.Parameters) + "\n"
                     + GetCanonicalizedHeadersForStringToSign(request) + "\n"
                     + GetRequestPayload(request);

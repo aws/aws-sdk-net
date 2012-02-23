@@ -538,7 +538,7 @@ namespace Amazon.DynamoDB.DataModel
 
             DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
             Table table = GetTargetTable(storageConfig, currentConfig);
-            Search query = table.Query(new QueryOperationConfig { HashKey = hashKeyEntry.Value, Filter = filter, ConsistentRead = currentConfig.ConsistentRead.Value });
+            Search query = table.Query(new QueryOperationConfig { HashKey = hashKeyEntry, Filter = filter, ConsistentRead = currentConfig.ConsistentRead.Value });
             query.AttributesToGet = storageConfig.AttributesToGet;
 
             return FromSearch<T>(query);

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:ec2="http://ec2.amazonaws.com/doc/2011-11-01/"
+                xmlns:ec2="http://ec2.amazonaws.com/doc/2011-12-15/"
                 exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-11-01/'"/>
+  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-12-15/'"/>
 
   <xsl:template match="ec2:DescribeInstanceStatusResponse">
     <xsl:element name="DescribeInstanceStatusResponse" namespace="{$ns}">
@@ -32,6 +32,8 @@
         </xsl:element>
         <xsl:apply-templates select="ec2:eventsSet" />
         <xsl:apply-templates select="ec2:instanceState"/>
+        <xsl:apply-templates select="ec2:systemStatus" />
+        <xsl:apply-templates select="ec2:instanceStatus" />
       </xsl:element>
     </xsl:for-each>
   </xsl:template>
@@ -66,5 +68,36 @@
     </xsl:element>
   </xsl:template>
 
+  <xsl:template match="ec2:systemStatus">
+    <xsl:element name="SystemStatusDetail" namespace="{$ns}">
+      <xsl:element name="Status" namespace="{$ns}">
+        <xsl:value-of select="ec2:status"/>
+      </xsl:element>
+      <xsl:apply-templates select="ec2:details" />
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="ec2:instanceStatus">
+    <xsl:element name="InstanceStatusDetail" namespace="{$ns}">
+      <xsl:element name="Status" namespace="{$ns}">
+        <xsl:value-of select="ec2:status"/>
+      </xsl:element>
+      <xsl:apply-templates select="ec2:details" />
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="ec2:details">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="InstanceStatusDetailType" namespace="{$ns}">
+        <xsl:element name="Name" namespace="{$ns}">
+          <xsl:value-of select="ec2:name"/>
+        </xsl:element>
+        <xsl:element name="Status" namespace="{$ns}">
+          <xsl:value-of select="ec2:status"/>
+        </xsl:element>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>  
+  
 </xsl:stylesheet>
 

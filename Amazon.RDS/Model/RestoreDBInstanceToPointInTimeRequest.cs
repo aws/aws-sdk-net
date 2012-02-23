@@ -25,9 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceToPointInTime operation.
-    /// <para> Creates a new DB Instance from a point-in-time system snapshot. The target database is created from the source database restore point
-    /// with the same configuration as the original source database, except that the new RDS instance is created with the default security group.
-    /// </para>
+    /// <para> Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up
+    /// to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database
+    /// except that the DB instance is created with the default DB security group. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.RestoreDBInstanceToPointInTime"/>
     public class RestoreDBInstanceToPointInTimeRequest : AmazonWebServiceRequest
@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private string dBInstanceClass;
         private int? port;
         private string availabilityZone;
+        private string dBSubnetGroupName;
         private bool? multiAZ;
         private bool? autoMinorVersionUpgrade;
         private string licenseModel;
@@ -105,8 +106,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The date and time from to restore from. Valid Values: Value must be a UTC time Constraints: <ul> <li>Must be after the latest restorable
-        /// time for the DB Instance</li> <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul> Example:
+        /// The date and time to restore from. Valid Values: Value must be a UTC time Constraints: <ul> <li>Must be before the latest restorable time
+        /// for the DB Instance</li> <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul> Example:
         /// <c>2009-09-07T23:45:00Z</c>
         ///  
         /// </summary>
@@ -193,7 +194,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The port number on which the database accepts connections. Constraints: Value must be <c>1115-65535</c> Default: The same port as the
+        /// The port number on which the database accepts connections. Constraints: Value must be <c>1150-65535</c> Default: The same port as the
         /// original DB Instance.
         ///  
         /// </summary>
@@ -248,6 +249,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZone()
         {
             return this.availabilityZone != null;       
+        }
+
+        /// <summary>
+        /// The DB subnet group name to use for the new instance.
+        ///  
+        /// </summary>
+        public string DBSubnetGroupName
+        {
+            get { return this.dBSubnetGroupName; }
+            set { this.dBSubnetGroupName = value; }
+        }
+
+        /// <summary>
+        /// Sets the DBSubnetGroupName property
+        /// </summary>
+        /// <param name="dBSubnetGroupName">The value to set for the DBSubnetGroupName property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceToPointInTimeRequest WithDBSubnetGroupName(string dBSubnetGroupName)
+        {
+            this.dBSubnetGroupName = dBSubnetGroupName;
+            return this;
+        }
+            
+
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
+        {
+            return this.dBSubnetGroupName != null;       
         }
 
         /// <summary>

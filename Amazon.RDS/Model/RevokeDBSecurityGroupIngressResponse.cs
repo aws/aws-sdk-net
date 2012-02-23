@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public RevokeDBSecurityGroupIngressResult RevokeDBSecurityGroupIngressResult
         {
-            get { return this.revokeDBSecurityGroupIngressResult; }
+            get 
+            {
+                if(this.revokeDBSecurityGroupIngressResult == null)
+                {
+                    this.revokeDBSecurityGroupIngressResult = new RevokeDBSecurityGroupIngressResult();
+                }
+
+                return this.revokeDBSecurityGroupIngressResult; 
+            }
             set { this.revokeDBSecurityGroupIngressResult = value; }
         }
     }

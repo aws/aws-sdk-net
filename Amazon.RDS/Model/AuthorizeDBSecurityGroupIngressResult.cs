@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the AuthorizeDBSecurityGroupIngress action.
     /// </summary>
-    public class AuthorizeDBSecurityGroupIngressResult : AmazonWebServiceResponse
+    public class AuthorizeDBSecurityGroupIngressResult
     {
         private DBSecurityGroup dBSecurityGroupValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the AuthorizeDBSecurityGroupIngressResult property.
         /// Contains the result of a successful invocation of the AuthorizeDBSecurityGroupIngress
         /// action.
-        /// 
+        /// </summary>
         public DBSecurityGroup DBSecurityGroup
         {
             get { return this.dBSecurityGroupValue; }

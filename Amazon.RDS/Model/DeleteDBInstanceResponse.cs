@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public DeleteDBInstanceResult DeleteDBInstanceResult
         {
-            get { return this.deleteDBInstanceResult; }
+            get 
+            {
+                if(this.deleteDBInstanceResult == null)
+                {
+                    this.deleteDBInstanceResult = new DeleteDBInstanceResult();
+                }
+
+                return this.deleteDBInstanceResult; 
+            }
             set { this.deleteDBInstanceResult = value; }
         }
     }
