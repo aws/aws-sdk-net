@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Create Load Balancer Listeners Request Marshaller
     /// </summary>       
-    public class CreateLoadBalancerListenersRequestMarshaller : IMarshaller<IRequest<CreateLoadBalancerListenersRequest>, CreateLoadBalancerListenersRequest>
+    public class CreateLoadBalancerListenersRequestMarshaller : IMarshaller<IRequest, CreateLoadBalancerListenersRequest>
     {
-        public IRequest<CreateLoadBalancerListenersRequest> Marshall(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest)
+        public IRequest Marshall(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest)
         {
-            IRequest<CreateLoadBalancerListenersRequest> request = new DefaultRequest<CreateLoadBalancerListenersRequest>(createLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(createLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateLoadBalancerListeners");
             request.Parameters.Add("Version", "2011-11-15");
             if (createLoadBalancerListenersRequest != null && createLoadBalancerListenersRequest.IsSetLoadBalancerName())

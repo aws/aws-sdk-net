@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   UpdateStackResult Unmarshaller
      /// </summary>
-    internal class UpdateStackResultUnmarshaller : IUnmarshaller<UpdateStackResult, UnmarshallerContext> 
+    internal class UpdateStackResultUnmarshaller : IUnmarshaller<UpdateStackResult, XmlUnmarshallerContext> 
     {
-        public UpdateStackResult Unmarshall(UnmarshallerContext context) 
+        public UpdateStackResult Unmarshall(XmlUnmarshallerContext context) 
         {
             UpdateStackResult updateStackResult = new UpdateStackResult();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("StackId", targetDepth))
                     {
                         updateStackResult.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -48,6 +48,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return updateStackResult;
                 }
             }
+                        
+
 
             return updateStackResult;
         }

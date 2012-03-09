@@ -25,12 +25,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for AddJobFlowSteps operation
     /// </summary>
-    internal class AddJobFlowStepsResponseUnmarshaller : IResponseUnmarshaller<AddJobFlowStepsResponse, UnmarshallerContext> {
+    internal class AddJobFlowStepsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public AddJobFlowStepsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             AddJobFlowStepsResponse response = new AddJobFlowStepsResponse();
-
+            
             while (context.Read())
             {
                 if (context.IsStartElement)
@@ -42,12 +43,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     }
                 }
             }
+                
 
             return response;
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

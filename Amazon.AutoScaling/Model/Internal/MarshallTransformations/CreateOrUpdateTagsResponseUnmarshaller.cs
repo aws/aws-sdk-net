@@ -25,9 +25,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for CreateOrUpdateTags operation
     /// </summary>
-    internal class CreateOrUpdateTagsResponseUnmarshaller : IResponseUnmarshaller<CreateOrUpdateTagsResponse, UnmarshallerContext> {
+    internal class CreateOrUpdateTagsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public CreateOrUpdateTagsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateOrUpdateTagsResponse response = new CreateOrUpdateTagsResponse();
             
@@ -48,7 +49,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

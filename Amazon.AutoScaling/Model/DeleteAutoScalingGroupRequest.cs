@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAutoScalingGroup operation.
-    /// <para> Deletes the specified Auto Scaling group if the group has no instances and no scaling activities in progress. </para>
+    /// <para> Deletes the specified auto scaling group if the group has no instances and no scaling activities in progress. </para>
     /// <para><b>NOTE:</b> To remove all instances before calling DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the minimum and
     /// maximum size of the AutoScalingGroup to zero. </para>
     /// </summary>

@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   TagDescription Unmarshaller
      /// </summary>
-    internal class TagDescriptionUnmarshaller : IUnmarshaller<TagDescription, UnmarshallerContext> 
+    internal class TagDescriptionUnmarshaller : IUnmarshaller<TagDescription, XmlUnmarshallerContext> 
     {
-        public TagDescription Unmarshall(UnmarshallerContext context) 
+        public TagDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             TagDescription tagDescription = new TagDescription();
             int originalDepth = context.CurrentDepth;

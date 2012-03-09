@@ -22,9 +22,9 @@
       /// <summary> 
       /// ActivityTaskScheduledEventAttributesUnmarshaller 
       /// </summary> 
-      internal class ActivityTaskScheduledEventAttributesUnmarshaller : IUnmarshaller<ActivityTaskScheduledEventAttributes, UnmarshallerContext>, IUnmarshaller<ActivityTaskScheduledEventAttributes, JsonUnmarshallerContext> 
+      internal class ActivityTaskScheduledEventAttributesUnmarshaller : IUnmarshaller<ActivityTaskScheduledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ActivityTaskScheduledEventAttributes, JsonUnmarshallerContext> 
       { 
-        ActivityTaskScheduledEventAttributes IUnmarshaller<ActivityTaskScheduledEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        ActivityTaskScheduledEventAttributes IUnmarshaller<ActivityTaskScheduledEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

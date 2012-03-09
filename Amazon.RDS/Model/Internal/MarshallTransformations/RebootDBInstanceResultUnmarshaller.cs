@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for RebootDBInstance operation
     /// </summary>
-    internal class RebootDBInstanceResultUnmarshaller : IUnmarshaller<RebootDBInstanceResult, UnmarshallerContext> {
+    internal class RebootDBInstanceResultUnmarshaller : IUnmarshaller<RebootDBInstanceResult, XmlUnmarshallerContext> {
 
-        public RebootDBInstanceResult Unmarshall(UnmarshallerContext context) 
+        public RebootDBInstanceResult Unmarshall(XmlUnmarshallerContext context) 
         {
             RebootDBInstanceResult result = new RebootDBInstanceResult();
             

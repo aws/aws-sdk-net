@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   AddInstanceGroupsResult Unmarshaller
      /// </summary>
-    internal class AddInstanceGroupsResultUnmarshaller : IUnmarshaller<AddInstanceGroupsResult, UnmarshallerContext> 
+    internal class AddInstanceGroupsResultUnmarshaller : IUnmarshaller<AddInstanceGroupsResult, XmlUnmarshallerContext> 
     {
-        public AddInstanceGroupsResult Unmarshall(UnmarshallerContext context) 
+        public AddInstanceGroupsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             AddInstanceGroupsResult addInstanceGroupsResult = new AddInstanceGroupsResult();
             int originalDepth = context.CurrentDepth;
@@ -35,13 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("JobFlowId", targetDepth))
                     {
                         addInstanceGroupsResult.JobFlowId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("InstanceGroupIds/member", targetDepth))
                     {
                         addInstanceGroupsResult.InstanceGroupIds.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
@@ -54,6 +54,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return addInstanceGroupsResult;
                 }
             }
+                        
+
 
             return addInstanceGroupsResult;
         }

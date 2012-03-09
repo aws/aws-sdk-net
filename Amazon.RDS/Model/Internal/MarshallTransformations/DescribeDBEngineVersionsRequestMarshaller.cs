@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe D B Engine Versions Request Marshaller
     /// </summary>       
-    public class DescribeDBEngineVersionsRequestMarshaller : IMarshaller<IRequest<DescribeDBEngineVersionsRequest>, DescribeDBEngineVersionsRequest>
+    public class DescribeDBEngineVersionsRequestMarshaller : IMarshaller<IRequest, DescribeDBEngineVersionsRequest>
     {
-        public IRequest<DescribeDBEngineVersionsRequest> Marshall(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest)
+        public IRequest Marshall(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest)
         {
-            IRequest<DescribeDBEngineVersionsRequest> request = new DefaultRequest<DescribeDBEngineVersionsRequest>(describeDBEngineVersionsRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(describeDBEngineVersionsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeDBEngineVersions");
             request.Parameters.Add("Version", "2012-01-15");
             if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetEngine())

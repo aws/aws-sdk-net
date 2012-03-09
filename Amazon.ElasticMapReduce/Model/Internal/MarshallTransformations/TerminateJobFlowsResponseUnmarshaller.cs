@@ -25,12 +25,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for TerminateJobFlows operation
     /// </summary>
-    internal class TerminateJobFlowsResponseUnmarshaller : IResponseUnmarshaller<TerminateJobFlowsResponse, UnmarshallerContext> {
+    internal class TerminateJobFlowsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public TerminateJobFlowsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             TerminateJobFlowsResponse response = new TerminateJobFlowsResponse();
-
+            
             while (context.Read())
             {
                 if (context.IsStartElement)
@@ -42,12 +43,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     }
                 }
             }
+                
 
             return response;
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Authorize D B Security Group Ingress Request Marshaller
     /// </summary>       
-    public class AuthorizeDBSecurityGroupIngressRequestMarshaller : IMarshaller<IRequest<AuthorizeDBSecurityGroupIngressRequest>, AuthorizeDBSecurityGroupIngressRequest>
+    public class AuthorizeDBSecurityGroupIngressRequestMarshaller : IMarshaller<IRequest, AuthorizeDBSecurityGroupIngressRequest>
     {
-        public IRequest<AuthorizeDBSecurityGroupIngressRequest> Marshall(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest)
+        public IRequest Marshall(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest)
         {
-            IRequest<AuthorizeDBSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeDBSecurityGroupIngressRequest>(authorizeDBSecurityGroupIngressRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(authorizeDBSecurityGroupIngressRequest, "AmazonRDS");
             request.Parameters.Add("Action", "AuthorizeDBSecurityGroupIngress");
             request.Parameters.Add("Version", "2012-01-15");
             if (authorizeDBSecurityGroupIngressRequest != null && authorizeDBSecurityGroupIngressRequest.IsSetDBSecurityGroupName())

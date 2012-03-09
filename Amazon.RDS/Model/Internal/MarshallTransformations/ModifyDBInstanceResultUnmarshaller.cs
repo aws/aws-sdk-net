@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for ModifyDBInstance operation
     /// </summary>
-    internal class ModifyDBInstanceResultUnmarshaller : IUnmarshaller<ModifyDBInstanceResult, UnmarshallerContext> {
+    internal class ModifyDBInstanceResultUnmarshaller : IUnmarshaller<ModifyDBInstanceResult, XmlUnmarshallerContext> {
 
-        public ModifyDBInstanceResult Unmarshall(UnmarshallerContext context) 
+        public ModifyDBInstanceResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ModifyDBInstanceResult result = new ModifyDBInstanceResult();
             

@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Deprecate Domain Request Marshaller
     /// </summary>       
-    internal class DeprecateDomainRequestMarshaller : IMarshaller<IRequest<DeprecateDomainRequest>, DeprecateDomainRequest> 
+    internal class DeprecateDomainRequestMarshaller : IMarshaller<IRequest, DeprecateDomainRequest> 
     {
-        public IRequest<DeprecateDomainRequest> Marshall(DeprecateDomainRequest deprecateDomainRequest) 
+        public IRequest Marshall(DeprecateDomainRequest deprecateDomainRequest) 
         {
 
-            IRequest<DeprecateDomainRequest> request = new DefaultRequest<DeprecateDomainRequest>(deprecateDomainRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(deprecateDomainRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.DeprecateDomain";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

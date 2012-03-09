@@ -24,9 +24,9 @@
       /// <summary> 
       /// Response Unmarshaller for UpdateItem operation 
       /// </summary> 
-      internal class UpdateItemResponseUnmarshaller : IResponseUnmarshaller<UpdateItemResponse, JsonUnmarshallerContext> 
+      internal class UpdateItemResponseUnmarshaller : JsonResponseUnmarshaller 
       { 
-        public UpdateItemResponse Unmarshall(JsonUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
         { 
           UpdateItemResponse response = new UpdateItemResponse();
           
@@ -36,7 +36,7 @@
           return response; 
         } 
          
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

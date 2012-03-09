@@ -1397,8 +1397,8 @@ namespace Amazon.CloudFront
             {
                 canonicalResource.Append("origin-access-identity/cloudfront");
             }
-            else if (action.Equals("PostInvalidation"))
-            {
+            else if(action.Equals("PostInvalidation"))
+            {                
                 canonicalResource.AppendFormat("distribution/{0}/invalidation", parameters[CloudFrontQueryParameter.DistributionId]);
             }
             else if (action.Equals("GetInvalidationList"))
@@ -1407,7 +1407,7 @@ namespace Amazon.CloudFront
             }
             else if (action.Equals("GetInvalidation"))
             {
-                canonicalResource.AppendFormat("distribution/{0}/invalidation/{1}",
+                canonicalResource.AppendFormat("distribution/{0}/invalidation/{1}", 
                     parameters[CloudFrontQueryParameter.DistributionId], parameters[CloudFrontQueryParameter.InvalidationId]);
             }
 
@@ -1693,6 +1693,8 @@ namespace Amazon.CloudFront
 
             if (httpRequest != null)
             {
+                httpRequest.ServicePoint.ConnectionLimit = this.config.ConnectionLimit;
+
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
                     WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);

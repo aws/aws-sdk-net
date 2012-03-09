@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents the user's current activity limits returned from a
-    /// successful <c>GetSendQuota</c> request.</para>
+    /// <para>Represents the user's current activity limits returned from a successful <c>GetSendQuota</c> request.</para>
     /// </summary>
     public class GetSendQuotaResult  
     {

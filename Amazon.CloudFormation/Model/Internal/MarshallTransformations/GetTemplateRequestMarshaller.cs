@@ -28,11 +28,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Template Request Marshaller
     /// </summary>       
-    public class GetTemplateRequestMarshaller : IMarshaller<IRequest<GetTemplateRequest>, GetTemplateRequest>
+    public class GetTemplateRequestMarshaller : IMarshaller<IRequest, GetTemplateRequest>
     {
-        public IRequest<GetTemplateRequest> Marshall(GetTemplateRequest getTemplateRequest)
+        public IRequest Marshall(GetTemplateRequest getTemplateRequest)
         {
-            IRequest<GetTemplateRequest> request = new DefaultRequest<GetTemplateRequest>(getTemplateRequest, "AmazonCloudFormation");
+            IRequest request = new DefaultRequest(getTemplateRequest, "AmazonCloudFormation");
             request.Parameters.Add("Action", "GetTemplate");
             request.Parameters.Add("Version", "2010-05-15");
             if (getTemplateRequest != null && getTemplateRequest.IsSetStackName())

@@ -23,6 +23,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Xml.Serialization;
@@ -77,7 +78,7 @@ namespace Amazon.S3.Model
         /// <returns>true if Headers property is set</returns>
         internal bool IsSetHeaders()
         {
-            return (this.headers != null &&
+            return (this.headers != null && 
                 this.headers.Count > 0);
         }
 
@@ -167,13 +168,16 @@ namespace Amazon.S3.Model
         internal Guid Id { get { return this.id; } }
 
 
-        internal TimeSpan TotalRequestTime { get; set; }
-        internal TimeSpan ResponseReadTime { get; set; }
-        internal TimeSpan ResponseProcessingTime { get; set; }
-        internal TimeSpan ResponseTime { get; set; }
+        internal long TotalRequestTime { get; set; }
+        internal long ResponseReadTime { get; set; }
+
+        internal long ResponseProcessingTime { get; set; }
+        internal long ResponseTime { get; set; }
         internal long BytesProcessed { get; set; }
 
-        internal TimeSpan MissingTime
+        internal Stopwatch StopWatch { get; set; }
+
+        internal long MissingTime
         {
             get
             {

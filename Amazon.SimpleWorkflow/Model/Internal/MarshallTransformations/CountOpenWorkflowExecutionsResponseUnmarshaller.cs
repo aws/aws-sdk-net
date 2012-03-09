@@ -24,9 +24,9 @@
       /// <summary>
       /// Response Unmarshaller for CountOpenWorkflowExecutions operation
       /// </summary>
-      internal class CountOpenWorkflowExecutionsResponseUnmarshaller : IResponseUnmarshaller<CountOpenWorkflowExecutionsResponse, JsonUnmarshallerContext>
+      internal class CountOpenWorkflowExecutionsResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public CountOpenWorkflowExecutionsResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           CountOpenWorkflowExecutionsResponse response = new CountOpenWorkflowExecutionsResponse();
           
@@ -36,7 +36,7 @@
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

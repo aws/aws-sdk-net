@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public GetAccountSummaryResult GetAccountSummaryResult
         {
-            get { return this.getAccountSummaryResult; }
+            get 
+            {
+                if(this.getAccountSummaryResult == null)
+                {
+                    this.getAccountSummaryResult = new GetAccountSummaryResult();
+                }
+
+                return this.getAccountSummaryResult; 
+            }
             set { this.getAccountSummaryResult = value; }
         }
     }

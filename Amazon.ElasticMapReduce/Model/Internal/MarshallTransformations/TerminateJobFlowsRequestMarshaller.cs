@@ -28,11 +28,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// Terminate Job Flows Request Marshaller
     /// </summary>       
-    public class TerminateJobFlowsRequestMarshaller : IMarshaller<IRequest<TerminateJobFlowsRequest>, TerminateJobFlowsRequest>
+    public class TerminateJobFlowsRequestMarshaller : IMarshaller<IRequest, TerminateJobFlowsRequest>
     {
-        public IRequest<TerminateJobFlowsRequest> Marshall(TerminateJobFlowsRequest terminateJobFlowsRequest)
+        public IRequest Marshall(TerminateJobFlowsRequest terminateJobFlowsRequest)
         {
-            IRequest<TerminateJobFlowsRequest> request = new DefaultRequest<TerminateJobFlowsRequest>(terminateJobFlowsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(terminateJobFlowsRequest, "AmazonElasticMapReduce");
             request.Parameters.Add("Action", "TerminateJobFlows");
             request.Parameters.Add("Version", "2009-03-31");
             if (terminateJobFlowsRequest != null)

@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for CreateDBInstanceReadReplica operation
     /// </summary>
-    internal class CreateDBInstanceReadReplicaResultUnmarshaller : IUnmarshaller<CreateDBInstanceReadReplicaResult, UnmarshallerContext> {
+    internal class CreateDBInstanceReadReplicaResultUnmarshaller : IUnmarshaller<CreateDBInstanceReadReplicaResult, XmlUnmarshallerContext> {
 
-        public CreateDBInstanceReadReplicaResult Unmarshall(UnmarshallerContext context) 
+        public CreateDBInstanceReadReplicaResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateDBInstanceReadReplicaResult result = new CreateDBInstanceReadReplicaResult();
             

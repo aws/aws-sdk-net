@@ -46,7 +46,7 @@ namespace Amazon.S3.Model
         string etagToNotMatch;
         Tuple<long, long> byteRange;
         int timeout = 0;
-        private int readWriteTimeout = 0;
+        int readWriteTimeout = 0;
         ResponseHeaderOverrides _responseHeaders;
 
         #endregion
@@ -409,18 +409,17 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets of the Timeout property (in milliseconds).
         /// The value of this property is assigned to the
-        /// ReadWriteTimeout and Timeout properties of the
-        /// HTTPWebRequest object used for S3 GET Object requests.
+        /// Timeout property of the HTTPWebRequest object used
+        /// for S3 GET Object requests.
         /// </summary>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
-        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
         public int Timeout
         {
             get { return this.timeout; }
             set
             {
-                if (value > 0)
+                if (value > 0 || value == System.Threading.Timeout.Infinite)
                 {
                     this.timeout = value;
                 }
@@ -430,7 +429,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Sets the Timeout property (in milliseconds). 
         /// The value of this property is assigned to the
-        /// ReadWriteTimeout and Timeout properties of the
+        /// Timeout property of the HttpWebRequest
         /// Please specify a timeout value only if you are certain that
         /// the file will not be retrieved within the default intervals
         /// specified for an HttpWebRequest.

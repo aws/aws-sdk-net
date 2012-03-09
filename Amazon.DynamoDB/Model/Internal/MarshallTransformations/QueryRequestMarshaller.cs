@@ -30,12 +30,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Query Request Marshaller
     /// </summary>       
-    internal class QueryRequestMarshaller : IMarshaller<IRequest<QueryRequest>, QueryRequest> 
+    internal class QueryRequestMarshaller : IMarshaller<IRequest, QueryRequest> 
     {
-        public IRequest<QueryRequest> Marshall(QueryRequest queryRequest) 
+        public IRequest Marshall(QueryRequest queryRequest) 
         {
 
-            IRequest<QueryRequest> request = new DefaultRequest<QueryRequest>(queryRequest, "AmazonDynamoDB");
+            IRequest request = new DefaultRequest(queryRequest, "AmazonDynamoDB");
             string target = "DynamoDB_20111205.Query";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

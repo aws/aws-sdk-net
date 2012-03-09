@@ -28,11 +28,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Validate Template Request Marshaller
     /// </summary>       
-    public class ValidateTemplateRequestMarshaller : IMarshaller<IRequest<ValidateTemplateRequest>, ValidateTemplateRequest>
+    public class ValidateTemplateRequestMarshaller : IMarshaller<IRequest, ValidateTemplateRequest>
     {
-        public IRequest<ValidateTemplateRequest> Marshall(ValidateTemplateRequest validateTemplateRequest)
+        public IRequest Marshall(ValidateTemplateRequest validateTemplateRequest)
         {
-            IRequest<ValidateTemplateRequest> request = new DefaultRequest<ValidateTemplateRequest>(validateTemplateRequest, "AmazonCloudFormation");
+            IRequest request = new DefaultRequest(validateTemplateRequest, "AmazonCloudFormation");
             request.Parameters.Add("Action", "ValidateTemplate");
             request.Parameters.Add("Version", "2010-05-15");
             if (validateTemplateRequest != null && validateTemplateRequest.IsSetTemplateBody())

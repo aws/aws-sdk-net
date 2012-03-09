@@ -25,12 +25,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DescribeAutoScalingGroups operation
     /// </summary>
-    internal class DescribeAutoScalingGroupsResponseUnmarshaller : IResponseUnmarshaller<DescribeAutoScalingGroupsResponse, UnmarshallerContext> {
+    internal class DescribeAutoScalingGroupsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DescribeAutoScalingGroupsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeAutoScalingGroupsResponse response = new DescribeAutoScalingGroupsResponse();
-
             
             while (context.Read())
             {
@@ -51,9 +51,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

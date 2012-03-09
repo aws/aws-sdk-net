@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>AutoScalingInstancesType</c> data type. </para>
+    /// <para> The AutoScalingInstancesType data type. </para>
     /// </summary>
     public class DescribeAutoScalingInstancesResult  
     {

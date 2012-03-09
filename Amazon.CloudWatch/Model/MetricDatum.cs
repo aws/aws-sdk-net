@@ -21,9 +21,8 @@ using System.IO;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The <c>MetricDatum</c> data type encapsulates the information
-    /// sent with PutMetricData to either create a new metric or add new
-    /// values to be aggregated into an existing metric. </para>
+    /// <para> The <c>MetricDatum</c> data type encapsulates the information sent with PutMetricData to either create a new metric or add new values
+    /// to be aggregated into an existing metric. </para>
     /// </summary>
     public class MetricDatum  
     {

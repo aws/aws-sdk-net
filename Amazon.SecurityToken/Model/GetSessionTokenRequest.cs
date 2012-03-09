@@ -25,12 +25,32 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSessionToken operation.
-    /// 
+    /// <para>The GetSessionToken action returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an Access
+    /// Key ID, a Secret Access Key, and a security token. These credentials are valid for the specified duration only. The session duration for IAM
+    /// users can be between one and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to one
+    /// hour.</para> <para>For more information about using GetSessionToken to create temporary credentials, go to Creating Temporary Credentials to
+    /// Enable Access for IAM Users in <i>Using IAM</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.SecurityToken.AmazonSecurityTokenService.GetSessionToken"/>
     public class GetSessionTokenRequest : AmazonWebServiceRequest
     {
         private int? durationSeconds;
+
+        /// <summary>
+        /// The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions range from 3600s (one hour)
+        /// to 129600s (36 hours), with 43200s (12 hours) as the default. Sessions for AWS account owners are restricted to a maximum of 3600s (one
+        /// hour).
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>3600 - 129600</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public int DurationSeconds
         {
             get { return this.durationSeconds ?? default(int); }

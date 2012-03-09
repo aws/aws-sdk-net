@@ -55,7 +55,7 @@ namespace Amazon.S3.Model
         internal NameValueCollection metaData;
         private S3CannedACL cannedACL;
         private int timeout = 0;
-        private int readWriteTimeout = 0;
+        private int readWriteTimeout;
         private S3StorageClass storageClass;
         private ServerSideEncryptionMethod encryption;
 
@@ -562,8 +562,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets of the Timeout property (in milliseconds).
         /// The value of this property is assigned to the
-        /// ReadWriteTimeout and Timeout properties of the
-        /// HTTPWebRequest object used for S3 COPY requests.
+        /// Timeout property of the HTTPWebRequest object used
+        /// for S3 COPY requests.
         /// </summary>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
@@ -573,7 +573,7 @@ namespace Amazon.S3.Model
             get { return this.timeout; }
             set
             {
-                if (value > 0)
+                if (value > 0 || value == System.Threading.Timeout.Infinite)
                 {
                     this.timeout = value;
                 }

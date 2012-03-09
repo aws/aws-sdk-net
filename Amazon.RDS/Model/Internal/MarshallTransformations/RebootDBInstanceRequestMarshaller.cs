@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Reboot D B Instance Request Marshaller
     /// </summary>       
-    public class RebootDBInstanceRequestMarshaller : IMarshaller<IRequest<RebootDBInstanceRequest>, RebootDBInstanceRequest>
+    public class RebootDBInstanceRequestMarshaller : IMarshaller<IRequest, RebootDBInstanceRequest>
     {
-        public IRequest<RebootDBInstanceRequest> Marshall(RebootDBInstanceRequest rebootDBInstanceRequest)
+        public IRequest Marshall(RebootDBInstanceRequest rebootDBInstanceRequest)
         {
-            IRequest<RebootDBInstanceRequest> request = new DefaultRequest<RebootDBInstanceRequest>(rebootDBInstanceRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(rebootDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RebootDBInstance");
             request.Parameters.Add("Version", "2012-01-15");
             if (rebootDBInstanceRequest != null && rebootDBInstanceRequest.IsSetDBInstanceIdentifier())

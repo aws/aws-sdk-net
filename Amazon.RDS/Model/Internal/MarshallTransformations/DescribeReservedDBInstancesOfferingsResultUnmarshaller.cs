@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeReservedDBInstancesOfferingsResult Unmarshaller
      /// </summary>
-    internal class DescribeReservedDBInstancesOfferingsResultUnmarshaller : IUnmarshaller<DescribeReservedDBInstancesOfferingsResult, UnmarshallerContext> 
+    internal class DescribeReservedDBInstancesOfferingsResultUnmarshaller : IUnmarshaller<DescribeReservedDBInstancesOfferingsResult, XmlUnmarshallerContext> 
     {
-        public DescribeReservedDBInstancesOfferingsResult Unmarshall(UnmarshallerContext context) 
+        public DescribeReservedDBInstancesOfferingsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeReservedDBInstancesOfferingsResult describeReservedDBInstancesOfferingsResult = new DescribeReservedDBInstancesOfferingsResult();
             int originalDepth = context.CurrentDepth;

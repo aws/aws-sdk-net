@@ -30,12 +30,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// List Tables Request Marshaller
     /// </summary>       
-    internal class ListTablesRequestMarshaller : IMarshaller<IRequest<ListTablesRequest>, ListTablesRequest> 
+    internal class ListTablesRequestMarshaller : IMarshaller<IRequest, ListTablesRequest> 
     {
-        public IRequest<ListTablesRequest> Marshall(ListTablesRequest listTablesRequest) 
+        public IRequest Marshall(ListTablesRequest listTablesRequest) 
         {
 
-            IRequest<ListTablesRequest> request = new DefaultRequest<ListTablesRequest>(listTablesRequest, "AmazonDynamoDB");
+            IRequest request = new DefaultRequest(listTablesRequest, "AmazonDynamoDB");
             string target = "DynamoDB_20111205.ListTables";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

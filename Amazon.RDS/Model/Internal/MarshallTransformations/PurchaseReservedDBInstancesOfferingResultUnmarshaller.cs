@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for PurchaseReservedDBInstancesOffering operation
     /// </summary>
-    internal class PurchaseReservedDBInstancesOfferingResultUnmarshaller : IUnmarshaller<PurchaseReservedDBInstancesOfferingResult, UnmarshallerContext> {
+    internal class PurchaseReservedDBInstancesOfferingResultUnmarshaller : IUnmarshaller<PurchaseReservedDBInstancesOfferingResult, XmlUnmarshallerContext> {
 
-        public PurchaseReservedDBInstancesOfferingResult Unmarshall(UnmarshallerContext context) 
+        public PurchaseReservedDBInstancesOfferingResult Unmarshall(XmlUnmarshallerContext context) 
         {
             PurchaseReservedDBInstancesOfferingResult result = new PurchaseReservedDBInstancesOfferingResult();
             

@@ -28,11 +28,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// Add Job Flow Steps Request Marshaller
     /// </summary>       
-    public class AddJobFlowStepsRequestMarshaller : IMarshaller<IRequest<AddJobFlowStepsRequest>, AddJobFlowStepsRequest>
+    public class AddJobFlowStepsRequestMarshaller : IMarshaller<IRequest, AddJobFlowStepsRequest>
     {
-        public IRequest<AddJobFlowStepsRequest> Marshall(AddJobFlowStepsRequest addJobFlowStepsRequest)
+        public IRequest Marshall(AddJobFlowStepsRequest addJobFlowStepsRequest)
         {
-            IRequest<AddJobFlowStepsRequest> request = new DefaultRequest<AddJobFlowStepsRequest>(addJobFlowStepsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(addJobFlowStepsRequest, "AmazonElasticMapReduce");
             request.Parameters.Add("Action", "AddJobFlowSteps");
             request.Parameters.Add("Version", "2009-03-31");
             if (addJobFlowStepsRequest != null && addJobFlowStepsRequest.IsSetJobFlowId())

@@ -37,7 +37,7 @@ namespace Amazon.CloudFormation.Model
         private string nextToken;
 
         /// <summary>
-        /// The name or the unique identifier associated with the stack.<br></br> Default: There is no default value.
+        /// The name or the unique identifier associated with the stack. Default: There is no default value.
         ///  
         /// </summary>
         public string StackName
@@ -65,7 +65,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// String that identifies the start of the next list of events, if there is one.<br></br> Default: There is no default value.
+        /// String that identifies the start of the next list of events, if there is one. Default: There is no default value.
         ///  
         /// <para>
         /// <b>Constraints:</b>

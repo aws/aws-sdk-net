@@ -25,15 +25,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for AttachLoadBalancerToSubnets operation
     /// </summary>
-    internal class AttachLoadBalancerToSubnetsResponseUnmarshaller : IResponseUnmarshaller<AttachLoadBalancerToSubnetsResponse, UnmarshallerContext> {
+    internal class AttachLoadBalancerToSubnetsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public AttachLoadBalancerToSubnetsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             AttachLoadBalancerToSubnetsResponse response = new AttachLoadBalancerToSubnetsResponse();
-
+            
             while (context.Read())
             {
-                if (context.IsStartElement)
+                if (context.IsStartElement)                
                 {
                     if(context.TestExpression("AttachLoadBalancerToSubnetsResult", 2))
                     {
@@ -46,15 +47,21 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     }
                 }
             }
-
+                 
+                        
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSubnet"))
+            {
+                return new InvalidSubnetException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("SubnetNotFound"))
             {
                 return new SubnetNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

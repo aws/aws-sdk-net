@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public CheckDNSAvailabilityResult CheckDNSAvailabilityResult
         {
-            get { return this.checkDNSAvailabilityResult; }
+            get 
+            {
+                if(this.checkDNSAvailabilityResult == null)
+                {
+                    this.checkDNSAvailabilityResult = new CheckDNSAvailabilityResult();
+                }
+
+                return this.checkDNSAvailabilityResult; 
+            }
             set { this.checkDNSAvailabilityResult = value; }
         }
     }

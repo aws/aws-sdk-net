@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Deprecate Activity Type Request Marshaller
     /// </summary>       
-    internal class DeprecateActivityTypeRequestMarshaller : IMarshaller<IRequest<DeprecateActivityTypeRequest>, DeprecateActivityTypeRequest> 
+    internal class DeprecateActivityTypeRequestMarshaller : IMarshaller<IRequest, DeprecateActivityTypeRequest> 
     {
-        public IRequest<DeprecateActivityTypeRequest> Marshall(DeprecateActivityTypeRequest deprecateActivityTypeRequest) 
+        public IRequest Marshall(DeprecateActivityTypeRequest deprecateActivityTypeRequest) 
         {
 
-            IRequest<DeprecateActivityTypeRequest> request = new DefaultRequest<DeprecateActivityTypeRequest>(deprecateActivityTypeRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(deprecateActivityTypeRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.DeprecateActivityType";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

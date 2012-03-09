@@ -22,9 +22,9 @@
       /// <summary> 
       /// WorkflowExecutionDetailUnmarshaller 
       /// </summary> 
-      internal class WorkflowExecutionDetailUnmarshaller : IUnmarshaller<WorkflowExecutionDetail, UnmarshallerContext>, IUnmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext> 
+      internal class WorkflowExecutionDetailUnmarshaller : IUnmarshaller<WorkflowExecutionDetail, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext> 
       { 
-        WorkflowExecutionDetail IUnmarshaller<WorkflowExecutionDetail, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        WorkflowExecutionDetail IUnmarshaller<WorkflowExecutionDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

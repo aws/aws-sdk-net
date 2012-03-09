@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ReservedDBInstance Unmarshaller
      /// </summary>
-    internal class ReservedDBInstanceUnmarshaller : IUnmarshaller<ReservedDBInstance, UnmarshallerContext> 
+    internal class ReservedDBInstanceUnmarshaller : IUnmarshaller<ReservedDBInstance, XmlUnmarshallerContext> 
     {
-        public ReservedDBInstance Unmarshall(UnmarshallerContext context) 
+        public ReservedDBInstance Unmarshall(XmlUnmarshallerContext context) 
         {
             ReservedDBInstance reservedDBInstance = new ReservedDBInstance();
             int originalDepth = context.CurrentDepth;

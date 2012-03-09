@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Respond Activity Task Failed Request Marshaller
     /// </summary>       
-    internal class RespondActivityTaskFailedRequestMarshaller : IMarshaller<IRequest<RespondActivityTaskFailedRequest>, RespondActivityTaskFailedRequest> 
+    internal class RespondActivityTaskFailedRequestMarshaller : IMarshaller<IRequest, RespondActivityTaskFailedRequest> 
     {
-        public IRequest<RespondActivityTaskFailedRequest> Marshall(RespondActivityTaskFailedRequest respondActivityTaskFailedRequest) 
+        public IRequest Marshall(RespondActivityTaskFailedRequest respondActivityTaskFailedRequest) 
         {
 
-            IRequest<RespondActivityTaskFailedRequest> request = new DefaultRequest<RespondActivityTaskFailedRequest>(respondActivityTaskFailedRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(respondActivityTaskFailedRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.RespondActivityTaskFailed";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

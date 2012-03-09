@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// String that identifies the start of the next list of events, if there is one. Default: There is no default value.
+        /// String that identifies the start of the next list of stack resource summaries, if there is one. Default: There is no default value.
         ///  
         /// <para>
         /// <b>Constraints:</b>

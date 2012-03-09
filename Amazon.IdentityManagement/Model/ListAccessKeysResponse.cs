@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public ListAccessKeysResult ListAccessKeysResult
         {
-            get { return this.listAccessKeysResult; }
+            get 
+            {
+                if(this.listAccessKeysResult == null)
+                {
+                    this.listAccessKeysResult = new ListAccessKeysResult();
+                }
+
+                return this.listAccessKeysResult; 
+            }
             set { this.listAccessKeysResult = value; }
         }
     }

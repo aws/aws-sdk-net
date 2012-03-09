@@ -25,9 +25,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for CopyDBSnapshot operation
     /// </summary>
-    internal class CopyDBSnapshotResponseUnmarshaller : IResponseUnmarshaller<CopyDBSnapshotResponse, UnmarshallerContext> {
+    internal class CopyDBSnapshotResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public CopyDBSnapshotResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             CopyDBSnapshotResponse response = new CopyDBSnapshotResponse();
             
@@ -54,7 +55,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

@@ -136,8 +136,14 @@ namespace Amazon.DynamoDB.DataModel
             Table table;
             if (!tablesMap.TryGetValue(tableName, out table))
             {
-                table = Table.LoadTable(client, tableName, Table.DynamoDBConsumer.DataModel);
-                tablesMap[tableName] = table;
+                lock (tablesMapLock)
+                {
+                    if (!tablesMap.TryGetValue(tableName, out table))
+                    {
+                        table = Table.LoadTable(client, tableName, Table.DynamoDBConsumer.DataModel);
+                        tablesMap[tableName] = table;
+                    }
+                }
             }
             return table;
         }
@@ -226,14 +232,15 @@ namespace Amazon.DynamoDB.DataModel
                 DynamoDBEntry entry;
                 if (document.TryGetValue(attributeName, out entry))
                 {
-                    object value = FromDynamoDBEntry(propertyStorage.MemberType, entry, propertyStorage.Converter); 
+                    object value = FromDynamoDBEntry(propertyStorage.MemberType, entry, propertyStorage.Converter); // TODO: send entire propertyStorage into method, and store the collectionAdd MethodInfo in it
 
                     if (!TrySetValue(instance, propertyStorage.Member, value))
                     {
                         throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
                     }
 
-                    storage.CurrentVersion = entry as Primitive;
+                    if (propertyStorage.IsVersion)
+                        storage.CurrentVersion = entry as Primitive;
                 }
             }
         }

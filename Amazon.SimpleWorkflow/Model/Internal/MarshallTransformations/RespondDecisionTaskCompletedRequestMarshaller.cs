@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Respond Decision Task Completed Request Marshaller
     /// </summary>       
-    internal class RespondDecisionTaskCompletedRequestMarshaller : IMarshaller<IRequest<RespondDecisionTaskCompletedRequest>, RespondDecisionTaskCompletedRequest> 
+    internal class RespondDecisionTaskCompletedRequestMarshaller : IMarshaller<IRequest, RespondDecisionTaskCompletedRequest> 
     {
-        public IRequest<RespondDecisionTaskCompletedRequest> Marshall(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest) 
+        public IRequest Marshall(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest) 
         {
 
-            IRequest<RespondDecisionTaskCompletedRequest> request = new DefaultRequest<RespondDecisionTaskCompletedRequest>(respondDecisionTaskCompletedRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(respondDecisionTaskCompletedRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.RespondDecisionTaskCompleted";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Modify D B Instance Request Marshaller
     /// </summary>       
-    public class ModifyDBInstanceRequestMarshaller : IMarshaller<IRequest<ModifyDBInstanceRequest>, ModifyDBInstanceRequest>
+    public class ModifyDBInstanceRequestMarshaller : IMarshaller<IRequest, ModifyDBInstanceRequest>
     {
-        public IRequest<ModifyDBInstanceRequest> Marshall(ModifyDBInstanceRequest modifyDBInstanceRequest)
+        public IRequest Marshall(ModifyDBInstanceRequest modifyDBInstanceRequest)
         {
-            IRequest<ModifyDBInstanceRequest> request = new DefaultRequest<ModifyDBInstanceRequest>(modifyDBInstanceRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(modifyDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "ModifyDBInstance");
             request.Parameters.Add("Version", "2012-01-15");
             if (modifyDBInstanceRequest != null && modifyDBInstanceRequest.IsSetDBInstanceIdentifier())

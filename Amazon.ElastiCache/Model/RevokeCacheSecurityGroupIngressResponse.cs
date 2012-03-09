@@ -34,7 +34,15 @@ namespace Amazon.ElastiCache.Model
         /// 
         public RevokeCacheSecurityGroupIngressResult RevokeCacheSecurityGroupIngressResult
         {
-            get { return this.revokeCacheSecurityGroupIngressResult; }
+            get 
+            {
+                if(this.revokeCacheSecurityGroupIngressResult == null)
+                {
+                    this.revokeCacheSecurityGroupIngressResult = new RevokeCacheSecurityGroupIngressResult();
+                }
+
+                return this.revokeCacheSecurityGroupIngressResult; 
+            }
             set { this.revokeCacheSecurityGroupIngressResult = value; }
         }
     }

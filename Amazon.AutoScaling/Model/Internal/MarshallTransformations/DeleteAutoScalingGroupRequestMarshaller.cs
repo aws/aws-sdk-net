@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Auto Scaling Group Request Marshaller
     /// </summary>       
-    public class DeleteAutoScalingGroupRequestMarshaller : IMarshaller<IRequest<DeleteAutoScalingGroupRequest>, DeleteAutoScalingGroupRequest>
+    public class DeleteAutoScalingGroupRequestMarshaller : IMarshaller<IRequest, DeleteAutoScalingGroupRequest>
     {
-        public IRequest<DeleteAutoScalingGroupRequest> Marshall(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest)
+        public IRequest Marshall(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest)
         {
-            IRequest<DeleteAutoScalingGroupRequest> request = new DefaultRequest<DeleteAutoScalingGroupRequest>(deleteAutoScalingGroupRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(deleteAutoScalingGroupRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DeleteAutoScalingGroup");
             request.Parameters.Add("Version", "2011-01-01");
             if (deleteAutoScalingGroupRequest != null && deleteAutoScalingGroupRequest.IsSetAutoScalingGroupName())

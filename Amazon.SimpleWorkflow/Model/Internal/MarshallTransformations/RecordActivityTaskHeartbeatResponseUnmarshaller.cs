@@ -24,9 +24,9 @@
       /// <summary>
       /// Response Unmarshaller for RecordActivityTaskHeartbeat operation
       /// </summary>
-      internal class RecordActivityTaskHeartbeatResponseUnmarshaller : IResponseUnmarshaller<RecordActivityTaskHeartbeatResponse, JsonUnmarshallerContext>
+      internal class RecordActivityTaskHeartbeatResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public RecordActivityTaskHeartbeatResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           RecordActivityTaskHeartbeatResponse response = new RecordActivityTaskHeartbeatResponse();
           
@@ -36,7 +36,7 @@
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

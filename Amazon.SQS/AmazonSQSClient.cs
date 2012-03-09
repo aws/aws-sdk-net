@@ -74,16 +74,13 @@ namespace Amazon.SQS
         {
             if (!this.disposed)
             {
-                if (fDisposing)
+                if (fDisposing && credentials != null)
                 {
-                    if (credentials != null)
+                    if (ownCredentials)
                     {
-                        if (ownCredentials && credentials is IDisposable)
-                        {
-                            (credentials as IDisposable).Dispose();
-                        }
-                        credentials = null;
+                        credentials.Dispose();
                     }
+                    credentials = null;
                 }
                 this.disposed = true;
             }
@@ -470,6 +467,8 @@ namespace Amazon.SQS
             HttpWebRequest request = WebRequest.Create(queueUrl) as HttpWebRequest;
             if (request != null)
             {
+                request.ServicePoint.ConnectionLimit = config.ConnectionLimit;
+
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
                     WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);

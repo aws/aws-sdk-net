@@ -22,9 +22,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ChangeInfo Unmarshaller
      /// </summary>
-    internal class ChangeInfoUnmarshaller : IUnmarshaller<ChangeInfo, UnmarshallerContext> 
+    internal class ChangeInfoUnmarshaller : IUnmarshaller<ChangeInfo, XmlUnmarshallerContext> 
     {
-        public ChangeInfo Unmarshall(UnmarshallerContext context) 
+        public ChangeInfo Unmarshall(XmlUnmarshallerContext context) 
         {
             ChangeInfo changeInfo = new ChangeInfo();
             int originalDepth = context.CurrentDepth;

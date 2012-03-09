@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public CreateGroupResult CreateGroupResult
         {
-            get { return this.createGroupResult; }
+            get 
+            {
+                if(this.createGroupResult == null)
+                {
+                    this.createGroupResult = new CreateGroupResult();
+                }
+
+                return this.createGroupResult; 
+            }
             set { this.createGroupResult = value; }
         }
     }

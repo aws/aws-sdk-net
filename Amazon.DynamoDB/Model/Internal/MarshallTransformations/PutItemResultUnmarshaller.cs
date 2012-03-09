@@ -22,9 +22,9 @@
       /// <summary> 
       /// PutItemResultUnmarshaller 
       /// </summary> 
-      internal class PutItemResultUnmarshaller : IUnmarshaller<PutItemResult, UnmarshallerContext>, IUnmarshaller<PutItemResult, JsonUnmarshallerContext> 
+      internal class PutItemResultUnmarshaller : IUnmarshaller<PutItemResult, XmlUnmarshallerContext>, IUnmarshaller<PutItemResult, JsonUnmarshallerContext> 
       { 
-        PutItemResult IUnmarshaller<PutItemResult, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        PutItemResult IUnmarshaller<PutItemResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

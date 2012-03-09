@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
         private string scheduledActionName;
 
         /// <summary>
-        /// The name of the Auto Scaling group.
+        /// The name of the Auto Scaling group
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeNotificationConfigurationsResult Unmarshaller
      /// </summary>
-    internal class DescribeNotificationConfigurationsResultUnmarshaller : IUnmarshaller<DescribeNotificationConfigurationsResult, UnmarshallerContext> 
+    internal class DescribeNotificationConfigurationsResultUnmarshaller : IUnmarshaller<DescribeNotificationConfigurationsResult, XmlUnmarshallerContext> 
     {
-        public DescribeNotificationConfigurationsResult Unmarshall(UnmarshallerContext context) 
+        public DescribeNotificationConfigurationsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeNotificationConfigurationsResult describeNotificationConfigurationsResult = new DescribeNotificationConfigurationsResult();
             int originalDepth = context.CurrentDepth;

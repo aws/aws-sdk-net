@@ -40,8 +40,8 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// A list containing the activity IDs of the desired scaling activities. If this list is omitted, all activities are described. If an
-        /// <c>AutoScalingGroupName</c> is provided, the results are limited to that group. The list of requested activities cannot contain more than 50
-        /// items. If unknown activities are requested, they are ignored with no error.
+        /// AutoScalingGroupName is provided, the results are limited to that group. The list of requested activities cannot contain more than 50 items.
+        /// If unknown activities are requested, they are ignored with no error.
         ///  
         /// </summary>
         public List<string> ActivityIds

@@ -25,12 +25,9 @@ namespace Amazon.ImportExport.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
-    /// <para> This operation initiates the process of scheduling an upload or
-    /// download of your data. You include in the request a manifest that
-    /// describes the data transfer specifics. The response to the request
-    /// includes a job ID, which you can use in other operations, a signature
-    /// that you use to identify your storage device, and the address where
-    /// you should ship your storage device. </para>
+    /// <para> This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that
+    /// describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature
+    /// that you use to identify your storage device, and the address where you should ship your storage device. </para>
     /// </summary>
     /// <seealso cref="Amazon.ImportExport.AmazonImportExport.CreateJob"/>
     public class CreateJobRequest : AmazonWebServiceRequest
@@ -70,10 +67,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if JobType property is set
         internal bool IsSetJobType()
         {
-            return this.jobType != null;        
+            return this.jobType != null;       
         }
 
         /// <summary>
@@ -97,6 +95,7 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if Manifest property is set
         internal bool IsSetManifest()
         {
@@ -124,6 +123,7 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if ManifestAddendum property is set
         internal bool IsSetManifestAddendum()
         {
@@ -131,8 +131,7 @@ namespace Amazon.ImportExport.Model
         }
 
         /// <summary>
-        /// Validate the manifest and parameter values in the request but do not
-        /// actually create a job.
+        /// Validate the manifest and parameter values in the request but do not actually create a job.
         ///  
         /// </summary>
         public bool ValidateOnly
@@ -152,10 +151,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if ValidateOnly property is set
         internal bool IsSetValidateOnly()
         {
-            return this.validateOnly.HasValue;      
+            return this.validateOnly.HasValue;       
         }
     }
 }

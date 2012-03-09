@@ -30,6 +30,7 @@ namespace Amazon.ImportExport
         public AmazonImportExportConfig()
         {
             this.ServiceURL = "https://importexport.amazonaws.com";
+            
         }
 
         /// <summary>

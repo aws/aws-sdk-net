@@ -38,21 +38,21 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="request">The request to have the signature compute for</param>
         /// <param name="secureKey">The AWS secret key stored in a secure string</param>
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
-        public override void Sign<T>(IRequest<T> request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
+        public override void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
         {
             if (String.IsNullOrEmpty(awsAccessKeyId))
             {
                 throw new Exception("The AWS Access Key ID cannot be NULL or a Zero length string");
             }
           
-            request.Parameters.Add("AWSAccessKeyId", awsAccessKeyId);
-            request.Parameters.Add("SignatureVersion", clientConfig.SignatureVersion);
-            request.Parameters.Add("SignatureMethod", clientConfig.SignatureMethod.ToString());
-            request.Parameters.Add("Timestamp", AWSSDKUtils.FormattedCurrentTimestampISO8601);
+            request.Parameters["AWSAccessKeyId"] = awsAccessKeyId;
+            request.Parameters["SignatureVersion"] = clientConfig.SignatureVersion;
+            request.Parameters["SignatureMethod"] = clientConfig.SignatureMethod.ToString();
+            request.Parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
 
             string toSign = AWSSDKUtils.CalculateStringToSignV2(request.Parameters, clientConfig.ServiceURL);
             string auth = ComputeHash(toSign, awsSecretAccessKey, secureKey, clientConfig.SignatureMethod);
-            request.Parameters.Add("Signature", auth);
+            request.Parameters["Signature"] = auth;
         }
     }
 }

@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Parameter Unmarshaller
      /// </summary>
-    internal class ParameterUnmarshaller : IUnmarshaller<Parameter, UnmarshallerContext> 
+    internal class ParameterUnmarshaller : IUnmarshaller<Parameter, XmlUnmarshallerContext> 
     {
-        public Parameter Unmarshall(UnmarshallerContext context) 
+        public Parameter Unmarshall(XmlUnmarshallerContext context) 
         {
             Parameter parameter = new Parameter();
             int originalDepth = context.CurrentDepth;
@@ -35,13 +35,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("ParameterKey", targetDepth))
                     {
                         parameter.ParameterKey = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ParameterValue", targetDepth))
                     {
                         parameter.ParameterValue = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -54,6 +54,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return parameter;
                 }
             }
+                        
+
 
             return parameter;
         }

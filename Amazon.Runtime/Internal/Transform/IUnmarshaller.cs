@@ -16,6 +16,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Net;
+using System.Web;
+using System.Xml;
+using System.IO;
+using Amazon.Util;
 
 namespace Amazon.Runtime.Internal.Transform
 {

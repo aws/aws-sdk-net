@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Tags Request Marshaller
     /// </summary>       
-    public class DeleteTagsRequestMarshaller : IMarshaller<IRequest<DeleteTagsRequest>, DeleteTagsRequest>
+    public class DeleteTagsRequestMarshaller : IMarshaller<IRequest, DeleteTagsRequest>
     {
-        public IRequest<DeleteTagsRequest> Marshall(DeleteTagsRequest deleteTagsRequest)
+        public IRequest Marshall(DeleteTagsRequest deleteTagsRequest)
         {
-            IRequest<DeleteTagsRequest> request = new DefaultRequest<DeleteTagsRequest>(deleteTagsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(deleteTagsRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DeleteTags");
             request.Parameters.Add("Version", "2011-01-01");
 

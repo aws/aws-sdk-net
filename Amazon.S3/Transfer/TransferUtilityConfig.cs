@@ -71,10 +71,6 @@ namespace Amazon.S3.Transfer
         /// 	Gets or sets the number of executing threads.
         /// 	This property determines how many active threads will be used to upload 
         /// 	the file. The default value is 10 threads.
-        /// 	
-        ///     If this property is set to a value greater then <seealso cref="System.Net.ServicePointManager.DefaultConnectionLimit"/> than
-        ///     <seealso cref="System.Net.ServicePointManager.DefaultConnectionLimit"/> will be updated to the value.  If simultaneous uploads are being
-        ///     done then consider increasing the <seealso cref="System.Net.ServicePointManager.DefaultConnectionLimit"/> property.
         /// </summary>
         /// <remarks>
         /// 	A value less than or equal to 0 will be silently ignored.
@@ -88,10 +84,6 @@ namespace Amazon.S3.Transfer
                     value = 1;
 
                 this._numberOfThreads = value;
-                if (ServicePointManager.DefaultConnectionLimit < value)
-                {
-                    ServicePointManager.DefaultConnectionLimit = value;
-                }
             }
         }
 

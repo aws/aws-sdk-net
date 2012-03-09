@@ -30,12 +30,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Batch Get Item Request Marshaller
     /// </summary>       
-    internal class BatchGetItemRequestMarshaller : IMarshaller<IRequest<BatchGetItemRequest>, BatchGetItemRequest> 
+    internal class BatchGetItemRequestMarshaller : IMarshaller<IRequest, BatchGetItemRequest> 
     {
-        public IRequest<BatchGetItemRequest> Marshall(BatchGetItemRequest batchGetItemRequest) 
+        public IRequest Marshall(BatchGetItemRequest batchGetItemRequest) 
         {
 
-            IRequest<BatchGetItemRequest> request = new DefaultRequest<BatchGetItemRequest>(batchGetItemRequest, "AmazonDynamoDB");
+            IRequest request = new DefaultRequest(batchGetItemRequest, "AmazonDynamoDB");
             string target = "DynamoDB_20111205.BatchGetItem";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

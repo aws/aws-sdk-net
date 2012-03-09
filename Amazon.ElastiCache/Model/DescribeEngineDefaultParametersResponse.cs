@@ -34,7 +34,15 @@ namespace Amazon.ElastiCache.Model
         /// 
         public DescribeEngineDefaultParametersResult DescribeEngineDefaultParametersResult
         {
-            get { return this.describeEngineDefaultParametersResult; }
+            get 
+            {
+                if(this.describeEngineDefaultParametersResult == null)
+                {
+                    this.describeEngineDefaultParametersResult = new DescribeEngineDefaultParametersResult();
+                }
+
+                return this.describeEngineDefaultParametersResult; 
+            }
             set { this.describeEngineDefaultParametersResult = value; }
         }
     }

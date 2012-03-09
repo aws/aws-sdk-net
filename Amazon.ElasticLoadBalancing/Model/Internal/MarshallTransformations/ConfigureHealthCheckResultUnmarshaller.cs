@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ConfigureHealthCheckResult Unmarshaller
      /// </summary>
-    internal class ConfigureHealthCheckResultUnmarshaller : IUnmarshaller<ConfigureHealthCheckResult, UnmarshallerContext> 
+    internal class ConfigureHealthCheckResultUnmarshaller : IUnmarshaller<ConfigureHealthCheckResult, XmlUnmarshallerContext> 
     {
-        public ConfigureHealthCheckResult Unmarshall(UnmarshallerContext context) 
+        public ConfigureHealthCheckResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ConfigureHealthCheckResult configureHealthCheckResult = new ConfigureHealthCheckResult();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("HealthCheck", targetDepth))
                     {
                         configureHealthCheckResult.HealthCheck = HealthCheckUnmarshaller.GetInstance().Unmarshall(context);
@@ -48,6 +48,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return configureHealthCheckResult;
                 }
             }
+                        
+
 
             return configureHealthCheckResult;
         }

@@ -23,15 +23,15 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the AuthorizeCacheSecurityGroupIngress action.
     /// </summary>
-    public class AuthorizeCacheSecurityGroupIngressResult : AmazonWebServiceResponse
+    public class AuthorizeCacheSecurityGroupIngressResult
     {
         private CacheSecurityGroup cacheSecurityGroupValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the AuthorizeCacheSecurityGroupIngressResult property.
         /// Contains the result of a successful invocation of the AuthorizeCacheSecurityGroupIngress
         /// action.
-        /// 
+        /// </summary>
         public CacheSecurityGroup CacheSecurityGroup
         {
             get { return this.cacheSecurityGroupValue; }

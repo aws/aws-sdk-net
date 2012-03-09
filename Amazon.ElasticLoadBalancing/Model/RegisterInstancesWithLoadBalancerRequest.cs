@@ -50,7 +50,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// 
         /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
-        /// <param name="instances"> A list of instances IDs that should be registered with the LoadBalancer. </param>
+        /// <param name="instances"> A list of instance IDs that should be registered with the LoadBalancer. <note>When the instance is stopped and then
+        /// restarted, the IP addresses associated with your instance changes. Elastic Load Balancing cannot recognize the new IP address, which
+        /// prevents it from routing traffic to your instances. We recommend that you de-register your Amazon EC2 instances from your load balancer
+        /// after you stop your instance, and then register the load balancer with your instance after you've restarted. To de-register your instances
+        /// from load balancer, use <a>DeregisterInstancesFromLoadBalancer</a> action.</note> </param>
         public RegisterInstancesWithLoadBalancerRequest(string loadBalancerName, List<Instance> instances) 
         {
             this.loadBalancerName = loadBalancerName;
@@ -87,7 +91,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of instances IDs that should be registered with the LoadBalancer.
+        /// A list of instance IDs that should be registered with the LoadBalancer. <note>When the instance is stopped and then restarted, the IP
+        /// addresses associated with your instance changes. Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing
+        /// traffic to your instances. We recommend that you de-register your Amazon EC2 instances from your load balancer after you stop your instance,
+        /// and then register the load balancer with your instance after you've restarted. To de-register your instances from load balancer, use
+        /// <a>DeregisterInstancesFromLoadBalancer</a> action.</note>
         ///  
         /// </summary>
         public List<Instance> Instances

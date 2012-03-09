@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>InstanceMonitoring</c> data type. </para>
+    /// <para> The <c>InstanceMonitoring</c> Data Type. </para>
     /// </summary>
     public class InstanceMonitoring  
     {

@@ -39,7 +39,7 @@ namespace Amazon.AutoScaling.Model
         private int? cooldown;
 
         /// <summary>
-        /// The name or ARN of the Auto Scaling group.
+        /// The name or ARN of the Auto Scaling Group.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -25,15 +25,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DetachLoadBalancerFromSubnets operation
     /// </summary>
-    internal class DetachLoadBalancerFromSubnetsResponseUnmarshaller : IResponseUnmarshaller<DetachLoadBalancerFromSubnetsResponse, UnmarshallerContext> {
+    internal class DetachLoadBalancerFromSubnetsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DetachLoadBalancerFromSubnetsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DetachLoadBalancerFromSubnetsResponse response = new DetachLoadBalancerFromSubnetsResponse();
-
+            
             while (context.Read())
             {
-                if (context.IsStartElement)
+                if (context.IsStartElement)                
                 {
                     if(context.TestExpression("DetachLoadBalancerFromSubnetsResult", 2))
                     {
@@ -46,12 +47,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     }
                 }
             }
-
+                 
+                        
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

@@ -22,9 +22,9 @@
       /// <summary> 
       /// ActivityTypeInfosUnmarshaller 
       /// </summary> 
-      internal class ActivityTypeInfosUnmarshaller : IUnmarshaller<ActivityTypeInfos, UnmarshallerContext>, IUnmarshaller<ActivityTypeInfos, JsonUnmarshallerContext> 
+      internal class ActivityTypeInfosUnmarshaller : IUnmarshaller<ActivityTypeInfos, XmlUnmarshallerContext>, IUnmarshaller<ActivityTypeInfos, JsonUnmarshallerContext> 
       { 
-        ActivityTypeInfos IUnmarshaller<ActivityTypeInfos, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        ActivityTypeInfos IUnmarshaller<ActivityTypeInfos, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

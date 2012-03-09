@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete D B Subnet Group Request Marshaller
     /// </summary>       
-    public class DeleteDBSubnetGroupRequestMarshaller : IMarshaller<IRequest<DeleteDBSubnetGroupRequest>, DeleteDBSubnetGroupRequest>
+    public class DeleteDBSubnetGroupRequestMarshaller : IMarshaller<IRequest, DeleteDBSubnetGroupRequest>
     {
-        public IRequest<DeleteDBSubnetGroupRequest> Marshall(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest)
+        public IRequest Marshall(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest)
         {
-            IRequest<DeleteDBSubnetGroupRequest> request = new DefaultRequest<DeleteDBSubnetGroupRequest>(deleteDBSubnetGroupRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(deleteDBSubnetGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteDBSubnetGroup");
             request.Parameters.Add("Version", "2012-01-15");
             if (deleteDBSubnetGroupRequest != null && deleteDBSubnetGroupRequest.IsSetDBSubnetGroupName())

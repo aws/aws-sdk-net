@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Notification Configurations Request Marshaller
     /// </summary>       
-    public class DescribeNotificationConfigurationsRequestMarshaller : IMarshaller<IRequest<DescribeNotificationConfigurationsRequest>, DescribeNotificationConfigurationsRequest>
+    public class DescribeNotificationConfigurationsRequestMarshaller : IMarshaller<IRequest, DescribeNotificationConfigurationsRequest>
     {
-        public IRequest<DescribeNotificationConfigurationsRequest> Marshall(DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest)
+        public IRequest Marshall(DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest)
         {
-            IRequest<DescribeNotificationConfigurationsRequest> request = new DefaultRequest<DescribeNotificationConfigurationsRequest>(describeNotificationConfigurationsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(describeNotificationConfigurationsRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribeNotificationConfigurations");
             request.Parameters.Add("Version", "2011-01-01");
             if (describeNotificationConfigurationsRequest != null)

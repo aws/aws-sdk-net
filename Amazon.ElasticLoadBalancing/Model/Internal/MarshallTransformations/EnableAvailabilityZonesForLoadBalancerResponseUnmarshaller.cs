@@ -25,15 +25,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for EnableAvailabilityZonesForLoadBalancer operation
     /// </summary>
-    internal class EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller : IResponseUnmarshaller<EnableAvailabilityZonesForLoadBalancerResponse, UnmarshallerContext> {
+    internal class EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public EnableAvailabilityZonesForLoadBalancerResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             EnableAvailabilityZonesForLoadBalancerResponse response = new EnableAvailabilityZonesForLoadBalancerResponse();
-
+            
             while (context.Read())
             {
-                if (context.IsStartElement)
+                if (context.IsStartElement)                
                 {
                     if(context.TestExpression("EnableAvailabilityZonesForLoadBalancerResult", 2))
                     {
@@ -46,12 +47,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     }
                 }
             }
-
+                 
+                        
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Attach Load Balancer To Subnets Request Marshaller
     /// </summary>       
-    public class AttachLoadBalancerToSubnetsRequestMarshaller : IMarshaller<IRequest<AttachLoadBalancerToSubnetsRequest>, AttachLoadBalancerToSubnetsRequest>
+    public class AttachLoadBalancerToSubnetsRequestMarshaller : IMarshaller<IRequest, AttachLoadBalancerToSubnetsRequest>
     {
-        public IRequest<AttachLoadBalancerToSubnetsRequest> Marshall(AttachLoadBalancerToSubnetsRequest attachLoadBalancerToSubnetsRequest)
+        public IRequest Marshall(AttachLoadBalancerToSubnetsRequest attachLoadBalancerToSubnetsRequest)
         {
-            IRequest<AttachLoadBalancerToSubnetsRequest> request = new DefaultRequest<AttachLoadBalancerToSubnetsRequest>(attachLoadBalancerToSubnetsRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(attachLoadBalancerToSubnetsRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "AttachLoadBalancerToSubnets");
             request.Parameters.Add("Version", "2011-11-15");
             if (attachLoadBalancerToSubnetsRequest != null && attachLoadBalancerToSubnetsRequest.IsSetLoadBalancerName())

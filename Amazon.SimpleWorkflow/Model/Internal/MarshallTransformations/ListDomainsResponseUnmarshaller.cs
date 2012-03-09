@@ -24,9 +24,9 @@
       /// <summary>
       /// Response Unmarshaller for ListDomains operation
       /// </summary>
-      internal class ListDomainsResponseUnmarshaller : IResponseUnmarshaller<ListDomainsResponse, JsonUnmarshallerContext>
+      internal class ListDomainsResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public ListDomainsResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           ListDomainsResponse response = new ListDomainsResponse();
           
@@ -36,7 +36,7 @@
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

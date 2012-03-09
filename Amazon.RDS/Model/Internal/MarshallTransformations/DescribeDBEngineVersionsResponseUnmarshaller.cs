@@ -25,12 +25,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DescribeDBEngineVersions operation
     /// </summary>
-    internal class DescribeDBEngineVersionsResponseUnmarshaller : IResponseUnmarshaller<DescribeDBEngineVersionsResponse, UnmarshallerContext> {
+    internal class DescribeDBEngineVersionsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DescribeDBEngineVersionsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeDBEngineVersionsResponse response = new DescribeDBEngineVersionsResponse();
-
             
             while (context.Read())
             {
@@ -51,9 +51,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

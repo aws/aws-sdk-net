@@ -24,9 +24,9 @@
       /// <summary>
       /// Response Unmarshaller for CountPendingDecisionTasks operation
       /// </summary>
-      internal class CountPendingDecisionTasksResponseUnmarshaller : IResponseUnmarshaller<CountPendingDecisionTasksResponse, JsonUnmarshallerContext>
+      internal class CountPendingDecisionTasksResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public CountPendingDecisionTasksResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           CountPendingDecisionTasksResponse response = new CountPendingDecisionTasksResponse();
           
@@ -36,7 +36,7 @@
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

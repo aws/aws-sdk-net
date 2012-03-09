@@ -22,9 +22,9 @@
       /// <summary> 
       /// WorkflowExecutionOpenCountsUnmarshaller 
       /// </summary> 
-      internal class WorkflowExecutionOpenCountsUnmarshaller : IUnmarshaller<WorkflowExecutionOpenCounts, UnmarshallerContext>, IUnmarshaller<WorkflowExecutionOpenCounts, JsonUnmarshallerContext> 
+      internal class WorkflowExecutionOpenCountsUnmarshaller : IUnmarshaller<WorkflowExecutionOpenCounts, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionOpenCounts, JsonUnmarshallerContext> 
       { 
-        WorkflowExecutionOpenCounts IUnmarshaller<WorkflowExecutionOpenCounts, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        WorkflowExecutionOpenCounts IUnmarshaller<WorkflowExecutionOpenCounts, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

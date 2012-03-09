@@ -25,10 +25,8 @@ namespace Amazon.ImportExport.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStatus operation.
-    /// <para> This operation returns information about a job, including where
-    /// the job is in the processing pipeline, the status of the results, and
-    /// the signature value associated with the job. You can only return
-    /// information about jobs you own. </para>
+    /// <para> This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and
+    /// the signature value associated with the job. You can only return information about jobs you own. </para>
     /// </summary>
     /// <seealso cref="Amazon.ImportExport.AmazonImportExport.GetStatus"/>
     public class GetStatusRequest : AmazonWebServiceRequest
@@ -56,10 +54,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return this.jobId != null;      
+            return this.jobId != null;       
         }
     }
 }

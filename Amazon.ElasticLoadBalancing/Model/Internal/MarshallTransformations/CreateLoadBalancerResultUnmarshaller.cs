@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CreateLoadBalancerResult Unmarshaller
      /// </summary>
-    internal class CreateLoadBalancerResultUnmarshaller : IUnmarshaller<CreateLoadBalancerResult, UnmarshallerContext> 
+    internal class CreateLoadBalancerResultUnmarshaller : IUnmarshaller<CreateLoadBalancerResult, XmlUnmarshallerContext> 
     {
-        public CreateLoadBalancerResult Unmarshall(UnmarshallerContext context) 
+        public CreateLoadBalancerResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateLoadBalancerResult createLoadBalancerResult = new CreateLoadBalancerResult();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("DNSName", targetDepth))
                     {
                         createLoadBalancerResult.DNSName = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -48,6 +48,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return createLoadBalancerResult;
                 }
             }
+                        
+
 
             return createLoadBalancerResult;
         }

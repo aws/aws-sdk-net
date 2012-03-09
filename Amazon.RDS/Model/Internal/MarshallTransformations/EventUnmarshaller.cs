@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Event Unmarshaller
      /// </summary>
-    internal class EventUnmarshaller : IUnmarshaller<Event, UnmarshallerContext> 
+    internal class EventUnmarshaller : IUnmarshaller<Event, XmlUnmarshallerContext> 
     {
-        public Event Unmarshall(UnmarshallerContext context) 
+        public Event Unmarshall(XmlUnmarshallerContext context) 
         {
             Event eventValue = new Event();
             int originalDepth = context.CurrentDepth;

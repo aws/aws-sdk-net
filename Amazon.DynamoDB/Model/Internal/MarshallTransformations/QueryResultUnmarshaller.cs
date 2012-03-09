@@ -22,9 +22,9 @@
       /// <summary> 
       /// QueryResultUnmarshaller 
       /// </summary> 
-      internal class QueryResultUnmarshaller : IUnmarshaller<QueryResult, UnmarshallerContext>, IUnmarshaller<QueryResult, JsonUnmarshallerContext> 
+      internal class QueryResultUnmarshaller : IUnmarshaller<QueryResult, XmlUnmarshallerContext>, IUnmarshaller<QueryResult, JsonUnmarshallerContext> 
       { 
-        QueryResult IUnmarshaller<QueryResult, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        QueryResult IUnmarshaller<QueryResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

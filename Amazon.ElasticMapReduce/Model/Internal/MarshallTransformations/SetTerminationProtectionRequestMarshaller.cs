@@ -28,11 +28,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// Set Termination Protection Request Marshaller
     /// </summary>       
-    public class SetTerminationProtectionRequestMarshaller : IMarshaller<IRequest<SetTerminationProtectionRequest>, SetTerminationProtectionRequest>
+    public class SetTerminationProtectionRequestMarshaller : IMarshaller<IRequest, SetTerminationProtectionRequest>
     {
-        public IRequest<SetTerminationProtectionRequest> Marshall(SetTerminationProtectionRequest setTerminationProtectionRequest)
+        public IRequest Marshall(SetTerminationProtectionRequest setTerminationProtectionRequest)
         {
-            IRequest<SetTerminationProtectionRequest> request = new DefaultRequest<SetTerminationProtectionRequest>(setTerminationProtectionRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(setTerminationProtectionRequest, "AmazonElasticMapReduce");
             request.Parameters.Add("Action", "SetTerminationProtection");
             request.Parameters.Add("Version", "2009-03-31");
             if (setTerminationProtectionRequest != null)

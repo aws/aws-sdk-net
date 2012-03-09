@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Listener Unmarshaller
      /// </summary>
-    internal class ListenerUnmarshaller : IUnmarshaller<Listener, UnmarshallerContext> 
+    internal class ListenerUnmarshaller : IUnmarshaller<Listener, XmlUnmarshallerContext> 
     {
-        public Listener Unmarshall(UnmarshallerContext context) 
+        public Listener Unmarshall(XmlUnmarshallerContext context) 
         {
             Listener listener = new Listener();
             int originalDepth = context.CurrentDepth;
@@ -35,31 +35,31 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("Protocol", targetDepth))
                     {
                         listener.Protocol = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("LoadBalancerPort", targetDepth))
                     {
                         listener.LoadBalancerPort = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("InstanceProtocol", targetDepth))
                     {
                         listener.InstanceProtocol = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("InstancePort", targetDepth))
                     {
                         listener.InstancePort = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("SSLCertificateId", targetDepth))
                     {
                         listener.SSLCertificateId = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -72,6 +72,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return listener;
                 }
             }
+                        
+
 
             return listener;
         }

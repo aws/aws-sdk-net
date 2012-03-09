@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Terminate Workflow Execution Request Marshaller
     /// </summary>       
-    internal class TerminateWorkflowExecutionRequestMarshaller : IMarshaller<IRequest<TerminateWorkflowExecutionRequest>, TerminateWorkflowExecutionRequest> 
+    internal class TerminateWorkflowExecutionRequestMarshaller : IMarshaller<IRequest, TerminateWorkflowExecutionRequest> 
     {
-        public IRequest<TerminateWorkflowExecutionRequest> Marshall(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest) 
+        public IRequest Marshall(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest) 
         {
 
-            IRequest<TerminateWorkflowExecutionRequest> request = new DefaultRequest<TerminateWorkflowExecutionRequest>(terminateWorkflowExecutionRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(terminateWorkflowExecutionRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.TerminateWorkflowExecution";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

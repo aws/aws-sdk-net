@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for RevokeDBSecurityGroupIngress operation
     /// </summary>
-    internal class RevokeDBSecurityGroupIngressResultUnmarshaller : IUnmarshaller<RevokeDBSecurityGroupIngressResult, UnmarshallerContext> {
+    internal class RevokeDBSecurityGroupIngressResultUnmarshaller : IUnmarshaller<RevokeDBSecurityGroupIngressResult, XmlUnmarshallerContext> {
 
-        public RevokeDBSecurityGroupIngressResult Unmarshall(UnmarshallerContext context) 
+        public RevokeDBSecurityGroupIngressResult Unmarshall(XmlUnmarshallerContext context) 
         {
             RevokeDBSecurityGroupIngressResult result = new RevokeDBSecurityGroupIngressResult();
             

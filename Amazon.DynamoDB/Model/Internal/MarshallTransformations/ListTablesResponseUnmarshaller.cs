@@ -24,9 +24,9 @@
       /// <summary> 
       /// Response Unmarshaller for ListTables operation 
       /// </summary> 
-      internal class ListTablesResponseUnmarshaller : IResponseUnmarshaller<ListTablesResponse, JsonUnmarshallerContext> 
+      internal class ListTablesResponseUnmarshaller : JsonResponseUnmarshaller 
       { 
-        public ListTablesResponse Unmarshall(JsonUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
         { 
           ListTablesResponse response = new ListTablesResponse();
           
@@ -36,7 +36,7 @@
           return response; 
         } 
          
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

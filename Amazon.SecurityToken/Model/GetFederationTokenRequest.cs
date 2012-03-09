@@ -25,7 +25,14 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFederationToken operation.
-    /// 
+    /// <para>The GetFederationToken action returns a set of temporary credentials for a federated user with the user name and policy specified in
+    /// the request. The credentials consist of an Access Key ID, a Secret Access Key, and a security token. The credentials are valid for the
+    /// specified duration, between one and 36 hours.</para> <para>The federated user who holds these credentials has any permissions allowed by the
+    /// intersection of the specified policy and any resource or user policies that apply to the caller of the GetFederationToken API, and any
+    /// resource policies that apply to the federated user's Amazon Resource Name (ARN). For more information about how token permissions work, see
+    /// Controlling Permissions in Temporary Credentials in <i>Using AWS Identity and Access Management</i> . For information about using
+    /// GetFederationToken to create temporary credentials, see Creating Temporary Credentials to Enable Access for Federated Users in <i>Using AWS
+    /// Identity and Access Management</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.SecurityToken.AmazonSecurityTokenService.GetFederationToken"/>
     public class GetFederationTokenRequest : AmazonWebServiceRequest
@@ -33,6 +40,26 @@ namespace Amazon.SecurityToken.Model
         private string name;
         private string policy;
         private int? durationSeconds;
+
+        /// <summary>
+        /// The name of the federated user associated with the credentials. For information about limitations on user names, go to <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a> in <i>Using AWS
+        /// Identity and Access Management</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>2 - 32</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\w+=,.@-]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string Name
         {
             get { return this.name; }
@@ -56,6 +83,27 @@ namespace Amazon.SecurityToken.Model
         {
             return this.name != null;       
         }
+
+        /// <summary>
+        /// A policy specifying the permissions to associate with the credentials. The caller can delegate their own permissions by specifying a policy,
+        /// and both policies will be checked when a service call is made. For more information about how permissions work in the context of temporary
+        /// credentials, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html" target="_blank">Controlling
+        /// Permissions in Temporary Credentials</a> in <i>Using AWS Identity and Access Management</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 2048</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string Policy
         {
             get { return this.policy; }
@@ -79,6 +127,21 @@ namespace Amazon.SecurityToken.Model
         {
             return this.policy != null;       
         }
+
+        /// <summary>
+        /// The duration, in seconds, that the session should last. Acceptable durations for federation sessions range from 3600s (one hour) to 129600s
+        /// (36 hours), with 43200s (12 hours) as the default.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>3600 - 129600</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public int DurationSeconds
         {
             get { return this.durationSeconds ?? default(int); }

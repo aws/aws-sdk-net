@@ -28,11 +28,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Stacks Request Marshaller
     /// </summary>       
-    public class DescribeStacksRequestMarshaller : IMarshaller<IRequest<DescribeStacksRequest>, DescribeStacksRequest>
+    public class DescribeStacksRequestMarshaller : IMarshaller<IRequest, DescribeStacksRequest>
     {
-        public IRequest<DescribeStacksRequest> Marshall(DescribeStacksRequest describeStacksRequest)
+        public IRequest Marshall(DescribeStacksRequest describeStacksRequest)
         {
-            IRequest<DescribeStacksRequest> request = new DefaultRequest<DescribeStacksRequest>(describeStacksRequest, "AmazonCloudFormation");
+            IRequest request = new DefaultRequest(describeStacksRequest, "AmazonCloudFormation");
             request.Parameters.Add("Action", "DescribeStacks");
             request.Parameters.Add("Version", "2010-05-15");
             if (describeStacksRequest != null && describeStacksRequest.IsSetStackName())

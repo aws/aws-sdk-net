@@ -22,9 +22,9 @@
       /// <summary> 
       /// DeleteTableResultUnmarshaller 
       /// </summary> 
-      internal class DeleteTableResultUnmarshaller : IUnmarshaller<DeleteTableResult, UnmarshallerContext>, IUnmarshaller<DeleteTableResult, JsonUnmarshallerContext> 
+      internal class DeleteTableResultUnmarshaller : IUnmarshaller<DeleteTableResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteTableResult, JsonUnmarshallerContext> 
       { 
-        DeleteTableResult IUnmarshaller<DeleteTableResult, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        DeleteTableResult IUnmarshaller<DeleteTableResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

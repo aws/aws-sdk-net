@@ -23,15 +23,15 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the CreateCacheParameterGroup action.
     /// </summary>
-    public class CreateCacheParameterGroupResult : AmazonWebServiceResponse
+    public class CreateCacheParameterGroupResult
     {
         private CacheParameterGroup cacheParameterGroupValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateCacheParameterGroupResult property.
         /// Contains the result of a successful invocation of the CreateCacheParameterGroup
         /// action.
-        /// 
+        /// </summary>
         public CacheParameterGroup CacheParameterGroup
         {
             get { return this.cacheParameterGroupValue; }

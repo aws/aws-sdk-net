@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for RestoreDBInstanceToPointInTime operation
     /// </summary>
-    internal class RestoreDBInstanceToPointInTimeResultUnmarshaller : IUnmarshaller<RestoreDBInstanceToPointInTimeResult, UnmarshallerContext> {
+    internal class RestoreDBInstanceToPointInTimeResultUnmarshaller : IUnmarshaller<RestoreDBInstanceToPointInTimeResult, XmlUnmarshallerContext> {
 
-        public RestoreDBInstanceToPointInTimeResult Unmarshall(UnmarshallerContext context) 
+        public RestoreDBInstanceToPointInTimeResult Unmarshall(XmlUnmarshallerContext context) 
         {
             RestoreDBInstanceToPointInTimeResult result = new RestoreDBInstanceToPointInTimeResult();
             

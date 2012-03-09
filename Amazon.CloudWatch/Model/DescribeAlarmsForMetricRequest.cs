@@ -25,8 +25,7 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAlarmsForMetric operation.
-    /// <para> Retrieves all alarms for a single metric. Specify a statistic,
-    /// period, or unit to filter the set of alarms further. </para>
+    /// <para> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DescribeAlarmsForMetric"/>
     public class DescribeAlarmsForMetricRequest : AmazonWebServiceRequest

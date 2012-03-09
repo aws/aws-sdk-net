@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Load Balancers Request Marshaller
     /// </summary>       
-    public class DescribeLoadBalancersRequestMarshaller : IMarshaller<IRequest<DescribeLoadBalancersRequest>, DescribeLoadBalancersRequest>
+    public class DescribeLoadBalancersRequestMarshaller : IMarshaller<IRequest, DescribeLoadBalancersRequest>
     {
-        public IRequest<DescribeLoadBalancersRequest> Marshall(DescribeLoadBalancersRequest describeLoadBalancersRequest)
+        public IRequest Marshall(DescribeLoadBalancersRequest describeLoadBalancersRequest)
         {
-            IRequest<DescribeLoadBalancersRequest> request = new DefaultRequest<DescribeLoadBalancersRequest>(describeLoadBalancersRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(describeLoadBalancersRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeLoadBalancers");
             request.Parameters.Add("Version", "2011-11-15");
             if (describeLoadBalancersRequest != null)
@@ -45,6 +45,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     request.Parameters.Add("LoadBalancerNames.member." + loadBalancerNamesListIndex, StringUtils.FromString(loadBalancerNamesListValue));
                     loadBalancerNamesListIndex++;
                 }
+            }
+            if (describeLoadBalancersRequest != null && describeLoadBalancersRequest.IsSetMarker())
+            {
+                request.Parameters.Add("Marker", StringUtils.FromString(describeLoadBalancersRequest.Marker));
             }
 
             return request;

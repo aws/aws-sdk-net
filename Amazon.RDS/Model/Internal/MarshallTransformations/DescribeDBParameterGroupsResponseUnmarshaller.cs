@@ -25,12 +25,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DescribeDBParameterGroups operation
     /// </summary>
-    internal class DescribeDBParameterGroupsResponseUnmarshaller : IResponseUnmarshaller<DescribeDBParameterGroupsResponse, UnmarshallerContext> {
+    internal class DescribeDBParameterGroupsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DescribeDBParameterGroupsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeDBParameterGroupsResponse response = new DescribeDBParameterGroupsResponse();
-
             
             while (context.Read())
             {
@@ -51,9 +51,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

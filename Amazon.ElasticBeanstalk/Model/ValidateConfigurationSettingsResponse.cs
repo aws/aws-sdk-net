@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public ValidateConfigurationSettingsResult ValidateConfigurationSettingsResult
         {
-            get { return this.validateConfigurationSettingsResult; }
+            get 
+            {
+                if(this.validateConfigurationSettingsResult == null)
+                {
+                    this.validateConfigurationSettingsResult = new ValidateConfigurationSettingsResult();
+                }
+
+                return this.validateConfigurationSettingsResult; 
+            }
             set { this.validateConfigurationSettingsResult = value; }
         }
     }

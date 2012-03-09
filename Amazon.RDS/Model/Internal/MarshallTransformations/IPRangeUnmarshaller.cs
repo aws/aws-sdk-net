@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   IPRange Unmarshaller
      /// </summary>
-    internal class IPRangeUnmarshaller : IUnmarshaller<IPRange, UnmarshallerContext> 
+    internal class IPRangeUnmarshaller : IUnmarshaller<IPRange, XmlUnmarshallerContext> 
     {
-        public IPRange Unmarshall(UnmarshallerContext context) 
+        public IPRange Unmarshall(XmlUnmarshallerContext context) 
         {
             IPRange iPRange = new IPRange();
             int originalDepth = context.CurrentDepth;

@@ -30,6 +30,7 @@ namespace Amazon.SimpleEmail
         public AmazonSimpleEmailServiceConfig()
         {
             this.ServiceURL = "https://email.us-east-1.amazonaws.com";
+            
         }
 
         /// <summary>

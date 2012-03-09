@@ -391,7 +391,8 @@ namespace ThirdParty.Json.LitJson
             DoValidation(Condition.Value);
             PutNewline();
 
-            Put(date.ToString(Amazon.Util.AWSSDKUtils.ISO8601DateFormat));
+            
+            Put(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliSeconds(date).ToString());
 
             context.ExpectingValue = false;
         }

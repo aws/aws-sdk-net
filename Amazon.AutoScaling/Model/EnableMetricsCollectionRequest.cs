@@ -25,9 +25,9 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableMetricsCollection operation.
-    /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
-    /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto scaling metrics collection
-    /// can be turned on only if the <c>InstanceMonitoring</c> flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
+    /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in AutoScalingGroupName. You can specify the list of enabled
+    /// metrics with the Metrics parameter. </para> <para> Auto scaling metrics collection can be turned on only if the <c>InstanceMonitoring</c>
+    /// flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.EnableMetricsCollection"/>
@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
         private string granularity;
 
         /// <summary>
-        /// The name or ARN of the Auto Scaling group.
+        /// The name or ARN of the Auto Scaling Group.
         ///  
         /// <para>
         /// <b>Constraints:</b>

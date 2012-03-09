@@ -52,7 +52,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="request">The request to have the signature compute for</param>
         /// <param name="secureKey">The AWS secret key stored in a secure string</param>
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
-        public override void Sign<T>(IRequest<T> request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey) 
+        public override void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey) 
         {
             if (UseAws3Https)
             {
@@ -64,7 +64,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
-        private void SignHttps<T>(IRequest<T> request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
+        private void SignHttps(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
         {
             string nonce = Guid.NewGuid().ToString();
             string date = AWSSDKUtils.FormattedCurrentTimestampRFC822;
@@ -81,12 +81,12 @@ namespace Amazon.Runtime.Internal.Auth
             builder.Append("SignedHeaders=x-amz-date;x-amz-nonce,");
             builder.Append("Signature=" + signature);
 
-            request.Headers.Add(AUTHORIZATION_HEADER, builder.ToString());
-            request.Headers.Add(NONCE_HEADER, nonce);
-            request.Headers.Add("x-amz-date", date);
+            request.Headers[AUTHORIZATION_HEADER] = builder.ToString();
+            request.Headers[NONCE_HEADER] = nonce;
+            request.Headers["x-amz-date"] = date;
         }
 
-        private void SignHttp<T>(IRequest<T> request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
+        private void SignHttp(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey)
         {
             SigningAlgorithm algorithm = SigningAlgorithm.HmacSHA256;
             string nonce = Guid.NewGuid().ToString();
@@ -96,21 +96,21 @@ namespace Amazon.Runtime.Internal.Auth
             // Temporarily disabling the AWS3 HTTPS signing scheme and only using AWS3 HTTP
             isHttps = false;
 
-            request.Headers.Add("Date", date);
-            request.Headers.Add("X-Amz-Date", date);
+            request.Headers["Date"] = date;
+            request.Headers["X-Amz-Date"] = date;
 
             // AWS3 HTTP requires that we sign the Host header
             // so we have to have it in the request by the time we sign.
             string hostHeader = request.Endpoint.Host;
             if (!request.Endpoint.IsDefaultPort)
                 hostHeader += ":" + request.Endpoint.Port;
-            request.Headers.Add("Host", hostHeader);
+            request.Headers["Host"] = hostHeader;
 
             byte[] bytesToSign;
             string stringToSign;
             if (isHttps)
             {
-                request.Headers.Add(NONCE_HEADER, nonce);
+                request.Headers[NONCE_HEADER] = nonce;
                 stringToSign = date + nonce;
                 bytesToSign = Encoding.UTF8.GetBytes(stringToSign);
             }
@@ -145,7 +145,7 @@ namespace Amazon.Runtime.Internal.Auth
 
             builder.Append("Signature=" + signature);
             string authorizationHeader = builder.ToString();
-            request.Headers.Add(AUTHORIZATION_HEADER, authorizationHeader);
+            request.Headers[AUTHORIZATION_HEADER] = authorizationHeader;
         }
 
         #region Http signing helpers
@@ -163,7 +163,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
-        private static bool IsHttpsRequest<T>(IRequest<T> request)
+        private static bool IsHttpsRequest(IRequest request)
         {
             string protocol = request.Endpoint.Scheme;
             if (protocol.Equals(Uri.UriSchemeHttp, StringComparison.OrdinalIgnoreCase))
@@ -204,7 +204,7 @@ namespace Amazon.Runtime.Internal.Auth
             return (string.IsNullOrEmpty(result) ? string.Empty : result.Substring(0, result.Length - 1));
         }
 
-        private static string GetRequestPayload<T>(IRequest<T> request)
+        private static string GetRequestPayload(IRequest request)
         {
             if (request.Content == null)
                 return string.Empty;
@@ -213,7 +213,7 @@ namespace Amazon.Runtime.Internal.Auth
             return encoding.GetString(request.Content);
         }
 
-        private static string GetSignedHeadersComponent<T>(IRequest<T> request)
+        private static string GetSignedHeadersComponent(IRequest request)
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("SignedHeaders=");
@@ -227,7 +227,7 @@ namespace Amazon.Runtime.Internal.Auth
             return builder.ToString();
         }
 
-        private static List<string> GetHeadersForStringToSign<T>(IRequest<T> request)
+        private static List<string> GetHeadersForStringToSign(IRequest request)
         {
             List<string> headersToSign = new List<string>();
             foreach (var entry in request.Headers) {
@@ -244,7 +244,7 @@ namespace Amazon.Runtime.Internal.Auth
             return headersToSign;
         }
 
-        private static string GetCanonicalizedHeadersForStringToSign<T>(IRequest<T> request)
+        private static string GetCanonicalizedHeadersForStringToSign(IRequest request)
         {
             List<string> headersToSign = GetHeadersForStringToSign(request);
 

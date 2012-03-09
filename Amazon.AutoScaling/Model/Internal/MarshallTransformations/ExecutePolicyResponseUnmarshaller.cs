@@ -25,9 +25,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ExecutePolicy operation
     /// </summary>
-    internal class ExecutePolicyResponseUnmarshaller : IResponseUnmarshaller<ExecutePolicyResponse, UnmarshallerContext> {
+    internal class ExecutePolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public ExecutePolicyResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             ExecutePolicyResponse response = new ExecutePolicyResponse();
             
@@ -48,7 +49,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

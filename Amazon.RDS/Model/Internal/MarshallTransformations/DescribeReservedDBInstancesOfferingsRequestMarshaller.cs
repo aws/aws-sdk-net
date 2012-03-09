@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Reserved D B Instances Offerings Request Marshaller
     /// </summary>       
-    public class DescribeReservedDBInstancesOfferingsRequestMarshaller : IMarshaller<IRequest<DescribeReservedDBInstancesOfferingsRequest>, DescribeReservedDBInstancesOfferingsRequest>
+    public class DescribeReservedDBInstancesOfferingsRequestMarshaller : IMarshaller<IRequest, DescribeReservedDBInstancesOfferingsRequest>
     {
-        public IRequest<DescribeReservedDBInstancesOfferingsRequest> Marshall(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest)
+        public IRequest Marshall(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest)
         {
-            IRequest<DescribeReservedDBInstancesOfferingsRequest> request = new DefaultRequest<DescribeReservedDBInstancesOfferingsRequest>(describeReservedDBInstancesOfferingsRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(describeReservedDBInstancesOfferingsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeReservedDBInstancesOfferings");
             request.Parameters.Add("Version", "2012-01-15");
             if (describeReservedDBInstancesOfferingsRequest != null && describeReservedDBInstancesOfferingsRequest.IsSetReservedDBInstancesOfferingId())

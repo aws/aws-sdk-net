@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -1140,7 +1140,7 @@ namespace Amazon.SimpleDB
 
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
 
-            HttpWebRequest request = configureWebRequest(requestData.Length, config);
+            HttpWebRequest request = configureWebRequest(requestData.Length, config, sdbAsyncResult.CompletedSynchronously);
             sdbAsyncResult.RequestState = new RequestState(request, requestData);
 
             if (sdbAsyncResult.CompletedSynchronously)
@@ -1362,11 +1362,13 @@ namespace Amazon.SimpleDB
           * Configure HttpClient with set of defaults as well as configuration
           * from AmazonSimpleDBConfig instance
           */
-        private static HttpWebRequest configureWebRequest(int contentLength, AmazonSimpleDBConfig config)
+        private static HttpWebRequest configureWebRequest(int contentLength, AmazonSimpleDBConfig config, bool completedSynchronously)
         {
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
             if (request != null)
             {
+                request.ServicePoint.ConnectionLimit = config.ConnectionLimit;
+
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
                     WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
@@ -1379,7 +1381,7 @@ namespace Amazon.SimpleDB
                     }
                     request.Proxy = proxy;
                 }
-                request.UserAgent = config.UserAgent;
+                request.UserAgent = config.UserAgent + " " + (completedSynchronously ? "SDBSync" : "SDBAsync");
                 request.Method = "POST";
                 request.Timeout = 50000;
                 request.ContentType = AWSSDKUtils.UrlEncodedContent;

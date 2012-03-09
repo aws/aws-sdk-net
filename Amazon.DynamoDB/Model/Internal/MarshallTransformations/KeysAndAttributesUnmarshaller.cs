@@ -22,9 +22,9 @@
       /// <summary> 
       /// KeysAndAttributesUnmarshaller 
       /// </summary> 
-      internal class KeysAndAttributesUnmarshaller : IUnmarshaller<KeysAndAttributes, UnmarshallerContext>, IUnmarshaller<KeysAndAttributes, JsonUnmarshallerContext> 
+      internal class KeysAndAttributesUnmarshaller : IUnmarshaller<KeysAndAttributes, XmlUnmarshallerContext>, IUnmarshaller<KeysAndAttributes, JsonUnmarshallerContext> 
       { 
-        KeysAndAttributes IUnmarshaller<KeysAndAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        KeysAndAttributes IUnmarshaller<KeysAndAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

@@ -34,7 +34,15 @@ namespace Amazon.ElastiCache.Model
         /// 
         public AuthorizeCacheSecurityGroupIngressResult AuthorizeCacheSecurityGroupIngressResult
         {
-            get { return this.authorizeCacheSecurityGroupIngressResult; }
+            get 
+            {
+                if(this.authorizeCacheSecurityGroupIngressResult == null)
+                {
+                    this.authorizeCacheSecurityGroupIngressResult = new AuthorizeCacheSecurityGroupIngressResult();
+                }
+
+                return this.authorizeCacheSecurityGroupIngressResult; 
+            }
             set { this.authorizeCacheSecurityGroupIngressResult = value; }
         }
     }

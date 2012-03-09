@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for AuthorizeDBSecurityGroupIngress operation
     /// </summary>
-    internal class AuthorizeDBSecurityGroupIngressResultUnmarshaller : IUnmarshaller<AuthorizeDBSecurityGroupIngressResult, UnmarshallerContext> {
+    internal class AuthorizeDBSecurityGroupIngressResultUnmarshaller : IUnmarshaller<AuthorizeDBSecurityGroupIngressResult, XmlUnmarshallerContext> {
 
-        public AuthorizeDBSecurityGroupIngressResult Unmarshall(UnmarshallerContext context) 
+        public AuthorizeDBSecurityGroupIngressResult Unmarshall(XmlUnmarshallerContext context) 
         {
             AuthorizeDBSecurityGroupIngressResult result = new AuthorizeDBSecurityGroupIngressResult();
             

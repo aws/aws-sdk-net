@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for CreateDBParameterGroup operation
     /// </summary>
-    internal class CreateDBParameterGroupResultUnmarshaller : IUnmarshaller<CreateDBParameterGroupResult, UnmarshallerContext> {
+    internal class CreateDBParameterGroupResultUnmarshaller : IUnmarshaller<CreateDBParameterGroupResult, XmlUnmarshallerContext> {
 
-        public CreateDBParameterGroupResult Unmarshall(UnmarshallerContext context) 
+        public CreateDBParameterGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateDBParameterGroupResult result = new CreateDBParameterGroupResult();
             

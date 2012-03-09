@@ -25,7 +25,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the EstimateTemplateCost operation.
-    /// <para>Returns the estimated monthly cost of a template. The return value is an AWS Simply Monthly Calculator URL with a query string that
+    /// <para>Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that
     /// describes the resources required to run the template. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.EstimateTemplateCost"/>

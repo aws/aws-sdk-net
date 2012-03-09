@@ -52,15 +52,30 @@ namespace Amazon.ImportExport.Model
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds elements to the Jobs collection
+        /// </summary>
+        /// <param name="jobs">The values to add to the Jobs collection </param>
+        /// <returns>this instance</returns>
+        public ListJobsResult WithJobs(IEnumerable<Job> jobs)
+        {
+            foreach (Job element in jobs)
+            {
+                this.jobs.Add(element);
+            }
+
+            return this;
+        }
+
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this.jobs.Count > 0;         
+            return this.jobs.Count > 0;       
         }
 
         /// <summary>
-        /// Indicates whether the list of jobs was truncated. If true, then call
-        /// ListJobs again using the last JobId element as the marker.
+        /// Indicates whether the list of jobs was truncated. If true, then call ListJobs again using the last JobId element as the marker.
         ///  
         /// </summary>
         public bool IsTruncated
@@ -80,6 +95,7 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {

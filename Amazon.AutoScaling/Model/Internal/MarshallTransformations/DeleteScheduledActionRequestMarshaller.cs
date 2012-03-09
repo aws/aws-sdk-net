@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Scheduled Action Request Marshaller
     /// </summary>       
-    public class DeleteScheduledActionRequestMarshaller : IMarshaller<IRequest<DeleteScheduledActionRequest>, DeleteScheduledActionRequest>
+    public class DeleteScheduledActionRequestMarshaller : IMarshaller<IRequest, DeleteScheduledActionRequest>
     {
-        public IRequest<DeleteScheduledActionRequest> Marshall(DeleteScheduledActionRequest deleteScheduledActionRequest)
+        public IRequest Marshall(DeleteScheduledActionRequest deleteScheduledActionRequest)
         {
-            IRequest<DeleteScheduledActionRequest> request = new DefaultRequest<DeleteScheduledActionRequest>(deleteScheduledActionRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(deleteScheduledActionRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DeleteScheduledAction");
             request.Parameters.Add("Version", "2011-01-01");
             if (deleteScheduledActionRequest != null && deleteScheduledActionRequest.IsSetAutoScalingGroupName())

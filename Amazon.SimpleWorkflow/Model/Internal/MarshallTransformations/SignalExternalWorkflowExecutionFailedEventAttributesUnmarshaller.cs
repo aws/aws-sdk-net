@@ -22,9 +22,9 @@
       /// <summary> 
       /// SignalExternalWorkflowExecutionFailedEventAttributesUnmarshaller 
       /// </summary> 
-      internal class SignalExternalWorkflowExecutionFailedEventAttributesUnmarshaller : IUnmarshaller<SignalExternalWorkflowExecutionFailedEventAttributes, UnmarshallerContext>, IUnmarshaller<SignalExternalWorkflowExecutionFailedEventAttributes, JsonUnmarshallerContext> 
+      internal class SignalExternalWorkflowExecutionFailedEventAttributesUnmarshaller : IUnmarshaller<SignalExternalWorkflowExecutionFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<SignalExternalWorkflowExecutionFailedEventAttributes, JsonUnmarshallerContext> 
       { 
-        SignalExternalWorkflowExecutionFailedEventAttributes IUnmarshaller<SignalExternalWorkflowExecutionFailedEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        SignalExternalWorkflowExecutionFailedEventAttributes IUnmarshaller<SignalExternalWorkflowExecutionFailedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

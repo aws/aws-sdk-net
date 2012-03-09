@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Create D B Instance Read Replica Request Marshaller
     /// </summary>       
-    public class CreateDBInstanceReadReplicaRequestMarshaller : IMarshaller<IRequest<CreateDBInstanceReadReplicaRequest>, CreateDBInstanceReadReplicaRequest>
+    public class CreateDBInstanceReadReplicaRequestMarshaller : IMarshaller<IRequest, CreateDBInstanceReadReplicaRequest>
     {
-        public IRequest<CreateDBInstanceReadReplicaRequest> Marshall(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest)
+        public IRequest Marshall(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest)
         {
-            IRequest<CreateDBInstanceReadReplicaRequest> request = new DefaultRequest<CreateDBInstanceReadReplicaRequest>(createDBInstanceReadReplicaRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(createDBInstanceReadReplicaRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBInstanceReadReplica");
             request.Parameters.Add("Version", "2012-01-15");
             if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetDBInstanceIdentifier())

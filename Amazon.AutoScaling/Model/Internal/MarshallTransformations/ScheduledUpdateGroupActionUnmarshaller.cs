@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ScheduledUpdateGroupAction Unmarshaller
      /// </summary>
-    internal class ScheduledUpdateGroupActionUnmarshaller : IUnmarshaller<ScheduledUpdateGroupAction, UnmarshallerContext> 
+    internal class ScheduledUpdateGroupActionUnmarshaller : IUnmarshaller<ScheduledUpdateGroupAction, XmlUnmarshallerContext> 
     {
-        public ScheduledUpdateGroupAction Unmarshall(UnmarshallerContext context) 
+        public ScheduledUpdateGroupAction Unmarshall(XmlUnmarshallerContext context) 
         {
             ScheduledUpdateGroupAction scheduledUpdateGroupAction = new ScheduledUpdateGroupAction();
             int originalDepth = context.CurrentDepth;

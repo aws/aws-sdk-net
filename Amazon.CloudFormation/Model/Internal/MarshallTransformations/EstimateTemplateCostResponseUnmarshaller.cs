@@ -25,15 +25,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for EstimateTemplateCost operation
     /// </summary>
-    internal class EstimateTemplateCostResponseUnmarshaller : IResponseUnmarshaller<EstimateTemplateCostResponse, UnmarshallerContext> {
+    internal class EstimateTemplateCostResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public EstimateTemplateCostResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             EstimateTemplateCostResponse response = new EstimateTemplateCostResponse();
-
+            
             while (context.Read())
             {
-                if (context.IsStartElement)
+                if (context.IsStartElement)                
                 {
                     if(context.TestExpression("EstimateTemplateCostResult", 2))
                     {
@@ -46,12 +47,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                 }
             }
-
+                 
+                        
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Apply Security Groups To Load Balancer Request Marshaller
     /// </summary>       
-    public class ApplySecurityGroupsToLoadBalancerRequestMarshaller : IMarshaller<IRequest<ApplySecurityGroupsToLoadBalancerRequest>, ApplySecurityGroupsToLoadBalancerRequest>
+    public class ApplySecurityGroupsToLoadBalancerRequestMarshaller : IMarshaller<IRequest, ApplySecurityGroupsToLoadBalancerRequest>
     {
-        public IRequest<ApplySecurityGroupsToLoadBalancerRequest> Marshall(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest)
+        public IRequest Marshall(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest)
         {
-            IRequest<ApplySecurityGroupsToLoadBalancerRequest> request = new DefaultRequest<ApplySecurityGroupsToLoadBalancerRequest>(applySecurityGroupsToLoadBalancerRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(applySecurityGroupsToLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "ApplySecurityGroupsToLoadBalancer");
             request.Parameters.Add("Version", "2011-11-15");
             if (applySecurityGroupsToLoadBalancerRequest != null && applySecurityGroupsToLoadBalancerRequest.IsSetLoadBalancerName())

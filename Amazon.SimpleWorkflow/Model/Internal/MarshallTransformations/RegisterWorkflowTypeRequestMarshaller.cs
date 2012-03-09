@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Register Workflow Type Request Marshaller
     /// </summary>       
-    internal class RegisterWorkflowTypeRequestMarshaller : IMarshaller<IRequest<RegisterWorkflowTypeRequest>, RegisterWorkflowTypeRequest> 
+    internal class RegisterWorkflowTypeRequestMarshaller : IMarshaller<IRequest, RegisterWorkflowTypeRequest> 
     {
-        public IRequest<RegisterWorkflowTypeRequest> Marshall(RegisterWorkflowTypeRequest registerWorkflowTypeRequest) 
+        public IRequest Marshall(RegisterWorkflowTypeRequest registerWorkflowTypeRequest) 
         {
 
-            IRequest<RegisterWorkflowTypeRequest> request = new DefaultRequest<RegisterWorkflowTypeRequest>(registerWorkflowTypeRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(registerWorkflowTypeRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.RegisterWorkflowType";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

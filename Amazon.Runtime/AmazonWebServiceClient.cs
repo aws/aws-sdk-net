@@ -116,6 +116,9 @@ namespace Amazon.Runtime
 
         #endregion
 
+
+        #region Constructors
+
         internal AmazonWebServiceClient(AWSCredentials credentials, ClientConfig config, bool ownCredentials, AuthenticationTypes authenticationType)
         {
             this.logger = new Logger(this.GetType());
@@ -182,6 +185,337 @@ namespace Amazon.Runtime
         {
         }
 
+        #endregion
+
+
+        #region Async methods
+
+        protected void Invoke(AsyncResult asyncResult)
+        {
+            ConfigureRequest(asyncResult);
+
+            InvokeConfiguredRequest(asyncResult);
+        }
+
+        private void InvokeConfiguredRequest(AsyncResult asyncResult)
+        {
+            logger.DebugFormat("Starting request {0} at {1}", asyncResult.RequestName, this.config.ServiceURL);
+
+            HttpWebRequest webRequest = ConfigureWebRequest(asyncResult);
+            asyncResult.RequestState = new RequestState(webRequest, asyncResult.RequestData);
+            asyncResult.RequestSent = DateTime.Now;
+
+            if (asyncResult.CompletedSynchronously)
+            {
+                this.getRequestStreamCallback(asyncResult);
+            }
+            else
+            {
+                IAsyncResult httpResult;
+                if (asyncResult != null
+                    && asyncResult.RequestState != null
+                    && asyncResult.RequestState.WebRequest.Method == "POST")
+                {
+                    httpResult = webRequest.BeginGetRequestStream(new AsyncCallback(this.getRequestStreamCallback), asyncResult);
+                }
+                else
+                {
+                    httpResult = webRequest.BeginGetResponse(new AsyncCallback(this.getResponseCallback), asyncResult);
+                }
+
+                if (httpResult.CompletedSynchronously)
+                {
+                    if (!asyncResult.RequestState.GetRequestStreamCallbackCalled)
+                    {
+                        getRequestStreamCallback(httpResult);
+                    }
+                    asyncResult.SetCompletedSynchronously(true);
+                }
+            }
+        }
+
+        private void ConfigureRequest(AsyncResult asyncResult)
+        {
+            IRequest request = asyncResult.Request;
+
+            request.Endpoint = new Uri(this.config.ServiceURL);
+            request.Headers["User-Agent"] = this.config.UserAgent + " " + (asyncResult.CompletedSynchronously ? "ClientSync" : "ClientAsync");
+            if (!request.Headers.ContainsKey(AWSSDKUtils.ContentTypeHeader))
+            {
+                request.Headers[AWSSDKUtils.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
+            }
+
+            ProcessRequestHandlers(request);
+
+            SignRequest(request, asyncResult.Signer);
+
+            asyncResult.RequestData = GetRequestData(request);
+        }
+
+        private byte[] GetRequestData(IRequest request)
+        {
+            byte[] requestData;
+            if (request.Content == null)
+            {
+                string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
+                requestData = Encoding.UTF8.GetBytes(queryString);
+            }
+            else
+            {
+                requestData = request.Content;
+            }
+
+            this.logger.DebugFormat("Request body's content size {0}", requestData.Length);
+            return requestData;
+        }
+
+        internal T endOperation<T>(IAsyncResult result)
+            where T : AmazonWebServiceResponse, new()
+        {
+            AsyncResult asyncResult = result as AsyncResult;
+            if (asyncResult == null)
+                return default(T);
+
+
+            if (!asyncResult.IsCompleted)
+            {
+                asyncResult.AsyncWaitHandle.WaitOne();
+            }
+
+            if (asyncResult.Exception != null)
+            {
+                AWSSDKUtils.PreserveStackTrace(asyncResult.Exception);
+                throw asyncResult.Exception;
+            }
+
+            return asyncResult.FinalResponse as T;
+        }
+
+        void getRequestStreamCallback(IAsyncResult result)
+        {
+            AsyncResult asyncResult;
+            if (result is AsyncResult)
+                asyncResult = result as AsyncResult;
+            else
+                asyncResult = result.AsyncState as AsyncResult;
+
+            asyncResult.RequestState.GetRequestStreamCallbackCalled = true;
+            try
+            {
+                RequestState state = asyncResult.RequestState;
+
+                if (asyncResult != null
+                    && asyncResult.RequestState != null
+                    && asyncResult.RequestState.RequestData != null
+                    && asyncResult.RequestState.RequestData.Length > 0
+                    && asyncResult.RequestState.WebRequest.Method == "POST")
+                {
+                    Stream requestStream;
+                    if (asyncResult.CompletedSynchronously)
+                        requestStream = state.WebRequest.GetRequestStream();
+                    else
+                        requestStream = state.WebRequest.EndGetRequestStream(result);
+
+                    using (requestStream)
+                    {
+                        byte[] requestData = asyncResult.RequestState.RequestData;
+                        requestStream.Write(requestData, 0, requestData.Length);
+                    }
+                }
+
+                if (asyncResult.CompletedSynchronously)
+                {
+                    this.getResponseCallback(asyncResult);
+                }
+                else
+                {
+                    IAsyncResult httpResult = state.WebRequest.BeginGetResponse(new AsyncCallback(this.getResponseCallback), asyncResult);
+                    if (httpResult.CompletedSynchronously)
+                    {
+                        if (!asyncResult.RequestState.GetResponseCallbackCalled)
+                        {
+                            getResponseCallback(httpResult);
+                        }
+                        asyncResult.SetCompletedSynchronously(true);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                asyncResult.RequestState.WebRequest.Abort();
+                asyncResult.Exception = e;
+
+                asyncResult.SignalWaitHandle();
+                if (asyncResult.Callback != null)
+                    asyncResult.Callback(asyncResult);
+            }
+        }
+
+        void getResponseCallback(IAsyncResult result)
+        {
+            AsyncResult asyncResult;
+            if (result is AsyncResult)
+                asyncResult = result as AsyncResult;
+            else
+                asyncResult = result.AsyncState as AsyncResult;
+
+            asyncResult.RequestState.GetResponseCallbackCalled = true;
+            bool shouldRetry = false;
+            try
+            {
+                RequestState state = asyncResult.RequestState;
+                HttpWebResponse httpResponse = null;
+                try
+                {
+                    if (asyncResult.CompletedSynchronously)
+                        httpResponse = state.WebRequest.GetResponse() as HttpWebResponse;
+                    else
+                        httpResponse = state.WebRequest.EndGetResponse(result) as HttpWebResponse;
+
+                    asyncResult.ResponseReceived = DateTime.UtcNow;
+                    this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.",
+                        asyncResult.RequestName,
+                        httpResponse.StatusCode,
+                        (asyncResult.ResponseReceived - asyncResult.RequestSent).TotalMilliseconds);
+
+                    using (httpResponse)
+                    {
+                        var unmarshaller = asyncResult.Unmarshaller;
+                        var context = unmarshaller.CreateContext(httpResponse, config.LogResponse);
+                        if (config.LogResponse)
+                        {
+                            this.logger.InfoFormat("Received response: [{0}]", context.ResponseBody);
+                        }
+                        asyncResult.FinalResponse = unmarshaller.Unmarshall(context);
+                    }
+                }
+                catch (WebException we)
+                {
+                    shouldRetry = handleHttpWebErrorResponse(asyncResult, we);
+                }
+                catch (IOException ioe)
+                {
+                    shouldRetry = handleIOException(asyncResult, httpResponse, ioe);
+                }
+                if (shouldRetry)
+                {
+                    asyncResult.RequestState.WebRequest.Abort();
+                    asyncResult.RetriesAttempt++;
+                    InvokeConfiguredRequest(asyncResult);
+                }
+            }
+            catch (Exception e)
+            {
+                asyncResult.RequestState.WebRequest.Abort();
+                asyncResult.Exception = e;
+                shouldRetry = false;
+                logger.Error(string.Format("Error configuring web request {0} to {1}.", asyncResult.RequestName, asyncResult.Request.Endpoint.ToString()), e);
+            }
+            finally
+            {
+                if (!shouldRetry)
+                {
+                    asyncResult.SignalWaitHandle();
+                    if (asyncResult.Callback != null)
+                        asyncResult.Callback(asyncResult);
+                }
+            }
+        }
+
+        bool handleIOException(AsyncResult asyncResult, HttpWebResponse httpResponse, IOException e)
+        {
+            if (isInnerExceptionThreadAbort(e))
+                throw e;
+
+            this.logger.Error(string.Format("IOException making request {0} to {1}.", asyncResult.RequestName, asyncResult.Request.Endpoint.ToString()), e);
+            if (httpResponse != null)
+            {
+                httpResponse.Close();
+                httpResponse = null;
+            }
+            // Abort the unsuccessful request
+            asyncResult.RequestState.WebRequest.Abort();
+
+            if (asyncResult.RetriesAttempt <= config.MaxErrorRetry)
+            {
+                this.logger.Error(
+                    string.Format("IOException making request {0} to {1}. Attempting retry {2}.",
+                        asyncResult.RequestName,
+                        asyncResult.Request.Endpoint.ToString(),
+                        asyncResult.RetriesAttempt),
+                    e);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        bool handleHttpWebErrorResponse(AsyncResult asyncResult, WebException we)
+        {
+            HttpStatusCode statusCode;
+            AmazonServiceException errorResponseException = null;
+            using (HttpWebResponse httpErrorResponse = we.Response as HttpWebResponse)
+            {
+                if (httpErrorResponse == null)
+                {
+                    // Abort the unsuccessful request
+                    asyncResult.RequestState.WebRequest.Abort();
+
+                    // If it is a keep alive error then attempt a retry
+                    if (we != null && asyncResult.RetriesAttempt <= config.MaxErrorRetry && we.Status == WebExceptionStatus.KeepAliveFailure)
+                    {
+                        pauseExponentially(asyncResult.RetriesAttempt);
+                        return true;
+                    }
+                    throw new AmazonServiceException(we);
+                }
+                statusCode = httpErrorResponse.StatusCode;
+
+                using (httpErrorResponse)
+                {
+                    var unmarshaller = asyncResult.Unmarshaller;
+                    UnmarshallerContext errorContext = unmarshaller.CreateContext(httpErrorResponse, config.LogResponse);
+                    if (config.LogResponse)
+                    {
+                        this.logger.InfoFormat("Received error response: [{0}]", errorContext.ResponseBody);
+                    }
+                    errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
+                }
+                asyncResult.RequestState.WebRequest.Abort();
+
+                if (isTemporaryRedirect(httpErrorResponse))
+                {
+                    string redirectedLocation = httpErrorResponse.Headers["location"];
+                    this.logger.InfoFormat("Request {0} is being redirected to {1}.", asyncResult.RequestName, redirectedLocation);
+                    asyncResult.Request.Endpoint = new Uri(redirectedLocation);
+                    return true;
+                }
+                else if (ShouldRetry(statusCode, this.config, errorResponseException, asyncResult.RetriesAttempt))
+                {
+                    this.logger.InfoFormat("Retry number {0} for request {1}.", asyncResult.RetriesAttempt, asyncResult.RequestName);
+                    pauseExponentially(asyncResult.RetriesAttempt);
+                    return true;
+                }
+            }
+
+            if (errorResponseException != null)
+            {
+                this.logger.Error(string.Format("Error making request {0}.", asyncResult.RequestName), errorResponseException);
+                throw errorResponseException;
+            }
+
+            AmazonServiceException excep = new AmazonServiceException("Unable to make request", we, statusCode);
+            this.logger.Error(string.Format("Error making request {0}.", asyncResult.RequestName), excep);
+            throw excep;
+        }
+
+        #endregion
+
+
+        #region Private/protected methods
+
         /// <summary>
         /// Gets the service url endpoint used by this client.
         /// </summary>
@@ -201,11 +535,13 @@ namespace Amazon.Runtime
         /// <summary>
         /// Creates the HttpWebRequest and configures the end point, content, user agent and proxy settings.
         /// </summary>
-        /// <param name="wrappedRequest">The internal wrapped request.</param>
-        /// <param name="requestData">The data to be sent for the request.</param>
+        /// <param name="asyncResult">The async request.</param>
         /// <returns>The web request that actually makes the call.</returns>
-        protected virtual HttpWebRequest ConfigureWebRequest<X>(IRequest<X> wrappedRequest, byte[] requestData)
+        protected virtual HttpWebRequest ConfigureWebRequest(AsyncResult asyncResult)//IRequest wrappedRequest, byte[] requestData)
         {
+            IRequest wrappedRequest = asyncResult.Request;
+            byte[] requestData = asyncResult.RequestData;
+
             Uri url = wrappedRequest.Endpoint;
             if (!string.IsNullOrEmpty(wrappedRequest.ResourcePath))
                 url = new Uri(wrappedRequest.Endpoint, wrappedRequest.ResourcePath);
@@ -219,6 +555,7 @@ namespace Amazon.Runtime
             HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             if (request != null)
             {
+                request.ServicePoint.ConnectionLimit = this.config.ConnectionLimit;
                 if (this.config.ProxyHost != null && this.config.ProxyPort != 0)
                 {
                     WebProxy proxy = new WebProxy(this.config.ProxyHost, this.config.ProxyPort);
@@ -245,14 +582,6 @@ namespace Amazon.Runtime
                 request.ContentLength = requestData.Length;
 
                 AddHeaders(request, wrappedRequest.Headers);
-
-                if (requestData.Length > 0 && request.Method == "POST")
-                {
-                    using (Stream requestStream = request.GetRequestStream())
-                    {
-                        requestStream.Write(requestData, 0, requestData.Length);
-                    }
-                }
             }
 
             return request;
@@ -342,7 +671,7 @@ namespace Amazon.Runtime
             return ClientProtocol.Unknown;
         }
 
-        private void SignRequest<X>(IRequest<X> request, AbstractAWSSigner signer) where X : AmazonWebServiceRequest
+        private void SignRequest(IRequest request, AbstractAWSSigner signer)
         {
             using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
             {
@@ -354,10 +683,10 @@ namespace Amazon.Runtime
                     switch (protocol)
                     {
                         case ClientProtocol.QueryStringProtocol:
-                            request.Parameters.Add("SecurityToken", immutableCredentials.Token);
+                            request.Parameters["SecurityToken"] = immutableCredentials.Token;
                             break;
                         case ClientProtocol.RestProtocol:
-                            request.Headers.Add("x-amz-security-token", immutableCredentials.Token);
+                            request.Headers["x-amz-security-token"] = immutableCredentials.Token;
                             break;
                         default:
                             throw new InvalidDataException("Cannot determine protocol");
@@ -367,210 +696,7 @@ namespace Amazon.Runtime
             }
         }
 
-
-        /// <summary>
-        /// This method makes the actual web request and marshalls the response body or error returned from the service.
-        /// For some error response a retry will be attempted after an exponential pause.
-        /// </summary>
-        /// <typeparam name="X">The user facing request type.</typeparam>
-        /// <typeparam name="Y">The user facing response type.</typeparam>
-        /// <param name="request">The wrapper around the user facing request.</param>
-        /// <param name="signer">The type of signer to use for the request.</param>
-        /// <param name="unmarshaller">The object used to unmarshall the response body.</param>
-        /// <returns>The response object for the request</returns>
-        internal Y Invoke<X, Y>(IRequest<X> request, AbstractAWSSigner signer, IResponseUnmarshaller<Y, UnmarshallerContext> unmarshaller)
-            where X : AmazonWebServiceRequest
-            where Y : AmazonWebServiceResponse
-        {
-            Type requestType = typeof(X);
-            string requestName = requestType.Name;
-
-            request.Endpoint = new Uri(this.config.ServiceURL);
-            request.Headers["User-Agent"] = this.config.UserAgent;
-            if (!request.Headers.ContainsKey(AWSSDKUtils.ContentTypeHeader))
-            {
-                request.Headers[AWSSDKUtils.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
-            }
-
-            ProcessRequestHandlers(request);
-
-            this.logger.DebugFormat("Starting request {0} at {1}", requestName, this.config.ServiceURL);
-            SignRequest<X>(request, signer);
-
-            byte[] requestData;
-            if (request.Content == null)
-            {
-                string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
-                requestData = Encoding.UTF8.GetBytes(queryString);
-            }
-            else
-            {
-                requestData = request.Content;
-            }
-
-            this.logger.DebugFormat("Request body's content size {0}", requestData.Length);
-
-            int retries = 0;
-            while (true)
-            {
-                retries++;
-
-                try
-                {
-                    HttpWebRequest webRequest = this.ConfigureWebRequest<X>(request, requestData);
-                    try
-                    {
-                        Y result;
-                        DateTime requestSent = DateTime.UtcNow;
-                        using (HttpWebResponse httpResponse = webRequest.GetResponse() as HttpWebResponse)
-                        {
-                            DateTime responseReceived = DateTime.UtcNow;
-                            this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", requestName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
-
-                            XmlTextReader reader;
-
-                            // Using NOSTREAM is the less effcient way of dealing with the response body but it is helpful 
-                            // for debug purposes to see the entire xml body coming back from the server.
-#if NOSTREAM
-                            string responseBody = new StreamReader(httpResponse.GetResponseStream()).ReadToEnd();
-                            reader = new XmlTextReader(new StringReader(responseBody));
-#else
-                            reader = new XmlTextReader(new StreamReader(httpResponse.GetResponseStream()));
-#endif
-                            UnmarshallerContext context = new UnmarshallerContext(reader, httpResponse.Headers);
-                            result = unmarshaller.Unmarshall(context);
-                        }
-
-                        return result;
-                    }
-                    catch (WebException we)
-                    {
-                        processWebException<X, Y>(requestName, we, webRequest, unmarshaller, request, retries);
-                    }
-                }
-                catch (IOException e)
-                {
-                    if (this.isInnerExceptionThreadAbort(e))
-                        throw;
-
-                    this.logger.Error(string.Format("IOException making request {0} to {1}.", requestName, request.Endpoint.ToString()), e);
-                    if (retries > this.config.MaxErrorRetry)
-                        throw;
-                    else
-                        this.logger.Error(string.Format("IOException making request {0} to {1}. Attempting retry {2}.", requestName, request.Endpoint.ToString(), retries), e);
-                }
-                catch (Exception e)
-                {
-                    this.logger.Error(string.Format("Error configuring web request {0} to {1}.", requestName, request.Endpoint.ToString()), e);
-                    throw;
-                }
-            }
-        }
-
-        /// <summary>
-        /// This method makes the actual web request and marshalls the response body or error returned from the service.
-        /// For some error response a retry will be attempted after an exponential pause.
-        /// </summary>
-        /// <typeparam name="X">The user facing request type.</typeparam>
-        /// <typeparam name="Y">The user facing response type.</typeparam>
-        /// <param name="request">The wrapper around the user facing request.</param>
-        /// <param name="signer">The type of signer to use for the request.</param>
-        /// <param name="unmarshaller">The object used to unmarshall the response body.</param>
-        /// <returns>The response object for the request</returns>
-        internal Y Invoke<X, Y>(IRequest<X> request, AbstractAWSSigner signer, IResponseUnmarshaller<Y, JsonUnmarshallerContext> unmarshaller)
-            where X : AmazonWebServiceRequest
-            where Y : AmazonWebServiceResponse
-        {
-            Type requestType = typeof(X);
-            string requestName = requestType.Name;
-
-            request.Endpoint = new Uri(this.config.ServiceURL);
-            request.Headers["User-Agent"] = this.config.UserAgent;
-            if (!request.Headers.ContainsKey(AWSSDKUtils.ContentTypeHeader))
-            {
-                request.Headers[AWSSDKUtils.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
-            }
-
-            ProcessRequestHandlers(request);
-
-            this.logger.DebugFormat("Starting request {0} at {1}", requestName, this.config.ServiceURL);
-            SignRequest<X>(request, signer);
-
-            byte[] requestData;
-            if (request.Content == null)
-            {
-                string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
-                requestData = Encoding.UTF8.GetBytes(queryString);
-                //this.logger.DebugFormat("Request body's content [{0}] with size {1}", queryString, requestData.Length);
-            }
-            else
-            {
-                requestData = request.Content;
-                //this.logger.DebugFormat("Request content size {0}", requestData.Length);
-            }
-
-            this.logger.DebugFormat("Request body's content size {0}", requestData.Length);
-
-            int retries = 0;
-            while (true)
-            {
-                retries++;
-
-                try
-                {
-                    HttpWebRequest webRequest = this.ConfigureWebRequest<X>(request, requestData);
-                    try
-                    {
-                        Y result;
-                        DateTime requestSent = DateTime.UtcNow;
-                        using (HttpWebResponse httpResponse = webRequest.GetResponse() as HttpWebResponse)
-                        {
-                            DateTime responseReceived = DateTime.UtcNow;
-                            this.logger.InfoFormat("Received response for {0} with status code {1} in {2} ms.", requestName, httpResponse.StatusCode, (responseReceived - requestSent).TotalMilliseconds);
-
-                            StreamReader reader;
-
-                            // Using NOSTREAM is the less effcient way of dealing with the response body but it is helpful 
-                            // for debug purposes to see the entire xml body coming back from the server.
-#if NOSTREAM
-                            string responseBody = new StreamReader(httpResponse.GetResponseStream()).ReadToEnd();
-                            reader = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(responseBody)));
-#else
-                            reader = new StreamReader(httpResponse.GetResponseStream());
-#endif
-                            JsonUnmarshallerContext context = new JsonUnmarshallerContext(reader);
-                            result = unmarshaller.Unmarshall(context);
-                            result.ResponseMetadata = new ResponseMetadata();
-                            result.ResponseMetadata.RequestId = httpResponse.Headers[AWSSDKUtils.RequestIdHeader];
-                        }
-
-                        return result;
-                    }
-                    catch (WebException we)
-                    {
-                        processWebException<X, Y>(requestName, we, webRequest, unmarshaller, request, retries);
-                    }
-                }
-                catch (IOException e)
-                {
-                    if (this.isInnerExceptionThreadAbort(e))
-                        throw;
-
-                    this.logger.Error(string.Format("IOException making request {0} to {1}.", requestName, request.Endpoint.ToString()), e);
-                    if (retries > this.config.MaxErrorRetry)
-                        throw;
-                    else
-                        this.logger.Error(string.Format("IOException making request {0} to {1}. Attempting retry {2}.", requestName, request.Endpoint.ToString(), retries), e);
-                }
-                catch (Exception e)
-                {
-                    this.logger.Error(string.Format("Error configuring web request {0} to {1}.", requestName, request.Endpoint.ToString()), e);
-                    throw;
-                }
-            }
-        }
-
-        protected virtual void ProcessRequestHandlers<X>(IRequest<X> request) where X : AmazonWebServiceRequest
+        protected virtual void ProcessRequestHandlers(IRequest request)
         {
             if (request == null) throw new ArgumentNullException("request");
 
@@ -590,128 +716,6 @@ namespace Amazon.Runtime
             if (e.InnerException != null)
                 return isInnerExceptionThreadAbort(e.InnerException);
             return false;
-        }
-
-        private void processWebException<X, Y>(string requestName, WebException we, HttpWebRequest webRequest, IResponseUnmarshaller<Y, UnmarshallerContext> unmarshaller, IRequest<X> request, int retries)
-        {
-            HttpStatusCode statusCode;
-            AmazonServiceException errorResponseException = null;
-            using (HttpWebResponse httpErrorResponse = we.Response as HttpWebResponse)
-            {
-                if (httpErrorResponse == null)
-                {
-                    // Abort the unsuccessful request
-                    webRequest.Abort();
-
-                    // If it is a keep alive error then attempt a retry
-                    if (we != null && retries <= config.MaxErrorRetry && we.Status == WebExceptionStatus.KeepAliveFailure)
-                    {
-                        pauseExponentially(retries);
-                        return;
-                    }
-                    throw new AmazonServiceException(we);
-                }
-                statusCode = httpErrorResponse.StatusCode;
-
-                XmlTextReader errorReader;
-#if NOSTREAM
-                string responseBody = new StreamReader(httpErrorResponse.GetResponseStream()).ReadToEnd(); ;
-                errorReader = new XmlTextReader(new StringReader(responseBody));
-#else
-                errorReader = new XmlTextReader(new StreamReader(httpErrorResponse.GetResponseStream()));
-#endif
-
-                UnmarshallerContext errorContext = new UnmarshallerContext(errorReader, httpErrorResponse.Headers);
-                errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
-
-                httpErrorResponse.Close();
-                webRequest.Abort();
-
-                if (isTemporaryRedirect(httpErrorResponse))
-                {
-                    string redirectedLocation = httpErrorResponse.Headers["location"];
-                    this.logger.InfoFormat("Request {0} is being redirected to {1}.", requestName, redirectedLocation);
-                    request.Endpoint = new Uri(redirectedLocation);
-                    return;
-                }
-                else if (ShouldRetry(statusCode, this.config, errorResponseException, retries))
-                {
-                    this.logger.InfoFormat("Retry number {0} for request {1}.", retries, requestName);
-                    pauseExponentially(retries);
-                    return;
-                }
-            }
-
-            if (errorResponseException != null)
-            {
-                this.logger.Error(string.Format("Error making request {0}.", requestName), errorResponseException);
-                throw errorResponseException;
-            }
-
-            AmazonServiceException excep = new AmazonServiceException("Unable to make request", we, statusCode);
-            this.logger.Error(string.Format("Error making request {0}.", requestName), excep);
-            throw excep;
-        }
-
-        private void processWebException<X, Y>(string requestName, WebException we, HttpWebRequest webRequest, IResponseUnmarshaller<Y, JsonUnmarshallerContext> unmarshaller, IRequest<X> request, int retries)
-        {
-            HttpStatusCode statusCode;
-            AmazonServiceException errorResponseException = null;
-            using (HttpWebResponse httpErrorResponse = we.Response as HttpWebResponse)
-            {
-                if (httpErrorResponse == null)
-                {
-                    // Abort the unsuccessful request
-                    webRequest.Abort();
-
-                    // If it is a keep alive error then attempt a retry
-                    if (we != null && retries <= config.MaxErrorRetry && we.Status == WebExceptionStatus.KeepAliveFailure)
-                    {
-                        pauseExponentially(retries);
-                        return;
-                    }
-                    throw new AmazonServiceException(we);
-                }
-                statusCode = httpErrorResponse.StatusCode;
-
-                StreamReader errorReader;
-#if NOSTREAM
-                string responseBody = new StreamReader(httpErrorResponse.GetResponseStream()).ReadToEnd();
-                errorReader = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(responseBody)));
-#else
-                errorReader = new StreamReader(httpErrorResponse.GetResponseStream());
-#endif
-
-                JsonUnmarshallerContext errorContext = new JsonUnmarshallerContext(errorReader);
-                errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
-
-                httpErrorResponse.Close();
-                webRequest.Abort();
-
-                if (isTemporaryRedirect(httpErrorResponse))
-                {
-                    string redirectedLocation = httpErrorResponse.Headers["location"];
-                    this.logger.InfoFormat("Request {0} is being redirected to {1}.", requestName, redirectedLocation);
-                    request.Endpoint = new Uri(redirectedLocation);
-                    return;
-                }
-                else if (ShouldRetry(statusCode, this.config, errorResponseException, retries))
-                {
-                    this.logger.InfoFormat("Retry number {0} for request {1}.", retries, requestName);
-                    pauseExponentially(retries);
-                    return;
-                }
-            }
-
-            if (errorResponseException != null)
-            {
-                this.logger.Error(string.Format("Error making request {0}.", requestName), errorResponseException);
-                throw errorResponseException;
-            }
-
-            AmazonServiceException excep = new AmazonServiceException("Unable to make request", we, statusCode);
-            this.logger.Error(string.Format("Error making request {0}.", requestName), excep);
-            throw excep;
         }
 
         private static bool isTemporaryRedirect(HttpWebResponse response)
@@ -784,5 +788,131 @@ namespace Amazon.Runtime
             delay = Math.Min(delay, MAX_BACKOFF_IN_MILLISECONDS);
             Thread.Sleep(delay);
         }
+
+        #endregion
+
+
+        #region Async Classes
+
+        protected class AsyncResult : IAsyncResult
+        {
+            // Private members
+
+            private ManualResetEvent _waitHandle;
+            private object _lockObj;
+
+
+            // Constructor
+            internal AsyncResult(IRequest request, AsyncCallback callback, object state, bool completeSynchronized, AbstractAWSSigner signer, ResponseUnmarshaller unmarshaller)
+            {
+                this.Request = request;
+                this.Callback = callback;
+                this.State = state;
+                this.CompletedSynchronously = completeSynchronized;
+                this.Signer = signer;
+                this.Unmarshaller = unmarshaller;
+                this.RequestName = request.OriginalRequest.GetType().Name;
+
+                this._lockObj = new object();
+            }
+
+
+            // Properties
+
+            internal Exception Exception { get; set; }
+
+            internal int RetriesAttempt { get; set; }
+
+            internal RequestState RequestState { get; set; }
+
+            internal object FinalResponse { get; set; }
+
+            internal byte[] RequestData { get; set; }
+
+            internal DateTime RequestSent { get; set; }
+
+            internal DateTime ResponseReceived { get; set; }
+
+
+            // Read-only properties
+
+            internal ResponseUnmarshaller Unmarshaller { get; private set; }
+
+            internal IRequest Request { get; private set; }
+
+            internal AsyncCallback Callback { get; private set; }
+
+            internal AbstractAWSSigner Signer { get; private set; }
+
+            internal object State { get; private set; }
+
+            internal string RequestName { get; private set; }
+
+            public bool CompletedSynchronously { get; private set; }
+
+            public bool IsCompleted { get; private set; }
+
+            public object AsyncState
+            {
+                get { return this.State; }
+            }
+
+            public WaitHandle AsyncWaitHandle
+            {
+                get
+                {
+                    if (this._waitHandle != null)
+                    {
+                        return this._waitHandle;
+                    }
+
+                    lock (this._lockObj)
+                    {
+                        if (this._waitHandle == null)
+                        {
+                            this._waitHandle = new ManualResetEvent(this.IsCompleted);
+                        }
+                    }
+
+                    return this._waitHandle;
+                }
+            }
+
+
+            // Methods
+            internal void SetCompletedSynchronously(bool completedSynchronously)
+            {
+                this.CompletedSynchronously = completedSynchronously;
+            }
+
+            internal void SignalWaitHandle()
+            {
+                this.IsCompleted = true;
+                if (this._waitHandle != null)
+                {
+                    this._waitHandle.Set();
+                }
+            }
+        }
+
+        internal class RequestState
+        {
+            public RequestState(HttpWebRequest webRequest, byte[] requestData)
+            {
+                this.WebRequest = webRequest;
+                this.RequestData = requestData;
+            }
+
+            internal HttpWebRequest WebRequest { get; private set; }
+
+            internal byte[] RequestData { get; private set; }
+
+
+            internal bool GetRequestStreamCallbackCalled { get; set; }
+
+            internal bool GetResponseCallbackCalled { get; set; }
+        }
+
+        #endregion
     }
 }

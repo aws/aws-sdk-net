@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Put Scaling Policy Request Marshaller
     /// </summary>       
-    public class PutScalingPolicyRequestMarshaller : IMarshaller<IRequest<PutScalingPolicyRequest>, PutScalingPolicyRequest>
+    public class PutScalingPolicyRequestMarshaller : IMarshaller<IRequest, PutScalingPolicyRequest>
     {
-        public IRequest<PutScalingPolicyRequest> Marshall(PutScalingPolicyRequest putScalingPolicyRequest)
+        public IRequest Marshall(PutScalingPolicyRequest putScalingPolicyRequest)
         {
-            IRequest<PutScalingPolicyRequest> request = new DefaultRequest<PutScalingPolicyRequest>(putScalingPolicyRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(putScalingPolicyRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "PutScalingPolicy");
             request.Parameters.Add("Version", "2011-01-01");
             if (putScalingPolicyRequest != null && putScalingPolicyRequest.IsSetAutoScalingGroupName())

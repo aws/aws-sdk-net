@@ -24,9 +24,9 @@
       /// <summary>
       /// Response Unmarshaller for DescribeWorkflowType operation
       /// </summary>
-      internal class DescribeWorkflowTypeResponseUnmarshaller : IResponseUnmarshaller<DescribeWorkflowTypeResponse, JsonUnmarshallerContext>
+      internal class DescribeWorkflowTypeResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public DescribeWorkflowTypeResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           DescribeWorkflowTypeResponse response = new DescribeWorkflowTypeResponse();
           
@@ -36,7 +36,7 @@
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

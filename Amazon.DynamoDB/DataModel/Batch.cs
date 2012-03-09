@@ -86,7 +86,46 @@ namespace Amazon.DynamoDB.DataModel
         /// <summary>
         /// Executes a server call to batch-get the items requested.
         /// </summary>
-        public virtual void Execute()
+        public void Execute()
+        {
+            ExecuteHelper(false);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.BatchGet.Execute"/>
+        /// </summary>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecute
+        ///         operation.</returns>
+        public IAsyncResult BeginExecute(AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { ExecuteHelper(true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.BatchGet.Execute"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecute.</param>
+        public void EndExecute(IAsyncResult asyncResult)
+        {
+            DynamoDBAsyncExecutor.EndOperation(asyncResult);
+        }
+
+        #endregion
+
+
+        #region Protected methods
+
+        /// <summary>
+        /// Executes a server call to batch-get the items requested.
+        /// Populates Results with the retrieved items.
+        /// </summary>
+        protected virtual void ExecuteHelper(bool isAsync)
         {
         }
 
@@ -121,17 +160,6 @@ namespace Amazon.DynamoDB.DataModel
         #region Public methods
 
         /// <summary>
-        /// Executes a server call to batch-get the items requested.
-        /// Populates Results with the retrieved items.
-        /// </summary>
-        public override void Execute()
-        {
-            CreateDocumentBatch();
-            DocumentBatch.Execute();
-            PopulateResults(DocumentBatch.Results);
-        }
-
-        /// <summary>
         /// Creates a MultiTableBatchGet object that is a combination
         /// of the current BatchGet and the specified BatchGets
         /// </summary>
@@ -160,6 +188,12 @@ namespace Amazon.DynamoDB.DataModel
 
         #region Internal/protected/private members
 
+        protected override void ExecuteHelper(bool isAsync)
+        {
+            CreateDocumentBatch();
+            DocumentBatch.ExecuteHelper(isAsync);
+            PopulateResults(DocumentBatch.Results);
+        }
         protected List<T> TypedResults { get; set; }
         internal override void CreateDocumentBatch()
         {
@@ -274,13 +308,18 @@ namespace Amazon.DynamoDB.DataModel
         /// </summary>
         public void Execute()
         {
+            ExecuteHelper(false);
+        }
+
+        internal void ExecuteHelper(bool isAsync)
+        {
             MultiTableDocumentBatchGet superBatch = new MultiTableDocumentBatchGet();
             foreach (var batch in allBatches)
             {
                 batch.CreateDocumentBatch();
                 superBatch.AddBatch(batch.DocumentBatch);
             }
-            superBatch.Execute();
+            superBatch.ExecuteHelper(isAsync);
 
             foreach (var batch in allBatches)
             {
@@ -288,10 +327,33 @@ namespace Amazon.DynamoDB.DataModel
             }
         }
 
+        /// <summary>
+        /// Initiates the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.MultiTableBatchGet.Execute"/>
+        /// </summary>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecute
+        ///         operation.</returns>
+        public IAsyncResult BeginExecute(AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { ExecuteHelper(true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.MultiTableBatchGet.Execute"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecute.</param>
+        public void EndExecute(IAsyncResult asyncResult)
+        {
+            DynamoDBAsyncExecutor.EndOperation(asyncResult);
+        }
+
         #endregion
-
     }
-
 
     internal class BatchGetKey
     {

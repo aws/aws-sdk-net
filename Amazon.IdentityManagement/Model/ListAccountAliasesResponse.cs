@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public ListAccountAliasesResult ListAccountAliasesResult
         {
-            get { return this.listAccountAliasesResult; }
+            get 
+            {
+                if(this.listAccountAliasesResult == null)
+                {
+                    this.listAccountAliasesResult = new ListAccountAliasesResult();
+                }
+
+                return this.listAccountAliasesResult; 
+            }
             set { this.listAccountAliasesResult = value; }
         }
     }

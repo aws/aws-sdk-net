@@ -25,9 +25,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for PutScheduledUpdateGroupAction operation
     /// </summary>
-    internal class PutScheduledUpdateGroupActionResponseUnmarshaller : IResponseUnmarshaller<PutScheduledUpdateGroupActionResponse, UnmarshallerContext> {
+    internal class PutScheduledUpdateGroupActionResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public PutScheduledUpdateGroupActionResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             PutScheduledUpdateGroupActionResponse response = new PutScheduledUpdateGroupActionResponse();
             
@@ -48,7 +49,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

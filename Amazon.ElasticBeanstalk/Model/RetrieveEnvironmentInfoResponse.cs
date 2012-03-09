@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public RetrieveEnvironmentInfoResult RetrieveEnvironmentInfoResult
         {
-            get { return this.retrieveEnvironmentInfoResult; }
+            get 
+            {
+                if(this.retrieveEnvironmentInfoResult == null)
+                {
+                    this.retrieveEnvironmentInfoResult = new RetrieveEnvironmentInfoResult();
+                }
+
+                return this.retrieveEnvironmentInfoResult; 
+            }
             set { this.retrieveEnvironmentInfoResult = value; }
         }
     }

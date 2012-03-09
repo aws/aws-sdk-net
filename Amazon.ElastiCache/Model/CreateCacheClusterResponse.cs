@@ -34,7 +34,15 @@ namespace Amazon.ElastiCache.Model
         /// 
         public CreateCacheClusterResult CreateCacheClusterResult
         {
-            get { return this.createCacheClusterResult; }
+            get 
+            {
+                if(this.createCacheClusterResult == null)
+                {
+                    this.createCacheClusterResult = new CreateCacheClusterResult();
+                }
+
+                return this.createCacheClusterResult; 
+            }
             set { this.createCacheClusterResult = value; }
         }
     }

@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Endpoint Unmarshaller
      /// </summary>
-    internal class EndpointUnmarshaller : IUnmarshaller<Endpoint, UnmarshallerContext> 
+    internal class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext> 
     {
-        public Endpoint Unmarshall(UnmarshallerContext context) 
+        public Endpoint Unmarshall(XmlUnmarshallerContext context) 
         {
             Endpoint endpoint = new Endpoint();
             int originalDepth = context.CurrentDepth;

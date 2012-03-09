@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe D B Snapshots Request Marshaller
     /// </summary>       
-    public class DescribeDBSnapshotsRequestMarshaller : IMarshaller<IRequest<DescribeDBSnapshotsRequest>, DescribeDBSnapshotsRequest>
+    public class DescribeDBSnapshotsRequestMarshaller : IMarshaller<IRequest, DescribeDBSnapshotsRequest>
     {
-        public IRequest<DescribeDBSnapshotsRequest> Marshall(DescribeDBSnapshotsRequest describeDBSnapshotsRequest)
+        public IRequest Marshall(DescribeDBSnapshotsRequest describeDBSnapshotsRequest)
         {
-            IRequest<DescribeDBSnapshotsRequest> request = new DefaultRequest<DescribeDBSnapshotsRequest>(describeDBSnapshotsRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(describeDBSnapshotsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeDBSnapshots");
             request.Parameters.Add("Version", "2012-01-15");
             if (describeDBSnapshotsRequest != null && describeDBSnapshotsRequest.IsSetDBInstanceIdentifier())

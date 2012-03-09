@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public DescribeConfigurationOptionsResult DescribeConfigurationOptionsResult
         {
-            get { return this.describeConfigurationOptionsResult; }
+            get 
+            {
+                if(this.describeConfigurationOptionsResult == null)
+                {
+                    this.describeConfigurationOptionsResult = new DescribeConfigurationOptionsResult();
+                }
+
+                return this.describeConfigurationOptionsResult; 
+            }
             set { this.describeConfigurationOptionsResult = value; }
         }
     }

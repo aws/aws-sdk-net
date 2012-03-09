@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The <c>Datapoint</c> data type encapsulates the statistical
-    /// data that Amazon CloudWatch computes from metric data. </para>
+    /// <para> The <c>Datapoint</c> data type encapsulates the statistical data that Amazon CloudWatch computes from metric data. </para>
     /// </summary>
     public class Datapoint  
     {

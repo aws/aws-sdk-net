@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Execute Policy Request Marshaller
     /// </summary>       
-    public class ExecutePolicyRequestMarshaller : IMarshaller<IRequest<ExecutePolicyRequest>, ExecutePolicyRequest>
+    public class ExecutePolicyRequestMarshaller : IMarshaller<IRequest, ExecutePolicyRequest>
     {
-        public IRequest<ExecutePolicyRequest> Marshall(ExecutePolicyRequest executePolicyRequest)
+        public IRequest Marshall(ExecutePolicyRequest executePolicyRequest)
         {
-            IRequest<ExecutePolicyRequest> request = new DefaultRequest<ExecutePolicyRequest>(executePolicyRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(executePolicyRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "ExecutePolicy");
             request.Parameters.Add("Version", "2011-01-01");
             if (executePolicyRequest != null && executePolicyRequest.IsSetAutoScalingGroupName())

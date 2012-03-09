@@ -25,9 +25,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DeleteDBSnapshot operation
     /// </summary>
-    internal class DeleteDBSnapshotResponseUnmarshaller : IResponseUnmarshaller<DeleteDBSnapshotResponse, UnmarshallerContext> {
+    internal class DeleteDBSnapshotResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DeleteDBSnapshotResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteDBSnapshotResponse response = new DeleteDBSnapshotResponse();
             
@@ -54,7 +55,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

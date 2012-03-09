@@ -24,9 +24,9 @@
       /// <summary> 
       /// Response Unmarshaller for Scan operation 
       /// </summary> 
-      internal class ScanResponseUnmarshaller : IResponseUnmarshaller<ScanResponse, JsonUnmarshallerContext> 
+      internal class ScanResponseUnmarshaller : JsonResponseUnmarshaller 
       { 
-        public ScanResponse Unmarshall(JsonUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
         { 
           ScanResponse response = new ScanResponse();
           
@@ -36,7 +36,7 @@
           return response; 
         } 
          
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

@@ -30,12 +30,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Item Request Marshaller
     /// </summary>       
-    internal class GetItemRequestMarshaller : IMarshaller<IRequest<GetItemRequest>, GetItemRequest> 
+    internal class GetItemRequestMarshaller : IMarshaller<IRequest, GetItemRequest> 
     {
-        public IRequest<GetItemRequest> Marshall(GetItemRequest getItemRequest) 
+        public IRequest Marshall(GetItemRequest getItemRequest) 
         {
 
-            IRequest<GetItemRequest> request = new DefaultRequest<GetItemRequest>(getItemRequest, "AmazonDynamoDB");
+            IRequest request = new DefaultRequest(getItemRequest, "AmazonDynamoDB");
             string target = "DynamoDB_20111205.GetItem";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

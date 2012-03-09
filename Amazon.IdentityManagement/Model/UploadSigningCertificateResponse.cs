@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public UploadSigningCertificateResult UploadSigningCertificateResult
         {
-            get { return this.uploadSigningCertificateResult; }
+            get 
+            {
+                if(this.uploadSigningCertificateResult == null)
+                {
+                    this.uploadSigningCertificateResult = new UploadSigningCertificateResult();
+                }
+
+                return this.uploadSigningCertificateResult; 
+            }
             set { this.uploadSigningCertificateResult = value; }
         }
     }

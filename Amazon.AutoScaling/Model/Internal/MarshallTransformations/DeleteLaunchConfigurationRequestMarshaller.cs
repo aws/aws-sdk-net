@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Launch Configuration Request Marshaller
     /// </summary>       
-    public class DeleteLaunchConfigurationRequestMarshaller : IMarshaller<IRequest<DeleteLaunchConfigurationRequest>, DeleteLaunchConfigurationRequest>
+    public class DeleteLaunchConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteLaunchConfigurationRequest>
     {
-        public IRequest<DeleteLaunchConfigurationRequest> Marshall(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest)
+        public IRequest Marshall(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest)
         {
-            IRequest<DeleteLaunchConfigurationRequest> request = new DefaultRequest<DeleteLaunchConfigurationRequest>(deleteLaunchConfigurationRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(deleteLaunchConfigurationRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DeleteLaunchConfiguration");
             request.Parameters.Add("Version", "2011-01-01");
             if (deleteLaunchConfigurationRequest != null && deleteLaunchConfigurationRequest.IsSetLaunchConfigurationName())

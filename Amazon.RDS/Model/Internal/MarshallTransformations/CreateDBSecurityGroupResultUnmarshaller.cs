@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for CreateDBSecurityGroup operation
     /// </summary>
-    internal class CreateDBSecurityGroupResultUnmarshaller : IUnmarshaller<CreateDBSecurityGroupResult, UnmarshallerContext> {
+    internal class CreateDBSecurityGroupResultUnmarshaller : IUnmarshaller<CreateDBSecurityGroupResult, XmlUnmarshallerContext> {
 
-        public CreateDBSecurityGroupResult Unmarshall(UnmarshallerContext context) 
+        public CreateDBSecurityGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateDBSecurityGroupResult result = new CreateDBSecurityGroupResult();
             

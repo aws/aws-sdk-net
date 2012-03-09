@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   JobFlowExecutionStatusDetail Unmarshaller
      /// </summary>
-    internal class JobFlowExecutionStatusDetailUnmarshaller : IUnmarshaller<JobFlowExecutionStatusDetail, UnmarshallerContext> 
+    internal class JobFlowExecutionStatusDetailUnmarshaller : IUnmarshaller<JobFlowExecutionStatusDetail, XmlUnmarshallerContext> 
     {
-        public JobFlowExecutionStatusDetail Unmarshall(UnmarshallerContext context) 
+        public JobFlowExecutionStatusDetail Unmarshall(XmlUnmarshallerContext context) 
         {
             JobFlowExecutionStatusDetail jobFlowExecutionStatusDetail = new JobFlowExecutionStatusDetail();
             int originalDepth = context.CurrentDepth;
@@ -35,37 +35,37 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("State", targetDepth))
                     {
                         jobFlowExecutionStatusDetail.State = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("CreationDateTime", targetDepth))
                     {
                         jobFlowExecutionStatusDetail.CreationDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StartDateTime", targetDepth))
                     {
                         jobFlowExecutionStatusDetail.StartDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ReadyDateTime", targetDepth))
                     {
                         jobFlowExecutionStatusDetail.ReadyDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("EndDateTime", targetDepth))
                     {
                         jobFlowExecutionStatusDetail.EndDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("LastStateChangeReason", targetDepth))
                     {
                         jobFlowExecutionStatusDetail.LastStateChangeReason = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -78,6 +78,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return jobFlowExecutionStatusDetail;
                 }
             }
+                        
+
 
             return jobFlowExecutionStatusDetail;
         }

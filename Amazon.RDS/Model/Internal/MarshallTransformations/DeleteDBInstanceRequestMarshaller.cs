@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete D B Instance Request Marshaller
     /// </summary>       
-    public class DeleteDBInstanceRequestMarshaller : IMarshaller<IRequest<DeleteDBInstanceRequest>, DeleteDBInstanceRequest>
+    public class DeleteDBInstanceRequestMarshaller : IMarshaller<IRequest, DeleteDBInstanceRequest>
     {
-        public IRequest<DeleteDBInstanceRequest> Marshall(DeleteDBInstanceRequest deleteDBInstanceRequest)
+        public IRequest Marshall(DeleteDBInstanceRequest deleteDBInstanceRequest)
         {
-            IRequest<DeleteDBInstanceRequest> request = new DefaultRequest<DeleteDBInstanceRequest>(deleteDBInstanceRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(deleteDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteDBInstance");
             request.Parameters.Add("Version", "2012-01-15");
             if (deleteDBInstanceRequest != null && deleteDBInstanceRequest.IsSetDBInstanceIdentifier())

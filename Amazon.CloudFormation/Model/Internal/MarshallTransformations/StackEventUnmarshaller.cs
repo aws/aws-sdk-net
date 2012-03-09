@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   StackEvent Unmarshaller
      /// </summary>
-    internal class StackEventUnmarshaller : IUnmarshaller<StackEvent, UnmarshallerContext> 
+    internal class StackEventUnmarshaller : IUnmarshaller<StackEvent, XmlUnmarshallerContext> 
     {
-        public StackEvent Unmarshall(UnmarshallerContext context) 
+        public StackEvent Unmarshall(XmlUnmarshallerContext context) 
         {
             StackEvent stackEvent = new StackEvent();
             int originalDepth = context.CurrentDepth;
@@ -35,61 +35,61 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("StackId", targetDepth))
                     {
                         stackEvent.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("EventId", targetDepth))
                     {
                         stackEvent.EventId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StackName", targetDepth))
                     {
                         stackEvent.StackName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("LogicalResourceId", targetDepth))
                     {
                         stackEvent.LogicalResourceId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("PhysicalResourceId", targetDepth))
                     {
                         stackEvent.PhysicalResourceId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ResourceType", targetDepth))
                     {
                         stackEvent.ResourceType = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Timestamp", targetDepth))
                     {
                         stackEvent.Timestamp = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ResourceStatus", targetDepth))
                     {
                         stackEvent.ResourceStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ResourceStatusReason", targetDepth))
                     {
                         stackEvent.ResourceStatusReason = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ResourceProperties", targetDepth))
                     {
                         stackEvent.ResourceProperties = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -102,6 +102,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return stackEvent;
                 }
             }
+                        
+
 
             return stackEvent;
         }

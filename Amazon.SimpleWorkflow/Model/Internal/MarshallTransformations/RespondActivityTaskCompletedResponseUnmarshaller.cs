@@ -24,16 +24,16 @@
       /// <summary>
       /// Response Unmarshaller for RespondActivityTaskCompleted operation
       /// </summary>
-      internal class RespondActivityTaskCompletedResponseUnmarshaller : IResponseUnmarshaller<RespondActivityTaskCompletedResponse, JsonUnmarshallerContext>
+      internal class RespondActivityTaskCompletedResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public RespondActivityTaskCompletedResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           RespondActivityTaskCompletedResponse response = new RespondActivityTaskCompletedResponse();
           
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

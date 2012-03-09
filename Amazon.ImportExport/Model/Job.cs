@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.ImportExport.Model
 {
     /// <summary>
-    /// <para> Representation of a job returned by the ListJobs operation.
-    /// </para>
+    /// <para> Representation of a job returned by the ListJobs operation. </para>
     /// </summary>
     public class Job  
     {
@@ -53,15 +52,15 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return this.jobId != null;      
+            return this.jobId != null;       
         }
 
         /// <summary>
-        /// Timestamp of the CreateJob request in ISO8601 date format. For example
-        /// "2010-03-28T20:27:35Z".
+        /// Timestamp of the CreateJob request in ISO8601 date format. For example "2010-03-28T20:27:35Z".
         ///  
         /// </summary>
         public DateTime CreationDate
@@ -81,10 +80,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;      
+            return this.creationDate.HasValue;       
         }
 
         /// <summary>
@@ -108,10 +108,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if IsCanceled property is set
         internal bool IsSetIsCanceled()
         {
-            return this.isCanceled.HasValue;        
+            return this.isCanceled.HasValue;       
         }
 
         /// <summary>
@@ -144,10 +145,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if JobType property is set
         internal bool IsSetJobType()
         {
-            return this.jobType != null;        
+            return this.jobType != null;       
         }
     }
 }

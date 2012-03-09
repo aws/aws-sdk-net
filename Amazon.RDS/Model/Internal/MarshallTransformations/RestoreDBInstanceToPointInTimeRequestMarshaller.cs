@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Restore D B Instance To Point In Time Request Marshaller
     /// </summary>       
-    public class RestoreDBInstanceToPointInTimeRequestMarshaller : IMarshaller<IRequest<RestoreDBInstanceToPointInTimeRequest>, RestoreDBInstanceToPointInTimeRequest>
+    public class RestoreDBInstanceToPointInTimeRequestMarshaller : IMarshaller<IRequest, RestoreDBInstanceToPointInTimeRequest>
     {
-        public IRequest<RestoreDBInstanceToPointInTimeRequest> Marshall(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest)
+        public IRequest Marshall(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest)
         {
-            IRequest<RestoreDBInstanceToPointInTimeRequest> request = new DefaultRequest<RestoreDBInstanceToPointInTimeRequest>(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RestoreDBInstanceToPointInTime");
             request.Parameters.Add("Version", "2012-01-15");
             if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetSourceDBInstanceIdentifier())

@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public CreateUserResult CreateUserResult
         {
-            get { return this.createUserResult; }
+            get 
+            {
+                if(this.createUserResult == null)
+                {
+                    this.createUserResult = new CreateUserResult();
+                }
+
+                return this.createUserResult; 
+            }
             set { this.createUserResult = value; }
         }
     }

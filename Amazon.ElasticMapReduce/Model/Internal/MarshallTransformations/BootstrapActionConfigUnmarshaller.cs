@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   BootstrapActionConfig Unmarshaller
      /// </summary>
-    internal class BootstrapActionConfigUnmarshaller : IUnmarshaller<BootstrapActionConfig, UnmarshallerContext> 
+    internal class BootstrapActionConfigUnmarshaller : IUnmarshaller<BootstrapActionConfig, XmlUnmarshallerContext> 
     {
-        public BootstrapActionConfig Unmarshall(UnmarshallerContext context) 
+        public BootstrapActionConfig Unmarshall(XmlUnmarshallerContext context) 
         {
             BootstrapActionConfig bootstrapActionConfig = new BootstrapActionConfig();
             int originalDepth = context.CurrentDepth;
@@ -35,13 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("Name", targetDepth))
                     {
                         bootstrapActionConfig.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ScriptBootstrapAction", targetDepth))
                     {
                         bootstrapActionConfig.ScriptBootstrapAction = ScriptBootstrapActionConfigUnmarshaller.GetInstance().Unmarshall(context);
@@ -54,6 +54,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return bootstrapActionConfig;
                 }
             }
+                        
+
 
             return bootstrapActionConfig;
         }

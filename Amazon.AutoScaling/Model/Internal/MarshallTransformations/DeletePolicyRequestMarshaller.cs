@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Policy Request Marshaller
     /// </summary>       
-    public class DeletePolicyRequestMarshaller : IMarshaller<IRequest<DeletePolicyRequest>, DeletePolicyRequest>
+    public class DeletePolicyRequestMarshaller : IMarshaller<IRequest, DeletePolicyRequest>
     {
-        public IRequest<DeletePolicyRequest> Marshall(DeletePolicyRequest deletePolicyRequest)
+        public IRequest Marshall(DeletePolicyRequest deletePolicyRequest)
         {
-            IRequest<DeletePolicyRequest> request = new DefaultRequest<DeletePolicyRequest>(deletePolicyRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(deletePolicyRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DeletePolicy");
             request.Parameters.Add("Version", "2011-01-01");
             if (deletePolicyRequest != null && deletePolicyRequest.IsSetAutoScalingGroupName())

@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -40,7 +41,7 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.4.3.0";
+        internal const string SDKVersionNumber = "1.4.4.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -51,6 +52,7 @@ namespace Amazon.Util
         internal const string UserAgentHeader = "User-Agent";
         internal const string RequestIdHeader = "x-amzn-RequestId";
         internal const int DefaultMaxRetry = 3;
+        private const int DefaultConnectionLimit = 50;
 
         private static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
@@ -338,6 +340,20 @@ namespace Amazon.Util
             TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
             double milli = Math.Round(ts.TotalMilliseconds, 0) / 1000.0;
             return milli;
+        }
+
+        internal static int GetConnectionLimit(int? clientConfigValue)
+        {
+            // Connection limit has been explicitly set on the client.
+            if (clientConfigValue.HasValue)
+                return clientConfigValue.Value;
+
+            // If default has been left at the system default return the SDK default.
+            if (ServicePointManager.DefaultConnectionLimit == 2)
+                return AWSSDKUtils.DefaultConnectionLimit;
+
+            // The system default has been explicitly changed so we will honor that value.
+            return ServicePointManager.DefaultConnectionLimit;
         }
 
         #endregion

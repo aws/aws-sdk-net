@@ -22,9 +22,9 @@
       /// <summary> 
       /// ActivityTaskStatusUnmarshaller 
       /// </summary> 
-      internal class ActivityTaskStatusUnmarshaller : IUnmarshaller<ActivityTaskStatus, UnmarshallerContext>, IUnmarshaller<ActivityTaskStatus, JsonUnmarshallerContext> 
+      internal class ActivityTaskStatusUnmarshaller : IUnmarshaller<ActivityTaskStatus, XmlUnmarshallerContext>, IUnmarshaller<ActivityTaskStatus, JsonUnmarshallerContext> 
       { 
-        ActivityTaskStatus IUnmarshaller<ActivityTaskStatus, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        ActivityTaskStatus IUnmarshaller<ActivityTaskStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

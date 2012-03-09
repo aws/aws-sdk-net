@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Suspend Processes Request Marshaller
     /// </summary>       
-    public class SuspendProcessesRequestMarshaller : IMarshaller<IRequest<SuspendProcessesRequest>, SuspendProcessesRequest>
+    public class SuspendProcessesRequestMarshaller : IMarshaller<IRequest, SuspendProcessesRequest>
     {
-        public IRequest<SuspendProcessesRequest> Marshall(SuspendProcessesRequest suspendProcessesRequest)
+        public IRequest Marshall(SuspendProcessesRequest suspendProcessesRequest)
         {
-            IRequest<SuspendProcessesRequest> request = new DefaultRequest<SuspendProcessesRequest>(suspendProcessesRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(suspendProcessesRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "SuspendProcesses");
             request.Parameters.Add("Version", "2011-01-01");
             if (suspendProcessesRequest != null && suspendProcessesRequest.IsSetAutoScalingGroupName())

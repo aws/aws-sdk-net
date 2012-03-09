@@ -22,9 +22,9 @@
       /// <summary> 
       /// AttributeValueUnmarshaller 
       /// </summary> 
-      internal class AttributeValueUnmarshaller : IUnmarshaller<AttributeValue, UnmarshallerContext>, IUnmarshaller<AttributeValue, JsonUnmarshallerContext> 
+      internal class AttributeValueUnmarshaller : IUnmarshaller<AttributeValue, XmlUnmarshallerContext>, IUnmarshaller<AttributeValue, JsonUnmarshallerContext> 
       { 
-        AttributeValue IUnmarshaller<AttributeValue, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        AttributeValue IUnmarshaller<AttributeValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

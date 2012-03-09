@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Reset D B Parameter Group Request Marshaller
     /// </summary>       
-    public class ResetDBParameterGroupRequestMarshaller : IMarshaller<IRequest<ResetDBParameterGroupRequest>, ResetDBParameterGroupRequest>
+    public class ResetDBParameterGroupRequestMarshaller : IMarshaller<IRequest, ResetDBParameterGroupRequest>
     {
-        public IRequest<ResetDBParameterGroupRequest> Marshall(ResetDBParameterGroupRequest resetDBParameterGroupRequest)
+        public IRequest Marshall(ResetDBParameterGroupRequest resetDBParameterGroupRequest)
         {
-            IRequest<ResetDBParameterGroupRequest> request = new DefaultRequest<ResetDBParameterGroupRequest>(resetDBParameterGroupRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(resetDBParameterGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "ResetDBParameterGroup");
             request.Parameters.Add("Version", "2012-01-15");
             if (resetDBParameterGroupRequest != null && resetDBParameterGroupRequest.IsSetDBParameterGroupName())

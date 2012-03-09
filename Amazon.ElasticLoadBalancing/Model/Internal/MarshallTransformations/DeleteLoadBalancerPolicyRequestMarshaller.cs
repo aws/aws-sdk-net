@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Load Balancer Policy Request Marshaller
     /// </summary>       
-    public class DeleteLoadBalancerPolicyRequestMarshaller : IMarshaller<IRequest<DeleteLoadBalancerPolicyRequest>, DeleteLoadBalancerPolicyRequest>
+    public class DeleteLoadBalancerPolicyRequestMarshaller : IMarshaller<IRequest, DeleteLoadBalancerPolicyRequest>
     {
-        public IRequest<DeleteLoadBalancerPolicyRequest> Marshall(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest)
+        public IRequest Marshall(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest)
         {
-            IRequest<DeleteLoadBalancerPolicyRequest> request = new DefaultRequest<DeleteLoadBalancerPolicyRequest>(deleteLoadBalancerPolicyRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(deleteLoadBalancerPolicyRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DeleteLoadBalancerPolicy");
             request.Parameters.Add("Version", "2011-11-15");
             if (deleteLoadBalancerPolicyRequest != null && deleteLoadBalancerPolicyRequest.IsSetLoadBalancerName())

@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for DescribeEngineDefaultParameters operation
     /// </summary>
-    internal class DescribeEngineDefaultParametersResultUnmarshaller : IUnmarshaller<DescribeEngineDefaultParametersResult, UnmarshallerContext> {
+    internal class DescribeEngineDefaultParametersResultUnmarshaller : IUnmarshaller<DescribeEngineDefaultParametersResult, XmlUnmarshallerContext> {
 
-        public DescribeEngineDefaultParametersResult Unmarshall(UnmarshallerContext context) 
+        public DescribeEngineDefaultParametersResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeEngineDefaultParametersResult result = new DescribeEngineDefaultParametersResult();
             

@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Copy D B Snapshot Request Marshaller
     /// </summary>       
-    public class CopyDBSnapshotRequestMarshaller : IMarshaller<IRequest<CopyDBSnapshotRequest>, CopyDBSnapshotRequest>
+    public class CopyDBSnapshotRequestMarshaller : IMarshaller<IRequest, CopyDBSnapshotRequest>
     {
-        public IRequest<CopyDBSnapshotRequest> Marshall(CopyDBSnapshotRequest copyDBSnapshotRequest)
+        public IRequest Marshall(CopyDBSnapshotRequest copyDBSnapshotRequest)
         {
-            IRequest<CopyDBSnapshotRequest> request = new DefaultRequest<CopyDBSnapshotRequest>(copyDBSnapshotRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(copyDBSnapshotRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CopyDBSnapshot");
             request.Parameters.Add("Version", "2012-01-15");
             if (copyDBSnapshotRequest != null && copyDBSnapshotRequest.IsSetSourceDBSnapshotIdentifier())

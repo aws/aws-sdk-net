@@ -25,10 +25,8 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAlarms operation.
-    /// <para> Retrieves alarms with the specified names. If no name is
-    /// specified, all alarms for the user are returned. Alarms can be
-    /// retrieved by using only a prefix for the alarm name, the alarm state,
-    /// or a prefix for any action. </para>
+    /// <para> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by
+    /// using only a prefix for the alarm name, the alarm state, or a prefix for any action. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DescribeAlarms"/>
     public class DescribeAlarmsRequest : AmazonWebServiceRequest

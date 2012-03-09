@@ -243,7 +243,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Availability Zones for the group.
+        /// Availability zones for the group.
         ///  
         /// <para>
         /// <b>Constraints:</b>

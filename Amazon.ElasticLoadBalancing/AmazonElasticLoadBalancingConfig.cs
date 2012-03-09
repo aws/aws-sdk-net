@@ -30,6 +30,7 @@ namespace Amazon.ElasticLoadBalancing
         public AmazonElasticLoadBalancingConfig()
         {
             this.ServiceURL = "https://elasticloadbalancing.amazonaws.com";
+            
         }
 
         /// <summary>

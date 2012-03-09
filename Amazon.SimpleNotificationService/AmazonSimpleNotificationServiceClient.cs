@@ -432,6 +432,8 @@ namespace Amazon.SimpleNotificationService
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
             if (request != null)
             {
+                request.ServicePoint.ConnectionLimit = config.ConnectionLimit;
+
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
                     WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);

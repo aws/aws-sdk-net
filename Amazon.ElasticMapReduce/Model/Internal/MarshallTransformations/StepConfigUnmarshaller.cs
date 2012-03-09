@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   StepConfig Unmarshaller
      /// </summary>
-    internal class StepConfigUnmarshaller : IUnmarshaller<StepConfig, UnmarshallerContext> 
+    internal class StepConfigUnmarshaller : IUnmarshaller<StepConfig, XmlUnmarshallerContext> 
     {
-        public StepConfig Unmarshall(UnmarshallerContext context) 
+        public StepConfig Unmarshall(XmlUnmarshallerContext context) 
         {
             StepConfig stepConfig = new StepConfig();
             int originalDepth = context.CurrentDepth;
@@ -35,19 +35,19 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("Name", targetDepth))
                     {
                         stepConfig.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ActionOnFailure", targetDepth))
                     {
                         stepConfig.ActionOnFailure = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("HadoopJarStep", targetDepth))
                     {
                         stepConfig.HadoopJarStep = HadoopJarStepConfigUnmarshaller.GetInstance().Unmarshall(context);
@@ -60,6 +60,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return stepConfig;
                 }
             }
+                        
+
 
             return stepConfig;
         }

@@ -29,8 +29,7 @@ namespace Amazon.ImportExport.Model
         private bool? success;
 
         /// <summary>
-        /// Specifies whether (true) or not (false) AWS Import/Export updated your
-        /// job.
+        /// Specifies whether (true) or not (false) AWS Import/Export updated your job.
         ///  
         /// </summary>
         public bool Success
@@ -50,6 +49,7 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if Success property is set
         internal bool IsSetSuccess()
         {

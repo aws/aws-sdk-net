@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Revoke D B Security Group Ingress Request Marshaller
     /// </summary>       
-    public class RevokeDBSecurityGroupIngressRequestMarshaller : IMarshaller<IRequest<RevokeDBSecurityGroupIngressRequest>, RevokeDBSecurityGroupIngressRequest>
+    public class RevokeDBSecurityGroupIngressRequestMarshaller : IMarshaller<IRequest, RevokeDBSecurityGroupIngressRequest>
     {
-        public IRequest<RevokeDBSecurityGroupIngressRequest> Marshall(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest)
+        public IRequest Marshall(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest)
         {
-            IRequest<RevokeDBSecurityGroupIngressRequest> request = new DefaultRequest<RevokeDBSecurityGroupIngressRequest>(revokeDBSecurityGroupIngressRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(revokeDBSecurityGroupIngressRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RevokeDBSecurityGroupIngress");
             request.Parameters.Add("Version", "2012-01-15");
             if (revokeDBSecurityGroupIngressRequest != null && revokeDBSecurityGroupIngressRequest.IsSetDBSecurityGroupName())

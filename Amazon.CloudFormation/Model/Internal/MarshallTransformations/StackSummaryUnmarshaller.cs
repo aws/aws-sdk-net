@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   StackSummary Unmarshaller
      /// </summary>
-    internal class StackSummaryUnmarshaller : IUnmarshaller<StackSummary, UnmarshallerContext> 
+    internal class StackSummaryUnmarshaller : IUnmarshaller<StackSummary, XmlUnmarshallerContext> 
     {
-        public StackSummary Unmarshall(UnmarshallerContext context) 
+        public StackSummary Unmarshall(XmlUnmarshallerContext context) 
         {
             StackSummary stackSummary = new StackSummary();
             int originalDepth = context.CurrentDepth;
@@ -35,49 +35,49 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("StackId", targetDepth))
                     {
                         stackSummary.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StackName", targetDepth))
                     {
                         stackSummary.StackName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("TemplateDescription", targetDepth))
                     {
                         stackSummary.TemplateDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("CreationTime", targetDepth))
                     {
                         stackSummary.CreationTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("LastUpdatedTime", targetDepth))
                     {
                         stackSummary.LastUpdatedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("DeletionTime", targetDepth))
                     {
                         stackSummary.DeletionTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StackStatus", targetDepth))
                     {
                         stackSummary.StackStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StackStatusReason", targetDepth))
                     {
                         stackSummary.StackStatusReason = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -90,6 +90,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return stackSummary;
                 }
             }
+                        
+
 
             return stackSummary;
         }

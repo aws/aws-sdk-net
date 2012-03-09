@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Respond Activity Task Canceled Request Marshaller
     /// </summary>       
-    internal class RespondActivityTaskCanceledRequestMarshaller : IMarshaller<IRequest<RespondActivityTaskCanceledRequest>, RespondActivityTaskCanceledRequest> 
+    internal class RespondActivityTaskCanceledRequestMarshaller : IMarshaller<IRequest, RespondActivityTaskCanceledRequest> 
     {
-        public IRequest<RespondActivityTaskCanceledRequest> Marshall(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest) 
+        public IRequest Marshall(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest) 
         {
 
-            IRequest<RespondActivityTaskCanceledRequest> request = new DefaultRequest<RespondActivityTaskCanceledRequest>(respondActivityTaskCanceledRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(respondActivityTaskCanceledRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.RespondActivityTaskCanceled";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

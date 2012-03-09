@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Set Load Balancer Policies Of Listener Request Marshaller
     /// </summary>       
-    public class SetLoadBalancerPoliciesOfListenerRequestMarshaller : IMarshaller<IRequest<SetLoadBalancerPoliciesOfListenerRequest>, SetLoadBalancerPoliciesOfListenerRequest>
+    public class SetLoadBalancerPoliciesOfListenerRequestMarshaller : IMarshaller<IRequest, SetLoadBalancerPoliciesOfListenerRequest>
     {
-        public IRequest<SetLoadBalancerPoliciesOfListenerRequest> Marshall(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest)
+        public IRequest Marshall(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest)
         {
-            IRequest<SetLoadBalancerPoliciesOfListenerRequest> request = new DefaultRequest<SetLoadBalancerPoliciesOfListenerRequest>(setLoadBalancerPoliciesOfListenerRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(setLoadBalancerPoliciesOfListenerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "SetLoadBalancerPoliciesOfListener");
             request.Parameters.Add("Version", "2011-11-15");
             if (setLoadBalancerPoliciesOfListenerRequest != null && setLoadBalancerPoliciesOfListenerRequest.IsSetLoadBalancerName())
@@ -47,7 +47,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             {
                 List<string> policyNamesList = setLoadBalancerPoliciesOfListenerRequest.PolicyNames;
 
-                if (policyNamesList.Count == 0) request.Parameters.Add("PolicyNames", "");
                 int policyNamesListIndex = 1;
                 foreach (string policyNamesListValue in policyNamesList)
                 { 

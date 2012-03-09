@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Orderable D B Instance Options Request Marshaller
     /// </summary>       
-    public class DescribeOrderableDBInstanceOptionsRequestMarshaller : IMarshaller<IRequest<DescribeOrderableDBInstanceOptionsRequest>, DescribeOrderableDBInstanceOptionsRequest>
+    public class DescribeOrderableDBInstanceOptionsRequestMarshaller : IMarshaller<IRequest, DescribeOrderableDBInstanceOptionsRequest>
     {
-        public IRequest<DescribeOrderableDBInstanceOptionsRequest> Marshall(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest)
+        public IRequest Marshall(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest)
         {
-            IRequest<DescribeOrderableDBInstanceOptionsRequest> request = new DefaultRequest<DescribeOrderableDBInstanceOptionsRequest>(describeOrderableDBInstanceOptionsRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(describeOrderableDBInstanceOptionsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeOrderableDBInstanceOptions");
             request.Parameters.Add("Version", "2012-01-15");
             if (describeOrderableDBInstanceOptionsRequest != null && describeOrderableDBInstanceOptionsRequest.IsSetEngine())

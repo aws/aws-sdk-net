@@ -68,6 +68,7 @@ namespace Amazon.EC2.Model
     public sealed class InstanceType
     {
         public const string M1Small = "m1.small";
+        public const string M1Medium = "m1.medium";
         public const string M1Large = "m1.large";
         public const string M1Xlarge = "m1.xlarge";
         public const string M2Xlarge = "m2.xlarge";

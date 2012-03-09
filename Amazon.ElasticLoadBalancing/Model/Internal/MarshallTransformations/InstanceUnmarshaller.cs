@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Instance Unmarshaller
      /// </summary>
-    internal class InstanceUnmarshaller : IUnmarshaller<Instance, UnmarshallerContext> 
+    internal class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext> 
     {
-        public Instance Unmarshall(UnmarshallerContext context) 
+        public Instance Unmarshall(XmlUnmarshallerContext context) 
         {
             Instance instance = new Instance();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("InstanceId", targetDepth))
                     {
                         instance.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -48,6 +48,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return instance;
                 }
             }
+                        
+
 
             return instance;
         }

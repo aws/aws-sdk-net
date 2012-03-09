@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public ListAvailableSolutionStacksResult ListAvailableSolutionStacksResult
         {
-            get { return this.listAvailableSolutionStacksResult; }
+            get 
+            {
+                if(this.listAvailableSolutionStacksResult == null)
+                {
+                    this.listAvailableSolutionStacksResult = new ListAvailableSolutionStacksResult();
+                }
+
+                return this.listAvailableSolutionStacksResult; 
+            }
             set { this.listAvailableSolutionStacksResult = value; }
         }
     }

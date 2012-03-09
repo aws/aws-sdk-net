@@ -34,7 +34,15 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         public DescribeAlarmsForMetricResult DescribeAlarmsForMetricResult
         {
-            get { return this.describeAlarmsForMetricResult; }
+            get 
+            {
+                if(this.describeAlarmsForMetricResult == null)
+                {
+                    this.describeAlarmsForMetricResult = new DescribeAlarmsForMetricResult();
+                }
+
+                return this.describeAlarmsForMetricResult; 
+            }
             set { this.describeAlarmsForMetricResult = value; }
         }
     }

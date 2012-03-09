@@ -30,12 +30,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Scan Request Marshaller
     /// </summary>       
-    internal class ScanRequestMarshaller : IMarshaller<IRequest<ScanRequest>, ScanRequest> 
+    internal class ScanRequestMarshaller : IMarshaller<IRequest, ScanRequest> 
     {
-        public IRequest<ScanRequest> Marshall(ScanRequest scanRequest) 
+        public IRequest Marshall(ScanRequest scanRequest) 
         {
 
-            IRequest<ScanRequest> request = new DefaultRequest<ScanRequest>(scanRequest, "AmazonDynamoDB");
+            IRequest request = new DefaultRequest(scanRequest, "AmazonDynamoDB");
             string target = "DynamoDB_20111205.Scan";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

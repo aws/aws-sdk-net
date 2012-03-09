@@ -19,6 +19,8 @@
  *  API Version: 2011-12-15
  */
 
+using Amazon.Util;
+
 namespace Amazon.EC2
 {
     /// <summary>
@@ -37,6 +39,7 @@ namespace Amazon.EC2
         private bool fUseSecureString = true;
         private string proxyUsername;
         private string proxyPassword;
+        private int? connectionLimit;
 
         /// <summary>
         /// Gets Service Version
@@ -375,6 +378,17 @@ namespace Amazon.EC2
         internal bool IsSetProxyPassword()
         {
             return !System.String.IsNullOrEmpty(this.proxyPassword);
+        }
+
+        /// <summary>
+        /// Gets and sets the connection limit set on the ServicePoint for the WebRequest.
+        /// Default value is 50 connections unless ServicePointManager.DefaultConnectionLimit is set in 
+        /// which case ServicePointManager.DefaultConnectionLimit will be used as the default.
+        /// </summary>
+        public int ConnectionLimit
+        {
+            get { return AWSSDKUtils.GetConnectionLimit(this.connectionLimit); }
+            set { this.connectionLimit = value; }
         }
     }
 }

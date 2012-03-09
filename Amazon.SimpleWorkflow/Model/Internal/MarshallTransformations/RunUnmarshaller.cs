@@ -22,9 +22,9 @@
       /// <summary> 
       /// RunUnmarshaller 
       /// </summary> 
-      internal class RunUnmarshaller : IUnmarshaller<Run, UnmarshallerContext>, IUnmarshaller<Run, JsonUnmarshallerContext> 
+      internal class RunUnmarshaller : IUnmarshaller<Run, XmlUnmarshallerContext>, IUnmarshaller<Run, JsonUnmarshallerContext> 
       { 
-        Run IUnmarshaller<Run, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        Run IUnmarshaller<Run, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

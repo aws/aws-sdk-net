@@ -25,7 +25,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSendQuota operation.
-    /// <para>Returns the user's current activity limits.</para>
+    /// <para>Returns the user's current sending limits.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetSendQuota"/>
     public class GetSendQuotaRequest : AmazonWebServiceRequest

@@ -320,7 +320,8 @@ namespace Amazon.ElasticMapReduce.Model
 
         /// <summary>
         /// Specifies the Hadoop version for the job flow. Valid inputs are "0.18", "0.20", or "0.20.205". If you do not set this value, the default of
-        /// 0.20 is used, unless overridden by setting the AmiVersion parameter in the RunJobFlow call.
+        /// 0.18 is used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI
+        /// version is used.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -363,7 +364,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you
         /// want the job flow to launch. If you do not specify this value, the job flow is launched in the normal Amazon Web Services cloud, outside of
-        /// an Amazon VPC.
+        /// an Amazon VPC. Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot specify
+        /// the cc1.4xlarge instance type for nodes of a job flow launched in a Amazon VPC.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -28,7 +28,7 @@ namespace Amazon.Runtime.Internal
     /// Callers shouldn't ever interact directly with objects of this class.
     /// </para>
     /// </summary>
-    internal class DefaultRequest<T> : IRequest<T>
+    internal class DefaultRequest : IRequest
     {
         IDictionary<string, string> parameters = new Dictionary<string, string>();
         IDictionary<string, string> headers = new Dictionary<string, string>();

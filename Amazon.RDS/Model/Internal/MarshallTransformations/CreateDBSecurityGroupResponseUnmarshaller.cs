@@ -25,9 +25,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for CreateDBSecurityGroup operation
     /// </summary>
-    internal class CreateDBSecurityGroupResponseUnmarshaller : IResponseUnmarshaller<CreateDBSecurityGroupResponse, UnmarshallerContext> {
+    internal class CreateDBSecurityGroupResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public CreateDBSecurityGroupResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateDBSecurityGroupResponse response = new CreateDBSecurityGroupResponse();
             
@@ -54,7 +55,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

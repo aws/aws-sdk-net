@@ -25,15 +25,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for CreateLBCookieStickinessPolicy operation
     /// </summary>
-    internal class CreateLBCookieStickinessPolicyResponseUnmarshaller : IResponseUnmarshaller<CreateLBCookieStickinessPolicyResponse, UnmarshallerContext> {
+    internal class CreateLBCookieStickinessPolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public CreateLBCookieStickinessPolicyResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateLBCookieStickinessPolicyResponse response = new CreateLBCookieStickinessPolicyResponse();
-
+            
             while (context.Read())
             {
-                if (context.IsStartElement)
+                if (context.IsStartElement)                
                 {
                     if(context.TestExpression("CreateLBCookieStickinessPolicyResult", 2))
                     {
@@ -46,12 +47,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     }
                 }
             }
-
+                 
+                        
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

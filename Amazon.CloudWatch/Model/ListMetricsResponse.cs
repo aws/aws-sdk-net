@@ -34,7 +34,15 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         public ListMetricsResult ListMetricsResult
         {
-            get { return this.listMetricsResult; }
+            get 
+            {
+                if(this.listMetricsResult == null)
+                {
+                    this.listMetricsResult = new ListMetricsResult();
+                }
+
+                return this.listMetricsResult; 
+            }
             set { this.listMetricsResult = value; }
         }
     }

@@ -28,11 +28,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Create Stack Request Marshaller
     /// </summary>       
-    public class CreateStackRequestMarshaller : IMarshaller<IRequest<CreateStackRequest>, CreateStackRequest>
+    public class CreateStackRequestMarshaller : IMarshaller<IRequest, CreateStackRequest>
     {
-        public IRequest<CreateStackRequest> Marshall(CreateStackRequest createStackRequest)
+        public IRequest Marshall(CreateStackRequest createStackRequest)
         {
-            IRequest<CreateStackRequest> request = new DefaultRequest<CreateStackRequest>(createStackRequest, "AmazonCloudFormation");
+            IRequest request = new DefaultRequest(createStackRequest, "AmazonCloudFormation");
             request.Parameters.Add("Action", "CreateStack");
             request.Parameters.Add("Version", "2010-05-15");
             if (createStackRequest != null && createStackRequest.IsSetStackName())
@@ -95,6 +95,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Capabilities.member." + capabilitiesListIndex, StringUtils.FromString(capabilitiesListValue));
                     capabilitiesListIndex++;
                 }
+            }
+            if (createStackRequest != null && createStackRequest.IsSetOnFailure())
+            {
+                request.Parameters.Add("OnFailure", StringUtils.FromString(createStackRequest.OnFailure));
             }
 
             return request;

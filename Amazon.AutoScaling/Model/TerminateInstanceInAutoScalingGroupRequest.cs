@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
         private bool? shouldDecrementDesiredCapacity;
 
         /// <summary>
-        /// The ID of the Amazon EC2 instance to be terminated.
+        /// The ID of the EC2 instance to be terminated.
         ///  
         /// <para>
         /// <b>Constraints:</b>

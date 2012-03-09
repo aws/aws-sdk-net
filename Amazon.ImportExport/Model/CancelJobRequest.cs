@@ -25,8 +25,7 @@ namespace Amazon.ImportExport.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelJob operation.
-    /// <para> This operation cancels a specified job. Only the job owner can
-    /// cancel it. The operation fails if the job has already started or is
+    /// <para> This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is
     /// complete. </para>
     /// </summary>
     /// <seealso cref="Amazon.ImportExport.AmazonImportExport.CancelJob"/>
@@ -55,10 +54,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return this.jobId != null;      
+            return this.jobId != null;       
         }
     }
 }

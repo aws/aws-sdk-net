@@ -22,9 +22,9 @@
       /// <summary> 
       /// TimerFiredEventAttributesUnmarshaller 
       /// </summary> 
-      internal class TimerFiredEventAttributesUnmarshaller : IUnmarshaller<TimerFiredEventAttributes, UnmarshallerContext>, IUnmarshaller<TimerFiredEventAttributes, JsonUnmarshallerContext> 
+      internal class TimerFiredEventAttributesUnmarshaller : IUnmarshaller<TimerFiredEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<TimerFiredEventAttributes, JsonUnmarshallerContext> 
       { 
-        TimerFiredEventAttributes IUnmarshaller<TimerFiredEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        TimerFiredEventAttributes IUnmarshaller<TimerFiredEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

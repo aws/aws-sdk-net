@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   LoadBalancerDescription Unmarshaller
      /// </summary>
-    internal class LoadBalancerDescriptionUnmarshaller : IUnmarshaller<LoadBalancerDescription, UnmarshallerContext> 
+    internal class LoadBalancerDescriptionUnmarshaller : IUnmarshaller<LoadBalancerDescription, XmlUnmarshallerContext> 
     {
-        public LoadBalancerDescription Unmarshall(UnmarshallerContext context) 
+        public LoadBalancerDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             LoadBalancerDescription loadBalancerDescription = new LoadBalancerDescription();
             int originalDepth = context.CurrentDepth;
@@ -35,91 +35,91 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("LoadBalancerName", targetDepth))
                     {
                         loadBalancerDescription.LoadBalancerName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("DNSName", targetDepth))
                     {
                         loadBalancerDescription.DNSName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("CanonicalHostedZoneName", targetDepth))
                     {
                         loadBalancerDescription.CanonicalHostedZoneName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("CanonicalHostedZoneNameID", targetDepth))
                     {
                         loadBalancerDescription.CanonicalHostedZoneNameID = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ListenerDescriptions/member", targetDepth))
                     {
                         loadBalancerDescription.ListenerDescriptions.Add(ListenerDescriptionUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Policies", targetDepth))
                     {
                         loadBalancerDescription.Policies = PoliciesUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("BackendServerDescriptions/member", targetDepth))
                     {
                         loadBalancerDescription.BackendServerDescriptions.Add(BackendServerDescriptionUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("AvailabilityZones/member", targetDepth))
                     {
                         loadBalancerDescription.AvailabilityZones.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Subnets/member", targetDepth))
                     {
                         loadBalancerDescription.Subnets.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("VPCId", targetDepth))
                     {
                         loadBalancerDescription.VPCId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Instances/member", targetDepth))
                     {
                         loadBalancerDescription.Instances.Add(InstanceUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("HealthCheck", targetDepth))
                     {
                         loadBalancerDescription.HealthCheck = HealthCheckUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("SourceSecurityGroup", targetDepth))
                     {
                         loadBalancerDescription.SourceSecurityGroup = SourceSecurityGroupUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("SecurityGroups/member", targetDepth))
                     {
                         loadBalancerDescription.SecurityGroups.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("CreatedTime", targetDepth))
                     {
                         loadBalancerDescription.CreatedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
@@ -132,6 +132,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return loadBalancerDescription;
                 }
             }
+                        
+
 
             return loadBalancerDescription;
         }

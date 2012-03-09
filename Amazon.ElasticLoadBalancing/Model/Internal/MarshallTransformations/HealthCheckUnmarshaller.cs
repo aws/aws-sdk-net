@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   HealthCheck Unmarshaller
      /// </summary>
-    internal class HealthCheckUnmarshaller : IUnmarshaller<HealthCheck, UnmarshallerContext> 
+    internal class HealthCheckUnmarshaller : IUnmarshaller<HealthCheck, XmlUnmarshallerContext> 
     {
-        public HealthCheck Unmarshall(UnmarshallerContext context) 
+        public HealthCheck Unmarshall(XmlUnmarshallerContext context) 
         {
             HealthCheck healthCheck = new HealthCheck();
             int originalDepth = context.CurrentDepth;
@@ -35,31 +35,31 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("Target", targetDepth))
                     {
                         healthCheck.Target = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Interval", targetDepth))
                     {
                         healthCheck.Interval = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Timeout", targetDepth))
                     {
                         healthCheck.Timeout = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("UnhealthyThreshold", targetDepth))
                     {
                         healthCheck.UnhealthyThreshold = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("HealthyThreshold", targetDepth))
                     {
                         healthCheck.HealthyThreshold = IntUnmarshaller.GetInstance().Unmarshall(context);
@@ -72,6 +72,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return healthCheck;
                 }
             }
+                        
+
 
             return healthCheck;
         }

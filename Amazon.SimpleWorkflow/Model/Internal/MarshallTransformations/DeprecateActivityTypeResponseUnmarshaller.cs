@@ -24,16 +24,16 @@
       /// <summary>
       /// Response Unmarshaller for DeprecateActivityType operation
       /// </summary>
-      internal class DeprecateActivityTypeResponseUnmarshaller : IResponseUnmarshaller<DeprecateActivityTypeResponse, JsonUnmarshallerContext>
+      internal class DeprecateActivityTypeResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public DeprecateActivityTypeResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           DeprecateActivityTypeResponse response = new DeprecateActivityTypeResponse();
           
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

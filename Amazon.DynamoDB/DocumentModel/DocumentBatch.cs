@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 
 using Amazon.DynamoDB.Model;
+using Amazon.Runtime;
 
 namespace Amazon.DynamoDB.DocumentModel
 {
@@ -105,13 +106,31 @@ namespace Amazon.DynamoDB.DocumentModel
         /// </summary>
         public void Execute()
         {
-            MultiBatchGet resultsObject = new MultiBatchGet
-            {
-                Batches = new List<DocumentBatchGet> { this }
-            };
+            ExecuteHelper(false);
+        }
 
-            var results = resultsObject.GetItems();
-            Results = results[TargetTable.TableName];
+        /// <summary>
+        /// Initiates the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.DocumentBatchGet.Execute"/>
+        /// </summary>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecute
+        ///         operation.</returns>
+        public IAsyncResult BeginExecute(AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { ExecuteHelper(true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.DocumentBatchGet.Execute"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecute.</param>
+        public void EndExecute(IAsyncResult asyncResult)
+        {
+            DynamoDBAsyncExecutor.EndOperation(asyncResult);
         }
 
         #endregion
@@ -119,6 +138,16 @@ namespace Amazon.DynamoDB.DocumentModel
 
         #region Internal methods
 
+        internal void ExecuteHelper(bool isAsync)
+        {
+            MultiBatchGet resultsObject = new MultiBatchGet
+            {
+                Batches = new List<DocumentBatchGet> { this }
+            };
+
+            var results = resultsObject.GetItemsHelper(isAsync);
+            Results = results[TargetTable.TableName];
+        }
         internal void AddKey(Document document)
         {
             Keys.Add(TargetTable.MakeKey(document));
@@ -198,12 +227,45 @@ namespace Amazon.DynamoDB.DocumentModel
         /// </summary>
         public void Execute()
         {
+            ExecuteHelper(false);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.MultiTableDocumentBatchGet.Execute"/>
+        /// </summary>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecute
+        ///         operation.</returns>
+        public IAsyncResult BeginExecute(AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { ExecuteHelper(true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.MultiTableDocumentBatchGet.Execute"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecute.</param>
+        public void EndExecute(IAsyncResult asyncResult)
+        {
+            DynamoDBAsyncExecutor.EndOperation(asyncResult);
+        }
+
+        #endregion
+
+        #region Internal methods
+
+        internal void ExecuteHelper(bool isAsync)
+        {
             MultiBatchGet resultsObject = new MultiBatchGet
             {
                 Batches = Batches
             };
 
-            var results = resultsObject.GetItems();
+            var results = resultsObject.GetItemsHelper(isAsync);
 
             foreach (var batch in Batches)
             {
@@ -229,7 +291,12 @@ namespace Amazon.DynamoDB.DocumentModel
 
         public Dictionary<string, List<Document>> GetItems()
         {
-            var itemsAsDictionaries = GetItemsHelper();
+            return GetItemsHelper(false);
+        }
+
+        internal Dictionary<string, List<Document>> GetItemsHelper(bool isAsync)
+        {
+            var itemsAsDictionaries = GetAttributeItems(isAsync);
             var itemsAsDocuments = new Dictionary<string, List<Document>>();
 
             foreach (var kvp in itemsAsDictionaries)
@@ -245,7 +312,7 @@ namespace Amazon.DynamoDB.DocumentModel
             return itemsAsDocuments;
         }
 
-        private Dictionary<string, List<Dictionary<string, AttributeValue>>> GetItemsHelper()
+        private Dictionary<string, List<Dictionary<string, AttributeValue>>> GetAttributeItems(bool isAsync)
         {
             var allItems = new Dictionary<string, List<Dictionary<string, AttributeValue>>>();
             if (Batches == null || Batches.Count == 0)
@@ -253,7 +320,9 @@ namespace Amazon.DynamoDB.DocumentModel
 
             DocumentBatchGet firstBatch = this.Batches[0];
             BatchGetItemRequest request = new BatchGetItemRequest();
-            request.BeforeRequestEvent += firstBatch.TargetTable.UserAgentRequestEventHandler;
+            request.BeforeRequestEvent += isAsync ?
+                new RequestEventHandler(firstBatch.TargetTable.UserAgentRequestEventHandlerAsync) :
+                new RequestEventHandler(firstBatch.TargetTable.UserAgentRequestEventHandlerSync);
 
             foreach (var batch in Batches)
             {

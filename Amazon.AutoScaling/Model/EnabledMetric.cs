@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>EnabledMetric</c> data type. </para>
+    /// <para> The EnabledMetric data type. </para>
     /// </summary>
     public class EnabledMetric  
     {

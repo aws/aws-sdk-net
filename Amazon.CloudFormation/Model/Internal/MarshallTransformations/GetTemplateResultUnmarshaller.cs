@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   GetTemplateResult Unmarshaller
      /// </summary>
-    internal class GetTemplateResultUnmarshaller : IUnmarshaller<GetTemplateResult, UnmarshallerContext> 
+    internal class GetTemplateResultUnmarshaller : IUnmarshaller<GetTemplateResult, XmlUnmarshallerContext> 
     {
-        public GetTemplateResult Unmarshall(UnmarshallerContext context) 
+        public GetTemplateResult Unmarshall(XmlUnmarshallerContext context) 
         {
             GetTemplateResult getTemplateResult = new GetTemplateResult();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("TemplateBody", targetDepth))
                     {
                         getTemplateResult.TemplateBody = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -48,6 +48,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return getTemplateResult;
                 }
             }
+                        
+
 
             return getTemplateResult;
         }

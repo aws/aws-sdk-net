@@ -24,9 +24,9 @@
       /// <summary>
       /// Response Unmarshaller for CountPendingActivityTasks operation
       /// </summary>
-      internal class CountPendingActivityTasksResponseUnmarshaller : IResponseUnmarshaller<CountPendingActivityTasksResponse, JsonUnmarshallerContext>
+      internal class CountPendingActivityTasksResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public CountPendingActivityTasksResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           CountPendingActivityTasksResponse response = new CountPendingActivityTasksResponse();
           
@@ -36,7 +36,7 @@
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

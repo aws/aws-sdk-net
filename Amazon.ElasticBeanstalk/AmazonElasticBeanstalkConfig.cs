@@ -30,6 +30,7 @@ namespace Amazon.ElasticBeanstalk
         public AmazonElasticBeanstalkConfig()
         {
             this.ServiceURL = "https://elasticbeanstalk.us-east-1.amazonaws.com";
+            
         }
 
         /// <summary>

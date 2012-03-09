@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeJobFlowsResult Unmarshaller
      /// </summary>
-    internal class DescribeJobFlowsResultUnmarshaller : IUnmarshaller<DescribeJobFlowsResult, UnmarshallerContext> 
+    internal class DescribeJobFlowsResultUnmarshaller : IUnmarshaller<DescribeJobFlowsResult, XmlUnmarshallerContext> 
     {
-        public DescribeJobFlowsResult Unmarshall(UnmarshallerContext context) 
+        public DescribeJobFlowsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeJobFlowsResult describeJobFlowsResult = new DescribeJobFlowsResult();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("JobFlows/member", targetDepth))
                     {
                         describeJobFlowsResult.JobFlows.Add(JobFlowDetailUnmarshaller.GetInstance().Unmarshall(context));
@@ -48,6 +48,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return describeJobFlowsResult;
                 }
             }
+                        
+
 
             return describeJobFlowsResult;
         }

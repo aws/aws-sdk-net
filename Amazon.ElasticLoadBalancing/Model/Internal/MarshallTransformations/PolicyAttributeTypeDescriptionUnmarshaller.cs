@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PolicyAttributeTypeDescription Unmarshaller
      /// </summary>
-    internal class PolicyAttributeTypeDescriptionUnmarshaller : IUnmarshaller<PolicyAttributeTypeDescription, UnmarshallerContext> 
+    internal class PolicyAttributeTypeDescriptionUnmarshaller : IUnmarshaller<PolicyAttributeTypeDescription, XmlUnmarshallerContext> 
     {
-        public PolicyAttributeTypeDescription Unmarshall(UnmarshallerContext context) 
+        public PolicyAttributeTypeDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             PolicyAttributeTypeDescription policyAttributeTypeDescription = new PolicyAttributeTypeDescription();
             int originalDepth = context.CurrentDepth;
@@ -35,31 +35,31 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("AttributeName", targetDepth))
                     {
                         policyAttributeTypeDescription.AttributeName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("AttributeType", targetDepth))
                     {
                         policyAttributeTypeDescription.AttributeType = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Description", targetDepth))
                     {
                         policyAttributeTypeDescription.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("DefaultValue", targetDepth))
                     {
                         policyAttributeTypeDescription.DefaultValue = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Cardinality", targetDepth))
                     {
                         policyAttributeTypeDescription.Cardinality = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -72,6 +72,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return policyAttributeTypeDescription;
                 }
             }
+                        
+
 
             return policyAttributeTypeDescription;
         }

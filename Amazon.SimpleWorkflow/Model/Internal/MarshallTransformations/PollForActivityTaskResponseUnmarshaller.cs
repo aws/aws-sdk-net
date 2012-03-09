@@ -24,9 +24,9 @@
       /// <summary>
       /// Response Unmarshaller for PollForActivityTask operation
       /// </summary>
-      internal class PollForActivityTaskResponseUnmarshaller : IResponseUnmarshaller<PollForActivityTaskResponse, JsonUnmarshallerContext>
+      internal class PollForActivityTaskResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public PollForActivityTaskResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           PollForActivityTaskResponse response = new PollForActivityTaskResponse();
           
@@ -36,7 +36,7 @@
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

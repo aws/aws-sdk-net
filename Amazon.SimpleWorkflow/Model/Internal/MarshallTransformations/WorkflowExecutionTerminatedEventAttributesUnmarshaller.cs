@@ -22,9 +22,9 @@
       /// <summary> 
       /// WorkflowExecutionTerminatedEventAttributesUnmarshaller 
       /// </summary> 
-      internal class WorkflowExecutionTerminatedEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, UnmarshallerContext>, IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, JsonUnmarshallerContext> 
+      internal class WorkflowExecutionTerminatedEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, JsonUnmarshallerContext> 
       { 
-        WorkflowExecutionTerminatedEventAttributes IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        WorkflowExecutionTerminatedEventAttributes IUnmarshaller<WorkflowExecutionTerminatedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

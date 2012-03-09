@@ -25,15 +25,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ListStackResources operation
     /// </summary>
-    internal class ListStackResourcesResponseUnmarshaller : IResponseUnmarshaller<ListStackResourcesResponse, UnmarshallerContext> {
+    internal class ListStackResourcesResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public ListStackResourcesResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             ListStackResourcesResponse response = new ListStackResourcesResponse();
-
+            
             while (context.Read())
             {
-                if (context.IsStartElement)
+                if (context.IsStartElement)                
                 {
                     if(context.TestExpression("ListStackResourcesResult", 2))
                     {
@@ -46,12 +47,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                 }
             }
-
+                 
+                        
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

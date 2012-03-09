@@ -25,9 +25,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for RevokeDBSecurityGroupIngress operation
     /// </summary>
-    internal class RevokeDBSecurityGroupIngressResponseUnmarshaller : IResponseUnmarshaller<RevokeDBSecurityGroupIngressResponse, UnmarshallerContext> {
+    internal class RevokeDBSecurityGroupIngressResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public RevokeDBSecurityGroupIngressResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             RevokeDBSecurityGroupIngressResponse response = new RevokeDBSecurityGroupIngressResponse();
             
@@ -54,7 +55,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

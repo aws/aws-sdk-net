@@ -464,8 +464,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets of the Timeout property (in milliseconds).
         /// The value of this property is assigned to the
-        /// ReadWriteTimeout and Timeout properties of the
-        /// HTTPWebRequest object used for S3 COPY requests.
+        /// Timeout property of the HTTPWebRequest object used
+        /// for S3 COPY requests.
         /// </summary>
         /// <remarks>Attempting to set value less than or equal to 0 (and not Infinite)
         /// will be silently ignored</remarks>

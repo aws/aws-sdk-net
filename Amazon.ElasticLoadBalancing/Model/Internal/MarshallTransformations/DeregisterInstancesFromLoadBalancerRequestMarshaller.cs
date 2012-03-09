@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Deregister Instances From Load Balancer Request Marshaller
     /// </summary>       
-    public class DeregisterInstancesFromLoadBalancerRequestMarshaller : IMarshaller<IRequest<DeregisterInstancesFromLoadBalancerRequest>, DeregisterInstancesFromLoadBalancerRequest>
+    public class DeregisterInstancesFromLoadBalancerRequestMarshaller : IMarshaller<IRequest, DeregisterInstancesFromLoadBalancerRequest>
     {
-        public IRequest<DeregisterInstancesFromLoadBalancerRequest> Marshall(DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest)
+        public IRequest Marshall(DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest)
         {
-            IRequest<DeregisterInstancesFromLoadBalancerRequest> request = new DefaultRequest<DeregisterInstancesFromLoadBalancerRequest>(deregisterInstancesFromLoadBalancerRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(deregisterInstancesFromLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DeregisterInstancesFromLoadBalancer");
             request.Parameters.Add("Version", "2011-11-15");
             if (deregisterInstancesFromLoadBalancerRequest != null && deregisterInstancesFromLoadBalancerRequest.IsSetLoadBalancerName())

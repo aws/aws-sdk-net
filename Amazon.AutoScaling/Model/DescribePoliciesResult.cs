@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>PoliciesType</c> data type. </para>
+    /// <para> The PoliciesType data type. </para>
     /// </summary>
     public class DescribePoliciesResult  
     {

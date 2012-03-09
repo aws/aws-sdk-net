@@ -21,7 +21,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// <summary>
     ///    Response Unmarshaller for all Errors
     /// </summary>
-    public class ErrorResponseUnmarshaller : IUnmarshaller<ErrorResponse, UnmarshallerContext>
+    public class ErrorResponseUnmarshaller : IUnmarshaller<ErrorResponse, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Build an ErrorResponse from XML 
@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <param name="context">The XML parsing context. 
         /// Usually an <c>Amazon.Runtime.Internal.UnmarshallerContext</c>.</param>
         /// <returns>An <c>ErrorResponse</c> object.</returns>
-        public ErrorResponse Unmarshall(UnmarshallerContext context)
+        public ErrorResponse Unmarshall(XmlUnmarshallerContext context)
         {
             ErrorResponse response = new ErrorResponse();
 

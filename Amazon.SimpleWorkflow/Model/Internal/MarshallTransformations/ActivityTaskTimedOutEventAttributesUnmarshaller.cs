@@ -22,9 +22,9 @@
       /// <summary> 
       /// ActivityTaskTimedOutEventAttributesUnmarshaller 
       /// </summary> 
-      internal class ActivityTaskTimedOutEventAttributesUnmarshaller : IUnmarshaller<ActivityTaskTimedOutEventAttributes, UnmarshallerContext>, IUnmarshaller<ActivityTaskTimedOutEventAttributes, JsonUnmarshallerContext> 
+      internal class ActivityTaskTimedOutEventAttributesUnmarshaller : IUnmarshaller<ActivityTaskTimedOutEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ActivityTaskTimedOutEventAttributes, JsonUnmarshallerContext> 
       { 
-        ActivityTaskTimedOutEventAttributes IUnmarshaller<ActivityTaskTimedOutEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        ActivityTaskTimedOutEventAttributes IUnmarshaller<ActivityTaskTimedOutEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

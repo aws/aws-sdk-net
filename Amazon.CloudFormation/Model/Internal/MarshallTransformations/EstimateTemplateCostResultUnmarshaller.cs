@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   EstimateTemplateCostResult Unmarshaller
      /// </summary>
-    internal class EstimateTemplateCostResultUnmarshaller : IUnmarshaller<EstimateTemplateCostResult, UnmarshallerContext> 
+    internal class EstimateTemplateCostResultUnmarshaller : IUnmarshaller<EstimateTemplateCostResult, XmlUnmarshallerContext> 
     {
-        public EstimateTemplateCostResult Unmarshall(UnmarshallerContext context) 
+        public EstimateTemplateCostResult Unmarshall(XmlUnmarshallerContext context) 
         {
             EstimateTemplateCostResult estimateTemplateCostResult = new EstimateTemplateCostResult();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("Url", targetDepth))
                     {
                         estimateTemplateCostResult.Url = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -48,6 +48,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return estimateTemplateCostResult;
                 }
             }
+                        
+
 
             return estimateTemplateCostResult;
         }

@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for CreateDBSnapshot operation
     /// </summary>
-    internal class CreateDBSnapshotResultUnmarshaller : IUnmarshaller<CreateDBSnapshotResult, UnmarshallerContext> {
+    internal class CreateDBSnapshotResultUnmarshaller : IUnmarshaller<CreateDBSnapshotResult, XmlUnmarshallerContext> {
 
-        public CreateDBSnapshotResult Unmarshall(UnmarshallerContext context) 
+        public CreateDBSnapshotResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateDBSnapshotResult result = new CreateDBSnapshotResult();
             

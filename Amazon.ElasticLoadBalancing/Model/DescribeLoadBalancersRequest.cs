@@ -34,6 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     public class DescribeLoadBalancersRequest : AmazonWebServiceRequest
     {
         private List<string> loadBalancerNames = new List<string>();
+        private string marker;
         /// <summary>
         /// Default constructor for a new DescribeLoadBalancersRequest object.  Callers should use the
         /// properties or fluent setter (With...) methods to initialize this object after creating it.
@@ -96,6 +97,34 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetLoadBalancerNames()
         {
             return this.loadBalancerNames.Count > 0;       
+        }
+
+        /// <summary>
+        /// An optional parameter reserved for future use.
+        ///  
+        /// </summary>
+        public string Marker
+        {
+            get { return this.marker; }
+            set { this.marker = value; }
+        }
+
+        /// <summary>
+        /// Sets the Marker property
+        /// </summary>
+        /// <param name="marker">The value to set for the Marker property </param>
+        /// <returns>this instance</returns>
+        public DescribeLoadBalancersRequest WithMarker(string marker)
+        {
+            this.marker = marker;
+            return this;
+        }
+            
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this.marker != null;       
         }
     }
 }

@@ -22,9 +22,9 @@
       /// <summary> 
       /// ScanResultUnmarshaller 
       /// </summary> 
-      internal class ScanResultUnmarshaller : IUnmarshaller<ScanResult, UnmarshallerContext>, IUnmarshaller<ScanResult, JsonUnmarshallerContext> 
+      internal class ScanResultUnmarshaller : IUnmarshaller<ScanResult, XmlUnmarshallerContext>, IUnmarshaller<ScanResult, JsonUnmarshallerContext> 
       { 
-        ScanResult IUnmarshaller<ScanResult, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        ScanResult IUnmarshaller<ScanResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

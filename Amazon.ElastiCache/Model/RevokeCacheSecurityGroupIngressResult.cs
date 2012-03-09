@@ -23,15 +23,15 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the RevokeCacheSecurityGroupIngress action.
     /// </summary>
-    public class RevokeCacheSecurityGroupIngressResult : AmazonWebServiceResponse
+    public class RevokeCacheSecurityGroupIngressResult
     {
         private CacheSecurityGroup cacheSecurityGroupValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the RevokeCacheSecurityGroupIngressResult property.
         /// Contains the result of a successful invocation of the RevokeCacheSecurityGroupIngress
         /// action.
-        /// 
+        /// </summary>
         public CacheSecurityGroup CacheSecurityGroup
         {
             get { return this.cacheSecurityGroupValue; }

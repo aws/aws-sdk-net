@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Events Request Marshaller
     /// </summary>       
-    public class DescribeEventsRequestMarshaller : IMarshaller<IRequest<DescribeEventsRequest>, DescribeEventsRequest>
+    public class DescribeEventsRequestMarshaller : IMarshaller<IRequest, DescribeEventsRequest>
     {
-        public IRequest<DescribeEventsRequest> Marshall(DescribeEventsRequest describeEventsRequest)
+        public IRequest Marshall(DescribeEventsRequest describeEventsRequest)
         {
-            IRequest<DescribeEventsRequest> request = new DefaultRequest<DescribeEventsRequest>(describeEventsRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(describeEventsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeEvents");
             request.Parameters.Add("Version", "2012-01-15");
             if (describeEventsRequest != null && describeEventsRequest.IsSetSourceIdentifier())

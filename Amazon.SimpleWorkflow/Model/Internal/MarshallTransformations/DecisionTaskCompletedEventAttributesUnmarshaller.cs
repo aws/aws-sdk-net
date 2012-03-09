@@ -22,9 +22,9 @@
       /// <summary> 
       /// DecisionTaskCompletedEventAttributesUnmarshaller 
       /// </summary> 
-      internal class DecisionTaskCompletedEventAttributesUnmarshaller : IUnmarshaller<DecisionTaskCompletedEventAttributes, UnmarshallerContext>, IUnmarshaller<DecisionTaskCompletedEventAttributes, JsonUnmarshallerContext> 
+      internal class DecisionTaskCompletedEventAttributesUnmarshaller : IUnmarshaller<DecisionTaskCompletedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<DecisionTaskCompletedEventAttributes, JsonUnmarshallerContext> 
       { 
-        DecisionTaskCompletedEventAttributes IUnmarshaller<DecisionTaskCompletedEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        DecisionTaskCompletedEventAttributes IUnmarshaller<DecisionTaskCompletedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

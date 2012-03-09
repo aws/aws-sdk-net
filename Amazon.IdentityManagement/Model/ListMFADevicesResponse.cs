@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public ListMFADevicesResult ListMFADevicesResult
         {
-            get { return this.listMFADevicesResult; }
+            get 
+            {
+                if(this.listMFADevicesResult == null)
+                {
+                    this.listMFADevicesResult = new ListMFADevicesResult();
+                }
+
+                return this.listMFADevicesResult; 
+            }
             set { this.listMFADevicesResult = value; }
         }
     }

@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public ListServerCertificatesResult ListServerCertificatesResult
         {
-            get { return this.listServerCertificatesResult; }
+            get 
+            {
+                if(this.listServerCertificatesResult == null)
+                {
+                    this.listServerCertificatesResult = new ListServerCertificatesResult();
+                }
+
+                return this.listServerCertificatesResult; 
+            }
             set { this.listServerCertificatesResult = value; }
         }
     }

@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Put Scheduled Update Group Action Request Marshaller
     /// </summary>       
-    public class PutScheduledUpdateGroupActionRequestMarshaller : IMarshaller<IRequest<PutScheduledUpdateGroupActionRequest>, PutScheduledUpdateGroupActionRequest>
+    public class PutScheduledUpdateGroupActionRequestMarshaller : IMarshaller<IRequest, PutScheduledUpdateGroupActionRequest>
     {
-        public IRequest<PutScheduledUpdateGroupActionRequest> Marshall(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest)
+        public IRequest Marshall(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest)
         {
-            IRequest<PutScheduledUpdateGroupActionRequest> request = new DefaultRequest<PutScheduledUpdateGroupActionRequest>(putScheduledUpdateGroupActionRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(putScheduledUpdateGroupActionRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "PutScheduledUpdateGroupAction");
             request.Parameters.Add("Version", "2011-01-01");
             if (putScheduledUpdateGroupActionRequest != null && putScheduledUpdateGroupActionRequest.IsSetAutoScalingGroupName())

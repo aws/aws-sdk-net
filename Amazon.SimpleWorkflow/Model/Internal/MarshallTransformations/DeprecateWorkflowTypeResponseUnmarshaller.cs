@@ -24,16 +24,16 @@
       /// <summary>
       /// Response Unmarshaller for DeprecateWorkflowType operation
       /// </summary>
-      internal class DeprecateWorkflowTypeResponseUnmarshaller : IResponseUnmarshaller<DeprecateWorkflowTypeResponse, JsonUnmarshallerContext>
+      internal class DeprecateWorkflowTypeResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public DeprecateWorkflowTypeResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           DeprecateWorkflowTypeResponse response = new DeprecateWorkflowTypeResponse();
           
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

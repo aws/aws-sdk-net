@@ -24,9 +24,9 @@
       /// <summary>
       /// Response Unmarshaller for DescribeActivityType operation
       /// </summary>
-      internal class DescribeActivityTypeResponseUnmarshaller : IResponseUnmarshaller<DescribeActivityTypeResponse, JsonUnmarshallerContext>
+      internal class DescribeActivityTypeResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public DescribeActivityTypeResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           DescribeActivityTypeResponse response = new DescribeActivityTypeResponse();
           
@@ -36,7 +36,7 @@
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

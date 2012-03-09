@@ -25,15 +25,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ApplySecurityGroupsToLoadBalancer operation
     /// </summary>
-    internal class ApplySecurityGroupsToLoadBalancerResponseUnmarshaller : IResponseUnmarshaller<ApplySecurityGroupsToLoadBalancerResponse, UnmarshallerContext> {
+    internal class ApplySecurityGroupsToLoadBalancerResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public ApplySecurityGroupsToLoadBalancerResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             ApplySecurityGroupsToLoadBalancerResponse response = new ApplySecurityGroupsToLoadBalancerResponse();
-
+            
             while (context.Read())
             {
-                if (context.IsStartElement)
+                if (context.IsStartElement)                
                 {
                     if(context.TestExpression("ApplySecurityGroupsToLoadBalancerResult", 2))
                     {
@@ -46,12 +47,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     }
                 }
             }
-
+                 
+                        
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

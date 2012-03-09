@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete D B Snapshot Request Marshaller
     /// </summary>       
-    public class DeleteDBSnapshotRequestMarshaller : IMarshaller<IRequest<DeleteDBSnapshotRequest>, DeleteDBSnapshotRequest>
+    public class DeleteDBSnapshotRequestMarshaller : IMarshaller<IRequest, DeleteDBSnapshotRequest>
     {
-        public IRequest<DeleteDBSnapshotRequest> Marshall(DeleteDBSnapshotRequest deleteDBSnapshotRequest)
+        public IRequest Marshall(DeleteDBSnapshotRequest deleteDBSnapshotRequest)
         {
-            IRequest<DeleteDBSnapshotRequest> request = new DefaultRequest<DeleteDBSnapshotRequest>(deleteDBSnapshotRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(deleteDBSnapshotRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteDBSnapshot");
             request.Parameters.Add("Version", "2012-01-15");
             if (deleteDBSnapshotRequest != null && deleteDBSnapshotRequest.IsSetDBSnapshotIdentifier())

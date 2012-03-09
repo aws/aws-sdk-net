@@ -34,7 +34,15 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         public CancelJobResult CancelJobResult
         {
-            get { return this.cancelJobResult; }
+            get 
+            {
+                if(this.cancelJobResult == null)
+                {
+                    this.cancelJobResult = new CancelJobResult();
+                }
+
+                return this.cancelJobResult; 
+            }
             set { this.cancelJobResult = value; }
         }
     }

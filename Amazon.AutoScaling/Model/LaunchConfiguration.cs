@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>LaunchConfiguration</c> data type. </para>
+    /// <para> The LaunchConfiguration data type. </para>
     /// </summary>
     public class LaunchConfiguration  
     {
@@ -163,7 +163,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Provides the name of the Amazon EC2 key pair.
+        /// Provides the name of the EC2 key pair.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -204,7 +204,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A description of the security groups to associate with the Amazon EC2 instances.
+        /// A description of the security groups to associate with the EC2 instances.
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -249,7 +249,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The user data available to the launched Amazon EC2 instances.
+        /// The user data available to the launched EC2 instances.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -290,7 +290,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Specifies the instance type of the Amazon EC2 instance.
+        /// Specifies the instance type of the EC2 instance.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -331,7 +331,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Provides the ID of the kernel associated with the Amazon EC2 AMI.
+        /// Provides the ID of the kernel associated with the EC2 AMI.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -372,7 +372,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Provides ID of the RAM disk associated with the Amazon EC2 AMI.
+        /// Provides ID of the RAM disk associated with the EC2 AMI.
         ///  
         /// <para>
         /// <b>Constraints:</b>

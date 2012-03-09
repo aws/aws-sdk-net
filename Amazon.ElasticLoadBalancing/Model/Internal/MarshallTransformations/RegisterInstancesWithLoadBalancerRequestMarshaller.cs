@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Register Instances With Load Balancer Request Marshaller
     /// </summary>       
-    public class RegisterInstancesWithLoadBalancerRequestMarshaller : IMarshaller<IRequest<RegisterInstancesWithLoadBalancerRequest>, RegisterInstancesWithLoadBalancerRequest>
+    public class RegisterInstancesWithLoadBalancerRequestMarshaller : IMarshaller<IRequest, RegisterInstancesWithLoadBalancerRequest>
     {
-        public IRequest<RegisterInstancesWithLoadBalancerRequest> Marshall(RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest)
+        public IRequest Marshall(RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest)
         {
-            IRequest<RegisterInstancesWithLoadBalancerRequest> request = new DefaultRequest<RegisterInstancesWithLoadBalancerRequest>(registerInstancesWithLoadBalancerRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(registerInstancesWithLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "RegisterInstancesWithLoadBalancer");
             request.Parameters.Add("Version", "2011-11-15");
             if (registerInstancesWithLoadBalancerRequest != null && registerInstancesWithLoadBalancerRequest.IsSetLoadBalancerName())

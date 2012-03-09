@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   EC2SecurityGroup Unmarshaller
      /// </summary>
-    internal class EC2SecurityGroupUnmarshaller : IUnmarshaller<EC2SecurityGroup, UnmarshallerContext> 
+    internal class EC2SecurityGroupUnmarshaller : IUnmarshaller<EC2SecurityGroup, XmlUnmarshallerContext> 
     {
-        public EC2SecurityGroup Unmarshall(UnmarshallerContext context) 
+        public EC2SecurityGroup Unmarshall(XmlUnmarshallerContext context) 
         {
             EC2SecurityGroup eC2SecurityGroup = new EC2SecurityGroup();
             int originalDepth = context.CurrentDepth;

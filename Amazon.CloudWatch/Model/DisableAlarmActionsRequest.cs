@@ -25,9 +25,8 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableAlarmActions operation.
-    /// <para> Disables actions for the specified alarms. When an alarm's
-    /// actions are disabled the alarm's state may change, but none of the
-    /// alarm's actions will execute. </para>
+    /// <para> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's
+    /// actions will execute. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DisableAlarmActions"/>
     public class DisableAlarmActionsRequest : AmazonWebServiceRequest

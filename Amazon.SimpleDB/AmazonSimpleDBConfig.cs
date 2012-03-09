@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -19,6 +19,8 @@
  *  API Version: 2009-04-15
  */
 
+using Amazon.Util;
+
 namespace Amazon.SimpleDB
 {
     /// <summary>
@@ -37,6 +39,7 @@ namespace Amazon.SimpleDB
         private bool fUseSecureString = true;
         private string proxyUsername;
         private string proxyPassword;
+        private int? connectionLimit;
 
         /// <summary>
         /// Gets Service Version
@@ -375,6 +378,17 @@ namespace Amazon.SimpleDB
         internal bool IsSetProxyPassword()
         {
             return !System.String.IsNullOrEmpty(this.proxyPassword);
+        }
+
+        /// <summary>
+        /// Gets and sets the connection limit set on the ServicePoint for the WebRequest.
+        /// Default value is 50 connections unless ServicePointManager.DefaultConnectionLimit is set in 
+        /// which case ServicePointManager.DefaultConnectionLimit will be used as the default.
+        /// </summary>
+        public int ConnectionLimit
+        {
+            get { return AWSSDKUtils.GetConnectionLimit(this.connectionLimit); }
+            set { this.connectionLimit = value; }
         }
     }
 }

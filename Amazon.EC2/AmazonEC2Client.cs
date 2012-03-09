@@ -100,16 +100,13 @@ namespace Amazon.EC2
         {
             if (!this.disposed)
             {
-                if (fDisposing)
+                if (fDisposing && credentials != null)
                 {
-                    if (credentials != null)
+                    if (ownCredentials)
                     {
-                        if (ownCredentials && credentials is IDisposable)
-                        {
-                            (credentials as IDisposable).Dispose();
-                        }
-                        credentials = null;
+                        credentials.Dispose();
                     }
+                    credentials = null;
                 }
                 this.disposed = true;
             }
@@ -170,7 +167,6 @@ namespace Amazon.EC2
         /// <param name="config">The AmazonEC2 Configuration Object</param>
         public AmazonEC2Client(AmazonEC2Config config)
             : this(new EnvironmentAWSCredentials(), config, true) { }
-
 
         /// <summary>
         /// Constructs AmazonEC2Client with AWS Access Key ID and AWS Secret Key
@@ -2805,6 +2801,8 @@ namespace Amazon.EC2
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
             if (request != null)
             {
+                request.ServicePoint.ConnectionLimit = config.ConnectionLimit;
+
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
                     WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
@@ -5089,7 +5087,7 @@ namespace Amazon.EC2
             if (request.IsSetGroupId())
             {
                 parameters["GroupId"] = request.GroupId;
-            }
+            } 
             if (request.IsSetSourceSecurityGroupName())
             {
                 parameters["SourceSecurityGroupName"] = request.SourceSecurityGroupName;

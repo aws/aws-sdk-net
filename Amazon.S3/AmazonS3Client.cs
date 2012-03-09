@@ -24,6 +24,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
@@ -64,7 +65,7 @@ namespace Amazon.S3
 
         #region Events
 
-        internal event RequestEventHandler BeforeRequestEvent;
+        internal event RequestEventHandler BeforeRequestEvent = delegate { };
 
         #endregion
 
@@ -4886,7 +4887,8 @@ namespace Amazon.S3
                 throw new AmazonS3Exception("No request specified for the S3 operation!");
             }
 
-            s3AsyncResult.S3Request.Headers[AWSSDKUtils.UserAgentHeader] = config.UserAgent;
+            string userAgent = config.UserAgent + " " + (s3AsyncResult.CompletedSynchronously ? "S3Sync" : "S3Async");
+            s3AsyncResult.S3Request.Headers[AWSSDKUtils.UserAgentHeader] = userAgent;
 
             ProcessRequestHandlers(s3AsyncResult.S3Request);
 
@@ -4965,7 +4967,7 @@ namespace Amazon.S3
 
                 try
                 {
-                    s3AsyncResult.RequestState = new RequestState(request, parameters, fStream, requestData, reqDataLen);
+                    s3AsyncResult.RequestState = new RequestState(request, parameters, fStream, requestData, reqDataLen, s3AsyncResult.S3Request.StopWatch.ElapsedTicks);
                     if (reqDataLen > 0)
                     {
                         if (s3AsyncResult.CompletedSynchronously)
@@ -5129,7 +5131,7 @@ namespace Amazon.S3
                     else
                         httpResponse = state.WebRequest.EndGetResponse(result) as HttpWebResponse;
 
-                    TimeSpan lengthOfRequest = DateTime.Now - state.WebRequestStart;
+                    long lengthOfRequest = s3AsyncResult.S3Request.StopWatch.ElapsedTicks - state.WebRequestStart;
                     s3AsyncResult.S3Request.ResponseTime = lengthOfRequest;
                     shouldRetry = handleHttpResponse<T>(
                         s3AsyncResult.S3Request,
@@ -5363,7 +5365,7 @@ namespace Amazon.S3
 
         bool handleHttpResponse<T>(S3Request userRequest, HttpWebRequest request, HttpWebResponse httpResponse,
             int retries,
-            TimeSpan lengthOfRequest, out T response, out Exception cause, out HttpStatusCode statusCode)
+            long lengthOfRequest, out T response, out Exception cause, out HttpStatusCode statusCode)
             where T : S3Response, new()
         {
             response = null;
@@ -5550,7 +5552,7 @@ namespace Amazon.S3
                 {
                     using (httpResponse)
                     {
-                        DateTime streamRead = DateTime.UtcNow;
+                        long streamRead = request.StopWatch.ElapsedTicks;
 
                         using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                         {
@@ -5580,7 +5582,7 @@ namespace Amazon.S3
                         {
                             string transformed = transform(responseBody, actionName, t);
 
-                            DateTime streamParsed = DateTime.UtcNow;
+                            long streamParsed = request.StopWatch.ElapsedTicks;
 
                             // Attempt to deserialize response into <Action> Response type
                             XmlSerializer serializer = new XmlSerializer(typeof(T));
@@ -5588,7 +5590,7 @@ namespace Amazon.S3
                             {
                                 response = (T)serializer.Deserialize(sr);
                             }
-                            DateTime objectCreated = DateTime.UtcNow;
+                            long objectCreated = request.StopWatch.ElapsedTicks;
                             request.ResponseReadTime = streamParsed - streamRead;
                             request.ResponseProcessingTime = objectCreated - streamParsed;
                             LOGGER.InfoFormat("Done reading response stream for request (id {0}). Stream read: {1}. Object create: {2}. Length of body: {3}",
@@ -5605,7 +5607,7 @@ namespace Amazon.S3
                             response = new T();
                             response.ProcessResponseBody(responseBody);
 
-                            DateTime streamParsed = DateTime.UtcNow;
+                            long streamParsed = request.StopWatch.ElapsedTicks;
                             request.ResponseReadTime = streamParsed - streamRead;
                         }
                     }
@@ -5805,6 +5807,8 @@ namespace Amazon.S3
 
             if (request != null)
             {
+                httpRequest.ServicePoint.ConnectionLimit = this.config.ConnectionLimit;
+
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
                     WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
@@ -6258,8 +6262,7 @@ namespace Amazon.S3
             if (request != null)
                 request.FireBeforeRequestEvent(this, args);
 
-            if (BeforeRequestEvent != null)
-                BeforeRequestEvent(this, args);
+            BeforeRequestEvent(this, args);
         }
 
         void addHttpRange(HttpWebRequest request, long start, long end)
@@ -6329,7 +6332,7 @@ namespace Amazon.S3
             Dictionary<string, object> _parameters;
             object _lockObj;
 
-            private DateTime _startTime;
+            private long _startTime;
 
             internal S3AsyncResult(S3Request s3Request, object state, AsyncCallback callback, bool completeSynchronized)
             {
@@ -6340,7 +6343,9 @@ namespace Amazon.S3
 
                 this._lockObj = new object();
 
-                this._startTime = DateTime.Now;
+                this.S3Request.StopWatch = Stopwatch.StartNew();
+                this.S3Request.StopWatch.Start();
+                this._startTime = this.S3Request.StopWatch.ElapsedTicks;
             }
 
             internal S3Request S3Request
@@ -6446,8 +6451,8 @@ namespace Amazon.S3
                 set
                 {
                     this._finalResponse = value;
-                    DateTime endTime = DateTime.Now;
-                    TimeSpan timeToComplete = endTime - this._startTime;
+                    long endTime = this._s3Request.StopWatch.ElapsedTicks;
+                    long timeToComplete = endTime - this._startTime;
                     this._s3Request.TotalRequestTime = timeToComplete;
                     _logger.InfoFormat("S3 request completed: {0}", this._s3Request);
                 }
@@ -6475,19 +6480,19 @@ namespace Amazon.S3
             long _requestDataLength;
             HttpWebRequest _webRequest;
             Map _parameters;
-            DateTime _webRequestStart;
+            long _webRequestStart;
             bool _getRequestStreamCallbackCalled;
             bool _getResponseCallbackCalled;
 
 
-            public RequestState(HttpWebRequest webRequest, Map parameters, Stream inputStream, byte[] requestData, long requestDataLength)
+            public RequestState(HttpWebRequest webRequest, Map parameters, Stream inputStream, byte[] requestData, long requestDataLength, long startTime)
             {
                 this._webRequest = webRequest;
                 this._parameters = parameters;
                 this._inputStream = inputStream;
                 this._requestData = requestData;
                 this._requestDataLength = requestDataLength;
-                this._webRequestStart = DateTime.Now;
+                this._webRequestStart = startTime;
             }
 
             internal HttpWebRequest WebRequest
@@ -6515,7 +6520,7 @@ namespace Amazon.S3
                 get { return this._requestDataLength; }
             }
 
-            internal DateTime WebRequestStart
+            internal long WebRequestStart
             {
                 get { return this._webRequestStart; }
                 set { this._webRequestStart = value; }
