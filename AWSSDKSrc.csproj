@@ -2237,6 +2237,9 @@
     <Compile Include="Amazon.EC2\Model\DescribeTagsResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeVolumeAttributeRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeVolumeAttributeResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeVolumeAttributeResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVolumesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2246,6 +2249,9 @@
     <Compile Include="Amazon.EC2\Model\DescribeVolumesResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeVolumeStatusRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeVolumeStatusResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeVolumeStatusResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeVpcsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2335,6 +2341,8 @@
     <Compile Include="Amazon.EC2\Model\EC2Constants.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\EnableVolumeIORequest.cs" />
+    <Compile Include="Amazon.EC2\Model\EnableVolumeIOResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Error.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2500,6 +2508,8 @@
     <Compile Include="Amazon.EC2\Model\ModifySnapshotAttributeResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\ModifyVolumeAttributeRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyVolumeAttributeResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Monitoring.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2766,6 +2776,11 @@
     <Compile Include="Amazon.EC2\Model\Volume.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\VolumeStatus.cs" />
+    <Compile Include="Amazon.EC2\Model\VolumeStatusAction.cs" />
+    <Compile Include="Amazon.EC2\Model\VolumeStatusDetail.cs" />
+    <Compile Include="Amazon.EC2\Model\VolumeStatusEvent.cs" />
+    <Compile Include="Amazon.EC2\Model\VolumeStatusInfo.cs" />
     <Compile Include="Amazon.EC2\Model\Vpc.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6471,6 +6486,10 @@
     <Content Include="Amazon.CloudFront\AmazonCloudFront.csproj" />
     <Content Include="Amazon.CloudFront\AmazonCloudFront.csproj.user" />
     <Content Include="Amazon.CloudFront\AmazonCloudFront.sln" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVolumeAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\ModifyVolumeAttributeResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\EnableVolumeIOResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeVolumeStatusResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront\Model\CreateDistributionResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront\Model\CreateOriginAccessIdentityResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront\Model\CreateStreamingDistributionResponse.xslt" />
