@@ -38,8 +38,8 @@ namespace Amazon.IdentityManagement
     /// </summary>
     public class AmazonIdentityManagementServiceClient : AmazonWebServiceClient, AmazonIdentityManagementService
     {
-    
-        AbstractAWSSigner signer = new QueryStringSigner();
+
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 
