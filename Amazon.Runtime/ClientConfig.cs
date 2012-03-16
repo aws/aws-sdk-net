@@ -28,6 +28,8 @@ namespace Amazon.Runtime
     public abstract class ClientConfig
     {
         private string serviceURL = "https://elasticloadbalancing.amazonaws.com/";
+        private string authRegion = null;
+        private string authServiceName = null;
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
         private string signatureVersion = "2";
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
@@ -86,6 +88,29 @@ namespace Amazon.Runtime
         {
             get { return this.serviceURL; }
             set { this.serviceURL = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the AuthenticationRegion property.
+        /// Used in AWS4 request signing, this is an optional property; 
+        /// change it only if the region cannot be determined from the 
+        /// service endpoint.
+        /// </summary>
+        public string AuthenticationRegion
+        {
+            get { return this.authRegion; }
+            set { this.authRegion = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the AuthenticationServiceName property.
+        /// Used in AWS4 request signing, this is the short-form
+        /// name of the service being called.
+        /// </summary>
+        public string AuthenticationServiceName
+        {
+            get { return this.authServiceName; }
+            set { this.authServiceName = value; }
         }
 
         /// <summary>

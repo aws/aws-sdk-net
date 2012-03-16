@@ -134,15 +134,12 @@ namespace Amazon.DynamoDB.DataModel
         private Table GetTable(string tableName)
         {
             Table table;
-            if (!tablesMap.TryGetValue(tableName, out table))
+            lock (tablesMapLock)
             {
-                lock (tablesMapLock)
+                if (!tablesMap.TryGetValue(tableName, out table))
                 {
-                    if (!tablesMap.TryGetValue(tableName, out table))
-                    {
-                        table = Table.LoadTable(client, tableName, Table.DynamoDBConsumer.DataModel);
-                        tablesMap[tableName] = table;
-                    }
+                    table = Table.LoadTable(client, tableName, Table.DynamoDBConsumer.DataModel);
+                    tablesMap[tableName] = table;
                 }
             }
             return table;

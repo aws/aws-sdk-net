@@ -25,7 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLoginProfile operation.
-    /// <para>Updates the login profile for the specified user. Use this API to change the user's password.</para>
+    /// <para>Changes the password for the specified user.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateLoginProfile"/>
     public class UpdateLoginProfileRequest : AmazonWebServiceRequest
@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
         private string password;
 
         /// <summary>
-        /// Name of the user whose login profile you want to update.
+        /// Name of the user whose password you want to update.
         ///  
         /// <para>
         /// <b>Constraints:</b>

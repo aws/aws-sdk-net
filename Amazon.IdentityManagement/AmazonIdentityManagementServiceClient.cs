@@ -28,13 +28,13 @@ namespace Amazon.IdentityManagement
     /// <summary>
     /// Implementation for accessing AmazonIdentityManagementService.
     ///  
-    /// AWS Identity and Access Management <para>This guide provides descriptions of the IAM API as well as links to related content in the guide,
-    /// Using IAM.</para> <para>IAM is a web service that enables AWS customers to manage users and user permissions under their AWS account. For
-    /// more information about this product go to AWS Identity and Access Management (IAM). For specific information about setting up signatures and
-    /// authorization through the API, go to Making Query Requests in <i>Using AWS Identity and Access Management</i> .</para> <para>If you're new
-    /// to AWS and need additional technical information about a specific AWS product, you can find the product's technical documentation at
-    /// http://aws.amazon.com/documentation/.</para> <para>We will refer to Amazon AWS Identity and Access Management using the abbreviated form
-    /// IAM. All copyrights and legal protections still apply.</para>
+    /// AWS Identity and Access Management <para>This guide provides descriptions of the Identity and Access Management (IAM) API as well as links
+    /// to related content in the guide, Using IAM.</para> <para>IAM is a web service that enables AWS customers to manage users and user
+    /// permissions under their AWS account. For more information about this product go to AWS Identity and Access Management (IAM). For information
+    /// about setting up signatures and authorization through the API, go to Signing AWS API Requests in the <i>AWS General Reference</i> . For
+    /// general information about using the Query API with IAM, go to Making Query Requests in <i>Using IAM</i> .</para> <para>If you're new to AWS
+    /// and need additional technical information about a specific AWS product, you can find the product's technical documentation at
+    /// http://aws.amazon.com/documentation/.</para>
     /// </summary>
     public class AmazonIdentityManagementServiceClient : AmazonWebServiceClient, AmazonIdentityManagementService
     {
@@ -1190,7 +1190,7 @@ namespace Amazon.IdentityManagement
         #region DeleteAccountPasswordPolicy
 
         /// <summary>
-        /// <para>Deletes the password policy for the current AWS account.</para>
+        /// <para>Deletes the password policy for the AWS account.</para>
         /// </summary>
         /// 
         /// <param name="deleteAccountPasswordPolicyRequest">Container for the necessary parameters to execute the DeleteAccountPasswordPolicy service
@@ -1245,7 +1245,7 @@ namespace Amazon.IdentityManagement
         
 
         /// <summary>
-        /// <para>Deletes the password policy for the current AWS account.</para>
+        /// <para>Deletes the password policy for the AWS account.</para>
         /// </summary>
         /// 
         /// <exception cref="NoSuchEntityException"/>
@@ -1260,7 +1260,7 @@ namespace Amazon.IdentityManagement
         #region GetLoginProfile
 
         /// <summary>
-        /// <para>Retrieves the login profile for the specified user.</para>
+        /// <para>Retrieves the user name and password create date for the specified user.</para>
         /// </summary>
         /// 
         /// <param name="getLoginProfileRequest">Container for the necessary parameters to execute the GetLoginProfile service method on
@@ -2659,7 +2659,7 @@ namespace Amazon.IdentityManagement
         #region UpdateLoginProfile
 
         /// <summary>
-        /// <para>Updates the login profile for the specified user. Use this API to change the user's password.</para>
+        /// <para>Changes the password for the specified user.</para>
         /// </summary>
         /// 
         /// <param name="updateLoginProfileRequest">Container for the necessary parameters to execute the UpdateLoginProfile service method on
@@ -2720,8 +2720,8 @@ namespace Amazon.IdentityManagement
         #region DeleteLoginProfile
 
         /// <summary>
-        /// <para>Deletes the login profile for the specified user, which terminates the user's ability to access AWS services through the IAM login
-        /// page.</para> <para><b>IMPORTANT:</b>Deleting a user's login profile does not prevent a user from accessing IAM through the command line
+        /// <para>Deletes the password for the specified user, which terminates the user's ability to access AWS services through the AWS Management
+        /// Console.</para> <para><b>IMPORTANT:</b>Deleting a user's password does not prevent a user from accessing IAM through the command line
         /// interface or the API. To prevent all user access you must also either make the access key inactive or delete it. For more information
         /// about making keys inactive or deleting them, see UpdateAccessKey and DeleteAccessKey. </para>
         /// </summary>
@@ -2783,13 +2783,15 @@ namespace Amazon.IdentityManagement
         #region ChangePassword
 
         /// <summary>
-        /// <para>Allows the user to change their password.</para>
+        /// <para>Changes the password of the IAM user calling <c>ChangePassword</c> . The root account password is not affected by this action. For
+        /// information about modifying passwords, see Managing Passwords.</para>
         /// </summary>
         /// 
         /// <param name="changePasswordRequest">Container for the necessary parameters to execute the ChangePassword service method on
         ///          AmazonIdentityManagementService.</param>
         /// 
         /// <exception cref="NoSuchEntityException"/>
+        /// <exception cref="InvalidUserTypeException"/>
         public ChangePasswordResponse ChangePassword(ChangePasswordRequest changePasswordRequest)
         {
             IAsyncResult asyncResult = invokeChangePassword(changePasswordRequest, null, null, true);
@@ -3476,9 +3478,8 @@ namespace Amazon.IdentityManagement
         #region CreateLoginProfile
 
         /// <summary>
-        /// <para>Creates a login profile for the specified user, giving the user the ability to access AWS services such as the AWS Management Console.
-        /// For more information about login profiles, see Creating or Deleting a User Login Profile in <i>Using AWS Identity and Access Management</i>
-        /// .</para>
+        /// <para>Creates a password for the specified user, giving the user the ability to access AWS services through the AWS Management Console. For
+        /// more information about managing passwords, see Managing Passwords in <i>Using IAM</i> .</para>
         /// </summary>
         /// 
         /// <param name="createLoginProfileRequest">Container for the necessary parameters to execute the CreateLoginProfile service method on
@@ -3546,7 +3547,8 @@ namespace Amazon.IdentityManagement
         #region UpdateAccountPasswordPolicy
 
         /// <summary>
-        /// <para>Updates the password policy settings for the account.</para>
+        /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to Managing an IAM
+        /// Password Policy.</para>
         /// </summary>
         /// 
         /// <param name="updateAccountPasswordPolicyRequest">Container for the necessary parameters to execute the UpdateAccountPasswordPolicy service
@@ -3602,7 +3604,8 @@ namespace Amazon.IdentityManagement
         
 
         /// <summary>
-        /// <para>Updates the password policy settings for the account.</para>
+        /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to Managing an IAM
+        /// Password Policy.</para>
         /// </summary>
         /// 
         /// <exception cref="MalformedPolicyDocumentException"/>
@@ -3697,7 +3700,8 @@ namespace Amazon.IdentityManagement
         #region GetAccountPasswordPolicy
 
         /// <summary>
-        /// <para>Retrieves the password policy for the current AWS account.</para>
+        /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to Managing an IAM Password
+        /// Policy.</para>
         /// </summary>
         /// 
         /// <param name="getAccountPasswordPolicyRequest">Container for the necessary parameters to execute the GetAccountPasswordPolicy service method
@@ -3759,7 +3763,8 @@ namespace Amazon.IdentityManagement
         
 
         /// <summary>
-        /// <para>Retrieves the password policy for the current AWS account.</para>
+        /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to Managing an IAM Password
+        /// Policy.</para>
         /// </summary>
         /// 
         /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by AmazonIdentityManagementService.</returns>

@@ -25,7 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountPasswordPolicy operation.
-    /// <para>Updates the password policy settings for the account.</para>
+    /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to Managing an IAM
+    /// Password Policy.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateAccountPasswordPolicy"/>
     public class UpdateAccountPasswordPolicyRequest : AmazonWebServiceRequest
@@ -35,6 +36,7 @@ namespace Amazon.IdentityManagement.Model
         private bool? requireNumbers;
         private bool? requireUppercaseCharacters;
         private bool? requireLowercaseCharacters;
+        private bool? allowUsersToChangePassword;
         public int MinimumPasswordLength
         {
             get { return this.minimumPasswordLength ?? default(int); }
@@ -149,6 +151,29 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetRequireLowercaseCharacters()
         {
             return this.requireLowercaseCharacters.HasValue;       
+        }
+        public bool AllowUsersToChangePassword
+        {
+            get { return this.allowUsersToChangePassword ?? default(bool); }
+            set { this.allowUsersToChangePassword = value; }
+        }
+
+        /// <summary>
+        /// Sets the AllowUsersToChangePassword property
+        /// </summary>
+        /// <param name="allowUsersToChangePassword">The value to set for the AllowUsersToChangePassword property </param>
+        /// <returns>this instance</returns>
+        public UpdateAccountPasswordPolicyRequest WithAllowUsersToChangePassword(bool allowUsersToChangePassword)
+        {
+            this.allowUsersToChangePassword = allowUsersToChangePassword;
+            return this;
+        }
+            
+
+        // Check to see if AllowUsersToChangePassword property is set
+        internal bool IsSetAllowUsersToChangePassword()
+        {
+            return this.allowUsersToChangePassword.HasValue;       
         }
     }
 }

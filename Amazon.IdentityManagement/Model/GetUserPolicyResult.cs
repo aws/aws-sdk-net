@@ -38,7 +38,7 @@ namespace Amazon.IdentityManagement.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 64</description>
+        ///         <description>1 - 128</description>
         ///     </item>
         ///     <item>
         ///         <term>Pattern</term>

@@ -65,6 +65,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         passwordPolicy.RequireLowercaseCharacters = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("AllowUsersToChangePassword", targetDepth))
+                    {
+                        passwordPolicy.AllowUsersToChangePassword = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

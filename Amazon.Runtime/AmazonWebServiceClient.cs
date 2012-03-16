@@ -40,6 +40,7 @@ namespace Amazon.Runtime
         #region Private members
 
         static IDictionary<string, RefreshingSessionAWSCredentials> cachedRefreshingCredentials = new Dictionary<string, RefreshingSessionAWSCredentials>();
+        static object cachedRefreshingCredentialsLock = new object();
 
 
         [Flags]
@@ -135,14 +136,20 @@ namespace Amazon.Runtime
                 {
                     this.credentials = credentials;
                 }
-                else if (cachedRefreshingCredentials.ContainsKey(refreshCredentials.UniqueIdentifier))
-                {
-                    this.credentials = cachedRefreshingCredentials[refreshCredentials.UniqueIdentifier];
-                }
                 else
                 {
-                    this.credentials = refreshCredentials;
-                    cachedRefreshingCredentials[refreshCredentials.UniqueIdentifier] = refreshCredentials;
+                    lock (cachedRefreshingCredentialsLock)
+                    {
+                        if (cachedRefreshingCredentials.ContainsKey(refreshCredentials.UniqueIdentifier))
+                        {
+                            this.credentials = cachedRefreshingCredentials[refreshCredentials.UniqueIdentifier];
+                        }
+                        else
+                        {
+                            this.credentials = refreshCredentials;
+                            cachedRefreshingCredentials[refreshCredentials.UniqueIdentifier] = refreshCredentials;
+                        }
+                    }
                 }
             }
             else

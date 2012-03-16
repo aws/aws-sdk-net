@@ -55,6 +55,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("RequireLowercaseCharacters", StringUtils.FromBool(updateAccountPasswordPolicyRequest.RequireLowercaseCharacters));
             }
+            if (updateAccountPasswordPolicyRequest != null && updateAccountPasswordPolicyRequest.IsSetAllowUsersToChangePassword())
+            {
+                request.Parameters.Add("AllowUsersToChangePassword", StringUtils.FromBool(updateAccountPasswordPolicyRequest.AllowUsersToChangePassword));
+            }
 
             return request;
         }

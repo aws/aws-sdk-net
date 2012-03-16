@@ -30,6 +30,7 @@ namespace Amazon.IdentityManagement.Model
         private bool? requireNumbers;
         private bool? requireUppercaseCharacters;
         private bool? requireLowercaseCharacters;
+        private bool? allowUsersToChangePassword;
         public int MinimumPasswordLength
         {
             get { return this.minimumPasswordLength ?? default(int); }
@@ -144,6 +145,29 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetRequireLowercaseCharacters()
         {
             return this.requireLowercaseCharacters.HasValue;       
+        }
+        public bool AllowUsersToChangePassword
+        {
+            get { return this.allowUsersToChangePassword ?? default(bool); }
+            set { this.allowUsersToChangePassword = value; }
+        }
+
+        /// <summary>
+        /// Sets the AllowUsersToChangePassword property
+        /// </summary>
+        /// <param name="allowUsersToChangePassword">The value to set for the AllowUsersToChangePassword property </param>
+        /// <returns>this instance</returns>
+        public PasswordPolicy WithAllowUsersToChangePassword(bool allowUsersToChangePassword)
+        {
+            this.allowUsersToChangePassword = allowUsersToChangePassword;
+            return this;
+        }
+            
+
+        // Check to see if AllowUsersToChangePassword property is set
+        internal bool IsSetAllowUsersToChangePassword()
+        {
+            return this.allowUsersToChangePassword.HasValue;       
         }
     }
 }

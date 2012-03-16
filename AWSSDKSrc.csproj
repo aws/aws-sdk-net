@@ -4327,6 +4327,7 @@
     <Compile Include="Amazon.IdentityManagement\Model\InvalidCertificateException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\InvalidUserTypeException.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\KeyPairMismatchException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5434,6 +5435,7 @@
     <Compile Include="Amazon.Runtime\Enumerations.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\AbstractAWSSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\AWS3Signer.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Auth\AWS4Signer.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\QueryStringSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\SignatureException.cs" />
     <Compile Include="Amazon.Runtime\Internal\DefaultRequest.cs" />
