@@ -479,6 +479,7 @@ namespace Amazon.Runtime
                     throw new AmazonServiceException(we);
                 }
                 statusCode = httpErrorResponse.StatusCode;
+                string redirectedLocation = httpErrorResponse.Headers["location"];
 
                 using (httpErrorResponse)
                 {
@@ -492,9 +493,8 @@ namespace Amazon.Runtime
                 }
                 asyncResult.RequestState.WebRequest.Abort();
 
-                if (isTemporaryRedirect(httpErrorResponse))
+                if (isTemporaryRedirect(statusCode, redirectedLocation))
                 {
-                    string redirectedLocation = httpErrorResponse.Headers["location"];
                     this.logger.InfoFormat("Request {0} is being redirected to {1}.", asyncResult.RequestName, redirectedLocation);
                     asyncResult.Request.Endpoint = new Uri(redirectedLocation);
                     return true;
@@ -725,9 +725,9 @@ namespace Amazon.Runtime
             return false;
         }
 
-        private static bool isTemporaryRedirect(HttpWebResponse response)
+        private static bool isTemporaryRedirect(HttpStatusCode statusCode, string redirectedLocation)
         {
-            return response.StatusCode == HttpStatusCode.TemporaryRedirect && response.Headers["location"] != null;
+            return statusCode == HttpStatusCode.TemporaryRedirect && redirectedLocation != null;
         }
 
         /// <summary>
