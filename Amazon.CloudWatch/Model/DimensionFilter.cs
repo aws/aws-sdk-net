@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The <c>DimensionFilter</c> data type is used to filter
-    /// ListMetrics results. </para>
+    /// <para> The <c>DimensionFilter</c> data type is used to filter ListMetrics results. </para>
     /// </summary>
     public class DimensionFilter  
     {

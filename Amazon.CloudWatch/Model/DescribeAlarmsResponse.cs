@@ -34,7 +34,15 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         public DescribeAlarmsResult DescribeAlarmsResult
         {
-            get { return this.describeAlarmsResult; }
+            get 
+            {
+                if(this.describeAlarmsResult == null)
+                {
+                    this.describeAlarmsResult = new DescribeAlarmsResult();
+                }
+
+                return this.describeAlarmsResult; 
+            }
             set { this.describeAlarmsResult = value; }
         }
     }

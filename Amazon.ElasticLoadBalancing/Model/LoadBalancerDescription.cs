@@ -507,7 +507,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The security groups the LoadBalancer is a memeber of (VPC only).
+        /// The security groups the LoadBalancer is a member of (VPC only).
         ///  
         /// </summary>
         public List<string> SecurityGroups

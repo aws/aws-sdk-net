@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeInstanceHealthResult Unmarshaller
      /// </summary>
-    internal class DescribeInstanceHealthResultUnmarshaller : IUnmarshaller<DescribeInstanceHealthResult, UnmarshallerContext> 
+    internal class DescribeInstanceHealthResultUnmarshaller : IUnmarshaller<DescribeInstanceHealthResult, XmlUnmarshallerContext> 
     {
-        public DescribeInstanceHealthResult Unmarshall(UnmarshallerContext context) 
+        public DescribeInstanceHealthResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeInstanceHealthResult describeInstanceHealthResult = new DescribeInstanceHealthResult();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("InstanceStates/member", targetDepth))
                     {
                         describeInstanceHealthResult.InstanceStates.Add(InstanceStateUnmarshaller.GetInstance().Unmarshall(context));
@@ -48,6 +48,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return describeInstanceHealthResult;
                 }
             }
+                        
+
 
             return describeInstanceHealthResult;
         }

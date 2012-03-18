@@ -25,15 +25,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DescribeStacks operation
     /// </summary>
-    internal class DescribeStacksResponseUnmarshaller : IResponseUnmarshaller<DescribeStacksResponse, UnmarshallerContext> {
+    internal class DescribeStacksResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DescribeStacksResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeStacksResponse response = new DescribeStacksResponse();
-
+            
             while (context.Read())
             {
-                if (context.IsStartElement)
+                if (context.IsStartElement)                
                 {
                     if(context.TestExpression("DescribeStacksResult", 2))
                     {
@@ -46,12 +47,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                 }
             }
-
+                 
+                        
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

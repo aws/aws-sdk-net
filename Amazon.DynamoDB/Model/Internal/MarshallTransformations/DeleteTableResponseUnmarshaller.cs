@@ -24,9 +24,9 @@
       /// <summary> 
       /// Response Unmarshaller for DeleteTable operation 
       /// </summary> 
-      internal class DeleteTableResponseUnmarshaller : IResponseUnmarshaller<DeleteTableResponse, JsonUnmarshallerContext> 
+      internal class DeleteTableResponseUnmarshaller : JsonResponseUnmarshaller 
       { 
-        public DeleteTableResponse Unmarshall(JsonUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
         { 
           DeleteTableResponse response = new DeleteTableResponse();
           
@@ -36,7 +36,7 @@
           return response; 
         } 
          
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

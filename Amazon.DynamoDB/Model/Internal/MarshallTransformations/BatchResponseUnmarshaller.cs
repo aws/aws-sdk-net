@@ -22,9 +22,9 @@
       /// <summary> 
       /// BatchResponseUnmarshaller 
       /// </summary> 
-      internal class BatchResponseUnmarshaller : IUnmarshaller<BatchResponse, UnmarshallerContext>, IUnmarshaller<BatchResponse, JsonUnmarshallerContext> 
+      internal class BatchResponseUnmarshaller : IUnmarshaller<BatchResponse, XmlUnmarshallerContext>, IUnmarshaller<BatchResponse, JsonUnmarshallerContext> 
       { 
-        BatchResponse IUnmarshaller<BatchResponse, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        BatchResponse IUnmarshaller<BatchResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

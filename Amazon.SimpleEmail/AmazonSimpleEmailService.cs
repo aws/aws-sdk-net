@@ -22,115 +22,338 @@ namespace Amazon.SimpleEmail
     /// <summary>
     /// Interface for accessing AmazonSimpleEmailService.
     ///  
-    ///  Amazon Simple Email Service <para> This is the API Reference for
-    /// Amazon Simple Email Service (Amazon SES). This documentation is
-    /// intended to be used in conjunction with the Amazon SES Getting Started
-    /// Guide and the Amazon SES Developer Guide. </para> <para> For specific
-    /// details on how to construct a service request, please consult the
-    /// Amazon SES Developer Guide. </para>
+    ///  Amazon Simple Email Service <para> This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to
+    /// be used in conjunction with the Amazon SES Getting Started Guide and the Amazon SES Developer Guide. </para> <para> For specific details on
+    /// how to construct a service request, please consult the Amazon SES Developer Guide. </para> <para><b>NOTE:</b>The endpoint for Amazon SES is
+    /// located at: https://email.us-east-1.amazonaws.com </para>
     /// </summary>
     public interface AmazonSimpleEmailService : IDisposable
     {
         
 
-         /// <summary>
-         /// <para>Returns the user's current activity limits.</para>
-         /// </summary>
-         /// 
-         /// <param name="getSendQuotaRequest">Container for the necessary
-         ///           parameters to execute the GetSendQuota service method on
-         ///           AmazonSimpleEmailService.</param>
-         /// 
-         /// <returns>The response from the GetSendQuota service method, as
-         ///         returned by AmazonSimpleEmailService.</returns>
-         /// 
-        GetSendQuotaResponse GetSendQuota(GetSendQuotaRequest getSendQuotaRequest); 
+        #region GetSendQuota
 
-         /// <summary>
-         /// <para>Returns a list containing all of the email addresses that have
-         /// been verified.</para>
-         /// </summary>
-         /// 
-         /// <param name="listVerifiedEmailAddressesRequest">Container for the
-         ///           necessary parameters to execute the ListVerifiedEmailAddresses service
-         ///           method on AmazonSimpleEmailService.</param>
-         /// 
-         /// <returns>The response from the ListVerifiedEmailAddresses service
-         ///         method, as returned by AmazonSimpleEmailService.</returns>
-         /// 
-        ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest); 
+        /// <summary>
+        /// <para>Returns the user's current sending limits.</para>
+        /// </summary>
+        /// 
+        /// <param name="getSendQuotaRequest">Container for the necessary parameters to execute the GetSendQuota service method on
+        ///          AmazonSimpleEmailService.</param>
+        /// 
+        /// <returns>The response from the GetSendQuota service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        GetSendQuotaResponse GetSendQuota(GetSendQuotaRequest getSendQuotaRequest);
 
-         /// <summary>
-         /// <para>Returns the user's sending statistics. The result is a list of
-         /// data points, representing the last two weeks of sending
-         /// activity.</para> <para>Each data point in the list contains statistics
-         /// for a 15-minute interval.</para>
-         /// </summary>
-         /// 
-         /// <param name="getSendStatisticsRequest">Container for the necessary
-         ///           parameters to execute the GetSendStatistics service method on
-         ///           AmazonSimpleEmailService.</param>
-         /// 
-         /// <returns>The response from the GetSendStatistics service method, as
-         ///         returned by AmazonSimpleEmailService.</returns>
-         /// 
-        GetSendStatisticsResponse GetSendStatistics(GetSendStatisticsRequest getSendStatisticsRequest); 
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSendQuota operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetSendQuota"/>
+        /// </summary>
+        /// 
+        /// <param name="getSendQuotaRequest">Container for the necessary parameters to execute the GetSendQuota operation on
+        ///          AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSendQuota
+        ///         operation.</returns>
+        IAsyncResult BeginGetSendQuota(GetSendQuotaRequest getSendQuotaRequest, AsyncCallback callback, object state);
 
-         /// <summary>
-         /// <para>Composes an email message, based on input data, and then
-         /// immediately queues the message for sending.</para>
-         /// </summary>
-         /// 
-         /// <param name="sendEmailRequest">Container for the necessary parameters
-         ///           to execute the SendEmail service method on
-         ///           AmazonSimpleEmailService.</param>
-         /// 
-         /// <returns>The response from the SendEmail service method, as returned
-         ///         by AmazonSimpleEmailService.</returns>
-         /// 
-         /// <exception cref="MessageRejectedException"/>
-        SendEmailResponse SendEmail(SendEmailRequest sendEmailRequest); 
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetSendQuota operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetSendQuota"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSendQuota.</param>
+        /// 
+        /// <returns>Returns a GetSendQuotaResult from AmazonSimpleEmailService.</returns>
+        GetSendQuotaResponse EndGetSendQuota(IAsyncResult asyncResult);
 
-         /// <summary>
-         /// <para>Deletes the specified email address from the list of verified
-         /// addresses.</para>
-         /// </summary>
-         /// 
-         /// <param name="deleteVerifiedEmailAddressRequest">Container for the
-         ///           necessary parameters to execute the DeleteVerifiedEmailAddress service
-         ///           method on AmazonSimpleEmailService.</param>
-         /// 
-        DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest); 
+        /// <summary>
+        /// <para>Returns the user's current sending limits.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the GetSendQuota service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        GetSendQuotaResponse GetSendQuota();
+        
+        #endregion
+        
+    
 
-         /// <summary>
-         /// <para>Verifies an email address. This action causes a confirmation
-         /// email message to be sent to the specified address.</para>
-         /// </summary>
-         /// 
-         /// <param name="verifyEmailAddressRequest">Container for the necessary
-         ///           parameters to execute the VerifyEmailAddress service method on
-         ///           AmazonSimpleEmailService.</param>
-         /// 
-        VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest); 
+        #region ListVerifiedEmailAddresses
 
-         /// <summary>
-         /// <para>Sends an email message, with header and content specified by the
-         /// client. The <c>SendRawEmail</c> action is useful for sending multipart
-         /// MIME emails, with attachments or inline content.</para> <para>The raw
-         /// text of the message must comply with Internet email standards;
-         /// otherwise, the message cannot be sent. For more information, go to
-         /// the Amazon SES Developer Guide.</para>
-         /// </summary>
-         /// 
-         /// <param name="sendRawEmailRequest">Container for the necessary
-         ///           parameters to execute the SendRawEmail service method on
-         ///           AmazonSimpleEmailService.</param>
-         /// 
-         /// <returns>The response from the SendRawEmail service method, as
-         ///         returned by AmazonSimpleEmailService.</returns>
-         /// 
-         /// <exception cref="MessageRejectedException"/>
-        SendRawEmailResponse SendRawEmail(SendRawEmailRequest sendRawEmailRequest); 
+        /// <summary>
+        /// <para>Returns a list containing all of the email addresses that have been verified.</para>
+        /// </summary>
+        /// 
+        /// <param name="listVerifiedEmailAddressesRequest">Container for the necessary parameters to execute the ListVerifiedEmailAddresses service
+        ///          method on AmazonSimpleEmailService.</param>
+        /// 
+        /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVerifiedEmailAddresses operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.ListVerifiedEmailAddresses"/>
+        /// </summary>
+        /// 
+        /// <param name="listVerifiedEmailAddressesRequest">Container for the necessary parameters to execute the ListVerifiedEmailAddresses operation
+        ///          on AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndListVerifiedEmailAddresses operation.</returns>
+        IAsyncResult BeginListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListVerifiedEmailAddresses operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.ListVerifiedEmailAddresses"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVerifiedEmailAddresses.</param>
+        /// 
+        /// <returns>Returns a ListVerifiedEmailAddressesResult from AmazonSimpleEmailService.</returns>
+        ListVerifiedEmailAddressesResponse EndListVerifiedEmailAddresses(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Returns a list containing all of the email addresses that have been verified.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses();
+        
+        #endregion
+        
+    
+
+        #region GetSendStatistics
+
+        /// <summary>
+        /// <para>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending
+        /// activity.</para> <para>Each data point in the list contains statistics for a 15-minute interval.</para>
+        /// </summary>
+        /// 
+        /// <param name="getSendStatisticsRequest">Container for the necessary parameters to execute the GetSendStatistics service method on
+        ///          AmazonSimpleEmailService.</param>
+        /// 
+        /// <returns>The response from the GetSendStatistics service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        GetSendStatisticsResponse GetSendStatistics(GetSendStatisticsRequest getSendStatisticsRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSendStatistics operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetSendStatistics"/>
+        /// </summary>
+        /// 
+        /// <param name="getSendStatisticsRequest">Container for the necessary parameters to execute the GetSendStatistics operation on
+        ///          AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSendStatistics
+        ///         operation.</returns>
+        IAsyncResult BeginGetSendStatistics(GetSendStatisticsRequest getSendStatisticsRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetSendStatistics operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetSendStatistics"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSendStatistics.</param>
+        /// 
+        /// <returns>Returns a GetSendStatisticsResult from AmazonSimpleEmailService.</returns>
+        GetSendStatisticsResponse EndGetSendStatistics(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending
+        /// activity.</para> <para>Each data point in the list contains statistics for a 15-minute interval.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the GetSendStatistics service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        GetSendStatisticsResponse GetSendStatistics();
+        
+        #endregion
+        
+    
+
+        #region SendEmail
+
+        /// <summary>
+        /// <para>Composes an email message based on input data, and then immediately queues the message for sending.</para> <para><b>IMPORTANT:</b>If
+        /// you have not yet requested production access to Amazon SES, then you will only be able to send email to and from verified email addresses.
+        /// For more information, go to the Amazon SES Developer Guide.</para> <para>The total size of the message cannot exceed 10 MB.</para>
+        /// <para>Amazon SES has a limit on the total number of recipients per message: The combined number of To:, CC: and BCC: email addresses cannot
+        /// exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and
+        /// then call Amazon SES repeatedly to send the message to each group.</para> <para>For every message that you send, the total number of
+        /// recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period.
+        /// For information about your sending quota, go to the "Managing Your Sending Activity" section of the Amazon SES Developer Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="sendEmailRequest">Container for the necessary parameters to execute the SendEmail service method on
+        ///          AmazonSimpleEmailService.</param>
+        /// 
+        /// <returns>The response from the SendEmail service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        /// <exception cref="MessageRejectedException"/>
+        SendEmailResponse SendEmail(SendEmailRequest sendEmailRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendEmail operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SendEmail"/>
+        /// </summary>
+        /// 
+        /// <param name="sendEmailRequest">Container for the necessary parameters to execute the SendEmail operation on
+        ///          AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendEmail
+        ///         operation.</returns>
+        IAsyncResult BeginSendEmail(SendEmailRequest sendEmailRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SendEmail operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SendEmail"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendEmail.</param>
+        /// 
+        /// <returns>Returns a SendEmailResult from AmazonSimpleEmailService.</returns>
+        SendEmailResponse EndSendEmail(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DeleteVerifiedEmailAddress
+
+        /// <summary>
+        /// <para>Deletes the specified email address from the list of verified addresses.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteVerifiedEmailAddressRequest">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service
+        ///          method on AmazonSimpleEmailService.</param>
+        /// 
+        DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVerifiedEmailAddress operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteVerifiedEmailAddressRequest">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress operation
+        ///          on AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteVerifiedEmailAddress operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVerifiedEmailAddress.</param>
+        DeleteVerifiedEmailAddressResponse EndDeleteVerifiedEmailAddress(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region VerifyEmailAddress
+
+        /// <summary>
+        /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para>
+        /// </summary>
+        /// 
+        /// <param name="verifyEmailAddressRequest">Container for the necessary parameters to execute the VerifyEmailAddress service method on
+        ///          AmazonSimpleEmailService.</param>
+        /// 
+        VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifyEmailAddress operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyEmailAddress"/>
+        /// </summary>
+        /// 
+        /// <param name="verifyEmailAddressRequest">Container for the necessary parameters to execute the VerifyEmailAddress operation on
+        ///          AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginVerifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the VerifyEmailAddress operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyEmailAddress"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyEmailAddress.</param>
+        VerifyEmailAddressResponse EndVerifyEmailAddress(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region SendRawEmail
+
+        /// <summary>
+        /// <para>Sends an email message, with header and content specified by the client. The <c>SendRawEmail</c> action is useful for sending
+        /// multipart MIME emails. The raw text of the message must comply with Internet email standards; otherwise, the message cannot be sent.</para>
+        /// <para><b>IMPORTANT:</b>If you have not yet requested production access to Amazon SES, then you will only be able to send email to and from
+        /// verified email addresses. For more information, go to the Amazon SES Developer Guide.</para> <para>The total size of the message cannot
+        /// exceed 10 MB. This includes any attachments that are part of the message.</para> <para>Amazon SES has a limit on the total number of
+        /// recipients per message: The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a
+        /// larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to
+        /// each group.</para> <para>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your
+        /// <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the
+        /// "Managing Your Sending Activity" section of the Amazon SES Developer Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="sendRawEmailRequest">Container for the necessary parameters to execute the SendRawEmail service method on
+        ///          AmazonSimpleEmailService.</param>
+        /// 
+        /// <returns>The response from the SendRawEmail service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        /// <exception cref="MessageRejectedException"/>
+        SendRawEmailResponse SendRawEmail(SendRawEmailRequest sendRawEmailRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendRawEmail operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SendRawEmail"/>
+        /// </summary>
+        /// 
+        /// <param name="sendRawEmailRequest">Container for the necessary parameters to execute the SendRawEmail operation on
+        ///          AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendRawEmail
+        ///         operation.</returns>
+        IAsyncResult BeginSendRawEmail(SendRawEmailRequest sendRawEmailRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SendRawEmail operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SendRawEmail"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendRawEmail.</param>
+        /// 
+        /// <returns>Returns a SendRawEmailResult from AmazonSimpleEmailService.</returns>
+        SendRawEmailResponse EndSendRawEmail(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
     }
 }
     

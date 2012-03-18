@@ -25,9 +25,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DeleteLaunchConfiguration operation
     /// </summary>
-    internal class DeleteLaunchConfigurationResponseUnmarshaller : IResponseUnmarshaller<DeleteLaunchConfigurationResponse, UnmarshallerContext> {
+    internal class DeleteLaunchConfigurationResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DeleteLaunchConfigurationResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteLaunchConfigurationResponse response = new DeleteLaunchConfigurationResponse();
             
@@ -48,7 +49,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

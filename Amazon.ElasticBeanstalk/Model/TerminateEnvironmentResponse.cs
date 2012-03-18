@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public TerminateEnvironmentResult TerminateEnvironmentResult
         {
-            get { return this.terminateEnvironmentResult; }
+            get 
+            {
+                if(this.terminateEnvironmentResult == null)
+                {
+                    this.terminateEnvironmentResult = new TerminateEnvironmentResult();
+                }
+
+                return this.terminateEnvironmentResult; 
+            }
             set { this.terminateEnvironmentResult = value; }
         }
     }

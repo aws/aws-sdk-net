@@ -22,9 +22,9 @@
       /// <summary> 
       /// TaskListUnmarshaller 
       /// </summary> 
-      internal class TaskListUnmarshaller : IUnmarshaller<TaskList, UnmarshallerContext>, IUnmarshaller<TaskList, JsonUnmarshallerContext> 
+      internal class TaskListUnmarshaller : IUnmarshaller<TaskList, XmlUnmarshallerContext>, IUnmarshaller<TaskList, JsonUnmarshallerContext> 
       { 
-        TaskList IUnmarshaller<TaskList, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        TaskList IUnmarshaller<TaskList, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

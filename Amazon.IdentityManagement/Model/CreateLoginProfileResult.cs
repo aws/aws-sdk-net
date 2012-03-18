@@ -29,7 +29,7 @@ namespace Amazon.IdentityManagement.Model
         private LoginProfile loginProfile;
 
         /// <summary>
-        /// The new login profile.
+        /// The user name and password create date.
         ///  
         /// </summary>
         public LoginProfile LoginProfile

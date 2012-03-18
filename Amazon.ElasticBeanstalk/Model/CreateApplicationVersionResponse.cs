@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public CreateApplicationVersionResult CreateApplicationVersionResult
         {
-            get { return this.createApplicationVersionResult; }
+            get 
+            {
+                if(this.createApplicationVersionResult == null)
+                {
+                    this.createApplicationVersionResult = new CreateApplicationVersionResult();
+                }
+
+                return this.createApplicationVersionResult; 
+            }
             set { this.createApplicationVersionResult = value; }
         }
     }

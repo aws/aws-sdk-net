@@ -30,12 +30,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Table Request Marshaller
     /// </summary>       
-    internal class DeleteTableRequestMarshaller : IMarshaller<IRequest<DeleteTableRequest>, DeleteTableRequest> 
+    internal class DeleteTableRequestMarshaller : IMarshaller<IRequest, DeleteTableRequest> 
     {
-        public IRequest<DeleteTableRequest> Marshall(DeleteTableRequest deleteTableRequest) 
+        public IRequest Marshall(DeleteTableRequest deleteTableRequest) 
         {
 
-            IRequest<DeleteTableRequest> request = new DefaultRequest<DeleteTableRequest>(deleteTableRequest, "AmazonDynamoDB");
+            IRequest request = new DefaultRequest(deleteTableRequest, "AmazonDynamoDB");
             string target = "DynamoDB_20111205.DeleteTable";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

@@ -24,9 +24,9 @@
       /// <summary> 
       /// Response Unmarshaller for Query operation 
       /// </summary> 
-      internal class QueryResponseUnmarshaller : IResponseUnmarshaller<QueryResponse, JsonUnmarshallerContext> 
+      internal class QueryResponseUnmarshaller : JsonResponseUnmarshaller 
       { 
-        public QueryResponse Unmarshall(JsonUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
         { 
           QueryResponse response = new QueryResponse();
           
@@ -36,7 +36,7 @@
           return response; 
         } 
          
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

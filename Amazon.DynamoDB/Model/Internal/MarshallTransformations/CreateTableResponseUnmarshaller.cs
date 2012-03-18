@@ -24,9 +24,9 @@
       /// <summary> 
       /// Response Unmarshaller for CreateTable operation 
       /// </summary> 
-      internal class CreateTableResponseUnmarshaller : IResponseUnmarshaller<CreateTableResponse, JsonUnmarshallerContext> 
+      internal class CreateTableResponseUnmarshaller : JsonResponseUnmarshaller 
       { 
-        public CreateTableResponse Unmarshall(JsonUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
         { 
           CreateTableResponse response = new CreateTableResponse();
           
@@ -36,7 +36,7 @@
           return response; 
         } 
          
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Output Unmarshaller
      /// </summary>
-    internal class OutputUnmarshaller : IUnmarshaller<Output, UnmarshallerContext> 
+    internal class OutputUnmarshaller : IUnmarshaller<Output, XmlUnmarshallerContext> 
     {
-        public Output Unmarshall(UnmarshallerContext context) 
+        public Output Unmarshall(XmlUnmarshallerContext context) 
         {
             Output output = new Output();
             int originalDepth = context.CurrentDepth;
@@ -35,19 +35,19 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("OutputKey", targetDepth))
                     {
                         output.OutputKey = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("OutputValue", targetDepth))
                     {
                         output.OutputValue = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Description", targetDepth))
                     {
                         output.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -60,6 +60,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return output;
                 }
             }
+                        
+
 
             return output;
         }

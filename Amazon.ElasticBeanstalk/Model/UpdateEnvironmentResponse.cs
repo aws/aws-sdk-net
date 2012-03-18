@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public UpdateEnvironmentResult UpdateEnvironmentResult
         {
-            get { return this.updateEnvironmentResult; }
+            get 
+            {
+                if(this.updateEnvironmentResult == null)
+                {
+                    this.updateEnvironmentResult = new UpdateEnvironmentResult();
+                }
+
+                return this.updateEnvironmentResult; 
+            }
             set { this.updateEnvironmentResult = value; }
         }
     }

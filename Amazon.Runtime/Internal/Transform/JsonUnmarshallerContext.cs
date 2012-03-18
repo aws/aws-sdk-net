@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Collections.Specialized;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -40,7 +41,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// }
     /// </code>
     /// </summary>
-    public class JsonUnmarshallerContext
+    public class JsonUnmarshallerContext : UnmarshallerContext
     {
 #region Private Members
         private StreamReader jsonStream = null;
@@ -50,20 +51,45 @@ namespace Amazon.Runtime.Internal.Transform
         private bool addedKey = true;
         private Stack<bool> inArray = new Stack<bool>();
         private Token current = new Token();
+        private NameValueCollection headers;
 #endregion
 
 #region Constructors
         /// <summary>
         /// Wrap the jsonstring for unmarshalling.
         /// </summary>
-        /// <param name="json">StreamReader that contains the json for unmarshalling</param>
-        public JsonUnmarshallerContext(StreamReader json)
+        /// <param name="responseStream">Stream that contains the JSON for unmarshalling</param>
+        /// <param name="headers">Headers associated with the request.</param>
+        public JsonUnmarshallerContext(Stream responseStream, NameValueCollection headers)
         {
-            this.jsonStream = json;
+            this.jsonStream = new StreamReader(responseStream);
+            this.headers = headers ?? new NameValueCollection();
+            this.responseContents = null;
         }
+        /// <summary>
+        /// Wrap the jsonstring for unmarshalling.
+        /// </summary>
+        /// <param name="responseBody">String that contains the JSON for unmarshalling</param>
+        /// <param name="headers">Headers associated with the request.</param>
+        public JsonUnmarshallerContext(string responseBody, NameValueCollection headers)
+        {
+            this.responseContents = responseBody;
+            this.jsonStream = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(responseBody)));
+            this.headers = headers ?? new NameValueCollection();
+        }
+
 #endregion
 
 #region Public Properties
+
+        /// <summary>
+        /// Gets the associated headers for the request.
+        /// </summary>
+        public NameValueCollection Headers
+        {
+            get { return this.headers; }
+        }
+
         /// <summary>
         /// Is the current token the start of an object
         /// </summary>

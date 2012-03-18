@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for RestoreDBInstanceFromDBSnapshot operation
     /// </summary>
-    internal class RestoreDBInstanceFromDBSnapshotResultUnmarshaller : IUnmarshaller<RestoreDBInstanceFromDBSnapshotResult, UnmarshallerContext> {
+    internal class RestoreDBInstanceFromDBSnapshotResultUnmarshaller : IUnmarshaller<RestoreDBInstanceFromDBSnapshotResult, XmlUnmarshallerContext> {
 
-        public RestoreDBInstanceFromDBSnapshotResult Unmarshall(UnmarshallerContext context) 
+        public RestoreDBInstanceFromDBSnapshotResult Unmarshall(XmlUnmarshallerContext context) 
         {
             RestoreDBInstanceFromDBSnapshotResult result = new RestoreDBInstanceFromDBSnapshotResult();
             

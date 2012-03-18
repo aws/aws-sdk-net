@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DeleteLoadBalancerListenersResult Unmarshaller
      /// </summary>
-    internal class DeleteLoadBalancerListenersResultUnmarshaller : IUnmarshaller<DeleteLoadBalancerListenersResult, UnmarshallerContext> 
+    internal class DeleteLoadBalancerListenersResultUnmarshaller : IUnmarshaller<DeleteLoadBalancerListenersResult, XmlUnmarshallerContext> 
     {
-        public DeleteLoadBalancerListenersResult Unmarshall(UnmarshallerContext context) 
+        public DeleteLoadBalancerListenersResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteLoadBalancerListenersResult deleteLoadBalancerListenersResult = new DeleteLoadBalancerListenersResult();
             int originalDepth = context.CurrentDepth;
@@ -42,6 +42,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return deleteLoadBalancerListenersResult;
                 }
             }
+                        
+
 
             return deleteLoadBalancerListenersResult;
         }

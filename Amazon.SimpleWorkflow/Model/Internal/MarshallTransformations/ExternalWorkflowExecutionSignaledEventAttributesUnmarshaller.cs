@@ -22,9 +22,9 @@
       /// <summary> 
       /// ExternalWorkflowExecutionSignaledEventAttributesUnmarshaller 
       /// </summary> 
-      internal class ExternalWorkflowExecutionSignaledEventAttributesUnmarshaller : IUnmarshaller<ExternalWorkflowExecutionSignaledEventAttributes, UnmarshallerContext>, IUnmarshaller<ExternalWorkflowExecutionSignaledEventAttributes, JsonUnmarshallerContext> 
+      internal class ExternalWorkflowExecutionSignaledEventAttributesUnmarshaller : IUnmarshaller<ExternalWorkflowExecutionSignaledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ExternalWorkflowExecutionSignaledEventAttributes, JsonUnmarshallerContext> 
       { 
-        ExternalWorkflowExecutionSignaledEventAttributes IUnmarshaller<ExternalWorkflowExecutionSignaledEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        ExternalWorkflowExecutionSignaledEventAttributes IUnmarshaller<ExternalWorkflowExecutionSignaledEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

@@ -25,9 +25,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DeleteDBInstance operation
     /// </summary>
-    internal class DeleteDBInstanceResponseUnmarshaller : IResponseUnmarshaller<DeleteDBInstanceResponse, UnmarshallerContext> {
+    internal class DeleteDBInstanceResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DeleteDBInstanceResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteDBInstanceResponse response = new DeleteDBInstanceResponse();
             
@@ -54,7 +55,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

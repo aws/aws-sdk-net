@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   SuspendedProcess Unmarshaller
      /// </summary>
-    internal class SuspendedProcessUnmarshaller : IUnmarshaller<SuspendedProcess, UnmarshallerContext> 
+    internal class SuspendedProcessUnmarshaller : IUnmarshaller<SuspendedProcess, XmlUnmarshallerContext> 
     {
-        public SuspendedProcess Unmarshall(UnmarshallerContext context) 
+        public SuspendedProcess Unmarshall(XmlUnmarshallerContext context) 
         {
             SuspendedProcess suspendedProcess = new SuspendedProcess();
             int originalDepth = context.CurrentDepth;

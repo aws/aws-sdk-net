@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for DeleteDBInstance operation
     /// </summary>
-    internal class DeleteDBInstanceResultUnmarshaller : IUnmarshaller<DeleteDBInstanceResult, UnmarshallerContext> {
+    internal class DeleteDBInstanceResultUnmarshaller : IUnmarshaller<DeleteDBInstanceResult, XmlUnmarshallerContext> {
 
-        public DeleteDBInstanceResult Unmarshall(UnmarshallerContext context) 
+        public DeleteDBInstanceResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteDBInstanceResult result = new DeleteDBInstanceResult();
             

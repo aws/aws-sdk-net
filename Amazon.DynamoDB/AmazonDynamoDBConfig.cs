@@ -30,7 +30,7 @@ namespace Amazon.DynamoDB
         public AmazonDynamoDBConfig()
         {
             this.ServiceURL = "https://dynamodb.us-east-1.amazonaws.com/";
-            this.MaxErrorRetry = 10;
+            this.MaxErrorRetry = 7;
         }
 
         /// <summary>

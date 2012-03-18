@@ -25,11 +25,9 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAlarmHistory operation.
-    /// <para> Retrieves history for the specified alarm. Filter alarms by
-    /// date range or item type. If an alarm name is not specified, Amazon
-    /// CloudWatch returns histories for all of the owner's alarms. </para>
-    /// <para><b>NOTE:</b> Amazon CloudWatch retains the history of an alarm
-    /// for two weeks, whether or not you delete the alarm. </para>
+    /// <para> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon
+    /// CloudWatch returns histories for all of the owner's alarms. </para> <para><b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for
+    /// two weeks, whether or not you delete the alarm. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DescribeAlarmHistory"/>
     public class DescribeAlarmHistoryRequest : AmazonWebServiceRequest

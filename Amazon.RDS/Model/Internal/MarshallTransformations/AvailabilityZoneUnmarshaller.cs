@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   AvailabilityZone Unmarshaller
      /// </summary>
-    internal class AvailabilityZoneUnmarshaller : IUnmarshaller<AvailabilityZone, UnmarshallerContext> 
+    internal class AvailabilityZoneUnmarshaller : IUnmarshaller<AvailabilityZone, XmlUnmarshallerContext> 
     {
-        public AvailabilityZone Unmarshall(UnmarshallerContext context) 
+        public AvailabilityZone Unmarshall(XmlUnmarshallerContext context) 
         {
             AvailabilityZone availabilityZone = new AvailabilityZone();
             int originalDepth = context.CurrentDepth;

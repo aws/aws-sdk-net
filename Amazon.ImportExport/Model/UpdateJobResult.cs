@@ -30,8 +30,7 @@ namespace Amazon.ImportExport.Model
         private string warningMessage;
 
         /// <summary>
-        /// Specifies whether (true) or not (false) AWS Import/Export updated your
-        /// job.
+        /// Specifies whether (true) or not (false) AWS Import/Export updated your job.
         ///  
         /// </summary>
         public bool Success
@@ -51,6 +50,7 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if Success property is set
         internal bool IsSetSuccess()
         {
@@ -58,8 +58,7 @@ namespace Amazon.ImportExport.Model
         }
 
         /// <summary>
-        /// An optional message notifying you of non-fatal issues with the job,
-        /// such as use of an incompatible Amazon S3 bucket name.
+        /// An optional message notifying you of non-fatal issues with the job, such as use of an incompatible Amazon S3 bucket name.
         ///  
         /// </summary>
         public string WarningMessage
@@ -79,10 +78,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if WarningMessage property is set
         internal bool IsSetWarningMessage()
         {
-            return this.warningMessage != null;         
+            return this.warningMessage != null;       
         }
     }
 }

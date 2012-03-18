@@ -22,9 +22,9 @@
       /// <summary> 
       /// DomainDetailUnmarshaller 
       /// </summary> 
-      internal class DomainDetailUnmarshaller : IUnmarshaller<DomainDetail, UnmarshallerContext>, IUnmarshaller<DomainDetail, JsonUnmarshallerContext> 
+      internal class DomainDetailUnmarshaller : IUnmarshaller<DomainDetail, XmlUnmarshallerContext>, IUnmarshaller<DomainDetail, JsonUnmarshallerContext> 
       { 
-        DomainDetail IUnmarshaller<DomainDetail, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        DomainDetail IUnmarshaller<DomainDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.SecurityToken.Model
 {
-    /// <summary>Get Federation Token Result
+    /// <summary>
+    /// <para>Contains the result of a successful invocation of the GetFederationToken action.</para>
     /// </summary>
     public class GetFederationTokenResult  
     {
@@ -28,6 +29,11 @@ namespace Amazon.SecurityToken.Model
         private Credentials credentials;
         private FederatedUser federatedUser;
         private int? packedPolicySize;
+
+        /// <summary>
+        /// Credentials for the service API authentication.
+        ///  
+        /// </summary>
         public Credentials Credentials
         {
             get { return this.credentials; }
@@ -51,6 +57,11 @@ namespace Amazon.SecurityToken.Model
         {
             return this.credentials != null;       
         }
+
+        /// <summary>
+        /// Identifiers for the federated user associated with the credentials. You can use the federated user's ARN in your resource policies.
+        ///  
+        /// </summary>
         public FederatedUser FederatedUser
         {
             get { return this.federatedUser; }
@@ -74,6 +85,21 @@ namespace Amazon.SecurityToken.Model
         {
             return this.federatedUser != null;       
         }
+
+        /// <summary>
+        /// A percentage value indicating the size of the policy in packed form. Policies for which the packed size is greater than 100% of the allowed
+        /// value are rejected by the service.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>0 - </description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public int PackedPolicySize
         {
             get { return this.packedPolicySize ?? default(int); }

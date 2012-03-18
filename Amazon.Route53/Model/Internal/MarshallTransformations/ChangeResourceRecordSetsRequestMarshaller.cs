@@ -30,13 +30,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Change Resource Record Sets Request Marshaller
     /// </summary>       
-    public class ChangeResourceRecordSetsRequestMarshaller : IMarshaller<IRequest<ChangeResourceRecordSetsRequest>, ChangeResourceRecordSetsRequest>
+    public class ChangeResourceRecordSetsRequestMarshaller : IMarshaller<IRequest, ChangeResourceRecordSetsRequest>
     {
         
     
-        public IRequest<ChangeResourceRecordSetsRequest> Marshall(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest)
+        public IRequest Marshall(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest)
         {
-            IRequest<ChangeResourceRecordSetsRequest> request = new DefaultRequest<ChangeResourceRecordSetsRequest>(changeResourceRecordSetsRequest, "AmazonRoute53");
+            IRequest request = new DefaultRequest(changeResourceRecordSetsRequest, "AmazonRoute53");
             request.HttpMethod = "POST";
               
             string uriResourcePath = "/2011-05-05/hostedzone/{Id}/rrset/"; 

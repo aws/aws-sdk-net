@@ -30,12 +30,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Put Item Request Marshaller
     /// </summary>       
-    internal class PutItemRequestMarshaller : IMarshaller<IRequest<PutItemRequest>, PutItemRequest> 
+    internal class PutItemRequestMarshaller : IMarshaller<IRequest, PutItemRequest> 
     {
-        public IRequest<PutItemRequest> Marshall(PutItemRequest putItemRequest) 
+        public IRequest Marshall(PutItemRequest putItemRequest) 
         {
 
-            IRequest<PutItemRequest> request = new DefaultRequest<PutItemRequest>(putItemRequest, "AmazonDynamoDB");
+            IRequest request = new DefaultRequest(putItemRequest, "AmazonDynamoDB");
             string target = "DynamoDB_20111205.PutItem";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

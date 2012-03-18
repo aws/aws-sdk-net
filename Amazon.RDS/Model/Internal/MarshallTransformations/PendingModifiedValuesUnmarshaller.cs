@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PendingModifiedValues Unmarshaller
      /// </summary>
-    internal class PendingModifiedValuesUnmarshaller : IUnmarshaller<PendingModifiedValues, UnmarshallerContext> 
+    internal class PendingModifiedValuesUnmarshaller : IUnmarshaller<PendingModifiedValues, XmlUnmarshallerContext> 
     {
-        public PendingModifiedValues Unmarshall(UnmarshallerContext context) 
+        public PendingModifiedValues Unmarshall(XmlUnmarshallerContext context) 
         {
             PendingModifiedValues pendingModifiedValues = new PendingModifiedValues();
             int originalDepth = context.CurrentDepth;

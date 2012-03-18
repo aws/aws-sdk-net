@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// The logical name of the resource as specified in the template.<br></br> Default: There is on default value.
+        /// The logical name of the resource as specified in the template. Default: There is no default value.
         ///  
         /// </summary>
         public string LogicalResourceId

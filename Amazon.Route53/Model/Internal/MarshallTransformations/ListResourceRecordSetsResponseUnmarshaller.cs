@@ -25,12 +25,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ListResourceRecordSets operation
     /// </summary>
-    internal class ListResourceRecordSetsResponseUnmarshaller : IResponseUnmarshaller<ListResourceRecordSetsResponse, UnmarshallerContext> {
+    internal class ListResourceRecordSetsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public ListResourceRecordSetsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             ListResourceRecordSetsResponse response = new ListResourceRecordSetsResponse();
-
             
             while (context.Read())
             {
@@ -44,9 +44,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

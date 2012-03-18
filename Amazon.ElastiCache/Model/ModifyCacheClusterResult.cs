@@ -23,15 +23,15 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the ModifyCacheCluster action.
     /// </summary>
-    public class ModifyCacheClusterResult : AmazonWebServiceResponse
+    public class ModifyCacheClusterResult
     {
         private CacheCluster cacheClusterValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the ModifyCacheClusterResult property.
         /// Contains the result of a successful invocation of the ModifyCacheCluster
         /// action.
-        /// 
+        /// </summary>
         public CacheCluster CacheCluster
         {
             get { return this.cacheClusterValue; }

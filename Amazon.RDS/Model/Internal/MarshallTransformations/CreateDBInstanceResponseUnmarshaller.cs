@@ -25,9 +25,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for CreateDBInstance operation
     /// </summary>
-    internal class CreateDBInstanceResponseUnmarshaller : IResponseUnmarshaller<CreateDBInstanceResponse, UnmarshallerContext> {
+    internal class CreateDBInstanceResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public CreateDBInstanceResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateDBInstanceResponse response = new CreateDBInstanceResponse();
             
@@ -54,7 +55,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

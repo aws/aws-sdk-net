@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Disable Availability Zones For Load Balancer Request Marshaller
     /// </summary>       
-    public class DisableAvailabilityZonesForLoadBalancerRequestMarshaller : IMarshaller<IRequest<DisableAvailabilityZonesForLoadBalancerRequest>, DisableAvailabilityZonesForLoadBalancerRequest>
+    public class DisableAvailabilityZonesForLoadBalancerRequestMarshaller : IMarshaller<IRequest, DisableAvailabilityZonesForLoadBalancerRequest>
     {
-        public IRequest<DisableAvailabilityZonesForLoadBalancerRequest> Marshall(DisableAvailabilityZonesForLoadBalancerRequest disableAvailabilityZonesForLoadBalancerRequest)
+        public IRequest Marshall(DisableAvailabilityZonesForLoadBalancerRequest disableAvailabilityZonesForLoadBalancerRequest)
         {
-            IRequest<DisableAvailabilityZonesForLoadBalancerRequest> request = new DefaultRequest<DisableAvailabilityZonesForLoadBalancerRequest>(disableAvailabilityZonesForLoadBalancerRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(disableAvailabilityZonesForLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DisableAvailabilityZonesForLoadBalancer");
             request.Parameters.Add("Version", "2011-11-15");
             if (disableAvailabilityZonesForLoadBalancerRequest != null && disableAvailabilityZonesForLoadBalancerRequest.IsSetLoadBalancerName())

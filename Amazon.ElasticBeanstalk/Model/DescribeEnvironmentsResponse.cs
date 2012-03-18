@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public DescribeEnvironmentsResult DescribeEnvironmentsResult
         {
-            get { return this.describeEnvironmentsResult; }
+            get 
+            {
+                if(this.describeEnvironmentsResult == null)
+                {
+                    this.describeEnvironmentsResult = new DescribeEnvironmentsResult();
+                }
+
+                return this.describeEnvironmentsResult; 
+            }
             set { this.describeEnvironmentsResult = value; }
         }
     }

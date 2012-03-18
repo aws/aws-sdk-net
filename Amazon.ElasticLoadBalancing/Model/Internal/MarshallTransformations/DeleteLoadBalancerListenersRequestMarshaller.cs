@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Load Balancer Listeners Request Marshaller
     /// </summary>       
-    public class DeleteLoadBalancerListenersRequestMarshaller : IMarshaller<IRequest<DeleteLoadBalancerListenersRequest>, DeleteLoadBalancerListenersRequest>
+    public class DeleteLoadBalancerListenersRequestMarshaller : IMarshaller<IRequest, DeleteLoadBalancerListenersRequest>
     {
-        public IRequest<DeleteLoadBalancerListenersRequest> Marshall(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest)
+        public IRequest Marshall(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest)
         {
-            IRequest<DeleteLoadBalancerListenersRequest> request = new DefaultRequest<DeleteLoadBalancerListenersRequest>(deleteLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(deleteLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DeleteLoadBalancerListeners");
             request.Parameters.Add("Version", "2011-11-15");
             if (deleteLoadBalancerListenersRequest != null && deleteLoadBalancerListenersRequest.IsSetLoadBalancerName())

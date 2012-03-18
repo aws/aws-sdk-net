@@ -28,11 +28,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Stack Request Marshaller
     /// </summary>       
-    public class DeleteStackRequestMarshaller : IMarshaller<IRequest<DeleteStackRequest>, DeleteStackRequest>
+    public class DeleteStackRequestMarshaller : IMarshaller<IRequest, DeleteStackRequest>
     {
-        public IRequest<DeleteStackRequest> Marshall(DeleteStackRequest deleteStackRequest)
+        public IRequest Marshall(DeleteStackRequest deleteStackRequest)
         {
-            IRequest<DeleteStackRequest> request = new DefaultRequest<DeleteStackRequest>(deleteStackRequest, "AmazonCloudFormation");
+            IRequest request = new DefaultRequest(deleteStackRequest, "AmazonCloudFormation");
             request.Parameters.Add("Action", "DeleteStack");
             request.Parameters.Add("Version", "2010-05-15");
             if (deleteStackRequest != null && deleteStackRequest.IsSetStackName())

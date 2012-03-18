@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   StepDetail Unmarshaller
      /// </summary>
-    internal class StepDetailUnmarshaller : IUnmarshaller<StepDetail, UnmarshallerContext> 
+    internal class StepDetailUnmarshaller : IUnmarshaller<StepDetail, XmlUnmarshallerContext> 
     {
-        public StepDetail Unmarshall(UnmarshallerContext context) 
+        public StepDetail Unmarshall(XmlUnmarshallerContext context) 
         {
             StepDetail stepDetail = new StepDetail();
             int originalDepth = context.CurrentDepth;
@@ -35,13 +35,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("StepConfig", targetDepth))
                     {
                         stepDetail.StepConfig = StepConfigUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ExecutionStatusDetail", targetDepth))
                     {
                         stepDetail.ExecutionStatusDetail = StepExecutionStatusDetailUnmarshaller.GetInstance().Unmarshall(context);
@@ -54,6 +54,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return stepDetail;
                 }
             }
+                        
+
 
             return stepDetail;
         }

@@ -24,9 +24,9 @@
       /// <summary>
       /// Response Unmarshaller for ListOpenWorkflowExecutions operation
       /// </summary>
-      internal class ListOpenWorkflowExecutionsResponseUnmarshaller : IResponseUnmarshaller<ListOpenWorkflowExecutionsResponse, JsonUnmarshallerContext>
+      internal class ListOpenWorkflowExecutionsResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public ListOpenWorkflowExecutionsResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           ListOpenWorkflowExecutionsResponse response = new ListOpenWorkflowExecutionsResponse();
           
@@ -36,7 +36,7 @@
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

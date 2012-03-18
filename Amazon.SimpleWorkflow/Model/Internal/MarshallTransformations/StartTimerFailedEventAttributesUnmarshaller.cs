@@ -22,9 +22,9 @@
       /// <summary> 
       /// StartTimerFailedEventAttributesUnmarshaller 
       /// </summary> 
-      internal class StartTimerFailedEventAttributesUnmarshaller : IUnmarshaller<StartTimerFailedEventAttributes, UnmarshallerContext>, IUnmarshaller<StartTimerFailedEventAttributes, JsonUnmarshallerContext> 
+      internal class StartTimerFailedEventAttributesUnmarshaller : IUnmarshaller<StartTimerFailedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<StartTimerFailedEventAttributes, JsonUnmarshallerContext> 
       { 
-        StartTimerFailedEventAttributes IUnmarshaller<StartTimerFailedEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        StartTimerFailedEventAttributes IUnmarshaller<StartTimerFailedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

@@ -34,7 +34,15 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         public GetStatusResult GetStatusResult
         {
-            get { return this.getStatusResult; }
+            get 
+            {
+                if(this.getStatusResult == null)
+                {
+                    this.getStatusResult = new GetStatusResult();
+                }
+
+                return this.getStatusResult; 
+            }
             set { this.getStatusResult = value; }
         }
     }

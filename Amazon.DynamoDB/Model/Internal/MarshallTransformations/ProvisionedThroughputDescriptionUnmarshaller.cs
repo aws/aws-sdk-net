@@ -22,9 +22,9 @@
       /// <summary> 
       /// ProvisionedThroughputDescriptionUnmarshaller 
       /// </summary> 
-      internal class ProvisionedThroughputDescriptionUnmarshaller : IUnmarshaller<ProvisionedThroughputDescription, UnmarshallerContext>, IUnmarshaller<ProvisionedThroughputDescription, JsonUnmarshallerContext> 
+      internal class ProvisionedThroughputDescriptionUnmarshaller : IUnmarshaller<ProvisionedThroughputDescription, XmlUnmarshallerContext>, IUnmarshaller<ProvisionedThroughputDescription, JsonUnmarshallerContext> 
       { 
-        ProvisionedThroughputDescription IUnmarshaller<ProvisionedThroughputDescription, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        ProvisionedThroughputDescription IUnmarshaller<ProvisionedThroughputDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

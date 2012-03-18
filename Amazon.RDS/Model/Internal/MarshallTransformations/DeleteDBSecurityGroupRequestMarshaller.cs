@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete D B Security Group Request Marshaller
     /// </summary>       
-    public class DeleteDBSecurityGroupRequestMarshaller : IMarshaller<IRequest<DeleteDBSecurityGroupRequest>, DeleteDBSecurityGroupRequest>
+    public class DeleteDBSecurityGroupRequestMarshaller : IMarshaller<IRequest, DeleteDBSecurityGroupRequest>
     {
-        public IRequest<DeleteDBSecurityGroupRequest> Marshall(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest)
+        public IRequest Marshall(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest)
         {
-            IRequest<DeleteDBSecurityGroupRequest> request = new DefaultRequest<DeleteDBSecurityGroupRequest>(deleteDBSecurityGroupRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(deleteDBSecurityGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteDBSecurityGroup");
             request.Parameters.Add("Version", "2012-01-15");
             if (deleteDBSecurityGroupRequest != null && deleteDBSecurityGroupRequest.IsSetDBSecurityGroupName())

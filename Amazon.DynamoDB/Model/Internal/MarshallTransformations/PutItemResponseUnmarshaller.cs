@@ -24,9 +24,9 @@
       /// <summary> 
       /// Response Unmarshaller for PutItem operation 
       /// </summary> 
-      internal class PutItemResponseUnmarshaller : IResponseUnmarshaller<PutItemResponse, JsonUnmarshallerContext> 
+      internal class PutItemResponseUnmarshaller : JsonResponseUnmarshaller 
       { 
-        public PutItemResponse Unmarshall(JsonUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
         { 
           PutItemResponse response = new PutItemResponse();
           
@@ -36,7 +36,7 @@
           return response; 
         } 
          
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

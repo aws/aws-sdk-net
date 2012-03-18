@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   InstanceGroupDetail Unmarshaller
      /// </summary>
-    internal class InstanceGroupDetailUnmarshaller : IUnmarshaller<InstanceGroupDetail, UnmarshallerContext> 
+    internal class InstanceGroupDetailUnmarshaller : IUnmarshaller<InstanceGroupDetail, XmlUnmarshallerContext> 
     {
-        public InstanceGroupDetail Unmarshall(UnmarshallerContext context) 
+        public InstanceGroupDetail Unmarshall(XmlUnmarshallerContext context) 
         {
             InstanceGroupDetail instanceGroupDetail = new InstanceGroupDetail();
             int originalDepth = context.CurrentDepth;
@@ -35,85 +35,85 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("InstanceGroupId", targetDepth))
                     {
                         instanceGroupDetail.InstanceGroupId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Name", targetDepth))
                     {
                         instanceGroupDetail.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Market", targetDepth))
                     {
                         instanceGroupDetail.Market = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("InstanceRole", targetDepth))
                     {
                         instanceGroupDetail.InstanceRole = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("BidPrice", targetDepth))
                     {
                         instanceGroupDetail.BidPrice = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("InstanceType", targetDepth))
                     {
                         instanceGroupDetail.InstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("InstanceRequestCount", targetDepth))
                     {
                         instanceGroupDetail.InstanceRequestCount = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("InstanceRunningCount", targetDepth))
                     {
                         instanceGroupDetail.InstanceRunningCount = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("State", targetDepth))
                     {
                         instanceGroupDetail.State = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("LastStateChangeReason", targetDepth))
                     {
                         instanceGroupDetail.LastStateChangeReason = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("CreationDateTime", targetDepth))
                     {
                         instanceGroupDetail.CreationDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StartDateTime", targetDepth))
                     {
                         instanceGroupDetail.StartDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ReadyDateTime", targetDepth))
                     {
                         instanceGroupDetail.ReadyDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("EndDateTime", targetDepth))
                     {
                         instanceGroupDetail.EndDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
@@ -126,6 +126,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return instanceGroupDetail;
                 }
             }
+                        
+
 
             return instanceGroupDetail;
         }

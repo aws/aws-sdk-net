@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Engine Default Parameters Request Marshaller
     /// </summary>       
-    public class DescribeEngineDefaultParametersRequestMarshaller : IMarshaller<IRequest<DescribeEngineDefaultParametersRequest>, DescribeEngineDefaultParametersRequest>
+    public class DescribeEngineDefaultParametersRequestMarshaller : IMarshaller<IRequest, DescribeEngineDefaultParametersRequest>
     {
-        public IRequest<DescribeEngineDefaultParametersRequest> Marshall(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest)
+        public IRequest Marshall(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest)
         {
-            IRequest<DescribeEngineDefaultParametersRequest> request = new DefaultRequest<DescribeEngineDefaultParametersRequest>(describeEngineDefaultParametersRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(describeEngineDefaultParametersRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeEngineDefaultParameters");
             request.Parameters.Add("Version", "2012-01-15");
             if (describeEngineDefaultParametersRequest != null && describeEngineDefaultParametersRequest.IsSetDBParameterGroupFamily())

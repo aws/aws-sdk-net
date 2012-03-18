@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   BackendServerDescription Unmarshaller
      /// </summary>
-    internal class BackendServerDescriptionUnmarshaller : IUnmarshaller<BackendServerDescription, UnmarshallerContext> 
+    internal class BackendServerDescriptionUnmarshaller : IUnmarshaller<BackendServerDescription, XmlUnmarshallerContext> 
     {
-        public BackendServerDescription Unmarshall(UnmarshallerContext context) 
+        public BackendServerDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             BackendServerDescription backendServerDescription = new BackendServerDescription();
             int originalDepth = context.CurrentDepth;
@@ -35,13 +35,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("InstancePort", targetDepth))
                     {
                         backendServerDescription.InstancePort = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("PolicyNames/member", targetDepth))
                     {
                         backendServerDescription.PolicyNames.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
@@ -54,6 +54,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return backendServerDescription;
                 }
             }
+                        
+
 
             return backendServerDescription;
         }

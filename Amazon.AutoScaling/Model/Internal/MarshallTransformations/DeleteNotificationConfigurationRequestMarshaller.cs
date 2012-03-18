@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Notification Configuration Request Marshaller
     /// </summary>       
-    public class DeleteNotificationConfigurationRequestMarshaller : IMarshaller<IRequest<DeleteNotificationConfigurationRequest>, DeleteNotificationConfigurationRequest>
+    public class DeleteNotificationConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteNotificationConfigurationRequest>
     {
-        public IRequest<DeleteNotificationConfigurationRequest> Marshall(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest)
+        public IRequest Marshall(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest)
         {
-            IRequest<DeleteNotificationConfigurationRequest> request = new DefaultRequest<DeleteNotificationConfigurationRequest>(deleteNotificationConfigurationRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(deleteNotificationConfigurationRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DeleteNotificationConfiguration");
             request.Parameters.Add("Version", "2011-01-01");
             if (deleteNotificationConfigurationRequest != null && deleteNotificationConfigurationRequest.IsSetAutoScalingGroupName())

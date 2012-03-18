@@ -24,16 +24,16 @@
       /// <summary>
       /// Response Unmarshaller for SignalWorkflowExecution operation
       /// </summary>
-      internal class SignalWorkflowExecutionResponseUnmarshaller : IResponseUnmarshaller<SignalWorkflowExecutionResponse, JsonUnmarshallerContext>
+      internal class SignalWorkflowExecutionResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public SignalWorkflowExecutionResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           SignalWorkflowExecutionResponse response = new SignalWorkflowExecutionResponse();
           
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

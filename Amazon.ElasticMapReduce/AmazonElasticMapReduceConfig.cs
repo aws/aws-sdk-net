@@ -30,6 +30,7 @@ namespace Amazon.ElasticMapReduce
         public AmazonElasticMapReduceConfig()
         {
             this.ServiceURL = "https://elasticmapreduce.amazonaws.com";
+            
         }
 
         /// <summary>

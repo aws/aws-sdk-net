@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Util;
 
 namespace Amazon.Runtime
 {
@@ -27,6 +28,8 @@ namespace Amazon.Runtime
     public abstract class ClientConfig
     {
         private string serviceURL = "https://elasticloadbalancing.amazonaws.com/";
+        private string authRegion = null;
+        private string authServiceName = null;
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
         private string signatureVersion = "2";
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
@@ -36,6 +39,8 @@ namespace Amazon.Runtime
         private bool fUseSecureString = true;
         private string proxyUsername;
         private string proxyPassword;
+        private bool logResponse = false;
+        private int? connectionLimit;
 
 
         /// <summary>
@@ -83,6 +88,29 @@ namespace Amazon.Runtime
         {
             get { return this.serviceURL; }
             set { this.serviceURL = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the AuthenticationRegion property.
+        /// Used in AWS4 request signing, this is an optional property; 
+        /// change it only if the region cannot be determined from the 
+        /// service endpoint.
+        /// </summary>
+        public string AuthenticationRegion
+        {
+            get { return this.authRegion; }
+            set { this.authRegion = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the AuthenticationServiceName property.
+        /// Used in AWS4 request signing, this is the short-form
+        /// name of the service being called.
+        /// </summary>
+        public string AuthenticationServiceName
+        {
+            get { return this.authServiceName; }
+            set { this.authServiceName = value; }
         }
 
         /// <summary>
@@ -164,5 +192,27 @@ namespace Amazon.Runtime
             set { this.proxyPassword = value; }
         }
 
+
+        /// <summary>
+        /// Gets and sets the LogResponse.
+        /// If this property is set to true, the service response
+        /// is read in its entirety and logged.
+        /// </summary>
+        public bool LogResponse
+        {
+            get { return this.logResponse; }
+            set { this.logResponse = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the connection limit set on the ServicePoint for the WebRequest.
+        /// Default value is 50 connections unless ServicePointManager.DefaultConnectionLimit is set in 
+        /// which case ServicePointManager.DefaultConnectionLimit will be used as the default.
+        /// </summary>
+        public int ConnectionLimit
+        {
+            get { return AWSSDKUtils.GetConnectionLimit(this.connectionLimit); }
+            set { this.connectionLimit = value; }
+        }
     }
 }

@@ -25,9 +25,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for PutNotificationConfiguration operation
     /// </summary>
-    internal class PutNotificationConfigurationResponseUnmarshaller : IResponseUnmarshaller<PutNotificationConfigurationResponse, UnmarshallerContext> {
+    internal class PutNotificationConfigurationResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public PutNotificationConfigurationResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             PutNotificationConfigurationResponse response = new PutNotificationConfigurationResponse();
             
@@ -48,7 +49,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

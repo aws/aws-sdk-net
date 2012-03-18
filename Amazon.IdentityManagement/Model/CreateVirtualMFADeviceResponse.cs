@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public CreateVirtualMFADeviceResult CreateVirtualMFADeviceResult
         {
-            get { return this.createVirtualMFADeviceResult; }
+            get 
+            {
+                if(this.createVirtualMFADeviceResult == null)
+                {
+                    this.createVirtualMFADeviceResult = new CreateVirtualMFADeviceResult();
+                }
+
+                return this.createVirtualMFADeviceResult; 
+            }
             set { this.createVirtualMFADeviceResult = value; }
         }
     }

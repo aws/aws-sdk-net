@@ -25,9 +25,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ResumeProcesses operation
     /// </summary>
-    internal class ResumeProcessesResponseUnmarshaller : IResponseUnmarshaller<ResumeProcessesResponse, UnmarshallerContext> {
+    internal class ResumeProcessesResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public ResumeProcessesResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             ResumeProcessesResponse response = new ResumeProcessesResponse();
             
@@ -48,7 +49,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

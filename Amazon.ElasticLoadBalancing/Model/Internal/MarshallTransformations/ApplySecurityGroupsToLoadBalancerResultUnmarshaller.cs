@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ApplySecurityGroupsToLoadBalancerResult Unmarshaller
      /// </summary>
-    internal class ApplySecurityGroupsToLoadBalancerResultUnmarshaller : IUnmarshaller<ApplySecurityGroupsToLoadBalancerResult, UnmarshallerContext> 
+    internal class ApplySecurityGroupsToLoadBalancerResultUnmarshaller : IUnmarshaller<ApplySecurityGroupsToLoadBalancerResult, XmlUnmarshallerContext> 
     {
-        public ApplySecurityGroupsToLoadBalancerResult Unmarshall(UnmarshallerContext context) 
+        public ApplySecurityGroupsToLoadBalancerResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ApplySecurityGroupsToLoadBalancerResult applySecurityGroupsToLoadBalancerResult = new ApplySecurityGroupsToLoadBalancerResult();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("SecurityGroups/member", targetDepth))
                     {
                         applySecurityGroupsToLoadBalancerResult.SecurityGroups.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
@@ -48,6 +48,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return applySecurityGroupsToLoadBalancerResult;
                 }
             }
+                        
+
 
             return applySecurityGroupsToLoadBalancerResult;
         }

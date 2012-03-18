@@ -30,13 +30,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete Hosted Zone Request Marshaller
     /// </summary>       
-    public class DeleteHostedZoneRequestMarshaller : IMarshaller<IRequest<DeleteHostedZoneRequest>, DeleteHostedZoneRequest>
+    public class DeleteHostedZoneRequestMarshaller : IMarshaller<IRequest, DeleteHostedZoneRequest>
     {
         
     
-        public IRequest<DeleteHostedZoneRequest> Marshall(DeleteHostedZoneRequest deleteHostedZoneRequest)
+        public IRequest Marshall(DeleteHostedZoneRequest deleteHostedZoneRequest)
         {
-            IRequest<DeleteHostedZoneRequest> request = new DefaultRequest<DeleteHostedZoneRequest>(deleteHostedZoneRequest, "AmazonRoute53");
+            IRequest request = new DefaultRequest(deleteHostedZoneRequest, "AmazonRoute53");
             request.HttpMethod = "DELETE";
               
             string uriResourcePath = "/2011-05-05/hostedzone/{Id}"; 

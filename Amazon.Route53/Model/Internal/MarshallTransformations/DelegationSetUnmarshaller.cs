@@ -22,9 +22,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DelegationSet Unmarshaller
      /// </summary>
-    internal class DelegationSetUnmarshaller : IUnmarshaller<DelegationSet, UnmarshallerContext> 
+    internal class DelegationSetUnmarshaller : IUnmarshaller<DelegationSet, XmlUnmarshallerContext> 
     {
-        public DelegationSet Unmarshall(UnmarshallerContext context) 
+        public DelegationSet Unmarshall(XmlUnmarshallerContext context) 
         {
             DelegationSet delegationSet = new DelegationSet();
             int originalDepth = context.CurrentDepth;

@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   InstanceState Unmarshaller
      /// </summary>
-    internal class InstanceStateUnmarshaller : IUnmarshaller<InstanceState, UnmarshallerContext> 
+    internal class InstanceStateUnmarshaller : IUnmarshaller<InstanceState, XmlUnmarshallerContext> 
     {
-        public InstanceState Unmarshall(UnmarshallerContext context) 
+        public InstanceState Unmarshall(XmlUnmarshallerContext context) 
         {
             InstanceState instanceState = new InstanceState();
             int originalDepth = context.CurrentDepth;
@@ -35,25 +35,25 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("InstanceId", targetDepth))
                     {
                         instanceState.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("State", targetDepth))
                     {
                         instanceState.State = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ReasonCode", targetDepth))
                     {
                         instanceState.ReasonCode = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Description", targetDepth))
                     {
                         instanceState.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -66,6 +66,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return instanceState;
                 }
             }
+                        
+
 
             return instanceState;
         }

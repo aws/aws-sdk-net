@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Record Activity Task Heartbeat Request Marshaller
     /// </summary>       
-    internal class RecordActivityTaskHeartbeatRequestMarshaller : IMarshaller<IRequest<RecordActivityTaskHeartbeatRequest>, RecordActivityTaskHeartbeatRequest> 
+    internal class RecordActivityTaskHeartbeatRequestMarshaller : IMarshaller<IRequest, RecordActivityTaskHeartbeatRequest> 
     {
-        public IRequest<RecordActivityTaskHeartbeatRequest> Marshall(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest) 
+        public IRequest Marshall(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest) 
         {
 
-            IRequest<RecordActivityTaskHeartbeatRequest> request = new DefaultRequest<RecordActivityTaskHeartbeatRequest>(recordActivityTaskHeartbeatRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(recordActivityTaskHeartbeatRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.RecordActivityTaskHeartbeat";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

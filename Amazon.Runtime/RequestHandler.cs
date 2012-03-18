@@ -52,7 +52,7 @@ namespace Amazon.Runtime
 
         #region Creator method
 
-        internal static WebServiceRequestEventArgs Create<X>(IRequest<X> request)
+        internal static WebServiceRequestEventArgs Create(IRequest request)
         {
             WebServiceRequestEventArgs args = new WebServiceRequestEventArgs
             {

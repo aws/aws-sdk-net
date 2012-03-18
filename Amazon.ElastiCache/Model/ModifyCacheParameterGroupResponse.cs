@@ -34,7 +34,15 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         public ModifyCacheParameterGroupResult ModifyCacheParameterGroupResult
         {
-            get { return this.modifyCacheParameterGroupResult; }
+            get 
+            {
+                if(this.modifyCacheParameterGroupResult == null)
+                {
+                    this.modifyCacheParameterGroupResult = new ModifyCacheParameterGroupResult();
+                }
+
+                return this.modifyCacheParameterGroupResult; 
+            }
             set { this.modifyCacheParameterGroupResult = value; }
         }
     }

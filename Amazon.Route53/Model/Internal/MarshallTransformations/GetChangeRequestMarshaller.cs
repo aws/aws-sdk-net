@@ -30,13 +30,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Change Request Marshaller
     /// </summary>       
-    public class GetChangeRequestMarshaller : IMarshaller<IRequest<GetChangeRequest>, GetChangeRequest>
+    public class GetChangeRequestMarshaller : IMarshaller<IRequest, GetChangeRequest>
     {
         
     
-        public IRequest<GetChangeRequest> Marshall(GetChangeRequest getChangeRequest)
+        public IRequest Marshall(GetChangeRequest getChangeRequest)
         {
-            IRequest<GetChangeRequest> request = new DefaultRequest<GetChangeRequest>(getChangeRequest, "AmazonRoute53");
+            IRequest request = new DefaultRequest(getChangeRequest, "AmazonRoute53");
             request.HttpMethod = "GET";
               
             string uriResourcePath = "/2011-05-05/change/{Id}"; 

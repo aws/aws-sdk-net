@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   HadoopJarStepConfig Unmarshaller
      /// </summary>
-    internal class HadoopJarStepConfigUnmarshaller : IUnmarshaller<HadoopJarStepConfig, UnmarshallerContext> 
+    internal class HadoopJarStepConfigUnmarshaller : IUnmarshaller<HadoopJarStepConfig, XmlUnmarshallerContext> 
     {
-        public HadoopJarStepConfig Unmarshall(UnmarshallerContext context) 
+        public HadoopJarStepConfig Unmarshall(XmlUnmarshallerContext context) 
         {
             HadoopJarStepConfig hadoopJarStepConfig = new HadoopJarStepConfig();
             int originalDepth = context.CurrentDepth;
@@ -35,25 +35,25 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("Properties/member", targetDepth))
                     {
                         hadoopJarStepConfig.Properties.Add(KeyValueUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Jar", targetDepth))
                     {
                         hadoopJarStepConfig.Jar = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("MainClass", targetDepth))
                     {
                         hadoopJarStepConfig.MainClass = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Args/member", targetDepth))
                     {
                         hadoopJarStepConfig.Args.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
@@ -66,6 +66,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return hadoopJarStepConfig;
                 }
             }
+                        
+
 
             return hadoopJarStepConfig;
         }

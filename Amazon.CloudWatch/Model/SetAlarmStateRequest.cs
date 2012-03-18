@@ -25,11 +25,9 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the SetAlarmState operation.
-    /// <para> Temporarily sets the state of an alarm. When the updated
-    /// <c>StateValue</c> differs from the previous value, the action
-    /// configured for the appropriate state is invoked. This is not a
-    /// permanent change. The next periodic alarm check (in about a minute)
-    /// will set the alarm to its actual state. </para>
+    /// <para> Temporarily sets the state of an alarm. When the updated <c>StateValue</c> differs from the previous value, the action configured for
+    /// the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to
+    /// its actual state. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.SetAlarmState"/>
     public class SetAlarmStateRequest : AmazonWebServiceRequest

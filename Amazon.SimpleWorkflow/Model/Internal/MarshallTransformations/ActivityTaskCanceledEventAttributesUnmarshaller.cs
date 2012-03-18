@@ -22,9 +22,9 @@
       /// <summary> 
       /// ActivityTaskCanceledEventAttributesUnmarshaller 
       /// </summary> 
-      internal class ActivityTaskCanceledEventAttributesUnmarshaller : IUnmarshaller<ActivityTaskCanceledEventAttributes, UnmarshallerContext>, IUnmarshaller<ActivityTaskCanceledEventAttributes, JsonUnmarshallerContext> 
+      internal class ActivityTaskCanceledEventAttributesUnmarshaller : IUnmarshaller<ActivityTaskCanceledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<ActivityTaskCanceledEventAttributes, JsonUnmarshallerContext> 
       { 
-        ActivityTaskCanceledEventAttributes IUnmarshaller<ActivityTaskCanceledEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        ActivityTaskCanceledEventAttributes IUnmarshaller<ActivityTaskCanceledEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

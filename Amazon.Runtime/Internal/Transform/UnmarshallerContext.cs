@@ -23,6 +23,20 @@ using System.Xml;
 namespace Amazon.Runtime.Internal.Transform
 {
     /// <summary>
+    /// Base class for the UnmarshallerContext objects that are used
+    /// to unmarshall a web-service response.
+    /// </summary>
+    public class UnmarshallerContext
+    {
+        protected string responseContents;
+
+        public string ResponseBody
+        {
+            get { return responseContents; }
+        }
+    }
+
+    /// <summary>
     /// Wrap an <c>XmltextReader</c> for simulating an event stream.
     /// 
     /// Each <c>Read()</c> operation goes either to the next element or next attribute within
@@ -42,7 +56,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// }
     /// </code>
     /// </summary>
-    public class UnmarshallerContext
+    public class XmlUnmarshallerContext : UnmarshallerContext
     {
         private XmlTextReader xmlReader;
         private Stack<string> stack = new Stack<string>();
@@ -53,17 +67,31 @@ namespace Amazon.Runtime.Internal.Transform
         private XmlNodeType nodeType;
         private string nodeContent = String.Empty;
         private NameValueCollection headers;
+
+        /// <summary>
+        /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
+        /// </summary>
+        /// <param name="responseBody">String with the XML from a service response.</param>
+        /// <param name="headers">Headers associated with the request.</param>
+        public XmlUnmarshallerContext(string responseBody, NameValueCollection headers)
+        {
+            this.xmlReader = new XmlTextReader(new StringReader(responseBody));
+            this.xmlReader.WhitespaceHandling = WhitespaceHandling.None;
+            this.headers = headers ?? new NameValueCollection();
+            this.responseContents = responseBody;
+        }
         
         /// <summary>
         /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
         /// </summary>
-        /// <param name="xmlReader"><c>XmlTextReader</c> with the XML from a service response.</param>
+        /// <param name="responseStream"><c>Stream</c> with the XML from a service response.</param>
         /// <param name="headers">Headers associated with the request.</param>
-        public UnmarshallerContext(XmlTextReader xmlReader, NameValueCollection headers)
+        public XmlUnmarshallerContext(Stream responseStream, NameValueCollection headers)
         {
-            this.xmlReader = xmlReader;
+            this.xmlReader = new XmlTextReader(new StreamReader(responseStream));
             this.xmlReader.WhitespaceHandling = WhitespaceHandling.None;
             this.headers = headers ?? new NameValueCollection();
+            this.responseContents = null;
         }
 
         /// <summary>

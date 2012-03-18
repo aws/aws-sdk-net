@@ -23,15 +23,15 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the CreateCacheSecurityGroup action.
     /// </summary>
-    public class CreateCacheSecurityGroupResult : AmazonWebServiceResponse
+    public class CreateCacheSecurityGroupResult
     {
         private CacheSecurityGroup cacheSecurityGroupValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateCacheSecurityGroupResult property.
         /// Contains the result of a successful invocation of the CreateCacheSecurityGroup
         /// action.
-        /// 
+        /// </summary>
         public CacheSecurityGroup CacheSecurityGroup
         {
             get { return this.cacheSecurityGroupValue; }

@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Detach Load Balancer From Subnets Request Marshaller
     /// </summary>       
-    public class DetachLoadBalancerFromSubnetsRequestMarshaller : IMarshaller<IRequest<DetachLoadBalancerFromSubnetsRequest>, DetachLoadBalancerFromSubnetsRequest>
+    public class DetachLoadBalancerFromSubnetsRequestMarshaller : IMarshaller<IRequest, DetachLoadBalancerFromSubnetsRequest>
     {
-        public IRequest<DetachLoadBalancerFromSubnetsRequest> Marshall(DetachLoadBalancerFromSubnetsRequest detachLoadBalancerFromSubnetsRequest)
+        public IRequest Marshall(DetachLoadBalancerFromSubnetsRequest detachLoadBalancerFromSubnetsRequest)
         {
-            IRequest<DetachLoadBalancerFromSubnetsRequest> request = new DefaultRequest<DetachLoadBalancerFromSubnetsRequest>(detachLoadBalancerFromSubnetsRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(detachLoadBalancerFromSubnetsRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DetachLoadBalancerFromSubnets");
             request.Parameters.Add("Version", "2011-11-15");
             if (detachLoadBalancerFromSubnetsRequest != null && detachLoadBalancerFromSubnetsRequest.IsSetLoadBalancerName())

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>AutoScalingGroupsType</c> data type. </para>
+    /// <para> The AutoScalingGroupsType data type. </para>
     /// </summary>
     public class DescribeAutoScalingGroupsResult  
     {

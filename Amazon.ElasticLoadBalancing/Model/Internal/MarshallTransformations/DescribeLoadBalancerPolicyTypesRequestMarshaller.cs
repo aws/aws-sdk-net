@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Load Balancer Policy Types Request Marshaller
     /// </summary>       
-    public class DescribeLoadBalancerPolicyTypesRequestMarshaller : IMarshaller<IRequest<DescribeLoadBalancerPolicyTypesRequest>, DescribeLoadBalancerPolicyTypesRequest>
+    public class DescribeLoadBalancerPolicyTypesRequestMarshaller : IMarshaller<IRequest, DescribeLoadBalancerPolicyTypesRequest>
     {
-        public IRequest<DescribeLoadBalancerPolicyTypesRequest> Marshall(DescribeLoadBalancerPolicyTypesRequest describeLoadBalancerPolicyTypesRequest)
+        public IRequest Marshall(DescribeLoadBalancerPolicyTypesRequest describeLoadBalancerPolicyTypesRequest)
         {
-            IRequest<DescribeLoadBalancerPolicyTypesRequest> request = new DefaultRequest<DescribeLoadBalancerPolicyTypesRequest>(describeLoadBalancerPolicyTypesRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(describeLoadBalancerPolicyTypesRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeLoadBalancerPolicyTypes");
             request.Parameters.Add("Version", "2011-11-15");
             if (describeLoadBalancerPolicyTypesRequest != null)

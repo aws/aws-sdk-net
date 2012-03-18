@@ -23,15 +23,15 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the CreateCacheCluster action.
     /// </summary>
-    public class CreateCacheClusterResult : AmazonWebServiceResponse
+    public class CreateCacheClusterResult
     {
         private CacheCluster cacheClusterValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateCacheClusterResult property.
         /// Contains the result of a successful invocation of the CreateCacheCluster
         /// action.
-        /// 
+        /// </summary>
         public CacheCluster CacheCluster
         {
             get { return this.cacheClusterValue; }

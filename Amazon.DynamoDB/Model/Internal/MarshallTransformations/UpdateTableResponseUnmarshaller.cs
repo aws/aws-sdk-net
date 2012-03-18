@@ -24,9 +24,9 @@
       /// <summary> 
       /// Response Unmarshaller for UpdateTable operation 
       /// </summary> 
-      internal class UpdateTableResponseUnmarshaller : IResponseUnmarshaller<UpdateTableResponse, JsonUnmarshallerContext> 
+      internal class UpdateTableResponseUnmarshaller : JsonResponseUnmarshaller 
       { 
-        public UpdateTableResponse Unmarshall(JsonUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
         { 
           UpdateTableResponse response = new UpdateTableResponse();
           
@@ -36,7 +36,7 @@
           return response; 
         } 
          
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

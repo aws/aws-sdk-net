@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Workflow Execution History Request Marshaller
     /// </summary>       
-    internal class GetWorkflowExecutionHistoryRequestMarshaller : IMarshaller<IRequest<GetWorkflowExecutionHistoryRequest>, GetWorkflowExecutionHistoryRequest> 
+    internal class GetWorkflowExecutionHistoryRequestMarshaller : IMarshaller<IRequest, GetWorkflowExecutionHistoryRequest> 
     {
-        public IRequest<GetWorkflowExecutionHistoryRequest> Marshall(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest) 
+        public IRequest Marshall(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest) 
         {
 
-            IRequest<GetWorkflowExecutionHistoryRequest> request = new DefaultRequest<GetWorkflowExecutionHistoryRequest>(getWorkflowExecutionHistoryRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(getWorkflowExecutionHistoryRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.GetWorkflowExecutionHistory";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

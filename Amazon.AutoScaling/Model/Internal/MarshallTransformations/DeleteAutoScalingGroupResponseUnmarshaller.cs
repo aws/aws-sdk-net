@@ -25,9 +25,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DeleteAutoScalingGroup operation
     /// </summary>
-    internal class DeleteAutoScalingGroupResponseUnmarshaller : IResponseUnmarshaller<DeleteAutoScalingGroupResponse, UnmarshallerContext> {
+    internal class DeleteAutoScalingGroupResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DeleteAutoScalingGroupResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteAutoScalingGroupResponse response = new DeleteAutoScalingGroupResponse();
             
@@ -48,7 +49,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

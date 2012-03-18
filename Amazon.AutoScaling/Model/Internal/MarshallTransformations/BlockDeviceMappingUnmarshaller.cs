@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   BlockDeviceMapping Unmarshaller
      /// </summary>
-    internal class BlockDeviceMappingUnmarshaller : IUnmarshaller<BlockDeviceMapping, UnmarshallerContext> 
+    internal class BlockDeviceMappingUnmarshaller : IUnmarshaller<BlockDeviceMapping, XmlUnmarshallerContext> 
     {
-        public BlockDeviceMapping Unmarshall(UnmarshallerContext context) 
+        public BlockDeviceMapping Unmarshall(XmlUnmarshallerContext context) 
         {
             BlockDeviceMapping blockDeviceMapping = new BlockDeviceMapping();
             int originalDepth = context.CurrentDepth;

@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DeregisterInstancesFromLoadBalancerResult Unmarshaller
      /// </summary>
-    internal class DeregisterInstancesFromLoadBalancerResultUnmarshaller : IUnmarshaller<DeregisterInstancesFromLoadBalancerResult, UnmarshallerContext> 
+    internal class DeregisterInstancesFromLoadBalancerResultUnmarshaller : IUnmarshaller<DeregisterInstancesFromLoadBalancerResult, XmlUnmarshallerContext> 
     {
-        public DeregisterInstancesFromLoadBalancerResult Unmarshall(UnmarshallerContext context) 
+        public DeregisterInstancesFromLoadBalancerResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DeregisterInstancesFromLoadBalancerResult deregisterInstancesFromLoadBalancerResult = new DeregisterInstancesFromLoadBalancerResult();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("Instances/member", targetDepth))
                     {
                         deregisterInstancesFromLoadBalancerResult.Instances.Add(InstanceUnmarshaller.GetInstance().Unmarshall(context));
@@ -48,6 +48,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return deregisterInstancesFromLoadBalancerResult;
                 }
             }
+                        
+
 
             return deregisterInstancesFromLoadBalancerResult;
         }

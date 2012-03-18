@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Tags Request Marshaller
     /// </summary>       
-    public class DescribeTagsRequestMarshaller : IMarshaller<IRequest<DescribeTagsRequest>, DescribeTagsRequest>
+    public class DescribeTagsRequestMarshaller : IMarshaller<IRequest, DescribeTagsRequest>
     {
-        public IRequest<DescribeTagsRequest> Marshall(DescribeTagsRequest describeTagsRequest)
+        public IRequest Marshall(DescribeTagsRequest describeTagsRequest)
         {
-            IRequest<DescribeTagsRequest> request = new DefaultRequest<DescribeTagsRequest>(describeTagsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(describeTagsRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribeTags");
             request.Parameters.Add("Version", "2011-01-01");
 

@@ -34,7 +34,15 @@ namespace Amazon.ImportExport.Model
         /// </summary>
         public CreateJobResult CreateJobResult
         {
-            get { return this.createJobResult; }
+            get 
+            {
+                if(this.createJobResult == null)
+                {
+                    this.createJobResult = new CreateJobResult();
+                }
+
+                return this.createJobResult; 
+            }
             set { this.createJobResult = value; }
         }
     }

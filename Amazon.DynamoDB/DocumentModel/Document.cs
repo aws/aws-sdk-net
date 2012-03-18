@@ -44,6 +44,12 @@ namespace Amazon.DynamoDB.DocumentModel
             currentValues = new Dictionary<string, DynamoDBEntry>();
         }
 
+        internal Document(Document source)
+        {
+            originalValues = new Dictionary<string, DynamoDBEntry>(source.originalValues);
+            currentValues = new Dictionary<string, DynamoDBEntry>(source.currentValues);
+        }
+
         #endregion
 
         #region Properties/accessors
@@ -240,32 +246,17 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Document doc = new Document();
 
-            // Add Primitives and PrimitiveLists
-            foreach (var attribute in data)
+            if (data != null)
             {
-                string wholeKey = attribute.Key;
-                AttributeValue value = attribute.Value;
+                // Add Primitives and PrimitiveLists
+                foreach (var attribute in data)
+                {
+                    string wholeKey = attribute.Key;
+                    AttributeValue value = attribute.Value;
 
-
-                if (value.S != null)
-                {
-                    doc.currentValues[wholeKey] = value.S;
-                }
-                else if (value.N != null)
-                {
-                    Primitive primitive = value.N;
-                    primitive.SaveAsNumeric = true;
-                    doc.currentValues[wholeKey] = primitive;
-                }
-                else if (value.SS != null && value.SS.Count != 0)
-                {
-                    doc.currentValues[wholeKey] = value.SS;
-                }
-                else if (value.NS != null && value.NS.Count != 0)
-                {
-                    PrimitiveList primitiveList = value.NS;
-                    primitiveList.SaveAsNumeric = true;
-                    doc.currentValues[wholeKey] = primitiveList;
+                    DynamoDBEntry convertedValue = AttributeValueToDynamoDBEntry(value);
+                    if (convertedValue != null)
+                        doc.currentValues[wholeKey] = convertedValue;
                 }
             }
 
@@ -273,6 +264,33 @@ namespace Amazon.DynamoDB.DocumentModel
             return doc;
         }
 
+        internal static DynamoDBEntry AttributeValueToDynamoDBEntry(AttributeValue value)
+        {
+            if (value.S != null)
+            {
+                return value.S;
+            }
+            else if (value.N != null)
+            {
+                Primitive primitive = value.N;
+                primitive.SaveAsNumeric = true;
+                return primitive;
+            }
+            else if (value.SS != null && value.SS.Count != 0)
+            {
+                return value.SS;
+            }
+            else if (value.NS != null && value.NS.Count != 0)
+            {
+                PrimitiveList primitiveList = value.NS;
+                primitiveList.SaveAsNumeric = true;
+                return primitiveList;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         #endregion
     }

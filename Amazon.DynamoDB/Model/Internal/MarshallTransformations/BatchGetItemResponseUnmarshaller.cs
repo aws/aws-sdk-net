@@ -24,9 +24,9 @@
       /// <summary> 
       /// Response Unmarshaller for BatchGetItem operation 
       /// </summary> 
-      internal class BatchGetItemResponseUnmarshaller : IResponseUnmarshaller<BatchGetItemResponse, JsonUnmarshallerContext> 
+      internal class BatchGetItemResponseUnmarshaller : JsonResponseUnmarshaller 
       { 
-        public BatchGetItemResponse Unmarshall(JsonUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
         { 
           BatchGetItemResponse response = new BatchGetItemResponse();
           
@@ -36,7 +36,7 @@
           return response; 
         } 
          
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   JobFlowInstancesDetail Unmarshaller
      /// </summary>
-    internal class JobFlowInstancesDetailUnmarshaller : IUnmarshaller<JobFlowInstancesDetail, UnmarshallerContext> 
+    internal class JobFlowInstancesDetailUnmarshaller : IUnmarshaller<JobFlowInstancesDetail, XmlUnmarshallerContext> 
     {
-        public JobFlowInstancesDetail Unmarshall(UnmarshallerContext context) 
+        public JobFlowInstancesDetail Unmarshall(XmlUnmarshallerContext context) 
         {
             JobFlowInstancesDetail jobFlowInstancesDetail = new JobFlowInstancesDetail();
             int originalDepth = context.CurrentDepth;
@@ -35,79 +35,79 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("MasterInstanceType", targetDepth))
                     {
                         jobFlowInstancesDetail.MasterInstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("MasterPublicDnsName", targetDepth))
                     {
                         jobFlowInstancesDetail.MasterPublicDnsName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("MasterInstanceId", targetDepth))
                     {
                         jobFlowInstancesDetail.MasterInstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("SlaveInstanceType", targetDepth))
                     {
                         jobFlowInstancesDetail.SlaveInstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("InstanceCount", targetDepth))
                     {
                         jobFlowInstancesDetail.InstanceCount = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("InstanceGroups/member", targetDepth))
                     {
                         jobFlowInstancesDetail.InstanceGroups.Add(InstanceGroupDetailUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("NormalizedInstanceHours", targetDepth))
                     {
                         jobFlowInstancesDetail.NormalizedInstanceHours = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Ec2KeyName", targetDepth))
                     {
                         jobFlowInstancesDetail.Ec2KeyName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Ec2SubnetId", targetDepth))
                     {
                         jobFlowInstancesDetail.Ec2SubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Placement", targetDepth))
                     {
                         jobFlowInstancesDetail.Placement = PlacementTypeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("KeepJobFlowAliveWhenNoSteps", targetDepth))
                     {
                         jobFlowInstancesDetail.KeepJobFlowAliveWhenNoSteps = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("TerminationProtected", targetDepth))
                     {
                         jobFlowInstancesDetail.TerminationProtected = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("HadoopVersion", targetDepth))
                     {
                         jobFlowInstancesDetail.HadoopVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -120,6 +120,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return jobFlowInstancesDetail;
                 }
             }
+                        
+
 
             return jobFlowInstancesDetail;
         }

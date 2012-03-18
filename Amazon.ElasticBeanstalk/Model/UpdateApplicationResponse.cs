@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public UpdateApplicationResult UpdateApplicationResult
         {
-            get { return this.updateApplicationResult; }
+            get 
+            {
+                if(this.updateApplicationResult == null)
+                {
+                    this.updateApplicationResult = new UpdateApplicationResult();
+                }
+
+                return this.updateApplicationResult; 
+            }
             set { this.updateApplicationResult = value; }
         }
     }

@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DBEngineVersion Unmarshaller
      /// </summary>
-    internal class DBEngineVersionUnmarshaller : IUnmarshaller<DBEngineVersion, UnmarshallerContext> 
+    internal class DBEngineVersionUnmarshaller : IUnmarshaller<DBEngineVersion, XmlUnmarshallerContext> 
     {
-        public DBEngineVersion Unmarshall(UnmarshallerContext context) 
+        public DBEngineVersion Unmarshall(XmlUnmarshallerContext context) 
         {
             DBEngineVersion dBEngineVersion = new DBEngineVersion();
             int originalDepth = context.CurrentDepth;

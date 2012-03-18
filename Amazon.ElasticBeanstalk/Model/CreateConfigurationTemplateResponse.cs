@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public CreateConfigurationTemplateResult CreateConfigurationTemplateResult
         {
-            get { return this.createConfigurationTemplateResult; }
+            get 
+            {
+                if(this.createConfigurationTemplateResult == null)
+                {
+                    this.createConfigurationTemplateResult = new CreateConfigurationTemplateResult();
+                }
+
+                return this.createConfigurationTemplateResult; 
+            }
             set { this.createConfigurationTemplateResult = value; }
         }
     }

@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The MetricAlarm data type represents an alarm. You can use
-    /// PutMetricAlarm to create or update an alarm. </para>
+    /// <para> The MetricAlarm data type represents an alarm. You can use PutMetricAlarm to create or update an alarm. </para>
     /// </summary>
     public class MetricAlarm  
     {
@@ -331,7 +330,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// The list of actions to execute when this alarm transitions into an <c>INSUFFICIENT_DATA</c> state from any other state. Each action is
         /// specified as an Amazon Resource Number (ARN). Currently the only actions supported are publishing to an Amazon SNS topic or triggering an
-        /// Auto Scaling policy.
+        /// Auto Scaling policy. <important>The current WSDL lists this attribute as <c>UnknownActions</c>.</important>
         ///  
         /// <para>
         /// <b>Constraints:</b>

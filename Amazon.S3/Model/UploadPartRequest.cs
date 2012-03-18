@@ -48,7 +48,6 @@ namespace Amazon.S3.Model
         private bool fGenerateMD5Digest;
         private int timeout = 0;
         private int readWriteTimeout = 0;
-
         private string filePath;
         private long? filePosition;
 
@@ -351,8 +350,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets of the Timeout property (in milliseconds).
         /// The value of this property is assigned to the
-        /// ReadWriteTimeout and Timeout properties of the
-        /// HTTPWebRequest object used for S3 PUT Object requests.
+        /// Timeout property of the HTTPWebRequest object
+        /// used for S3 PUT Object requests.
         /// </summary>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
@@ -362,7 +361,7 @@ namespace Amazon.S3.Model
             get { return this.timeout; }
             set
             {
-                if (value > 0)
+                if (value > 0 || value == System.Threading.Timeout.Infinite)
                 {
                     this.timeout = value;
                 }
@@ -436,6 +435,7 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
 
         /// <summary>
         /// The event for Put Object progress notifications. All

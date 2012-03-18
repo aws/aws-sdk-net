@@ -25,10 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTags operation.
-    /// <para> Lists the Auto Scaling group tags. </para> <para> You can use filters to limit results when describing tags. For example, you can
-    /// query for tags of a particular Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the
-    /// specified values for it to be included in the results. </para> <para> You can also specify multiple filters. The result includes information
-    /// for a particular tag only if it matches all your filters. If there's no match, no special message is returned. </para>
+    /// 
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeTags"/>
     public class DescribeTagsRequest : AmazonWebServiceRequest
@@ -36,13 +33,6 @@ namespace Amazon.AutoScaling.Model
         private List<Filter> filters = new List<Filter>();
         private string nextToken;
         private int? maxRecords;
-
-        /// <summary>
-        /// The value of the filter type used to identify the tags to be returned. For example, you can filter so that tags are returned according to
-        /// Auto Scaling group, the key and value, or whether the new tag will be applied to instances launched after the tag is created
-        /// (PropagateAtLaunch).
-        ///  
-        /// </summary>
         public List<Filter> Filters
         {
             get { return this.filters; }
@@ -83,20 +73,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this.filters.Count > 0;       
         }
-
-        /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string NextToken
         {
             get { return this.nextToken; }
@@ -120,20 +96,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this.nextToken != null;       
         }
-
-        /// <summary>
-        /// The maximum number of records to return.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 50</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public int MaxRecords
         {
             get { return this.maxRecords ?? default(int); }

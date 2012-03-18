@@ -37,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         private List<string> notificationTypes = new List<string>();
 
         /// <summary>
-        /// The name of the Auto Scaling group.
+        /// The name of the Auto Scaling Group.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   SourceSecurityGroup Unmarshaller
      /// </summary>
-    internal class SourceSecurityGroupUnmarshaller : IUnmarshaller<SourceSecurityGroup, UnmarshallerContext> 
+    internal class SourceSecurityGroupUnmarshaller : IUnmarshaller<SourceSecurityGroup, XmlUnmarshallerContext> 
     {
-        public SourceSecurityGroup Unmarshall(UnmarshallerContext context) 
+        public SourceSecurityGroup Unmarshall(XmlUnmarshallerContext context) 
         {
             SourceSecurityGroup sourceSecurityGroup = new SourceSecurityGroup();
             int originalDepth = context.CurrentDepth;
@@ -35,13 +35,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("OwnerAlias", targetDepth))
                     {
                         sourceSecurityGroup.OwnerAlias = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("GroupName", targetDepth))
                     {
                         sourceSecurityGroup.GroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -54,6 +54,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return sourceSecurityGroup;
                 }
             }
+                        
+
 
             return sourceSecurityGroup;
         }

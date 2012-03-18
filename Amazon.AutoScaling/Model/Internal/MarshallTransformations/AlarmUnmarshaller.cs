@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Alarm Unmarshaller
      /// </summary>
-    internal class AlarmUnmarshaller : IUnmarshaller<Alarm, UnmarshallerContext> 
+    internal class AlarmUnmarshaller : IUnmarshaller<Alarm, XmlUnmarshallerContext> 
     {
-        public Alarm Unmarshall(UnmarshallerContext context) 
+        public Alarm Unmarshall(XmlUnmarshallerContext context) 
         {
             Alarm alarm = new Alarm();
             int originalDepth = context.CurrentDepth;

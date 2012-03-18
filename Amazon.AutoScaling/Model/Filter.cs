@@ -20,28 +20,13 @@ using System.IO;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// <para>The <c>Filter</c> data type.</para>
+    /// <summary>Filter
     /// </summary>
     public class Filter  
     {
         
         private string name;
         private List<string> values = new List<string>();
-
-        /// <summary>
-        /// The name of the filter.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string Name
         {
             get { return this.name; }
@@ -65,11 +50,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this.name != null;       
         }
-
-        /// <summary>
-        /// The value of the filter.
-        ///  
-        /// </summary>
         public List<string> Values
         {
             get { return this.values; }

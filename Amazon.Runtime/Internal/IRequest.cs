@@ -27,8 +27,7 @@ namespace Amazon.Runtime.Internal
     /// Callers shouldn't ever interact directly with objects of this class.
     /// </para>
     /// </summary>
-    /// <typeparam name="T">The type of original, user facing request represented by this request.</typeparam>
-    public interface IRequest<T>
+    public interface IRequest
     {
         /// <summary>
         /// Returns a dictionary of the headers included in this request.

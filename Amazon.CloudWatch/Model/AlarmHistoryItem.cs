@@ -21,10 +21,8 @@ using System.IO;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The <c>AlarmHistoryItem</c> data type contains descriptive
-    /// information about the history of a specific alarm. If you call
-    /// DescribeAlarmHistory, Amazon CloudWatch returns this data type as part
-    /// of the DescribeAlarmHistoryResult data type. </para>
+    /// <para> The <c>AlarmHistoryItem</c> data type contains descriptive information about the history of a specific alarm. If you call
+    /// DescribeAlarmHistory, Amazon CloudWatch returns this data type as part of the DescribeAlarmHistoryResult data type. </para>
     /// </summary>
     public class AlarmHistoryItem  
     {

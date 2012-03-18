@@ -22,9 +22,9 @@
       /// <summary> 
       /// WorkflowExecutionTimedOutEventAttributesUnmarshaller 
       /// </summary> 
-      internal class WorkflowExecutionTimedOutEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionTimedOutEventAttributes, UnmarshallerContext>, IUnmarshaller<WorkflowExecutionTimedOutEventAttributes, JsonUnmarshallerContext> 
+      internal class WorkflowExecutionTimedOutEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionTimedOutEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionTimedOutEventAttributes, JsonUnmarshallerContext> 
       { 
-        WorkflowExecutionTimedOutEventAttributes IUnmarshaller<WorkflowExecutionTimedOutEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        WorkflowExecutionTimedOutEventAttributes IUnmarshaller<WorkflowExecutionTimedOutEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

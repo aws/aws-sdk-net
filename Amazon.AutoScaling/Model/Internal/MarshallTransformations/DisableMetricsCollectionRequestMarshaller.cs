@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Disable Metrics Collection Request Marshaller
     /// </summary>       
-    public class DisableMetricsCollectionRequestMarshaller : IMarshaller<IRequest<DisableMetricsCollectionRequest>, DisableMetricsCollectionRequest>
+    public class DisableMetricsCollectionRequestMarshaller : IMarshaller<IRequest, DisableMetricsCollectionRequest>
     {
-        public IRequest<DisableMetricsCollectionRequest> Marshall(DisableMetricsCollectionRequest disableMetricsCollectionRequest)
+        public IRequest Marshall(DisableMetricsCollectionRequest disableMetricsCollectionRequest)
         {
-            IRequest<DisableMetricsCollectionRequest> request = new DefaultRequest<DisableMetricsCollectionRequest>(disableMetricsCollectionRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(disableMetricsCollectionRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DisableMetricsCollection");
             request.Parameters.Add("Version", "2011-01-01");
             if (disableMetricsCollectionRequest != null && disableMetricsCollectionRequest.IsSetAutoScalingGroupName())

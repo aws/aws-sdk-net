@@ -25,15 +25,16 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for AddInstanceGroups operation
     /// </summary>
-    internal class AddInstanceGroupsResponseUnmarshaller : IResponseUnmarshaller<AddInstanceGroupsResponse, UnmarshallerContext> {
+    internal class AddInstanceGroupsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public AddInstanceGroupsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             AddInstanceGroupsResponse response = new AddInstanceGroupsResponse();
-
+            
             while (context.Read())
             {
-                if (context.IsStartElement)
+                if (context.IsStartElement)                
                 {
                     if(context.TestExpression("AddInstanceGroupsResult", 2))
                     {
@@ -46,12 +47,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     }
                 }
             }
-
+                 
+                        
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

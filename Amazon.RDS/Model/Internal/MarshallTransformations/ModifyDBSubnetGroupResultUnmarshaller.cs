@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for ModifyDBSubnetGroup operation
     /// </summary>
-    internal class ModifyDBSubnetGroupResultUnmarshaller : IUnmarshaller<ModifyDBSubnetGroupResult, UnmarshallerContext> {
+    internal class ModifyDBSubnetGroupResultUnmarshaller : IUnmarshaller<ModifyDBSubnetGroupResult, XmlUnmarshallerContext> {
 
-        public ModifyDBSubnetGroupResult Unmarshall(UnmarshallerContext context) 
+        public ModifyDBSubnetGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ModifyDBSubnetGroupResult result = new ModifyDBSubnetGroupResult();
             

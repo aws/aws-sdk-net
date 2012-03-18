@@ -34,7 +34,15 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         public DescribeCacheSecurityGroupsResult DescribeCacheSecurityGroupsResult
         {
-            get { return this.describeCacheSecurityGroupsResult; }
+            get 
+            {
+                if(this.describeCacheSecurityGroupsResult == null)
+                {
+                    this.describeCacheSecurityGroupsResult = new DescribeCacheSecurityGroupsResult();
+                }
+
+                return this.describeCacheSecurityGroupsResult; 
+            }
             set { this.describeCacheSecurityGroupsResult = value; }
         }
     }

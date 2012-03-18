@@ -30,12 +30,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Update Table Request Marshaller
     /// </summary>       
-    internal class UpdateTableRequestMarshaller : IMarshaller<IRequest<UpdateTableRequest>, UpdateTableRequest> 
+    internal class UpdateTableRequestMarshaller : IMarshaller<IRequest, UpdateTableRequest> 
     {
-        public IRequest<UpdateTableRequest> Marshall(UpdateTableRequest updateTableRequest) 
+        public IRequest Marshall(UpdateTableRequest updateTableRequest) 
         {
 
-            IRequest<UpdateTableRequest> request = new DefaultRequest<UpdateTableRequest>(updateTableRequest, "AmazonDynamoDB");
+            IRequest request = new DefaultRequest(updateTableRequest, "AmazonDynamoDB");
             string target = "DynamoDB_20111205.UpdateTable";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

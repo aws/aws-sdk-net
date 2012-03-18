@@ -25,8 +25,7 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlarms operation.
-    /// <para> Deletes all specified alarms. In the event of an error, no
-    /// alarms are deleted. </para>
+    /// <para> Deletes all specified alarms. In the event of an error, no alarms are deleted. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DeleteAlarms"/>
     public class DeleteAlarmsRequest : AmazonWebServiceRequest

@@ -20,7 +20,7 @@ namespace Amazon.SecurityToken
 {
 
     /// <summary>
-    /// Configuration for accessing  service
+    /// Configuration for accessing AWS Security Token Service service
     /// </summary>
     public class AmazonSecurityTokenServiceConfig : ClientConfig
     {
@@ -30,6 +30,7 @@ namespace Amazon.SecurityToken
         public AmazonSecurityTokenServiceConfig()
         {
             this.ServiceURL = "https://sts.amazonaws.com";
+            
         }
 
         /// <summary>

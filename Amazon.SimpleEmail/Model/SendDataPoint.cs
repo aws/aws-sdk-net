@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents sending statistics data. Each <c>SendDataPoint</c>
-    /// contains statistics for a 15-minute period of sending activity.</para>
+    /// <para>Represents sending statistics data. Each <c>SendDataPoint</c> contains statistics for a 15-minute period of sending activity.</para>
     /// </summary>
     public class SendDataPoint  
     {

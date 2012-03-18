@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The LoginProfile data type contains information about a login profile for a user.</para> <para> This data type is used as a response
-    /// element in the actions CreateLoginProfile and GetLoginProfile. </para>
+    /// <para>The LoginProfile data type contains the user name and password create date for a user.</para> <para> This data type is used as a
+    /// response element in the actions CreateLoginProfile and GetLoginProfile. </para>
     /// </summary>
     public class LoginProfile  
     {
@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? createDate;
 
         /// <summary>
-        /// The name of the user, which can be used for logins.
+        /// The name of the user, which can be used for signing into the AWS Management Console.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -72,7 +72,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The date when the login profile for the user was created.
+        /// The date when the password for the user was created.
         ///  
         /// </summary>
         public DateTime CreateDate

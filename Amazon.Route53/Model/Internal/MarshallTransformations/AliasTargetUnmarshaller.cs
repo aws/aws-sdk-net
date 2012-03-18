@@ -22,9 +22,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   AliasTarget Unmarshaller
      /// </summary>
-    internal class AliasTargetUnmarshaller : IUnmarshaller<AliasTarget, UnmarshallerContext> 
+    internal class AliasTargetUnmarshaller : IUnmarshaller<AliasTarget, XmlUnmarshallerContext> 
     {
-        public AliasTarget Unmarshall(UnmarshallerContext context) 
+        public AliasTarget Unmarshall(XmlUnmarshallerContext context) 
         {
             AliasTarget aliasTarget = new AliasTarget();
             int originalDepth = context.CurrentDepth;

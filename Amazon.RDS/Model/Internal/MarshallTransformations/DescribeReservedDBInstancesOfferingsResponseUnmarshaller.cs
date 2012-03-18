@@ -25,12 +25,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DescribeReservedDBInstancesOfferings operation
     /// </summary>
-    internal class DescribeReservedDBInstancesOfferingsResponseUnmarshaller : IResponseUnmarshaller<DescribeReservedDBInstancesOfferingsResponse, UnmarshallerContext> {
+    internal class DescribeReservedDBInstancesOfferingsResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DescribeReservedDBInstancesOfferingsResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeReservedDBInstancesOfferingsResponse response = new DescribeReservedDBInstancesOfferingsResponse();
-
             
             while (context.Read())
             {
@@ -51,9 +51,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

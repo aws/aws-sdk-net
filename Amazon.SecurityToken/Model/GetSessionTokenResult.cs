@@ -20,12 +20,18 @@ using System.IO;
 
 namespace Amazon.SecurityToken.Model
 {
-    /// <summary>Get Session Token Result
+    /// <summary>
+    /// <para>Contains the result of a successful invocation of the GetSessionToken action.</para>
     /// </summary>
     public class GetSessionTokenResult  
     {
         
         private Credentials credentials;
+
+        /// <summary>
+        /// The session credentials for API authentication.
+        ///  
+        /// </summary>
         public Credentials Credentials
         {
             get { return this.credentials; }

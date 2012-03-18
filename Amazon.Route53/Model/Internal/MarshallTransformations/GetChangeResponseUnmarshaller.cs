@@ -25,12 +25,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetChange operation
     /// </summary>
-    internal class GetChangeResponseUnmarshaller : IResponseUnmarshaller<GetChangeResponse, UnmarshallerContext> {
+    internal class GetChangeResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public GetChangeResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             GetChangeResponse response = new GetChangeResponse();
-
             
             while (context.Read())
             {
@@ -44,9 +44,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

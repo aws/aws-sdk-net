@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ProcessType Unmarshaller
      /// </summary>
-    internal class ProcessTypeUnmarshaller : IUnmarshaller<ProcessType, UnmarshallerContext> 
+    internal class ProcessTypeUnmarshaller : IUnmarshaller<ProcessType, XmlUnmarshallerContext> 
     {
-        public ProcessType Unmarshall(UnmarshallerContext context) 
+        public ProcessType Unmarshall(XmlUnmarshallerContext context) 
         {
             ProcessType processType = new ProcessType();
             int originalDepth = context.CurrentDepth;

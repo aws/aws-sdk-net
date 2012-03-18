@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePolicy operation.
-    /// <para>Deletes a policy created by PutScalingPolicy.</para>
+    /// <para>Deletes a policy created by PutScalingPolicy </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeletePolicy"/>
     public class DeletePolicyRequest : AmazonWebServiceRequest
@@ -75,7 +75,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The name or PolicyARN of the policy you want to delete.
+        /// The name or PolicyARN of the policy you want to delete
         ///  
         /// <para>
         /// <b>Constraints:</b>

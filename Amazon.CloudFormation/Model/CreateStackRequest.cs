@@ -40,6 +40,7 @@ namespace Amazon.CloudFormation.Model
         private int? timeoutInMinutes;
         private List<string> notificationARNs = new List<string>();
         private List<string> capabilities = new List<string>();
+        private string onFailure;
 
         /// <summary>
         /// The name associated with the stack. The name must be unique within your AWS account. <note> Must contain only alphanumeric characters (case
@@ -194,7 +195,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Boolean to enable or disable rollback on stack creation failures.<br></br> Default: <c>false</c>
+        /// Boolean to enable or disable rollback on stack creation failures. Default: <c>false</c>
         ///  
         /// </summary>
         public bool DisableRollback
@@ -316,12 +317,12 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// The list of capabilities that you want to allow in the stack. If your template contains IAM resources, you must specify the CAPABILITY_IAM
-        /// value for this parameter; otherwise, this action returns an InsufficientCapabilities error. IAM resources are the following: 
-        /// <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>, 
-        /// <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, 
-        /// <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>, 
-        /// <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>, and 
-        /// <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+        /// value for this parameter; otherwise, this action returns an InsufficientCapabilities error. IAM resources are the following: <a
+        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>, <a
+        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a
+        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>, <a
+        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>, and <a
+        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
         ///  
         /// </summary>
         public List<string> Capabilities
@@ -363,6 +364,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCapabilities()
         {
             return this.capabilities.Count > 0;       
+        }
+        public string OnFailure
+        {
+            get { return this.onFailure; }
+            set { this.onFailure = value; }
+        }
+
+        /// <summary>
+        /// Sets the OnFailure property
+        /// </summary>
+        /// <param name="onFailure">The value to set for the OnFailure property </param>
+        /// <returns>this instance</returns>
+        public CreateStackRequest WithOnFailure(string onFailure)
+        {
+            this.onFailure = onFailure;
+            return this;
+        }
+            
+
+        // Check to see if OnFailure property is set
+        internal bool IsSetOnFailure()
+        {
+            return this.onFailure != null;       
         }
     }
 }

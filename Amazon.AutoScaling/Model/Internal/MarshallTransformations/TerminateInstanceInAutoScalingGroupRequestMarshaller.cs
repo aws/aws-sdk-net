@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Terminate Instance In Auto Scaling Group Request Marshaller
     /// </summary>       
-    public class TerminateInstanceInAutoScalingGroupRequestMarshaller : IMarshaller<IRequest<TerminateInstanceInAutoScalingGroupRequest>, TerminateInstanceInAutoScalingGroupRequest>
+    public class TerminateInstanceInAutoScalingGroupRequestMarshaller : IMarshaller<IRequest, TerminateInstanceInAutoScalingGroupRequest>
     {
-        public IRequest<TerminateInstanceInAutoScalingGroupRequest> Marshall(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest)
+        public IRequest Marshall(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest)
         {
-            IRequest<TerminateInstanceInAutoScalingGroupRequest> request = new DefaultRequest<TerminateInstanceInAutoScalingGroupRequest>(terminateInstanceInAutoScalingGroupRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(terminateInstanceInAutoScalingGroupRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "TerminateInstanceInAutoScalingGroup");
             request.Parameters.Add("Version", "2011-01-01");
             if (terminateInstanceInAutoScalingGroupRequest != null && terminateInstanceInAutoScalingGroupRequest.IsSetInstanceId())

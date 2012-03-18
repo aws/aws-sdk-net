@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Create Or Update Tags Request Marshaller
     /// </summary>       
-    public class CreateOrUpdateTagsRequestMarshaller : IMarshaller<IRequest<CreateOrUpdateTagsRequest>, CreateOrUpdateTagsRequest>
+    public class CreateOrUpdateTagsRequestMarshaller : IMarshaller<IRequest, CreateOrUpdateTagsRequest>
     {
-        public IRequest<CreateOrUpdateTagsRequest> Marshall(CreateOrUpdateTagsRequest createOrUpdateTagsRequest)
+        public IRequest Marshall(CreateOrUpdateTagsRequest createOrUpdateTagsRequest)
         {
-            IRequest<CreateOrUpdateTagsRequest> request = new DefaultRequest<CreateOrUpdateTagsRequest>(createOrUpdateTagsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(createOrUpdateTagsRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "CreateOrUpdateTags");
             request.Parameters.Add("Version", "2011-01-01");
 

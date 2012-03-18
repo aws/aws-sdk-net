@@ -25,15 +25,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DeleteLoadBalancerListeners operation
     /// </summary>
-    internal class DeleteLoadBalancerListenersResponseUnmarshaller : IResponseUnmarshaller<DeleteLoadBalancerListenersResponse, UnmarshallerContext> {
+    internal class DeleteLoadBalancerListenersResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DeleteLoadBalancerListenersResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteLoadBalancerListenersResponse response = new DeleteLoadBalancerListenersResponse();
-
+            
             while (context.Read())
             {
-                if (context.IsStartElement)
+                if (context.IsStartElement)                
                 {
                     if(context.TestExpression("DeleteLoadBalancerListenersResult", 2))
                     {
@@ -46,12 +47,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     }
                 }
             }
-
+                 
+                        
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

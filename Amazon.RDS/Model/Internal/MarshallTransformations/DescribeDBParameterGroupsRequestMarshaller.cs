@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe D B Parameter Groups Request Marshaller
     /// </summary>       
-    public class DescribeDBParameterGroupsRequestMarshaller : IMarshaller<IRequest<DescribeDBParameterGroupsRequest>, DescribeDBParameterGroupsRequest>
+    public class DescribeDBParameterGroupsRequestMarshaller : IMarshaller<IRequest, DescribeDBParameterGroupsRequest>
     {
-        public IRequest<DescribeDBParameterGroupsRequest> Marshall(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest)
+        public IRequest Marshall(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest)
         {
-            IRequest<DescribeDBParameterGroupsRequest> request = new DefaultRequest<DescribeDBParameterGroupsRequest>(describeDBParameterGroupsRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(describeDBParameterGroupsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeDBParameterGroups");
             request.Parameters.Add("Version", "2012-01-15");
             if (describeDBParameterGroupsRequest != null && describeDBParameterGroupsRequest.IsSetDBParameterGroupName())

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-12-15
+ *  API Version: 2012-03-01
  */
 
 using System;
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
     ///For example, a filter value of \*amazon\?\\
     ///specifies the literal string *amazon?\.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-03-01/", IsNullable = false)]
     public class Filter
     {    
         private string nameField;

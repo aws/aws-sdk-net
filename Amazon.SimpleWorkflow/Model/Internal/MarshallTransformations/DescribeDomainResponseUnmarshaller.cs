@@ -24,9 +24,9 @@
       /// <summary>
       /// Response Unmarshaller for DescribeDomain operation
       /// </summary>
-      internal class DescribeDomainResponseUnmarshaller : IResponseUnmarshaller<DescribeDomainResponse, JsonUnmarshallerContext>
+      internal class DescribeDomainResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public DescribeDomainResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           DescribeDomainResponse response = new DescribeDomainResponse();
           
@@ -36,7 +36,7 @@
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

@@ -196,6 +196,11 @@ namespace Amazon.CloudFormation.Model
         {
             return this.creationTime.HasValue;       
         }
+
+        /// <summary>
+        /// The time the stack was last updated.
+        ///  
+        /// </summary>
         public DateTime LastUpdatedTime
         {
             get { return this.lastUpdatedTime ?? default(DateTime); }

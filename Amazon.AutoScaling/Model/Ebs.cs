@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
         private int? volumeSize;
 
         /// <summary>
-        /// The snapshot ID.
+        /// The Snapshot ID.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -71,7 +71,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The volume size, in gigabytes.
+        /// The volume size, in GigaBytes.
         ///  
         /// <para>
         /// <b>Constraints:</b>

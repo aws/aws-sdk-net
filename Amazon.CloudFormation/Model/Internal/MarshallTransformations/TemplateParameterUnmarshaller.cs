@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   TemplateParameter Unmarshaller
      /// </summary>
-    internal class TemplateParameterUnmarshaller : IUnmarshaller<TemplateParameter, UnmarshallerContext> 
+    internal class TemplateParameterUnmarshaller : IUnmarshaller<TemplateParameter, XmlUnmarshallerContext> 
     {
-        public TemplateParameter Unmarshall(UnmarshallerContext context) 
+        public TemplateParameter Unmarshall(XmlUnmarshallerContext context) 
         {
             TemplateParameter templateParameter = new TemplateParameter();
             int originalDepth = context.CurrentDepth;
@@ -35,25 +35,25 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("ParameterKey", targetDepth))
                     {
                         templateParameter.ParameterKey = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("DefaultValue", targetDepth))
                     {
                         templateParameter.DefaultValue = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("NoEcho", targetDepth))
                     {
                         templateParameter.NoEcho = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Description", targetDepth))
                     {
                         templateParameter.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -66,6 +66,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return templateParameter;
                 }
             }
+                        
+
 
             return templateParameter;
         }

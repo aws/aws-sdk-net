@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Modify D B Subnet Group Request Marshaller
     /// </summary>       
-    public class ModifyDBSubnetGroupRequestMarshaller : IMarshaller<IRequest<ModifyDBSubnetGroupRequest>, ModifyDBSubnetGroupRequest>
+    public class ModifyDBSubnetGroupRequestMarshaller : IMarshaller<IRequest, ModifyDBSubnetGroupRequest>
     {
-        public IRequest<ModifyDBSubnetGroupRequest> Marshall(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest)
+        public IRequest Marshall(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest)
         {
-            IRequest<ModifyDBSubnetGroupRequest> request = new DefaultRequest<ModifyDBSubnetGroupRequest>(modifyDBSubnetGroupRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(modifyDBSubnetGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "ModifyDBSubnetGroup");
             request.Parameters.Add("Version", "2012-01-15");
             if (modifyDBSubnetGroupRequest != null && modifyDBSubnetGroupRequest.IsSetDBSubnetGroupName())

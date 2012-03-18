@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Set Load Balancer Listener S S L Certificate Request Marshaller
     /// </summary>       
-    public class SetLoadBalancerListenerSSLCertificateRequestMarshaller : IMarshaller<IRequest<SetLoadBalancerListenerSSLCertificateRequest>, SetLoadBalancerListenerSSLCertificateRequest>
+    public class SetLoadBalancerListenerSSLCertificateRequestMarshaller : IMarshaller<IRequest, SetLoadBalancerListenerSSLCertificateRequest>
     {
-        public IRequest<SetLoadBalancerListenerSSLCertificateRequest> Marshall(SetLoadBalancerListenerSSLCertificateRequest setLoadBalancerListenerSSLCertificateRequest)
+        public IRequest Marshall(SetLoadBalancerListenerSSLCertificateRequest setLoadBalancerListenerSSLCertificateRequest)
         {
-            IRequest<SetLoadBalancerListenerSSLCertificateRequest> request = new DefaultRequest<SetLoadBalancerListenerSSLCertificateRequest>(setLoadBalancerListenerSSLCertificateRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(setLoadBalancerListenerSSLCertificateRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "SetLoadBalancerListenerSSLCertificate");
             request.Parameters.Add("Version", "2011-11-15");
             if (setLoadBalancerListenerSSLCertificateRequest != null && setLoadBalancerListenerSSLCertificateRequest.IsSetLoadBalancerName())

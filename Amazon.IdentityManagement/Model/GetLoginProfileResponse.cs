@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public GetLoginProfileResult GetLoginProfileResult
         {
-            get { return this.getLoginProfileResult; }
+            get 
+            {
+                if(this.getLoginProfileResult == null)
+                {
+                    this.getLoginProfileResult = new GetLoginProfileResult();
+                }
+
+                return this.getLoginProfileResult; 
+            }
             set { this.getLoginProfileResult = value; }
         }
     }

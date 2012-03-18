@@ -24,16 +24,16 @@
       /// <summary>
       /// Response Unmarshaller for RegisterWorkflowType operation
       /// </summary>
-      internal class RegisterWorkflowTypeResponseUnmarshaller : IResponseUnmarshaller<RegisterWorkflowTypeResponse, JsonUnmarshallerContext>
+      internal class RegisterWorkflowTypeResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public RegisterWorkflowTypeResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           RegisterWorkflowTypeResponse response = new RegisterWorkflowTypeResponse();
           
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

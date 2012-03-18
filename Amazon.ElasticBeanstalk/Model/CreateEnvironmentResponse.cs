@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public CreateEnvironmentResult CreateEnvironmentResult
         {
-            get { return this.createEnvironmentResult; }
+            get 
+            {
+                if(this.createEnvironmentResult == null)
+                {
+                    this.createEnvironmentResult = new CreateEnvironmentResult();
+                }
+
+                return this.createEnvironmentResult; 
+            }
             set { this.createEnvironmentResult = value; }
         }
     }

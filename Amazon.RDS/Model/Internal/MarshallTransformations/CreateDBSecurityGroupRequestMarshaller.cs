@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Create D B Security Group Request Marshaller
     /// </summary>       
-    public class CreateDBSecurityGroupRequestMarshaller : IMarshaller<IRequest<CreateDBSecurityGroupRequest>, CreateDBSecurityGroupRequest>
+    public class CreateDBSecurityGroupRequestMarshaller : IMarshaller<IRequest, CreateDBSecurityGroupRequest>
     {
-        public IRequest<CreateDBSecurityGroupRequest> Marshall(CreateDBSecurityGroupRequest createDBSecurityGroupRequest)
+        public IRequest Marshall(CreateDBSecurityGroupRequest createDBSecurityGroupRequest)
         {
-            IRequest<CreateDBSecurityGroupRequest> request = new DefaultRequest<CreateDBSecurityGroupRequest>(createDBSecurityGroupRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(createDBSecurityGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBSecurityGroup");
             request.Parameters.Add("Version", "2012-01-15");
             if (createDBSecurityGroupRequest != null && createDBSecurityGroupRequest.IsSetDBSecurityGroupName())

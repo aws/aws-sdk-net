@@ -25,30 +25,24 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMetricStatistics operation.
-    /// <para> Gets statistics for the specified metric. </para>
-    /// <para><b>NOTE:</b> The maximum number of data points returned from a
-    /// single GetMetricStatistics request is 1,440. If a request is made that
-    /// generates more than 1,440 data points, Amazon CloudWatch returns an
-    /// error. In such a case, alter the request by narrowing the specified
-    /// time range or increasing the specified period. Alternatively, make
-    /// multiple requests across adjacent time ranges. </para> <para> Amazon
-    /// CloudWatch aggregates data points based on the length of the
-    /// <c>period</c> that you specify. For example, if you request statistics
-    /// with a one-minute granularity, Amazon CloudWatch aggregates data
-    /// points with time stamps that fall within the same one-minute period.
-    /// In such a case, the data points queried can greatly outnumber the data
-    /// points returned. </para> <para><b>NOTE:</b> The maximum number of data
-    /// points that can be queried is 50,850; whereas the maximum number of
-    /// data points returned is 1,440. </para> <para> The following examples
-    /// show various statistics allowed by the data point query maximum of
-    /// 50,850 when you call <c>GetMetricStatistics</c> on Amazon EC2
-    /// instances with detailed (one-minute) monitoring enabled: </para>
+    /// <para> Gets statistics for the specified metric. </para> <para><b>NOTE:</b> The maximum number of data points returned from a single
+    /// GetMetricStatistics request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error.
+    /// In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple
+    /// requests across adjacent time ranges. </para> <para> Amazon CloudWatch aggregates data points based on the length of the <c>period</c> that
+    /// you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps
+    /// that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </para>
+    /// <para><b>NOTE:</b> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is
+    /// 1,440. </para> <para> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call
+    /// <c>GetMetricStatistics</c> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </para>
     /// <ul>
     /// <li>Statistics for up to 400 instances for a span of one hour</li>
     /// <li>Statistics for up to 35 instances over a span of 24 hours</li>
     /// <li>Statistics for up to 2 instances over a span of 2 weeks</li>
     /// 
     /// </ul>
+    /// <para> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to
+    /// Cloudwatch, go to CloudWatch Support for AWS Products in the <i>Amazon CloudWatch Developer Guide</i> .
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.GetMetricStatistics"/>
     public class GetMetricStatisticsRequest : AmazonWebServiceRequest
@@ -293,7 +287,9 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The metric statistics to return.
+        /// The metric statistics to return. For information about specific statistics returned by GetMetricStatistics, go to <a
+        /// href="http://docs.amazonwebservices.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a>
+        /// in the <i>Amazon CloudWatch Developer Guide</i>. Valid Values: <c>Average | Sum | SampleCount | Maximum | Minimum</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>

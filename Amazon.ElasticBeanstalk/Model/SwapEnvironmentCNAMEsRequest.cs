@@ -25,7 +25,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the SwapEnvironmentCNAMEs operation.
-    /// 
+    /// <para> Swaps the CNAMEs of two environments. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.SwapEnvironmentCNAMEs"/>
     public class SwapEnvironmentCNAMEsRequest : AmazonWebServiceRequest
@@ -34,6 +34,12 @@ namespace Amazon.ElasticBeanstalk.Model
         private string sourceEnvironmentName;
         private string destinationEnvironmentId;
         private string destinationEnvironmentName;
+
+        /// <summary>
+        /// The ID of the source environment. Condition: You must specify at least the <c>SourceEnvironmentID</c> or the <c>SourceEnvironmentName</c>.
+        /// You may also specify both. If you specify the <c>SourceEnvironmentId</c>, you must specify the <c>DestinationEnvironmentId</c>.
+        ///  
+        /// </summary>
         public string SourceEnvironmentId
         {
             get { return this.sourceEnvironmentId; }
@@ -57,6 +63,21 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this.sourceEnvironmentId != null;       
         }
+
+        /// <summary>
+        /// The name of the source environment. Condition: You must specify at least the <c>SourceEnvironmentID</c> or the <c>SourceEnvironmentName</c>.
+        /// You may also specify both. If you specify the <c>SourceEnvironmentName</c>, you must specify the <c>DestinationEnvironmentName</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>4 - 23</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string SourceEnvironmentName
         {
             get { return this.sourceEnvironmentName; }
@@ -80,6 +101,13 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this.sourceEnvironmentName != null;       
         }
+
+        /// <summary>
+        /// The ID of the destination environment. Condition: You must specify at least the <c>DestinationEnvironmentID</c> or the
+        /// <c>DestinationEnvironmentName</c>. You may also specify both. You must specify the <c>SourceEnvironmentId</c> with the
+        /// <c>DestinationEnvironmentId</c>.
+        ///  
+        /// </summary>
         public string DestinationEnvironmentId
         {
             get { return this.destinationEnvironmentId; }
@@ -103,6 +131,22 @@ namespace Amazon.ElasticBeanstalk.Model
         {
             return this.destinationEnvironmentId != null;       
         }
+
+        /// <summary>
+        /// The name of the destination environment. Condition: You must specify at least the <c>DestinationEnvironmentID</c> or the
+        /// <c>DestinationEnvironmentName</c>. You may also specify both. You must specify the <c>SourceEnvironmentName</c> with the
+        /// <c>DestinationEnvironmentName</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>4 - 23</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string DestinationEnvironmentName
         {
             get { return this.destinationEnvironmentName; }

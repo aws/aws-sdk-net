@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   StepExecutionStatusDetail Unmarshaller
      /// </summary>
-    internal class StepExecutionStatusDetailUnmarshaller : IUnmarshaller<StepExecutionStatusDetail, UnmarshallerContext> 
+    internal class StepExecutionStatusDetailUnmarshaller : IUnmarshaller<StepExecutionStatusDetail, XmlUnmarshallerContext> 
     {
-        public StepExecutionStatusDetail Unmarshall(UnmarshallerContext context) 
+        public StepExecutionStatusDetail Unmarshall(XmlUnmarshallerContext context) 
         {
             StepExecutionStatusDetail stepExecutionStatusDetail = new StepExecutionStatusDetail();
             int originalDepth = context.CurrentDepth;
@@ -35,31 +35,31 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("State", targetDepth))
                     {
                         stepExecutionStatusDetail.State = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("CreationDateTime", targetDepth))
                     {
                         stepExecutionStatusDetail.CreationDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StartDateTime", targetDepth))
                     {
                         stepExecutionStatusDetail.StartDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("EndDateTime", targetDepth))
                     {
                         stepExecutionStatusDetail.EndDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("LastStateChangeReason", targetDepth))
                     {
                         stepExecutionStatusDetail.LastStateChangeReason = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -72,6 +72,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return stepExecutionStatusDetail;
                 }
             }
+                        
+
 
             return stepExecutionStatusDetail;
         }

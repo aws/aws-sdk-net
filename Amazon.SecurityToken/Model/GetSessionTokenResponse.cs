@@ -30,11 +30,19 @@ namespace Amazon.SecurityToken.Model
 
         /// <summary>
         /// Gets and sets the GetSessionTokenResult property.
-        /// 
+        /// Contains the result of a successful invocation of the GetSessionToken action.
         /// </summary>
         public GetSessionTokenResult GetSessionTokenResult
         {
-            get { return this.getSessionTokenResult; }
+            get 
+            {
+                if(this.getSessionTokenResult == null)
+                {
+                    this.getSessionTokenResult = new GetSessionTokenResult();
+                }
+
+                return this.getSessionTokenResult; 
+            }
             set { this.getSessionTokenResult = value; }
         }
     }

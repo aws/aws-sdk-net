@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CreateAppCookieStickinessPolicyResult Unmarshaller
      /// </summary>
-    internal class CreateAppCookieStickinessPolicyResultUnmarshaller : IUnmarshaller<CreateAppCookieStickinessPolicyResult, UnmarshallerContext> 
+    internal class CreateAppCookieStickinessPolicyResultUnmarshaller : IUnmarshaller<CreateAppCookieStickinessPolicyResult, XmlUnmarshallerContext> 
     {
-        public CreateAppCookieStickinessPolicyResult Unmarshall(UnmarshallerContext context) 
+        public CreateAppCookieStickinessPolicyResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateAppCookieStickinessPolicyResult createAppCookieStickinessPolicyResult = new CreateAppCookieStickinessPolicyResult();
             int originalDepth = context.CurrentDepth;
@@ -42,6 +42,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return createAppCookieStickinessPolicyResult;
                 }
             }
+                        
+
 
             return createAppCookieStickinessPolicyResult;
         }

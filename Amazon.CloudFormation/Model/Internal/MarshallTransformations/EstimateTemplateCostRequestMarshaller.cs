@@ -28,11 +28,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Estimate Template Cost Request Marshaller
     /// </summary>       
-    public class EstimateTemplateCostRequestMarshaller : IMarshaller<IRequest<EstimateTemplateCostRequest>, EstimateTemplateCostRequest>
+    public class EstimateTemplateCostRequestMarshaller : IMarshaller<IRequest, EstimateTemplateCostRequest>
     {
-        public IRequest<EstimateTemplateCostRequest> Marshall(EstimateTemplateCostRequest estimateTemplateCostRequest)
+        public IRequest Marshall(EstimateTemplateCostRequest estimateTemplateCostRequest)
         {
-            IRequest<EstimateTemplateCostRequest> request = new DefaultRequest<EstimateTemplateCostRequest>(estimateTemplateCostRequest, "AmazonCloudFormation");
+            IRequest request = new DefaultRequest(estimateTemplateCostRequest, "AmazonCloudFormation");
             request.Parameters.Add("Action", "EstimateTemplateCost");
             request.Parameters.Add("Version", "2010-05-15");
             if (estimateTemplateCostRequest != null && estimateTemplateCostRequest.IsSetTemplateBody())

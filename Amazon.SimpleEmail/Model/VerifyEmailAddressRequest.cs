@@ -25,8 +25,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyEmailAddress operation.
-    /// <para>Verifies an email address. This action causes a confirmation
-    /// email message to be sent to the specified address.</para>
+    /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyEmailAddress"/>
     public class VerifyEmailAddressRequest : AmazonWebServiceRequest

@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   EnabledMetric Unmarshaller
      /// </summary>
-    internal class EnabledMetricUnmarshaller : IUnmarshaller<EnabledMetric, UnmarshallerContext> 
+    internal class EnabledMetricUnmarshaller : IUnmarshaller<EnabledMetric, XmlUnmarshallerContext> 
     {
-        public EnabledMetric Unmarshall(UnmarshallerContext context) 
+        public EnabledMetric Unmarshall(XmlUnmarshallerContext context) 
         {
             EnabledMetric enabledMetric = new EnabledMetric();
             int originalDepth = context.CurrentDepth;

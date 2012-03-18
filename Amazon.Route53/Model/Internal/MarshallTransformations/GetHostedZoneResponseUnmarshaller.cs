@@ -25,12 +25,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetHostedZone operation
     /// </summary>
-    internal class GetHostedZoneResponseUnmarshaller : IResponseUnmarshaller<GetHostedZoneResponse, UnmarshallerContext> {
+    internal class GetHostedZoneResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public GetHostedZoneResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             GetHostedZoneResponse response = new GetHostedZoneResponse();
-
             
             while (context.Read())
             {
@@ -44,9 +44,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         
             return response;
         }
+
         
-        
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

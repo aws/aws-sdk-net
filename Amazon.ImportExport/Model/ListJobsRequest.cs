@@ -25,11 +25,9 @@ namespace Amazon.ImportExport.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
-    /// <para> This operation returns the jobs associated with the requester.
-    /// AWS Import/Export lists the jobs in reverse chronological order based
-    /// on the date of creation. For example if Job Test1 was created
-    /// 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation
-    /// would return Test2 followed by Test1. </para>
+    /// <para> This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based
+    /// on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return
+    /// Test2 followed by Test1. </para>
     /// </summary>
     /// <seealso cref="Amazon.ImportExport.AmazonImportExport.ListJobs"/>
     public class ListJobsRequest : AmazonWebServiceRequest
@@ -38,10 +36,8 @@ namespace Amazon.ImportExport.Model
         private string marker;
 
         /// <summary>
-        /// Sets the maximum number of jobs returned in the response. If there are
-        /// additional jobs that were not returned because MaxJobs was exceeded,
-        /// the response contains <IsTruncated>true</IsTruncated>. To return the
-        /// additional jobs, see Marker.
+        /// Sets the maximum number of jobs returned in the response. If there are additional jobs that were not returned because MaxJobs was exceeded,
+        /// the response contains <IsTruncated>true</IsTruncated>. To return the additional jobs, see Marker.
         ///  
         /// </summary>
         public int MaxJobs
@@ -61,6 +57,7 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if MaxJobs property is set
         internal bool IsSetMaxJobs()
         {
@@ -68,8 +65,7 @@ namespace Amazon.ImportExport.Model
         }
 
         /// <summary>
-        /// Specifies the JOBID to start after when listing the jobs created with
-        /// your account. AWS Import/Export lists your jobs in reverse
+        /// Specifies the JOBID to start after when listing the jobs created with your account. AWS Import/Export lists your jobs in reverse
         /// chronological order. See MaxJobs.
         ///  
         /// </summary>
@@ -90,10 +86,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;         
+            return this.marker != null;       
         }
     }
 }

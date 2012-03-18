@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>LaunchConfigurationsType</c> data type. </para>
+    /// <para> The LaunchConfigurationsType data type. </para>
     /// </summary>
     public class DescribeLaunchConfigurationsResult  
     {

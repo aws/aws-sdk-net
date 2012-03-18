@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents the message to be sent, composed of a subject and a
-    /// body.</para>
+    /// <para>Represents the message to be sent, composed of a subject and a body.</para>
     /// </summary>
     public class Message  
     {

@@ -25,9 +25,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DeleteDBSecurityGroup operation
     /// </summary>
-    internal class DeleteDBSecurityGroupResponseUnmarshaller : IResponseUnmarshaller<DeleteDBSecurityGroupResponse, UnmarshallerContext> {
+    internal class DeleteDBSecurityGroupResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DeleteDBSecurityGroupResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteDBSecurityGroupResponse response = new DeleteDBSecurityGroupResponse();
             
@@ -48,7 +49,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

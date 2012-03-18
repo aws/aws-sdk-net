@@ -160,7 +160,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// The verison of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions currently supported by Amazon
+        /// The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions currently supported by Amazon
         /// ElasticMapReduce, go to <a
         /// href="http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
         /// Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>

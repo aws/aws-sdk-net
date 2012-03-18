@@ -22,9 +22,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PlacementType Unmarshaller
      /// </summary>
-    internal class PlacementTypeUnmarshaller : IUnmarshaller<PlacementType, UnmarshallerContext> 
+    internal class PlacementTypeUnmarshaller : IUnmarshaller<PlacementType, XmlUnmarshallerContext> 
     {
-        public PlacementType Unmarshall(UnmarshallerContext context) 
+        public PlacementType Unmarshall(XmlUnmarshallerContext context) 
         {
             PlacementType placementType = new PlacementType();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("AvailabilityZone", targetDepth))
                     {
                         placementType.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -48,6 +48,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     return placementType;
                 }
             }
+                        
+
 
             return placementType;
         }

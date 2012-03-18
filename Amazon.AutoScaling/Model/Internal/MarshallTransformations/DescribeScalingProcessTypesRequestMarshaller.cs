@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Scaling Process Types Request Marshaller
     /// </summary>       
-    public class DescribeScalingProcessTypesRequestMarshaller : IMarshaller<IRequest<DescribeScalingProcessTypesRequest>, DescribeScalingProcessTypesRequest>
+    public class DescribeScalingProcessTypesRequestMarshaller : IMarshaller<IRequest, DescribeScalingProcessTypesRequest>
     {
-        public IRequest<DescribeScalingProcessTypesRequest> Marshall(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest)
+        public IRequest Marshall(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest)
         {
-            IRequest<DescribeScalingProcessTypesRequest> request = new DefaultRequest<DescribeScalingProcessTypesRequest>(describeScalingProcessTypesRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(describeScalingProcessTypesRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribeScalingProcessTypes");
             request.Parameters.Add("Version", "2011-01-01");
 

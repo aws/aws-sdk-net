@@ -22,9 +22,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   HostedZoneConfig Unmarshaller
      /// </summary>
-    internal class HostedZoneConfigUnmarshaller : IUnmarshaller<HostedZoneConfig, UnmarshallerContext> 
+    internal class HostedZoneConfigUnmarshaller : IUnmarshaller<HostedZoneConfig, XmlUnmarshallerContext> 
     {
-        public HostedZoneConfig Unmarshall(UnmarshallerContext context) 
+        public HostedZoneConfig Unmarshall(XmlUnmarshallerContext context) 
         {
             HostedZoneConfig hostedZoneConfig = new HostedZoneConfig();
             int originalDepth = context.CurrentDepth;

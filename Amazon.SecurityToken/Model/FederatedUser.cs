@@ -20,13 +20,32 @@ using System.IO;
 
 namespace Amazon.SecurityToken.Model
 {
-    /// <summary>Federated User
+    /// <summary>
+    /// <para>Identifiers for the federated user associated with the credentials.</para>
     /// </summary>
     public class FederatedUser  
     {
         
         private string federatedUserId;
         private string arn;
+
+        /// <summary>
+        /// The string identifying the federated user associated with the credentials, similar to the UserId of an IAM user.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>2 - 96</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\w+=,.@-\:]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string FederatedUserId
         {
             get { return this.federatedUserId; }
@@ -50,6 +69,22 @@ namespace Amazon.SecurityToken.Model
         {
             return this.federatedUserId != null;       
         }
+
+        /// <summary>
+        /// The ARN specifying the federated user associated with the credentials. For more information about ARNs and how to use them in policies, see
+        /// <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>20 - 2048</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string Arn
         {
             get { return this.arn; }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-12-15
+ *  API Version: 2012-03-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Request to create a Spot Instance request.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-03-01/", IsNullable = false)]
     public class RequestSpotInstancesRequest
     {    
         private string spotPriceField;
@@ -108,7 +108,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the Type property.
         /// The instance type. Valid values:
-        /// m1.small|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge.
+        /// m1.small|m1.medium|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge.
         /// Default - m1.small.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
@@ -122,7 +122,7 @@ namespace Amazon.EC2.Model
         /// Sets the Type property
         /// </summary>
         /// <param name="type">The instance type. Valid values:
-        /// m1.small|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge.
+        /// m1.small|m1.medium|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge.
         /// Default - m1.small.</param>
         /// <returns>this instance</returns>
         public RequestSpotInstancesRequest WithType(string type)

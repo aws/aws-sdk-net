@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   AdjustmentType Unmarshaller
      /// </summary>
-    internal class AdjustmentTypeUnmarshaller : IUnmarshaller<AdjustmentType, UnmarshallerContext> 
+    internal class AdjustmentTypeUnmarshaller : IUnmarshaller<AdjustmentType, XmlUnmarshallerContext> 
     {
-        public AdjustmentType Unmarshall(UnmarshallerContext context) 
+        public AdjustmentType Unmarshall(XmlUnmarshallerContext context) 
         {
             AdjustmentType adjustmentType = new AdjustmentType();
             int originalDepth = context.CurrentDepth;

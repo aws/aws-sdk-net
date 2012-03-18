@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PutScalingPolicyResult Unmarshaller
      /// </summary>
-    internal class PutScalingPolicyResultUnmarshaller : IUnmarshaller<PutScalingPolicyResult, UnmarshallerContext> 
+    internal class PutScalingPolicyResultUnmarshaller : IUnmarshaller<PutScalingPolicyResult, XmlUnmarshallerContext> 
     {
-        public PutScalingPolicyResult Unmarshall(UnmarshallerContext context) 
+        public PutScalingPolicyResult Unmarshall(XmlUnmarshallerContext context) 
         {
             PutScalingPolicyResult putScalingPolicyResult = new PutScalingPolicyResult();
             int originalDepth = context.CurrentDepth;

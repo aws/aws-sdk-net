@@ -35,7 +35,15 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         public GetSendStatisticsResult GetSendStatisticsResult
         {
-            get { return this.getSendStatisticsResult; }
+            get 
+            {
+                if(this.getSendStatisticsResult == null)
+                {
+                    this.getSendStatisticsResult = new GetSendStatisticsResult();
+                }
+
+                return this.getSendStatisticsResult; 
+            }
             set { this.getSendStatisticsResult = value; }
         }
     }

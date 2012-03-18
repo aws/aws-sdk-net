@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Launch Configurations Request Marshaller
     /// </summary>       
-    public class DescribeLaunchConfigurationsRequestMarshaller : IMarshaller<IRequest<DescribeLaunchConfigurationsRequest>, DescribeLaunchConfigurationsRequest>
+    public class DescribeLaunchConfigurationsRequestMarshaller : IMarshaller<IRequest, DescribeLaunchConfigurationsRequest>
     {
-        public IRequest<DescribeLaunchConfigurationsRequest> Marshall(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest)
+        public IRequest Marshall(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest)
         {
-            IRequest<DescribeLaunchConfigurationsRequest> request = new DefaultRequest<DescribeLaunchConfigurationsRequest>(describeLaunchConfigurationsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(describeLaunchConfigurationsRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "DescribeLaunchConfigurations");
             request.Parameters.Add("Version", "2011-01-01");
             if (describeLaunchConfigurationsRequest != null)

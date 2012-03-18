@@ -25,9 +25,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for SetInstanceHealth operation
     /// </summary>
-    internal class SetInstanceHealthResponseUnmarshaller : IResponseUnmarshaller<SetInstanceHealthResponse, UnmarshallerContext> {
+    internal class SetInstanceHealthResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public SetInstanceHealthResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             SetInstanceHealthResponse response = new SetInstanceHealthResponse();
             
@@ -48,7 +49,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

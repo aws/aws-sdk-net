@@ -24,16 +24,16 @@
       /// <summary>
       /// Response Unmarshaller for RegisterDomain operation
       /// </summary>
-      internal class RegisterDomainResponseUnmarshaller : IResponseUnmarshaller<RegisterDomainResponse, JsonUnmarshallerContext>
+      internal class RegisterDomainResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public RegisterDomainResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           RegisterDomainResponse response = new RegisterDomainResponse();
           
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

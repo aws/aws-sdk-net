@@ -80,7 +80,8 @@ namespace Amazon.DynamoDB.Model
         /// <em>less than</em>.</li> <li><c>GE</c> for <em>greater than or equal to</em>.</li> <li><c>GT</c> for <em>greater than</em>.</li>
         /// <li><c>BETWEEN</c> for <em>between</em>.</li> <li><c>NOT_NULL</c> for <em>exists</em>.</li> <li><c>NULL</c> for <em>not exists</em>.</li>
         /// <li><c>CONTAINS</c> for substring or value in a set.</li> <li><c>NOT_CONTAINS</c> for absence of a substring or absence of a value in a
-        /// set.</li> <li><c>BEGINS_WITH</c> for a substring prefix.</li> </ul>
+        /// set.</li> <li><c>BEGINS_WITH</c> for a substring prefix.</li> </ul> Scan operations support all available comparison operators. Query
+        /// operations support a subset of the available comparison operators: EQ, LE, LT, GE, GT, BETWEEN, and BEGINS_WITH.
         ///  
         /// <para>
         /// <b>Constraints:</b>

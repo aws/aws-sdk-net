@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   TerminateInstanceInAutoScalingGroupResult Unmarshaller
      /// </summary>
-    internal class TerminateInstanceInAutoScalingGroupResultUnmarshaller : IUnmarshaller<TerminateInstanceInAutoScalingGroupResult, UnmarshallerContext> 
+    internal class TerminateInstanceInAutoScalingGroupResultUnmarshaller : IUnmarshaller<TerminateInstanceInAutoScalingGroupResult, XmlUnmarshallerContext> 
     {
-        public TerminateInstanceInAutoScalingGroupResult Unmarshall(UnmarshallerContext context) 
+        public TerminateInstanceInAutoScalingGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
             TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroupResult = new TerminateInstanceInAutoScalingGroupResult();
             int originalDepth = context.CurrentDepth;

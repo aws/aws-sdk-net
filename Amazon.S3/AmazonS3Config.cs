@@ -22,6 +22,7 @@
 
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using Amazon.Util;
 
 namespace Amazon.S3
 {
@@ -42,6 +43,7 @@ namespace Amazon.S3
         private Protocol protocol = Protocol.HTTPS;
         private bool fUseSecureString = true;
         private int bufferSize = S3Constants.DefaultBufferSize;
+        private int? connectionLimit;
 
         #endregion
 
@@ -350,6 +352,17 @@ namespace Amazon.S3
         {
             get { return this.bufferSize; }
             set { this.bufferSize = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the connection limit set on the ServicePoint for the WebRequest.
+        /// Default value is 50 connections unless ServicePointManager.DefaultConnectionLimit is set in 
+        /// which case ServicePointManager.DefaultConnectionLimit will be used as the default.
+        /// </summary>
+        public int ConnectionLimit
+        {
+            get { return AWSSDKUtils.GetConnectionLimit(this.connectionLimit); }
+            set { this.connectionLimit = value; }
         }
     }
 }

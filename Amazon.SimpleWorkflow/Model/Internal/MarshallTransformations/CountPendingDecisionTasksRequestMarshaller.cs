@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Count Pending Decision Tasks Request Marshaller
     /// </summary>       
-    internal class CountPendingDecisionTasksRequestMarshaller : IMarshaller<IRequest<CountPendingDecisionTasksRequest>, CountPendingDecisionTasksRequest> 
+    internal class CountPendingDecisionTasksRequestMarshaller : IMarshaller<IRequest, CountPendingDecisionTasksRequest> 
     {
-        public IRequest<CountPendingDecisionTasksRequest> Marshall(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest) 
+        public IRequest Marshall(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest) 
         {
 
-            IRequest<CountPendingDecisionTasksRequest> request = new DefaultRequest<CountPendingDecisionTasksRequest>(countPendingDecisionTasksRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(countPendingDecisionTasksRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.CountPendingDecisionTasks";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

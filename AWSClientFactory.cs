@@ -1442,7 +1442,7 @@ namespace Amazon
             )
         {
             return new AmazonSecurityTokenServiceClient(awsAccessKey, awsSecretAccessKey, config);
-        }
+        }  
 
         /// <summary>
         /// Create a client for the Amazon SimpleWorkflow Service with the credentials defined in the App.config.
@@ -1521,7 +1521,7 @@ namespace Amazon
         {
             return new AmazonSimpleWorkflowClient(awsAccessKey, awsSecretAccessKey, config);
         }
-		
+
         /// <summary>
         /// Create a client for the Amazon DynamoDB Service with the credentials defined in the App.config.
         /// 

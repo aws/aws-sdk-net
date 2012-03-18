@@ -34,7 +34,15 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         public SendRawEmailResult SendRawEmailResult
         {
-            get { return this.sendRawEmailResult; }
+            get 
+            {
+                if(this.sendRawEmailResult == null)
+                {
+                    this.sendRawEmailResult = new SendRawEmailResult();
+                }
+
+                return this.sendRawEmailResult; 
+            }
             set { this.sendRawEmailResult = value; }
         }
     }

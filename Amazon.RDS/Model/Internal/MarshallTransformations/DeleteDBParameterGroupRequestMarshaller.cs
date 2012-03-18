@@ -28,11 +28,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Delete D B Parameter Group Request Marshaller
     /// </summary>       
-    public class DeleteDBParameterGroupRequestMarshaller : IMarshaller<IRequest<DeleteDBParameterGroupRequest>, DeleteDBParameterGroupRequest>
+    public class DeleteDBParameterGroupRequestMarshaller : IMarshaller<IRequest, DeleteDBParameterGroupRequest>
     {
-        public IRequest<DeleteDBParameterGroupRequest> Marshall(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest)
+        public IRequest Marshall(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest)
         {
-            IRequest<DeleteDBParameterGroupRequest> request = new DefaultRequest<DeleteDBParameterGroupRequest>(deleteDBParameterGroupRequest, "AmazonRDS");
+            IRequest request = new DefaultRequest(deleteDBParameterGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteDBParameterGroup");
             request.Parameters.Add("Version", "2012-01-15");
             if (deleteDBParameterGroupRequest != null && deleteDBParameterGroupRequest.IsSetDBParameterGroupName())

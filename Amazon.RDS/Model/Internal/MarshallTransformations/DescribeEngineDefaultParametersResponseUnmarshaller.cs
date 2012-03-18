@@ -25,9 +25,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DescribeEngineDefaultParameters operation
     /// </summary>
-    internal class DescribeEngineDefaultParametersResponseUnmarshaller : IResponseUnmarshaller<DescribeEngineDefaultParametersResponse, UnmarshallerContext> {
+    internal class DescribeEngineDefaultParametersResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DescribeEngineDefaultParametersResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeEngineDefaultParametersResponse response = new DescribeEngineDefaultParametersResponse();
             
@@ -54,7 +55,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

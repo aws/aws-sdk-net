@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Set Instance Health Request Marshaller
     /// </summary>       
-    public class SetInstanceHealthRequestMarshaller : IMarshaller<IRequest<SetInstanceHealthRequest>, SetInstanceHealthRequest>
+    public class SetInstanceHealthRequestMarshaller : IMarshaller<IRequest, SetInstanceHealthRequest>
     {
-        public IRequest<SetInstanceHealthRequest> Marshall(SetInstanceHealthRequest setInstanceHealthRequest)
+        public IRequest Marshall(SetInstanceHealthRequest setInstanceHealthRequest)
         {
-            IRequest<SetInstanceHealthRequest> request = new DefaultRequest<SetInstanceHealthRequest>(setInstanceHealthRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(setInstanceHealthRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "SetInstanceHealth");
             request.Parameters.Add("Version", "2011-01-01");
             if (setInstanceHealthRequest != null && setInstanceHealthRequest.IsSetInstanceId())

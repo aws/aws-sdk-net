@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ListStackResourcesResult Unmarshaller
      /// </summary>
-    internal class ListStackResourcesResultUnmarshaller : IUnmarshaller<ListStackResourcesResult, UnmarshallerContext> 
+    internal class ListStackResourcesResultUnmarshaller : IUnmarshaller<ListStackResourcesResult, XmlUnmarshallerContext> 
     {
-        public ListStackResourcesResult Unmarshall(UnmarshallerContext context) 
+        public ListStackResourcesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ListStackResourcesResult listStackResourcesResult = new ListStackResourcesResult();
             int originalDepth = context.CurrentDepth;
@@ -35,13 +35,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("StackResourceSummaries/member", targetDepth))
                     {
                         listStackResourcesResult.StackResourceSummaries.Add(StackResourceSummaryUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("NextToken", targetDepth))
                     {
                         listStackResourcesResult.NextToken = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -54,6 +54,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return listStackResourcesResult;
                 }
             }
+                        
+
 
             return listStackResourcesResult;
         }

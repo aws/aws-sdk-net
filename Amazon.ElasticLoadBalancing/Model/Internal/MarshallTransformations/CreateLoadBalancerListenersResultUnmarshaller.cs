@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CreateLoadBalancerListenersResult Unmarshaller
      /// </summary>
-    internal class CreateLoadBalancerListenersResultUnmarshaller : IUnmarshaller<CreateLoadBalancerListenersResult, UnmarshallerContext> 
+    internal class CreateLoadBalancerListenersResultUnmarshaller : IUnmarshaller<CreateLoadBalancerListenersResult, XmlUnmarshallerContext> 
     {
-        public CreateLoadBalancerListenersResult Unmarshall(UnmarshallerContext context) 
+        public CreateLoadBalancerListenersResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateLoadBalancerListenersResult createLoadBalancerListenersResult = new CreateLoadBalancerListenersResult();
             int originalDepth = context.CurrentDepth;
@@ -42,6 +42,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return createLoadBalancerListenersResult;
                 }
             }
+                        
+
 
             return createLoadBalancerListenersResult;
         }

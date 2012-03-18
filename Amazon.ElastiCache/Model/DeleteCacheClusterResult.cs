@@ -23,15 +23,15 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the DeleteCacheCluster action.
     /// </summary>
-    public class DeleteCacheClusterResult : AmazonWebServiceResponse
+    public class DeleteCacheClusterResult
     {
         private CacheCluster cacheClusterValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the DeleteCacheClusterResult property.
         /// Contains the result of a successful invocation of the DeleteCacheCluster
         /// action.
-        /// 
+        /// </summary>
         public CacheCluster CacheCluster
         {
             get { return this.cacheClusterValue; }

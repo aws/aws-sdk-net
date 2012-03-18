@@ -20,13 +20,19 @@ using System.IO;
 
 namespace Amazon.CloudFormation.Model
 {
-    /// <summary>List Stacks Result
+    /// <summary>
+    /// <para> The output for ListStacks action. </para>
     /// </summary>
     public class ListStacksResult  
     {
         
         private List<StackSummary> stackSummaries = new List<StackSummary>();
         private string nextToken;
+
+        /// <summary>
+        /// A list of <c>StackSummary</c> structures containing information about the specified stacks.
+        ///  
+        /// </summary>
         public List<StackSummary> StackSummaries
         {
             get { return this.stackSummaries; }
@@ -67,6 +73,20 @@ namespace Amazon.CloudFormation.Model
         {
             return this.stackSummaries.Count > 0;       
         }
+
+        /// <summary>
+        /// String that identifies the start of the next list of stacks, if there is one.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1024</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string NextToken
         {
             get { return this.nextToken; }

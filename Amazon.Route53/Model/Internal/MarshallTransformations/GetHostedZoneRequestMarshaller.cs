@@ -30,13 +30,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get Hosted Zone Request Marshaller
     /// </summary>       
-    public class GetHostedZoneRequestMarshaller : IMarshaller<IRequest<GetHostedZoneRequest>, GetHostedZoneRequest>
+    public class GetHostedZoneRequestMarshaller : IMarshaller<IRequest, GetHostedZoneRequest>
     {
         
     
-        public IRequest<GetHostedZoneRequest> Marshall(GetHostedZoneRequest getHostedZoneRequest)
+        public IRequest Marshall(GetHostedZoneRequest getHostedZoneRequest)
         {
-            IRequest<GetHostedZoneRequest> request = new DefaultRequest<GetHostedZoneRequest>(getHostedZoneRequest, "AmazonRoute53");
+            IRequest request = new DefaultRequest(getHostedZoneRequest, "AmazonRoute53");
             request.HttpMethod = "GET";
               
             string uriResourcePath = "/2011-05-05/hostedzone/{Id}"; 

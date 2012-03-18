@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public ListGroupPoliciesResult ListGroupPoliciesResult
         {
-            get { return this.listGroupPoliciesResult; }
+            get 
+            {
+                if(this.listGroupPoliciesResult == null)
+                {
+                    this.listGroupPoliciesResult = new ListGroupPoliciesResult();
+                }
+
+                return this.listGroupPoliciesResult; 
+            }
             set { this.listGroupPoliciesResult = value; }
         }
     }

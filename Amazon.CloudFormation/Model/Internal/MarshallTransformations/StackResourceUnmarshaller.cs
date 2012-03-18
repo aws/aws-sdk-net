@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   StackResource Unmarshaller
      /// </summary>
-    internal class StackResourceUnmarshaller : IUnmarshaller<StackResource, UnmarshallerContext> 
+    internal class StackResourceUnmarshaller : IUnmarshaller<StackResource, XmlUnmarshallerContext> 
     {
-        public StackResource Unmarshall(UnmarshallerContext context) 
+        public StackResource Unmarshall(XmlUnmarshallerContext context) 
         {
             StackResource stackResource = new StackResource();
             int originalDepth = context.CurrentDepth;
@@ -35,55 +35,55 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("StackName", targetDepth))
                     {
                         stackResource.StackName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StackId", targetDepth))
                     {
                         stackResource.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("LogicalResourceId", targetDepth))
                     {
                         stackResource.LogicalResourceId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("PhysicalResourceId", targetDepth))
                     {
                         stackResource.PhysicalResourceId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ResourceType", targetDepth))
                     {
                         stackResource.ResourceType = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Timestamp", targetDepth))
                     {
                         stackResource.Timestamp = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ResourceStatus", targetDepth))
                     {
                         stackResource.ResourceStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("ResourceStatusReason", targetDepth))
                     {
                         stackResource.ResourceStatusReason = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Description", targetDepth))
                     {
                         stackResource.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -96,6 +96,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return stackResource;
                 }
             }
+                        
+
 
             return stackResource;
         }

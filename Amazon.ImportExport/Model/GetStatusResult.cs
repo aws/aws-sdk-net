@@ -64,10 +64,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return this.jobId != null;      
+            return this.jobId != null;       
         }
 
         /// <summary>
@@ -100,10 +101,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if JobType property is set
         internal bool IsSetJobType()
         {
-            return this.jobType != null;        
+            return this.jobType != null;       
         }
 
         /// <summary>
@@ -127,15 +129,15 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if AwsShippingAddress property is set
         internal bool IsSetAwsShippingAddress()
         {
-            return this.awsShippingAddress != null;         
+            return this.awsShippingAddress != null;       
         }
 
         /// <summary>
-        /// A token representing the location of the storage device, such as
-        /// "AtAWS".
+        /// A token representing the location of the storage device, such as "AtAWS".
         ///  
         /// </summary>
         public string LocationCode
@@ -155,6 +157,7 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if LocationCode property is set
         internal bool IsSetLocationCode()
         {
@@ -162,8 +165,7 @@ namespace Amazon.ImportExport.Model
         }
 
         /// <summary>
-        /// A more human readable form of the physical location of the storage
-        /// device.
+        /// A more human readable form of the physical location of the storage device.
         ///  
         /// </summary>
         public string LocationMessage
@@ -183,10 +185,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if LocationMessage property is set
         internal bool IsSetLocationMessage()
         {
-            return this.locationMessage != null;        
+            return this.locationMessage != null;       
         }
 
         /// <summary>
@@ -210,6 +213,7 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if ProgressCode property is set
         internal bool IsSetProgressCode()
         {
@@ -237,15 +241,15 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if ProgressMessage property is set
         internal bool IsSetProgressMessage()
         {
-            return this.progressMessage != null;        
+            return this.progressMessage != null;       
         }
 
         /// <summary>
-        /// Name of the shipping company. This value is included when the
-        /// LocationCode is "Returned".
+        /// Name of the shipping company. This value is included when the LocationCode is "Returned".
         ///  
         /// </summary>
         public string Carrier
@@ -265,16 +269,16 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if Carrier property is set
         internal bool IsSetCarrier()
         {
-            return this.carrier != null;        
+            return this.carrier != null;       
         }
 
         /// <summary>
-        /// The shipping tracking number assigned by AWS Import/Export to the
-        /// storage device when it's returned to you. We return this value when
-        /// the LocationCode is "Returned".
+        /// The shipping tracking number assigned by AWS Import/Export to the storage device when it's returned to you. We return this value when the
+        /// LocationCode is "Returned".
         ///  
         /// </summary>
         public string TrackingNumber
@@ -294,10 +298,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if TrackingNumber property is set
         internal bool IsSetTrackingNumber()
         {
-            return this.trackingNumber != null;         
+            return this.trackingNumber != null;       
         }
 
         /// <summary>
@@ -321,10 +326,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if LogBucket property is set
         internal bool IsSetLogBucket()
         {
-            return this.logBucket != null;      
+            return this.logBucket != null;       
         }
 
         /// <summary>
@@ -348,15 +354,15 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if LogKey property is set
         internal bool IsSetLogKey()
         {
-            return this.logKey != null;         
+            return this.logKey != null;       
         }
 
         /// <summary>
-        /// Number of errors. We return this value when the ProgressCode is
-        /// Success or SuccessWithErrors.
+        /// Number of errors. We return this value when the ProgressCode is Success or SuccessWithErrors.
         ///  
         /// </summary>
         public int ErrorCount
@@ -376,17 +382,16 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if ErrorCount property is set
         internal bool IsSetErrorCount()
         {
-            return this.errorCount.HasValue;        
+            return this.errorCount.HasValue;       
         }
 
         /// <summary>
-        /// An encrypted code used to authenticate the request and response, for
-        /// example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you
-        /// want to create the signature file yourself. Generally you should use
-        /// the SignatureFileContents value.
+        /// An encrypted code used to authenticate the request and response, for example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you
+        /// want to create the signature file yourself. Generally you should use the SignatureFileContents value.
         ///  
         /// </summary>
         public string Signature
@@ -406,17 +411,16 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if Signature property is set
         internal bool IsSetSignature()
         {
-            return this.signature != null;      
+            return this.signature != null;       
         }
 
         /// <summary>
-        /// An encrypted code used to authenticate the request and response, for
-        /// example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you
-        /// want to create the signature file yourself. Generally you should use
-        /// the SignatureFileContents value.
+        /// An encrypted code used to authenticate the request and response, for example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you
+        /// want to create the signature file yourself. Generally you should use the SignatureFileContents value.
         ///  
         /// </summary>
         public string SignatureFileContents
@@ -436,10 +440,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if SignatureFileContents property is set
         internal bool IsSetSignatureFileContents()
         {
-            return this.signatureFileContents != null;      
+            return this.signatureFileContents != null;       
         }
 
         /// <summary>
@@ -463,15 +468,15 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if CurrentManifest property is set
         internal bool IsSetCurrentManifest()
         {
-            return this.currentManifest != null;        
+            return this.currentManifest != null;       
         }
 
         /// <summary>
-        /// Timestamp of the CreateJob request in ISO8601 date format. For example
-        /// "2010-03-28T20:27:35Z".
+        /// Timestamp of the CreateJob request in ISO8601 date format. For example "2010-03-28T20:27:35Z".
         ///  
         /// </summary>
         public DateTime CreationDate
@@ -491,10 +496,11 @@ namespace Amazon.ImportExport.Model
             return this;
         }
             
+
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;      
+            return this.creationDate.HasValue;       
         }
     }
 }

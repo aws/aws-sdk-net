@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Put Notification Configuration Request Marshaller
     /// </summary>       
-    public class PutNotificationConfigurationRequestMarshaller : IMarshaller<IRequest<PutNotificationConfigurationRequest>, PutNotificationConfigurationRequest>
+    public class PutNotificationConfigurationRequestMarshaller : IMarshaller<IRequest, PutNotificationConfigurationRequest>
     {
-        public IRequest<PutNotificationConfigurationRequest> Marshall(PutNotificationConfigurationRequest putNotificationConfigurationRequest)
+        public IRequest Marshall(PutNotificationConfigurationRequest putNotificationConfigurationRequest)
         {
-            IRequest<PutNotificationConfigurationRequest> request = new DefaultRequest<PutNotificationConfigurationRequest>(putNotificationConfigurationRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(putNotificationConfigurationRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "PutNotificationConfiguration");
             request.Parameters.Add("Version", "2011-01-01");
             if (putNotificationConfigurationRequest != null && putNotificationConfigurationRequest.IsSetAutoScalingGroupName())

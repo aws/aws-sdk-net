@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ValidateTemplateResult Unmarshaller
      /// </summary>
-    internal class ValidateTemplateResultUnmarshaller : IUnmarshaller<ValidateTemplateResult, UnmarshallerContext> 
+    internal class ValidateTemplateResultUnmarshaller : IUnmarshaller<ValidateTemplateResult, XmlUnmarshallerContext> 
     {
-        public ValidateTemplateResult Unmarshall(UnmarshallerContext context) 
+        public ValidateTemplateResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ValidateTemplateResult validateTemplateResult = new ValidateTemplateResult();
             int originalDepth = context.CurrentDepth;
@@ -35,25 +35,25 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("Parameters/member", targetDepth))
                     {
                         validateTemplateResult.Parameters.Add(TemplateParameterUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Description", targetDepth))
                     {
                         validateTemplateResult.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Capabilities/member", targetDepth))
                     {
                         validateTemplateResult.Capabilities.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("CapabilitiesReason", targetDepth))
                     {
                         validateTemplateResult.CapabilitiesReason = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -66,6 +66,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return validateTemplateResult;
                 }
             }
+                        
+
 
             return validateTemplateResult;
         }

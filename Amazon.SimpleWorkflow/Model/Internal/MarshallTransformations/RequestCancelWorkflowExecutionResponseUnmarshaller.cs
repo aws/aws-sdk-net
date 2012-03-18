@@ -24,16 +24,16 @@
       /// <summary>
       /// Response Unmarshaller for RequestCancelWorkflowExecution operation
       /// </summary>
-      internal class RequestCancelWorkflowExecutionResponseUnmarshaller : IResponseUnmarshaller<RequestCancelWorkflowExecutionResponse, JsonUnmarshallerContext>
+      internal class RequestCancelWorkflowExecutionResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public RequestCancelWorkflowExecutionResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           RequestCancelWorkflowExecutionResponse response = new RequestCancelWorkflowExecutionResponse();
           
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

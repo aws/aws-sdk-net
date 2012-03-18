@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public ListGroupsForUserResult ListGroupsForUserResult
         {
-            get { return this.listGroupsForUserResult; }
+            get 
+            {
+                if(this.listGroupsForUserResult == null)
+                {
+                    this.listGroupsForUserResult = new ListGroupsForUserResult();
+                }
+
+                return this.listGroupsForUserResult; 
+            }
             set { this.listGroupsForUserResult = value; }
         }
     }

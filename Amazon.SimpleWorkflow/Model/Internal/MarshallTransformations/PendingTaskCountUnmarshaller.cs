@@ -22,9 +22,9 @@
       /// <summary> 
       /// PendingTaskCountUnmarshaller 
       /// </summary> 
-      internal class PendingTaskCountUnmarshaller : IUnmarshaller<PendingTaskCount, UnmarshallerContext>, IUnmarshaller<PendingTaskCount, JsonUnmarshallerContext> 
+      internal class PendingTaskCountUnmarshaller : IUnmarshaller<PendingTaskCount, XmlUnmarshallerContext>, IUnmarshaller<PendingTaskCount, JsonUnmarshallerContext> 
       { 
-        PendingTaskCount IUnmarshaller<PendingTaskCount, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        PendingTaskCount IUnmarshaller<PendingTaskCount, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

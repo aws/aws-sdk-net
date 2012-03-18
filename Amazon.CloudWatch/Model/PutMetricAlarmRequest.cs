@@ -25,15 +25,11 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the PutMetricAlarm operation.
-    /// <para> Creates or updates an alarm and associates it with the
-    /// specified Amazon CloudWatch metric. Optionally, this operation can
-    /// associate one or more Amazon Simple Notification Service resources
-    /// with the alarm. </para> <para> When this operation creates an alarm,
-    /// the alarm state is immediately set to <c>INSUFFICIENT_DATA</c> . The
-    /// alarm is evaluated and its <c>StateValue</c> is set appropriately.
-    /// Any actions associated with the <c>StateValue</c> is then executed.
-    /// </para> <para><b>NOTE:</b> When updating an existing alarm, its
-    /// StateValue is left unchanged. </para>
+    /// <para> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate
+    /// one or more Amazon Simple Notification Service resources with the alarm. </para> <para> When this operation creates an alarm, the alarm
+    /// state is immediately set to <c>INSUFFICIENT_DATA</c> . The alarm is evaluated and its <c>StateValue</c> is set appropriately. Any actions
+    /// associated with the <c>StateValue</c> is then executed. </para> <para><b>NOTE:</b> When updating an existing alarm, its StateValue is left
+    /// unchanged. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.PutMetricAlarm"/>
     public class PutMetricAlarmRequest : AmazonWebServiceRequest

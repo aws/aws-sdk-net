@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DBSecurityGroupMembership Unmarshaller
      /// </summary>
-    internal class DBSecurityGroupMembershipUnmarshaller : IUnmarshaller<DBSecurityGroupMembership, UnmarshallerContext> 
+    internal class DBSecurityGroupMembershipUnmarshaller : IUnmarshaller<DBSecurityGroupMembership, XmlUnmarshallerContext> 
     {
-        public DBSecurityGroupMembership Unmarshall(UnmarshallerContext context) 
+        public DBSecurityGroupMembership Unmarshall(XmlUnmarshallerContext context) 
         {
             DBSecurityGroupMembership dBSecurityGroupMembership = new DBSecurityGroupMembership();
             int originalDepth = context.CurrentDepth;

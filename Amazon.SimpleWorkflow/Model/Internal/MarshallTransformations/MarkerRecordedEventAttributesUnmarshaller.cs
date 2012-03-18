@@ -22,9 +22,9 @@
       /// <summary> 
       /// MarkerRecordedEventAttributesUnmarshaller 
       /// </summary> 
-      internal class MarkerRecordedEventAttributesUnmarshaller : IUnmarshaller<MarkerRecordedEventAttributes, UnmarshallerContext>, IUnmarshaller<MarkerRecordedEventAttributes, JsonUnmarshallerContext> 
+      internal class MarkerRecordedEventAttributesUnmarshaller : IUnmarshaller<MarkerRecordedEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<MarkerRecordedEventAttributes, JsonUnmarshallerContext> 
       { 
-        MarkerRecordedEventAttributes IUnmarshaller<MarkerRecordedEventAttributes, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        MarkerRecordedEventAttributes IUnmarshaller<MarkerRecordedEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

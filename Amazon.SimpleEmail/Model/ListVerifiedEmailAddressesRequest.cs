@@ -25,8 +25,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVerifiedEmailAddresses operation.
-    /// <para>Returns a list containing all of the email addresses that have
-    /// been verified.</para>
+    /// <para>Returns a list containing all of the email addresses that have been verified.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.ListVerifiedEmailAddresses"/>
     public class ListVerifiedEmailAddressesRequest : AmazonWebServiceRequest

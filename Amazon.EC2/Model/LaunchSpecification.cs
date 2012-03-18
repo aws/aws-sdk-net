@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-12-15
+ *  API Version: 2012-03-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Specifies additional launch instance information.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-03-01/", IsNullable = false)]
     public class LaunchSpecification
     {    
         private string imageIdField;
@@ -258,7 +258,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the InstanceType property.
         /// Specifies the instance type. Valid values are:
-        /// m1.small | m1.large | m1.xlarge |
+        /// m1.small | m1.medium | m1.large | m1.xlarge |
         /// c1.medium | c1.xlarge |
         /// m2.2xlarge | m2.4xlarge.
         /// Default: m1.small
@@ -274,7 +274,7 @@ namespace Amazon.EC2.Model
         /// Sets the InstanceType property
         /// </summary>
         /// <param name="instanceType">Specifies the instance type. Valid values are:
-        /// m1.small | m1.large | m1.xlarge |
+        /// m1.small | m1.medium | m1.large | m1.xlarge |
         /// c1.medium | c1.xlarge |
         /// m2.2xlarge | m2.4xlarge.
         /// Default: m1.small</param>

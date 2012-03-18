@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -40,7 +41,10 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.4.3.0";
+        internal const string DefaultRegion = "us-east-1";
+        internal const string DefaultGovRegion = "us-gov-west-1";
+
+        internal const string SDKVersionNumber = "1.4.6.2";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -51,6 +55,7 @@ namespace Amazon.Util
         internal const string UserAgentHeader = "User-Agent";
         internal const string RequestIdHeader = "x-amzn-RequestId";
         internal const int DefaultMaxRetry = 3;
+        private const int DefaultConnectionLimit = 50;
 
         private static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
@@ -83,6 +88,11 @@ namespace Amazon.Util
         /// The ISO8601Date Format string. Used when parsing date objects
         /// </summary>
         public const string ISO8601DateFormatNoMS = "yyyy-MM-dd\\THH:mm:ss\\Z";
+
+        /// <summary>
+        /// The ISO8601 Basic date/time format string. Used when parsing date objects
+        /// </summary>
+        public const string ISO8601BasicDateTimeFormat = "yyyyMMddTHHmmssZ";
 
         /// <summary>
         /// The RFC822Date Format string. Used when parsing date objects
@@ -238,30 +248,24 @@ namespace Amazon.Util
 
 
         static Dictionary<string, XslCompiledTransform> typeToXslCompiledTransform = new Dictionary<string, XslCompiledTransform>();
+        static object typeToXslCompiledTransformLock = new object();
 
         internal static XslCompiledTransform GetXslCompiledTransform(string name)
         {
             XslCompiledTransform Result;
 
-            if (false == typeToXslCompiledTransform.TryGetValue(name, out Result))
+            lock (typeToXslCompiledTransformLock)
             {
-                lock (typeToXslCompiledTransform)
+                if (false == typeToXslCompiledTransform.TryGetValue(name, out Result))
                 {
-                    // This is to cover the very small window where multiple threads might have come in at the
-                    // same time before the XSL had been loaded.  In that case the first thread would get the lock
-                    // and the second would be blocked.  Without this "if" check the second thread would recreate the 
-                    // transform the first thread created.
-                    if (false == typeToXslCompiledTransform.TryGetValue(name, out Result))
+                    Result = new XslCompiledTransform();
+
+                    using (XmlTextReader xmlReader = new XmlTextReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(name)))
                     {
-                        Result = new XslCompiledTransform();
-
-                        using (XmlTextReader xmlReader = new XmlTextReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(name)))
-                        {
-                            Result.Load(xmlReader);
-                        }
-
-                        typeToXslCompiledTransform.Add(name, Result);
+                        Result.Load(xmlReader);
                     }
+
+                    typeToXslCompiledTransform.Add(name, Result);
                 }
             }
 
@@ -324,6 +328,66 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Attempt to infer the region for a service request based on the endpoint
+        /// </summary>
+        /// <param name="url">Endpoint to the service to be called</param>
+        /// <returns>
+        /// Region parsed from the endpoint; DefaultRegion (or DefaultGovRegion) 
+        /// if it cannot be determined/is not explicit
+        /// </returns>
+        public static string DetermineRegion(string url)
+        {
+            if (url.Contains("//"))
+                url = url.Substring(url.IndexOf("//") + 2);
+
+            if (!url.EndsWith(".amazonaws.com"))
+                return DefaultRegion;
+
+            string serviceAndRegion = url.Substring(0, url.IndexOf(".amazonaws.com"));
+
+            char separator;
+            if (serviceAndRegion.StartsWith("s3"))
+                separator = '-';
+            else
+                separator = '.';
+
+            if (serviceAndRegion.IndexOf(separator) == -1)
+                return DefaultRegion;
+
+            string region = serviceAndRegion.Substring(serviceAndRegion.IndexOf(separator) + 1);
+            if (string.Equals(region, "us-gov"))
+                return DefaultGovRegion;
+
+            return region;
+        }
+
+        /// <summary>
+        /// Attempt to infer the service name for a request (in short form, eg 'iam') from the
+        /// service endpoint.
+        /// </summary>
+        /// <param name="url">Endpoint to the service to be called</param>
+        /// <returns>
+        /// Short-form name of the service parsed from the endpoint; empty string if it cannot 
+        /// be determined
+        /// </returns>
+        public static string DetermineService(string url)
+        {
+            if (url.Contains("//"))
+                url = url.Substring(url.IndexOf("//") + 2);
+
+            string[] urlParts = url.Split(new char[] {'.'}, StringSplitOptions.RemoveEmptyEntries);
+            if (urlParts == null || urlParts.Length == 0)
+                return string.Empty;
+
+            string servicePart = urlParts[0];
+            int hyphenated = servicePart.IndexOf('-');
+            if (hyphenated < 0)
+                return servicePart;
+            else
+                return servicePart.Substring(0, hyphenated);
+        }
+
+        /// <summary>
         /// Utilitly method for converting Unix epoch seconds to DateTime structure.
         /// </summary>
         /// <param name="seconds">The number of seconds since January 1, 1970.</param>
@@ -338,6 +402,20 @@ namespace Amazon.Util
             TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
             double milli = Math.Round(ts.TotalMilliseconds, 0) / 1000.0;
             return milli;
+        }
+
+        internal static int GetConnectionLimit(int? clientConfigValue)
+        {
+            // Connection limit has been explicitly set on the client.
+            if (clientConfigValue.HasValue)
+                return clientConfigValue.Value;
+
+            // If default has been left at the system default return the SDK default.
+            if (ServicePointManager.DefaultConnectionLimit == 2)
+                return AWSSDKUtils.DefaultConnectionLimit;
+
+            // The system default has been explicitly changed so we will honor that value.
+            return ServicePointManager.DefaultConnectionLimit;
         }
 
         #endregion

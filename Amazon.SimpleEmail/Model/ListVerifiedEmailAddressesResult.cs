@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents a list of all the email addresses verified for the
-    /// current user.</para>
+    /// <para>Represents a list of all the email addresses verified for the current user.</para>
     /// </summary>
     public class ListVerifiedEmailAddressesResult  
     {

@@ -224,9 +224,8 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// If specified, only workflow executions that match this close status are counted. This filter has an affect only if <c>executionStatus</c> is
-        /// specified as <c>CLOSED</c>. <note><c>closeStatusFilter</c>, <c>executionFilter</c>, <c>typeFilter</c> and <c>tagFilter</c> are mutually
-        /// exclusive. You can specify at most one of these in a request.</note>
+        /// If specified, only workflow executions that match this close status are counted. <note><c>closeStatusFilter</c>, <c>executionFilter</c>,
+        /// <c>typeFilter</c> and <c>tagFilter</c> are mutually exclusive. You can specify at most one of these in a request.</note>
         ///  
         /// </summary>
         public CloseStatusFilter CloseStatusFilter

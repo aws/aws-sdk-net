@@ -25,9 +25,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for RestoreDBInstanceToPointInTime operation
     /// </summary>
-    internal class RestoreDBInstanceToPointInTimeResponseUnmarshaller : IResponseUnmarshaller<RestoreDBInstanceToPointInTimeResponse, UnmarshallerContext> {
+    internal class RestoreDBInstanceToPointInTimeResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public RestoreDBInstanceToPointInTimeResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             RestoreDBInstanceToPointInTimeResponse response = new RestoreDBInstanceToPointInTimeResponse();
             
@@ -54,7 +55,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

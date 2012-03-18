@@ -18,6 +18,8 @@ using System;
 using Amazon.DynamoDB.Model;
 using Amazon.Runtime;
 using Amazon.Util;
+using System.Threading;
+using System.Collections.Generic;
 
 namespace Amazon.DynamoDB.DocumentModel
 {
@@ -44,7 +46,7 @@ namespace Amazon.DynamoDB.DocumentModel
             {
                 TableName = TableName
             };
-            req.BeforeRequestEvent += new RequestEventHandler(this.UserAgentRequestEventHandler);
+            req.BeforeRequestEvent += new RequestEventHandler(this.UserAgentRequestEventHandlerSync);
             DescribeTableResult info = this.DDBClient.DescribeTable(req).DescribeTableResult;
 
             if (info.Table == null)
@@ -122,13 +124,23 @@ namespace Amazon.DynamoDB.DocumentModel
             return MakeKey(hashKey, rangeKey);
         }
 
-        internal void UserAgentRequestEventHandler(object sender, RequestEventArgs args)
+        internal void UserAgentRequestEventHandlerSync(object sender, RequestEventArgs args)
+        {
+            UserAgentRequestEventHandler(sender, args, false);
+        }
+        internal void UserAgentRequestEventHandlerAsync(object sender, RequestEventArgs args)
+        {
+            UserAgentRequestEventHandler(sender, args, true);
+        }
+
+        private void UserAgentRequestEventHandler(object sender, RequestEventArgs args, bool isAsync)
         {
             WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
             if (wsArgs != null)
             {
                 string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
-                wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " " + this.TableConsumer.ToString();
+                wsArgs.Headers[AWSSDKUtils.UserAgentHeader] =
+                    currentUserAgent + " " + this.TableConsumer.ToString() + " " + (isAsync ? "TableAsync" : "TableSync");
             }
         }
 
@@ -270,6 +282,11 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Null or updated attributes, depending on config.</returns>
         public Document PutItem(Document doc, PutItemOperationConfig config)
         {
+            return PutItemHelper(doc, config, false);
+        }
+
+        internal Document PutItemHelper(Document doc, PutItemOperationConfig config, bool isAsync)
+        {
             var currentConfig = config ?? new PutItemOperationConfig();
 
             PutItemRequest req = new PutItemRequest
@@ -277,7 +294,9 @@ namespace Amazon.DynamoDB.DocumentModel
                 TableName = TableName,
                 Item = doc.ToAttributeMap()
             };
-            req.BeforeRequestEvent += new RequestEventHandler(this.UserAgentRequestEventHandler);
+            req.BeforeRequestEvent += isAsync ?
+                new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
+                new RequestEventHandler(UserAgentRequestEventHandlerSync);
             if (currentConfig.Expected != null)
                 req.Expected = currentConfig.Expected.ToExpectedAttributeMap();
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
@@ -298,6 +317,53 @@ namespace Amazon.DynamoDB.DocumentModel
 
         #endregion
 
+        #region PutItemAsync
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.PutItem"/>
+        /// </summary>
+        /// <param name="doc">Document to save.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutItem
+        ///         operation.</returns>
+        public IAsyncResult BeginPutItem(Document doc, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => PutItemHelper(doc, null, true), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.PutItem"/>
+        /// </summary>
+        /// <param name="doc">Document to save.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutItem
+        ///         operation.</returns>
+        public IAsyncResult BeginPutItem(Document doc, PutItemOperationConfig config, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => PutItemHelper(doc, config, true), callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.PutItem"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutItem.</param>
+        /// <returns>Null or updated attributes, depending on config.</returns>
+        public Document EndPutItem(IAsyncResult asyncResult)
+        {
+            return DynamoDBAsyncExecutor.EndOperation(asyncResult) as Document;
+        }
+
+        #endregion
+
+
         #region GetItem
 
         /// <summary>
@@ -307,7 +373,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Document from DynamoDB</returns>
         public Document GetItem(Primitive hashKey)
         {
-            return GetHelper(MakeKey(hashKey, null), null);
+            return GetItemHelper(MakeKey(hashKey, null), null, false);
         }
 
         /// <summary>
@@ -318,7 +384,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Document from DynamoDB.</returns>
         public Document GetItem(Primitive hashKey, Primitive rangeKey)
         {
-            return GetHelper(MakeKey(hashKey, rangeKey), null);
+            return GetItemHelper(MakeKey(hashKey, rangeKey), null, false);
         }
 
         /// <summary>
@@ -329,7 +395,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Document from DynamoDB.</returns>
         public Document GetItem(Primitive hashKey, GetItemOperationConfig config)
         {
-            return GetHelper(MakeKey(hashKey, null), config);
+            return GetItemHelper(MakeKey(hashKey, null), config, false);
         }
 
         /// <summary>
@@ -342,10 +408,10 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Document from DynamoDB.</returns>
         public Document GetItem(Primitive hashKey, Primitive rangeKey, GetItemOperationConfig config)
         {
-            return GetHelper(MakeKey(hashKey, rangeKey), config);
+            return GetItemHelper(MakeKey(hashKey, rangeKey), config, false);
         }
 
-        internal Document GetHelper(Key key, GetItemOperationConfig config)
+        internal Document GetItemHelper(Key key, GetItemOperationConfig config, bool isAsync)
         {
             var currentConfig = config ?? new GetItemOperationConfig();
             var request = new GetItemRequest
@@ -354,7 +420,9 @@ namespace Amazon.DynamoDB.DocumentModel
                 Key = key,
                 ConsistentRead = currentConfig.ConsistentRead
             };
-            request.BeforeRequestEvent += new RequestEventHandler(this.UserAgentRequestEventHandler);
+            request.BeforeRequestEvent += isAsync ?
+                new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
+                new RequestEventHandler(UserAgentRequestEventHandlerSync);
             if (currentConfig.AttributesToGet != null)
                 request.WithAttributesToGet(currentConfig.AttributesToGet);
 
@@ -367,6 +435,86 @@ namespace Amazon.DynamoDB.DocumentModel
 
         #endregion
 
+        #region GetItemAsync
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.GetItem"/>
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetItem
+        ///         operation.</returns>
+        public IAsyncResult BeginGetItem(Primitive hashKey, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, null), null, true), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.GetItem"/>
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="rangeKey">Range key element of the document.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetItem
+        ///         operation.</returns>
+        public IAsyncResult BeginGetItem(Primitive hashKey, Primitive rangeKey, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, rangeKey), null, true), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.GetItem"/>
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetItem
+        ///         operation.</returns>
+        public IAsyncResult BeginGetItem(Primitive hashKey, GetItemOperationConfig config, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, null), config, true), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.GetItem"/>
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="rangeKey">Range key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetItem
+        ///         operation.</returns>
+        public IAsyncResult BeginGetItem(Primitive hashKey, Primitive rangeKey, GetItemOperationConfig config, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, rangeKey), config, true), callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.GetItem"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetItem.</param>
+        /// <returns>Document from DynamoDB.</returns>
+        public Document EndGetItem(IAsyncResult asyncResult)
+        {
+            return DynamoDBAsyncExecutor.EndOperation(asyncResult) as Document;
+        }
+
+        #endregion
+
+
         #region UpdateItem
 
         /// <summary>
@@ -375,7 +523,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <param name="doc">Document to update.</param>
         public void UpdateItem(Document doc)
         {
-            UpdateHelper(doc, MakeKey(doc), null);
+            UpdateHelper(doc, MakeKey(doc), null, false);
         }
         /// <summary>
         /// Update a document in DynamoDB, with hash primary key to identify the document.
@@ -384,7 +532,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <param name="hashKey">Hash key element of the document.</param>
         public void UpdateItem(Document doc, Primitive hashKey)
         {
-            UpdateHelper(doc, MakeKey(hashKey,null), null);
+            UpdateHelper(doc, MakeKey(hashKey, null), null, false);
         }
         /// <summary>
         /// Update a document in DynamoDB, with a hash-and-range primary key
@@ -395,7 +543,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <param name="rangeKey">Range key element of the document.</param>
         public void UpdateItem(Document doc, Primitive hashKey, Primitive rangeKey)
         {
-            UpdateHelper(doc, MakeKey(hashKey, rangeKey), null);
+            UpdateHelper(doc, MakeKey(hashKey, rangeKey), null, false);
         }
 
         /// <summary>
@@ -407,7 +555,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <seealso cref="Amazon.DynamoDB.DocumentModel.UpdateItemOperationConfig"/>
         public Document UpdateItem(Document doc, UpdateItemOperationConfig config)
         {
-            return UpdateHelper(doc, MakeKey(doc), config);
+            return UpdateHelper(doc, MakeKey(doc), config, false);
         }
         /// <summary>
         /// Update a document in DynamoDB, with a hash primary key to identify the
@@ -420,7 +568,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <seealso cref="Amazon.DynamoDB.DocumentModel.UpdateItemOperationConfig"/>
         public Document UpdateItem(Document doc, Primitive hashKey, UpdateItemOperationConfig config)
         {
-            return UpdateHelper(doc, MakeKey(hashKey, null), config);
+            return UpdateHelper(doc, MakeKey(hashKey, null), config, false);
         }
         /// <summary>
         /// Update a document in DynamoDB, with a hash-and-range primary key to identify
@@ -434,20 +582,27 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <seealso cref="Amazon.DynamoDB.DocumentModel.UpdateItemOperationConfig"/>
         public Document UpdateItem(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config)
         {
-            return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config);
+            return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, false);
         }
 
-        private Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config)
+        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, bool isAsync)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
             var attributeUpdates = doc.ToAttributeUpdateMap(true);
             foreach (var keyName in this.keyNames)
             {
-                if (keyName != null)
-                {
-                    attributeUpdates.Remove(keyName);
-                }
+                attributeUpdates.Remove(keyName);
+            }
+
+            ReturnValues currentReturnValue = currentConfig.ReturnValues;
+            bool keysOnlyUpdate = attributeUpdates.Count == 0;
+            // If there are no non-key attributes, make an Update call with AllNewAttributes
+            // return value. If no attributes returned, the item doesn't exist yet, so
+            // make a Put call.
+            if (keysOnlyUpdate)
+            {
+                currentReturnValue = ReturnValues.AllNewAttributes;
             }
 
             UpdateItemRequest req = new UpdateItemRequest
@@ -455,24 +610,244 @@ namespace Amazon.DynamoDB.DocumentModel
                 TableName = TableName,
                 Key = key,
                 AttributeUpdates = attributeUpdates,
-                ReturnValues = EnumToStringMapper.Convert(currentConfig.ReturnValues)
+                ReturnValues = EnumToStringMapper.Convert(currentReturnValue)
             };
-            req.BeforeRequestEvent += new RequestEventHandler(this.UserAgentRequestEventHandler);
+            req.BeforeRequestEvent += isAsync ?
+                new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
+                new RequestEventHandler(UserAgentRequestEventHandlerSync);
             if (currentConfig.Expected != null)
                 req.Expected = currentConfig.Expected.ToExpectedAttributeMap();
 
             var resp = DDBClient.UpdateItem(req);
+            var returnedAttributes = resp.UpdateItemResult.Attributes;
             doc.CommitChanges();
+
+            if (keysOnlyUpdate)
+            {
+                if (returnedAttributes == null || returnedAttributes.Count == 0)
+                {
+                    // if only keys were specified and no attributes are returned, we must issue a Put
+                    return CallKeysOnlyPut(key, currentConfig, isAsync);
+                }
+                else
+                {
+                    // update was called with AllNewAttributes, item exists
+                    // return correct set of attributes
+                    // [None] is handled at the end
+                    // [AllNewAttributes, AllOldAttributes] are equivalent in this case, no-op
+                    // [UpdatedNewAttributes, UpdatedOldAttributes] must return no attributes
+                    switch (currentConfig.ReturnValues)
+                    {
+                        case ReturnValues.UpdatedNewAttributes:
+                        case ReturnValues.UpdatedOldAttributes:
+                            returnedAttributes = new Dictionary<string,AttributeValue>();
+                            break;
+                    }
+                }
+            }
 
             Document ret = null;
             if (currentConfig.ReturnValues != ReturnValues.None)
             {
-                ret = Document.FromAttributeMap(resp.UpdateItemResult.Attributes);
+                ret = Document.FromAttributeMap(returnedAttributes);
             }
             return ret;
         }
 
+        // calls Put, but returns like Update
+        private Document CallKeysOnlyPut(Key key, UpdateItemOperationConfig config, bool isAsync)
+        {
+            // configure the keys-only Document
+            Document doc = CreateKeysOnlyDocument(key);
+
+            // configure the put operation
+            PutItemOperationConfig putConfig = CreateKeysOnlyPutConfig(key, config);
+
+            // call put
+            PutItemHelper(doc, putConfig, isAsync);
+
+            /*
+            New item created, return Update-appropriate response.
+            For update, when no item exists:
+             [None] - returns null,
+             [AllOld, UpdatedNew, UpdatedOld] - return no attributes 
+             [AllNew] - returns all attributes
+            */
+            Document response;
+            switch (config.ReturnValues)
+            {
+                case ReturnValues.None:
+                    response = null;
+                    break;
+                case ReturnValues.AllNewAttributes:
+                    response = doc;
+                    break;
+                default:
+                    response = new Document();
+                    break;
+            }
+
+            return response;
+        }
+
+        // Creates a Document object that consists of the hash and potentially range keys
+        private Document CreateKeysOnlyDocument(Key key)
+        {
+            // create document to put
+            Document doc = new Document();
+            if (!doc.Contains(this.HashKeyName))
+            {
+                DynamoDBEntry hashKey = Document.AttributeValueToDynamoDBEntry(key.HashKeyElement);
+                if (hashKey == null) throw new InvalidOperationException("Cannot convert hash key attribute");
+                doc[this.HashKeyName] = hashKey;
+            }
+            if (this.RangeKeyIsDefined && !doc.Contains(this.RangeKeyName))
+            {
+                DynamoDBEntry rangeKey = Document.AttributeValueToDynamoDBEntry(key.RangeKeyElement);
+                if (rangeKey == null) throw new InvalidOperationException("Cannot convert range key attribute");
+                doc[this.RangeKeyName] = rangeKey;
+            }
+            return doc;
+        }
+
+        // Creates a PutItemOperationConfig for the keys-only Put operation
+        private PutItemOperationConfig CreateKeysOnlyPutConfig(Key key, UpdateItemOperationConfig config)
+        {
+            // configure the expected document
+            Document expected = new Document();
+
+            expected[this.HashKeyName] = null;
+            if (this.RangeKeyIsDefined)
+            {
+                expected[this.RangeKeyName] = null;
+            }
+
+            // create the PutItemOperationConfig
+            var putConfig = new PutItemOperationConfig
+            {
+                Expected = expected,
+                ReturnValues = ReturnValues.None
+            };
+
+            return putConfig;
+        }
+
         #endregion
+
+        #region UpdateItemAsync
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.UpdateItem"/>
+        /// </summary>
+        /// <param name="doc">Document to update.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateItem
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateItem(Document doc, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(doc), null, true), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.UpdateItem"/>
+        /// </summary>
+        /// <param name="doc">Attributes to update.</param>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateItem
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateItem(Document doc, Primitive hashKey, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, null), null, true), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.UpdateItem"/>
+        /// </summary>
+        /// <param name="doc">Attributes to update.</param>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="rangeKey">Range key element of the document.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateItem
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateItem(Document doc, Primitive hashKey, Primitive rangeKey, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, rangeKey), null, true), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.UpdateItem"/>
+        /// </summary>
+        /// <param name="doc">Document to update.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateItem
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateItem(Document doc, UpdateItemOperationConfig config, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(doc), config, true), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.UpdateItem"/>
+        /// </summary>
+        /// <param name="doc">Attributes to update.</param>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateItem
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateItem(Document doc, Primitive hashKey, UpdateItemOperationConfig config, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, null), config, true), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.UpdateItem"/>
+        /// </summary>
+        /// <param name="doc">Attributes to update.</param>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="rangeKey">Range key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateItem
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateItem(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, true), callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.UpdateItem"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateItem.</param>
+        /// <returns>Null or updated attributes, depending on config.</returns>
+        public Document EndUpdateItem(IAsyncResult asyncResult)
+        {
+            return DynamoDBAsyncExecutor.EndOperation(asyncResult) as Document;
+        }
+
+        #endregion
+
 
         #region DeleteItem
 
@@ -482,7 +857,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <param name="document">Document to delete.</param>
         public void DeleteItem(Document document)
         {
-            DeleteHelper(MakeKey(document), null);
+            DeleteHelper(MakeKey(document), null, false);
         }
         /// <summary>
         /// Delete a document in DynamoDB, identified by a hash primary key.
@@ -490,7 +865,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <param name="hashKey">Hash key element of the document.</param>
         public void DeleteItem(Primitive hashKey)
         {
-            DeleteHelper(MakeKey(hashKey, null), null);
+            DeleteHelper(MakeKey(hashKey, null), null, false);
         }
         /// <summary>
         /// Delete a document in DynamoDB, identified by a hash-and-range primary key.
@@ -499,7 +874,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <param name="rangeKey">Range key element of the document.</param>
         public void DeleteItem(Primitive hashKey, Primitive rangeKey)
         {
-            DeleteHelper(MakeKey(hashKey, rangeKey), null);
+            DeleteHelper(MakeKey(hashKey, rangeKey), null, false);
         }
 
         /// <summary>
@@ -510,7 +885,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Null or old attributes, depending on config.</returns>
         public Document DeleteItem(Document document, DeleteItemOperationConfig config)
         {
-            return DeleteHelper(MakeKey(document), config);
+            return DeleteHelper(MakeKey(document), config, false);
         }
         /// <summary>
         /// Delete a document in DynamoDB, identified by a hash primary key,
@@ -521,7 +896,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Null or old attributes, depending on config.</returns>
         public Document DeleteItem(Primitive hashKey, DeleteItemOperationConfig config)
         {
-            return DeleteHelper(MakeKey(hashKey, null), config);
+            return DeleteHelper(MakeKey(hashKey, null), config, false);
         }
         /// <summary>
         /// Delete a document in DynamoDB, identified by hash-and-range primary key,
@@ -533,10 +908,10 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Null or old attributes, depending on config.</returns>
         public Document DeleteItem(Primitive hashKey, Primitive rangeKey, DeleteItemOperationConfig config)
         {
-            return DeleteHelper(MakeKey(hashKey, rangeKey), config);
+            return DeleteHelper(MakeKey(hashKey, rangeKey), config, false);
         }
 
-        internal Document DeleteHelper(Key key, DeleteItemOperationConfig config)
+        internal Document DeleteHelper(Key key, DeleteItemOperationConfig config, bool isAsync)
         {
             var currentConfig = config ?? new DeleteItemOperationConfig();
 
@@ -545,7 +920,9 @@ namespace Amazon.DynamoDB.DocumentModel
                 TableName = TableName,
                 Key = key
             };
-            req.BeforeRequestEvent += new RequestEventHandler(this.UserAgentRequestEventHandler);
+            req.BeforeRequestEvent += isAsync ?
+                new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
+                new RequestEventHandler(UserAgentRequestEventHandlerSync);
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
             {
                 req.ReturnValues = EnumToStringMapper.Convert(currentConfig.ReturnValues);
@@ -566,6 +943,118 @@ namespace Amazon.DynamoDB.DocumentModel
         }
 
         #endregion
+
+        #region DeleteItemAsync
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.DeleteItem"/>
+        /// </summary>
+        /// <param name="document">Document to delete.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteItem
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteItem(Document document, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(document), null, true); return null; }, callback, state);
+        }
+        
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.DeleteItem"/>
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteItem
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteItem(Primitive hashKey, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(hashKey, null), null, true); return null; }, callback, state);
+        }
+        
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.DeleteItem"/>
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="rangeKey">Range key element of the document.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteItem
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteItem(Primitive hashKey, Primitive rangeKey, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(hashKey, rangeKey), null, true); return null; }, callback, state);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.DeleteItem"/>
+        /// </summary>
+        /// <param name="document">Document to delete.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteItem
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteItem(Document document, DeleteItemOperationConfig config, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(document), config, true), callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.DeleteItem"/>
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteItem
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteItem(Primitive hashKey, DeleteItemOperationConfig config, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(hashKey, null), config, true), callback, state);
+        }
+        
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.DeleteItem"/>
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="rangeKey">Range key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteItem
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteItem(Primitive hashKey, Primitive rangeKey, DeleteItemOperationConfig config, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(hashKey, rangeKey), config, true), callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteItem operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Table.DeleteItem"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteItem.</param>
+        /// <returns>Null or old attributes, depending on config.</returns>
+        public Document EndDeleteItem(IAsyncResult asyncResult)
+        {
+            return DynamoDBAsyncExecutor.EndOperation(asyncResult) as Document;
+        }
+
+        #endregion
+
 
         #region Scan
 
@@ -606,6 +1095,7 @@ namespace Amazon.DynamoDB.DocumentModel
         }
 
         #endregion
+
 
         #region Query
 
@@ -654,6 +1144,7 @@ namespace Amazon.DynamoDB.DocumentModel
 
         #endregion
 
+
         #region BatchGet
 
         /// <summary>
@@ -667,5 +1158,6 @@ namespace Amazon.DynamoDB.DocumentModel
         }
 
         #endregion
+
     }
 }

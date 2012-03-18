@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Register Domain Request Marshaller
     /// </summary>       
-    internal class RegisterDomainRequestMarshaller : IMarshaller<IRequest<RegisterDomainRequest>, RegisterDomainRequest> 
+    internal class RegisterDomainRequestMarshaller : IMarshaller<IRequest, RegisterDomainRequest> 
     {
-        public IRequest<RegisterDomainRequest> Marshall(RegisterDomainRequest registerDomainRequest) 
+        public IRequest Marshall(RegisterDomainRequest registerDomainRequest) 
         {
 
-            IRequest<RegisterDomainRequest> request = new DefaultRequest<RegisterDomainRequest>(registerDomainRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(registerDomainRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.RegisterDomain";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

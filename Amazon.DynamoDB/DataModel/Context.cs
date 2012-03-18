@@ -99,6 +99,7 @@ namespace Amazon.DynamoDB.DataModel
         private AmazonDynamoDB client;
         private Dictionary<string, Table> tablesMap;
         private DynamoDBContextConfig config;
+        private readonly object tablesMapLock = new object();
 
         #endregion
 
@@ -179,6 +180,11 @@ namespace Amazon.DynamoDB.DataModel
         /// <param name="operationConfig">Overriding configuration.</param>
         public void Save<T>(T value, DynamoDBOperationConfig operationConfig)
         {
+            SaveHelper<T>(value, operationConfig, false);
+        }
+
+        private void SaveHelper<T>(T value, DynamoDBOperationConfig operationConfig, bool isAsync)
+        {
             if (value == null) return;
 
             ItemStorage storage = ObjectToItemStorage<T>(value);
@@ -186,15 +192,21 @@ namespace Amazon.DynamoDB.DataModel
 
             DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
             Table table = GetTargetTable(storage.Config, currentConfig);
-            if ((currentConfig.SkipVersionCheck.HasValue && currentConfig.SkipVersionCheck.Value) || !storage.Config.HasVersion)
+            if (
+                (currentConfig.SkipVersionCheck.HasValue && currentConfig.SkipVersionCheck.Value)
+                || !storage.Config.HasVersion)
             {
-                table.UpdateItem(storage.Document);
+                table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), null, isAsync);
             }
             else
             {
                 Document expectedDocument = CreateExpectedDocumentForVersion(storage);
                 SetNewVersion(storage);
-                table.UpdateItem(storage.Document, new UpdateItemOperationConfig { Expected = expectedDocument, ReturnValues = ReturnValues.None });
+                table.UpdateHelper(
+                    storage.Document,
+                    table.MakeKey(storage.Document),
+                    new UpdateItemOperationConfig { Expected = expectedDocument, ReturnValues = ReturnValues.None },
+                    true);
                 PopulateInstance(storage, value);
             }
         }
@@ -213,6 +225,53 @@ namespace Amazon.DynamoDB.DataModel
             if (storage == null) return null;
 
             return storage.Document;
+        }
+
+        #endregion
+
+        #region Save async
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Save operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Save"/>
+        /// </summary>
+        /// <typeparam name="T">Type to save as.</typeparam>
+        /// <param name="value">Object to save.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSave
+        ///         operation.</returns>
+        public IAsyncResult BeginSave<T>(T value, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { SaveHelper<T>(value, null, true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Save operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Save"/>
+        /// </summary>
+        /// <typeparam name="T">Type to save as.</typeparam>
+        /// <param name="value">Object to save.</param>
+        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSave
+        ///         operation.</returns>
+        public IAsyncResult BeginSave<T>(T value, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { SaveHelper<T>(value, operationConfig, true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the Save operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Save"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSave.</param>
+        public void EndSave(IAsyncResult asyncResult)
+        {
+            DynamoDBAsyncExecutor.EndOperation(asyncResult);
         }
 
         #endregion
@@ -289,6 +348,11 @@ namespace Amazon.DynamoDB.DataModel
         /// </returns>
         public T Load<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
+            return LoadHelper<T>(hashKey, rangeKey, operationConfig, false);
+        }
+
+        private T LoadHelper<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, bool isAsync)
+        {
             DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
 
             ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
@@ -301,7 +365,7 @@ namespace Amazon.DynamoDB.DataModel
                 AttributesToGet = storageConfig.AttributesToGet
             };
 
-            storage.Document = table.GetHelper(key, getConfig);
+            storage.Document = table.GetItemHelper(key, getConfig, isAsync);
 
             T instance = DocumentToObject<T>(storage);
             return instance;
@@ -322,6 +386,88 @@ namespace Amazon.DynamoDB.DataModel
             storage.Document = document;
             T instance = DocumentToObject<T>(storage);
             return instance;
+        }
+
+        #endregion
+
+        #region Load async
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Load operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Load"/>
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="hashKey">Hash key element of the target item.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLoad
+        ///         operation.</returns>
+        public IAsyncResult BeginLoad<T>(object hashKey, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, null, null, true), callback, state);
+        }
+        /// <summary>
+        /// Initiates the asynchronous execution of the Load operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Load"/>
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="hashKey">Hash key element of the target item.</param>
+        /// <param name="rangeKey">Range key element of the target item.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLoad
+        ///         operation.</returns>
+        public IAsyncResult BeginLoad<T>(object hashKey, object rangeKey, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, rangeKey, null, true), callback, state);
+        }
+        /// <summary>
+        /// Initiates the asynchronous execution of the Load operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Load"/>
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="hashKey">Hash key element of the target item.</param>
+        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLoad
+        ///         operation.</returns>
+        public IAsyncResult BeginLoad<T>(object hashKey, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, null, operationConfig, true), callback, state);
+        }
+        /// <summary>
+        /// Initiates the asynchronous execution of the Load operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Load"/>
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="hashKey">Hash key element of the target item.</param>
+        /// <param name="rangeKey">Range key element of the target item.</param>
+        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLoad
+        ///         operation.</returns>
+        public IAsyncResult BeginLoad<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, rangeKey, operationConfig, true), callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the Load operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Load"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginLoad.</param>
+        /// <returns>
+        /// Object of type T, populated with properties of item loaded from DynamoDB.
+        /// </returns>
+        public T EndLoad<T>(IAsyncResult asyncResult)
+        {
+            return (T)DynamoDBAsyncExecutor.EndOperation(asyncResult);
         }
 
         #endregion
@@ -357,6 +503,11 @@ namespace Amazon.DynamoDB.DataModel
         /// <param name="operationConfig">Overriding configuration.</param>
         public void Delete<T>(T value, DynamoDBOperationConfig operationConfig)
         {
+            DeleteHelper<T>(value, operationConfig, false);
+        }
+        
+        private void DeleteHelper<T>(T value, DynamoDBOperationConfig operationConfig, bool isAsync)
+        {
             if (value == null) throw new ArgumentNullException("value");
 
             ItemStorage storage = ObjectToItemStorage<T>(value, true);
@@ -366,12 +517,15 @@ namespace Amazon.DynamoDB.DataModel
             Table table = GetTargetTable(storage.Config, flatConfig);
             if (flatConfig.SkipVersionCheck.Value || !storage.Config.HasVersion)
             {
-                table.DeleteItem(storage.Document);
+                table.DeleteHelper(table.MakeKey(storage.Document), null, isAsync);
             }
             else
             {
                 Document expectedDocument = CreateExpectedDocumentForVersion(storage);
-                table.DeleteItem(storage.Document, new DeleteItemOperationConfig { Expected = expectedDocument });
+                table.DeleteHelper(
+                    table.MakeKey(storage.Document),
+                    new DeleteItemOperationConfig { Expected = expectedDocument },
+                    isAsync);
             }
         }
 
@@ -432,6 +586,11 @@ namespace Amazon.DynamoDB.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         public void Delete<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
+            DeleteHelper<T>(hashKey, rangeKey, operationConfig, false);
+        }
+
+        private void DeleteHelper<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, bool isAsync)
+        {
             if (hashKey == null) throw new ArgumentNullException("hashKey");
 
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
@@ -439,7 +598,121 @@ namespace Amazon.DynamoDB.DataModel
             Table table = GetTargetTable(storageConfig, config);
             Key key = MakeKey(hashKey, rangeKey, storageConfig);
 
-            table.DeleteHelper(key, null);
+            table.DeleteHelper(key, null, false);
+        }
+
+        #endregion
+
+        #region Delete async
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Delete operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Delete"/>
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="value">Object to delete.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDelete
+        ///         operation.</returns>
+        public IAsyncResult BeginDelete<T>(T value, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(value, null, true); return null; }, callback, state);
+        }
+        /// <summary>
+        /// Initiates the asynchronous execution of the Delete operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Delete"/>
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="value">Object to delete.</param>
+        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDelete
+        ///         operation.</returns>
+        public IAsyncResult BeginDelete<T>(T value, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(value, operationConfig, true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Delete operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Delete"/>
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDelete
+        ///         operation.</returns>
+        public IAsyncResult BeginDelete<T>(object hashKey, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, null, null, true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Delete operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Delete"/>
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDelete
+        ///         operation.</returns>
+        public IAsyncResult BeginDelete<T>(object hashKey, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, null, operationConfig, true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Delete operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Delete"/>
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <param name="rangeKey">Range key element of the object to delete.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDelete
+        ///         operation.</returns>
+        public IAsyncResult BeginDelete<T>(object hashKey, object rangeKey, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, rangeKey, null, true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Delete operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Delete"/>
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <param name="rangeKey">Range key element of the object to delete.</param>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDelete
+        ///         operation.</returns>
+        public IAsyncResult BeginDelete<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, rangeKey, operationConfig, true); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the Delete operation.
+        /// <seealso cref="Amazon.DynamoDB.DataModel.DynamoDBContext.Delete"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDelete.</param>
+        public void EndDelete(IAsyncResult asyncResult)
+        {
+            DynamoDBAsyncExecutor.EndOperation(asyncResult);
         }
 
         #endregion

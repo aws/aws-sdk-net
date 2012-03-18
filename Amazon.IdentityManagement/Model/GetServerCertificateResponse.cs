@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public GetServerCertificateResult GetServerCertificateResult
         {
-            get { return this.getServerCertificateResult; }
+            get 
+            {
+                if(this.getServerCertificateResult == null)
+                {
+                    this.getServerCertificateResult = new GetServerCertificateResult();
+                }
+
+                return this.getServerCertificateResult; 
+            }
             set { this.getServerCertificateResult = value; }
         }
     }

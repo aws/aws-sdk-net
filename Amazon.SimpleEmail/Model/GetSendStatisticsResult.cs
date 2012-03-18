@@ -21,10 +21,8 @@ using System.IO;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents a list of <c>SendDataPoint</c> items returned from a
-    /// successful <c>GetSendStatistics</c> request. This list contains
-    /// aggregated data from the previous two weeks of sending
-    /// activity.</para>
+    /// <para>Represents a list of <c>SendDataPoint</c> items returned from a successful <c>GetSendStatistics</c> request. This list contains
+    /// aggregated data from the previous two weeks of sending activity.</para>
     /// </summary>
     public class GetSendStatisticsResult  
     {

@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 
 using Amazon.DynamoDB.Model;
+using Amazon.Runtime;
 
 namespace Amazon.DynamoDB.DocumentModel
 {
@@ -110,48 +111,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             get
             {
-                if (IsDone)
-                {
-                    return Matches.Count;
-                }
-                else
-                {
-                    if (count != -1)
-                    {
-                        return count;
-                    }
-                    else
-                    {
-                        switch (SearchMethod)
-                        {
-                            case SearchType.Scan:
-                                ScanRequest scanReq = new ScanRequest()
-                                    .WithCount(true)
-                                    .WithExclusiveStartKey(NextKey)
-                                    .WithTableName(TableName)
-                                    .WithBeforeRequestHandler(SourceTable.UserAgentRequestEventHandler) as ScanRequest;
-                                scanReq.ScanFilter = (ScanFilter)Filter;
-                                ScanResult scanResult = SourceTable.DDBClient.Scan(scanReq).ScanResult;
-                                count = Matches.Count + scanResult.Count;
-                                return count;
-                            case SearchType.Query:
-                                QueryRequest queryReq = new QueryRequest()
-                                    .WithConsistentRead(IsConsistentRead)
-                                    .WithCount(true)
-                                    .WithExclusiveStartKey(NextKey)
-                                    .WithHashKeyValue(HashKey)
-                                    .WithRangeKeyCondition(((RangeFilter)Filter).Condition)
-                                    .WithScanIndexForward(!IsBackwardSearch)
-                                    .WithTableName(TableName)
-                                    .WithBeforeRequestHandler(SourceTable.UserAgentRequestEventHandler) as QueryRequest;
-                                QueryResult queryResult = SourceTable.DDBClient.Query(queryReq).QueryResult;
-                                count = Matches.Count + queryResult.Count;
-                                return count;
-                            default:
-                                throw new InvalidOperationException("Unknown Search Method");
-                        }
-                    }
-                }
+                return GetCount();
             }
         }
 
@@ -166,6 +126,11 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Next set of Documents matching the search parameters</returns>
         public List<Document> GetNextSet()
         {
+            return GetNextSetHelper(false);
+        }
+
+        private List<Document> GetNextSetHelper(bool isAsync)
+        {
             List<Document> ret = new List<Document>();
 
             if (!IsDone)
@@ -176,8 +141,10 @@ namespace Amazon.DynamoDB.DocumentModel
                         ScanRequest scanReq = new ScanRequest()
                             .WithExclusiveStartKey(NextKey)
                             .WithLimit(Limit)
-                            .WithTableName(TableName)
-                            .WithBeforeRequestHandler(SourceTable.UserAgentRequestEventHandler) as ScanRequest;
+                            .WithTableName(TableName);
+                        scanReq.BeforeRequestEvent += isAsync ?
+                            new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerAsync) :
+                            new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerSync);
                         if (AttributesToGet != null)
                             scanReq.AttributesToGet = AttributesToGet;
                         scanReq.ScanFilter = (ScanFilter)Filter;
@@ -202,9 +169,11 @@ namespace Amazon.DynamoDB.DocumentModel
                             .WithLimit(Limit)
                             .WithRangeKeyCondition(((RangeFilter)Filter).Condition)
                             .WithScanIndexForward(!IsBackwardSearch)
-                            .WithTableName(TableName)
-                            .WithBeforeRequestHandler(SourceTable.UserAgentRequestEventHandler) as QueryRequest;
-                        if (AttributesToGet !=null)
+                            .WithTableName(TableName);
+                        queryReq.BeforeRequestEvent += isAsync ?
+                            new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerAsync) :
+                            new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerSync);
+                        if (AttributesToGet != null)
                             queryReq.AttributesToGet = AttributesToGet;
                         QueryResult queryResult = SourceTable.DDBClient.Query(queryReq).QueryResult;
                         foreach (var item in queryResult.Items)
@@ -233,11 +202,16 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>List of Documents matching the search parameters</returns>
         public List<Document> GetRemaining()
         {
+            return GetRemainingHelper(false);
+        }
+
+        private List<Document> GetRemainingHelper(bool isAsync)
+        {
             List<Document> ret = new List<Document>();
 
             while (!IsDone)
             {
-                foreach (Document doc in GetNextSet())
+                foreach (Document doc in GetNextSetHelper(isAsync))
                 {
                     ret.Add(doc);
                 }
@@ -249,6 +223,59 @@ namespace Amazon.DynamoDB.DocumentModel
         #endregion
 
 
+        #region Async public 
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNextSet operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Search.GetNextSet"/>
+        /// </summary>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNextSet
+        ///         operation.</returns>
+        public IAsyncResult BeginGetNextSet(AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetNextSetHelper(true), callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Search.GetNextSet"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNextSet.</param>
+        /// <returns>Next set of Documents matching the search parameters</returns>
+        public List<Document> EndGetNextSet(IAsyncResult asyncResult)
+        {
+            return DynamoDBAsyncExecutor.EndOperation(asyncResult) as List<Document>;
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRemaining operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Search.GetRemaining"/>
+        /// </summary>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRemaining
+        ///         operation.</returns>
+        public IAsyncResult BeginGetRemaining(AsyncCallback callback, object state)
+        {
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetRemainingHelper(true), callback, state);
+        }
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetRemaining operation.
+        /// <seealso cref="Amazon.DynamoDB.DocumentModel.Search.GetRemaining"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRemaining.</param>
+        /// <returns>List of Documents matching the search parameters</returns>
+        public List<Document> EndGetRemaining(IAsyncResult asyncResult)
+        {
+            return DynamoDBAsyncExecutor.EndOperation(asyncResult) as List<Document>;
+        }
+
+        #endregion
+
         #region Private/internal properties
 
         private int count = -1;
@@ -256,6 +283,52 @@ namespace Amazon.DynamoDB.DocumentModel
         private SearchType SearchMethod { get; set; }
 
         internal Table SourceTable { get; set; }
+
+        private int GetCount()
+        {
+            if (IsDone)
+            {
+                return Matches.Count;
+            }
+            else
+            {
+                if (count != -1)
+                {
+                    return count;
+                }
+                else
+                {
+                    switch (SearchMethod)
+                    {
+                        case SearchType.Scan:
+                            ScanRequest scanReq = new ScanRequest()
+                                .WithCount(true)
+                                .WithExclusiveStartKey(NextKey)
+                                .WithTableName(TableName)
+                                .WithBeforeRequestHandler(SourceTable.UserAgentRequestEventHandlerSync) as ScanRequest;
+                            scanReq.ScanFilter = (ScanFilter)Filter;
+                            ScanResult scanResult = SourceTable.DDBClient.Scan(scanReq).ScanResult;
+                            count = Matches.Count + scanResult.Count;
+                            return count;
+                        case SearchType.Query:
+                            QueryRequest queryReq = new QueryRequest()
+                                .WithConsistentRead(IsConsistentRead)
+                                .WithCount(true)
+                                .WithExclusiveStartKey(NextKey)
+                                .WithHashKeyValue(HashKey)
+                                .WithRangeKeyCondition(((RangeFilter)Filter).Condition)
+                                .WithScanIndexForward(!IsBackwardSearch)
+                                .WithTableName(TableName)
+                                .WithBeforeRequestHandler(SourceTable.UserAgentRequestEventHandlerSync) as QueryRequest;
+                            QueryResult queryResult = SourceTable.DDBClient.Query(queryReq).QueryResult;
+                            count = Matches.Count + queryResult.Count;
+                            return count;
+                        default:
+                            throw new InvalidOperationException("Unknown Search Method");
+                    }
+                }
+            }
+        }
 
         #endregion
     }

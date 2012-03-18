@@ -34,7 +34,15 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         public GetSendQuotaResult GetSendQuotaResult
         {
-            get { return this.getSendQuotaResult; }
+            get 
+            {
+                if(this.getSendQuotaResult == null)
+                {
+                    this.getSendQuotaResult = new GetSendQuotaResult();
+                }
+
+                return this.getSendQuotaResult; 
+            }
             set { this.getSendQuotaResult = value; }
         }
     }

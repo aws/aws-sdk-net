@@ -34,7 +34,15 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         public ListVerifiedEmailAddressesResult ListVerifiedEmailAddressesResult
         {
-            get { return this.listVerifiedEmailAddressesResult; }
+            get 
+            {
+                if(this.listVerifiedEmailAddressesResult == null)
+                {
+                    this.listVerifiedEmailAddressesResult = new ListVerifiedEmailAddressesResult();
+                }
+
+                return this.listVerifiedEmailAddressesResult; 
+            }
             set { this.listVerifiedEmailAddressesResult = value; }
         }
     }

@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PolicyDescription Unmarshaller
      /// </summary>
-    internal class PolicyDescriptionUnmarshaller : IUnmarshaller<PolicyDescription, UnmarshallerContext> 
+    internal class PolicyDescriptionUnmarshaller : IUnmarshaller<PolicyDescription, XmlUnmarshallerContext> 
     {
-        public PolicyDescription Unmarshall(UnmarshallerContext context) 
+        public PolicyDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             PolicyDescription policyDescription = new PolicyDescription();
             int originalDepth = context.CurrentDepth;
@@ -35,19 +35,19 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("PolicyName", targetDepth))
                     {
                         policyDescription.PolicyName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("PolicyTypeName", targetDepth))
                     {
                         policyDescription.PolicyTypeName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("PolicyAttributeDescriptions/member", targetDepth))
                     {
                         policyDescription.PolicyAttributeDescriptions.Add(PolicyAttributeDescriptionUnmarshaller.GetInstance().Unmarshall(context));
@@ -60,6 +60,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return policyDescription;
                 }
             }
+                        
+
 
             return policyDescription;
         }

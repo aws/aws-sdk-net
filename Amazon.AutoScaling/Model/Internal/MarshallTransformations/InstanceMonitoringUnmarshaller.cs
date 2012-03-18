@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   InstanceMonitoring Unmarshaller
      /// </summary>
-    internal class InstanceMonitoringUnmarshaller : IUnmarshaller<InstanceMonitoring, UnmarshallerContext> 
+    internal class InstanceMonitoringUnmarshaller : IUnmarshaller<InstanceMonitoring, XmlUnmarshallerContext> 
     {
-        public InstanceMonitoring Unmarshall(UnmarshallerContext context) 
+        public InstanceMonitoring Unmarshall(XmlUnmarshallerContext context) 
         {
             InstanceMonitoring instanceMonitoring = new InstanceMonitoring();
             int originalDepth = context.CurrentDepth;

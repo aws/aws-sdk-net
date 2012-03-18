@@ -20,19 +20,13 @@ using System.IO;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>
-    /// <para> </para>
+    /// <summary>Describe Tags Result
     /// </summary>
     public class DescribeTagsResult  
     {
         
         private List<TagDescription> tags = new List<TagDescription>();
         private string nextToken;
-
-        /// <summary>
-        /// The list of tags.
-        ///  
-        /// </summary>
         public List<TagDescription> Tags
         {
             get { return this.tags; }
@@ -73,20 +67,6 @@ namespace Amazon.AutoScaling.Model
         {
             return this.tags.Count > 0;       
         }
-
-        /// <summary>
-        /// A string used to mark the start of the next batch of returned results.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string NextToken
         {
             get { return this.nextToken; }

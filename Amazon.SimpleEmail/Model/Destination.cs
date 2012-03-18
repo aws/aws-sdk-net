@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents the destination of the message, consisting of To:,
-    /// CC:, and BCC: fields.</para>
+    /// <para>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</para>
     /// </summary>
     public class Destination  
     {

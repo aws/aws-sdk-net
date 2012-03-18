@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutScheduledUpdateGroupAction operation.
-    /// <para> Creates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
+    /// <para> Creates a scheduled scaling action for a Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
     /// unchanged in the affected Auto Scaling group. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.PutScheduledUpdateGroupAction"/>
@@ -42,7 +42,7 @@ namespace Amazon.AutoScaling.Model
         private int? desiredCapacity;
 
         /// <summary>
-        /// The name or ARN of the Auto Scaling group.
+        /// The name or ARN of the Auto Scaling Group.
         ///  
         /// <para>
         /// <b>Constraints:</b>

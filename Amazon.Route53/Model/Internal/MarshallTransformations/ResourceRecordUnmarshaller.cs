@@ -22,9 +22,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ResourceRecord Unmarshaller
      /// </summary>
-    internal class ResourceRecordUnmarshaller : IUnmarshaller<ResourceRecord, UnmarshallerContext> 
+    internal class ResourceRecordUnmarshaller : IUnmarshaller<ResourceRecord, XmlUnmarshallerContext> 
     {
-        public ResourceRecord Unmarshall(UnmarshallerContext context) 
+        public ResourceRecord Unmarshall(XmlUnmarshallerContext context) 
         {
             ResourceRecord resourceRecord = new ResourceRecord();
             int originalDepth = context.CurrentDepth;

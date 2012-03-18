@@ -34,7 +34,15 @@ namespace Amazon.ElastiCache.Model
         /// 
         public RebootCacheClusterResult RebootCacheClusterResult
         {
-            get { return this.rebootCacheClusterResult; }
+            get 
+            {
+                if(this.rebootCacheClusterResult == null)
+                {
+                    this.rebootCacheClusterResult = new RebootCacheClusterResult();
+                }
+
+                return this.rebootCacheClusterResult; 
+            }
             set { this.rebootCacheClusterResult = value; }
         }
     }

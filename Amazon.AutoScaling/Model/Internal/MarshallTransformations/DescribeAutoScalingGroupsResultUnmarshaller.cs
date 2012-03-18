@@ -22,9 +22,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeAutoScalingGroupsResult Unmarshaller
      /// </summary>
-    internal class DescribeAutoScalingGroupsResultUnmarshaller : IUnmarshaller<DescribeAutoScalingGroupsResult, UnmarshallerContext> 
+    internal class DescribeAutoScalingGroupsResultUnmarshaller : IUnmarshaller<DescribeAutoScalingGroupsResult, XmlUnmarshallerContext> 
     {
-        public DescribeAutoScalingGroupsResult Unmarshall(UnmarshallerContext context) 
+        public DescribeAutoScalingGroupsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeAutoScalingGroupsResult describeAutoScalingGroupsResult = new DescribeAutoScalingGroupsResult();
             int originalDepth = context.CurrentDepth;

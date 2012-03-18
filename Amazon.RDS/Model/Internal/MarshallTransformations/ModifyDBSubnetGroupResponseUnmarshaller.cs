@@ -25,9 +25,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ModifyDBSubnetGroup operation
     /// </summary>
-    internal class ModifyDBSubnetGroupResponseUnmarshaller : IResponseUnmarshaller<ModifyDBSubnetGroupResponse, UnmarshallerContext> {
+    internal class ModifyDBSubnetGroupResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public ModifyDBSubnetGroupResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             ModifyDBSubnetGroupResponse response = new ModifyDBSubnetGroupResponse();
             
@@ -54,7 +55,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

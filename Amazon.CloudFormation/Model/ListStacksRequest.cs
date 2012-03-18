@@ -34,6 +34,20 @@ namespace Amazon.CloudFormation.Model
     {
         private string nextToken;
         private List<string> stackStatusFilter = new List<string>();
+
+        /// <summary>
+        /// String that identifies the start of the next list of stacks, if there is one. Default: There is no default value.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1024</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string NextToken
         {
             get { return this.nextToken; }
@@ -57,6 +71,12 @@ namespace Amazon.CloudFormation.Model
         {
             return this.nextToken != null;       
         }
+
+        /// <summary>
+        /// Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete
+        /// list of stack status codes, see the <c>StackStatus</c> parameter of the <a>Stack</a> data type.
+        ///  
+        /// </summary>
         public List<string> StackStatusFilter
         {
             get { return this.stackStatusFilter; }

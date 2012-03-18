@@ -24,16 +24,16 @@
       /// <summary>
       /// Response Unmarshaller for DeprecateDomain operation
       /// </summary>
-      internal class DeprecateDomainResponseUnmarshaller : IResponseUnmarshaller<DeprecateDomainResponse, JsonUnmarshallerContext>
+      internal class DeprecateDomainResponseUnmarshaller : JsonResponseUnmarshaller
       {
-        public DeprecateDomainResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
           DeprecateDomainResponse response = new DeprecateDomainResponse();
           
           return response;
           }
            
-        public AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
         { 
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
            

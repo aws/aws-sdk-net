@@ -34,7 +34,15 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         public GetUserPolicyResult GetUserPolicyResult
         {
-            get { return this.getUserPolicyResult; }
+            get 
+            {
+                if(this.getUserPolicyResult == null)
+                {
+                    this.getUserPolicyResult = new GetUserPolicyResult();
+                }
+
+                return this.getUserPolicyResult; 
+            }
             set { this.getUserPolicyResult = value; }
         }
     }

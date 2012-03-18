@@ -28,11 +28,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     /// <summary>
     /// Add Instance Groups Request Marshaller
     /// </summary>       
-    public class AddInstanceGroupsRequestMarshaller : IMarshaller<IRequest<AddInstanceGroupsRequest>, AddInstanceGroupsRequest>
+    public class AddInstanceGroupsRequestMarshaller : IMarshaller<IRequest, AddInstanceGroupsRequest>
     {
-        public IRequest<AddInstanceGroupsRequest> Marshall(AddInstanceGroupsRequest addInstanceGroupsRequest)
+        public IRequest Marshall(AddInstanceGroupsRequest addInstanceGroupsRequest)
         {
-            IRequest<AddInstanceGroupsRequest> request = new DefaultRequest<AddInstanceGroupsRequest>(addInstanceGroupsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(addInstanceGroupsRequest, "AmazonElasticMapReduce");
             request.Parameters.Add("Action", "AddInstanceGroups");
             request.Parameters.Add("Version", "2009-03-31");
 

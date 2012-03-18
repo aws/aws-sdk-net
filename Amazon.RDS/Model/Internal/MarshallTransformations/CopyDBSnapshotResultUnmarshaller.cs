@@ -21,9 +21,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Result Unmarshaller for CopyDBSnapshot operation
     /// </summary>
-    internal class CopyDBSnapshotResultUnmarshaller : IUnmarshaller<CopyDBSnapshotResult, UnmarshallerContext> {
+    internal class CopyDBSnapshotResultUnmarshaller : IUnmarshaller<CopyDBSnapshotResult, XmlUnmarshallerContext> {
 
-        public CopyDBSnapshotResult Unmarshall(UnmarshallerContext context) 
+        public CopyDBSnapshotResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CopyDBSnapshotResult result = new CopyDBSnapshotResult();
             

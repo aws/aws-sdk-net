@@ -22,9 +22,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Stack Unmarshaller
      /// </summary>
-    internal class StackUnmarshaller : IUnmarshaller<Stack, UnmarshallerContext> 
+    internal class StackUnmarshaller : IUnmarshaller<Stack, XmlUnmarshallerContext> 
     {
-        public Stack Unmarshall(UnmarshallerContext context) 
+        public Stack Unmarshall(XmlUnmarshallerContext context) 
         {
             Stack stack = new Stack();
             int originalDepth = context.CurrentDepth;
@@ -35,79 +35,79 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("StackId", targetDepth))
                     {
                         stack.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StackName", targetDepth))
                     {
                         stack.StackName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Description", targetDepth))
                     {
                         stack.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Parameters/member", targetDepth))
                     {
                         stack.Parameters.Add(ParameterUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("CreationTime", targetDepth))
                     {
                         stack.CreationTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("LastUpdatedTime", targetDepth))
                     {
                         stack.LastUpdatedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StackStatus", targetDepth))
                     {
                         stack.StackStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("StackStatusReason", targetDepth))
                     {
                         stack.StackStatusReason = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("DisableRollback", targetDepth))
                     {
                         stack.DisableRollback = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("NotificationARNs/member", targetDepth))
                     {
                         stack.NotificationARNs.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("TimeoutInMinutes", targetDepth))
                     {
                         stack.TimeoutInMinutes = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Capabilities/member", targetDepth))
                     {
                         stack.Capabilities.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Outputs/member", targetDepth))
                     {
                         stack.Outputs.Add(OutputUnmarshaller.GetInstance().Unmarshall(context));
@@ -120,6 +120,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     return stack;
                 }
             }
+                        
+
 
             return stack;
         }

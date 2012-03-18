@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-12-15
+ *  API Version: 2012-03-01
  */
 
 using System;
@@ -2200,5 +2200,40 @@ namespace Amazon.EC2
         /// <remarks>Only one attribute can be specified per call.</remarks>
         ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request);
 
+        /// <summary>
+        /// Returns the status of one or more volumes.
+        /// </summary>
+        /// <param name="request">Describe Volume Status request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Volume Status response from the service</returns>
+        DescribeVolumeStatusResponse DescribeVolumeStatus(DescribeVolumeStatusRequest request);
+
+        /// <summary>
+        /// Enables I/O operations for a volume that had I/O operations disabled.
+        /// </summary>
+        /// <param name="request">Enable Volume IO request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Enable Volume IO response from the service</returns>
+        EnableVolumeIOResponse EnableVolumeIO(EnableVolumeIORequest request);
+
+        /// <summary>
+        /// Modifies a volume attribute.
+        /// </summary>
+        /// <param name="request">Modify Volume Attribute request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Modify Volume Attribute response from the service</returns>
+        ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request);
+
+        /// <summary>
+        /// Describes attribute of the volume.
+        /// </summary>
+        /// <param name="request">Describe Volume Attribute request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Volume Attribute response from the service</returns>
+        DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request);
     }
 }

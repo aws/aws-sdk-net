@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Threading;
 
 using Amazon.CloudWatch.Model;
-using Amazon.CloudWatch.Model.Transform;
+using Amazon.CloudWatch.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -25,36 +26,30 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudWatch
 {
     /// <summary>
-    /// Implemenation for accessing AmazonCloudWatch.
+    /// Implementation for accessing AmazonCloudWatch.
     ///  
-    /// Amazon CloudWatch <para>Amazon CloudWatch is a web service that
-    /// enables you to monitor and manage various metrics, as well as
-    /// configure alarm actions based on data from metrics.</para>
-    /// <para>Amazon CloudWatch monitoring enables you to collect, analyze,
-    /// and view system and application metrics so that you can make
-    /// operational and business decisions more quickly and with greater
-    /// confidence. You can use Amazon CloudWatch to collect metrics about
-    /// your AWS resources, such as the performance of your Amazon EC2
-    /// instances. You can also publish your own metrics directly to Amazon
-    /// CloudWatch.</para> <para>Amazon CloudWatch allows you to manage the
-    /// metrics in several ways. If you are publishing your own metrics, you
-    /// can define custom metrics for your own use. If you are registered for
-    /// an AWS product that supports Amazon CloudWatch, the service
-    /// automatically pushes basic metrics to CloudWatch for you. Once Amazon
-    /// CloudWatch contains metrics from either source, you can calculate
-    /// statistics based on that data and graphically visualize those
-    /// statistics in the Amazon CloudWatch Console.</para> <para>Amazon
-    /// CloudWatch alarms help you implement decisions more easily by enabling
-    /// you to do things like send notifications or automatically make changes
-    /// to the resources you are monitoring, based on rules that you define.
-    /// For example, you can create alarms that initiate Auto Scaling and
-    /// Simple Notification Service actions on your behalf. </para>
+    /// Amazon CloudWatch <para>This is the <i>Amazon CloudWatch API Reference</i> . This guide provides detailed information about Amazon
+    /// CloudWatch actions, data types, parameters, and errors. For detailed information about Amazon CloudWatch features and their associated API
+    /// calls, go to the Amazon CloudWatch Developer Guide. </para> <para>Amazon CloudWatch is a web service that enables you to publish, monitor,
+    /// and manage various metrics, as well as configure alarm actions based on data from metrics. For more information about this product go to
+    /// http://aws.amazon.com/cloudwatch. </para> <para>Use the following links to get started using the <i>Amazon CloudWatch API Reference</i>
+    /// :</para>
+    /// <ul>
+    /// <li> Actions: An alphabetical list of all Amazon CloudWatch actions.</li>
+    /// <li> Data Types: An alphabetical list of all Amazon CloudWatch data types.</li>
+    /// <li> Common Parameters: Parameters that all Query actions can use.</li>
+    /// <li> Common Errors: Client and server errors that all actions can return.</li>
+    /// <li> Regions and Endpoints: Itemized regions and endpoints for all AWS products.</li>
+    /// <li> WSDL Location: http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl</li>
+    /// 
+    /// </ul>
     /// </summary>
     public class AmazonCloudWatchClient : AmazonWebServiceClient, AmazonCloudWatch
     {
     
-    
         AbstractAWSSigner signer = new QueryStringSigner();
+
+        #region Constructors
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with the credentials defined in the App.config.
@@ -89,9 +84,29 @@ namespace Amazon.CloudWatch
         /// </code>
         ///
         /// </summary>
-        /// <param name="config">The AmazonElasticBeanstalkClient Configuration Object</param>
+        /// <param name="config">The AmazonCloudWatch Configuration Object</param>
         public AmazonCloudWatchClient(AmazonCloudWatchConfig config)
             : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public AmazonCloudWatchClient(AWSCredentials credentials)
+            : this(credentials, new AmazonCloudWatchConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchClient with AWS Credentials and an
+        /// AmazonCloudWatchClient Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The AmazonCloudWatchClient Configuration Object</param>
+        public AmazonCloudWatchClient(AWSCredentials credentials, AmazonCloudWatchConfig clientConfig)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User)
+        {
+        }
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with AWS Access Key ID and AWS Secret Key
@@ -105,7 +120,7 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonS3 Configuration object. If the config object's
+        /// AmazonCloudWatchClient Configuration object. If the config object's
         /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
         /// is stored as a clear-text string. Please use this option only
         /// if the application environment doesn't allow the use of SecureStrings.
@@ -114,283 +129,784 @@ namespace Amazon.CloudWatch
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonCloudWatchClient Configuration Object</param>
         public AmazonCloudWatchClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudWatchConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User)
         {
         }
         
+
+        #endregion
    
+        #region PutMetricAlarm
 
-         /// <summary>
-         /// <para> Creates or updates an alarm and associates it with the
-         /// specified Amazon CloudWatch metric. Optionally, this operation can
-         /// associate one or more Amazon Simple Notification Service resources
-         /// with the alarm. </para> <para> When this operation creates an alarm,
-         /// the alarm state is immediately set to <c>INSUFFICIENT_DATA</c> . The
-         /// alarm is evaluated and its <c>StateValue</c> is set appropriately.
-         /// Any actions associated with the <c>StateValue</c> is then executed.
-         /// </para> <para><b>NOTE:</b> When updating an existing alarm, its
-         /// StateValue is left unchanged. </para>
-         /// </summary>
-         /// 
-         /// <param name="putMetricAlarmRequest">Container for the necessary
-         ///           parameters to execute the PutMetricAlarm service method on
-         ///           AmazonCloudWatch.</param>
-         /// 
-         /// <exception cref="LimitExceededException"/>
-        public PutMetricAlarmResponse PutMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest) 
-        {           
-            IRequest<PutMetricAlarmRequest> request = new PutMetricAlarmRequestMarshaller().Marshall(putMetricAlarmRequest);
-            PutMetricAlarmResponse response = Invoke<PutMetricAlarmRequest, PutMetricAlarmResponse> (request, this.signer, PutMetricAlarmResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate
+        /// one or more Amazon Simple Notification Service resources with the alarm. </para> <para> When this operation creates an alarm, the alarm
+        /// state is immediately set to <c>INSUFFICIENT_DATA</c> . The alarm is evaluated and its <c>StateValue</c> is set appropriately. Any actions
+        /// associated with the <c>StateValue</c> is then executed. </para> <para><b>NOTE:</b> When updating an existing alarm, its StateValue is left
+        /// unchanged. </para>
+        /// </summary>
+        /// 
+        /// <param name="putMetricAlarmRequest">Container for the necessary parameters to execute the PutMetricAlarm service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        /// <exception cref="LimitExceededException"/>
+        public PutMetricAlarmResponse PutMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest)
+        {
+            IAsyncResult asyncResult = invokePutMetricAlarm(putMetricAlarmRequest, null, null, true);
+            return EndPutMetricAlarm(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutMetricAlarm operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.PutMetricAlarm"/>
+        /// </summary>
+        /// 
+        /// <param name="putMetricAlarmRequest">Container for the necessary parameters to execute the PutMetricAlarm operation on
+        ///          AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginPutMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest, AsyncCallback callback, object state)
+        {
+            return invokePutMetricAlarm(putMetricAlarmRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutMetricAlarm operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.PutMetricAlarm"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMetricAlarm.</param>
+        public PutMetricAlarmResponse EndPutMetricAlarm(IAsyncResult asyncResult)
+        {
+            return endOperation<PutMetricAlarmResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokePutMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new PutMetricAlarmRequestMarshaller().Marshall(putMetricAlarmRequest);
+            var unmarshaller = PutMetricAlarmResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
     
+        #region PutMetricData
 
-         /// <summary>
-         /// <para> Publishes metric data points to Amazon CloudWatch. Amazon
-         /// Cloudwatch associates the data points with the specified metric. If
-         /// the specified metric does not exist, Amazon CloudWatch creates the
-         /// metric. </para> <para><b>NOTE:</b> If you create a metric with the
-         /// PutMetricData action, allow up to fifteen minutes for the metric to
-         /// appear in calls to the ListMetrics action. </para> <para> The size of
-         /// a PutMetricData request is limited to 8 KB for HTTP GET requests and
-         /// 40 KB for HTTP POST requests. </para> <para><b>IMPORTANT:</b> Although
-         /// the Value parameter accepts numbers of type Double, Amazon CloudWatch
-         /// truncates values with very large exponents. Values with base-10
-         /// exponents greater than 126 (1 x 10^126) are truncated. Likewise,
-         /// values with base-10 exponents less than -130 (1 x 10^-130) are also
-         /// truncated. </para>
-         /// </summary>
-         /// 
-         /// <param name="putMetricDataRequest">Container for the necessary
-         ///           parameters to execute the PutMetricData service method on
-         ///           AmazonCloudWatch.</param>
-         /// 
-         /// <exception cref="InvalidParameterValueException"/>
-         /// <exception cref="InternalServiceException"/>
-         /// <exception cref="InvalidParameterCombinationException"/>
-         /// <exception cref="MissingRequiredParameterException"/>
-        public PutMetricDataResponse PutMetricData(PutMetricDataRequest putMetricDataRequest) 
-        {           
-            IRequest<PutMetricDataRequest> request = new PutMetricDataRequestMarshaller().Marshall(putMetricDataRequest);
-            PutMetricDataResponse response = Invoke<PutMetricDataRequest, PutMetricDataResponse> (request, this.signer, PutMetricDataResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the
+        /// specified metric does not exist, Amazon CloudWatch creates the metric. </para> <para><b>NOTE:</b> If you create a metric with the
+        /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. </para> <para> The size of a
+        /// PutMetricData request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </para> <para><b>IMPORTANT:</b> Although
+        /// the Value parameter accepts numbers of type Double, Amazon CloudWatch truncates values with very large exponents. Values with base-10
+        /// exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also
+        /// truncated. </para>
+        /// </summary>
+        /// 
+        /// <param name="putMetricDataRequest">Container for the necessary parameters to execute the PutMetricData service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="InternalServiceException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        /// <exception cref="MissingRequiredParameterException"/>
+        public PutMetricDataResponse PutMetricData(PutMetricDataRequest putMetricDataRequest)
+        {
+            IAsyncResult asyncResult = invokePutMetricData(putMetricDataRequest, null, null, true);
+            return EndPutMetricData(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutMetricData operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.PutMetricData"/>
+        /// </summary>
+        /// 
+        /// <param name="putMetricDataRequest">Container for the necessary parameters to execute the PutMetricData operation on
+        ///          AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginPutMetricData(PutMetricDataRequest putMetricDataRequest, AsyncCallback callback, object state)
+        {
+            return invokePutMetricData(putMetricDataRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutMetricData operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.PutMetricData"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMetricData.</param>
+        public PutMetricDataResponse EndPutMetricData(IAsyncResult asyncResult)
+        {
+            return endOperation<PutMetricDataResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokePutMetricData(PutMetricDataRequest putMetricDataRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new PutMetricDataRequestMarshaller().Marshall(putMetricDataRequest);
+            var unmarshaller = PutMetricDataResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
     
+        #region ListMetrics
 
-         /// <summary>
-         /// <para> Returns a list of valid metrics stored for the AWS account
-         /// owner. Returned metrics can be used with <c>GetMetricStatistics</c> to
-         /// obtain statistical data for a given metric. </para> <para><b>NOTE:</b>
-         /// Up to 500 results are returned for any one call. To retrieve further
-         /// results, use returned NextToken values with subsequent ListMetrics
-         /// operations. </para> <para><b>NOTE:</b> If you create a metric with the
-         /// PutMetricData action, allow up to fifteen minutes for the metric to
-         /// appear in calls to the ListMetrics action. </para>
-         /// </summary>
-         /// 
-         /// <param name="listMetricsRequest">Container for the necessary
-         ///           parameters to execute the ListMetrics service method on
-         ///           AmazonCloudWatch.</param>
-         /// 
-         /// <returns>The response from the ListMetrics service method, as returned
-         ///         by AmazonCloudWatch.</returns>
-         /// 
-         /// <exception cref="InternalServiceException"/>
-         /// <exception cref="InvalidParameterValueException"/>
-        public ListMetricsResponse ListMetrics(ListMetricsRequest listMetricsRequest) 
-        {           
-            IRequest<ListMetricsRequest> request = new ListMetricsRequestMarshaller().Marshall(listMetricsRequest);
-            ListMetricsResponse response = Invoke<ListMetricsRequest, ListMetricsResponse> (request, this.signer, ListMetricsResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with GetMetricStatistics to obtain
+        /// statistical data for a given metric. </para> <para><b>NOTE:</b> Up to 500 results are returned for any one call. To retrieve further
+        /// results, use returned NextToken values with subsequent ListMetrics operations. </para> <para><b>NOTE:</b> If you create a metric with the
+        /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. Statistics about the metric,
+        /// however, are available sooner using GetMetricStatistics. </para>
+        /// </summary>
+        /// 
+        /// <param name="listMetricsRequest">Container for the necessary parameters to execute the ListMetrics service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        /// <returns>The response from the ListMetrics service method, as returned by AmazonCloudWatch.</returns>
+        /// 
+        /// <exception cref="InternalServiceException"/>
+        /// <exception cref="InvalidParameterValueException"/>
+        public ListMetricsResponse ListMetrics(ListMetricsRequest listMetricsRequest)
+        {
+            IAsyncResult asyncResult = invokeListMetrics(listMetricsRequest, null, null, true);
+            return EndListMetrics(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMetrics operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.ListMetrics"/>
+        /// </summary>
+        /// 
+        /// <param name="listMetricsRequest">Container for the necessary parameters to execute the ListMetrics operation on AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMetrics
+        ///         operation.</returns>
+        public IAsyncResult BeginListMetrics(ListMetricsRequest listMetricsRequest, AsyncCallback callback, object state)
+        {
+            return invokeListMetrics(listMetricsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListMetrics operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.ListMetrics"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMetrics.</param>
+        /// 
+        /// <returns>Returns a ListMetricsResult from AmazonCloudWatch.</returns>
+        public ListMetricsResponse EndListMetrics(IAsyncResult asyncResult)
+        {
+            return endOperation<ListMetricsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListMetrics(ListMetricsRequest listMetricsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListMetricsRequestMarshaller().Marshall(listMetricsRequest);
+            var unmarshaller = ListMetricsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with GetMetricStatistics to obtain
+        /// statistical data for a given metric. </para> <para><b>NOTE:</b> Up to 500 results are returned for any one call. To retrieve further
+        /// results, use returned NextToken values with subsequent ListMetrics operations. </para> <para><b>NOTE:</b> If you create a metric with the
+        /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. Statistics about the metric,
+        /// however, are available sooner using GetMetricStatistics. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListMetrics service method, as returned by AmazonCloudWatch.</returns>
+        /// 
+        /// <exception cref="InternalServiceException"/>
+        /// <exception cref="InvalidParameterValueException"/>
+        public ListMetricsResponse ListMetrics()
+        {
+            return ListMetrics(new ListMetricsRequest());
+        }
+        
+
+        #endregion
     
+        #region GetMetricStatistics
 
-         /// <summary>
-         /// <para> Gets statistics for the specified metric. </para>
-         /// <para><b>NOTE:</b> The maximum number of data points returned from a
-         /// single GetMetricStatistics request is 1,440. If a request is made that
-         /// generates more than 1,440 data points, Amazon CloudWatch returns an
-         /// error. In such a case, alter the request by narrowing the specified
-         /// time range or increasing the specified period. Alternatively, make
-         /// multiple requests across adjacent time ranges. </para> <para> Amazon
-         /// CloudWatch aggregates data points based on the length of the
-         /// <c>period</c> that you specify. For example, if you request statistics
-         /// with a one-minute granularity, Amazon CloudWatch aggregates data
-         /// points with time stamps that fall within the same one-minute period.
-         /// In such a case, the data points queried can greatly outnumber the data
-         /// points returned. </para> <para><b>NOTE:</b> The maximum number of data
-         /// points that can be queried is 50,850; whereas the maximum number of
-         /// data points returned is 1,440. </para> <para> The following examples
-         /// show various statistics allowed by the data point query maximum of
-         /// 50,850 when you call <c>GetMetricStatistics</c> on Amazon EC2
-         /// instances with detailed (one-minute) monitoring enabled: </para>
-         /// <ul>
-         /// <li>Statistics for up to 400 instances for a span of one hour</li>
-         /// <li>Statistics for up to 35 instances over a span of 24 hours</li>
-         /// <li>Statistics for up to 2 instances over a span of 2 weeks</li>
-         /// 
-         /// </ul>
-         /// </summary>
-         /// 
-         /// <param name="getMetricStatisticsRequest">Container for the necessary
-         ///           parameters to execute the GetMetricStatistics service method on
-         ///           AmazonCloudWatch.</param>
-         /// 
-         /// <returns>The response from the GetMetricStatistics service method, as
-         ///         returned by AmazonCloudWatch.</returns>
-         /// 
-         /// <exception cref="InvalidParameterValueException"/>
-         /// <exception cref="InternalServiceException"/>
-         /// <exception cref="InvalidParameterCombinationException"/>
-         /// <exception cref="MissingRequiredParameterException"/>
-        public GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest getMetricStatisticsRequest) 
-        {           
-            IRequest<GetMetricStatisticsRequest> request = new GetMetricStatisticsRequestMarshaller().Marshall(getMetricStatisticsRequest);
-            GetMetricStatisticsResponse response = Invoke<GetMetricStatisticsRequest, GetMetricStatisticsResponse> (request, this.signer, GetMetricStatisticsResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Gets statistics for the specified metric. </para> <para><b>NOTE:</b> The maximum number of data points returned from a single
+        /// GetMetricStatistics request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error.
+        /// In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple
+        /// requests across adjacent time ranges. </para> <para> Amazon CloudWatch aggregates data points based on the length of the <c>period</c> that
+        /// you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps
+        /// that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </para>
+        /// <para><b>NOTE:</b> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is
+        /// 1,440. </para> <para> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call
+        /// <c>GetMetricStatistics</c> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </para>
+        /// <ul>
+        /// <li>Statistics for up to 400 instances for a span of one hour</li>
+        /// <li>Statistics for up to 35 instances over a span of 24 hours</li>
+        /// <li>Statistics for up to 2 instances over a span of 2 weeks</li>
+        /// 
+        /// </ul>
+        /// <para> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to
+        /// Cloudwatch, go to CloudWatch Support for AWS Products in the <i>Amazon CloudWatch Developer Guide</i> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="getMetricStatisticsRequest">Container for the necessary parameters to execute the GetMetricStatistics service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        /// <returns>The response from the GetMetricStatistics service method, as returned by AmazonCloudWatch.</returns>
+        /// 
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="InternalServiceException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        /// <exception cref="MissingRequiredParameterException"/>
+        public GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest getMetricStatisticsRequest)
+        {
+            IAsyncResult asyncResult = invokeGetMetricStatistics(getMetricStatisticsRequest, null, null, true);
+            return EndGetMetricStatistics(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricStatistics operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.GetMetricStatistics"/>
+        /// </summary>
+        /// 
+        /// <param name="getMetricStatisticsRequest">Container for the necessary parameters to execute the GetMetricStatistics operation on
+        ///          AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndGetMetricStatistics operation.</returns>
+        public IAsyncResult BeginGetMetricStatistics(GetMetricStatisticsRequest getMetricStatisticsRequest, AsyncCallback callback, object state)
+        {
+            return invokeGetMetricStatistics(getMetricStatisticsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetMetricStatistics operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.GetMetricStatistics"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetricStatistics.</param>
+        /// 
+        /// <returns>Returns a GetMetricStatisticsResult from AmazonCloudWatch.</returns>
+        public GetMetricStatisticsResponse EndGetMetricStatistics(IAsyncResult asyncResult)
+        {
+            return endOperation<GetMetricStatisticsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeGetMetricStatistics(GetMetricStatisticsRequest getMetricStatisticsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new GetMetricStatisticsRequestMarshaller().Marshall(getMetricStatisticsRequest);
+            var unmarshaller = GetMetricStatisticsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
     
+        #region DisableAlarmActions
 
-         /// <summary>
-         /// <para> Disables actions for the specified alarms. When an alarm's
-         /// actions are disabled the alarm's state may change, but none of the
-         /// alarm's actions will execute. </para>
-         /// </summary>
-         /// 
-         /// <param name="disableAlarmActionsRequest">Container for the necessary
-         ///           parameters to execute the DisableAlarmActions service method on
-         ///           AmazonCloudWatch.</param>
-         /// 
-        public DisableAlarmActionsResponse DisableAlarmActions(DisableAlarmActionsRequest disableAlarmActionsRequest) 
-        {           
-            IRequest<DisableAlarmActionsRequest> request = new DisableAlarmActionsRequestMarshaller().Marshall(disableAlarmActionsRequest);
-            DisableAlarmActionsResponse response = Invoke<DisableAlarmActionsRequest, DisableAlarmActionsResponse> (request, this.signer, DisableAlarmActionsResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's state may change, but none of the alarm's
+        /// actions will execute. </para>
+        /// </summary>
+        /// 
+        /// <param name="disableAlarmActionsRequest">Container for the necessary parameters to execute the DisableAlarmActions service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        public DisableAlarmActionsResponse DisableAlarmActions(DisableAlarmActionsRequest disableAlarmActionsRequest)
+        {
+            IAsyncResult asyncResult = invokeDisableAlarmActions(disableAlarmActionsRequest, null, null, true);
+            return EndDisableAlarmActions(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableAlarmActions operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DisableAlarmActions"/>
+        /// </summary>
+        /// 
+        /// <param name="disableAlarmActionsRequest">Container for the necessary parameters to execute the DisableAlarmActions operation on
+        ///          AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDisableAlarmActions(DisableAlarmActionsRequest disableAlarmActionsRequest, AsyncCallback callback, object state)
+        {
+            return invokeDisableAlarmActions(disableAlarmActionsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DisableAlarmActions operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DisableAlarmActions"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableAlarmActions.</param>
+        public DisableAlarmActionsResponse EndDisableAlarmActions(IAsyncResult asyncResult)
+        {
+            return endOperation<DisableAlarmActionsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDisableAlarmActions(DisableAlarmActionsRequest disableAlarmActionsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DisableAlarmActionsRequestMarshaller().Marshall(disableAlarmActionsRequest);
+            var unmarshaller = DisableAlarmActionsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
     
+        #region DescribeAlarms
 
-         /// <summary>
-         /// <para> Retrieves alarms with the specified names. If no name is
-         /// specified, all alarms for the user are returned. Alarms can be
-         /// retrieved by using only a prefix for the alarm name, the alarm state,
-         /// or a prefix for any action. </para>
-         /// </summary>
-         /// 
-         /// <param name="describeAlarmsRequest">Container for the necessary
-         ///           parameters to execute the DescribeAlarms service method on
-         ///           AmazonCloudWatch.</param>
-         /// 
-         /// <returns>The response from the DescribeAlarms service method, as
-         ///         returned by AmazonCloudWatch.</returns>
-         /// 
-         /// <exception cref="InvalidNextTokenException"/>
-        public DescribeAlarmsResponse DescribeAlarms(DescribeAlarmsRequest describeAlarmsRequest) 
-        {           
-            IRequest<DescribeAlarmsRequest> request = new DescribeAlarmsRequestMarshaller().Marshall(describeAlarmsRequest);
-            DescribeAlarmsResponse response = Invoke<DescribeAlarmsRequest, DescribeAlarmsResponse> (request, this.signer, DescribeAlarmsResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by
+        /// using only a prefix for the alarm name, the alarm state, or a prefix for any action. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeAlarmsRequest">Container for the necessary parameters to execute the DescribeAlarms service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        /// <returns>The response from the DescribeAlarms service method, as returned by AmazonCloudWatch.</returns>
+        /// 
+        /// <exception cref="InvalidNextTokenException"/>
+        public DescribeAlarmsResponse DescribeAlarms(DescribeAlarmsRequest describeAlarmsRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeAlarms(describeAlarmsRequest, null, null, true);
+            return EndDescribeAlarms(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAlarms operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DescribeAlarms"/>
+        /// </summary>
+        /// 
+        /// <param name="describeAlarmsRequest">Container for the necessary parameters to execute the DescribeAlarms operation on
+        ///          AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAlarms
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeAlarms(DescribeAlarmsRequest describeAlarmsRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeAlarms(describeAlarmsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeAlarms operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DescribeAlarms"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarms.</param>
+        /// 
+        /// <returns>Returns a DescribeAlarmsResult from AmazonCloudWatch.</returns>
+        public DescribeAlarmsResponse EndDescribeAlarms(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeAlarmsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeAlarms(DescribeAlarmsRequest describeAlarmsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeAlarmsRequestMarshaller().Marshall(describeAlarmsRequest);
+            var unmarshaller = DescribeAlarmsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para> Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by
+        /// using only a prefix for the alarm name, the alarm state, or a prefix for any action. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeAlarms service method, as returned by AmazonCloudWatch.</returns>
+        /// 
+        /// <exception cref="InvalidNextTokenException"/>
+        public DescribeAlarmsResponse DescribeAlarms()
+        {
+            return DescribeAlarms(new DescribeAlarmsRequest());
+        }
+        
+
+        #endregion
     
+        #region DescribeAlarmsForMetric
 
-         /// <summary>
-         /// <para> Retrieves all alarms for a single metric. Specify a statistic,
-         /// period, or unit to filter the set of alarms further. </para>
-         /// </summary>
-         /// 
-         /// <param name="describeAlarmsForMetricRequest">Container for the
-         ///           necessary parameters to execute the DescribeAlarmsForMetric service
-         ///           method on AmazonCloudWatch.</param>
-         /// 
-         /// <returns>The response from the DescribeAlarmsForMetric service method,
-         ///         as returned by AmazonCloudWatch.</returns>
-         /// 
-        public DescribeAlarmsForMetricResponse DescribeAlarmsForMetric(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest) 
-        {           
-            IRequest<DescribeAlarmsForMetricRequest> request = new DescribeAlarmsForMetricRequestMarshaller().Marshall(describeAlarmsForMetricRequest);
-            DescribeAlarmsForMetricResponse response = Invoke<DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResponse> (request, this.signer, DescribeAlarmsForMetricResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeAlarmsForMetricRequest">Container for the necessary parameters to execute the DescribeAlarmsForMetric service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        /// <returns>The response from the DescribeAlarmsForMetric service method, as returned by AmazonCloudWatch.</returns>
+        /// 
+        public DescribeAlarmsForMetricResponse DescribeAlarmsForMetric(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeAlarmsForMetric(describeAlarmsForMetricRequest, null, null, true);
+            return EndDescribeAlarmsForMetric(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAlarmsForMetric operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DescribeAlarmsForMetric"/>
+        /// </summary>
+        /// 
+        /// <param name="describeAlarmsForMetricRequest">Container for the necessary parameters to execute the DescribeAlarmsForMetric operation on
+        ///          AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeAlarmsForMetric operation.</returns>
+        public IAsyncResult BeginDescribeAlarmsForMetric(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeAlarmsForMetric(describeAlarmsForMetricRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeAlarmsForMetric operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DescribeAlarmsForMetric"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarmsForMetric.</param>
+        /// 
+        /// <returns>Returns a DescribeAlarmsForMetricResult from AmazonCloudWatch.</returns>
+        public DescribeAlarmsForMetricResponse EndDescribeAlarmsForMetric(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeAlarmsForMetricResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeAlarmsForMetric(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeAlarmsForMetricRequestMarshaller().Marshall(describeAlarmsForMetricRequest);
+            var unmarshaller = DescribeAlarmsForMetricResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
     
+        #region DescribeAlarmHistory
 
-         /// <summary>
-         /// <para> Retrieves history for the specified alarm. Filter alarms by
-         /// date range or item type. If an alarm name is not specified, Amazon
-         /// CloudWatch returns histories for all of the owner's alarms. </para>
-         /// <para><b>NOTE:</b> Amazon CloudWatch retains the history of an alarm
-         /// for two weeks, whether or not you delete the alarm. </para>
-         /// </summary>
-         /// 
-         /// <param name="describeAlarmHistoryRequest">Container for the necessary
-         ///           parameters to execute the DescribeAlarmHistory service method on
-         ///           AmazonCloudWatch.</param>
-         /// 
-         /// <returns>The response from the DescribeAlarmHistory service method, as
-         ///         returned by AmazonCloudWatch.</returns>
-         /// 
-         /// <exception cref="InvalidNextTokenException"/>
-        public DescribeAlarmHistoryResponse DescribeAlarmHistory(DescribeAlarmHistoryRequest describeAlarmHistoryRequest) 
-        {           
-            IRequest<DescribeAlarmHistoryRequest> request = new DescribeAlarmHistoryRequestMarshaller().Marshall(describeAlarmHistoryRequest);
-            DescribeAlarmHistoryResponse response = Invoke<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResponse> (request, this.signer, DescribeAlarmHistoryResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon
+        /// CloudWatch returns histories for all of the owner's alarms. </para> <para><b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for
+        /// two weeks, whether or not you delete the alarm. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeAlarmHistoryRequest">Container for the necessary parameters to execute the DescribeAlarmHistory service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        /// <returns>The response from the DescribeAlarmHistory service method, as returned by AmazonCloudWatch.</returns>
+        /// 
+        /// <exception cref="InvalidNextTokenException"/>
+        public DescribeAlarmHistoryResponse DescribeAlarmHistory(DescribeAlarmHistoryRequest describeAlarmHistoryRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeAlarmHistory(describeAlarmHistoryRequest, null, null, true);
+            return EndDescribeAlarmHistory(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAlarmHistory operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DescribeAlarmHistory"/>
+        /// </summary>
+        /// 
+        /// <param name="describeAlarmHistoryRequest">Container for the necessary parameters to execute the DescribeAlarmHistory operation on
+        ///          AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeAlarmHistory operation.</returns>
+        public IAsyncResult BeginDescribeAlarmHistory(DescribeAlarmHistoryRequest describeAlarmHistoryRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeAlarmHistory(describeAlarmHistoryRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeAlarmHistory operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DescribeAlarmHistory"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarmHistory.</param>
+        /// 
+        /// <returns>Returns a DescribeAlarmHistoryResult from AmazonCloudWatch.</returns>
+        public DescribeAlarmHistoryResponse EndDescribeAlarmHistory(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeAlarmHistoryResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeAlarmHistory(DescribeAlarmHistoryRequest describeAlarmHistoryRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeAlarmHistoryRequestMarshaller().Marshall(describeAlarmHistoryRequest);
+            var unmarshaller = DescribeAlarmHistoryResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para> Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon
+        /// CloudWatch returns histories for all of the owner's alarms. </para> <para><b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for
+        /// two weeks, whether or not you delete the alarm. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeAlarmHistory service method, as returned by AmazonCloudWatch.</returns>
+        /// 
+        /// <exception cref="InvalidNextTokenException"/>
+        public DescribeAlarmHistoryResponse DescribeAlarmHistory()
+        {
+            return DescribeAlarmHistory(new DescribeAlarmHistoryRequest());
+        }
+        
+
+        #endregion
     
+        #region EnableAlarmActions
 
-         /// <summary>
-         /// <para> Enables actions for the specified alarms. </para>
-         /// </summary>
-         /// 
-         /// <param name="enableAlarmActionsRequest">Container for the necessary
-         ///           parameters to execute the EnableAlarmActions service method on
-         ///           AmazonCloudWatch.</param>
-         /// 
-        public EnableAlarmActionsResponse EnableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest) 
-        {           
-            IRequest<EnableAlarmActionsRequest> request = new EnableAlarmActionsRequestMarshaller().Marshall(enableAlarmActionsRequest);
-            EnableAlarmActionsResponse response = Invoke<EnableAlarmActionsRequest, EnableAlarmActionsResponse> (request, this.signer, EnableAlarmActionsResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Enables actions for the specified alarms. </para>
+        /// </summary>
+        /// 
+        /// <param name="enableAlarmActionsRequest">Container for the necessary parameters to execute the EnableAlarmActions service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        public EnableAlarmActionsResponse EnableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest)
+        {
+            IAsyncResult asyncResult = invokeEnableAlarmActions(enableAlarmActionsRequest, null, null, true);
+            return EndEnableAlarmActions(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableAlarmActions operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.EnableAlarmActions"/>
+        /// </summary>
+        /// 
+        /// <param name="enableAlarmActionsRequest">Container for the necessary parameters to execute the EnableAlarmActions operation on
+        ///          AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginEnableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest, AsyncCallback callback, object state)
+        {
+            return invokeEnableAlarmActions(enableAlarmActionsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the EnableAlarmActions operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.EnableAlarmActions"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableAlarmActions.</param>
+        public EnableAlarmActionsResponse EndEnableAlarmActions(IAsyncResult asyncResult)
+        {
+            return endOperation<EnableAlarmActionsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeEnableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new EnableAlarmActionsRequestMarshaller().Marshall(enableAlarmActionsRequest);
+            var unmarshaller = EnableAlarmActionsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
     
+        #region DeleteAlarms
 
-         /// <summary>
-         /// <para> Deletes all specified alarms. In the event of an error, no
-         /// alarms are deleted. </para>
-         /// </summary>
-         /// 
-         /// <param name="deleteAlarmsRequest">Container for the necessary
-         ///           parameters to execute the DeleteAlarms service method on
-         ///           AmazonCloudWatch.</param>
-         /// 
-         /// <exception cref="ResourceNotFoundException"/>
-        public DeleteAlarmsResponse DeleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest) 
-        {           
-            IRequest<DeleteAlarmsRequest> request = new DeleteAlarmsRequestMarshaller().Marshall(deleteAlarmsRequest);
-            DeleteAlarmsResponse response = Invoke<DeleteAlarmsRequest, DeleteAlarmsResponse> (request, this.signer, DeleteAlarmsResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Deletes all specified alarms. In the event of an error, no alarms are deleted. </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteAlarmsRequest">Container for the necessary parameters to execute the DeleteAlarms service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        public DeleteAlarmsResponse DeleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteAlarms(deleteAlarmsRequest, null, null, true);
+            return EndDeleteAlarms(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAlarms operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DeleteAlarms"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteAlarmsRequest">Container for the necessary parameters to execute the DeleteAlarms operation on AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteAlarms(deleteAlarmsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteAlarms operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.DeleteAlarms"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAlarms.</param>
+        public DeleteAlarmsResponse EndDeleteAlarms(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteAlarmsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteAlarmsRequestMarshaller().Marshall(deleteAlarmsRequest);
+            var unmarshaller = DeleteAlarmsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
     
+        #region SetAlarmState
 
-         /// <summary>
-         /// <para> Temporarily sets the state of an alarm. When the updated
-         /// <c>StateValue</c> differs from the previous value, the action
-         /// configured for the appropriate state is invoked. This is not a
-         /// permanent change. The next periodic alarm check (in about a minute)
-         /// will set the alarm to its actual state. </para>
-         /// </summary>
-         /// 
-         /// <param name="setAlarmStateRequest">Container for the necessary
-         ///           parameters to execute the SetAlarmState service method on
-         ///           AmazonCloudWatch.</param>
-         /// 
-         /// <exception cref="ResourceNotFoundException"/>
-         /// <exception cref="InvalidFormatException"/>
-        public SetAlarmStateResponse SetAlarmState(SetAlarmStateRequest setAlarmStateRequest) 
-        {           
-            IRequest<SetAlarmStateRequest> request = new SetAlarmStateRequestMarshaller().Marshall(setAlarmStateRequest);
-            SetAlarmStateResponse response = Invoke<SetAlarmStateRequest, SetAlarmStateResponse> (request, this.signer, SetAlarmStateResponseUnmarshaller.GetInstance());
-            return response;
+        /// <summary>
+        /// <para> Temporarily sets the state of an alarm. When the updated <c>StateValue</c> differs from the previous value, the action configured for
+        /// the appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to
+        /// its actual state. </para>
+        /// </summary>
+        /// 
+        /// <param name="setAlarmStateRequest">Container for the necessary parameters to execute the SetAlarmState service method on
+        ///          AmazonCloudWatch.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="InvalidFormatException"/>
+        public SetAlarmStateResponse SetAlarmState(SetAlarmStateRequest setAlarmStateRequest)
+        {
+            IAsyncResult asyncResult = invokeSetAlarmState(setAlarmStateRequest, null, null, true);
+            return EndSetAlarmState(asyncResult);
         }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetAlarmState operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.SetAlarmState"/>
+        /// </summary>
+        /// 
+        /// <param name="setAlarmStateRequest">Container for the necessary parameters to execute the SetAlarmState operation on
+        ///          AmazonCloudWatch.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginSetAlarmState(SetAlarmStateRequest setAlarmStateRequest, AsyncCallback callback, object state)
+        {
+            return invokeSetAlarmState(setAlarmStateRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetAlarmState operation.
+        /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.SetAlarmState"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetAlarmState.</param>
+        public SetAlarmStateResponse EndSetAlarmState(IAsyncResult asyncResult)
+        {
+            return endOperation<SetAlarmStateResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeSetAlarmState(SetAlarmStateRequest setAlarmStateRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new SetAlarmStateRequestMarshaller().Marshall(setAlarmStateRequest);
+            var unmarshaller = SetAlarmStateResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
     
     }
-}   
+}
     

@@ -22,9 +22,9 @@
       /// <summary> 
       /// BatchGetItemResultUnmarshaller 
       /// </summary> 
-      internal class BatchGetItemResultUnmarshaller : IUnmarshaller<BatchGetItemResult, UnmarshallerContext>, IUnmarshaller<BatchGetItemResult, JsonUnmarshallerContext> 
+      internal class BatchGetItemResultUnmarshaller : IUnmarshaller<BatchGetItemResult, XmlUnmarshallerContext>, IUnmarshaller<BatchGetItemResult, JsonUnmarshallerContext> 
       { 
-        BatchGetItemResult IUnmarshaller<BatchGetItemResult, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        BatchGetItemResult IUnmarshaller<BatchGetItemResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

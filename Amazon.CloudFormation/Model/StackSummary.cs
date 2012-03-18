@@ -146,6 +146,11 @@ namespace Amazon.CloudFormation.Model
         {
             return this.creationTime.HasValue;       
         }
+
+        /// <summary>
+        /// The time the stack was last updated.
+        ///  
+        /// </summary>
         public DateTime LastUpdatedTime
         {
             get { return this.lastUpdatedTime ?? default(DateTime); }
@@ -234,6 +239,11 @@ namespace Amazon.CloudFormation.Model
         {
             return this.stackStatus != null;       
         }
+
+        /// <summary>
+        /// Success/Failure message associated with the stack status.
+        ///  
+        /// </summary>
         public string StackStatusReason
         {
             get { return this.stackStatusReason; }

@@ -30,6 +30,7 @@ namespace Amazon.CloudFormation
         public AmazonCloudFormationConfig()
         {
             this.ServiceURL = "https://cloudformation.us-east-1.amazonaws.com";
+            
         }
 
         /// <summary>

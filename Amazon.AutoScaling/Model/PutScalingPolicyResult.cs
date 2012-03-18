@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>PolicyARNType</c> data type. </para>
+    /// <para> The PolicyARNType data type. </para>
     /// </summary>
     public class PutScalingPolicyResult  
     {

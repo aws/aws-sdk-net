@@ -25,7 +25,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLoginProfile operation.
-    /// <para>Retrieves the login profile for the specified user.</para>
+    /// <para>Retrieves the user name and password create date for the specified user.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetLoginProfile"/>
     public class GetLoginProfileRequest : AmazonWebServiceRequest

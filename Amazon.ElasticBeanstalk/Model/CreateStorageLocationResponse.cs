@@ -34,7 +34,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         public CreateStorageLocationResult CreateStorageLocationResult
         {
-            get { return this.createStorageLocationResult; }
+            get 
+            {
+                if(this.createStorageLocationResult == null)
+                {
+                    this.createStorageLocationResult = new CreateStorageLocationResult();
+                }
+
+                return this.createStorageLocationResult; 
+            }
             set { this.createStorageLocationResult = value; }
         }
     }

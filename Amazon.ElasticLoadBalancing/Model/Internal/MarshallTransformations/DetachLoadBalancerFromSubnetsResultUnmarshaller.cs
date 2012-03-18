@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DetachLoadBalancerFromSubnetsResult Unmarshaller
      /// </summary>
-    internal class DetachLoadBalancerFromSubnetsResultUnmarshaller : IUnmarshaller<DetachLoadBalancerFromSubnetsResult, UnmarshallerContext> 
+    internal class DetachLoadBalancerFromSubnetsResultUnmarshaller : IUnmarshaller<DetachLoadBalancerFromSubnetsResult, XmlUnmarshallerContext> 
     {
-        public DetachLoadBalancerFromSubnetsResult Unmarshall(UnmarshallerContext context) 
+        public DetachLoadBalancerFromSubnetsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DetachLoadBalancerFromSubnetsResult detachLoadBalancerFromSubnetsResult = new DetachLoadBalancerFromSubnetsResult();
             int originalDepth = context.CurrentDepth;
@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("Subnets/member", targetDepth))
                     {
                         detachLoadBalancerFromSubnetsResult.Subnets.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
@@ -48,6 +48,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return detachLoadBalancerFromSubnetsResult;
                 }
             }
+                        
+
 
             return detachLoadBalancerFromSubnetsResult;
         }

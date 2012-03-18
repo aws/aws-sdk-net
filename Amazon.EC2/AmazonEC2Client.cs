@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-12-15
+ *  API Version: 2012-03-01
  */
 
 using System;
@@ -100,16 +100,13 @@ namespace Amazon.EC2
         {
             if (!this.disposed)
             {
-                if (fDisposing)
+                if (fDisposing && credentials != null)
                 {
-                    if (credentials != null)
+                    if (ownCredentials)
                     {
-                        if (ownCredentials && credentials is IDisposable)
-                        {
-                            (credentials as IDisposable).Dispose();
-                        }
-                        credentials = null;
+                        credentials.Dispose();
                     }
+                    credentials = null;
                 }
                 this.disposed = true;
             }
@@ -170,7 +167,6 @@ namespace Amazon.EC2
         /// <param name="config">The AmazonEC2 Configuration Object</param>
         public AmazonEC2Client(AmazonEC2Config config)
             : this(new EnvironmentAWSCredentials(), config, true) { }
-
 
         /// <summary>
         /// Constructs AmazonEC2Client with AWS Access Key ID and AWS Secret Key
@@ -2792,6 +2788,54 @@ namespace Amazon.EC2
             return Invoke<ResetNetworkInterfaceAttributeResponse>(ConvertResetNetworkInterfaceAttribute(request));
         }
 
+        /// <summary>
+        /// Returns the status of one or more volumes.
+        /// </summary>
+        /// <param name="request">Describe Volume Status request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Volume Status response from the service</returns>
+        public DescribeVolumeStatusResponse DescribeVolumeStatus(DescribeVolumeStatusRequest request)
+        {
+            return Invoke<DescribeVolumeStatusResponse>(ConvertDescribeVolumeStatus(request));
+        }
+
+        /// <summary>
+        /// Enables I/O operations for a volume that had I/O operations disabled.
+        /// </summary>
+        /// <param name="request">Enable Volume IO request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Enable Volume IO response from the service</returns>
+        public EnableVolumeIOResponse EnableVolumeIO(EnableVolumeIORequest request)
+        {
+            return Invoke<EnableVolumeIOResponse>(ConvertEnableVolumeIO(request));
+        }
+
+        /// <summary>
+        /// Modifies a volume attribute.
+        /// </summary>
+        /// <param name="request">Modify Volume Attribute request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Modify Volume Attribute response from the service</returns>
+        public ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request)
+        {
+            return Invoke<ModifyVolumeAttributeResponse>(ConvertModifyVolumeAttribute(request));
+        }
+
+        /// <summary>
+        /// Describes attribute of the volume.
+        /// </summary>
+        /// <param name="request">Describe Volume Attribute request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Volume Attribute response from the service</returns>
+        public DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
+        {
+            return Invoke<DescribeVolumeAttributeResponse>(ConvertDescribeVolumeAttribute(request));
+        }
+
         #endregion
 
         #region Private API
@@ -2805,6 +2849,8 @@ namespace Amazon.EC2
             HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
             if (request != null)
             {
+                request.ServicePoint.ConnectionLimit = config.ConnectionLimit;
+
                 if (config.IsSetProxyHost() && config.IsSetProxyPort())
                 {
                     WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
@@ -2884,19 +2930,7 @@ namespace Amazon.EC2
                         }
                     }
 
-                    /* Perform response transformation */
-                    if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
-                    {
-                        responseBody = Transform(responseBody, actionName, this.GetType());
-                    }
-
-                    /* Attempt to deserialize response into <Action> Response type */
-                    XmlSerializer serializer = new XmlSerializer(typeof(T));
-                    using (XmlTextReader sr = new XmlTextReader(new StringReader(responseBody)))
-                    {
-                        response = (T)serializer.Deserialize(sr);
-                    }
-                    shouldRetry = false;
+                    shouldRetry = ParseResponse<T>(actionName, ref response, ref responseBody);
                 }
                 /* Web exception is thrown on unsucessful responses */
                 catch (WebException we)
@@ -2973,6 +3007,30 @@ namespace Amazon.EC2
             } while (shouldRetry);
 
             return response;
+        }
+
+        private bool ParseResponse<T>(string actionName, ref T response, ref string responseBody)
+        {
+            string transformedResponseBody = TransformResponse(actionName, responseBody);
+
+            /* Attempt to deserialize response into <Action> Response type */
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            using (XmlTextReader sr = new XmlTextReader(new StringReader(transformedResponseBody)))
+            {
+                response = (T)serializer.Deserialize(sr);
+            }
+
+            return false;
+        }
+
+        private string TransformResponse(string actionName, string responseBody)
+        {
+            /* Perform response transformation */
+            if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
+            {
+                responseBody = Transform(responseBody, actionName, this.GetType());
+            }
+            return responseBody;
         }
 
         /**
@@ -5089,7 +5147,7 @@ namespace Amazon.EC2
             if (request.IsSetGroupId())
             {
                 parameters["GroupId"] = request.GroupId;
-            }
+            } 
             if (request.IsSetSourceSecurityGroupName())
             {
                 parameters["SourceSecurityGroupName"] = request.SourceSecurityGroupName;
@@ -7050,6 +7108,116 @@ namespace Amazon.EC2
             if (request.IsSetNetworkInterfaceId())
             {
                 parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+            }
+            if (request.IsSetAttribute())
+            {
+                parameters["Attribute"] = request.Attribute;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeVolumeStatusRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeVolumeStatus(DescribeVolumeStatusRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeVolumeStatus";
+
+            if (request.IsSetVolumeId())
+            {
+                List<string> describeVolumeStatusRequestVolumeIdList = request.VolumeId;
+                int describeVolumeStatusRequestVolumeIdListIndex = 1;
+                foreach (string describeVolumeStatusRequestVolumeId in describeVolumeStatusRequestVolumeIdList)
+                {
+                    parameters[String.Concat("VolumeId", ".", describeVolumeStatusRequestVolumeIdListIndex)] = describeVolumeStatusRequestVolumeId;
+                    describeVolumeStatusRequestVolumeIdListIndex++;
+                }
+            }
+
+            if (request.IsSetFilter())
+            {
+                List<Filter> describeInstanceStatusRequestFilterList = request.Filter;
+                int describeInstanceStatusRequestFilterListIndex = 1;
+                foreach (Filter describeInstanceStatusRequestFilter in describeInstanceStatusRequestFilterList)
+                {
+                    if (describeInstanceStatusRequestFilter.IsSetName())
+                    {
+                        parameters[String.Concat("Filter", ".", describeInstanceStatusRequestFilterListIndex, ".", "Name")] = describeInstanceStatusRequestFilter.Name;
+                    }
+                    List<string> filterValueList = describeInstanceStatusRequestFilter.Value;
+                    int filterValueListIndex = 1;
+                    foreach (string filterValue in filterValueList)
+                    {
+                        parameters[String.Concat("Filter", ".", describeInstanceStatusRequestFilterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                        filterValueListIndex++;
+                    }
+
+                    describeInstanceStatusRequestFilterListIndex++;
+                }
+            }
+
+            if (request.IsSetMaxResults())
+            {
+                parameters["MaxResults"] = request.MaxResults.ToString();
+            }
+
+            if (request.IsSetNextToken())
+            {
+                parameters["NextToken"] = request.NextToken;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert EnableVolumeIORequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertEnableVolumeIO(EnableVolumeIORequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "EnableVolumeIO";
+
+            if (request.IsSetVolumeId())
+            {
+                parameters["VolumeId"] = request.VolumeId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert ModifyVolumeAttributeRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertModifyVolumeAttribute(ModifyVolumeAttributeRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ModifyVolumeAttribute";
+
+            if (request.IsSetVolumeId())
+            {
+                parameters["VolumeId"] = request.VolumeId;
+            }
+            if (request.IsSetAutoEnableIO())
+            {
+                parameters["AutoEnableIO.Value"] = request.AutoEnableIO.ToString().ToLower();
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeVolumeAttributeRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeVolumeAttribute";
+
+            if (request.IsSetVolumeId())
+            {
+                parameters["VolumeId"] = request.VolumeId;
             }
             if (request.IsSetAttribute())
             {

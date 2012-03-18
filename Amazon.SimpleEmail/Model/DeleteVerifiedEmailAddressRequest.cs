@@ -25,8 +25,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVerifiedEmailAddress operation.
-    /// <para>Deletes the specified email address from the list of verified
-    /// addresses.</para>
+    /// <para>Deletes the specified email address from the list of verified addresses.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
     public class DeleteVerifiedEmailAddressRequest : AmazonWebServiceRequest

@@ -22,9 +22,9 @@
       /// <summary> 
       /// DescribeTableResultUnmarshaller 
       /// </summary> 
-      internal class DescribeTableResultUnmarshaller : IUnmarshaller<DescribeTableResult, UnmarshallerContext>, IUnmarshaller<DescribeTableResult, JsonUnmarshallerContext> 
+      internal class DescribeTableResultUnmarshaller : IUnmarshaller<DescribeTableResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeTableResult, JsonUnmarshallerContext> 
       { 
-        DescribeTableResult IUnmarshaller<DescribeTableResult, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        DescribeTableResult IUnmarshaller<DescribeTableResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

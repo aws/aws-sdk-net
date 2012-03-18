@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   SetLoadBalancerPoliciesForBackendServerResult Unmarshaller
      /// </summary>
-    internal class SetLoadBalancerPoliciesForBackendServerResultUnmarshaller : IUnmarshaller<SetLoadBalancerPoliciesForBackendServerResult, UnmarshallerContext> 
+    internal class SetLoadBalancerPoliciesForBackendServerResultUnmarshaller : IUnmarshaller<SetLoadBalancerPoliciesForBackendServerResult, XmlUnmarshallerContext> 
     {
-        public SetLoadBalancerPoliciesForBackendServerResult Unmarshall(UnmarshallerContext context) 
+        public SetLoadBalancerPoliciesForBackendServerResult Unmarshall(XmlUnmarshallerContext context) 
         {
             SetLoadBalancerPoliciesForBackendServerResult setLoadBalancerPoliciesForBackendServerResult = new SetLoadBalancerPoliciesForBackendServerResult();
             int originalDepth = context.CurrentDepth;
@@ -42,6 +42,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return setLoadBalancerPoliciesForBackendServerResult;
                 }
             }
+                        
+
 
             return setLoadBalancerPoliciesForBackendServerResult;
         }

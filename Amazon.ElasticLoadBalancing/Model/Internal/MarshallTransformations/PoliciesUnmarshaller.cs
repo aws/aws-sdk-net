@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Policies Unmarshaller
      /// </summary>
-    internal class PoliciesUnmarshaller : IUnmarshaller<Policies, UnmarshallerContext> 
+    internal class PoliciesUnmarshaller : IUnmarshaller<Policies, XmlUnmarshallerContext> 
     {
-        public Policies Unmarshall(UnmarshallerContext context) 
+        public Policies Unmarshall(XmlUnmarshallerContext context) 
         {
             Policies policies = new Policies();
             int originalDepth = context.CurrentDepth;
@@ -35,19 +35,19 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("AppCookieStickinessPolicies/member", targetDepth))
                     {
                         policies.AppCookieStickinessPolicies.Add(AppCookieStickinessPolicyUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("LBCookieStickinessPolicies/member", targetDepth))
                     {
                         policies.LBCookieStickinessPolicies.Add(LBCookieStickinessPolicyUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("OtherPolicies/member", targetDepth))
                     {
                         policies.OtherPolicies.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
@@ -60,6 +60,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return policies;
                 }
             }
+                        
+
 
             return policies;
         }

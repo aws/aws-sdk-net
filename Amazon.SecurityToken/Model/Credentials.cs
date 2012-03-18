@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.SecurityToken.Model
 {
-    /// <summary>Credentials
+    /// <summary>
+    /// <para>AWS credentials for API authentication.</para>
     /// </summary>
     public class Credentials  
     {
@@ -29,6 +30,24 @@ namespace Amazon.SecurityToken.Model
         private string secretAccessKey;
         private string sessionToken;
         private DateTime? expiration;
+
+        /// <summary>
+        /// AccessKeyId ID that identifies the temporary credentials.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>16 - 32</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\w]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string AccessKeyId
         {
             get { return this.accessKeyId; }
@@ -52,6 +71,11 @@ namespace Amazon.SecurityToken.Model
         {
             return this.accessKeyId != null;       
         }
+
+        /// <summary>
+        /// The Secret Access Key to sign requests.
+        ///  
+        /// </summary>
         public string SecretAccessKey
         {
             get { return this.secretAccessKey; }
@@ -75,6 +99,11 @@ namespace Amazon.SecurityToken.Model
         {
             return this.secretAccessKey != null;       
         }
+
+        /// <summary>
+        /// The security token that users must pass to the service API to use the temporary credentials.
+        ///  
+        /// </summary>
         public string SessionToken
         {
             get { return this.sessionToken; }
@@ -98,6 +127,11 @@ namespace Amazon.SecurityToken.Model
         {
             return this.sessionToken != null;       
         }
+
+        /// <summary>
+        /// The date on which these credentials expire.
+        ///  
+        /// </summary>
         public DateTime Expiration
         {
             get { return this.expiration ?? default(DateTime); }

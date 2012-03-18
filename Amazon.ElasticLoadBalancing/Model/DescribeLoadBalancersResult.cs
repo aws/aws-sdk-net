@@ -27,6 +27,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
         
         private List<LoadBalancerDescription> loadBalancerDescriptions = new List<LoadBalancerDescription>();
+        private string nextMarker;
 
         /// <summary>
         /// A list of LoadBalancer description structures.
@@ -71,6 +72,34 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetLoadBalancerDescriptions()
         {
             return this.loadBalancerDescriptions.Count > 0;       
+        }
+
+        /// <summary>
+        /// An optional parameter reserved for future use.
+        ///  
+        /// </summary>
+        public string NextMarker
+        {
+            get { return this.nextMarker; }
+            set { this.nextMarker = value; }
+        }
+
+        /// <summary>
+        /// Sets the NextMarker property
+        /// </summary>
+        /// <param name="nextMarker">The value to set for the NextMarker property </param>
+        /// <returns>this instance</returns>
+        public DescribeLoadBalancersResult WithNextMarker(string nextMarker)
+        {
+            this.nextMarker = nextMarker;
+            return this;
+        }
+            
+
+        // Check to see if NextMarker property is set
+        internal bool IsSetNextMarker()
+        {
+            return this.nextMarker != null;       
         }
     }
 }

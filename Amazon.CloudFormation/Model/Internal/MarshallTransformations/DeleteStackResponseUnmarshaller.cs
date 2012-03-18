@@ -25,12 +25,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DeleteStack operation
     /// </summary>
-    internal class DeleteStackResponseUnmarshaller : IResponseUnmarshaller<DeleteStackResponse, UnmarshallerContext> {
+    internal class DeleteStackResponseUnmarshaller : XmlResponseUnmarshaller
+    {
 
-        public DeleteStackResponse Unmarshall(UnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteStackResponse response = new DeleteStackResponse();
-
+            
             while (context.Read())
             {
                 if (context.IsStartElement)
@@ -42,12 +43,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                 }
             }
+                
 
             return response;
         }
         
         
-        public AmazonServiceException UnmarshallException(UnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             

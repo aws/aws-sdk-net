@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The <c>Metric</c> data type contains information about a
-    /// specific metric. If you call ListMetrics, Amazon CloudWatch returns
-    /// information contained by this data type. </para>
+    /// <para> The <c>Metric</c> data type contains information about a specific metric. If you call ListMetrics, Amazon CloudWatch returns
+    /// information contained by this data type. </para> <para> The example in the Examples section publishes two metrics named buffers and latency.
+    /// Both metrics are in the examples namespace. Both metrics have two dimensions, InstanceID and InstanceType. </para>
     /// </summary>
     public class Metric  
     {

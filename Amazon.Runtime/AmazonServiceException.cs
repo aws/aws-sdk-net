@@ -112,5 +112,27 @@ namespace Amazon.Runtime
             get { return this.statusCode; }
             protected set { this.statusCode = value; }
         }
+
+
+        #region Internal Set methods
+
+        internal void SetErrorType(ErrorType errorType)
+        {
+            this.ErrorType = errorType;
+        }
+        internal void SetErrorCode(string errorCode)
+        {
+            this.ErrorCode = errorCode;
+        }
+        internal void SetRequestId(string requestId)
+        {
+            this.RequestId = requestId;
+        }
+        internal void SetStatusCode(HttpStatusCode StatusCode)
+        {
+            this.StatusCode = StatusCode;
+        }
+
+        #endregion
     }
 }

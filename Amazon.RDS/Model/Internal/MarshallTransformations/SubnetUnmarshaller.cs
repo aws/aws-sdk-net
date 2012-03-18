@@ -22,9 +22,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Subnet Unmarshaller
      /// </summary>
-    internal class SubnetUnmarshaller : IUnmarshaller<Subnet, UnmarshallerContext> 
+    internal class SubnetUnmarshaller : IUnmarshaller<Subnet, XmlUnmarshallerContext> 
     {
-        public Subnet Unmarshall(UnmarshallerContext context) 
+        public Subnet Unmarshall(XmlUnmarshallerContext context) 
         {
             Subnet subnet = new Subnet();
             int originalDepth = context.CurrentDepth;

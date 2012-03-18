@@ -30,11 +30,19 @@ namespace Amazon.SecurityToken.Model
 
         /// <summary>
         /// Gets and sets the GetFederationTokenResult property.
-        /// 
+        /// Contains the result of a successful invocation of the GetFederationToken action.
         /// </summary>
         public GetFederationTokenResult GetFederationTokenResult
         {
-            get { return this.getFederationTokenResult; }
+            get 
+            {
+                if(this.getFederationTokenResult == null)
+                {
+                    this.getFederationTokenResult = new GetFederationTokenResult();
+                }
+
+                return this.getFederationTokenResult; 
+            }
             set { this.getFederationTokenResult = value; }
         }
     }

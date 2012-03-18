@@ -22,9 +22,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
      /// <summary>
      ///   GetChangeResult Unmarshaller
      /// </summary>
-    internal class GetChangeResultUnmarshaller : IUnmarshaller<GetChangeResult, UnmarshallerContext> 
+    internal class GetChangeResultUnmarshaller : IUnmarshaller<GetChangeResult, XmlUnmarshallerContext> 
     {
-        public GetChangeResult Unmarshall(UnmarshallerContext context) 
+        public GetChangeResult Unmarshall(XmlUnmarshallerContext context) 
         {
             GetChangeResult getChangeResult = new GetChangeResult();
             int originalDepth = context.CurrentDepth;

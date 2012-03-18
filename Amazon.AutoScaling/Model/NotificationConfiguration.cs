@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>NotificationConfiguration</c> data type. </para>
+    /// <para> The NotificationConfiguration data type. </para>
     /// </summary>
     public class NotificationConfiguration  
     {

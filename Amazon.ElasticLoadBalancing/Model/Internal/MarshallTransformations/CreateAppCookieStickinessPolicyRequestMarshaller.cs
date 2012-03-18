@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Create App Cookie Stickiness Policy Request Marshaller
     /// </summary>       
-    public class CreateAppCookieStickinessPolicyRequestMarshaller : IMarshaller<IRequest<CreateAppCookieStickinessPolicyRequest>, CreateAppCookieStickinessPolicyRequest>
+    public class CreateAppCookieStickinessPolicyRequestMarshaller : IMarshaller<IRequest, CreateAppCookieStickinessPolicyRequest>
     {
-        public IRequest<CreateAppCookieStickinessPolicyRequest> Marshall(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest)
+        public IRequest Marshall(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest)
         {
-            IRequest<CreateAppCookieStickinessPolicyRequest> request = new DefaultRequest<CreateAppCookieStickinessPolicyRequest>(createAppCookieStickinessPolicyRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(createAppCookieStickinessPolicyRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateAppCookieStickinessPolicy");
             request.Parameters.Add("Version", "2011-11-15");
             if (createAppCookieStickinessPolicyRequest != null && createAppCookieStickinessPolicyRequest.IsSetLoadBalancerName())

@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// Gets and sets the ListStacksResult property.
-        /// 
+        /// The output for ListStacks action.
         /// </summary>
         public ListStacksResult ListStacksResult
         {

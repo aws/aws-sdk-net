@@ -30,12 +30,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
     /// <summary>
     /// Poll For Decision Task Request Marshaller
     /// </summary>       
-    internal class PollForDecisionTaskRequestMarshaller : IMarshaller<IRequest<PollForDecisionTaskRequest>, PollForDecisionTaskRequest> 
+    internal class PollForDecisionTaskRequestMarshaller : IMarshaller<IRequest, PollForDecisionTaskRequest> 
     {
-        public IRequest<PollForDecisionTaskRequest> Marshall(PollForDecisionTaskRequest pollForDecisionTaskRequest) 
+        public IRequest Marshall(PollForDecisionTaskRequest pollForDecisionTaskRequest) 
         {
 
-            IRequest<PollForDecisionTaskRequest> request = new DefaultRequest<PollForDecisionTaskRequest>(pollForDecisionTaskRequest, "AmazonSimpleWorkflow");
+            IRequest request = new DefaultRequest(pollForDecisionTaskRequest, "AmazonSimpleWorkflow");
             string target = "SimpleWorkflowService.PollForDecisionTask";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";

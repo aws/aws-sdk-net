@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PolicyTypeDescription Unmarshaller
      /// </summary>
-    internal class PolicyTypeDescriptionUnmarshaller : IUnmarshaller<PolicyTypeDescription, UnmarshallerContext> 
+    internal class PolicyTypeDescriptionUnmarshaller : IUnmarshaller<PolicyTypeDescription, XmlUnmarshallerContext> 
     {
-        public PolicyTypeDescription Unmarshall(UnmarshallerContext context) 
+        public PolicyTypeDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             PolicyTypeDescription policyTypeDescription = new PolicyTypeDescription();
             int originalDepth = context.CurrentDepth;
@@ -35,19 +35,19 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("PolicyTypeName", targetDepth))
                     {
                         policyTypeDescription.PolicyTypeName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("Description", targetDepth))
                     {
                         policyTypeDescription.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
-                    }
+                    } 
                     if (context.TestExpression("PolicyAttributeTypeDescriptions/member", targetDepth))
                     {
                         policyTypeDescription.PolicyAttributeTypeDescriptions.Add(PolicyAttributeTypeDescriptionUnmarshaller.GetInstance().Unmarshall(context));
@@ -60,6 +60,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return policyTypeDescription;
                 }
             }
+                        
+
 
             return policyTypeDescription;
         }

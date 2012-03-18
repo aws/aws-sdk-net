@@ -28,11 +28,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Set Desired Capacity Request Marshaller
     /// </summary>       
-    public class SetDesiredCapacityRequestMarshaller : IMarshaller<IRequest<SetDesiredCapacityRequest>, SetDesiredCapacityRequest>
+    public class SetDesiredCapacityRequestMarshaller : IMarshaller<IRequest, SetDesiredCapacityRequest>
     {
-        public IRequest<SetDesiredCapacityRequest> Marshall(SetDesiredCapacityRequest setDesiredCapacityRequest)
+        public IRequest Marshall(SetDesiredCapacityRequest setDesiredCapacityRequest)
         {
-            IRequest<SetDesiredCapacityRequest> request = new DefaultRequest<SetDesiredCapacityRequest>(setDesiredCapacityRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(setDesiredCapacityRequest, "AmazonAutoScaling");
             request.Parameters.Add("Action", "SetDesiredCapacity");
             request.Parameters.Add("Version", "2011-01-01");
             if (setDesiredCapacityRequest != null && setDesiredCapacityRequest.IsSetAutoScalingGroupName())

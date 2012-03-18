@@ -22,9 +22,9 @@
       /// <summary> 
       /// HistoryUnmarshaller 
       /// </summary> 
-      internal class HistoryUnmarshaller : IUnmarshaller<History, UnmarshallerContext>, IUnmarshaller<History, JsonUnmarshallerContext> 
+      internal class HistoryUnmarshaller : IUnmarshaller<History, XmlUnmarshallerContext>, IUnmarshaller<History, JsonUnmarshallerContext> 
       { 
-        History IUnmarshaller<History, UnmarshallerContext>.Unmarshall(UnmarshallerContext context)
+        History IUnmarshaller<History, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }

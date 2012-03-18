@@ -28,11 +28,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Describe Instance Health Request Marshaller
     /// </summary>       
-    public class DescribeInstanceHealthRequestMarshaller : IMarshaller<IRequest<DescribeInstanceHealthRequest>, DescribeInstanceHealthRequest>
+    public class DescribeInstanceHealthRequestMarshaller : IMarshaller<IRequest, DescribeInstanceHealthRequest>
     {
-        public IRequest<DescribeInstanceHealthRequest> Marshall(DescribeInstanceHealthRequest describeInstanceHealthRequest)
+        public IRequest Marshall(DescribeInstanceHealthRequest describeInstanceHealthRequest)
         {
-            IRequest<DescribeInstanceHealthRequest> request = new DefaultRequest<DescribeInstanceHealthRequest>(describeInstanceHealthRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(describeInstanceHealthRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeInstanceHealth");
             request.Parameters.Add("Version", "2011-11-15");
             if (describeInstanceHealthRequest != null && describeInstanceHealthRequest.IsSetLoadBalancerName())

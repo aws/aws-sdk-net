@@ -22,9 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeLoadBalancersResult Unmarshaller
      /// </summary>
-    internal class DescribeLoadBalancersResultUnmarshaller : IUnmarshaller<DescribeLoadBalancersResult, UnmarshallerContext> 
+    internal class DescribeLoadBalancersResultUnmarshaller : IUnmarshaller<DescribeLoadBalancersResult, XmlUnmarshallerContext> 
     {
-        public DescribeLoadBalancersResult Unmarshall(UnmarshallerContext context) 
+        public DescribeLoadBalancersResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeLoadBalancersResult describeLoadBalancersResult = new DescribeLoadBalancersResult();
             int originalDepth = context.CurrentDepth;
@@ -35,10 +35,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                {
+                { 
                     if (context.TestExpression("LoadBalancerDescriptions/member", targetDepth))
                     {
                         describeLoadBalancersResult.LoadBalancerDescriptions.Add(LoadBalancerDescriptionUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("NextMarker", targetDepth))
+                    {
+                        describeLoadBalancersResult.NextMarker = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }
@@ -48,6 +54,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     return describeLoadBalancersResult;
                 }
             }
+                        
+
 
             return describeLoadBalancersResult;
         }
