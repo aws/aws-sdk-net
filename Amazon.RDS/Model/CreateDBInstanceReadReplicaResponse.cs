@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public CreateDBInstanceReadReplicaResult CreateDBInstanceReadReplicaResult
         {
-            get { return this.createDBInstanceReadReplicaResult; }
+            get 
+            {
+                if(this.createDBInstanceReadReplicaResult == null)
+                {
+                    this.createDBInstanceReadReplicaResult = new CreateDBInstanceReadReplicaResult();
+                }
+
+                return this.createDBInstanceReadReplicaResult; 
+            }
             set { this.createDBInstanceReadReplicaResult = value; }
         }
     }

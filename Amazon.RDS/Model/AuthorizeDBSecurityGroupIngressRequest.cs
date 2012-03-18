@@ -25,11 +25,13 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeDBSecurityGroupIngress operation.
-    /// <para> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 Security Groups can be added to the
-    /// DBSecurityGroup if the application using the database is running on EC2 instances. Second, IP ranges are available if the application
-    /// accessing your database is running on the Internet. Required parameters for this API are one of CIDR range or (EC2SecurityGroupName AND
-    /// EC2SecurityGroupOwnerId). </para> <para><b>NOTE:</b> You cannot authorize ingress from an EC2 security group in one Region to an Amazon RDS
-    /// DB Instance in another. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
+    /// <para> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC Security Groups can be added to the
+    /// DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application
+    /// accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or
+    /// (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </para> <para><b>NOTE:</b> You cannot authorize
+    /// ingress from an EC2 security group in one Region to an Amazon RDS DB Instance in another. You cannot authorize ingress from a VPC security
+    /// group in one VPC to an Amazon RDS DB Instance in another. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial.
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.AuthorizeDBSecurityGroupIngress"/>
     public class AuthorizeDBSecurityGroupIngressRequest : AmazonWebServiceRequest
@@ -37,10 +39,11 @@ namespace Amazon.RDS.Model
         private string dBSecurityGroupName;
         private string cIDRIP;
         private string eC2SecurityGroupName;
+        private string eC2SecurityGroupId;
         private string eC2SecurityGroupOwnerId;
 
         /// <summary>
-        /// The name of the DB Security Group to authorize.
+        /// The name of the DB Security Group to add authorization to.
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -96,7 +99,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Name of the EC2 Security Group to authorize.
+        /// Name of the EC2 Security Group to authorize. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
+        /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
         public string EC2SecurityGroupName
@@ -124,8 +128,38 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// AWS Account Number of the owner of the security group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-        /// acceptable value.
+        /// Id of the EC2 Security Group to authorize. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
+        /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
+        ///  
+        /// </summary>
+        public string EC2SecurityGroupId
+        {
+            get { return this.eC2SecurityGroupId; }
+            set { this.eC2SecurityGroupId = value; }
+        }
+
+        /// <summary>
+        /// Sets the EC2SecurityGroupId property
+        /// </summary>
+        /// <param name="eC2SecurityGroupId">The value to set for the EC2SecurityGroupId property </param>
+        /// <returns>this instance</returns>
+        public AuthorizeDBSecurityGroupIngressRequest WithEC2SecurityGroupId(string eC2SecurityGroupId)
+        {
+            this.eC2SecurityGroupId = eC2SecurityGroupId;
+            return this;
+        }
+            
+
+        // Check to see if EC2SecurityGroupId property is set
+        internal bool IsSetEC2SecurityGroupId()
+        {
+            return this.eC2SecurityGroupId != null;       
+        }
+
+        /// <summary>
+        /// AWS Account Number of the owner of the EC2 Security Group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
+        /// acceptable value. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise, EC2SecurityGroupOwnerId and either
+        /// <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
         public string EC2SecurityGroupOwnerId

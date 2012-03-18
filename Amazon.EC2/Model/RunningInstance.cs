@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Properties of a Launched EC2 Instance
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class RunningInstance
     {    
         private string instanceIdField;
@@ -66,6 +66,8 @@ namespace Amazon.EC2.Model
         private string virtualizationTypeField;
         private string clientTokenField;
         private List<Tag> tagField;
+        private string hypervisorField;
+        private List<InstanceNetworkInterface> networkInterfaceSetField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -1229,5 +1231,75 @@ namespace Amazon.EC2.Model
             return (Tag.Count > 0);
         }
 
+        /// <summary>
+        /// Gets and sets the Hypervisor property.
+        /// The instance's hypervisor type.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Hypervisor")]
+        private string Hypervisor
+        {
+            get { return this.hypervisorField; }
+            set { this.hypervisorField = value; }
+        }
+
+        /// <summary>
+        /// Sets the hypervisor property.
+        /// </summary>
+        /// <param name="hypervisor">The instance's hypervisor type.</param>
+        /// <returns>this instance</returns>
+        public RunningInstance WithHypervisor(string hypervisor)
+        {
+            this.hypervisorField = hypervisor;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the Hypervisor property is set.
+        /// </summary>
+        /// <returns>true if the Hypervisor property is set</returns>
+        public bool IsSetHypervisor()
+        {
+            return !string.IsNullOrEmpty(this.hypervisorField);
+        }
+
+        /// <summary>
+        /// Gets and sets the NetworkInterfaceSet property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "NetworkInterfaceSet")]
+        public List<InstanceNetworkInterface> NetworkInterfaceSet
+        {
+            get
+            {
+                if (this.networkInterfaceSetField == null)
+                {
+                    this.networkInterfaceSetField = new List<InstanceNetworkInterface>();
+                }
+                return this.networkInterfaceSetField;
+            }
+            set { this.networkInterfaceSetField = value; }
+        }
+
+        /// <summary>
+        /// Sets the NetworkInterfaceSet property.
+        /// </summary>
+        /// <param name="list">Collection of InstanceNetworkInterface items</param>
+        /// <returns>this instance</returns>
+        public RunningInstance WithNetworkInterfaceSet(params InstanceNetworkInterface[] list)
+        {
+            foreach (InstanceNetworkInterface item in list)
+            {
+                this.NetworkInterfaceSet.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the NetworkInterfaceSet property is set
+        /// </summary>
+        /// <returns>true if the NetworkInterfaceSet property is set</returns>
+        public bool IsSetNetworkInterfaceSet()
+        {
+            return (this.NetworkInterfaceSet.Count > 0);
+        }
     }
 }

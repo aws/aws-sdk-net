@@ -22,6 +22,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// <para> A scaling action that is scheduled for a future time and date. An action can be scheduled up to thirty days in advance. </para>
+    /// <para> Starting with API version 2011-01-01, you can use <c>recurrence</c> to specify that a scaling action occurs regularly on a schedule.
+    /// </para>
     /// </summary>
     public class DescribeScheduledActionsResult  
     {

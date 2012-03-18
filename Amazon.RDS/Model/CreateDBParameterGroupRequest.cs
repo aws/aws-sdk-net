@@ -25,7 +25,11 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBParameterGroup operation.
-    /// <para> Creates a new database parameter group. </para>
+    /// <para> Creates a new DB Parameter Group. </para> <para> A DB Parameter Group is initially created with the default parameters for the
+    /// database engine used by the DB Instance. To provide custom values for any of the parameters, you must modify the group after creating it
+    /// using <i>ModifyDBParameterGroup</i> . Once you've created a DB Parameter Group, you need to associate it with your DB Instance using
+    /// <i>ModifyDBInstance</i> . When you associate a new DB Parameter Group with a running DB Instance, you need to reboot the DB Instance for the
+    /// new DB Parameter Group and associated settings to take effect. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBParameterGroup"/>
     public class CreateDBParameterGroupRequest : AmazonWebServiceRequest
@@ -65,8 +69,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be
-        /// applied only to a DB instance running a database engine compatible with that DB parameter group family and version.
+        /// The DB Parameter Group Family name. A DB Parameter Group can be associated with one and only one DB Parameter Group Family, and can be
+        /// applied only to a DB Instance running a database engine and engine version compatible with that DB Parameter Group Family.
         ///  
         /// </summary>
         public string DBParameterGroupFamily

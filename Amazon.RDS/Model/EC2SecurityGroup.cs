@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
         
         private string status;
         private string eC2SecurityGroupName;
+        private string eC2SecurityGroupId;
         private string eC2SecurityGroupOwnerId;
 
         /// <summary>
@@ -90,6 +91,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetEC2SecurityGroupName()
         {
             return this.eC2SecurityGroupName != null;       
+        }
+
+        /// <summary>
+        /// Specifies the id of the EC2 Security Group.
+        ///  
+        /// </summary>
+        public string EC2SecurityGroupId
+        {
+            get { return this.eC2SecurityGroupId; }
+            set { this.eC2SecurityGroupId = value; }
+        }
+
+        /// <summary>
+        /// Sets the EC2SecurityGroupId property
+        /// </summary>
+        /// <param name="eC2SecurityGroupId">The value to set for the EC2SecurityGroupId property </param>
+        /// <returns>this instance</returns>
+        public EC2SecurityGroup WithEC2SecurityGroupId(string eC2SecurityGroupId)
+        {
+            this.eC2SecurityGroupId = eC2SecurityGroupId;
+            return this;
+        }
+            
+
+        // Check to see if EC2SecurityGroupId property is set
+        internal bool IsSetEC2SecurityGroupId()
+        {
+            return this.eC2SecurityGroupId != null;       
         }
 
         /// <summary>

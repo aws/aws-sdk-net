@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// 
         public CreateDBParameterGroupResult CreateDBParameterGroupResult
         {
-            get { return this.createDBParameterGroupResult; }
+            get 
+            {
+                if(this.createDBParameterGroupResult == null)
+                {
+                    this.createDBParameterGroupResult = new CreateDBParameterGroupResult();
+                }
+
+                return this.createDBParameterGroupResult; 
+            }
             set { this.createDBParameterGroupResult = value; }
         }
     }

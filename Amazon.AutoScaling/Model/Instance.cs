@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The Instance data type. </para>
+    /// <para> The <c>Instance</c> data type. </para>
     /// </summary>
     public class Instance  
     {
@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
         private string launchConfigurationName;
 
         /// <summary>
-        /// Specifies the EC2 instance ID.
+        /// Specifies the ID of the Amazon EC2 instance.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -74,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Availability zones associated with this instance.
+        /// Availability Zones associated with this instance.
         ///  
         /// <para>
         /// <b>Constraints:</b>

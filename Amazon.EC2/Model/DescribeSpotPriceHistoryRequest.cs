@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Request to describe historical pricing for Spot
     /// Instances.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class DescribeSpotPriceHistoryRequest
     {    
         private string startTimeField;
@@ -242,6 +242,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the AvailabilityZone property.
         /// Filters the results by availability zone.
         /// </summary>
+        [XmlElementAttribute(ElementName = "AvailabilityZone")]
         public string AvailabilityZone
         {
             get { return this.availabilityZoneField; }
@@ -272,6 +273,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the MaxResults property.
         /// Specifies the number of rows to return.
         /// </summary>
+        [XmlElementAttribute(ElementName = "MaxResults")]
         public int MaxResults
         {
             get { return this.maxResultsField.GetValueOrDefault(); }

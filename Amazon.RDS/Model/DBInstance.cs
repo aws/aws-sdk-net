@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         private List<DBSecurityGroupMembership> dBSecurityGroups = new List<DBSecurityGroupMembership>();
         private List<DBParameterGroupStatus> dBParameterGroups = new List<DBParameterGroupStatus>();
         private string availabilityZone;
+        private DBSubnetGroup dBSubnetGroup;
         private string preferredMaintenanceWindow;
         private PendingModifiedValues pendingModifiedValues;
         private DateTime? latestRestorableTime;
@@ -484,6 +485,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZone()
         {
             return this.availabilityZone != null;       
+        }
+
+        /// <summary>
+        /// Provides the inforamtion of the subnet group associated with the DB instance, including the name, descrption and subnets in the subnet
+        /// group.
+        ///  
+        /// </summary>
+        public DBSubnetGroup DBSubnetGroup
+        {
+            get { return this.dBSubnetGroup; }
+            set { this.dBSubnetGroup = value; }
+        }
+
+        /// <summary>
+        /// Sets the DBSubnetGroup property
+        /// </summary>
+        /// <param name="dBSubnetGroup">The value to set for the DBSubnetGroup property </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithDBSubnetGroup(DBSubnetGroup dBSubnetGroup)
+        {
+            this.dBSubnetGroup = dBSubnetGroup;
+            return this;
+        }
+            
+
+        // Check to see if DBSubnetGroup property is set
+        internal bool IsSetDBSubnetGroup()
+        {
+            return this.dBSubnetGroup != null;       
         }
 
         /// <summary>

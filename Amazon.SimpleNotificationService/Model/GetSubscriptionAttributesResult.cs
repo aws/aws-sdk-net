@@ -39,7 +39,6 @@ namespace Amazon.SimpleNotificationService.Model
         /// Gets and sets the Attributes property.
         /// A map of the subscription's attributes. Attributes in this map include the following:
         /// 
-        /// TODO: update these values
         ///     <ul>
         ///     <li>SubscriptionArn -- the subscription's ARN</li>
         ///     <li>TopicArn -- the topic ARN which the subscription is associated with</li>

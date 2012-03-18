@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Threading;
 
 using Amazon.RDS.Model;
-using Amazon.RDS.Model.Transform;
+using Amazon.RDS.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -25,7 +26,7 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.RDS
 {
     /// <summary>
-    /// Implemenation for accessing AmazonRDS.
+    /// Implementation for accessing AmazonRDS.
     ///  
     /// Amazon Relational Database Service <para> Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up,
     /// operate, and scale a relational database in the cloud. It provides cost-efficient, resizable capacity for an industry-standard relational
@@ -34,13 +35,15 @@ namespace Amazon.RDS
     /// applications, and tools you already use today with your existing MySQL or Oracle databases work with Amazon RDS without modification. Amazon
     /// RDS automatically backs up your database and maintains the database software that powers your DB Instance. Amazon RDS is flexible: you can
     /// scale your database instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web Services,
-    /// there are no up-front investments, and you pay only for the resources you use. </para>
+    /// there are no up-front investments, and you pay only for the resources you use. </para> <para> This is the <i>Amazon RDS API Reference</i> .
+    /// It contains a comprehensive description of all Amazon RDS Query APIs and data types. To get started with Amazon RDS, go to the Amazon RDS
+    /// Getting Started Guide. For more information on Amazon RDS concepts and usage scenarios, go to the Amazon RDS User Guide. </para>
     /// </summary>
     public class AmazonRDSClient : AmazonWebServiceClient, AmazonRDS
     {
     
-    
         AbstractAWSSigner signer = new QueryStringSigner();
+
 
         /// <summary>
         /// Constructs AmazonRDSClient with the credentials defined in the App.config.
@@ -75,9 +78,29 @@ namespace Amazon.RDS
         /// </code>
         ///
         /// </summary>
-        /// <param name="config">The AmazonRDSClient Configuration Object</param>
+        /// <param name="config">The AmazonRDS Configuration Object</param>
         public AmazonRDSClient(AmazonRDSConfig config)
             : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonRDSClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public AmazonRDSClient(AWSCredentials credentials)
+            : this(credentials, new AmazonRDSConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonRDSClient with AWS Credentials and an
+        /// AmazonRDSClient Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
+        public AmazonRDSClient(AWSCredentials credentials, AmazonRDSConfig clientConfig)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User)
+        {
+        }
 
         /// <summary>
         /// Constructs AmazonRDSClient with AWS Access Key ID and AWS Secret Key
@@ -100,91 +123,186 @@ namespace Amazon.RDS
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonRDSClient Configuration Object</param>
         public AmazonRDSClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonRDSConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User)
         {
         }
         
-   
 
          /// <summary>
-         /// <para> Returns information about provisioned RDS instances. This API supports pagination. </para>
+         /// <para> The DeleteDBInstance API deletes a previously provisioned RDS instance. A successful response from the web service indicates the
+         /// request was received correctly. If a final DBSnapshot is requested the status of the RDS instance will be "deleting" until the DBSnapshot is
+         /// created. DescribeDBInstance is used to monitor the status of this operation. This cannot be canceled or reverted once submitted. </para>
          /// </summary>
          /// 
-         /// <param name="describeDBInstancesRequest">Container for the necessary parameters to execute the DescribeDBInstances service method on
+         /// <param name="deleteDBInstanceRequest">Container for the necessary parameters to execute the DeleteDBInstance service method on
          ///           AmazonRDS.</param>
          /// 
-         /// <returns>The response from the DescribeDBInstances service method, as returned by AmazonRDS.</returns>
+         /// <returns>The response from the DeleteDBInstance service method, as returned by AmazonRDS.</returns>
          /// 
          /// <exception cref="DBInstanceNotFoundException"/>
-        public DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) 
-        {           
-            IRequest<DescribeDBInstancesRequest> request = new DescribeDBInstancesRequestMarshaller().Marshall(describeDBInstancesRequest);
-            DescribeDBInstancesResponse response = Invoke<DescribeDBInstancesRequest, DescribeDBInstancesResponse> (request, this.signer, DescribeDBInstancesResponseUnmarshaller.GetInstance());
+         /// <exception cref="InvalidDBInstanceStateException"/>
+         /// <exception cref="SnapshotQuotaExceededException"/>
+         /// <exception cref="DBSnapshotAlreadyExistsException"/>
+        public DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) 
+        {
+            IRequest<DeleteDBInstanceRequest> request = new DeleteDBInstanceRequestMarshaller().Marshall(deleteDBInstanceRequest);
+            DeleteDBInstanceResponse response = Invoke<DeleteDBInstanceRequest, DeleteDBInstanceResponse> (request, this.signer, DeleteDBInstanceResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events
-         /// specific to a particular DB Instance, database security group, database snapshot or database parameter group can be obtained by providing
-         /// the name as a parameter. By default, the past hour of events are returned. </para>
+         /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
+         /// specified DBSubnetGroup. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
          /// </summary>
          /// 
-         /// <param name="describeEventsRequest">Container for the necessary parameters to execute the DescribeEvents service method on
+         /// <param name="describeDBSubnetGroupsRequest">Container for the necessary parameters to execute the DescribeDBSubnetGroups service method on
          ///           AmazonRDS.</param>
          /// 
-         /// <returns>The response from the DescribeEvents service method, as returned by AmazonRDS.</returns>
+         /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by AmazonRDS.</returns>
          /// 
-        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest describeEventsRequest) 
-        {           
-            IRequest<DescribeEventsRequest> request = new DescribeEventsRequestMarshaller().Marshall(describeEventsRequest);
-            DescribeEventsResponse response = Invoke<DescribeEventsRequest, DescribeEventsResponse> (request, this.signer, DescribeEventsResponseUnmarshaller.GetInstance());
+         /// <exception cref="DBSubnetGroupNotFoundException"/>
+        public DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest) 
+        {
+            IRequest<DescribeDBSubnetGroupsRequest> request = new DescribeDBSubnetGroupsRequestMarshaller().Marshall(describeDBSubnetGroupsRequest);
+            DescribeDBSubnetGroupsResponse response = Invoke<DescribeDBSubnetGroupsRequest, DescribeDBSubnetGroupsResponse> (request, this.signer, DescribeDBSubnetGroupsResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Returns the detailed parameter list for a particular DBParameterGroup. </para>
+         /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
+         /// specified DBSubnetGroup. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
          /// </summary>
          /// 
-         /// <param name="describeDBParametersRequest">Container for the necessary parameters to execute the DescribeDBParameters service method on
+         /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBSubnetGroupNotFoundException"/>
+        public DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups()
+        {
+            return DescribeDBSubnetGroups(new DescribeDBSubnetGroupsRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName,
+         /// ParameterValue, and ApplyMethod. A maximum of 20 parameters can be modified in a single request. </para> <para><b>NOTE:</b> The
+         /// apply-immediate method can only be used for dynamic parameters; the pending-reboot method can be used for either dynamic or static
+         /// parameters. </para>
+         /// </summary>
+         /// 
+         /// <param name="modifyDBParameterGroupRequest">Container for the necessary parameters to execute the ModifyDBParameterGroup service method on
          ///           AmazonRDS.</param>
          /// 
-         /// <returns>The response from the DescribeDBParameters service method, as returned by AmazonRDS.</returns>
+         /// <returns>The response from the ModifyDBParameterGroup service method, as returned by AmazonRDS.</returns>
          /// 
          /// <exception cref="DBParameterGroupNotFoundException"/>
-        public DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) 
-        {           
-            IRequest<DescribeDBParametersRequest> request = new DescribeDBParametersRequestMarshaller().Marshall(describeDBParametersRequest);
-            DescribeDBParametersResponse response = Invoke<DescribeDBParametersRequest, DescribeDBParametersResponse> (request, this.signer, DescribeDBParametersResponseUnmarshaller.GetInstance());
+         /// <exception cref="InvalidDBParameterGroupStateException"/>
+        public ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) 
+        {
+            IRequest<ModifyDBParameterGroupRequest> request = new ModifyDBParameterGroupRequestMarshaller().Marshall(modifyDBParameterGroupRequest);
+            ModifyDBParameterGroupResponse response = Invoke<ModifyDBParameterGroupRequest, ModifyDBParameterGroupResponse> (request, this.signer, ModifyDBParameterGroupResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 Security Groups can be added to the
-         /// DBSecurityGroup if the application using the database is running on EC2 instances. Second, IP ranges are available if the application
-         /// accessing your database is running on the Internet. Required parameters for this API are one of CIDR range or (EC2SecurityGroupName AND
-         /// EC2SecurityGroupOwnerId). </para> <para><b>NOTE:</b> You cannot authorize ingress from an EC2 security group in one Region to an Amazon RDS
-         /// DB Instance in another. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
+         /// <para> Modify settings for a DB Instance. You can change one or more database configuration parameters by specifying these parameters and
+         /// the new values in the request. </para>
          /// </summary>
          /// 
-         /// <param name="authorizeDBSecurityGroupIngressRequest">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress
-         ///           service method on AmazonRDS.</param>
+         /// <param name="modifyDBInstanceRequest">Container for the necessary parameters to execute the ModifyDBInstance service method on
+         ///           AmazonRDS.</param>
          /// 
-         /// <returns>The response from the AuthorizeDBSecurityGroupIngress service method, as returned by AmazonRDS.</returns>
+         /// <returns>The response from the ModifyDBInstance service method, as returned by AmazonRDS.</returns>
          /// 
+         /// <exception cref="DBParameterGroupNotFoundException"/>
+         /// <exception cref="DBInstanceNotFoundException"/>
+         /// <exception cref="StorageQuotaExceededException"/>
+         /// <exception cref="InvalidVPCNetworkStateException"/>
+         /// <exception cref="InvalidDBInstanceStateException"/>
          /// <exception cref="DBSecurityGroupNotFoundException"/>
          /// <exception cref="InvalidDBSecurityGroupStateException"/>
-         /// <exception cref="AuthorizationAlreadyExistsException"/>
-         /// <exception cref="AuthorizationQuotaExceededException"/>
-        public AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest) 
-        {           
-            IRequest<AuthorizeDBSecurityGroupIngressRequest> request = new AuthorizeDBSecurityGroupIngressRequestMarshaller().Marshall(authorizeDBSecurityGroupIngressRequest);
-            AuthorizeDBSecurityGroupIngressResponse response = Invoke<AuthorizeDBSecurityGroupIngressRequest, AuthorizeDBSecurityGroupIngressResponse> (request, this.signer, AuthorizeDBSecurityGroupIngressResponseUnmarshaller.GetInstance());
+         /// <exception cref="InsufficientDBInstanceCapacityException"/>
+        public ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest) 
+        {
+            IRequest<ModifyDBInstanceRequest> request = new ModifyDBInstanceRequestMarshaller().Marshall(modifyDBInstanceRequest);
+            ModifyDBInstanceResponse response = Invoke<ModifyDBInstanceRequest, ModifyDBInstanceResponse> (request, this.signer, ModifyDBInstanceResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeReservedDBInstancesRequest">Container for the necessary parameters to execute the DescribeReservedDBInstances service
+         ///           method on AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the DescribeReservedDBInstances service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="ReservedDBInstanceNotFoundException"/>
+        public DescribeReservedDBInstancesResponse DescribeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) 
+        {
+            IRequest<DescribeReservedDBInstancesRequest> request = new DescribeReservedDBInstancesRequestMarshaller().Marshall(describeReservedDBInstancesRequest);
+            DescribeReservedDBInstancesResponse response = Invoke<DescribeReservedDBInstancesRequest, DescribeReservedDBInstancesResponse> (request, this.signer, DescribeReservedDBInstancesResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeReservedDBInstances service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="ReservedDBInstanceNotFoundException"/>
+        public DescribeReservedDBInstancesResponse DescribeReservedDBInstances()
+        {
+            return DescribeReservedDBInstances(new DescribeReservedDBInstancesRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Deletes a DB subnet group. </para> <para><b>NOTE:</b>The specified database subnet group must not be associated with any DB
+         /// instances.</para>
+         /// </summary>
+         /// 
+         /// <param name="deleteDBSubnetGroupRequest">Container for the necessary parameters to execute the DeleteDBSubnetGroup service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <exception cref="DBSubnetGroupNotFoundException"/>
+         /// <exception cref="InvalidDBSubnetGroupStateException"/>
+         /// <exception cref="InvalidDBSubnetStateException"/>
+        public DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest) 
+        {
+            IRequest<DeleteDBSubnetGroupRequest> request = new DeleteDBSubnetGroupRequestMarshaller().Marshall(deleteDBSubnetGroupRequest);
+            DeleteDBSubnetGroupResponse response = Invoke<DeleteDBSubnetGroupRequest, DeleteDBSubnetGroupResponse> (request, this.signer, DeleteDBSubnetGroupResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Creates a new DB subnet group. DB subnet groups must contain at least one subnet in each AZ in the region. </para>
+         /// </summary>
+         /// 
+         /// <param name="createDBSubnetGroupRequest">Container for the necessary parameters to execute the CreateDBSubnetGroup service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the CreateDBSubnetGroup service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBSubnetQuotaExceededException"/>
+         /// <exception cref="DBSubnetGroupAlreadyExistsException"/>
+         /// <exception cref="DBSubnetGroupQuotaExceededException"/>
+         /// <exception cref="DBSubnetGroupListDoesNotCoverAllAzException"/>
+         /// <exception cref="InvalidSubnetException"/>
+        public CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest) 
+        {
+            IRequest<CreateDBSubnetGroupRequest> request = new CreateDBSubnetGroupRequestMarshaller().Marshall(createDBSubnetGroupRequest);
+            CreateDBSubnetGroupResponse response = Invoke<CreateDBSubnetGroupRequest, CreateDBSubnetGroupResponse> (request, this.signer, CreateDBSubnetGroupResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
 
          /// <summary>
          /// <para> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of
@@ -198,12 +316,186 @@ namespace Amazon.RDS
          /// 
          /// <exception cref="DBSecurityGroupNotFoundException"/>
         public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) 
-        {           
+        {
             IRequest<DescribeDBSecurityGroupsRequest> request = new DescribeDBSecurityGroupsRequestMarshaller().Marshall(describeDBSecurityGroupsRequest);
             DescribeDBSecurityGroupsResponse response = Invoke<DescribeDBSecurityGroupsRequest, DescribeDBSecurityGroupsResponse> (request, this.signer, DescribeDBSecurityGroupsResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of
+         /// the specified DBSecurityGroup. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBSecurityGroupNotFoundException"/>
+        public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups()
+        {
+            return DescribeDBSecurityGroups(new DescribeDBSecurityGroupsRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Purchases a reserved DB Instance offering. </para>
+         /// </summary>
+         /// 
+         /// <param name="purchaseReservedDBInstancesOfferingRequest">Container for the necessary parameters to execute the
+         ///           PurchaseReservedDBInstancesOffering service method on AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the PurchaseReservedDBInstancesOffering service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="ReservedDBInstancesOfferingNotFoundException"/>
+         /// <exception cref="ReservedDBInstanceQuotaExceededException"/>
+         /// <exception cref="ReservedDBInstanceAlreadyExistsException"/>
+        public PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest) 
+        {
+            IRequest<PurchaseReservedDBInstancesOfferingRequest> request = new PurchaseReservedDBInstancesOfferingRequestMarshaller().Marshall(purchaseReservedDBInstancesOfferingRequest);
+            PurchaseReservedDBInstancesOfferingResponse response = Invoke<PurchaseReservedDBInstancesOfferingRequest, PurchaseReservedDBInstancesOfferingResponse> (request, this.signer, PurchaseReservedDBInstancesOfferingResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Deletes a DB Security Group. </para> <para><b>NOTE:</b>The specified DB Security Group must not be associated with any DB
+         /// Instances.</para>
+         /// </summary>
+         /// 
+         /// <param name="deleteDBSecurityGroupRequest">Container for the necessary parameters to execute the DeleteDBSecurityGroup service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <exception cref="DBSecurityGroupNotFoundException"/>
+         /// <exception cref="InvalidDBSecurityGroupStateException"/>
+        public DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) 
+        {
+            IRequest<DeleteDBSecurityGroupRequest> request = new DeleteDBSecurityGroupRequestMarshaller().Marshall(deleteDBSecurityGroupRequest);
+            DeleteDBSecurityGroupResponse response = Invoke<DeleteDBSecurityGroupRequest, DeleteDBSecurityGroupResponse> (request, this.signer, DeleteDBSecurityGroupResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in each AZ in the region. </para>
+         /// </summary>
+         /// 
+         /// <param name="modifyDBSubnetGroupRequest">Container for the necessary parameters to execute the ModifyDBSubnetGroup service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the ModifyDBSubnetGroup service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBSubnetGroupNotFoundException"/>
+         /// <exception cref="DBSubnetQuotaExceededException"/>
+         /// <exception cref="SubnetAlreadyInUseException"/>
+         /// <exception cref="DBSubnetGroupListDoesNotCoverAllAzException"/>
+         /// <exception cref="InvalidSubnetException"/>
+        public ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest) 
+        {
+            IRequest<ModifyDBSubnetGroupRequest> request = new ModifyDBSubnetGroupRequestMarshaller().Marshall(modifyDBSubnetGroupRequest);
+            ModifyDBSubnetGroupResponse response = Invoke<ModifyDBSubnetGroupRequest, ModifyDBSubnetGroupResponse> (request, this.signer, ModifyDBSubnetGroupResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Creates a DBSnapshot. The source DBInstance must be in "available" state. </para>
+         /// </summary>
+         /// 
+         /// <param name="createDBSnapshotRequest">Container for the necessary parameters to execute the CreateDBSnapshot service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the CreateDBSnapshot service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBInstanceNotFoundException"/>
+         /// <exception cref="InvalidDBInstanceStateException"/>
+         /// <exception cref="SnapshotQuotaExceededException"/>
+         /// <exception cref="DBSnapshotAlreadyExistsException"/>
+        public CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) 
+        {
+            IRequest<CreateDBSnapshotRequest> request = new CreateDBSnapshotRequestMarshaller().Marshall(createDBSnapshotRequest);
+            CreateDBSnapshotResponse response = Invoke<CreateDBSnapshotRequest, CreateDBSnapshotResponse> (request, this.signer, CreateDBSnapshotResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Returns a list of the available DB engines. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeDBEngineVersionsRequest">Container for the necessary parameters to execute the DescribeDBEngineVersions service method
+         ///           on AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the DescribeDBEngineVersions service method, as returned by AmazonRDS.</returns>
+         /// 
+        public DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) 
+        {
+            IRequest<DescribeDBEngineVersionsRequest> request = new DescribeDBEngineVersionsRequestMarshaller().Marshall(describeDBEngineVersionsRequest);
+            DescribeDBEngineVersionsResponse response = Invoke<DescribeDBEngineVersionsRequest, DescribeDBEngineVersionsResponse> (request, this.signer, DescribeDBEngineVersionsResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Returns a list of the available DB engines. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeDBEngineVersions service method, as returned by AmazonRDS.</returns>
+         /// 
+        public DescribeDBEngineVersionsResponse DescribeDBEngineVersions()
+        {
+            return DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up
+         /// to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database
+         /// except that the DB instance is created with the default DB security group. </para>
+         /// </summary>
+         /// 
+         /// <param name="restoreDBInstanceToPointInTimeRequest">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime
+         ///           service method on AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the RestoreDBInstanceToPointInTime service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="PointInTimeRestoreNotEnabledException"/>
+         /// <exception cref="InvalidRestoreException"/>
+         /// <exception cref="InstanceQuotaExceededException"/>
+         /// <exception cref="DBSubnetGroupNotFoundException"/>
+         /// <exception cref="DBInstanceAlreadyExistsException"/>
+         /// <exception cref="DBInstanceNotFoundException"/>
+         /// <exception cref="StorageQuotaExceededException"/>
+         /// <exception cref="InvalidVPCNetworkStateException"/>
+         /// <exception cref="InvalidDBInstanceStateException"/>
+         /// <exception cref="InsufficientDBInstanceCapacityException"/>
+        public RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
+        {
+            IRequest<RestoreDBInstanceToPointInTimeRequest> request = new RestoreDBInstanceToPointInTimeRequestMarshaller().Marshall(restoreDBInstanceToPointInTimeRequest);
+            RestoreDBInstanceToPointInTimeResponse response = Invoke<RestoreDBInstanceToPointInTimeRequest, RestoreDBInstanceToPointInTimeResponse> (request, this.signer, RestoreDBInstanceToPointInTimeResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Copies the specified DBSnapshot. The source DBSnapshot must be in the "available" state. </para>
+         /// </summary>
+         /// 
+         /// <param name="copyDBSnapshotRequest">Container for the necessary parameters to execute the CopyDBSnapshot service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the CopyDBSnapshot service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="InvalidDBSnapshotStateException"/>
+         /// <exception cref="SnapshotQuotaExceededException"/>
+         /// <exception cref="DBSnapshotAlreadyExistsException"/>
+         /// <exception cref="DBSnapshotNotFoundException"/>
+        public CopyDBSnapshotResponse CopyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest) 
+        {
+            IRequest<CopyDBSnapshotRequest> request = new CopyDBSnapshotRequestMarshaller().Marshall(copyDBSnapshotRequest);
+            CopyDBSnapshotResponse response = Invoke<CopyDBSnapshotRequest, CopyDBSnapshotResponse> (request, this.signer, CopyDBSnapshotResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
 
          /// <summary>
          /// <para> Modifies the parameters of a DBParameterGroup to the engine/system default value. To reset specific parameters submit a list of the
@@ -220,160 +512,12 @@ namespace Amazon.RDS
          /// <exception cref="DBParameterGroupNotFoundException"/>
          /// <exception cref="InvalidDBParameterGroupStateException"/>
         public ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest) 
-        {           
+        {
             IRequest<ResetDBParameterGroupRequest> request = new ResetDBParameterGroupRequestMarshaller().Marshall(resetDBParameterGroupRequest);
             ResetDBParameterGroupResponse response = Invoke<ResetDBParameterGroupRequest, ResetDBParameterGroupResponse> (request, this.signer, ResetDBParameterGroupResponseUnmarshaller.GetInstance());
             return response;
         }
-    
-
-         /// <summary>
-         /// <para> Creates a new DB Instance from a point-in-time system snapshot. The target database is created from the source database restore point
-         /// with the same configuration as the original source database, except that the new RDS instance is created with the default security group.
-         /// </para>
-         /// </summary>
-         /// 
-         /// <param name="restoreDBInstanceToPointInTimeRequest">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime
-         ///           service method on AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the RestoreDBInstanceToPointInTime service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="PointInTimeRestoreNotEnabledException"/>
-         /// <exception cref="InstanceQuotaExceededException"/>
-         /// <exception cref="DBInstanceAlreadyExistsException"/>
-         /// <exception cref="DBInstanceNotFoundException"/>
-         /// <exception cref="StorageQuotaExceededException"/>
-         /// <exception cref="InvalidDBInstanceStateException"/>
-         /// <exception cref="InsufficientDBInstanceCapacityException"/>
-        public RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
-        {           
-            IRequest<RestoreDBInstanceToPointInTimeRequest> request = new RestoreDBInstanceToPointInTimeRequestMarshaller().Marshall(restoreDBInstanceToPointInTimeRequest);
-            RestoreDBInstanceToPointInTimeResponse response = Invoke<RestoreDBInstanceToPointInTimeRequest, RestoreDBInstanceToPointInTimeResponse> (request, this.signer, RestoreDBInstanceToPointInTimeResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Returns a list of the available DB engines. </para>
-         /// </summary>
-         /// 
-         /// <param name="describeDBEngineVersionsRequest">Container for the necessary parameters to execute the DescribeDBEngineVersions service method
-         ///           on AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the DescribeDBEngineVersions service method, as returned by AmazonRDS.</returns>
-         /// 
-        public DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) 
-        {           
-            IRequest<DescribeDBEngineVersionsRequest> request = new DescribeDBEngineVersionsRequestMarshaller().Marshall(describeDBEngineVersionsRequest);
-            DescribeDBEngineVersionsResponse response = Invoke<DescribeDBEngineVersionsRequest, DescribeDBEngineVersionsResponse> (request, this.signer, DescribeDBEngineVersionsResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Creates a new database parameter group. </para>
-         /// </summary>
-         /// 
-         /// <param name="createDBParameterGroupRequest">Container for the necessary parameters to execute the CreateDBParameterGroup service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the CreateDBParameterGroup service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="DBParameterGroupQuotaExceededException"/>
-         /// <exception cref="DBParameterGroupAlreadyExistsException"/>
-        public CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest) 
-        {           
-            IRequest<CreateDBParameterGroupRequest> request = new CreateDBParameterGroupRequestMarshaller().Marshall(createDBParameterGroupRequest);
-            CreateDBParameterGroupResponse response = Invoke<CreateDBParameterGroupRequest, CreateDBParameterGroupResponse> (request, this.signer, CreateDBParameterGroupResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Modify settings for a DB Instance. You can change one or more database configuration parameters by specifying these parameters and
-         /// the new values in the request. </para>
-         /// </summary>
-         /// 
-         /// <param name="modifyDBInstanceRequest">Container for the necessary parameters to execute the ModifyDBInstance service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the ModifyDBInstance service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="DBParameterGroupNotFoundException"/>
-         /// <exception cref="DBInstanceNotFoundException"/>
-         /// <exception cref="InvalidDBInstanceStateException"/>
-         /// <exception cref="DBSecurityGroupNotFoundException"/>
-         /// <exception cref="InvalidDBSecurityGroupStateException"/>
-         /// <exception cref="InsufficientDBInstanceCapacityException"/>
-        public ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest) 
-        {           
-            IRequest<ModifyDBInstanceRequest> request = new ModifyDBInstanceRequestMarshaller().Marshall(modifyDBInstanceRequest);
-            ModifyDBInstanceResponse response = Invoke<ModifyDBInstanceRequest, ModifyDBInstanceResponse> (request, this.signer, ModifyDBInstanceResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up
-         /// to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database
-         /// except that the DB instance is created with the default DB security group. </para>
-         /// </summary>
-         /// 
-         /// <param name="restoreDBInstanceFromDBSnapshotRequest">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot
-         ///           service method on AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the RestoreDBInstanceFromDBSnapshot service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="InstanceQuotaExceededException"/>
-         /// <exception cref="DBInstanceAlreadyExistsException"/>
-         /// <exception cref="StorageQuotaExceededException"/>
-         /// <exception cref="InvalidDBSnapshotStateException"/>
-         /// <exception cref="InsufficientDBInstanceCapacityException"/>
-         /// <exception cref="DBSnapshotNotFoundException"/>
-        public RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) 
-        {           
-            IRequest<RestoreDBInstanceFromDBSnapshotRequest> request = new RestoreDBInstanceFromDBSnapshotRequestMarshaller().Marshall(restoreDBInstanceFromDBSnapshotRequest);
-            RestoreDBInstanceFromDBSnapshotResponse response = Invoke<RestoreDBInstanceFromDBSnapshotRequest, RestoreDBInstanceFromDBSnapshotResponse> (request, this.signer, RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Creates a new database security group. Database Security groups control access to a database instance. </para>
-         /// </summary>
-         /// 
-         /// <param name="createDBSecurityGroupRequest">Container for the necessary parameters to execute the CreateDBSecurityGroup service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the CreateDBSecurityGroup service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="DBSecurityGroupQuotaExceededException"/>
-         /// <exception cref="DBSecurityGroupAlreadyExistsException"/>
-        public CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest) 
-        {           
-            IRequest<CreateDBSecurityGroupRequest> request = new CreateDBSecurityGroupRequestMarshaller().Marshall(createDBSecurityGroupRequest);
-            CreateDBSecurityGroupResponse response = Invoke<CreateDBSecurityGroupRequest, CreateDBSecurityGroupResponse> (request, this.signer, CreateDBSecurityGroupResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Deletes a database security group. </para> <para><b>NOTE:</b>The specified database security group must not be associated with any DB
-         /// instances.</para>
-         /// </summary>
-         /// 
-         /// <param name="deleteDBSecurityGroupRequest">Container for the necessary parameters to execute the DeleteDBSecurityGroup service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <exception cref="DBSecurityGroupNotFoundException"/>
-         /// <exception cref="InvalidDBSecurityGroupStateException"/>
-        public DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) 
-        {           
-            IRequest<DeleteDBSecurityGroupRequest> request = new DeleteDBSecurityGroupRequestMarshaller().Marshall(deleteDBSecurityGroupRequest);
-            DeleteDBSecurityGroupResponse response = Invoke<DeleteDBSecurityGroupRequest, DeleteDBSecurityGroupResponse> (request, this.signer, DeleteDBSecurityGroupResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
+        
 
          /// <summary>
          /// <para> Returns a list of orderable DB Instance options for the specified engine. </para>
@@ -385,12 +529,239 @@ namespace Amazon.RDS
          /// <returns>The response from the DescribeOrderableDBInstanceOptions service method, as returned by AmazonRDS.</returns>
          /// 
         public DescribeOrderableDBInstanceOptionsResponse DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) 
-        {           
+        {
             IRequest<DescribeOrderableDBInstanceOptionsRequest> request = new DescribeOrderableDBInstanceOptionsRequestMarshaller().Marshall(describeOrderableDBInstanceOptionsRequest);
             DescribeOrderableDBInstanceOptionsResponse response = Invoke<DescribeOrderableDBInstanceOptionsRequest, DescribeOrderableDBInstanceOptionsResponse> (request, this.signer, DescribeOrderableDBInstanceOptionsResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para> Deletes a DBSnapshot. </para> <para><b>NOTE:</b>The DBSnapshot must be in the available state to be deleted.</para>
+         /// </summary>
+         /// 
+         /// <param name="deleteDBSnapshotRequest">Container for the necessary parameters to execute the DeleteDBSnapshot service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the DeleteDBSnapshot service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="InvalidDBSnapshotStateException"/>
+         /// <exception cref="DBSnapshotNotFoundException"/>
+        public DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
+        {
+            IRequest<DeleteDBSnapshotRequest> request = new DeleteDBSnapshotRequestMarshaller().Marshall(deleteDBSnapshotRequest);
+            DeleteDBSnapshotResponse response = Invoke<DeleteDBSnapshotRequest, DeleteDBSnapshotResponse> (request, this.signer, DeleteDBSnapshotResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Returns the detailed parameter list for a particular DBParameterGroup. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeDBParametersRequest">Container for the necessary parameters to execute the DescribeDBParameters service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the DescribeDBParameters service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBParameterGroupNotFoundException"/>
+        public DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) 
+        {
+            IRequest<DescribeDBParametersRequest> request = new DescribeDBParametersRequestMarshaller().Marshall(describeDBParametersRequest);
+            DescribeDBParametersResponse response = Invoke<DescribeDBParametersRequest, DescribeDBParametersResponse> (request, this.signer, DescribeDBParametersResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Creates a new DB instance. </para>
+         /// </summary>
+         /// 
+         /// <param name="createDBInstanceRequest">Container for the necessary parameters to execute the CreateDBInstance service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the CreateDBInstance service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBParameterGroupNotFoundException"/>
+         /// <exception cref="InstanceQuotaExceededException"/>
+         /// <exception cref="DBSubnetGroupNotFoundException"/>
+         /// <exception cref="DBInstanceAlreadyExistsException"/>
+         /// <exception cref="StorageQuotaExceededException"/>
+         /// <exception cref="InvalidVPCNetworkStateException"/>
+         /// <exception cref="DBSecurityGroupNotFoundException"/>
+         /// <exception cref="InsufficientDBInstanceCapacityException"/>
+        public CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest createDBInstanceRequest) 
+        {
+            IRequest<CreateDBInstanceRequest> request = new CreateDBInstanceRequestMarshaller().Marshall(createDBInstanceRequest);
+            CreateDBInstanceResponse response = Invoke<CreateDBInstanceRequest, CreateDBInstanceResponse> (request, this.signer, CreateDBInstanceResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS instances to be deleted. </para>
+         /// <para><b>NOTE:</b> The specified DB Parameter Group cannot be associated with any DB Instances. </para>
+         /// </summary>
+         /// 
+         /// <param name="deleteDBParameterGroupRequest">Container for the necessary parameters to execute the DeleteDBParameterGroup service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <exception cref="DBParameterGroupNotFoundException"/>
+         /// <exception cref="InvalidDBParameterGroupStateException"/>
+        public DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) 
+        {
+            IRequest<DeleteDBParameterGroupRequest> request = new DeleteDBParameterGroupRequestMarshaller().Marshall(deleteDBParameterGroupRequest);
+            DeleteDBParameterGroupResponse response = Invoke<DeleteDBParameterGroupRequest, DeleteDBParameterGroupResponse> (request, this.signer, DeleteDBParameterGroupResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for
+         /// this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).
+         /// </para>
+         /// </summary>
+         /// 
+         /// <param name="revokeDBSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress service
+         ///           method on AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the RevokeDBSecurityGroupIngress service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBSecurityGroupNotFoundException"/>
+         /// <exception cref="InvalidDBSecurityGroupStateException"/>
+         /// <exception cref="AuthorizationNotFoundException"/>
+        public RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) 
+        {
+            IRequest<RevokeDBSecurityGroupIngressRequest> request = new RevokeDBSecurityGroupIngressRequestMarshaller().Marshall(revokeDBSecurityGroupIngressRequest);
+            RevokeDBSecurityGroupIngressResponse response = Invoke<RevokeDBSecurityGroupIngressRequest, RevokeDBSecurityGroupIngressResponse> (request, this.signer, RevokeDBSecurityGroupIngressResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Creates a new DB Security Group. DB Security Groups control access to a DB Instance. </para>
+         /// </summary>
+         /// 
+         /// <param name="createDBSecurityGroupRequest">Container for the necessary parameters to execute the CreateDBSecurityGroup service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the CreateDBSecurityGroup service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBSecurityGroupQuotaExceededException"/>
+         /// <exception cref="DBSecurityGroupAlreadyExistsException"/>
+        public CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest) 
+        {
+            IRequest<CreateDBSecurityGroupRequest> request = new CreateDBSecurityGroupRequestMarshaller().Marshall(createDBSecurityGroupRequest);
+            CreateDBSecurityGroupResponse response = Invoke<CreateDBSecurityGroupRequest, CreateDBSecurityGroupResponse> (request, this.signer, CreateDBSecurityGroupResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description
+         /// of the specified DBParameterGroup. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeDBParameterGroupsRequest">Container for the necessary parameters to execute the DescribeDBParameterGroups service
+         ///           method on AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the DescribeDBParameterGroups service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBParameterGroupNotFoundException"/>
+        public DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) 
+        {
+            IRequest<DescribeDBParameterGroupsRequest> request = new DescribeDBParameterGroupsRequestMarshaller().Marshall(describeDBParameterGroupsRequest);
+            DescribeDBParameterGroupsResponse response = Invoke<DescribeDBParameterGroupsRequest, DescribeDBParameterGroupsResponse> (request, this.signer, DescribeDBParameterGroupsResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description
+         /// of the specified DBParameterGroup. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeDBParameterGroups service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBParameterGroupNotFoundException"/>
+        public DescribeDBParameterGroupsResponse DescribeDBParameterGroups()
+        {
+            return DescribeDBParameterGroups(new DescribeDBParameterGroupsRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events
+         /// specific to a particular DB Instance, DB Security Group, database snapshot or DB Parameter Group can be obtained by providing the name as a
+         /// parameter. By default, the past hour of events are returned. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeEventsRequest">Container for the necessary parameters to execute the DescribeEvents service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the DescribeEvents service method, as returned by AmazonRDS.</returns>
+         /// 
+        public DescribeEventsResponse DescribeEvents(DescribeEventsRequest describeEventsRequest) 
+        {
+            IRequest<DescribeEventsRequest> request = new DescribeEventsRequestMarshaller().Marshall(describeEventsRequest);
+            DescribeEventsResponse response = Invoke<DescribeEventsRequest, DescribeEventsResponse> (request, this.signer, DescribeEventsResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events
+         /// specific to a particular DB Instance, DB Security Group, database snapshot or DB Parameter Group can be obtained by providing the name as a
+         /// parameter. By default, the past hour of events are returned. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeEvents service method, as returned by AmazonRDS.</returns>
+         /// 
+        public DescribeEventsResponse DescribeEvents()
+        {
+            return DescribeEvents(new DescribeEventsRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Returns the default engine and system parameter information for the specified database engine. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeEngineDefaultParametersRequest">Container for the necessary parameters to execute the DescribeEngineDefaultParameters
+         ///           service method on AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the DescribeEngineDefaultParameters service method, as returned by AmazonRDS.</returns>
+         /// 
+        public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
+        {
+            IRequest<DescribeEngineDefaultParametersRequest> request = new DescribeEngineDefaultParametersRequestMarshaller().Marshall(describeEngineDefaultParametersRequest);
+            DescribeEngineDefaultParametersResponse response = Invoke<DescribeEngineDefaultParametersRequest, DescribeEngineDefaultParametersResponse> (request, this.signer, DescribeEngineDefaultParametersResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Creates a new DB Parameter Group. </para> <para> A DB Parameter Group is initially created with the default parameters for the
+         /// database engine used by the DB Instance. To provide custom values for any of the parameters, you must modify the group after creating it
+         /// using <i>ModifyDBParameterGroup</i> . Once you've created a DB Parameter Group, you need to associate it with your DB Instance using
+         /// <i>ModifyDBInstance</i> . When you associate a new DB Parameter Group with a running DB Instance, you need to reboot the DB Instance for the
+         /// new DB Parameter Group and associated settings to take effect. </para>
+         /// </summary>
+         /// 
+         /// <param name="createDBParameterGroupRequest">Container for the necessary parameters to execute the CreateDBParameterGroup service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the CreateDBParameterGroup service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBParameterGroupQuotaExceededException"/>
+         /// <exception cref="DBParameterGroupAlreadyExistsException"/>
+        public CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest) 
+        {
+            IRequest<CreateDBParameterGroupRequest> request = new CreateDBParameterGroupRequestMarshaller().Marshall(createDBParameterGroupRequest);
+            CreateDBParameterGroupResponse response = Invoke<CreateDBParameterGroupRequest, CreateDBParameterGroupResponse> (request, this.signer, CreateDBParameterGroupResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
 
          /// <summary>
          /// <para> Lists available reserved DB Instance offerings. </para>
@@ -403,12 +774,131 @@ namespace Amazon.RDS
          /// 
          /// <exception cref="ReservedDBInstancesOfferingNotFoundException"/>
         public DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest) 
-        {           
+        {
             IRequest<DescribeReservedDBInstancesOfferingsRequest> request = new DescribeReservedDBInstancesOfferingsRequestMarshaller().Marshall(describeReservedDBInstancesOfferingsRequest);
             DescribeReservedDBInstancesOfferingsResponse response = Invoke<DescribeReservedDBInstancesOfferingsRequest, DescribeReservedDBInstancesOfferingsResponse> (request, this.signer, DescribeReservedDBInstancesOfferingsResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
+
+         /// <summary>
+         /// <para> Lists available reserved DB Instance offerings. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeReservedDBInstancesOfferings service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="ReservedDBInstancesOfferingNotFoundException"/>
+        public DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings()
+        {
+            return DescribeReservedDBInstancesOfferings(new DescribeReservedDBInstancesOfferingsRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Returns information about provisioned RDS instances. This API supports pagination. </para>
+         /// </summary>
+         /// 
+         /// <param name="describeDBInstancesRequest">Container for the necessary parameters to execute the DescribeDBInstances service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the DescribeDBInstances service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBInstanceNotFoundException"/>
+        public DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) 
+        {
+            IRequest<DescribeDBInstancesRequest> request = new DescribeDBInstancesRequestMarshaller().Marshall(describeDBInstancesRequest);
+            DescribeDBInstancesResponse response = Invoke<DescribeDBInstancesRequest, DescribeDBInstancesResponse> (request, this.signer, DescribeDBInstancesResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Returns information about provisioned RDS instances. This API supports pagination. </para>
+         /// </summary>
+         /// 
+         /// <returns>The response from the DescribeDBInstances service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBInstanceNotFoundException"/>
+        public DescribeDBInstancesResponse DescribeDBInstances()
+        {
+            return DescribeDBInstances(new DescribeDBInstancesRequest());
+        }
+        
+
+         /// <summary>
+         /// <para> Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with
+         /// ApplyStatus of pending-reboot to the RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS
+         /// instance during which the RDS instance status is set to rebooting. A DBInstance event is created when the reboot is completed. </para>
+         /// </summary>
+         /// 
+         /// <param name="rebootDBInstanceRequest">Container for the necessary parameters to execute the RebootDBInstance service method on
+         ///           AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the RebootDBInstance service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBInstanceNotFoundException"/>
+         /// <exception cref="InvalidDBInstanceStateException"/>
+        public RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) 
+        {
+            IRequest<RebootDBInstanceRequest> request = new RebootDBInstanceRequestMarshaller().Marshall(rebootDBInstanceRequest);
+            RebootDBInstanceResponse response = Invoke<RebootDBInstanceRequest, RebootDBInstanceResponse> (request, this.signer, RebootDBInstanceResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Creates a new DB Instance from a DB snapshot. The target database is created from the source database restore point with the same
+         /// configuration as the original source database, except that the new RDS instance is created with the default security group. </para>
+         /// </summary>
+         /// 
+         /// <param name="restoreDBInstanceFromDBSnapshotRequest">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot
+         ///           service method on AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the RestoreDBInstanceFromDBSnapshot service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="InvalidRestoreException"/>
+         /// <exception cref="InstanceQuotaExceededException"/>
+         /// <exception cref="DBSubnetGroupNotFoundException"/>
+         /// <exception cref="DBInstanceAlreadyExistsException"/>
+         /// <exception cref="StorageQuotaExceededException"/>
+         /// <exception cref="InvalidVPCNetworkStateException"/>
+         /// <exception cref="InvalidDBSnapshotStateException"/>
+         /// <exception cref="InsufficientDBInstanceCapacityException"/>
+         /// <exception cref="DBSnapshotNotFoundException"/>
+        public RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) 
+        {
+            IRequest<RestoreDBInstanceFromDBSnapshotRequest> request = new RestoreDBInstanceFromDBSnapshotRequestMarshaller().Marshall(restoreDBInstanceFromDBSnapshotRequest);
+            RestoreDBInstanceFromDBSnapshotResponse response = Invoke<RestoreDBInstanceFromDBSnapshotRequest, RestoreDBInstanceFromDBSnapshotResponse> (request, this.signer, RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
+
+         /// <summary>
+         /// <para> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC Security Groups can be added to the
+         /// DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application
+         /// accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or
+         /// (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </para> <para><b>NOTE:</b> You cannot authorize
+         /// ingress from an EC2 security group in one Region to an Amazon RDS DB Instance in another. You cannot authorize ingress from a VPC security
+         /// group in one VPC to an Amazon RDS DB Instance in another. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial.
+         /// </para>
+         /// </summary>
+         /// 
+         /// <param name="authorizeDBSecurityGroupIngressRequest">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress
+         ///           service method on AmazonRDS.</param>
+         /// 
+         /// <returns>The response from the AuthorizeDBSecurityGroupIngress service method, as returned by AmazonRDS.</returns>
+         /// 
+         /// <exception cref="DBSecurityGroupNotFoundException"/>
+         /// <exception cref="InvalidDBSecurityGroupStateException"/>
+         /// <exception cref="AuthorizationAlreadyExistsException"/>
+         /// <exception cref="AuthorizationQuotaExceededException"/>
+        public AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest) 
+        {
+            IRequest<AuthorizeDBSecurityGroupIngressRequest> request = new AuthorizeDBSecurityGroupIngressRequestMarshaller().Marshall(authorizeDBSecurityGroupIngressRequest);
+            AuthorizeDBSecurityGroupIngressResponse response = Invoke<AuthorizeDBSecurityGroupIngressRequest, AuthorizeDBSecurityGroupIngressResponse> (request, this.signer, AuthorizeDBSecurityGroupIngressResponseUnmarshaller.GetInstance());
+            return response;
+        }
+        
 
          /// <summary>
          /// <para> Creates a DB Instance that acts as a Read Replica of a source DB Instance. </para> <para> All Read Replica DB Instances are created
@@ -427,182 +917,17 @@ namespace Amazon.RDS
          /// <exception cref="DBInstanceAlreadyExistsException"/>
          /// <exception cref="DBInstanceNotFoundException"/>
          /// <exception cref="StorageQuotaExceededException"/>
+         /// <exception cref="InvalidVPCNetworkStateException"/>
          /// <exception cref="InvalidDBInstanceStateException"/>
          /// <exception cref="DBSecurityGroupNotFoundException"/>
          /// <exception cref="InsufficientDBInstanceCapacityException"/>
         public CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest) 
-        {           
+        {
             IRequest<CreateDBInstanceReadReplicaRequest> request = new CreateDBInstanceReadReplicaRequestMarshaller().Marshall(createDBInstanceReadReplicaRequest);
             CreateDBInstanceReadReplicaResponse response = Invoke<CreateDBInstanceReadReplicaRequest, CreateDBInstanceReadReplicaResponse> (request, this.signer, CreateDBInstanceReadReplicaResponseUnmarshaller.GetInstance());
             return response;
         }
-    
-
-         /// <summary>
-         /// <para> Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 Security Groups. Required parameters for this API
-         /// are one of CIDRIP or (EC2SecurityGroupName AND EC2SecurityGroupOwnerId). </para>
-         /// </summary>
-         /// 
-         /// <param name="revokeDBSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress service
-         ///           method on AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the RevokeDBSecurityGroupIngress service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="DBSecurityGroupNotFoundException"/>
-         /// <exception cref="InvalidDBSecurityGroupStateException"/>
-         /// <exception cref="AuthorizationNotFoundException"/>
-        public RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) 
-        {           
-            IRequest<RevokeDBSecurityGroupIngressRequest> request = new RevokeDBSecurityGroupIngressRequestMarshaller().Marshall(revokeDBSecurityGroupIngressRequest);
-            RevokeDBSecurityGroupIngressResponse response = Invoke<RevokeDBSecurityGroupIngressRequest, RevokeDBSecurityGroupIngressResponse> (request, this.signer, RevokeDBSecurityGroupIngressResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Creates a DBSnapshot. The source DBInstance must be in "available" state. </para>
-         /// </summary>
-         /// 
-         /// <param name="createDBSnapshotRequest">Container for the necessary parameters to execute the CreateDBSnapshot service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the CreateDBSnapshot service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="DBInstanceNotFoundException"/>
-         /// <exception cref="InvalidDBInstanceStateException"/>
-         /// <exception cref="SnapshotQuotaExceededException"/>
-         /// <exception cref="DBSnapshotAlreadyExistsException"/>
-        public CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) 
-        {           
-            IRequest<CreateDBSnapshotRequest> request = new CreateDBSnapshotRequestMarshaller().Marshall(createDBSnapshotRequest);
-            CreateDBSnapshotResponse response = Invoke<CreateDBSnapshotRequest, CreateDBSnapshotResponse> (request, this.signer, CreateDBSnapshotResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with
-         /// ApplyStatus of pending-reboot to the RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS
-         /// instance during which the RDS instance status is set to rebooting. A DBInstance event is created when the reboot is completed. </para>
-         /// </summary>
-         /// 
-         /// <param name="rebootDBInstanceRequest">Container for the necessary parameters to execute the RebootDBInstance service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the RebootDBInstance service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="DBInstanceNotFoundException"/>
-         /// <exception cref="InvalidDBInstanceStateException"/>
-        public RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) 
-        {           
-            IRequest<RebootDBInstanceRequest> request = new RebootDBInstanceRequestMarshaller().Marshall(rebootDBInstanceRequest);
-            RebootDBInstanceResponse response = Invoke<RebootDBInstanceRequest, RebootDBInstanceResponse> (request, this.signer, RebootDBInstanceResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the descriptions
-         /// of the specified DBParameterGroup. </para>
-         /// </summary>
-         /// 
-         /// <param name="describeDBParameterGroupsRequest">Container for the necessary parameters to execute the DescribeDBParameterGroups service
-         ///           method on AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the DescribeDBParameterGroups service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="DBParameterGroupNotFoundException"/>
-        public DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) 
-        {           
-            IRequest<DescribeDBParameterGroupsRequest> request = new DescribeDBParameterGroupsRequestMarshaller().Marshall(describeDBParameterGroupsRequest);
-            DescribeDBParameterGroupsResponse response = Invoke<DescribeDBParameterGroupsRequest, DescribeDBParameterGroupsResponse> (request, this.signer, DescribeDBParameterGroupsResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Creates a new DB instance. </para>
-         /// </summary>
-         /// 
-         /// <param name="createDBInstanceRequest">Container for the necessary parameters to execute the CreateDBInstance service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the CreateDBInstance service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="DBParameterGroupNotFoundException"/>
-         /// <exception cref="InstanceQuotaExceededException"/>
-         /// <exception cref="DBInstanceAlreadyExistsException"/>
-         /// <exception cref="StorageQuotaExceededException"/>
-         /// <exception cref="DBSecurityGroupNotFoundException"/>
-         /// <exception cref="InsufficientDBInstanceCapacityException"/>
-        public CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest createDBInstanceRequest) 
-        {           
-            IRequest<CreateDBInstanceRequest> request = new CreateDBInstanceRequestMarshaller().Marshall(createDBInstanceRequest);
-            CreateDBInstanceResponse response = Invoke<CreateDBInstanceRequest, CreateDBInstanceResponse> (request, this.signer, CreateDBInstanceResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> The DeleteDBInstance API deletes a previously provisioned RDS instance. A successful response from the web service indicates the
-         /// request was received correctly. If a final DBSnapshot is requested the status of the RDS instance will be "deleting" until the DBSnapshot is
-         /// created. DescribeDBInstance is used to monitor the status of this operation. This cannot be canceled or reverted once submitted. </para>
-         /// </summary>
-         /// 
-         /// <param name="deleteDBInstanceRequest">Container for the necessary parameters to execute the DeleteDBInstance service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the DeleteDBInstance service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="DBInstanceNotFoundException"/>
-         /// <exception cref="InvalidDBInstanceStateException"/>
-         /// <exception cref="SnapshotQuotaExceededException"/>
-         /// <exception cref="DBSnapshotAlreadyExistsException"/>
-        public DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) 
-        {           
-            IRequest<DeleteDBInstanceRequest> request = new DeleteDBInstanceRequestMarshaller().Marshall(deleteDBInstanceRequest);
-            DeleteDBInstanceResponse response = Invoke<DeleteDBInstanceRequest, DeleteDBInstanceResponse> (request, this.signer, DeleteDBInstanceResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS instances to be deleted. </para>
-         /// <para><b>NOTE:</b> The specified database parameter group cannot be associated with any DB Instances. </para>
-         /// </summary>
-         /// 
-         /// <param name="deleteDBParameterGroupRequest">Container for the necessary parameters to execute the DeleteDBParameterGroup service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <exception cref="DBParameterGroupNotFoundException"/>
-         /// <exception cref="InvalidDBParameterGroupStateException"/>
-        public DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) 
-        {           
-            IRequest<DeleteDBParameterGroupRequest> request = new DeleteDBParameterGroupRequestMarshaller().Marshall(deleteDBParameterGroupRequest);
-            DeleteDBParameterGroupResponse response = Invoke<DeleteDBParameterGroupRequest, DeleteDBParameterGroupResponse> (request, this.signer, DeleteDBParameterGroupResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName,
-         /// ParameterValue, and ApplyMethod. A maximum of 20 parameters can be modified in a single request. </para>
-         /// </summary>
-         /// 
-         /// <param name="modifyDBParameterGroupRequest">Container for the necessary parameters to execute the ModifyDBParameterGroup service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the ModifyDBParameterGroup service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="DBParameterGroupNotFoundException"/>
-         /// <exception cref="InvalidDBParameterGroupStateException"/>
-        public ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) 
-        {           
-            IRequest<ModifyDBParameterGroupRequest> request = new ModifyDBParameterGroupRequestMarshaller().Marshall(modifyDBParameterGroupRequest);
-            ModifyDBParameterGroupResponse response = Invoke<ModifyDBParameterGroupRequest, ModifyDBParameterGroupResponse> (request, this.signer, ModifyDBParameterGroupResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
+        
 
          /// <summary>
          /// <para> Returns information about DBSnapshots. This API supports pagination. </para>
@@ -615,86 +940,25 @@ namespace Amazon.RDS
          /// 
          /// <exception cref="DBSnapshotNotFoundException"/>
         public DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
-        {           
+        {
             IRequest<DescribeDBSnapshotsRequest> request = new DescribeDBSnapshotsRequestMarshaller().Marshall(describeDBSnapshotsRequest);
             DescribeDBSnapshotsResponse response = Invoke<DescribeDBSnapshotsRequest, DescribeDBSnapshotsResponse> (request, this.signer, DescribeDBSnapshotsResponseUnmarshaller.GetInstance());
             return response;
         }
-    
+        
 
          /// <summary>
-         /// <para> Purchases a reserved DB Instance offering. </para>
+         /// <para> Returns information about DBSnapshots. This API supports pagination. </para>
          /// </summary>
          /// 
-         /// <param name="purchaseReservedDBInstancesOfferingRequest">Container for the necessary parameters to execute the
-         ///           PurchaseReservedDBInstancesOffering service method on AmazonRDS.</param>
+         /// <returns>The response from the DescribeDBSnapshots service method, as returned by AmazonRDS.</returns>
          /// 
-         /// <returns>The response from the PurchaseReservedDBInstancesOffering service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="ReservedDBInstancesOfferingNotFoundException"/>
-         /// <exception cref="ReservedDBInstanceQuotaExceededException"/>
-         /// <exception cref="ReservedDBInstanceAlreadyExistsException"/>
-        public PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest) 
-        {           
-            IRequest<PurchaseReservedDBInstancesOfferingRequest> request = new PurchaseReservedDBInstancesOfferingRequestMarshaller().Marshall(purchaseReservedDBInstancesOfferingRequest);
-            PurchaseReservedDBInstancesOfferingResponse response = Invoke<PurchaseReservedDBInstancesOfferingRequest, PurchaseReservedDBInstancesOfferingResponse> (request, this.signer, PurchaseReservedDBInstancesOfferingResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Returns the default engine and system parameter information for the specified database engine. </para>
-         /// </summary>
-         /// 
-         /// <param name="describeEngineDefaultParametersRequest">Container for the necessary parameters to execute the DescribeEngineDefaultParameters
-         ///           service method on AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the DescribeEngineDefaultParameters service method, as returned by AmazonRDS.</returns>
-         /// 
-        public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
-        {           
-            IRequest<DescribeEngineDefaultParametersRequest> request = new DescribeEngineDefaultParametersRequestMarshaller().Marshall(describeEngineDefaultParametersRequest);
-            DescribeEngineDefaultParametersResponse response = Invoke<DescribeEngineDefaultParametersRequest, DescribeEngineDefaultParametersResponse> (request, this.signer, DescribeEngineDefaultParametersResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </para>
-         /// </summary>
-         /// 
-         /// <param name="describeReservedDBInstancesRequest">Container for the necessary parameters to execute the DescribeReservedDBInstances service
-         ///           method on AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the DescribeReservedDBInstances service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="ReservedDBInstanceNotFoundException"/>
-        public DescribeReservedDBInstancesResponse DescribeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) 
-        {           
-            IRequest<DescribeReservedDBInstancesRequest> request = new DescribeReservedDBInstancesRequestMarshaller().Marshall(describeReservedDBInstancesRequest);
-            DescribeReservedDBInstancesResponse response = Invoke<DescribeReservedDBInstancesRequest, DescribeReservedDBInstancesResponse> (request, this.signer, DescribeReservedDBInstancesResponseUnmarshaller.GetInstance());
-            return response;
-        }
-    
-
-         /// <summary>
-         /// <para> Deletes a DBSnapshot. </para> <para><b>NOTE:</b>The DBSnapshot must be in the available state to be deleted.</para>
-         /// </summary>
-         /// 
-         /// <param name="deleteDBSnapshotRequest">Container for the necessary parameters to execute the DeleteDBSnapshot service method on
-         ///           AmazonRDS.</param>
-         /// 
-         /// <returns>The response from the DeleteDBSnapshot service method, as returned by AmazonRDS.</returns>
-         /// 
-         /// <exception cref="InvalidDBSnapshotStateException"/>
          /// <exception cref="DBSnapshotNotFoundException"/>
-        public DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
-        {           
-            IRequest<DeleteDBSnapshotRequest> request = new DeleteDBSnapshotRequestMarshaller().Marshall(deleteDBSnapshotRequest);
-            DeleteDBSnapshotResponse response = Invoke<DeleteDBSnapshotRequest, DeleteDBSnapshotResponse> (request, this.signer, DeleteDBSnapshotResponseUnmarshaller.GetInstance());
-            return response;
+        public DescribeDBSnapshotsResponse DescribeDBSnapshots()
+        {
+            return DescribeDBSnapshots(new DescribeDBSnapshotsRequest());
         }
-    
+        
     }
-}   
+}
     

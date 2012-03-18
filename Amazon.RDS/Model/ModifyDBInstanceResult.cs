@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the ModifyDBInstance action.
     /// </summary>
-    public class ModifyDBInstanceResult : AmazonWebServiceResponse
+    public class ModifyDBInstanceResult
     {
         private DBInstance dBInstanceValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the ModifyDBInstanceResult property.
         /// Contains the result of a successful invocation of the ModifyDBInstance
         /// action.
-        /// 
+        /// </summary>
         public DBInstance DBInstance
         {
             get { return this.dBInstanceValue; }

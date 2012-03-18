@@ -52,16 +52,28 @@ namespace Amazon.Runtime.Internal.Transform
         private IEnumerator<string> attributeEnumerator;
         private XmlNodeType nodeType;
         private string nodeContent = String.Empty;
+        private NameValueCollection headers;
         
         /// <summary>
         /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
         /// </summary>
         /// <param name="xmlReader"><c>XmlTextReader</c> with the XML from a service response.</param>
-        public UnmarshallerContext(XmlTextReader xmlReader)
+        /// <param name="headers">Headers associated with the request.</param>
+        public UnmarshallerContext(XmlTextReader xmlReader, NameValueCollection headers)
         {
             this.xmlReader = xmlReader;
             this.xmlReader.WhitespaceHandling = WhitespaceHandling.None;
+            this.headers = headers ?? new NameValueCollection();
         }
+
+        /// <summary>
+        /// Gets the associated headers for the request.
+        /// </summary>
+        public NameValueCollection Headers
+        {
+            get { return this.headers; }
+        }
+
 
         /// <summary>
         ///     Reads to the next node in the XML document, and updates the context
@@ -79,7 +91,7 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else
             {
-                if (xmlReader.NodeType == XmlNodeType.None)
+                if (xmlReader.NodeType == XmlNodeType.None || xmlReader.NodeType == XmlNodeType.XmlDeclaration)
                     xmlReader.Read();
 
                 while (xmlReader.IsEmptyElement)

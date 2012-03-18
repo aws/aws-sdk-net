@@ -226,7 +226,7 @@ namespace Amazon.DynamoDB.DataModel
                 DynamoDBEntry entry;
                 if (document.TryGetValue(attributeName, out entry))
                 {
-                    object value = FromDynamoDBEntry(propertyStorage.MemberType, entry, propertyStorage.Converter); // TODO: send entire propertyStorage into method, and store the collectionAdd MethodInfo in it
+                    object value = FromDynamoDBEntry(propertyStorage.MemberType, entry, propertyStorage.Converter); 
 
                     if (!TrySetValue(instance, propertyStorage.Member, value))
                     {

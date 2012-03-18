@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the CreateDBSnapshot action.
     /// </summary>
-    public class CreateDBSnapshotResult : AmazonWebServiceResponse
+    public class CreateDBSnapshotResult
     {
         private DBSnapshot dBSnapshotValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateDBSnapshotResult property.
         /// Contains the result of a successful invocation of the CreateDBSnapshot
         /// action.
-        /// 
+        /// </summary>
         public DBSnapshot DBSnapshot
         {
             get { return this.dBSnapshotValue; }

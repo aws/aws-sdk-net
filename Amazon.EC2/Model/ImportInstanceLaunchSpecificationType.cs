@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -29,11 +29,12 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Specifies additional launch instance information.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class ImportInstanceLaunchSpecificationType
     {    
         private string architectureField;
         private List<string> securityGroupField;
+        private List<string> securityGroupIdField;
         private string userDataField;
         private string instanceTypeField;
         private Placement placementField;
@@ -116,6 +117,47 @@ namespace Amazon.EC2.Model
         public bool IsSetSecurityGroup()
         {
             return (SecurityGroup.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the SecurityGroupId property.
+        /// One or more security group IDs.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "SecurityGroupId")]
+        public List<string> SecurityGroupId
+        {
+            get
+            {
+                if (this.securityGroupIdField == null)
+                {
+                    this.securityGroupIdField = new List<string>();
+                }
+                return this.securityGroupIdField;
+            }
+            set { this.securityGroupIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the SecurityGroupId property
+        /// </summary>
+        /// <param name="list">One or more security group IDs.</param>
+        /// <returns>this instance</returns>
+        public ImportInstanceLaunchSpecificationType WithSecurityGroupId(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                SecurityGroupId.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if SecurityGroupId property is set
+        /// </summary>
+        /// <returns>true if SecurityGroupId property is set</returns>
+        public bool IsSetSecurityGroupId()
+        {
+            return (SecurityGroupId.Count > 0);
         }
 
         /// <summary>

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -616,6 +616,19 @@ namespace Amazon.EC2
         /// DescribeInstanceStatus returns information only for instances in the running state.
         /// </remarks>
         DescribeInstanceStatusResponse DescribeInstanceStatus(DescribeInstanceStatusRequest request);
+
+        /// <summary>
+        /// Submit feedback about an instance's status. This action works only for instances that are in the running state. 
+        /// If your experience with the instance differs from the instance status returned by the DescribeInstanceStatus 
+        /// action, use ReportInstanceStatus to report your experience with the instance. Amazon EC2 collects this 
+        /// information to improve the accuracy of status checks.
+        /// </summary>
+        /// <param name="request">Report Instance Status request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Report Instance Status response from the service</returns>
+        /// <remarks>Use of this action does not change the value returned by DescribeInstanceStatus.</remarks>
+        ReportInstanceStatusResponse ReportInstanceStatus(ReportInstanceStatusRequest request);
 
         /// <summary>
         /// Describe Instances 
@@ -1236,8 +1249,7 @@ namespace Amazon.EC2
         /// filters (e.g., the subnet is in a particular VPC, and the subnet's state is
         /// available). The result includes information for a particular subnet only
         /// if the subnet matches all your filters. If there's no match, no special
-        /// message is returned; the response is simply empty. The following table
-        /// shows the available filters.
+        /// message is returned; the response is simply empty.
         /// </remarks>
         DescribeSubnetsResponse DescribeSubnets(DescribeSubnetsRequest request);
 
@@ -1591,8 +1603,8 @@ namespace Amazon.EC2
         /// <remarks>
         /// Creates a set of DHCP options that you can then associate with one or more VPCs,
         /// causing all existing and new instances that you launch in those VPCs to use the
-        /// set of DHCP options. The following table lists the individual DHCP options you can
-        /// specify. For more information about the options, go to RFC 2132 - http://www.ietf.org/rfc/rfc2132.txt
+        /// set of DHCP options. 
+        /// For more information about the options, go to RFC 2132 - http://www.ietf.org/rfc/rfc2132.txt
         /// </remarks>
         CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request);
 
@@ -2112,6 +2124,81 @@ namespace Amazon.EC2
         /// ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
         /// </remarks>
         DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request);
+
+        /// <summary>
+        /// Attaches a network interface to an instance.
+        /// </summary>
+        /// <param name="request">Attach Network Interface request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Attach Network Interface response from the service</returns>
+        AttachNetworkInterfaceResponse AttachNetworkInterface(AttachNetworkInterfaceRequest request);
+
+        /// <summary>
+        /// Creates a network interface in the specified subnet.
+        /// </summary>
+        /// <param name="request">Create Network Interface request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Create Network Interface response from the service</returns>
+        CreateNetworkInterfaceResponse CreateNetworkInterface(CreateNetworkInterfaceRequest request);
+
+        /// <summary>
+        /// Deletes the specified network interface.
+        /// </summary>
+        /// <param name="request">Delete Network Interface request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Delete Network Interface response from the service</returns>
+        DeleteNetworkInterfaceResponse DeleteNetworkInterface(DeleteNetworkInterfaceRequest request);
+
+        /// <summary>
+        /// Describes a network interface attribute. 
+        /// </summary>
+        /// <param name="request">Describe Network Interface Attribute request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Network Interface Attribute response from the service</returns>
+        /// <remarks>Only one attribute can be specified per call.</remarks>
+        DescribeNetworkInterfaceAttributeResponse DescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request);
+
+        /// <summary>
+        /// Provides information about one or more network interfaces.
+        /// </summary>
+        /// <param name="request">Describe Network Interfaces request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Network Interfaces response from the service</returns>
+        DescribeNetworkInterfacesResponse DescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request);
+
+        /// <summary>
+        /// Detaches a network interface from an instance.
+        /// </summary>
+        /// <param name="request">Detach Network Interface request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Detach Network Interface response from the service</returns>
+        DetachNetworkInterfaceResponse DetachNetworkInterface(DetachNetworkInterfaceRequest request);
+
+        /// <summary>
+        /// Modifies a network interface attribute. 
+        /// </summary>
+        /// <param name="request">Modify Network Interface Attribute request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Modify Network Interface Attribute response from the service</returns>
+        /// <remarks>Only one attribute can be specified per call.</remarks>
+        ModifyNetworkInterfaceAttributeResponse ModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request);
+
+        /// <summary>
+        /// Resets a network interface attribute. 
+        /// </summary>
+        /// <param name="request">Reset Network Interface Attribute request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Reset Network Interface Attribute response from the service</returns>
+        /// <remarks>Only one attribute can be specified per call.</remarks>
+        ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request);
 
     }
 }

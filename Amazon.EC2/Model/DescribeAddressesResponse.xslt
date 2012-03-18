@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-11-01/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-12-15/" exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-11-01/'"/>
+    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2011-12-15/'"/>
     <xsl:template match="ec2:DescribeAddressesResponse">
         <xsl:element name="DescribeAddressesResponse" namespace="{$ns}">
             <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -33,6 +33,12 @@
           </xsl:element>
           <xsl:element name="Domain" namespace="{$ns}">
             <xsl:value-of select="ec2:domain"/>
+          </xsl:element>
+          <xsl:element name="NetworkInterfaceId" namespace="{$ns}">
+            <xsl:value-of select="ec2:networkInterfaceId"/>
+          </xsl:element>
+          <xsl:element name="NetworkInterfaceOwnerId" namespace="{$ns}">
+            <xsl:value-of select="ec2:networkInterfaceOwnerId"/>
           </xsl:element>
         </xsl:element>
     </xsl:template>

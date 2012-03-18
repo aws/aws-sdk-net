@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-11-01/"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2011-12-15/"
   exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
   <xsl:variable name="ns"
-    select="'http://ec2.amazonaws.com/doc/2011-11-01/'" />
+    select="'http://ec2.amazonaws.com/doc/2011-12-15/'" />
   <xsl:template match="ec2:DescribeSpotInstanceRequestsResponse">
     <xsl:element name="DescribeSpotInstanceRequestsResponse" namespace="{$ns}">
       <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -17,6 +17,7 @@
       </xsl:element>
     </xsl:element>
   </xsl:template>
+
   <xsl:template match="ec2:spotInstanceRequestSet">
     <xsl:for-each select="ec2:item">
       <xsl:element name="SpotInstanceRequest" namespace="{$ns}">
@@ -59,7 +60,6 @@
         <xsl:element name="LaunchedAvailabilityZone" namespace="{$ns}">
           <xsl:value-of select="ec2:launchedAvailabilityZone"/>
         </xsl:element>
-
       </xsl:element>
     </xsl:for-each>
   </xsl:template>
@@ -74,6 +74,7 @@
       </xsl:element>
     </xsl:element>
   </xsl:template>
+
   <xsl:template match="ec2:launchSpecification">
     <xsl:element name="LaunchSpecification" namespace="{$ns}">
       <xsl:element name="ImageId" namespace="{$ns}">
@@ -82,7 +83,7 @@
       <xsl:element name="KeyName" namespace="{$ns}">
         <xsl:value-of select="ec2:keyName"/>
       </xsl:element>
-      <xsl:apply-templates select="ec2:groupSet"/>
+      <xsl:apply-templates select="ec2:groupSet" mode="idAndName"/>
       <xsl:element name="AddressingType" namespace="{$ns}">
         <xsl:value-of select="ec2:addressingType"/>
       </xsl:element>
@@ -115,9 +116,11 @@
       <xsl:element name="SubnetId" namespace="{$ns}">
         <xsl:value-of select="ec2:subnetId"/>
       </xsl:element>
+      <xsl:apply-templates select="ec2:networkInterfaceSet" />
     </xsl:element>
   </xsl:template>
-  <xsl:template match="ec2:groupSet">
+
+  <xsl:template match="ec2:groupSet" mode="idAndName">
     <xsl:for-each select="ec2:item">
       <xsl:element name="SecurityGroup" namespace="{$ns}">
         <xsl:value-of select="ec2:groupName"/>
@@ -127,26 +130,38 @@
       </xsl:element>
     </xsl:for-each>
   </xsl:template>
+
+  <xsl:template match="ec2:groupSet" mode="idOnly">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="GroupId" namespace="{$ns}">
+        <xsl:value-of select="ec2:groupId"/>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+
   <xsl:template match="ec2:blockDeviceMapping">
     <xsl:for-each select="ec2:item">
       <xsl:element name="BlockDeviceMapping" namespace="{$ns}">
         <xsl:element name="DeviceName" namespace="{$ns}">
           <xsl:value-of select="ec2:deviceName"/>
         </xsl:element>
+        <xsl:element name="VirtualName" namespace="{$ns}">
+          <xsl:value-of select="ec2:virtualName"/>
+        </xsl:element>
         <xsl:apply-templates select="ec2:ebs"/>
+        <xsl:element name="NoDevice" namespace="{$ns}">
+          <xsl:value-of select="ec2:noDevice"/>
+        </xsl:element>
       </xsl:element>
     </xsl:for-each>
   </xsl:template>
   <xsl:template match="ec2:ebs">
     <xsl:element name="Ebs" namespace="{$ns}">
-      <xsl:element name="VolumeId" namespace="{$ns}">
-        <xsl:value-of select="ec2:volumeId"/>
+      <xsl:element name="SnapshotId" namespace="{$ns}">
+        <xsl:value-of select="ec2:snapshotId"/>
       </xsl:element>
-      <xsl:element name="Status" namespace="{$ns}">
-        <xsl:value-of select="ec2:status"/>
-      </xsl:element>
-      <xsl:element name="AttachTime" namespace="{$ns}">
-        <xsl:value-of select="ec2:attachTime"/>
+      <xsl:element name="VolumeSize" namespace="{$ns}">
+        <xsl:value-of select="ec2:volumeSize"/>
       </xsl:element>
       <xsl:element name="DeleteOnTermination" namespace="{$ns}">
         <xsl:if test="string-length(ec2:deleteOnTermination) = 0">false</xsl:if>
@@ -156,6 +171,7 @@
       </xsl:element>
     </xsl:element>
   </xsl:template>
+
   <xsl:template match="ec2:tagSet">
     <xsl:for-each select="ec2:item">
       <xsl:element name="Tag" namespace="{$ns}">
@@ -164,6 +180,35 @@
         </xsl:element>
         <xsl:element name="Value" namespace="{$ns}">
           <xsl:value-of select="ec2:value" />
+        </xsl:element>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="ec2:networkInterfaceSet">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="InstanceNetworkInterfaceSpecification" namespace="{$ns}">
+        <xsl:element name="NetworkInterfaceId" namespace="{$ns}">
+          <xsl:value-of select="ec2:networkInterfaceId"/>
+        </xsl:element>
+        <xsl:element name="DeviceIndex" namespace="{$ns}">
+          <xsl:value-of select="ec2:deviceIndex"/>
+        </xsl:element>
+        <xsl:element name="SubnetId" namespace="{$ns}">
+          <xsl:value-of select="ec2:subnetId"/>
+        </xsl:element>
+        <xsl:element name="Description" namespace="{$ns}">
+          <xsl:value-of select="ec2:description"/>
+        </xsl:element>
+        <xsl:element name="PrivateIpAddress" namespace="{$ns}">
+          <xsl:value-of select="ec2:privateIpAddress"/>
+        </xsl:element>
+        <xsl:apply-templates select="ec2:groupSet" mode="idOnly"/>
+        <xsl:element name="DeleteOnTermination" namespace="{$ns}">
+          <xsl:if test="string-length(ec2:deleteOnTermination) = 0">false</xsl:if>
+          <xsl:if test="string-length(ec2:deleteOnTermination) > 0">
+            <xsl:value-of select="ec2:deleteOnTermination"/>
+          </xsl:if>
         </xsl:element>
       </xsl:element>
     </xsl:for-each>

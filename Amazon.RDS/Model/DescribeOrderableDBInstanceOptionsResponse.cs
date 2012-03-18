@@ -34,7 +34,15 @@ namespace Amazon.RDS.Model
         /// </summary>
         public DescribeOrderableDBInstanceOptionsResult DescribeOrderableDBInstanceOptionsResult
         {
-            get { return this.describeOrderableDBInstanceOptionsResult; }
+            get 
+            {
+                if(this.describeOrderableDBInstanceOptionsResult == null)
+                {
+                    this.describeOrderableDBInstanceOptionsResult = new DescribeOrderableDBInstanceOptionsResult();
+                }
+
+                return this.describeOrderableDBInstanceOptionsResult; 
+            }
             set { this.describeOrderableDBInstanceOptionsResult = value; }
         }
     }

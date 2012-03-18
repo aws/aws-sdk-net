@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 namespace Amazon.EC2
@@ -26,7 +26,7 @@ namespace Amazon.EC2
     /// </summary>
     public class AmazonEC2Config
     {
-        private string serviceVersion = "2011-11-01";
+        private string serviceVersion = "2011-12-15";
         private string serviceURL = "https://ec2.amazonaws.com";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
         private string signatureVersion = "2";

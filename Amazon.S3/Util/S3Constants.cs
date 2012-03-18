@@ -54,6 +54,7 @@ namespace Amazon.S3.Util
         internal const string AmzStorageClassHeader = "x-amz-storage-class";
         internal const string AmzSecurityTokenHeader = "x-amz-security-token";
         internal const string AmzServerSideEncryptionHeader = "x-amz-server-side-encryption";
+        internal const string AmzExpirationHeader = "x-amz-expiration";
 
         // Accepted HTTP Verbs
         internal static readonly string[] Verbs = { "GET", "HEAD", "PUT", "DELETE", "POST" };
@@ -105,5 +106,6 @@ namespace Amazon.S3.Util
         // Error Codes
         internal const string NoSuchBucketPolicy = "NoSuchBucketPolicy";
         internal const string NoSuchWebsiteConfiguration = "NoSuchWebsiteConfiguration";
+        internal const string NoSuchLifecycleConfiguration = "NoSuchLifecycleConfiguration";
     }
 }

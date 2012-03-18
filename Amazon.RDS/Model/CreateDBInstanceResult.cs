@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the CreateDBInstance action.
     /// </summary>
-    public class CreateDBInstanceResult : AmazonWebServiceResponse
+    public class CreateDBInstanceResult
     {
         private DBInstance dBInstanceValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateDBInstanceResult property.
         /// Contains the result of a successful invocation of the CreateDBInstance
         /// action.
-        /// 
+        /// </summary>
         public DBInstance DBInstance
         {
             get { return this.dBInstanceValue; }

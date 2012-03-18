@@ -40,7 +40,7 @@ namespace Amazon.Util
     {
         #region Internal Constants
 
-        internal const string SDKVersionNumber = "1.4.0.1";
+        internal const string SDKVersionNumber = "1.4.3.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -230,6 +230,9 @@ namespace Amazon.Util
                 }
             }
             string result = data.ToString();
+            if (result.Length == 0)
+                return string.Empty;
+
             return result.Remove(result.Length - 1);
         }
 

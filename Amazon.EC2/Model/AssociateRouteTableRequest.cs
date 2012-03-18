@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-11-01
+ *  API Version: 2011-12-15
  */
 
 using System;
@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// table. The action returns an association ID, which you need if you want to disassociate the route table
     /// from the subnet later. A route table can be associated with multiple subnets.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-11-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2011-12-15/", IsNullable = false)]
     public class AssociateRouteTableRequest
     {    
         private string routeTableIdField;

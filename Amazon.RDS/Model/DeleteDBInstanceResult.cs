@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the DeleteDBInstance action.
     /// </summary>
-    public class DeleteDBInstanceResult : AmazonWebServiceResponse
+    public class DeleteDBInstanceResult
     {
         private DBInstance dBInstanceValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the DeleteDBInstanceResult property.
         /// Contains the result of a successful invocation of the DeleteDBInstance
         /// action.
-        /// 
+        /// </summary>
         public DBInstance DBInstance
         {
             get { return this.dBInstanceValue; }

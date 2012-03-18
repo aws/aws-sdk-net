@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
         private bool? shouldRespectGracePeriod;
 
         /// <summary>
-        /// The identifier of the EC2 instance.
+        /// The identifier of the Amazon EC2 instance.
         ///  
         /// <para>
         /// <b>Constraints:</b>

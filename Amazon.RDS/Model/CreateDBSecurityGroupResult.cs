@@ -23,15 +23,15 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the CreateDBSecurityGroup action.
     /// </summary>
-    public class CreateDBSecurityGroupResult : AmazonWebServiceResponse
+    public class CreateDBSecurityGroupResult
     {
         private DBSecurityGroup dBSecurityGroupValue;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateDBSecurityGroupResult property.
         /// Contains the result of a successful invocation of the CreateDBSecurityGroup
         /// action.
-        /// 
+        /// </summary>
         public DBSecurityGroup DBSecurityGroup
         {
             get { return this.dBSecurityGroupValue; }

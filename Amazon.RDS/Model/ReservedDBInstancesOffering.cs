@@ -33,7 +33,9 @@ namespace Amazon.RDS.Model
         private double? usagePrice;
         private string currencyCode;
         private string productDescription;
+        private string offeringType;
         private bool? multiAZ;
+        private List<RecurringCharge> recurringCharges = new List<RecurringCharge>();
 
         /// <summary>
         /// The offering identifier.
@@ -232,6 +234,34 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// The offering type.
+        ///  
+        /// </summary>
+        public string OfferingType
+        {
+            get { return this.offeringType; }
+            set { this.offeringType = value; }
+        }
+
+        /// <summary>
+        /// Sets the OfferingType property
+        /// </summary>
+        /// <param name="offeringType">The value to set for the OfferingType property </param>
+        /// <returns>this instance</returns>
+        public ReservedDBInstancesOffering WithOfferingType(string offeringType)
+        {
+            this.offeringType = offeringType;
+            return this;
+        }
+            
+
+        // Check to see if OfferingType property is set
+        internal bool IsSetOfferingType()
+        {
+            return this.offeringType != null;       
+        }
+
+        /// <summary>
         /// Indicates if the offering applies to Multi-AZ deployments.
         ///  
         /// </summary>
@@ -257,6 +287,51 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this.multiAZ.HasValue;       
+        }
+
+        /// <summary>
+        /// The recurring price charged to run this reserved DB Instance.
+        ///  
+        /// </summary>
+        public List<RecurringCharge> RecurringCharges
+        {
+            get { return this.recurringCharges; }
+            set { this.recurringCharges = value; }
+        }
+        /// <summary>
+        /// Adds elements to the RecurringCharges collection
+        /// </summary>
+        /// <param name="recurringCharges">The values to add to the RecurringCharges collection </param>
+        /// <returns>this instance</returns>
+        public ReservedDBInstancesOffering WithRecurringCharges(params RecurringCharge[] recurringCharges)
+        {
+            foreach (RecurringCharge element in recurringCharges)
+            {
+                this.recurringCharges.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the RecurringCharges collection
+        /// </summary>
+        /// <param name="recurringCharges">The values to add to the RecurringCharges collection </param>
+        /// <returns>this instance</returns>
+        public ReservedDBInstancesOffering WithRecurringCharges(IEnumerable<RecurringCharge> recurringCharges)
+        {
+            foreach (RecurringCharge element in recurringCharges)
+            {
+                this.recurringCharges.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if RecurringCharges property is set
+        internal bool IsSetRecurringCharges()
+        {
+            return this.recurringCharges.Count > 0;       
         }
     }
 }
