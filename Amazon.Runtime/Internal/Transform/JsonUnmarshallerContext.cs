@@ -506,7 +506,7 @@ namespace Amazon.Runtime.Internal.Transform
                         {
                             if (escaped)
                             {
-                                sb.Append(nextChar); // not calling GetEscapedChar, it would simply return \
+                                sb.Append((char)nextChar); // not calling GetEscapedChar, it would simply return \
                             }
                             escaped = !escaped;
                         }
