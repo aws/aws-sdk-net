@@ -586,7 +586,10 @@ namespace Amazon.Runtime
                 //request.ContentType = AWSSDKUtils.UrlEncodedContent;
 
                 request.Method = wrappedRequest.HttpMethod;
-                request.ContentLength = requestData.Length;
+                if (request.Method == "POST")
+                {
+                    request.ContentLength = requestData.Length;
+                }
 
                 AddHeaders(request, wrappedRequest.Headers);
             }

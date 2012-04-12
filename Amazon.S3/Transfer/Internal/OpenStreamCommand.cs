@@ -55,6 +55,10 @@ namespace Amazon.S3.Transfer.Internal
             GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
             GetObjectResponse response = this._s3Client.GetObject(getRequest);
             this._responseStream = response.ResponseStream;
+
+            // Null out the http response so the response stream won't get closed when the GetObjectResponse object is garbage collected.
+            response.httpResponse = null;
+            response.ResponseStream = null;
         }
 
         internal Stream ResponseStream
