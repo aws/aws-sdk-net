@@ -40,7 +40,7 @@ namespace Amazon.ElastiCache
         {
             get
             {
-                return "2011-07-15";
+                return "2012-03-09";
             }
         }
     }

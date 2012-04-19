@@ -62,8 +62,8 @@ namespace Amazon.DynamoDB.Model
 
         /// <summary>
         /// The number of Capacity Units of the provisioned throughput of the table consumed during the operation. <c>GetItem</c>, <c>BatchGetItem</c>,
-        /// <c>Query</c>, and <c>Scan</c> operations consume <c>ReadCapacityUnits</c>, while <c>PutItem</c>, <c>UpdateItem</c>, and <c>DeleteItem</c>
-        /// operations consume <c>WriteCapacityUnits</c>.
+        /// <c>BatchWriteItem</c>, <c>Query</c>, and <c>Scan</c> operations consume <c>ReadCapacityUnits</c>, while <c>PutItem</c>, <c>UpdateItem</c>,
+        /// and <c>DeleteItem</c> operations consume <c>WriteCapacityUnits</c>.
         ///  
         /// </summary>
         public double ConsumedCapacityUnits

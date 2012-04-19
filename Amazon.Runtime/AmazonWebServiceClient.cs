@@ -563,6 +563,7 @@ namespace Amazon.Runtime
             if (request != null)
             {
                 request.ServicePoint.ConnectionLimit = this.config.ConnectionLimit;
+                request.ServicePoint.UseNagleAlgorithm = this.config.UseNagleAlgorithm;
                 if (this.config.ProxyHost != null && this.config.ProxyPort != 0)
                 {
                     WebProxy proxy = new WebProxy(this.config.ProxyHost, this.config.ProxyPort);

@@ -165,11 +165,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                     {
                         writer.WritePropertyName("AttributeUpdates");
                         writer.WriteObjectStart();
-                        foreach (string key in updateItemRequest.AttributeUpdates.Keys)
+                        foreach (string updateItemRequestAttributeUpdatesKey in updateItemRequest.AttributeUpdates.Keys)
                         {
                             AttributeValueUpdate attributeUpdatesListValue;
-                            bool hasValue = updateItemRequest.AttributeUpdates.TryGetValue(key, out attributeUpdatesListValue);
-                            writer.WritePropertyName(key);
+                            bool attributeUpdatesListValueHasValue = updateItemRequest.AttributeUpdates.TryGetValue(updateItemRequestAttributeUpdatesKey, out attributeUpdatesListValue);
+                            writer.WritePropertyName(updateItemRequestAttributeUpdatesKey);
+
                             writer.WriteObjectStart();
 
                             if (attributeUpdatesListValue != null) 
@@ -236,11 +237,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                     {
                         writer.WritePropertyName("Expected");
                         writer.WriteObjectStart();
-                        foreach (string key in updateItemRequest.Expected.Keys)
+                        foreach (string updateItemRequestExpectedKey in updateItemRequest.Expected.Keys)
                         {
                             ExpectedAttributeValue expectedListValue;
-                            bool hasValue = updateItemRequest.Expected.TryGetValue(key, out expectedListValue);
-                            writer.WritePropertyName(key);
+                            bool expectedListValueHasValue = updateItemRequest.Expected.TryGetValue(updateItemRequestExpectedKey, out expectedListValue);
+                            writer.WritePropertyName(updateItemRequestExpectedKey);
+
                             writer.WriteObjectStart();
 
                             if (expectedListValue != null) 

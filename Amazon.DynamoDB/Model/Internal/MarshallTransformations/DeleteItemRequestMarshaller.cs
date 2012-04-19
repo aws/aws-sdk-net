@@ -165,11 +165,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                     {
                         writer.WritePropertyName("Expected");
                         writer.WriteObjectStart();
-                        foreach (string key in deleteItemRequest.Expected.Keys)
+                        foreach (string deleteItemRequestExpectedKey in deleteItemRequest.Expected.Keys)
                         {
                             ExpectedAttributeValue expectedListValue;
-                            bool hasValue = deleteItemRequest.Expected.TryGetValue(key, out expectedListValue);
-                            writer.WritePropertyName(key);
+                            bool expectedListValueHasValue = deleteItemRequest.Expected.TryGetValue(deleteItemRequestExpectedKey, out expectedListValue);
+                            writer.WritePropertyName(deleteItemRequestExpectedKey);
+
                             writer.WriteObjectStart();
 
                             if (expectedListValue != null) 

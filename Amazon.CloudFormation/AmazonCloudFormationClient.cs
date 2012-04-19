@@ -40,7 +40,7 @@ namespace Amazon.CloudFormation
     public class AmazonCloudFormationClient : AmazonWebServiceClient, AmazonCloudFormation
     {
     
-        AbstractAWSSigner signer = new QueryStringSigner();
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 

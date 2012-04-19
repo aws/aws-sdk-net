@@ -1159,5 +1159,19 @@ namespace Amazon.DynamoDB.DocumentModel
 
         #endregion
 
+
+        #region BatchWrite
+
+        /// <summary>
+        /// Creates a DocumentBatchWrite object for the current table, allowing
+        /// a batch-put/delete operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentBatchWrite object.</returns>
+        public DocumentBatchWrite CreateBatchWrite()
+        {
+            return new DocumentBatchWrite(this);
+        }
+
+        #endregion
     }
 }
