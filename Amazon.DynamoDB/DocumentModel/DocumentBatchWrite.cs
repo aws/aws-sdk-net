@@ -324,14 +324,12 @@ namespace Amazon.DynamoDB.DocumentModel
             {
                 CallUntilCompletion(request, targetTable.DDBClient);
             }
-            catch (IOException)
-            {
-                shouldTrySmallerRequest = true;
-            }
             catch (AmazonDynamoDBException addbex)
             {
                 if (addbex.StatusCode == HttpStatusCode.RequestEntityTooLarge)
                     shouldTrySmallerRequest = true;
+                else
+                    throw;
             }
 
             if (shouldTrySmallerRequest)
