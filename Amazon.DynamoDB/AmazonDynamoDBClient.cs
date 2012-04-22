@@ -28,8 +28,8 @@ namespace Amazon.DynamoDB
     /// <summary>
     /// Implementation for accessing AmazonDynamoDB.
     ///  
-    /// <para> Amazon DynamoDB is a fast, highly scalable, highly available, cost-effective non-relational database service. Amazon DynamoDB removes
-    /// traditional scalability limitations on data storage while maintaining low latency and predictable performance. </para>
+    /// <para>Amazon DynamoDB is a fast, highly scalable, highly available, cost-effective non-relational database service.</para> <para>Amazon
+    /// DynamoDB removes traditional scalability limitations on data storage while maintaining low latency and predictable performance.</para>
     /// </summary>
     public class AmazonDynamoDBClient : AmazonWebServiceClient, AmazonDynamoDB
     {
@@ -151,142 +151,6 @@ namespace Amazon.DynamoDB
 
         #endregion
    
-        #region Scan
-
-        /// <summary>
-        /// <para>Retrieves one or more items and its attributes by performing a full scan of a table.</para> <para>Provide a <c>ScanFilter</c> to get
-        /// more specific results.</para>
-        /// </summary>
-        /// 
-        /// <param name="scanRequest">Container for the necessary parameters to execute the Scan service method on AmazonDynamoDB.</param>
-        /// 
-        /// <returns>The response from the Scan service method, as returned by AmazonDynamoDB.</returns>
-        /// 
-        /// <exception cref="ProvisionedThroughputExceededException"/>
-        /// <exception cref="InternalServerErrorException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        public ScanResponse Scan(ScanRequest scanRequest)
-        {
-            IAsyncResult asyncResult = invokeScan(scanRequest, null, null, true);
-            return EndScan(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the Scan operation.
-        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.Scan"/>
-        /// </summary>
-        /// 
-        /// <param name="scanRequest">Container for the necessary parameters to execute the Scan operation on AmazonDynamoDB.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndScan
-        ///         operation.</returns>
-        public IAsyncResult BeginScan(ScanRequest scanRequest, AsyncCallback callback, object state)
-        {
-            return invokeScan(scanRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the Scan operation.
-        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.Scan"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginScan.</param>
-        /// 
-        /// <returns>Returns a ScanResult from AmazonDynamoDB.</returns>
-        public ScanResponse EndScan(IAsyncResult asyncResult)
-        {
-            return endOperation<ScanResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeScan(ScanRequest scanRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new ScanRequestMarshaller().Marshall(scanRequest);
-            var unmarshaller = ScanResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        #endregion
-    
-        #region CreateTable
-
-        /// <summary>
-        /// <para>Adds a new table to your account.</para> <para>The table name must be unique among those associated with the AWS Account issuing the
-        /// request, and the AWS Region that receives the request (e.g. <c>us-east-1</c> ).</para> <para>The <c>CreateTable</c> operation triggers an
-        /// asynchronous workflow to begin creating the table. Amazon DynamoDB immediately returns the state of the table ( <c>CREATING</c> ) until the
-        /// table is in the <c>ACTIVE</c> state. Once the table is in the <c>ACTIVE</c> state, you can perform data plane operations.</para>
-        /// </summary>
-        /// 
-        /// <param name="createTableRequest">Container for the necessary parameters to execute the CreateTable service method on AmazonDynamoDB.</param>
-        /// 
-        /// <returns>The response from the CreateTable service method, as returned by AmazonDynamoDB.</returns>
-        /// 
-        /// <exception cref="ResourceInUseException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="InternalServerErrorException"/>
-        public CreateTableResponse CreateTable(CreateTableRequest createTableRequest)
-        {
-            IAsyncResult asyncResult = invokeCreateTable(createTableRequest, null, null, true);
-            return EndCreateTable(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateTable operation.
-        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.CreateTable"/>
-        /// </summary>
-        /// 
-        /// <param name="createTableRequest">Container for the necessary parameters to execute the CreateTable operation on AmazonDynamoDB.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTable
-        ///         operation.</returns>
-        public IAsyncResult BeginCreateTable(CreateTableRequest createTableRequest, AsyncCallback callback, object state)
-        {
-            return invokeCreateTable(createTableRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateTable operation.
-        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.CreateTable"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTable.</param>
-        /// 
-        /// <returns>Returns a CreateTableResult from AmazonDynamoDB.</returns>
-        public CreateTableResponse EndCreateTable(IAsyncResult asyncResult)
-        {
-            return endOperation<CreateTableResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeCreateTable(CreateTableRequest createTableRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateTableRequestMarshaller().Marshall(createTableRequest);
-            var unmarshaller = CreateTableResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        #endregion
-    
         #region ListTables
 
         /// <summary>
@@ -432,6 +296,75 @@ namespace Amazon.DynamoDB
 
         #endregion
     
+        #region BatchWriteItem
+
+        /// <summary>
+        /// <para>Allows to execute a batch of Put and/or Delete Requests for many tables in a single call. A total of 25 requests are allowed.</para>
+        /// <para>There are no transaction guarantees provided by this API. It does not allow conditional puts nor does it support return values.</para>
+        /// </summary>
+        /// 
+        /// <param name="batchWriteItemRequest">Container for the necessary parameters to execute the BatchWriteItem service method on
+        ///          AmazonDynamoDB.</param>
+        /// 
+        /// <returns>The response from the BatchWriteItem service method, as returned by AmazonDynamoDB.</returns>
+        /// 
+        /// <exception cref="ProvisionedThroughputExceededException"/>
+        /// <exception cref="InternalServerErrorException"/>
+        /// <exception cref="ResourceNotFoundException"/>
+        public BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest batchWriteItemRequest)
+        {
+            IAsyncResult asyncResult = invokeBatchWriteItem(batchWriteItemRequest, null, null, true);
+            return EndBatchWriteItem(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchWriteItem operation.
+        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.BatchWriteItem"/>
+        /// </summary>
+        /// 
+        /// <param name="batchWriteItemRequest">Container for the necessary parameters to execute the BatchWriteItem operation on
+        ///          AmazonDynamoDB.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchWriteItem
+        ///         operation.</returns>
+        public IAsyncResult BeginBatchWriteItem(BatchWriteItemRequest batchWriteItemRequest, AsyncCallback callback, object state)
+        {
+            return invokeBatchWriteItem(batchWriteItemRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the BatchWriteItem operation.
+        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.BatchWriteItem"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchWriteItem.</param>
+        /// 
+        /// <returns>Returns a BatchWriteItemResult from AmazonDynamoDB.</returns>
+        public BatchWriteItemResponse EndBatchWriteItem(IAsyncResult asyncResult)
+        {
+            return endOperation<BatchWriteItemResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeBatchWriteItem(BatchWriteItemRequest batchWriteItemRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new BatchWriteItemRequestMarshaller().Marshall(batchWriteItemRequest);
+            var unmarshaller = BatchWriteItemResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region UpdateItem
 
         /// <summary>
@@ -491,74 +424,6 @@ namespace Amazon.DynamoDB
         {
             IRequest irequest = new UpdateItemRequestMarshaller().Marshall(updateItemRequest);
             var unmarshaller = UpdateItemResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        #endregion
-    
-        #region UpdateTable
-
-        /// <summary>
-        /// <para>Updates the provisioned throughput for the given table.</para> <para>Setting the throughput for a table helps you manage performance
-        /// and is part of the Provisioned Throughput feature of Amazon DynamoDB.</para>
-        /// </summary>
-        /// 
-        /// <param name="updateTableRequest">Container for the necessary parameters to execute the UpdateTable service method on AmazonDynamoDB.</param>
-        /// 
-        /// <returns>The response from the UpdateTable service method, as returned by AmazonDynamoDB.</returns>
-        /// 
-        /// <exception cref="ResourceInUseException"/>
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="InternalServerErrorException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        public UpdateTableResponse UpdateTable(UpdateTableRequest updateTableRequest)
-        {
-            IAsyncResult asyncResult = invokeUpdateTable(updateTableRequest, null, null, true);
-            return EndUpdateTable(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UpdateTable operation.
-        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.UpdateTable"/>
-        /// </summary>
-        /// 
-        /// <param name="updateTableRequest">Container for the necessary parameters to execute the UpdateTable operation on AmazonDynamoDB.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTable
-        ///         operation.</returns>
-        public IAsyncResult BeginUpdateTable(UpdateTableRequest updateTableRequest, AsyncCallback callback, object state)
-        {
-            return invokeUpdateTable(updateTableRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the UpdateTable operation.
-        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.UpdateTable"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTable.</param>
-        /// 
-        /// <returns>Returns a UpdateTableResult from AmazonDynamoDB.</returns>
-        public UpdateTableResponse EndUpdateTable(IAsyncResult asyncResult)
-        {
-            return endOperation<UpdateTableResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeUpdateTable(UpdateTableRequest updateTableRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new UpdateTableRequestMarshaller().Marshall(updateTableRequest);
-            var unmarshaller = UpdateTableResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -628,6 +493,277 @@ namespace Amazon.DynamoDB
         {
             IRequest irequest = new PutItemRequestMarshaller().Marshall(putItemRequest);
             var unmarshaller = PutItemResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DescribeTable
+
+        /// <summary>
+        /// <para>Retrieves information about the table, including the current status of the table, the primary key schema and when the table was
+        /// created.</para> <para>If the table does not exist, Amazon DynamoDB returns a <c>ResourceNotFoundException</c> .</para>
+        /// </summary>
+        /// 
+        /// <param name="describeTableRequest">Container for the necessary parameters to execute the DescribeTable service method on
+        ///          AmazonDynamoDB.</param>
+        /// 
+        /// <returns>The response from the DescribeTable service method, as returned by AmazonDynamoDB.</returns>
+        /// 
+        /// <exception cref="InternalServerErrorException"/>
+        /// <exception cref="ResourceNotFoundException"/>
+        public DescribeTableResponse DescribeTable(DescribeTableRequest describeTableRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeTable(describeTableRequest, null, null, true);
+            return EndDescribeTable(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTable operation.
+        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.DescribeTable"/>
+        /// </summary>
+        /// 
+        /// <param name="describeTableRequest">Container for the necessary parameters to execute the DescribeTable operation on AmazonDynamoDB.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTable
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeTable(DescribeTableRequest describeTableRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeTable(describeTableRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeTable operation.
+        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.DescribeTable"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTable.</param>
+        /// 
+        /// <returns>Returns a DescribeTableResult from AmazonDynamoDB.</returns>
+        public DescribeTableResponse EndDescribeTable(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeTableResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeTable(DescribeTableRequest describeTableRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeTableRequestMarshaller().Marshall(describeTableRequest);
+            var unmarshaller = DescribeTableResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region Scan
+
+        /// <summary>
+        /// <para>Retrieves one or more items and its attributes by performing a full scan of a table.</para> <para>Provide a <c>ScanFilter</c> to get
+        /// more specific results.</para>
+        /// </summary>
+        /// 
+        /// <param name="scanRequest">Container for the necessary parameters to execute the Scan service method on AmazonDynamoDB.</param>
+        /// 
+        /// <returns>The response from the Scan service method, as returned by AmazonDynamoDB.</returns>
+        /// 
+        /// <exception cref="ProvisionedThroughputExceededException"/>
+        /// <exception cref="InternalServerErrorException"/>
+        /// <exception cref="ResourceNotFoundException"/>
+        public ScanResponse Scan(ScanRequest scanRequest)
+        {
+            IAsyncResult asyncResult = invokeScan(scanRequest, null, null, true);
+            return EndScan(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Scan operation.
+        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.Scan"/>
+        /// </summary>
+        /// 
+        /// <param name="scanRequest">Container for the necessary parameters to execute the Scan operation on AmazonDynamoDB.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndScan
+        ///         operation.</returns>
+        public IAsyncResult BeginScan(ScanRequest scanRequest, AsyncCallback callback, object state)
+        {
+            return invokeScan(scanRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the Scan operation.
+        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.Scan"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginScan.</param>
+        /// 
+        /// <returns>Returns a ScanResult from AmazonDynamoDB.</returns>
+        public ScanResponse EndScan(IAsyncResult asyncResult)
+        {
+            return endOperation<ScanResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeScan(ScanRequest scanRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ScanRequestMarshaller().Marshall(scanRequest);
+            var unmarshaller = ScanResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region CreateTable
+
+        /// <summary>
+        /// <para>Adds a new table to your account.</para> <para>The table name must be unique among those associated with the AWS Account issuing the
+        /// request, and the AWS Region that receives the request (e.g. <c>us-east-1</c> ).</para> <para>The <c>CreateTable</c> operation triggers an
+        /// asynchronous workflow to begin creating the table. Amazon DynamoDB immediately returns the state of the table ( <c>CREATING</c> ) until the
+        /// table is in the <c>ACTIVE</c> state. Once the table is in the <c>ACTIVE</c> state, you can perform data plane operations.</para>
+        /// </summary>
+        /// 
+        /// <param name="createTableRequest">Container for the necessary parameters to execute the CreateTable service method on AmazonDynamoDB.</param>
+        /// 
+        /// <returns>The response from the CreateTable service method, as returned by AmazonDynamoDB.</returns>
+        /// 
+        /// <exception cref="ResourceInUseException"/>
+        /// <exception cref="LimitExceededException"/>
+        /// <exception cref="InternalServerErrorException"/>
+        public CreateTableResponse CreateTable(CreateTableRequest createTableRequest)
+        {
+            IAsyncResult asyncResult = invokeCreateTable(createTableRequest, null, null, true);
+            return EndCreateTable(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTable operation.
+        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.CreateTable"/>
+        /// </summary>
+        /// 
+        /// <param name="createTableRequest">Container for the necessary parameters to execute the CreateTable operation on AmazonDynamoDB.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTable
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateTable(CreateTableRequest createTableRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreateTable(createTableRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateTable operation.
+        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.CreateTable"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTable.</param>
+        /// 
+        /// <returns>Returns a CreateTableResult from AmazonDynamoDB.</returns>
+        public CreateTableResponse EndCreateTable(IAsyncResult asyncResult)
+        {
+            return endOperation<CreateTableResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreateTable(CreateTableRequest createTableRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreateTableRequestMarshaller().Marshall(createTableRequest);
+            var unmarshaller = CreateTableResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region UpdateTable
+
+        /// <summary>
+        /// <para>Updates the provisioned throughput for the given table.</para> <para>Setting the throughput for a table helps you manage performance
+        /// and is part of the Provisioned Throughput feature of Amazon DynamoDB.</para>
+        /// </summary>
+        /// 
+        /// <param name="updateTableRequest">Container for the necessary parameters to execute the UpdateTable service method on AmazonDynamoDB.</param>
+        /// 
+        /// <returns>The response from the UpdateTable service method, as returned by AmazonDynamoDB.</returns>
+        /// 
+        /// <exception cref="ResourceInUseException"/>
+        /// <exception cref="LimitExceededException"/>
+        /// <exception cref="InternalServerErrorException"/>
+        /// <exception cref="ResourceNotFoundException"/>
+        public UpdateTableResponse UpdateTable(UpdateTableRequest updateTableRequest)
+        {
+            IAsyncResult asyncResult = invokeUpdateTable(updateTableRequest, null, null, true);
+            return EndUpdateTable(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTable operation.
+        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.UpdateTable"/>
+        /// </summary>
+        /// 
+        /// <param name="updateTableRequest">Container for the necessary parameters to execute the UpdateTable operation on AmazonDynamoDB.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTable
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateTable(UpdateTableRequest updateTableRequest, AsyncCallback callback, object state)
+        {
+            return invokeUpdateTable(updateTableRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateTable operation.
+        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.UpdateTable"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTable.</param>
+        /// 
+        /// <returns>Returns a UpdateTableResult from AmazonDynamoDB.</returns>
+        public UpdateTableResponse EndUpdateTable(IAsyncResult asyncResult)
+        {
+            return endOperation<UpdateTableResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeUpdateTable(UpdateTableRequest updateTableRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new UpdateTableRequestMarshaller().Marshall(updateTableRequest);
+            var unmarshaller = UpdateTableResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -765,73 +901,6 @@ namespace Amazon.DynamoDB
         {
             IRequest irequest = new DeleteItemRequestMarshaller().Marshall(deleteItemRequest);
             var unmarshaller = DeleteItemResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        #endregion
-    
-        #region DescribeTable
-
-        /// <summary>
-        /// <para>Retrieves information about the table, including the current status of the table, the primary key schema and when the table was
-        /// created.</para> <para>If the table does not exist, Amazon DynamoDB returns a <c>ResourceNotFoundException</c> .</para>
-        /// </summary>
-        /// 
-        /// <param name="describeTableRequest">Container for the necessary parameters to execute the DescribeTable service method on
-        ///          AmazonDynamoDB.</param>
-        /// 
-        /// <returns>The response from the DescribeTable service method, as returned by AmazonDynamoDB.</returns>
-        /// 
-        /// <exception cref="InternalServerErrorException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        public DescribeTableResponse DescribeTable(DescribeTableRequest describeTableRequest)
-        {
-            IAsyncResult asyncResult = invokeDescribeTable(describeTableRequest, null, null, true);
-            return EndDescribeTable(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeTable operation.
-        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.DescribeTable"/>
-        /// </summary>
-        /// 
-        /// <param name="describeTableRequest">Container for the necessary parameters to execute the DescribeTable operation on AmazonDynamoDB.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTable
-        ///         operation.</returns>
-        public IAsyncResult BeginDescribeTable(DescribeTableRequest describeTableRequest, AsyncCallback callback, object state)
-        {
-            return invokeDescribeTable(describeTableRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeTable operation.
-        /// <seealso cref="Amazon.DynamoDB.AmazonDynamoDB.DescribeTable"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTable.</param>
-        /// 
-        /// <returns>Returns a DescribeTableResult from AmazonDynamoDB.</returns>
-        public DescribeTableResponse EndDescribeTable(IAsyncResult asyncResult)
-        {
-            return endOperation<DescribeTableResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeDescribeTable(DescribeTableRequest describeTableRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DescribeTableRequestMarshaller().Marshall(describeTableRequest);
-            var unmarshaller = DescribeTableResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;

@@ -56,11 +56,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                     {
                         writer.WritePropertyName("Item");
                         writer.WriteObjectStart();
-                        foreach (string key in putItemRequest.Item.Keys)
+                        foreach (string putItemRequestItemKey in putItemRequest.Item.Keys)
                         {
                             AttributeValue itemListValue;
-                            bool hasValue = putItemRequest.Item.TryGetValue(key, out itemListValue);
-                            writer.WritePropertyName(key);
+                            bool itemListValueHasValue = putItemRequest.Item.TryGetValue(putItemRequestItemKey, out itemListValue);
+                            writer.WritePropertyName(putItemRequestItemKey);
+
                             writer.WriteObjectStart();
                             if (itemListValue != null && itemListValue.IsSetS()) 
                             {
@@ -111,11 +112,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                     {
                         writer.WritePropertyName("Expected");
                         writer.WriteObjectStart();
-                        foreach (string key in putItemRequest.Expected.Keys)
+                        foreach (string putItemRequestExpectedKey in putItemRequest.Expected.Keys)
                         {
                             ExpectedAttributeValue expectedListValue;
-                            bool hasValue = putItemRequest.Expected.TryGetValue(key, out expectedListValue);
-                            writer.WritePropertyName(key);
+                            bool expectedListValueHasValue = putItemRequest.Expected.TryGetValue(putItemRequestExpectedKey, out expectedListValue);
+                            writer.WritePropertyName(putItemRequestExpectedKey);
+
                             writer.WriteObjectStart();
 
                             if (expectedListValue != null) 

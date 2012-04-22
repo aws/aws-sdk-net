@@ -933,6 +933,32 @@ namespace Amazon.DynamoDB.DataModel
         #endregion
 
 
+        #region Batch Write
+
+        public BatchWrite<T> CreateBatchWrite<T>()
+        {
+            return CreateBatchWrite<T>(null);
+        }
+        public BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)
+        {
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
+            return new BatchWrite<T>(this, config);
+        }
+
+        public MultiTableBatchWrite CreateMultiTableBatchWrite(params BatchWrite[] batches)
+        {
+            return new MultiTableBatchWrite(batches);
+        }
+
+        public void ExecuteBatchWrite(params BatchWrite[] batches)
+        {
+            MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);
+            superBatch.Execute();
+        }
+
+        #endregion
+
+
         #region Table methods
 
         /// <summary>

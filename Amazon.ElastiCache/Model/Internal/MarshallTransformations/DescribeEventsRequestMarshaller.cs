@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeEventsRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "DescribeEvents");
-            request.Parameters.Add("Version", "2011-07-15");
+            request.Parameters.Add("Version", "2012-03-09");
             if (describeEventsRequest != null && describeEventsRequest.IsSetSourceIdentifier())
             {
                 request.Parameters.Add("SourceIdentifier", StringUtils.FromString(describeEventsRequest.SourceIdentifier));

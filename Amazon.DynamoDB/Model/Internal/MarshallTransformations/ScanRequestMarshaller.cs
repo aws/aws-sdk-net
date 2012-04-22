@@ -80,11 +80,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                     {
                         writer.WritePropertyName("ScanFilter");
                         writer.WriteObjectStart();
-                        foreach (string key in scanRequest.ScanFilter.Keys)
+                        foreach (string scanRequestScanFilterKey in scanRequest.ScanFilter.Keys)
                         {
                             Condition scanFilterListValue;
-                            bool hasValue = scanRequest.ScanFilter.TryGetValue(key, out scanFilterListValue);
-                            writer.WritePropertyName(key);
+                            bool scanFilterListValueHasValue = scanRequest.ScanFilter.TryGetValue(scanRequestScanFilterKey, out scanFilterListValue);
+                            writer.WritePropertyName(scanRequestScanFilterKey);
+
                             writer.WriteObjectStart();
 
                             if (scanFilterListValue != null && scanFilterListValue.AttributeValueList != null && scanFilterListValue.AttributeValueList.Count > 0)

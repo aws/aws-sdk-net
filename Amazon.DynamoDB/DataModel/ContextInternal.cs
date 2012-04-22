@@ -253,13 +253,15 @@ namespace Amazon.DynamoDB.DataModel
 
             Type objectType = typeof(T);
             ItemStorageConfig config = ItemStorageConfigCache.GetConfig(objectType);
-
             if (config == null) return null;
 
+            ItemStorage storage = ObjectToItemStorage<T>(toStore, keysOnly, config);
+            return storage;
+        }
+        internal static ItemStorage ObjectToItemStorage<T>(T toStore, bool keysOnly, ItemStorageConfig config)
+        {
             ItemStorage storage = new ItemStorage(config);
-
             PopulateItemStorage(toStore, storage, keysOnly);
-
             return storage;
         }
         private static void PopulateItemStorage(object toStore, ItemStorage storage, bool keysOnly)

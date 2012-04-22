@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(revokeCacheSecurityGroupIngressRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "RevokeCacheSecurityGroupIngress");
-            request.Parameters.Add("Version", "2011-07-15");
+            request.Parameters.Add("Version", "2012-03-09");
             if (revokeCacheSecurityGroupIngressRequest != null && revokeCacheSecurityGroupIngressRequest.IsSetCacheSecurityGroupName())
             {
                 request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(revokeCacheSecurityGroupIngressRequest.CacheSecurityGroupName));

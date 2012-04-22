@@ -1354,9 +1354,10 @@
     <Compile Include="Amazon.DynamoDB\DataModel\Attributes.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.DynamoDB\DataModel\Batch.cs">
+    <Compile Include="Amazon.DynamoDB\DataModel\BatchGet.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DynamoDB\DataModel\BatchWrite.cs" />
     <Compile Include="Amazon.DynamoDB\DataModel\Context.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1372,9 +1373,10 @@
     <Compile Include="Amazon.DynamoDB\DocumentModel\Document.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.DynamoDB\DocumentModel\DocumentBatch.cs">
+    <Compile Include="Amazon.DynamoDB\DocumentModel\DocumentBatchGet.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DynamoDB\DocumentModel\DocumentBatchWrite.cs" />
     <Compile Include="Amazon.DynamoDB\DocumentModel\DynamoDBEntry.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1418,6 +1420,16 @@
     <Compile Include="Amazon.DynamoDB\Model\BatchResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\BatchWriteItemRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\BatchWriteItemResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\BatchWriteItemResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\BatchWriteResponse.cs" />
     <Compile Include="Amazon.DynamoDB\Model\Condition.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1440,6 +1452,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDB\Model\DeleteItemResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\DeleteRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDB\Model\DeleteTableRequest.cs">
@@ -1490,6 +1505,16 @@
     <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteItemRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteItemResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteItemResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\BatchWriteResponseUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\CreateTableRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1506,6 +1531,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteItemResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteRequestUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\DeleteTableRequestMarshaller.cs">
@@ -1568,6 +1596,9 @@
     <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\PutItemResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\PutRequestUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\QueryRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1605,6 +1636,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\UpdateTableResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\Internal\MarshallTransformations\WriteRequestUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDB\Model\Key.cs">
@@ -1647,6 +1681,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDB\Model\PutItemResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\PutRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDB\Model\QueryRequest.cs">
@@ -1692,6 +1729,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDB\Model\UpdateTableResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DynamoDB\Model\WriteRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.EC2\AmazonEC2.cs">
@@ -3026,6 +3066,12 @@
     <Compile Include="Amazon.ElastiCache\Model\DescribeEventsRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeEventsResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeEventsResult.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesOfferingsRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesOfferingsResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesOfferingsResult.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\EC2SecurityGroup.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Endpoint.cs" />
     <Compile Include="Amazon.ElastiCache\Model\EngineDefaults.cs" />
@@ -3076,6 +3122,12 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeEventsRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeEventsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeEventsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesOfferingsRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesOfferingsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesOfferingsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\EC2SecurityGroupUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\EndpointUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\EngineDefaultsUnmarshaller.cs" />
@@ -3089,9 +3141,15 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\NotificationConfigurationUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ParameterUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\PendingModifiedValuesUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\PurchaseReservedCacheNodesOfferingRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\PurchaseReservedCacheNodesOfferingResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\PurchaseReservedCacheNodesOfferingResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\RebootCacheClusterRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\RebootCacheClusterResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\RebootCacheClusterResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\RecurringChargeUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ReservedCacheNodesOfferingUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ReservedCacheNodeUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ResetCacheParameterGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ResetCacheParameterGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ResetCacheParameterGroupResultUnmarshaller.cs" />
@@ -3115,9 +3173,19 @@
     <Compile Include="Amazon.ElastiCache\Model\Parameter.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ParameterNameValue.cs" />
     <Compile Include="Amazon.ElastiCache\Model\PendingModifiedValues.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\PurchaseReservedCacheNodesOfferingRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\PurchaseReservedCacheNodesOfferingResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\PurchaseReservedCacheNodesOfferingResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\RebootCacheClusterRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\RebootCacheClusterResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\RebootCacheClusterResult.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\RecurringCharge.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ReservedCacheNode.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ReservedCacheNodeAlreadyExistsException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ReservedCacheNodeNotFoundException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ReservedCacheNodeQuotaExceededException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ReservedCacheNodesOffering.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ReservedCacheNodesOfferingNotFoundException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ResetCacheParameterGroupRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ResetCacheParameterGroupResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ResetCacheParameterGroupResult.cs" />

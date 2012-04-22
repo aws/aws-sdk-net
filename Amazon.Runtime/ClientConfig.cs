@@ -41,6 +41,7 @@ namespace Amazon.Runtime
         private string proxyPassword;
         private bool logResponse = false;
         private int? connectionLimit;
+        private bool useNagleAlgorithm = false;
 
 
         /// <summary>
@@ -213,6 +214,17 @@ namespace Amazon.Runtime
         {
             get { return AWSSDKUtils.GetConnectionLimit(this.connectionLimit); }
             set { this.connectionLimit = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets a Boolean value that determines whether the Nagle algorithm is used on connections managed by the ServicePoint object used
+        /// for requests to AWS.  This is defaulted to false for lower latency with responses that return small amount of data.  This is the opposite 
+        /// default then ServicePoint.UseNagleAlgorithm which is optimized for large responses like web pages or images.
+        /// </summary>
+        public bool UseNagleAlgorithm
+        {
+            get { return this.useNagleAlgorithm; }
+            set { this.useNagleAlgorithm = value; }
         }
     }
 }

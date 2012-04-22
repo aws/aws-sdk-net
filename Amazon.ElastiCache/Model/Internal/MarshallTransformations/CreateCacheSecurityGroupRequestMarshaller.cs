@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createCacheSecurityGroupRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "CreateCacheSecurityGroup");
-            request.Parameters.Add("Version", "2011-07-15");
+            request.Parameters.Add("Version", "2012-03-09");
             if (createCacheSecurityGroupRequest != null && createCacheSecurityGroupRequest.IsSetCacheSecurityGroupName())
             {
                 request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(createCacheSecurityGroupRequest.CacheSecurityGroupName));

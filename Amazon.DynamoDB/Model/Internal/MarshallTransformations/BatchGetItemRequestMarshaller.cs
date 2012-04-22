@@ -51,11 +51,12 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                     {
                         writer.WritePropertyName("RequestItems");
                         writer.WriteObjectStart();
-                        foreach (string key in batchGetItemRequest.RequestItems.Keys)
+                        foreach (string batchGetItemRequestRequestItemsKey in batchGetItemRequest.RequestItems.Keys)
                         {
                             KeysAndAttributes requestItemsListValue;
-                            bool hasValue = batchGetItemRequest.RequestItems.TryGetValue(key, out requestItemsListValue);
-                            writer.WritePropertyName(key);
+                            bool requestItemsListValueHasValue = batchGetItemRequest.RequestItems.TryGetValue(batchGetItemRequestRequestItemsKey, out requestItemsListValue);
+                            writer.WritePropertyName(batchGetItemRequestRequestItemsKey);
+
                             writer.WriteObjectStart();
 
                             if (requestItemsListValue != null && requestItemsListValue.Keys != null && requestItemsListValue.Keys.Count > 0)
