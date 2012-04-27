@@ -44,7 +44,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.4.8.1";
+        internal const string SDKVersionNumber = "1.4.8.2";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -339,6 +339,9 @@ namespace Amazon.Util
         {
             if (url.Contains("//"))
                 url = url.Substring(url.IndexOf("//") + 2);
+
+            if(url.EndsWith("/"))
+                url = url.Substring(0, url.Length - 1);
 
             if (!url.EndsWith(".amazonaws.com"))
                 return DefaultRegion;
