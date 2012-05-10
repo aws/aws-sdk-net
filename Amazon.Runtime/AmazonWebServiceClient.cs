@@ -138,6 +138,7 @@ namespace Amazon.Runtime
                 }
                 else
                 {
+                    this.ownCredentials = false;
                     lock (cachedRefreshingCredentialsLock)
                     {
                         if (cachedRefreshingCredentials.ContainsKey(refreshCredentials.UniqueIdentifier))

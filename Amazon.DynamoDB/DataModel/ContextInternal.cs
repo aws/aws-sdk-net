@@ -346,22 +346,34 @@ namespace Amazon.DynamoDB.DataModel
         private static bool TryFromPrimitiveList(Type targetType, PrimitiveList value, out object output)
         {
             Type elementType;
-            if (!EntityUtils.ImplementsInterface(targetType, typeof(ICollection<>)) ||
+            if ((!EntityUtils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
+                !EntityUtils.ImplementsInterface(targetType, typeof(IList))) ||
                 !EntityUtils.CanInstantiate(targetType) ||
                 !EntityUtils.IsPrimitive(elementType = targetType.GetGenericArguments()[0]))
             {
                 output = null;
                 return false;
             }
-
-            MethodInfo collectionAdd = targetType.GetMethod("Add");
+            
             var collection = EntityUtils.Instantiate(targetType);
+            IList ilist = collection as IList;
+            bool useIListInterface = ilist != null;
+
+            MethodInfo collectionAdd = null;
+            if (!useIListInterface)
+            {
+                collectionAdd = targetType.GetMethod("Add");
+            }
+            
             foreach (Primitive primitive in value.Entries)
             {
                 object primitiveValue;
                 if (TryFromPrimitive(elementType, primitive, out primitiveValue))
                 {
-                    collectionAdd.Invoke(collection, new object[] { primitiveValue });
+                    if (useIListInterface)
+                        ilist.Add(primitiveValue);
+                    else
+                        collectionAdd.Invoke(collection, new object[] { primitiveValue });
                 }
                 else
                 {
@@ -544,21 +556,29 @@ namespace Amazon.DynamoDB.DataModel
         }
         private static RangeFilter ComposeRangeFilter(QueryOperator op, IEnumerable<object> values, ItemStorageConfig storageConfig)
         {
-            PropertyStorage propertyStorage = storageConfig.RangePropertyStorage;
-
-            List<AttributeValue> attributeValues = new List<AttributeValue>();
-            foreach (var value in values)
+            RangeFilter filter;
+            if (values != null)
             {
-                var entry = ToDynamoDBEntry(propertyStorage.MemberType, value, propertyStorage.Converter);
+                PropertyStorage propertyStorage = storageConfig.RangePropertyStorage;
 
-                AttributeValue nativeValue = entry.ConvertToAttributeValue();
-                if (nativeValue != null)
+                List<AttributeValue> attributeValues = new List<AttributeValue>();
+                foreach (var value in values)
                 {
-                    attributeValues.Add(nativeValue);
-                }
-            }
+                    var entry = ToDynamoDBEntry(propertyStorage.MemberType, value, propertyStorage.Converter);
 
-            RangeFilter filter = new RangeFilter(op, attributeValues);
+                    AttributeValue nativeValue = entry.ConvertToAttributeValue();
+                    if (nativeValue != null)
+                    {
+                        attributeValues.Add(nativeValue);
+                    }
+                }
+
+                filter = new RangeFilter(op, attributeValues);
+            }
+            else
+            {
+                filter = new RangeFilter();
+            }
             return filter;
         }
 

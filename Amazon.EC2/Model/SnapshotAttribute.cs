@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-03-01
+ *  API Version: 2012-04-01
  */
 
 using System;
@@ -29,11 +29,12 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Snapshot Attribute
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-03-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
     public class SnapshotAttribute
     {    
         private string snapshotIdField;
         private List<CreateVolumePermission> createVolumePermissionField;
+        private List<ProductCode> productCodesField;
 
         /// <summary>
         /// Gets and sets the SnapshotId property.
@@ -105,6 +106,46 @@ namespace Amazon.EC2.Model
         public bool IsSetCreateVolumePermission()
         {
             return (CreateVolumePermission.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the ProductCodes property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ProductCode")]
+        public List<ProductCode> ProductCodes
+        {
+            get
+            {
+                if (this.productCodesField == null)
+                {
+                    this.productCodesField = new List<ProductCode>();
+                }
+                return this.productCodesField;
+            }
+            set { this.productCodesField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProductCodes property
+        /// </summary>
+        /// <param name="list">Product codes.</param>
+        /// <returns>this instance</returns>
+        public SnapshotAttribute WithProductCodes(params ProductCode[] list)
+        {
+            foreach (ProductCode item in list)
+            {
+                ProductCodes.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ProductCodes property is set
+        /// </summary>
+        /// <returns>true if ProductCodes property is set</returns>
+        public bool IsSetProductCodes()
+        {
+            return (ProductCodes.Count > 0);
         }
 
     }

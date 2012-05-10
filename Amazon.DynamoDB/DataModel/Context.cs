@@ -765,6 +765,31 @@ namespace Amazon.DynamoDB.DataModel
 
         /// <summary>
         /// Executes a Query operation against DynamoDB, finding items
+        /// that match the specified hash primary key.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKeyValue">Hash key of the items to query.</param>
+        /// <returns>Lazy-loaded collection of results.</returns>
+        public IEnumerable<T> Query<T>(object hashKeyValue)
+        {
+            return QueryHelper<T>(hashKeyValue, QueryOperator.Equal, null, null);
+        }
+
+        /// <summary>
+        /// Executes a Query operation against DynamoDB, finding items
+        /// that match the specified hash primary key.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKeyValue">Hash key of the items to query.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <returns>Lazy-loaded collection of results.</returns>
+        public IEnumerable<T> Query<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
+        {
+            return QueryHelper<T>(hashKeyValue, QueryOperator.Equal, null, operationConfig);
+        }
+
+        /// <summary>
+        /// Executes a Query operation against DynamoDB, finding items
         /// that match the specified range element condition for a hash-and-range primary key.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
@@ -781,7 +806,7 @@ namespace Amazon.DynamoDB.DataModel
             if (values == null || values.Length == 0)
                 throw new ArgumentOutOfRangeException("values");
 
-            return Query<T>(hashKeyValue, op, values, null);
+            return QueryHelper<T>(hashKeyValue, op, values, null);
         }
 
         /// <summary>
@@ -803,6 +828,11 @@ namespace Amazon.DynamoDB.DataModel
             if (values == null)
                 throw new ArgumentNullException("values");
 
+            return QueryHelper<T>(hashKeyValue, op, values, operationConfig);
+        }
+
+        private IEnumerable<T> QueryHelper<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
+        {
             ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
             RangeFilter filter = ComposeRangeFilter(op, values, storageConfig);
 

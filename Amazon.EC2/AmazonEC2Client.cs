@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-03-01
+ *  API Version: 2012-04-01
  */
 
 using System;
@@ -838,7 +838,7 @@ namespace Amazon.EC2
         /// </remarks>
         public DescribeImageAttributeResponse DescribeImageAttribute(DescribeImageAttributeRequest request)
         {
-            return Invoke<DescribeImageAttributeResponse>(ConvertDescribeImageAttribute(request));
+            return Invoke<DescribeImageAttributeResponse>(ConvertDescribeImageAttribute(request), DescribeImageAttributeResponse.serializer_UnknownElement);
         }
 
         /// <summary>
@@ -897,7 +897,7 @@ namespace Amazon.EC2
         /// </remarks>
         public DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
-            return Invoke<DescribeImagesResponse>(ConvertDescribeImages(request));
+            return Invoke<DescribeImagesResponse>(ConvertDescribeImages(request), DescribeImagesResponse.serializer_UnknownElement);
         }
 
         /// <summary>
@@ -955,7 +955,7 @@ namespace Amazon.EC2
         /// </remarks>
         public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
-            return Invoke<DescribeInstancesResponse>(ConvertDescribeInstances(request));
+            return Invoke<DescribeInstancesResponse>(ConvertDescribeInstances(request), DescribeInstancesResponse.serializer_UnknownElement);
         }
 
         /// <summary>
@@ -1461,7 +1461,7 @@ namespace Amazon.EC2
         /// </remarks>
         public RunInstancesResponse RunInstances(RunInstancesRequest request)
         {
-            return Invoke<RunInstancesResponse>(ConvertRunInstances(request));
+            return Invoke<RunInstancesResponse>(ConvertRunInstances(request), RunInstancesResponse.serializer_UnknownElement);
         }
 
         /// <summary>
@@ -2879,15 +2879,27 @@ namespace Amazon.EC2
          */
         private T Invoke<T>(IDictionary<string, string> parameters)
         {
-            return Invoke<T>(parameters, null);
+            return Invoke<T>(parameters, null, null);
+        }
+
+        private T Invoke<T>(IDictionary<string, string> parameters, XmlElementEventHandler unknownElementHandler)
+        {
+            return Invoke<T>(parameters, unknownElementHandler, null);
+        }
+
+        private T Invoke<T>(IDictionary<string, string> parameters, ImmutableCredentials credentials)
+        {
+            return Invoke<T>(parameters, null, credentials);
         }
 
         /**
          * Invoke request and return response
          * Allows caller to pass in ImmutableCredentials. This way, if ImmutableCredentials were
          * needed before Invoke, the same credentials will be used in Invoke.
+         * unknownElementHandler is passed for types that contain members tagged Obsolete, which would
+         * be skipped by the serializer.
          */
-        private T Invoke<T>(IDictionary<string, string> parameters, ImmutableCredentials credentials)
+        private T Invoke<T>(IDictionary<string, string> parameters, XmlElementEventHandler unknownElementHandler, ImmutableCredentials credentials)
         {
             string actionName = parameters["Action"];
             T response = default(T);
@@ -2930,7 +2942,7 @@ namespace Amazon.EC2
                         }
                     }
 
-                    shouldRetry = ParseResponse<T>(actionName, ref response, ref responseBody);
+                    shouldRetry = ParseResponse<T>(actionName, unknownElementHandler, ref response, ref responseBody);
                 }
                 /* Web exception is thrown on unsucessful responses */
                 catch (WebException we)
@@ -3009,12 +3021,14 @@ namespace Amazon.EC2
             return response;
         }
 
-        private bool ParseResponse<T>(string actionName, ref T response, ref string responseBody)
+        private bool ParseResponse<T>(string actionName, XmlElementEventHandler unknownElementHandler, ref T response, ref string responseBody)
         {
             string transformedResponseBody = TransformResponse(actionName, responseBody);
 
             /* Attempt to deserialize response into <Action> Response type */
             XmlSerializer serializer = new XmlSerializer(typeof(T));
+            if (unknownElementHandler != null)
+                serializer.UnknownElement += unknownElementHandler;
             using (XmlTextReader sr = new XmlTextReader(new StringReader(transformedResponseBody)))
             {
                 response = (T)serializer.Deserialize(sr);
