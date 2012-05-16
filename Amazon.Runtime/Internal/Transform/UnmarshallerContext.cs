@@ -102,6 +102,13 @@ namespace Amazon.Runtime.Internal.Transform
             get { return this.headers; }
         }
 
+        /// <summary>
+        /// The current XML path that is being unmarshalled.
+        /// </summary>
+        public string CurrentPath
+        {
+            get { return this.stackString; }
+        }
 
         /// <summary>
         ///     Reads to the next node in the XML document, and updates the context

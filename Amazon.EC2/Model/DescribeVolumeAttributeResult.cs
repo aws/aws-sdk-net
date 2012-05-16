@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-03-01
+ *  API Version: 2012-04-01
  */
 
 using System;
@@ -30,11 +30,12 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Describe Volume Attribute result.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-03-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
     public class DescribeVolumeAttributeResult
     {
         private string volumeIdField;
         private bool? autoEnableIOField;
+        private List<ProductCode> productCodesField;
 
         /// <summary>
         /// Flag that signals if the AutoEnableIO attribute is true or false.
@@ -75,6 +76,31 @@ namespace Amazon.EC2.Model
             return this.volumeIdField != null;
         }
 
+        /// <summary>
+        /// Product codes for the volume.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ProductCode")]
+        public List<ProductCode> ProductCodes
+        {
+            get
+            {
+                if (this.productCodesField == null)
+                {
+                    this.productCodesField = new List<ProductCode>();
+                }
+                return this.productCodesField;
+            }
+            set { this.productCodesField = value; }
+        }
+
+        /// <summary>
+        /// Checks if ProductCodes property is set
+        /// </summary>
+        /// <returns>true if ProductCodes property is set</returns>
+        public bool IsSetProductCodes()
+        {
+            return (ProductCodes.Count > 0);
+        }
 
         /// <summary>
         /// XML Representation of this object

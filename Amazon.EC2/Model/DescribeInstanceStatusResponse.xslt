@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:ec2="http://ec2.amazonaws.com/doc/2012-03-01/"
+                xmlns:ec2="http://ec2.amazonaws.com/doc/2012-04-01/"
                 exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2012-03-01/'"/>
+  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2012-04-01/'"/>
 
   <xsl:template match="ec2:DescribeInstanceStatusResponse">
     <xsl:element name="DescribeInstanceStatusResponse" namespace="{$ns}">

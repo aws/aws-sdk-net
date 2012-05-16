@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-03-01
+ *  API Version: 2012-04-01
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Describe Image Attribute Response
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-03-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
     public class DescribeImageAttributeResponse
     {    
         private ResponseMetadata responseMetadataField;
@@ -98,6 +98,21 @@ namespace Amazon.EC2.Model
         public override string ToString()
         {
             return this.ToXML();
+        }
+
+        // handles elements tagged as Obsolete which are otherwise ignored by the Xml Serializer
+        public static void serializer_UnknownElement(object sender, XmlElementEventArgs e)
+        {
+            if (e.Element.Name != "ProductCodeId")
+                return;
+
+            var target = e.ObjectBeingDeserialized as ImageAttribute;
+            if (target == null)
+                return;
+
+#pragma warning disable 0618
+            target.ProductCode.Add(e.Element.InnerText);
+#pragma warning restore 0618
         }
     }
 }

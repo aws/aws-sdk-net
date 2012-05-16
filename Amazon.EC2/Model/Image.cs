@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-03-01
+ *  API Version: 2012-04-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///AMI
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-03-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
     public class Image
     {    
         private string imageIdField;
@@ -37,7 +37,10 @@ namespace Amazon.EC2.Model
         private string imageStateField;
         private string ownerIdField;
         private string visibilityField;
+        // obsolete, to be removed
         private List<string> productCodeField;
+        // replacement for string list of product codes
+        private List<ProductCode> productCodesField;
         private string architectureField;
         private string imageTypeField;
         private string kernelIdField;
@@ -215,7 +218,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the ProductCode property.
         /// Product codes of the AMI
         /// </summary>
-        [XmlElementAttribute(ElementName = "ProductCode")]
+        [XmlElementAttribute(ElementName = "ProductCodeId")]
+        [Obsolete("This member has been deprecated and will be removed in a future release. Please use the ProductCodes member instead.")]
         public List<string> ProductCode
         {
             get
@@ -234,6 +238,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Product codes of the AMI</param>
         /// <returns>this instance</returns>
+        [Obsolete("This member has been deprecated and will be removed in a future release. Please use the WithProductCodes member instead.")]
         public Image WithProductCode(params string[] list)
         {
             foreach (string item in list)
@@ -247,9 +252,51 @@ namespace Amazon.EC2.Model
         /// Checks if ProductCode property is set
         /// </summary>
         /// <returns>true if ProductCode property is set</returns>
+        [Obsolete("This member has been deprecated and will be removed in a future release. Please use the IsSetProductCodes member instead.")]
         public bool IsSetProductCode()
         {
             return (ProductCode.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the ProductCodes property.
+        /// Product codes attached to this instance.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ProductCodes")]
+        public List<ProductCode> ProductCodes
+        {
+            get
+            {
+                if (this.productCodesField == null)
+                {
+                    this.productCodesField = new List<ProductCode>();
+                }
+                return this.productCodesField;
+            }
+            set { this.productCodesField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProductCodes property
+        /// </summary>
+        /// <param name="list">Product codes attached to this instance.</param>
+        /// <returns>this instance</returns>
+        public Image WithProductCodes(params ProductCode[] list)
+        {
+            foreach (ProductCode item in list)
+            {
+                ProductCodes.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if ProductCodes property is set
+        /// </summary>
+        /// <returns>true if ProductCodes property is set</returns>
+        public bool IsSetProductCodes()
+        {
+            return (ProductCodes.Count > 0);
         }
 
         /// <summary>

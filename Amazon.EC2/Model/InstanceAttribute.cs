@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-03-01
+ *  API Version: 2012-04-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///A list of instance attributes.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-03-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
     public class InstanceAttribute
     {    
         private string instanceIdField;
@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private bool? sourceDestCheckField;
         private List<string> groupNameField;
         private List<string> groupIdField;
+        private List<ProductCode> productCodesField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -468,5 +469,44 @@ namespace Amazon.EC2.Model
             return (GroupId.Count > 0);
         }
 
+        /// <summary>
+        /// Gets and sets the ProductCodes property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "ProductCodes")]
+        public List<ProductCode> ProductCodes
+        {
+            get
+            {
+                if (this.productCodesField == null)
+                {
+                    this.productCodesField = new List<ProductCode>();
+                }
+                return this.productCodesField;
+            }
+            set { this.productCodesField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProductCodes property
+        /// </summary>
+        /// <param name="list">list of product codes and types</param>
+        /// <returns>this instance</returns>
+        public InstanceAttribute WithProductCodes(params ProductCode[] list)
+        {
+            foreach (ProductCode item in list)
+            {
+                ProductCodes.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the ProductCodes property is set
+        /// </summary>
+        /// <returns>true if the ProductCodes property is set</returns>
+        public bool IsSetProductCodes()
+        {
+            return (ProductCodes.Count > 0);
+        }
     }
 }

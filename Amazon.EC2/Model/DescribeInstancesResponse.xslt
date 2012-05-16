@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-03-01/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-04-01/" exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2012-03-01/'"/>
+  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2012-04-01/'"/>
   <xsl:template match="ec2:DescribeInstancesResponse">
     <xsl:element name="DescribeInstancesResponse" namespace="{$ns}">
       <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -158,14 +158,28 @@
 	             <xsl:value-of select="ec2:pool"/>
 	         </xsl:element>
         </xsl:element>
-    </xsl:template>      
+    </xsl:template>
+
   <xsl:template match="ec2:productCodes">
+    <!-- output obsolete id-only list until removed from sdk -->
     <xsl:for-each select="ec2:item">
-      <xsl:element name="ProductCode" namespace="{$ns}">
+      <xsl:element name="ProductCodeId" namespace="{$ns}">
         <xsl:value-of select="ec2:productCode"/>
       </xsl:element>
     </xsl:for-each>
+    <!-- this is the preferred output -->
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="ProductCodes" namespace="{$ns}">
+        <xsl:element name="ProductCodeId" namespace="{$ns}">
+          <xsl:value-of select="ec2:productCode"/>
+        </xsl:element>
+        <xsl:element name="Type" namespace="{$ns}">
+          <xsl:value-of select="ec2:type"/>
+        </xsl:element>
+      </xsl:element>
+    </xsl:for-each>
   </xsl:template>
+
   <xsl:template match="ec2:instanceState">
     <xsl:element name="InstanceState" namespace="{$ns}">
       <xsl:element name="Code" namespace="{$ns}">

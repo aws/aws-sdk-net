@@ -1,66 +1,64 @@
-/*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+/*
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-11-01
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
+using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Text;
+using System.IO;
 
-using Amazon.CloudFront.Util;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The CreateDistributionRequest contains the parameters used for the CreateDistribution operation.
+    /// Container for the parameters to the CreateDistribution operation.
+    /// <para> Create a new distribution. </para>
     /// </summary>
-    public class CreateDistributionRequest : CloudFrontRequest
+    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateDistribution"/>
+    public class CreateDistributionRequest : AmazonWebServiceRequest
     {
-        #region DistributionConfig
+        private DistributionConfig distributionConfig;
 
         /// <summary>
-        /// Gets and Sets the DistributionConfig property.
+        /// The distribution's configuration information.
+        ///  
         /// </summary>
-        [XmlElementAttribute(ElementName = "DistributionConfig")]
-        public override CloudFrontDistributionConfig DistributionConfig
+        public DistributionConfig DistributionConfig
         {
-            get
-            {
-                if (this.dConfig == null)
-                {
-                    this.dConfig = new CloudFrontDistributionConfig();
-                }
-                return this.dConfig;
-            }
-            set { this.dConfig = value; }
+            get { return this.distributionConfig; }
+            set { this.distributionConfig = value; }
         }
 
         /// <summary>
-        /// Sets the DistributionConfig property for this request.
+        /// Sets the DistributionConfig property
         /// </summary>
-        /// <param name="distributionConfig">The value that DistributionConfig is set to</param>
-        /// <returns>the request with the Id set</returns>
-        public CreateDistributionRequest WithDistributionConfig(CloudFrontDistributionConfig distributionConfig)
+        /// <param name="distributionConfig">The value to set for the DistributionConfig property </param>
+        /// <returns>this instance</returns>
+        public CreateDistributionRequest WithDistributionConfig(DistributionConfig distributionConfig)
         {
-            this.dConfig = distributionConfig;
+            this.distributionConfig = distributionConfig;
             return this;
         }
+            
 
-        #endregion
+        // Check to see if DistributionConfig property is set
+        internal bool IsSetDistributionConfig()
+        {
+            return this.distributionConfig != null;       
+        }
     }
 }
+    

@@ -89,7 +89,15 @@ namespace Amazon.Runtime.Internal.Transform
             if (context == null)
                 throw new ArgumentOutOfRangeException("Unsupported UnmarshallerContext");
 
-            return this.Unmarshall(context);
+            AmazonWebServiceResponse response = this.Unmarshall(context);
+
+            if (context.Headers[AWSSDKUtils.RequestIdHeader] != null)
+            {
+                response.ResponseMetadata = new ResponseMetadata();
+                response.ResponseMetadata.RequestId = context.Headers[AWSSDKUtils.RequestIdHeader];
+            }
+
+            return response;
         }
         public override AmazonServiceException UnmarshallException(UnmarshallerContext input, Exception innerException, HttpStatusCode statusCode)
         {
@@ -147,10 +155,18 @@ namespace Amazon.Runtime.Internal.Transform
             if (context == null)
                 throw new ArgumentOutOfRangeException("Unsupported UnmarshallerContext");
 
-            var response = this.Unmarshall(context);
-            response.ResponseMetadata = new ResponseMetadata();
-            response.ResponseMetadata.RequestId = context.Headers[AWSSDKUtils.RequestIdHeader];
-            return response;
+            string requestId = context.Headers[AWSSDKUtils.RequestIdHeader];
+            try
+            {
+                var response = this.Unmarshall(context);
+                response.ResponseMetadata = new ResponseMetadata();
+                response.ResponseMetadata.RequestId = requestId;
+                return response;
+            }
+            catch (Exception e)
+            {
+                throw new AmazonUnmarshallingException(requestId, context.CurrentPath, e);
+            }
         }
         public override AmazonServiceException UnmarshallException(UnmarshallerContext input, Exception innerException, HttpStatusCode statusCode)
         {

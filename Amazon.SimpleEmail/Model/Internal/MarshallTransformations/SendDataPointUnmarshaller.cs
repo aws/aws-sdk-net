@@ -22,13 +22,14 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
      /// <summary>
      ///   SendDataPoint Unmarshaller
      /// </summary>
-    internal class SendDataPointUnmarshaller : IUnmarshaller<SendDataPoint, XmlUnmarshallerContext> 
+    internal class SendDataPointUnmarshaller : IUnmarshaller<SendDataPoint, XmlUnmarshallerContext>, IUnmarshaller<SendDataPoint, JsonUnmarshallerContext> 
     {
         public SendDataPoint Unmarshall(XmlUnmarshallerContext context) 
         {
             SendDataPoint sendDataPoint = new SendDataPoint();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -76,6 +77,11 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
 
             return sendDataPoint;
+        }
+
+        public SendDataPoint Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static SendDataPointUnmarshaller instance;

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-03-01
+ *  API Version: 2012-04-01
  */
 
 using System;
@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// can be specified
     /// per call.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-03-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
     public class DescribeSnapshotAttributeRequest
     {    
         private string snapshotIdField;
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the Attribute property.
-        /// Describes the create volume permissions of the
+        /// Describes the create volume permissions or the product codes of the
         /// snapshot.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Attribute property
         /// </summary>
-        /// <param name="attribute">Describes the create volume permissions of the
+        /// <param name="attribute">Describes the create volume permissions or the product codes of the
         /// snapshot.</param>
         /// <returns>this instance</returns>
         public DescribeSnapshotAttributeRequest WithAttribute(string attribute)

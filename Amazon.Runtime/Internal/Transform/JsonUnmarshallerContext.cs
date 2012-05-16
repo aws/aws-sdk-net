@@ -299,6 +299,14 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get { return current.Type; }
         }
+
+        /// <summary>
+        /// The current Json path that is being unmarshalled.
+        /// </summary>
+        public string CurrentPath
+        {
+            get { return this.keyChainString; }
+        }
 #endregion
 
 #region Private Properties

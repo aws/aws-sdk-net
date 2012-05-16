@@ -167,9 +167,10 @@ namespace Amazon.DynamoDB.DocumentModel
                             .WithExclusiveStartKey(NextKey)
                             .WithHashKeyValue(HashKey)
                             .WithLimit(Limit)
-                            .WithRangeKeyCondition(((RangeFilter)Filter).Condition)
                             .WithScanIndexForward(!IsBackwardSearch)
                             .WithTableName(TableName);
+                        if (Filter != null)
+                            queryReq.RangeKeyCondition = ((RangeFilter)Filter).Condition;
                         queryReq.BeforeRequestEvent += isAsync ?
                             new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerAsync) :
                             new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerSync);

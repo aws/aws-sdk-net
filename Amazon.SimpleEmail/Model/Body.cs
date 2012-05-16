@@ -22,7 +22,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// <para>Represents the body of the message. You can specify text, HTML, or both. If you use both, then the message should display correctly in
-    /// the widest variety of email clients.</para>
+    /// the widest variety of email clients. </para>
     /// </summary>
     public class Body  
     {

@@ -26,6 +26,8 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the VerifyEmailAddress operation.
     /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para>
+    /// <para><b>IMPORTANT:</b>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The
+    /// VerifyEmailIdentity action is now preferred.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyEmailAddress"/>
     public class VerifyEmailAddressRequest : AmazonWebServiceRequest

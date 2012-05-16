@@ -25,14 +25,15 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the SendEmail operation.
-    /// <para>Composes an email message based on input data, and then immediately queues the message for sending.</para> <para><b>IMPORTANT:</b>If
-    /// you have not yet requested production access to Amazon SES, then you will only be able to send email to and from verified email addresses.
-    /// For more information, go to the Amazon SES Developer Guide.</para> <para>The total size of the message cannot exceed 10 MB.</para>
-    /// <para>Amazon SES has a limit on the total number of recipients per message: The combined number of To:, CC: and BCC: email addresses cannot
-    /// exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and
-    /// then call Amazon SES repeatedly to send the message to each group.</para> <para>For every message that you send, the total number of
-    /// recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period.
-    /// For information about your sending quota, go to the "Managing Your Sending Activity" section of the Amazon SES Developer Guide.</para>
+    /// <para>Composes an email message based on input data, and then immediately queues the message for sending. </para> <para><b>IMPORTANT:</b>If
+    /// you have not yet requested production access to Amazon SES, then you will only be able to send email to and from verified email addresses
+    /// and domains. For more information, go to the Amazon SES Developer Guide. </para> <para>The total size of the message cannot exceed 10
+    /// MB.</para> <para>Amazon SES has a limit on the total number of recipients per message: The combined number of To:, CC: and BCC: email
+    /// addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50
+    /// or fewer, and then call Amazon SES repeatedly to send the message to each group. </para> <para>For every message that you send, the total
+    /// number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number of emails you can send in a
+    /// 24-hour period. For information about your sending quota, go to the "Managing Your Sending Activity" section of theAmazon SES Developer
+    /// Guide. </para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SendEmail"/>
     public class SendEmailRequest : AmazonWebServiceRequest
@@ -54,7 +55,7 @@ namespace Amazon.SimpleEmail.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="source"> The sender's email address. </param>
+        /// <param name="source"> The identity's email address. </param>
         /// <param name="destination"> The destination for this email, composed of To:, CC:, and BCC: fields. </param>
         /// <param name="message"> The message to be sent. </param>
         public SendEmailRequest(string source, Destination destination, Message message) 
@@ -66,7 +67,7 @@ namespace Amazon.SimpleEmail.Model
     
 
         /// <summary>
-        /// The sender's email address.
+        /// The identity's email address.
         ///  
         /// </summary>
         public string Source

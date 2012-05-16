@@ -22,13 +22,14 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ListVerifiedEmailAddressesResult Unmarshaller
      /// </summary>
-    internal class ListVerifiedEmailAddressesResultUnmarshaller : IUnmarshaller<ListVerifiedEmailAddressesResult, XmlUnmarshallerContext> 
+    internal class ListVerifiedEmailAddressesResultUnmarshaller : IUnmarshaller<ListVerifiedEmailAddressesResult, XmlUnmarshallerContext>, IUnmarshaller<ListVerifiedEmailAddressesResult, JsonUnmarshallerContext> 
     {
         public ListVerifiedEmailAddressesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ListVerifiedEmailAddressesResult listVerifiedEmailAddressesResult = new ListVerifiedEmailAddressesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
 
             return listVerifiedEmailAddressesResult;
+        }
+
+        public ListVerifiedEmailAddressesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ListVerifiedEmailAddressesResultUnmarshaller instance;

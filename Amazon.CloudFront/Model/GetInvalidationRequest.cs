@@ -1,105 +1,93 @@
-/*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+/*
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-11-01
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The GetInvalidationRequest contains the parameters used for the GetInvalidation operation.
-    /// <br />Required Parameter: DistributionId, InvalidationId
+    /// Container for the parameters to the GetInvalidation operation.
+    /// <para> Get the information about an invalidation. </para>
     /// </summary>
-    public class GetInvalidationRequest : BaseRequest
+    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetInvalidation"/>
+    public class GetInvalidationRequest : AmazonWebServiceRequest
     {
-        private string invalidationId;
         private string distributionId;
-
-        #region InvalidationId
-        /// <summary>
-        /// Gets and Sets the InvalidationId property for the invalidation
-        /// </summary>
-        public string InvalidationId
-        {
-            get
-            {
-                return this.invalidationId;
-            }
-            set
-            {
-                this.invalidationId = value;
-            }
-        }
+        private string id;
 
         /// <summary>
-        /// Sets the InvalidationId property of this request to the value passed in.
-        /// </summary>
-        /// <param name="invalidationId">The invalidation's id</param>
-        /// <returns>The request with the InvalidationId property set</returns>
-        public GetInvalidationRequest WithInvalidationId(string invalidationId)
-        {
-            this.invalidationId = invalidationId;
-            return this;
-        }
-        #endregion
-
-        #region DistributionId
-
-        /// <summary>
-        /// Gets and Sets the DistributionId property for the Distribution
+        /// The distribution's id.
+        ///  
         /// </summary>
         public string DistributionId
         {
-            get
-            {
-                return this.distributionId;
-            }
-            set
-            {
-                this.distributionId = value;
-            }
+            get { return this.distributionId; }
+            set { this.distributionId = value; }
         }
 
         /// <summary>
-        /// Sets the DistributionId property of this request to the value passed in.
+        /// Sets the DistributionId property
         /// </summary>
-        /// <param name="distributionId">The distribution's id</param>
-        /// <returns>The request with the DistributionId property set</returns>
+        /// <param name="distributionId">The value to set for the DistributionId property </param>
+        /// <returns>this instance</returns>
         public GetInvalidationRequest WithDistributionId(string distributionId)
         {
             this.distributionId = distributionId;
             return this;
         }
+            
+
+        // Check to see if DistributionId property is set
+        internal bool IsSetDistributionId()
+        {
+            return this.distributionId != null;       
+        }
 
         /// <summary>
-        /// Sets the DistributionId property of this request to the value passed in.
+        /// The invalidation's id.
+        ///  
         /// </summary>
-        /// <param name="distributionId">The distribution's id</param>
-        /// <returns>The request with the DistributionId property set</returns>
-        [Obsolete("This method will be removed in a future release, clients should use WithDistributionId")]
-        public GetInvalidationRequest WithDistribtionId(string distributionId)
+        public string Id
         {
-            return WithDistributionId(distributionId);
+            get { return this.id; }
+            set { this.id = value; }
         }
-        #endregion
+
+        /// <summary>
+        /// Sets the Id property
+        /// </summary>
+        /// <param name="id">The value to set for the Id property </param>
+        /// <returns>this instance</returns>
+        public GetInvalidationRequest WithId(string id)
+        {
+            this.id = id;
+            return this;
+        }
+            
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this.id != null;       
+        }
     }
 }
+    
