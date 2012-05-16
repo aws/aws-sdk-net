@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents a unique message ID returned from a successful <c>SendEmail</c> request.</para>
+    /// <para>Represents a unique message ID returned from a successful <c>SendEmail</c> request. </para>
     /// </summary>
     public class SendEmailResult  
     {

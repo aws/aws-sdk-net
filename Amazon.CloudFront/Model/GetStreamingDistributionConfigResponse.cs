@@ -1,76 +1,50 @@
-/*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+/*
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-11-01
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
+using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Text;
+
+using Amazon.Runtime;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The GetStreamingDistributionConfigResponse contains the StreamingDistribution's configuration
-    /// and any headers returned by CloudFront.
+    /// Returns information about the  GetStreamingDistributionConfigResult response and response metadata.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-11-01/", IsNullable = false)]
-    public class GetStreamingDistributionConfigResponse : CloudFrontResponse
+    public class GetStreamingDistributionConfigResponse : AmazonWebServiceResponse
     {
-        #region Private Members
-
-        private CloudFrontStreamingDistributionConfig distributionConfig;
-
-        #endregion
-
-        #region StreamingDistributionConfig
+        private GetStreamingDistributionConfigResult getStreamingDistributionConfigResult;
 
         /// <summary>
-        /// Gets and Sets the StreamingDistributionConfig property.
+        /// Gets and sets the GetStreamingDistributionConfigResult property.
+        /// The returned result of the corresponding request.
         /// </summary>
-        [XmlElementAttribute(ElementName = "StreamingDistributionConfig")]
-        public CloudFrontStreamingDistributionConfig StreamingDistributionConfig
+        public GetStreamingDistributionConfigResult GetStreamingDistributionConfigResult
         {
-            get { return this.distributionConfig; }
-            set { this.distributionConfig = value; }
-        }
-
-        #endregion
-
-        #region ETag
-
-        /// <summary>
-        /// Gets and sets the ETag property.
-        /// The Streaming Distribution's Configuration ETag is also
-        /// set if possible.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "ETag")]
-        public override string ETag
-        {
-            set
+            get 
             {
-                this.etagHeader = value;
-                if (null != distributionConfig)
+                if(this.getStreamingDistributionConfigResult == null)
                 {
-                    distributionConfig.ETag = value;
+                    this.getStreamingDistributionConfigResult = new GetStreamingDistributionConfigResult();
                 }
-            }
-        }
 
-        #endregion
+                return this.getStreamingDistributionConfigResult; 
+            }
+            set { this.getStreamingDistributionConfigResult = value; }
+        }
     }
 }
+    

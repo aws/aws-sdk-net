@@ -25,7 +25,9 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVerifiedEmailAddresses operation.
-    /// <para>Returns a list containing all of the email addresses that have been verified.</para>
+    /// <para>Returns a list containing all of the email addresses that have been verified.</para> <para><b>IMPORTANT:</b>The
+    /// ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action is now
+    /// preferred.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.ListVerifiedEmailAddresses"/>
     public class ListVerifiedEmailAddressesRequest : AmazonWebServiceRequest

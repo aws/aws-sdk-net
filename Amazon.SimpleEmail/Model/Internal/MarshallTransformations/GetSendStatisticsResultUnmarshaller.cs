@@ -22,13 +22,14 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
      /// <summary>
      ///   GetSendStatisticsResult Unmarshaller
      /// </summary>
-    internal class GetSendStatisticsResultUnmarshaller : IUnmarshaller<GetSendStatisticsResult, XmlUnmarshallerContext> 
+    internal class GetSendStatisticsResultUnmarshaller : IUnmarshaller<GetSendStatisticsResult, XmlUnmarshallerContext>, IUnmarshaller<GetSendStatisticsResult, JsonUnmarshallerContext> 
     {
         public GetSendStatisticsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             GetSendStatisticsResult getSendStatisticsResult = new GetSendStatisticsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
 
             return getSendStatisticsResult;
+        }
+
+        public GetSendStatisticsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static GetSendStatisticsResultUnmarshaller instance;

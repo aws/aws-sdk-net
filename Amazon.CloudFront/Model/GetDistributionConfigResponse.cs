@@ -1,75 +1,50 @@
-/*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+/*
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-11-01
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
+using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Text;
+
+using Amazon.Runtime;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The GetDistributionConfigResponse contains the distribution's configuration
-    /// and any headers returned by CloudFront.
+    /// Returns information about the  GetDistributionConfigResult response and response metadata.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://cloudfront.amazonaws.com/doc/2010-11-01/", IsNullable = false)]
-    public class GetDistributionConfigResponse : CloudFrontResponse
+    public class GetDistributionConfigResponse : AmazonWebServiceResponse
     {
-        #region Private Members
-
-        private CloudFrontDistributionConfig distributionConfig;
-
-        #endregion
-
-        #region DistributionConfig
+        private GetDistributionConfigResult getDistributionConfigResult;
 
         /// <summary>
-        /// Gets and Sets the DistributionConfig property.
+        /// Gets and sets the GetDistributionConfigResult property.
+        /// The returned result of the corresponding request.
         /// </summary>
-        [XmlElementAttribute(ElementName = "DistributionConfig")]
-        public CloudFrontDistributionConfig DistributionConfig
+        public GetDistributionConfigResult GetDistributionConfigResult
         {
-            get { return this.distributionConfig; }
-            set { this.distributionConfig = value; }
-        }
-
-        #endregion
-
-        #region ETag
-
-        /// <summary>
-        /// Gets and sets the ETag property.
-        /// The Distribution Configuration's ETag property is also set if possible.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "ETag")]
-        public override string ETag
-        {
-            set
+            get 
             {
-                this.etagHeader = value;
-                if (null != distributionConfig)
+                if(this.getDistributionConfigResult == null)
                 {
-                    distributionConfig.ETag = value;
+                    this.getDistributionConfigResult = new GetDistributionConfigResult();
                 }
-            }
-        }
 
-        #endregion
+                return this.getDistributionConfigResult; 
+            }
+            set { this.getDistributionConfigResult = value; }
+        }
     }
 }
+    

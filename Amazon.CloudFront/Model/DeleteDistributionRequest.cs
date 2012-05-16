@@ -1,94 +1,93 @@
-/*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+/*
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-11-01
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
-
+using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The DeleteDistributionRequest contains the parameters used for the DeleteDistribution operation.
-    /// <br />Required Parameters: Id
-    /// <br />Required Parameters: ETag
+    /// Container for the parameters to the DeleteDistribution operation.
+    /// <para> Delete a distribution. </para>
     /// </summary>
-    public class DeleteDistributionRequest : CloudFrontRequest
+    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteDistribution"/>
+    public class DeleteDistributionRequest : AmazonWebServiceRequest
     {
-        #region Id
+        private string id;
+        private string ifMatch;
 
         /// <summary>
-        /// Gets and sets the Id property for the Distribution
+        /// The distribution id.
+        ///  
         /// </summary>
-        public override string Id
+        public string Id
         {
-            get
-            {
-                return this.distId;
-            }
-            set
-            {
-                this.distId = value;
-            }
+            get { return this.id; }
+            set { this.id = value; }
         }
 
         /// <summary>
-        /// Sets the Id property of this request to the value passed in.
+        /// Sets the Id property
         /// </summary>
-        /// <param name="id">The distribution's id</param>
-        /// <returns>The request with the Id property set</returns>
+        /// <param name="id">The value to set for the Id property </param>
+        /// <returns>this instance</returns>
         public DeleteDistributionRequest WithId(string id)
         {
-            this.distId = id;
+            this.id = id;
             return this;
         }
+            
 
-        #endregion
-
-        #region ETag
-
-        /// <summary>
-        /// Gets and sets the ETag property for the Distribution
-        /// </summary>
-        public override string ETag
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            get
-            {
-                return this.etagHeader;
-            }
-            set
-            {
-                this.etagHeader = value;
-            }
+            return this.id != null;       
         }
 
         /// <summary>
-        /// Sets the ETag property of this request to the value passed in.
+        /// The value of the ETag header you received when you disabled the distribution. For example: E2QWRUHAPOMQZL.
+        ///  
         /// </summary>
-        /// <param name="etag">The distribution's etag</param>
-        /// <returns>The request with the ETag property set</returns>
-        public DeleteDistributionRequest WithETag(string etag)
+        public string IfMatch
         {
-            this.etagHeader = etag;
-            return this;
+            get { return this.ifMatch; }
+            set { this.ifMatch = value; }
         }
 
-        #endregion
+        /// <summary>
+        /// Sets the IfMatch property
+        /// </summary>
+        /// <param name="ifMatch">The value to set for the IfMatch property </param>
+        /// <returns>this instance</returns>
+        public DeleteDistributionRequest WithIfMatch(string ifMatch)
+        {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+            
+
+        // Check to see if IfMatch property is set
+        internal bool IsSetIfMatch()
+        {
+            return this.ifMatch != null;       
+        }
     }
 }
+    

@@ -22,13 +22,14 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
      /// <summary>
      ///   GetSendQuotaResult Unmarshaller
      /// </summary>
-    internal class GetSendQuotaResultUnmarshaller : IUnmarshaller<GetSendQuotaResult, XmlUnmarshallerContext> 
+    internal class GetSendQuotaResultUnmarshaller : IUnmarshaller<GetSendQuotaResult, XmlUnmarshallerContext>, IUnmarshaller<GetSendQuotaResult, JsonUnmarshallerContext> 
     {
         public GetSendQuotaResult Unmarshall(XmlUnmarshallerContext context) 
         {
             GetSendQuotaResult getSendQuotaResult = new GetSendQuotaResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -64,6 +65,11 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
 
             return getSendQuotaResult;
+        }
+
+        public GetSendQuotaResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static GetSendQuotaResultUnmarshaller instance;

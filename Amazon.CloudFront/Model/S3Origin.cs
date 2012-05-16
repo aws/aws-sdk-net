@@ -1,150 +1,89 @@
-/*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+/*
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-11-01
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
-
-using Amazon.S3.Util;
+using System.IO;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// S3 origin information to associate with the distribution.
+    /// <para> A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for
+    /// distribution. </para>
     /// </summary>
-    public class S3Origin
+    public class S3Origin  
     {
-        string _dnsName;
-        CloudFrontOriginAccessIdentity _originAccessIdentity;
+        
+        private string domainName;
+        private string originAccessIdentity;
 
         /// <summary>
-        /// Initializes a new instance of the S3Origin class.
+        /// The DNS name of the S3 origin.
+        ///  
         /// </summary>
-        public S3Origin()
+        public string DomainName
         {
-        }
-
-
-        /// <summary>
-        /// Initializes a new instance of the S3Origin class.
-        /// </summary>
-        /// <param name="dnsName">The DNS name of your Amazon S3 bucket.</param>
-        /// <param name="originAccessIdentity">The origin access identity.</param>
-        public S3Origin(string dnsName, CloudFrontOriginAccessIdentity originAccessIdentity)
-        {
-            this.DNSName = dnsName;
-            this.OriginAccessIdentity = originAccessIdentity;
+            get { return this.domainName; }
+            set { this.domainName = value; }
         }
 
         /// <summary>
-        /// Gets or sets the DNS name of your Amazon S3 bucket to associate with the distribution.
-        /// For example: mybucket.s3.amazonaws.com.
+        /// Sets the DomainName property
         /// </summary>
-        /// <value>The DNS name of your Amazon S3 bucket.</value>
-        public string DNSName
+        /// <param name="domainName">The value to set for the DomainName property </param>
+        /// <returns>this instance</returns>
+        public S3Origin WithDomainName(string domainName)
         {
-            get { return this._dnsName; }
-            set 
-            {
-                if (AmazonS3Util.ValidateV2Bucket(value))
-                {
-                    this._dnsName = value;
-                }
-                else
-                {
-                    throw new AmazonCloudFrontException(
-                        "Only Amazon S3 V2 style buckets are acceptable as Origin values"
-                        );
-                }
-            }
-        }
-
-
-        /// <summary>
-        /// Sets the DNS name of your Amazon S3 bucket to associate with the distribution and 
-        /// returns back this instance for method chaining.
-        /// </summary>
-        /// <param name="dnsName">The DNS name of your Amazon S3 bucket.</param>
-        /// <returns>This instance</returns>
-        public S3Origin WithDNSName(string dnsName)
-        {
-            this.DNSName = dnsName;
+            this.domainName = domainName;
             return this;
         }
+            
 
-        internal bool IsSetDNSName()
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
         {
-            return this._dnsName != null;
+            return this.domainName != null;       
         }
 
         /// <summary>
-        /// Gets or sets the CloudFront origin access identity to associate with
-        /// the distribution. When the distribution is serving private
-        /// content this property must be set.
+        /// Your S3 origin's origin access identity.
+        ///  
         /// </summary>
-        /// <value>The origin access identity.</value>
-        public CloudFrontOriginAccessIdentity OriginAccessIdentity
+        public string OriginAccessIdentity
         {
-            get { return this._originAccessIdentity; }
-            set { this._originAccessIdentity = value; }
+            get { return this.originAccessIdentity; }
+            set { this.originAccessIdentity = value; }
         }
 
         /// <summary>
-        /// Sets the CloudFront origin access identity to associate with
-        /// the distribution. When the distribution is serving private
-        /// content this property must be set.
-        /// This instance is returned back for method chaining.
+        /// Sets the OriginAccessIdentity property
         /// </summary>
-        /// <param name="originAccessIdentity">The origin access identity.</param>
-        /// <returns>This instance</returns>
-        public S3Origin WithOriginAccessIdentity(CloudFrontOriginAccessIdentity originAccessIdentity)
+        /// <param name="originAccessIdentity">The value to set for the OriginAccessIdentity property </param>
+        /// <returns>this instance</returns>
+        public S3Origin WithOriginAccessIdentity(string originAccessIdentity)
         {
-            this.OriginAccessIdentity = originAccessIdentity;
+            this.originAccessIdentity = originAccessIdentity;
             return this;
         }
+            
 
+        // Check to see if OriginAccessIdentity property is set
         internal bool IsSetOriginAccessIdentity()
         {
-            return this._originAccessIdentity != null;
-        }
-
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder(1024);
-            sb.Append("<S3Origin>");
-
-            sb.Append("<DNSName>");
-            sb.Append((this.DNSName.EndsWith(".s3.amazonaws.com")) ? this.DNSName : String.Concat(this.DNSName, ".s3.amazonaws.com"));
-            sb.Append("</DNSName>");
-
-            if (this.OriginAccessIdentity != null)
-            {
-                sb.Append("<OriginAccessIdentity>");
-                sb.Append(this.OriginAccessIdentity);
-                sb.Append("</OriginAccessIdentity>");
-            }
-
-            sb.Append("</S3Origin>");
-
-            return sb.ToString();
+            return this.originAccessIdentity != null;       
         }
     }
 }

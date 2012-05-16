@@ -222,7 +222,7 @@ namespace Amazon.Runtime
                 IAsyncResult httpResult;
                 if (asyncResult != null
                     && asyncResult.RequestState != null
-                    && asyncResult.RequestState.WebRequest.Method == "POST")
+                    && (asyncResult.RequestState.WebRequest.Method == "POST" || asyncResult.RequestState.WebRequest.Method == "PUT"))
                 {
                     httpResult = webRequest.BeginGetRequestStream(new AsyncCallback(this.getRequestStreamCallback), asyncResult);
                 }
@@ -316,7 +316,7 @@ namespace Amazon.Runtime
                     && asyncResult.RequestState != null
                     && asyncResult.RequestState.RequestData != null
                     && asyncResult.RequestState.RequestData.Length > 0
-                    && asyncResult.RequestState.WebRequest.Method == "POST")
+                    && (asyncResult.RequestState.WebRequest.Method == "POST" || asyncResult.RequestState.WebRequest.Method == "PUT"))
                 {
                     Stream requestStream;
                     if (asyncResult.CompletedSynchronously)
@@ -588,7 +588,7 @@ namespace Amazon.Runtime
                 //request.ContentType = AWSSDKUtils.UrlEncodedContent;
 
                 request.Method = wrappedRequest.HttpMethod;
-                if (request.Method == "POST")
+                if (request.Method == "POST" || request.Method == "PUT")
                 {
                     request.ContentLength = requestData.Length;
                 }

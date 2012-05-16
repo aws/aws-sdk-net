@@ -1,162 +1,95 @@
-/*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+/*
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2010-11-01
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
 using System.IO;
-using System.Xml;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Contains a list of paths to objects that are to be invalidated and a CallerReference to ensure the request can't be replayed.
-    /// For more information, please visit:
-    /// <see href="http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/index.html?InvalidationBatchDatatype.html"/>
+    /// <para> An invalidation batch. </para>
     /// </summary>
-    public class InvalidationBatch
+    public class InvalidationBatch  
     {
-        private List<string> paths = new List<string>();
+        
+        private Paths paths;
         private string callerReference;
 
         /// <summary>
-        /// Default constructor
+        /// The path of the object to invalidate. The path is relative to the distribution and must begin with a slash (/). You must enclose each
+        /// invalidation object with the Path element tags. If the path includes non-ASCII characters or unsafe characters as defined in RFC 1783
+        /// (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do not URL encode any other characters in the path, or CloudFront will
+        /// not invalidate the old version of the updated object.
+        ///  
         /// </summary>
-        public InvalidationBatch()
+        public Paths Paths
         {
+            get { return this.paths; }
+            set { this.paths = value; }
         }
 
         /// <summary>
-        /// Constructs and instance of InvalidationBatch with a callerReference.
+        /// Sets the Paths property
         /// </summary>
-        /// <param name="callerReference">A unique name that ensures the request can't be replayed.</param>
-        public InvalidationBatch(string callerReference)
+        /// <param name="paths">The value to set for the Paths property </param>
+        /// <returns>this instance</returns>
+        public InvalidationBatch WithPaths(Paths paths)
         {
-            this.callerReference = callerReference;
-        }
-
-        /// <summary>
-        /// Constructs and instance of InvalidationBatch with a callerReference and a list of paths to objects.
-        /// </summary>
-        /// <param name="callerReference">A unique name that ensures the request can't be replayed.</param>
-        /// <param name="paths">A list of paths to objects that will be invalidated.</param>
-        public InvalidationBatch(string callerReference, List<string> paths)
-        {
-            this.callerReference = callerReference;
             this.paths = paths;
+            return this;
+        }
+            
+
+        // Check to see if Paths property is set
+        internal bool IsSetPaths()
+        {
+            return this.paths != null;       
         }
 
         /// <summary>
-        /// Gets and Sets the CallerReference property a unique name that ensures the request can't be replayed.
+        /// A unique name that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the Path object), a new
+        /// distribution is created. If the CallerReference is a value you already sent in a previous request to create an invalidation batch, and the
+        /// content of each Path element is identical to the original request, the response includes the same information returned to the original
+        /// request. If the CallerReference is a value you already sent in a previous request to create a distribution but the content of any Path is
+        /// different from the original request, CloudFront returns an InvalidationBatchAlreadyExists error.
+        ///  
         /// </summary>
         public string CallerReference
         {
-            get
-            {
-                return this.callerReference;
-            }
-            set
-            {
-                this.callerReference = value;
-            }
+            get { return this.callerReference; }
+            set { this.callerReference = value; }
         }
 
         /// <summary>
-        /// Sets the CallerReference property and returns back this instance to chain method calls.
+        /// Sets the CallerReference property
         /// </summary>
-        /// <param name="callerReference">A unique name that ensures the request can't be replayed.</param>
-        /// <returns>This instance</returns>
+        /// <param name="callerReference">The value to set for the CallerReference property </param>
+        /// <returns>this instance</returns>
         public InvalidationBatch WithCallerReference(string callerReference)
         {
             this.callerReference = callerReference;
             return this;
         }
+            
 
-        /// <summary>
-        /// Gets and Sets the Paths property which is a list of paths to objects that will be invalidated.
-        /// </summary>
-        public List<string> Paths
+        // Check to see if CallerReference property is set
+        internal bool IsSetCallerReference()
         {
-            get
-            {
-                return this.paths;
-            }
-            set
-            {
-                this.paths = value;
-            }
-        }
-
-        /// <summary>
-        /// Adds paths to the collection of path strings and returns back this instance to chain method calls.
-        /// </summary>
-        /// <param name="path">A list of paths to objects that will be invalidated</param>
-        /// <returns>This instance</returns>
-        public InvalidationBatch WithPaths(params string[] path)
-        {
-            foreach (string p in path)
-            {
-                this.paths.Add(p);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds paths to the collection of path strings and returns back this instance to chain method calls.
-        /// </summary>
-        /// <param name="paths">A list of paths to objects that will be invalidated</param>
-        /// <returns>This instance</returns>
-        public InvalidationBatch WithPaths(IEnumerable<string> paths)
-        {
-            foreach (string p in paths)
-            {
-                this.paths.Add(p);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Creates a XML representation of this object and returns it back as a string.
-        /// </summary>
-        /// <returns>A XML string representing this object.</returns>
-        public override string ToString()
-        {
-            StringWriter sw = new StringWriter();
-            XmlTextWriter xmlWriter = new XmlTextWriter(sw);
-
-            xmlWriter.WriteStartElement("InvalidationBatch");
-
-            foreach (string path in Paths)
-            {
-                string value = path.StartsWith("/") ? path : "/" + path;
-                xmlWriter.WriteElementString("Path", value);
-            }
-
-            xmlWriter.WriteElementString("CallerReference", this.CallerReference);
-            xmlWriter.WriteEndElement();
-
-            xmlWriter.Close();
-            return sw.ToString();
+            return this.callerReference != null;       
         }
     }
 }
