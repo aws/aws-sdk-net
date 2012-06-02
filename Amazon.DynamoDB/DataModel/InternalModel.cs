@@ -159,7 +159,7 @@ namespace Amazon.DynamoDB.DataModel
 
             ItemStorageConfig config = new ItemStorageConfig();
 
-            DynamoDBTableAttribute tableAttribute = EntityUtils.GetTableAttribute(type);
+            var tableAttribute = EntityUtils.GetTableAttribute(type);
             if (tableAttribute == null || string.IsNullOrEmpty(tableAttribute.TableName)) throw new InvalidOperationException("No DynamoDBTableAttribute on type");
 
             if (string.IsNullOrEmpty(tableAttribute.TableName)) throw new InvalidOperationException("DynamoDBTableAttribute.Table is empty or null");
@@ -174,22 +174,52 @@ namespace Amazon.DynamoDB.DataModel
                 // filter out properties that aren't both read and write
                 if (!EntityUtils.IsReadWrite(member)) continue;
 
-                DynamoDBAttribute attribute = EntityUtils.GetAttribute(member);
-
-                // filter out ignored properties
-                if (attribute is DynamoDBIgnoreAttribute) continue;
+                var attributes = EntityUtils.GetAttributes(member);
 
                 Type memberType = EntityUtils.GetType(member);
                 string attributeName = GetAccurateCase(config, member.Name);
                 string propertyName = member.Name;
 
-                PropertyStorage propertyStorage = new PropertyStorage
-                {
-                    Member = member,
-                    MemberType = memberType,
-                };
+                var propertyStorage = new PropertyStorage
+                                                      {
+                                                          Member = member,
+                                                          MemberType = memberType,
+                                                      };
 
-                if (attribute is DynamoDBVersionAttribute)
+                bool ignoreAttiribute = false;
+                DynamoDBPropertyAttribute propertyAttribute = null;
+                DynamoDBHashKeyAttribute hashKeyAttribute = null;
+                DynamoDBRangeKeyAttribute rangeKeyAttribute = null;
+                DynamoDBVersionAttribute versionAttribute = null;
+
+                foreach (var attribute in attributes)
+                {
+                    // filter out ignored properties
+                    if (attribute is DynamoDBIgnoreAttribute)
+                    {
+                        ignoreAttiribute = true;
+                        continue;
+                    }
+
+                    if (attribute is DynamoDBVersionAttribute)
+                        versionAttribute = attribute as DynamoDBVersionAttribute;
+
+                    if (attribute is DynamoDBPropertyAttribute)
+                        propertyAttribute = attribute as DynamoDBPropertyAttribute;
+
+                    if (attribute is DynamoDBHashKeyAttribute)
+                        hashKeyAttribute = attribute as DynamoDBHashKeyAttribute;
+
+                    if (attribute is DynamoDBRangeKeyAttribute)
+                        rangeKeyAttribute = attribute as DynamoDBRangeKeyAttribute;
+                }
+
+                if (ignoreAttiribute)
+                    continue;
+
+                //TODO: test for valid attribute combinations
+
+                if (versionAttribute != null)
                 {
                     EntityUtils.ValidateVersionType(memberType);    // no conversion is possible, so type must be a nullable primitive
 
@@ -200,46 +230,48 @@ namespace Amazon.DynamoDB.DataModel
                     propertyStorage.IsVersion = true;
                 }
 
-                DynamoDBPropertyAttribute propertyAttribute = attribute as DynamoDBPropertyAttribute;
+                if (hashKeyAttribute != null)
+                {
+                    if (propertyAttribute.Converter == null && !EntityUtils.IsPrimitive(memberType))
+                        throw new InvalidOperationException("Hash key " + propertyName + " must be of primitive type");
+                    if (!string.IsNullOrEmpty(config.HashKeyPropertyName))
+                        throw new InvalidOperationException("Multiple hash keys defined");
+
+                    config.HashKeyPropertyName = propertyName;
+                    propertyStorage.IsHashKey = true;
+                }
+
+                if (rangeKeyAttribute != null)
+                {
+                    if (propertyAttribute.Converter == null && !EntityUtils.IsPrimitive(memberType))
+                        throw new InvalidOperationException("Range key " + propertyName + " must be of primitive type");
+                    if (!string.IsNullOrEmpty(config.RangeKeyPropertyName))
+                        throw new InvalidOperationException("Multiple range keys defined");
+
+                    config.RangeKeyPropertyName = propertyName;
+                    propertyStorage.IsRangeKey = true;
+                }
+
                 if (propertyAttribute != null)
                 {
                     if (!string.IsNullOrEmpty(propertyAttribute.AttributeName))
                         attributeName = GetAccurateCase(config, propertyAttribute.AttributeName);
 
-                    if (propertyAttribute is DynamoDBHashKeyAttribute)
-                    {
-                        if (propertyAttribute.Converter == null && !EntityUtils.IsPrimitive(memberType))
-                            throw new InvalidOperationException("Hash key " + propertyName + " must be of primitive type");
-                        if (!string.IsNullOrEmpty(config.HashKeyPropertyName))
-                            throw new InvalidOperationException("Multiple hash keys defined");
-
-                        config.HashKeyPropertyName = propertyName;
-                        propertyStorage.IsHashKey = true;
-                    }
-                    if (propertyAttribute is DynamoDBRangeKeyAttribute)
-                    {
-                        if (propertyAttribute.Converter == null && !EntityUtils.IsPrimitive(memberType))
-                            throw new InvalidOperationException("Range key " + propertyName + " must be of primitive type");
-                        if (!string.IsNullOrEmpty(config.RangeKeyPropertyName))
-                            throw new InvalidOperationException("Multiple range keys defined");
-
-                        config.RangeKeyPropertyName = propertyName;
-                        propertyStorage.IsRangeKey = true;
-                    }
-
-
                     if (propertyAttribute.Converter != null)
                     {
-                        if (!EntityUtils.CanInstantiate(propertyAttribute.Converter) || !EntityUtils.ImplementsInterface(propertyAttribute.Converter, typeof(IPropertyConverter)))
+                        if (!EntityUtils.CanInstantiate(propertyAttribute.Converter) ||
+                            !EntityUtils.ImplementsInterface(propertyAttribute.Converter,
+                                                             typeof(IPropertyConverter)))
                             throw new InvalidOperationException("Converter for " + propertyName + " must be instantiable with no parameters and must implement IPropertyConverter");
 
-                        propertyStorage.Converter = EntityUtils.Instantiate(propertyAttribute.Converter) as IPropertyConverter;
+                        propertyStorage.Converter =
+                            EntityUtils.Instantiate(propertyAttribute.Converter) as IPropertyConverter;
                     }
                 }
 
                 propertyStorage.PropertyName = propertyName;
                 propertyStorage.AttributeName = attributeName;
-                
+
                 config.AttributesToGet.Add(attributeName);
                 config.AddPropertyStorage(propertyStorage);
             }
