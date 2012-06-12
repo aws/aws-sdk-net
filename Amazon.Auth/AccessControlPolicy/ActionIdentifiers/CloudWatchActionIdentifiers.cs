@@ -35,6 +35,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier GetMetricStatistics = new ActionIdentifier("cloudwatch:GetMetricStatistics");
         public static readonly ActionIdentifier ListMetrics = new ActionIdentifier("cloudwatch:ListMetrics");
         public static readonly ActionIdentifier PutMetricAlarm = new ActionIdentifier("cloudwatch:PutMetricAlarm");
+        public static readonly ActionIdentifier PutMetricData = new ActionIdentifier("cloudwatch:PutMetricData");
         public static readonly ActionIdentifier SetAlarmState = new ActionIdentifier("cloudwatch:SetAlarmState");
     }
 }

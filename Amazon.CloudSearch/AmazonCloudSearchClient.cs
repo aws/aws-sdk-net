@@ -54,7 +54,7 @@ namespace Amazon.CloudSearch
         ///
         /// </summary>
         public AmazonCloudSearchClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonCloudSearchConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with the credentials defined in the App.config.
@@ -73,7 +73,7 @@ namespace Amazon.CloudSearch
         /// </summary>
         /// <param name="config">The AmazonCloudSearch Configuration Object</param>
         public AmazonCloudSearchClient(AmazonCloudSearchConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with AWS Credentials

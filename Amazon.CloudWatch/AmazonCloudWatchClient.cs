@@ -67,7 +67,7 @@ namespace Amazon.CloudWatch
         ///
         /// </summary>
         public AmazonCloudWatchClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonCloudWatchConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with the credentials defined in the App.config.
@@ -86,7 +86,7 @@ namespace Amazon.CloudWatch
         /// </summary>
         /// <param name="config">The AmazonCloudWatch Configuration Object</param>
         public AmazonCloudWatchClient(AmazonCloudWatchConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with AWS Credentials

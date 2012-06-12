@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
         private int? maxRecords;
         private string marker;
         private bool? defaultOnly;
+        private bool? listSupportedCharacterSets;
 
         /// <summary>
         /// The database engine to return.
@@ -206,6 +207,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetDefaultOnly()
         {
             return this.defaultOnly.HasValue;       
+        }
+
+        /// <summary>
+        /// If this parameter is specified, and if the requested engine supports the CharacterSetName parameter for CreateDBInstance, the response
+        /// includes a list of supported character sets for each engine version.
+        ///  
+        /// </summary>
+        public bool ListSupportedCharacterSets
+        {
+            get { return this.listSupportedCharacterSets ?? default(bool); }
+            set { this.listSupportedCharacterSets = value; }
+        }
+
+        /// <summary>
+        /// Sets the ListSupportedCharacterSets property
+        /// </summary>
+        /// <param name="listSupportedCharacterSets">The value to set for the ListSupportedCharacterSets property </param>
+        /// <returns>this instance</returns>
+        public DescribeDBEngineVersionsRequest WithListSupportedCharacterSets(bool listSupportedCharacterSets)
+        {
+            this.listSupportedCharacterSets = listSupportedCharacterSets;
+            return this;
+        }
+            
+
+        // Check to see if ListSupportedCharacterSets property is set
+        internal bool IsSetListSupportedCharacterSets()
+        {
+            return this.listSupportedCharacterSets.HasValue;       
         }
     }
 }

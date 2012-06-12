@@ -56,6 +56,13 @@ namespace Amazon.S3.Util
         internal const string AmzServerSideEncryptionHeader = "x-amz-server-side-encryption";
         internal const string AmzExpirationHeader = "x-amz-expiration";
 
+        internal const string 
+            AmzGrantHeaderRead        = "x-amz-grant-read",
+            AmzGrantHeaderWrite       = "x-amz-grant-write",
+            AmzGrantHeaderReadAcp     = "x-amz-grant-read-acp",
+            AmzGrantHeaderWriteAcp    = "x-amz-grant-write-acp",
+            AmzGrantHeaderFullControl = "x-amz-grant-full-control";
+
         // Accepted HTTP Verbs
         internal static readonly string[] Verbs = { "GET", "HEAD", "PUT", "DELETE", "POST" };
         internal static readonly string GetVerb = Verbs[0];

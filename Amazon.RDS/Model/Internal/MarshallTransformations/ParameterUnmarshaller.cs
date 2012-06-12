@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Parameter Unmarshaller
      /// </summary>
-    internal class ParameterUnmarshaller : IUnmarshaller<Parameter, XmlUnmarshallerContext> 
+    internal class ParameterUnmarshaller : IUnmarshaller<Parameter, XmlUnmarshallerContext>, IUnmarshaller<Parameter, JsonUnmarshallerContext> 
     {
         public Parameter Unmarshall(XmlUnmarshallerContext context) 
         {
             Parameter parameter = new Parameter();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -106,6 +107,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return parameter;
+        }
+
+        public Parameter Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ParameterUnmarshaller instance;

@@ -157,7 +157,7 @@ namespace Amazon.SimpleWorkflow
         ///
         /// </summary>
         public AmazonSimpleWorkflowClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonSimpleWorkflowConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleWorkflowConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonSimpleWorkflowClient with the credentials defined in the App.config.
@@ -176,7 +176,7 @@ namespace Amazon.SimpleWorkflow
         /// </summary>
         /// <param name="config">The AmazonSimpleWorkflow Configuration Object</param>
         public AmazonSimpleWorkflowClient(AmazonSimpleWorkflowConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonSimpleWorkflowClient with AWS Credentials

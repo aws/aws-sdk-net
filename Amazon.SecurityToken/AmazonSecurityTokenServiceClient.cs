@@ -60,7 +60,7 @@ namespace Amazon.SecurityToken
         ///
         /// </summary>
         public AmazonSecurityTokenServiceClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonSecurityTokenServiceConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with the credentials defined in the App.config.
@@ -79,7 +79,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// <param name="config">The AmazonSecurityTokenService Configuration Object</param>
         public AmazonSecurityTokenServiceClient(AmazonSecurityTokenServiceConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with AWS Credentials

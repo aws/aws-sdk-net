@@ -55,7 +55,7 @@ namespace Amazon.ElasticLoadBalancing
         ///
         /// </summary>
         public AmazonElasticLoadBalancingClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonElasticLoadBalancingConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with the credentials defined in the App.config.
@@ -74,7 +74,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// <param name="config">The AmazonElasticLoadBalancing Configuration Object</param>
         public AmazonElasticLoadBalancingClient(AmazonElasticLoadBalancingConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with AWS Credentials

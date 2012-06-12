@@ -53,7 +53,7 @@ namespace Amazon.Route53
         ///
         /// </summary>
         public AmazonRoute53Client()
-            : base(new EnvironmentAWSCredentials(), new AmazonRoute53Config(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53Config(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonRoute53Client with the credentials defined in the App.config.
@@ -72,7 +72,7 @@ namespace Amazon.Route53
         /// </summary>
         /// <param name="config">The AmazonRoute53 Configuration Object</param>
         public AmazonRoute53Client(AmazonRoute53Config config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonRoute53Client with AWS Credentials

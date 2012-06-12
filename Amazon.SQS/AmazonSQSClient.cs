@@ -121,7 +121,7 @@ namespace Amazon.SQS
         ///
         /// </summary>
         public AmazonSQSClient()
-            : this(new EnvironmentAWSCredentials(), new AmazonSQSConfig(), true) { }
+            : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSQSConfig(), true) { }
 
         /// <summary>
         /// Constructs AmazonSQSClient with the credentials defined in the App.config.
@@ -140,7 +140,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="config">The AmazonSQS Configuration Object</param>
         public AmazonSQSClient(AmazonSQSConfig config)
-            : this(new EnvironmentAWSCredentials(), config, true) { }
+            : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
 
         /// <summary>
         /// Constructs AmazonSQSClient with AWS Access Key ID and AWS Secret Key

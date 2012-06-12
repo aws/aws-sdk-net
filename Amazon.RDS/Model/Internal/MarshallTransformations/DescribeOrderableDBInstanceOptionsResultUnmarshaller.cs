@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeOrderableDBInstanceOptionsResult Unmarshaller
      /// </summary>
-    internal class DescribeOrderableDBInstanceOptionsResultUnmarshaller : IUnmarshaller<DescribeOrderableDBInstanceOptionsResult, XmlUnmarshallerContext> 
+    internal class DescribeOrderableDBInstanceOptionsResultUnmarshaller : IUnmarshaller<DescribeOrderableDBInstanceOptionsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeOrderableDBInstanceOptionsResult, JsonUnmarshallerContext> 
     {
         public DescribeOrderableDBInstanceOptionsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeOrderableDBInstanceOptionsResult describeOrderableDBInstanceOptionsResult = new DescribeOrderableDBInstanceOptionsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return describeOrderableDBInstanceOptionsResult;
+        }
+
+        public DescribeOrderableDBInstanceOptionsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeOrderableDBInstanceOptionsResultUnmarshaller instance;

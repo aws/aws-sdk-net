@@ -31,6 +31,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier DescribeJobFlows = new ActionIdentifier("elasticmapreduce:DescribeJobFlows");
         public static readonly ActionIdentifier ModifyInstanceGroups = new ActionIdentifier("elasticmapreduce:ModifyInstanceGroups");
         public static readonly ActionIdentifier RunJobFlow = new ActionIdentifier("elasticmapreduce:RunJobFlow");
+        public static readonly ActionIdentifier SetTerminationProtection = new ActionIdentifier("elasticmapreduce:SetTerminationProtection");
         public static readonly ActionIdentifier TerminateJobFlows = new ActionIdentifier("elasticmapreduce:TerminateJobFlows");
     }
 }

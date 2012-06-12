@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   RecurringCharge Unmarshaller
      /// </summary>
-    internal class RecurringChargeUnmarshaller : IUnmarshaller<RecurringCharge, XmlUnmarshallerContext> 
+    internal class RecurringChargeUnmarshaller : IUnmarshaller<RecurringCharge, XmlUnmarshallerContext>, IUnmarshaller<RecurringCharge, JsonUnmarshallerContext> 
     {
         public RecurringCharge Unmarshall(XmlUnmarshallerContext context) 
         {
             RecurringCharge recurringCharge = new RecurringCharge();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -61,6 +62,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return recurringCharge;
+        }
+
+        public RecurringCharge Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static RecurringChargeUnmarshaller instance;

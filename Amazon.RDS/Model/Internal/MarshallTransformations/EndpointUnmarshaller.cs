@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Endpoint Unmarshaller
      /// </summary>
-    internal class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext> 
+    internal class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext>, IUnmarshaller<Endpoint, JsonUnmarshallerContext> 
     {
         public Endpoint Unmarshall(XmlUnmarshallerContext context) 
         {
             Endpoint endpoint = new Endpoint();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return endpoint;
+        }
+
+        public Endpoint Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static EndpointUnmarshaller instance;

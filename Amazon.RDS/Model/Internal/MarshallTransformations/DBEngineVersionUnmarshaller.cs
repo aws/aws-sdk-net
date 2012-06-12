@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DBEngineVersion Unmarshaller
      /// </summary>
-    internal class DBEngineVersionUnmarshaller : IUnmarshaller<DBEngineVersion, XmlUnmarshallerContext> 
+    internal class DBEngineVersionUnmarshaller : IUnmarshaller<DBEngineVersion, XmlUnmarshallerContext>, IUnmarshaller<DBEngineVersion, JsonUnmarshallerContext> 
     {
         public DBEngineVersion Unmarshall(XmlUnmarshallerContext context) 
         {
             DBEngineVersion dBEngineVersion = new DBEngineVersion();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -65,6 +66,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         dBEngineVersion.DBEngineVersionDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("SupportedCharacterSets/CharacterSet", targetDepth))
+                    {
+                        dBEngineVersion.SupportedCharacterSets.Add(CharacterSetUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -76,6 +83,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return dBEngineVersion;
+        }
+
+        public DBEngineVersion Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DBEngineVersionUnmarshaller instance;

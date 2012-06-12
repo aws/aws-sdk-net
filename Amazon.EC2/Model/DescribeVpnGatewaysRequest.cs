@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-04-01
+ *  API Version: 2012-05-01
  */
 
 using System;
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     /// 4. The VPCs the VPN gateway is attached to and the state of each
     /// attachment (attaching, attached, detaching, detached)
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-05-01/", IsNullable = false)]
     public class DescribeVpnGatewaysRequest
     {    
         private List<string> vpnGatewayIdField;

@@ -31,6 +31,7 @@ namespace Amazon.RDS.Model
         private string dBParameterGroupFamily;
         private string dBEngineDescription;
         private string dBEngineVersionDescription;
+        private List<CharacterSet> supportedCharacterSets = new List<CharacterSet>();
 
         /// <summary>
         /// The name of the database engine.
@@ -170,6 +171,51 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBEngineVersionDescription()
         {
             return this.dBEngineVersionDescription != null;       
+        }
+
+        /// <summary>
+        /// A list of the character sets supported by this engine for the <c>CharacterSetName</c> parameter of the CreateDBInstance API.
+        ///  
+        /// </summary>
+        public List<CharacterSet> SupportedCharacterSets
+        {
+            get { return this.supportedCharacterSets; }
+            set { this.supportedCharacterSets = value; }
+        }
+        /// <summary>
+        /// Adds elements to the SupportedCharacterSets collection
+        /// </summary>
+        /// <param name="supportedCharacterSets">The values to add to the SupportedCharacterSets collection </param>
+        /// <returns>this instance</returns>
+        public DBEngineVersion WithSupportedCharacterSets(params CharacterSet[] supportedCharacterSets)
+        {
+            foreach (CharacterSet element in supportedCharacterSets)
+            {
+                this.supportedCharacterSets.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the SupportedCharacterSets collection
+        /// </summary>
+        /// <param name="supportedCharacterSets">The values to add to the SupportedCharacterSets collection </param>
+        /// <returns>this instance</returns>
+        public DBEngineVersion WithSupportedCharacterSets(IEnumerable<CharacterSet> supportedCharacterSets)
+        {
+            foreach (CharacterSet element in supportedCharacterSets)
+            {
+                this.supportedCharacterSets.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if SupportedCharacterSets property is set
+        internal bool IsSetSupportedCharacterSets()
+        {
+            return this.supportedCharacterSets.Count > 0;       
         }
     }
 }

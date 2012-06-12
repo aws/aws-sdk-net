@@ -40,7 +40,7 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? createDate;
 
         /// <summary>
-        /// Path to the user name. For more information about paths, see <a
+        /// Path to the user. For more information about paths, see <a
         /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
         /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
         ///  

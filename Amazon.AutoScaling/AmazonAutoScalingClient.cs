@@ -59,7 +59,7 @@ namespace Amazon.AutoScaling
         ///
         /// </summary>
         public AmazonAutoScalingClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonAutoScalingConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with the credentials defined in the App.config.
@@ -78,7 +78,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// <param name="config">The AmazonAutoScaling Configuration Object</param>
         public AmazonAutoScalingClient(AmazonAutoScalingConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with AWS Credentials

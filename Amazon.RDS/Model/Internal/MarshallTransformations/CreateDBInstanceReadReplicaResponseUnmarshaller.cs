@@ -69,6 +69,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 return new InstanceQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBSubnetGroupNotFoundFault"))
+            {
+                return new DBSubnetGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("DBInstanceAlreadyExists"))
             {
                 return new DBInstanceAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

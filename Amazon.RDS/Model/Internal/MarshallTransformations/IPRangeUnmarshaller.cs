@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   IPRange Unmarshaller
      /// </summary>
-    internal class IPRangeUnmarshaller : IUnmarshaller<IPRange, XmlUnmarshallerContext> 
+    internal class IPRangeUnmarshaller : IUnmarshaller<IPRange, XmlUnmarshallerContext>, IUnmarshaller<IPRange, JsonUnmarshallerContext> 
     {
         public IPRange Unmarshall(XmlUnmarshallerContext context) 
         {
             IPRange iPRange = new IPRange();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return iPRange;
+        }
+
+        public IPRange Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static IPRangeUnmarshaller instance;

@@ -27,7 +27,8 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the ModifyDBParameterGroup operation.
     /// <para> Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName,
     /// ParameterValue, and ApplyMethod. A maximum of 20 parameters can be modified in a single request. </para> <para><b>NOTE:</b> The
-    /// apply-immediate method can only be used for dynamic parameters; the pending-reboot method can be used for either dynamic or static
+    /// apply-immediate method can be used only for dynamic parameters; the pending-reboot method can be used with MySQL and Oracle DB Instances for
+    /// either dynamic or static parameters. For Microsoft SQL Server DB Instances, the pending-reboot method can be used only for static
     /// parameters. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.ModifyDBParameterGroup"/>

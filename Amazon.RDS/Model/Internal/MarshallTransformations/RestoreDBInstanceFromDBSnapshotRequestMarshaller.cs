@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RestoreDBInstanceFromDBSnapshot");
-            request.Parameters.Add("Version", "2012-01-15");
+            request.Parameters.Add("Version", "2012-04-23");
             if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetDBInstanceIdentifier())
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.DBInstanceIdentifier));
@@ -78,6 +78,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetEngine())
             {
                 request.Parameters.Add("Engine", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.Engine));
+            }
+            if (restoreDBInstanceFromDBSnapshotRequest != null && restoreDBInstanceFromDBSnapshotRequest.IsSetOptionGroupName())
+            {
+                request.Parameters.Add("OptionGroupName", StringUtils.FromString(restoreDBInstanceFromDBSnapshotRequest.OptionGroupName));
             }
 
             return request;

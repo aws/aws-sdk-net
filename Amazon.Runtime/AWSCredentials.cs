@@ -824,4 +824,255 @@ namespace Amazon.Runtime
 
         #endregion
     }
+
+    /// <summary>
+    /// Credentials that are retrieved from the Instance Profile service on an EC2 instance
+    /// </summary>
+    public class InstanceProfileAWSCredentials : RefreshingAWSCredentials
+    {
+        #region Properties
+
+        /// <summary>
+        /// Role for which the credentials are retrieved
+        /// </summary>
+        public string Role { get; set; }
+
+        #endregion
+
+
+        #region Overrides
+
+        protected override CredentialsRefreshState GenerateNewCredentials()
+        {
+            CredentialsRefreshState state = GetRefreshState();
+            return state;
+        }
+
+        #endregion
+
+
+        #region Constructors
+
+        /// <summary>
+        /// Constructs a InstanceProfileAWSCredentials object for specific role
+        /// </summary>
+        /// <param name="role">Role to use</param>
+        public InstanceProfileAWSCredentials(string role)
+        {
+            Role = role;
+        }
+
+        /// <summary>
+        /// Constructs a InstanceProfileAWSCredentials object for the first found role
+        /// </summary>
+        public InstanceProfileAWSCredentials()
+            : this(GetFirstRole()) { }
+
+        #endregion
+
+
+        #region Public static methods
+
+        /// <summary>
+        /// Retrieves a list of all roles available through current InstanceProfile service
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<string> GetAvailableRoles()
+        {
+            string allAliases = GetContents(RolesUri);
+            if (string.IsNullOrEmpty(allAliases))
+                yield break;
+
+            string[] parts = allAliases.Split(AliasSeparators, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var part in parts)
+            {
+                var trim = part.Trim();
+                if (!string.IsNullOrEmpty(trim))
+                    yield return trim;
+            }
+        }
+
+        #endregion
+
+
+        #region Private members
+
+        private static string[] AliasSeparators = new string[] { "<br/>" };
+        private static string Server = "http://169.254.169.254";
+        private static string RolesPath = "/latest/meta-data/iam/security-credentials/";
+        private static string InfoPath = "/latest/meta-data/iam/info";
+        private static string SuccessCode = "Success";
+
+        private static Uri RolesUri
+        {
+            get
+            {
+                return new Uri(Server + RolesPath);
+            }
+        }
+        private Uri CurrentRoleUri
+        {
+            get
+            {
+                return new Uri(Server + RolesPath + Role);
+            }
+        }
+        private Uri InfoUri
+        {
+            get
+            {
+                return new Uri(Server + InfoPath);
+            }
+        }
+
+        private CredentialsRefreshState GetRefreshState()
+        {
+            SecurityInfo info = GetServiceInfo();
+            if (!string.IsNullOrEmpty(info.Message))
+            {
+                throw new AmazonServiceException(string.Format(
+                    "Unable to retrieve credentials. Message = \"{1}\".",
+                    info.Message));
+            }
+            SecurityCredentials credentials = GetRoleCredentials();
+
+            CredentialsRefreshState refreshState = new CredentialsRefreshState
+            {
+                Credentials = new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token, false),
+                Expiration = credentials.Expiration
+            };
+
+            return refreshState;
+        }
+
+        private SecurityInfo GetServiceInfo()
+        {
+            string json = GetContents(InfoUri);
+            SecurityInfo info = JsonMapper.ToObject<SecurityInfo>(json);
+            ValidateResponse(info);
+            return info;
+        }
+
+        private SecurityCredentials GetRoleCredentials()
+        {
+            string json = GetContents(CurrentRoleUri);
+            SecurityCredentials credentials = JsonMapper.ToObject<SecurityCredentials>(json);
+            ValidateResponse(credentials);
+            return credentials;
+        }
+
+        private static void ValidateResponse(SecurityBase response)
+        {
+            if (!string.Equals(response.Code, SuccessCode, StringComparison.OrdinalIgnoreCase))
+            {
+                throw new AmazonServiceException(string.Format(
+                    "Unable to retrieve credentials. Code = \"{0}\". Message = \"{1}\".",
+                    response.Code, response.Message));
+            }
+        }
+
+        private static string GetContents(Uri uri)
+        {
+            try
+            {
+                HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    return reader.ReadToEnd();
+                }
+            }
+            catch (WebException)
+            {
+                throw new AmazonServiceException("Unable to reach credentials server");
+            }
+        }
+
+        private static string GetFirstRole()
+        {
+            IEnumerable<string> roles = GetAvailableRoles();
+            foreach (string role in roles)
+            {
+                return role;
+            }
+
+            // no roles found
+            throw new InvalidOperationException("No roles found");
+        }
+
+        #endregion
+
+
+        #region Private serialization classes
+
+        private class SecurityBase
+        {
+            public string Code { get; set; }
+            public string Message { get; set; }
+            public DateTime LastUpdated { get; set; }
+        }
+
+        private class SecurityInfo : SecurityBase
+        {
+            public string InstanceProfileArn { get; set; }
+            public string InstanceProfileId { get; set; }
+        }
+
+        private class SecurityCredentials : SecurityBase
+        {
+            public string Type { get; set; }
+            public string AccessKeyId { get; set; }
+            public string SecretAccessKey { get; set; }
+            public string Token { get; set; }
+            public DateTime Expiration { get; set; }
+        }
+
+        #endregion
+    }
+
+
+    // Credentials fallback mechanism
+    internal static class FallbackCredentialsFactory
+    {
+        static FallbackCredentialsFactory()
+        {
+            Reset();
+        }
+
+        public delegate AWSCredentials CredentialsGenerator();
+        public static List<CredentialsGenerator> CredentialsGenerators { get; set; }
+        public static void Reset()
+        {
+            CredentialsGenerators = new List<CredentialsGenerator>
+            {
+                () => new EnvironmentAWSCredentials(),
+                () => new InstanceProfileAWSCredentials()
+            };
+        }
+
+        internal static AWSCredentials GetCredentials()
+        {
+            AWSCredentials credentials = null;
+
+            foreach (CredentialsGenerator generator in CredentialsGenerators)
+            {
+                try
+                {
+                    credentials = generator();
+                }
+                catch
+                {
+                    credentials = null;
+                }
+
+                if (credentials != null)
+                    return credentials;
+            }
+
+            if (credentials == null)
+                throw new AmazonServiceException("Unable to find credentials");
+
+            return credentials;
+        }
+    }
 }

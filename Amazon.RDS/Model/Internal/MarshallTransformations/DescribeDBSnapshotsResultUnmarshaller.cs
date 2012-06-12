@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeDBSnapshotsResult Unmarshaller
      /// </summary>
-    internal class DescribeDBSnapshotsResultUnmarshaller : IUnmarshaller<DescribeDBSnapshotsResult, XmlUnmarshallerContext> 
+    internal class DescribeDBSnapshotsResultUnmarshaller : IUnmarshaller<DescribeDBSnapshotsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeDBSnapshotsResult, JsonUnmarshallerContext> 
     {
         public DescribeDBSnapshotsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeDBSnapshotsResult describeDBSnapshotsResult = new DescribeDBSnapshotsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return describeDBSnapshotsResult;
+        }
+
+        public DescribeDBSnapshotsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeDBSnapshotsResultUnmarshaller instance;

@@ -30,7 +30,7 @@ namespace Amazon.S3.Model
     /// The InitiateMultipartUploadRequest contains the parameters used for the InitiateMultipartUpload method.
     /// <br />Required Parameters: BucketName, Key
     /// </summary>
-    public class InitiateMultipartUploadRequest : S3Request
+    public class InitiateMultipartUploadRequest : S3PutWithACLRequest
     {
 
         private string bucketName;
@@ -305,6 +305,23 @@ namespace Amazon.S3.Model
         public InitiateMultipartUploadRequest WithStorageClass(S3StorageClass sClass)
         {
             this.storageClass = sClass;
+            return this;
+        }
+
+        #endregion
+
+        #region Grants
+
+        /// <summary>
+        /// Adds Custom Access Control Lists to this request.
+        /// Please refer to <see cref="T:Amazon.S3.Model.S3Grant"/> for information on
+        /// S3 Grants.
+        /// </summary>
+        /// <param name="grants">One or more S3 Grants.</param>
+        /// <returns>The request with the Grants set.</returns>
+        public InitiateMultipartUploadRequest WithGrants(params S3Grant[] grants)
+        {
+            this.Grants.AddRange(grants);
             return this;
         }
 

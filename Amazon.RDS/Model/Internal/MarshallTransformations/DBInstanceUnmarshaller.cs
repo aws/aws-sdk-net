@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DBInstance Unmarshaller
      /// </summary>
-    internal class DBInstanceUnmarshaller : IUnmarshaller<DBInstance, XmlUnmarshallerContext> 
+    internal class DBInstanceUnmarshaller : IUnmarshaller<DBInstance, XmlUnmarshallerContext>, IUnmarshaller<DBInstance, JsonUnmarshallerContext> 
     {
         public DBInstance Unmarshall(XmlUnmarshallerContext context) 
         {
             DBInstance dBInstance = new DBInstance();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -182,6 +183,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         dBInstance.LicenseModel = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("OptionGroupMembership", targetDepth))
+                    {
+                        dBInstance.OptionGroupMembership = OptionGroupMembershipUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("CharacterSetName", targetDepth))
+                    {
+                        dBInstance.CharacterSetName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -193,6 +206,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return dBInstance;
+        }
+
+        public DBInstance Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DBInstanceUnmarshaller instance;

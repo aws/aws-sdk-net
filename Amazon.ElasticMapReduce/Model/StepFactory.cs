@@ -196,14 +196,19 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// The available Hive versions.  These are only available on Hadoop 0.20
-        /// Hive_0_5 Hive 0.5
-        /// Hive_0_7 Hive 0.7
+        /// The available Hive versions.
         /// </summary>
         public class HiveVersion
         {
             public static readonly HiveVersion Hive_0_5 = new HiveVersion("0.5");
             public static readonly HiveVersion Hive_0_7 = new HiveVersion("0.7");
+            public static readonly HiveVersion Hive_0_7_1 = new HiveVersion("0.7.1");
+            public static readonly HiveVersion Hive_0_7_1_1 = new HiveVersion("0.7.1.1");
+            public static readonly HiveVersion Hive_0_7_1_2 = new HiveVersion("0.7.1.2");
+            public static readonly HiveVersion Hive_0_7_1_3 = new HiveVersion("0.7.1.3");
+            public static readonly HiveVersion Hive_0_7_1_4 = new HiveVersion("0.7.1.4");
+            public static readonly HiveVersion Hive_0_8_1 = new HiveVersion("0.8.1");
+            public static readonly HiveVersion Hive_Latest = new HiveVersion("latest");
 
             string _version;
 

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-04-01
+ *  API Version: 2012-05-01
  */
 
 using System;
@@ -29,11 +29,12 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Instance Status Detail Type
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-05-01/", IsNullable = false)]
     public class InstanceStatusDetailType
     {
         private string nameField;
         private string statusField;
+        private string impairedSinceField;
 
         /// <summary>
         /// Gets and sets the Name property.
@@ -101,6 +102,35 @@ namespace Amazon.EC2.Model
         public bool IsSetStatus()
         {
             return !string.IsNullOrEmpty(this.statusField);
+        }
+
+        /// <summary>
+        /// The time when a status check failed. For an instance that was launched and impaired, this is the time when the instance was launched.
+        /// </summary>
+        public string ImpairedSince
+        {
+            get { return this.impairedSinceField; }
+            set { this.impairedSinceField = value; }
+        }
+
+        /// <summary>
+        /// Sets the time when a status check failed.
+        /// </summary>
+        /// <param name="impairedSince">The time of the status check failure</param>
+        /// <returns>this instance</returns>
+        public InstanceStatusDetailType WithImpairedSince(string impairedSince)
+        {
+            this.impairedSinceField = impairedSince;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the ImpairedSince property is set.
+        /// </summary>
+        /// <returns>True if the ImpairedSince property is set</returns>
+        public bool IsSetImpairedSince()
+        {
+            return !string.IsNullOrEmpty(this.impairedSinceField);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RestoreDBInstanceToPointInTime");
-            request.Parameters.Add("Version", "2012-01-15");
+            request.Parameters.Add("Version", "2012-04-23");
             if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetSourceDBInstanceIdentifier())
             {
                 request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.SourceDBInstanceIdentifier));
@@ -86,6 +86,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetEngine())
             {
                 request.Parameters.Add("Engine", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.Engine));
+            }
+            if (restoreDBInstanceToPointInTimeRequest != null && restoreDBInstanceToPointInTimeRequest.IsSetOptionGroupName())
+            {
+                request.Parameters.Add("OptionGroupName", StringUtils.FromString(restoreDBInstanceToPointInTimeRequest.OptionGroupName));
             }
 
             return request;

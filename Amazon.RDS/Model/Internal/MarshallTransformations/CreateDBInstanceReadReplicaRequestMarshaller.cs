@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createDBInstanceReadReplicaRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBInstanceReadReplica");
-            request.Parameters.Add("Version", "2012-01-15");
+            request.Parameters.Add("Version", "2012-04-23");
             if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetDBInstanceIdentifier())
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(createDBInstanceReadReplicaRequest.DBInstanceIdentifier));
@@ -58,6 +58,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetAutoMinorVersionUpgrade())
             {
                 request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(createDBInstanceReadReplicaRequest.AutoMinorVersionUpgrade));
+            }
+            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetOptionGroupName())
+            {
+                request.Parameters.Add("OptionGroupName", StringUtils.FromString(createDBInstanceReadReplicaRequest.OptionGroupName));
             }
 
             return request;

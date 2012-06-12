@@ -53,7 +53,7 @@ namespace Amazon.CloudFront
         ///
         /// </summary>
         public AmazonCloudFrontClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonCloudFrontConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with the credentials defined in the App.config.
@@ -72,7 +72,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="config">The AmazonCloudFront Configuration Object</param>
         public AmazonCloudFrontClient(AmazonCloudFrontConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with AWS Credentials

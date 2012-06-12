@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DBSecurityGroupMembership Unmarshaller
      /// </summary>
-    internal class DBSecurityGroupMembershipUnmarshaller : IUnmarshaller<DBSecurityGroupMembership, XmlUnmarshallerContext> 
+    internal class DBSecurityGroupMembershipUnmarshaller : IUnmarshaller<DBSecurityGroupMembership, XmlUnmarshallerContext>, IUnmarshaller<DBSecurityGroupMembership, JsonUnmarshallerContext> 
     {
         public DBSecurityGroupMembership Unmarshall(XmlUnmarshallerContext context) 
         {
             DBSecurityGroupMembership dBSecurityGroupMembership = new DBSecurityGroupMembership();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return dBSecurityGroupMembership;
+        }
+
+        public DBSecurityGroupMembership Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DBSecurityGroupMembershipUnmarshaller instance;

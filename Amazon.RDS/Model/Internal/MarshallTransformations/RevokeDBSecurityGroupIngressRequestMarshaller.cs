@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(revokeDBSecurityGroupIngressRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RevokeDBSecurityGroupIngress");
-            request.Parameters.Add("Version", "2012-01-15");
+            request.Parameters.Add("Version", "2012-04-23");
             if (revokeDBSecurityGroupIngressRequest != null && revokeDBSecurityGroupIngressRequest.IsSetDBSecurityGroupName())
             {
                 request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(revokeDBSecurityGroupIngressRequest.DBSecurityGroupName));

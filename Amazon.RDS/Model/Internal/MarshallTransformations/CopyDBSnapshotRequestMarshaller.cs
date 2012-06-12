@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(copyDBSnapshotRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CopyDBSnapshot");
-            request.Parameters.Add("Version", "2012-01-15");
+            request.Parameters.Add("Version", "2012-04-23");
             if (copyDBSnapshotRequest != null && copyDBSnapshotRequest.IsSetSourceDBSnapshotIdentifier())
             {
                 request.Parameters.Add("SourceDBSnapshotIdentifier", StringUtils.FromString(copyDBSnapshotRequest.SourceDBSnapshotIdentifier));

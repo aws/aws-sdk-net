@@ -64,7 +64,7 @@ namespace Amazon.StorageGateway
         ///
         /// </summary>
         public AmazonStorageGatewayClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonStorageGatewayConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonStorageGatewayConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonStorageGatewayClient with the credentials defined in the App.config.
@@ -83,7 +83,7 @@ namespace Amazon.StorageGateway
         /// </summary>
         /// <param name="config">The AmazonStorageGateway Configuration Object</param>
         public AmazonStorageGatewayClient(AmazonStorageGatewayConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonStorageGatewayClient with AWS Credentials

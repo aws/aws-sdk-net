@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createDBSecurityGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBSecurityGroup");
-            request.Parameters.Add("Version", "2012-01-15");
+            request.Parameters.Add("Version", "2012-04-23");
             if (createDBSecurityGroupRequest != null && createDBSecurityGroupRequest.IsSetDBSecurityGroupName())
             {
                 request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(createDBSecurityGroupRequest.DBSecurityGroupName));

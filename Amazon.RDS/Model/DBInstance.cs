@@ -57,6 +57,8 @@ namespace Amazon.RDS.Model
         private string readReplicaSourceDBInstanceIdentifier;
         private List<string> readReplicaDBInstanceIdentifiers = new List<string>();
         private string licenseModel;
+        private OptionGroupMembership optionGroupMembership;
+        private string characterSetName;
 
         /// <summary>
         /// Contains a user-supplied database identifier. This is the unique key that identifies a DB Instance.
@@ -784,6 +786,62 @@ namespace Amazon.RDS.Model
         internal bool IsSetLicenseModel()
         {
             return this.licenseModel != null;       
+        }
+
+        /// <summary>
+        /// Specifies the name and status of the option group that this instance belongs to.
+        ///  
+        /// </summary>
+        public OptionGroupMembership OptionGroupMembership
+        {
+            get { return this.optionGroupMembership; }
+            set { this.optionGroupMembership = value; }
+        }
+
+        /// <summary>
+        /// Sets the OptionGroupMembership property
+        /// </summary>
+        /// <param name="optionGroupMembership">The value to set for the OptionGroupMembership property </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithOptionGroupMembership(OptionGroupMembership optionGroupMembership)
+        {
+            this.optionGroupMembership = optionGroupMembership;
+            return this;
+        }
+            
+
+        // Check to see if OptionGroupMembership property is set
+        internal bool IsSetOptionGroupMembership()
+        {
+            return this.optionGroupMembership != null;       
+        }
+
+        /// <summary>
+        /// If present, specifies the name of the character set that this instance is associated with.
+        ///  
+        /// </summary>
+        public string CharacterSetName
+        {
+            get { return this.characterSetName; }
+            set { this.characterSetName = value; }
+        }
+
+        /// <summary>
+        /// Sets the CharacterSetName property
+        /// </summary>
+        /// <param name="characterSetName">The value to set for the CharacterSetName property </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithCharacterSetName(string characterSetName)
+        {
+            this.characterSetName = characterSetName;
+            return this;
+        }
+            
+
+        // Check to see if CharacterSetName property is set
+        internal bool IsSetCharacterSetName()
+        {
+            return this.characterSetName != null;       
         }
     }
 }

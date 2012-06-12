@@ -207,7 +207,8 @@ namespace Amazon.Runtime
 
         private void InvokeConfiguredRequest(AsyncResult asyncResult)
         {
-            logger.DebugFormat("Starting request {0} at {1}", asyncResult.RequestName, this.config.ServiceURL);
+            if(logger.IsDebugEnabled)
+                logger.DebugFormat("Starting request {0} at {1}", asyncResult.RequestName, this.config.ServiceURL);
 
             HttpWebRequest webRequest = ConfigureWebRequest(asyncResult);
             asyncResult.RequestState = new RequestState(webRequest, asyncResult.RequestData);
@@ -273,7 +274,8 @@ namespace Amazon.Runtime
                 requestData = request.Content;
             }
 
-            this.logger.DebugFormat("Request body's content size {0}", requestData.Length);
+            if (logger.IsDebugEnabled)
+                this.logger.DebugFormat("Request body's content size {0}", requestData.Length);
             return requestData;
         }
 
@@ -417,7 +419,8 @@ namespace Amazon.Runtime
                 asyncResult.RequestState.WebRequest.Abort();
                 asyncResult.Exception = e;
                 shouldRetry = false;
-                logger.Error(string.Format("Error configuring web request {0} to {1}.", asyncResult.RequestName, asyncResult.Request.Endpoint.ToString()), e);
+                if (logger.IsErrorEnabled)
+                    logger.Error(string.Format("Error configuring web request {0} to {1}.", asyncResult.RequestName, asyncResult.Request.Endpoint.ToString()), e);
             }
             finally
             {
@@ -435,7 +438,8 @@ namespace Amazon.Runtime
             if (isInnerExceptionThreadAbort(e))
                 throw e;
 
-            this.logger.Error(string.Format("IOException making request {0} to {1}.", asyncResult.RequestName, asyncResult.Request.Endpoint.ToString()), e);
+            if (logger.IsErrorEnabled)
+                this.logger.Error(string.Format("IOException making request {0} to {1}.", asyncResult.RequestName, asyncResult.Request.Endpoint.ToString()), e);
             if (httpResponse != null)
             {
                 httpResponse.Close();
@@ -446,12 +450,13 @@ namespace Amazon.Runtime
 
             if (asyncResult.RetriesAttempt <= config.MaxErrorRetry)
             {
-                this.logger.Error(
-                    string.Format("IOException making request {0} to {1}. Attempting retry {2}.",
-                        asyncResult.RequestName,
-                        asyncResult.Request.Endpoint.ToString(),
-                        asyncResult.RetriesAttempt),
-                    e);
+                if (logger.IsErrorEnabled)
+                    this.logger.Error(
+                        string.Format("IOException making request {0} to {1}. Attempting retry {2}.",
+                            asyncResult.RequestName,
+                            asyncResult.Request.Endpoint.ToString(),
+                            asyncResult.RetriesAttempt),
+                        e);
                 return true;
             }
             else
@@ -488,7 +493,8 @@ namespace Amazon.Runtime
                     UnmarshallerContext errorContext = unmarshaller.CreateContext(httpErrorResponse, config.LogResponse);
                     if (config.LogResponse)
                     {
-                        this.logger.InfoFormat("Received error response: [{0}]", errorContext.ResponseBody);
+                        if (logger.IsInfoEnabled)
+                            this.logger.InfoFormat("Received error response: [{0}]", errorContext.ResponseBody);
                     }
                     errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
                 }
@@ -496,13 +502,15 @@ namespace Amazon.Runtime
 
                 if (isTemporaryRedirect(statusCode, redirectedLocation))
                 {
-                    this.logger.InfoFormat("Request {0} is being redirected to {1}.", asyncResult.RequestName, redirectedLocation);
+                    if (logger.IsInfoEnabled)
+                        this.logger.InfoFormat("Request {0} is being redirected to {1}.", asyncResult.RequestName, redirectedLocation);
                     asyncResult.Request.Endpoint = new Uri(redirectedLocation);
                     return true;
                 }
                 else if (ShouldRetry(statusCode, this.config, errorResponseException, asyncResult.RetriesAttempt))
                 {
-                    this.logger.InfoFormat("Retry number {0} for request {1}.", asyncResult.RetriesAttempt, asyncResult.RequestName);
+                    if (logger.IsInfoEnabled)
+                        this.logger.InfoFormat("Retry number {0} for request {1}.", asyncResult.RetriesAttempt, asyncResult.RequestName);
                     pauseExponentially(asyncResult.RetriesAttempt);
                     return true;
                 }
@@ -510,12 +518,14 @@ namespace Amazon.Runtime
 
             if (errorResponseException != null)
             {
-                this.logger.Error(string.Format("Error making request {0}.", asyncResult.RequestName), errorResponseException);
+                if (logger.IsErrorEnabled)
+                    this.logger.Error(string.Format("Error making request {0}.", asyncResult.RequestName), errorResponseException);
                 throw errorResponseException;
             }
 
             AmazonServiceException excep = new AmazonServiceException("Unable to make request", we, statusCode);
-            this.logger.Error(string.Format("Error making request {0}.", asyncResult.RequestName), excep);
+            if (logger.IsErrorEnabled)
+                this.logger.Error(string.Format("Error making request {0}.", asyncResult.RequestName), excep);
             throw excep;
         }
 
@@ -574,11 +584,13 @@ namespace Amazon.Runtime
                             config.ProxyUsername,
                             config.ProxyPassword ?? String.Empty
                             );
-                        this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1} for user {2}.", config.ProxyHost, config.ProxyPort, config.ProxyUsername);
+                        if (logger.IsDebugEnabled)
+                            this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1} for user {2}.", config.ProxyHost, config.ProxyPort, config.ProxyUsername);
                     }
                     else
                     {
-                        this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
+                        if (logger.IsDebugEnabled)
+                            this.logger.DebugFormat("Configured request to use proxy with host {0} and port {1}.", config.ProxyHost, config.ProxyPort);
                     }
                     request.Proxy = proxy;
                 }

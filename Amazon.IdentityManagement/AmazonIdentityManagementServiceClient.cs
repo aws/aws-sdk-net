@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement
         ///
         /// </summary>
         public AmazonIdentityManagementServiceClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonIdentityManagementServiceConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityManagementServiceConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with the credentials defined in the App.config.
@@ -78,7 +78,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// <param name="config">The AmazonIdentityManagementService Configuration Object</param>
         public AmazonIdentityManagementServiceClient(AmazonIdentityManagementServiceConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with AWS Credentials
@@ -454,8 +454,9 @@ namespace Amazon.IdentityManagement
         /// <para>Adds (or updates) a policy document associated with the specified user. For information about policies, refer to Overview of Policies
         /// in <i>Using AWS Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate
         /// with a user, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy
-        /// documents can be large, you should use POST rather than GET when calling PutUserPolicy. For more information, see Making Query Requests in
-        /// Using AWS Identity and Access Management.</para>
+        /// documents can be large, you should use POST rather than GET when calling PutUserPolicy. For information about setting up signatures and
+        /// authorization through the API, go to Signing AWS API Requests in the AWS General Reference. For general information about using the Query
+        /// API with IAM, go to Making Query Requests in Using IAM.</para>
         /// </summary>
         /// 
         /// <param name="putUserPolicyRequest">Container for the necessary parameters to execute the PutUserPolicy service method on
@@ -789,6 +790,72 @@ namespace Amazon.IdentityManagement
 
         #endregion
     
+        #region PutRolePolicy
+
+        /// <summary>
+        /// <para>Adds (or updates) a policy document associated with the specified role. For information about policies, refer to Overview of Policies
+        /// in <i>Using AWS Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate
+        /// with a role, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy
+        /// documents can be large, you should use POST rather than GET when calling PutRolePolicy. For information about setting up signatures and
+        /// authorization through the API, go to Signing AWS API Requests in the AWS General Reference. For general information about using the Query
+        /// API with IAM, go to Making Query Requests in Using IAM.</para>
+        /// </summary>
+        /// 
+        /// <param name="putRolePolicyRequest">Container for the necessary parameters to execute the PutRolePolicy service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <exception cref="MalformedPolicyDocumentException"/>
+        /// <exception cref="NoSuchEntityException"/>
+        /// <exception cref="LimitExceededException"/>
+        public PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest putRolePolicyRequest)
+        {
+            IAsyncResult asyncResult = invokePutRolePolicy(putRolePolicyRequest, null, null, true);
+            return EndPutRolePolicy(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRolePolicy operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.PutRolePolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="putRolePolicyRequest">Container for the necessary parameters to execute the PutRolePolicy operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginPutRolePolicy(PutRolePolicyRequest putRolePolicyRequest, AsyncCallback callback, object state)
+        {
+            return invokePutRolePolicy(putRolePolicyRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutRolePolicy operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.PutRolePolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRolePolicy.</param>
+        public PutRolePolicyResponse EndPutRolePolicy(IAsyncResult asyncResult)
+        {
+            return endOperation<PutRolePolicyResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokePutRolePolicy(PutRolePolicyRequest putRolePolicyRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new PutRolePolicyRequestMarshaller().Marshall(putRolePolicyRequest);
+            var unmarshaller = PutRolePolicyResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region UpdateSigningCertificate
 
         /// <summary>
@@ -911,70 +978,6 @@ namespace Amazon.IdentityManagement
 
         #endregion
     
-        #region UpdateGroup
-
-        /// <summary>
-        /// <para>Updates the name and/or the path of the specified group.</para> <para><b>IMPORTANT:</b> You should understand the implications of
-        /// changing a group's path or name. For more information, see Renaming Users and Groups in Using AWS Identity and Access Management. </para>
-        /// <para><b>NOTE:</b>To change a group name the requester must have appropriate permissions on both the source object and the target object.
-        /// For example, to change Managers to MGRs, the entity making the request must have permission on Managers and MGRs, or must have permission on
-        /// all (*). For more information about permissions, see Permissions and Policies. </para>
-        /// </summary>
-        /// 
-        /// <param name="updateGroupRequest">Container for the necessary parameters to execute the UpdateGroup service method on
-        ///          AmazonIdentityManagementService.</param>
-        /// 
-        /// <exception cref="NoSuchEntityException"/>
-        /// <exception cref="EntityAlreadyExistsException"/>
-        public UpdateGroupResponse UpdateGroup(UpdateGroupRequest updateGroupRequest)
-        {
-            IAsyncResult asyncResult = invokeUpdateGroup(updateGroupRequest, null, null, true);
-            return EndUpdateGroup(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UpdateGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateGroup"/>
-        /// </summary>
-        /// 
-        /// <param name="updateGroupRequest">Container for the necessary parameters to execute the UpdateGroup operation on
-        ///          AmazonIdentityManagementService.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginUpdateGroup(UpdateGroupRequest updateGroupRequest, AsyncCallback callback, object state)
-        {
-            return invokeUpdateGroup(updateGroupRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the UpdateGroup operation.
-        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateGroup"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGroup.</param>
-        public UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult)
-        {
-            return endOperation<UpdateGroupResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeUpdateGroup(UpdateGroupRequest updateGroupRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new UpdateGroupRequestMarshaller().Marshall(updateGroupRequest);
-            var unmarshaller = UpdateGroupResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        #endregion
-    
         #region ListUsers
 
         /// <summary>
@@ -1050,6 +1053,70 @@ namespace Amazon.IdentityManagement
         {
             return ListUsers(new ListUsersRequest());
         }
+        
+
+        #endregion
+    
+        #region UpdateGroup
+
+        /// <summary>
+        /// <para>Updates the name and/or the path of the specified group.</para> <para><b>IMPORTANT:</b> You should understand the implications of
+        /// changing a group's path or name. For more information, see Renaming Users and Groups in Using AWS Identity and Access Management. </para>
+        /// <para><b>NOTE:</b>To change a group name the requester must have appropriate permissions on both the source object and the target object.
+        /// For example, to change Managers to MGRs, the entity making the request must have permission on Managers and MGRs, or must have permission on
+        /// all (*). For more information about permissions, see Permissions and Policies. </para>
+        /// </summary>
+        /// 
+        /// <param name="updateGroupRequest">Container for the necessary parameters to execute the UpdateGroup service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        /// <exception cref="EntityAlreadyExistsException"/>
+        public UpdateGroupResponse UpdateGroup(UpdateGroupRequest updateGroupRequest)
+        {
+            IAsyncResult asyncResult = invokeUpdateGroup(updateGroupRequest, null, null, true);
+            return EndUpdateGroup(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGroup operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateGroup"/>
+        /// </summary>
+        /// 
+        /// <param name="updateGroupRequest">Container for the necessary parameters to execute the UpdateGroup operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginUpdateGroup(UpdateGroupRequest updateGroupRequest, AsyncCallback callback, object state)
+        {
+            return invokeUpdateGroup(updateGroupRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateGroup operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateGroup"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGroup.</param>
+        public UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult)
+        {
+            return endOperation<UpdateGroupResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeUpdateGroup(UpdateGroupRequest updateGroupRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new UpdateGroupRequestMarshaller().Marshall(updateGroupRequest);
+            var unmarshaller = UpdateGroupResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
         
 
         #endregion
@@ -1330,8 +1397,9 @@ namespace Amazon.IdentityManagement
         /// key, and an optional certificate chain, which should all be PEM-encoded.</para> <para>For information about the number of server
         /// certificates you can upload, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
         /// <para><b>NOTE:</b>Because the body of the public key certificate, private key, and the certificate chain can be large, you should use POST
-        /// rather than GET when calling UploadServerCertificate. For more information, see Making Query Requests in Using AWS Identity and Access
-        /// Management.</para>
+        /// rather than GET when calling UploadServerCertificate. For information about setting up signatures and authorization through the API, go to
+        /// Signing AWS API Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query
+        /// Requests in Using IAM.</para>
         /// </summary>
         /// 
         /// <param name="uploadServerCertificateRequest">Container for the necessary parameters to execute the UploadServerCertificate service method on
@@ -1697,6 +1765,66 @@ namespace Amazon.IdentityManagement
         {
             IRequest irequest = new RemoveUserFromGroupRequestMarshaller().Marshall(removeUserFromGroupRequest);
             var unmarshaller = RemoveUserFromGroupResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DeleteRole
+
+        /// <summary>
+        /// <para>Deletes the specified role. The role must not have any attached policies.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteRoleRequest">Container for the necessary parameters to execute the DeleteRole service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        /// <exception cref="DeleteConflictException"/>
+        public DeleteRoleResponse DeleteRole(DeleteRoleRequest deleteRoleRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteRole(deleteRoleRequest, null, null, true);
+            return EndDeleteRole(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRole operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteRole"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteRoleRequest">Container for the necessary parameters to execute the DeleteRole operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeleteRole(DeleteRoleRequest deleteRoleRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteRole(deleteRoleRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteRole operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteRole"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRole.</param>
+        public DeleteRoleResponse EndDeleteRole(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteRoleResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteRole(DeleteRoleRequest deleteRoleRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteRoleRequestMarshaller().Marshall(deleteRoleRequest);
+            var unmarshaller = DeleteRoleResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -2161,6 +2289,85 @@ namespace Amazon.IdentityManagement
 
         #endregion
     
+        #region ListInstanceProfiles
+
+        /// <summary>
+        /// <para>Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list.</para> <para>You
+        /// can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+        /// </summary>
+        /// 
+        /// <param name="listInstanceProfilesRequest">Container for the necessary parameters to execute the ListInstanceProfiles service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <returns>The response from the ListInstanceProfiles service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        public ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest)
+        {
+            IAsyncResult asyncResult = invokeListInstanceProfiles(listInstanceProfilesRequest, null, null, true);
+            return EndListInstanceProfiles(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceProfiles operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListInstanceProfiles"/>
+        /// </summary>
+        /// 
+        /// <param name="listInstanceProfilesRequest">Container for the necessary parameters to execute the ListInstanceProfiles operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndListInstanceProfiles operation.</returns>
+        public IAsyncResult BeginListInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest, AsyncCallback callback, object state)
+        {
+            return invokeListInstanceProfiles(listInstanceProfilesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListInstanceProfiles operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListInstanceProfiles"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceProfiles.</param>
+        /// 
+        /// <returns>Returns a ListInstanceProfilesResult from AmazonIdentityManagementService.</returns>
+        public ListInstanceProfilesResponse EndListInstanceProfiles(IAsyncResult asyncResult)
+        {
+            return endOperation<ListInstanceProfilesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListInstanceProfilesRequestMarshaller().Marshall(listInstanceProfilesRequest);
+            var unmarshaller = ListInstanceProfilesResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list.</para> <para>You
+        /// can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListInstanceProfiles service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        public ListInstanceProfilesResponse ListInstanceProfiles()
+        {
+            return ListInstanceProfiles(new ListInstanceProfilesRequest());
+        }
+        
+
+        #endregion
+    
         #region UpdateAccessKey
 
         /// <summary>
@@ -2492,6 +2699,139 @@ namespace Amazon.IdentityManagement
 
         #endregion
     
+        #region GetRole
+
+        /// <summary>
+        /// <para>Retrieves information about the specified role, including the role's path, GUID, ARN, and the assume role policy.</para>
+        /// </summary>
+        /// 
+        /// <param name="getRoleRequest">Container for the necessary parameters to execute the GetRole service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <returns>The response from the GetRole service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        public GetRoleResponse GetRole(GetRoleRequest getRoleRequest)
+        {
+            IAsyncResult asyncResult = invokeGetRole(getRoleRequest, null, null, true);
+            return EndGetRole(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRole operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetRole"/>
+        /// </summary>
+        /// 
+        /// <param name="getRoleRequest">Container for the necessary parameters to execute the GetRole operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRole
+        ///         operation.</returns>
+        public IAsyncResult BeginGetRole(GetRoleRequest getRoleRequest, AsyncCallback callback, object state)
+        {
+            return invokeGetRole(getRoleRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetRole operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetRole"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRole.</param>
+        /// 
+        /// <returns>Returns a GetRoleResult from AmazonIdentityManagementService.</returns>
+        public GetRoleResponse EndGetRole(IAsyncResult asyncResult)
+        {
+            return endOperation<GetRoleResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeGetRole(GetRoleRequest getRoleRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new GetRoleRequestMarshaller().Marshall(getRoleRequest);
+            var unmarshaller = GetRoleResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region ListRolePolicies
+
+        /// <summary>
+        /// <para>Lists the names of the policies associated with the specified role. If there are none, the action returns an empty list.</para>
+        /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+        /// </summary>
+        /// 
+        /// <param name="listRolePoliciesRequest">Container for the necessary parameters to execute the ListRolePolicies service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <returns>The response from the ListRolePolicies service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        public ListRolePoliciesResponse ListRolePolicies(ListRolePoliciesRequest listRolePoliciesRequest)
+        {
+            IAsyncResult asyncResult = invokeListRolePolicies(listRolePoliciesRequest, null, null, true);
+            return EndListRolePolicies(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRolePolicies operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListRolePolicies"/>
+        /// </summary>
+        /// 
+        /// <param name="listRolePoliciesRequest">Container for the necessary parameters to execute the ListRolePolicies operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRolePolicies
+        ///         operation.</returns>
+        public IAsyncResult BeginListRolePolicies(ListRolePoliciesRequest listRolePoliciesRequest, AsyncCallback callback, object state)
+        {
+            return invokeListRolePolicies(listRolePoliciesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListRolePolicies operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListRolePolicies"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRolePolicies.</param>
+        /// 
+        /// <returns>Returns a ListRolePoliciesResult from AmazonIdentityManagementService.</returns>
+        public ListRolePoliciesResponse EndListRolePolicies(IAsyncResult asyncResult)
+        {
+            return endOperation<ListRolePoliciesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListRolePolicies(ListRolePoliciesRequest listRolePoliciesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListRolePoliciesRequestMarshaller().Marshall(listRolePoliciesRequest);
+            var unmarshaller = ListRolePoliciesResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region ListSigningCertificates
 
         /// <summary>
@@ -2587,8 +2927,9 @@ namespace Amazon.IdentityManagement
         /// .</para> <para>If the <c>UserName</c> field is not specified, the user name is determined implicitly based on the AWS Access Key ID used to
         /// sign the request. Because this action works for access keys under the AWS account, this API can be used to manage root credentials even if
         /// the AWS account has no associated users.</para> <para><b>NOTE:</b>Because the body of a X.509 certificate can be large, you should use POST
-        /// rather than GET when calling UploadSigningCertificate. For more information, see Making Query Requests in Using AWS Identity and Access
-        /// Management.</para>
+        /// rather than GET when calling UploadSigningCertificate. For information about setting up signatures and authorization through the API, go to
+        /// Signing AWS API Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query
+        /// Requests in Using IAM.</para>
         /// </summary>
         /// 
         /// <param name="uploadSigningCertificateRequest">Container for the necessary parameters to execute the UploadSigningCertificate service method
@@ -2647,6 +2988,135 @@ namespace Amazon.IdentityManagement
         {
             IRequest irequest = new UploadSigningCertificateRequestMarshaller().Marshall(uploadSigningCertificateRequest);
             var unmarshaller = UploadSigningCertificateResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DeleteInstanceProfile
+
+        /// <summary>
+        /// <para>Deletes the specified instance profile. The instance profile must have an associated role.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteInstanceProfileRequest">Container for the necessary parameters to execute the DeleteInstanceProfile service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        /// <exception cref="DeleteConflictException"/>
+        public DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteInstanceProfile(deleteInstanceProfileRequest, null, null, true);
+            return EndDeleteInstanceProfile(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInstanceProfile operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteInstanceProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteInstanceProfileRequest">Container for the necessary parameters to execute the DeleteInstanceProfile operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteInstanceProfile(deleteInstanceProfileRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteInstanceProfile operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteInstanceProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstanceProfile.</param>
+        public DeleteInstanceProfileResponse EndDeleteInstanceProfile(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteInstanceProfileResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteInstanceProfileRequestMarshaller().Marshall(deleteInstanceProfileRequest);
+            var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region CreateRole
+
+        /// <summary>
+        /// <para>Creates a new role for your AWS account.</para> <para>For information about limitations on the number of roles you can create, see
+        /// Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="createRoleRequest">Container for the necessary parameters to execute the CreateRole service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <returns>The response from the CreateRole service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        /// <exception cref="MalformedPolicyDocumentException"/>
+        /// <exception cref="LimitExceededException"/>
+        /// <exception cref="EntityAlreadyExistsException"/>
+        public CreateRoleResponse CreateRole(CreateRoleRequest createRoleRequest)
+        {
+            IAsyncResult asyncResult = invokeCreateRole(createRoleRequest, null, null, true);
+            return EndCreateRole(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRole operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateRole"/>
+        /// </summary>
+        /// 
+        /// <param name="createRoleRequest">Container for the necessary parameters to execute the CreateRole operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRole
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateRole(CreateRoleRequest createRoleRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreateRole(createRoleRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateRole operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateRole"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRole.</param>
+        /// 
+        /// <returns>Returns a CreateRoleResult from AmazonIdentityManagementService.</returns>
+        public CreateRoleResponse EndCreateRole(IAsyncResult asyncResult)
+        {
+            return endOperation<CreateRoleResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreateRole(CreateRoleRequest createRoleRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreateRoleRequestMarshaller().Marshall(createRoleRequest);
+            var unmarshaller = CreateRoleResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -2913,8 +3383,9 @@ namespace Amazon.IdentityManagement
         /// <para>Adds (or updates) a policy document associated with the specified group. For information about policies, refer to Overview of Policies
         /// in <i>Using AWS Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate
         /// with a group, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy
-        /// documents can be large, you should use POST rather than GET when calling PutGroupPolicy. For more information, see Making Query Requests in
-        /// Using AWS Identity and Access Management.</para>
+        /// documents can be large, you should use POST rather than GET when calling PutGroupPolicy. For information about setting up signatures and
+        /// authorization through the API, go to Signing AWS API Requests in the AWS General Reference. For general information about using the Query
+        /// API with IAM, go to Making Query Requests in Using IAM.</para>
         /// </summary>
         /// 
         /// <param name="putGroupPolicyRequest">Container for the necessary parameters to execute the PutGroupPolicy service method on
@@ -3256,6 +3727,67 @@ namespace Amazon.IdentityManagement
 
         #endregion
     
+        #region AddRoleToInstanceProfile
+
+        /// <summary>
+        /// <para>Adds the specified role to the specified instance profile.</para>
+        /// </summary>
+        /// 
+        /// <param name="addRoleToInstanceProfileRequest">Container for the necessary parameters to execute the AddRoleToInstanceProfile service method
+        ///          on AmazonIdentityManagementService.</param>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        /// <exception cref="LimitExceededException"/>
+        /// <exception cref="EntityAlreadyExistsException"/>
+        public AddRoleToInstanceProfileResponse AddRoleToInstanceProfile(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest)
+        {
+            IAsyncResult asyncResult = invokeAddRoleToInstanceProfile(addRoleToInstanceProfileRequest, null, null, true);
+            return EndAddRoleToInstanceProfile(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddRoleToInstanceProfile operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.AddRoleToInstanceProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="addRoleToInstanceProfileRequest">Container for the necessary parameters to execute the AddRoleToInstanceProfile operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginAddRoleToInstanceProfile(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest, AsyncCallback callback, object state)
+        {
+            return invokeAddRoleToInstanceProfile(addRoleToInstanceProfileRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AddRoleToInstanceProfile operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.AddRoleToInstanceProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddRoleToInstanceProfile.</param>
+        public AddRoleToInstanceProfileResponse EndAddRoleToInstanceProfile(IAsyncResult asyncResult)
+        {
+            return endOperation<AddRoleToInstanceProfileResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeAddRoleToInstanceProfile(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new AddRoleToInstanceProfileRequestMarshaller().Marshall(addRoleToInstanceProfileRequest);
+            var unmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region GetGroupPolicy
 
         /// <summary>
@@ -3314,6 +3846,140 @@ namespace Amazon.IdentityManagement
         {
             IRequest irequest = new GetGroupPolicyRequestMarshaller().Marshall(getGroupPolicyRequest);
             var unmarshaller = GetGroupPolicyResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region GetRolePolicy
+
+        /// <summary>
+        /// <para>Retrieves the specified policy document for the specified role. The returned policy is URL-encoded according to RFC 3986. For more
+        /// information about RFC 3986, go to http://www.faqs.org/rfcs/rfc3986.html.</para>
+        /// </summary>
+        /// 
+        /// <param name="getRolePolicyRequest">Container for the necessary parameters to execute the GetRolePolicy service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <returns>The response from the GetRolePolicy service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        public GetRolePolicyResponse GetRolePolicy(GetRolePolicyRequest getRolePolicyRequest)
+        {
+            IAsyncResult asyncResult = invokeGetRolePolicy(getRolePolicyRequest, null, null, true);
+            return EndGetRolePolicy(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRolePolicy operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetRolePolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="getRolePolicyRequest">Container for the necessary parameters to execute the GetRolePolicy operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRolePolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginGetRolePolicy(GetRolePolicyRequest getRolePolicyRequest, AsyncCallback callback, object state)
+        {
+            return invokeGetRolePolicy(getRolePolicyRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetRolePolicy operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetRolePolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRolePolicy.</param>
+        /// 
+        /// <returns>Returns a GetRolePolicyResult from AmazonIdentityManagementService.</returns>
+        public GetRolePolicyResponse EndGetRolePolicy(IAsyncResult asyncResult)
+        {
+            return endOperation<GetRolePolicyResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeGetRolePolicy(GetRolePolicyRequest getRolePolicyRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new GetRolePolicyRequestMarshaller().Marshall(getRolePolicyRequest);
+            var unmarshaller = GetRolePolicyResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region ListInstanceProfilesForRole
+
+        /// <summary>
+        /// <para>Lists the instance profiles that have the specified associated role. If there are none, the action returns an empty list.</para>
+        /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+        /// </summary>
+        /// 
+        /// <param name="listInstanceProfilesForRoleRequest">Container for the necessary parameters to execute the ListInstanceProfilesForRole service
+        ///          method on AmazonIdentityManagementService.</param>
+        /// 
+        /// <returns>The response from the ListInstanceProfilesForRole service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        public ListInstanceProfilesForRoleResponse ListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest)
+        {
+            IAsyncResult asyncResult = invokeListInstanceProfilesForRole(listInstanceProfilesForRoleRequest, null, null, true);
+            return EndListInstanceProfilesForRole(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceProfilesForRole operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListInstanceProfilesForRole"/>
+        /// </summary>
+        /// 
+        /// <param name="listInstanceProfilesForRoleRequest">Container for the necessary parameters to execute the ListInstanceProfilesForRole operation
+        ///          on AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndListInstanceProfilesForRole operation.</returns>
+        public IAsyncResult BeginListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest, AsyncCallback callback, object state)
+        {
+            return invokeListInstanceProfilesForRole(listInstanceProfilesForRoleRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListInstanceProfilesForRole operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListInstanceProfilesForRole"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceProfilesForRole.</param>
+        /// 
+        /// <returns>Returns a ListInstanceProfilesForRoleResult from AmazonIdentityManagementService.</returns>
+        public ListInstanceProfilesForRoleResponse EndListInstanceProfilesForRole(IAsyncResult asyncResult)
+        {
+            return endOperation<ListInstanceProfilesForRoleResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListInstanceProfilesForRoleRequestMarshaller().Marshall(listInstanceProfilesForRoleRequest);
+            var unmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -3404,6 +4070,133 @@ namespace Amazon.IdentityManagement
         {
             return ListVirtualMFADevices(new ListVirtualMFADevicesRequest());
         }
+        
+
+        #endregion
+    
+        #region DeleteRolePolicy
+
+        /// <summary>
+        /// <para>Deletes the specified policy associated with the specified role.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteRolePolicyRequest">Container for the necessary parameters to execute the DeleteRolePolicy service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        public DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteRolePolicy(deleteRolePolicyRequest, null, null, true);
+            return EndDeleteRolePolicy(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRolePolicy operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteRolePolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteRolePolicyRequest">Container for the necessary parameters to execute the DeleteRolePolicy operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteRolePolicy(deleteRolePolicyRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteRolePolicy operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteRolePolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRolePolicy.</param>
+        public DeleteRolePolicyResponse EndDeleteRolePolicy(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteRolePolicyResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteRolePolicyRequestMarshaller().Marshall(deleteRolePolicyRequest);
+            var unmarshaller = DeleteRolePolicyResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region CreateInstanceProfile
+
+        /// <summary>
+        /// <para>Creates a new instance profile.</para> <para>For information about the number of instance profiles you can create, see Limitations on
+        /// IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="createInstanceProfileRequest">Container for the necessary parameters to execute the CreateInstanceProfile service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <returns>The response from the CreateInstanceProfile service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        /// <exception cref="LimitExceededException"/>
+        /// <exception cref="EntityAlreadyExistsException"/>
+        public CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest createInstanceProfileRequest)
+        {
+            IAsyncResult asyncResult = invokeCreateInstanceProfile(createInstanceProfileRequest, null, null, true);
+            return EndCreateInstanceProfile(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInstanceProfile operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateInstanceProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="createInstanceProfileRequest">Container for the necessary parameters to execute the CreateInstanceProfile operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateInstanceProfile operation.</returns>
+        public IAsyncResult BeginCreateInstanceProfile(CreateInstanceProfileRequest createInstanceProfileRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreateInstanceProfile(createInstanceProfileRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateInstanceProfile operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateInstanceProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a CreateInstanceProfileResult from AmazonIdentityManagementService.</returns>
+        public CreateInstanceProfileResponse EndCreateInstanceProfile(IAsyncResult asyncResult)
+        {
+            return endOperation<CreateInstanceProfileResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreateInstanceProfile(CreateInstanceProfileRequest createInstanceProfileRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreateInstanceProfileRequestMarshaller().Marshall(createInstanceProfileRequest);
+            var unmarshaller = CreateInstanceProfileResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
         
 
         #endregion
@@ -3544,6 +4337,65 @@ namespace Amazon.IdentityManagement
 
         #endregion
     
+        #region RemoveRoleFromInstanceProfile
+
+        /// <summary>
+        /// <para>Removes the specified role from the specified instance profile.</para>
+        /// </summary>
+        /// 
+        /// <param name="removeRoleFromInstanceProfileRequest">Container for the necessary parameters to execute the RemoveRoleFromInstanceProfile
+        ///          service method on AmazonIdentityManagementService.</param>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        public RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest)
+        {
+            IAsyncResult asyncResult = invokeRemoveRoleFromInstanceProfile(removeRoleFromInstanceProfileRequest, null, null, true);
+            return EndRemoveRoleFromInstanceProfile(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveRoleFromInstanceProfile operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.RemoveRoleFromInstanceProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="removeRoleFromInstanceProfileRequest">Container for the necessary parameters to execute the RemoveRoleFromInstanceProfile
+        ///          operation on AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginRemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest, AsyncCallback callback, object state)
+        {
+            return invokeRemoveRoleFromInstanceProfile(removeRoleFromInstanceProfileRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RemoveRoleFromInstanceProfile operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.RemoveRoleFromInstanceProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveRoleFromInstanceProfile.</param>
+        public RemoveRoleFromInstanceProfileResponse EndRemoveRoleFromInstanceProfile(IAsyncResult asyncResult)
+        {
+            return endOperation<RemoveRoleFromInstanceProfileResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeRemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new RemoveRoleFromInstanceProfileRequestMarshaller().Marshall(removeRoleFromInstanceProfileRequest);
+            var unmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region UpdateAccountPasswordPolicy
 
         /// <summary>
@@ -3613,6 +4465,211 @@ namespace Amazon.IdentityManagement
         public UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy()
         {
             return UpdateAccountPasswordPolicy(new UpdateAccountPasswordPolicyRequest());
+        }
+        
+
+        #endregion
+    
+        #region UpdateAssumeRolePolicy
+
+        /// <summary>
+        /// <para>Updates the policy governing how the given role can be assumed.</para>
+        /// </summary>
+        /// 
+        /// <param name="updateAssumeRolePolicyRequest">Container for the necessary parameters to execute the UpdateAssumeRolePolicy service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <exception cref="MalformedPolicyDocumentException"/>
+        /// <exception cref="NoSuchEntityException"/>
+        public UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest)
+        {
+            IAsyncResult asyncResult = invokeUpdateAssumeRolePolicy(updateAssumeRolePolicyRequest, null, null, true);
+            return EndUpdateAssumeRolePolicy(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAssumeRolePolicy operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateAssumeRolePolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="updateAssumeRolePolicyRequest">Container for the necessary parameters to execute the UpdateAssumeRolePolicy operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginUpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest, AsyncCallback callback, object state)
+        {
+            return invokeUpdateAssumeRolePolicy(updateAssumeRolePolicyRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateAssumeRolePolicy operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateAssumeRolePolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAssumeRolePolicy.</param>
+        public UpdateAssumeRolePolicyResponse EndUpdateAssumeRolePolicy(IAsyncResult asyncResult)
+        {
+            return endOperation<UpdateAssumeRolePolicyResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeUpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new UpdateAssumeRolePolicyRequestMarshaller().Marshall(updateAssumeRolePolicyRequest);
+            var unmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region GetInstanceProfile
+
+        /// <summary>
+        /// <para>Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role.</para>
+        /// </summary>
+        /// 
+        /// <param name="getInstanceProfileRequest">Container for the necessary parameters to execute the GetInstanceProfile service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <returns>The response from the GetInstanceProfile service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        /// <exception cref="NoSuchEntityException"/>
+        public GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest getInstanceProfileRequest)
+        {
+            IAsyncResult asyncResult = invokeGetInstanceProfile(getInstanceProfileRequest, null, null, true);
+            return EndGetInstanceProfile(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInstanceProfile operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetInstanceProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="getInstanceProfileRequest">Container for the necessary parameters to execute the GetInstanceProfile operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndGetInstanceProfile operation.</returns>
+        public IAsyncResult BeginGetInstanceProfile(GetInstanceProfileRequest getInstanceProfileRequest, AsyncCallback callback, object state)
+        {
+            return invokeGetInstanceProfile(getInstanceProfileRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetInstanceProfile operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetInstanceProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a GetInstanceProfileResult from AmazonIdentityManagementService.</returns>
+        public GetInstanceProfileResponse EndGetInstanceProfile(IAsyncResult asyncResult)
+        {
+            return endOperation<GetInstanceProfileResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeGetInstanceProfile(GetInstanceProfileRequest getInstanceProfileRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new GetInstanceProfileRequestMarshaller().Marshall(getInstanceProfileRequest);
+            var unmarshaller = GetInstanceProfileResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region ListRoles
+
+        /// <summary>
+        /// <para>Lists the roles have the specified path prefix. If there are none, the action returns an empty list.</para> <para>You can paginate the
+        /// results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+        /// </summary>
+        /// 
+        /// <param name="listRolesRequest">Container for the necessary parameters to execute the ListRoles service method on
+        ///          AmazonIdentityManagementService.</param>
+        /// 
+        /// <returns>The response from the ListRoles service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        public ListRolesResponse ListRoles(ListRolesRequest listRolesRequest)
+        {
+            IAsyncResult asyncResult = invokeListRoles(listRolesRequest, null, null, true);
+            return EndListRoles(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRoles operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListRoles"/>
+        /// </summary>
+        /// 
+        /// <param name="listRolesRequest">Container for the necessary parameters to execute the ListRoles operation on
+        ///          AmazonIdentityManagementService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRoles
+        ///         operation.</returns>
+        public IAsyncResult BeginListRoles(ListRolesRequest listRolesRequest, AsyncCallback callback, object state)
+        {
+            return invokeListRoles(listRolesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListRoles operation.
+        /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListRoles"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRoles.</param>
+        /// 
+        /// <returns>Returns a ListRolesResult from AmazonIdentityManagementService.</returns>
+        public ListRolesResponse EndListRoles(IAsyncResult asyncResult)
+        {
+            return endOperation<ListRolesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListRoles(ListRolesRequest listRolesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListRolesRequestMarshaller().Marshall(listRolesRequest);
+            var unmarshaller = ListRolesResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Lists the roles have the specified path prefix. If there are none, the action returns an empty list.</para> <para>You can paginate the
+        /// results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListRoles service method, as returned by AmazonIdentityManagementService.</returns>
+        /// 
+        public ListRolesResponse ListRoles()
+        {
+            return ListRoles(new ListRolesRequest());
         }
         
 

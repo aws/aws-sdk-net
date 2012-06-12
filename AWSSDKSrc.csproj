@@ -83,6 +83,7 @@
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\CloudFormationActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\CloudFrontActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\CloudWatchActionIdentifiers.cs" />
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\DynamoDBActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\EC2ActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\ElastiCacheActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\ElasticBeanstalkActionIdentifiers.cs" />
@@ -2090,6 +2091,8 @@
     <Compile Include="Amazon.EC2\Model\CancelConversionTaskResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\CancelExportTaskRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\CancelExportTaskResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CancelledSpotInstanceRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2144,6 +2147,9 @@
     <Compile Include="Amazon.EC2\Model\CreateImageResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateInstanceExportTaskRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateInstanceExportTaskResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateInstanceExportTaskResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateInternetGatewayRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2464,6 +2470,9 @@
     <Compile Include="Amazon.EC2\Model\DescribeDhcpOptionsResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeExportTasksRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeExportTasksResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeExportTasksResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeImageAttributeRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2780,6 +2789,8 @@
     <Compile Include="Amazon.EC2\Model\ErrorResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\ExportTaskType.cs" />
+    <Compile Include="Amazon.EC2\Model\ExportToS3TaskType.cs" />
     <Compile Include="Amazon.EC2\Model\Filter.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2799,6 +2810,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.EC2\Model\GetPasswordDataResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.EC2\Model\IAMInstanceProfile.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.EC2\Model\Icmp.cs">
@@ -2864,6 +2878,7 @@
     <Compile Include="Amazon.EC2\Model\InstanceEbsBlockDeviceParameter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\InstanceExportTaskType.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceLicense.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4158,14 +4173,22 @@
     <Compile Include="Amazon.IdentityManagement\Model\AccessKeyMetadata.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\AddRoleToInstanceProfileRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\AddRoleToInstanceProfileResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\AddUserToGroupRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\AddUserToGroupResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\ChangePasswordRequest.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\ChangePasswordResponse.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\ChangePasswordRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\ChangePasswordResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\CreateAccessKeyRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4190,6 +4213,11 @@
     <Compile Include="Amazon.IdentityManagement\Model\CreateGroupResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\CreateInstanceProfileRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\CreateInstanceProfileResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\CreateInstanceProfileResult.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\CreateLoginProfileRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4197,6 +4225,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\CreateLoginProfileResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\CreateRoleRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\CreateRoleResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\CreateRoleResult.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\CreateUserRequest.cs">
@@ -4235,8 +4272,12 @@
     <Compile Include="Amazon.IdentityManagement\Model\DeleteAccountAliasResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\DeleteAccountPasswordPolicyRequest.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\DeleteAccountPasswordPolicyResponse.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteAccountPasswordPolicyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteAccountPasswordPolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\DeleteConflictException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4252,10 +4293,26 @@
     <Compile Include="Amazon.IdentityManagement\Model\DeleteGroupResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteInstanceProfileRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteInstanceProfileResponse.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\DeleteLoginProfileRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\DeleteLoginProfileResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteRolePolicyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteRolePolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteRoleRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\DeleteRoleResponse.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\DeleteServerCertificateRequest.cs">
@@ -4303,9 +4360,15 @@
     <Compile Include="Amazon.IdentityManagement\Model\EntityTemporarilyUnmodifiableException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\GetAccountPasswordPolicyRequest.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\GetAccountPasswordPolicyResponse.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\GetAccountPasswordPolicyResult.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\GetAccountPasswordPolicyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\GetAccountPasswordPolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\GetAccountPasswordPolicyResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\GetAccountSummaryRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4333,6 +4396,11 @@
     <Compile Include="Amazon.IdentityManagement\Model\GetGroupResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\GetInstanceProfileRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\GetInstanceProfileResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\GetInstanceProfileResult.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\GetLoginProfileRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4340,6 +4408,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\GetLoginProfileResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\GetRolePolicyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\GetRolePolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\GetRolePolicyResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\GetRoleRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\GetRoleResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\GetRoleResult.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\GetServerCertificateRequest.cs">
@@ -4372,10 +4458,19 @@
     <Compile Include="Amazon.IdentityManagement\Model\Group.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\InstanceProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\AccessKeyMetadataUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\AccessKeyUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\AddRoleToInstanceProfileRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\AddRoleToInstanceProfileResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\AddUserToGroupRequestMarshaller.cs">
@@ -4384,8 +4479,12 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\AddUserToGroupResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ChangePasswordRequestMarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ChangePasswordResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ChangePasswordRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ChangePasswordResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateAccessKeyRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4410,6 +4509,11 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateGroupResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateInstanceProfileRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateInstanceProfileResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateInstanceProfileResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateLoginProfileRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4417,6 +4521,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateLoginProfileResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateRoleRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateRoleResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateRoleResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateUserRequestMarshaller.cs">
@@ -4455,8 +4568,12 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteAccountAliasResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteAccountPasswordPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteAccountPasswordPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteAccountPasswordPolicyRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteAccountPasswordPolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteGroupPolicyRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4469,10 +4586,24 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteGroupResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteInstanceProfileRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteInstanceProfileResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteLoginProfileRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteLoginProfileResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteRolePolicyRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteRolePolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteRoleRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteRoleResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeleteServerCertificateRequestMarshaller.cs">
@@ -4511,9 +4642,15 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\EnableMFADeviceResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountPasswordPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountPasswordPolicyResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountPasswordPolicyResultUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountPasswordPolicyRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountPasswordPolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountPasswordPolicyResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountSummaryRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4541,6 +4678,11 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetGroupResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetInstanceProfileRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetInstanceProfileResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetInstanceProfileResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetLoginProfileRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4548,6 +4690,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetLoginProfileResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRolePolicyRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRolePolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRolePolicyResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRoleRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRoleResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRoleResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetServerCertificateRequestMarshaller.cs">
@@ -4578,6 +4738,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GroupUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\InstanceProfileUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListAccessKeysRequestMarshaller.cs">
@@ -4625,6 +4788,12 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListGroupsResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesForRoleRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesForRoleResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesForRoleResultUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListMFADevicesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4632,6 +4801,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListMFADevicesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolePoliciesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolePoliciesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolePoliciesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListServerCertificatesRequestMarshaller.cs">
@@ -4685,11 +4872,19 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\MFADeviceUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\PasswordPolicyUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\PasswordPolicyUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\PutGroupPolicyRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\PutGroupPolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\PutRolePolicyRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\PutRolePolicyResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\PutUserPolicyRequestMarshaller.cs">
@@ -4698,6 +4893,8 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\PutUserPolicyResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\RemoveRoleFromInstanceProfileRequestMarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\RemoveRoleFromInstanceProfileResponseUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\RemoveUserFromGroupRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4708,6 +4905,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ResyncMFADeviceResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\RoleUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ServerCertificateMetadataUnmarshaller.cs">
@@ -4725,8 +4925,18 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UpdateAccessKeyResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UpdateAccountPasswordPolicyRequestMarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UpdateAccountPasswordPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UpdateAccountPasswordPolicyRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UpdateAccountPasswordPolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UpdateAssumeRolePolicyRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UpdateAssumeRolePolicyResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UpdateGroupRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4787,7 +4997,9 @@
     <Compile Include="Amazon.IdentityManagement\Model\InvalidCertificateException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\InvalidUserTypeException.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\InvalidUserTypeException.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\KeyPairMismatchException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4839,6 +5051,16 @@
     <Compile Include="Amazon.IdentityManagement\Model\ListGroupsResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\ListInstanceProfilesForRoleRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\ListInstanceProfilesForRoleResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\ListInstanceProfilesForRoleResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\ListInstanceProfilesRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\ListInstanceProfilesResponse.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\ListInstanceProfilesResult.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\ListMFADevicesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4846,6 +5068,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\ListMFADevicesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\ListRolePoliciesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\ListRolePoliciesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\ListRolePoliciesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\ListRolesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\ListRolesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\ListRolesResult.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\ListServerCertificatesRequest.cs">
@@ -4908,18 +5148,32 @@
     <Compile Include="Amazon.IdentityManagement\Model\NoSuchEntityException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\PasswordPolicy.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\PasswordPolicyViolationException.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\PasswordPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\PasswordPolicyViolationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\PutGroupPolicyRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\PutGroupPolicyResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\PutRolePolicyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\PutRolePolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\PutUserPolicyRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\PutUserPolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\RemoveRoleFromInstanceProfileRequest.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\RemoveRoleFromInstanceProfileResponse.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\RemoveUserFromGroupRequest.cs">
@@ -4932,6 +5186,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\ResyncMFADeviceResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\Role.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\ServerCertificate.cs">
@@ -4949,8 +5206,18 @@
     <Compile Include="Amazon.IdentityManagement\Model\UpdateAccessKeyResponse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\UpdateAccountPasswordPolicyRequest.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\UpdateAccountPasswordPolicyResponse.cs" />
+    <Compile Include="Amazon.IdentityManagement\Model\UpdateAccountPasswordPolicyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\UpdateAccountPasswordPolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\UpdateAssumeRolePolicyRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.IdentityManagement\Model\UpdateAssumeRolePolicyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\UpdateGroupRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5097,9 +5364,16 @@
     <Compile Include="Amazon.RDS\Model\AvailabilityZone.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\CopyDBSnapshotRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\CopyDBSnapshotResponse.cs" />
-    <Compile Include="Amazon.RDS\Model\CopyDBSnapshotResult.cs" />
+    <Compile Include="Amazon.RDS\Model\CharacterSet.cs" />
+    <Compile Include="Amazon.RDS\Model\CopyDBSnapshotRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\CopyDBSnapshotResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\CopyDBSnapshotResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\CreateDBInstanceReadReplicaRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5145,9 +5419,18 @@
     <Compile Include="Amazon.RDS\Model\CreateDBSnapshotResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\CreateDBSubnetGroupRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\CreateDBSubnetGroupResponse.cs" />
-    <Compile Include="Amazon.RDS\Model\CreateDBSubnetGroupResult.cs" />
+    <Compile Include="Amazon.RDS\Model\CreateDBSubnetGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\CreateDBSubnetGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\CreateDBSubnetGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\CreateOptionGroupRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\CreateOptionGroupResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\CreateOptionGroupResult.cs" />
     <Compile Include="Amazon.RDS\Model\DBEngineVersion.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5199,12 +5482,24 @@
     <Compile Include="Amazon.RDS\Model\DBSnapshotNotFoundException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\DBSubnetGroup.cs" />
-    <Compile Include="Amazon.RDS\Model\DBSubnetGroupAlreadyExistsException.cs" />
-    <Compile Include="Amazon.RDS\Model\DBSubnetGroupListDoesNotCoverAllAzException.cs" />
-    <Compile Include="Amazon.RDS\Model\DBSubnetGroupNotFoundException.cs" />
-    <Compile Include="Amazon.RDS\Model\DBSubnetGroupQuotaExceededException.cs" />
-    <Compile Include="Amazon.RDS\Model\DBSubnetQuotaExceededException.cs" />
+    <Compile Include="Amazon.RDS\Model\DBSubnetGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DBSubnetGroupAlreadyExistsException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DBSubnetGroupListDoesNotCoverAllAzException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DBSubnetGroupNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DBSubnetGroupQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DBSubnetQuotaExceededException.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\DeleteDBInstanceRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5235,8 +5530,14 @@
     <Compile Include="Amazon.RDS\Model\DeleteDBSnapshotResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\DeleteDBSubnetGroupRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\DeleteDBSubnetGroupResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\DeleteDBSubnetGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DeleteDBSubnetGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DeleteOptionGroupRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\DeleteOptionGroupResponse.cs" />
     <Compile Include="Amazon.RDS\Model\DescribeDBEngineVersionsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5291,9 +5592,15 @@
     <Compile Include="Amazon.RDS\Model\DescribeDBSnapshotsResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\DescribeDBSubnetGroupsRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\DescribeDBSubnetGroupsResponse.cs" />
-    <Compile Include="Amazon.RDS\Model\DescribeDBSubnetGroupsResult.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeDBSubnetGroupsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DescribeDBSubnetGroupsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\DescribeDBSubnetGroupsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\DescribeEngineDefaultParametersRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5312,6 +5619,12 @@
     <Compile Include="Amazon.RDS\Model\DescribeEventsResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupOptionsRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupOptionsResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupOptionsResult.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupsRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupsResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\DescribeOptionGroupsResult.cs" />
     <Compile Include="Amazon.RDS\Model\DescribeOrderableDBInstanceOptionsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5369,9 +5682,16 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AvailabilityZoneUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CopyDBSnapshotRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CopyDBSnapshotResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CopyDBSnapshotResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CharacterSetUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CopyDBSnapshotRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CopyDBSnapshotResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CopyDBSnapshotResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateDBInstanceReadReplicaRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5417,9 +5737,18 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateDBSnapshotResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateDBSubnetGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateDBSubnetGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateDBSubnetGroupResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateDBSubnetGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateDBSubnetGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateDBSubnetGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateOptionGroupRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateOptionGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\CreateOptionGroupResultUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DBEngineVersionUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5441,7 +5770,9 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DBSnapshotUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DBSubnetGroupUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DBSubnetGroupUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteDBInstanceRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5472,8 +5803,14 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteDBSnapshotResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteDBSubnetGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteDBSubnetGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteDBSubnetGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteDBSubnetGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteOptionGroupRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DeleteOptionGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBEngineVersionsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5528,9 +5865,15 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBSnapshotsResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBSubnetGroupsRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBSubnetGroupsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBSubnetGroupsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBSubnetGroupsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBSubnetGroupsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeDBSubnetGroupsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEngineDefaultParametersRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5549,6 +5892,12 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeEventsResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupOptionsRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupOptionsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupOptionsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupsRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOptionGroupsResultUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\DescribeOrderableDBInstanceOptionsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5609,9 +5958,22 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyDBParameterGroupResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyDBSubnetGroupRequestMarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyDBSubnetGroupResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyDBSubnetGroupResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyDBSubnetGroupRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyDBSubnetGroupResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyDBSubnetGroupResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyOptionGroupRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyOptionGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyOptionGroupResultUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupMembershipUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupOptionUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionGroupUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OptionUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\OrderableDBInstanceOptionUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5639,7 +6001,9 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RebootDBInstanceResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RecurringChargeUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RecurringChargeUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ReservedDBInstancesOfferingUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5682,7 +6046,9 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RevokeDBSecurityGroupIngressResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\SubnetUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\SubnetUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\InvalidDBInstanceStateException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5695,11 +6061,22 @@
     <Compile Include="Amazon.RDS\Model\InvalidDBSnapshotStateException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\InvalidDBSubnetGroupStateException.cs" />
-    <Compile Include="Amazon.RDS\Model\InvalidDBSubnetStateException.cs" />
-    <Compile Include="Amazon.RDS\Model\InvalidRestoreException.cs" />
-    <Compile Include="Amazon.RDS\Model\InvalidSubnetException.cs" />
-    <Compile Include="Amazon.RDS\Model\InvalidVPCNetworkStateException.cs" />
+    <Compile Include="Amazon.RDS\Model\InvalidDBSubnetGroupStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\InvalidDBSubnetStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\InvalidOptionGroupStateException.cs" />
+    <Compile Include="Amazon.RDS\Model\InvalidRestoreException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\InvalidSubnetException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\InvalidVPCNetworkStateException.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\IPRange.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5721,9 +6098,26 @@
     <Compile Include="Amazon.RDS\Model\ModifyDBParameterGroupResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\ModifyDBSubnetGroupRequest.cs" />
-    <Compile Include="Amazon.RDS\Model\ModifyDBSubnetGroupResponse.cs" />
-    <Compile Include="Amazon.RDS\Model\ModifyDBSubnetGroupResult.cs" />
+    <Compile Include="Amazon.RDS\Model\ModifyDBSubnetGroupRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\ModifyDBSubnetGroupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\ModifyDBSubnetGroupResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\ModifyOptionGroupRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\ModifyOptionGroupResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\ModifyOptionGroupResult.cs" />
+    <Compile Include="Amazon.RDS\Model\Option.cs" />
+    <Compile Include="Amazon.RDS\Model\OptionConfiguration.cs" />
+    <Compile Include="Amazon.RDS\Model\OptionGroup.cs" />
+    <Compile Include="Amazon.RDS\Model\OptionGroupAlreadyExistsException.cs" />
+    <Compile Include="Amazon.RDS\Model\OptionGroupMembership.cs" />
+    <Compile Include="Amazon.RDS\Model\OptionGroupNotFoundException.cs" />
+    <Compile Include="Amazon.RDS\Model\OptionGroupOption.cs" />
+    <Compile Include="Amazon.RDS\Model\OptionGroupQuotaExceededException.cs" />
     <Compile Include="Amazon.RDS\Model\OrderableDBInstanceOption.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5754,7 +6148,9 @@
     <Compile Include="Amazon.RDS\Model\RebootDBInstanceResult.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\RecurringCharge.cs" />
+    <Compile Include="Amazon.RDS\Model\RecurringCharge.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.RDS\Model\ReservedDBInstance.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5815,8 +6211,12 @@
     <Compile Include="Amazon.RDS\Model\StorageQuotaExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\Subnet.cs" />
-    <Compile Include="Amazon.RDS\Model\SubnetAlreadyInUseException.cs" />
+    <Compile Include="Amazon.RDS\Model\Subnet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.RDS\Model\SubnetAlreadyInUseException.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Route53\AmazonRoute53.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Client.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Config.cs" />
@@ -6009,6 +6409,7 @@
     <Compile Include="Amazon.S3\Model\EnableBucketLoggingResponse.cs" />
     <Compile Include="Amazon.S3\Model\S3ObjectVersion.cs" />
     <Compile Include="Amazon.S3\Model\S3BucketVersioningConfig.cs" />
+    <Compile Include="Amazon.S3\Model\S3PutWithACLRequest.cs" />
     <Compile Include="Amazon.S3\Model\SetBucketVersioningRequest.cs" />
     <Compile Include="Amazon.S3\Model\SetBucketVersioningResponse.cs" />
     <Compile Include="Amazon.S3\Model\SetNotificationConfigurationRequest.cs" />
@@ -7051,6 +7452,7 @@
     <Compile Include="Amazon.StorageGateway\Model\UpdateSnapshotScheduleResult.cs" />
     <Compile Include="Amazon.StorageGateway\Model\VolumeInfo.cs" />
     <Compile Include="Amazon.StorageGateway\Model\VolumeiSCSIAttributes.cs" />
+    <Compile Include="Amazon.StorageGateway\Util\AmazonStorageGatewayUtil.cs" />
     <Compile Include="AWSClientFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.cs" />
@@ -7310,6 +7712,11 @@
     <EmbeddedResource Include="Amazon.CloudFront_2012_03_15\Model\SetOriginAccessIdentityConfigResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront_2012_03_15\Model\SetStreamingDistributionConfigResponse.xslt" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\CancelExportTaskResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateInstanceExportTaskResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeExportTasksResponse.xslt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -7318,4 +7725,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

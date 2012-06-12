@@ -56,7 +56,7 @@ namespace Amazon.ImportExport
         ///
         /// </summary>
         public AmazonImportExportClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonImportExportConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with the credentials defined in the App.config.
@@ -75,7 +75,7 @@ namespace Amazon.ImportExport
         /// </summary>
         /// <param name="config">The AmazonImportExport Configuration Object</param>
         public AmazonImportExportClient(AmazonImportExportConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with AWS Credentials

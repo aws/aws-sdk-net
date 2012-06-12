@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   EngineDefaults Unmarshaller
      /// </summary>
-    internal class EngineDefaultsUnmarshaller : IUnmarshaller<EngineDefaults, XmlUnmarshallerContext> 
+    internal class EngineDefaultsUnmarshaller : IUnmarshaller<EngineDefaults, XmlUnmarshallerContext>, IUnmarshaller<EngineDefaults, JsonUnmarshallerContext> 
     {
         public EngineDefaults Unmarshall(XmlUnmarshallerContext context) 
         {
             EngineDefaults engineDefaults = new EngineDefaults();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -67,6 +68,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return engineDefaults;
+        }
+
+        public EngineDefaults Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static EngineDefaultsUnmarshaller instance;

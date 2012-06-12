@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce
         ///
         /// </summary>
         public AmazonElasticMapReduceClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonElasticMapReduceConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials defined in the App.config.
@@ -75,7 +75,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// <param name="config">The AmazonElasticMapReduce Configuration Object</param>
         public AmazonElasticMapReduceClient(AmazonElasticMapReduceConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with AWS Credentials

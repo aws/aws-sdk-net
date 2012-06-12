@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private string availabilityZone;
         private int? port;
         private bool? autoMinorVersionUpgrade;
+        private string optionGroupName;
 
         /// <summary>
         /// The DB Instance identifier of the Read Replica. This is the unique key that identifies a DB Instance. This parameter is stored as a
@@ -211,6 +212,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this.autoMinorVersionUpgrade.HasValue;       
+        }
+        public string OptionGroupName
+        {
+            get { return this.optionGroupName; }
+            set { this.optionGroupName = value; }
+        }
+
+        /// <summary>
+        /// Sets the OptionGroupName property
+        /// </summary>
+        /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceReadReplicaRequest WithOptionGroupName(string optionGroupName)
+        {
+            this.optionGroupName = optionGroupName;
+            return this;
+        }
+            
+
+        // Check to see if OptionGroupName property is set
+        internal bool IsSetOptionGroupName()
+        {
+            return this.optionGroupName != null;       
         }
     }
 }

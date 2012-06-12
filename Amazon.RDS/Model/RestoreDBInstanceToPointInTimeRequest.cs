@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private string licenseModel;
         private string dBName;
         private string engine;
+        private string optionGroupName;
 
         /// <summary>
         /// The identifier of the source DB Instance from which to restore. Constraints: <ul> <li>Must be the identifier of an existing database
@@ -165,8 +166,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <c>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.2xlarge |
-        /// db.m2.4xlarge</c> Default: The same DBInstanceClass as the original DB Instance.
+        /// The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
+        /// db.m2.2xlarge | db.m2.4xlarge</c> Default: The same DBInstanceClass as the original DB Instance.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -420,6 +421,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngine()
         {
             return this.engine != null;       
+        }
+        public string OptionGroupName
+        {
+            get { return this.optionGroupName; }
+            set { this.optionGroupName = value; }
+        }
+
+        /// <summary>
+        /// Sets the OptionGroupName property
+        /// </summary>
+        /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceToPointInTimeRequest WithOptionGroupName(string optionGroupName)
+        {
+            this.optionGroupName = optionGroupName;
+            return this;
+        }
+            
+
+        // Check to see if OptionGroupName property is set
+        internal bool IsSetOptionGroupName()
+        {
+            return this.optionGroupName != null;       
         }
     }
 }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-04-01
+ *  API Version: 2012-05-01
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Cancels an active conversion task. The task can be the import of an instance or volume. The command removes all artifacts of the conversion, including a 
     /// partially uploaded volume or instance. If the conversion is complete or is in the process of transferring the final disk image, the command fails and returns an exception.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-05-01/", IsNullable = false)]
     public class CancelConversionTaskRequest
     {    
         private string conversionTaskIdField;

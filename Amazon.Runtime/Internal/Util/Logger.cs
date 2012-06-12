@@ -64,6 +64,8 @@ namespace Amazon.Runtime.Internal.Util
         static object infoLevelPropertyValue;
         static object errorLevelPropertyValue;
 
+        static MethodInfo isEnabledForMethod;
+
         static Type systemStringFormatType;
 
         static Type loggerType;
@@ -123,8 +125,10 @@ namespace Amazon.Runtime.Internal.Util
                     systemStringFormatType = Type.GetType("log4net.Util.SystemStringFormat, log4net");
 
                     logMethod = logType.GetMethod("Log", new Type[] { typeof(Type), levelType, typeof(object), typeof(Exception) });
+                    isEnabledForMethod = logType.GetMethod("IsEnabledFor", new Type[] { levelType });
 
                     if (getLoggerWithTypeMethod == null ||
+                        isEnabledForMethod == null ||
                         logType == null ||
                         levelType == null ||
                         logMethod == null)
@@ -140,6 +144,21 @@ namespace Amazon.Runtime.Internal.Util
                     // Mark as failed so no attempted will be made on the logging methods.
                     loadState = LoadState.Failed;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Simple wrapper around the log4net IsErrorEnabled property.
+        /// </summary>
+        public bool IsErrorEnabled
+        {
+            get
+            {
+                if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || errorLevelPropertyValue == null)
+                    return false;
+
+                bool enabled = Convert.ToBoolean(isEnabledForMethod.Invoke(this.internalLogger, new object[] { errorLevelPropertyValue }));
+                return enabled;
             }
         }
 
@@ -162,6 +181,21 @@ namespace Amazon.Runtime.Internal.Util
                     new LogMessage(CultureInfo.InvariantCulture, message),
                     exception
                 });
+        }
+
+        /// <summary>
+        /// Simple wrapper around the log4net IsDebugEnabled property.
+        /// </summary>
+        public bool IsDebugEnabled
+        {
+            get
+            {
+                if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || debugLevelPropertyValue == null)
+                    return false;
+
+                bool enabled = Convert.ToBoolean(isEnabledForMethod.Invoke(this.internalLogger, new object[] { debugLevelPropertyValue }));
+                return enabled;
+            }
         }
 
         /// <summary>
@@ -203,6 +237,21 @@ namespace Amazon.Runtime.Internal.Util
                     null
                 });
 
+        }
+
+        /// <summary>
+        /// Simple wrapper around the log4net IsInfoEnabled property.
+        /// </summary>
+        public bool IsInfoEnabled
+        {
+            get
+            {
+                if (loadState != LoadState.Success || this.internalLogger == null || loggerType == null || systemStringFormatType == null || infoLevelPropertyValue == null)
+                    return false;
+
+                bool enabled = Convert.ToBoolean(isEnabledForMethod.Invoke(this.internalLogger, new object[] { infoLevelPropertyValue }));
+                return enabled;
+            }
         }
 
         /// <summary>

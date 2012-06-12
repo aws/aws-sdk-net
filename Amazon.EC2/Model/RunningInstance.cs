@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-04-01
+ *  API Version: 2012-05-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Properties of a Launched EC2 Instance
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-05-01/", IsNullable = false)]
     public class RunningInstance
     {    
         private string instanceIdField;
@@ -71,6 +71,7 @@ namespace Amazon.EC2.Model
         private List<Tag> tagField;
         private string hypervisorField;
         private List<InstanceNetworkInterface> networkInterfaceSetField;
+        private IAMInstanceProfile instanceProfileField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -1348,5 +1349,36 @@ namespace Amazon.EC2.Model
         {
             return (this.NetworkInterfaceSet.Count > 0);
         }
+
+        /// <summary>
+        /// Gets and sets the InstanceProfile property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "InstanceProfile")]
+        public IAMInstanceProfile InstanceProfile
+        {
+            get { return this.instanceProfileField; }
+            set { this.instanceProfileField = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstanceProfile property.
+        /// </summary>
+        /// <param name="instanceProfile">An Identity and Access Management Instance Profile</param>
+        /// <returns>this instance</returns>
+        public RunningInstance WithInstanceProfile(IAMInstanceProfile instanceProfile)
+        {
+            this.instanceProfileField = instanceProfile;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the InstanceProfile property is set
+        /// </summary>
+        /// <returns>true if the InstanceProfile property is set</returns>
+        public bool IsSetInstanceProfile()
+        {
+            return this.instanceProfileField != null;
+        }
+
     }
 }

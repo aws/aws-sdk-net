@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-04-01
+ *  API Version: 2012-05-01
  */
 
 using System;
@@ -147,7 +147,7 @@ namespace Amazon.EC2
         ///
         /// </summary>
         public AmazonEC2Client()
-            : this(new EnvironmentAWSCredentials(), new AmazonEC2Config(), true) { }
+            : this(FallbackCredentialsFactory.GetCredentials(), new AmazonEC2Config(), true) { }
 
         /// <summary>
         /// Constructs AmazonEC2Client with the credentials defined in the App.config.
@@ -166,7 +166,7 @@ namespace Amazon.EC2
         /// </summary>
         /// <param name="config">The AmazonEC2 Configuration Object</param>
         public AmazonEC2Client(AmazonEC2Config config)
-            : this(new EnvironmentAWSCredentials(), config, true) { }
+            : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
 
         /// <summary>
         /// Constructs AmazonEC2Client with AWS Access Key ID and AWS Secret Key
@@ -2836,6 +2836,47 @@ namespace Amazon.EC2
             return Invoke<DescribeVolumeAttributeResponse>(ConvertDescribeVolumeAttribute(request));
         }
 
+        /// <summary>
+        /// Creates a new export task, produces an image of an EC2 instance for use in another virtualization environment, 
+        /// and then writes the image to the specified Amazon S3 bucket. If the instance is running at the time of export, 
+        /// Amazon EC2 will attempt to shut down the instance, initiate the export process, and then reboot the instance. 
+        /// Only instances derived from your own ImportInstance tasks may be exported. When the task is complete, the image can be downloaded from your Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Create Instance Export Task request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Create Instance Export Task response from the service</returns>
+        public CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request)
+        {
+            return Invoke<CreateInstanceExportTaskResponse>(ConvertCreateInstanceExportTask(request));
+        }
+
+        /// <summary>
+        /// Describes your export tasks. If no export task IDs are specified, all export tasks initiated by you are returned.
+        /// </summary>
+        /// <param name="request">Describe Export Tasks request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Export Tasks response from the service</returns>
+        public DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
+        {
+            return Invoke<DescribeExportTasksResponse>(ConvertDescribeExportTasks(request));
+        }
+
+        /// <summary>
+        /// Cancels an active export task. The command removes all artifacts of the export, including any partially 
+        /// created Amazon S3 objects. If the export task is complete or is in the process of transferring the final 
+        /// disk image, the command fails and returns an error.
+        /// </summary>
+        /// <param name="request">Cancel Export Task request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Cancel Export Task response from the service</returns>
+        public CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
+        {
+            return Invoke<CancelExportTaskResponse>(ConvertCancelExportTask(request));
+        }
+
         #endregion
 
         #region Private API
@@ -4516,6 +4557,19 @@ namespace Amazon.EC2
                 describeInstanceStatusRequestFilterListIndex++;
             }
 
+            if (request.IsSetIncludeAllInstances())
+            {
+                parameters["IncludeAllInstances"] = request.IncludeAllInstances.ToString();
+            }
+            if (request.IsSetMaxResults())
+            {
+                parameters["MaxResults"] = request.MaxResults.ToString();
+            }
+            if (request.IsSetNextToken())
+            {
+                parameters["NextToken"] = request.NextToken;
+            }
+
             return parameters;
         }
 
@@ -5423,6 +5477,14 @@ namespace Amazon.EC2
                     instanceNetworkInterfaceListIndex++;
                 }
             }
+            if (request.IsSetInstanceProfile())
+            {
+                IAMInstanceProfile instanceProfile = request.InstanceProfile;
+                if (instanceProfile.IsSetArn())
+                {
+                    parameters[String.Concat("IamInstanceProfile", ".", "Arn")] = instanceProfile.Arn;
+                }
+            }
 
             return parameters;
         }
@@ -5927,6 +5989,14 @@ namespace Amazon.EC2
                         }
 
                         instanceNetworkInterfaceListIndex++;
+                    }
+                }
+                if (requestSpotInstancesRequestLaunchSpecification.IsSetInstanceProfile())
+                {
+                    IAMInstanceProfile instanceProfile = requestSpotInstancesRequestLaunchSpecification.InstanceProfile;
+                    if (instanceProfile.IsSetArn())
+                    {
+                        parameters[String.Concat("LaunchSpecification", ".", "IamInstanceProfile", ".", "Arn")] = instanceProfile.Arn;
                     }
                 }
             }
@@ -7236,6 +7306,88 @@ namespace Amazon.EC2
             if (request.IsSetAttribute())
             {
                 parameters["Attribute"] = request.Attribute;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateInstanceExportTaskRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateInstanceExportTask(CreateInstanceExportTaskRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateInstanceExportTask";
+
+            if (request.IsSetDescription())
+            {
+                parameters["Description"] = request.Description;
+            }
+            if (request.IsSetInstanceId())
+            {
+                parameters["InstanceId"] = request.InstanceId;
+            }
+            if (request.IsSetTargetEnvironment())
+            {
+                parameters["TargetEnvironment"] = request.TargetEnvironment;
+            }
+            if (request.IsSetExportToS3Task())
+            {
+                if (request.ExportToS3Task.IsSetDiskImageFormat())
+                {
+                    parameters["ExportToS3.DiskImageFormat"] = request.ExportToS3Task.DiskImageFormat;
+                }
+                if (request.ExportToS3Task.IsSetContainerFormat())
+                {
+                    parameters["ExportToS3.ContainerFormat"] = request.ExportToS3Task.ContainerFormat;
+                }
+                if (request.ExportToS3Task.IsSetS3Bucket())
+                {
+                    parameters["ExportToS3.S3Bucket"] = request.ExportToS3Task.S3Bucket;
+                }
+                if (request.ExportToS3Task.IsSetS3Prefix())
+                {
+                    parameters["ExportToS3.S3Prefix"] = request.ExportToS3Task.S3Prefix;
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeExportTasksRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeExportTasks(DescribeExportTasksRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeExportTasks";
+
+            if (request.IsSetExportTaskIds())
+            {
+                List<string> exportTaskIdsList = request.ExportTaskIds;
+                int exportTaskIdsListIndex = 1;
+                foreach (string exportTaskId in exportTaskIdsList)
+                {
+                    parameters[String.Concat("ExportTaskId", ".", exportTaskIdsListIndex)] = exportTaskId;
+                    exportTaskIdsListIndex++;
+                }
+
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CancelExportTaskRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCancelExportTask(CancelExportTaskRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CancelExportTask";
+
+            if (request.IsSetExportTaskId())
+            {
+                parameters["ExportTaskId"] = request.ExportTaskId;
             }
 
             return parameters;

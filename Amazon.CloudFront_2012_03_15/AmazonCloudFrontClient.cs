@@ -130,7 +130,7 @@ namespace Amazon.CloudFront_2012_03_15
         ///
         /// </summary>
         public AmazonCloudFrontClient()
-            : this(new EnvironmentAWSCredentials(), new AmazonCloudFrontConfig(), true) { }
+            : this(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig(), true) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with the credentials defined in the App.config.
@@ -149,7 +149,7 @@ namespace Amazon.CloudFront_2012_03_15
         /// </summary>
         /// <param name="config">The AmazonEC2 Configuration Object</param>
         public AmazonCloudFrontClient(AmazonCloudFrontConfig config)
-            : this(new EnvironmentAWSCredentials(), config, true) { }
+            : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with AWS Access Key ID and AWS Secret Key

@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ModifyDBParameterGroupResult Unmarshaller
      /// </summary>
-    internal class ModifyDBParameterGroupResultUnmarshaller : IUnmarshaller<ModifyDBParameterGroupResult, XmlUnmarshallerContext> 
+    internal class ModifyDBParameterGroupResultUnmarshaller : IUnmarshaller<ModifyDBParameterGroupResult, XmlUnmarshallerContext>, IUnmarshaller<ModifyDBParameterGroupResult, JsonUnmarshallerContext> 
     {
         public ModifyDBParameterGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ModifyDBParameterGroupResult modifyDBParameterGroupResult = new ModifyDBParameterGroupResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return modifyDBParameterGroupResult;
+        }
+
+        public ModifyDBParameterGroupResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ModifyDBParameterGroupResultUnmarshaller instance;

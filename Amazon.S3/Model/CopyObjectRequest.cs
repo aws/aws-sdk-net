@@ -37,7 +37,7 @@ namespace Amazon.S3.Model
     /// UnmodifiedSinceDate, Directive, Metadata, CannedACL, Timeout, SourceVersionId,
     /// StorageClass
     /// </summary>
-    public class CopyObjectRequest : S3Request
+    public class CopyObjectRequest : S3PutWithACLRequest
     {
         #region Private Members
 
@@ -719,6 +719,23 @@ namespace Amazon.S3.Model
         public CopyObjectRequest WithStorageClass(S3StorageClass sClass)
         {
             this.StorageClass = sClass;
+            return this;
+        }
+
+        #endregion
+
+        #region Grants
+
+        /// <summary>
+        /// Adds Custom Access Control Lists to this request.
+        /// Please refer to <see cref="T:Amazon.S3.Model.S3Grant"/> for information on
+        /// S3 Grants.
+        /// </summary>
+        /// <param name="grants">One or more S3 Grants.</param>
+        /// <returns>The request with the Grants set.</returns>
+        public CopyObjectRequest WithGrants(params S3Grant[] grants)
+        {
+            this.Grants.AddRange(grants);
             return this;
         }
 

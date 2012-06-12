@@ -34,8 +34,8 @@ namespace Amazon.RDS.Model
         private string targetDBSnapshotIdentifier;
 
         /// <summary>
-        /// The identifier for the source DB snapshot. Constraints: <ul> <li>Must be the identifier for a valid automated snapshot in the "available"
-        /// state.</li> </ul> Example: <c>rds:mydb-2012-01-15-00-01</c>
+        /// The identifier for the source DB snapshot. Constraints: <ul> <li>Must be the identifier for a valid system snapshot in the "available"
+        /// state.</li> </ul> Example: <c>rds:mydb-2012-04-02-00-01</c>
         ///  
         /// </summary>
         public string SourceDBSnapshotIdentifier

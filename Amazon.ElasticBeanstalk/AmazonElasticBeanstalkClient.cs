@@ -62,7 +62,7 @@ namespace Amazon.ElasticBeanstalk
         ///
         /// </summary>
         public AmazonElasticBeanstalkClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonElasticBeanstalkConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with the credentials defined in the App.config.
@@ -81,7 +81,7 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         /// <param name="config">The AmazonElasticBeanstalk Configuration Object</param>
         public AmazonElasticBeanstalkClient(AmazonElasticBeanstalkConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with AWS Credentials

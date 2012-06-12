@@ -30,7 +30,7 @@ namespace Amazon.S3.Model
     /// <br />Required Parameters: BucketName
     /// <br />Optional Parameters: BucketRegion, Default - S3Region.US
     /// </summary>
-    public class PutBucketRequest : S3Request
+    public class PutBucketRequest : S3PutWithACLRequest
     {
         #region Private Member
 
@@ -138,6 +138,23 @@ namespace Amazon.S3.Model
         public PutBucketRequest WithBucketRegionName(string bucketRegionName)
         {
             BucketRegionName = bucketRegionName;
+            return this;
+        }
+
+        #endregion
+
+        #region Grants
+
+        /// <summary>
+        /// Adds Custom Access Control Lists to this request.
+        /// Please refer to <see cref="T:Amazon.S3.Model.S3Grant"/> for information on
+        /// S3 Grants.
+        /// </summary>
+        /// <param name="grants">One or more S3 Grants.</param>
+        /// <returns>The request with the Grants set.</returns>
+        public PutBucketRequest WithGrants(params S3Grant[] grants)
+        {
+            this.Grants.AddRange(grants);
             return this;
         }
 

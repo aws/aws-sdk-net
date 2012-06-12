@@ -30,8 +30,9 @@ namespace Amazon.IdentityManagement.Model
     /// .</para> <para>If the <c>UserName</c> field is not specified, the user name is determined implicitly based on the AWS Access Key ID used to
     /// sign the request. Because this action works for access keys under the AWS account, this API can be used to manage root credentials even if
     /// the AWS account has no associated users.</para> <para><b>NOTE:</b>Because the body of a X.509 certificate can be large, you should use POST
-    /// rather than GET when calling UploadSigningCertificate. For more information, see Making Query Requests in Using AWS Identity and Access
-    /// Management.</para>
+    /// rather than GET when calling UploadSigningCertificate. For information about setting up signatures and authorization through the API, go to
+    /// Signing AWS API Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query
+    /// Requests in Using IAM.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UploadSigningCertificate"/>
     public class UploadSigningCertificateRequest : AmazonWebServiceRequest

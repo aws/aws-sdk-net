@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PendingModifiedValues Unmarshaller
      /// </summary>
-    internal class PendingModifiedValuesUnmarshaller : IUnmarshaller<PendingModifiedValues, XmlUnmarshallerContext> 
+    internal class PendingModifiedValuesUnmarshaller : IUnmarshaller<PendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<PendingModifiedValues, JsonUnmarshallerContext> 
     {
         public PendingModifiedValues Unmarshall(XmlUnmarshallerContext context) 
         {
             PendingModifiedValues pendingModifiedValues = new PendingModifiedValues();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -88,6 +89,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return pendingModifiedValues;
+        }
+
+        public PendingModifiedValues Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static PendingModifiedValuesUnmarshaller instance;

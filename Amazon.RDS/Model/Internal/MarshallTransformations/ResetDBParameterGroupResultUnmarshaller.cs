@@ -22,13 +22,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ResetDBParameterGroupResult Unmarshaller
      /// </summary>
-    internal class ResetDBParameterGroupResultUnmarshaller : IUnmarshaller<ResetDBParameterGroupResult, XmlUnmarshallerContext> 
+    internal class ResetDBParameterGroupResultUnmarshaller : IUnmarshaller<ResetDBParameterGroupResult, XmlUnmarshallerContext>, IUnmarshaller<ResetDBParameterGroupResult, JsonUnmarshallerContext> 
     {
         public ResetDBParameterGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ResetDBParameterGroupResult resetDBParameterGroupResult = new ResetDBParameterGroupResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
 
             return resetDBParameterGroupResult;
+        }
+
+        public ResetDBParameterGroupResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ResetDBParameterGroupResultUnmarshaller instance;

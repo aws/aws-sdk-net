@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation
         ///
         /// </summary>
         public AmazonCloudFormationClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonCloudFormationConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFormationConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with the credentials defined in the App.config.
@@ -79,7 +79,7 @@ namespace Amazon.CloudFormation
         /// </summary>
         /// <param name="config">The AmazonCloudFormation Configuration Object</param>
         public AmazonCloudFormationClient(AmazonCloudFormationConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with AWS Credentials

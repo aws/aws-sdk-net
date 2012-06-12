@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-04-01
+ *  API Version: 2012-05-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Specifies additional launch instance information.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-04-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-05-01/", IsNullable = false)]
     public class LaunchSpecification
     {    
         private string imageIdField;
@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         private MonitoringSpecification monitoringField;
         private string subnetIdField;
         private List<InstanceNetworkInterfaceSpecification> networkInterfaceSetField;
+        private IAMInstanceProfile instanceProfileField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
@@ -542,6 +543,39 @@ namespace Amazon.EC2.Model
         public bool IsSetNetworkInterfaceSet()
         {
             return (this.NetworkInterfaceSet.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the InstanceProfile property.
+        /// An Identity and Access Management Instance Profile to associate with the instance.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "InstanceProfile")]
+        public IAMInstanceProfile InstanceProfile
+        {
+            get { return this.instanceProfileField; }
+            set { this.instanceProfileField = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstanceProfile property.
+        /// </summary>
+        /// <param name="instanceProfile">
+        /// An Identity and Access Management Instance Profile to associate with the instance.
+        /// </param>
+        /// <returns>this instance</returns>
+        public LaunchSpecification WithInstanceProfile(IAMInstanceProfile instanceProfile)
+        {
+            this.instanceProfileField = instanceProfile;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the InstanceProfile property is set
+        /// </summary>
+        /// <returns>true if the InstanceProfile property is set</returns>
+        public bool IsSetInstanceProfile()
+        {
+            return this.instanceProfileField != null;
         }
     }
 }

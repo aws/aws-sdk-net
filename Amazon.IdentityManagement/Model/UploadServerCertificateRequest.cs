@@ -29,8 +29,9 @@ namespace Amazon.IdentityManagement.Model
     /// key, and an optional certificate chain, which should all be PEM-encoded.</para> <para>For information about the number of server
     /// certificates you can upload, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
     /// <para><b>NOTE:</b>Because the body of the public key certificate, private key, and the certificate chain can be large, you should use POST
-    /// rather than GET when calling UploadServerCertificate. For more information, see Making Query Requests in Using AWS Identity and Access
-    /// Management.</para>
+    /// rather than GET when calling UploadServerCertificate. For information about setting up signatures and authorization through the API, go to
+    /// Signing AWS API Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query
+    /// Requests in Using IAM.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UploadServerCertificate"/>
     public class UploadServerCertificateRequest : AmazonWebServiceRequest

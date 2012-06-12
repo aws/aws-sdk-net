@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
         private string marker;
 
         /// <summary>
-        /// A list of user names.
+        /// A list of users.
         ///  
         /// </summary>
         public List<User> Users

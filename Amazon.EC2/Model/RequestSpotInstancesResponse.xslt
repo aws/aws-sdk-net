@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-04-01/"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-05-01/"
     exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
     <xsl:variable name="ns"
-        select="'http://ec2.amazonaws.com/doc/2012-04-01/'" />
+        select="'http://ec2.amazonaws.com/doc/2012-05-01/'" />
     <xsl:template match="ec2:RequestSpotInstancesResponse">
         <xsl:element name="RequestSpotInstancesResponse" namespace="{$ns}">
             <xsl:element name="ResponseMetadata" namespace="{$ns}">
@@ -113,8 +113,11 @@
                 <xsl:value-of select="ec2:subnetId"/>
             </xsl:element>
           <xsl:apply-templates select="ec2:networkInterfaceSet" />
+          <xsl:apply-templates select="ec2:iamInstanceProfile" />
         </xsl:element>
     </xsl:template>
+  
+  
     <xsl:template match="ec2:groupSet" mode="idAndName">
         <xsl:for-each select="ec2:item">
           <xsl:element name="SecurityGroup" namespace="{$ns}">
@@ -164,6 +167,14 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
+
+  <xsl:template match="ec2:iamInstanceProfile">
+    <xsl:element name="InstanceProfile" namespace="{$ns}">
+      <xsl:element name="Arn" namespace="{$ns}">
+        <xsl:value-of select="ec2:arn"/>
+      </xsl:element>
+    </xsl:element>
+  </xsl:template>
 
   <xsl:template match="ec2:networkInterfaceSet">
     <xsl:for-each select="ec2:item">

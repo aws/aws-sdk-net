@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeDBEngineVersionsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeDBEngineVersions");
-            request.Parameters.Add("Version", "2012-01-15");
+            request.Parameters.Add("Version", "2012-04-23");
             if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetEngine())
             {
                 request.Parameters.Add("Engine", StringUtils.FromString(describeDBEngineVersionsRequest.Engine));
@@ -58,6 +58,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetDefaultOnly())
             {
                 request.Parameters.Add("DefaultOnly", StringUtils.FromBool(describeDBEngineVersionsRequest.DefaultOnly));
+            }
+            if (describeDBEngineVersionsRequest != null && describeDBEngineVersionsRequest.IsSetListSupportedCharacterSets())
+            {
+                request.Parameters.Add("ListSupportedCharacterSets", StringUtils.FromBool(describeDBEngineVersionsRequest.ListSupportedCharacterSets));
             }
 
             return request;

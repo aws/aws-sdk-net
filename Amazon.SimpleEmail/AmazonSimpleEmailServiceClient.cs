@@ -56,7 +56,7 @@ namespace Amazon.SimpleEmail
         ///
         /// </summary>
         public AmazonSimpleEmailServiceClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonSimpleEmailServiceConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceClient with the credentials defined in the App.config.
@@ -75,7 +75,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         /// <param name="config">The AmazonSimpleEmailService Configuration Object</param>
         public AmazonSimpleEmailServiceClient(AmazonSimpleEmailServiceConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceClient with AWS Credentials

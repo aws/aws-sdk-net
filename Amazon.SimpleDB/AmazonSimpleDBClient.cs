@@ -111,7 +111,7 @@ namespace Amazon.SimpleDB
         ///
         /// </summary>
         public AmazonSimpleDBClient()
-            : this(new EnvironmentAWSCredentials(), new AmazonSimpleDBConfig(), true) { }
+            : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleDBConfig(), true) { }
 
         /// <summary>
         /// Constructs AmazonSimpleDBClient with the credentials defined in the App.config.
@@ -130,7 +130,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="config">The AmazonSimpleDB Configuration Object</param>
         public AmazonSimpleDBClient(AmazonSimpleDBConfig config)
-            : this(new EnvironmentAWSCredentials(), config, true) { }
+            : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
 
         /// <summary>
         /// Constructs AmazonSimpleDBClient with AWS Access Key ID and AWS Secret Key

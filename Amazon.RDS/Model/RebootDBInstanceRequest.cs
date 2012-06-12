@@ -27,12 +27,14 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the RebootDBInstance operation.
     /// <para> Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with
     /// ApplyStatus of pending-reboot to the RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS
-    /// instance during which the RDS instance status is set to rebooting. A DBInstance event is created when the reboot is completed. </para>
+    /// instance during which the RDS instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the
+    /// reboot will be conducted through a failover. A DBInstance event is created when the reboot is completed. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.RebootDBInstance"/>
     public class RebootDBInstanceRequest : AmazonWebServiceRequest
     {
         private string dBInstanceIdentifier;
+        private bool? forceFailover;
 
         /// <summary>
         /// The DB Instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
@@ -62,6 +64,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this.dBInstanceIdentifier != null;       
+        }
+
+        /// <summary>
+        /// When <c>true</c>, the reboot will be conducted through a MultiAZ failover. Constraint: You cannot specify <c>true</c> if the instance is not
+        /// configured for MultiAZ.
+        ///  
+        /// </summary>
+        public bool ForceFailover
+        {
+            get { return this.forceFailover ?? default(bool); }
+            set { this.forceFailover = value; }
+        }
+
+        /// <summary>
+        /// Sets the ForceFailover property
+        /// </summary>
+        /// <param name="forceFailover">The value to set for the ForceFailover property </param>
+        /// <returns>this instance</returns>
+        public RebootDBInstanceRequest WithForceFailover(bool forceFailover)
+        {
+            this.forceFailover = forceFailover;
+            return this;
+        }
+            
+
+        // Check to see if ForceFailover property is set
+        internal bool IsSetForceFailover()
+        {
+            return this.forceFailover.HasValue;       
         }
     }
 }

@@ -116,7 +116,7 @@ namespace Amazon.SimpleNotificationService
         ///
         /// </summary>
         public AmazonSimpleNotificationServiceClient()
-            : this(new EnvironmentAWSCredentials(), new AmazonSimpleNotificationServiceConfig(), true) { }
+            : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleNotificationServiceConfig(), true) { }
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with the credentials defined in the App.config.
@@ -135,7 +135,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="config">The AmazonSimpleNotificationService Configuration Object</param>
         public AmazonSimpleNotificationServiceClient(AmazonSimpleNotificationServiceConfig config)
-            : this(new EnvironmentAWSCredentials(), config, true) { }
+            : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with AWS Access Key ID and AWS Secret Key

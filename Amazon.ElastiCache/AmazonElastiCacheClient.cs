@@ -58,7 +58,7 @@ namespace Amazon.ElastiCache
         ///
         /// </summary>
         public AmazonElastiCacheClient()
-            : base(new EnvironmentAWSCredentials(), new AmazonElastiCacheConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with the credentials defined in the App.config.
@@ -77,7 +77,7 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// <param name="config">The AmazonElastiCache Configuration Object</param>
         public AmazonElastiCacheClient(AmazonElastiCacheConfig config)
-            : base(new EnvironmentAWSCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with AWS Credentials
