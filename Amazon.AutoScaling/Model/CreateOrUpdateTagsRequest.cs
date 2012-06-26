@@ -25,12 +25,26 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateOrUpdateTags operation.
-    /// 
+    /// <para> Creates new tags or updates existing tags for an Auto Scaling group. </para> <para><b>NOTE:</b> A tag's definition is composed of a
+    /// resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request
+    /// Parameters for more information. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateOrUpdateTags"/>
     public class CreateOrUpdateTagsRequest : AmazonWebServiceRequest
     {
         private List<Tag> tags = new List<Tag>();
+
+        /// <summary>
+        /// The tag to be created or updated. Each tag should be defined by its resource type, resource ID, key, value, and a propagate flag. The
+        /// resource type and resource ID identify the type and name of resource for which the tag is created. Currently, <c>auto-scaling-group</c> is
+        /// the only supported resource type. The valid value for the resource ID is <i>groupname</i>. The <c>PropagateAtLaunch</c> flag defines whether
+        /// the new tag will be applied to instances launched by the Auto Scaling group. Valid values are <c>true</c> or <c>false</c>. However,
+        /// instances that are already running will not get the new or updated tag. Likewise, when you modify a tag, the updated version will be applied
+        /// only to new instances launched by the Auto Scaling group after the change. Running instances that had the previous version of the tag will
+        /// continue to have the older tag. When you create a tag and a tag of the same name already exists, the operation overwrites the previous tag
+        /// definition, but you will not get an error message.
+        ///  
+        /// </summary>
         public List<Tag> Tags
         {
             get { return this.tags; }

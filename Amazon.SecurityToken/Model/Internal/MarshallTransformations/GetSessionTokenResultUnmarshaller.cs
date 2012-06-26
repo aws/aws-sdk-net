@@ -22,13 +22,14 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
      /// <summary>
      ///   GetSessionTokenResult Unmarshaller
      /// </summary>
-    internal class GetSessionTokenResultUnmarshaller : IUnmarshaller<GetSessionTokenResult, XmlUnmarshallerContext> 
+    internal class GetSessionTokenResultUnmarshaller : IUnmarshaller<GetSessionTokenResult, XmlUnmarshallerContext>, IUnmarshaller<GetSessionTokenResult, JsonUnmarshallerContext> 
     {
         public GetSessionTokenResult Unmarshall(XmlUnmarshallerContext context) 
         {
             GetSessionTokenResult getSessionTokenResult = new GetSessionTokenResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 
 
             return getSessionTokenResult;
+        }
+
+        public GetSessionTokenResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static GetSessionTokenResultUnmarshaller instance;

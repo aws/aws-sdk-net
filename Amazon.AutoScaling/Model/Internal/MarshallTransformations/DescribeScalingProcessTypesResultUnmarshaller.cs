@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeScalingProcessTypesResult Unmarshaller
      /// </summary>
-    internal class DescribeScalingProcessTypesResultUnmarshaller : IUnmarshaller<DescribeScalingProcessTypesResult, XmlUnmarshallerContext> 
+    internal class DescribeScalingProcessTypesResultUnmarshaller : IUnmarshaller<DescribeScalingProcessTypesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeScalingProcessTypesResult, JsonUnmarshallerContext> 
     {
         public DescribeScalingProcessTypesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeScalingProcessTypesResult describeScalingProcessTypesResult = new DescribeScalingProcessTypesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return describeScalingProcessTypesResult;
+        }
+
+        public DescribeScalingProcessTypesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeScalingProcessTypesResultUnmarshaller instance;

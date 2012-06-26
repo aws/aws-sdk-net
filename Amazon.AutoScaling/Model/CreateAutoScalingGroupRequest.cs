@@ -25,9 +25,9 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAutoScalingGroup operation.
-    /// <para> Creates a new Auto Scaling group with the specified name. When the creation request is completed, the Auto Scaling group is ready to
-    /// be used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of your AWS account, and
-    /// under the quota of Auto Scaling groups allowed for your account. </para>
+    /// <para> Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto
+    /// Scaling group is ready to be used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of
+    /// your AWS account, and under the quota of Auto Scaling groups allowed for your account. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateAutoScalingGroup"/>
     public class CreateAutoScalingGroupRequest : AmazonWebServiceRequest
@@ -241,7 +241,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of availability zones for the Auto Scaling group.
+        /// A list of Availability Zones for the Auto Scaling group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -295,7 +295,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of LoadBalancers to use.
+        /// A list of load balancers to use.
         ///  
         /// </summary>
         public List<string> LoadBalancerNames
@@ -381,7 +381,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Length of time in seconds after a new EC2 instance comes into service that Auto Scaling starts checking its health.
+        /// Length of time in seconds after a new Amazon EC2 instance comes into service that Auto Scaling starts checking its health.
         ///  
         /// </summary>
         public int HealthCheckGracePeriod
@@ -491,6 +491,12 @@ namespace Amazon.AutoScaling.Model
         {
             return this.vPCZoneIdentifier != null;       
         }
+
+        /// <summary>
+        /// The tag to be created or updated. Each tag should be defined by its resource type, resource ID, key, value, and a propagate flag. Valid
+        /// values are: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or <i>false</i>. Value and propagate are optional parameters.
+        ///  
+        /// </summary>
         public List<Tag> Tags
         {
             get { return this.tags; }

@@ -78,7 +78,7 @@ namespace Amazon.S3.Model
             S3Grant grant = new S3Grant();
             grant.WithGrantee(grantee);
             grant.WithPermission(permission);
-            this.grantList.Add(grant);
+            this.Grants.Add(grant);
         }
 
         /// <summary>
@@ -88,11 +88,11 @@ namespace Amazon.S3.Model
         /// <param name="permission">The permission for the grantee to remove</param>
         public void RemoveGrant(S3Grantee grantee, S3Permission permission)
         {
-            foreach (S3Grant grant in this.grantList)
+            foreach (S3Grant grant in this.Grants)
             {
                 if (grant.Grantee.Equals(grantee) && grant.Permission == permission)
                 {
-                    this.grantList.Remove(grant);
+                    this.Grants.Remove(grant);
                     break;
                 }
             }
@@ -105,7 +105,7 @@ namespace Amazon.S3.Model
         public void RemoveGrant(S3Grantee grantee)
         {
             List<S3Grant> removeList = new List<S3Grant>();
-            foreach (S3Grant grant in this.grantList)
+            foreach (S3Grant grant in this.Grants)
             {
                 if (grant.Grantee.Equals(grantee))
                 {
@@ -114,7 +114,7 @@ namespace Amazon.S3.Model
             }
             foreach (S3Grant grant in removeList)
             {
-                this.grantList.Remove(grant);
+                this.Grants.Remove(grant);
             }
         }
 
@@ -131,7 +131,7 @@ namespace Amazon.S3.Model
             sb.Append(System.String.Concat("<DisplayName>", this.Owner.DisplayName, "</DisplayName>"));
             sb.Append("</Owner>");
             sb.Append("<AccessControlList>");
-            foreach (S3Grant grant in this.grantList)
+            foreach (S3Grant grant in this.Grants)
             {
                 sb.Append(grant.ToXML());
             }
@@ -146,7 +146,7 @@ namespace Amazon.S3.Model
 
         internal void Sort()
         {
-            this.grantList.Sort(new ComparatorGrant());
+            this.Grants.Sort(new ComparatorGrant());
         }
 
         #endregion
@@ -228,7 +228,7 @@ namespace Amazon.S3.Model
         {
             foreach (S3Grant arg in args)
             {
-                grantList.Add(arg);
+                Grants.Add(arg);
             }
             return this;
         }
@@ -239,7 +239,7 @@ namespace Amazon.S3.Model
         /// <returns>true if Grants property is set.</returns>
         internal bool IsSetGrants()
         {
-            return (this.grantList.Count > 0);
+            return (this.Grants.Count > 0);
         }
 
         #endregion

@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ScalingPolicy Unmarshaller
      /// </summary>
-    internal class ScalingPolicyUnmarshaller : IUnmarshaller<ScalingPolicy, XmlUnmarshallerContext> 
+    internal class ScalingPolicyUnmarshaller : IUnmarshaller<ScalingPolicy, XmlUnmarshallerContext>, IUnmarshaller<ScalingPolicy, JsonUnmarshallerContext> 
     {
         public ScalingPolicy Unmarshall(XmlUnmarshallerContext context) 
         {
             ScalingPolicy scalingPolicy = new ScalingPolicy();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -77,6 +78,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         scalingPolicy.Alarms.Add(AlarmUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
+                    } 
+                    if (context.TestExpression("MinAdjustmentStep", targetDepth))
+                    {
+                        scalingPolicy.MinAdjustmentStep = IntUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -88,6 +95,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return scalingPolicy;
+        }
+
+        public ScalingPolicy Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ScalingPolicyUnmarshaller instance;

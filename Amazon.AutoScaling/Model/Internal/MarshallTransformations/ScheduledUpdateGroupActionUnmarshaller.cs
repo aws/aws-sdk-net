@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ScheduledUpdateGroupAction Unmarshaller
      /// </summary>
-    internal class ScheduledUpdateGroupActionUnmarshaller : IUnmarshaller<ScheduledUpdateGroupAction, XmlUnmarshallerContext> 
+    internal class ScheduledUpdateGroupActionUnmarshaller : IUnmarshaller<ScheduledUpdateGroupAction, XmlUnmarshallerContext>, IUnmarshaller<ScheduledUpdateGroupAction, JsonUnmarshallerContext> 
     {
         public ScheduledUpdateGroupAction Unmarshall(XmlUnmarshallerContext context) 
         {
             ScheduledUpdateGroupAction scheduledUpdateGroupAction = new ScheduledUpdateGroupAction();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -106,6 +107,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return scheduledUpdateGroupAction;
+        }
+
+        public ScheduledUpdateGroupAction Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ScheduledUpdateGroupActionUnmarshaller instance;

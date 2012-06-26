@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The BlockDeviceMapping data type. </para>
+    /// <para> The <c>BlockDeviceMapping</c> data type. </para>
     /// </summary>
     public class BlockDeviceMapping  
     {

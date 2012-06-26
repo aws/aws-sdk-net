@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Ebs Unmarshaller
      /// </summary>
-    internal class EbsUnmarshaller : IUnmarshaller<Ebs, XmlUnmarshallerContext> 
+    internal class EbsUnmarshaller : IUnmarshaller<Ebs, XmlUnmarshallerContext>, IUnmarshaller<Ebs, JsonUnmarshallerContext> 
     {
         public Ebs Unmarshall(XmlUnmarshallerContext context) 
         {
             Ebs ebs = new Ebs();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return ebs;
+        }
+
+        public Ebs Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static EbsUnmarshaller instance;

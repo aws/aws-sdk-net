@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeAdjustmentTypesResult Unmarshaller
      /// </summary>
-    internal class DescribeAdjustmentTypesResultUnmarshaller : IUnmarshaller<DescribeAdjustmentTypesResult, XmlUnmarshallerContext> 
+    internal class DescribeAdjustmentTypesResultUnmarshaller : IUnmarshaller<DescribeAdjustmentTypesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeAdjustmentTypesResult, JsonUnmarshallerContext> 
     {
         public DescribeAdjustmentTypesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeAdjustmentTypesResult describeAdjustmentTypesResult = new DescribeAdjustmentTypesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return describeAdjustmentTypesResult;
+        }
+
+        public DescribeAdjustmentTypesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeAdjustmentTypesResultUnmarshaller instance;

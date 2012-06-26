@@ -22,13 +22,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeAlarmHistoryResult Unmarshaller
      /// </summary>
-    internal class DescribeAlarmHistoryResultUnmarshaller : IUnmarshaller<DescribeAlarmHistoryResult, XmlUnmarshallerContext> 
+    internal class DescribeAlarmHistoryResultUnmarshaller : IUnmarshaller<DescribeAlarmHistoryResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeAlarmHistoryResult, JsonUnmarshallerContext> 
     {
         public DescribeAlarmHistoryResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeAlarmHistoryResult describeAlarmHistoryResult = new DescribeAlarmHistoryResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
 
             return describeAlarmHistoryResult;
+        }
+
+        public DescribeAlarmHistoryResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeAlarmHistoryResultUnmarshaller instance;

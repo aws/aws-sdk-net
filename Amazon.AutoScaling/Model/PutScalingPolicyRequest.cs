@@ -37,9 +37,10 @@ namespace Amazon.AutoScaling.Model
         private int? scalingAdjustment;
         private string adjustmentType;
         private int? cooldown;
+        private int? minAdjustmentStep;
 
         /// <summary>
-        /// The name or ARN of the Auto Scaling Group.
+        /// The name or ARN of the Auto Scaling group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -218,6 +219,36 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetCooldown()
         {
             return this.cooldown.HasValue;       
+        }
+
+        /// <summary>
+        /// Used with <c>AdjustmentType</c> with the value <c>PercentChangeInCapacity</c>, the scaling policy changes the <c>DesiredCapacity</c> of the
+        /// Auto Scaling group by at least the number of instances specified in the value. You will get a <c>ValidationError</c> if you use
+        /// <c>MinAdjustmentStep</c> on a policy with an <c>AdjustmentType</c> other than <c>PercentChangeInCapacity</c>.
+        ///  
+        /// </summary>
+        public int MinAdjustmentStep
+        {
+            get { return this.minAdjustmentStep ?? default(int); }
+            set { this.minAdjustmentStep = value; }
+        }
+
+        /// <summary>
+        /// Sets the MinAdjustmentStep property
+        /// </summary>
+        /// <param name="minAdjustmentStep">The value to set for the MinAdjustmentStep property </param>
+        /// <returns>this instance</returns>
+        public PutScalingPolicyRequest WithMinAdjustmentStep(int minAdjustmentStep)
+        {
+            this.minAdjustmentStep = minAdjustmentStep;
+            return this;
+        }
+            
+
+        // Check to see if MinAdjustmentStep property is set
+        internal bool IsSetMinAdjustmentStep()
+        {
+            return this.minAdjustmentStep.HasValue;       
         }
     }
 }

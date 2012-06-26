@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeMetricCollectionTypesResult Unmarshaller
      /// </summary>
-    internal class DescribeMetricCollectionTypesResultUnmarshaller : IUnmarshaller<DescribeMetricCollectionTypesResult, XmlUnmarshallerContext> 
+    internal class DescribeMetricCollectionTypesResultUnmarshaller : IUnmarshaller<DescribeMetricCollectionTypesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeMetricCollectionTypesResult, JsonUnmarshallerContext> 
     {
         public DescribeMetricCollectionTypesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeMetricCollectionTypesResult describeMetricCollectionTypesResult = new DescribeMetricCollectionTypesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return describeMetricCollectionTypesResult;
+        }
+
+        public DescribeMetricCollectionTypesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeMetricCollectionTypesResultUnmarshaller instance;

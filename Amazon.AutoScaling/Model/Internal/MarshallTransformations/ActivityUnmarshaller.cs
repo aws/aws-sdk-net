@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Activity Unmarshaller
      /// </summary>
-    internal class ActivityUnmarshaller : IUnmarshaller<Activity, XmlUnmarshallerContext> 
+    internal class ActivityUnmarshaller : IUnmarshaller<Activity, XmlUnmarshallerContext>, IUnmarshaller<Activity, JsonUnmarshallerContext> 
     {
         public Activity Unmarshall(XmlUnmarshallerContext context) 
         {
             Activity activity = new Activity();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -106,6 +107,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return activity;
+        }
+
+        public Activity Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ActivityUnmarshaller instance;

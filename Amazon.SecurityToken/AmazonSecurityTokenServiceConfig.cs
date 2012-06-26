@@ -30,7 +30,7 @@ namespace Amazon.SecurityToken
         public AmazonSecurityTokenServiceConfig()
         {
             this.ServiceURL = "https://sts.amazonaws.com";
-            
+            this.AuthenticationServiceName = "sts";
         }
 
         /// <summary>

@@ -55,6 +55,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("Cooldown", StringUtils.FromInt(putScalingPolicyRequest.Cooldown));
             }
+            if (putScalingPolicyRequest != null && putScalingPolicyRequest.IsSetMinAdjustmentStep())
+            {
+                request.Parameters.Add("MinAdjustmentStep", StringUtils.FromInt(putScalingPolicyRequest.MinAdjustmentStep));
+            }
 
             return request;
         }

@@ -170,7 +170,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Contains the minimum size of the AutoScalingGroup.
+        /// Contains the minimum size of the Auto Scaling group.
         ///  
         /// </summary>
         public int MinSize
@@ -198,7 +198,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Contains the maximum size of the AutoScalingGroup.
+        /// Contains the maximum size of the Auto Scaling group.
         ///  
         /// </summary>
         public int MaxSize
@@ -226,7 +226,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Specifies the desired capacity for the AutoScalingGroup.
+        /// Specifies the desired capacity for the Auto Scaling group.
         ///  
         /// </summary>
         public int DesiredCapacity
@@ -282,7 +282,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Contains a list of availability zones for the group.
+        /// Contains a list of Availability Zones for the group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -451,7 +451,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Provides a summary list of EC2 instances.
+        /// Provides a summary list of Amazon EC2 instances.
         ///  
         /// </summary>
         public List<Instance> Instances
@@ -739,6 +739,11 @@ namespace Amazon.AutoScaling.Model
         {
             return this.status != null;       
         }
+
+        /// <summary>
+        /// A list of tags for the Auto Scaling group.
+        ///  
+        /// </summary>
         public List<TagDescription> Tags
         {
             get { return this.tags; }

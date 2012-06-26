@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribePoliciesResult Unmarshaller
      /// </summary>
-    internal class DescribePoliciesResultUnmarshaller : IUnmarshaller<DescribePoliciesResult, XmlUnmarshallerContext> 
+    internal class DescribePoliciesResultUnmarshaller : IUnmarshaller<DescribePoliciesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribePoliciesResult, JsonUnmarshallerContext> 
     {
         public DescribePoliciesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribePoliciesResult describePoliciesResult = new DescribePoliciesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return describePoliciesResult;
+        }
+
+        public DescribePoliciesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribePoliciesResultUnmarshaller instance;

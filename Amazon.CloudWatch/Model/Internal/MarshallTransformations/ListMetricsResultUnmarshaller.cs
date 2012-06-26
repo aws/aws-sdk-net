@@ -22,13 +22,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ListMetricsResult Unmarshaller
      /// </summary>
-    internal class ListMetricsResultUnmarshaller : IUnmarshaller<ListMetricsResult, XmlUnmarshallerContext> 
+    internal class ListMetricsResultUnmarshaller : IUnmarshaller<ListMetricsResult, XmlUnmarshallerContext>, IUnmarshaller<ListMetricsResult, JsonUnmarshallerContext> 
     {
         public ListMetricsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ListMetricsResult listMetricsResult = new ListMetricsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
 
             return listMetricsResult;
+        }
+
+        public ListMetricsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ListMetricsResultUnmarshaller instance;

@@ -35,7 +35,7 @@ namespace Amazon.CloudFront_2012_03_15
         #region Private Members
 
         private string serviceURL = "https://cloudfront.amazonaws.com";
-        private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
+        private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent + " v2012_03_15";
         private string proxyHost;
         private int proxyPort = -1;
         private int maxErrorRetry = 3;

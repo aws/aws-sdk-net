@@ -80,7 +80,7 @@ namespace Amazon.S3.Transfer
         }
         /// <summary>
         /// 	Gets or sets the local directory where objects from Amazon S3 will be downloaded.  
-				/// 	If the directory doesn't exist, it will be created.
+		/// 	If the directory doesn't exist, it will be created.
         /// </summary>
         /// <value>
         /// 	The local directory where objects from Amazon S3 will be downloaded.

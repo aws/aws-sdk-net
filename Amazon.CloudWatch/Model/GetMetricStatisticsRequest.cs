@@ -41,7 +41,7 @@ namespace Amazon.CloudWatch.Model
     /// 
     /// </ul>
     /// <para> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to
-    /// Cloudwatch, go to CloudWatch Support for AWS Products in the <i>Amazon CloudWatch Developer Guide</i> .
+    /// Cloudwatch, go to Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference in the <i>Amazon CloudWatch Developer Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudWatch.AmazonCloudWatch.GetMetricStatistics"/>
@@ -57,7 +57,7 @@ namespace Amazon.CloudWatch.Model
         private string unit;
 
         /// <summary>
-        /// The namespace of the metric.
+        /// The namespace of the metric, with or without spaces.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -98,7 +98,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The name of the metric.
+        /// The name of the metric, with or without spaces.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -287,8 +287,8 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The metric statistics to return. For information about specific statistics returned by GetMetricStatistics, go to <a
-        /// href="http://docs.amazonwebservices.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a>
+        /// The metric statistics to return. For information about specific statistics returned by GetMetricStatistics, go to
+        /// <a href="http://docs.amazonwebservices.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a>
         /// in the <i>Amazon CloudWatch Developer Guide</i>. Valid Values: <c>Average | Sum | SampleCount | Maximum | Minimum</c>
         ///  
         /// <para>

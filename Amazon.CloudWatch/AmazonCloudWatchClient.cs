@@ -32,8 +32,10 @@ namespace Amazon.CloudWatch
     /// CloudWatch actions, data types, parameters, and errors. For detailed information about Amazon CloudWatch features and their associated API
     /// calls, go to the Amazon CloudWatch Developer Guide. </para> <para>Amazon CloudWatch is a web service that enables you to publish, monitor,
     /// and manage various metrics, as well as configure alarm actions based on data from metrics. For more information about this product go to
-    /// http://aws.amazon.com/cloudwatch. </para> <para>Use the following links to get started using the <i>Amazon CloudWatch API Reference</i>
-    /// :</para>
+    /// http://aws.amazon.com/cloudwatch. </para> <para> For information about the namespace, metric names, and dimensions that other Amazon Web
+    /// Services products use to send metrics to Cloudwatch, go to Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference in the <i>Amazon
+    /// CloudWatch Developer Guide</i> .
+    /// </para> <para>Use the following links to get started using the <i>Amazon CloudWatch API Reference</i> :</para>
     /// <ul>
     /// <li> Actions: An alphabetical list of all Amazon CloudWatch actions.</li>
     /// <li> Data Types: An alphabetical list of all Amazon CloudWatch data types.</li>
@@ -47,7 +49,7 @@ namespace Amazon.CloudWatch
     public class AmazonCloudWatchClient : AmazonWebServiceClient, AmazonCloudWatch
     {
     
-        AbstractAWSSigner signer = new QueryStringSigner();
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 
@@ -374,7 +376,7 @@ namespace Amazon.CloudWatch
         /// 
         /// </ul>
         /// <para> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to
-        /// Cloudwatch, go to CloudWatch Support for AWS Products in the <i>Amazon CloudWatch Developer Guide</i> .
+        /// Cloudwatch, go to Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference in the <i>Amazon CloudWatch Developer Guide</i> .
         /// </para>
         /// </summary>
         /// 

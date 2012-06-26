@@ -28,19 +28,20 @@ namespace Amazon.SecurityToken
     /// <summary>
     /// Implementation for accessing AmazonSecurityTokenService.
     ///  
-    /// AWS Security Token Service <para>This is the <i>AWS Security Token Service API Reference</i> . The AWS Security Token Service is a web
-    /// service that enables you to request temporary, limited-privilege credentials for AWS Identity and Access Management (IAM) users or for users
-    /// that you authenticate (federated users). This guide provides descriptions of the AWS Security Token Service API as well as links to related
-    /// content in Using IAM.</para> <para>For more detailed information about using this service, go to Granting Temporary Access to Your AWS
-    /// Resources in <i>Using IAM</i> .</para> <para>For specific information about setting up signatures and authorization through the API, go to
-    /// Making Query Requests in <i>Using IAM</i> .</para> <para>If you're new to AWS and need additional technical information about a specific AWS
-    /// product, you can find the product's technical documentation at http://aws.amazon.com/documentation/.</para> <para>We will refer to Amazon
-    /// Identity and Access Management using the abbreviated form IAM. All copyrights and legal protections still apply.</para>
+    /// AWS Security Token Service <para>The AWS Security Token Service is a web service that enables you to request temporary, limited-privilege
+    /// credentials for AWS Identity and Access Management (IAM) users or for users that you authenticate (federated users). This guide provides
+    /// descriptions of the AWS Security Token Service API.</para> <para>For more detailed information about using this service, go to Using
+    /// Temporary Security Credentials.</para> <para>For information about setting up signatures and authorization through the API, go to Signing
+    /// AWS API Requests in the <i>AWS General Reference</i> . For general information about the Query API, go to Making Query Requests in <i>Using
+    /// IAM</i> . For information about using security tokens with other AWS products, go to Using Temporary Security Credentials to Access AWS in
+    /// <i>Using Temporary Security Credentials</i> .</para> <para>If you're new to AWS and need additional technical information about a specific
+    /// AWS product, you can find the product's technical documentation at http://aws.amazon.com/documentation/.</para> <para>We will refer to
+    /// Amazon Identity and Access Management using the abbreviated form IAM. All copyrights and legal protections still apply.</para>
     /// </summary>
     public class AmazonSecurityTokenServiceClient : AmazonWebServiceClient, AmazonSecurityTokenService
     {
     
-        AbstractAWSSigner signer = new QueryStringSigner();
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 
@@ -218,13 +219,13 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// <para>The GetFederationToken action returns a set of temporary credentials for a federated user with the user name and policy specified in
-        /// the request. The credentials consist of an Access Key ID, a Secret Access Key, and a security token. The credentials are valid for the
-        /// specified duration, between one and 36 hours.</para> <para>The federated user who holds these credentials has any permissions allowed by the
-        /// intersection of the specified policy and any resource or user policies that apply to the caller of the GetFederationToken API, and any
-        /// resource policies that apply to the federated user's Amazon Resource Name (ARN). For more information about how token permissions work, see
-        /// Controlling Permissions in Temporary Credentials in <i>Using AWS Identity and Access Management</i> . For information about using
-        /// GetFederationToken to create temporary credentials, see Creating Temporary Credentials to Enable Access for Federated Users in <i>Using AWS
-        /// Identity and Access Management</i> .</para>
+        /// the request. The credentials consist of an Access Key ID, a Secret Access Key, and a security token. Credentials created by IAM users are
+        /// valid for the specified duration, between one and 36 hours; credentials created using account credentials last one hour.</para> <para>The
+        /// federated user who holds these credentials has any permissions allowed by the intersection of the specified policy and any resource or user
+        /// policies that apply to the caller of the GetFederationToken API, and any resource policies that apply to the federated user's Amazon
+        /// Resource Name (ARN). For more information about how token permissions work, see Controlling Permissions in Temporary Credentials in <i>Using
+        /// AWS Identity and Access Management</i> . For information about using GetFederationToken to create temporary credentials, see Creating
+        /// Temporary Credentials to Enable Access for Federated Users in <i>Using AWS Identity and Access Management</i> .</para>
         /// </summary>
         /// 
         /// <param name="getFederationTokenRequest">Container for the necessary parameters to execute the GetFederationToken service method on

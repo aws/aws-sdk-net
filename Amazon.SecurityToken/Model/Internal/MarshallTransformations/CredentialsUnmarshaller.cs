@@ -22,13 +22,14 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Credentials Unmarshaller
      /// </summary>
-    internal class CredentialsUnmarshaller : IUnmarshaller<Credentials, XmlUnmarshallerContext> 
+    internal class CredentialsUnmarshaller : IUnmarshaller<Credentials, XmlUnmarshallerContext>, IUnmarshaller<Credentials, JsonUnmarshallerContext> 
     {
         public Credentials Unmarshall(XmlUnmarshallerContext context) 
         {
             Credentials credentials = new Credentials();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -70,6 +71,11 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 
 
             return credentials;
+        }
+
+        public Credentials Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static CredentialsUnmarshaller instance;

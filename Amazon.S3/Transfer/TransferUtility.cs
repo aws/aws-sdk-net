@@ -945,12 +945,12 @@ namespace Amazon.S3.Transfer
 
         /// <summary>
         /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
-				/// 	specified by the <c>S3Directory</c>
+		/// 	specified by the <c>S3Directory</c>
         /// 	property of the passed in <c>TransferUtilityDownloadDirectoryRequest</c> object.
         /// </summary>
         /// <param name="request">
         /// 	Contains all the parameters required to download objects from Amazon S3 
-				/// 	into a local directory.
+		/// 	into a local directory.
         /// </param>
         public void DownloadDirectory(TransferUtilityDownloadDirectoryRequest request)
         {

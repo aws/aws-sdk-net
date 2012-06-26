@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> This data type stores information about an scheduled update to an Auto Scaling group. </para>
+    /// <para> This data type stores information about a scheduled update to an Auto Scaling group. </para>
     /// </summary>
     public class ScheduledUpdateGroupAction  
     {

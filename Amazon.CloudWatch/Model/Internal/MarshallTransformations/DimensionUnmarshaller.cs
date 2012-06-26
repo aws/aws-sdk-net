@@ -22,13 +22,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Dimension Unmarshaller
      /// </summary>
-    internal class DimensionUnmarshaller : IUnmarshaller<Dimension, XmlUnmarshallerContext> 
+    internal class DimensionUnmarshaller : IUnmarshaller<Dimension, XmlUnmarshallerContext>, IUnmarshaller<Dimension, JsonUnmarshallerContext> 
     {
         public Dimension Unmarshall(XmlUnmarshallerContext context) 
         {
             Dimension dimension = new Dimension();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
 
             return dimension;
+        }
+
+        public Dimension Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DimensionUnmarshaller instance;

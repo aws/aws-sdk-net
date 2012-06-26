@@ -72,7 +72,8 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// A list of dimensions associated with the metric.
+        /// A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you need to append .member.N to it (e.g.,
+        /// Dimensions.member.N).
         ///  
         /// <para>
         /// <b>Constraints:</b>

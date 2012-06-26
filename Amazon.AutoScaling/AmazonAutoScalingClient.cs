@@ -28,18 +28,18 @@ namespace Amazon.AutoScaling
     /// <summary>
     /// Implementation for accessing AmazonAutoScaling.
     ///  
-    /// Auto Scaling <para> This is the <i>Auto Scaling API Reference</i> . This guide provides detailed information about Auto Scaling actions,
-    /// data types, parameters, and errors. For detailed information about Auto Scaling features and their associated API calls, go to the Auto
-    /// Scaling Developer Guide. </para> <para> Auto Scaling is a web service designed to automatically launch or terminate EC2 instances based on
-    /// user-defined policies, schedules, and health checks. This service is used in conjunction with Amazon CloudWatch and Elastic Load Balancing
-    /// services. </para> <para>This reference is based on the current WSDL, which is available at:</para> <para>
+    /// Auto Scaling <para> This guide provides detailed information about Auto Scaling actions, data types, parameters, and errors. For detailed
+    /// information about Auto Scaling features and their associated API calls, go to the Auto Scaling Developer Guide. </para> <para> Auto Scaling
+    /// is a web service designed to automatically launch or terminate Amazon Elastic Compute Cloud (Amazon EC2) instances based on user-defined
+    /// policies, schedules, and health checks. This service is used in conjunction with Amazon CloudWatch and Elastic Load Balancing services.
+    /// </para> <para>This reference is based on the current WSDL, which is available at:</para> <para>
     /// http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl </para> <para> <b>Endpoints</b> </para> <para>For information about this
     /// product's regions and endpoints, go to Regions and Endpoints in the Amazon Web Services General Reference. </para>
     /// </summary>
     public class AmazonAutoScalingClient : AmazonWebServiceClient, AmazonAutoScaling
     {
     
-        AbstractAWSSigner signer = new QueryStringSigner();
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 
@@ -216,9 +216,9 @@ namespace Amazon.AutoScaling
         #region EnableMetricsCollection
 
         /// <summary>
-        /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in AutoScalingGroupName. You can specify the list of enabled
-        /// metrics with the Metrics parameter. </para> <para> Auto scaling metrics collection can be turned on only if the <c>InstanceMonitoring</c>
-        /// flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
+        /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
+        /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto scaling metrics collection
+        /// can be turned on only if the <c>InstanceMonitoring</c> flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
         /// </para>
         /// </summary>
         /// 
@@ -553,9 +553,9 @@ namespace Amazon.AutoScaling
         #region CreateAutoScalingGroup
 
         /// <summary>
-        /// <para> Creates a new Auto Scaling group with the specified name. When the creation request is completed, the Auto Scaling group is ready to
-        /// be used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of your AWS account, and
-        /// under the quota of Auto Scaling groups allowed for your account. </para>
+        /// <para> Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto
+        /// Scaling group is ready to be used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of
+        /// your AWS account, and under the quota of Auto Scaling groups allowed for your account. </para>
         /// </summary>
         /// 
         /// <param name="createAutoScalingGroupRequest">Container for the necessary parameters to execute the CreateAutoScalingGroup service method on
@@ -779,6 +779,10 @@ namespace Amazon.AutoScaling
         #region DescribeTags
 
         /// <summary>
+        /// <para> Lists the Auto Scaling group tags. </para> <para> You can use filters to limit results when describing tags. For example, you can
+        /// query for tags of a particular Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the
+        /// specified values for it to be included in the results. </para> <para> You can also specify multiple filters. The result includes information
+        /// for a particular tag only if it matches all your filters. If there's no match, no special message is returned. </para>
         /// </summary>
         /// 
         /// <param name="describeTagsRequest">Container for the necessary parameters to execute the DescribeTags service method on
@@ -839,6 +843,10 @@ namespace Amazon.AutoScaling
         
 
         /// <summary>
+        /// <para> Lists the Auto Scaling group tags. </para> <para> You can use filters to limit results when describing tags. For example, you can
+        /// query for tags of a particular Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the
+        /// specified values for it to be included in the results. </para> <para> You can also specify multiple filters. The result includes information
+        /// for a particular tag only if it matches all your filters. If there's no match, no special message is returned. </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AmazonAutoScaling.</returns>
@@ -914,6 +922,7 @@ namespace Amazon.AutoScaling
         #region DeleteTags
 
         /// <summary>
+        /// <para>Removes the specified tags or a set of tags from a set of resources.</para>
         /// </summary>
         /// 
         /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags service method on
@@ -1099,7 +1108,7 @@ namespace Amazon.AutoScaling
         #region DeletePolicy
 
         /// <summary>
-        /// <para>Deletes a policy created by PutScalingPolicy </para>
+        /// <para>Deletes a policy created by PutScalingPolicy.</para>
         /// </summary>
         /// 
         /// <param name="deletePolicyRequest">Container for the necessary parameters to execute the DeletePolicy service method on
@@ -1407,6 +1416,9 @@ namespace Amazon.AutoScaling
         #region CreateOrUpdateTags
 
         /// <summary>
+        /// <para> Creates new tags or updates existing tags for an Auto Scaling group. </para> <para><b>NOTE:</b> A tag's definition is composed of a
+        /// resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request
+        /// Parameters for more information. </para>
         /// </summary>
         /// 
         /// <param name="createOrUpdateTagsRequest">Container for the necessary parameters to execute the CreateOrUpdateTags service method on
@@ -1617,7 +1629,7 @@ namespace Amazon.AutoScaling
         /// maximum limit of launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created,
         /// the new launch configuration is available for immediate use. </para> <para>You can create a launch configuration with Amazon EC2 security
         /// groups or with Amazon VPC security groups. However, you can't use Amazon EC2 security groups together with Amazon VPC security groups, or
-        /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. gzipped) user data
+        /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data
         /// files. </para>
         /// </summary>
         /// 
@@ -1678,7 +1690,7 @@ namespace Amazon.AutoScaling
         #region DeleteAutoScalingGroup
 
         /// <summary>
-        /// <para> Deletes the specified auto scaling group if the group has no instances and no scaling activities in progress. </para>
+        /// <para> Deletes the specified Auto Scaling group if the group has no instances and no scaling activities in progress. </para>
         /// <para><b>NOTE:</b> To remove all instances before calling DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the minimum and
         /// maximum size of the AutoScalingGroup to zero. </para>
         /// </summary>
@@ -1740,8 +1752,8 @@ namespace Amazon.AutoScaling
         #region DisableMetricsCollection
 
         /// <summary>
-        /// <para> Disables monitoring of group metrics for the Auto Scaling group specified in AutoScalingGroupName. You can specify the list of
-        /// affected metrics with the Metrics parameter. </para>
+        /// <para> Disables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
+        /// You can specify the list of affected metrics with the <c>Metrics</c> parameter. </para>
         /// </summary>
         /// 
         /// <param name="disableMetricsCollectionRequest">Container for the necessary parameters to execute the DisableMetricsCollection service method
@@ -1804,8 +1816,11 @@ namespace Amazon.AutoScaling
         /// Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics collection, you can disable collection of
         /// all group metrics by calling DisableMetricsCollection. </para> <para> The new settings are registered upon the completion of this call. Any
         /// launch configuration settings take effect on any triggers after this call returns. Triggers that are currently in progress aren't affected.
-        /// </para> <para><b>NOTE:</b> If the new values are specified for the MinSize or MaxSize parameters, then there will be an implicit call to
-        /// SetDesiredCapacity to set the group to the new MaxSize. All optional parameters are left unchanged if not passed in the request. </para>
+        /// </para> <para><b>NOTE:</b> If a new value is specified for MinSize without specifying the value for DesiredCapacity, and if the new MinSize
+        /// is larger than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new
+        /// MinSize. If a new value is specified for MaxSize without specifying the value for DesiredCapacity, and the new MaxSize is smaller than the
+        /// current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MaxSize. All other
+        /// optional parameters are left unchanged if not passed in the request. </para>
         /// </summary>
         /// 
         /// <param name="updateAutoScalingGroupRequest">Container for the necessary parameters to execute the UpdateAutoScalingGroup service method on
@@ -1864,8 +1879,8 @@ namespace Amazon.AutoScaling
         #region DescribeLaunchConfigurations
 
         /// <summary>
-        /// <para> Returns a full description of the launch configurations given the specified names. </para> <para> If no names are specified, then the
-        /// full details of all launch configurations are returned. </para>
+        /// <para> Returns a full description of the launch configurations, or the specified launch configurations, if they exist. </para> <para> If no
+        /// name is specified, then the full details of all launch configurations are returned. </para>
         /// </summary>
         /// 
         /// <param name="describeLaunchConfigurationsRequest">Container for the necessary parameters to execute the DescribeLaunchConfigurations service
@@ -1927,8 +1942,8 @@ namespace Amazon.AutoScaling
         
 
         /// <summary>
-        /// <para> Returns a full description of the launch configurations given the specified names. </para> <para> If no names are specified, then the
-        /// full details of all launch configurations are returned. </para>
+        /// <para> Returns a full description of the launch configurations, or the specified launch configurations, if they exist. </para> <para> If no
+        /// name is specified, then the full details of all launch configurations are returned. </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AmazonAutoScaling.</returns>
@@ -2022,8 +2037,8 @@ namespace Amazon.AutoScaling
         #region DescribeScheduledActions
 
         /// <summary>
-        /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of action already executed, see
-        /// the activity record returned in DescribeScalingActivities. </para>
+        /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
+        /// see the activity record returned in DescribeScalingActivities. </para>
         /// </summary>
         /// 
         /// <param name="describeScheduledActionsRequest">Container for the necessary parameters to execute the DescribeScheduledActions service method
@@ -2085,8 +2100,8 @@ namespace Amazon.AutoScaling
         
 
         /// <summary>
-        /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of action already executed, see
-        /// the activity record returned in DescribeScalingActivities. </para>
+        /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
+        /// see the activity record returned in DescribeScalingActivities. </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AmazonAutoScaling.</returns>
@@ -2103,7 +2118,7 @@ namespace Amazon.AutoScaling
         #region PutScheduledUpdateGroupAction
 
         /// <summary>
-        /// <para> Creates a scheduled scaling action for a Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
+        /// <para> Creates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
         /// unchanged in the affected Auto Scaling group. </para>
         /// </summary>
         /// 
@@ -2242,13 +2257,13 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// <para> Adjusts the desired size of the AutoScalingGroup by initiating scaling activities. When reducing the size of the group, it is not
-        /// possible to define which EC2 instances will be terminated. This applies to any Auto Scaling decisions that might result in terminating
-        /// instances. </para> <para> There are two common use cases for <c>SetDesiredCapacity</c> :
+        /// possible to define which Amazon EC2 instances will be terminated. This applies to any Auto Scaling decisions that might result in
+        /// terminating instances. </para> <para> There are two common use cases for <c>SetDesiredCapacity</c> :
         /// one for users of the Auto Scaling triggering system, and another for developers who write their own triggering systems. Both use
         /// cases relate to the concept of cooldown. </para> <para> In the first case, if you use the Auto Scaling triggering system,
         /// <c>SetDesiredCapacity</c> changes the size of your Auto Scaling group without regard to the cooldown period. This could be useful, for
         /// example, if Auto Scaling did something unexpected for some reason. If your cooldown period is 10 minutes, Auto Scaling would normally reject
-        /// requests to change the size of the group for that entire 10 minute period. The <c>SetDesiredCapacity</c> command allows you to circumvent
+        /// requests to change the size of the group for that entire 10-minute period. The <c>SetDesiredCapacity</c> command allows you to circumvent
         /// this restriction and change the size of the group before the end of the cooldown period. </para> <para> In the second case, if you write
         /// your own triggering system, you can use <c>SetDesiredCapacity</c> to control the size of your Auto Scaling group. If you want the same
         /// cooldown functionality that Auto Scaling offers, you can configure <c>SetDesiredCapacity</c> to honor cooldown by setting the

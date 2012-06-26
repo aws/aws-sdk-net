@@ -79,7 +79,7 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// A list of policy names or policy ARNs to be described. If this list is omitted, all policy names are described. If an auto scaling group
-        /// name is provided, the results are limited to that group.The list of requested policy names cannot contain more than 50 items. If unknown
+        /// name is provided, the results are limited to that group. The list of requested policy names cannot contain more than 50 items. If unknown
         /// policy names are requested, they are ignored with no error.
         ///  
         /// </summary>

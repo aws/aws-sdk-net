@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The ScalingPolicy data type. </para>
+    /// <para> The <c>ScalingPolicy</c> data type. </para>
     /// </summary>
     public class ScalingPolicy  
     {
@@ -33,6 +33,7 @@ namespace Amazon.AutoScaling.Model
         private int? cooldown;
         private string policyARN;
         private List<Alarm> alarms = new List<Alarm>();
+        private int? minAdjustmentStep;
 
         /// <summary>
         /// The name of the Auto Scaling group associated with this scaling policy.
@@ -117,8 +118,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number associated with the specified AdjustmentType. A positive value adds to the current capacity and a negative value removes from the
-        /// current capacity.
+        /// The number associated with the specified adjustment type. A positive value adds to the current capacity and a negative value removes from
+        /// the current capacity.
         ///  
         /// </summary>
         public int ScalingAdjustment
@@ -146,8 +147,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Specifies whether the ScalingAdjustment is an absolute number or a percentage of the current capacity. Valid values are
-        /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentOfCapacity</c>.
+        /// Specifies whether the <c>ScalingAdjustment</c> is an absolute number or a percentage of the current capacity. Valid values are
+        /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -299,6 +300,34 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAlarms()
         {
             return this.alarms.Count > 0;       
+        }
+
+        /// <summary>
+        /// Changes the <c>DesiredCapacity</c> of the Auto Scaling group by at least the specified number of instances.
+        ///  
+        /// </summary>
+        public int MinAdjustmentStep
+        {
+            get { return this.minAdjustmentStep ?? default(int); }
+            set { this.minAdjustmentStep = value; }
+        }
+
+        /// <summary>
+        /// Sets the MinAdjustmentStep property
+        /// </summary>
+        /// <param name="minAdjustmentStep">The value to set for the MinAdjustmentStep property </param>
+        /// <returns>this instance</returns>
+        public ScalingPolicy WithMinAdjustmentStep(int minAdjustmentStep)
+        {
+            this.minAdjustmentStep = minAdjustmentStep;
+            return this;
+        }
+            
+
+        // Check to see if MinAdjustmentStep property is set
+        internal bool IsSetMinAdjustmentStep()
+        {
+            return this.minAdjustmentStep.HasValue;       
         }
     }
 }

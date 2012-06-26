@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   AutoScalingGroup Unmarshaller
      /// </summary>
-    internal class AutoScalingGroupUnmarshaller : IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext> 
+    internal class AutoScalingGroupUnmarshaller : IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingGroup, JsonUnmarshallerContext> 
     {
         public AutoScalingGroup Unmarshall(XmlUnmarshallerContext context) 
         {
             AutoScalingGroup autoScalingGroup = new AutoScalingGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -160,6 +161,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return autoScalingGroup;
+        }
+
+        public AutoScalingGroup Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static AutoScalingGroupUnmarshaller instance;

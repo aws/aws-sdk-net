@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   TerminateInstanceInAutoScalingGroupResult Unmarshaller
      /// </summary>
-    internal class TerminateInstanceInAutoScalingGroupResultUnmarshaller : IUnmarshaller<TerminateInstanceInAutoScalingGroupResult, XmlUnmarshallerContext> 
+    internal class TerminateInstanceInAutoScalingGroupResultUnmarshaller : IUnmarshaller<TerminateInstanceInAutoScalingGroupResult, XmlUnmarshallerContext>, IUnmarshaller<TerminateInstanceInAutoScalingGroupResult, JsonUnmarshallerContext> 
     {
         public TerminateInstanceInAutoScalingGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
             TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroupResult = new TerminateInstanceInAutoScalingGroupResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return terminateInstanceInAutoScalingGroupResult;
+        }
+
+        public TerminateInstanceInAutoScalingGroupResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static TerminateInstanceInAutoScalingGroupResultUnmarshaller instance;

@@ -22,13 +22,14 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
      /// <summary>
      ///   GetFederationTokenResult Unmarshaller
      /// </summary>
-    internal class GetFederationTokenResultUnmarshaller : IUnmarshaller<GetFederationTokenResult, XmlUnmarshallerContext> 
+    internal class GetFederationTokenResultUnmarshaller : IUnmarshaller<GetFederationTokenResult, XmlUnmarshallerContext>, IUnmarshaller<GetFederationTokenResult, JsonUnmarshallerContext> 
     {
         public GetFederationTokenResult Unmarshall(XmlUnmarshallerContext context) 
         {
             GetFederationTokenResult getFederationTokenResult = new GetFederationTokenResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -64,6 +65,11 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 
 
             return getFederationTokenResult;
+        }
+
+        public GetFederationTokenResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static GetFederationTokenResultUnmarshaller instance;

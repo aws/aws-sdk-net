@@ -30,8 +30,11 @@ namespace Amazon.AutoScaling.Model
     /// Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics collection, you can disable collection of
     /// all group metrics by calling DisableMetricsCollection. </para> <para> The new settings are registered upon the completion of this call. Any
     /// launch configuration settings take effect on any triggers after this call returns. Triggers that are currently in progress aren't affected.
-    /// </para> <para><b>NOTE:</b> If the new values are specified for the MinSize or MaxSize parameters, then there will be an implicit call to
-    /// SetDesiredCapacity to set the group to the new MaxSize. All optional parameters are left unchanged if not passed in the request. </para>
+    /// </para> <para><b>NOTE:</b> If a new value is specified for MinSize without specifying the value for DesiredCapacity, and if the new MinSize
+    /// is larger than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new
+    /// MinSize. If a new value is specified for MaxSize without specifying the value for DesiredCapacity, and the new MaxSize is smaller than the
+    /// current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MaxSize. All other
+    /// optional parameters are left unchanged if not passed in the request. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.UpdateAutoScalingGroup"/>
     public class UpdateAutoScalingGroupRequest : AmazonWebServiceRequest
@@ -243,7 +246,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Availability zones for the group.
+        /// Availability Zones for the group.
         ///  
         /// <para>
         /// <b>Constraints:</b>

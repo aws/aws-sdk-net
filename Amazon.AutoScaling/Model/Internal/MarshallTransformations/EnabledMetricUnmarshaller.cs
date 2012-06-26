@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   EnabledMetric Unmarshaller
      /// </summary>
-    internal class EnabledMetricUnmarshaller : IUnmarshaller<EnabledMetric, XmlUnmarshallerContext> 
+    internal class EnabledMetricUnmarshaller : IUnmarshaller<EnabledMetric, XmlUnmarshallerContext>, IUnmarshaller<EnabledMetric, JsonUnmarshallerContext> 
     {
         public EnabledMetric Unmarshall(XmlUnmarshallerContext context) 
         {
             EnabledMetric enabledMetric = new EnabledMetric();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return enabledMetric;
+        }
+
+        public EnabledMetric Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static EnabledMetricUnmarshaller instance;

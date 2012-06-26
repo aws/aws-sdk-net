@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
     /// maximum limit of launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created,
     /// the new launch configuration is available for immediate use. </para> <para>You can create a launch configuration with Amazon EC2 security
     /// groups or with Amazon VPC security groups. However, you can't use Amazon EC2 security groups together with Amazon VPC security groups, or
-    /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. gzipped) user data
+    /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data
     /// files. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateLaunchConfiguration"/>
@@ -45,6 +45,8 @@ namespace Amazon.AutoScaling.Model
         private string ramdiskId;
         private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
         private InstanceMonitoring instanceMonitoring;
+        private string spotPrice;
+        private string iamInstanceProfile;
 
         /// <summary>
         /// The name of the launch configuration to create.
@@ -89,7 +91,7 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned during registration. For more information about Amazon EC2 images,
-        /// please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>
+        /// please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -130,7 +132,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The name of the EC2 key pair.
+        /// The name of the Amazon EC2 key pair.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -264,7 +266,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The instance type of the EC2 instance. For more information about Amazon EC2 instance types, please see <a
+        /// The instance type of the Amazon EC2 instance. For more information about Amazon EC2 instance types, please see <a
         /// href="http://aws.amazon.com/ec2/"> Amazon EC2 product documentation</a>
         ///  
         /// <para>
@@ -306,7 +308,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The ID of the kernel associated with the EC2 AMI.
+        /// The ID of the kernel associated with the Amazon EC2 AMI.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -347,7 +349,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The ID of the RAM disk associated with the EC2 AMI.
+        /// The ID of the RAM disk associated with the Amazon EC2 AMI.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -390,7 +392,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// A list of mappings that specify how block devices are exposed to the instance. Each mapping is made up of a <i>VirtualName</i>, a
         /// <i>DeviceName</i>, and an <i>ebs</i> data structure that contains information about the associated Elastic Block Storage volume. For more
-        /// information about Amazon EC2 BlockDeviceMappings, please go to <a
+        /// information about Amazon EC2 BlockDeviceMappings, go to <a
         /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html"> Block Device Mapping</a> in
         /// the Amazon EC2 product documentation.
         ///  
@@ -464,6 +466,90 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetInstanceMonitoring()
         {
             return this.instanceMonitoring != null;       
+        }
+
+        /// <summary>
+        /// The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you
+        /// specify exceeds the current Spot market price. For more information on launching Spot Instances, go to <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/US-SpotInstances.html"> Using Auto Scaling to Launch Spot Instances</a> in
+        /// the <i>Auto Scaling Developer Guide</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 255</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string SpotPrice
+        {
+            get { return this.spotPrice; }
+            set { this.spotPrice = value; }
+        }
+
+        /// <summary>
+        /// Sets the SpotPrice property
+        /// </summary>
+        /// <param name="spotPrice">The value to set for the SpotPrice property </param>
+        /// <returns>this instance</returns>
+        public CreateLaunchConfigurationRequest WithSpotPrice(string spotPrice)
+        {
+            this.spotPrice = spotPrice;
+            return this;
+        }
+            
+
+        // Check to see if SpotPrice property is set
+        internal bool IsSetSpotPrice()
+        {
+            return this.spotPrice != null;       
+        }
+
+        /// <summary>
+        /// The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. For information on
+        /// launching EC2 instances with an IAM role, go to <a
+        /// href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching Auto Scaling Instances With an IAM
+        /// Role</a> in the <i>Auto Scaling Developer Guide</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1600</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string IamInstanceProfile
+        {
+            get { return this.iamInstanceProfile; }
+            set { this.iamInstanceProfile = value; }
+        }
+
+        /// <summary>
+        /// Sets the IamInstanceProfile property
+        /// </summary>
+        /// <param name="iamInstanceProfile">The value to set for the IamInstanceProfile property </param>
+        /// <returns>this instance</returns>
+        public CreateLaunchConfigurationRequest WithIamInstanceProfile(string iamInstanceProfile)
+        {
+            this.iamInstanceProfile = iamInstanceProfile;
+            return this;
+        }
+            
+
+        // Check to see if IamInstanceProfile property is set
+        internal bool IsSetIamInstanceProfile()
+        {
+            return this.iamInstanceProfile != null;       
         }
     }
 }

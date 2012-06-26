@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   LaunchConfiguration Unmarshaller
      /// </summary>
-    internal class LaunchConfigurationUnmarshaller : IUnmarshaller<LaunchConfiguration, XmlUnmarshallerContext> 
+    internal class LaunchConfigurationUnmarshaller : IUnmarshaller<LaunchConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LaunchConfiguration, JsonUnmarshallerContext> 
     {
         public LaunchConfiguration Unmarshall(XmlUnmarshallerContext context) 
         {
             LaunchConfiguration launchConfiguration = new LaunchConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -102,6 +103,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("SpotPrice", targetDepth))
+                    {
+                        launchConfiguration.SpotPrice = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("IamInstanceProfile", targetDepth))
+                    {
+                        launchConfiguration.IamInstanceProfile = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("CreatedTime", targetDepth))
                     {
                         launchConfiguration.CreatedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
@@ -118,6 +131,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return launchConfiguration;
+        }
+
+        public LaunchConfiguration Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static LaunchConfigurationUnmarshaller instance;

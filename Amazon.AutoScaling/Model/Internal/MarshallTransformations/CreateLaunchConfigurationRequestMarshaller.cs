@@ -113,6 +113,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("InstanceMonitoring.Enabled", StringUtils.FromBool(instanceMonitoring.Enabled));
                 }
             }
+            if (createLaunchConfigurationRequest != null && createLaunchConfigurationRequest.IsSetSpotPrice())
+            {
+                request.Parameters.Add("SpotPrice", StringUtils.FromString(createLaunchConfigurationRequest.SpotPrice));
+            }
+            if (createLaunchConfigurationRequest != null && createLaunchConfigurationRequest.IsSetIamInstanceProfile())
+            {
+                request.Parameters.Add("IamInstanceProfile", StringUtils.FromString(createLaunchConfigurationRequest.IamInstanceProfile));
+            }
 
             return request;
         }

@@ -22,13 +22,14 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
      /// <summary>
      ///   FederatedUser Unmarshaller
      /// </summary>
-    internal class FederatedUserUnmarshaller : IUnmarshaller<FederatedUser, XmlUnmarshallerContext> 
+    internal class FederatedUserUnmarshaller : IUnmarshaller<FederatedUser, XmlUnmarshallerContext>, IUnmarshaller<FederatedUser, JsonUnmarshallerContext> 
     {
         public FederatedUser Unmarshall(XmlUnmarshallerContext context) 
         {
             FederatedUser federatedUser = new FederatedUser();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 
 
             return federatedUser;
+        }
+
+        public FederatedUser Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static FederatedUserUnmarshaller instance;

@@ -26,13 +26,13 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// Container for the parameters to the GetFederationToken operation.
     /// <para>The GetFederationToken action returns a set of temporary credentials for a federated user with the user name and policy specified in
-    /// the request. The credentials consist of an Access Key ID, a Secret Access Key, and a security token. The credentials are valid for the
-    /// specified duration, between one and 36 hours.</para> <para>The federated user who holds these credentials has any permissions allowed by the
-    /// intersection of the specified policy and any resource or user policies that apply to the caller of the GetFederationToken API, and any
-    /// resource policies that apply to the federated user's Amazon Resource Name (ARN). For more information about how token permissions work, see
-    /// Controlling Permissions in Temporary Credentials in <i>Using AWS Identity and Access Management</i> . For information about using
-    /// GetFederationToken to create temporary credentials, see Creating Temporary Credentials to Enable Access for Federated Users in <i>Using AWS
-    /// Identity and Access Management</i> .</para>
+    /// the request. The credentials consist of an Access Key ID, a Secret Access Key, and a security token. Credentials created by IAM users are
+    /// valid for the specified duration, between one and 36 hours; credentials created using account credentials last one hour.</para> <para>The
+    /// federated user who holds these credentials has any permissions allowed by the intersection of the specified policy and any resource or user
+    /// policies that apply to the caller of the GetFederationToken API, and any resource policies that apply to the federated user's Amazon
+    /// Resource Name (ARN). For more information about how token permissions work, see Controlling Permissions in Temporary Credentials in <i>Using
+    /// AWS Identity and Access Management</i> . For information about using GetFederationToken to create temporary credentials, see Creating
+    /// Temporary Credentials to Enable Access for Federated Users in <i>Using AWS Identity and Access Management</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.SecurityToken.AmazonSecurityTokenService.GetFederationToken"/>
     public class GetFederationTokenRequest : AmazonWebServiceRequest

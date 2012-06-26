@@ -30,7 +30,7 @@ namespace Amazon.CloudWatch
         public AmazonCloudWatchConfig()
         {
             this.ServiceURL = "https://monitoring.amazonaws.com";
-            
+            this.AuthenticationServiceName = "monitoring";
         }
 
         /// <summary>

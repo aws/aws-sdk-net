@@ -77,7 +77,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of Granularities for the listed Metrics.
+        /// A list of granularities for the listed Metrics.
         ///  
         /// </summary>
         public List<MetricGranularityType> Granularities

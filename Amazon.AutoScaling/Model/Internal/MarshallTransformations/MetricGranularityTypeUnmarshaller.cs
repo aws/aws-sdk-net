@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   MetricGranularityType Unmarshaller
      /// </summary>
-    internal class MetricGranularityTypeUnmarshaller : IUnmarshaller<MetricGranularityType, XmlUnmarshallerContext> 
+    internal class MetricGranularityTypeUnmarshaller : IUnmarshaller<MetricGranularityType, XmlUnmarshallerContext>, IUnmarshaller<MetricGranularityType, JsonUnmarshallerContext> 
     {
         public MetricGranularityType Unmarshall(XmlUnmarshallerContext context) 
         {
             MetricGranularityType metricGranularityType = new MetricGranularityType();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return metricGranularityType;
+        }
+
+        public MetricGranularityType Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static MetricGranularityTypeUnmarshaller instance;

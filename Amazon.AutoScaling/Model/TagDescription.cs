@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>Tag Description
+    /// <summary>
+    /// <para> The tag applied to an Auto Scaling group. </para>
     /// </summary>
     public class TagDescription  
     {
@@ -30,6 +31,20 @@ namespace Amazon.AutoScaling.Model
         private string key;
         private string value;
         private bool? propagateAtLaunch;
+
+        /// <summary>
+        /// The name of the Auto Scaling group.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string ResourceId
         {
             get { return this.resourceId; }
@@ -53,6 +68,20 @@ namespace Amazon.AutoScaling.Model
         {
             return this.resourceId != null;       
         }
+
+        /// <summary>
+        /// The kind of resource to which the tag is applied. Currently, Auto Scaling supports the <c>auto-scaling-group</c> resource type.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string ResourceType
         {
             get { return this.resourceType; }
@@ -76,6 +105,24 @@ namespace Amazon.AutoScaling.Model
         {
             return this.resourceType != null;       
         }
+
+        /// <summary>
+        /// The key of the tag.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 128</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string Key
         {
             get { return this.key; }
@@ -99,6 +146,24 @@ namespace Amazon.AutoScaling.Model
         {
             return this.key != null;       
         }
+
+        /// <summary>
+        /// The value of the tag.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 256</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string Value
         {
             get { return this.value; }
@@ -122,6 +187,12 @@ namespace Amazon.AutoScaling.Model
         {
             return this.value != null;       
         }
+
+        /// <summary>
+        /// Specifies whether the new tag will be applied to instances launched after the tag is created. The same behavior applies to updates: If you
+        /// change a tag, the changed tag will be applied to all instances launched after you made the change.
+        ///  
+        /// </summary>
         public bool PropagateAtLaunch
         {
             get { return this.propagateAtLaunch ?? default(bool); }

@@ -22,13 +22,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeAutoScalingNotificationTypesResult Unmarshaller
      /// </summary>
-    internal class DescribeAutoScalingNotificationTypesResultUnmarshaller : IUnmarshaller<DescribeAutoScalingNotificationTypesResult, XmlUnmarshallerContext> 
+    internal class DescribeAutoScalingNotificationTypesResultUnmarshaller : IUnmarshaller<DescribeAutoScalingNotificationTypesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeAutoScalingNotificationTypesResult, JsonUnmarshallerContext> 
     {
         public DescribeAutoScalingNotificationTypesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypesResult = new DescribeAutoScalingNotificationTypesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
 
             return describeAutoScalingNotificationTypesResult;
+        }
+
+        public DescribeAutoScalingNotificationTypesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeAutoScalingNotificationTypesResultUnmarshaller instance;

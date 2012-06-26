@@ -22,13 +22,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Datapoint Unmarshaller
      /// </summary>
-    internal class DatapointUnmarshaller : IUnmarshaller<Datapoint, XmlUnmarshallerContext> 
+    internal class DatapointUnmarshaller : IUnmarshaller<Datapoint, XmlUnmarshallerContext>, IUnmarshaller<Datapoint, JsonUnmarshallerContext> 
     {
         public Datapoint Unmarshall(XmlUnmarshallerContext context) 
         {
             Datapoint datapoint = new Datapoint();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -88,6 +89,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
 
             return datapoint;
+        }
+
+        public Datapoint Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DatapointUnmarshaller instance;
