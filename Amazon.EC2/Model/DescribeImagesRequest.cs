@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-05-01
+ *  API Version: 2012-06-01
  */
 
 using System;
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
     /// (if you own the AMI(s)), self for AMIs for which you own or have
     /// explicit permissions, or all for public AMIs.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-05-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-01/", IsNullable = false)]
     public class DescribeImagesRequest
     {    
         private List<string> imageIdField;

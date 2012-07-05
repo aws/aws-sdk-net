@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-05-01
+ *  API Version: 2012-06-01
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Modifies an attribute of an AMI
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-05-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-01/", IsNullable = false)]
     public class ModifyImageAttributeRequest
     {    
         private string imageIdField;
