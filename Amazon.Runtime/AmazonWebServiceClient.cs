@@ -350,6 +350,23 @@ namespace Amazon.Runtime
                     }
                 }
             }
+            catch (WebException e)
+            {
+                asyncResult.RequestState.WebRequest.Abort();
+                if (handleHttpWebErrorResponse(asyncResult, e))
+                {
+                    asyncResult.RetriesAttempt++;
+                    InvokeConfiguredRequest(asyncResult);                    
+                }
+                else
+                {
+                    asyncResult.Exception = e;
+
+                    asyncResult.SignalWaitHandle();
+                    if (asyncResult.Callback != null)
+                        asyncResult.Callback(asyncResult);
+                }
+            }
             catch (Exception e)
             {
                 asyncResult.RequestState.WebRequest.Abort();
@@ -476,8 +493,8 @@ namespace Amazon.Runtime
                     // Abort the unsuccessful request
                     asyncResult.RequestState.WebRequest.Abort();
 
-                    // If it is a keep alive error then attempt a retry
-                    if (we != null && asyncResult.RetriesAttempt <= config.MaxErrorRetry && we.Status == WebExceptionStatus.KeepAliveFailure)
+                    // If it is a keep alive error or name resolution error then attempt a retry
+                    if (we != null && asyncResult.RetriesAttempt <= config.MaxErrorRetry && (we.Status == WebExceptionStatus.KeepAliveFailure || we.Status == WebExceptionStatus.NameResolutionFailure))
                     {
                         pauseExponentially(asyncResult.RetriesAttempt);
                         return true;
