@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents a list of all identities for the AWS Account.</para>
+    /// <para>Represents a list of all verified identities for the AWS Account.</para>
     /// </summary>
     public class ListIdentitiesResult  
     {

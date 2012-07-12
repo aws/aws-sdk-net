@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-06-01/"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-06-15/"
 	exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
   <xsl:variable name="ns"
-		select="'http://ec2.amazonaws.com/doc/2012-06-01/'" />
+		select="'http://ec2.amazonaws.com/doc/2012-06-15/'" />
   <xsl:template match="ec2:CreateNetworkAclResponse">
     <xsl:element name="CreateNetworkAclResponse"
 			namespace="{$ns}">

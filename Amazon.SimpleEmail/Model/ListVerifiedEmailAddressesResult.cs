@@ -27,6 +27,11 @@ namespace Amazon.SimpleEmail.Model
     {
         
         private List<string> verifiedEmailAddresses = new List<string>();
+
+        /// <summary>
+        /// A list of email addresses that have been verified.
+        ///  
+        /// </summary>
         public List<string> VerifiedEmailAddresses
         {
             get { return this.verifiedEmailAddresses; }

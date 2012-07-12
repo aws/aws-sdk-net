@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-01
+ *  API Version: 2012-06-15
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Instance Network Interface Specification
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
     public class InstanceNetworkInterfaceSpecification
     {
         private string networkInterfaceIdField;
@@ -39,6 +39,8 @@ namespace Amazon.EC2.Model
         private string privateIpAddressField;
         private List<string> groupIdField;
         private bool? deleteOnTerminationField;
+        private List<PrivateIpAddress> privateIpAddressesField;
+        private int? secondaryPrivateIpAddressCountField;
 
         /// <summary>
         /// Gets and sets the NetworkInterfaceId property.
@@ -167,6 +169,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the private IP address of the network interface.
+        /// Specifies the primary private IP address of the network interface. Applies only when 
+        /// creating new network interfaces. Requires n=1 network interfaces in launch.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddress")]
         public string PrivateIpAddress
@@ -177,6 +181,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Sets the private IP address of the network interface.
+        /// Specifies the primary private IP address of the network interface. Applies only when 
+        /// creating new network interfaces. Requires n=1 network interfaces in launch.
         /// </summary>
         /// <param name="ipAddress">IP address of the network interface</param>
         /// <returns>this instance</returns>
@@ -266,6 +272,96 @@ namespace Amazon.EC2.Model
         public bool IsSetDeleteOnTermination()
         {
             return this.deleteOnTerminationField != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the PrivateIpAddresses property.
+        /// Private IP addresses. The private IP address of the specified network interface. 
+        /// This parameter can be used multiple times to specify explicit private IP addresses 
+        /// for a network interface, but only one private IP address can be designated as primary. 
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PrivateIpAddresses")]
+        public List<PrivateIpAddress> PrivateIpAddresses
+        {
+            get
+            {
+                if (this.privateIpAddressesField == null)
+                {
+                    this.privateIpAddressesField = new List<PrivateIpAddress>();
+                }
+                return this.privateIpAddressesField;
+            }
+            set { this.privateIpAddressesField = value; }
+        }
+
+        /// <summary>
+        /// Sets the PrivateIpAddresses property.
+        /// The private IP address of the specified network interface. 
+        /// This parameter can be used multiple times to specify explicit private IP addresses 
+        /// for a network interface, but only one private IP address can be designated as primary. 
+        /// </summary>
+        /// <param name="privateIpAddresses">Private IP addresses.</param>
+        /// <returns>this instance</returns>
+        public InstanceNetworkInterfaceSpecification WithPrivateIpAddresses(params PrivateIpAddress[] privateIpAddresses)
+        {
+            foreach (PrivateIpAddress privateIpAddress in privateIpAddresses)
+            {
+                PrivateIpAddresses.Add(privateIpAddress);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PrivateIpAddresses property is set
+        /// </summary>
+        /// <returns>true if the PrivateIpAddresses property is set</returns>
+        public bool IsSetPrivateIpAddresses()
+        {
+            return PrivateIpAddresses.Count > 0;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the SecondaryPrivateIpAddressCount property.
+        /// Specifies the number of secondary private IP addresses to assign to a network interface. 
+        /// When you specify a number of secondary IP addresses, AWS automatically assigns these IP 
+        /// addresses within the subnet’s range. The number of IP addresses you can assign to a network 
+        /// interface varies by instance type. For more information, go to Available Instance Types in 
+        /// the Amazon Elastic Compute Cloud User Guide. For a single network interface, you cannot specify 
+        /// this option and specify more than one private IP address.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "SecondaryPrivateIpAddressCount")]
+        public int SecondaryPrivateIpAddressCount
+        {
+            get { return this.secondaryPrivateIpAddressCountField.GetValueOrDefault(); }
+            set { this.secondaryPrivateIpAddressCountField = value; }
+        }
+
+        /// <summary>
+        /// Sets the SecondaryPrivateIpAddressCount property
+        /// Specifies the number of secondary private IP addresses to assign to a network interface. 
+        /// When you specify a number of secondary IP addresses, AWS automatically assigns these IP 
+        /// addresses within the subnet’s range. The number of IP addresses you can assign to a network 
+        /// interface varies by instance type. For more information, go to Available Instance Types in 
+        /// the Amazon Elastic Compute Cloud User Guide. For a single network interface, you cannot specify 
+        /// this option and specify more than one private IP address.
+        /// </summary>
+        /// <param name="secondaryPrivateIpAddressCount">Number of secondary private IP addresses.</param>
+        /// <returns>this instance</returns>
+        public InstanceNetworkInterfaceSpecification WithSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount)
+        {
+            this.secondaryPrivateIpAddressCountField = secondaryPrivateIpAddressCount;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the SecondaryPrivateIpAddressCount property is set
+        /// </summary>
+        /// <returns>true if the SecondaryPrivateIpAddressCount property is set</returns>
+        public bool IsSetSecondaryPrivateIpAddressCount()
+        {
+            return this.secondaryPrivateIpAddressCountField != null;
         }
     }
 }

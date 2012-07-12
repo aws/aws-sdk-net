@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-01
+ *  API Version: 2012-06-15
  */
 
 using System;
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     ///an Elastic IP associated with your account
     ///and the InstanceId of the instance it is associated with.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
     public class Address
     {    
         private string instanceIdField;
@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private string domainField;
         private string networkInterfaceIdField;
         private string networkInterfaceOwnerIdField;
+        private string privateIpAddressField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -267,6 +268,37 @@ namespace Amazon.EC2.Model
         public bool IsSetNetworkInterfaceOwnerId()
         {
             return !string.IsNullOrEmpty(this.networkInterfaceOwnerIdField);
+        }
+
+        /// <summary>
+        /// Gets and sets the PrivateIpAddress property.
+        /// Private IP address.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PrivateIpAddress")]
+        public string PrivateIpAddress
+        {
+            get { return this.privateIpAddressField; }
+            set { this.privateIpAddressField = value; }
+        }
+
+        /// <summary>
+        /// Sets the PrivateIpAddress property
+        /// </summary>
+        /// <param name="privateIpAddress">Private IP address.</param>
+        /// <returns>this instance</returns>
+        public Address WithPrivateIpAddress(string privateIpAddress)
+        {
+            this.privateIpAddressField = privateIpAddress;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PrivateIpAddress property is set
+        /// </summary>
+        /// <returns>true if the PrivateIpAddress property is set</returns>
+        public bool IsSetPrivateIpAddress()
+        {
+            return !string.IsNullOrEmpty(this.privateIpAddressField);
         }
     }
 }

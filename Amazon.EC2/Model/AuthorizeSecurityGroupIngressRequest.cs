@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-01
+ *  API Version: 2012-06-15
  */
 
 using System;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// must be specified. When authorizing a CIDR IP permission,
     /// GroupName, IpProtocol, FromPort, ToPort and CidrIp must be specified
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
     public class AuthorizeSecurityGroupIngressRequest
     {    
         private string userIdField;

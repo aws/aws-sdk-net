@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-01
+ *  API Version: 2012-06-15
  */
 
 using System;
@@ -32,13 +32,15 @@ namespace Amazon.EC2.Model
     /// to the new instance. This is an idempotent operation. If you enter it more than once,
     /// Amazon EC2 does not return an error.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
     public class AssociateAddressRequest
     {    
         private string instanceIdField;
         private string publicIpField;
         private string allocationIdField;
         private string networkInterfaceIdField;
+        private string privateIpAddressField;
+        private bool? allowReassociationField;
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -171,5 +173,72 @@ namespace Amazon.EC2.Model
             return !string.IsNullOrEmpty(this.networkInterfaceIdField);
         }
 
+        /// <summary>
+        /// Gets and sets the PrivateIpAddress property.
+        /// The primary or secondary private IP address to associate with the Elastic IP address. 
+        /// If no private IP is specified, the Elastic IP address is associated with the primary 
+        /// private IP address. This is only available in Amazon VPC.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PrivateIpAddress")]
+        public string PrivateIpAddress
+        {
+            get { return this.privateIpAddressField; }
+            set { this.privateIpAddressField = value; }
+        }
+
+        /// <summary>
+        /// Sets the PrivateIpAddress property
+        /// </summary>
+        /// <param name="privateIpAddress">Private IP address.</param>
+        /// <returns>this instance</returns>
+        public AssociateAddressRequest WithPrivateIpAddress(string privateIpAddress)
+        {
+            this.privateIpAddressField = privateIpAddress;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PrivateIpAddress property is set
+        /// </summary>
+        /// <returns>true if the PrivateIpAddress property is set</returns>
+        public bool IsSetPrivateIpAddress()
+        {
+            return !string.IsNullOrEmpty(this.privateIpAddressField);
+        }
+
+
+        /// <summary>
+        /// Gets and sets the AllowReassociation property.
+        /// Specify this option to allow an Elastic IP address that is already associated with another 
+        /// network interface or instance to be re-associated with the specified instance or interface. 
+        /// If the Elastic IP address is associated, and this option is not specified, the operation will 
+        /// fail. This is only available in Amazon VPC.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "AllowReassociation")]
+        public bool AllowReassociation
+        {
+            get { return this.allowReassociationField.GetValueOrDefault(); }
+            set { this.allowReassociationField = value; }
+        }
+
+        /// <summary>
+        /// Sets the AllowReassociation property
+        /// </summary>
+        /// <param name="allowReassociation">Whether reassociation is allowed.</param>
+        /// <returns>this instance</returns>
+        public AssociateAddressRequest WithAllowReassociation(bool allowReassociation)
+        {
+            this.allowReassociationField = allowReassociation;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the AllowReassociation property is set
+        /// </summary>
+        /// <returns>true if the AllowReassociation property is set</returns>
+        public bool IsSetAllowReassociation()
+        {
+            return this.allowReassociationField != null;
+        }
     }
 }

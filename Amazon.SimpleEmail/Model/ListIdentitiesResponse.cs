@@ -30,7 +30,7 @@ namespace Amazon.SimpleEmail.Model
 
         /// <summary>
         /// Gets and sets the ListIdentitiesResult property.
-        /// Represents a list of all identities for the AWS Account.
+        /// Represents a list of all verified identities for the AWS Account.
         /// </summary>
         public ListIdentitiesResult ListIdentitiesResult
         {

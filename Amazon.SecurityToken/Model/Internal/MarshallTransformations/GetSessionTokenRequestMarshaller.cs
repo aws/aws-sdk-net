@@ -39,6 +39,14 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("DurationSeconds", StringUtils.FromInt(getSessionTokenRequest.DurationSeconds));
             }
+            if (getSessionTokenRequest != null && getSessionTokenRequest.IsSetSerialNumber())
+            {
+                request.Parameters.Add("SerialNumber", StringUtils.FromString(getSessionTokenRequest.SerialNumber));
+            }
+            if (getSessionTokenRequest != null && getSessionTokenRequest.IsSetTokenCode())
+            {
+                request.Parameters.Add("TokenCode", StringUtils.FromString(getSessionTokenRequest.TokenCode));
+            }
 
             return request;
         }

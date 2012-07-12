@@ -46,8 +46,8 @@ namespace Amazon.Runtime
         [Flags]
         internal enum AuthenticationTypes
         {
-            User = 0x0,
-            Session = 0x1
+            User = 0x1,
+            Session = 0x2
         }
 
         internal static List<string> ErrorCodesToRetryOn = new List<string>
@@ -705,7 +705,7 @@ namespace Amazon.Runtime
         private enum ClientProtocol { QueryStringProtocol, RestProtocol, Unknown }
         private static ClientProtocol DetermineProtocol(AbstractAWSSigner signer)
         {
-            if (signer is AWS3Signer)
+            if (signer is AWS3Signer || signer is AWS4Signer)
                 return ClientProtocol.RestProtocol;
             if (signer is QueryStringSigner)
                 return ClientProtocol.QueryStringProtocol;

@@ -135,9 +135,9 @@ namespace Amazon.SecurityToken
         /// <summary>
         /// <para>The GetSessionToken action returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an Access
         /// Key ID, a Secret Access Key, and a security token. These credentials are valid for the specified duration only. The session duration for IAM
-        /// users can be between one and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to one
-        /// hour.</para> <para>For more information about using GetSessionToken to create temporary credentials, go to Creating Temporary Credentials to
-        /// Enable Access for IAM Users in <i>Using IAM</i> .</para>
+        /// users can be between one and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to one hour.
+        /// Providing the MFA device serial number and the token code is optional.</para> <para>For more information about using GetSessionToken to
+        /// create temporary credentials, go to Creating Temporary Credentials to Enable Access for IAM Users in <i>Using IAM</i> .</para>
         /// </summary>
         /// 
         /// <param name="getSessionTokenRequest">Container for the necessary parameters to execute the GetSessionToken service method on
@@ -200,9 +200,9 @@ namespace Amazon.SecurityToken
         /// <summary>
         /// <para>The GetSessionToken action returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an Access
         /// Key ID, a Secret Access Key, and a security token. These credentials are valid for the specified duration only. The session duration for IAM
-        /// users can be between one and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to one
-        /// hour.</para> <para>For more information about using GetSessionToken to create temporary credentials, go to Creating Temporary Credentials to
-        /// Enable Access for IAM Users in <i>Using IAM</i> .</para>
+        /// users can be between one and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to one hour.
+        /// Providing the MFA device serial number and the token code is optional.</para> <para>For more information about using GetSessionToken to
+        /// create temporary credentials, go to Creating Temporary Credentials to Enable Access for IAM Users in <i>Using IAM</i> .</para>
         /// </summary>
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by AmazonSecurityTokenService.</returns>

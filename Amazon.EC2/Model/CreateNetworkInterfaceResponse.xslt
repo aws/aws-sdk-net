@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-06-01/" exclude-result-prefixes="ec2">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-06-15/" exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2012-06-01/'"/>
+  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2012-06-15/'"/>
 
   <xsl:template match="ec2:CreateNetworkInterfaceResponse">
     <xsl:element name="CreateNetworkInterfaceResponse"
@@ -61,6 +61,7 @@
       <xsl:apply-templates select="ec2:attachment"/>
       <xsl:apply-templates select="ec2:association"/>
       <xsl:apply-templates select="ec2:tagSet" />
+      <xsl:apply-templates select="ec2:privateIpAddressesSet" />
     </xsl:element>
   </xsl:template>
 
@@ -77,6 +78,20 @@
       </xsl:element>
       <xsl:element name="GroupId" namespace="{$ns}">
         <xsl:value-of select="ec2:groupId"/>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="ec2:privateIpAddressesSet">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="PrivateIpAddresses" namespace="{$ns}">
+        <xsl:element name="IpAddress" namespace="{$ns}">
+          <xsl:value-of select="ec2:privateIpAddress"/>
+        </xsl:element>
+        <xsl:element name="Primary" namespace="{$ns}">
+          <xsl:value-of select="ec2:primary"/>
+        </xsl:element>
+        <xsl:apply-templates select="ec2:association"/>
       </xsl:element>
     </xsl:for-each>
   </xsl:template>
