@@ -34,7 +34,7 @@ namespace Amazon.DynamoDB
     public class AmazonDynamoDBClient : AmazonWebServiceClient, AmazonDynamoDB
     {
     
-        AbstractAWSSigner signer = new AWS3Signer();
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 
@@ -54,7 +54,7 @@ namespace Amazon.DynamoDB
         ///
         /// </summary>
         public AmazonDynamoDBClient()
-            : base(new RefreshingSessionAWSCredentials(), new AmazonDynamoDBConfig(), true, AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDynamoDBConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDynamoDBClient with the credentials defined in the App.config.
@@ -73,7 +73,7 @@ namespace Amazon.DynamoDB
         /// </summary>
         /// <param name="config">The AmazonDynamoDB Configuration Object</param>
         public AmazonDynamoDBClient(AmazonDynamoDBConfig config)
-            : base(new RefreshingSessionAWSCredentials(), config, true, AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDynamoDBClient with AWS Credentials
@@ -91,7 +91,7 @@ namespace Amazon.DynamoDB
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonDynamoDBClient Configuration Object</param>
         public AmazonDynamoDBClient(AWSCredentials credentials, AmazonDynamoDBConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.Session)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -116,7 +116,7 @@ namespace Amazon.DynamoDB
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonDynamoDBClient Configuration Object</param>
         public AmazonDynamoDBClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonDynamoDBConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
         
@@ -143,7 +143,7 @@ namespace Amazon.DynamoDB
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="clientConfig">The AmazonDynamoDBClient Configuration Object</param>
         public AmazonDynamoDBClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonDynamoDBConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.Session)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 

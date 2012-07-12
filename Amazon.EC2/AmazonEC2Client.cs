@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-01
+ *  API Version: 2012-06-15
  */
 
 using System;
@@ -131,6 +131,8 @@ namespace Amazon.EC2
 
         #endregion
 
+        #region Constructors
+
         /// <summary>
         /// Constructs AmazonEC2Client with the credentials defined in the App.config.
         /// 
@@ -222,6 +224,8 @@ namespace Amazon.EC2
             this.config = config;
             this.ownCredentials = ownCredentials;
         }
+
+        #endregion
 
         #region Public API
 
@@ -2877,6 +2881,41 @@ namespace Amazon.EC2
             return Invoke<CancelExportTaskResponse>(ConvertCancelExportTask(request));
         }
 
+        /// <summary>
+        /// Assigns one or more secondary private IP addresses to a network interface in Amazon VPC.
+        /// </summary>
+        /// <param name="request">Assign Private Ip Addresses request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Assign Private Ip Addresses response from the service</returns>
+        /// <remarks>
+        /// This action applies to only  Amazon VPC instances or network interfaces.
+        /// You can specify one or more specific secondary IP addresses that you want to assign
+        /// or you can specify a number of secondary IP addresses to be automatically assigned
+        /// within the subnet’s CIDR block range. The number of secondary IP addresses that you
+        /// can assign to an instance varies by instance type.
+        /// For more information, see the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        public AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
+        {
+            return Invoke<AssignPrivateIpAddressesResponse>(ConvertAssignPrivateIpAddresses(request));
+        }
+
+        /// <summary>
+        /// Unassigns one or more secondary private IP addresses from a network interface in Amazon VPC. 
+        /// </summary>
+        /// <param name="request">Unassign Private Ip Addresses request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Unassign Private Ip Addresses response from the service</returns>
+        /// <remarks>
+        /// This action is only available in Amazon VPC.
+        /// </remarks>
+        public UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request)
+        {
+            return Invoke<UnassignPrivateIpAddressesResponse>(ConvertUnassignPrivateIpAddresses(request));
+        }
+
         #endregion
 
         #region Private API
@@ -3291,6 +3330,14 @@ namespace Amazon.EC2
             if (request.IsSetNetworkInterfaceId())
             {
                 parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+            }
+            if (request.IsSetPrivateIpAddress())
+            {
+                parameters["PrivateIpAddress"] = request.PrivateIpAddress;
+            }
+            if (request.IsSetAllowReassociation())
+            {
+                parameters["allowReassociation"] = request.AllowReassociation.ToString().ToLower();
             }
 
             return parameters;
@@ -5474,6 +5521,18 @@ namespace Amazon.EC2
                         }
                     }
 
+                    if (instanceNetworkInterface.IsSetPrivateIpAddresses())
+                    {
+                        List<PrivateIpAddress> privateIpAddressesList = instanceNetworkInterface.PrivateIpAddresses;
+                        int privateIpAddressesListIndex = 1;
+                        foreach (PrivateIpAddress privateIpAddress in privateIpAddressesList)
+                        {
+                            parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "PrivateIpAddresses", ".", privateIpAddressesListIndex, ".", "Primary")] = privateIpAddress.Primary.ToString().ToLower();
+                            parameters[String.Concat("NetworkInterface", ".", instanceNetworkInterfaceListIndex, ".", "PrivateIpAddresses", ".", privateIpAddressesListIndex, ".", "PrivateIpAddress")] = privateIpAddress.IpAddress;
+                            privateIpAddressesListIndex++;
+                        }
+                    }
+
                     instanceNetworkInterfaceListIndex++;
                 }
             }
@@ -7044,6 +7103,21 @@ namespace Amazon.EC2
                 }
             }
 
+            if (request.IsSetPrivateIpAddresses())
+            {
+                List<PrivateIpAddress> privateIpAddressesList = request.PrivateIpAddresses;
+                int privateIpAddressesListIndex = 1;
+                foreach (PrivateIpAddress privateIpAddress in privateIpAddressesList)
+                {
+                    parameters[String.Concat("PrivateIpAddresses", ".", privateIpAddressesListIndex, ".", "Primary")] = privateIpAddress.Primary.ToString().ToLower();
+                    parameters[String.Concat("PrivateIpAddresses", ".", privateIpAddressesListIndex, ".", "PrivateIpAddress")] = privateIpAddress.IpAddress;
+                    privateIpAddressesListIndex++;
+                }
+            }
+
+            if (request.IsSetSecondaryPrivateIpAddressCount())
+                parameters["SecondaryPrivateIpAddressCount"] = request.SecondaryPrivateIpAddressCount.ToString();
+
             return parameters;
         }
 
@@ -7393,6 +7467,67 @@ namespace Amazon.EC2
             return parameters;
         }
 
+
+        /**
+         * Convert AssignPrivateIpAddresses to name value pairs
+         */
+        private static IDictionary<string, string> ConvertAssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "AssignPrivateIpAddresses";
+
+            if (request.IsSetNetworkInterfaceId())
+            {
+                parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+            }
+            if (request.IsSetSecondaryPrivateIpAddressCount())
+            {
+                parameters["SecondaryPrivateIpAddressCount"] = request.SecondaryPrivateIpAddressCount.ToString();
+            }
+            if (request.IsSetAllowReassignment())
+            {
+                parameters["AllowReassignment"] = request.AllowReassignment.ToString().ToLower();
+            }
+            if (request.IsSetPrivateIpAddresses())
+            {
+                List<string> privateIpAddressList = request.PrivateIpAddresses;
+                int privateIpAddressListIndex = 1;
+                foreach (string privateIpAddress in privateIpAddressList)
+                {
+                    parameters[String.Concat("PrivateIpAddress", ".", privateIpAddressListIndex)] = privateIpAddress;
+                    privateIpAddressListIndex++;
+                }
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert UnassignPrivateIpAddresses to name value pairs
+         */
+        private static IDictionary<string, string> ConvertUnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "UnassignPrivateIpAddresses";
+
+            if (request.IsSetNetworkInterfaceId())
+            {
+                parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+            }
+            if (request.IsSetPrivateIpAddresses())
+            {
+                List<string> privateIpAddressList = request.PrivateIpAddresses;
+                int privateIpAddressListIndex = 1;
+                foreach (string privateIpAddress in privateIpAddressList)
+                {
+                    parameters[String.Concat("PrivateIpAddress", ".", privateIpAddressListIndex)] = privateIpAddress;
+                    privateIpAddressListIndex++;
+                }
+            }
+
+            return parameters;
+        }
+
         /*
          *  Transforms response based on xslt template
          */
@@ -7417,7 +7552,11 @@ namespace Amazon.EC2
                 "Response.xslt"
                 );
 
-            using (XmlTextReader xmlReader = new XmlTextReader(assembly.GetManifestResourceStream(resourceName)))
+            Stream resourceStream = assembly.GetManifestResourceStream(resourceName);
+            if (resourceStream == null)
+                throw new InvalidOperationException("Unable to find resource " + resourceName);
+
+            using (XmlTextReader xmlReader = new XmlTextReader(resourceStream))
             {
                 transformer.Load(xmlReader);
 

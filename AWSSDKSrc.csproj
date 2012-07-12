@@ -1989,6 +1989,8 @@
     <Compile Include="Amazon.EC2\Model\AllocateAddressResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\AssignPrivateIpAddressesRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\AssignPrivateIpAddressesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\AssociateAddressRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2892,6 +2894,7 @@
     <Compile Include="Amazon.EC2\Model\InstanceNetworkInterfaceAssociation.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceNetworkInterfaceAttachment.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceNetworkInterfaceSpecification.cs" />
+    <Compile Include="Amazon.EC2\Model\InstancePrivateIpAddress.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceState.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2984,6 +2987,7 @@
     <Compile Include="Amazon.EC2\Model\NetworkInterfaceAssociation.cs" />
     <Compile Include="Amazon.EC2\Model\NetworkInterfaceAttachment.cs" />
     <Compile Include="Amazon.EC2\Model\NetworkInterfaceAttribute.cs" />
+    <Compile Include="Amazon.EC2\Model\NetworkInterfacePrivateIpAddress.cs" />
     <Compile Include="Amazon.EC2\Model\PasswordData.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2996,6 +3000,7 @@
     <Compile Include="Amazon.EC2\Model\PortRange.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\PrivateIpAddress.cs" />
     <Compile Include="Amazon.EC2\Model\ProductCode.cs" />
     <Compile Include="Amazon.EC2\Model\PurchaseReservedInstancesOfferingRequest.cs">
       <SubType>Code</SubType>
@@ -3208,6 +3213,8 @@
     <Compile Include="Amazon.EC2\Model\TerminateInstancesResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\UnassignPrivateIpAddressesRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\UnassignPrivateIpAddressesResponse.cs" />
     <Compile Include="Amazon.EC2\Model\UnmonitorInstancesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7736,6 +7743,12 @@
     <EmbeddedResource Include="Amazon.EC2\Model\CancelExportTaskResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\CreateInstanceExportTaskResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\DescribeExportTasksResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\AssignPrivateIpAddressesResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\UnassignPrivateIpAddressesResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-01
+ *  API Version: 2012-06-15
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Instance Network Interface
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
     public class InstanceNetworkInterface
     {
         private string networkInterfaceIdField;
@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private List<string> groupNameField;
         private InstanceNetworkInterfaceAttachment instanceNetworkInterfaceAttachmentField;
         private InstanceNetworkInterfaceAssociation instanceNetworkInterfaceAssociationField;
+        private List<InstancePrivateIpAddress> privateIpAddressesField;
 
         /// <summary>
         /// Gets and sets the NetworkInterfaceId property.
@@ -463,6 +464,48 @@ namespace Amazon.EC2.Model
         public bool IsSetAssociation()
         {
             return this.instanceNetworkInterfaceAssociationField != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the PrivateIpAddresses property.
+        /// Private IP addresses.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PrivateIpAddresses")]
+        public List<InstancePrivateIpAddress> PrivateIpAddresses
+        {
+            get
+            {
+                if (this.privateIpAddressesField == null)
+                {
+                    this.privateIpAddressesField = new List<InstancePrivateIpAddress>();
+                }
+                return this.privateIpAddressesField;
+            }
+            set { this.privateIpAddressesField = value; }
+        }
+
+        /// <summary>
+        /// Sets the PrivateIpAddresses property
+        /// </summary>
+        /// <param name="privateIpAddresses">Private IP addresses.</param>
+        /// <returns>this instance</returns>
+        public InstanceNetworkInterface WithPrivateIpAddresses(params InstancePrivateIpAddress[] privateIpAddresses)
+        {
+            foreach (InstancePrivateIpAddress privateIpAddress in privateIpAddresses)
+            {
+                PrivateIpAddresses.Add(privateIpAddress);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PrivateIpAddresses property is set
+        /// </summary>
+        /// <returns>true if the PrivateIpAddresses property is set</returns>
+        public bool IsSetPrivateIpAddresses()
+        {
+            return PrivateIpAddresses.Count > 0;
         }
     }
 }

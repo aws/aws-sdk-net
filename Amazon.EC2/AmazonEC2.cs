@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-01
+ *  API Version: 2012-06-15
  */
 
 using System;
@@ -2268,5 +2268,33 @@ namespace Amazon.EC2
         /// <returns>Cancel Export Task response from the service</returns>
         CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request);
 
+        /// <summary>
+        /// Assigns one or more secondary private IP addresses to a network interface in Amazon VPC.
+        /// </summary>
+        /// <param name="request">Assign Private Ip Addresses request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Assign Private Ip Addresses response from the service</returns>
+        /// <remarks>
+        /// This action applies to only  Amazon VPC instances or network interfaces.
+        /// You can specify one or more specific secondary IP addresses that you want to assign
+        /// or you can specify a number of secondary IP addresses to be automatically assigned
+        /// within the subnet’s CIDR block range. The number of secondary IP addresses that you
+        /// can assign to an instance varies by instance type.
+        /// For more information, see the Amazon Virtual Private Cloud User Guide.
+        /// </remarks>
+        AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request);
+
+        /// <summary>
+        /// Unassigns one or more secondary private IP addresses from a network interface in Amazon VPC. 
+        /// </summary>
+        /// <param name="request">Unassign Private Ip Addresses request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Unassign Private Ip Addresses response from the service</returns>
+        /// <remarks>
+        /// This action is only available in Amazon VPC.
+        /// </remarks>
+        UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request);
     }
 }

@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-01
+ *  API Version: 2012-06-15
  */
 
 using System;
@@ -29,13 +29,15 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Create Network Interface request
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
     public class CreateNetworkInterfaceRequest
     {
         private string subnetIdField;
         private string descriptionField;
         private string privateIpAddressField;
         private List<string> groupIdField;
+        private List<PrivateIpAddress> privateIpAddressesField;
+        private int? secondaryPrivateIpAddressCountField;
 
         /// <summary>
         /// Gets and sets the ID of the subnet to associate with the network interface.
@@ -165,6 +167,80 @@ namespace Amazon.EC2.Model
         public bool IsSetGroupId()
         {
             return (GroupId.Count > 0);
+        }
+
+
+        /// <summary>
+        /// Gets and sets the PrivateIpAddresses property.
+        /// Private IP addresses.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PrivateIpAddresses")]
+        public List<PrivateIpAddress> PrivateIpAddresses
+        {
+            get
+            {
+                if (this.privateIpAddressesField == null)
+                {
+                    this.privateIpAddressesField = new List<PrivateIpAddress>();
+                }
+                return this.privateIpAddressesField;
+            }
+            set { this.privateIpAddressesField = value; }
+        }
+
+        /// <summary>
+        /// Sets the PrivateIpAddresses property
+        /// </summary>
+        /// <param name="privateIpAddresses">Private IP addresses.</param>
+        /// <returns>this instance</returns>
+        public CreateNetworkInterfaceRequest WithPrivateIpAddresses(params PrivateIpAddress[] privateIpAddresses)
+        {
+            foreach (PrivateIpAddress privateIpAddress in privateIpAddresses)
+            {
+                PrivateIpAddresses.Add(privateIpAddress);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PrivateIpAddresses property is set
+        /// </summary>
+        /// <returns>true if the PrivateIpAddresses property is set</returns>
+        public bool IsSetPrivateIpAddresses()
+        {
+            return PrivateIpAddresses.Count > 0;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the SecondaryPrivateIpAddressCount property.
+        /// Number of secondary private IP addresses.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "SecondaryPrivateIpAddressCount")]
+        public int SecondaryPrivateIpAddressCount
+        {
+            get { return this.secondaryPrivateIpAddressCountField.GetValueOrDefault(); }
+            set { this.secondaryPrivateIpAddressCountField = value; }
+        }
+
+        /// <summary>
+        /// Sets the SecondaryPrivateIpAddressCount property
+        /// </summary>
+        /// <param name="secondaryPrivateIpAddressCount">Number of secondary private IP addresses.</param>
+        /// <returns>this instance</returns>
+        public CreateNetworkInterfaceRequest WithSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount)
+        {
+            this.secondaryPrivateIpAddressCountField = secondaryPrivateIpAddressCount;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the SecondaryPrivateIpAddressCount property is set
+        /// </summary>
+        /// <returns>true if the SecondaryPrivateIpAddressCount property is set</returns>
+        public bool IsSetSecondaryPrivateIpAddressCount()
+        {
+            return this.secondaryPrivateIpAddressCountField != null;
         }
     }
 }

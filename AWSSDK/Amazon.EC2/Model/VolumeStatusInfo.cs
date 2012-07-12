@@ -1,0 +1,103 @@
+﻿/*******************************************************************************
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
+ * this file except in compliance with the License. A copy of the License is located at
+ *
+ * http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ * *****************************************************************************
+ *    __  _    _  ___
+ *   (  )( \/\/ )/ __)
+ *   /__\ \    / \__ \
+ *  (_)(_) \/\/  (___/
+ *
+ *  AWS SDK for .NET
+ *  API Version: 2012-06-15
+ */
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
+using System.Text;
+
+namespace Amazon.EC2.Model
+{
+    /// <summary>
+    /// VolumeStatusInfo
+    /// </summary>
+    public class VolumeStatusInfo
+    {
+        private string statusField;
+        private List<VolumeStatusDetail> volumeStatusDetailField;
+
+        /// <summary>
+        /// The status of the volume
+        /// </summary>
+        public string Status
+        {
+            get { return this.statusField; }
+            set { this.statusField = value; }
+        }
+        /// <summary>
+        /// Checks if Status property is set
+        /// </summary>
+        /// <returns>true if Status property is set</returns>
+        public bool IsSetStatus()
+        {
+            return this.statusField != null;
+        }
+        /// <summary>
+        /// Sets the Status property.
+        /// </summary>
+        /// <param name="status">The new status</param>
+        /// <returns>this instance</returns>
+        public VolumeStatusInfo WithStatus(string status)
+        {
+            this.statusField = status;
+            return this;
+        }
+
+        /// <summary>
+        /// Details of the volume status
+        /// </summary>
+        [XmlElementAttribute(ElementName = "VolumeStatusDetail")]
+        public List<VolumeStatusDetail> VolumeStatusDetail
+        {
+            get
+            {
+                if (this.volumeStatusDetailField == null)
+                {
+                    this.volumeStatusDetailField = new List<VolumeStatusDetail>();
+                }
+                return this.volumeStatusDetailField;
+            }
+            set { this.volumeStatusDetailField = value; }
+        }
+        /// <summary>
+        /// Checks if VolumeStatusDetail property is set
+        /// </summary>
+        /// <returns>true if VolumeStatusDetail property is set</returns>
+        public bool IsSetVolumeStatusDetail()
+        {
+            return this.volumeStatusDetailField != null;
+        }
+        /// <summary>
+        /// Sets the VolumeStatusDetail property.
+        /// </summary>
+        /// <param name="list">The new details</param>
+        /// <returns>this instance</returns>
+        public VolumeStatusInfo WithVolumeStatusDetail(params VolumeStatusDetail[] list)
+        {
+            foreach (VolumeStatusDetail item in list)
+            {
+                this.volumeStatusDetailField.Add(item);
+            }
+            return this;
+        }
+    }
+}
