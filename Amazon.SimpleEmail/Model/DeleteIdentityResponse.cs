@@ -30,7 +30,7 @@ namespace Amazon.SimpleEmail.Model
 
         /// <summary>
         /// Gets and sets the DeleteIdentityResult property.
-        /// An empty element.
+        /// An empty element. Receiving this element indicates that the request completed successfully.
         /// </summary>
         public DeleteIdentityResult DeleteIdentityResult
         {

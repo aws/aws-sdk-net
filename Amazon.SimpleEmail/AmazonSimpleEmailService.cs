@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmail
     ///  
     ///  Amazon Simple Email Service <para> This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to
     /// be used in conjunction with the Amazon SES Getting Started Guide and the Amazon SES Developer Guide. </para> <para> For specific details on
-    /// how to construct a service request, please consult theAmazon SES Developer Guide. </para> <para><b>NOTE:</b>The endpoint for Amazon SES is
+    /// how to construct a service request, please consult the Amazon SES Developer Guide. </para> <para><b>NOTE:</b>The endpoint for Amazon SES is
     /// located at: https://email.us-east-1.amazonaws.com </para>
     /// </summary>
     public interface AmazonSimpleEmailService : IDisposable
@@ -264,6 +264,106 @@ namespace Amazon.SimpleEmail
         
     
 
+        #region VerifyDomainDkim
+
+        /// <summary>
+        /// <para>Returns a set of DNS records, or <i>tokens</i> , that must be published in the domain name's DNS to complete the DKIM verification
+        /// process. These tokens are DNS <c>CNAME</c> records that point to DKIM public keys hosted by Amazon SES. To complete the DKIM verification
+        /// process, these tokens must be published in the domain's DNS. The tokens must remain published in order for Easy DKIM signing to function
+        /// correctly.</para> <para>After the tokens are added to the domain's DNS, Amazon SES will be able to DKIM-sign email originating from that
+        /// domain. To enable or disable Easy DKIM signing for a domain, use the <c>SetIdentityDkimEnabled</c> action.</para> <para>For more information
+        /// about Easy DKIM, go to the Amazon SES Developer Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="verifyDomainDkimRequest">Container for the necessary parameters to execute the VerifyDomainDkim service method on
+        ///          AmazonSimpleEmailService.</param>
+        /// 
+        /// <returns>The response from the VerifyDomainDkim service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        VerifyDomainDkimResponse VerifyDomainDkim(VerifyDomainDkimRequest verifyDomainDkimRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifyDomainDkim operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyDomainDkim"/>
+        /// </summary>
+        /// 
+        /// <param name="verifyDomainDkimRequest">Container for the necessary parameters to execute the VerifyDomainDkim operation on
+        ///          AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyDomainDkim
+        ///         operation.</returns>
+        IAsyncResult BeginVerifyDomainDkim(VerifyDomainDkimRequest verifyDomainDkimRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the VerifyDomainDkim operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyDomainDkim"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDomainDkim.</param>
+        /// 
+        /// <returns>Returns a VerifyDomainDkimResult from AmazonSimpleEmailService.</returns>
+        VerifyDomainDkimResponse EndVerifyDomainDkim(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region GetIdentityDkimAttributes
+
+        /// <summary>
+        /// <para>Returns the DNS records, or <i>tokens</i> , that must be present in order for Easy DKIM to sign outgoing email messages.</para>
+        /// <para>This action takes a list of verified identities as input. It then returns the following information for each identity:</para>
+        /// <ul>
+        /// <li>Whether Easy DKIM signing is enabled or disabled.</li>
+        /// <li>The set of tokens that are required for Easy DKIM signing. These tokens must be published in the domain name's DNS records in order
+        /// for DKIM verification to complete, and must remain published in order for Easy DKIM signing to operate correctly. (This information is only
+        /// returned for domain name identities, not for email addresses.)</li>
+        /// <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain name's DNS. (This information is only returned for
+        /// domain name identities, not for email addresses.)</li>
+        /// 
+        /// </ul>
+        /// <para>For more information about Easy DKIM signing, go to the Amazon SES Developer Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="getIdentityDkimAttributesRequest">Container for the necessary parameters to execute the GetIdentityDkimAttributes service
+        ///          method on AmazonSimpleEmailService.</param>
+        /// 
+        /// <returns>The response from the GetIdentityDkimAttributes service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        GetIdentityDkimAttributesResponse GetIdentityDkimAttributes(GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityDkimAttributes operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetIdentityDkimAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="getIdentityDkimAttributesRequest">Container for the necessary parameters to execute the GetIdentityDkimAttributes operation on
+        ///          AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndGetIdentityDkimAttributes operation.</returns>
+        IAsyncResult BeginGetIdentityDkimAttributes(GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetIdentityDkimAttributes operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetIdentityDkimAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityDkimAttributes.</param>
+        /// 
+        /// <returns>Returns a GetIdentityDkimAttributesResult from AmazonSimpleEmailService.</returns>
+        GetIdentityDkimAttributesResponse EndGetIdentityDkimAttributes(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region VerifyEmailAddress
 
         /// <summary>
@@ -448,6 +548,57 @@ namespace Amazon.SimpleEmail
         
     
 
+        #region SetIdentityDkimEnabled
+
+        /// <summary>
+        /// <para>Enables or disables Easy DKIM signing of email sent from an identity:</para>
+        /// <ul>
+        /// <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <c>example.com</c> ), then Amazon SES will DKIM-sign all email sent
+        /// by addresses under that domain name (e.g., <c>user@example.com</c> ).</li>
+        /// <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li>
+        /// 
+        /// </ul>
+        /// <para>For email addresses (e.g., <c>user@example.com</c> ), you can only enable Easy DKIM signing if the corresponding domain (e.g.,
+        /// <c>example.com</c> ) has been set up for Easy DKIM using the AWS Console or the <c>VerifyDomainDkim</c> action.</para> <para>For more
+        /// information about Easy DKIM signing, go to the Amazon SES Developer Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="setIdentityDkimEnabledRequest">Container for the necessary parameters to execute the SetIdentityDkimEnabled service method on
+        ///          AmazonSimpleEmailService.</param>
+        /// 
+        /// <returns>The response from the SetIdentityDkimEnabled service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        SetIdentityDkimEnabledResponse SetIdentityDkimEnabled(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityDkimEnabled operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SetIdentityDkimEnabled"/>
+        /// </summary>
+        /// 
+        /// <param name="setIdentityDkimEnabledRequest">Container for the necessary parameters to execute the SetIdentityDkimEnabled operation on
+        ///          AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndSetIdentityDkimEnabled operation.</returns>
+        IAsyncResult BeginSetIdentityDkimEnabled(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetIdentityDkimEnabled operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SetIdentityDkimEnabled"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityDkimEnabled.</param>
+        /// 
+        /// <returns>Returns a SetIdentityDkimEnabledResult from AmazonSimpleEmailService.</returns>
+        SetIdentityDkimEnabledResponse EndSetIdentityDkimEnabled(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region GetSendQuota
 
         /// <summary>
@@ -542,6 +693,48 @@ namespace Amazon.SimpleEmail
         
     
 
+        #region VerifyDomainIdentity
+
+        /// <summary>
+        /// <para>Verifies a domain.</para>
+        /// </summary>
+        /// 
+        /// <param name="verifyDomainIdentityRequest">Container for the necessary parameters to execute the VerifyDomainIdentity service method on
+        ///          AmazonSimpleEmailService.</param>
+        /// 
+        /// <returns>The response from the VerifyDomainIdentity service method, as returned by AmazonSimpleEmailService.</returns>
+        /// 
+        VerifyDomainIdentityResponse VerifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifyDomainIdentity operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyDomainIdentity"/>
+        /// </summary>
+        /// 
+        /// <param name="verifyDomainIdentityRequest">Container for the necessary parameters to execute the VerifyDomainIdentity operation on
+        ///          AmazonSimpleEmailService.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndVerifyDomainIdentity operation.</returns>
+        IAsyncResult BeginVerifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the VerifyDomainIdentity operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyDomainIdentity"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDomainIdentity.</param>
+        /// 
+        /// <returns>Returns a VerifyDomainIdentityResult from AmazonSimpleEmailService.</returns>
+        VerifyDomainIdentityResponse EndVerifyDomainIdentity(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region SendEmail
 
         /// <summary>
@@ -593,43 +786,37 @@ namespace Amazon.SimpleEmail
         
     
 
-        #region VerifyDomainIdentity
+        #region DeleteVerifiedEmailAddress
 
         /// <summary>
-        /// <para>Verifies a domain.</para>
+        /// <para>Deletes the specified email address from the list of verified addresses.</para> <para><b>IMPORTANT:</b>The DeleteVerifiedEmailAddress
+        /// action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</para>
         /// </summary>
         /// 
-        /// <param name="verifyDomainIdentityRequest">Container for the necessary parameters to execute the VerifyDomainIdentity service method on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="deleteVerifiedEmailAddressRequest">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service
+        ///          method on AmazonSimpleEmailService.</param>
         /// 
-        /// <returns>The response from the VerifyDomainIdentity service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        VerifyDomainIdentityResponse VerifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest);
+        DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the VerifyDomainIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyDomainIdentity"/>
+        /// Initiates the asynchronous execution of the DeleteVerifiedEmailAddress operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
         /// </summary>
         /// 
-        /// <param name="verifyDomainIdentityRequest">Container for the necessary parameters to execute the VerifyDomainIdentity operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="deleteVerifiedEmailAddressRequest">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress operation
+        ///          on AmazonSimpleEmailService.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndVerifyDomainIdentity operation.</returns>
-        IAsyncResult BeginVerifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginDeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the VerifyDomainIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyDomainIdentity"/>
+        /// Finishes the asynchronous execution of the DeleteVerifiedEmailAddress operation.
+        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDomainIdentity.</param>
-        /// 
-        /// <returns>Returns a VerifyDomainIdentityResult from AmazonSimpleEmailService.</returns>
-        VerifyDomainIdentityResponse EndVerifyDomainIdentity(IAsyncResult asyncResult);
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVerifiedEmailAddress.</param>
+        DeleteVerifiedEmailAddressResponse EndDeleteVerifiedEmailAddress(IAsyncResult asyncResult);
         
         #endregion
         
@@ -675,42 +862,6 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>Returns a SetIdentityNotificationTopicResult from AmazonSimpleEmailService.</returns>
         SetIdentityNotificationTopicResponse EndSetIdentityNotificationTopic(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region DeleteVerifiedEmailAddress
-
-        /// <summary>
-        /// <para>Deletes the specified email address from the list of verified addresses.</para> <para><b>IMPORTANT:</b>The DeleteVerifiedEmailAddress
-        /// action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</para>
-        /// </summary>
-        /// 
-        /// <param name="deleteVerifiedEmailAddressRequest">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service
-        ///          method on AmazonSimpleEmailService.</param>
-        /// 
-        DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteVerifiedEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteVerifiedEmailAddressRequest">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress operation
-        ///          on AmazonSimpleEmailService.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteVerifiedEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVerifiedEmailAddress.</param>
-        DeleteVerifiedEmailAddressResponse EndDeleteVerifiedEmailAddress(IAsyncResult asyncResult);
         
         #endregion
         

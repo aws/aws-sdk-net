@@ -18,19 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents a list of all verified identities for the AWS Account.</para>
+    /// Container for the parameters to the GetIdentityDkimAttributes operation.
+    /// <para>Returns the DNS records, or <i>tokens</i> , that must be present in order for Easy DKIM to sign outgoing email messages.</para>
+    /// <para>This action takes a list of verified identities as input. It then returns the following information for each identity:</para>
+    /// <ul>
+    /// <li>Whether Easy DKIM signing is enabled or disabled.</li>
+    /// <li>The set of tokens that are required for Easy DKIM signing. These tokens must be published in the domain name's DNS records in order
+    /// for DKIM verification to complete, and must remain published in order for Easy DKIM signing to operate correctly. (This information is only
+    /// returned for domain name identities, not for email addresses.)</li>
+    /// <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain name's DNS. (This information is only returned for
+    /// domain name identities, not for email addresses.)</li>
+    /// 
+    /// </ul>
+    /// <para>For more information about Easy DKIM signing, go to the Amazon SES Developer Guide.</para>
     /// </summary>
-    public class ListIdentitiesResult  
+    /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetIdentityDkimAttributes"/>
+    public class GetIdentityDkimAttributesRequest : AmazonWebServiceRequest
     {
-        
         private List<string> identities = new List<string>();
-        private string nextToken;
 
         /// <summary>
-        /// A list of identities.
+        /// A list of one or more verified identities - email addresses, domains, or both.
         ///  
         /// </summary>
         public List<string> Identities
@@ -43,7 +57,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identities">The values to add to the Identities collection </param>
         /// <returns>this instance</returns>
-        public ListIdentitiesResult WithIdentities(params string[] identities)
+        public GetIdentityDkimAttributesRequest WithIdentities(params string[] identities)
         {
             foreach (string element in identities)
             {
@@ -58,7 +72,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identities">The values to add to the Identities collection </param>
         /// <returns>this instance</returns>
-        public ListIdentitiesResult WithIdentities(IEnumerable<string> identities)
+        public GetIdentityDkimAttributesRequest WithIdentities(IEnumerable<string> identities)
         {
             foreach (string element in identities)
             {
@@ -73,33 +87,6 @@ namespace Amazon.SimpleEmail.Model
         {
             return this.identities.Count > 0;       
         }
-
-        /// <summary>
-        /// The token used for pagination.
-        ///  
-        /// </summary>
-        public string NextToken
-        {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
-        }
-
-        /// <summary>
-        /// Sets the NextToken property
-        /// </summary>
-        /// <param name="nextToken">The value to set for the NextToken property </param>
-        /// <returns>this instance</returns>
-        public ListIdentitiesResult WithNextToken(string nextToken)
-        {
-            this.nextToken = nextToken;
-            return this;
-        }
-            
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this.nextToken != null;       
-        }
     }
 }
+    

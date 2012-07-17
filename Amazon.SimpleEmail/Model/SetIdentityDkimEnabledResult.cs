@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>An empty element. Receiving this element indicates that the request completed successfully.</para>
     /// </summary>
-    public class SetIdentityNotificationTopicResult  
+    public class SetIdentityDkimEnabledResult  
     {
         
     }

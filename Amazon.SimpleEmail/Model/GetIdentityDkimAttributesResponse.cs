@@ -22,28 +22,28 @@ using Amazon.Runtime;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Returns information about the  ListIdentitiesResult response and response metadata.
+    /// Returns information about the  GetIdentityDkimAttributesResult response and response metadata.
     /// </summary>
-    public class ListIdentitiesResponse : AmazonWebServiceResponse
+    public class GetIdentityDkimAttributesResponse : AmazonWebServiceResponse
     {
-        private ListIdentitiesResult listIdentitiesResult;
+        private GetIdentityDkimAttributesResult getIdentityDkimAttributesResult;
 
         /// <summary>
-        /// Gets and sets the ListIdentitiesResult property.
-        /// Represents a list of all verified identities for the AWS Account.
+        /// Gets and sets the GetIdentityDkimAttributesResult property.
+        /// Represents a list of all the DKIM attributes for the specified identity.
         /// </summary>
-        public ListIdentitiesResult ListIdentitiesResult
+        public GetIdentityDkimAttributesResult GetIdentityDkimAttributesResult
         {
             get 
             {
-                if(this.listIdentitiesResult == null)
+                if(this.getIdentityDkimAttributesResult == null)
                 {
-                    this.listIdentitiesResult = new ListIdentitiesResult();
+                    this.getIdentityDkimAttributesResult = new GetIdentityDkimAttributesResult();
                 }
 
-                return this.listIdentitiesResult; 
+                return this.getIdentityDkimAttributesResult; 
             }
-            set { this.listIdentitiesResult = value; }
+            set { this.getIdentityDkimAttributesResult = value; }
         }
     }
 }

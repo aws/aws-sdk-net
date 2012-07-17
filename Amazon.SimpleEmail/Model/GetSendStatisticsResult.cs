@@ -28,6 +28,11 @@ namespace Amazon.SimpleEmail.Model
     {
         
         private List<SendDataPoint> sendDataPoints = new List<SendDataPoint>();
+
+        /// <summary>
+        /// A list of data points, each of which represents 15 minutes of activity.
+        ///  
+        /// </summary>
         public List<SendDataPoint> SendDataPoints
         {
             get { return this.sendDataPoints; }
