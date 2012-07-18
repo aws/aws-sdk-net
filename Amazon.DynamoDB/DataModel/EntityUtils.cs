@@ -74,32 +74,48 @@ namespace Amazon.DynamoDB.DataModel
 
         public static DynamoDBTableAttribute GetTableAttribute(Type type)
         {
-            DynamoDBTableAttribute tableAttribute = GetAttribute(type) as DynamoDBTableAttribute;
+            DynamoDBTableAttribute tableAttribute = null;
+            int count =0;
+
+            foreach (var attribute in GetAttributes(type))
+            {
+                if (!(attribute is DynamoDBTableAttribute)) 
+                    continue;
+
+                count++;
+                if(count > 1)
+                    throw new Exception("There can only be one TableAttribute per table.");
+
+                tableAttribute = attribute as DynamoDBTableAttribute;
+            }
+
             if (tableAttribute == null)
                 return null;
             return tableAttribute;
         }
 
-        public static DynamoDBAttribute GetAttribute(Type targetType)
+        public static DynamoDBAttribute[] GetAttributes(Type targetType)
         {
             if (targetType == null) throw new ArgumentNullException("targetType");
-            object[] attributes = targetType.GetCustomAttributes(typeof(DynamoDBAttribute), true);
-            return GetSingleDDBAttribute(attributes);
-        }
-        public static DynamoDBAttribute GetAttribute(MemberInfo targetMemberInfo)
-        {
-            if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
-            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
-            return GetSingleDDBAttribute(attributes);
+            var attributes = targetType.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+            return GetAttributes(attributes);
         }
 
-        public static DynamoDBAttribute GetSingleDDBAttribute(object[] attributes)
+        public static DynamoDBAttribute[] GetAttributes(MemberInfo targetMemberInfo)
         {
-            if (attributes.Length == 0)
-                return null;
-            if (attributes.Length == 1)
-                return (attributes[0] as DynamoDBAttribute);
-            throw new InvalidOperationException("Cannot have multiple DynamoDBAttributes on a single member");
+            if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
+            var attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+            return GetAttributes(attributes);
+        }
+
+        private static DynamoDBAttribute[] GetAttributes(object[] attributes)
+        {
+            var result = new DynamoDBAttribute[attributes.Length];
+
+            for (int x = 0; x < attributes.Length; x++ )
+                result[x] = attributes[x] as DynamoDBAttribute;
+
+            return result;
         }
 
         #endregion
