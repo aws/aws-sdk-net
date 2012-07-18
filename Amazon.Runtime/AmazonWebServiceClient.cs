@@ -774,7 +774,7 @@ namespace Amazon.Runtime
         /// <returns>True if the failed request should be retried.</returns>
         public static bool ShouldRetry(HttpStatusCode statusCode, ClientConfig config, AmazonServiceException errorResponseException, int retries)
         {
-            if (retries > config.MaxErrorRetry)
+            if (retries >= config.MaxErrorRetry)
             {
                 return false;
             }
