@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-06-15/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="default-ec2-namespace" exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-  <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2012-06-15/'"/>
   <xsl:template match="ec2:DescribeImageAttributeResponse">
-    <xsl:element name="DescribeImageAttributeResponse" namespace="{$ns}">
-      <xsl:element name="ResponseMetadata" namespace="{$ns}">
-        <xsl:element name="RequestId" namespace="{$ns}">
+    <xsl:element name="DescribeImageAttributeResponse">
+      <xsl:element name="ResponseMetadata">
+        <xsl:element name="RequestId">
           <xsl:value-of select="ec2:requestId"/>
         </xsl:element>
       </xsl:element>
-      <xsl:element name="DescribeImageAttributeResult" namespace="{$ns}">
-        <xsl:element name="ImageAttribute" namespace="{$ns}">
-          <xsl:element name="ImageId" namespace="{$ns}">
+      <xsl:element name="DescribeImageAttributeResult">
+        <xsl:element name="ImageAttribute">
+          <xsl:element name="ImageId">
             <xsl:value-of select="ec2:imageId"/>
           </xsl:element>
           <xsl:apply-templates select="ec2:launchPermission"/>
@@ -26,11 +25,11 @@
   </xsl:template>
   <xsl:template match="ec2:launchPermission">
     <xsl:for-each select="ec2:item">
-      <xsl:element name="LaunchPermission" namespace="{$ns}">
-        <xsl:element name="UserId" namespace="{$ns}">
+      <xsl:element name="LaunchPermission">
+        <xsl:element name="UserId">
           <xsl:value-of select="ec2:userId"/>
         </xsl:element>
-        <xsl:element name="GroupName" namespace="{$ns}">
+        <xsl:element name="GroupName">
           <xsl:value-of select="ec2:group"/>
         </xsl:element>
       </xsl:element>
@@ -40,17 +39,17 @@
   <xsl:template match="ec2:productCodes">
     <!-- output obsolete id-only list until removed from sdk -->
     <xsl:for-each select="ec2:item">
-      <xsl:element name="ProductCodeId" namespace="{$ns}">
+      <xsl:element name="ProductCodeId">
         <xsl:value-of select="ec2:productCode"/>
       </xsl:element>
     </xsl:for-each>
     <!-- this is the preferred output -->
     <xsl:for-each select="ec2:item">
-      <xsl:element name="ProductCodes" namespace="{$ns}">
-        <xsl:element name="ProductCodeId" namespace="{$ns}">
+      <xsl:element name="ProductCodes">
+        <xsl:element name="ProductCodeId">
           <xsl:value-of select="ec2:productCode"/>
         </xsl:element>
-        <xsl:element name="Type" namespace="{$ns}">
+        <xsl:element name="Type">
           <xsl:value-of select="ec2:type"/>
         </xsl:element>
       </xsl:element>
@@ -58,27 +57,27 @@
   </xsl:template>
   
   <xsl:template match="ec2:kernel">
-    <xsl:element name="KernelId" namespace="{$ns}">
+    <xsl:element name="KernelId">
       <xsl:value-of select="ec2:value"/>
     </xsl:element>
   </xsl:template>
   <xsl:template match="ec2:ramdisk">
-    <xsl:element name="RamdiskId" namespace="{$ns}">
+    <xsl:element name="RamdiskId">
       <xsl:value-of select="ec2:value"/>
     </xsl:element>
   </xsl:template>
   <xsl:template match="ec2:description">
-    <xsl:element name="Description" namespace="{$ns}">
+    <xsl:element name="Description">
       <xsl:value-of select="ec2:value"/>
     </xsl:element>
   </xsl:template>
   <xsl:template match="ec2:blockDeviceMapping">
     <xsl:for-each select="ec2:item">
-      <xsl:element name="BlockDeviceMapping" namespace="{$ns}">
-        <xsl:element name="DeviceName" namespace="{$ns}">
+      <xsl:element name="BlockDeviceMapping">
+        <xsl:element name="DeviceName">
           <xsl:value-of select="ec2:deviceName"/>
         </xsl:element>
-        <xsl:element name="VirtualName" namespace="{$ns}">
+        <xsl:element name="VirtualName">
           <xsl:value-of select="ec2:virtualName"/>
         </xsl:element>
         <xsl:apply-templates select="ec2:ebs"/>
@@ -87,17 +86,17 @@
     </xsl:for-each>
   </xsl:template>
   <xsl:template match="ec2:ebs">
-    <xsl:element name="Ebs" namespace="{$ns}">
-      <xsl:element name="SnapshotId" namespace="{$ns}">
+    <xsl:element name="Ebs">
+      <xsl:element name="SnapshotId">
         <xsl:value-of select="ec2:snapshotId"/>
       </xsl:element>
       <!-- if a snapshot is specified, the volumeSize is optional -->
       <xsl:if test="ec2:volumeSize">
-        <xsl:element name="VolumeSize" namespace="{$ns}">
+        <xsl:element name="VolumeSize">
           <xsl:value-of select="ec2:volumeSize"/>
         </xsl:element>
       </xsl:if>
-      <xsl:element name="DeleteOnTermination" namespace="{$ns}">
+      <xsl:element name="DeleteOnTermination">
         <xsl:if test="string-length(ec2:deleteOnTermination) = 0">
           <xsl:text>false</xsl:text>
         </xsl:if>
@@ -108,7 +107,7 @@
     </xsl:element>
   </xsl:template>
   <xsl:template match="ec2:noDevice">
-    <xsl:element name="NoDevice" namespace="{$ns}">
+    <xsl:element name="NoDevice">
       <xsl:value-of select="'true'"/>
     </xsl:element>
   </xsl:template>

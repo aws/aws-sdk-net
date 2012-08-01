@@ -41,6 +41,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private SourceSecurityGroup sourceSecurityGroup;
         private List<string> securityGroups = new List<string>();
         private DateTime? createdTime;
+        private string scheme;
         /// <summary>
         /// Default constructor for a new LoadBalancerDescription object.  Callers should use the
         /// properties or fluent setter (With...) methods to initialize this object after creating it.
@@ -577,6 +578,36 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetCreatedTime()
         {
             return this.createdTime.HasValue;       
+        }
+
+        /// <summary>
+        /// Specifies the type of LoadBalancer. If the <c>Scheme</c> is <c>internet-facing</c>, the LoadBalancer has a publicly resolvable DNS name that
+        /// resolves to public IP addresses. If the <c>Scheme</c> is <c>internal</c>, the LoadBalancer has a publicly resolvable DNS name that resolves
+        /// to private IP addresses. This option is only available for LoadBalancers attached to an Amazon VPC.
+        ///  
+        /// </summary>
+        public string Scheme
+        {
+            get { return this.scheme; }
+            set { this.scheme = value; }
+        }
+
+        /// <summary>
+        /// Sets the Scheme property
+        /// </summary>
+        /// <param name="scheme">The value to set for the Scheme property </param>
+        /// <returns>this instance</returns>
+        public LoadBalancerDescription WithScheme(string scheme)
+        {
+            this.scheme = scheme;
+            return this;
+        }
+            
+
+        // Check to see if Scheme property is set
+        internal bool IsSetScheme()
+        {
+            return this.scheme != null;       
         }
     }
 }

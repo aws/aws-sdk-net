@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -33,13 +32,15 @@ namespace Amazon.EC2.Model
     /// use storage that persists on instance failure, and can be stopped
     /// and started.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class CreateImageRequest
     {    
         private string instanceIdField;
         private string nameField;
         private string descriptionField;
         private bool? noRebootField;
+        private List<BlockDeviceMapping> blockDeviceMappingField;
+
 
         /// <summary>
         /// Gets and sets the InstanceId property.
@@ -185,6 +186,46 @@ namespace Amazon.EC2.Model
         public bool IsSetNoReboot()
         {
             return this.noRebootField.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the BlockDeviceMapping property.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
+        public List<BlockDeviceMapping> BlockDeviceMapping
+        {
+            get
+            {
+                if (this.blockDeviceMappingField == null)
+                {
+                    this.blockDeviceMappingField = new List<BlockDeviceMapping>();
+                }
+                return this.blockDeviceMappingField;
+            }
+            set { this.blockDeviceMappingField = value; }
+        }
+
+        /// <summary>
+        /// Sets the BlockDeviceMapping property
+        /// </summary>
+        /// <param name="list">BlockDeviceMapping property</param>
+        /// <returns>this instance</returns>
+        public CreateImageRequest WithBlockDeviceMapping(params BlockDeviceMapping[] list)
+        {
+            foreach (BlockDeviceMapping item in list)
+            {
+                BlockDeviceMapping.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if BlockDeviceMapping property is set
+        /// </summary>
+        /// <returns>true if BlockDeviceMapping property is set</returns>
+        public bool IsSetBlockDeviceMapping()
+        {
+            return (BlockDeviceMapping.Count > 0);
         }
 
     }

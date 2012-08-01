@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   BackendServerDescription Unmarshaller
      /// </summary>
-    internal class BackendServerDescriptionUnmarshaller : IUnmarshaller<BackendServerDescription, XmlUnmarshallerContext> 
+    internal class BackendServerDescriptionUnmarshaller : IUnmarshaller<BackendServerDescription, XmlUnmarshallerContext>, IUnmarshaller<BackendServerDescription, JsonUnmarshallerContext> 
     {
         public BackendServerDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             BackendServerDescription backendServerDescription = new BackendServerDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return backendServerDescription;
+        }
+
+        public BackendServerDescription Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static BackendServerDescriptionUnmarshaller instance;

@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   InstanceState Unmarshaller
      /// </summary>
-    internal class InstanceStateUnmarshaller : IUnmarshaller<InstanceState, XmlUnmarshallerContext> 
+    internal class InstanceStateUnmarshaller : IUnmarshaller<InstanceState, XmlUnmarshallerContext>, IUnmarshaller<InstanceState, JsonUnmarshallerContext> 
     {
         public InstanceState Unmarshall(XmlUnmarshallerContext context) 
         {
             InstanceState instanceState = new InstanceState();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -70,6 +71,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return instanceState;
+        }
+
+        public InstanceState Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static InstanceStateUnmarshaller instance;

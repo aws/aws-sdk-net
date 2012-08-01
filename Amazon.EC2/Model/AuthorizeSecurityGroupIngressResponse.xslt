@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-06-15/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="default-ec2-namespace" exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2012-06-15/'"/>
     <xsl:template match="ec2:AuthorizeSecurityGroupIngressResponse">
         <xsl:apply-templates select="ec2:return"/>
     </xsl:template>
     <xsl:template match="ec2:return">
-            <xsl:element name="AuthorizeSecurityGroupIngressResponse" namespace="{$ns}">
-                <xsl:element name="ResponseMetadata" namespace="{$ns}">
-                    <xsl:element name="RequestId" namespace="{$ns}">
+            <xsl:element name="AuthorizeSecurityGroupIngressResponse">
+                <xsl:element name="ResponseMetadata">
+                    <xsl:element name="RequestId">
                         <xsl:value-of select="../ec2:requestId"/>
                     </xsl:element>
                 </xsl:element>

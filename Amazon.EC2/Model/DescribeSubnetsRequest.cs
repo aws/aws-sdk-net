@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -41,7 +40,7 @@ namespace Amazon.EC2.Model
     /// no match, no special message is returned; the response
     /// is simply empty
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class DescribeSubnetsRequest
     {    
         private List<string> subnetIdField;

@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -31,7 +30,7 @@ namespace Amazon.EC2.Model
     /// created Amazon S3 objects. If the export task is complete or is in the process of transferring the final 
     /// disk image, the command fails and returns an error.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class CancelExportTaskRequest
     {
         private string exportTaskIdField;

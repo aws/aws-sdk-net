@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   SourceSecurityGroup Unmarshaller
      /// </summary>
-    internal class SourceSecurityGroupUnmarshaller : IUnmarshaller<SourceSecurityGroup, XmlUnmarshallerContext> 
+    internal class SourceSecurityGroupUnmarshaller : IUnmarshaller<SourceSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<SourceSecurityGroup, JsonUnmarshallerContext> 
     {
         public SourceSecurityGroup Unmarshall(XmlUnmarshallerContext context) 
         {
             SourceSecurityGroup sourceSecurityGroup = new SourceSecurityGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return sourceSecurityGroup;
+        }
+
+        public SourceSecurityGroup Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static SourceSecurityGroupUnmarshaller instance;

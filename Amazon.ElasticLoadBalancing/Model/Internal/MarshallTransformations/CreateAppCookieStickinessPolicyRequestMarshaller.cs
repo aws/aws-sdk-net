@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createAppCookieStickinessPolicyRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateAppCookieStickinessPolicy");
-            request.Parameters.Add("Version", "2011-11-15");
+            request.Parameters.Add("Version", "2012-06-01");
             if (createAppCookieStickinessPolicyRequest != null && createAppCookieStickinessPolicyRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createAppCookieStickinessPolicyRequest.LoadBalancerName));

@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -37,7 +36,7 @@ namespace Amazon.EC2.Model
     ///an Elastic IP associated with your account
     ///and the InstanceId of the instance it is associated with.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class Address
     {    
         private string instanceIdField;

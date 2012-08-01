@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   EnableAvailabilityZonesForLoadBalancerResult Unmarshaller
      /// </summary>
-    internal class EnableAvailabilityZonesForLoadBalancerResultUnmarshaller : IUnmarshaller<EnableAvailabilityZonesForLoadBalancerResult, XmlUnmarshallerContext> 
+    internal class EnableAvailabilityZonesForLoadBalancerResultUnmarshaller : IUnmarshaller<EnableAvailabilityZonesForLoadBalancerResult, XmlUnmarshallerContext>, IUnmarshaller<EnableAvailabilityZonesForLoadBalancerResult, JsonUnmarshallerContext> 
     {
         public EnableAvailabilityZonesForLoadBalancerResult Unmarshall(XmlUnmarshallerContext context) 
         {
             EnableAvailabilityZonesForLoadBalancerResult enableAvailabilityZonesForLoadBalancerResult = new EnableAvailabilityZonesForLoadBalancerResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return enableAvailabilityZonesForLoadBalancerResult;
+        }
+
+        public EnableAvailabilityZonesForLoadBalancerResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static EnableAvailabilityZonesForLoadBalancerResultUnmarshaller instance;

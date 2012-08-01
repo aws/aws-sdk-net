@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="http://ec2.amazonaws.com/doc/2012-06-15/" exclude-result-prefixes="ec2">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ec2="default-ec2-namespace" exclude-result-prefixes="ec2">
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes"/>
-    <xsl:variable name="ns" select="'http://ec2.amazonaws.com/doc/2012-06-15/'"/>
     <xsl:template match="ec2:GetPasswordDataResponse">
-        <xsl:element name="GetPasswordDataResponse" namespace="{$ns}">
-            <xsl:element name="ResponseMetadata" namespace="{$ns}">
-                <xsl:element name="RequestId" namespace="{$ns}">
+        <xsl:element name="GetPasswordDataResponse">
+            <xsl:element name="ResponseMetadata">
+                <xsl:element name="RequestId">
                     <xsl:value-of select="ec2:requestId"/>
                 </xsl:element>
             </xsl:element>
-            <xsl:element name="GetPasswordDataResult" namespace="{$ns}">
-                <xsl:element name="PasswordData" namespace="{$ns}">
-                    <xsl:element name="InstanceId" namespace="{$ns}">
+            <xsl:element name="GetPasswordDataResult">
+                <xsl:element name="PasswordData">
+                    <xsl:element name="InstanceId">
                         <xsl:value-of select="ec2:instanceId"/>
                     </xsl:element>
-                    <xsl:element name="Timestamp" namespace="{$ns}">
+                    <xsl:element name="Timestamp">
                         <xsl:value-of select="ec2:timestamp"/>
                     </xsl:element>
-                    <xsl:element name="Data" namespace="{$ns}">
+                    <xsl:element name="Data">
                         <xsl:value-of select="ec2:passwordData"/>
                     </xsl:element>
                 </xsl:element>

@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -2841,47 +2840,6 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Creates a new export task, produces an image of an EC2 instance for use in another virtualization environment, 
-        /// and then writes the image to the specified Amazon S3 bucket. If the instance is running at the time of export, 
-        /// Amazon EC2 will attempt to shut down the instance, initiate the export process, and then reboot the instance. 
-        /// Only instances derived from your own ImportInstance tasks may be exported. When the task is complete, the image can be downloaded from your Amazon S3 bucket.
-        /// </summary>
-        /// <param name="request">Create Instance Export Task request</param>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
-        /// <returns>Create Instance Export Task response from the service</returns>
-        public CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request)
-        {
-            return Invoke<CreateInstanceExportTaskResponse>(ConvertCreateInstanceExportTask(request));
-        }
-
-        /// <summary>
-        /// Describes your export tasks. If no export task IDs are specified, all export tasks initiated by you are returned.
-        /// </summary>
-        /// <param name="request">Describe Export Tasks request</param>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
-        /// <returns>Describe Export Tasks response from the service</returns>
-        public DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
-        {
-            return Invoke<DescribeExportTasksResponse>(ConvertDescribeExportTasks(request));
-        }
-
-        /// <summary>
-        /// Cancels an active export task. The command removes all artifacts of the export, including any partially 
-        /// created Amazon S3 objects. If the export task is complete or is in the process of transferring the final 
-        /// disk image, the command fails and returns an error.
-        /// </summary>
-        /// <param name="request">Cancel Export Task request</param>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
-        /// <returns>Cancel Export Task response from the service</returns>
-        public CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
-        {
-            return Invoke<CancelExportTaskResponse>(ConvertCancelExportTask(request));
-        }
-
-        /// <summary>
         /// Assigns one or more secondary private IP addresses to a network interface in Amazon VPC.
         /// </summary>
         /// <param name="request">Assign Private Ip Addresses request</param>
@@ -3119,12 +3077,13 @@ namespace Amazon.EC2
 
         private string TransformResponse(string actionName, string responseBody)
         {
+            string transformedResponse = responseBody;
             /* Perform response transformation */
-            if (responseBody.Trim().EndsWith(String.Concat(actionName, "Response>")))
+            if (transformedResponse.Trim().EndsWith(String.Concat(actionName, "Response>")))
             {
-                responseBody = Transform(responseBody, actionName, this.GetType());
+                transformedResponse = Transform(transformedResponse, actionName, this.GetType());
             }
-            return responseBody;
+            return transformedResponse;
         }
 
         /**
@@ -3554,7 +3513,49 @@ namespace Amazon.EC2
             {
                 parameters["NoReboot"] = request.NoReboot.ToString().ToLower();
             }
+            List<BlockDeviceMapping> createImageRequestBlockDeviceMappingList = request.BlockDeviceMapping;
+            int registerImageRequestBlockDeviceMappingListIndex = 1;
+            foreach (BlockDeviceMapping createImageRequestBlockDeviceMapping in createImageRequestBlockDeviceMappingList)
+            {
+                if (createImageRequestBlockDeviceMapping.IsSetDeviceName())
+                {
+                    parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "DeviceName")] = createImageRequestBlockDeviceMapping.DeviceName;
+                }
+                if (createImageRequestBlockDeviceMapping.IsSetVirtualName())
+                {
+                    parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "VirtualName")] = createImageRequestBlockDeviceMapping.VirtualName;
+                }
+                if (createImageRequestBlockDeviceMapping.IsSetEbs())
+                {
+                    EbsBlockDevice blockDeviceMappingEbs = createImageRequestBlockDeviceMapping.Ebs;
+                    if (blockDeviceMappingEbs.IsSetSnapshotId())
+                    {
+                        parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "SnapshotId")] = blockDeviceMappingEbs.SnapshotId;
+                    }
+                    if (blockDeviceMappingEbs.IsSetVolumeSize())
+                    {
+                        parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "VolumeSize")] = blockDeviceMappingEbs.VolumeSize.ToString();
+                    }
+                    if (blockDeviceMappingEbs.IsSetDeleteOnTermination())
+                    {
+                        parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "DeleteOnTermination")] = blockDeviceMappingEbs.DeleteOnTermination.ToString().ToLower();
+                    }
+                    if (blockDeviceMappingEbs.IsSetVolumeType())
+                    {
+                        parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "VolumeType")] = blockDeviceMappingEbs.VolumeType;
+                    }
+                    if (blockDeviceMappingEbs.IsSetIOPS())
+                    {
+                        parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "Iops")] = blockDeviceMappingEbs.IOPS;
+                    }
+                }
+                if (createImageRequestBlockDeviceMapping.IsSetNoDevice())
+                {
+                    parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "NoDevice")] = createImageRequestBlockDeviceMapping.NoDevice;
+                }
 
+                registerImageRequestBlockDeviceMappingListIndex++;
+            } 
             return parameters;
         }
 
@@ -4604,19 +4605,6 @@ namespace Amazon.EC2
                 describeInstanceStatusRequestFilterListIndex++;
             }
 
-            if (request.IsSetIncludeAllInstances())
-            {
-                parameters["IncludeAllInstances"] = request.IncludeAllInstances.ToString();
-            }
-            if (request.IsSetMaxResults())
-            {
-                parameters["MaxResults"] = request.MaxResults.ToString();
-            }
-            if (request.IsSetNextToken())
-            {
-                parameters["NextToken"] = request.NextToken;
-            }
-
             return parameters;
         }
 
@@ -5156,6 +5144,14 @@ namespace Amazon.EC2
                     {
                         parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "DeleteOnTermination")] = blockDeviceMappingEbs.DeleteOnTermination.ToString().ToLower();
                     }
+                    if (blockDeviceMappingEbs.IsSetVolumeType())
+                    {
+                        parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "VolumeType")] = blockDeviceMappingEbs.VolumeType;
+                    }
+                    if (blockDeviceMappingEbs.IsSetIOPS())
+                    {
+                        parameters[String.Concat("BlockDeviceMapping", ".", registerImageRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "Iops")] = blockDeviceMappingEbs.IOPS;
+                    }
                 }
                 if (registerImageRequestBlockDeviceMapping.IsSetNoDevice())
                 {
@@ -5432,6 +5428,14 @@ namespace Amazon.EC2
                     {
                         parameters[String.Concat("BlockDeviceMapping", ".", runInstancesRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "DeleteOnTermination")] = blockDeviceMappingEbs.DeleteOnTermination.ToString().ToLower();
                     }
+                    if (blockDeviceMappingEbs.IsSetVolumeType())
+                    {
+                        parameters[String.Concat("BlockDeviceMapping", ".", runInstancesRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "VolumeType")] = blockDeviceMappingEbs.VolumeType;
+                    }
+                    if (blockDeviceMappingEbs.IsSetIOPS())
+                    {
+                        parameters[String.Concat("BlockDeviceMapping", ".", runInstancesRequestBlockDeviceMappingListIndex, ".", "Ebs", ".", "Iops")] = blockDeviceMappingEbs.IOPS;
+                    }
                 }
                 if (runInstancesRequestBlockDeviceMapping.IsSetNoDevice())
                 {
@@ -5536,6 +5540,10 @@ namespace Amazon.EC2
                     instanceNetworkInterfaceListIndex++;
                 }
             }
+            if (request.IsSetEbsOptimized())
+            {
+                parameters["EbsOptimized"] = request.EbsOptimized.ToString().ToLower();
+            }
             if (request.IsSetInstanceProfile())
             {
                 IAMInstanceProfile instanceProfile = request.InstanceProfile;
@@ -5639,6 +5647,14 @@ namespace Amazon.EC2
             if (request.IsSetAvailabilityZone())
             {
                 parameters["AvailabilityZone"] = request.AvailabilityZone;
+            }
+            if (request.IsSetIOPS())
+            {
+                parameters["Iops"] = request.IOPS;
+            }
+            if (request.IsSetVolumeType())
+            {
+                parameters["VolumeType"] = request.VolumeType;
             }
 
             return parameters;
@@ -5986,6 +6002,14 @@ namespace Amazon.EC2
                         {
                             parameters[String.Concat("LaunchSpecification", ".", "BlockDeviceMapping", ".", launchSpecificationBlockDeviceMappingListIndex, ".", "Ebs", ".", "DeleteOnTermination")] = blockDeviceMappingEbs.DeleteOnTermination.ToString().ToLower();
                         }
+                        if (blockDeviceMappingEbs.IsSetVolumeType())
+                        {
+                            parameters[String.Concat("LaunchSpecification", ".", "BlockDeviceMapping", ".", launchSpecificationBlockDeviceMappingListIndex, ".", "Ebs", ".", "VolumeType")] = blockDeviceMappingEbs.VolumeType;
+                        }
+                        if (blockDeviceMappingEbs.IsSetIOPS())
+                        {
+                            parameters[String.Concat("LaunchSpecification", ".", "BlockDeviceMapping", ".", launchSpecificationBlockDeviceMappingListIndex, ".", "Ebs", ".", "Iops")] = blockDeviceMappingEbs.IOPS;
+                        }
                     }
                     if (launchSpecificationBlockDeviceMapping.IsSetNoDevice())
                     {
@@ -6057,6 +6081,10 @@ namespace Amazon.EC2
                     {
                         parameters[String.Concat("LaunchSpecification", ".", "IamInstanceProfile", ".", "Arn")] = instanceProfile.Arn;
                     }
+                }
+                if (requestSpotInstancesRequestLaunchSpecification.IsSetEbsOptimized())
+                {
+                    parameters[String.Concat("LaunchSpecification", ".", "EbsOptimized")] = requestSpotInstancesRequestLaunchSpecification.EbsOptimized.ToString().ToLower();
                 }
             }
 
@@ -7385,88 +7413,6 @@ namespace Amazon.EC2
             return parameters;
         }
 
-        /**
-         * Convert CreateInstanceExportTaskRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertCreateInstanceExportTask(CreateInstanceExportTaskRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "CreateInstanceExportTask";
-
-            if (request.IsSetDescription())
-            {
-                parameters["Description"] = request.Description;
-            }
-            if (request.IsSetInstanceId())
-            {
-                parameters["InstanceId"] = request.InstanceId;
-            }
-            if (request.IsSetTargetEnvironment())
-            {
-                parameters["TargetEnvironment"] = request.TargetEnvironment;
-            }
-            if (request.IsSetExportToS3Task())
-            {
-                if (request.ExportToS3Task.IsSetDiskImageFormat())
-                {
-                    parameters["ExportToS3.DiskImageFormat"] = request.ExportToS3Task.DiskImageFormat;
-                }
-                if (request.ExportToS3Task.IsSetContainerFormat())
-                {
-                    parameters["ExportToS3.ContainerFormat"] = request.ExportToS3Task.ContainerFormat;
-                }
-                if (request.ExportToS3Task.IsSetS3Bucket())
-                {
-                    parameters["ExportToS3.S3Bucket"] = request.ExportToS3Task.S3Bucket;
-                }
-                if (request.ExportToS3Task.IsSetS3Prefix())
-                {
-                    parameters["ExportToS3.S3Prefix"] = request.ExportToS3Task.S3Prefix;
-                }
-            }
-
-            return parameters;
-        }
-
-        /**
-         * Convert DescribeExportTasksRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertDescribeExportTasks(DescribeExportTasksRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "DescribeExportTasks";
-
-            if (request.IsSetExportTaskIds())
-            {
-                List<string> exportTaskIdsList = request.ExportTaskIds;
-                int exportTaskIdsListIndex = 1;
-                foreach (string exportTaskId in exportTaskIdsList)
-                {
-                    parameters[String.Concat("ExportTaskId", ".", exportTaskIdsListIndex)] = exportTaskId;
-                    exportTaskIdsListIndex++;
-                }
-
-            }
-
-            return parameters;
-        }
-
-        /**
-         * Convert CancelExportTaskRequest to name value pairs
-         */
-        private static IDictionary<string, string> ConvertCancelExportTask(CancelExportTaskRequest request)
-        {
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["Action"] = "CancelExportTask";
-
-            if (request.IsSetExportTaskId())
-            {
-                parameters["ExportTaskId"] = request.ExportTaskId;
-            }
-
-            return parameters;
-        }
-
 
         /**
          * Convert AssignPrivateIpAddresses to name value pairs
@@ -7531,46 +7477,117 @@ namespace Amazon.EC2
         /*
          *  Transforms response based on xslt template
          */
-        private static string Transform(string responseBody, string action, Type t)
+        private string Transform(string responseBody, string action, Type t)
         {
-            XslCompiledTransform transformer = new XslCompiledTransform();
+            XslCompiledTransform transformer = GetTransform(action, config.ServiceVersion);
+
+            StringReader sr = new StringReader(responseBody);
+            using (XmlTextReader xmlR = new XmlTextReader(sr))
+            {
+                StringBuilder sb = new StringBuilder(1024);
+                using (StringWriter sw = new StringWriter(sb))
+                {
+                    transformer.Transform(xmlR, null, sw);
+                    return sb.ToString();
+                }
+            }
+        }
+
+
+        /*
+         *  Retrieves XSLT resource for specific action
+         */
+        private static Stream GetXsltStream(string action)
+        {
+            string currentNamespace = typeof(AmazonEC2Client).Namespace;
 
             // Build the name of the xslt transform to apply to the response
-            char[] seps = { ',' };
-
-            Assembly assembly = Assembly.GetAssembly(t);
+            Assembly assembly = Assembly.GetAssembly(typeof(AmazonEC2Client));
             string assemblyName = assembly.FullName;
-            assemblyName = assemblyName.Split(seps)[0];
+            string currentAssemblyName = assemblyName.Split(new char[] { ',' })[0];
 
-            string ns = t.Namespace;
             string resourceName = String.Concat(
-                assemblyName,
+                currentAssemblyName,
                 ".",
-                ns,
+                currentNamespace,
                 ".Model.",
                 action,
                 "Response.xslt"
                 );
 
-            Stream resourceStream = assembly.GetManifestResourceStream(resourceName);
+            Assembly currentAssembly = Assembly.GetAssembly(typeof(AmazonEC2Client));
+            Stream resourceStream = currentAssembly.GetManifestResourceStream(resourceName);
             if (resourceStream == null)
                 throw new InvalidOperationException("Unable to find resource " + resourceName);
 
-            using (XmlTextReader xmlReader = new XmlTextReader(resourceStream))
-            {
-                transformer.Load(xmlReader);
+            return resourceStream;
+        }
 
-                StringBuilder sb = new StringBuilder(1024);
-                using (XmlTextReader xmlR = new XmlTextReader(new StringReader(responseBody)))
+        /*
+         *  Retrieves XSLT XmlReader for specific action
+         */
+        private static XmlTextReader GetXsltReader(string action, string serviceVersion)
+        {
+            string xslt;
+            Stream xsltStream = GetXsltStream(action);
+            using (StreamReader reader = new StreamReader(xsltStream))
+            {
+                xslt = reader.ReadToEnd();
+            }
+            xslt = SetTransformNamespace(xslt, serviceVersion);
+
+            StringReader stringReader = new StringReader(xslt);
+            XmlTextReader xmlReader = new XmlTextReader(stringReader);
+            return xmlReader;
+        }
+
+        /*
+         *  Sets the ec2 namespace in the transform to the namespace matching the service version
+         */
+        private static string SetTransformNamespace(string xslt, string serviceVersion)
+        {
+            string ns = string.Concat("http://ec2.amazonaws.com/doc/", serviceVersion, "/");
+            string defaultNS = "default-ec2-namespace";
+            int defaultNSLocation = xslt.IndexOf(defaultNS, StringComparison.Ordinal);
+            if (defaultNSLocation < 0)
+            {
+                throw new AmazonEC2Exception("Invalid XSLT");
+            }
+            StringBuilder builder = new StringBuilder(xslt);
+            builder.Remove(defaultNSLocation, defaultNS.Length);
+            builder.Insert(defaultNSLocation, ns);
+            xslt = builder.ToString();
+            return xslt;
+        }
+
+        /*
+         *  Retrieves XslCompiledTransform for specific action and service version
+         */
+        private static XslCompiledTransform GetTransform(string action, string serviceVersion)
+        {
+            string key = string.Concat(action, "#", serviceVersion);
+            XslCompiledTransform transform;
+            lock (xsltCacheLock)
+            {
+                if (!xsltCache.TryGetValue(key, out transform))
                 {
-                    using (StringWriter sw = new StringWriter(sb))
+                    transform = new XslCompiledTransform();
+                    using (XmlTextReader xmlReader = GetXsltReader(action, serviceVersion))
                     {
-                        transformer.Transform(xmlR, null, sw);
-                        return sb.ToString();
+                        transform.Load(xmlReader);
                     }
+                    xsltCache[key] = transform;
                 }
             }
+
+            return transform;
         }
+
+        /*
+         *  XslCompiledTransform cache, keyed on "[Action]#[ServiceVersion]"
+         */
+        private static object xsltCacheLock = new object();
+        private static Dictionary<string, XslCompiledTransform> xsltCache = new Dictionary<string, XslCompiledTransform>();
 
         #endregion
     }

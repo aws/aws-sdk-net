@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -39,12 +38,14 @@ namespace Amazon.EC2.Model
     /// volume and the instance to which it
     /// attaches must be in the same Availability Zone.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class CreateVolumeRequest
     {    
         private string sizeField;
         private string snapshotIdField;
         private string availabilityZoneField;
+        private string volumeTypeField;
+        private string iopsField;
 
         /// <summary>
         /// Gets and sets the Size property.
@@ -151,5 +152,70 @@ namespace Amazon.EC2.Model
             return this.availabilityZoneField != null;
         }
 
+        /// <summary>
+        /// Gets and sets the IOPS property.
+        /// Quantity of desired throughput in IOPS.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "IOPS")]
+        public string IOPS
+        {
+            get { return this.iopsField; }
+            set { this.iopsField = value; }
+        }
+
+        /// <summary>
+        /// Sets the IOPS property
+        /// </summary>
+        /// <param name="iops">Quantity of desired throughput in IOPS</param>
+        /// <returns>this instance</returns>
+        public CreateVolumeRequest WithIOPS(string iops)
+        {
+            this.iopsField = iops;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if IOPS property is set
+        /// </summary>
+        /// <returns>True if IOPS property is set</returns>
+        public bool IsSetIOPS()
+        {
+            return this.iopsField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the VolumeType property.
+        /// Constraints: may be either "io1" or "standard".
+        /// If VolumeType != "io1", IOPS property cannot be set.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "VolumeType")]
+        public string VolumeType
+        {
+            get { return this.volumeTypeField; }
+            set { this.volumeTypeField = value; }
+        }
+
+        /// <summary>
+        /// Sets the VolumeType property
+        /// </summary>
+        /// <param name="volumeType">Volume Type.
+        /// Constraints: may be either "io1" or "standard".
+        /// If VolumeType != "io1", IOPS property cannot be set.
+        /// </param>
+        /// <returns>this instance</returns>
+        public CreateVolumeRequest WithVolumeType(string volumeType)
+        {
+            this.volumeTypeField = volumeType;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if VolumeType property is set
+        /// </summary>
+        /// <returns>True if VolumeType property is set</returns>
+        public bool IsSetVolumeType()
+        {
+            return this.volumeTypeField != null;
+        }
     }
 }

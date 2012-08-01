@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(setLoadBalancerListenerSSLCertificateRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "SetLoadBalancerListenerSSLCertificate");
-            request.Parameters.Add("Version", "2011-11-15");
+            request.Parameters.Add("Version", "2012-06-01");
             if (setLoadBalancerListenerSSLCertificateRequest != null && setLoadBalancerListenerSSLCertificateRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(setLoadBalancerListenerSSLCertificateRequest.LoadBalancerName));

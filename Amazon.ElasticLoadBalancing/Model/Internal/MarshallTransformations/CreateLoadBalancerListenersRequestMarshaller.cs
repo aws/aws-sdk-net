@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateLoadBalancerListeners");
-            request.Parameters.Add("Version", "2011-11-15");
+            request.Parameters.Add("Version", "2012-06-01");
             if (createLoadBalancerListenersRequest != null && createLoadBalancerListenersRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createLoadBalancerListenersRequest.LoadBalancerName));

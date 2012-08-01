@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PolicyAttributeDescription Unmarshaller
      /// </summary>
-    internal class PolicyAttributeDescriptionUnmarshaller : IUnmarshaller<PolicyAttributeDescription, XmlUnmarshallerContext> 
+    internal class PolicyAttributeDescriptionUnmarshaller : IUnmarshaller<PolicyAttributeDescription, XmlUnmarshallerContext>, IUnmarshaller<PolicyAttributeDescription, JsonUnmarshallerContext> 
     {
         public PolicyAttributeDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             PolicyAttributeDescription policyAttributeDescription = new PolicyAttributeDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return policyAttributeDescription;
+        }
+
+        public PolicyAttributeDescription Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static PolicyAttributeDescriptionUnmarshaller instance;

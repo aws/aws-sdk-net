@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -29,7 +28,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Volume
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class Volume
     {    
         private string volumeIdField;
@@ -40,6 +39,8 @@ namespace Amazon.EC2.Model
         private string createTimeField;
         private List<Attachment> attachmentField;
         private List<Tag> tagField;
+        private string volumeTypeField;
+        private string iopsField;
 
         /// <summary>
         /// Gets and sets the VolumeId property.
@@ -309,5 +310,70 @@ namespace Amazon.EC2.Model
             return (Tag.Count > 0);
         }
 
+        /// <summary>
+        /// Gets and sets the IOPS property.
+        /// Quantity of desired throughput in IOPS.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "IOPS")]
+        public string IOPS
+        {
+            get { return this.iopsField; }
+            set { this.iopsField = value; }
+        }
+
+        /// <summary>
+        /// Sets the IOPS property
+        /// </summary>
+        /// <param name="iops">Quantity of desired throughput in IOPS</param>
+        /// <returns>this instance</returns>
+        public Volume WithIOPS(string iops)
+        {
+            this.iopsField = iops;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if IOPS property is set
+        /// </summary>
+        /// <returns>True if IOPS property is set</returns>
+        public bool IsSetIOPS()
+        {
+            return this.iopsField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the VolumeType property.
+        /// Constraints: may be either "io1" or "standard".
+        /// If VolumeType != "io1", IOPS property cannot be set.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "VolumeType")]
+        public string VolumeType
+        {
+            get { return this.volumeTypeField; }
+            set { this.volumeTypeField = value; }
+        }
+
+        /// <summary>
+        /// Sets the VolumeType property
+        /// </summary>
+        /// <param name="volumeType">Volume Type.
+        /// Constraints: may be either "io1" or "standard".
+        /// If VolumeType != "io1", IOPS property cannot be set.
+        /// </param>
+        /// <returns>this instance</returns>
+        public Volume WithVolumeType(string volumeType)
+        {
+            this.volumeTypeField = volumeType;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if VolumeType property is set
+        /// </summary>
+        /// <returns>True if VolumeType property is set</returns>
+        public bool IsSetVolumeType()
+        {
+            return this.volumeTypeField != null;
+        }
     }
 }

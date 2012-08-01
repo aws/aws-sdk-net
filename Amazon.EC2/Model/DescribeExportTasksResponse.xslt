@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
       xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-      xmlns:ec2="http://ec2.amazonaws.com/doc/2012-06-15/"
+      xmlns:ec2="default-ec2-namespace"
       exclude-result-prefixes="ec2">
   <xsl:output method="xml" omit-xml-declaration="no" indent="yes" />
-  <xsl:variable name="ns"
-      select="'http://ec2.amazonaws.com/doc/2012-06-15/'" />
 
   <xsl:template match="ec2:DescribeExportTasksResponse">
-    <xsl:element name="DescribeExportTasksResponse" namespace="{$ns}">
-      <xsl:element name="ResponseMetadata" namespace="{$ns}">
-        <xsl:element name="RequestId" namespace="{$ns}">
+    <xsl:element name="DescribeExportTasksResponse">
+      <xsl:element name="ResponseMetadata">
+        <xsl:element name="RequestId">
           <xsl:value-of select="ec2:requestId" />
         </xsl:element>
       </xsl:element>
-      <xsl:element name="DescribeExportTasksResult" namespace="{$ns}">
+      <xsl:element name="DescribeExportTasksResult">
         <xsl:apply-templates select="ec2:exportTaskSet"/>
       </xsl:element>
     </xsl:element>
@@ -22,23 +20,23 @@
 
   <xsl:template match="ec2:exportTaskSet">
     <xsl:for-each select="ec2:item">
-      <xsl:element name="ExportTaskType" namespace="{$ns}">
-        <xsl:element name="ExportTaskId" namespace="{$ns}">
+      <xsl:element name="ExportTaskType">
+        <xsl:element name="ExportTaskId">
           <xsl:value-of select="ec2:exportTaskId" />
         </xsl:element>
-        <xsl:element name="Description" namespace="{$ns}">
+        <xsl:element name="Description">
           <xsl:value-of select="ec2:description" />
         </xsl:element>
-        <xsl:element name="State" namespace="{$ns}">
+        <xsl:element name="State">
           <xsl:value-of select="ec2:state" />
         </xsl:element>
-        <xsl:element name="StatusMessage" namespace="{$ns}">
+        <xsl:element name="StatusMessage">
           <xsl:value-of select="ec2:statusMessage" />
         </xsl:element>
-        <xsl:element name="InstanceExportTaskType" namespace="{$ns}">
+        <xsl:element name="InstanceExportTaskType">
           <xsl:apply-templates select="ec2:instanceExport"/>
         </xsl:element>
-        <xsl:element name="ExportToS3TaskType" namespace="{$ns}">
+        <xsl:element name="ExportToS3TaskType">
           <xsl:apply-templates select="ec2:exportToS3"/>
         </xsl:element>
       </xsl:element>
@@ -46,25 +44,25 @@
   </xsl:template>
 
   <xsl:template match="ec2:instanceExport">
-    <xsl:element name="InstanceId" namespace="{$ns}">
+    <xsl:element name="InstanceId">
       <xsl:value-of select="ec2:instanceId" />
     </xsl:element>
-    <xsl:element name="TargetEnvironment" namespace="{$ns}">
+    <xsl:element name="TargetEnvironment">
       <xsl:value-of select="ec2:targetEnvironment" />
     </xsl:element>
   </xsl:template>
 
   <xsl:template match="ec2:exportToS3">
-    <xsl:element name="DiskImageFormat" namespace="{$ns}">
+    <xsl:element name="DiskImageFormat">
       <xsl:value-of select="ec2:diskImageFormat" />
     </xsl:element>
-    <xsl:element name="ContainerFormat" namespace="{$ns}">
+    <xsl:element name="ContainerFormat">
       <xsl:value-of select="ec2:containerFormat" />
     </xsl:element>
-    <xsl:element name="S3Bucket" namespace="{$ns}">
+    <xsl:element name="S3Bucket">
       <xsl:value-of select="ec2:s3Bucket" />
     </xsl:element>
-    <xsl:element name="S3Key" namespace="{$ns}">
+    <xsl:element name="S3Key">
       <xsl:value-of select="ec2:s3Key" />
     </xsl:element>
   </xsl:template>

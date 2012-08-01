@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Listener Unmarshaller
      /// </summary>
-    internal class ListenerUnmarshaller : IUnmarshaller<Listener, XmlUnmarshallerContext> 
+    internal class ListenerUnmarshaller : IUnmarshaller<Listener, XmlUnmarshallerContext>, IUnmarshaller<Listener, JsonUnmarshallerContext> 
     {
         public Listener Unmarshall(XmlUnmarshallerContext context) 
         {
             Listener listener = new Listener();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -76,6 +77,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return listener;
+        }
+
+        public Listener Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ListenerUnmarshaller instance;

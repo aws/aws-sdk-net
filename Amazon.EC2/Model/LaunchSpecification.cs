@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -29,7 +28,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Specifies additional launch instance information.
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class LaunchSpecification
     {    
         private string imageIdField;
@@ -47,6 +46,7 @@ namespace Amazon.EC2.Model
         private string subnetIdField;
         private List<InstanceNetworkInterfaceSpecification> networkInterfaceSetField;
         private IAMInstanceProfile instanceProfileField;
+        private bool? ebsOptimizedField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
@@ -576,6 +576,38 @@ namespace Amazon.EC2.Model
         public bool IsSetInstanceProfile()
         {
             return this.instanceProfileField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the EbsOptimized property.
+        /// Specifies whether to use the EBS IOPS optimized option.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "EbsOptimized")]
+        public bool EbsOptimized
+        {
+            get { return this.ebsOptimizedField.GetValueOrDefault(); }
+            set { this.ebsOptimizedField = value; }
+        }
+
+        /// <summary>
+        /// Sets the EbsOptimized property
+        /// </summary>
+        /// <param name="ebsOptimized">Specifies whether to use the EBS
+        /// IOPS optimized option.</param>
+        /// <returns>this instance</returns>
+        public LaunchSpecification WithEbsOptimized(bool ebsOptimized)
+        {
+            this.ebsOptimizedField = ebsOptimized;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if EbsOptimized property is set
+        /// </summary>
+        /// <returns>true if EbsOptimized property is set</returns>
+        public bool IsSetEbsOptimized()
+        {
+            return this.ebsOptimizedField.HasValue;
         }
     }
 }

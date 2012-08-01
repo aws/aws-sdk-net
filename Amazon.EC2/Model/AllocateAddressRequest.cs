@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -29,7 +28,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Acquires an elastic IP address for use with your account.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class AllocateAddressRequest
     {    
         private string domainField;
