@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -33,7 +32,7 @@ namespace Amazon.EC2.Model
     /// This command does not
     /// delete the AMI from Amazon S3.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class DeregisterImageRequest
     {    
         private string imageIdField;

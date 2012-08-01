@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private string engineVersion;
         private bool? autoMinorVersionUpgrade;
         private string licenseModel;
+        private int? iops;
         private string optionGroupName;
         private string characterSetName;
 
@@ -57,7 +58,6 @@ namespace Amazon.RDS.Model
         /// Instance is created. If this parameter is not specified, no database is created in the DB Instance. Constraints: <ul> <li>Must contain 1 to
         /// 64 alphanumeric characters</li> <li>Cannot be a word reserved by the specified database engine</li> </ul> Type: String <b>Oracle</b> The
         /// Oracle System ID (SID) of the created DB Instance. Default: <c>ORCL</c> Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
-        /// <b>SQL Server</b> Not applicable. Must be null.
         ///  
         /// </summary>
         public string DBName
@@ -86,8 +86,8 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The DB Instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
-        /// characters or hyphens (1 to 15 for SQL Server).</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two
-        /// consecutive hyphens.</li> </ul> Example: <c>mydbinstance</c>
+        /// characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+        /// </ul> Example: <c>mydbinstance</c>
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -116,8 +116,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The amount of storage (in gigabytes) to be initially allocated for the database instance. <b>MySQL</b> Constraints: Must be an integer from
-        /// 5 to 1024. Type: Integer <b>Oracle</b> Constraints: Must be an integer from 10 to 1024. <b>SQL Server</b> Constraints: Must be an integer
-        /// from 200 to 1024 (Standard Edition and Enterprise Edition) or from 30 to 1024 (Express Edition and Web Edition)
+        /// 5 to 1024. Type: Integer <b>Oracle</b> Constraints: Must be an integer from 10 to 1024.
         ///  
         /// </summary>
         public int AllocatedStorage
@@ -145,9 +144,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The compute and memory capacity of the DB Instance. To determine the instance classes that are available for a particular DB engine, use the
-        /// <a>DescribeOrderableDBInstanceOptions</a> action. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-        /// |db.m2.2xlarge | db.m2.4xlarge</c>
+        /// The compute and memory capacity of the DB Instance. Valid Values: <c>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge
+        /// | db.m2.4xlarge</c>
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -176,7 +174,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The name of the database engine to be used for this instance. Valid Values: <c>MySQL</c> | <c>oracle-se1</c> | <c>oracle-se</c> |
-        /// <c>oracle-ee</c> | <c>sqlserver-ee</c> | <c>sqlserver-se</c> | <c>sqlserver-ex</c> | <c>sqlserver-web</c>
+        /// <c>oracle-ee</c>
         ///  
         /// </summary>
         public string Engine
@@ -207,8 +205,7 @@ namespace Amazon.RDS.Model
         /// The name of master user for the client DB Instance. <b>MySQL</b> Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
         /// <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> Type: String
         /// <b>Oracle</b> Constraints: <ul> <li>Must be 1 to 30 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a
-        /// reserved word for the chosen database engine.</li> </ul> <b>SQL Server</b> Constraints: <ul> <li>Must be 1 to 128 alphanumeric
-        /// characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul>
+        /// reserved word for the chosen database engine.</li> </ul>
         ///  
         /// </summary>
         public string MasterUsername
@@ -236,9 +233,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The password for the master database user. <b>MySQL</b> Constraints: Must contain from 8 to 41 alphanumeric characters. Type: String
-        /// <b>Oracle</b> Constraints: Must contain from 8 to 30 alphanumeric characters. <b>SQL Server</b> Constraints: Must contain from 8 to 128
-        /// alphanumeric characters.
+        /// The password for the master DB Instance user. <b>MySQL</b> Constraints: Cannot contain more than 41 alphanumeric characters. Type: String
+        /// <b>Oracle</b> Constraints: Cannot contain more than 30 alphanumeric characters.
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -497,8 +493,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The port number on which the database accepts connections. <b>MySQL</b> Default: <c>3306</c> Valid Values: <c>1150-65535</c> Type: Integer
-        /// <b>Oracle</b> Default: <c>1521</c> Valid Values: <c>1150-65535</c> <b>SQL Server</b> Default: <c>1433</c> Valid Values: <c>1150-65535</c>
-        /// except for <c>1434</c> and <c>3389</c>.
+        /// <b>Oracle</b> Default: <c>1521</c> Valid Values: <c>1150-65535</c>
         ///  
         /// </summary>
         public int Port
@@ -526,8 +521,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft SQL Server, must be set to false. You cannot set the AvailabilityZone
-        /// parameter if the MultiAZ parameter is set to true.
+        /// Specifies if the DB Instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the MultiAZ parameter is set to
+        /// true.
         ///  
         /// </summary>
         public bool MultiAZ
@@ -556,7 +551,6 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The version number of the database engine to use. <b>MySQL</b> Example: <c>5.1.42</c> Type: String <b>Oracle</b> Example: <c>11.2.0.2.v2</c>
-        /// Type: String <b>SQL Server</b> Example: <c>10.50.2789.0.v1</c>
         ///  
         /// </summary>
         public string EngineVersion
@@ -638,6 +632,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetLicenseModel()
         {
             return this.licenseModel != null;       
+        }
+
+        /// <summary>
+        /// The amount of provisioned input/output operations per second to be initially allocated for the database instance. Constraints: Must be an
+        /// integer Type: Integer
+        ///  
+        /// </summary>
+        public int Iops
+        {
+            get { return this.iops ?? default(int); }
+            set { this.iops = value; }
+        }
+
+        /// <summary>
+        /// Sets the Iops property
+        /// </summary>
+        /// <param name="iops">The value to set for the Iops property </param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceRequest WithIops(int iops)
+        {
+            this.iops = iops;
+            return this;
+        }
+            
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this.iops.HasValue;       
         }
 
         /// <summary>

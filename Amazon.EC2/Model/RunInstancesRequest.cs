@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -117,7 +116,7 @@ namespace Amazon.EC2.Model
     /// Elastic Compute Cloud
     /// Developer Guide
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class RunInstancesRequest
     {    
         private string imageIdField;
@@ -141,6 +140,7 @@ namespace Amazon.EC2.Model
         private string privateIpAddressField;
         private string clientTokenField;
         private List<InstanceNetworkInterfaceSpecification> networkInterfaceSetField;
+        private bool? ebsOptimizedField;
         private IAMInstanceProfile instanceProfileField;
 
         /// <summary>
@@ -912,6 +912,39 @@ namespace Amazon.EC2.Model
         {
             return (this.NetworkInterfaceSet.Count > 0);
         }
+
+        /// <summary>
+        /// Gets and sets the EbsOptimized property.
+        /// Specifies whether to use the EBS IOPS optimized option.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "EbsOptimized")]
+        public bool EbsOptimized
+        {
+            get { return this.ebsOptimizedField.GetValueOrDefault(); }
+            set { this.ebsOptimizedField = value; }
+        }
+
+        /// <summary>
+        /// Sets the EbsOptimized property
+        /// </summary>
+        /// <param name="ebsOptimized">Specifies whether to use the EBS
+        /// IOPS optimized option.</param>
+        /// <returns>this instance</returns>
+        public RunInstancesRequest WithEbsOptimized(bool ebsOptimized)
+        {
+            this.ebsOptimizedField = ebsOptimized;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if EbsOptimized property is set
+        /// </summary>
+        /// <returns>true if EbsOptimized property is set</returns>
+        public bool IsSetEbsOptimized()
+        {
+            return this.ebsOptimizedField.HasValue;
+        }
+
 
         /// <summary>
         /// Gets and sets the InstanceProfile property.

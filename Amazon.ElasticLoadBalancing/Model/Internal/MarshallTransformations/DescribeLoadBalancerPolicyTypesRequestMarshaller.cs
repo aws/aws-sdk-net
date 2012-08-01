@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeLoadBalancerPolicyTypesRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeLoadBalancerPolicyTypes");
-            request.Parameters.Add("Version", "2011-11-15");
+            request.Parameters.Add("Version", "2012-06-01");
             if (describeLoadBalancerPolicyTypesRequest != null)
             {
                 List<string> policyTypeNamesList = describeLoadBalancerPolicyTypesRequest.PolicyTypeNames;

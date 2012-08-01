@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing
         public AmazonElasticLoadBalancingConfig()
         {
             this.ServiceURL = "https://elasticloadbalancing.amazonaws.com";
-            
+            this.AuthenticationServiceName = "elasticloadbalancing";
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Amazon.ElasticLoadBalancing
         {
             get
             {
-                return "2011-11-15";
+                return "2012-06-01";
             }
         }
     }

@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteOptionGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteOptionGroup");
-            request.Parameters.Add("Version", "2012-04-23");
+            request.Parameters.Add("Version", "2012-07-01");
             if (deleteOptionGroupRequest != null && deleteOptionGroupRequest.IsSetOptionGroupName())
             {
                 request.Parameters.Add("OptionGroupName", StringUtils.FromString(deleteOptionGroupRequest.OptionGroupName));

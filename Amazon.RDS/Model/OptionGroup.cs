@@ -31,6 +31,8 @@ namespace Amazon.RDS.Model
         private string engineName;
         private string majorEngineVersion;
         private List<Option> options = new List<Option>();
+        private bool? allowsVpcAndNonVpcInstanceMemberships;
+        private string vpcId;
 
         /// <summary>
         /// Specifies the name of the option group.
@@ -177,6 +179,64 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptions()
         {
             return this.options.Count > 0;       
+        }
+
+        /// <summary>
+        /// Indicates whether this option group can be applied to both VPC and non-VPC instances.
+        ///  
+        /// </summary>
+        public bool AllowsVpcAndNonVpcInstanceMemberships
+        {
+            get { return this.allowsVpcAndNonVpcInstanceMemberships ?? default(bool); }
+            set { this.allowsVpcAndNonVpcInstanceMemberships = value; }
+        }
+
+        /// <summary>
+        /// Sets the AllowsVpcAndNonVpcInstanceMemberships property
+        /// </summary>
+        /// <param name="allowsVpcAndNonVpcInstanceMemberships">The value to set for the AllowsVpcAndNonVpcInstanceMemberships property </param>
+        /// <returns>this instance</returns>
+        public OptionGroup WithAllowsVpcAndNonVpcInstanceMemberships(bool allowsVpcAndNonVpcInstanceMemberships)
+        {
+            this.allowsVpcAndNonVpcInstanceMemberships = allowsVpcAndNonVpcInstanceMemberships;
+            return this;
+        }
+            
+
+        // Check to see if AllowsVpcAndNonVpcInstanceMemberships property is set
+        internal bool IsSetAllowsVpcAndNonVpcInstanceMemberships()
+        {
+            return this.allowsVpcAndNonVpcInstanceMemberships.HasValue;       
+        }
+
+        /// <summary>
+        /// If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this field
+        /// is blank, then this option group can only be applied to non-VPC instances. Otherwise, this option group can only be applied to instances
+        /// that are in the VPC indicated by this field.
+        ///  
+        /// </summary>
+        public string VpcId
+        {
+            get { return this.vpcId; }
+            set { this.vpcId = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcId property
+        /// </summary>
+        /// <param name="vpcId">The value to set for the VpcId property </param>
+        /// <returns>this instance</returns>
+        public OptionGroup WithVpcId(string vpcId)
+        {
+            this.vpcId = vpcId;
+            return this;
+        }
+            
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this.vpcId != null;       
         }
     }
 }

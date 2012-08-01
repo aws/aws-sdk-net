@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeOrderableDBInstanceOptionsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeOrderableDBInstanceOptions");
-            request.Parameters.Add("Version", "2012-04-23");
+            request.Parameters.Add("Version", "2012-07-01");
             if (describeOrderableDBInstanceOptionsRequest != null && describeOrderableDBInstanceOptionsRequest.IsSetEngine())
             {
                 request.Parameters.Add("Engine", StringUtils.FromString(describeOrderableDBInstanceOptionsRequest.Engine));
@@ -50,6 +50,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (describeOrderableDBInstanceOptionsRequest != null && describeOrderableDBInstanceOptionsRequest.IsSetLicenseModel())
             {
                 request.Parameters.Add("LicenseModel", StringUtils.FromString(describeOrderableDBInstanceOptionsRequest.LicenseModel));
+            }
+            if (describeOrderableDBInstanceOptionsRequest != null && describeOrderableDBInstanceOptionsRequest.IsSetVpc())
+            {
+                request.Parameters.Add("Vpc", StringUtils.FromBool(describeOrderableDBInstanceOptionsRequest.Vpc));
             }
             if (describeOrderableDBInstanceOptionsRequest != null && describeOrderableDBInstanceOptionsRequest.IsSetMaxRecords())
             {

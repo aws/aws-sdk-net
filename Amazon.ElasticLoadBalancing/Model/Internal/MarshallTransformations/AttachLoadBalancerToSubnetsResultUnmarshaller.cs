@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   AttachLoadBalancerToSubnetsResult Unmarshaller
      /// </summary>
-    internal class AttachLoadBalancerToSubnetsResultUnmarshaller : IUnmarshaller<AttachLoadBalancerToSubnetsResult, XmlUnmarshallerContext> 
+    internal class AttachLoadBalancerToSubnetsResultUnmarshaller : IUnmarshaller<AttachLoadBalancerToSubnetsResult, XmlUnmarshallerContext>, IUnmarshaller<AttachLoadBalancerToSubnetsResult, JsonUnmarshallerContext> 
     {
         public AttachLoadBalancerToSubnetsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             AttachLoadBalancerToSubnetsResult attachLoadBalancerToSubnetsResult = new AttachLoadBalancerToSubnetsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return attachLoadBalancerToSubnetsResult;
+        }
+
+        public AttachLoadBalancerToSubnetsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static AttachLoadBalancerToSubnetsResultUnmarshaller instance;

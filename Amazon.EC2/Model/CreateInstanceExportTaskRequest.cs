@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -33,7 +32,7 @@ namespace Amazon.EC2.Model
     /// from your own ImportInstance tasks may be exported. When the task is complete, the image can be downloaded from your 
     /// Amazon S3 bucket.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class CreateInstanceExportTaskRequest
     {
         private string descriptionField;

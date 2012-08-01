@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         private string licenseModel;
         private string dBName;
         private string engine;
+        private int? iops;
         private string optionGroupName;
 
         /// <summary>
@@ -104,8 +105,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
-        /// db.m2.2xlarge | db.m2.4xlarge</c>
+        /// The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <c>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.2xlarge |
+        /// db.m2.4xlarge</c>
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -359,6 +360,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngine()
         {
             return this.engine != null;       
+        }
+        public int Iops
+        {
+            get { return this.iops ?? default(int); }
+            set { this.iops = value; }
+        }
+
+        /// <summary>
+        /// Sets the Iops property
+        /// </summary>
+        /// <param name="iops">The value to set for the Iops property </param>
+        /// <returns>this instance</returns>
+        public RestoreDBInstanceFromDBSnapshotRequest WithIops(int iops)
+        {
+            this.iops = iops;
+            return this;
+        }
+            
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this.iops.HasValue;       
         }
         public string OptionGroupName
         {

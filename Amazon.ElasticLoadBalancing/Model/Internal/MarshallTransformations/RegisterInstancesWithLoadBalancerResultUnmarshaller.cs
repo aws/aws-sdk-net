@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   RegisterInstancesWithLoadBalancerResult Unmarshaller
      /// </summary>
-    internal class RegisterInstancesWithLoadBalancerResultUnmarshaller : IUnmarshaller<RegisterInstancesWithLoadBalancerResult, XmlUnmarshallerContext> 
+    internal class RegisterInstancesWithLoadBalancerResultUnmarshaller : IUnmarshaller<RegisterInstancesWithLoadBalancerResult, XmlUnmarshallerContext>, IUnmarshaller<RegisterInstancesWithLoadBalancerResult, JsonUnmarshallerContext> 
     {
         public RegisterInstancesWithLoadBalancerResult Unmarshall(XmlUnmarshallerContext context) 
         {
             RegisterInstancesWithLoadBalancerResult registerInstancesWithLoadBalancerResult = new RegisterInstancesWithLoadBalancerResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return registerInstancesWithLoadBalancerResult;
+        }
+
+        public RegisterInstancesWithLoadBalancerResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static RegisterInstancesWithLoadBalancerResultUnmarshaller instance;

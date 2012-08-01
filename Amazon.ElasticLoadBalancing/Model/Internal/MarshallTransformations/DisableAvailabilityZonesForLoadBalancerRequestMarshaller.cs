@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(disableAvailabilityZonesForLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "DisableAvailabilityZonesForLoadBalancer");
-            request.Parameters.Add("Version", "2011-11-15");
+            request.Parameters.Add("Version", "2012-06-01");
             if (disableAvailabilityZonesForLoadBalancerRequest != null && disableAvailabilityZonesForLoadBalancerRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(disableAvailabilityZonesForLoadBalancerRequest.LoadBalancerName));

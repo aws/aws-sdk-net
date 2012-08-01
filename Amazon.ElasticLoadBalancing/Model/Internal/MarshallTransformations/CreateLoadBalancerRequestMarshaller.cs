@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateLoadBalancer");
-            request.Parameters.Add("Version", "2011-11-15");
+            request.Parameters.Add("Version", "2012-06-01");
             if (createLoadBalancerRequest != null && createLoadBalancerRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createLoadBalancerRequest.LoadBalancerName));
@@ -102,6 +102,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SecurityGroups.member." + securityGroupsListIndex, StringUtils.FromString(securityGroupsListValue));
                     securityGroupsListIndex++;
                 }
+            }
+            if (createLoadBalancerRequest != null && createLoadBalancerRequest.IsSetScheme())
+            {
+                request.Parameters.Add("Scheme", StringUtils.FromString(createLoadBalancerRequest.Scheme));
             }
 
             return request;

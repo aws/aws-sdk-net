@@ -3998,6 +3998,7 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\InvalidInstanceException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\InvalidSchemeException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\InvalidSecurityGroupException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\InvalidSubnetException.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\LBCookieStickinessPolicy.cs">
@@ -5371,7 +5372,6 @@
     <Compile Include="Amazon.RDS\Model\AvailabilityZone.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.RDS\Model\CharacterSet.cs" />
     <Compile Include="Amazon.RDS\Model\CopyDBSnapshotRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5381,6 +5381,7 @@
     <Compile Include="Amazon.RDS\Model\CopyDBSnapshotResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\CharacterSet.cs" />
     <Compile Include="Amazon.RDS\Model\CreateDBInstanceReadReplicaRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6137,6 +6138,7 @@
     <Compile Include="Amazon.RDS\Model\PointInTimeRestoreNotEnabledException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\ProvisionedIopsNotAvailableInAZException.cs" />
     <Compile Include="Amazon.RDS\Model\PurchaseReservedDBInstancesOfferingRequest.cs">
       <SubType>Code</SubType>
     </Compile>

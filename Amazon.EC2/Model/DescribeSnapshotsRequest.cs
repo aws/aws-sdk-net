@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -89,7 +88,7 @@ namespace Amazon.EC2.Model
     /// snapshots for which you own or have explicit
     /// permissions, or all for public snapshots.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class DescribeSnapshotsRequest
     {    
         private List<string> snapshotIdField;

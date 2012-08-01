@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class NetworkInterfacePrivateIpAddress
     {
         private string ipAddressField;

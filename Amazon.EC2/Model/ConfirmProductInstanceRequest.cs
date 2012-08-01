@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -32,7 +31,7 @@ namespace Amazon.EC2.Model
     /// useful when an AMI owner wants to verify whether a user's instance is
     /// eligible for support.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class ConfirmProductInstanceRequest
     {    
         private string productCodeField;

@@ -67,6 +67,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("DefaultCharacterSet", targetDepth))
+                    {
+                        dBEngineVersion.DefaultCharacterSet = CharacterSetUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("SupportedCharacterSets/CharacterSet", targetDepth))
                     {
                         dBEngineVersion.SupportedCharacterSets.Add(CharacterSetUnmarshaller.GetInstance().Unmarshall(context));

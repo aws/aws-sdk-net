@@ -184,6 +184,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("Iops", targetDepth))
+                    {
+                        dBInstance.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("OptionGroupMembership", targetDepth))
                     {
                         dBInstance.OptionGroupMembership = OptionGroupMembershipUnmarshaller.GetInstance().Unmarshall(context);

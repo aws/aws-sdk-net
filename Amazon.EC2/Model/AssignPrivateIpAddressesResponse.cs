@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System.IO;
@@ -28,7 +27,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Assign Private Ip Addresses Response
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class AssignPrivateIpAddressesResponse
     {
         private ResponseMetadata responseMetadataField;

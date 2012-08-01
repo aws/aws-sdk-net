@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBInstance");
-            request.Parameters.Add("Version", "2012-04-23");
+            request.Parameters.Add("Version", "2012-07-01");
             if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetDBName())
             {
                 request.Parameters.Add("DBName", StringUtils.FromString(createDBInstanceRequest.DBName));
@@ -117,6 +117,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetLicenseModel())
             {
                 request.Parameters.Add("LicenseModel", StringUtils.FromString(createDBInstanceRequest.LicenseModel));
+            }
+            if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetIops())
+            {
+                request.Parameters.Add("Iops", StringUtils.FromInt(createDBInstanceRequest.Iops));
             }
             if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetOptionGroupName())
             {

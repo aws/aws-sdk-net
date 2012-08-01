@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -35,7 +34,7 @@ namespace Amazon.EC2.Model
     /// <remarks>
     /// Use of this action does not change the value returned by DescribeInstanceStatus.
     /// </remarks>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class ReportInstanceStatusRequest
     {
         private List<string> instanceIdField;

@@ -82,21 +82,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
-                    if (context.TestExpression("VpcCapable", targetDepth))
+                    if (context.TestExpression("Vpc", targetDepth))
                     {
-                        orderableDBInstanceOption.VpcCapable = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("VpcMultiAZCapable", targetDepth))
-                    {
-                        orderableDBInstanceOption.VpcMultiAZCapable = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("VpcReadReplicaCapable", targetDepth))
-                    {
-                        orderableDBInstanceOption.VpcReadReplicaCapable = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        orderableDBInstanceOption.Vpc = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

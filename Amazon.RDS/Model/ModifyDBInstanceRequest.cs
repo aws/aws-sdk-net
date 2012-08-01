@@ -45,13 +45,13 @@ namespace Amazon.RDS.Model
         private string engineVersion;
         private bool? allowMajorVersionUpgrade;
         private bool? autoMinorVersionUpgrade;
+        private int? iops;
         private string optionGroupName;
 
         /// <summary>
-        /// The DB Instance identifier. This value is stored as a lowercase string. For a SQL Server DB Instance, this value cannot be changed.
-        /// Constraints: <ul> <li>Must be the identifier for an existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
-        /// hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example:
-        /// <copy>mydbinstance</copy>
+        /// The DB Instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must be the identifier for an existing DB
+        /// Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+        /// with a hyphen or contain two consecutive hyphens</li> </ul> Example: <copy>mydbinstance</copy>
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -82,10 +82,9 @@ namespace Amazon.RDS.Model
         /// The new storage capacity of the RDS instance. This change does not result in an outage and is applied during the next maintenance window
         /// unless the <c>ApplyImmediately</c> parameter is specified as <c>true</c> for this request. <b>MySQL</b> Default: Uses existing setting Valid
         /// Values: 5-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater
-        /// than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer <b>Oracle</b> Default: Uses
+        /// than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer <b>MySQL</b> Default: Uses
         /// existing setting Valid Values: 10-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are not
-        /// at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. <b>SQL Server</b> Cannot be
-        /// modified.
+        /// at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.
         ///  
         /// </summary>
         public int AllocatedStorage
@@ -113,10 +112,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The new compute and memory capacity of the DB Instance. To determine the instance classes that are available for a particular DB engine, use
-        /// the <a>DescribeOrderableDBInstanceOptions</a> action. Passing a value for this parameter causes an outage during the change and is applied
+        /// The new compute and memory capacity of the DB Instance. Passing a value for this parameter causes an outage during the change and is applied
         /// during the next maintenance window, unless the <c>ApplyImmediately</c> parameter is specified as <c>true</c> for this request. Default: Uses
-        /// existing setting Valid Values: <c>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</c>
+        /// existing setting Valid Values: <c>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</c>
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -224,9 +222,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// The new password for the DB Instance master user. This change is asynchronously applied as soon as possible. Between the time of the request
         /// and the completion of the request, the <c>MasterUserPassword</c> element exists in the <c>PendingModifiedValues</c> element of the operation
-        /// response. Default: Uses existing setting Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric characters
-        /// (Oracle), or 8 to 128 alphanumeric characters (SQL Server). <note> Amazon RDS API actions never return the password, so this action provides
-        /// a way to regain access to a master instance user if the password is lost. </note>
+        /// response. Default: Uses existing setting Constraints: Must be 4 to 41 alphanumeric characters (engine specific) <note> Amazon RDS APIs never
+        /// return the password, so this API provides a way to regain access to a master instance user if the password is lost. </note>
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -487,6 +484,37 @@ namespace Amazon.RDS.Model
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this.autoMinorVersionUpgrade.HasValue;       
+        }
+
+        /// <summary>
+        /// The new provisioned I/O operations per second of the RDS instance. This change does not result in an outage and is applied during the next
+        /// maintenance window unless the <c>ApplyImmediately</c> parameter is specified as <c>true</c> for this request. Default: Uses existing setting
+        /// Constraints: Value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing
+        /// value are rounded up so that they are 10% greater than the current value. Type: Integer
+        ///  
+        /// </summary>
+        public int Iops
+        {
+            get { return this.iops ?? default(int); }
+            set { this.iops = value; }
+        }
+
+        /// <summary>
+        /// Sets the Iops property
+        /// </summary>
+        /// <param name="iops">The value to set for the Iops property </param>
+        /// <returns>this instance</returns>
+        public ModifyDBInstanceRequest WithIops(int iops)
+        {
+            this.iops = iops;
+            return this;
+        }
+            
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this.iops.HasValue;       
         }
 
         /// <summary>

@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -40,7 +39,7 @@ namespace Amazon.EC2.Model
     /// one character.You can escape special characters using a backslash before the character. For example,
     /// a value of \*amazon\?\\ searches for the literal string *amazon?\.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class DescribeInternetGatewaysRequest
     {    
         private List<string> internetGatewayIdField;

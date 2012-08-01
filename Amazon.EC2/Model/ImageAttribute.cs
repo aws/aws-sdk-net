@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -29,7 +28,7 @@ namespace Amazon.EC2.Model
     ///<summary>
     ///Image Attribute
     ///</summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class ImageAttribute
     {    
         private string imageIdField;
@@ -41,7 +40,7 @@ namespace Amazon.EC2.Model
         private string kernelIdField;
         private string ramdiskIdField;
         private string descriptionField;
-        private BlockDeviceMapping blockDeviceMappingField;
+        private List<BlockDeviceMapping> blockDeviceMappingField;
 
         /// <summary>
         /// Gets and sets the ImageId property.
@@ -294,23 +293,32 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the BlockDeviceMapping property.
-        /// Block device mapping.
         /// </summary>
         [XmlElementAttribute(ElementName = "BlockDeviceMapping")]
-        public BlockDeviceMapping BlockDeviceMapping
+        public List<BlockDeviceMapping> BlockDeviceMapping
         {
-            get { return this.blockDeviceMappingField; }
+            get
+            {
+                if (this.blockDeviceMappingField == null)
+                {
+                    this.blockDeviceMappingField = new List<BlockDeviceMapping>();
+                }
+                return this.blockDeviceMappingField;
+            }
             set { this.blockDeviceMappingField = value; }
         }
 
         /// <summary>
         /// Sets the BlockDeviceMapping property
         /// </summary>
-        /// <param name="blockDeviceMapping">Block device mapping.</param>
+        /// <param name="list">BlockDeviceMapping property</param>
         /// <returns>this instance</returns>
-        public ImageAttribute WithBlockDeviceMapping(BlockDeviceMapping blockDeviceMapping)
+        public ImageAttribute WithBlockDeviceMapping(params BlockDeviceMapping[] list)
         {
-            this.blockDeviceMappingField = blockDeviceMapping;
+            foreach (BlockDeviceMapping item in list)
+            {
+                BlockDeviceMapping.Add(item);
+            }
             return this;
         }
 
@@ -320,7 +328,7 @@ namespace Amazon.EC2.Model
         /// <returns>true if BlockDeviceMapping property is set</returns>
         public bool IsSetBlockDeviceMapping()
         {
-            return this.blockDeviceMappingField != null;
+            return (BlockDeviceMapping.Count > 0);
         }
 
     }

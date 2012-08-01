@@ -25,7 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyOptionGroup operation.
-    /// <para> Modifies an existing Option Group. </para>
+    /// <p>
+    /// Modifies an existing Option Group.
+    /// </p>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.ModifyOptionGroup"/>
     public class ModifyOptionGroupRequest : AmazonWebServiceRequest

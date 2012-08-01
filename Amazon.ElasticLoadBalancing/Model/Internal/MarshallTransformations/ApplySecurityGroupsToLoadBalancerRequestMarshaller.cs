@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(applySecurityGroupsToLoadBalancerRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "ApplySecurityGroupsToLoadBalancer");
-            request.Parameters.Add("Version", "2011-11-15");
+            request.Parameters.Add("Version", "2012-06-01");
             if (applySecurityGroupsToLoadBalancerRequest != null && applySecurityGroupsToLoadBalancerRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(applySecurityGroupsToLoadBalancerRequest.LoadBalancerName));

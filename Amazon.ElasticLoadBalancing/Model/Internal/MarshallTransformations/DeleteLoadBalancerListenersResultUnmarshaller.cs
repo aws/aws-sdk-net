@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DeleteLoadBalancerListenersResult Unmarshaller
      /// </summary>
-    internal class DeleteLoadBalancerListenersResultUnmarshaller : IUnmarshaller<DeleteLoadBalancerListenersResult, XmlUnmarshallerContext> 
+    internal class DeleteLoadBalancerListenersResultUnmarshaller : IUnmarshaller<DeleteLoadBalancerListenersResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteLoadBalancerListenersResult, JsonUnmarshallerContext> 
     {
         public DeleteLoadBalancerListenersResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteLoadBalancerListenersResult deleteLoadBalancerListenersResult = new DeleteLoadBalancerListenersResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -46,6 +47,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return deleteLoadBalancerListenersResult;
+        }
+
+        public DeleteLoadBalancerListenersResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DeleteLoadBalancerListenersResultUnmarshaller instance;

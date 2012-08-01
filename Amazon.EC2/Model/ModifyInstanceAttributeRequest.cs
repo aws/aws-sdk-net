@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -29,7 +28,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Modifies an attribute of an instance.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class ModifyInstanceAttributeRequest
     {    
         private string instanceIdField;
@@ -75,8 +74,8 @@ namespace Amazon.EC2.Model
         /// "instanceType", "kernel", "ramdisk",
         /// "userData", "disableApiTermination",
         /// "instanceInitiatedShutdownBehavior",
-        /// "sourceDestCheck",
-        /// "rootDeviceName", and "blockDeviceMapping"
+        /// "sourceDestCheck", "rootDeviceName",
+        /// "blockDeviceMapping" and "ebsOptimized"
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -92,8 +91,8 @@ namespace Amazon.EC2.Model
         /// "instanceType", "kernel", "ramdisk",
         /// "userData", "disableApiTermination",
         /// "instanceInitiatedShutdownBehavior",
-        /// "sourceDestCheck",
-        /// "rootDeviceName", and "blockDeviceMapping"</param>
+        /// "sourceDestCheck", "rootDeviceName",
+        /// "blockDeviceMapping" and "ebsOptimized"</param>
         /// <returns>this instance</returns>
         public ModifyInstanceAttributeRequest WithAttribute(string attribute)
         {

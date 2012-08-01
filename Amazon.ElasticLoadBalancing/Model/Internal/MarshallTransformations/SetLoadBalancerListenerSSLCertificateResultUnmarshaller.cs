@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   SetLoadBalancerListenerSSLCertificateResult Unmarshaller
      /// </summary>
-    internal class SetLoadBalancerListenerSSLCertificateResultUnmarshaller : IUnmarshaller<SetLoadBalancerListenerSSLCertificateResult, XmlUnmarshallerContext> 
+    internal class SetLoadBalancerListenerSSLCertificateResultUnmarshaller : IUnmarshaller<SetLoadBalancerListenerSSLCertificateResult, XmlUnmarshallerContext>, IUnmarshaller<SetLoadBalancerListenerSSLCertificateResult, JsonUnmarshallerContext> 
     {
         public SetLoadBalancerListenerSSLCertificateResult Unmarshall(XmlUnmarshallerContext context) 
         {
             SetLoadBalancerListenerSSLCertificateResult setLoadBalancerListenerSSLCertificateResult = new SetLoadBalancerListenerSSLCertificateResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -46,6 +47,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return setLoadBalancerListenerSSLCertificateResult;
+        }
+
+        public SetLoadBalancerListenerSSLCertificateResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static SetLoadBalancerListenerSSLCertificateResultUnmarshaller instance;

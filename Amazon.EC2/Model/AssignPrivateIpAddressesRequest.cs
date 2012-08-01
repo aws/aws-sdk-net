@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System.Collections.Generic;
@@ -27,7 +26,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Assigns one or more secondary private IP addresses to a network interface in Amazon VPC.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class AssignPrivateIpAddressesRequest
     {
         private string networkInterfaceIdField;

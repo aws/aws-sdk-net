@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   LoadBalancerDescription Unmarshaller
      /// </summary>
-    internal class LoadBalancerDescriptionUnmarshaller : IUnmarshaller<LoadBalancerDescription, XmlUnmarshallerContext> 
+    internal class LoadBalancerDescriptionUnmarshaller : IUnmarshaller<LoadBalancerDescription, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancerDescription, JsonUnmarshallerContext> 
     {
         public LoadBalancerDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             LoadBalancerDescription loadBalancerDescription = new LoadBalancerDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -125,6 +126,12 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         loadBalancerDescription.CreatedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("Scheme", targetDepth))
+                    {
+                        loadBalancerDescription.Scheme = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -136,6 +143,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return loadBalancerDescription;
+        }
+
+        public LoadBalancerDescription Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static LoadBalancerDescriptionUnmarshaller instance;

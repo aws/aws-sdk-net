@@ -25,7 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOptionGroups operation.
-    /// <para> Describes the available option groups. </para>
+    /// <p>
+    /// Describes the available option groups.
+    /// </p>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeOptionGroups"/>
     public class DescribeOptionGroupsRequest : AmazonWebServiceRequest

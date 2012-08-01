@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(resetDBParameterGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "ResetDBParameterGroup");
-            request.Parameters.Add("Version", "2012-04-23");
+            request.Parameters.Add("Version", "2012-07-01");
             if (resetDBParameterGroupRequest != null && resetDBParameterGroupRequest.IsSetDBParameterGroupName())
             {
                 request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(resetDBParameterGroupRequest.DBParameterGroupName));

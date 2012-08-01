@@ -57,6 +57,7 @@ namespace Amazon.RDS.Model
         private string readReplicaSourceDBInstanceIdentifier;
         private List<string> readReplicaDBInstanceIdentifiers = new List<string>();
         private string licenseModel;
+        private int? iops;
         private OptionGroupMembership optionGroupMembership;
         private string characterSetName;
 
@@ -786,6 +787,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetLicenseModel()
         {
             return this.licenseModel != null;       
+        }
+
+        /// <summary>
+        /// Specifies the provisioned I/O operations per second.
+        ///  
+        /// </summary>
+        public int Iops
+        {
+            get { return this.iops ?? default(int); }
+            set { this.iops = value; }
+        }
+
+        /// <summary>
+        /// Sets the Iops property
+        /// </summary>
+        /// <param name="iops">The value to set for the Iops property </param>
+        /// <returns>this instance</returns>
+        public DBInstance WithIops(int iops)
+        {
+            this.iops = iops;
+            return this;
+        }
+            
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this.iops.HasValue;       
         }
 
         /// <summary>

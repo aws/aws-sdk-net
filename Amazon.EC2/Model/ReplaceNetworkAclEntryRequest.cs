@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -30,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network
     /// ACLs in the Amazon Virtual Private Cloud User Guide.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class ReplaceNetworkAclEntryRequest
     {    
         private string networkAclIdField;

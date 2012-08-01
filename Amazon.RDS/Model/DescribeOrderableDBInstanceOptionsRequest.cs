@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
         private string engineVersion;
         private string dBInstanceClass;
         private string licenseModel;
+        private bool? vpc;
         private int? maxRecords;
         private string marker;
 
@@ -147,6 +148,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetLicenseModel()
         {
             return this.licenseModel != null;       
+        }
+
+        /// <summary>
+        /// The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
+        ///  
+        /// </summary>
+        public bool Vpc
+        {
+            get { return this.vpc ?? default(bool); }
+            set { this.vpc = value; }
+        }
+
+        /// <summary>
+        /// Sets the Vpc property
+        /// </summary>
+        /// <param name="vpc">The value to set for the Vpc property </param>
+        /// <returns>this instance</returns>
+        public DescribeOrderableDBInstanceOptionsRequest WithVpc(bool vpc)
+        {
+            this.vpc = vpc;
+            return this;
+        }
+            
+
+        // Check to see if Vpc property is set
+        internal bool IsSetVpc()
+        {
+            return this.vpc.HasValue;       
         }
 
         /// <summary>

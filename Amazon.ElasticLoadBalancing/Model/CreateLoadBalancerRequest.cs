@@ -27,12 +27,16 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Container for the parameters to the CreateLoadBalancer operation.
     /// <para> Creates a new LoadBalancer. </para> <para> After the call has completed successfully, a new LoadBalancer is created; however, it will
     /// not be usable until at least one instance has been registered. When the LoadBalancer creation is completed, the client can check whether or
-    /// not it is usable by using the DescribeInstanceHealth API. The LoadBalancer is usable as soon as any registered instance is <i>InService</i>
-    /// .
+    /// not it is usable by using the DescribeInstanceHealth action. The LoadBalancer is usable as soon as any registered instance is
+    /// <i>InService</i> .
     /// </para> <para><b>NOTE:</b> Currently, the client's quota of LoadBalancers is limited to ten per Region. </para> <para><b>NOTE:</b>
     /// LoadBalancer DNS names vary depending on the Region they're created in. For LoadBalancers created in the United States, the DNS name ends
     /// with: us-east-1.elb.amazonaws.com (for the US Standard Region) us-west-1.elb.amazonaws.com (for the Northern California Region) For
-    /// LoadBalancers created in the EU (Ireland) Region, the DNS name ends with: eu-west-1.elb.amazonaws.com </para>
+    /// LoadBalancers created in the EU (Ireland) Region, the DNS name ends with: eu-west-1.elb.amazonaws.com </para> <para>For information on using
+    /// CreateLoadBalancer to create a new LoadBalancer in Amazon EC2, go to Using Query API section in the <i>Creating a Load Balancer With SSL
+    /// Cipher Settings and Back-end Authentication</i> topic of the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>For information on
+    /// using CreateLoadBalancer to create a new LoadBalancer in Amazon VPC, go to Using Query API section in the <i>Creating a Basic Load Balancer
+    /// in Amazon VPC</i> topic of the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateLoadBalancer"/>
     public class CreateLoadBalancerRequest : AmazonWebServiceRequest
@@ -42,6 +46,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> availabilityZones = new List<string>();
         private List<string> subnets = new List<string>();
         private List<string> securityGroups = new List<string>();
+        private string scheme;
         /// <summary>
         /// Default constructor for a new CreateLoadBalancerRequest object.  Callers should use the
         /// properties or fluent setter (With...) methods to initialize this object after creating it.
@@ -72,7 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <param name="listeners"> A list of the following tuples: LoadBalancerPort, InstancePort, and Protocol. </param>
         /// <param name="availabilityZones"> A list of Availability Zones. At least one Availability Zone must be specified. Specified Availability
         /// Zones must be in the same EC2 Region as the LoadBalancer. Traffic will be equally distributed across all zones. This list can be modified
-        /// after the creation of the LoadBalancer. </param>
+        /// after the creation of the LoadBalancer by calling <a>EnableAvailabilityZonesFroLoadBalancer</a>. </param>
         public CreateLoadBalancerRequest(string loadBalancerName, List<Listener> listeners, List<string> availabilityZones) 
         {
             this.loadBalancerName = loadBalancerName;
@@ -156,7 +161,8 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// A list of Availability Zones. At least one Availability Zone must be specified. Specified Availability Zones must be in the same EC2 Region
-        /// as the LoadBalancer. Traffic will be equally distributed across all zones. This list can be modified after the creation of the LoadBalancer.
+        /// as the LoadBalancer. Traffic will be equally distributed across all zones. This list can be modified after the creation of the LoadBalancer
+        /// by calling <a>EnableAvailabilityZonesFroLoadBalancer</a>.
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -288,6 +294,36 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetSecurityGroups()
         {
             return this.securityGroups.Count > 0;       
+        }
+
+        /// <summary>
+        /// The type of a LoadBalancer. By default, Elastic Load Balancing creates an Internet-facing LoadBalancer with a publicly resolvable DNS name,
+        /// which resolves to public IP addresses. Specify the value <c>internal</c> for this option to create an internal LoadBalancer with a DNS name
+        /// that resolves to private IP addresses. This option is only available for LoadBalancers attached to an Amazon VPC.
+        ///  
+        /// </summary>
+        public string Scheme
+        {
+            get { return this.scheme; }
+            set { this.scheme = value; }
+        }
+
+        /// <summary>
+        /// Sets the Scheme property
+        /// </summary>
+        /// <param name="scheme">The value to set for the Scheme property </param>
+        /// <returns>this instance</returns>
+        public CreateLoadBalancerRequest WithScheme(string scheme)
+        {
+            this.scheme = scheme;
+            return this;
+        }
+            
+
+        // Check to see if Scheme property is set
+        internal bool IsSetScheme()
+        {
+            return this.scheme != null;       
         }
     }
 }

@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -30,7 +29,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Information returned by the DescribePlacementGroup request.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class DescribePlacementGroupsResponse
     {    
         private ResponseMetadata responseMetadataField;

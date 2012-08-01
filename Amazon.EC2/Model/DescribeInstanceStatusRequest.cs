@@ -16,7 +16,6 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2012-06-15
  */
 
 using System;
@@ -29,14 +28,13 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Describes the components of a Describe Instance Status request.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://ec2.amazonaws.com/doc/2012-06-15/", IsNullable = false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class DescribeInstanceStatusRequest
     {
         private List<string> instanceIdField;
         private List<Filter> filterField;
         private string nextTokenField;
         private int? maxResultsField;
-        private bool? includeAllInstancesField;
 
         /// <summary>
         /// Gets and sets the list of instance IDs. If not specified, all instances are described. 
@@ -128,7 +126,6 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets a string specifying the next paginated set of results to return. 
         /// </summary>
-        [XmlElementAttribute(ElementName = "NextToken")]
         public string NextToken
         {
             get { return this.nextTokenField; }
@@ -158,7 +155,6 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the maximum number of paginated instance items per response.
         /// </summary>
-        [XmlElementAttribute(ElementName = "MaxResults")]
         public int MaxResults
         {
             get { return this.maxResultsField.GetValueOrDefault(); }
@@ -183,41 +179,6 @@ namespace Amazon.EC2.Model
         public bool IsSetMaxResults()
         {
             return this.maxResultsField.HasValue;
-        }
-
-        /// <summary>
-        /// Gets and sets whether the request includes all or only running instances.
-        /// When true, returns the health status for all instances (e.g., running, stopped, pending, shutting down, etc.). 
-        /// When false (default), returns only the health status for running instances. 
-        /// </summary>
-        [XmlElementAttribute(ElementName = "IncludeAllInstances")]
-        public bool IncludeAllInstances
-        {
-            get { return this.includeAllInstancesField.GetValueOrDefault(); }
-            set { this.includeAllInstancesField = value; }
-        }
-
-        /// <summary>
-        /// Sets whether the request includes all or only running instances.
-        /// </summary>
-        /// <param name="includeAllInstances">
-        /// Set true to return the health status for all instances (e.g., running, stopped, pending, shutting down, etc.). 
-        /// Set false to return only the health status for running instances. 
-        /// </param>
-        /// <returns>this instance</returns>
-        public DescribeInstanceStatusRequest WithIncludeAllInstances(bool includeAllInstances)
-        {
-            this.includeAllInstancesField = includeAllInstances;
-            return this;
-        }
-
-        /// <summary>
-        /// Checks if the IncludeAllInstances property is set.
-        /// </summary>
-        /// <returns>True if the IncludeAllInstances property is set.</returns>
-        public bool IsSetIncludeAllInstances()
-        {
-            return this.includeAllInstancesField != null;
         }
     }
 }

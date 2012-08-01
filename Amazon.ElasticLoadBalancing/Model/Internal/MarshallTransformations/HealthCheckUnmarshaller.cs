@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   HealthCheck Unmarshaller
      /// </summary>
-    internal class HealthCheckUnmarshaller : IUnmarshaller<HealthCheck, XmlUnmarshallerContext> 
+    internal class HealthCheckUnmarshaller : IUnmarshaller<HealthCheck, XmlUnmarshallerContext>, IUnmarshaller<HealthCheck, JsonUnmarshallerContext> 
     {
         public HealthCheck Unmarshall(XmlUnmarshallerContext context) 
         {
             HealthCheck healthCheck = new HealthCheck();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -76,6 +77,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return healthCheck;
+        }
+
+        public HealthCheck Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static HealthCheckUnmarshaller instance;

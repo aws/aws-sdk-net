@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(attachLoadBalancerToSubnetsRequest, "AmazonElasticLoadBalancing");
             request.Parameters.Add("Action", "AttachLoadBalancerToSubnets");
-            request.Parameters.Add("Version", "2011-11-15");
+            request.Parameters.Add("Version", "2012-06-01");
             if (attachLoadBalancerToSubnetsRequest != null && attachLoadBalancerToSubnetsRequest.IsSetLoadBalancerName())
             {
                 request.Parameters.Add("LoadBalancerName", StringUtils.FromString(attachLoadBalancerToSubnetsRequest.LoadBalancerName));

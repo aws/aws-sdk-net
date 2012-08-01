@@ -22,13 +22,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ApplySecurityGroupsToLoadBalancerResult Unmarshaller
      /// </summary>
-    internal class ApplySecurityGroupsToLoadBalancerResultUnmarshaller : IUnmarshaller<ApplySecurityGroupsToLoadBalancerResult, XmlUnmarshallerContext> 
+    internal class ApplySecurityGroupsToLoadBalancerResultUnmarshaller : IUnmarshaller<ApplySecurityGroupsToLoadBalancerResult, XmlUnmarshallerContext>, IUnmarshaller<ApplySecurityGroupsToLoadBalancerResult, JsonUnmarshallerContext> 
     {
         public ApplySecurityGroupsToLoadBalancerResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ApplySecurityGroupsToLoadBalancerResult applySecurityGroupsToLoadBalancerResult = new ApplySecurityGroupsToLoadBalancerResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
 
             return applySecurityGroupsToLoadBalancerResult;
+        }
+
+        public ApplySecurityGroupsToLoadBalancerResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ApplySecurityGroupsToLoadBalancerResultUnmarshaller instance;
