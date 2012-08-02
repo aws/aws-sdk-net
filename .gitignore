@@ -1,0 +1,9 @@
+*.suo
+obj
+bin
+*.csproj.user
+*.pidb
+*.userprefs
+*~HEAD
+.DS_Store
+

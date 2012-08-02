@@ -235,7 +235,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             DateTime ret;
             Double seconds;
-            if (Double.TryParse(context.ReadText(), NumberStyles.Any, CultureInfo.InvariantCulture, out seconds))
+            if (Double.TryParse(context.ReadText(), out seconds))
             {
                 ret = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                 ret = ret.AddSeconds(seconds);
