@@ -52,6 +52,7 @@ namespace Amazon.Runtime.Internal.Transform
         private Stack<bool> inArray = new Stack<bool>();
         private Token current = new Token();
         private NameValueCollection headers;
+        private int httpStatusCode;
 #endregion
 
 #region Constructors
@@ -59,28 +60,40 @@ namespace Amazon.Runtime.Internal.Transform
         /// Wrap the jsonstring for unmarshalling.
         /// </summary>
         /// <param name="responseStream">Stream that contains the JSON for unmarshalling</param>
+        /// <param name="httpStatusCode">Status code of the response</param>
         /// <param name="headers">Headers associated with the request.</param>
-        public JsonUnmarshallerContext(Stream responseStream, NameValueCollection headers)
+        public JsonUnmarshallerContext(Stream responseStream, int httpStatusCode, NameValueCollection headers)
         {
             this.jsonStream = new StreamReader(responseStream);
             this.headers = headers ?? new NameValueCollection();
             this.responseContents = null;
+            this.httpStatusCode = httpStatusCode;
         }
         /// <summary>
         /// Wrap the jsonstring for unmarshalling.
         /// </summary>
         /// <param name="responseBody">String that contains the JSON for unmarshalling</param>
+        /// <param name="httpStatusCode">Status code of the response</param>
         /// <param name="headers">Headers associated with the request.</param>
-        public JsonUnmarshallerContext(string responseBody, NameValueCollection headers)
+        public JsonUnmarshallerContext(string responseBody, int httpStatusCode, NameValueCollection headers)
         {
             this.responseContents = responseBody;
             this.jsonStream = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(responseBody)));
             this.headers = headers ?? new NameValueCollection();
+            this.httpStatusCode = httpStatusCode;
         }
 
 #endregion
 
 #region Public Properties
+
+        /// <summary>
+        /// The Http Status Code of the request being unmarshalled.
+        /// </summary>
+        public int HttpStatusCode
+        {
+            get { return this.httpStatusCode; }
+        }
 
         /// <summary>
         /// Gets the associated headers for the request.
@@ -336,6 +349,11 @@ namespace Amazon.Runtime.Internal.Transform
 
             current = ReadToken();
 
+            if (current.Type == TokenType.None && jsonStream.EndOfStream)
+            {
+                return false;
+            }
+
             if (current.Type != TokenType.EndElement)
             {
                 addedKey = true;
@@ -487,6 +505,11 @@ namespace Amazon.Runtime.Internal.Transform
             while (Char.IsWhiteSpace((char)nextChar))
             {
                 nextChar = jsonStream.Read();
+                if (jsonStream.EndOfStream)
+                {
+                    return ret;
+                }
+
                 if (nextChar == -1)
                 {
                     return ret;
@@ -582,7 +605,7 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         throw new InvalidDataException("Invalid JSON data");
                     }
-                    ret.Text = "false";
+                    ret.Text = null;
                     break;
                 default:
                     throw new InvalidDataException("Invalid JSON data");

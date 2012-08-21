@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(listResourceRecordSetsRequest, "AmazonRoute53");
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "/2011-05-05/hostedzone/{Id}/rrset?type={Type}&name={Name}&identifier={Identifier}&maxitems={MaxItems}"; 
+            string uriResourcePath = "/2012-02-29/hostedzone/{Id}/rrset?type={Type}&name={Name}&identifier={Identifier}&maxitems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", listResourceRecordSetsRequest.HostedZoneId ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{Name}", listResourceRecordSetsRequest.StartRecordName ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{Type}", listResourceRecordSetsRequest.StartRecordType ?? "" ); 

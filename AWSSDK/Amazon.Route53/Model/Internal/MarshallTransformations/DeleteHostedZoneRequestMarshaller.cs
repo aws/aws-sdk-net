@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(deleteHostedZoneRequest, "AmazonRoute53");
             request.HttpMethod = "DELETE";
               
-            string uriResourcePath = "/2011-05-05/hostedzone/{Id}"; 
+            string uriResourcePath = "/2012-02-29/hostedzone/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", deleteHostedZoneRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 

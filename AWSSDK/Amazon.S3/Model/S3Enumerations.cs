@@ -73,6 +73,11 @@ namespace Amazon.S3.Model
         /// in the bucket but still grant the bucket owner full rights over the objects.
         /// </summary>
         BucketOwnerFullControl,
+
+        /// <summary>
+        /// The LogDelivery group gets WRITE and READ_ACP permissions on the bucket.
+        /// </summary>
+        LogDeliveryWrite,
     }
 
     internal enum S3QueryParameter

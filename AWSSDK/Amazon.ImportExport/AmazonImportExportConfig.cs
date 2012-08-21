@@ -43,6 +43,17 @@ namespace Amazon.ImportExport
                 return "2010-06-01";
             }
         }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "importexport";
+            }
+        }
     }
 }
 

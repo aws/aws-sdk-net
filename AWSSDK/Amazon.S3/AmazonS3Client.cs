@@ -119,7 +119,7 @@ namespace Amazon.S3
             Type t = typeof(HttpWebRequest);
             ADD_RANGE_METHODINFO = t.GetMethod("AddRange", BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[] { typeof(string), typeof(string), typeof(string) }, null);
         }
-
+        
         /// <summary>
         /// Constructs AmazonS3Client with the credentials defined in the App.config.
         /// 
@@ -158,6 +158,25 @@ namespace Amazon.S3
             : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
 
         /// <summary>
+        /// Constructs AmazonS3Client with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonS3Client(RegionEndpoint region)
+            : this(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config() { RegionEndpoint = region }, true) { }
+
+        /// <summary>
         /// Constructs AmazonS3Client with AWS Access Key ID and AWS Secret Key
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
@@ -177,6 +196,19 @@ namespace Amazon.S3
         /// <param name="config">The S3 Configuration Object</param>
         public AmazonS3Client(string awsAccessKeyId, string awsSecretAccessKey, AmazonS3Config config)
             : this(CreateCredentials(awsAccessKeyId, awsSecretAccessKey), config, true) { }
+
+        /// <summary>
+        /// Constructs AmazonS3Client with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonS3 Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonS3Client(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(CreateCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonS3Config() { RegionEndpoint = region }, true) { }
 
         /// <summary>
         /// Constructs an AmazonS3Client with AWS Access Key ID, AWS Secret Key and an
@@ -203,6 +235,15 @@ namespace Amazon.S3
         /// <param name="config"></param>
         public AmazonS3Client(AWSCredentials credentials, AmazonS3Config config)
             : this(credentials, config, false) { }
+
+        /// <summary>
+        /// Constructs an AmazonS3Client with AWSCredentials and an
+        /// Amazon S3 Configuration object
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonS3Client(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonS3Config() { RegionEndpoint = region }, false) { }
 
         private AmazonS3Client(AWSCredentials credentials, AmazonS3Config config, bool ownCredentials)
         {
@@ -3505,7 +3546,6 @@ namespace Amazon.S3
 
         #endregion
 
-
         #region DeleteBucketWebsite
 
         /// <summary>
@@ -3821,7 +3861,11 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "PutBucket";
 
             string regionCode;
-            if (!string.IsNullOrEmpty(request.BucketRegionName))
+            if (request.UseClientRegion)
+            {
+                regionCode = Amazon.Util.AWSSDKUtils.DetermineRegion(this.determinedConfiguredServiceURL());
+            }
+            else if (!string.IsNullOrEmpty(request.BucketRegionName))
             {
                 if (string.Equals(request.BucketRegionName, S3Constants.REGION_EU_WEST_1))
                 {
@@ -3847,7 +3891,10 @@ namespace Amazon.S3
                 parameters[S3QueryParameter.ContentType] = AWSSDKUtils.UrlEncodedContent;
             }
 
-            ConvertPutWithACLRequest(request);
+            if (request.IsSetCannedACL())
+                setCannedACLHeader(request.Headers, request.CannedACL);
+            else
+                ConvertPutWithACLRequest(request);
 
             request.RequestDestinationBucket = request.BucketName;
         }
@@ -5355,7 +5402,10 @@ namespace Amazon.S3
                 if (LOGGER.IsInfoEnabled) 
                     LOGGER.InfoFormat("Retry number {0} for request {1}.", retries, actionName);
             }
+            long pauseStart = userRequest.StopWatch.ElapsedTicks;
             pauseOnRetry(retries, this.config.MaxErrorRetry, statusCode, requestAddr, respHdrs, cause);
+            userRequest.PauseTime += (userRequest.StopWatch.ElapsedTicks - pauseStart);
+
             // Reset the request so that streams are recreated,
             // removed headers are added back, etc
             prepareRequestForRetry(userRequest, orignalStreamPosition);
@@ -5466,7 +5516,9 @@ namespace Amazon.S3
                 if (LOGGER.IsInfoEnabled) 
                     LOGGER.InfoFormat("Request for {0} is being redirect to {1}.", actionName, userRequest.parameters[S3QueryParameter.Url]);
 
+                long pauseStart = userRequest.StopWatch.ElapsedTicks;
                 pauseOnRetry(retries + 1, this.config.MaxErrorRetry, statusCode, requestAddr, httpResponse.Headers, cause);
+                userRequest.PauseTime += (userRequest.StopWatch.ElapsedTicks - pauseStart);
 
                 // The HTTPResponse object needs to be closed. Once this is done, the request
                 // is gracefully terminated. Mind you, if this response object is not closed,
@@ -5802,7 +5854,7 @@ namespace Amazon.S3
         /**
          * Build the Url from the parameters passed in.
          * Component parts are:
-         * - ServiceURL from the Config
+         * - RegionEndpoint or ServiceURL from the Config
          * - Bucket
          * - Key
          * - urlPrefix
@@ -5817,7 +5869,7 @@ namespace Amazon.S3
                 throw new AmazonS3Exception("The Amazon S3 Service URL is either null or empty");
             }
 
-            string url = config.ServiceURL;
+            string url = determinedConfiguredServiceURL();
 
             if (parameters[S3QueryParameter.BucketVersion].Equals(S3Constants.BucketVersions[1]))
             {
@@ -5854,6 +5906,17 @@ namespace Amazon.S3
 
             // Add the Url to the parameters
             parameters[S3QueryParameter.Url] = url;
+        }
+
+        string determinedConfiguredServiceURL()
+        {
+            string url;
+            if (config.RegionEndpoint == null)
+                url = config.ServiceURL;
+            else
+                url = config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+
+            return url;
         }
 
         /**

@@ -29,9 +29,14 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public abstract class ResponseUnmarshaller : IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext>
     {
-        public virtual UnmarshallerContext CreateContext(HttpWebResponse response, bool readEntireResponse)
+        public virtual UnmarshallerContext CreateContext(HttpWebResponse response, bool readEntireResponse, AsyncResult asyncResult)
         {
             throw new NotImplementedException();
+        }
+
+        internal virtual bool HasStreamingProperty
+        {
+            get { return false; }
         }
 
         #region IResponseUnmarshaller<AmazonWebServiceResponse,UnmarshallerContext> Members
@@ -60,7 +65,7 @@ namespace Amazon.Runtime.Internal.Transform
     {
         protected string contents;
 
-        public override UnmarshallerContext CreateContext(HttpWebResponse response, bool readEntireResponse)
+        public override UnmarshallerContext CreateContext(HttpWebResponse response, bool readEntireResponse, AsyncResult asyncResult)
         {
             if (response == null)
             {
@@ -70,10 +75,12 @@ namespace Amazon.Runtime.Internal.Transform
                     );
             }
 
+            asyncResult.StreamReadStartTime = asyncResult.ElapsedTicks;
             XmlUnmarshallerContext context;
             if (readEntireResponse)
             {
                 string responseBody = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                asyncResult.ResponseReadTime = asyncResult.StreamReadStartTime - asyncResult.ElapsedTicks;
                 context = new XmlUnmarshallerContext(responseBody, response.Headers);
             }
             else
@@ -125,7 +132,7 @@ namespace Amazon.Runtime.Internal.Transform
     {
         protected string contents;
 
-        public override UnmarshallerContext CreateContext(HttpWebResponse response, bool readEntireResponse)
+        public override UnmarshallerContext CreateContext(HttpWebResponse response, bool readEntireResponse, AsyncResult asyncResult)
         {
             if (response == null)
             {
@@ -135,15 +142,17 @@ namespace Amazon.Runtime.Internal.Transform
                     );
             }
 
+            asyncResult.StreamReadStartTime = asyncResult.ElapsedTicks;
             JsonUnmarshallerContext context;
-            if (readEntireResponse)
+            if (readEntireResponse && response.ContentType != "application/octet-stream")
             {
                 string responseBody = new StreamReader(response.GetResponseStream()).ReadToEnd();
-                context = new JsonUnmarshallerContext(responseBody, response.Headers);
+                asyncResult.ResponseReadTime = asyncResult.ElapsedTicks - asyncResult.StreamReadStartTime;
+                context = new JsonUnmarshallerContext(responseBody, (int)response.StatusCode, response.Headers);
             }
             else
             {
-                context = new JsonUnmarshallerContext(response.GetResponseStream(), response.Headers);
+                context = new JsonUnmarshallerContext(response.GetResponseStream(), (int)response.StatusCode, response.Headers);
             }
 
             return context;

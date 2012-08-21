@@ -43,6 +43,17 @@ namespace Amazon.SimpleWorkflow
                 return "2012-01-25";
             }
         }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "swf";
+            }
+        }
     }
 }
 

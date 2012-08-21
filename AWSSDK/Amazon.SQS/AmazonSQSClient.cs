@@ -138,6 +138,25 @@ namespace Amazon.SQS
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSQSClient(RegionEndpoint region)
+            : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSQSConfig() { RegionEndpoint = region }, true) { }
+
+        /// <summary>
+        /// Constructs AmazonSQSClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonSQS Configuration Object</param>
         public AmazonSQSClient(AmazonSQSConfig config)
             : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
@@ -149,6 +168,15 @@ namespace Amazon.SQS
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonSQSClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonSQSConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonSQSClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSQSClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonSQSConfig() { RegionEndpoint = region }) { }
 
         /// <summary>
         /// Constructs AmazonSQSClient with AWS Access Key ID, AWS Secret Key and an
@@ -174,11 +202,29 @@ namespace Amazon.SQS
             : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true) { }
 
         /// <summary>
+        /// Constructs an AmazonSQSClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonSQS Configuration object
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSQSClient(string awsAccessKeyId, SecureString awsSecretAccessKey, RegionEndpoint region)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonSQSConfig() { RegionEndpoint = region }, true) { }
+
+        /// <summary>
         /// Constructs AmazonSQSClient with AWSCredentials
         /// </summary>
         /// <param name="credentials"></param>
         public AmazonSQSClient(AWSCredentials credentials)
             : this(credentials, new AmazonSQSConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonSQSClient with AWSCredentials
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSQSClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonSQSConfig() { RegionEndpoint = region }) { }
 
         /// <summary>
         /// Constructs AmazonSQSClient with AWSCredentials and an AmazonSQS Configuration object.
@@ -501,7 +547,14 @@ namespace Amazon.SQS
         {
             string actionName = parameters["Action"];
             T response = default(T);
-            string queueUrl = parameters.ContainsKey("QueueUrl") ? parameters["QueueUrl"] : config.ServiceURL;
+
+            string url;
+            if (config.RegionEndpoint != null)
+                url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+            else
+                url = config.ServiceURL;
+
+            string queueUrl = parameters.ContainsKey("QueueUrl") ? parameters["QueueUrl"] : url;
 
             if (parameters.ContainsKey("QueueUrl"))
             {

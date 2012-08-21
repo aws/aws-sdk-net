@@ -43,6 +43,17 @@ namespace Amazon.CloudFormation
                 return "2010-05-15";
             }
         }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "cloudformation";
+            }
+        }
     }
 }
 

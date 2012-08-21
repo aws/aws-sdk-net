@@ -60,6 +60,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("Region", targetDepth))
+                    {
+                        resourceRecordSet.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("TTL", targetDepth))
                     {
                         resourceRecordSet.TTL = LongUnmarshaller.GetInstance().Unmarshall(context);

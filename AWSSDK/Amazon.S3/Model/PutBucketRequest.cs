@@ -37,6 +37,8 @@ namespace Amazon.S3.Model
         private string bucketName;
         private S3Region bucketRegion;
         private string bucketRegionName;
+        private bool useClientRegion;
+        private S3CannedACL cannedACL;
 
         #endregion
 
@@ -141,6 +143,25 @@ namespace Amazon.S3.Model
             return this;
         }
 
+        /// <summary>
+        /// Gets and sets UseClientRegion property.
+        /// If set to true the bucket will be created in the region the AmazonS3 client is configured.  This is default to false.
+        /// </summary>
+        public bool UseClientRegion
+        {
+            get { return this.useClientRegion; }
+            set
+            {
+                this.useClientRegion = value;
+            }
+        }
+
+        public PutBucketRequest WithUseClientRegion(bool useClientRegion)
+        {
+            this.useClientRegion = useClientRegion;
+            return this;
+        }
+
         #endregion
 
         #region Grants
@@ -152,10 +173,53 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="grants">One or more S3 Grants.</param>
         /// <returns>The request with the Grants set.</returns>
+        /// <remarks>You can use either a canned ACL or specify access permissions explicitly. You cannot do both.</remarks>
         public PutBucketRequest WithGrants(params S3Grant[] grants)
         {
             this.Grants.AddRange(grants);
             return this;
+        }
+
+        #endregion
+
+        #region CannedACL
+
+        /// <summary>
+        /// Gets and sets the CannedACL property.
+        /// </summary>
+        public S3CannedACL CannedACL
+        {
+            get { return this.cannedACL; }
+            set { this.cannedACL = value; }
+        }
+
+        /// <summary>
+        /// Adds a canned ACL to this request.
+        /// </summary>
+        /// <param name="acl">The canned ACL to apply; you can specify only one canned ACL in your request</param>
+        /// <returns>The request with the Grants set.</returns>
+        /// <remarks>You can use either a canned ACL or specify access permissions explicitly. You cannot do both.</remarks>
+        public PutBucketRequest WithCannedACL(S3CannedACL acl)
+        {
+            this.cannedACL = acl;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the S3CannedACL property is set.
+        /// </summary>
+        /// <returns>true if there is the S3CannedACL property is set.</returns>
+        internal bool IsSetCannedACL()
+        {
+            return (cannedACL != S3CannedACL.NoACL);
+        }
+
+        /// <summary>
+        /// Resets the S3CannedACL
+        /// </summary>
+        public void RemoveCannedACL()
+        {
+            this.cannedACL = S3CannedACL.NoACL;
         }
 
         #endregion

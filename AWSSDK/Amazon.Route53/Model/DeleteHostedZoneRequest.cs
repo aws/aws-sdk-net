@@ -25,7 +25,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHostedZone operation.
-    /// <para>This action deletes a hosted zone. To delete a hosted zone, send a <c>DELETE</c> request to the <c>2011-05-05/hostedzone/hosted zone
+    /// <para>This action deletes a hosted zone. To delete a hosted zone, send a <c>DELETE</c> request to the <c>2012-02-29/hostedzone/hosted zone
     /// ID </c> resource.</para> <para>For more information about deleting a hosted zone, see Deleting a Hosted Zone in the Amazon Route 53
     /// Developer Guide.</para> <para><b>IMPORTANT:</b> You can delete a hosted zone only if there are no resource record sets other than the
     /// default SOA record and NS resource record sets. If your hosted zone contains other resource record sets, you must delete them before you can

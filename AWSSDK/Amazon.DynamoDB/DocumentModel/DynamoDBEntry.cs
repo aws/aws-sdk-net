@@ -524,6 +524,36 @@ namespace Amazon.DynamoDB.DocumentModel
 
 
         /// <summary>
+        /// Explicitly convert DynamoDBEntry to Guid
+        /// </summary>
+        /// <returns>Guid value of this object</returns>
+        public virtual Guid AsGuid()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert Guid to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">Guid data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(Guid data)
+        {
+            Primitive p = data;
+            return p;
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to Guid
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>Guid value of DynamoDBEntry</returns>
+        public static explicit operator Guid(DynamoDBEntry p)
+        {
+            return p.AsGuid();
+        }
+
+
+
+        /// <summary>
         /// Explicitly convert DynamoDBEntry to List&lt;Primitive&gt;
         /// </summary>
         /// <returns>List&lt;Primitive&gt; value of this object</returns>

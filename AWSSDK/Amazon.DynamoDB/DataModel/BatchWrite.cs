@@ -150,7 +150,7 @@ namespace Amazon.DynamoDB.DataModel
         {
             if (item == null) return;
 
-            ItemStorage storage = DynamoDBContext.ObjectToItemStorage<T>(item, false, StorageConfig);
+            ItemStorage storage = DynamoDBContext.ObjectToItemStorage<T>(item, false, true, StorageConfig);
             if (storage == null) return;
             DocumentBatch.AddDocumentToPut(storage.Document);
         }
@@ -182,7 +182,7 @@ namespace Amazon.DynamoDB.DataModel
         {
             if (item == null) return;
 
-            ItemStorage storage = DynamoDBContext.ObjectToItemStorage<T>(item, true, StorageConfig);
+            ItemStorage storage = DynamoDBContext.ObjectToItemStorage<T>(item, true, true, StorageConfig);
             if (storage == null) return;
             DocumentBatch.AddItemToDelete(storage.Document);
         }

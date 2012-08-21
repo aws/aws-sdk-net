@@ -59,6 +59,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         hostedZone.Config = HostedZoneConfigUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("ResourceRecordSetCount", targetDepth))
+                    {
+                        hostedZone.ResourceRecordSetCount = LongUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

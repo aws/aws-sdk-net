@@ -73,6 +73,26 @@ namespace Amazon.ElasticMapReduce
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElasticMapReduceClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
+
+
+        /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonElasticMapReduce Configuration Object</param>
         public AmazonElasticMapReduceClient(AmazonElasticMapReduceConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
@@ -83,6 +103,16 @@ namespace Amazon.ElasticMapReduce
         /// <param name="credentials">AWS Credentials</param>
         public AmazonElasticMapReduceClient(AWSCredentials credentials)
             : this(credentials, new AmazonElasticMapReduceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElasticMapReduceClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonElasticMapReduceConfig() { RegionEndpoint = region })
         {
         }
 
@@ -104,6 +134,17 @@ namespace Amazon.ElasticMapReduce
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonElasticMapReduceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonElasticMapReduceConfig() { RegionEndpoint = region })
         {
         }
 

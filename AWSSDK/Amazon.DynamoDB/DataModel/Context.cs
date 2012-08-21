@@ -64,7 +64,6 @@ namespace Amazon.DynamoDB.DataModel
         /// </summary>
         public bool? SkipVersionCheck { get; set; }
 
-
         /// <summary>
         /// Property that directs DynamoDBContext to prefix all table names
         /// with a specific string.
@@ -72,6 +71,14 @@ namespace Amazon.DynamoDB.DataModel
         /// table names are used.
         /// </summary>
         public string TableNamePrefix { get; set; }
+
+        /// <summary>
+        /// Property that directs DynamoDBContext to ignore null values
+        /// on attributes during a Save operation.
+        /// If the property is false (or not set), null values will be
+        /// interpreted as directives to delete the specific attribute.
+        /// </summary>
+        public bool? IgnoreNullValues { get; set; }
     }
 
     /// <summary>
@@ -111,7 +118,15 @@ namespace Amazon.DynamoDB.DataModel
         /// client and a default DynamoDBContextConfig object for configuration.
         /// </summary>
         public DynamoDBContext()
-            : this(new AmazonDynamoDBClient(), true, new DynamoDBContextConfig()) { }
+            : this(RegionEndpoint.USEast1) { }
+
+        /// <summary>
+        /// Constructs a DynamoDBContext object with a default AmazonDynamoDBClient
+        /// client and a default DynamoDBContextConfig object for configuration.
+        /// </summary>
+        /// <param name="region">The region to configure the AmazonDynamoDBClient to use.</param>
+        public DynamoDBContext(RegionEndpoint region)
+            : this(new AmazonDynamoDBClient(region), true, new DynamoDBContextConfig()) { }
 
         /// <summary>
         /// Constructs a DynamoDBContext object with the specified configuration.
@@ -119,7 +134,16 @@ namespace Amazon.DynamoDB.DataModel
         /// </summary>
         /// <param name="config"></param>
         public DynamoDBContext(DynamoDBContextConfig config)
-            : this(new AmazonDynamoDBClient(), true, config) { }
+            : this(RegionEndpoint.USEast1, config) { }
+
+        /// <summary>
+        /// Constructs a DynamoDBContext object with the specified configuration.
+        /// Uses a default AmazonDynamoDBClient as the client.
+        /// </summary>
+        /// <param name="region">The region to configure the AmazonDynamoDBClient to use.</param>
+        /// <param name="config"></param>
+        public DynamoDBContext(RegionEndpoint region, DynamoDBContextConfig config)
+            : this(new AmazonDynamoDBClient(region), true, config) { }
 
         /// <summary>
         /// Constructs a DynamoDBContext object with the specified DynamoDB client.
@@ -187,10 +211,10 @@ namespace Amazon.DynamoDB.DataModel
         {
             if (value == null) return;
 
-            ItemStorage storage = ObjectToItemStorage<T>(value);
+            DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
+            ItemStorage storage = ObjectToItemStorage<T>(value, false, currentConfig.IgnoreNullValues.Value);
             if (storage == null) return;
 
-            DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
             Table table = GetTargetTable(storage.Config, currentConfig);
             if (
                 (currentConfig.SkipVersionCheck.HasValue && currentConfig.SkipVersionCheck.Value)
@@ -221,7 +245,7 @@ namespace Amazon.DynamoDB.DataModel
         {
             if (value == null) return null;
 
-            ItemStorage storage = ObjectToItemStorage<T>(value);
+            ItemStorage storage = ObjectToItemStorage<T>(value, false, false);
             if (storage == null) return null;
 
             return storage.Document;
@@ -510,7 +534,7 @@ namespace Amazon.DynamoDB.DataModel
         {
             if (value == null) throw new ArgumentNullException("value");
 
-            ItemStorage storage = ObjectToItemStorage<T>(value, true);
+            ItemStorage storage = ObjectToItemStorage<T>(value, true, true);
             if (storage == null) return;
 
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.config);

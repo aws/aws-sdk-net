@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,12 +10,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AWSSDK</RootNamespace>
     <AssemblyName>AWSSDK</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>
     </StartupObject>
-    <TargetFrameworkSubset>
-    </TargetFrameworkSubset>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -42,6 +40,11 @@
     </SccProvider>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>awssdk.dll.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,6 +58,7 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <NoWarn>419,1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -70,10 +74,14 @@
     <DebugSymbols>false</DebugSymbols>
     <NoWarn>419,1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -4163,6 +4171,143 @@
     <Compile Include="Amazon.ElasticMapReduce\Model\StreamingStep.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\TerminateJobFlowsRequest.cs" />
     <Compile Include="Amazon.ElasticMapReduce\Model\TerminateJobFlowsResponse.cs" />
+    <Compile Include="Amazon.Glacier\AmazonGlacier.cs" />
+    <Compile Include="Amazon.Glacier\AmazonGlacierClient.cs" />
+    <Compile Include="Amazon.Glacier\AmazonGlacierConfig.cs" />
+    <Compile Include="Amazon.Glacier\AmazonGlacierException.cs" />
+    <Compile Include="Amazon.Glacier\AmazonGlacierExtensions.cs" />
+    <Compile Include="Amazon.Glacier\GlacierUtils.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\ArchiveTransferManager.cs" />
+    <Compile Include="Amazon.Glacier\Model\AbortMultipartUploadRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\AbortMultipartUploadResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\CompleteMultipartUploadRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\CompleteMultipartUploadResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\CompleteMultipartUploadResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\CreateVaultRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\CreateVaultResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\CreateVaultResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\DeleteArchiveRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\DeleteArchiveResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\DeleteVaultNotificationsRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\DeleteVaultNotificationsResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\DeleteVaultRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\DeleteVaultResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\DescribeJobRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\DescribeJobResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\DescribeJobResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\DescribeVaultOutput.cs" />
+    <Compile Include="Amazon.Glacier\Model\DescribeVaultRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\DescribeVaultResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\DescribeVaultResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\GetJobOutputRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\GetJobOutputResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\GetJobOutputResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\GetVaultNotificationsRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\GetVaultNotificationsResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\GetVaultNotificationsResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\GlacierJobDescription.cs" />
+    <Compile Include="Amazon.Glacier\Model\InitiateJobRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\InitiateJobResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\InitiateJobResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\InitiateMultipartUploadRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\InitiateMultipartUploadResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\InitiateMultipartUploadResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\AbortMultipartUploadRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\AbortMultipartUploadResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\CompleteMultipartUploadRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\CompleteMultipartUploadResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\CompleteMultipartUploadResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\CreateVaultRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\CreateVaultResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\CreateVaultResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DeleteArchiveRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DeleteArchiveResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DeleteVaultNotificationsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DeleteVaultNotificationsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DeleteVaultRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DeleteVaultResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DescribeJobRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DescribeJobResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DescribeJobResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DescribeVaultOutputUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DescribeVaultRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DescribeVaultResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\DescribeVaultResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\GetJobOutputRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\GetJobOutputResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\GetJobOutputResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\GetVaultNotificationsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\GetVaultNotificationsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\GetVaultNotificationsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\GlacierJobDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\InitiateJobRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\InitiateJobResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\InitiateJobResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\InitiateMultipartUploadRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\InitiateMultipartUploadResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\InitiateMultipartUploadResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListJobsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListJobsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListJobsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListMultipartUploadsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListMultipartUploadsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListMultipartUploadsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListPartsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListPartsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListPartsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListVaultsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListVaultsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\ListVaultsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\PartListElementUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\SetVaultNotificationsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\SetVaultNotificationsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\UploadArchiveRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\UploadArchiveResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\UploadArchiveResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\UploadListElementUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\UploadMultipartPartRequestMarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\UploadMultipartPartResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\UploadMultipartPartResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\Internal\MarshallTransformations\VaultNotificationConfigUnmarshaller.cs" />
+    <Compile Include="Amazon.Glacier\Model\InvalidParameterValueException.cs" />
+    <Compile Include="Amazon.Glacier\Model\JobParameters.cs" />
+    <Compile Include="Amazon.Glacier\Model\LimitExceededException.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListJobsRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListJobsResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListJobsResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListMultipartUploadsRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListMultipartUploadsResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListMultipartUploadsResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListPartsRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListPartsResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListPartsResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListVaultsRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListVaultsResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\ListVaultsResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\MissingParameterValueException.cs" />
+    <Compile Include="Amazon.Glacier\Model\PartListElement.cs" />
+    <Compile Include="Amazon.Glacier\Model\RequestTimeoutException.cs" />
+    <Compile Include="Amazon.Glacier\Model\ResourceNotFoundException.cs" />
+    <Compile Include="Amazon.Glacier\Model\ServiceUnavailableException.cs" />
+    <Compile Include="Amazon.Glacier\Model\SetVaultNotificationsRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\SetVaultNotificationsResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\UploadArchiveRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\UploadArchiveResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\UploadArchiveResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\UploadListElement.cs" />
+    <Compile Include="Amazon.Glacier\Model\UploadMultipartPartRequest.cs" />
+    <Compile Include="Amazon.Glacier\Model\UploadMultipartPartResponse.cs" />
+    <Compile Include="Amazon.Glacier\Model\UploadMultipartPartResult.cs" />
+    <Compile Include="Amazon.Glacier\Model\VaultNotificationConfig.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\CommonOptions.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\DownloadOptions.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\Internal\BaseUploadCommand.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\Internal\DownloadFileCommand.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\Internal\MultipartUploadCommand.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\Internal\SinglepartUploadCommand.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\UploadOptions.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\UploadResult.cs" />
+    <Compile Include="Amazon.Glacier\TreeHashGenerator.cs" />
     <Compile Include="Amazon.IdentityManagement\AmazonIdentityManagementService.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6291,6 +6436,8 @@
     <Compile Include="Amazon.Route53\Model\ListResourceRecordSetsRequest.cs" />
     <Compile Include="Amazon.Route53\Model\ListResourceRecordSetsResponse.cs" />
     <Compile Include="Amazon.Route53\Model\ListResourceRecordSetsResult.cs" />
+    <Compile Include="Amazon.Route53\Model\NoSuchChangeException.cs" />
+    <Compile Include="Amazon.Route53\Model\NoSuchHostedZoneException.cs" />
     <Compile Include="Amazon.Route53\Model\ResourceRecord.cs" />
     <Compile Include="Amazon.Route53\Model\ResourceRecordSet.cs" />
     <Compile Include="Amazon.Route53\Model\TooManyHostedZonesException.cs" />
@@ -6302,6 +6449,8 @@
     <Compile Include="Amazon.Runtime\AWSCredentials.cs" />
     <Compile Include="Amazon.Runtime\ClientConfig.cs" />
     <Compile Include="Amazon.Runtime\Enumerations.cs" />
+    <Compile Include="Amazon.Runtime\ExceptionHandler.cs" />
+    <Compile Include="Amazon.Runtime\Internal\AsyncResult.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\AbstractAWSSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\AWS3Signer.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\AWS4Signer.cs" />
@@ -6326,14 +6475,21 @@
     <Compile Include="Amazon.Runtime\Internal\Util\Logger.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\StringUtils.cs" />
     <Compile Include="Amazon.Runtime\RequestHandler.cs" />
+    <Compile Include="Amazon.Runtime\ResponseHandler.cs" />
     <Compile Include="Amazon.Runtime\ResponseMetadata.cs" />
     <Compile Include="Amazon.Runtime\SignatureException.cs" />
+    <Compile Include="Amazon.Runtime\StreamUploadProgressArgs.cs" />
     <Compile Include="Amazon.S3\AmazonS3.cs" />
     <Compile Include="Amazon.S3\AmazonS3Client.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.S3\AmazonS3Config.cs" />
     <Compile Include="Amazon.S3\AmazonS3Exception.cs" />
+    <Compile Include="Amazon.S3\IO\S3DirectoryInfo.cs" />
+    <Compile Include="Amazon.S3\IO\S3FileInfo.cs" />
+    <Compile Include="Amazon.S3\IO\S3FileStream.cs" />
+    <Compile Include="Amazon.S3\IO\S3FileSystemInfo.cs" />
+    <Compile Include="Amazon.S3\IO\S3Helper.cs" />
     <Compile Include="Amazon.S3\Model\AbortMultipartUploadRequest.cs" />
     <Compile Include="Amazon.S3\Model\AbortMultipartUploadResponse.cs" />
     <Compile Include="Amazon.S3\Model\CompleteMultipartUploadRequest.cs" />
@@ -6389,7 +6545,7 @@
     <Compile Include="Amazon.S3\Model\NotificationConfigurationList.cs" />
     <Compile Include="Amazon.S3\Model\PartDetail.cs" />
     <Compile Include="Amazon.S3\Model\PartEtag.cs" />
-    <Compile Include="Amazon.S3\Model\PartStreamWrapper.cs" />
+    <Compile Include="Amazon.Util\PartStreamWrapper.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketWebsiteRequest.cs" />
@@ -7501,9 +7657,12 @@
     <Compile Include="Amazon.StorageGateway\Model\VolumeInfo.cs" />
     <Compile Include="Amazon.StorageGateway\Model\VolumeiSCSIAttributes.cs" />
     <Compile Include="Amazon.StorageGateway\Util\AmazonStorageGatewayUtil.cs" />
+    <Compile Include="Amazon.Util\PaginatedResource.cs" />
+    <Compile Include="Amazon.Util\PaginatedResourceFactory.cs" />
     <Compile Include="AWSClientFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.cs" />
+    <Compile Include="RegionEndpoint.cs" />
     <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1Encodable.cs" />
     <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1EncodableVector.cs" />
     <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1InputStream.cs" />
@@ -7759,6 +7918,9 @@
     <EmbeddedResource Include="Amazon.CloudFront_2012_03_15\Model\SetDistributionConfigResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront_2012_03_15\Model\SetOriginAccessIdentityConfigResponse.xslt" />
     <EmbeddedResource Include="Amazon.CloudFront_2012_03_15\Model\SetStreamingDistributionConfigResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="endpoints.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.EC2\Model\CancelExportTaskResponse.xslt" />

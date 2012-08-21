@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Amazon.Runtime.Internal
@@ -35,6 +36,15 @@ namespace Amazon.Runtime.Internal
         IDictionary<string, string> Headers
         {
             get;
+        }
+
+        /// <summary>
+        /// Gets and sets a flag that indicates whether the request is sent as a query string instead of the request body.
+        /// </summary>
+        bool UseQueryString
+        {
+            get;
+            set;
         }
 
         /// <summary>
@@ -79,6 +89,23 @@ namespace Amazon.Runtime.Internal
         {
             get;
             set;
+        }
+
+        /// <summary>
+        /// Gets and sets the content stream.
+        /// </summary>
+        Stream ContentStream
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets the SHA 256 hash of the content stream.
+        /// </summary>
+        string ContentStreamHash
+        {
+            get;
         }
 
         /// <summary>

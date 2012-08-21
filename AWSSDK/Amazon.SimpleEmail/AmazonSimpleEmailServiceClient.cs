@@ -73,7 +73,26 @@ namespace Amazon.SimpleEmail
         /// </code>
         ///
         /// </summary>
-        /// <param name="config">The AmazonSimpleEmailService Configuration Object</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSimpleEmailServiceClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonSimpleEmailServiceClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonSimpleEmailService Configuration Object</param>        
         public AmazonSimpleEmailServiceClient(AmazonSimpleEmailServiceConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
 
@@ -83,6 +102,16 @@ namespace Amazon.SimpleEmail
         /// <param name="credentials">AWS Credentials</param>
         public AmazonSimpleEmailServiceClient(AWSCredentials credentials)
             : this(credentials, new AmazonSimpleEmailServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSimpleEmailServiceClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSimpleEmailServiceClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonSimpleEmailServiceConfig(){RegionEndpoint=region})
         {
         }
 
@@ -104,6 +133,17 @@ namespace Amazon.SimpleEmail
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonSimpleEmailServiceClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonSimpleEmailServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSimpleEmailServiceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSimpleEmailServiceClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonSimpleEmailServiceConfig() {RegionEndpoint=region})
         {
         }
 

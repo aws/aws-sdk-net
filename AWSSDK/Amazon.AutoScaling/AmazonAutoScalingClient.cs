@@ -76,6 +76,25 @@ namespace Amazon.AutoScaling
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonAutoScalingClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonAutoScaling Configuration Object</param>
         public AmazonAutoScalingClient(AmazonAutoScalingConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
@@ -86,6 +105,16 @@ namespace Amazon.AutoScaling
         /// <param name="credentials">AWS Credentials</param>
         public AmazonAutoScalingClient(AWSCredentials credentials)
             : this(credentials, new AmazonAutoScalingConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonAutoScalingClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonAutoScalingConfig(){RegionEndpoint=region})
         {
         }
 
@@ -107,6 +136,17 @@ namespace Amazon.AutoScaling
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonAutoScalingConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonAutoScalingConfig() {RegionEndpoint=region})
         {
         }
 

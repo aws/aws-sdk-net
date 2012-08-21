@@ -34,6 +34,17 @@ namespace Amazon.RDS
         }
 
         /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "rds";
+            }
+        }
+
+        /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
         public override string ServiceVersion

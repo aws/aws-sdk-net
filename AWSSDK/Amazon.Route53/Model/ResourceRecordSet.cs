@@ -30,6 +30,7 @@ namespace Amazon.Route53.Model
         private string type;
         private string setIdentifier;
         private long? weight;
+        private string region;
         private long? tTL;
         private List<ResourceRecord> resourceRecords = new List<ResourceRecord>();
         private AliasTarget aliasTarget;
@@ -109,8 +110,8 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// <i>Weighted resource record sets only:</i> An identifier that differentiates among multiple resource record sets that have the same
-        /// combination of DNS name and type.
+        /// <i>Weighted resource record sets or Regional resource record sets only:</i> An identifier that differentiates among multiple resource record
+        /// sets that have the same combination of DNS name and type.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -182,6 +183,48 @@ namespace Amazon.Route53.Model
         internal bool IsSetWeight()
         {
             return this.weight.HasValue;       
+        }
+
+        /// <summary>
+        /// <i>Regional resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that
+        /// specifies the AWS region for the current resource record set.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 64</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this.region; }
+            set { this.region = value; }
+        }
+
+        /// <summary>
+        /// Sets the Region property
+        /// </summary>
+        /// <param name="region">The value to set for the Region property </param>
+        /// <returns>this instance</returns>
+        public ResourceRecordSet WithRegion(string region)
+        {
+            this.region = region;
+            return this;
+        }
+            
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this.region != null;       
         }
 
         /// <summary>

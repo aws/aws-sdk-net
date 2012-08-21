@@ -44,7 +44,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.4.15.1";
+        internal const string SDKVersionNumber = "1.5.0.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -227,8 +227,12 @@ namespace Amazon.Util
          */
         internal static string GetParametersAsString(IDictionary<string, string> parameters)
         {
+            string[] keys = new string[parameters.Keys.Count];
+            parameters.Keys.CopyTo(keys, 0);
+            Array.Sort<string>(keys);
+
             StringBuilder data = new StringBuilder(512);
-            foreach (string key in (IEnumerable<string>)parameters.Keys)
+            foreach (string key in keys)
             {
                 string value = parameters[key];
                 if (value != null)
@@ -420,6 +424,25 @@ namespace Amazon.Util
             // The system default has been explicitly changed so we will honor that value.
             return ServicePointManager.DefaultConnectionLimit;
         }
+
+        /// <summary>
+        /// Helper function to format a byte array into string
+        /// </summary>
+        /// <param name="data">The data blob to process</param>
+        /// <param name="lowercase">If true, returns hex digits in lower case form</param>
+        /// <returns>String version of the data</returns>
+        internal static string ToHex(byte[] data, bool lowercase)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                sb.Append(data[i].ToString(lowercase ? "x2" : "X2"));
+            }
+
+            return sb.ToString();
+        }
+
 
         #endregion
 

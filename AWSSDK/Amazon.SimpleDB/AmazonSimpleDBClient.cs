@@ -128,6 +128,25 @@ namespace Amazon.SimpleDB
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSimpleDBClient(RegionEndpoint region)
+            : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleDBConfig() { RegionEndpoint = region }, true) { }
+
+        /// <summary>
+        /// Constructs AmazonSimpleDBClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonSimpleDB Configuration Object</param>
         public AmazonSimpleDBClient(AmazonSimpleDBConfig config)
             : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
@@ -139,6 +158,15 @@ namespace Amazon.SimpleDB
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonSimpleDBClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonSimpleDBConfig(), true) { }
+
+        /// <summary>
+        /// Constructs AmazonSimpleDBClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSimpleDBClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonSimpleDBConfig() { RegionEndpoint = region }, true) { }
 
         /// <summary>
         /// Constructs AmazonSimpleDBClient with AWS Access Key ID, AWS Secret Key and an
@@ -169,6 +197,14 @@ namespace Amazon.SimpleDB
         /// <param name="credentials"></param>
         public AmazonSimpleDBClient(AWSCredentials credentials)
             : this(credentials, new AmazonSimpleDBConfig()) { }
+
+        /// <summary>
+        /// Constructs an AmazonSimpleDBClient with AWSCredentials
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSimpleDBClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonSimpleDBConfig(){ RegionEndpoint = region }) { }
 
         /// <summary>
         /// Constructs an AmazonSimpleDBClient with AWSCredentials and an
@@ -1364,7 +1400,13 @@ namespace Amazon.SimpleDB
           */
         private static HttpWebRequest configureWebRequest(int contentLength, AmazonSimpleDBConfig config, bool completedSynchronously)
         {
-            HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
+            string url;
+            if (config.RegionEndpoint != null)
+                url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+            else
+                url = config.ServiceURL;
+
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             if (request != null)
             {
                 request.ServicePoint.ConnectionLimit = config.ConnectionLimit;
@@ -1504,7 +1546,13 @@ namespace Amazon.SimpleDB
                 {
                     throw new AmazonSimpleDBException("Invalid Signature Version specified");
                 }
-                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
+
+                string url;
+                if (config.RegionEndpoint != null)
+                    url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+                else
+                    url = config.ServiceURL;
+                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, url);
 
                 KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
                 string auth;

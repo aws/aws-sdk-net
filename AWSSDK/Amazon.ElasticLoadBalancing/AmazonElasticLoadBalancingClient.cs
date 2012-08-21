@@ -80,6 +80,25 @@ namespace Amazon.ElasticLoadBalancing
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElasticLoadBalancingClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonElasticLoadBalancingClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonElasticLoadBalancing Configuration Object</param>
         public AmazonElasticLoadBalancingClient(AmazonElasticLoadBalancingConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
@@ -90,6 +109,16 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="credentials">AWS Credentials</param>
         public AmazonElasticLoadBalancingClient(AWSCredentials credentials)
             : this(credentials, new AmazonElasticLoadBalancingConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElasticLoadBalancingClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElasticLoadBalancingClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonElasticLoadBalancingConfig(){RegionEndpoint=region})
         {
         }
 
@@ -111,6 +140,17 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonElasticLoadBalancingClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonElasticLoadBalancingConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElasticLoadBalancingClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElasticLoadBalancingClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonElasticLoadBalancingConfig() {RegionEndpoint=region})
         {
         }
 

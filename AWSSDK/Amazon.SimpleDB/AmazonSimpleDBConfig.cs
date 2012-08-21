@@ -29,6 +29,7 @@ namespace Amazon.SimpleDB
     public class AmazonSimpleDBConfig
     {
         private string serviceVersion = "2009-04-15";
+        private RegionEndpoint regionEndpoint;
         private string serviceURL = "https://sdb.amazonaws.com";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
         private string signatureVersion = "2";
@@ -132,6 +133,31 @@ namespace Amazon.SimpleDB
         public bool IsSetUserAgent()
         {
             return this.userAgent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the RegionEndpoint property.  The region constant to use that 
+        /// determines the endpoint to use.  If this is not set
+        /// then the client will fallback to the value of ServiceURL.
+        /// </summary>
+        public RegionEndpoint RegionEndpoint
+        {
+            get
+            {
+                return regionEndpoint;
+            }
+            set
+            {
+                this.regionEndpoint = value;
+            }
+        }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal string RegionEndpointServiceName
+        {
+            get { return "sdb"; }
         }
 
         /// <summary>

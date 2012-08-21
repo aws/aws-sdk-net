@@ -48,7 +48,8 @@ namespace Amazon.DynamoDB.DataModel
                 type.IsAssignableFrom(typeof(String)) ||
                 type.IsAssignableFrom(typeof(uint)) ||
                 type.IsAssignableFrom(typeof(ulong)) ||
-                type.IsAssignableFrom(typeof(ushort)));
+                type.IsAssignableFrom(typeof(ushort)) ||
+                type.IsAssignableFrom(typeof(Guid)));
         }
 
         public static void ValidateVersionType(Type memberType)

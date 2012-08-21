@@ -24,6 +24,7 @@ namespace Amazon.Runtime
     public abstract class AmazonWebServiceRequest
     {
         internal event RequestEventHandler BeforeRequestEvent;
+        internal EventHandler<StreamTransferProgressArgs> StreamUploadProgressCallback;
 
         internal AmazonWebServiceRequest WithBeforeRequestHandler(RequestEventHandler handler)
         {

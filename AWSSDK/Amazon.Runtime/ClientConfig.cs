@@ -27,6 +27,9 @@ namespace Amazon.Runtime
     /// </summary>
     public abstract class ClientConfig
     {
+
+        private RegionEndpoint regionEndpoint;
+
         private string serviceURL = "https://elasticloadbalancing.amazonaws.com/";
         private string authRegion = null;
         private string authServiceName = null;
@@ -35,14 +38,15 @@ namespace Amazon.Runtime
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private string proxyHost;
         private int proxyPort = -1;
-        private int maxErrorRetry = 3;
+        private int maxErrorRetry = 4;
         private bool fUseSecureString = true;
         private string proxyUsername;
         private string proxyPassword;
+        private bool readEntireResponse = false;
         private bool logResponse = false;
         private int? connectionLimit;
         private bool useNagleAlgorithm = false;
-
+        private int bufferSize = Amazon.S3.Util.S3Constants.DefaultBufferSize;
 
         /// <summary>
         /// Gets Service Version
@@ -80,6 +84,31 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Gets and sets the RegionEndpoint property.  The region constant to use that 
+        /// determines the endpoint to use.  If this is not set
+        /// then the client will fallback to the value of ServiceURL.
+        /// </summary>
+        public RegionEndpoint RegionEndpoint
+        {
+            get
+            {
+                return regionEndpoint;
+            }
+            set
+            {
+                this.regionEndpoint = value;
+            }
+        }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal abstract string RegionEndpointServiceName
+        {
+            get;
+        }
+
+        /// <summary>
         /// Gets and sets of the ServiceURL property.
         /// This is an optional property; change it
         /// only if you want to try a different service
@@ -89,6 +118,23 @@ namespace Amazon.Runtime
         {
             get { return this.serviceURL; }
             set { this.serviceURL = value; }
+        }
+
+        internal string DetermineServiceURL()
+        {
+            string url;
+            if (this.RegionEndpoint == null)
+            {
+                url = this.ServiceURL;
+            }
+            else
+            {
+                var endpoint = this.RegionEndpoint.GetEndpointForService(this.RegionEndpointServiceName);
+                string protocol = endpoint.HTTPS ? "https://" : "http://";
+                url = new Uri(string.Format("{0}{1}", protocol, endpoint.Hostname)).AbsoluteUri;
+            }
+
+            return url;
         }
 
         /// <summary>
@@ -225,6 +271,28 @@ namespace Amazon.Runtime
         {
             get { return this.useNagleAlgorithm; }
             set { this.useNagleAlgorithm = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the ReadEntireResponse.
+        /// If this property is set to true, the service response
+        /// is read in its entirety before being processed.
+        /// </summary>
+        public bool ReadEntireResponse
+        {
+            get { return this.readEntireResponse; }
+            set { this.readEntireResponse = value; }
+        }
+
+        /// <summary>
+        /// Gets and Sets the BufferSize property.
+        /// The BufferSize controls the buffer used to read in from input streams and write 
+        /// out to the request.
+        /// </summary>
+        public int BufferSize
+        {
+            get { return this.bufferSize; }
+            set { this.bufferSize = value; }
         }
     }
 }

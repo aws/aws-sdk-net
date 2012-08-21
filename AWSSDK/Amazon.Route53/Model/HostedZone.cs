@@ -30,6 +30,7 @@ namespace Amazon.Route53.Model
         private string name;
         private string callerReference;
         private HostedZoneConfig config;
+        private long? resourceRecordSetCount;
 
         /// <summary>
         /// The ID of the specified hosted zone.
@@ -171,6 +172,34 @@ namespace Amazon.Route53.Model
         internal bool IsSetConfig()
         {
             return this.config != null;       
+        }
+
+        /// <summary>
+        /// Total number of resource record sets in the hosted zone.
+        ///  
+        /// </summary>
+        public long ResourceRecordSetCount
+        {
+            get { return this.resourceRecordSetCount ?? default(long); }
+            set { this.resourceRecordSetCount = value; }
+        }
+
+        /// <summary>
+        /// Sets the ResourceRecordSetCount property
+        /// </summary>
+        /// <param name="resourceRecordSetCount">The value to set for the ResourceRecordSetCount property </param>
+        /// <returns>this instance</returns>
+        public HostedZone WithResourceRecordSetCount(long resourceRecordSetCount)
+        {
+            this.resourceRecordSetCount = resourceRecordSetCount;
+            return this;
+        }
+            
+
+        // Check to see if ResourceRecordSetCount property is set
+        internal bool IsSetResourceRecordSetCount()
+        {
+            return this.resourceRecordSetCount.HasValue;       
         }
     }
 }

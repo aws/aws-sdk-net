@@ -214,7 +214,19 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <returns>A JSON string representation of this AWS access control policy.</returns>
         public string ToJson()
         {
-            return new JsonPolicyWriter().WritePolicyToString(this);
+            return ToJson(true);
+        }
+
+        /// <summary>
+        /// Returns a JSON string representation of this AWS access control policy,
+        /// suitable to be sent to an AWS service as part of a request to set an
+        /// access control policy.
+        /// </summary>
+        /// <param name="prettyPrint">Toggle pretty print for the generated JSON document</param>
+        /// <returns>A JSON string representation of this AWS access control policy.</returns>
+        public string ToJson(bool prettyPrint)
+        {
+            return new JsonPolicyWriter().WritePolicyToString(prettyPrint, this);
         }
 
         /// <summary>

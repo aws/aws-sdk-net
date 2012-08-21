@@ -135,8 +135,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// The DNS type at which to begin the listing of resource record sets. Valid values: <c>A</c> | <c>AAAA</c> | <c>CNAME</c> | <c>MX</c> |
         /// <c>NS</c> | <c>PTR</c> | <c>SOA</c> | <c>SPF</c> | <c>SRV</c> | <c>TXT</c> Values for Weighted Resource Record Sets: <c>A</c> | <c>AAAA</c>
-        /// | <c>CNAME</c> | <c>TXT</c> Values for Alias Resource Record Sets: <c>A</c> | <c>AAAA</c> Constraint: Specifying <c>type</c> without
-        /// specifying <c>name</c> returns an <a>InvalidInput</a> error.
+        /// | <c>CNAME</c> | <c>TXT</c> Values for Regional Resource Record Sets: <c>A</c> | <c>AAAA</c> | <c>CNAME</c> | <c>TXT</c> Values for Alias
+        /// Resource Record Sets: <c>A</c> | <c>AAAA</c> Constraint: Specifying <c>type</c> without specifying <c>name</c> returns an
+        /// <a>InvalidInput</a> error.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -43,6 +43,17 @@ namespace Amazon.StorageGateway
                 return "2012-03-12";
             }
         }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "storagegateway";
+            }
+        }
     }
 }
 

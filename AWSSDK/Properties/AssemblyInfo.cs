@@ -22,6 +22,7 @@
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -53,8 +54,9 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.4.15.1")]
-[assembly: AssemblyFileVersion("1.4.15.1")]
+[assembly: AssemblyVersion("1.5.0.0")]
+[assembly: AssemblyFileVersion("1.5.0.0")]
 
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Security.AllowPartiallyTrustedCallers]
+[assembly: InternalsVisibleTo("AWS.Extensions,PublicKey=002400000480000094000000060200000024000052534131000400000100010069c143eef38779e24f2b18afb585e7da335fd856d4fd33c0d51d89e67efe47f8d7978e72c436de2a646c10505c5b737e2eb36fce354ed74b8afec3a50e143cc9f4ccc25b1feba068224c116cc6c203c1dd6988d4d1ce96ab62c3d3ed037b9e5e845a1540a9b4dd11f8f6c125eb99bf8beb0e3155ed6a0d56184236a55521d6db")]

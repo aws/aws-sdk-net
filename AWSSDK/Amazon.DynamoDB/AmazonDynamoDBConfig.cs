@@ -31,7 +31,18 @@ namespace Amazon.DynamoDB
         {
             this.ServiceURL = "https://dynamodb.us-east-1.amazonaws.com/";
             this.AuthenticationServiceName = "dynamodb";
-            this.MaxErrorRetry = 7;
+            this.MaxErrorRetry = 8;
+        }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "dynamodb";
+            }
         }
 
         /// <summary>

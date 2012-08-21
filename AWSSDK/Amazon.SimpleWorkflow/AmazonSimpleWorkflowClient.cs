@@ -174,6 +174,25 @@ namespace Amazon.SimpleWorkflow
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSimpleWorkflowClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleWorkflowConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonSimpleWorkflowClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonSimpleWorkflow Configuration Object</param>
         public AmazonSimpleWorkflowClient(AmazonSimpleWorkflowConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
@@ -184,6 +203,16 @@ namespace Amazon.SimpleWorkflow
         /// <param name="credentials">AWS Credentials</param>
         public AmazonSimpleWorkflowClient(AWSCredentials credentials)
             : this(credentials, new AmazonSimpleWorkflowConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSimpleWorkflowClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSimpleWorkflowClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonSimpleWorkflowConfig() { RegionEndpoint = region })
         {
         }
 
@@ -205,6 +234,17 @@ namespace Amazon.SimpleWorkflow
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonSimpleWorkflowClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonSimpleWorkflowConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSimpleWorkflowClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSimpleWorkflowClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonSimpleWorkflowConfig() { RegionEndpoint = region })
         {
         }
 

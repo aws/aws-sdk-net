@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(getChangeRequest, "AmazonRoute53");
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "/2011-05-05/change/{Id}"; 
+            string uriResourcePath = "/2012-02-29/change/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", getChangeRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 

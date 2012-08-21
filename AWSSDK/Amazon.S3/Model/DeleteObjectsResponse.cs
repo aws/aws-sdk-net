@@ -49,7 +49,7 @@ namespace Amazon.S3.Model
     }
 
     /// <summary>
-    /// The DeleteObjectsResponse contains a list of successfu
+    /// The DeleteObjectsResponse contains a list of successful
     /// and failed deletes, as well as any headers returned by S3.
     /// </summary>
     [XmlTypeAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/")]

@@ -41,7 +41,7 @@ namespace Amazon.RDS
     /// </summary>
     public class AmazonRDSClient : AmazonWebServiceClient, AmazonRDS
     {
-    
+
         AbstractAWSSigner signer = new QueryStringSigner();
 
         #region Constructors
@@ -79,6 +79,25 @@ namespace Amazon.RDS
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonRDSClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonRDSClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonRDS Configuration Object</param>
         public AmazonRDSClient(AmazonRDSConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
@@ -89,6 +108,16 @@ namespace Amazon.RDS
         /// <param name="credentials">AWS Credentials</param>
         public AmazonRDSClient(AWSCredentials credentials)
             : this(credentials, new AmazonRDSConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonRDSClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonRDSClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonRDSConfig() { RegionEndpoint = region })
         {
         }
 
@@ -114,6 +143,17 @@ namespace Amazon.RDS
         }
 
         /// <summary>
+        /// Constructs AmazonRDSClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonRDSClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonRDSConfig() { RegionEndpoint = region })
+        {
+        }
+
+        /// <summary>
         /// Constructs AmazonRDSClient with AWS Access Key ID, AWS Secret Key and an
         /// AmazonRDSClient Configuration object. If the config object's
         /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
@@ -127,10 +167,11 @@ namespace Amazon.RDS
             : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User)
         {
         }
-        
+
 
         #endregion
-   
+
+
         #region CreateDBInstance
 
         /// <summary>
@@ -156,7 +197,7 @@ namespace Amazon.RDS
             return EndCreateDBInstance(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBInstance operation.
@@ -175,7 +216,7 @@ namespace Amazon.RDS
             return invokeCreateDBInstance(createDBInstanceRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the CreateDBInstance operation.
@@ -189,7 +230,7 @@ namespace Amazon.RDS
         {
             return endOperation<CreateDBInstanceResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeCreateDBInstance(CreateDBInstanceRequest createDBInstanceRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new CreateDBInstanceRequestMarshaller().Marshall(createDBInstanceRequest);
@@ -198,11 +239,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DescribeEvents
 
         /// <summary>
@@ -222,7 +263,7 @@ namespace Amazon.RDS
             return EndDescribeEvents(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
@@ -241,7 +282,7 @@ namespace Amazon.RDS
             return invokeDescribeEvents(describeEventsRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeEvents operation.
@@ -255,7 +296,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeEventsResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeEvents(DescribeEventsRequest describeEventsRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeEventsRequestMarshaller().Marshall(describeEventsRequest);
@@ -264,8 +305,8 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         /// <summary>
         /// <para> Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events
@@ -279,10 +320,10 @@ namespace Amazon.RDS
         {
             return DescribeEvents(new DescribeEventsRequest());
         }
-        
+
 
         #endregion
-    
+
         #region RestoreDBInstanceToPointInTime
 
         /// <summary>
@@ -312,7 +353,7 @@ namespace Amazon.RDS
             return EndRestoreDBInstanceToPointInTime(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreDBInstanceToPointInTime operation.
@@ -332,7 +373,7 @@ namespace Amazon.RDS
             return invokeRestoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the RestoreDBInstanceToPointInTime operation.
@@ -346,7 +387,7 @@ namespace Amazon.RDS
         {
             return endOperation<RestoreDBInstanceToPointInTimeResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeRestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new RestoreDBInstanceToPointInTimeRequestMarshaller().Marshall(restoreDBInstanceToPointInTimeRequest);
@@ -355,11 +396,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DeleteDBSubnetGroup
 
         /// <summary>
@@ -379,7 +420,7 @@ namespace Amazon.RDS
             return EndDeleteDBSubnetGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSubnetGroup operation.
@@ -396,7 +437,7 @@ namespace Amazon.RDS
             return invokeDeleteDBSubnetGroup(deleteDBSubnetGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteDBSubnetGroup operation.
@@ -408,7 +449,7 @@ namespace Amazon.RDS
         {
             return endOperation<DeleteDBSubnetGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDeleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DeleteDBSubnetGroupRequestMarshaller().Marshall(deleteDBSubnetGroupRequest);
@@ -417,11 +458,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region CreateDBSecurityGroup
 
         /// <summary>
@@ -441,7 +482,7 @@ namespace Amazon.RDS
             return EndCreateDBSecurityGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSecurityGroup operation.
@@ -461,7 +502,7 @@ namespace Amazon.RDS
             return invokeCreateDBSecurityGroup(createDBSecurityGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the CreateDBSecurityGroup operation.
@@ -475,7 +516,7 @@ namespace Amazon.RDS
         {
             return endOperation<CreateDBSecurityGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeCreateDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new CreateDBSecurityGroupRequestMarshaller().Marshall(createDBSecurityGroupRequest);
@@ -484,11 +525,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DescribeDBSubnetGroups
 
         /// <summary>
@@ -508,7 +549,7 @@ namespace Amazon.RDS
             return EndDescribeDBSubnetGroups(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSubnetGroups operation.
@@ -528,7 +569,7 @@ namespace Amazon.RDS
             return invokeDescribeDBSubnetGroups(describeDBSubnetGroupsRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeDBSubnetGroups operation.
@@ -542,7 +583,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeDBSubnetGroupsResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeDBSubnetGroupsRequestMarshaller().Marshall(describeDBSubnetGroupsRequest);
@@ -551,8 +592,8 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         /// <summary>
         /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
@@ -566,10 +607,10 @@ namespace Amazon.RDS
         {
             return DescribeDBSubnetGroups(new DescribeDBSubnetGroupsRequest());
         }
-        
+
 
         #endregion
-    
+
         #region CreateDBParameterGroup
 
         /// <summary>
@@ -593,7 +634,7 @@ namespace Amazon.RDS
             return EndCreateDBParameterGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBParameterGroup operation.
@@ -613,7 +654,7 @@ namespace Amazon.RDS
             return invokeCreateDBParameterGroup(createDBParameterGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the CreateDBParameterGroup operation.
@@ -627,7 +668,7 @@ namespace Amazon.RDS
         {
             return endOperation<CreateDBParameterGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeCreateDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new CreateDBParameterGroupRequestMarshaller().Marshall(createDBParameterGroupRequest);
@@ -636,11 +677,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region ModifyDBParameterGroup
 
         /// <summary>
@@ -664,7 +705,7 @@ namespace Amazon.RDS
             return EndModifyDBParameterGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBParameterGroup operation.
@@ -684,7 +725,7 @@ namespace Amazon.RDS
             return invokeModifyDBParameterGroup(modifyDBParameterGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the ModifyDBParameterGroup operation.
@@ -698,7 +739,7 @@ namespace Amazon.RDS
         {
             return endOperation<ModifyDBParameterGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeModifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new ModifyDBParameterGroupRequestMarshaller().Marshall(modifyDBParameterGroupRequest);
@@ -707,11 +748,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DescribeDBParameterGroups
 
         /// <summary>
@@ -731,7 +772,7 @@ namespace Amazon.RDS
             return EndDescribeDBParameterGroups(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBParameterGroups operation.
@@ -751,7 +792,7 @@ namespace Amazon.RDS
             return invokeDescribeDBParameterGroups(describeDBParameterGroupsRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeDBParameterGroups operation.
@@ -765,7 +806,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeDBParameterGroupsResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeDBParameterGroupsRequestMarshaller().Marshall(describeDBParameterGroupsRequest);
@@ -774,8 +815,8 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         /// <summary>
         /// <para> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description
@@ -789,10 +830,10 @@ namespace Amazon.RDS
         {
             return DescribeDBParameterGroups(new DescribeDBParameterGroupsRequest());
         }
-        
+
 
         #endregion
-    
+
         #region DescribeDBEngineVersions
 
         /// <summary>
@@ -810,7 +851,7 @@ namespace Amazon.RDS
             return EndDescribeDBEngineVersions(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBEngineVersions operation.
@@ -830,7 +871,7 @@ namespace Amazon.RDS
             return invokeDescribeDBEngineVersions(describeDBEngineVersionsRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeDBEngineVersions operation.
@@ -844,7 +885,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeDBEngineVersionsResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeDBEngineVersionsRequestMarshaller().Marshall(describeDBEngineVersionsRequest);
@@ -853,8 +894,8 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         /// <summary>
         /// <para> Returns a list of the available DB engines. </para>
@@ -866,10 +907,10 @@ namespace Amazon.RDS
         {
             return DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest());
         }
-        
+
 
         #endregion
-    
+
         #region ResetDBParameterGroup
 
         /// <summary>
@@ -892,7 +933,7 @@ namespace Amazon.RDS
             return EndResetDBParameterGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetDBParameterGroup operation.
@@ -912,7 +953,7 @@ namespace Amazon.RDS
             return invokeResetDBParameterGroup(resetDBParameterGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the ResetDBParameterGroup operation.
@@ -926,7 +967,7 @@ namespace Amazon.RDS
         {
             return endOperation<ResetDBParameterGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeResetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new ResetDBParameterGroupRequestMarshaller().Marshall(resetDBParameterGroupRequest);
@@ -935,11 +976,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region PurchaseReservedDBInstancesOffering
 
         /// <summary>
@@ -960,7 +1001,7 @@ namespace Amazon.RDS
             return EndPurchaseReservedDBInstancesOffering(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedDBInstancesOffering operation.
@@ -980,7 +1021,7 @@ namespace Amazon.RDS
             return invokePurchaseReservedDBInstancesOffering(purchaseReservedDBInstancesOfferingRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the PurchaseReservedDBInstancesOffering operation.
@@ -994,7 +1035,7 @@ namespace Amazon.RDS
         {
             return endOperation<PurchaseReservedDBInstancesOfferingResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokePurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new PurchaseReservedDBInstancesOfferingRequestMarshaller().Marshall(purchaseReservedDBInstancesOfferingRequest);
@@ -1003,11 +1044,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region ModifyDBSubnetGroup
 
         /// <summary>
@@ -1030,7 +1071,7 @@ namespace Amazon.RDS
             return EndModifyDBSubnetGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBSubnetGroup operation.
@@ -1050,7 +1091,7 @@ namespace Amazon.RDS
             return invokeModifyDBSubnetGroup(modifyDBSubnetGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the ModifyDBSubnetGroup operation.
@@ -1064,7 +1105,7 @@ namespace Amazon.RDS
         {
             return endOperation<ModifyDBSubnetGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeModifyDBSubnetGroup(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new ModifyDBSubnetGroupRequestMarshaller().Marshall(modifyDBSubnetGroupRequest);
@@ -1073,11 +1114,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region RevokeDBSecurityGroupIngress
 
         /// <summary>
@@ -1100,7 +1141,7 @@ namespace Amazon.RDS
             return EndRevokeDBSecurityGroupIngress(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeDBSecurityGroupIngress operation.
@@ -1120,7 +1161,7 @@ namespace Amazon.RDS
             return invokeRevokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the RevokeDBSecurityGroupIngress operation.
@@ -1134,7 +1175,7 @@ namespace Amazon.RDS
         {
             return endOperation<RevokeDBSecurityGroupIngressResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeRevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new RevokeDBSecurityGroupIngressRequestMarshaller().Marshall(revokeDBSecurityGroupIngressRequest);
@@ -1143,11 +1184,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DeleteOptionGroup
 
         /// <summary>
@@ -1165,7 +1206,7 @@ namespace Amazon.RDS
             return EndDeleteOptionGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteOptionGroup operation.
@@ -1182,7 +1223,7 @@ namespace Amazon.RDS
             return invokeDeleteOptionGroup(deleteOptionGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteOptionGroup operation.
@@ -1194,7 +1235,7 @@ namespace Amazon.RDS
         {
             return endOperation<DeleteOptionGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDeleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DeleteOptionGroupRequestMarshaller().Marshall(deleteOptionGroupRequest);
@@ -1203,11 +1244,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region RebootDBInstance
 
         /// <summary>
@@ -1230,7 +1271,7 @@ namespace Amazon.RDS
             return EndRebootDBInstance(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootDBInstance operation.
@@ -1249,7 +1290,7 @@ namespace Amazon.RDS
             return invokeRebootDBInstance(rebootDBInstanceRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the RebootDBInstance operation.
@@ -1263,7 +1304,7 @@ namespace Amazon.RDS
         {
             return endOperation<RebootDBInstanceResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeRebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new RebootDBInstanceRequestMarshaller().Marshall(rebootDBInstanceRequest);
@@ -1272,11 +1313,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region AuthorizeDBSecurityGroupIngress
 
         /// <summary>
@@ -1304,7 +1345,7 @@ namespace Amazon.RDS
             return EndAuthorizeDBSecurityGroupIngress(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeDBSecurityGroupIngress operation.
@@ -1324,7 +1365,7 @@ namespace Amazon.RDS
             return invokeAuthorizeDBSecurityGroupIngress(authorizeDBSecurityGroupIngressRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the AuthorizeDBSecurityGroupIngress operation.
@@ -1338,7 +1379,7 @@ namespace Amazon.RDS
         {
             return endOperation<AuthorizeDBSecurityGroupIngressResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeAuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new AuthorizeDBSecurityGroupIngressRequestMarshaller().Marshall(authorizeDBSecurityGroupIngressRequest);
@@ -1347,11 +1388,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DescribeEngineDefaultParameters
 
         /// <summary>
@@ -1369,7 +1410,7 @@ namespace Amazon.RDS
             return EndDescribeEngineDefaultParameters(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEngineDefaultParameters operation.
@@ -1389,7 +1430,7 @@ namespace Amazon.RDS
             return invokeDescribeEngineDefaultParameters(describeEngineDefaultParametersRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeEngineDefaultParameters operation.
@@ -1403,7 +1444,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeEngineDefaultParametersResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeEngineDefaultParametersRequestMarshaller().Marshall(describeEngineDefaultParametersRequest);
@@ -1412,11 +1453,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region RestoreDBInstanceFromDBSnapshot
 
         /// <summary>
@@ -1444,7 +1485,7 @@ namespace Amazon.RDS
             return EndRestoreDBInstanceFromDBSnapshot(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreDBInstanceFromDBSnapshot operation.
@@ -1464,7 +1505,7 @@ namespace Amazon.RDS
             return invokeRestoreDBInstanceFromDBSnapshot(restoreDBInstanceFromDBSnapshotRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the RestoreDBInstanceFromDBSnapshot operation.
@@ -1478,7 +1519,7 @@ namespace Amazon.RDS
         {
             return endOperation<RestoreDBInstanceFromDBSnapshotResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeRestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new RestoreDBInstanceFromDBSnapshotRequestMarshaller().Marshall(restoreDBInstanceFromDBSnapshotRequest);
@@ -1487,11 +1528,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DeleteDBSecurityGroup
 
         /// <summary>
@@ -1510,7 +1551,7 @@ namespace Amazon.RDS
             return EndDeleteDBSecurityGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSecurityGroup operation.
@@ -1527,7 +1568,7 @@ namespace Amazon.RDS
             return invokeDeleteDBSecurityGroup(deleteDBSecurityGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteDBSecurityGroup operation.
@@ -1539,7 +1580,7 @@ namespace Amazon.RDS
         {
             return endOperation<DeleteDBSecurityGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDeleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DeleteDBSecurityGroupRequestMarshaller().Marshall(deleteDBSecurityGroupRequest);
@@ -1548,11 +1589,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DescribeOrderableDBInstanceOptions
 
         /// <summary>
@@ -1570,7 +1611,7 @@ namespace Amazon.RDS
             return EndDescribeOrderableDBInstanceOptions(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOrderableDBInstanceOptions operation.
@@ -1590,7 +1631,7 @@ namespace Amazon.RDS
             return invokeDescribeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeOrderableDBInstanceOptions operation.
@@ -1604,7 +1645,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeOrderableDBInstanceOptionsResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeOrderableDBInstanceOptionsRequestMarshaller().Marshall(describeOrderableDBInstanceOptionsRequest);
@@ -1613,11 +1654,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DescribeReservedDBInstancesOfferings
 
         /// <summary>
@@ -1636,7 +1677,7 @@ namespace Amazon.RDS
             return EndDescribeReservedDBInstancesOfferings(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedDBInstancesOfferings operation.
@@ -1656,7 +1697,7 @@ namespace Amazon.RDS
             return invokeDescribeReservedDBInstancesOfferings(describeReservedDBInstancesOfferingsRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeReservedDBInstancesOfferings operation.
@@ -1670,7 +1711,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeReservedDBInstancesOfferingsResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeReservedDBInstancesOfferingsRequestMarshaller().Marshall(describeReservedDBInstancesOfferingsRequest);
@@ -1679,8 +1720,8 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         /// <summary>
         /// <para> Lists available reserved DB Instance offerings. </para>
@@ -1693,10 +1734,10 @@ namespace Amazon.RDS
         {
             return DescribeReservedDBInstancesOfferings(new DescribeReservedDBInstancesOfferingsRequest());
         }
-        
+
 
         #endregion
-    
+
         #region DescribeReservedDBInstances
 
         /// <summary>
@@ -1715,7 +1756,7 @@ namespace Amazon.RDS
             return EndDescribeReservedDBInstances(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedDBInstances operation.
@@ -1735,7 +1776,7 @@ namespace Amazon.RDS
             return invokeDescribeReservedDBInstances(describeReservedDBInstancesRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeReservedDBInstances operation.
@@ -1749,7 +1790,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeReservedDBInstancesResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeReservedDBInstancesRequestMarshaller().Marshall(describeReservedDBInstancesRequest);
@@ -1758,8 +1799,8 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         /// <summary>
         /// <para> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </para>
@@ -1772,10 +1813,10 @@ namespace Amazon.RDS
         {
             return DescribeReservedDBInstances(new DescribeReservedDBInstancesRequest());
         }
-        
+
 
         #endregion
-    
+
         #region DeleteDBInstance
 
         /// <summary>
@@ -1799,7 +1840,7 @@ namespace Amazon.RDS
             return EndDeleteDBInstance(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBInstance operation.
@@ -1818,7 +1859,7 @@ namespace Amazon.RDS
             return invokeDeleteDBInstance(deleteDBInstanceRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteDBInstance operation.
@@ -1832,7 +1873,7 @@ namespace Amazon.RDS
         {
             return endOperation<DeleteDBInstanceResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDeleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DeleteDBInstanceRequestMarshaller().Marshall(deleteDBInstanceRequest);
@@ -1841,11 +1882,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DescribeDBSecurityGroups
 
         /// <summary>
@@ -1865,7 +1906,7 @@ namespace Amazon.RDS
             return EndDescribeDBSecurityGroups(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSecurityGroups operation.
@@ -1885,7 +1926,7 @@ namespace Amazon.RDS
             return invokeDescribeDBSecurityGroups(describeDBSecurityGroupsRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeDBSecurityGroups operation.
@@ -1899,7 +1940,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeDBSecurityGroupsResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeDBSecurityGroupsRequestMarshaller().Marshall(describeDBSecurityGroupsRequest);
@@ -1908,8 +1949,8 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         /// <summary>
         /// <para> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of
@@ -1923,10 +1964,10 @@ namespace Amazon.RDS
         {
             return DescribeDBSecurityGroups(new DescribeDBSecurityGroupsRequest());
         }
-        
+
 
         #endregion
-    
+
         #region CreateDBSnapshot
 
         /// <summary>
@@ -1948,7 +1989,7 @@ namespace Amazon.RDS
             return EndCreateDBSnapshot(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSnapshot operation.
@@ -1967,7 +2008,7 @@ namespace Amazon.RDS
             return invokeCreateDBSnapshot(createDBSnapshotRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the CreateDBSnapshot operation.
@@ -1981,7 +2022,7 @@ namespace Amazon.RDS
         {
             return endOperation<CreateDBSnapshotResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeCreateDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new CreateDBSnapshotRequestMarshaller().Marshall(createDBSnapshotRequest);
@@ -1990,11 +2031,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DescribeOptionGroupOptions
 
         /// <summary>
@@ -2012,7 +2053,7 @@ namespace Amazon.RDS
             return EndDescribeOptionGroupOptions(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOptionGroupOptions operation.
@@ -2032,7 +2073,7 @@ namespace Amazon.RDS
             return invokeDescribeOptionGroupOptions(describeOptionGroupOptionsRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeOptionGroupOptions operation.
@@ -2046,7 +2087,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeOptionGroupOptionsResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeOptionGroupOptionsRequestMarshaller().Marshall(describeOptionGroupOptionsRequest);
@@ -2055,11 +2096,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DeleteDBParameterGroup
 
         /// <summary>
@@ -2078,7 +2119,7 @@ namespace Amazon.RDS
             return EndDeleteDBParameterGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBParameterGroup operation.
@@ -2095,7 +2136,7 @@ namespace Amazon.RDS
             return invokeDeleteDBParameterGroup(deleteDBParameterGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteDBParameterGroup operation.
@@ -2107,7 +2148,7 @@ namespace Amazon.RDS
         {
             return endOperation<DeleteDBParameterGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDeleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DeleteDBParameterGroupRequestMarshaller().Marshall(deleteDBParameterGroupRequest);
@@ -2116,11 +2157,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DescribeOptionGroups
 
         /// <summary>
@@ -2139,7 +2180,7 @@ namespace Amazon.RDS
             return EndDescribeOptionGroups(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOptionGroups operation.
@@ -2159,7 +2200,7 @@ namespace Amazon.RDS
             return invokeDescribeOptionGroups(describeOptionGroupsRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeOptionGroups operation.
@@ -2173,7 +2214,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeOptionGroupsResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeOptionGroupsRequestMarshaller().Marshall(describeOptionGroupsRequest);
@@ -2182,8 +2223,8 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         /// <summary>
         /// <para> Describes the available option groups. </para>
@@ -2196,10 +2237,10 @@ namespace Amazon.RDS
         {
             return DescribeOptionGroups(new DescribeOptionGroupsRequest());
         }
-        
+
 
         #endregion
-    
+
         #region DescribeDBInstances
 
         /// <summary>
@@ -2218,7 +2259,7 @@ namespace Amazon.RDS
             return EndDescribeDBInstances(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBInstances operation.
@@ -2238,7 +2279,7 @@ namespace Amazon.RDS
             return invokeDescribeDBInstances(describeDBInstancesRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeDBInstances operation.
@@ -2252,7 +2293,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeDBInstancesResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeDBInstancesRequestMarshaller().Marshall(describeDBInstancesRequest);
@@ -2261,8 +2302,8 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         /// <summary>
         /// <para> Returns information about provisioned RDS instances. This API supports pagination. </para>
@@ -2275,10 +2316,10 @@ namespace Amazon.RDS
         {
             return DescribeDBInstances(new DescribeDBInstancesRequest());
         }
-        
+
 
         #endregion
-    
+
         #region DescribeDBSnapshots
 
         /// <summary>
@@ -2297,7 +2338,7 @@ namespace Amazon.RDS
             return EndDescribeDBSnapshots(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSnapshots operation.
@@ -2317,7 +2358,7 @@ namespace Amazon.RDS
             return invokeDescribeDBSnapshots(describeDBSnapshotsRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeDBSnapshots operation.
@@ -2331,7 +2372,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeDBSnapshotsResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeDBSnapshotsRequestMarshaller().Marshall(describeDBSnapshotsRequest);
@@ -2340,8 +2381,8 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         /// <summary>
         /// <para> Returns information about DBSnapshots. This API supports pagination. </para>
@@ -2354,10 +2395,10 @@ namespace Amazon.RDS
         {
             return DescribeDBSnapshots(new DescribeDBSnapshotsRequest());
         }
-        
+
 
         #endregion
-    
+
         #region DescribeDBParameters
 
         /// <summary>
@@ -2376,7 +2417,7 @@ namespace Amazon.RDS
             return EndDescribeDBParameters(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBParameters operation.
@@ -2396,7 +2437,7 @@ namespace Amazon.RDS
             return invokeDescribeDBParameters(describeDBParametersRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DescribeDBParameters operation.
@@ -2410,7 +2451,7 @@ namespace Amazon.RDS
         {
             return endOperation<DescribeDBParametersResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDescribeDBParameters(DescribeDBParametersRequest describeDBParametersRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DescribeDBParametersRequestMarshaller().Marshall(describeDBParametersRequest);
@@ -2419,11 +2460,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region CopyDBSnapshot
 
         /// <summary>
@@ -2445,7 +2486,7 @@ namespace Amazon.RDS
             return EndCopyDBSnapshot(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyDBSnapshot operation.
@@ -2464,7 +2505,7 @@ namespace Amazon.RDS
             return invokeCopyDBSnapshot(copyDBSnapshotRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the CopyDBSnapshot operation.
@@ -2478,7 +2519,7 @@ namespace Amazon.RDS
         {
             return endOperation<CopyDBSnapshotResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeCopyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new CopyDBSnapshotRequestMarshaller().Marshall(copyDBSnapshotRequest);
@@ -2487,11 +2528,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region CreateDBInstanceReadReplica
 
         /// <summary>
@@ -2522,7 +2563,7 @@ namespace Amazon.RDS
             return EndCreateDBInstanceReadReplica(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBInstanceReadReplica operation.
@@ -2542,7 +2583,7 @@ namespace Amazon.RDS
             return invokeCreateDBInstanceReadReplica(createDBInstanceReadReplicaRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the CreateDBInstanceReadReplica operation.
@@ -2556,7 +2597,7 @@ namespace Amazon.RDS
         {
             return endOperation<CreateDBInstanceReadReplicaResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeCreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new CreateDBInstanceReadReplicaRequestMarshaller().Marshall(createDBInstanceReadReplicaRequest);
@@ -2565,11 +2606,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region DeleteDBSnapshot
 
         /// <summary>
@@ -2589,7 +2630,7 @@ namespace Amazon.RDS
             return EndDeleteDBSnapshot(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDBSnapshot operation.
@@ -2608,7 +2649,7 @@ namespace Amazon.RDS
             return invokeDeleteDBSnapshot(deleteDBSnapshotRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteDBSnapshot operation.
@@ -2622,7 +2663,7 @@ namespace Amazon.RDS
         {
             return endOperation<DeleteDBSnapshotResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeDeleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DeleteDBSnapshotRequestMarshaller().Marshall(deleteDBSnapshotRequest);
@@ -2631,11 +2672,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region CreateOptionGroup
 
         /// <summary>
@@ -2655,7 +2696,7 @@ namespace Amazon.RDS
             return EndCreateOptionGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOptionGroup operation.
@@ -2675,7 +2716,7 @@ namespace Amazon.RDS
             return invokeCreateOptionGroup(createOptionGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the CreateOptionGroup operation.
@@ -2689,7 +2730,7 @@ namespace Amazon.RDS
         {
             return endOperation<CreateOptionGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeCreateOptionGroup(CreateOptionGroupRequest createOptionGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new CreateOptionGroupRequestMarshaller().Marshall(createOptionGroupRequest);
@@ -2698,11 +2739,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region ModifyDBInstance
 
         /// <summary>
@@ -2729,7 +2770,7 @@ namespace Amazon.RDS
             return EndModifyDBInstance(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyDBInstance operation.
@@ -2748,7 +2789,7 @@ namespace Amazon.RDS
             return invokeModifyDBInstance(modifyDBInstanceRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the ModifyDBInstance operation.
@@ -2762,7 +2803,7 @@ namespace Amazon.RDS
         {
             return endOperation<ModifyDBInstanceResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeModifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new ModifyDBInstanceRequestMarshaller().Marshall(modifyDBInstanceRequest);
@@ -2771,11 +2812,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region CreateDBSubnetGroup
 
         /// <summary>
@@ -2798,7 +2839,7 @@ namespace Amazon.RDS
             return EndCreateDBSubnetGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDBSubnetGroup operation.
@@ -2818,7 +2859,7 @@ namespace Amazon.RDS
             return invokeCreateDBSubnetGroup(createDBSubnetGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the CreateDBSubnetGroup operation.
@@ -2832,7 +2873,7 @@ namespace Amazon.RDS
         {
             return endOperation<CreateDBSubnetGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeCreateDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new CreateDBSubnetGroupRequestMarshaller().Marshall(createDBSubnetGroupRequest);
@@ -2841,11 +2882,11 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
         #region ModifyOptionGroup
 
         /// <summary>
@@ -2865,7 +2906,7 @@ namespace Amazon.RDS
             return EndModifyOptionGroup(asyncResult);
         }
 
-        
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyOptionGroup operation.
@@ -2885,7 +2926,7 @@ namespace Amazon.RDS
             return invokeModifyOptionGroup(modifyOptionGroupRequest, callback, state, false);
         }
 
-        
+
 
         /// <summary>
         /// Finishes the asynchronous execution of the ModifyOptionGroup operation.
@@ -2899,7 +2940,7 @@ namespace Amazon.RDS
         {
             return endOperation<ModifyOptionGroupResponse>(asyncResult);
         }
-        
+
         IAsyncResult invokeModifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new ModifyOptionGroupRequestMarshaller().Marshall(modifyOptionGroupRequest);
@@ -2908,11 +2949,10 @@ namespace Amazon.RDS
             Invoke(result);
             return result;
         }
-        
-        
+
+
 
         #endregion
-    
+
     }
 }
-    

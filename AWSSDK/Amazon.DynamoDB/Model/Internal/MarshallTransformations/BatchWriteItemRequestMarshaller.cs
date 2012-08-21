@@ -58,197 +58,200 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                             writer.WritePropertyName(batchWriteItemRequestRequestItemsKey);
 
                             writer.WriteArrayStart();
-                            foreach (WriteRequest valueListValue in requestItemsListValue) 
+                            if (requestItemsListValue != null)
                             {
-                                writer.WriteObjectStart();
-
-                                if (valueListValue != null) 
+                                foreach (WriteRequest valueListValue in requestItemsListValue) 
                                 {
-                                    PutRequest putRequest = valueListValue.PutRequest;
-                                    if (putRequest != null)
+                                    writer.WriteObjectStart();
+
+                                    if (valueListValue != null) 
                                     {
-                                        writer.WritePropertyName("PutRequest");
-                                        writer.WriteObjectStart();
-                                        if (putRequest != null) 
+                                        PutRequest putRequest = valueListValue.PutRequest;
+                                        if (putRequest != null)
                                         {
-                                            if (putRequest.Item != null) 
+                                            writer.WritePropertyName("PutRequest");
+                                            writer.WriteObjectStart();
+                                            if (putRequest != null) 
                                             {
-                                                writer.WritePropertyName("Item");
-                                                writer.WriteObjectStart();
-                                                foreach (string putRequestItemKey in putRequest.Item.Keys)
+                                                if (putRequest.Item != null) 
                                                 {
-                                                    AttributeValue itemListValue;
-                                                    bool itemListValueHasValue = putRequest.Item.TryGetValue(putRequestItemKey, out itemListValue);
-                                                    writer.WritePropertyName(putRequestItemKey);
-
+                                                    writer.WritePropertyName("Item");
                                                     writer.WriteObjectStart();
-                                                    if (itemListValue != null && itemListValue.IsSetS()) 
+                                                    foreach (string putRequestItemKey in putRequest.Item.Keys)
                                                     {
-                                                        writer.WritePropertyName("S");
-                                                        writer.Write(itemListValue.S);
-                                                    }
-                                                    if (itemListValue != null && itemListValue.IsSetN()) 
-                                                    {
-                                                        writer.WritePropertyName("N");
-                                                        writer.Write(itemListValue.N);
-                                                    }
+                                                        AttributeValue itemListValue;
+                                                        bool itemListValueHasValue = putRequest.Item.TryGetValue(putRequestItemKey, out itemListValue);
+                                                        writer.WritePropertyName(putRequestItemKey);
 
-                                                    if (itemListValue != null && itemListValue.SS != null && itemListValue.SS.Count > 0) 
-                                                    {
-                                                        List<string> sSList = itemListValue.SS;
-                                                        writer.WritePropertyName("SS");
-                                                        writer.WriteArrayStart();
-
-                                                        foreach (string sSListValue in sSList) 
-                                                        { 
-                                                            writer.Write(StringUtils.FromString(sSListValue));
+                                                        writer.WriteObjectStart();
+                                                        if (itemListValue != null && itemListValue.IsSetS()) 
+                                                        {
+                                                            writer.WritePropertyName("S");
+                                                            writer.Write(itemListValue.S);
+                                                        }
+                                                        if (itemListValue != null && itemListValue.IsSetN()) 
+                                                        {
+                                                            writer.WritePropertyName("N");
+                                                            writer.Write(itemListValue.N);
                                                         }
 
-                                                        writer.WriteArrayEnd();
-                                                    }
+                                                        if (itemListValue != null && itemListValue.SS != null && itemListValue.SS.Count > 0) 
+                                                        {
+                                                            List<string> sSList = itemListValue.SS;
+                                                            writer.WritePropertyName("SS");
+                                                            writer.WriteArrayStart();
 
-                                                    if (itemListValue != null && itemListValue.NS != null && itemListValue.NS.Count > 0) 
-                                                    {
-                                                        List<string> nSList = itemListValue.NS;
-                                                        writer.WritePropertyName("NS");
-                                                        writer.WriteArrayStart();
+                                                            foreach (string sSListValue in sSList) 
+                                                            { 
+                                                                writer.Write(StringUtils.FromString(sSListValue));
+                                                            }
 
-                                                        foreach (string nSListValue in nSList) 
-                                                        { 
-                                                            writer.Write(StringUtils.FromString(nSListValue));
+                                                            writer.WriteArrayEnd();
                                                         }
 
-                                                        writer.WriteArrayEnd();
+                                                        if (itemListValue != null && itemListValue.NS != null && itemListValue.NS.Count > 0) 
+                                                        {
+                                                            List<string> nSList = itemListValue.NS;
+                                                            writer.WritePropertyName("NS");
+                                                            writer.WriteArrayStart();
+
+                                                            foreach (string nSListValue in nSList) 
+                                                            { 
+                                                                writer.Write(StringUtils.FromString(nSListValue));
+                                                            }
+
+                                                            writer.WriteArrayEnd();
+                                                        }
+                                                        writer.WriteObjectEnd();
                                                     }
                                                     writer.WriteObjectEnd();
                                                 }
-                                                writer.WriteObjectEnd();
                                             }
+                                            writer.WriteObjectEnd();
                                         }
-                                        writer.WriteObjectEnd();
                                     }
-                                }
 
-                                if (valueListValue != null) 
-                                {
-                                    DeleteRequest deleteRequest = valueListValue.DeleteRequest;
-                                    if (deleteRequest != null)
+                                    if (valueListValue != null) 
                                     {
-                                        writer.WritePropertyName("DeleteRequest");
-                                        writer.WriteObjectStart();
-
-                                        if (deleteRequest != null) 
+                                        DeleteRequest deleteRequest = valueListValue.DeleteRequest;
+                                        if (deleteRequest != null)
                                         {
-                                            Key key = deleteRequest.Key;
-                                            if (key != null)
+                                            writer.WritePropertyName("DeleteRequest");
+                                            writer.WriteObjectStart();
+
+                                            if (deleteRequest != null) 
                                             {
-                                                writer.WritePropertyName("Key");
-                                                writer.WriteObjectStart();
-
-                                                if (key != null) 
+                                                Key key = deleteRequest.Key;
+                                                if (key != null)
                                                 {
-                                                    AttributeValue hashKeyElement = key.HashKeyElement;
-                                                    if (hashKeyElement != null)
+                                                    writer.WritePropertyName("Key");
+                                                    writer.WriteObjectStart();
+
+                                                    if (key != null) 
                                                     {
-                                                        writer.WritePropertyName("HashKeyElement");
-                                                        writer.WriteObjectStart();
-                                                        if (hashKeyElement != null && hashKeyElement.IsSetS()) 
+                                                        AttributeValue hashKeyElement = key.HashKeyElement;
+                                                        if (hashKeyElement != null)
                                                         {
-                                                            writer.WritePropertyName("S");
-                                                            writer.Write(hashKeyElement.S);
-                                                        }
-                                                        if (hashKeyElement != null && hashKeyElement.IsSetN()) 
-                                                        {
-                                                            writer.WritePropertyName("N");
-                                                            writer.Write(hashKeyElement.N);
-                                                        }
-
-                                                        if (hashKeyElement != null && hashKeyElement.SS != null && hashKeyElement.SS.Count > 0) 
-                                                        {
-                                                            List<string> sSList = hashKeyElement.SS;
-                                                            writer.WritePropertyName("SS");
-                                                            writer.WriteArrayStart();
-
-                                                            foreach (string sSListValue in sSList) 
-                                                            { 
-                                                                writer.Write(StringUtils.FromString(sSListValue));
+                                                            writer.WritePropertyName("HashKeyElement");
+                                                            writer.WriteObjectStart();
+                                                            if (hashKeyElement != null && hashKeyElement.IsSetS()) 
+                                                            {
+                                                                writer.WritePropertyName("S");
+                                                                writer.Write(hashKeyElement.S);
+                                                            }
+                                                            if (hashKeyElement != null && hashKeyElement.IsSetN()) 
+                                                            {
+                                                                writer.WritePropertyName("N");
+                                                                writer.Write(hashKeyElement.N);
                                                             }
 
-                                                            writer.WriteArrayEnd();
-                                                        }
+                                                            if (hashKeyElement != null && hashKeyElement.SS != null && hashKeyElement.SS.Count > 0) 
+                                                            {
+                                                                List<string> sSList = hashKeyElement.SS;
+                                                                writer.WritePropertyName("SS");
+                                                                writer.WriteArrayStart();
 
-                                                        if (hashKeyElement != null && hashKeyElement.NS != null && hashKeyElement.NS.Count > 0) 
-                                                        {
-                                                            List<string> nSList = hashKeyElement.NS;
-                                                            writer.WritePropertyName("NS");
-                                                            writer.WriteArrayStart();
+                                                                foreach (string sSListValue in sSList) 
+                                                                { 
+                                                                    writer.Write(StringUtils.FromString(sSListValue));
+                                                                }
 
-                                                            foreach (string nSListValue in nSList) 
-                                                            { 
-                                                                writer.Write(StringUtils.FromString(nSListValue));
+                                                                writer.WriteArrayEnd();
                                                             }
 
-                                                            writer.WriteArrayEnd();
+                                                            if (hashKeyElement != null && hashKeyElement.NS != null && hashKeyElement.NS.Count > 0) 
+                                                            {
+                                                                List<string> nSList = hashKeyElement.NS;
+                                                                writer.WritePropertyName("NS");
+                                                                writer.WriteArrayStart();
+
+                                                                foreach (string nSListValue in nSList) 
+                                                                { 
+                                                                    writer.Write(StringUtils.FromString(nSListValue));
+                                                                }
+
+                                                                writer.WriteArrayEnd();
+                                                            }
+                                                            writer.WriteObjectEnd();
                                                         }
-                                                        writer.WriteObjectEnd();
                                                     }
-                                                }
 
-                                                if (key != null) 
-                                                {
-                                                    AttributeValue rangeKeyElement = key.RangeKeyElement;
-                                                    if (rangeKeyElement != null)
+                                                    if (key != null) 
                                                     {
-                                                        writer.WritePropertyName("RangeKeyElement");
-                                                        writer.WriteObjectStart();
-                                                        if (rangeKeyElement != null && rangeKeyElement.IsSetS()) 
+                                                        AttributeValue rangeKeyElement = key.RangeKeyElement;
+                                                        if (rangeKeyElement != null)
                                                         {
-                                                            writer.WritePropertyName("S");
-                                                            writer.Write(rangeKeyElement.S);
-                                                        }
-                                                        if (rangeKeyElement != null && rangeKeyElement.IsSetN()) 
-                                                        {
-                                                            writer.WritePropertyName("N");
-                                                            writer.Write(rangeKeyElement.N);
-                                                        }
-
-                                                        if (rangeKeyElement != null && rangeKeyElement.SS != null && rangeKeyElement.SS.Count > 0) 
-                                                        {
-                                                            List<string> sSList = rangeKeyElement.SS;
-                                                            writer.WritePropertyName("SS");
-                                                            writer.WriteArrayStart();
-
-                                                            foreach (string sSListValue in sSList) 
-                                                            { 
-                                                                writer.Write(StringUtils.FromString(sSListValue));
+                                                            writer.WritePropertyName("RangeKeyElement");
+                                                            writer.WriteObjectStart();
+                                                            if (rangeKeyElement != null && rangeKeyElement.IsSetS()) 
+                                                            {
+                                                                writer.WritePropertyName("S");
+                                                                writer.Write(rangeKeyElement.S);
+                                                            }
+                                                            if (rangeKeyElement != null && rangeKeyElement.IsSetN()) 
+                                                            {
+                                                                writer.WritePropertyName("N");
+                                                                writer.Write(rangeKeyElement.N);
                                                             }
 
-                                                            writer.WriteArrayEnd();
-                                                        }
+                                                            if (rangeKeyElement != null && rangeKeyElement.SS != null && rangeKeyElement.SS.Count > 0) 
+                                                            {
+                                                                List<string> sSList = rangeKeyElement.SS;
+                                                                writer.WritePropertyName("SS");
+                                                                writer.WriteArrayStart();
 
-                                                        if (rangeKeyElement != null && rangeKeyElement.NS != null && rangeKeyElement.NS.Count > 0) 
-                                                        {
-                                                            List<string> nSList = rangeKeyElement.NS;
-                                                            writer.WritePropertyName("NS");
-                                                            writer.WriteArrayStart();
+                                                                foreach (string sSListValue in sSList) 
+                                                                { 
+                                                                    writer.Write(StringUtils.FromString(sSListValue));
+                                                                }
 
-                                                            foreach (string nSListValue in nSList) 
-                                                            { 
-                                                                writer.Write(StringUtils.FromString(nSListValue));
+                                                                writer.WriteArrayEnd();
                                                             }
 
-                                                            writer.WriteArrayEnd();
+                                                            if (rangeKeyElement != null && rangeKeyElement.NS != null && rangeKeyElement.NS.Count > 0) 
+                                                            {
+                                                                List<string> nSList = rangeKeyElement.NS;
+                                                                writer.WritePropertyName("NS");
+                                                                writer.WriteArrayStart();
+
+                                                                foreach (string nSListValue in nSList) 
+                                                                { 
+                                                                    writer.Write(StringUtils.FromString(nSListValue));
+                                                                }
+
+                                                                writer.WriteArrayEnd();
+                                                            }
+                                                            writer.WriteObjectEnd();
                                                         }
-                                                        writer.WriteObjectEnd();
                                                     }
+                                                    writer.WriteObjectEnd();
                                                 }
-                                                writer.WriteObjectEnd();
                                             }
+                                            writer.WriteObjectEnd();
                                         }
-                                        writer.WriteObjectEnd();
                                     }
+                                    writer.WriteObjectEnd();
                                 }
-                                writer.WriteObjectEnd();
                             }
                             writer.WriteArrayEnd();
                         }

@@ -73,6 +73,25 @@ namespace Amazon.ImportExport
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonImportExportClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonImportExportClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonImportExport Configuration Object</param>
         public AmazonImportExportClient(AmazonImportExportConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
@@ -83,6 +102,16 @@ namespace Amazon.ImportExport
         /// <param name="credentials">AWS Credentials</param>
         public AmazonImportExportClient(AWSCredentials credentials)
             : this(credentials, new AmazonImportExportConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonImportExportClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonImportExportClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonImportExportConfig() { RegionEndpoint = region })
         {
         }
 
@@ -104,6 +133,17 @@ namespace Amazon.ImportExport
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonImportExportClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonImportExportConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonImportExportClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonImportExportClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonImportExportConfig() { RegionEndpoint = region })
         {
         }
 

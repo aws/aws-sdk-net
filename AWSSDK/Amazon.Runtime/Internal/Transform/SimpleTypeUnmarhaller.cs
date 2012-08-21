@@ -33,6 +33,9 @@ namespace Amazon.Runtime.Internal.Transform
         public static T Unmarshall(JsonUnmarshallerContext context)
         {
             string text = context.ReadText();
+            if (text == null)
+                return default(T);
+
             return (T)Convert.ChangeType(text, typeof(T), System.Globalization.CultureInfo.InvariantCulture);
         }
     }

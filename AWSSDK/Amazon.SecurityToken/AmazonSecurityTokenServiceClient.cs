@@ -78,6 +78,25 @@ namespace Amazon.SecurityToken
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSecurityTokenServiceClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonSecurityTokenServiceClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonSecurityTokenService Configuration Object</param>
         public AmazonSecurityTokenServiceClient(AmazonSecurityTokenServiceConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
@@ -88,6 +107,16 @@ namespace Amazon.SecurityToken
         /// <param name="credentials">AWS Credentials</param>
         public AmazonSecurityTokenServiceClient(AWSCredentials credentials)
             : this(credentials, new AmazonSecurityTokenServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSecurityTokenServiceClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSecurityTokenServiceClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonSecurityTokenServiceConfig() { RegionEndpoint = region })
         {
         }
 
@@ -109,6 +138,17 @@ namespace Amazon.SecurityToken
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonSecurityTokenServiceClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonSecurityTokenServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSecurityTokenServiceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSecurityTokenServiceClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonSecurityTokenServiceConfig() { RegionEndpoint = region })
         {
         }
 

@@ -165,6 +165,25 @@ namespace Amazon.EC2
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonEC2Client(RegionEndpoint region)
+            : this(FallbackCredentialsFactory.GetCredentials(), new AmazonEC2Config() { RegionEndpoint = region }, true) { }
+
+        /// <summary>
+        /// Constructs AmazonEC2Client with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonEC2 Configuration Object</param>
         public AmazonEC2Client(AmazonEC2Config config)
             : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
@@ -176,6 +195,15 @@ namespace Amazon.EC2
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonEC2Client(string awsAccessKeyId, string awsSecretAccessKey)
             : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonEC2Config(), true) { }
+
+        /// <summary>
+        /// Constructs AmazonEC2Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonEC2Client(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonEC2Config() { RegionEndpoint = region }, true) { }
 
         /// <summary>
         /// Constructs AmazonEC2Client with AWS Access Key ID, AWS Secret Key and an
@@ -201,11 +229,29 @@ namespace Amazon.EC2
             : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true) { }
 
         /// <summary>
+        /// Constructs an AmazonEC2Client with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonEC2 Configuration object
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonEC2Client(string awsAccessKeyId, SecureString awsSecretAccessKey, RegionEndpoint region)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonEC2Config() { RegionEndpoint = region }, true) { }
+
+        /// <summary>
         /// Constructs an AmazonEC2Client with AWSCredentials
         /// </summary>
         /// <param name="credentials"></param>
         public AmazonEC2Client(AWSCredentials credentials)
             : this(credentials, new AmazonEC2Config(), false) { }
+
+        /// <summary>
+        /// Constructs an AmazonEC2Client with AWSCredentials
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonEC2Client(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonEC2Config() { RegionEndpoint = region }, false) { }
 
         /// <summary>
         /// Constructs an AmazonEC2Client with AWSCredentials and an AmazonEC2 Configuration object
@@ -2884,7 +2930,13 @@ namespace Amazon.EC2
          */
         private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonEC2Config config)
         {
-            HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
+            string url;
+            if (config.RegionEndpoint != null)
+                url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+            else
+                url = config.ServiceURL;
+
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             if (request != null)
             {
                 request.ServicePoint.ConnectionLimit = config.ConnectionLimit;
@@ -3173,7 +3225,14 @@ namespace Amazon.EC2
                 {
                     throw new AmazonEC2Exception("Invalid Signature Version specified");
                 }
-                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
+
+                string serviceURL;
+                if (config.RegionEndpoint != null)
+                    serviceURL = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+                else
+                    serviceURL = config.ServiceURL;
+
+                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceURL);
 
                 KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
                 string auth;

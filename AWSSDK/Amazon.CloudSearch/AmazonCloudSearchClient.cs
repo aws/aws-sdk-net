@@ -71,6 +71,25 @@ namespace Amazon.CloudSearch
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonCloudSearchClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonCloudSearch Configuration Object</param>
         public AmazonCloudSearchClient(AmazonCloudSearchConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
@@ -81,6 +100,16 @@ namespace Amazon.CloudSearch
         /// <param name="credentials">AWS Credentials</param>
         public AmazonCloudSearchClient(AWSCredentials credentials)
             : this(credentials, new AmazonCloudSearchConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonCloudSearchClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonCloudSearchConfig() { RegionEndpoint = region })
         {
         }
 
@@ -102,6 +131,17 @@ namespace Amazon.CloudSearch
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonCloudSearchClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonCloudSearchConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonCloudSearchClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonCloudSearchConfig() { RegionEndpoint = region })
         {
         }
 

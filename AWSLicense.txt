@@ -1,4 +1,4 @@
-Copyright 2009-2011 Amazon Technologies, Inc.
+Copyright 2009-2012 Amazon Technologies, Inc.
 
 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 

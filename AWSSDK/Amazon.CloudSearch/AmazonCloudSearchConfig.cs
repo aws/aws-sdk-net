@@ -43,6 +43,17 @@ namespace Amazon.CloudSearch
                 return "2011-02-01";
             }
         }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "cloudsearch";
+            }
+        }
     }
 }
 

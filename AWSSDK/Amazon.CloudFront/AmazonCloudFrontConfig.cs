@@ -43,6 +43,17 @@ namespace Amazon.CloudFront
                 return "2012-05-05";
             }
         }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "cloudfront";
+            }
+        }
     }
 }
 

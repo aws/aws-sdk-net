@@ -46,7 +46,9 @@ namespace Amazon.Runtime
         public IDictionary<string, string> Parameters { get; protected set; }
         public string ServiceName { get; protected set; }
         public Uri Endpoint { get; protected set; }
-        public AmazonWebServiceRequest OriginalRequest { get; protected set; }
+        public AmazonWebServiceRequest Request { get; protected set; }
+        [Obsolete("OriginalRequest property has been deprecated in favor of the Request property")]
+        public AmazonWebServiceRequest OriginalRequest { get { return Request; } }
 
         #endregion
 
@@ -59,7 +61,7 @@ namespace Amazon.Runtime
                 Headers = request.Headers,
                 Parameters = request.Parameters,
                 ServiceName = request.ServiceName,
-                OriginalRequest = request.OriginalRequest,
+                Request = request.OriginalRequest,
                 Endpoint = request.Endpoint
             };
             return args;

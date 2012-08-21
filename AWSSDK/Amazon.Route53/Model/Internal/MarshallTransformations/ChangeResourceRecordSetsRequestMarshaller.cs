@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(changeResourceRecordSetsRequest, "AmazonRoute53");
             request.HttpMethod = "POST";
               
-            string uriResourcePath = "/2011-05-05/hostedzone/{Id}/rrset/"; 
+            string uriResourcePath = "/2012-02-29/hostedzone/{Id}/rrset/"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", changeResourceRecordSetsRequest.HostedZoneId ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 
@@ -65,16 +65,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             xmlWriter.Namespaces = true;
                        
             
-            xmlWriter.WriteStartElement("ChangeResourceRecordSetsRequest", "https://route53.amazonaws.com/doc/2011-05-05/");
+            xmlWriter.WriteStartElement("ChangeResourceRecordSetsRequest", "https://route53.amazonaws.com/doc/2012-02-29/");
                     if (changeResourceRecordSetsRequest != null) 
         {
             ChangeBatch changeBatchChangeBatch = changeResourceRecordSetsRequest.ChangeBatch;
             if (changeBatchChangeBatch != null) 
             {
-                xmlWriter.WriteStartElement("ChangeBatch", "https://route53.amazonaws.com/doc/2011-05-05/");
+                xmlWriter.WriteStartElement("ChangeBatch", "https://route53.amazonaws.com/doc/2012-02-29/");
                 if (changeBatchChangeBatch.IsSetComment()) 
                 {
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2011-05-05/", changeBatchChangeBatch.Comment.ToString());
+                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2012-02-29/", changeBatchChangeBatch.Comment.ToString());
                 }
 
                 if (changeBatchChangeBatch != null) 
@@ -83,39 +83,43 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     if (changesList != null && changesList.Count > 0) 
                     {
                         int changesListIndex = 1;
-                        xmlWriter.WriteStartElement("Changes", "https://route53.amazonaws.com/doc/2011-05-05/");
+                        xmlWriter.WriteStartElement("Changes", "https://route53.amazonaws.com/doc/2012-02-29/");
                         foreach (Change changesListValue in changesList) 
                         {
-                            xmlWriter.WriteStartElement("Change", "https://route53.amazonaws.com/doc/2011-05-05/");
+                            xmlWriter.WriteStartElement("Change", "https://route53.amazonaws.com/doc/2012-02-29/");
                             if (changesListValue.IsSetAction()) 
                             {
-                                xmlWriter.WriteElementString("Action", "https://route53.amazonaws.com/doc/2011-05-05/", changesListValue.Action.ToString());
+                                xmlWriter.WriteElementString("Action", "https://route53.amazonaws.com/doc/2012-02-29/", changesListValue.Action.ToString());
                             }
                             if (changesListValue != null) 
                             {
                                 ResourceRecordSet resourceRecordSetResourceRecordSet = changesListValue.ResourceRecordSet;
                                 if (resourceRecordSetResourceRecordSet != null) 
                                 {
-                                    xmlWriter.WriteStartElement("ResourceRecordSet", "https://route53.amazonaws.com/doc/2011-05-05/");
+                                    xmlWriter.WriteStartElement("ResourceRecordSet", "https://route53.amazonaws.com/doc/2012-02-29/");
                                     if (resourceRecordSetResourceRecordSet.IsSetName()) 
                                     {
-                                        xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2011-05-05/", resourceRecordSetResourceRecordSet.Name.ToString());
+                                        xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2012-02-29/", resourceRecordSetResourceRecordSet.Name.ToString());
                                     }
                                     if (resourceRecordSetResourceRecordSet.IsSetType()) 
                                     {
-                                        xmlWriter.WriteElementString("Type", "https://route53.amazonaws.com/doc/2011-05-05/", resourceRecordSetResourceRecordSet.Type.ToString());
+                                        xmlWriter.WriteElementString("Type", "https://route53.amazonaws.com/doc/2012-02-29/", resourceRecordSetResourceRecordSet.Type.ToString());
                                     }
                                     if (resourceRecordSetResourceRecordSet.IsSetSetIdentifier()) 
                                     {
-                                        xmlWriter.WriteElementString("SetIdentifier", "https://route53.amazonaws.com/doc/2011-05-05/", resourceRecordSetResourceRecordSet.SetIdentifier.ToString());
+                                        xmlWriter.WriteElementString("SetIdentifier", "https://route53.amazonaws.com/doc/2012-02-29/", resourceRecordSetResourceRecordSet.SetIdentifier.ToString());
                                     }
                                     if (resourceRecordSetResourceRecordSet.IsSetWeight()) 
                                     {
-                                        xmlWriter.WriteElementString("Weight", "https://route53.amazonaws.com/doc/2011-05-05/", resourceRecordSetResourceRecordSet.Weight.ToString());
+                                        xmlWriter.WriteElementString("Weight", "https://route53.amazonaws.com/doc/2012-02-29/", resourceRecordSetResourceRecordSet.Weight.ToString());
+                                    }
+                                    if (resourceRecordSetResourceRecordSet.IsSetRegion()) 
+                                    {
+                                        xmlWriter.WriteElementString("Region", "https://route53.amazonaws.com/doc/2012-02-29/", resourceRecordSetResourceRecordSet.Region.ToString());
                                     }
                                     if (resourceRecordSetResourceRecordSet.IsSetTTL()) 
                                     {
-                                        xmlWriter.WriteElementString("TTL", "https://route53.amazonaws.com/doc/2011-05-05/", resourceRecordSetResourceRecordSet.TTL.ToString());
+                                        xmlWriter.WriteElementString("TTL", "https://route53.amazonaws.com/doc/2012-02-29/", resourceRecordSetResourceRecordSet.TTL.ToString());
                                     }
 
                                     if (resourceRecordSetResourceRecordSet != null) 
@@ -124,13 +128,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                         if (resourceRecordsList != null && resourceRecordsList.Count > 0) 
                                         {
                                             int resourceRecordsListIndex = 1;
-                                            xmlWriter.WriteStartElement("ResourceRecords", "https://route53.amazonaws.com/doc/2011-05-05/");
+                                            xmlWriter.WriteStartElement("ResourceRecords", "https://route53.amazonaws.com/doc/2012-02-29/");
                                             foreach (ResourceRecord resourceRecordsListValue in resourceRecordsList) 
                                             {
-                                                xmlWriter.WriteStartElement("ResourceRecord", "https://route53.amazonaws.com/doc/2011-05-05/");
+                                                xmlWriter.WriteStartElement("ResourceRecord", "https://route53.amazonaws.com/doc/2012-02-29/");
                                                 if (resourceRecordsListValue.IsSetValue()) 
                                                 {
-                                                    xmlWriter.WriteElementString("Value", "https://route53.amazonaws.com/doc/2011-05-05/", resourceRecordsListValue.Value.ToString());
+                                                    xmlWriter.WriteElementString("Value", "https://route53.amazonaws.com/doc/2012-02-29/", resourceRecordsListValue.Value.ToString());
                                                 }
                                             xmlWriter.WriteEndElement();
 
@@ -145,14 +149,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                         AliasTarget aliasTargetAliasTarget = resourceRecordSetResourceRecordSet.AliasTarget;
                                         if (aliasTargetAliasTarget != null) 
                                         {
-                                            xmlWriter.WriteStartElement("AliasTarget", "https://route53.amazonaws.com/doc/2011-05-05/");
+                                            xmlWriter.WriteStartElement("AliasTarget", "https://route53.amazonaws.com/doc/2012-02-29/");
                                             if (aliasTargetAliasTarget.IsSetHostedZoneId()) 
                                             {
-                                                xmlWriter.WriteElementString("HostedZoneId", "https://route53.amazonaws.com/doc/2011-05-05/", aliasTargetAliasTarget.HostedZoneId.ToString());
+                                                xmlWriter.WriteElementString("HostedZoneId", "https://route53.amazonaws.com/doc/2012-02-29/", aliasTargetAliasTarget.HostedZoneId.ToString());
                                             }
                                             if (aliasTargetAliasTarget.IsSetDNSName()) 
                                             {
-                                                xmlWriter.WriteElementString("DNSName", "https://route53.amazonaws.com/doc/2011-05-05/", aliasTargetAliasTarget.DNSName.ToString());
+                                                xmlWriter.WriteElementString("DNSName", "https://route53.amazonaws.com/doc/2012-02-29/", aliasTargetAliasTarget.DNSName.ToString());
                                             }
                                             xmlWriter.WriteEndElement();
                                         }

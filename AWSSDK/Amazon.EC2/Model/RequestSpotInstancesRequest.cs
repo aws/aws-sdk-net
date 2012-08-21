@@ -42,7 +42,8 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SpotPrice property.
-        /// The maximum hourly price for any Spot Instance launched to fulfill the request.
+        /// Specifies the maximum price you will pay to
+        /// launch one or more Spot Instances.
         /// </summary>
         [XmlElementAttribute(ElementName = "SpotPrice")]
         public string SpotPrice
@@ -54,7 +55,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the SpotPrice property
         /// </summary>
-        /// <param name="spotPrice">The maximum hourly price for any Spot Instance launched to fulfill the request.</param>
+        /// <param name="spotPrice">Specifies the maximum price you will pay to
+        /// launch one or more Spot Instances.</param>
         /// <returns>this instance</returns>
         public RequestSpotInstancesRequest WithSpotPrice(string spotPrice)
         {
@@ -139,11 +141,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ValidFrom property.
-        /// Start date of the request. If this is a one-time request, the request becomes 
-        /// active at this date and time and remains active until all instances launch, the 
-        /// request expires, or the request is canceled. If the request is persistent, the 
-        /// request becomes active at this date and time and remains active until it expires 
-        /// or is canceled.
+        /// Start date of the request. If this is a one-time request,
+        /// the request remains active until all instances
+        /// launch, the request expires, or the request is canceled. If the
+        /// request is persistent, it remains active until it expires or
+        /// is canceled.
         /// Default: Request is effective immediately
         /// </summary>
         [XmlElementAttribute(ElementName = "ValidFrom")]
@@ -156,12 +158,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ValidFrom property
         /// </summary>
-        /// <param name="validFrom">
-        /// Start date of the request. If this is a one-time request, the request becomes 
-        /// active at this date and time and remains active until all instances launch, the 
-        /// request expires, or the request is canceled. If the request is persistent, the 
-        /// request becomes active at this date and time and remains active until it expires 
-        /// or is canceled.
+        /// <param name="validFrom">Start date of the request. If this is a one-time request,
+        /// the request remains active until all instances
+        /// launch, the request expires, or the request is canceled. If the
+        /// request is persistent, it remains active until it expires or
+        /// is canceled.
         /// Default: Request is effective immediately</param>
         /// <returns>this instance</returns>
         public RequestSpotInstancesRequest WithValidFrom(string validFrom)
@@ -181,10 +182,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the ValidUntil property.
-        /// End date of the request. If this is a one-time request, the request remains 
-        /// active until all instances launch, the request is canceled, or this date is 
-        /// reached. If the request is persistent, it remains active until it is canceled 
-        /// or this date and time is reached.
+        /// End date of the request. If this is a one-time request,
+        /// the request remains active until all instances launch,
+        /// the request expires, or the request is canceled. If the
+        /// request is persistent, it remains active until it expires or
+        /// is canceled.
         /// Default: Request remains open until criteria for closing are met
         /// </summary>
         [XmlElementAttribute(ElementName = "ValidUntil")]
@@ -197,11 +199,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the ValidUntil property
         /// </summary>
-        /// <param name="validUntil">
-        /// End date of the request. If this is a one-time request, the request remains 
-        /// active until all instances launch, the request is canceled, or this date is 
-        /// reached. If the request is persistent, it remains active until it is canceled 
-        /// or this date and time is reached.
+        /// <param name="validUntil">End date of the request. If this is a one-time request,
+        /// the request remains active until all instances launch,
+        /// the request expires, or the request is canceled. If the
+        /// request is persistent, it remains active until it expires or
+        /// is canceled.
         /// Default: Request remains open until criteria for closing are met</param>
         /// <returns>this instance</returns>
         public RequestSpotInstancesRequest WithValidUntil(string validUntil)

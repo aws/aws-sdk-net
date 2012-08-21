@@ -40,7 +40,18 @@ namespace Amazon.Route53
         {
             get
             {
-                return "2011-05-05";
+                return "2012-02-29";
+            }
+        }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "route53";
             }
         }
     }

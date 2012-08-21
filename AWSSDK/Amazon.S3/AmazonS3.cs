@@ -1788,7 +1788,6 @@ namespace Amazon.S3
 
         #endregion
 
-
         #region PutLifecycleConfiguration
 
         /// <summary>

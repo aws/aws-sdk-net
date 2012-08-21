@@ -43,6 +43,17 @@ namespace Amazon.IdentityManagement
                 return "2010-05-08";
             }
         }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "iam";
+            }
+        }
     }
 }
 

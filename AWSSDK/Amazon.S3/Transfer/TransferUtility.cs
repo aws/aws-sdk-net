@@ -73,7 +73,25 @@ namespace Amazon.S3.Transfer
         /// 	The AWS Secret Access Key.
         /// </param>
         public TransferUtility(string awsAccessKeyId, string awsSecretAccessKey)
-            : this(new AmazonS3Client(awsAccessKeyId, awsSecretAccessKey))
+            : this(new AmazonS3Client(awsAccessKeyId, awsSecretAccessKey, RegionEndpoint.USEast1))
+        {
+            this._shouldDispose = true;
+        }
+
+        /// <summary>
+        /// 	Constructs a new <see cref="TransferUtility"/> class.
+        /// </summary>
+        /// <param name="awsAccessKeyId">
+        /// 	The AWS Access Key ID.
+        /// </param>
+        /// <param name="awsSecretAccessKey">
+        /// 	The AWS Secret Access Key.
+        /// </param>
+        /// <param name="region">
+        ///     The region to configure the transfer utility for.
+        /// </param>
+        public TransferUtility(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(new AmazonS3Client(awsAccessKeyId, awsSecretAccessKey, region))
         {
             this._shouldDispose = true;
         }
@@ -91,7 +109,28 @@ namespace Amazon.S3.Transfer
         /// 	Specifies advanced settings.
         /// </param>
         public TransferUtility(string awsAccessKeyId, string awsSecretAccessKey, TransferUtilityConfig config)
-            : this(new AmazonS3Client(awsAccessKeyId, awsSecretAccessKey), config)
+            : this(awsAccessKeyId, awsSecretAccessKey, RegionEndpoint.USEast1, config)
+        {
+            this._shouldDispose = true;
+        }
+
+        /// <summary>
+        /// 	Constructs a new instance of the <see cref="TransferUtility"/> class.
+        /// </summary>
+        /// <param name="awsAccessKeyId">
+        /// 	The AWS Access Key ID.
+        /// </param>
+        /// <param name="awsSecretAccessKey">
+        /// 	The AWS Secret Access Key.
+        /// </param>
+        /// <param name="region">
+        ///     The region to configure the transfer utility for.
+        /// </param>
+        /// <param name="config">
+        /// 	Specifies advanced settings.
+        /// </param>
+        public TransferUtility(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region, TransferUtilityConfig config)
+            : this(new AmazonS3Client(awsAccessKeyId, awsSecretAccessKey, region), config)
         {
             this._shouldDispose = true;
         }

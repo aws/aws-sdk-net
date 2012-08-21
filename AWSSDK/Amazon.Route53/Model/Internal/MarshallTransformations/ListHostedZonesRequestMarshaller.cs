@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(listHostedZonesRequest, "AmazonRoute53");
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "/2011-05-05/hostedzone?marker={Marker}&maxitems={MaxItems}"; 
+            string uriResourcePath = "/2012-02-29/hostedzone?marker={Marker}&maxitems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Marker}", listHostedZonesRequest.Marker ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxItems}", listHostedZonesRequest.MaxItems ?? "" ); 
             

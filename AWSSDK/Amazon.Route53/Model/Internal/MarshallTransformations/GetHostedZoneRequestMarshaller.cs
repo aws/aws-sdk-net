@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(getHostedZoneRequest, "AmazonRoute53");
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "/2011-05-05/hostedzone/{Id}"; 
+            string uriResourcePath = "/2012-02-29/hostedzone/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", getHostedZoneRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 

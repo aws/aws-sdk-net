@@ -133,6 +133,25 @@ namespace Amazon.SimpleNotificationService
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSimpleNotificationServiceClient(RegionEndpoint region)
+            : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleNotificationServiceConfig() { RegionEndpoint = region }, true) { }
+
+        /// <summary>
+        /// Constructs AmazonSimpleNotificationServiceClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonSimpleNotificationService Configuration Object</param>
         public AmazonSimpleNotificationServiceClient(AmazonSimpleNotificationServiceConfig config)
             : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
@@ -144,6 +163,15 @@ namespace Amazon.SimpleNotificationService
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonSimpleNotificationServiceClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonSimpleNotificationServiceConfig(), true) { }
+
+        /// <summary>
+        /// Constructs AmazonSimpleNotificationServiceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSimpleNotificationServiceClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonSimpleNotificationServiceConfig() { RegionEndpoint = region }, true) { }
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with AWS Access Key ID, AWS Secret Key and an
@@ -164,9 +192,9 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key as a SecureString</param>
-        /// <param name="config">The AmazonSimpleNotificationService Configuration Object</param>
-        public AmazonSimpleNotificationServiceClient(string awsAccessKeyId, SecureString awsSecretAccessKey, AmazonSimpleNotificationServiceConfig config)
-            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true) { }
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSimpleNotificationServiceClient(string awsAccessKeyId, SecureString awsSecretAccessKey, RegionEndpoint region)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), new AmazonSimpleNotificationServiceConfig() { RegionEndpoint = region }, true) { }
 
         /// <summary>
         /// Constructs an AmazonSimpleNotificationServiceClient with AWSCredentials
@@ -174,6 +202,14 @@ namespace Amazon.SimpleNotificationService
         /// <param name="credentials"></param>
         public AmazonSimpleNotificationServiceClient(AWSCredentials credentials)
             : this(credentials, new AmazonSimpleNotificationServiceConfig()) { }
+
+        /// <summary>
+        /// Constructs an AmazonSimpleNotificationServiceClient with AWSCredentials
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="region">The region to connect to.</param>
+        public AmazonSimpleNotificationServiceClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonSimpleNotificationServiceConfig() { RegionEndpoint = region }) { }
 
         /// <summary>
         /// Constructs an AmazonSimpleNotificationServiceClient with AWSCredentials and an
@@ -429,7 +465,13 @@ namespace Amazon.SimpleNotificationService
          */
         private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonSimpleNotificationServiceConfig config)
         {
-            HttpWebRequest request = WebRequest.Create(config.ServiceURL) as HttpWebRequest;
+            string url;
+            if (config.RegionEndpoint != null)
+                url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+            else
+                url = config.ServiceURL;
+
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             if (request != null)
             {
                 request.ServicePoint.ConnectionLimit = config.ConnectionLimit;
@@ -690,7 +732,14 @@ namespace Amazon.SimpleNotificationService
                 {
                     throw new AmazonSimpleNotificationServiceException("Invalid Signature Version specified");
                 }
-                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, config.ServiceURL);
+
+                string url;
+                if (config.RegionEndpoint != null)
+                    url = "https://" + config.RegionEndpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname;
+                else
+                    url = config.ServiceURL;
+
+                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, url);
 
                 KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
                 string auth;

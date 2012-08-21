@@ -25,6 +25,7 @@ namespace Amazon.Runtime
     public class AmazonWebServiceResponse
     {
         private ResponseMetadata responseMetaDataField;
+        private long contentLength;
 
         /// <summary>
         /// Contains additional information about the request, such as the 
@@ -34,6 +35,15 @@ namespace Amazon.Runtime
         {
             get { return  responseMetaDataField; }
             set { responseMetaDataField = value; }
+        }
+
+        /// <summary>
+        /// Returns the content length of the HTTP response.
+        /// </summary>
+        public long ContentLength
+        {
+            get { return this.contentLength; }
+            internal set { this.contentLength = value; }
         }
     }
 }

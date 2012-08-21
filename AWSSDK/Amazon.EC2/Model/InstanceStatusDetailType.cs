@@ -106,6 +106,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The time when a status check failed. For an instance that was launched and impaired, this is the time when the instance was launched.
         /// </summary>
+        [XmlElement(ElementName = "ImpairedSince")]
         public string ImpairedSince
         {
             get { return this.impairedSinceField; }

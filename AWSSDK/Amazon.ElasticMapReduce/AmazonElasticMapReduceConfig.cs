@@ -43,6 +43,17 @@ namespace Amazon.ElasticMapReduce
                 return "2009-03-31";
             }
         }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal override string RegionEndpointServiceName
+        {
+            get
+            {
+                return "elasticmapreduce";
+            }
+        }
     }
 }
 

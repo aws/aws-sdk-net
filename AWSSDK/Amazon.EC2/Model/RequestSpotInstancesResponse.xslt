@@ -112,9 +112,11 @@
             </xsl:element>
           <xsl:apply-templates select="ec2:networkInterfaceSet" />
           <xsl:apply-templates select="ec2:iamInstanceProfile" />
-          <xsl:element name="EbsOptimized">
-            <xsl:value-of select="ec2:ebsOptimized"/>
-          </xsl:element>
+          <xsl:if test="ec2:ebsOptimized">
+            <xsl:element name="EbsOptimized">
+              <xsl:value-of select="ec2:ebsOptimized"/>
+            </xsl:element>
+          </xsl:if>
         </xsl:element>
     </xsl:template>
   

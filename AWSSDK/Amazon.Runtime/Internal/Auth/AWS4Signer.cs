@@ -65,17 +65,23 @@ namespace Amazon.Runtime.Internal.Auth
 
             string scope = string.Format("{0}/{1}/{2}/{3}", dateStamp, region, service, TERMINATOR);
             List<string> headersToSign = GetHeadersForSigning(request.Headers);
+
+            var queryString = request.UseQueryString ? AWSSDKUtils.GetParametersAsString(request.Parameters) : "";
+
             string canonicalRequest = GetCanonicalRequest(headersToSign,
-                                                          request.Endpoint,
+                                                          new Uri(request.Endpoint, request.ResourcePath),
+                                                          queryString,
                                                           request.Headers,
-                                                          GetRequestPayload(request));
+                                                          request.UseQueryString ? "" : GetRequestPayload(request),
+                                                          request.ContentStreamHash,
+                                                          request.HttpMethod);
 
             StringBuilder stringToSign = new StringBuilder();
             stringToSign.AppendFormat("{0}-{1}\n{2}\n{3}\n", SCHEME, ALGORITHM, dateTime, scope);
 
             HashAlgorithm ha = HashAlgorithm.Create("SHA-256");
             byte[] canonicalRequestHashBytes = ha.ComputeHash(Encoding.UTF8.GetBytes(canonicalRequest));
-            stringToSign.Append(ToHex(canonicalRequestHashBytes, true));
+            stringToSign.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
 
             KeyedHashAlgorithm kha = KeyedHashAlgorithm.Create(signingAlgorithm);
             kha.Key = ComposeSigningKey(signingAlgorithm, awsSecretAccessKey, secureKey, region, dateStamp, service);
@@ -85,7 +91,7 @@ namespace Amazon.Runtime.Internal.Auth
             authorizationHeader.AppendFormat("{0}-{1} ", SCHEME, ALGORITHM);
             authorizationHeader.AppendFormat("Credential={0}/{1}, ", awsAccessKeyId, scope);
             authorizationHeader.AppendFormat("SignedHeaders={0}, ", GetSignedHeaders(headersToSign));
-            authorizationHeader.AppendFormat("Signature={0}", ToHex(signature, true));
+            authorizationHeader.AppendFormat("Signature={0}", AWSSDKUtils.ToHex(signature, true));
 
             request.Headers.Add("Authorization", authorizationHeader.ToString());
         }
@@ -103,11 +109,13 @@ namespace Amazon.Runtime.Internal.Auth
         /// Region name for inclusion in the signature; only needed if this  cannot be determined by parsing 
         /// the endpoint.
         /// </param>
+        /// <param name="httpMethod">The HTTP method used to make the request.</param>
         /// <param name="credentials">User credentials</param>
         /// <returns>The signature string to be added as header 'Authorization' on the eventual request</returns>
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
         public static string CalculateSignature(IDictionary<string, string> parameters,
                                                 string serviceURL,
+                                                string httpMethod,
                                                 string authenticationServiceName,
                                                 string authenticationRegion,
                                                 ImmutableCredentials credentials)
@@ -134,15 +142,18 @@ namespace Amazon.Runtime.Internal.Auth
             List<string> headersToSign = GetHeadersForSigning(parameters);
             string canonicalRequest = GetCanonicalRequest(headersToSign,
                                                           new Uri(serviceURL),
+                                                          "",
                                                           parameters,
-                                                          AWSSDKUtils.GetParametersAsString(parameters));
+                                                          AWSSDKUtils.GetParametersAsString(parameters),
+                                                          null, // No support for binary request body yet here.
+                                                          httpMethod);
 
             StringBuilder stringToSign = new StringBuilder();
             stringToSign.AppendFormat("{0}-{1}\n{2}\n{3}\n", SCHEME, ALGORITHM, dateTime, scope);
 
             HashAlgorithm ha = HashAlgorithm.Create("SHA-256");
             byte[] canonicalRequestHashBytes = ha.ComputeHash(Encoding.UTF8.GetBytes(canonicalRequest));
-            stringToSign.Append(ToHex(canonicalRequestHashBytes, true));
+            stringToSign.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
 
             KeyedHashAlgorithm kha = KeyedHashAlgorithm.Create(signingAlgorithm);
             kha.Key = ComposeSigningKey(signingAlgorithm, credentials.ClearSecretKey, credentials.SecureSecretKey, region, dateStamp, service);
@@ -152,37 +163,19 @@ namespace Amazon.Runtime.Internal.Auth
             authorizationHeader.AppendFormat("{0}-{1} ", SCHEME, ALGORITHM);
             authorizationHeader.AppendFormat("Credential={0}/{1}, ", credentials.AccessKey, scope);
             authorizationHeader.AppendFormat("SignedHeaders={0}, ", GetSignedHeaders(headersToSign));
-            authorizationHeader.AppendFormat("Signature={0}", ToHex(signature, true));
+            authorizationHeader.AppendFormat("Signature={0}", AWSSDKUtils.ToHex(signature, true));
 
             return authorizationHeader.ToString();
         }
 
         #region Http signing helpers
 
-        /// <summary>
-        /// Helper function to format a byte array into string
-        /// </summary>
-        /// <param name="data">The data blob to process</param>
-        /// <param name="lowercase">If true, returns hex digits in lower case form</param>
-        /// <returns>String version of the data</returns>
-        private static string ToHex(byte[] data, bool lowercase)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < data.Length; i++)
-            {
-                sb.Append(data[i].ToString(lowercase ? "x2" : "X2"));
-            }
-
-            return sb.ToString();
-        }
-
         private static string DetermineRegion(ClientConfig clientConfig)
         {
             if (!string.IsNullOrEmpty(clientConfig.AuthenticationRegion))
                 return clientConfig.AuthenticationRegion.ToLower();
             else
-                return AWSSDKUtils.DetermineRegion(clientConfig.ServiceURL).ToLower();
+                return AWSSDKUtils.DetermineRegion(clientConfig.DetermineServiceURL()).ToLower();
         }
 
         private static string DetermineService(ClientConfig clientConfig)
@@ -190,7 +183,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (!string.IsNullOrEmpty(clientConfig.AuthenticationServiceName))
                 return clientConfig.AuthenticationServiceName.ToLower();
             else
-                return AWSSDKUtils.DetermineService(clientConfig.ServiceURL).ToLower();
+                return AWSSDKUtils.DetermineService(clientConfig.DetermineServiceURL()).ToLower();
         }
 
         /// <summary>
@@ -206,18 +199,13 @@ namespace Amazon.Runtime.Internal.Auth
         private static byte[] ComposeSigningKey(string algorithm, string awsSecretAccessKey, SecureString secureKey, string region, string date, string service)
         {
             const string KsecretPrefix = "AWS4";
-            IntPtr bstr = IntPtr.Zero;
             char[] Ksecret = null;
 
             try
             {
                 if (string.IsNullOrEmpty(awsSecretAccessKey))
                 {
-                    Ksecret = new char[KsecretPrefix.Length + secureKey.Length];
-                    Array.Copy(KsecretPrefix.ToCharArray(), 0, Ksecret, 0, KsecretPrefix.Length);
-
-                    bstr = Marshal.SecureStringToBSTR(secureKey);
-                    Marshal.Copy(bstr, Ksecret, KsecretPrefix.Length, secureKey.Length);
+                    Ksecret = ExtractSecretFromSecureString(secureKey, KsecretPrefix);
                 }
                 else
                 {
@@ -234,7 +222,32 @@ namespace Amazon.Runtime.Internal.Auth
                 // clean up all secrets, regardless of how initially seeded (for simplicity)
                 if (Ksecret != null)
                     Array.Clear(Ksecret, 0, Ksecret.Length);
+            }
+        }
 
+        /// <summary>
+        /// Extracts a secure string into a char[].
+        /// </summary>
+        /// <param name="secureKey">The secure string to extract</param>
+        /// <param name="secretPrefix">A string with which to prefix the secure string</param>
+        /// <returns>The secure string </returns>
+        /// <remarks>This needs to be in a separate method to ComposeSigningKey to prevent security exceptions when JIT Compiling under partial trust</remarks>
+        private static char[] ExtractSecretFromSecureString(SecureString secureKey, string secretPrefix)
+        {
+            IntPtr bstr = IntPtr.Zero;
+
+            try
+            {
+                char[] Ksecret = new char[secretPrefix.Length + secureKey.Length];
+                Array.Copy(secretPrefix.ToCharArray(), 0, Ksecret, 0, secretPrefix.Length);
+
+                bstr = Marshal.SecureStringToBSTR(secureKey);
+                Marshal.Copy(bstr, Ksecret, secretPrefix.Length, secureKey.Length);
+
+                return Ksecret;
+            }
+            finally
+            {
                 if (bstr != IntPtr.Zero)
                     Marshal.ZeroFreeBSTR(bstr);
             }
@@ -259,24 +272,40 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="headersToSign">Request headers that are to be included in the signature</param>
         /// <param name="serviceEndPoint">The endpoint to the service being called</param>
+        /// <param name="queryString">The query parameters for the request</param>
         /// <param name="headers">The full request headers</param>
         /// <param name="requestBody">The body of the request</param>
+        /// <param name="binaryRequestBodyHash">The hash of the binary request body if present.</param>
+        /// <param name="httpMethod">The http method used for the request</param>
         /// <returns>Canonicalised request as a string</returns>
         private static string GetCanonicalRequest(List<string> headersToSign,
                                                   Uri serviceEndPoint,
+                                                  string queryString,
                                                   IDictionary<string, string> headers,
-                                                  string requestBody)
+                                                  string requestBody,
+                                                  string binaryRequestBodyHash,
+                                                  string httpMethod)
         {
-            StringBuilder canonicalRequest = new StringBuilder("POST\n");
+            StringBuilder canonicalRequest = new StringBuilder();
+            canonicalRequest.AppendFormat("{0}\n", httpMethod);
             canonicalRequest.AppendFormat("{0}\n", GetCanonicalizedResourcePath(serviceEndPoint));
-            canonicalRequest.Append("\n");
+            canonicalRequest.AppendFormat("{0}\n", queryString);
+
 
             canonicalRequest.AppendFormat("{0}\n", GetCanonicalizedHeaders(headersToSign, headers));
             canonicalRequest.AppendFormat("{0}\n", GetSignedHeaders(headersToSign));
 
-            HashAlgorithm ha = HashAlgorithm.Create("SHA-256");
-            byte[] payloadHashBytes = ha.ComputeHash(Encoding.UTF8.GetBytes(requestBody));
-            canonicalRequest.Append(ToHex(payloadHashBytes, true));
+            if (binaryRequestBodyHash != null)
+            {
+                canonicalRequest.Append(binaryRequestBodyHash);
+            }
+            else
+            {
+                HashAlgorithm ha = HashAlgorithm.Create("SHA-256");
+                byte[] payloadHashBytes = ha.ComputeHash(Encoding.UTF8.GetBytes(requestBody));
+                canonicalRequest.Append(AWSSDKUtils.ToHex(payloadHashBytes, true));
+            }
+
             return canonicalRequest.ToString();
         }
 

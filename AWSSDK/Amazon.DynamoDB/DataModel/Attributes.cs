@@ -176,6 +176,49 @@ namespace Amazon.DynamoDB.DataModel
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
     public class DynamoDBHashKeyAttribute : DynamoDBPropertyAttribute
     {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public DynamoDBHashKeyAttribute()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Constructor that specifies an alternate attribute name
+        /// </summary>
+        /// <param name="attributeName">
+        /// Name of attribute to be associated with property or field.
+        /// </param>
+        public DynamoDBHashKeyAttribute(string attributeName)
+            : base(attributeName)
+        {
+        }
+
+        /// <summary>
+        /// Constructor that specifies a custom converter.
+        /// 
+        /// Converter must be the type of a class that implements IPropertyConverter.
+        /// </summary>
+        /// <param name="converter">Custom converter type.</param>
+        public DynamoDBHashKeyAttribute(Type converter)
+            : base(converter)
+        {
+        }
+
+        /// <summary>
+        /// Constructor that specifies an alternate attribute name and a custom converter.
+        /// 
+        /// Converter must be the type of a class that implements IPropertyConverter.
+        /// </summary>
+        /// <param name="attributeName">
+        /// Name of attribute to be associated with property or field.
+        /// </param>
+        /// <param name="converter">Custom converter type.</param>
+        public DynamoDBHashKeyAttribute(string attributeName, Type converter)
+            : base(attributeName, converter)
+        {
+        }
     }
 
     /// <summary>
@@ -188,5 +231,48 @@ namespace Amazon.DynamoDB.DataModel
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
     public class DynamoDBRangeKeyAttribute : DynamoDBPropertyAttribute
     {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public DynamoDBRangeKeyAttribute()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Constructor that specifies an alternate attribute name
+        /// </summary>
+        /// <param name="attributeName">
+        /// Name of attribute to be associated with property or field.
+        /// </param>
+        public DynamoDBRangeKeyAttribute(string attributeName)
+            : base(attributeName)
+        {
+        }
+
+        /// <summary>
+        /// Constructor that specifies a custom converter.
+        /// 
+        /// Converter must be the type of a class that implements IPropertyConverter.
+        /// </summary>
+        /// <param name="converter">Custom converter type.</param>
+        public DynamoDBRangeKeyAttribute(Type converter)
+            : base(converter)
+        {
+        }
+
+        /// <summary>
+        /// Constructor that specifies an alternate attribute name and a custom converter.
+        /// 
+        /// Converter must be the type of a class that implements IPropertyConverter.
+        /// </summary>
+        /// <param name="attributeName">
+        /// Name of attribute to be associated with property or field.
+        /// </param>
+        /// <param name="converter">Custom converter type.</param>
+        public DynamoDBRangeKeyAttribute(string attributeName, Type converter)
+            : base(attributeName, converter)
+        {
+        }
     }
 }

@@ -718,6 +718,37 @@ namespace Amazon.DynamoDB.DocumentModel
             return p.AsDateTime();
         }
 
+
+
+        /// <summary>
+        /// Explicitly convert Primitive to Guid
+        /// </summary>
+        /// <returns>Guid value of this object</returns>
+        public override Guid AsGuid()
+        {
+            Guid ret = new Guid(Value);
+            return ret;
+        }
+        /// <summary>
+        /// Implicitly convert Guid to Primitive
+        /// </summary>
+        /// <param name="data">Guid data to convert</param>
+        /// <returns>Primitive representing the data</returns>
+        public static implicit operator Primitive(Guid data)
+        {
+            Primitive ret = data.ToString();
+            return ret;
+        }
+        /// <summary>
+        /// Explicitly convert Primitive to Guid
+        /// </summary>
+        /// <param name="p">Primitive to convert</param>
+        /// <returns>Guid value of Primitive</returns>
+        public static explicit operator Guid(Primitive p)
+        {
+            return p.AsGuid();
+        }
+
         #endregion
 
         #region Public overrides

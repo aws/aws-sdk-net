@@ -146,8 +146,9 @@ namespace Amazon.S3.Model
             {
                 this.lastModified = DateTime.ParseExact(
                     value,
-                    AWSSDKUtils.ISO8601DateFormat,
-                    CultureInfo.InvariantCulture
+                    new string[] { AWSSDKUtils.ISO8601DateFormat, AWSSDKUtils.GMTDateFormat },
+                    CultureInfo.InvariantCulture,
+                    DateTimeStyles.None
                     );
             }
         }

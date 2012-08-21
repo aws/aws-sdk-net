@@ -24,17 +24,17 @@ namespace Amazon.DynamoDB
 {
     internal delegate object AsyncCall();
 
-    internal class AsyncResult : IAsyncResult
+    internal class DynamoDBAsyncResult : IAsyncResult
     {
         private ManualResetEvent _waitHandle;
 
-        public AsyncResult(AsyncCallback callback, object state)
+        public DynamoDBAsyncResult(AsyncCallback callback, object state)
         {
             this.Callback = callback;
             this.AsyncState = state;
             this._waitHandle = new ManualResetEvent(false);
         }
-        public AsyncResult()
+        public DynamoDBAsyncResult()
         {
         }
 
@@ -71,7 +71,7 @@ namespace Amazon.DynamoDB
 
     internal static class DynamoDBAsyncExecutor
     {
-        public static void Execute(AsyncCall call, AsyncResult result)
+        public static void Execute(AsyncCall call, DynamoDBAsyncResult result)
         {
             try
             {
@@ -94,14 +94,14 @@ namespace Amazon.DynamoDB
 
         public static IAsyncResult BeginOperation(AsyncCall call, AsyncCallback callback, object state)
         {
-            AsyncResult result = new AsyncResult(callback, state);
+            DynamoDBAsyncResult result = new DynamoDBAsyncResult(callback, state);
             new Thread(() => Execute(call, result)).Start();
             return result;
         }
 
         public static object EndOperation(IAsyncResult result)
         {
-            AsyncResult asyncResult = result as AsyncResult;
+            DynamoDBAsyncResult asyncResult = result as DynamoDBAsyncResult;
             if (asyncResult == null)
                 return null;
 

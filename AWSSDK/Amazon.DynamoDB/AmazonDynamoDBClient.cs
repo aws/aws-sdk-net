@@ -71,6 +71,25 @@ namespace Amazon.DynamoDB
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonDynamoDBClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDynamoDBConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+
+        /// <summary>
+        /// Constructs AmazonDynamoDBClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonDynamoDB Configuration Object</param>
         public AmazonDynamoDBClient(AmazonDynamoDBConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
@@ -81,6 +100,16 @@ namespace Amazon.DynamoDB
         /// <param name="credentials">AWS Credentials</param>
         public AmazonDynamoDBClient(AWSCredentials credentials)
             : this(credentials, new AmazonDynamoDBConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDynamoDBClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonDynamoDBClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonDynamoDBConfig(){RegionEndpoint=region})
         {
         }
 
@@ -102,6 +131,17 @@ namespace Amazon.DynamoDB
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonDynamoDBClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonDynamoDBConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDynamoDBClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonDynamoDBClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonDynamoDBConfig() {RegionEndpoint=region})
         {
         }
 
@@ -128,6 +168,18 @@ namespace Amazon.DynamoDB
         /// <param name="awsSessionToken">AWS Session Token</param>
         public AmazonDynamoDBClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
             : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonDynamoDBConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonDynamoDBClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonDynamoDBClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonDynamoDBConfig(){RegionEndpoint = region})
         {
         }
 
@@ -1061,6 +1113,7 @@ namespace Amazon.DynamoDB
             delay = Math.Min(delay, MAX_BACKOFF_IN_MILLISECONDS);
             Thread.Sleep(delay);
         }
+
     }
 }
     

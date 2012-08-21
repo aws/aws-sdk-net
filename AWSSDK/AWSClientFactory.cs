@@ -18,6 +18,7 @@
  *  AWS SDK for .NET
  *
  */
+using System;
 
 using Amazon.AutoScaling;
 using Amazon.CloudFormation;
@@ -40,6 +41,8 @@ using Amazon.SimpleDB;
 using Amazon.SimpleEmail;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleWorkflow;
+
+using Amazon.Runtime;
 
 namespace Amazon
 {
@@ -134,6 +137,84 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Create a client for the Amazon EC2 Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon EC2 client</returns>
+        public static AmazonEC2 CreateAmazonEC2Client(RegionEndpoint region)
+        {
+            return new AmazonEC2Client(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon EC2 Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon EC2 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonEC2 CreateAmazonEC2Client(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonEC2Client(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon EC2 Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon EC2 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonEC2 CreateAmazonEC2Client(AWSCredentials credentials)
+        {
+            return new AmazonEC2Client(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon EC2 Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon EC2 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonEC2 CreateAmazonEC2Client(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonEC2Client(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon EC2 Service with AWSCredentials and an AmazonEC2 Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon EC2 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonEC2 CreateAmazonEC2Client(AWSCredentials credentials, AmazonEC2Config config)
+        {
+            return new AmazonEC2Client(credentials, config);
+        }
+
+
+
+        /// <summary>
         /// Create a client for the Amazon SimpleDB Service with the credentials defined in the App.config.
         /// 
         /// Example App.config with credentials set. 
@@ -209,6 +290,82 @@ namespace Amazon
             )
         {
             return new AmazonSimpleDBClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleDB Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SimpleDB client</returns>
+        public static AmazonSimpleDB CreateAmazonSimpleDBClient(RegionEndpoint region)
+        {
+            return new AmazonSimpleDBClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleDB Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SimpleDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleDB CreateAmazonSimpleDBClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonSimpleDBClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleDB Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon SimpleDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleDB CreateAmazonSimpleDBClient(AWSCredentials credentials)
+        {
+            return new AmazonSimpleDBClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleDB Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SimpleDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleDB CreateAmazonSimpleDBClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonSimpleDBClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleDB Service with AWSCredentials and an AmazonSimpleDB Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon SimpleDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleDB CreateAmazonSimpleDBClient(AWSCredentials credentials, AmazonSimpleDBConfig config)
+        {
+            return new AmazonSimpleDBClient(credentials, config);
         }
 
         /// <summary>
@@ -290,6 +447,82 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Create a client for the Amazon ElasticMapReduce Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticMapReduce client</returns>
+        public static AmazonElasticMapReduce CreateAmazonElasticMapReduceClient(RegionEndpoint region)
+        {
+            return new AmazonElasticMapReduceClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticMapReduce Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticMapReduce client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticMapReduce CreateAmazonElasticMapReduceClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonElasticMapReduceClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticMapReduce Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon ElasticMapReduce client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticMapReduce CreateAmazonElasticMapReduceClient(AWSCredentials credentials)
+        {
+            return new AmazonElasticMapReduceClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticMapReduce Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticMapReduce client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticMapReduce CreateAmazonElasticMapReduceClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonElasticMapReduceClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticMapReduce Service with AWSCredentials and an AmazonElasticMapReduce Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon ElasticMapReduce client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticMapReduce CreateAmazonElasticMapReduceClient(AWSCredentials credentials, AmazonElasticMapReduceConfig config)
+        {
+            return new AmazonElasticMapReduceClient(credentials, config);
+        }
+
+        /// <summary>
         /// Create a client for the Amazon SQS Service with the credentials defined in the App.config.
         /// 
         /// Example App.config with credentials set. 
@@ -365,6 +598,82 @@ namespace Amazon
             )
         {
             return new AmazonSQSClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SQS Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SQS client</returns>
+        public static AmazonSQS CreateAmazonSQSClient(RegionEndpoint region)
+        {
+            return new AmazonSQSClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SQS Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SQS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSQS CreateAmazonSQSClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonSQSClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SQS Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon SQS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSQS CreateAmazonSQSClient(AWSCredentials credentials)
+        {
+            return new AmazonSQSClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SQS Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SQS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSQS CreateAmazonSQSClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonSQSClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SQS Service with AWSCredentials and an AmazonSQS Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon SQS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSQS CreateAmazonSQSClient(AWSCredentials credentials, AmazonSQSConfig config)
+        {
+            return new AmazonSQSClient(credentials, config);
         }
 
         /// <summary>
@@ -446,6 +755,82 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Create a client for the Amazon CloudWatch Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudWatch client</returns>
+        public static AmazonCloudWatch CreateAmazonCloudWatchClient(RegionEndpoint region)
+        {
+            return new AmazonCloudWatchClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatch Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudWatch client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudWatch CreateAmazonCloudWatchClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCloudWatchClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatch Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CloudWatch client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudWatch CreateAmazonCloudWatchClient(AWSCredentials credentials)
+        {
+            return new AmazonCloudWatchClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatch Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudWatch client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudWatch CreateAmazonCloudWatchClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCloudWatchClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudWatch Service with AWSCredentials and an AmazonCloudWatch Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CloudWatch client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudWatch CreateAmazonCloudWatchClient(AWSCredentials credentials, AmazonCloudWatchConfig config)
+        {
+            return new AmazonCloudWatchClient(credentials, config);
+        }
+
+        /// <summary>
         /// Create a client for the Amazon ElasticLoadBalancing Service with the credentials defined in the App.config.
         /// 
         /// Example App.config with credentials set. 
@@ -521,6 +906,82 @@ namespace Amazon
             )
         {
             return new AmazonElasticLoadBalancingClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticLoadBalancing Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticLoadBalancing client</returns>
+        public static AmazonElasticLoadBalancing CreateAmazonElasticLoadBalancingClient(RegionEndpoint region)
+        {
+            return new AmazonElasticLoadBalancingClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticLoadBalancing Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticLoadBalancing client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticLoadBalancing CreateAmazonElasticLoadBalancingClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonElasticLoadBalancingClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticLoadBalancing Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon ElasticLoadBalancing client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticLoadBalancing CreateAmazonElasticLoadBalancingClient(AWSCredentials credentials)
+        {
+            return new AmazonElasticLoadBalancingClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticLoadBalancing Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticLoadBalancing client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticLoadBalancing CreateAmazonElasticLoadBalancingClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonElasticLoadBalancingClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticLoadBalancing Service with AWSCredentials and an AmazonElasticLoadBalancing Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon ElasticLoadBalancing client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticLoadBalancing CreateAmazonElasticLoadBalancingClient(AWSCredentials credentials, AmazonElasticLoadBalancingConfig config)
+        {
+            return new AmazonElasticLoadBalancingClient(credentials, config);
         }
 
         /// <summary>
@@ -602,6 +1063,82 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Create a client for the Amazon AutoScaling Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon AutoScaling client</returns>
+        public static AmazonAutoScaling CreateAmazonAutoScalingClient(RegionEndpoint region)
+        {
+            return new AmazonAutoScalingClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AutoScaling Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon AutoScaling client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAutoScaling CreateAmazonAutoScalingClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonAutoScalingClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AutoScaling Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon AutoScaling client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAutoScaling CreateAmazonAutoScalingClient(AWSCredentials credentials)
+        {
+            return new AmazonAutoScalingClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AutoScaling Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon AutoScaling client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAutoScaling CreateAmazonAutoScalingClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonAutoScalingClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon AutoScaling Service with AWSCredentials and an AmazonAutoScaling Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon AutoScaling client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonAutoScaling CreateAmazonAutoScalingClient(AWSCredentials credentials, AmazonAutoScalingConfig config)
+        {
+            return new AmazonAutoScalingClient(credentials, config);
+        }
+
+        /// <summary>
         /// Create a client for the Amazon S3 Service with the credentials defined in the App.config.
         /// 
         /// Example App.config with credentials set. 
@@ -620,7 +1157,7 @@ namespace Amazon
         /// </remarks>
         public static AmazonS3 CreateAmazonS3Client()
         {
-            return new AmazonS3Client();
+            return new AmazonS3Client(RegionEndpoint.USEast1);
         }
 
         /// <summary>
@@ -677,6 +1214,82 @@ namespace Amazon
             )
         {
             return new AmazonS3Client(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon S3 Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon S3 client</returns>
+        public static AmazonS3 CreateAmazonS3Client(RegionEndpoint region)
+        {
+            return new AmazonS3Client(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon S3 Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon S3 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonS3 CreateAmazonS3Client(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonS3Client(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon S3 Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon S3 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonS3 CreateAmazonS3Client(AWSCredentials credentials)
+        {
+            return new AmazonS3Client(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon S3 Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon S3 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonS3 CreateAmazonS3Client(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonS3Client(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon S3 Service with AWSCredentials and an AmazonS3 Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon S3 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonS3 CreateAmazonS3Client(AWSCredentials credentials, AmazonS3Config config)
+        {
+            return new AmazonS3Client(credentials, config);
         }
 
         /// <summary>
@@ -758,6 +1371,82 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Create a client for the Amazon RDS Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon RDS client</returns>
+        public static AmazonRDS CreateAmazonRDSClient(RegionEndpoint region)
+        {
+            return new AmazonRDSClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon RDS Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon RDS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRDS CreateAmazonRDSClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonRDSClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon RDS Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon RDS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRDS CreateAmazonRDSClient(AWSCredentials credentials)
+        {
+            return new AmazonRDSClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon RDS Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon RDS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRDS CreateAmazonRDSClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonRDSClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon RDS Service with AWSCredentials and an AmazonRDS Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon RDS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRDS CreateAmazonRDSClient(AWSCredentials credentials, AmazonRDSConfig config)
+        {
+            return new AmazonRDSClient(credentials, config);
+        }
+
+        /// <summary>
         /// Create a client for the Amazon CloudFront Service with the credentials defined in the App.config.
         /// 
         /// Example App.config with credentials set. 
@@ -833,6 +1522,82 @@ namespace Amazon
             )
         {
             return new AmazonCloudFrontClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFront Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudFront client</returns>
+        public static AmazonCloudFront CreateAmazonCloudFrontClient(RegionEndpoint region)
+        {
+            return new AmazonCloudFrontClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFront Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudFront client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFront CreateAmazonCloudFrontClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCloudFrontClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFront Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CloudFront client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFront CreateAmazonCloudFrontClient(AWSCredentials credentials)
+        {
+            return new AmazonCloudFrontClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFront Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudFront client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFront CreateAmazonCloudFrontClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCloudFrontClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFront Service with AWSCredentials and an AmazonCloudFront Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CloudFront client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFront CreateAmazonCloudFrontClient(AWSCredentials credentials, AmazonCloudFrontConfig config)
+        {
+            return new AmazonCloudFrontClient(credentials, config);
         }
 
         /// <summary>
@@ -914,6 +1679,82 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Create a client for the Amazon SNS Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SNS client</returns>
+        public static AmazonSimpleNotificationService CreateAmazonSNSClient(RegionEndpoint region)
+        {
+            return new AmazonSimpleNotificationServiceClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SNS Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SNS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleNotificationService CreateAmazonSNSClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonSimpleNotificationServiceClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SNS Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon SNS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleNotificationService CreateAmazonSNSClient(AWSCredentials credentials)
+        {
+            return new AmazonSimpleNotificationServiceClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SNS Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SNS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleNotificationService CreateAmazonSNSClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonSimpleNotificationServiceClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SNS Service with AWSCredentials and an AmazonSNS Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon SNS client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleNotificationService CreateAmazonSNSClient(AWSCredentials credentials, AmazonSimpleNotificationServiceConfig config)
+        {
+            return new AmazonSimpleNotificationServiceClient(credentials, config);
+        }
+
+        /// <summary>
         /// Create a client for the Amazon IdentityManagement Service with the credentials defined in the App.config.
         /// 
         /// Example App.config with credentials set. 
@@ -984,6 +1825,82 @@ namespace Amazon
             )
         {
             return new AmazonIdentityManagementServiceClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon IdentityManagementService Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon IdentityManagementService client</returns>
+        public static AmazonIdentityManagementService CreateAmazonIdentityManagementServiceClient(RegionEndpoint region)
+        {
+            return new AmazonIdentityManagementServiceClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon IdentityManagementService Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon IdentityManagementService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonIdentityManagementService CreateAmazonIdentityManagementServiceClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonIdentityManagementServiceClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon IdentityManagementService Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon IdentityManagementService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonIdentityManagementService CreateAmazonIdentityManagementServiceClient(AWSCredentials credentials)
+        {
+            return new AmazonIdentityManagementServiceClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon IdentityManagementService Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon IdentityManagementService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonIdentityManagementService CreateAmazonIdentityManagementServiceClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonIdentityManagementServiceClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon IdentityManagementService Service with AWSCredentials and an AmazonIdentityManagementService Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon IdentityManagementService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonIdentityManagementService CreateAmazonIdentityManagementServiceClient(AWSCredentials credentials, AmazonIdentityManagementServiceConfig config)
+        {
+            return new AmazonIdentityManagementServiceClient(credentials, config);
         }
 
         /// <summary>
@@ -1064,6 +1981,82 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Create a client for the Amazon ElasticBeanstalk Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticBeanstalk client</returns>
+        public static AmazonElasticBeanstalk CreateAmazonElasticBeanstalkClient(RegionEndpoint region)
+        {
+            return new AmazonElasticBeanstalkClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticBeanstalk Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticBeanstalk client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticBeanstalk CreateAmazonElasticBeanstalkClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonElasticBeanstalkClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticBeanstalk Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon ElasticBeanstalk client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticBeanstalk CreateAmazonElasticBeanstalkClient(AWSCredentials credentials)
+        {
+            return new AmazonElasticBeanstalkClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticBeanstalk Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElasticBeanstalk client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticBeanstalk CreateAmazonElasticBeanstalkClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonElasticBeanstalkClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElasticBeanstalk Service with AWSCredentials and an AmazonElasticBeanstalk Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon ElasticBeanstalk client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElasticBeanstalk CreateAmazonElasticBeanstalkClient(AWSCredentials credentials, AmazonElasticBeanstalkConfig config)
+        {
+            return new AmazonElasticBeanstalkClient(credentials, config);
+        }
+
+        /// <summary>
         /// Create a client for the Amazon SimpleEmailService Service with the credentials defined in the App.config.
         /// 
         /// Example App.config with credentials set. 
@@ -1134,6 +2127,82 @@ namespace Amazon
             )
         {
             return new AmazonSimpleEmailServiceClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleEmailService Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SimpleEmailService client</returns>
+        public static AmazonSimpleEmailService CreateAmazonSimpleEmailServiceClient(RegionEndpoint region)
+        {
+            return new AmazonSimpleEmailServiceClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleEmailService Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SimpleEmailService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleEmailService CreateAmazonSimpleEmailServiceClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonSimpleEmailServiceClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleEmailService Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon SimpleEmailService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleEmailService CreateAmazonSimpleEmailServiceClient(AWSCredentials credentials)
+        {
+            return new AmazonSimpleEmailServiceClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleEmailService Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SimpleEmailService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleEmailService CreateAmazonSimpleEmailServiceClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonSimpleEmailServiceClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleEmailService Service with AWSCredentials and an AmazonSimpleEmailService Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon SimpleEmailService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleEmailService CreateAmazonSimpleEmailServiceClient(AWSCredentials credentials, AmazonSimpleEmailServiceConfig config)
+        {
+            return new AmazonSimpleEmailServiceClient(credentials, config);
         }
 
         /// <summary>
@@ -1214,6 +2283,82 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Create a client for the Amazon CloudFormation Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudFormation client</returns>
+        public static AmazonCloudFormation CreateAmazonCloudFormationClient(RegionEndpoint region)
+        {
+            return new AmazonCloudFormationClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFormation Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudFormation client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFormation CreateAmazonCloudFormationClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCloudFormationClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFormation Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CloudFormation client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFormation CreateAmazonCloudFormationClient(AWSCredentials credentials)
+        {
+            return new AmazonCloudFormationClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFormation Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudFormation client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFormation CreateAmazonCloudFormationClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCloudFormationClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudFormation Service with AWSCredentials and an AmazonCloudFormation Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CloudFormation client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonCloudFormation CreateAmazonCloudFormationClient(AWSCredentials credentials, AmazonCloudFormationConfig config)
+        {
+            return new AmazonCloudFormationClient(credentials, config);
+        }
+
+        /// <summary>
         /// Create a client for the Amazon ElastiCache Service with the credentials defined in the App.config.
         /// 
         /// Example App.config with credentials set. 
@@ -1288,6 +2433,82 @@ namespace Amazon
             )
         {
             return new AmazonElastiCacheClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElastiCache Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElastiCache client</returns>
+        public static AmazonElastiCache CreateAmazonElastiCacheClient(RegionEndpoint region)
+        {
+            return new AmazonElastiCacheClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElastiCache Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElastiCache client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElastiCache CreateAmazonElastiCacheClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonElastiCacheClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElastiCache Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon ElastiCache client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElastiCache CreateAmazonElastiCacheClient(AWSCredentials credentials)
+        {
+            return new AmazonElastiCacheClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElastiCache Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ElastiCache client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElastiCache CreateAmazonElastiCacheClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonElastiCacheClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ElastiCache Service with AWSCredentials and an AmazonElastiCache Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon ElastiCache client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonElastiCache CreateAmazonElastiCacheClient(AWSCredentials credentials, AmazonElastiCacheConfig config)
+        {
+            return new AmazonElastiCacheClient(credentials, config);
         }
 
         /// <summary>
@@ -1368,6 +2589,82 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Create a client for the Amazon ImportExport Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ImportExport client</returns>
+        public static AmazonImportExport CreateAmazonImportExportClient(RegionEndpoint region)
+        {
+            return new AmazonImportExportClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ImportExport Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ImportExport client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonImportExport CreateAmazonImportExportClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonImportExportClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ImportExport Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon ImportExport client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonImportExport CreateAmazonImportExportClient(AWSCredentials credentials)
+        {
+            return new AmazonImportExportClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ImportExport Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon ImportExport client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonImportExport CreateAmazonImportExportClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonImportExportClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon ImportExport Service with AWSCredentials and an AmazonImportExport Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon ImportExport client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonImportExport CreateAmazonImportExportClient(AWSCredentials credentials, AmazonImportExportConfig config)
+        {
+            return new AmazonImportExportClient(credentials, config);
+        }
+
+        /// <summary>
         /// Create a client for the Amazon SecurityToken Service with the credentials defined in the App.config.
         /// 
         /// Example App.config with credentials set. 
@@ -1442,7 +2739,83 @@ namespace Amazon
             )
         {
             return new AmazonSecurityTokenServiceClient(awsAccessKey, awsSecretAccessKey, config);
-        }  
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SecurityTokenService Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SecurityTokenService client</returns>
+        public static AmazonSecurityTokenService CreateAmazonSecurityTokenServiceClient(RegionEndpoint region)
+        {
+            return new AmazonSecurityTokenServiceClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SecurityTokenService Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SecurityTokenService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSecurityTokenService CreateAmazonSecurityTokenServiceClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonSecurityTokenServiceClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SecurityTokenService Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon SecurityTokenService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSecurityTokenService CreateAmazonSecurityTokenServiceClient(AWSCredentials credentials)
+        {
+            return new AmazonSecurityTokenServiceClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SecurityTokenService Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SecurityTokenService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSecurityTokenService CreateAmazonSecurityTokenServiceClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonSecurityTokenServiceClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SecurityTokenService Service with AWSCredentials and an AmazonSecurityTokenService Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon SecurityTokenService client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSecurityTokenService CreateAmazonSecurityTokenServiceClient(AWSCredentials credentials, AmazonSecurityTokenServiceConfig config)
+        {
+            return new AmazonSecurityTokenServiceClient(credentials, config);
+        }
 
         /// <summary>
         /// Create a client for the Amazon SimpleWorkflow Service with the credentials defined in the App.config.
@@ -1520,6 +2893,82 @@ namespace Amazon
             )
         {
             return new AmazonSimpleWorkflowClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleWorkflow Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SimpleWorkflow client</returns>
+        public static AmazonSimpleWorkflow CreateAmazonSimpleWorkflowClient(RegionEndpoint region)
+        {
+            return new AmazonSimpleWorkflowClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleWorkflow Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SimpleWorkflow client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleWorkflow CreateAmazonSimpleWorkflowClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonSimpleWorkflowClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleWorkflow Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon SimpleWorkflow client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleWorkflow CreateAmazonSimpleWorkflowClient(AWSCredentials credentials)
+        {
+            return new AmazonSimpleWorkflowClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleWorkflow Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon SimpleWorkflow client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleWorkflow CreateAmazonSimpleWorkflowClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonSimpleWorkflowClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon SimpleWorkflow Service with AWSCredentials and an AmazonSimpleWorkflow Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon SimpleWorkflow client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonSimpleWorkflow CreateAmazonSimpleWorkflowClient(AWSCredentials credentials, AmazonSimpleWorkflowConfig config)
+        {
+            return new AmazonSimpleWorkflowClient(credentials, config);
         }
 
         /// <summary>
@@ -1601,6 +3050,82 @@ namespace Amazon
         }
 
         /// <summary>
+        /// Create a client for the Amazon DynamoDB Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        public static AmazonDynamoDB CreateAmazonDynamoDBClient(RegionEndpoint region)
+        {
+            return new AmazonDynamoDBClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDynamoDB CreateAmazonDynamoDBClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonDynamoDBClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDynamoDB CreateAmazonDynamoDBClient(AWSCredentials credentials)
+        {
+            return new AmazonDynamoDBClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDynamoDB CreateAmazonDynamoDBClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonDynamoDBClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DynamoDB Service with AWSCredentials and an AmazonDynamoDB Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon DynamoDB client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDynamoDB CreateAmazonDynamoDBClient(AWSCredentials credentials, AmazonDynamoDBConfig config)
+        {
+            return new AmazonDynamoDBClient(credentials, config);
+        }
+
+        /// <summary>
         /// Create a client for the Amazon Route53 Service with the credentials defined in the App.config.
         /// 
         /// Example App.config with credentials set. 
@@ -1676,6 +3201,82 @@ namespace Amazon
             )
         {
             return new AmazonRoute53Client(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53 Service with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Route53 client</returns>
+        public static AmazonRoute53 CreateAmazonRoute53Client(RegionEndpoint region)
+        {
+            return new AmazonRoute53Client(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53 Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Route53 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRoute53 CreateAmazonRoute53Client(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonRoute53Client(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53 Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon Route53 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRoute53 CreateAmazonRoute53Client(AWSCredentials credentials)
+        {
+            return new AmazonRoute53Client(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53 Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Route53 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRoute53 CreateAmazonRoute53Client(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonRoute53Client(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Route53 Service with AWSCredentials and an AmazonRoute53 Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon Route53 client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonRoute53 CreateAmazonRoute53Client(AWSCredentials credentials, AmazonRoute53Config config)
+        {
+            return new AmazonRoute53Client(credentials, config);
         }
     }
 }

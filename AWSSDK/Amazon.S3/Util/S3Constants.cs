@@ -41,6 +41,9 @@ namespace Amazon.S3.Util
         internal const int MinBucketLength = 3;
         internal const int MaxBucketLength = 63;
 
+        // The maximum number of keys that can be passed into a DeleteObjects call.
+        internal const int MULTIPLE_OBJECT_DELETE_LIMIT = 1000;
+
         // Commonly used headers
         internal const string AmzRequestIdHeader = "x-amz-request-id";
         internal const string AmzId2Header = "x-amz-id-2";
@@ -97,7 +100,8 @@ namespace Amazon.S3.Util
                                                 "public-read-write",
                                                 "authenticated-read",
                                                 "bucket-owner-read",
-                                                "bucket-owner-full-control"};
+                                                "bucket-owner-full-control",
+                                                "log-delivery-write"};
 
         // Metadata Directives as strings
         internal static readonly string[] MetaDataDirectives = { "COPY", "REPLACE" };

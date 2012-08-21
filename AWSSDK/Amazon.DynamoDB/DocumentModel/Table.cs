@@ -29,7 +29,7 @@ namespace Amazon.DynamoDB.DocumentModel
 
         internal enum DynamoDBConsumer
         {
-            DocumentModel, DataModel
+            DocumentModel, DataModel, SessionStateProvider
         }
 
         internal AmazonDynamoDB DDBClient;

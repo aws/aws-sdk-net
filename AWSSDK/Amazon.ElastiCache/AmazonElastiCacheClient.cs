@@ -75,6 +75,25 @@ namespace Amazon.ElastiCache
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElastiCacheClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
+
+        /// <summary>
+        /// Constructs AmazonElastiCacheClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonElastiCache Configuration Object</param>
         public AmazonElastiCacheClient(AmazonElastiCacheConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
@@ -85,6 +104,16 @@ namespace Amazon.ElastiCache
         /// <param name="credentials">AWS Credentials</param>
         public AmazonElastiCacheClient(AWSCredentials credentials)
             : this(credentials, new AmazonElastiCacheConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElastiCacheClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElastiCacheClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonElastiCacheConfig() { RegionEndpoint = region })
         {
         }
 
@@ -106,6 +135,17 @@ namespace Amazon.ElastiCache
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonElastiCacheClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonElastiCacheConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElastiCacheClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElastiCacheClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonElastiCacheConfig() { RegionEndpoint = region })
         {
         }
 

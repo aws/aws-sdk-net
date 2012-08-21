@@ -40,7 +40,7 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
          *             If the specified policy is null or invalid and cannot be
          *             serialized to a JSON string.
          */
-        public string WritePolicyToString(Policy policy)
+        public string WritePolicyToString(bool prettyPrint, Policy policy)
         {
             if (policy == null)
             {
@@ -51,8 +51,10 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             try
             {
                 JsonWriter generator = new JsonWriter(writer);
-                generator.PrettyPrint = true;
+
                 generator.IndentValue = 4;
+                generator.PrettyPrint = prettyPrint;
+
                 writePolicy(policy, generator);
                 return writer.ToString().Trim();
             }

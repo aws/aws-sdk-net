@@ -43,6 +43,7 @@ namespace Amazon.DynamoDB.DataModel
 
             bool consistentRead = operationConfig.ConsistentRead ?? contextConfig.ConsistentRead ?? false;
             bool skipVersionCheck = operationConfig.SkipVersionCheck ?? contextConfig.SkipVersionCheck ?? false;
+            bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
             string overrideTableName =
                 !string.IsNullOrEmpty(operationConfig.OverrideTableName) ? operationConfig.OverrideTableName : string.Empty;
             string tableNamePrefix =
@@ -51,6 +52,7 @@ namespace Amazon.DynamoDB.DataModel
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;
+            IgnoreNullValues = ignoreNullValues;
             OverrideTableName = overrideTableName;
             TableNamePrefix = tableNamePrefix;
         }
@@ -73,7 +75,7 @@ namespace Amazon.DynamoDB.DataModel
             else
                 version = null;
 
-            if (version != null)
+            if (version != null && !string.IsNullOrEmpty(version.Value))
             {
                 if (!version.SaveAsNumeric) throw new InvalidOperationException("Version property must be numeric");
                 PropertyStorage propertyStorage = storage.Config.VersionPropertyStorage;
@@ -185,9 +187,15 @@ namespace Amazon.DynamoDB.DataModel
         #region Marshalling/unmarshalling
 
         // Check if DynamoDBEntry is supported
-        private static bool ShouldSave(DynamoDBEntry entry)
+        private static bool ShouldSave(DynamoDBEntry entry, bool ignoreNullValues)
         {
-            if (entry == null) return false;
+            if (entry == null)
+            {
+                if (ignoreNullValues)
+                    return false;
+                else
+                    return true;
+            }
 
             var primitive = entry as Primitive;
             var primitiveList = entry as PrimitiveList;
@@ -229,11 +237,14 @@ namespace Amazon.DynamoDB.DataModel
                 DynamoDBEntry entry;
                 if (document.TryGetValue(attributeName, out entry))
                 {
-                    object value = FromDynamoDBEntry(propertyStorage.MemberType, entry, propertyStorage.Converter); // TODO: send entire propertyStorage into method, and store the collectionAdd MethodInfo in it
-
-                    if (!TrySetValue(instance, propertyStorage.Member, value))
+                    if (ShouldSave(entry, true))
                     {
-                        throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
+                        object value = FromDynamoDBEntry(propertyStorage.MemberType, entry, propertyStorage.Converter); // TODO: send entire propertyStorage into method, and store the collectionAdd MethodInfo in it
+
+                        if (!TrySetValue(instance, propertyStorage.Member, value))
+                        {
+                            throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
+                        }
                     }
 
                     if (propertyStorage.IsVersion)
@@ -243,11 +254,7 @@ namespace Amazon.DynamoDB.DataModel
         }
 
         // Serializing an object into a DynamoDB document
-        private static ItemStorage ObjectToItemStorage<T>(T toStore)
-        {
-            return ObjectToItemStorage<T>(toStore, false);
-        }
-        private static ItemStorage ObjectToItemStorage<T>(T toStore, bool keysOnly)
+        private static ItemStorage ObjectToItemStorage<T>(T toStore, bool keysOnly, bool ignoreNullValues)
         {
             if (toStore == null) return null;
 
@@ -255,16 +262,16 @@ namespace Amazon.DynamoDB.DataModel
             ItemStorageConfig config = ItemStorageConfigCache.GetConfig(objectType);
             if (config == null) return null;
 
-            ItemStorage storage = ObjectToItemStorage<T>(toStore, keysOnly, config);
+            ItemStorage storage = ObjectToItemStorage<T>(toStore, keysOnly, ignoreNullValues, config);
             return storage;
         }
-        internal static ItemStorage ObjectToItemStorage<T>(T toStore, bool keysOnly, ItemStorageConfig config)
+        internal static ItemStorage ObjectToItemStorage<T>(T toStore, bool keysOnly, bool ignoreNullValues, ItemStorageConfig config)
         {
             ItemStorage storage = new ItemStorage(config);
-            PopulateItemStorage(toStore, storage, keysOnly);
+            PopulateItemStorage(toStore, keysOnly, ignoreNullValues, storage);
             return storage;
         }
-        private static void PopulateItemStorage(object toStore, ItemStorage storage, bool keysOnly)
+        private static void PopulateItemStorage(object toStore, bool keysOnly, bool ignoreNullValues, ItemStorage storage)
         {
             ItemStorageConfig config = storage.Config;
             Document document = storage.Document;
@@ -283,7 +290,7 @@ namespace Amazon.DynamoDB.DataModel
                 {
                     DynamoDBEntry dbe = ToDynamoDBEntry(propertyStorage.MemberType, value, propertyStorage.Converter);
 
-                    if (ShouldSave(dbe))
+                    if (ShouldSave(dbe, ignoreNullValues))
                     {
                         if (propertyStorage.IsHashKey || propertyStorage.IsRangeKey || propertyStorage.IsVersion)
                         {
@@ -439,6 +446,12 @@ namespace Amazon.DynamoDB.DataModel
         // Primitive <--> Value type
         private static bool TryFromPrimitive(Type targetType, Primitive value, out object output)
         {
+            if (value.Value == null)
+            {
+                output = null;
+                return true;
+            }
+
             if (targetType.IsAssignableFrom(typeof(Boolean))) output = value.AsBoolean();
             else if (targetType.IsAssignableFrom(typeof(Byte))) output = value.AsByte();
             else if (targetType.IsAssignableFrom(typeof(Char))) output = value.AsChar();
@@ -454,6 +467,7 @@ namespace Amazon.DynamoDB.DataModel
             else if (targetType.IsAssignableFrom(typeof(uint))) output = value.AsUInt();
             else if (targetType.IsAssignableFrom(typeof(ulong))) output = value.AsULong();
             else if (targetType.IsAssignableFrom(typeof(ushort))) output = value.AsUShort();
+            else if (targetType.IsAssignableFrom(typeof(Guid))) output = value.AsGuid();
             else
             {
                 output = null;
@@ -478,6 +492,7 @@ namespace Amazon.DynamoDB.DataModel
             else if (type.IsAssignableFrom(typeof(uint))) output = (uint)value;
             else if (type.IsAssignableFrom(typeof(ulong))) output = (ulong)value;
             else if (type.IsAssignableFrom(typeof(ushort))) output = (ushort)value;
+            else if (type.IsAssignableFrom(typeof(Guid))) output = (Guid)value;
             else
             {
                 output = null;

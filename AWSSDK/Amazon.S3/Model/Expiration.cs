@@ -21,6 +21,7 @@
  */
 
 using System;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace Amazon.S3.Model
@@ -74,7 +75,7 @@ namespace Amazon.S3.Model
             if (!expiryMatches.Success || !expiryMatches.Groups[1].Success)
                 throw new InvalidOperationException("No Expiry Date match");
             string expiryDateValue = expiryMatches.Groups[1].Value;
-            DateTime expiryDate = DateTime.Parse(expiryDateValue);
+            DateTime expiryDate = DateTime.ParseExact(expiryDateValue, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
 
             var ruleMatches = ruleRegex.Match(headerValue);
             if (!ruleMatches.Success || !ruleMatches.Groups[1].Success)

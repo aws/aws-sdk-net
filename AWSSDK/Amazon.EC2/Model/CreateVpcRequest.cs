@@ -84,9 +84,11 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the InstanceTenancy property.
-        /// The allowed tenancy of instances launched into the VPC. A value of default means instances 
-        /// can be launched with any tenancy; a value of dedicated means instances must be launched 
-        /// with tenancy as dedicated.
+        /// The allowed tenancy of instances launched into the VPC. A value 
+        /// of default means instances can be launched with any tenancy; 
+        /// a value of dedicated means all instances launched into the 
+        /// VPC will be launched with dedicated tenancy regardless of the 
+        /// tenancy assigned to the instance at launch. 
         /// 
         /// Valid Values: default | dedicated
         /// </summary>

@@ -14,10 +14,13 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.IO;
 using System.Text;
 using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Util;
 
 namespace Amazon.Runtime.Internal
 {
@@ -37,7 +40,10 @@ namespace Amazon.Runtime.Internal
         string serviceName;
         readonly AmazonWebServiceRequest originalRequest;
         byte[] content;
+        Stream contentStream;
+        string contentStreamHash;
         string httpMethod = "POST";
+        bool useQueryString = false;
 
         /// <summary>
         /// Constructs a new DefaultRequest with the specified service name and the
@@ -64,6 +70,23 @@ namespace Amazon.Runtime.Internal
             set
             {
                 this.httpMethod = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets and sets a flag that indicates whether the request is sent as a query string instead of the request body.
+        /// </summary>
+        public bool UseQueryString
+        {
+            get
+            {
+                if (this.HttpMethod == "GET")
+                    return true;
+                return this.useQueryString;
+            }
+            set
+            {
+                this.useQueryString = value;
             }
         }
 
@@ -144,6 +167,37 @@ namespace Amazon.Runtime.Internal
             set
             {
                 this.content = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets and sets the content stream.
+        /// </summary>
+        public Stream ContentStream
+        {
+            get { return this.contentStream; }
+            set { this.contentStream = value; }
+        }
+
+        public string ContentStreamHash
+        {
+            get
+            {
+                if (this.contentStream == null)
+                    return null;
+
+                if (this.contentStreamHash == null)
+                {
+                    long position = this.ContentStream.Position;
+
+                    HashAlgorithm ha = HashAlgorithm.Create("SHA-256");
+                    byte[] payloadHashBytes = ha.ComputeHash(this.ContentStream);
+                    this.contentStreamHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
+
+                    this.ContentStream.Seek(position, SeekOrigin.Begin);
+                }
+
+                return this.contentStreamHash;
             }
         }
 

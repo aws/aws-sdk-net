@@ -33,6 +33,8 @@ namespace Amazon.S3
     {
         #region Private Members
 
+        private RegionEndpoint regionEndpoint;
+        
         private string serviceURL = S3Constants.S3DefaultEndpoint;
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
         private string proxyHost;
@@ -46,6 +48,32 @@ namespace Amazon.S3
         private int? connectionLimit;
 
         #endregion
+
+
+        /// <summary>
+        /// Gets and sets the RegionEndpoint property.  The region constant to use that 
+        /// determines the endpoint to use.  If this is not set
+        /// then the client will fallback to the value of ServiceURL.
+        /// </summary>
+        public RegionEndpoint RegionEndpoint
+        {
+            get
+            {
+                return regionEndpoint;
+            }
+            set
+            {
+                this.regionEndpoint = value;
+            }
+        }
+
+        /// <summary>
+        /// The constant used to lookup in the region hash the endpoint.
+        /// </summary>
+        internal string RegionEndpointServiceName
+        {
+            get { return "s3"; }
+        }
 
         /// <summary>
         /// Gets and sets the ServiceURL property.

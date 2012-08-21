@@ -1,4 +1,4 @@
-/*******************************************************************************
+ï»¿/*******************************************************************************
  * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -168,8 +168,6 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the private IP address of the network interface.
-        /// Specifies the primary private IP address of the network interface. Applies only when 
-        /// creating new network interfaces. Requires n=1 network interfaces in launch.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddress")]
         public string PrivateIpAddress
@@ -180,8 +178,6 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Sets the private IP address of the network interface.
-        /// Specifies the primary private IP address of the network interface. Applies only when 
-        /// creating new network interfaces. Requires n=1 network interfaces in launch.
         /// </summary>
         /// <param name="ipAddress">IP address of the network interface</param>
         /// <returns>this instance</returns>
@@ -276,9 +272,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the PrivateIpAddresses property.
-        /// Private IP addresses. The private IP address of the specified network interface. 
-        /// This parameter can be used multiple times to specify explicit private IP addresses 
-        /// for a network interface, but only one private IP address can be designated as primary. 
+        /// Private IP addresses.
         /// </summary>
         [XmlElementAttribute(ElementName = "PrivateIpAddresses")]
         public List<PrivateIpAddress> PrivateIpAddresses
@@ -295,10 +289,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the PrivateIpAddresses property.
-        /// The private IP address of the specified network interface. 
-        /// This parameter can be used multiple times to specify explicit private IP addresses 
-        /// for a network interface, but only one private IP address can be designated as primary. 
+        /// Sets the PrivateIpAddresses property
         /// </summary>
         /// <param name="privateIpAddresses">Private IP addresses.</param>
         /// <returns>this instance</returns>
@@ -323,12 +314,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Gets and sets the SecondaryPrivateIpAddressCount property.
-        /// Specifies the number of secondary private IP addresses to assign to a network interface. 
-        /// When you specify a number of secondary IP addresses, AWS automatically assigns these IP 
-        /// addresses within the subnet’s range. The number of IP addresses you can assign to a network 
-        /// interface varies by instance type. For more information, go to Available Instance Types in 
-        /// the Amazon Elastic Compute Cloud User Guide. For a single network interface, you cannot specify 
-        /// this option and specify more than one private IP address.
+        /// Number of secondary private IP addresses.
         /// </summary>
         [XmlElementAttribute(ElementName = "SecondaryPrivateIpAddressCount")]
         public int SecondaryPrivateIpAddressCount
@@ -339,12 +325,6 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// Sets the SecondaryPrivateIpAddressCount property
-        /// Specifies the number of secondary private IP addresses to assign to a network interface. 
-        /// When you specify a number of secondary IP addresses, AWS automatically assigns these IP 
-        /// addresses within the subnet’s range. The number of IP addresses you can assign to a network 
-        /// interface varies by instance type. For more information, go to Available Instance Types in 
-        /// the Amazon Elastic Compute Cloud User Guide. For a single network interface, you cannot specify 
-        /// this option and specify more than one private IP address.
         /// </summary>
         /// <param name="secondaryPrivateIpAddressCount">Number of secondary private IP addresses.</param>
         /// <returns>this instance</returns>

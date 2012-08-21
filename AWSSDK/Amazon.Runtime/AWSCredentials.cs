@@ -1053,6 +1053,7 @@ namespace Amazon.Runtime
         internal static AWSCredentials GetCredentials()
         {
             AWSCredentials credentials = null;
+            List<Exception> errors = new List<Exception>();
 
             foreach (CredentialsGenerator generator in CredentialsGenerators)
             {
@@ -1060,9 +1061,10 @@ namespace Amazon.Runtime
                 {
                     credentials = generator();
                 }
-                catch
+                catch (Exception e)
                 {
                     credentials = null;
+                    errors.Add(e);
                 }
 
                 if (credentials != null)
@@ -1070,7 +1072,22 @@ namespace Amazon.Runtime
             }
 
             if (credentials == null)
-                throw new AmazonServiceException("Unable to find credentials");
+            {
+                using (StringWriter writer = new StringWriter())
+                {
+                    writer.WriteLine("Unable to find credentials");
+                    writer.WriteLine();
+                    for (int i = 0; i < errors.Count; i++)
+                    {
+                        Exception e = errors[i];
+                        writer.WriteLine("Exception {0} of {1}:", i + 1, errors.Count);
+                        writer.WriteLine(e.ToString());
+                        writer.WriteLine();
+                    }
+
+                    throw new AmazonServiceException(writer.ToString());
+                }
+            }
 
             return credentials;
         }

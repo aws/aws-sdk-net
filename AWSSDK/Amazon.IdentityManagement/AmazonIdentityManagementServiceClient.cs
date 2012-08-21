@@ -38,7 +38,7 @@ namespace Amazon.IdentityManagement
     /// </summary>
     public class AmazonIdentityManagementServiceClient : AmazonWebServiceClient, AmazonIdentityManagementService
     {
-
+    
         AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
@@ -76,6 +76,27 @@ namespace Amazon.IdentityManagement
         /// </code>
         ///
         /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonIdentityManagementServiceClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityManagementServiceConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
+
+
+
+        /// <summary>
+        /// Constructs AmazonIdentityManagementServiceClient with the credentials defined in the App.config.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
         /// <param name="config">The AmazonIdentityManagementService Configuration Object</param>
         public AmazonIdentityManagementServiceClient(AmazonIdentityManagementServiceConfig config)
             : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
@@ -86,6 +107,16 @@ namespace Amazon.IdentityManagement
         /// <param name="credentials">AWS Credentials</param>
         public AmazonIdentityManagementServiceClient(AWSCredentials credentials)
             : this(credentials, new AmazonIdentityManagementServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonIdentityManagementServiceClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonIdentityManagementServiceClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonIdentityManagementServiceConfig() { RegionEndpoint = region })
         {
         }
 
@@ -107,6 +138,17 @@ namespace Amazon.IdentityManagement
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         public AmazonIdentityManagementServiceClient(string awsAccessKeyId, string awsSecretAccessKey)
             : this(awsAccessKeyId, awsSecretAccessKey, new AmazonIdentityManagementServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonIdentityManagementServiceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonIdentityManagementServiceClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonIdentityManagementServiceConfig() { RegionEndpoint = region })
         {
         }
 

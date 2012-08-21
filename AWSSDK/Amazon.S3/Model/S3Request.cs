@@ -174,16 +174,9 @@ namespace Amazon.S3.Model
         internal long ResponseProcessingTime { get; set; }
         internal long ResponseTime { get; set; }
         internal long BytesProcessed { get; set; }
+        internal long PauseTime { get; set; }
 
         internal Stopwatch StopWatch { get; set; }
-
-        internal long MissingTime
-        {
-            get
-            {
-                return (TotalRequestTime - (ResponseReadTime + ResponseProcessingTime + ResponseTime));
-            }
-        }
 
         #endregion
 
@@ -191,14 +184,13 @@ namespace Amazon.S3.Model
 
         public override string ToString()
         {
-            string contents = string.Format("S3Request: Type - {0}, ID - {1}, ResponseTime - {2}, ResponseReadTime - {3}, ResponseProcessingTime - {4}, TotalRequestTime - {5}, Unaccounted time - {6}, Bytes processed - {7}",
+            string contents = string.Format("S3Request: Type - {0}, ID - {1}, ResponseTime - {2}, ResponseReadTime - {3}, ResponseProcessingTime - {4}, TotalRequestTime - {5}, Bytes processed - {6}",
                 this.GetType().FullName,
                 this.Id,
                 this.ResponseTime,
                 this.ResponseReadTime,
                 this.ResponseProcessingTime,
                 this.TotalRequestTime,
-                this.MissingTime,
                 this.BytesProcessed);
             return contents;
         }

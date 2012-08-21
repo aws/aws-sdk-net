@@ -25,7 +25,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHostedZones operation.
-    /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2011-05-05/hostedzone</c> resource. The response to this
+    /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2012-02-29/hostedzone</c> resource. The response to this
     /// request includes a <c>HostedZones</c> element with zero, one, or multiple <c>HostedZone</c> child elements. By default, the list of hosted
     /// zones is displayed on a single page. You can control the length of the page that is displayed by using the <c>MaxItems</c> parameter. You
     /// can use the <c>Marker</c> parameter to control the hosted zone that the list begins with. </para> <para><b>NOTE:</b> Amazon Route 53 returns
