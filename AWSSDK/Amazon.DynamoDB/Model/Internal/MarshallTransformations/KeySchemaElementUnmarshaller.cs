@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public KeySchemaElement Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          KeySchemaElement keySchemaElement = new KeySchemaElement();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            KeySchemaElement keySchemaElement = new KeySchemaElement();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("AttributeName", targetDepth)) 
               {
@@ -54,22 +55,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return keySchemaElement; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return keySchemaElement; 
-            } 
-          } 
-          return keySchemaElement; 
+          
+          
+            return keySchemaElement; 
         } 
         
         private static KeySchemaElementUnmarshaller instance; 
         public static KeySchemaElementUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new KeySchemaElementUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new KeySchemaElementUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

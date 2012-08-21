@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,19 +31,20 @@
         }
         
         public AttributeValue Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          AttributeValue attributeValue = new AttributeValue();
+        {
+            AttributeValue attributeValue = new AttributeValue();
           attributeValue.SS = null; 
                         attributeValue.NS = null; 
-                        
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                        attributeValue.BS = null; 
+                                  
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("S", targetDepth)) 
               {
@@ -53,6 +55,12 @@
               if (context.TestExpression("N", targetDepth)) 
               {
                 attributeValue.N = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue; 
+              }
+   
+              if (context.TestExpression("B", targetDepth)) 
+              {
+                attributeValue.B = MemoryStreamUnmarshaller.GetInstance().Unmarshall(context);
                 continue; 
               }
    
@@ -92,22 +100,42 @@
                 continue; 
               }
    
+              if (context.TestExpression("BS", targetDepth)) 
+              {
+                attributeValue.BS = new List<MemoryStream>();
+                        MemoryStreamUnmarshaller unmarshaller = MemoryStreamUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     attributeValue.BS.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
+                continue; 
+              }
+   
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return attributeValue; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return attributeValue; 
-            } 
-          } 
-          return attributeValue; 
+          
+          
+            return attributeValue; 
         } 
         
         private static AttributeValueUnmarshaller instance; 
         public static AttributeValueUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new AttributeValueUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new AttributeValueUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

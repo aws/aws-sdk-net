@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,18 +31,18 @@
         }
         
         public BatchResponse Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          BatchResponse batchResponse = new BatchResponse();
+        {
+            BatchResponse batchResponse = new BatchResponse();
           batchResponse.Items = null; 
-                        
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                                  
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("Items", targetDepth)) 
               {
@@ -67,22 +68,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return batchResponse; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return batchResponse; 
-            } 
-          } 
-          return batchResponse; 
+          
+          
+            return batchResponse; 
         } 
         
         private static BatchResponseUnmarshaller instance; 
         public static BatchResponseUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new BatchResponseUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new BatchResponseUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

@@ -40,6 +40,17 @@ namespace Amazon.DynamoDB.DocumentModel
 
         #region Private/internal methods
 
+        private DynamoDBEntryType GetType(string attributeType)
+        {
+            if (String.Equals(attributeType, "N"))
+                return DynamoDBEntryType.Numeric;
+            if (String.Equals(attributeType, "S"))
+                return DynamoDBEntryType.String;
+            if (String.Equals(attributeType, "B"))
+                return DynamoDBEntryType.Binary;
+            throw new InvalidOperationException("Unknown attribute type");
+        }
+
         private void GetKeyInfo()
         {
             DescribeTableRequest req = new DescribeTableRequest
@@ -54,13 +65,13 @@ namespace Amazon.DynamoDB.DocumentModel
                 throw new ArgumentException(String.Format("Table name {0} does not exist", TableName));
             }
 
-            HashKeyIsNumeric = String.Equals(info.Table.KeySchema.HashKeyElement.AttributeType, "N");
+            HashKeyType = GetType(info.Table.KeySchema.HashKeyElement.AttributeType);
             HashKeyName = info.Table.KeySchema.HashKeyElement.AttributeName;
 
             if (info.Table.KeySchema.RangeKeyElement != null)
             {
                 RangeKeyIsDefined = true;
-                RangeKeyIsNumeric = String.Equals(info.Table.KeySchema.RangeKeyElement.AttributeType, "N");
+                RangeKeyType = GetType(info.Table.KeySchema.RangeKeyElement.AttributeType);
                 RangeKeyName = info.Table.KeySchema.RangeKeyElement.AttributeName;
                 keyNames = new string[] { HashKeyName, RangeKeyName };
             }
@@ -75,7 +86,7 @@ namespace Amazon.DynamoDB.DocumentModel
             Key newKey = new Key();
 
             newKey.HashKeyElement = hashKey.ConvertToAttributeValue();
-            if (HashKeyIsNumeric != hashKey.SaveAsNumeric)
+            if (HashKeyType != hashKey.Type)
                 throw new InvalidOperationException("Table schema hash key inconsistent with specified hash key value");
 
             if ((rangeKey == null) == RangeKeyIsDefined)
@@ -87,7 +98,7 @@ namespace Amazon.DynamoDB.DocumentModel
                 if (RangeKeyIsDefined)
                 {
                     newKey.RangeKeyElement = rangeKey.ConvertToAttributeValue();
-                    if (RangeKeyIsNumeric != rangeKey.SaveAsNumeric)
+                    if (RangeKeyType != rangeKey.Type)
                         throw new InvalidOperationException("Table schema range key inconsistent with specified range key value");
                 }
             }
@@ -153,11 +164,11 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             return new Table(this.DDBClient, this.TableName, newConsumer)
             {
-                HashKeyIsNumeric = this.HashKeyIsNumeric,
+                HashKeyType = this.HashKeyType,
                 HashKeyName = this.HashKeyName,
                 keyNames = this.keyNames,
                 RangeKeyIsDefined = this.RangeKeyIsDefined,
-                RangeKeyIsNumeric = this.RangeKeyIsNumeric,
+                RangeKeyType = this.RangeKeyType,
                 RangeKeyName = this.RangeKeyName,
                 TableConsumer = this.TableConsumer
             };
@@ -173,7 +184,9 @@ namespace Amazon.DynamoDB.DocumentModel
             DDBClient = ddbClient;
             TableConsumer = consumer;
             TableName = tableName;
-            HashKeyIsNumeric = RangeKeyIsDefined = RangeKeyIsNumeric = false;
+            RangeKeyIsDefined = false;
+            HashKeyType = DynamoDBEntryType.String;
+            RangeKeyType = DynamoDBEntryType.String;
         }
 
         internal static Table LoadTable(AmazonDynamoDB ddbClient, string tableName, Table.DynamoDBConsumer consumer)
@@ -246,14 +259,26 @@ namespace Amazon.DynamoDB.DocumentModel
         public string RangeKeyName { get; private set; }
 
         /// <summary>
+        /// Type of the hash key for the table.
+        /// </summary>
+        public DynamoDBEntryType HashKeyType { get; private set; }
+
+        /// <summary>
+        /// Type of the range key for the table.
+        /// </summary>
+        public DynamoDBEntryType RangeKeyType { get; private set; }
+
+        /// <summary>
         /// Flag that signals if the hash key element is a numeric.
         /// </summary>
-        public bool HashKeyIsNumeric { get; private set; }
+        [Obsolete]
+        public bool HashKeyIsNumeric { get { return this.HashKeyType == DynamoDBEntryType.Numeric; } }
 
         /// <summary>
         /// Flag that signals if the range key element is a numeric.
         /// </summary>
-        public bool RangeKeyIsNumeric { get; private set; }
+        [Obsolete]
+        public bool RangeKeyIsNumeric { get { return this.RangeKeyType == DynamoDBEntryType.Numeric; } }
 
         /// <summary>
         /// Flag that signals if the range key element is present on the table.
@@ -589,7 +614,11 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
-            var attributeUpdates = doc.ToAttributeUpdateMap(true);
+            // If the keys have been changed, treat entire document as having changed
+            bool haveKeysChanged = HaveKeysChanged(doc);
+            bool updateChangedAttributesOnly = !haveKeysChanged;
+
+            var attributeUpdates = doc.ToAttributeUpdateMap(updateChangedAttributesOnly);
             foreach (var keyName in this.keyNames)
             {
                 attributeUpdates.Remove(keyName);
@@ -654,7 +683,18 @@ namespace Amazon.DynamoDB.DocumentModel
             return ret;
         }
 
-        // calls Put, but returns like Update
+        // Checks if key attributes have been updated
+        private bool HaveKeysChanged(Document doc)
+        {
+            foreach (var keyName in this.keyNames)
+            {
+                if (doc.IsAttributeChanged(keyName))
+                    return true;
+            }
+            return false;
+        }
+
+        // Calls Put, but returns like Update
         private Document CallKeysOnlyPut(Key key, UpdateItemOperationConfig config, bool isAsync)
         {
             // configure the keys-only Document
@@ -1125,7 +1165,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             if (config == null)
                 throw new ArgumentNullException("config");
-            if (string.IsNullOrEmpty(config.HashKey))
+            if (config.HashKey == null)
                 throw new ArgumentNullException("config.HashKey");
 
             Search ret = new Search(SearchType.Query);

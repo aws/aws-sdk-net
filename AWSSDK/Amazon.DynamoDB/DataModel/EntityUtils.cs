@@ -14,16 +14,9 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Text;
+using System.IO;
 using System.Reflection;
-using Amazon.DynamoDB.DocumentModel;
-using Amazon.DynamoDB.Model;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
+using System.Text;
 
 namespace Amazon.DynamoDB.DataModel
 {
@@ -49,7 +42,9 @@ namespace Amazon.DynamoDB.DataModel
                 type.IsAssignableFrom(typeof(uint)) ||
                 type.IsAssignableFrom(typeof(ulong)) ||
                 type.IsAssignableFrom(typeof(ushort)) ||
-                type.IsAssignableFrom(typeof(Guid)));
+                type.IsAssignableFrom(typeof(Guid)) ||
+                type.IsAssignableFrom(typeof(byte[])) ||
+                type.IsAssignableFrom(typeof(MemoryStream)));
         }
 
         public static void ValidateVersionType(Type memberType)

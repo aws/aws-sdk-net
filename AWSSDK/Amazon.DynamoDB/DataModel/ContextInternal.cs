@@ -16,6 +16,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 
 using Amazon.DynamoDB.DocumentModel;
@@ -75,9 +76,9 @@ namespace Amazon.DynamoDB.DataModel
             else
                 version = null;
 
-            if (version != null && !string.IsNullOrEmpty(version.Value))
+            if (version != null && version.Value != null)
             {
-                if (!version.SaveAsNumeric) throw new InvalidOperationException("Version property must be numeric");
+                if (version.Type != DynamoDBEntryType.Numeric) throw new InvalidOperationException("Version property must be numeric");
                 PropertyStorage propertyStorage = storage.Config.VersionPropertyStorage;
                 IncrementVersion(propertyStorage.MemberType, ref version);
             }
@@ -198,10 +199,10 @@ namespace Amazon.DynamoDB.DataModel
             }
 
             var primitive = entry as Primitive;
-            var primitiveList = entry as PrimitiveList;
-
             if (primitive != null)
-                return (!string.IsNullOrEmpty(primitive.Value));
+                return (primitive.Value != null);
+
+            var primitiveList = entry as PrimitiveList;
             if (primitiveList != null)
                 return (primitiveList.Entries != null && primitiveList.Entries.Count > 0);
 
@@ -402,7 +403,6 @@ namespace Amazon.DynamoDB.DataModel
                 return false;
             }
 
-            PrimitiveList primitiveList = new PrimitiveList();
             ICollection collection = value as ICollection;
 
             Primitive primitive;
@@ -420,14 +420,15 @@ namespace Amazon.DynamoDB.DataModel
                 return false;
             }
 
-            bool? isNumeric = null;
+            PrimitiveList primitiveList = new PrimitiveList();
+            DynamoDBEntryType? listType = null;
             foreach (var item in collection)
             {
                 if (TryToPrimitive(elementType, item, out primitive))
                 {
-                    if (isNumeric.HasValue && isNumeric.Value != primitive.SaveAsNumeric)
-                        throw new InvalidOperationException("List cannot contain a mix of numerics and non-numerics");
-                    isNumeric = primitive.SaveAsNumeric;
+                    if (listType.HasValue && listType.Value != primitive.Type)
+                        throw new InvalidOperationException("List cannot contain a mix of different types");
+                    listType = primitive.Type;
 
                     primitiveList.Entries.Add(primitive);
                 }
@@ -437,7 +438,7 @@ namespace Amazon.DynamoDB.DataModel
                     return false;
                 }
             }
-            primitiveList.SaveAsNumeric = isNumeric.HasValue ? isNumeric.Value : false;
+            primitiveList.Type = listType.GetValueOrDefault(DynamoDBEntryType.String);
 
             output = primitiveList;
             return true;
@@ -468,6 +469,8 @@ namespace Amazon.DynamoDB.DataModel
             else if (targetType.IsAssignableFrom(typeof(ulong))) output = value.AsULong();
             else if (targetType.IsAssignableFrom(typeof(ushort))) output = value.AsUShort();
             else if (targetType.IsAssignableFrom(typeof(Guid))) output = value.AsGuid();
+            else if (targetType.IsAssignableFrom(typeof(byte[]))) output = value.AsByteArray();
+            else if (targetType.IsAssignableFrom(typeof(MemoryStream))) output = value.AsMemoryStream();
             else
             {
                 output = null;
@@ -493,6 +496,8 @@ namespace Amazon.DynamoDB.DataModel
             else if (type.IsAssignableFrom(typeof(ulong))) output = (ulong)value;
             else if (type.IsAssignableFrom(typeof(ushort))) output = (ushort)value;
             else if (type.IsAssignableFrom(typeof(Guid))) output = (Guid)value;
+            else if (type.IsAssignableFrom(typeof(byte[]))) output = (byte[])value;
+            else if (type.IsAssignableFrom(typeof(MemoryStream))) output = (MemoryStream)value;
             else
             {
                 output = null;

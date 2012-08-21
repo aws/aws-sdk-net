@@ -31,6 +31,7 @@
           CreateTableResponse response = new CreateTableResponse();
           
           context.Read();
+      
           response.CreateTableResult = CreateTableResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public DescribeTableResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          DescribeTableResult describeTableResult = new DescribeTableResult();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            DescribeTableResult describeTableResult = new DescribeTableResult();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("Table", targetDepth)) 
               {
@@ -48,22 +49,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return describeTableResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return describeTableResult; 
-            } 
-          } 
-          return describeTableResult; 
+          
+          
+            return describeTableResult; 
         } 
         
         private static DescribeTableResultUnmarshaller instance; 
         public static DescribeTableResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new DescribeTableResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new DescribeTableResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

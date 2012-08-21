@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,19 +31,19 @@
         }
         
         public KeysAndAttributes Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          KeysAndAttributes keysAndAttributes = new KeysAndAttributes();
+        {
+            KeysAndAttributes keysAndAttributes = new KeysAndAttributes();
           keysAndAttributes.Keys = null; 
                         keysAndAttributes.AttributesToGet = null; 
-                        
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                                  
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("Keys", targetDepth)) 
               {
@@ -80,22 +81,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return keysAndAttributes; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return keysAndAttributes; 
-            } 
-          } 
-          return keysAndAttributes; 
+          
+          
+            return keysAndAttributes; 
         } 
         
         private static KeysAndAttributesUnmarshaller instance; 
         public static KeysAndAttributesUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new KeysAndAttributesUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new KeysAndAttributesUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

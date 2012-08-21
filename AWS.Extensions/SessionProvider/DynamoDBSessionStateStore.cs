@@ -716,7 +716,7 @@ namespace Amazon.SessionProvider
         /// </summary>
         private void ValidateTable()
         {
-            if (this._table.HashKeyIsNumeric)
+            if (this._table.HashKeyType != DynamoDBEntryType.String)
                 throw new AmazonDynamoDBException(string.Format("Table {0} cannot be used to store session data because hash key is not a string.", this._tableName));
 
             if (this._table.RangeKeyIsDefined)

@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public ProvisionedThroughputDescription Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          ProvisionedThroughputDescription provisionedThroughputDescription = new ProvisionedThroughputDescription();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            ProvisionedThroughputDescription provisionedThroughputDescription = new ProvisionedThroughputDescription();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("LastIncreaseDateTime", targetDepth)) 
               {
@@ -66,22 +67,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return provisionedThroughputDescription; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return provisionedThroughputDescription; 
-            } 
-          } 
-          return provisionedThroughputDescription; 
+          
+          
+            return provisionedThroughputDescription; 
         } 
         
         private static ProvisionedThroughputDescriptionUnmarshaller instance; 
         public static ProvisionedThroughputDescriptionUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new ProvisionedThroughputDescriptionUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new ProvisionedThroughputDescriptionUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

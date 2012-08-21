@@ -32,6 +32,8 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
     /// </summary>       
     internal class ScanRequestMarshaller : IMarshaller<IRequest, ScanRequest> 
     {
+        
+
         public IRequest Marshall(ScanRequest scanRequest) 
         {
 
@@ -40,6 +42,32 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
 
+            
+              
+            string uriResourcePath = ""; 
+            
+            if (uriResourcePath.Contains("?")) 
+            {
+                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+        
+                foreach (string s in queryString.Split('&', ';')) 
+                {
+                    string[] nameValuePair = s.Split('=');
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
+                    {
+                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                    }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
+                    }
+                }
+            }
+            
+            request.ResourcePath = uriResourcePath;
+            
+             
             using (StringWriter stringWriter = new StringWriter())
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -106,6 +134,11 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                                         writer.WritePropertyName("N");
                                         writer.Write(attributeValueListListValue.N);
                                     }
+                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetB()) 
+                                    {
+                                        writer.WritePropertyName("B");
+                                        writer.Write(StringUtils.FromMemoryStream(attributeValueListListValue.B));
+                                    }
 
                                     if (attributeValueListListValue != null && attributeValueListListValue.SS != null && attributeValueListListValue.SS.Count > 0) 
                                     {
@@ -130,6 +163,20 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                                         foreach (string nSListValue in nSList) 
                                         { 
                                             writer.Write(StringUtils.FromString(nSListValue));
+                                        }
+
+                                        writer.WriteArrayEnd();
+                                    }
+
+                                    if (attributeValueListListValue != null && attributeValueListListValue.BS != null && attributeValueListListValue.BS.Count > 0) 
+                                    {
+                                        List<MemoryStream> bSList = attributeValueListListValue.BS;
+                                        writer.WritePropertyName("BS");
+                                        writer.WriteArrayStart();
+
+                                        foreach (MemoryStream bSListValue in bSList) 
+                                        { 
+                                            writer.Write(StringUtils.FromMemoryStream(bSListValue));
                                         }
 
                                         writer.WriteArrayEnd();
@@ -174,6 +221,11 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                                     writer.WritePropertyName("N");
                                     writer.Write(hashKeyElement.N);
                                 }
+                                if (hashKeyElement != null && hashKeyElement.IsSetB()) 
+                                {
+                                    writer.WritePropertyName("B");
+                                    writer.Write(StringUtils.FromMemoryStream(hashKeyElement.B));
+                                }
 
                                 if (hashKeyElement != null && hashKeyElement.SS != null && hashKeyElement.SS.Count > 0) 
                                 {
@@ -202,6 +254,20 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
 
                                     writer.WriteArrayEnd();
                                 }
+
+                                if (hashKeyElement != null && hashKeyElement.BS != null && hashKeyElement.BS.Count > 0) 
+                                {
+                                    List<MemoryStream> bSList = hashKeyElement.BS;
+                                    writer.WritePropertyName("BS");
+                                    writer.WriteArrayStart();
+
+                                    foreach (MemoryStream bSListValue in bSList) 
+                                    { 
+                                        writer.Write(StringUtils.FromMemoryStream(bSListValue));
+                                    }
+
+                                    writer.WriteArrayEnd();
+                                }
                                 writer.WriteObjectEnd();
                             }
                         }
@@ -222,6 +288,11 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                                 {
                                     writer.WritePropertyName("N");
                                     writer.Write(rangeKeyElement.N);
+                                }
+                                if (rangeKeyElement != null && rangeKeyElement.IsSetB()) 
+                                {
+                                    writer.WritePropertyName("B");
+                                    writer.Write(StringUtils.FromMemoryStream(rangeKeyElement.B));
                                 }
 
                                 if (rangeKeyElement != null && rangeKeyElement.SS != null && rangeKeyElement.SS.Count > 0) 
@@ -251,6 +322,20 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
 
                                     writer.WriteArrayEnd();
                                 }
+
+                                if (rangeKeyElement != null && rangeKeyElement.BS != null && rangeKeyElement.BS.Count > 0) 
+                                {
+                                    List<MemoryStream> bSList = rangeKeyElement.BS;
+                                    writer.WritePropertyName("BS");
+                                    writer.WriteArrayStart();
+
+                                    foreach (MemoryStream bSListValue in bSList) 
+                                    { 
+                                        writer.Write(StringUtils.FromMemoryStream(bSListValue));
+                                    }
+
+                                    writer.WriteArrayEnd();
+                                }
                                 writer.WriteObjectEnd();
                             }
                         }
@@ -262,8 +347,10 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
                 
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-                return request;
             }
+        
+
+            return request;
         }
     }
 }

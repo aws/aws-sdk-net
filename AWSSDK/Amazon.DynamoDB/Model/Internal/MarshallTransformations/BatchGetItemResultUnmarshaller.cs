@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,19 +31,19 @@
         }
         
         public BatchGetItemResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          BatchGetItemResult batchGetItemResult = new BatchGetItemResult();
+        {
+            BatchGetItemResult batchGetItemResult = new BatchGetItemResult();
           batchGetItemResult.Responses = null; 
                         batchGetItemResult.UnprocessedKeys = null; 
-                        
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                                  
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("Responses", targetDepth)) 
               {
@@ -84,22 +85,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return batchGetItemResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return batchGetItemResult; 
-            } 
-          } 
-          return batchGetItemResult; 
+          
+          
+            return batchGetItemResult; 
         } 
         
         private static BatchGetItemResultUnmarshaller instance; 
         public static BatchGetItemResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new BatchGetItemResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new BatchGetItemResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

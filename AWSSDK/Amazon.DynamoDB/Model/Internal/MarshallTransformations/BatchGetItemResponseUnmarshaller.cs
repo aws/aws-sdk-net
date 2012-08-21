@@ -31,6 +31,7 @@
           BatchGetItemResponse response = new BatchGetItemResponse();
           
           context.Read();
+      
           response.BatchGetItemResult = BatchGetItemResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

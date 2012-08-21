@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public KeySchema Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          KeySchema keySchema = new KeySchema();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            KeySchema keySchema = new KeySchema();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("HashKeyElement", targetDepth)) 
               {
@@ -54,22 +55,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return keySchema; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return keySchema; 
-            } 
-          } 
-          return keySchema; 
+          
+          
+            return keySchema; 
         } 
         
         private static KeySchemaUnmarshaller instance; 
         public static KeySchemaUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new KeySchemaUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new KeySchemaUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

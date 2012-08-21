@@ -31,6 +31,7 @@
           DeleteTableResponse response = new DeleteTableResponse();
           
           context.Read();
+      
           response.DeleteTableResult = DeleteTableResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

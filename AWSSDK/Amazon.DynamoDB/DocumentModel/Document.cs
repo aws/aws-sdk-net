@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 
 using Amazon.DynamoDB.Model;
+using System.IO;
 
 namespace Amazon.DynamoDB.DocumentModel
 {
@@ -264,32 +265,57 @@ namespace Amazon.DynamoDB.DocumentModel
             return doc;
         }
 
-        internal static DynamoDBEntry AttributeValueToDynamoDBEntry(AttributeValue value)
+        internal static DynamoDBEntry AttributeValueToDynamoDBEntry(AttributeValue attributeValue)
         {
-            if (value.S != null)
+            Primitive primitive = null;
+            if (attributeValue.S != null)
             {
-                return value.S;
+                primitive = new Primitive(attributeValue.S);
             }
-            else if (value.N != null)
+            else if (attributeValue.N != null)
             {
-                Primitive primitive = value.N;
-                primitive.SaveAsNumeric = true;
+                primitive = new Primitive(attributeValue.N, true);
+            }
+            else if (attributeValue.B != null)
+            {
+                primitive = new Primitive(attributeValue.B);
+            }
+            if (primitive != null)
                 return primitive;
-            }
-            else if (value.SS != null && value.SS.Count != 0)
+
+            PrimitiveList primitiveList = null;
+            if (attributeValue.SS != null && attributeValue.SS.Count != 0)
             {
-                return value.SS;
+                primitiveList = new PrimitiveList(DynamoDBEntryType.String);
+                foreach (string item in attributeValue.SS)
+                {
+                    primitive = new Primitive(item);
+                    primitiveList.Add(primitive);
+                }
             }
-            else if (value.NS != null && value.NS.Count != 0)
+            else if (attributeValue.NS != null && attributeValue.NS.Count != 0)
             {
-                PrimitiveList primitiveList = value.NS;
-                primitiveList.SaveAsNumeric = true;
+                primitiveList = new PrimitiveList(DynamoDBEntryType.Numeric);
+                foreach (string item in attributeValue.NS)
+                {
+                    primitive = new Primitive(item, true);
+                    primitiveList.Add(primitive);
+                }
+            }
+            else if (attributeValue.BS != null && attributeValue.BS.Count != 0)
+            {
+                primitiveList = new PrimitiveList(DynamoDBEntryType.Binary);
+                foreach (MemoryStream item in attributeValue.BS)
+                {
+                    primitive = new Primitive(item);
+                    primitiveList.Add(primitive);
+                }
+            }
+
+            if (primitiveList != null)
                 return primitiveList;
-            }
-            else
-            {
-                return null;
-            }
+
+            return null;
         }
 
         #endregion

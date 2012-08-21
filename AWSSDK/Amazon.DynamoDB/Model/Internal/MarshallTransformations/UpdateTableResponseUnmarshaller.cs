@@ -31,6 +31,7 @@
           UpdateTableResponse response = new UpdateTableResponse();
           
           context.Read();
+      
           response.UpdateTableResult = UpdateTableResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

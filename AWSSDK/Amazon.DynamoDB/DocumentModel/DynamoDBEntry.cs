@@ -17,9 +17,16 @@ using System;
 using System.Collections.Generic;
 
 using Amazon.DynamoDB.Model;
+using System.IO;
 
 namespace Amazon.DynamoDB.DocumentModel
 {
+
+    /// <summary>
+    /// Enumerator describing type of DynamoDB data
+    /// </summary>
+    public enum DynamoDBEntryType { String, Numeric, Binary }
+
     /// <summary>
     /// Abstract class representing an arbitrary DynamoDB attribute value
     /// </summary>
@@ -28,8 +35,40 @@ namespace Amazon.DynamoDB.DocumentModel
         #region Internal conversion methods
 
         internal abstract AttributeValue ConvertToAttributeValue();
-        internal abstract ExpectedAttributeValue ConvertToExpectedAttributeValue();
-        internal abstract AttributeValueUpdate ConvertToAttributeUpdateValue();
+        internal ExpectedAttributeValue ConvertToExpectedAttributeValue()
+        {
+            AttributeValue attributeValue = ConvertToAttributeValue();
+
+            ExpectedAttributeValue expectedAttribute = new ExpectedAttributeValue();
+            if (attributeValue == null)
+            {
+                expectedAttribute.Exists = false;
+            }
+            else
+            {
+                expectedAttribute.Exists = true;
+                expectedAttribute.Value = attributeValue;
+            }
+
+            return expectedAttribute;
+        }
+        internal AttributeValueUpdate ConvertToAttributeUpdateValue()
+        {
+            AttributeValue attributeValue = ConvertToAttributeValue();
+
+            AttributeValueUpdate attributeUpdate = new AttributeValueUpdate();
+            if (attributeValue == null)
+            {
+                attributeUpdate.Action = "DELETE";
+            }
+            else
+            {
+                attributeUpdate.Action = "PUT";
+                attributeUpdate.Value = attributeValue;
+            }
+
+            return attributeUpdate;
+        }
         
         #endregion
 
@@ -554,6 +593,66 @@ namespace Amazon.DynamoDB.DocumentModel
 
 
         /// <summary>
+        /// Explicitly convert DynamoDBEntry to byte[]
+        /// </summary>
+        /// <returns>byte[] value of this object</returns>
+        public virtual byte[] AsByteArray()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert byte[] to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">byte[] data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(byte[] data)
+        {
+            Primitive p = data;
+            return p;
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to byte[]
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>byte[] value of DynamoDBEntry</returns>
+        public static explicit operator byte[](DynamoDBEntry p)
+        {
+            return p.AsByteArray();
+        }
+
+
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to MemoryStream
+        /// </summary>
+        /// <returns>MemoryStream value of this object</returns>
+        public virtual MemoryStream AsMemoryStream()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert MemoryStream to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">MemoryStream data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(MemoryStream data)
+        {
+            Primitive p = data;
+            return p;
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to MemoryStream
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>MemoryStream value of DynamoDBEntry</returns>
+        public static explicit operator MemoryStream(DynamoDBEntry p)
+        {
+            return p.AsMemoryStream();
+        }
+
+
+
+        /// <summary>
         /// Explicitly convert DynamoDBEntry to List&lt;Primitive&gt;
         /// </summary>
         /// <returns>List&lt;Primitive&gt; value of this object</returns>
@@ -611,8 +710,69 @@ namespace Amazon.DynamoDB.DocumentModel
             return p.AsListOfString();
         }
 
+        
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to List&lt;byte[]&gt;
+        /// </summary>
+        /// <returns>List&lt;byte[]&gt; value of this object</returns>
+        public virtual List<byte[]> AsListOfByteArray()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert List&lt;byte[]&gt; to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">List&lt;byte[]&gt; data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(List<byte[]> data)
+        {
+            PrimitiveList pl = data;
+            return pl;
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to List&lt;byte[]&gt;
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>List&lt;byte[]&gt; value of DynamoDBEntry</returns>
+        public static explicit operator List<byte[]>(DynamoDBEntry p)
+        {
+            return p.AsListOfByteArray();
+        }
+
+
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to List&lt;MemoryStream&gt;
+        /// </summary>
+        /// <returns>List&lt;MemoryStream&gt; value of this object</returns>
+        public virtual List<MemoryStream> AsListOfMemoryStream()
+        {
+            throw new InvalidCastException();
+        }
+        /// <summary>
+        /// Implicitly convert List&lt;MemoryStream&gt; to DynamoDBEntry
+        /// </summary>
+        /// <param name="data">List&lt;MemoryStream&gt; data to convert</param>
+        /// <returns>DynamoDBEntry representing the data</returns>
+        public static implicit operator DynamoDBEntry(List<MemoryStream> data)
+        {
+            PrimitiveList pl = data;
+            return pl;
+        }
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to List&lt;MemoryStream&gt;
+        /// </summary>
+        /// <param name="p">DynamoDBEntry to convert</param>
+        /// <returns>List&lt;MemoryStream&gt; value of DynamoDBEntry</returns>
+        public static explicit operator List<MemoryStream>(DynamoDBEntry p)
+        {
+            return p.AsListOfMemoryStream();
+        }
+
         #endregion
 
         public abstract object Clone();
     }
+
 }

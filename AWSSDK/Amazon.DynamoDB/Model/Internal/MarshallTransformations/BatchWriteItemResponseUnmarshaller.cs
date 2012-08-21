@@ -31,6 +31,7 @@
           BatchWriteItemResponse response = new BatchWriteItemResponse();
           
           context.Read();
+      
           response.BatchWriteItemResult = BatchWriteItemResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

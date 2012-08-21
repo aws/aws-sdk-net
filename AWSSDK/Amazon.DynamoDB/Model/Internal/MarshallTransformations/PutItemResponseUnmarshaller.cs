@@ -31,6 +31,7 @@
           PutItemResponse response = new PutItemResponse();
           
           context.Read();
+      
           response.PutItemResult = PutItemResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

@@ -31,6 +31,7 @@
           ScanResponse response = new ScanResponse();
           
           context.Read();
+      
           response.ScanResult = ScanResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

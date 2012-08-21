@@ -31,6 +31,7 @@
           QueryResponse response = new QueryResponse();
           
           context.Read();
+      
           response.QueryResult = QueryResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

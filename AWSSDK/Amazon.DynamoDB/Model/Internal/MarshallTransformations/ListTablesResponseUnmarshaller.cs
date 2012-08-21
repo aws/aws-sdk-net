@@ -31,6 +31,7 @@
           ListTablesResponse response = new ListTablesResponse();
           
           context.Read();
+      
           response.ListTablesResult = ListTablesResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

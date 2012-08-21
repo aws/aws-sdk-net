@@ -15,6 +15,7 @@
 
 using System;
 using System.Globalization;
+using System.IO;
 
 using Amazon.DynamoDB.Model;
 using Amazon.Util;
@@ -32,7 +33,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// Constructs an empty Primitive
         /// </summary>
         public Primitive()
-            : this(null, false)
+            : this(null, DynamoDBEntryType.String)
         {
         }
 
@@ -42,7 +43,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// </summary>
         /// <param name="value">Value of the Primitive</param>
         public Primitive(string value)
-            : this(value, false)
+            : this(value, DynamoDBEntryType.String)
         {
         }
 
@@ -55,9 +56,29 @@ namespace Amazon.DynamoDB.DocumentModel
         /// Flag, set to true if value should be treated as a number instead of a string
         /// </param>
         public Primitive(string value, bool saveAsNumeric)
+            : this(value, saveAsNumeric ? DynamoDBEntryType.Numeric : DynamoDBEntryType.String)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Binary Primitive with the specified MemoryStream value.
+        /// Note: Primitive's Value is set to the stream's ToArray() response.
+        /// </summary>
+        /// <param name="value">Value of the Primitive</param>
+        public Primitive(MemoryStream value)
+            : this(value.ToArray()) { }
+
+        /// <summary>
+        /// Constructs a Binary Primitive with the specified byte[] value.
+        /// </summary>
+        /// <param name="value">Value of the Primitive</param>
+        public Primitive(byte[] value)
+            : this(value, DynamoDBEntryType.Binary) { }
+
+        internal Primitive(object value, DynamoDBEntryType type)
         {
             Value = value;
-            SaveAsNumeric = saveAsNumeric;
+            Type = type;
         }
 
         #endregion
@@ -65,22 +86,16 @@ namespace Amazon.DynamoDB.DocumentModel
         #region Properties
 
         /// <summary>
-        /// String representation of the Primitive
+        /// Value of the Primitive.
+        /// If Type is String or Numeric, this property is a string.
+        /// If Type is Binary, this property is a byte array.
         /// </summary>
-        public String Value
-        {
-            get;
-            set;
-        }
+        public object Value { get; set; }
 
         /// <summary>
-        /// Flag, set to true if value should be treated as a number instead of a string
+        /// Type of this primitive object
         /// </summary>
-        public Boolean SaveAsNumeric
-        {
-            get;
-            set;
-        }
+        public DynamoDBEntryType Type { get; set; }
 
         #endregion
 
@@ -88,72 +103,37 @@ namespace Amazon.DynamoDB.DocumentModel
 
         internal override AttributeValue ConvertToAttributeValue()
         {
-            if (!string.IsNullOrEmpty(this.Value))
+            if (this.Value == null)
+                return null;
+
+            if (this.Type != DynamoDBEntryType.Binary && string.IsNullOrEmpty(this.StringValue))
+                return null;
+
+            AttributeValue attribute = new AttributeValue();
+            switch (this.Type)
             {
-                AttributeValue attribute = new AttributeValue();
-                if (SaveAsNumeric)
-                {
-                    attribute.N = Value;
-                }
-                else
-                {
-                    attribute.S = Value;
-                }
-                return attribute;
+                case DynamoDBEntryType.Numeric:
+                    attribute.N = StringValue;
+                    break;
+                case DynamoDBEntryType.String:
+                    attribute.S = StringValue;
+                    break;
+                case DynamoDBEntryType.Binary:
+                    byte[] bytes = (byte[])Value;
+                    attribute.B = new MemoryStream(bytes);
+                    break;
             }
-            else
+            return attribute;
+        }
+
+        internal string StringValue
+        {
+            get
             {
+                if (this.Type == DynamoDBEntryType.Numeric || this.Type == DynamoDBEntryType.String)
+                    return this.Value as string;
                 return null;
             }
-        }
-
-        internal override ExpectedAttributeValue ConvertToExpectedAttributeValue()
-        {
-            ExpectedAttributeValue expectedAttribute = new ExpectedAttributeValue();
-            if (!string.IsNullOrEmpty(this.Value))
-            {
-                expectedAttribute.Exists = true;
-                expectedAttribute.Value = new AttributeValue();
-                if (SaveAsNumeric)
-                {
-                    expectedAttribute.Value.N = Value;
-                }
-                else
-                {
-                    expectedAttribute.Value.S = Value;
-                }
-            }
-            else
-            {
-                expectedAttribute.Exists = false;
-            }
-
-            return expectedAttribute;
-        }
-
-        internal override AttributeValueUpdate ConvertToAttributeUpdateValue()
-        {
-
-            AttributeValueUpdate attributeUpdate = new AttributeValueUpdate();
-            if (!string.IsNullOrEmpty(this.Value))
-            {
-                attributeUpdate.Action = "PUT";
-                attributeUpdate.Value = new AttributeValue();
-                if (SaveAsNumeric)
-                {
-                    attributeUpdate.Value.N = Value;
-                }
-                else
-                {
-                    attributeUpdate.Value.S = Value;
-                }
-            }
-            else
-            {
-                attributeUpdate.Action = "DELETE";
-            }
-
-            return attributeUpdate;
         }
 
         #endregion
@@ -166,11 +146,11 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Boolean value of this object</returns>
         public override Boolean AsBoolean()
         {
-            if (string.IsNullOrEmpty(Value))
+            if (string.IsNullOrEmpty(StringValue))
             {
                 throw new InvalidCastException();
             }
-            Boolean ret = !string.Equals("0", Value, StringComparison.OrdinalIgnoreCase);
+            Boolean ret = !string.Equals("0", StringValue, StringComparison.OrdinalIgnoreCase);
             return ret;
         }
         /// <summary>
@@ -182,7 +162,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data ? "1" : "0";
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -204,7 +184,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override Byte AsByte()
         {
             Byte ret = 0;
-            if (!Byte.TryParse(Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
+            if (!Byte.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -219,7 +199,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("d");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -242,7 +222,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override SByte AsSByte()
         {
             SByte ret = 0;
-            if (!SByte.TryParse(Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
+            if (!SByte.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -258,7 +238,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("d");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -282,7 +262,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override UInt16 AsUShort()
         {
             UInt16 ret = 0;
-            if (!UInt16.TryParse(Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
+            if (!UInt16.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -298,7 +278,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("d");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -321,7 +301,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override Int16 AsShort()
         {
             Int16 ret = 0;
-            if (!Int16.TryParse(Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
+            if (!Int16.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -336,7 +316,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("d");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -359,7 +339,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override UInt32 AsUInt()
         {
             UInt32 ret = 0;
-            if (!UInt32.TryParse(Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
+            if (!UInt32.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -375,7 +355,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("d");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -398,7 +378,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override Int32 AsInt()
         {
             Int32 ret = 0;
-            if (!Int32.TryParse(Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
+            if (!Int32.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -413,7 +393,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("d");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -436,7 +416,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override UInt64 AsULong()
         {
             UInt64 ret = 0;
-            if (!UInt64.TryParse(Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
+            if (!UInt64.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -452,7 +432,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("d");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -475,7 +455,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override Int64 AsLong()
         {
             Int64 ret = 0;
-            if (!Int64.TryParse(Value, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
+            if (!Int64.TryParse(StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -490,7 +470,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("d");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -512,7 +492,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override Single AsSingle()
         {
             Single ret = 0;
-            if (!Single.TryParse(Value, NumberStyles.Float, CultureInfo.InvariantCulture, out ret))
+            if (!Single.TryParse(StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -527,7 +507,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("r");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -549,7 +529,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override Double AsDouble()
         {
             Double ret = 0;
-            if (!Double.TryParse(Value, NumberStyles.Float, CultureInfo.InvariantCulture, out ret))
+            if (!Double.TryParse(StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -564,7 +544,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("r");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -586,7 +566,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override Decimal AsDecimal()
         {
             Decimal ret = 0;
-            if (!Decimal.TryParse(Value, NumberStyles.Float, CultureInfo.InvariantCulture, out ret))
+            if (!Decimal.TryParse(StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -601,7 +581,7 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             Primitive ret = new Primitive();
             ret.Value = data.ToString("g");
-            ret.SaveAsNumeric = true;
+            ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
         /// <summary>
@@ -623,7 +603,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override Char AsChar()
         {
             Char ret = '0';
-            if (!Char.TryParse(Value, out ret))
+            if (!Char.TryParse(StringValue, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -658,7 +638,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>String value of this object</returns>
         public override String AsString()
         {
-            return Value;
+            return StringValue;
         }
         /// <summary>
         /// Implicitly convert String to Primitive
@@ -690,7 +670,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override DateTime AsDateTime()
         {
             DateTime ret;
-            if (!DateTime.TryParseExact(Value, AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out ret))
+            if (!DateTime.TryParseExact(StringValue, AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out ret))
             {
                 throw new InvalidCastException();
             }
@@ -726,7 +706,7 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>Guid value of this object</returns>
         public override Guid AsGuid()
         {
-            Guid ret = new Guid(Value);
+            Guid ret = new Guid(StringValue);
             return ret;
         }
         /// <summary>
@@ -749,12 +729,75 @@ namespace Amazon.DynamoDB.DocumentModel
             return p.AsGuid();
         }
 
+
+
+        /// <summary>
+        /// Explicitly convert Primitive to byte[]
+        /// </summary>
+        /// <returns>byte[] value of this object</returns>
+        public override byte[] AsByteArray()
+        {
+            byte[] ret = (byte[])Value;
+            return ret;
+        }
+        /// <summary>
+        /// Implicitly convert byte[] to Primitive
+        /// </summary>
+        /// <param name="data">byte[] data to convert</param>
+        /// <returns>Primitive representing the data</returns>
+        public static implicit operator Primitive(byte[] data)
+        {
+            Primitive ret = new Primitive(data, DynamoDBEntryType.Binary);
+            return ret;
+        }
+        /// <summary>
+        /// Explicitly convert Primitive to byte[]
+        /// </summary>
+        /// <param name="p">Primitive to convert</param>
+        /// <returns>byte[] value of Primitive</returns>
+        public static explicit operator byte[](Primitive p)
+        {
+            return p.AsByteArray();
+        }
+
+
+
+        /// <summary>
+        /// Explicitly convert Primitive to MemoryStream
+        /// </summary>
+        /// <returns>MemoryStream value of this object</returns>
+        public override MemoryStream AsMemoryStream()
+        {
+            MemoryStream ret = new MemoryStream((byte[])Value);
+            return ret;
+        }
+        /// <summary>
+        /// Implicitly convert MemoryStream to Primitive
+        /// </summary>
+        /// <param name="data">MemoryStream data to convert</param>
+        /// <returns>Primitive representing the data</returns>
+        public static implicit operator Primitive(MemoryStream data)
+        {
+            Primitive ret = new Primitive(data.ToArray(), DynamoDBEntryType.Binary);
+            return ret;
+        }
+        /// <summary>
+        /// Explicitly convert Primitive to MemoryStream
+        /// </summary>
+        /// <param name="p">Primitive to convert</param>
+        /// <returns>MemoryStream value of Primitive</returns>
+        public static explicit operator MemoryStream(Primitive p)
+        {
+            return p.AsMemoryStream();
+        }
+
         #endregion
 
         #region Public overrides
+
         public override object Clone()
         {
-            return new Primitive(this.Value, this.SaveAsNumeric);
+            return new Primitive(this.Value, this.Type);
         }
 
         int hashCode = new Random().Next(int.MaxValue);
@@ -768,9 +811,35 @@ namespace Amazon.DynamoDB.DocumentModel
             Primitive entryOther = obj as Primitive;
             if (entryOther == null)
                 return false;
+            if (this.Type != entryOther.Type)
+                return false;
 
-            return entryOther.SaveAsNumeric == this.SaveAsNumeric && string.Equals(entryOther.Value, this.Value);
+            if (this.Type == DynamoDBEntryType.Numeric || this.Type == DynamoDBEntryType.String)
+            {
+                return (string.Equals(this.StringValue, entryOther.StringValue));
+            }
+            else if (this.Type == DynamoDBEntryType.Binary)
+            {
+                byte[] thisByteArray = this.Value as byte[];
+                byte[] otherByteArray = entryOther.Value as byte[];
+
+                if (thisByteArray.Length != otherByteArray.Length)
+                    return false;
+
+                for (int i = 0; i < thisByteArray.Length; i++)
+                {
+                    if (thisByteArray[i] != otherByteArray[i])
+                        return false;
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
         #endregion
     }
 }

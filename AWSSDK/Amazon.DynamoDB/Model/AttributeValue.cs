@@ -23,16 +23,20 @@ namespace Amazon.DynamoDB.Model
     /// <summary>
     /// <para>AttributeValue can be <c>String</c> ,
     /// <c>Number</c> ,
+    /// <c>Blob</c> ,
     /// <c>StringSet</c> ,
-    /// <c>NumberSet</c> .</para>
+    /// <c>NumberSet</c> ,
+    /// <c>BlobSet</c> .</para>
     /// </summary>
     public class AttributeValue  
     {
         
         private string s;
         private string n;
+        private MemoryStream b;
         private List<string> sS = new List<string>();
         private List<string> nS = new List<string>();
+        private List<MemoryStream> bS = new List<MemoryStream>();
 
         /// <summary>
         /// Strings are Unicode with UTF-8 binary encoding. The maximum size is limited by the size of the primary key (1024 bytes as a range part of a
@@ -90,6 +94,34 @@ namespace Amazon.DynamoDB.Model
         internal bool IsSetN()
         {
             return this.n != null;       
+        }
+
+        /// <summary>
+        /// Blobs are binary data passed from a ByteBuffer.
+        ///  
+        /// </summary>
+        public MemoryStream B
+        {
+            get { return this.b; }
+            set { this.b = value; }
+        }
+
+        /// <summary>
+        /// Sets the B property
+        /// </summary>
+        /// <param name="b">The value to set for the B property </param>
+        /// <returns>this instance</returns>
+        public AttributeValue WithB(MemoryStream b)
+        {
+            this.b = b;
+            return this;
+        }
+            
+
+        // Check to see if B property is set
+        internal bool IsSetB()
+        {
+            return this.b != null;       
         }
 
         /// <summary>
@@ -180,6 +212,51 @@ namespace Amazon.DynamoDB.Model
         internal bool IsSetNS()
         {
             return this.nS.Count > 0;       
+        }
+
+        /// <summary>
+        /// A set of Blobs.
+        ///  
+        /// </summary>
+        public List<MemoryStream> BS
+        {
+            get { return this.bS; }
+            set { this.bS = value; }
+        }
+        /// <summary>
+        /// Adds elements to the BS collection
+        /// </summary>
+        /// <param name="bS">The values to add to the BS collection </param>
+        /// <returns>this instance</returns>
+        public AttributeValue WithBS(params MemoryStream[] bS)
+        {
+            foreach (MemoryStream element in bS)
+            {
+                this.bS.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the BS collection
+        /// </summary>
+        /// <param name="bS">The values to add to the BS collection </param>
+        /// <returns>this instance</returns>
+        public AttributeValue WithBS(IEnumerable<MemoryStream> bS)
+        {
+            foreach (MemoryStream element in bS)
+            {
+                this.bS.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if BS property is set
+        internal bool IsSetBS()
+        {
+            return this.bS.Count > 0;       
         }
     }
 }

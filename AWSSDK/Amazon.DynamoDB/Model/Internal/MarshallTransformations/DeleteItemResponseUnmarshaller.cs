@@ -31,6 +31,7 @@
           DeleteItemResponse response = new DeleteItemResponse();
           
           context.Read();
+      
           response.DeleteItemResult = DeleteItemResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

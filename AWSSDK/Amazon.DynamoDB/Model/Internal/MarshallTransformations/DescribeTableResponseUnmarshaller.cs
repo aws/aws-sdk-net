@@ -31,6 +31,7 @@
           DescribeTableResponse response = new DescribeTableResponse();
           
           context.Read();
+      
           response.DescribeTableResult = DescribeTableResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

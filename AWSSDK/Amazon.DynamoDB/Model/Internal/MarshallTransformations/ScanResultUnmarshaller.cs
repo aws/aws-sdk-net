@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,18 +31,18 @@
         }
         
         public ScanResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          ScanResult scanResult = new ScanResult();
+        {
+            ScanResult scanResult = new ScanResult();
           scanResult.Items = null; 
-                        
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                                  
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("Items", targetDepth)) 
               {
@@ -85,22 +86,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return scanResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return scanResult; 
-            } 
-          } 
-          return scanResult; 
+          
+          
+            return scanResult; 
         } 
         
         private static ScanResultUnmarshaller instance; 
         public static ScanResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new ScanResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new ScanResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,18 +31,18 @@
         }
         
         public UpdateItemResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          UpdateItemResult updateItemResult = new UpdateItemResult();
+        {
+            UpdateItemResult updateItemResult = new UpdateItemResult();
           updateItemResult.Attributes = null; 
-                        
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                                  
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("Attributes", targetDepth)) 
               {
@@ -69,22 +70,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return updateItemResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return updateItemResult; 
-            } 
-          } 
-          return updateItemResult; 
+          
+          
+            return updateItemResult; 
         } 
         
         private static UpdateItemResultUnmarshaller instance; 
         public static UpdateItemResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new UpdateItemResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new UpdateItemResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

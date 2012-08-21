@@ -31,6 +31,7 @@
           UpdateItemResponse response = new UpdateItemResponse();
           
           context.Read();
+      
           response.UpdateItemResult = UpdateItemResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

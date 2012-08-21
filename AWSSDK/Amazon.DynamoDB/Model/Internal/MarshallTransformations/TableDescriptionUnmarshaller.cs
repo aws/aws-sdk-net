@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public TableDescription Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          TableDescription tableDescription = new TableDescription();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            TableDescription tableDescription = new TableDescription();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("TableName", targetDepth)) 
               {
@@ -84,22 +85,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return tableDescription; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return tableDescription; 
-            } 
-          } 
-          return tableDescription; 
+          
+          
+            return tableDescription; 
         } 
         
         private static TableDescriptionUnmarshaller instance; 
         public static TableDescriptionUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new TableDescriptionUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new TableDescriptionUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

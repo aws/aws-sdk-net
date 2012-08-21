@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.DynamoDB.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.DynamoDB.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations 
     { 
@@ -30,18 +31,18 @@
         }
         
         public PutRequest Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          PutRequest putRequest = new PutRequest();
+        {
+            PutRequest putRequest = new PutRequest();
           putRequest.Item = null; 
-                        
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                                  
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("Item", targetDepth)) 
               {
@@ -63,22 +64,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return putRequest; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return putRequest; 
-            } 
-          } 
-          return putRequest; 
+          
+          
+            return putRequest; 
         } 
         
         private static PutRequestUnmarshaller instance; 
         public static PutRequestUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new PutRequestUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new PutRequestUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 
 using Amazon.DynamoDB.Model;
+using System.IO;
 
 namespace Amazon.DynamoDB.DocumentModel
 {
@@ -32,19 +33,19 @@ namespace Amazon.DynamoDB.DocumentModel
         /// Values are configured to be saved as strings.
         /// </summary>
         public PrimitiveList()
-            : this(false)
+            : this(DynamoDBEntryType.String)
         {
         }
 
         /// <summary>
         /// Constructs an empty PrimitiveList and specifies
-        /// whether it should be stored as a number or not.
+        /// the type of its elements.
         /// </summary>
-        /// <param name="saveAsNumeric"></param>
-        public PrimitiveList(bool saveAsNumeric)
+        /// <param name="type"></param>
+        public PrimitiveList(DynamoDBEntryType type)
         {
             Entries = new List<Primitive>();
-            SaveAsNumeric = saveAsNumeric;
+            Type = type;
         }
 
         #endregion
@@ -55,20 +56,12 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <summary>
         /// Collection of Primitive entries
         /// </summary>
-        public List<Primitive> Entries
-        {
-            get;
-            set;
-        }
-        
+        public List<Primitive> Entries { get; set; }
+
         /// <summary>
-        /// Flag, set to true if value should be treated as a number, not a string
+        /// Type of Primitive items in the list
         /// </summary>
-        public Boolean SaveAsNumeric
-        {
-            get;
-            set;
-        }
+        public DynamoDBEntryType Type { get; set; }
 
         /// <summary>
         /// Gets or sets Primitive at a specific location in the list.
@@ -110,86 +103,51 @@ namespace Amazon.DynamoDB.DocumentModel
 
         internal override AttributeValue ConvertToAttributeValue()
         {
+            if (Entries == null || Entries.Count == 0)
+                return null;
+
             AttributeValue attribute = new AttributeValue();
-            List<string> values = new List<string>();
-            foreach (var entry in Entries)
+            if (Type == DynamoDBEntryType.Numeric || Type == DynamoDBEntryType.String)
             {
-                values.Add(entry.Value);
+                List<string> values = new List<string>();
+                foreach (var entry in Entries)
+                {
+                    values.Add(entry.StringValue);
+                }
+
+                if (Type == DynamoDBEntryType.Numeric)
+                {
+                    attribute.NS = values;
+                }
+                else
+                {
+                    attribute.SS = values;
+                }
             }
-            if (SaveAsNumeric)
+            else if (Type == DynamoDBEntryType.Binary)
             {
-                attribute.NS = values;
+                List<MemoryStream> values = new List<MemoryStream>();
+                foreach (var entry in Entries)
+                {
+                    MemoryStream stream = new MemoryStream(entry.AsByteArray());
+                    values.Add(stream);
+                }
+
+                attribute.BS = values;
             }
             else
             {
-                attribute.SS = values;
+                throw new InvalidOperationException("Unsupported Type");
             }
 
             return attribute;
-        }
-
-        internal override ExpectedAttributeValue ConvertToExpectedAttributeValue()
-        {
-            ExpectedAttributeValue expectedAttribute = new ExpectedAttributeValue();
-            if ((Entries != null) && (Entries.Count != 0))
-            {
-                expectedAttribute.Exists = true;
-                expectedAttribute.Value = new AttributeValue();
-                List<string> values = new List<string>();
-                foreach (var entry in Entries)
-                {
-                    values.Add(entry.Value);
-                }
-                if (SaveAsNumeric)
-                {
-                    expectedAttribute.Value.NS = values;
-                }
-                else
-                {
-                    expectedAttribute.Value.SS = values;
-                }
-            }
-            else
-            {
-                expectedAttribute.Exists = false;
-            }
-
-            return expectedAttribute;
-        }
-
-        internal override AttributeValueUpdate ConvertToAttributeUpdateValue()
-        {
-            AttributeValueUpdate attributeUpdate = new AttributeValueUpdate();
-            if ((Entries != null) && (Entries.Count != 0))
-            {
-                attributeUpdate.Action = "PUT";
-                attributeUpdate.Value = new AttributeValue();
-                List<string> values = new List<string>();
-                foreach (var entry in Entries)
-                {
-                    values.Add(entry.Value);
-                }
-                if (SaveAsNumeric)
-                {
-                    attributeUpdate.Value.NS = values;
-                }
-                else
-                {
-                    attributeUpdate.Value.SS = values;
-                }
-            }
-            else
-            {
-                attributeUpdate.Action = "DELETE";
-            }
-
-            return attributeUpdate;
         }
 
         #endregion
 
 
         #region Explicit and Implicit conversions
+
 
         /// <summary>
         /// Explicitly convert PrimitiveList to List&lt;Primitive&gt;
@@ -206,9 +164,16 @@ namespace Amazon.DynamoDB.DocumentModel
         /// <returns>PrimitiveList representing the data</returns>
         public static implicit operator PrimitiveList(List<Primitive> data)
         {
-            PrimitiveList pl = new PrimitiveList();
-            pl.Entries = data;
-            return pl;
+            PrimitiveList primitiveList = new PrimitiveList();
+            DynamoDBEntryType? listType = null;
+            foreach (var primitive in data)
+            {
+                listType = primitive.Type;
+                primitiveList.Entries.Add(primitive);
+            }
+            primitiveList.Type = listType.GetValueOrDefault(DynamoDBEntryType.String);
+
+            return primitiveList;
         }
         /// <summary>
         /// Explicitly convert PrimitiveList to List&lt;Primitive&gt;
@@ -219,6 +184,8 @@ namespace Amazon.DynamoDB.DocumentModel
         {
             return p.AsListOfPrimitives();
         }
+
+
 
         /// <summary>
         /// Explicitly convert PrimitiveList to List&lt;String&gt;
@@ -257,19 +224,98 @@ namespace Amazon.DynamoDB.DocumentModel
             return p.AsListOfString();
         }
 
+
+
+        /// <summary>
+        /// Explicitly convert PrimitiveList to byte[]
+        /// </summary>
+        /// <returns>List&lt;byte[]&gt; value of this object</returns>
+        public override List<byte[]> AsListOfByteArray()
+        {
+            List<byte[]> ret = new List<byte[]>();
+            foreach (Primitive entry in Entries)
+            {
+                ret.Add(entry.AsByteArray());
+            }
+            return ret;
+        }
+        /// <summary>
+        /// Implicitly convert List&lt;byte[]&gt; to PrimitiveList
+        /// </summary>
+        /// <param name="data">List&lt;byte[]&gt; data to convert</param>
+        /// <returns>PrimitiveList representing the data</returns>
+        public static implicit operator PrimitiveList(List<byte[]> data)
+        {
+            PrimitiveList pl = new PrimitiveList(DynamoDBEntryType.Binary);
+            foreach (byte[] entry in data)
+            {
+                pl.Entries.Add(entry);
+            }
+            return pl;
+        }
+        /// <summary>
+        /// Explicitly convert PrimitiveList to List&lt;byte[]&gt;
+        /// </summary>
+        /// <param name="p">PrimitiveList to convert</param>
+        /// <returns>List&lt;byte[]&gt; value of PrimitiveList</returns>
+        public static explicit operator List<byte[]>(PrimitiveList p)
+        {
+            return p.AsListOfByteArray();
+        }
+
+
+
+        /// <summary>
+        /// Explicitly convert PrimitiveList to List&lt;MemoryStream&gt;
+        /// </summary>
+        /// <returns>List&lt;MemoryStream&gt; value of this object</returns>
+        public override List<MemoryStream> AsListOfMemoryStream()
+        {
+            List<MemoryStream> ret = new List<MemoryStream>();
+            foreach (var entry in Entries)
+            {
+                ret.Add(new MemoryStream(entry.AsByteArray()));
+            }
+            return ret;
+        }
+        /// <summary>
+        /// Implicitly convert List&lt;MemoryStream&gt; to PrimitiveList
+        /// </summary>
+        /// <param name="data">List&lt;MemoryStream&gt; data to convert</param>
+        /// <returns>PrimitiveList representing the data</returns>
+        public static implicit operator PrimitiveList(List<MemoryStream> data)
+        {
+            PrimitiveList pl = new PrimitiveList(DynamoDBEntryType.Binary);
+            foreach (MemoryStream entry in data)
+            {
+                pl.Entries.Add(entry.ToArray());
+            }
+            return pl;
+        }
+        /// <summary>
+        /// Explicitly convert PrimitiveList to List&lt;MemoryStream&gt;
+        /// </summary>
+        /// <param name="p">PrimitiveList to convert</param>
+        /// <returns>List&lt;MemoryStream&gt; value of PrimitiveList</returns>
+        public static explicit operator List<MemoryStream>(PrimitiveList p)
+        {
+            return p.AsListOfMemoryStream();
+        }
+
+
         #endregion
 
+
         #region Public overrides
+
         public override object Clone()
         {
-            List<Primitive> values = new List<Primitive>();
+            PrimitiveList list = new PrimitiveList(this.Type);
             foreach (Primitive entry in this.Entries)
             {
-                values.Add(entry.Clone() as Primitive);
+                list.Add(entry.Clone() as Primitive);
             }
 
-            PrimitiveList list = new PrimitiveList(this.SaveAsNumeric);
-            list.Entries = values;
             return list;
         }
 
@@ -282,7 +328,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public override bool Equals(object obj)
         {
             PrimitiveList entryOther = obj as PrimitiveList;
-            if (entryOther == null || this.SaveAsNumeric != entryOther.SaveAsNumeric)
+            if (entryOther == null || this.Type != entryOther.Type)
                 return false;
 
             if (entryOther.Entries.Count != this.Entries.Count)
@@ -303,6 +349,7 @@ namespace Amazon.DynamoDB.DocumentModel
 
             return true;
         }
+        
         #endregion
     }
 }

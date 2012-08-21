@@ -31,6 +31,7 @@
           GetItemResponse response = new GetItemResponse();
           
           context.Read();
+      
           response.GetItemResult = GetItemResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 

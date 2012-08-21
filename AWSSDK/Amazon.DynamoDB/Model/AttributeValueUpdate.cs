@@ -31,7 +31,7 @@ namespace Amazon.DynamoDB.Model
         private string action;
 
         /// <summary>
-        /// AttributeValue can be <c>String</c>, <c>Number</c>, <c>StringSet</c>, <c>NumberSet</c>.
+        /// AttributeValue can be <c>String</c>, <c>Number</c>, <c>Blob</c>, <c>StringSet</c>, <c>NumberSet</c>, <c>BlobSet</c>.
         ///  
         /// </summary>
         public AttributeValue Value

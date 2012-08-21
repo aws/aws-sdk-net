@@ -74,7 +74,7 @@ namespace Amazon.DynamoDB.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>S, N</description>
+        ///         <description>S, N, B</description>
         ///     </item>
         /// </list>
         /// </para>
