@@ -943,6 +943,7 @@
     <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\StackUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\TagUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\TemplateParameterUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1009,6 +1010,7 @@
     <Compile Include="Amazon.CloudFormation\Model\StackSummary.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\Tag.cs" />
     <Compile Include="Amazon.CloudFormation\Model\TemplateParameter.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1037,6 +1039,7 @@
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontClient.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontConfig.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontException.cs" />
+    <Compile Include="Amazon.CloudFront\AmazonCloudFrontUrlSigner.cs" />
     <Compile Include="Amazon.CloudFront\Model\AccessDeniedException.cs" />
     <Compile Include="Amazon.CloudFront\Model\ActiveTrustedSigners.cs" />
     <Compile Include="Amazon.CloudFront\Model\Aliases.cs" />
@@ -5496,6 +5499,8 @@
     <Compile Include="Amazon.RDS\AmazonRDSException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\AddTagsToResourceRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\AddTagsToResourceResponse.cs" />
     <Compile Include="Amazon.RDS\Model\AuthorizationAlreadyExistsException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5823,6 +5828,8 @@
     <Compile Include="Amazon.RDS\Model\InsufficientDBInstanceCapacityException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AddTagsToResourceRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AddTagsToResourceResponseUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\AuthorizeDBSecurityGroupIngressRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6093,6 +6100,9 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\IPRangeUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ListTagsForResourceRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ListTagsForResourceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ListTagsForResourceResultUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ModifyDBInstanceRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6157,6 +6167,8 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RecurringChargeUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RemoveTagsFromResourceRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\RemoveTagsFromResourceResponseUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\ReservedDBInstancesOfferingUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6202,6 +6214,7 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\SubnetUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\TagUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\InvalidDBInstanceStateException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6233,6 +6246,9 @@
     <Compile Include="Amazon.RDS\Model\IPRange.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\ListTagsForResourceRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\ListTagsForResourceResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\ListTagsForResourceResult.cs" />
     <Compile Include="Amazon.RDS\Model\ModifyDBInstanceRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6304,6 +6320,8 @@
     <Compile Include="Amazon.RDS\Model\RecurringCharge.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\RemoveTagsFromResourceRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\RemoveTagsFromResourceResponse.cs" />
     <Compile Include="Amazon.RDS\Model\ReservedDBInstance.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6370,6 +6388,7 @@
     <Compile Include="Amazon.RDS\Model\SubnetAlreadyInUseException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Tag.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Client.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Config.cs" />
@@ -6441,6 +6460,7 @@
     <Compile Include="Amazon.Route53\Model\ResourceRecord.cs" />
     <Compile Include="Amazon.Route53\Model\ResourceRecordSet.cs" />
     <Compile Include="Amazon.Route53\Model\TooManyHostedZonesException.cs" />
+    <Compile Include="Amazon.Runtime\AmazonClientException.cs" />
     <Compile Include="Amazon.Runtime\AmazonServiceException.cs" />
     <Compile Include="Amazon.Runtime\AmazonUnmarshallingException.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceClient.cs" />
@@ -6496,10 +6516,16 @@
     <Compile Include="Amazon.S3\Model\CompleteMultipartUploadResponse.cs" />
     <Compile Include="Amazon.S3\Model\CopyPartRequest.cs" />
     <Compile Include="Amazon.S3\Model\CopyPartResponse.cs" />
+    <Compile Include="Amazon.S3\Model\CORSConfiguration.cs" />
+    <Compile Include="Amazon.S3\Model\CORSRule.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketPolicyResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketTaggingRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteBucketTaggingResponse.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteRequest.cs" />
     <Compile Include="Amazon.S3\Model\DeleteBucketWebsiteResponse.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteCORSConfigurationRequest.cs" />
+    <Compile Include="Amazon.S3\Model\DeleteCORSConfigurationResponse.cs" />
     <Compile Include="Amazon.S3\Model\DeletedObject.cs" />
     <Compile Include="Amazon.S3\Model\DeleteError.cs" />
     <Compile Include="Amazon.S3\Model\DeleteLifecycleConfigurationRequest.cs">
@@ -6514,10 +6540,14 @@
     <Compile Include="Amazon.S3\Model\Expiration.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketPolicyResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketTaggingRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetBucketTaggingResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketVersioningRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketVersioningResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketWebsiteRequest.cs" />
     <Compile Include="Amazon.S3\Model\GetBucketWebsiteResponse.cs" />
+    <Compile Include="Amazon.S3\Model\GetCORSConfigurationRequest.cs" />
+    <Compile Include="Amazon.S3\Model\GetCORSConfigurationResponse.cs" />
     <Compile Include="Amazon.S3\Model\GetLifecycleConfigurationRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6545,6 +6575,12 @@
     <Compile Include="Amazon.S3\Model\NotificationConfigurationList.cs" />
     <Compile Include="Amazon.S3\Model\PartDetail.cs" />
     <Compile Include="Amazon.S3\Model\PartEtag.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketTaggingRequest.cs" />
+    <Compile Include="Amazon.S3\Model\PutBucketTaggingResponse.cs" />
+    <Compile Include="Amazon.S3\Model\Tag.cs" />
+    <Compile Include="Amazon.S3\Model\TagSet.cs" />
+    <Compile Include="Amazon.S3\Model\PutCORSConfigurationRequest.cs" />
+    <Compile Include="Amazon.S3\Model\PutCORSConfigurationResponse.cs" />
     <Compile Include="Amazon.Util\PartStreamWrapper.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs" />
@@ -7932,6 +7968,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.EC2\Model\UnassignPrivateIpAddressesResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.S3\Model\GetBucketTaggingResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.S3\Model\GetCORSConfigurationResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

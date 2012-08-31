@@ -22,13 +22,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Stack Unmarshaller
      /// </summary>
-    internal class StackUnmarshaller : IUnmarshaller<Stack, XmlUnmarshallerContext> 
+    internal class StackUnmarshaller : IUnmarshaller<Stack, XmlUnmarshallerContext>, IUnmarshaller<Stack, JsonUnmarshallerContext> 
     {
         public Stack Unmarshall(XmlUnmarshallerContext context) 
         {
             Stack stack = new Stack();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -113,6 +114,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         stack.Outputs.Add(OutputUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
+                    } 
+                    if (context.TestExpression("Tags/member", targetDepth))
+                    {
+                        stack.Tags.Add(TagUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -124,6 +131,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
 
             return stack;
+        }
+
+        public Stack Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static StackUnmarshaller instance;

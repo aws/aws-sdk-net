@@ -22,13 +22,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ListStacksResult Unmarshaller
      /// </summary>
-    internal class ListStacksResultUnmarshaller : IUnmarshaller<ListStacksResult, XmlUnmarshallerContext> 
+    internal class ListStacksResultUnmarshaller : IUnmarshaller<ListStacksResult, XmlUnmarshallerContext>, IUnmarshaller<ListStacksResult, JsonUnmarshallerContext> 
     {
         public ListStacksResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ListStacksResult listStacksResult = new ListStacksResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
 
             return listStacksResult;
+        }
+
+        public ListStacksResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ListStacksResultUnmarshaller instance;

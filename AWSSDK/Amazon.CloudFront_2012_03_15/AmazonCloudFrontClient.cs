@@ -115,7 +115,8 @@ namespace Amazon.CloudFront_2012_03_15
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonCloudFrontClient with the credentials defined in the App.config.
+        /// Constructs AmazonCloudFrontClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -133,7 +134,8 @@ namespace Amazon.CloudFront_2012_03_15
             : this(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig(), true) { }
 
         /// <summary>
-        /// Constructs AmazonCloudFrontClient with the credentials defined in the App.config.
+        /// Constructs AmazonCloudFrontClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

@@ -69,6 +69,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         optionGroup.Options.Add(OptionUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
+                    } 
+                    if (context.TestExpression("AllowsVpcAndNonVpcInstanceMemberships", targetDepth))
+                    {
+                        optionGroup.AllowsVpcAndNonVpcInstanceMemberships = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("VpcId", targetDepth))
+                    {
+                        optionGroup.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

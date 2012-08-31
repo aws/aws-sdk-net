@@ -96,7 +96,8 @@ namespace Amazon.SimpleDB
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonSimpleDBClient with the credentials defined in the App.config.
+        /// Constructs AmazonSimpleDBClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -114,7 +115,8 @@ namespace Amazon.SimpleDB
             : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleDBConfig(), true) { }
 
         /// <summary>
-        /// Constructs AmazonSimpleDBClient with the credentials defined in the App.config.
+        /// Constructs AmazonSimpleDBClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -133,7 +135,8 @@ namespace Amazon.SimpleDB
             : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleDBConfig() { RegionEndpoint = region }, true) { }
 
         /// <summary>
-        /// Constructs AmazonSimpleDBClient with the credentials defined in the App.config.
+        /// Constructs AmazonSimpleDBClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

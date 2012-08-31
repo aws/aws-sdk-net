@@ -22,13 +22,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ValidateTemplateResult Unmarshaller
      /// </summary>
-    internal class ValidateTemplateResultUnmarshaller : IUnmarshaller<ValidateTemplateResult, XmlUnmarshallerContext> 
+    internal class ValidateTemplateResultUnmarshaller : IUnmarshaller<ValidateTemplateResult, XmlUnmarshallerContext>, IUnmarshaller<ValidateTemplateResult, JsonUnmarshallerContext> 
     {
         public ValidateTemplateResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ValidateTemplateResult validateTemplateResult = new ValidateTemplateResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -70,6 +71,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
 
             return validateTemplateResult;
+        }
+
+        public ValidateTemplateResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ValidateTemplateResultUnmarshaller instance;

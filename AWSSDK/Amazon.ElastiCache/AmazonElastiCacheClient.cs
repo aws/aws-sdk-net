@@ -43,7 +43,8 @@ namespace Amazon.ElastiCache
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonElastiCacheClient with the credentials defined in the App.config.
+        /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -58,10 +59,11 @@ namespace Amazon.ElastiCache
         ///
         /// </summary>
         public AmazonElastiCacheClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
-        /// Constructs AmazonElastiCacheClient with the credentials defined in the App.config.
+        /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -77,10 +79,11 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElastiCacheClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
-        /// Constructs AmazonElastiCacheClient with the credentials defined in the App.config.
+        /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -96,7 +99,7 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// <param name="config">The AmazonElastiCache Configuration Object</param>
         public AmazonElastiCacheClient(AmazonElastiCacheConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with AWS Credentials
@@ -113,7 +116,7 @@ namespace Amazon.ElastiCache
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonElastiCacheClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonElastiCacheConfig() { RegionEndpoint = region })
+            : this(credentials, new AmazonElastiCacheConfig(){RegionEndpoint=region})
         {
         }
 
@@ -124,7 +127,7 @@ namespace Amazon.ElastiCache
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElastiCacheClient Configuration Object</param>
         public AmazonElastiCacheClient(AWSCredentials credentials, AmazonElastiCacheConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -145,7 +148,7 @@ namespace Amazon.ElastiCache
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="region">The region to connect.</param>
         public AmazonElastiCacheClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonElastiCacheConfig() { RegionEndpoint = region })
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonElastiCacheConfig() {RegionEndpoint=region})
         {
         }
 
@@ -160,9 +163,49 @@ namespace Amazon.ElastiCache
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonElastiCacheClient Configuration Object</param>
         public AmazonElastiCacheClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElastiCacheConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
+        
+        /// <summary>
+        /// Constructs AmazonElastiCacheClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonElastiCacheClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElastiCacheConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElastiCacheClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElastiCacheClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElastiCacheConfig(){RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElastiCacheClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonElastiCacheClient Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonElastiCacheClient Configuration Object</param>
+        public AmazonElastiCacheClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonElastiCacheConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
+
         
 
         #endregion

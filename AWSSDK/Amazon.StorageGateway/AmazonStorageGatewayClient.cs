@@ -49,7 +49,8 @@ namespace Amazon.StorageGateway
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonStorageGatewayClient with the credentials defined in the App.config.
+        /// Constructs AmazonStorageGatewayClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -67,7 +68,8 @@ namespace Amazon.StorageGateway
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonStorageGatewayConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonStorageGatewayClient with the credentials defined in the App.config.
+        /// Constructs AmazonStorageGatewayClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

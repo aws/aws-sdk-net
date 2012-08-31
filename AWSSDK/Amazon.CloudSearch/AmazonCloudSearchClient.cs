@@ -39,7 +39,8 @@ namespace Amazon.CloudSearch
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonCloudSearchClient with the credentials defined in the App.config.
+        /// Constructs AmazonCloudSearchClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -57,7 +58,8 @@ namespace Amazon.CloudSearch
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonCloudSearchClient with the credentials defined in the App.config.
+        /// Constructs AmazonCloudSearchClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -76,7 +78,8 @@ namespace Amazon.CloudSearch
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonCloudSearchClient with the credentials defined in the App.config.
+        /// Constructs AmazonCloudSearchClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

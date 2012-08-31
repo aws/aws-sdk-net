@@ -22,13 +22,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Output Unmarshaller
      /// </summary>
-    internal class OutputUnmarshaller : IUnmarshaller<Output, XmlUnmarshallerContext> 
+    internal class OutputUnmarshaller : IUnmarshaller<Output, XmlUnmarshallerContext>, IUnmarshaller<Output, JsonUnmarshallerContext> 
     {
         public Output Unmarshall(XmlUnmarshallerContext context) 
         {
             Output output = new Output();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -64,6 +65,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
 
             return output;
+        }
+
+        public Output Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static OutputUnmarshaller instance;

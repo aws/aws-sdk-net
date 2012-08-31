@@ -41,7 +41,8 @@ namespace Amazon.ImportExport
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonImportExportClient with the credentials defined in the App.config.
+        /// Constructs AmazonImportExportClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -59,7 +60,8 @@ namespace Amazon.ImportExport
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonImportExportClient with the credentials defined in the App.config.
+        /// Constructs AmazonImportExportClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -78,7 +80,8 @@ namespace Amazon.ImportExport
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonImportExportClient with the credentials defined in the App.config.
+        /// Constructs AmazonImportExportClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

@@ -148,7 +148,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// The time the stack was last updated.
+        /// The time the stack was last updated. This field will only be returned if the stack has been updated at least once.
         ///  
         /// </summary>
         public DateTime LastUpdatedTime
@@ -204,7 +204,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// The status of the stack when it was deleted.
+        /// The current status of the stack.
         ///  
         /// <para>
         /// <b>Constraints:</b>

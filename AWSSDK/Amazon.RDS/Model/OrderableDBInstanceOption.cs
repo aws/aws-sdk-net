@@ -34,9 +34,7 @@ namespace Amazon.RDS.Model
         private List<AvailabilityZone> availabilityZones = new List<AvailabilityZone>();
         private bool? multiAZCapable;
         private bool? readReplicaCapable;
-        private bool? vpcCapable;
-        private bool? vpcMultiAZCapable;
-        private bool? vpcReadReplicaCapable;
+        private bool? vpc;
 
         /// <summary>
         /// The engine type of the orderable DB Instance.
@@ -252,87 +250,31 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates whether this orderable DB Instance is VPC capable.
+        /// Indicates whether this is a VPC orderable DB Instance.
         ///  
         /// </summary>
-        public bool VpcCapable
+        public bool Vpc
         {
-            get { return this.vpcCapable ?? default(bool); }
-            set { this.vpcCapable = value; }
+            get { return this.vpc ?? default(bool); }
+            set { this.vpc = value; }
         }
 
         /// <summary>
-        /// Sets the VpcCapable property
+        /// Sets the Vpc property
         /// </summary>
-        /// <param name="vpcCapable">The value to set for the VpcCapable property </param>
+        /// <param name="vpc">The value to set for the Vpc property </param>
         /// <returns>this instance</returns>
-        public OrderableDBInstanceOption WithVpcCapable(bool vpcCapable)
+        public OrderableDBInstanceOption WithVpc(bool vpc)
         {
-            this.vpcCapable = vpcCapable;
+            this.vpc = vpc;
             return this;
         }
             
 
-        // Check to see if VpcCapable property is set
-        internal bool IsSetVpcCapable()
+        // Check to see if Vpc property is set
+        internal bool IsSetVpc()
         {
-            return this.vpcCapable.HasValue;       
-        }
-
-        /// <summary>
-        /// Indicates whether this orderable DB Instance is VPC multi-AZ capable.
-        ///  
-        /// </summary>
-        public bool VpcMultiAZCapable
-        {
-            get { return this.vpcMultiAZCapable ?? default(bool); }
-            set { this.vpcMultiAZCapable = value; }
-        }
-
-        /// <summary>
-        /// Sets the VpcMultiAZCapable property
-        /// </summary>
-        /// <param name="vpcMultiAZCapable">The value to set for the VpcMultiAZCapable property </param>
-        /// <returns>this instance</returns>
-        public OrderableDBInstanceOption WithVpcMultiAZCapable(bool vpcMultiAZCapable)
-        {
-            this.vpcMultiAZCapable = vpcMultiAZCapable;
-            return this;
-        }
-            
-
-        // Check to see if VpcMultiAZCapable property is set
-        internal bool IsSetVpcMultiAZCapable()
-        {
-            return this.vpcMultiAZCapable.HasValue;       
-        }
-
-        /// <summary>
-        /// Indicates whether this orderable DB Instance can have a VPC read replica.
-        ///  
-        /// </summary>
-        public bool VpcReadReplicaCapable
-        {
-            get { return this.vpcReadReplicaCapable ?? default(bool); }
-            set { this.vpcReadReplicaCapable = value; }
-        }
-
-        /// <summary>
-        /// Sets the VpcReadReplicaCapable property
-        /// </summary>
-        /// <param name="vpcReadReplicaCapable">The value to set for the VpcReadReplicaCapable property </param>
-        /// <returns>this instance</returns>
-        public OrderableDBInstanceOption WithVpcReadReplicaCapable(bool vpcReadReplicaCapable)
-        {
-            this.vpcReadReplicaCapable = vpcReadReplicaCapable;
-            return this;
-        }
-            
-
-        // Check to see if VpcReadReplicaCapable property is set
-        internal bool IsSetVpcReadReplicaCapable()
-        {
-            return this.vpcReadReplicaCapable.HasValue;       
+            return this.vpc.HasValue;       
         }
     }
 }

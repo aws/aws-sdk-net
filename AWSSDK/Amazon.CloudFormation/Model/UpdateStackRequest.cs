@@ -27,8 +27,9 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the UpdateStack operation.
     /// <para> Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the
     /// status of the stack via the DescribeStacks action. </para> <para>To get a copy of the template for an existing stack, you can use the
-    /// GetTemplate action. </para> <para>For more information about creating an update template, updating a stack, and monitoring the progress of
-    /// the update, see Updating a Stack. </para>
+    /// GetTemplate action. </para> <para>Tags that were associated with this stack during creation time will still be associated with the stack
+    /// after an <c>UpdateStack</c> operation.</para> <para>For more information about creating an update template, updating a stack, and monitoring
+    /// the progress of the update, see Updating a Stack. </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.UpdateStack"/>
     public class UpdateStackRequest : AmazonWebServiceRequest

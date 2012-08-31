@@ -43,7 +43,8 @@ namespace Amazon.Glacier.Transfer
         AmazonGlacier glacierClient;
 
         /// <summary>
-        /// Constructs an ArchiveTransferManager object for the specified Amazon Glacier region endpoint using the credentials defined in the App.config.
+        /// Constructs an ArchiveTransferManager object for the specified Amazon Glacier region endpoint using the credentials
+        /// loaded from the application's default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -274,7 +275,7 @@ namespace Amazon.Glacier.Transfer
             if (wsArgs != null)
             {
                 string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
-                wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + "ArchiveTransferManager/" + this.operation;
+                wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " ArchiveTransferManager/" + this.operation;
             }
         }
     }

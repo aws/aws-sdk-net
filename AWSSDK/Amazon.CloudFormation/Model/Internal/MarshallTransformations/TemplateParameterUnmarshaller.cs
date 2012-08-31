@@ -22,13 +22,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   TemplateParameter Unmarshaller
      /// </summary>
-    internal class TemplateParameterUnmarshaller : IUnmarshaller<TemplateParameter, XmlUnmarshallerContext> 
+    internal class TemplateParameterUnmarshaller : IUnmarshaller<TemplateParameter, XmlUnmarshallerContext>, IUnmarshaller<TemplateParameter, JsonUnmarshallerContext> 
     {
         public TemplateParameter Unmarshall(XmlUnmarshallerContext context) 
         {
             TemplateParameter templateParameter = new TemplateParameter();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -70,6 +71,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
 
             return templateParameter;
+        }
+
+        public TemplateParameter Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static TemplateParameterUnmarshaller instance;

@@ -41,6 +41,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> notificationARNs = new List<string>();
         private List<string> capabilities = new List<string>();
         private string onFailure;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
         /// The name associated with the stack. The name must be unique within your AWS account. <note> Must contain only alphanumeric characters (case
@@ -195,7 +196,8 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Boolean to enable or disable rollback on stack creation failures. Default: <c>false</c>
+        /// Set to <c>true</c> to disable rollback of the stack if stack creation failed. You can specify either <c>DisableRollback</c> or
+        /// <c>OnFailure</c>, but not both. Default: <c>false</c>
         ///  
         /// </summary>
         public bool DisableRollback
@@ -365,6 +367,21 @@ namespace Amazon.CloudFormation.Model
         {
             return this.capabilities.Count > 0;       
         }
+
+        /// <summary>
+        /// Determines what action will be taken if stack creation fails. This must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify either
+        /// <c>OnFailure</c> or <c>DisableRollback</c>, but not both. Default: <c>ROLLBACK</c>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>DO_NOTHING, ROLLBACK, DELETE</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string OnFailure
         {
             get { return this.onFailure; }
@@ -387,6 +404,52 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetOnFailure()
         {
             return this.onFailure != null;       
+        }
+
+        /// <summary>
+        /// A set of user-defined <c>Tags</c> to associate with this stack, represented by key/value pairs. Tags defined for the stack are propogated to
+        /// EC2 resources that are created as part of the stack.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        public CreateStackRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        public CreateStackRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;       
         }
     }
 }

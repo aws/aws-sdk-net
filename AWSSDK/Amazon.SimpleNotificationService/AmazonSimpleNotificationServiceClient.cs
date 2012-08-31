@@ -101,7 +101,8 @@ namespace Amazon.SimpleNotificationService
         #endregion
 
         /// <summary>
-        /// Constructs AmazonSimpleNotificationServiceClient with the credentials defined in the App.config.
+        /// Constructs AmazonSimpleNotificationServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -119,7 +120,8 @@ namespace Amazon.SimpleNotificationService
             : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleNotificationServiceConfig(), true) { }
 
         /// <summary>
-        /// Constructs AmazonSimpleNotificationServiceClient with the credentials defined in the App.config.
+        /// Constructs AmazonSimpleNotificationServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -138,7 +140,8 @@ namespace Amazon.SimpleNotificationService
             : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleNotificationServiceConfig() { RegionEndpoint = region }, true) { }
 
         /// <summary>
-        /// Constructs AmazonSimpleNotificationServiceClient with the credentials defined in the App.config.
+        /// Constructs AmazonSimpleNotificationServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

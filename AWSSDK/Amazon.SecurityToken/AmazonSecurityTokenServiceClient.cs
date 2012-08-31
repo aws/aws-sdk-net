@@ -46,7 +46,8 @@ namespace Amazon.SecurityToken
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonSecurityTokenServiceClient with the credentials defined in the App.config.
+        /// Constructs AmazonSecurityTokenServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -64,7 +65,8 @@ namespace Amazon.SecurityToken
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonSecurityTokenServiceClient with the credentials defined in the App.config.
+        /// Constructs AmazonSecurityTokenServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -83,7 +85,8 @@ namespace Amazon.SecurityToken
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonSecurityTokenServiceClient with the credentials defined in the App.config.
+        /// Constructs AmazonSecurityTokenServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

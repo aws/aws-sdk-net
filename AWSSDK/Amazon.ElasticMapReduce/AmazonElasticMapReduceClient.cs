@@ -41,7 +41,8 @@ namespace Amazon.ElasticMapReduce
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonElasticMapReduceClient with the credentials defined in the App.config.
+        /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -59,7 +60,8 @@ namespace Amazon.ElasticMapReduce
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonElasticMapReduceClient with the credentials defined in the App.config.
+        /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -79,7 +81,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Constructs AmazonElasticMapReduceClient with the credentials defined in the App.config.
+        /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

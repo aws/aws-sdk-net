@@ -48,6 +48,8 @@ namespace Amazon.SessionProvider
     ///          type="Amazon.SessionProvider.DynamoDBSessionStateStore"
     ///          AWSAccessKey="YOUR_ACCESS_KEY"
     ///          AWSSecretKey="YOUR_SECRET_KEY"
+	///          Region="us-east-1"
+	///			 Table="ASP.NET_SessionState"
     ///          /&gt;
     ///   &lt;/providers&gt;
     /// &lt;/sessionState&gt;

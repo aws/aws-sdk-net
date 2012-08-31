@@ -147,7 +147,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// The compute and memory capacity of the DB Instance. To determine the instance classes that are available for a particular DB engine, use the
         /// <a>DescribeOrderableDBInstanceOptions</a> action. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-        /// |db.m2.2xlarge | db.m2.4xlarge</c>
+        /// |db.m2.2xlarge | db.m2.4xlarge</c> <note>Amazon RDS does not support db.t1.micro instances in a virtual private cloud (VPC).</note>
         ///  
         /// </summary>
         public string DBInstanceClass

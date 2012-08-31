@@ -44,7 +44,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.5.1.0";
+        internal const string SDKVersionNumber = "1.5.2.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -402,6 +402,11 @@ namespace Amazon.Util
         public static DateTime ConvertFromUnixEpochSeconds(int seconds)
         {
             return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc).ToLocalTime();
+        }
+
+        public static int ConvertToUnixEpochSeconds(DateTime dateTime)
+        {
+            return (int)ConvertToUnixEpochMilliSeconds(dateTime);
         }
 
         public static double ConvertToUnixEpochMilliSeconds(DateTime dateTime)

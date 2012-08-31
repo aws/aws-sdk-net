@@ -54,7 +54,8 @@ namespace Amazon.CloudWatch
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonCloudWatchClient with the credentials defined in the App.config.
+        /// Constructs AmazonCloudWatchClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -72,7 +73,8 @@ namespace Amazon.CloudWatch
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonCloudWatchClient with the credentials defined in the App.config.
+        /// Constructs AmazonCloudWatchClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -91,7 +93,8 @@ namespace Amazon.CloudWatch
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonCloudWatchClient with the credentials defined in the App.config.
+        /// Constructs AmazonCloudWatchClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

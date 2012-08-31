@@ -133,7 +133,8 @@ namespace Amazon.EC2
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonEC2Client with the credentials defined in the App.config.
+        /// Constructs AmazonEC2Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -151,7 +152,8 @@ namespace Amazon.EC2
             : this(FallbackCredentialsFactory.GetCredentials(), new AmazonEC2Config(), true) { }
 
         /// <summary>
-        /// Constructs AmazonEC2Client with the credentials defined in the App.config.
+        /// Constructs AmazonEC2Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -170,7 +172,8 @@ namespace Amazon.EC2
             : this(FallbackCredentialsFactory.GetCredentials(), new AmazonEC2Config() { RegionEndpoint = region }, true) { }
 
         /// <summary>
-        /// Constructs AmazonEC2Client with the credentials defined in the App.config.
+        /// Constructs AmazonEC2Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

@@ -44,7 +44,8 @@ namespace Amazon.AutoScaling
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonAutoScalingClient with the credentials defined in the App.config.
+        /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -62,7 +63,8 @@ namespace Amazon.AutoScaling
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonAutoScalingClient with the credentials defined in the App.config.
+        /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -81,7 +83,8 @@ namespace Amazon.AutoScaling
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonAutoScalingClient with the credentials defined in the App.config.
+        /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

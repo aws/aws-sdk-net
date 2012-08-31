@@ -39,6 +39,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("StackName", StringUtils.FromString(describeStacksRequest.StackName));
             }
+            if (describeStacksRequest != null && describeStacksRequest.IsSetNextToken())
+            {
+                request.Parameters.Add("NextToken", StringUtils.FromString(describeStacksRequest.NextToken));
+            }
 
             return request;
         }

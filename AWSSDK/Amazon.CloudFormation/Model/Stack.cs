@@ -39,6 +39,7 @@ namespace Amazon.CloudFormation.Model
         private int? timeoutInMinutes;
         private List<string> capabilities = new List<string>();
         private List<Output> outputs = new List<Output>();
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
         /// Unique identifier of the stack.
@@ -198,7 +199,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// The time the stack was last updated.
+        /// The time the stack was last updated. This field will only be returned if the stack has been updated at least once.
         ///  
         /// </summary>
         public DateTime LastUpdatedTime
@@ -498,6 +499,46 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetOutputs()
         {
             return this.outputs.Count > 0;       
+        }
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        public Stack WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        public Stack WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;       
         }
     }
 }

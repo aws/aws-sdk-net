@@ -60,7 +60,8 @@ namespace Amazon
     {
 
         /// <summary>
-        /// Create a client for the Amazon EC2 Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon EC2 Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -82,7 +83,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon EC2 Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon EC2 Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -137,7 +139,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon EC2 Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon EC2 Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -215,7 +218,8 @@ namespace Amazon
 
 
         /// <summary>
-        /// Create a client for the Amazon SimpleDB Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SimpleDB Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -237,7 +241,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SimpleDB Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SimpleDB Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -293,7 +298,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SimpleDB Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SimpleDB Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -369,7 +375,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElasticMapReduce Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElasticMapReduce Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -391,7 +398,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElasticMapReduce Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElasticMapReduce Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -447,7 +455,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElasticMapReduce Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElasticMapReduce Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -523,7 +532,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SQS Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SQS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -545,7 +555,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SQS Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SQS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -601,7 +612,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SQS Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SQS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -677,7 +689,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon CloudWatch Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon CloudWatch Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -699,7 +712,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon CloudWatch Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon CloudWatch Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -755,7 +769,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon CloudWatch Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon CloudWatch Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -831,7 +846,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElasticLoadBalancing Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElasticLoadBalancing Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -853,7 +869,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElasticLoadBalancing Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElasticLoadBalancing Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -909,7 +926,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElasticLoadBalancing Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElasticLoadBalancing Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -985,7 +1003,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon AutoScaling Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon AutoScaling Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1007,7 +1026,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon AutoScaling Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon AutoScaling Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1063,7 +1083,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon AutoScaling Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon AutoScaling Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1139,7 +1160,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon S3 Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon S3 Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1161,7 +1183,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon S3 Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon S3 Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1217,7 +1240,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon S3 Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon S3 Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1293,7 +1317,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon RDS Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon RDS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1315,7 +1340,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon RDS Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon RDS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1371,7 +1397,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon RDS Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon RDS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1447,7 +1474,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon CloudFront Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon CloudFront Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1469,7 +1497,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon CloudFront Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon CloudFront Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1525,7 +1554,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon CloudFront Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon CloudFront Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1601,7 +1631,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SNS Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SNS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1623,7 +1654,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SNS Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SNS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1679,7 +1711,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SNS Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SNS Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1755,7 +1788,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon IdentityManagement Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon IdentityManagement Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1777,7 +1811,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon IdentityManagement Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon IdentityManagement Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1828,7 +1863,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon IdentityManagementService Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon IdentityManagementService Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1904,7 +1940,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElasticBeanstalk Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElasticBeanstalk Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1926,7 +1963,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElasticBeanstalk Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElasticBeanstalk Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -1981,7 +2019,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElasticBeanstalk Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElasticBeanstalk Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2057,7 +2096,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SimpleEmailService Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SimpleEmailService Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2079,7 +2119,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SimpleEmailService Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SimpleEmailService Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2130,7 +2171,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SimpleEmailService Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SimpleEmailService Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2206,7 +2248,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon CloudFormation Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon CloudFormation Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2228,7 +2271,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon CloudFormation Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon CloudFormation Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2283,7 +2327,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon CloudFormation Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon CloudFormation Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2359,7 +2404,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElastiCache Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElastiCache Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2381,7 +2427,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElastiCache Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElastiCache Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2436,7 +2483,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ElastiCache Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ElastiCache Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2512,7 +2560,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ImportExport Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ImportExport Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2534,7 +2583,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ImportExport Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ImportExport Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2589,7 +2639,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon ImportExport Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon ImportExport Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2665,7 +2716,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SecurityToken Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SecurityToken Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2687,7 +2739,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SecurityToken Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SecurityToken Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2742,7 +2795,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SecurityTokenService Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SecurityTokenService Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2818,7 +2872,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SimpleWorkflow Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SimpleWorkflow Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2840,7 +2895,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SimpleWorkflow Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SimpleWorkflow Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2896,7 +2952,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon SimpleWorkflow Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon SimpleWorkflow Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2972,7 +3029,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon DynamoDB Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon DynamoDB Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -2994,7 +3052,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon DynamoDB Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon DynamoDB Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -3050,7 +3109,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon DynamoDB Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon DynamoDB Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -3126,7 +3186,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon Route53 Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon Route53 Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -3148,7 +3209,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon Route53 Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon Route53 Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -3204,7 +3266,8 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Create a client for the Amazon Route53 Service with the credentials defined in the App.config.
+        /// Create a client for the Amazon Route53 Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

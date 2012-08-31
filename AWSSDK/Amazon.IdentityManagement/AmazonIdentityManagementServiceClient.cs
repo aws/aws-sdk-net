@@ -44,7 +44,8 @@ namespace Amazon.IdentityManagement
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonIdentityManagementServiceClient with the credentials defined in the App.config.
+        /// Constructs AmazonIdentityManagementServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -62,7 +63,8 @@ namespace Amazon.IdentityManagement
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityManagementServiceConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonIdentityManagementServiceClient with the credentials defined in the App.config.
+        /// Constructs AmazonIdentityManagementServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -83,7 +85,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Constructs AmazonIdentityManagementServiceClient with the credentials defined in the App.config.
+        /// Constructs AmazonIdentityManagementServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

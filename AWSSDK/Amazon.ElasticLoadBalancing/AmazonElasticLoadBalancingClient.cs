@@ -48,7 +48,8 @@ namespace Amazon.ElasticLoadBalancing
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonElasticLoadBalancingClient with the credentials defined in the App.config.
+        /// Constructs AmazonElasticLoadBalancingClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -66,7 +67,8 @@ namespace Amazon.ElasticLoadBalancing
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig(), true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonElasticLoadBalancingClient with the credentials defined in the App.config.
+        /// Constructs AmazonElasticLoadBalancingClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -85,7 +87,8 @@ namespace Amazon.ElasticLoadBalancing
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonElasticLoadBalancingClient with the credentials defined in the App.config.
+        /// Constructs AmazonElasticLoadBalancingClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

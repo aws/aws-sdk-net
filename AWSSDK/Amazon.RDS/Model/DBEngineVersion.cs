@@ -31,6 +31,7 @@ namespace Amazon.RDS.Model
         private string dBParameterGroupFamily;
         private string dBEngineDescription;
         private string dBEngineVersionDescription;
+        private CharacterSet defaultCharacterSet;
         private List<CharacterSet> supportedCharacterSets = new List<CharacterSet>();
 
         /// <summary>
@@ -171,6 +172,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBEngineVersionDescription()
         {
             return this.dBEngineVersionDescription != null;       
+        }
+
+        /// <summary>
+        /// The default character set for new instances of this engine version, if the <c>CharacterSetName</c> parameter of the CreateDBInstance API is
+        /// not specified.
+        ///  
+        /// </summary>
+        public CharacterSet DefaultCharacterSet
+        {
+            get { return this.defaultCharacterSet; }
+            set { this.defaultCharacterSet = value; }
+        }
+
+        /// <summary>
+        /// Sets the DefaultCharacterSet property
+        /// </summary>
+        /// <param name="defaultCharacterSet">The value to set for the DefaultCharacterSet property </param>
+        /// <returns>this instance</returns>
+        public DBEngineVersion WithDefaultCharacterSet(CharacterSet defaultCharacterSet)
+        {
+            this.defaultCharacterSet = defaultCharacterSet;
+            return this;
+        }
+            
+
+        // Check to see if DefaultCharacterSet property is set
+        internal bool IsSetDefaultCharacterSet()
+        {
+            return this.defaultCharacterSet != null;       
         }
 
         /// <summary>

@@ -38,7 +38,8 @@ namespace Amazon.Route53
         #region Constructors
 
         /// <summary>
-        /// Constructs AmazonRoute53Client with the credentials defined in the App.config.
+        /// Constructs AmazonRoute53Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -56,7 +57,8 @@ namespace Amazon.Route53
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53Config(), true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonRoute53Client with the credentials defined in the App.config.
+        /// Constructs AmazonRoute53Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -75,7 +77,8 @@ namespace Amazon.Route53
             : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53Config() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
 
         /// <summary>
-        /// Constructs AmazonRoute53Client with the credentials defined in the App.config.
+        /// Constructs AmazonRoute53Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

@@ -22,13 +22,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeStackResourceResult Unmarshaller
      /// </summary>
-    internal class DescribeStackResourceResultUnmarshaller : IUnmarshaller<DescribeStackResourceResult, XmlUnmarshallerContext> 
+    internal class DescribeStackResourceResultUnmarshaller : IUnmarshaller<DescribeStackResourceResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeStackResourceResult, JsonUnmarshallerContext> 
     {
         public DescribeStackResourceResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeStackResourceResult describeStackResourceResult = new DescribeStackResourceResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
 
             return describeStackResourceResult;
+        }
+
+        public DescribeStackResourceResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeStackResourceResultUnmarshaller instance;

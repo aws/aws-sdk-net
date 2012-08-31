@@ -27,6 +27,7 @@ namespace Amazon.CloudFormation.Model
     {
         
         private List<Stack> stacks = new List<Stack>();
+        private string nextToken;
 
         /// <summary>
         /// A list of stack structures.
@@ -71,6 +72,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStacks()
         {
             return this.stacks.Count > 0;       
+        }
+        public string NextToken
+        {
+            get { return this.nextToken; }
+            set { this.nextToken = value; }
+        }
+
+        /// <summary>
+        /// Sets the NextToken property
+        /// </summary>
+        /// <param name="nextToken">The value to set for the NextToken property </param>
+        /// <returns>this instance</returns>
+        public DescribeStacksResult WithNextToken(string nextToken)
+        {
+            this.nextToken = nextToken;
+            return this;
+        }
+            
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this.nextToken != null;       
         }
     }
 }

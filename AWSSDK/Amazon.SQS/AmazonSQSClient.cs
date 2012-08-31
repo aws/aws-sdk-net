@@ -106,7 +106,8 @@ namespace Amazon.SQS
         #endregion
 
         /// <summary>
-        /// Constructs AmazonSQSClient with the credentials defined in the App.config.
+        /// Constructs AmazonSQSClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -124,7 +125,8 @@ namespace Amazon.SQS
             : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSQSConfig(), true) { }
 
         /// <summary>
-        /// Constructs AmazonSQSClient with the credentials defined in the App.config.
+        /// Constructs AmazonSQSClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -143,7 +145,8 @@ namespace Amazon.SQS
             : this(FallbackCredentialsFactory.GetCredentials(), new AmazonSQSConfig() { RegionEndpoint = region }, true) { }
 
         /// <summary>
-        /// Constructs AmazonSQSClient with the credentials defined in the App.config.
+        /// Constructs AmazonSQSClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>

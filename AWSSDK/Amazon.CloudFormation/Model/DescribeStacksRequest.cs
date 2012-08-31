@@ -32,6 +32,7 @@ namespace Amazon.CloudFormation.Model
     public class DescribeStacksRequest : AmazonWebServiceRequest
     {
         private string stackName;
+        private string nextToken;
 
         /// <summary>
         /// The name or the unique identifier associated with the stack. Default: There is no default value.
@@ -59,6 +60,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackName()
         {
             return this.stackName != null;       
+        }
+        public string NextToken
+        {
+            get { return this.nextToken; }
+            set { this.nextToken = value; }
+        }
+
+        /// <summary>
+        /// Sets the NextToken property
+        /// </summary>
+        /// <param name="nextToken">The value to set for the NextToken property </param>
+        /// <returns>this instance</returns>
+        public DescribeStacksRequest WithNextToken(string nextToken)
+        {
+            this.nextToken = nextToken;
+            return this;
+        }
+            
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this.nextToken != null;       
         }
     }
 }

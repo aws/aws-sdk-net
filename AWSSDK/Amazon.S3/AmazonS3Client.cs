@@ -121,7 +121,8 @@ namespace Amazon.S3
         }
         
         /// <summary>
-        /// Constructs AmazonS3Client with the credentials defined in the App.config.
+        /// Constructs AmazonS3Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -139,7 +140,8 @@ namespace Amazon.S3
             : this(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config(), true) { }
 
         /// <summary>
-        /// Constructs AmazonS3Client with the credentials defined in the App.config.
+        /// Constructs AmazonS3Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -158,7 +160,8 @@ namespace Amazon.S3
             : this(FallbackCredentialsFactory.GetCredentials(), config, true) { }
 
         /// <summary>
-        /// Constructs AmazonS3Client with the credentials defined in the App.config.
+        /// Constructs AmazonS3Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
         /// 
         /// Example App.config with credentials set. 
         /// <code>
@@ -3546,6 +3549,466 @@ namespace Amazon.S3
 
         #endregion
 
+        #region PutBucketTagging
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketTagging operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutBucketTagging"/>
+        /// </summary>
+        /// <param name="request">The PutBucketTaggingRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndPutBucketTagging.</returns>
+        public IAsyncResult BeginPutBucketTagging(PutBucketTaggingRequest request, AsyncCallback callback, object state)
+        {
+            return invokePutBucketTagging(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutBucketTagging operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketTagging.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a PutBucketTaggingResponse from S3.</returns>
+        public PutBucketTaggingResponse EndPutBucketTagging(IAsyncResult asyncResult)
+        {
+            return endOperation<PutBucketTaggingResponse>(asyncResult);
+        }
+
+
+        /// <summary>
+        /// Puts the tagging that should be applied for the bucket.
+        /// If tagging already exists for the specified bucket, the new
+        /// tagging will replace the existing configuration.
+        /// </summary>
+        /// <param name="request">The PutBucketTaggingRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a PutBucketTaggingResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
+        {
+            IAsyncResult asyncResult = invokePutBucketTagging(request, null, null, true);
+            return EndPutBucketTagging(asyncResult);
+        }
+
+        IAsyncResult invokePutBucketTagging(PutBucketTaggingRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The PutBucketTaggingRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertPutBucketTagging(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<PutBucketTaggingResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region GetBucketTagging
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketTagging operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketTagging"/>
+        /// </summary>
+        /// <param name="request">The GetBucketTaggingRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndGetBucketTagging.</returns>
+        public IAsyncResult BeginGetBucketTagging(GetBucketTaggingRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetBucketTagging(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetBucketTagging operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketTagging.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetBucketTaggingResponse from S3.</returns>
+        public GetBucketTaggingResponse EndGetBucketTagging(IAsyncResult asyncResult)
+        {
+            return endOperation<GetBucketTaggingResponse>(asyncResult);
+        }
+
+        /// <summary>
+        /// Retrieves the tagging for the specified bucket.
+        /// If no configuration has been set for the bucket, an AmazonS3Exception will be thrown.
+        /// </summary>
+        /// <param name="request">The GetBucketTaggingRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a GetBucketTaggingResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
+        {
+            IAsyncResult asyncResult = invokeGetBucketTagging(request, null, null, true);
+            return EndGetBucketTagging(asyncResult);
+        }
+
+        IAsyncResult invokeGetBucketTagging(GetBucketTaggingRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The GetBucketTaggingRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertGetBucketTagging(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetBucketTaggingResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region DeleteBucketTagging
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketTagging operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteBucketTagging"/>
+        /// </summary>
+        /// <param name="request">The DeleteBucketTaggingRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndDeleteBucketTagging.</returns>
+        public IAsyncResult BeginDeleteBucketTagging(DeleteBucketTaggingRequest request, AsyncCallback callback, object state)
+        {
+            return invokeDeleteBucketTagging(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteBucketTagging operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketTagging.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a DeleteBucketTaggingResponse from S3.</returns>
+        public DeleteBucketTaggingResponse EndDeleteBucketTagging(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteBucketTaggingResponse>(asyncResult);
+        }
+
+        /// <summary>
+        /// <para>
+        /// Deletes the tagging for the specified bucket.
+        /// </para>
+        /// <para>
+        /// If you delete a tagging that does not exist yet, Amazon S3 will return a
+        /// success (not an error message).
+        /// </para>
+        /// </summary>
+        /// <param name="request">The DeleteBucketTaggingRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a DeleteBucketTaggingResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
+        {
+            IAsyncResult asyncResult = invokeDeleteBucketTagging(request, null, null, true);
+            return EndDeleteBucketTagging(asyncResult);
+        }
+
+        IAsyncResult invokeDeleteBucketTagging(DeleteBucketTaggingRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The DeleteBucketTaggingRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertDeleteBucketTagging(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<DeleteBucketTaggingResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region PutCORSConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutCORSConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutCORSConfiguration"/>
+        /// </summary>
+        /// <param name="request">The PutCORSConfigurationRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndPutCORSConfiguration.</returns>
+        public IAsyncResult BeginPutCORSConfiguration(PutCORSConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            return invokePutCORSConfiguration(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutCORSConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutCORSConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a PutCORSConfigurationResponse from S3.</returns>
+        public PutCORSConfigurationResponse EndPutCORSConfiguration(IAsyncResult asyncResult)
+        {
+            return endOperation<PutCORSConfigurationResponse>(asyncResult);
+        }
+
+        /// <summary>
+        /// <para>
+        /// Sets the CORS configuration that should be applied for the bucket.
+        /// If a configuration already exists for the specified bucket, the new
+        /// configuration will replace the existing configuration.
+        /// </para>
+        /// <para>
+        /// CORS configuration provides a way to define the lifetime of
+        /// objects for a keyspace. Objects are automatically deleted after the
+        /// predefined lifetime.
+        /// </para>
+        /// <para>
+        /// For more information on CORS configurations, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The PutCORSConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a PutCORSConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
+        {
+            IAsyncResult asyncResult = invokePutCORSConfiguration(request, null, null, true);
+            return EndPutCORSConfiguration(asyncResult);
+        }
+
+        IAsyncResult invokePutCORSConfiguration(PutCORSConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The PutCORSConfigurationRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertPutCORSConfiguration(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<PutCORSConfigurationResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region GetCORSConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCORSConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetCORSConfiguration"/>
+        /// </summary>
+        /// <param name="request">The GetCORSConfigurationRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndGetCORSConfiguration.</returns>
+        public IAsyncResult BeginGetCORSConfiguration(GetCORSConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            return invokeGetCORSConfiguration(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetCORSConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCORSConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetCORSConfigurationResponse from S3.</returns>
+        public GetCORSConfigurationResponse EndGetCORSConfiguration(IAsyncResult asyncResult)
+        {
+            try
+            {
+                return endOperation<GetCORSConfigurationResponse>(asyncResult);
+            }
+            catch (AmazonS3Exception e)
+            {
+                if (e.ErrorCode == S3Constants.NoSuchCORSConfiguration)
+                {
+                    return new GetCORSConfigurationResponse();
+                }
+
+                throw;
+            }
+
+        }
+
+        /// <summary>
+        /// <para>
+        /// Retrieves the CORS configuration for the specified bucket.
+        /// If no configuration has been set for the bucket, the Configuration
+        /// property of the response will be null.
+        /// </para>
+        /// <para>
+        /// CORS configuration provides a way to define the lifetime of
+        /// objects for a keyspace. Objects are automatically deleted after the
+        /// predefined lifetime.
+        /// </para>
+        /// <para>
+        /// For more information on CORS configurations, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The GetCORSConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a GetCORSConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
+        {
+            IAsyncResult asyncResult = invokeGetCORSConfiguration(request, null, null, true);
+            return EndGetCORSConfiguration(asyncResult);
+        }
+
+        IAsyncResult invokeGetCORSConfiguration(GetCORSConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The GetCORSConfigurationRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertGetCORSConfiguration(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<GetCORSConfigurationResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
+        #region DeleteCORSConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCORSConfiguration operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteCORSConfiguration"/>
+        /// </summary>
+        /// <param name="request">The DeleteCORSConfigurationRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndDeleteCORSConfiguration.</returns>
+        public IAsyncResult BeginDeleteCORSConfiguration(DeleteCORSConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            return invokeDeleteCORSConfiguration(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteCORSConfiguration operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCORSConfiguration.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a DeleteCORSConfigurationResponse from S3.</returns>
+        public DeleteCORSConfigurationResponse EndDeleteCORSConfiguration(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteCORSConfigurationResponse>(asyncResult);
+        }
+
+        /// <summary>
+        /// <para>
+        /// Deletes the CORS configuration for the specified bucket.
+        /// </para>
+        /// <para>
+        /// If you delete a configuration that does not exist, Amazon S3 will return a
+        /// success (not an error message).
+        /// </para>
+        /// <para>
+        /// CORS configuration provides a way to define the lifetime of
+        /// objects for a keyspace. Objects are automatically deleted after the
+        /// predefined lifetime.
+        /// </para>
+        /// <para>
+        /// For more information on CORS configurations, 
+        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// </para>
+        /// </summary>
+        /// <param name="request">The DeleteCORSConfigurationRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a DeleteCORSConfigurationResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
+        {
+            IAsyncResult asyncResult = invokeDeleteCORSConfiguration(request, null, null, true);
+            return EndDeleteCORSConfiguration(asyncResult);
+        }
+
+        IAsyncResult invokeDeleteCORSConfiguration(DeleteCORSConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The DeleteCORSConfigurationRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertDeleteCORSConfiguration(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<DeleteCORSConfigurationResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
         #region DeleteBucketWebsite
 
         /// <summary>
@@ -4893,8 +5356,6 @@ namespace Amazon.S3
             }
         }
 
-
-
         /**
          *  Convert PutLifecycleConfigurationRequest to key/value pairs.
          */
@@ -4948,6 +5409,124 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Action] = "DeleteLifecycleConfiguration";
 
             string queryStr = "?lifecycle";
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            request.RequestDestinationBucket = request.BucketName;
+        }
+
+        /**
+         *  Convert ConvertPutBucketTagging to key/value pairs.
+         */
+        private void ConvertPutBucketTagging(PutBucketTaggingRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
+            parameters[S3QueryParameter.Action] = "PutBucketTagging";
+
+            string queryStr = "?tagging";
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            string content = request.ContentXML;
+            parameters[S3QueryParameter.ContentBody] = content;
+            parameters[S3QueryParameter.ContentType] = "application/xml";
+
+            string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+            webHeaders[AWSSDKUtils.ContentMD5Header] = checksum;
+
+            request.RequestDestinationBucket = request.BucketName;
+        }
+        /**
+         *  Convert ConvertGetBucketTagging to key/value pairs.
+         */
+        private void ConvertGetBucketTagging(GetBucketTaggingRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
+            parameters[S3QueryParameter.Action] = "GetBucketTagging";
+
+            string queryStr = "?tagging";
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            request.RequestDestinationBucket = request.BucketName;
+        }
+        /**
+         *  Convert ConvertDeleteBucketTagging to key/value pairs.
+         */
+        private void ConvertDeleteBucketTagging(DeleteBucketTaggingRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.DeleteVerb;
+            parameters[S3QueryParameter.Action] = "DeleteLifecycleConfiguration";
+
+            string queryStr = "?tagging";
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            request.RequestDestinationBucket = request.BucketName;
+        }
+
+        /**
+         *  Convert PutCORSConfigurationRequest to key/value pairs.
+         */
+        private void ConvertPutCORSConfiguration(PutCORSConfigurationRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.PutVerb;
+            parameters[S3QueryParameter.Action] = "PutCORSConfiguration";
+
+            string queryStr = "?cors";
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            string content = request.ContentXML;
+            parameters[S3QueryParameter.ContentBody] = content;
+            parameters[S3QueryParameter.ContentType] = "application/xml";
+
+            string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+            webHeaders[AWSSDKUtils.ContentMD5Header] = checksum;
+
+            request.RequestDestinationBucket = request.BucketName;
+        }
+        /**
+         *  Convert GetCORSConfigurationRequest to key/value pairs.
+         */
+        private void ConvertGetCORSConfiguration(GetCORSConfigurationRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.GetVerb;
+            parameters[S3QueryParameter.Action] = "GetCORSConfiguration";
+
+            string queryStr = "?cors";
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            request.RequestDestinationBucket = request.BucketName;
+        }
+        /**
+         *  Convert DeleteCORSConfigurationRequest to key/value pairs.
+         */
+        private void ConvertDeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.DeleteVerb;
+            parameters[S3QueryParameter.Action] = "DeleteCORSConfiguration";
+
+            string queryStr = "?cors";
             parameters[S3QueryParameter.Query] = queryStr;
             parameters[S3QueryParameter.QueryToSign] = queryStr;
 
@@ -5452,7 +6031,13 @@ namespace Amazon.S3
             bool shouldRetry;
             using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
             {
-                shouldRetry = processRequestError(actionName, request, we, errorResponse, requestAddr, out respHdrs, typeof(AmazonS3Client), out cause);
+                if (errorResponse != null)
+                    shouldRetry = processRequestError(actionName, request, we, errorResponse, requestAddr, out respHdrs, typeof(AmazonS3Client), out cause);
+                else
+                {
+                    shouldRetry = true;
+                    cause = we;
+                }
 
                 if (httpResponse != null)
                 {

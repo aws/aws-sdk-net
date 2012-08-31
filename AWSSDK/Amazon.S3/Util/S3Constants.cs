@@ -118,5 +118,6 @@ namespace Amazon.S3.Util
         internal const string NoSuchBucketPolicy = "NoSuchBucketPolicy";
         internal const string NoSuchWebsiteConfiguration = "NoSuchWebsiteConfiguration";
         internal const string NoSuchLifecycleConfiguration = "NoSuchLifecycleConfiguration";
+        internal const string NoSuchCORSConfiguration = "NoSuchCORSConfiguration";
     }
 }
