@@ -4304,8 +4304,10 @@
     <Compile Include="Amazon.Glacier\Model\VaultNotificationConfig.cs" />
     <Compile Include="Amazon.Glacier\Transfer\CommonOptions.cs" />
     <Compile Include="Amazon.Glacier\Transfer\DownloadOptions.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\InitiateArchiveRetrievalOptions.cs" />
     <Compile Include="Amazon.Glacier\Transfer\Internal\BaseUploadCommand.cs" />
     <Compile Include="Amazon.Glacier\Transfer\Internal\DownloadFileCommand.cs" />
+    <Compile Include="Amazon.Glacier\Transfer\Internal\DownloadJobCommand.cs" />
     <Compile Include="Amazon.Glacier\Transfer\Internal\MultipartUploadCommand.cs" />
     <Compile Include="Amazon.Glacier\Transfer\Internal\SinglepartUploadCommand.cs" />
     <Compile Include="Amazon.Glacier\Transfer\UploadOptions.cs" />

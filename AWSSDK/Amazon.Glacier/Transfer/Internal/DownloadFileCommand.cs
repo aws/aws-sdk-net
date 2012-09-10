@@ -36,6 +36,7 @@ namespace Amazon.Glacier.Transfer.Internal
 {
     internal class DownloadFileCommand
     {
+        internal const int MAX_OPERATION_RETRY = 5;
         const string SQS_POLICY = 
             "{" +
             "    \"Version\" : \"2008-10-17\"," +
@@ -56,9 +57,6 @@ namespace Amazon.Glacier.Transfer.Internal
             "        }" +
             "    ]" +
             "}";
-
-        const int MAX_OPERATION_RETRY = 5;
-        const int PART_STREAM_HASH_SIZE = 1024 * 1024;
 
         ArchiveTransferManager manager;
         string vaultName;
@@ -155,148 +153,8 @@ namespace Amazon.Glacier.Transfer.Internal
             if (messageJobId == null)
                 return;
 
-            long contentLength = -1;
-            string glacierProvidedCheckSum = null;
-            string rangeValue = null;
-            Stream input = null;
-            Stream output = null;
-            try
-            {
-                // Make sure the directory exists to write too.
-                FileInfo fi = new FileInfo(filePath);
-                Directory.CreateDirectory(fi.DirectoryName);
-                FileMode fileMode = FileMode.Create;
-
-                int retryAttempts = 0;
-                byte[] buffer = new byte[1024 * 1024 * 5];
-                long transferredBytes = 0;
-
-                MemoryStream partStream = new MemoryStream(new byte[PART_STREAM_HASH_SIZE]);
-                LinkedList<string> hashes = new LinkedList<string>();
-
-                while (true)
-                {
-                    try
-                    {
-                        output = File.Open(filePath, fileMode, FileAccess.Write, FileShare.None);
-                        try
-                        {
-                            GetJobOutputRequest getJobOutputRequest = new GetJobOutputRequest()
-                                .WithAccountId(this.options.AccountId)
-                                .WithVaultName(this.vaultName)
-                                .WithJobId(jobId)
-                                .WithRange(rangeValue);
-                            getJobOutputRequest.BeforeRequestEvent += new UserAgentPostFix("DownloadArchive").UserAgentRequestEventHandlerSync;
-                            GetJobOutputResponse jobOutputResponse = this.manager.GlacierClient.GetJobOutput(getJobOutputRequest);
-
-                            if (contentLength < 0)
-                            {
-                                contentLength = jobOutputResponse.ContentLength;
-                                glacierProvidedCheckSum = jobOutputResponse.GetJobOutputResult.Checksum;
-                            }
-
-                            input = jobOutputResponse.GetJobOutputResult.Body;
-
-                            int bytesRead = 0;
-                            do
-                            {
-                                bytesRead = input.Read(buffer, 0, buffer.Length);
-                                if (bytesRead <= 0)
-                                    break;
-                                
-                                output.Write(buffer, 0, bytesRead);
-                                transferredBytes += bytesRead;
-
-                                int offset = 0;
-
-                                if (partStream.Position + bytesRead > PART_STREAM_HASH_SIZE)
-                                {
-                                    var length = PART_STREAM_HASH_SIZE - (int)partStream.Position;
-                                    partStream.Write(buffer, 0, length);
-                                    offset = length;
-                                }
-                                else
-                                {
-                                    partStream.Write(buffer, 0, bytesRead);
-                                    offset = bytesRead;
-                                }
-
-                                if (partStream.Position == PART_STREAM_HASH_SIZE)
-                                {
-                                    partStream.Position = 0;
-                                    hashes.AddLast(TreeHashGenerator.CalculateTreeHash(partStream));
-                                }
-
-                                if (offset != bytesRead)
-                                {
-                                    partStream.Write(buffer, offset, bytesRead - offset);
-                                }
-
-                                // Make callback on progress if a callback is attached.
-                                if (this.options.StreamTransferProgress != null)
-                                    this.options.StreamTransferProgress(this.manager, new Runtime.StreamTransferProgressArgs(bytesRead, transferredBytes, contentLength));
-
-                                if (retryAttempts > 0)
-                                    retryAttempts = 0; // Reset retry attempts back to 0 since we able to successfully write more data to disk.
-
-                            } while (bytesRead > 0);
-
-                            // Compute hash of the last remaining bytes
-                            if (partStream.Position != 0)
-                            {
-                                partStream.SetLength(partStream.Position);
-                                partStream.Position = 0;
-                                hashes.AddLast(TreeHashGenerator.CalculateTreeHash(partStream));
-                            }
-
-                            break;
-                        }
-                        finally
-                        {
-                            output.Close();
-                            output = null;
-
-                            try { if (input != null) input.Close(); }
-                            catch (Exception) { }
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        if (e is AmazonGlacierException && ((AmazonGlacierException)e).StatusCode == HttpStatusCode.NotFound)
-                        {
-                            throw;
-                        }
-
-                        fileMode = FileMode.Append;
-                        rangeValue = string.Format("bytes={0}-", new FileInfo(filePath).Length);
-                        retryAttempts++;
-
-                        if (retryAttempts <= MAX_OPERATION_RETRY)
-                        {
-                            Thread.Sleep(60 * 1000);
-                        }
-                        else
-                            throw;
-                    }
-                }
-
-                var computedCheckSum = TreeHashGenerator.CalculateTreeHash(hashes);
-                if (!string.Equals(glacierProvidedCheckSum, computedCheckSum, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    throw new AmazonGlacierException("Checksum of the downloaded file does not match the checksum reported by Amazon Glacier.");
-                }
-            }
-            catch (IOException e)
-            {
-                throw new IOException("Unable to save archive to disk", e);
-            }
-            finally
-            {
-                try { if(input != null) input.Close(); }
-                catch (Exception) { }
-                try { if (output != null) output.Close(); }
-                catch (Exception) { }
-            }
+            var command = new DownloadJobCommand(this.manager, this.vaultName, jobId, this.filePath, this.options);
+            command.Execute();
         }
 
 

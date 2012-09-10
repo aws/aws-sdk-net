@@ -44,7 +44,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.5.2.0";
+        internal const string SDKVersionNumber = "1.5.2.1";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -59,15 +59,27 @@ namespace Amazon.Util
 
         private static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
+        internal static Dictionary<int, string> RFCEncodingSchemes = new Dictionary<int, string>
+        {
+            { 3986,  ValidUrlCharacters },
+            { 1738,  ValidUrlCharactersRFC1738 }
+        };
+
         #endregion
 
         #region Public Constants
 
         /// <summary>
-        /// The Set of accepted and valid Url characters. 
-        /// Characters outside of this set will be encoded
+        /// The Set of accepted and valid Url characters per RFC3986. 
+        /// Characters outside of this set will be encoded.
         /// </summary>
         public const string ValidUrlCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~";
+
+        /// <summary>
+        /// The Set of accepted and valid Url characters per RFC1738. 
+        /// Characters outside of this set will be encoded.
+        /// </summary>
+        public const string ValidUrlCharactersRFC1738 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.";
 
         /// <summary>
         /// The string representing Url Encoded Content in HTTP requests
@@ -729,19 +741,37 @@ namespace Amazon.Util
         }
 
         /// <summary>
-        /// URL encodes a string. If the path property is specified,
+        /// URL encodes a string per RFC3986. If the path property is specified,
         /// the accepted path characters {/+:} are not encoded.
         /// </summary>
         /// <param name="data">The string to encode</param>
         /// <param name="path">Whether the string is a URL path or not</param>
-        /// <returns></returns>
+        /// <returns>The encoded string</returns>
         public static string UrlEncode(string data, bool path)
         {
+            return UrlEncode(3986, data, path);
+        }
+
+        /// <summary>
+        /// URL encodes a string per the specified RFC. If the path property is specified,
+        /// the accepted path characters {/+:} are not encoded.
+        /// </summary>
+        /// <param name="rfcNumber">RFC number determing safe characters</param>
+        /// <param name="data">The string to encode</param>
+        /// <param name="path">Whether the string is a URL path or not</param>
+        /// <returns>The encoded string</returns>
+        /// <remarks>
+        /// Currently recognised RFC versions are 1738 (Dec '94) and 3986 (Jan '05). 
+        /// If the specified RFC is not recognised, 3986 is used by default.
+        /// </remarks>
+        internal static string UrlEncode(int rfcNumber, string data, bool path)
+        {
             StringBuilder encoded = new StringBuilder(data.Length * 2);
-            string unreservedChars = String.Concat(
-                AWSSDKUtils.ValidUrlCharacters,
-                (path ? "/:" : "")
-                );
+            string validUrlCharacters;
+            if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out validUrlCharacters))
+                validUrlCharacters = ValidUrlCharacters;
+
+            string unreservedChars = String.Concat(validUrlCharacters, (path ? "/:" : ""));
 
             foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(data))
             {
@@ -757,7 +787,6 @@ namespace Amazon.Util
 
             return encoded.ToString();
         }
-
         #endregion
     }
 }

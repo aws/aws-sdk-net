@@ -86,7 +86,7 @@ namespace Amazon.CloudFront_2012_03_15.Util
         /// <returns></returns>
         public static string UrlEncode(string data, bool path)
         {
-            return AWSSDKUtils.UrlEncode(data, path);
+            return AWSSDKUtils.UrlEncode(1738, data, path);
         }
     }
 }

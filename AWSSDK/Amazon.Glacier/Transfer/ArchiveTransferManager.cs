@@ -253,11 +253,94 @@ namespace Amazon.Glacier.Transfer
             command.Execute();
         }
 
-
-
-
         #endregion
 
+        #region Download Job
+
+        /// <summary>
+        /// <para>
+        /// Downloads the results from a completed archive retrieval.  Saves the job output
+        /// to the specified file.
+        /// </para>
+        /// <para>
+        /// If there is an error during download the download will be retried from the last point read.
+        /// Once the download is complete the checksum will be compared.
+        /// </para>
+        /// </summary>
+        /// <param name="vaultName">The name of the vault to download the job output from.</param>
+        /// <param name="jobId">The unique job ID for an archive retrieval job.</param>
+        /// <param name="filePath">The file path to save the job output at.</param>
+        public void DownloadJob(string vaultName, string jobId, string filePath)
+        {
+            var command = new DownloadJobCommand(this, vaultName, jobId, filePath, new DownloadOptions());
+            command.Execute();
+        }
+
+        /// <summary>
+        /// <para>
+        /// Downloads the results from a completed archive retrieval.  Saves the job output
+        /// to the specified file.
+        /// </para>
+        /// <para>
+        /// If there is an error during download the download will be retried from the last point read.
+        /// Once the download is complete the checksum will be compared.
+        /// </para>
+        /// </summary>
+        /// <param name="vaultName">The name of the vault to download the job output from.</param>
+        /// <param name="jobId">The unique job ID for an archive retrieval job.</param>
+        /// <param name="filePath">The file path to save the job output at.</param>
+        /// <param name="options">Additional options that can be used for the download.</param>
+        public void DownloadJob(string vaultName, string jobId, string filePath, DownloadOptions options)
+        {
+            var command = new DownloadJobCommand(this, vaultName, jobId, filePath, options);
+            command.Execute();
+        }
+    
+        #endregion
+
+        #region Initiate Archive Retieval
+        /// <summary>
+        /// This method initiates an archive retieval job for the specified archive and returns back the job id.
+        /// Once the is complete
+        /// </summary>
+        /// <param name="vaultName">The name of the vault that contains the archive to initiate the job for.</param>
+        /// <param name="archiveId">The archive id that the download job will retrieve.</param>
+        /// <returns>The job id for the initiated job.</returns>
+        public string InitiateArchiveRetrievalJob(string vaultName, string archiveId)
+        {
+            return InitiateArchiveRetrievalJob(vaultName, archiveId, null);
+        }
+
+        /// <summary>
+        /// This method initiates an archive retieval job for the specified archive and returns back the job id.
+        /// Once the is complete
+        /// </summary>
+        /// <param name="vaultName">The name of the vault that contains the archive to initiate the job for.</param>
+        /// <param name="archiveId">The archive id that the download job will retrieve.</param>
+        /// <param name="options">Additional options that can be used for initiating archive retrieval.</param>
+        /// <returns>The job id for the initiated job.</returns>
+        public string InitiateArchiveRetrievalJob(string vaultName, string archiveId, InitiateArchiveRetrievalOptions options)
+        {
+            InitiateJobRequest jobRequest = new InitiateJobRequest()
+            {
+                VaultName = vaultName,
+                JobParameters = new JobParameters()
+                {
+                    ArchiveId = archiveId,
+                    Type = "archive-retrieval"
+                }
+            };
+
+            if (options != null)
+            {
+                jobRequest.AccountId = options.AccountId;
+                jobRequest.JobParameters.SNSTopic = options.SNSTopic;
+            }
+
+            var jobId = glacierClient.InitiateJob(jobRequest).InitiateJobResult.JobId;
+            return jobId;
+        }
+        #endregion
     }
 
     internal class UserAgentPostFix
