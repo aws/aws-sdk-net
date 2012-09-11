@@ -818,20 +818,6 @@ namespace Amazon.Runtime
             }
         }
 
-        private void ValidateAuthentication(ImmutableCredentials immutableCredentials)
-        {
-            if (immutableCredentials.UseToken)  // token supplied
-            {
-                if ((authenticationType & AuthenticationTypes.Session) != AuthenticationTypes.Session)
-                    throw new AmazonServiceException("Client does not support session authentication");
-            }
-            else  // no token supplied
-            {
-                if ((authenticationType & AuthenticationTypes.User) != AuthenticationTypes.User)
-                    throw new AmazonServiceException("Client does not support user authentication");
-            }
-        }
-
         private enum ClientProtocol { QueryStringProtocol, RestProtocol, Unknown }
         private static ClientProtocol DetermineProtocol(AbstractAWSSigner signer)
         {
@@ -846,8 +832,6 @@ namespace Amazon.Runtime
         {
             using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
             {
-                ValidateAuthentication(immutableCredentials);
-
                 if (immutableCredentials.UseToken)
                 {
                     ClientProtocol protocol = DetermineProtocol(signer);
