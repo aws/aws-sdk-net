@@ -37,6 +37,8 @@
             </xsl:element>
             <xsl:apply-templates select="ec2:tagSet" />
             <xsl:apply-templates select="ec2:vgwTelemetry" />
+            <xsl:apply-templates select="ec2:options" />
+            <xsl:apply-templates select="ec2:routes" />
         </xsl:element>
     </xsl:template>
   <xsl:template match="ec2:tagSet">
@@ -68,6 +70,28 @@
         </xsl:element>
         <xsl:element name="AcceptedRouteCount">
           <xsl:value-of select="ec2:acceptedRouteCount" />
+        </xsl:element>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+  <xsl:template match="ec2:options">
+    <xsl:if test="ec2:staticRoutesOnly">
+      <xsl:element name="StaticRoutesOnly">
+        <xsl:value-of select="ec2:staticRoutesOnly" />
+      </xsl:element>
+    </xsl:if>
+  </xsl:template>
+  <xsl:template match="ec2:routes">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="VpnStaticRoute">
+        <xsl:element name="DestinationCidrBlock">
+          <xsl:value-of select="ec2:destinationCidrBlock" />
+        </xsl:element>
+        <xsl:element name="Source">
+          <xsl:value-of select="ec2:source" />
+        </xsl:element>
+        <xsl:element name="State">
+          <xsl:value-of select="ec2:state" />
         </xsl:element>
       </xsl:element>
     </xsl:for-each>

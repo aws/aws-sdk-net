@@ -2923,6 +2923,94 @@ namespace Amazon.EC2
             return Invoke<UnassignPrivateIpAddressesResponse>(ConvertUnassignPrivateIpAddresses(request));
         }
 
+        /// <summary>
+        /// Creates a new static route associated with a VPN connection between an existing virtual private gateway 
+        /// and a VPN customer gateway. The static route allows traffic to be routed from the virtual private gateway 
+        /// to the VPN customer gateway.
+        /// </summary>
+        /// <param name="request">Create Vpn Connection Route request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Create Vpn Connection Route response from the service</returns>
+        public CreateVpnConnectionRouteResponse CreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request)
+        {
+            return Invoke<CreateVpnConnectionRouteResponse>(ConvertCreateVpnConnectionRoute(request));
+        }
+
+        /// <summary>
+        /// Deletes a static route associated with a VPN connection between an existing virtual private gateway 
+        /// and a VPN customer gateway. The static route allows traffic to be routed from the virtual private 
+        /// gateway to the VPN customer gateway.
+        /// </summary>
+        /// <param name="request">Delete Vpn Connection Route request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Delete Vpn Connection Route response from the service</returns>
+        public DeleteVpnConnectionRouteResponse DeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request)
+        {
+            return Invoke<DeleteVpnConnectionRouteResponse>(ConvertDeleteVpnConnectionRoute(request));
+        }
+
+        /// <summary>
+        /// Enables a virtual private gateway (VGW) to propagate routes to the routing tables of an Amazon VPC.
+        /// </summary>
+        /// <param name="request">Enable Virtual Gateway Route Propagation request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Enable Virtual Gateway Route Propagation response from the service</returns>
+        public EnableVGWRoutePropagationResponse EnableVGWRoutePropagation(EnableVGWRoutePropagationRequest request)
+        {
+            return Invoke<EnableVGWRoutePropagationResponse>(ConvertEnableVGWRoutePropagation(request));
+        }
+
+        /// <summary>
+        /// Disables a virtual private gateway (VGW) from propagating routes to the routing tables of an Amazon VPC.
+        /// </summary>
+        /// <param name="request">Disable Virtual Gateway Route Propagation request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Disable Virtual Gateway Route Propagation response from the service</returns>
+        public DisableVGWRoutePropagationResponse DisableVGWRoutePropagation(DisableVGWRoutePropagationRequest request)
+        {
+            return Invoke<DisableVGWRoutePropagationResponse>(ConvertDisableVGWRoutePropagation(request));
+        }
+
+        /// <summary>
+        /// Cancel a Reserved Instance listing to remove it from the marketplace.
+        /// </summary>
+        /// <param name="request">Cancel Reserved Instances Listing request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Cancel Reserved Instances Listing response from the service</returns>
+        public CancelReservedInstancesListingResponse CancelReservedInstancesListing(CancelReservedInstancesListingRequest request)
+        {
+            return Invoke<CancelReservedInstancesListingResponse>(ConvertCancelReservedInstancesListing(request));
+        }
+
+        /// <summary>
+        /// Submit one Reserved Instance listing for re-sale.
+        /// </summary>
+        /// <param name="request">Create Reserved Instances Listing request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Create Reserved Instances Listing response from the service</returns>
+        public CreateReservedInstancesListingResponse CreateReservedInstancesListing(CreateReservedInstancesListingRequest request)
+        {
+            return Invoke<CreateReservedInstancesListingResponse>(ConvertCreateReservedInstancesListing(request));
+        }
+
+        /// <summary>
+        /// Describes Reserved Instance listings that you submitted for re-sale. 
+        /// </summary>
+        /// <param name="request">Describe Reserved Instances Listing request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Reserved Instances Listing response from the service</returns>
+        public DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request)
+        {
+            return Invoke<DescribeReservedInstancesListingsResponse>(ConvertDescribeReservedInstancesListings(request));
+        }
+
         #endregion
 
         #region Private API
@@ -3792,7 +3880,10 @@ namespace Amazon.EC2
             {
                 parameters["VpnGatewayId"] = request.VpnGatewayId;
             }
-
+            if (request.IsSetStaticRoutesOnly())
+            {
+                parameters["Options.StaticRoutesOnly"] = request.StaticRoutesOnly.ToString();
+            }
             return parameters;
         }
 
@@ -4258,7 +4349,7 @@ namespace Amazon.EC2
             int describeReservedInstancesOfferingsRequestReservedInstancesIdListIndex = 1;
             foreach (string describeReservedInstancesOfferingsRequestReservedInstancesId in describeReservedInstancesOfferingsRequestReservedInstancesIdList)
             {
-                parameters[String.Concat("ReservedInstancesId", ".", describeReservedInstancesOfferingsRequestReservedInstancesIdListIndex)] = describeReservedInstancesOfferingsRequestReservedInstancesId;
+                parameters[String.Concat("ReservedInstancesOfferingId", ".", describeReservedInstancesOfferingsRequestReservedInstancesIdListIndex)] = describeReservedInstancesOfferingsRequestReservedInstancesId;
                 describeReservedInstancesOfferingsRequestReservedInstancesIdListIndex++;
             }
             if (request.IsSetInstanceType())
@@ -4298,6 +4389,30 @@ namespace Amazon.EC2
             if (request.IsSetOfferingType())
             {
                 parameters["OfferingType"] = request.OfferingType;
+            }
+            if (request.IsSetIncludeMarketplace())
+            {
+                parameters["IncludeMarketplace"] = request.IncludeMarketplace.ToString();
+            }
+            if (request.IsSetMinDuration())
+            {
+                parameters["MinDuration"] = request.MinDuration.ToString();
+            }
+            if (request.IsSetMaxDuration())
+            {
+                parameters["MaxDuration"] = request.MaxDuration.ToString();
+            }
+            if (request.IsSetMaxInstanceCount())
+            {
+                parameters["MaxInstanceCount"] = request.MaxInstanceCount.ToString();
+            }
+            if (request.IsSetMaxResults())
+            {
+                parameters["MaxResults"] = request.MaxResults.ToString();
+            }
+            if (request.IsSetNextToken())
+            {
+                parameters["NextToken"] = request.NextToken;
             }
             return parameters;
         }
@@ -4392,6 +4507,14 @@ namespace Amazon.EC2
             if (request.IsSetInstanceCount())
             {
                 parameters["InstanceCount"] = request.InstanceCount;
+            }
+            if (request.IsSetLimitPrice())
+            {
+                ReservedInstanceLimitPrice limitPrice = request.LimitPrice;
+                if (limitPrice.IsSetAmount())
+                    parameters["LimitPrice.Amount"] = request.LimitPrice.Amount.ToString();
+                if (limitPrice.IsSetCurrencyCode())
+                    parameters["LimitPrice.CurrencyCode"] = request.LimitPrice.CurrencyCode;
             }
 
             return parameters;
@@ -7536,6 +7659,198 @@ namespace Amazon.EC2
             return parameters;
         }
 
+        /**
+         * Convert CreateVpnConnectionRouteRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateVpnConnectionRoute";
+
+            if (request.IsSetVpnConnectionId())
+            {
+                parameters["VpnConnectionId"] = request.VpnConnectionId;
+            }
+            if (request.IsSetDestinationCidrBlock())
+            {
+                parameters["DestinationCidrBlock"] = request.DestinationCidrBlock;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteVpnConnectionRouteRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DeleteVpnConnectionRoute";
+
+            if (request.IsSetVpnConnectionId())
+            {
+                parameters["VpnConnectionId"] = request.VpnConnectionId;
+            }
+            if (request.IsSetDestinationCidrBlock())
+            {
+                parameters["DestinationCidrBlock"] = request.DestinationCidrBlock;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert EnableVGWRoutePropagationRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertEnableVGWRoutePropagation(EnableVGWRoutePropagationRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "EnableVGWRoutePropagation";
+
+            if (request.IsSetRouteTableId())
+            {
+                parameters["RouteTableId"] = request.RouteTableId;
+            }
+            if (request.IsSetGatewayId())
+            {
+                parameters["GatewayId"] = request.GatewayId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DisableVGWRoutePropagationRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDisableVGWRoutePropagation(DisableVGWRoutePropagationRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DisableVGWRoutePropagation";
+
+            if (request.IsSetRouteTableId())
+            {
+                parameters["RouteTableId"] = request.RouteTableId;
+            }
+            if (request.IsSetGatewayId())
+            {
+                parameters["GatewayId"] = request.GatewayId;
+            }
+
+            return parameters;
+        }
+
+
+        /**
+         * Convert CancelReservedInstancesListingRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCancelReservedInstancesListing(CancelReservedInstancesListingRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CancelReservedInstancesListing";
+
+            if (request.IsSetReservedInstancesListingId())
+            {
+                parameters["ReservedInstancesListingId"] = request.ReservedInstancesListingId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CreateReservedInstancesListingRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateReservedInstancesListing(CreateReservedInstancesListingRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CreateReservedInstancesListing";
+
+            if (request.IsSetReservedInstancesId())
+            {
+                parameters["ReservedInstancesId"] = request.ReservedInstancesId;
+            }
+            if (request.IsSetInstanceCount())
+            {
+                parameters["InstanceCount"] = request.InstanceCount.ToString();
+            }
+            if (request.IsSetPricingSchedules())
+            {
+                List<PricingSchedule> pricingSchedules = request.PricingSchedules;
+                int pricingSchedulesListIndex = 1;
+                foreach (var pricingSchedule in pricingSchedules)
+                {
+                    if (pricingSchedule.IsSetTerm())
+                    {
+                        parameters[String.Concat("PriceSchedules", ".", pricingSchedulesListIndex, "Term")] = pricingSchedule.Term.ToString();
+                    }
+                    if (pricingSchedule.IsSetPrice())
+                    {
+                        parameters[String.Concat("PriceSchedules", ".", pricingSchedulesListIndex, "Price")] = pricingSchedule.Price.ToString();
+                    }
+                    if (pricingSchedule.IsSetCurrencyCode())
+                    {
+                        parameters[String.Concat("PriceSchedules", ".", pricingSchedulesListIndex, "CurrencyCode")] = pricingSchedule.CurrencyCode;
+                    }
+                    pricingSchedulesListIndex++;
+                }
+            }
+            if (request.IsSetClientToken())
+            {
+                parameters["ClientToken"] = request.ClientToken;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeReservedInstancesListingRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "DescribeReservedInstancesListing";
+
+            if (request.IsSetReservedInstancesListingId())
+            {
+                List<string> ids = request.ReservedInstancesListingId;
+                int idsIndex = 1;
+                foreach (string id in ids)
+                {
+                    parameters[string.Concat("ReservedInstancesListingId", idsIndex)] = id;
+                    idsIndex++;
+                }
+            }
+            if (request.IsSetReservedInstancesId())
+            {
+                List<string> ids = request.ReservedInstancesId;
+                int idsIndex = 1;
+                foreach (string id in ids)
+                {
+                    parameters[string.Concat("ReservedInstancesId", idsIndex)] = id;
+                    idsIndex++;
+                }
+            }
+            List<Filter> filterList = request.Filter;
+            int filterListIndex = 1;
+            foreach (Filter filter in filterList)
+            {
+                if (filter.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", filterListIndex, ".", "Name")] = filter.Name;
+                }
+                List<string> filterValueList = filter.Value;
+                int filterValueListIndex = 1;
+                foreach (string filterValue in filterValueList)
+                {
+                    parameters[String.Concat("Filter", ".", filterListIndex, ".", "Value", ".", filterValueListIndex)] = filterValue;
+                    filterValueListIndex++;
+                }
+
+                filterListIndex++;
+            }
+
+            return parameters;
+        }
+
         /*
          *  Transforms response based on xslt template
          */
@@ -7554,7 +7869,6 @@ namespace Amazon.EC2
                 }
             }
         }
-
 
         /*
          *  Retrieves XSLT resource for specific action

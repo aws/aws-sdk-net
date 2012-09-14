@@ -47,6 +47,12 @@ namespace Amazon.EC2.Model
         private List<Filter> filterField;
         private string instanceTenancyField;
         private string offeringTypeField;
+        private bool? includeMarketplaceField;
+        private Decimal? minDurationField;
+        private Decimal? maxDurationField;
+        private int? maxInstanceCountField;
+        private string nextTokenField;
+        private int? maxResultsField;
 
         /// <summary>
         /// Gets and sets the ReservedInstancesId property.
@@ -295,6 +301,193 @@ namespace Amazon.EC2.Model
         public bool IsSetOfferingType()
         {
             return !string.IsNullOrEmpty(this.offeringTypeField);
+        }
+
+        /// <summary>
+        /// Gets and sets whether to include Marketplace offerings in the response.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "IncludeMarketplace")]
+        public bool IncludeMarketplace
+        {
+            get { return this.includeMarketplaceField.GetValueOrDefault(); }
+            set { this.includeMarketplaceField = value; }
+        }
+
+        /// <summary>
+        /// Sets whether to include Reserved Instance Marketplace listings in the response.
+        /// </summary>
+        /// <param name="includeMarketplace">True to include Marketplace listings</param>
+        /// <returns>this instance</returns>
+        public DescribeReservedInstancesOfferingsRequest WithIncludeMarketplace(bool includeMarketplace)
+        {
+            this.includeMarketplaceField = includeMarketplace;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks whether the IncludeMarketplace property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetIncludeMarketplace()
+        {
+            return this.includeMarketplaceField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the minimum duration (in seconds) to filter when searching for offerings.
+        /// </summary>
+        /// <remarks>Default: 2592000 (1 month)</remarks>
+        [XmlElementAttribute(ElementName = "MinDuration")]
+        public Decimal MinDuration
+        {
+            get { return this.minDurationField.GetValueOrDefault(); }
+            set { this.minDurationField = value; }
+        }
+
+        /// <summary>
+        /// Sets the minimum duration to filter when searching for offerings.
+        /// </summary>
+        /// <param name="minDuration">Duration in seconds; default: 2592000 (1 month)</param>
+        /// <returns>this instance</returns>
+        public DescribeReservedInstancesOfferingsRequest WithMinDuration(Decimal minDuration)
+        {
+            this.minDurationField = minDuration;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the MinDuration property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetMinDuration()
+        {
+            return this.minDurationField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the maximum duration (in seconds) to filter when searching for offerings.
+        /// </summary>
+        /// <remarks>
+        /// Default: 94608000 (3 years)
+        /// </remarks>
+        [XmlElementAttribute(ElementName = "MaxDuration")]
+        public Decimal MaxDuration
+        {
+            get { return this.maxDurationField.GetValueOrDefault(); }
+            set { this.maxDurationField = value; }
+        }
+
+        /// <summary>
+        /// Sets the maximum duration to filter when searching for offerings.
+        /// </summary>
+        /// <param name="maxDuration">Duration in seconds; default: 94608000 (3 years)</param>
+        /// <returns>this instance</returns>
+        public DescribeReservedInstancesOfferingsRequest WithMaxDuration(Decimal maxDuration)
+        {
+            this.maxDurationField = maxDuration;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the MaxDuration property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetMaxDuration()
+        {
+            return this.maxDurationField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the maximum number of instances to filter when searching for offerings.
+        /// </summary>
+        /// <remarks>Default: 20</remarks>
+        [XmlElementAttribute(ElementName = "MaxInstanceCount")]
+        public int MaxInstanceCount
+        {
+            get { return this.maxInstanceCountField.GetValueOrDefault(); }
+            set { this.maxInstanceCountField = value; }
+        }
+
+        /// <summary>
+        /// Sets the maximum number of instances to filter when searching for offerings.
+        /// </summary>
+        /// <param name="maxInstanceCount">Maximum instance count; default - 20</param>
+        /// <returns>this instance</returns>
+        public DescribeReservedInstancesOfferingsRequest WithMaxInstanceCount(int maxInstanceCount)
+        {
+            this.maxInstanceCountField = maxInstanceCount;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the MaxInstanceCount property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetMaxInstanceCount()
+        {
+            return this.maxInstanceCountField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the maximum number of offerings to return per call.
+        /// </summary>
+        /// <remarks>Default: 1000, Maximum: 1000</remarks>
+        [XmlElementAttribute(ElementName = "MaxResults")]
+        public int MaxResults
+        {
+            get { return this.maxResultsField.GetValueOrDefault(); }
+            set { this.maxResultsField = value; }
+        }
+
+        /// <summary>
+        /// Sets the maximum number of offerings to return per call.
+        /// </summary>
+        /// <param name="maxResults">Maximum offerings to return; Default: 1000, Maximum: 1000</param>
+        /// <returns>this instance</returns>
+        public DescribeReservedInstancesOfferingsRequest WithMaxResults(int maxResults)
+        {
+            this.maxResultsField = maxResults;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the MaxResults property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetMaxResults()
+        {
+            return this.maxResultsField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the token to get the next page of results.
+        /// </summary>
+        /// <remarks>Default: First page of results if the string is empty</remarks>
+        [XmlElementAttribute(ElementName = "NextToken")]
+        public string NextToken
+        {
+            get { return this.nextTokenField; }
+            set { this.nextTokenField = value; }
+        }
+
+        /// <summary>
+        /// Sets the token to get the next page of results.
+        /// </summary>
+        /// <param name="nextToken">Token for next page; first page is returned if empty string</param>
+        /// <returns>this instance</returns>
+        public DescribeReservedInstancesOfferingsRequest WithNextToken(string nextToken)
+        {
+            this.nextTokenField = nextToken;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the NextToken property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetNextToken()
+        {
+            return !string.IsNullOrEmpty(this.nextTokenField);
         }
     }
 }

@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
     {    
         private string reservedInstancesOfferingIdField;
         private string instanceCountField;
+        private ReservedInstanceLimitPrice limitPriceField;
 
         /// <summary>
         /// Gets and sets the ReservedInstancesOfferingId property.
@@ -80,7 +81,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the InstanceCount property.
         /// The number of Reserved Instances to purchase.
-        /// Default: 1
+        /// Default: None
         /// </summary>
         [XmlElementAttribute(ElementName = "InstanceCount")]
         public string InstanceCount
@@ -93,7 +94,7 @@ namespace Amazon.EC2.Model
         /// Sets the InstanceCount property
         /// </summary>
         /// <param name="instanceCount">The number of Reserved Instances to purchase.
-        /// Default: 1</param>
+        /// Default: None</param>
         /// <returns>this instance</returns>
         public PurchaseReservedInstancesOfferingRequest WithInstanceCount(string instanceCount)
         {
@@ -110,5 +111,38 @@ namespace Amazon.EC2.Model
             return this.instanceCountField != null;
         }
 
+        /// <summary>
+        /// Gets and sets the limiting price for Reserved Instance Marketplace 
+        /// offerings to limit the total order and ensure that the Reserved 
+        /// Instances are not purchased at unexpected prices.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "LimitPrice")]
+        public ReservedInstanceLimitPrice LimitPrice
+        {
+            get { return this.limitPriceField; }
+            set { this.limitPriceField = value; }
+        }
+
+        /// <summary>
+        /// Sets the limiting price for Reserved Instance Marketplace 
+        /// offerings to limit the total order and ensure that the Reserved 
+        /// Instances are not purchased at unexpected prices.
+        /// </summary>
+        /// <param name="limitPrice">Price limit</param>
+        /// <returns>this instance</returns>
+        public PurchaseReservedInstancesOfferingRequest WithLimitPrice(ReservedInstanceLimitPrice limitPrice)
+        {
+            this.limitPriceField = limitPrice;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the LimitPrice property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetLimitPrice()
+        {
+            return this.limitPriceField != null;
+        }
     }
 }

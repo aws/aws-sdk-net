@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string typeField;
         private string customerGatewayIdField;
         private string vpnGatewayIdField;
+        private bool? staticRoutesOnlyField;
 
         /// <summary>
         /// Gets and sets the Type property.
@@ -129,5 +130,44 @@ namespace Amazon.EC2.Model
             return this.vpnGatewayIdField != null;
         }
 
+        /// <summary>
+        /// Gets and sets the StaticRoutesOnly option for the VPN connection.
+        /// </summary>
+        /// <remarks>
+        /// A Boolean value indicating whether or not the VPN connection requires static routes. 
+        /// If you are creating a VPN connection for a device that does not support BGP, you must 
+        /// specify this value as true.
+        /// </remarks>
+        [XmlElementAttribute(ElementName = "StaticRoutesOnly")]
+        public bool StaticRoutesOnly
+        {
+            get { return this.staticRoutesOnlyField.GetValueOrDefault(); }
+            set { this.staticRoutesOnlyField = value; }
+        }
+
+        /// <summary>
+        /// Sets the StaticRoutesOnly option for the VPN connection.
+        /// </summary>
+        /// <param name="staticRoutesOnly">Static routes only value</param>
+        /// <returns>This instance</returns>
+        /// <remarks>
+        /// A Boolean value indicating whether or not the VPN connection requires static routes. 
+        /// If you are creating a VPN connection for a device that does not support BGP, you must 
+        /// specify this value as true.
+        /// </remarks>
+        public CreateVpnConnectionRequest WithStaticRoutesOnly(bool staticRoutesOnly)
+        {
+            this.staticRoutesOnlyField = staticRoutesOnly;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the StaticRoutesOnly property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetStaticRoutesOnly()
+        {
+            return this.staticRoutesOnlyField != null;
+        }
     }
 }

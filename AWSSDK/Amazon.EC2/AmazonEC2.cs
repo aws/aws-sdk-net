@@ -2262,5 +2262,72 @@ namespace Amazon.EC2
         /// This action is only available in Amazon VPC.
         /// </remarks>
         UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request);
+
+        /// <summary>
+        /// Creates a new static route associated with a VPN connection between an existing virtual private gateway 
+        /// and a VPN customer gateway. The static route allows traffic to be routed from the virtual private gateway 
+        /// to the VPN customer gateway.
+        /// </summary>
+        /// <param name="request">Create Vpn Connection Route request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Create Vpn Connection Route response from the service</returns>
+        CreateVpnConnectionRouteResponse CreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request);
+
+        /// <summary>
+        /// Deletes a static route associated with a VPN connection between an existing virtual private gateway 
+        /// and a VPN customer gateway. The static route allows traffic to be routed from the virtual private 
+        /// gateway to the VPN customer gateway.
+        /// </summary>
+        /// <param name="request">Delete Vpn Connection Route request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Delete Vpn Connection Route response from the service</returns>
+        DeleteVpnConnectionRouteResponse DeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request);
+
+        /// <summary>
+        /// Enables a virtual private gateway (VGW) to propagate routes to the routing tables of an Amazon VPC.
+        /// </summary>
+        /// <param name="request">Enable Virtual Gateway Route Propagation request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Enable Virtual Gateway Route Propagation response from the service</returns>
+        EnableVGWRoutePropagationResponse EnableVGWRoutePropagation(EnableVGWRoutePropagationRequest request);
+
+        /// <summary>
+        /// Disables a virtual private gateway (VGW) from propagating routes to the routing tables of an Amazon VPC.
+        /// </summary>
+        /// <param name="request">Disable Virtual Gateway Route Propagation request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Disable Virtual Gateway Route Propagation response from the service</returns>
+        DisableVGWRoutePropagationResponse DisableVGWRoutePropagation(DisableVGWRoutePropagationRequest request);
+
+        /// <summary>
+        /// Cancel a Reserved Instance listing to remove it from the marketplace.
+        /// </summary>
+        /// <param name="request">Cancel Reserved Instances Listing request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Cancel Reserved Instances Listing response from the service</returns>
+	    CancelReservedInstancesListingResponse CancelReservedInstancesListing(CancelReservedInstancesListingRequest request);
+
+        /// <summary>
+        /// Submit one Reserved Instance listing for re-sale. 
+        /// </summary>
+        /// <param name="request">Create Reserved Instances Listing request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Create Reserved Instances Listing response from the service</returns>
+        CreateReservedInstancesListingResponse CreateReservedInstancesListing(CreateReservedInstancesListingRequest request);
+
+        /// <summary>
+        /// Describes Reserved Instance listings that you submitted for re-sale. 
+        /// </summary>
+        /// <param name="request">Describe Reserved Instances Listing request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Describe Reserved Instances Listing response from the service</returns>
+        DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request);
     }
 }

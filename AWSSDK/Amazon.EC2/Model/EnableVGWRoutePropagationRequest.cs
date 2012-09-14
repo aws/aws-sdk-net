@@ -1,0 +1,97 @@
+﻿/*******************************************************************************
+ * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
+ * this file except in compliance with the License. A copy of the License is located at
+ *
+ * http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ * *****************************************************************************
+ *    __  _    _  ___
+ *   (  )( \/\/ )/ __)
+ *   /__\ \    / \__ \
+ *  (_)(_) \/\/  (___/
+ *
+ *  AWS SDK for .NET
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+
+namespace Amazon.EC2.Model
+{
+    /// <summary>
+    /// Enable Virtual Gateway (VGW) Route Propagation Request
+    /// </summary>
+    [XmlRootAttribute(IsNullable = false)]
+    public class EnableVGWRoutePropagationRequest
+    {
+        private string routeTableIdField;
+        private string gatewayIdField;
+
+        /// <summary>
+        /// Gets and sets the ID of the routing table.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "RouteTableId")]
+        public string RouteTableId
+        {
+            get { return this.routeTableIdField; }
+            set { this.routeTableIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ID of the routing table.
+        /// </summary>
+        /// <param name="routeTableId">Routing table id</param>
+        /// <returns>This instance</returns>
+        public EnableVGWRoutePropagationRequest WithRouteTableId(string routeTableId)
+        {
+            this.routeTableIdField = routeTableId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks is the RouteTableId property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetRouteTableId()
+        {
+            return !string.IsNullOrEmpty(this.routeTableIdField);
+        }
+
+        /// <summary>
+        /// Gets and sets the ID of the Virtual Private Gateway.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "GatewayId")]
+        public string GatewayId
+        {
+            get { return this.gatewayIdField; }
+            set { this.gatewayIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ID of the Virtual Private Gateway.
+        /// </summary>
+        /// <param name="gatewayId">Gateway Id</param>
+        /// <returns>This instance</returns>
+        public EnableVGWRoutePropagationRequest WithGatewayId(string gatewayId)
+        {
+            this.gatewayIdField = gatewayId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the GatewayId property is set
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetGatewayId()
+        {
+            return !string.IsNullOrEmpty(this.gatewayIdField);
+        }
+    }
+}

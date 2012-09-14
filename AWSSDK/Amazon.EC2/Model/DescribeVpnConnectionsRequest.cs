@@ -108,16 +108,28 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the Filter property.
         /// The filter to apply on the results of DescribeVpnConnections.
+        /// </summary>
+        /// <remarks>
         /// Filters can be:
         /// a. state - The state of the VPN connection. (pending, available,
         /// deleting, deleted).
         /// b. type - The type of VPN connection. Currently the only
         /// supported type is ipsec.1.
-        /// c. customerGatewayId - The ID of a customer gateway associated
+        /// c. customer-gateway-id - The ID of a customer gateway associated
         /// with the VPN connection.
-        /// d. vpnGatewayId - The ID of a VPN gateway associated with the VPN
+        /// d. vpn-gateway-id - The ID of a VPN gateway associated with the VPN
         /// connection.
-        /// </summary>
+        /// e. vpn-connection-id - the ID of the VPN connection.
+        /// f. customer-gateway-configuration - the configuration information for the customer gateway.
+        /// g. options.static-routes-only - indicates whether the connection has static routes only (used for devices that do not support BGP).
+        /// h. route.destination-cidr-block - the destination CIDR block; this corresponds to the subnet used in a customer data center.  
+        /// i. bgp-asn - the BGP ASN associated with a BGP device.
+        /// j. tag-key - the key of a tag assigned to the resource (this filter is independent of the tag-value filter).
+        /// k. tag-value - the value of a tag assigned to the resource (this filter is independent of the tag-key filter).
+        /// l. tag:key - Filters the results based on a specific tag/value combination.
+        /// Example: To list just the resources assigned tag Purpose=X, then specify: Filter.1.Name=tag:Purpose and Filter.1.Value.1=X.
+        /// Example: To list just resources assigned tag Purpose=X OR Purpose=Y, then specify: Filter.1.Name=tag:Purpose and Filter.1.Value.1=X and Filter.1.Value.2=Y.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Filter")]
         public List<Filter> Filter
         {
@@ -135,17 +147,29 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the Filter property
         /// </summary>
-        /// <param name="list">The filter to apply on the results of DescribeVpnConnections.
+        /// <param name="list">The filter to apply on the results of DescribeVpnConnections.</param>
+        /// <returns>this instance</returns>
+        /// <remarks>
         /// Filters can be:
         /// a. state - The state of the VPN connection. (pending, available,
         /// deleting, deleted).
         /// b. type - The type of VPN connection. Currently the only
         /// supported type is ipsec.1.
-        /// c. customerGatewayId - The ID of a customer gateway associated
+        /// c. customer-gateway-id - The ID of a customer gateway associated
         /// with the VPN connection.
-        /// d. vpnGatewayId - The ID of a VPN gateway associated with the VPN
-        /// connection.</param>
-        /// <returns>this instance</returns>
+        /// d. vpn-gateway-id - The ID of a VPN gateway associated with the VPN
+        /// connection.
+        /// e. vpn-connection-id - the ID of the VPN connection.
+        /// f. customer-gateway-configuration - the configuration information for the customer gateway.
+        /// g. options.static-routes-only - indicates whether the connection has static routes only (used for devices that do not support BGP).
+        /// h. route.destination-cidr-block - the destination CIDR block; this corresponds to the subnet used in a customer data center.  
+        /// i. bgp-asn - the BGP ASN associated with a BGP device.
+        /// j. tag-key - the key of a tag assigned to the resource (this filter is independent of the tag-value filter).
+        /// k. tag-value - the value of a tag assigned to the resource (this filter is independent of the tag-key filter).
+        /// l. tag:key - Filters the results based on a specific tag/value combination.
+        /// Example: To list just the resources assigned tag Purpose=X, then specify: Filter.1.Name=tag:Purpose and Filter.1.Value.1=X.
+        /// Example: To list just resources assigned tag Purpose=X OR Purpose=Y, then specify: Filter.1.Name=tag:Purpose and Filter.1.Value.1=X and Filter.1.Value.2=Y.
+        /// </remarks>
         public DescribeVpnConnectionsRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

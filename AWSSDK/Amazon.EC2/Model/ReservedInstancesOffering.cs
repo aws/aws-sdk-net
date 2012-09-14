@@ -42,6 +42,8 @@ namespace Amazon.EC2.Model
         private string currencyCodeField;
         private string offeringTypeField;
         private List<RecurringCharges> recurringChargesField;
+        private bool? isMarketplaceField;
+        private List<PricingDetails> pricingDetailsField;
 
         /// <summary>
         /// Gets and sets the ReservedInstancesOfferingId property.
@@ -381,12 +383,98 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Sets the RecurringCharges property.
+        /// </summary>
+        /// <param name="list">Zero or more recurring charges associated with the Reserved Instance offering.</param>
+        /// <returns>this instance</returns>
+        public ReservedInstancesOffering WithRecurringCharges(params RecurringCharges[] list)
+        {
+            foreach (RecurringCharges item in list)
+            {
+                this.RecurringCharges.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
         /// Checks if RecurringCharges property is set
         /// </summary>
         /// <returns>true if RecurringCharges property is set</returns>
         public bool IsSetRecurringCharges()
         {
             return (RecurringCharges.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets whether the offering is available through the Reserved Instance
+        /// Marketplace (resale) or AWS. True if it is a Marketplace offering.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "IsMarketPlace")]
+        public bool IsMarketPlace
+        {
+            get { return this.isMarketplaceField.GetValueOrDefault(); }
+            set { this.isMarketplaceField = value; }
+        }
+
+        /// <summary>
+        /// Sets whether the offering is available through the Reserved Instance
+        /// Marketplace (resale) or AWS. 
+        /// </summary>
+        /// <param name="isMarketplace">True if it is a Marketplace offering.</param>
+        /// <returns>this instance</returns>
+        public ReservedInstancesOffering WithIsMarketplace(bool isMarketplace)
+        {
+            this.isMarketplaceField = isMarketplace;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the IsMarketplace property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetIsMarketplace()
+        {
+            return this.isMarketplaceField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the pricing details of the Reserved Instance offering.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PricingDetails")]
+        public List<PricingDetails> PricingDetails
+        {
+            get
+            {
+                if (this.pricingDetailsField == null)
+                {
+                    this.pricingDetailsField = new List<PricingDetails>();
+                }
+                return this.pricingDetailsField;
+            }
+            set { this.pricingDetailsField = value; }
+        }
+
+        /// <summary>
+        /// Sets the pricing details of the Reserved Instance offering.
+        /// </summary>
+        /// <param name="list">Pricing details for the offering</param>
+        /// <returns>this instance</returns>
+        public ReservedInstancesOffering WithPricingDetails(params PricingDetails[] list)
+        {
+            foreach (PricingDetails item in list)
+            {
+                this.PricingDetails.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PricingDetails property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetPricingDetails()
+        {
+            return (this.PricingDetails.Count > 0);
         }
     }
 }

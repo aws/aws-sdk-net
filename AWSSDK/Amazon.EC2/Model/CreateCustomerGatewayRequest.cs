@@ -38,10 +38,14 @@ namespace Amazon.EC2.Model
     /// gateway's external interface. The IP address must be static and can't be
     /// behind a device performing network address translation (NAT).
     ///
-    /// You must also provide the device's Border Gateway Protocol (BGP)
-    /// Autonomous System Number (ASN). You can use an existing ASN
-    /// assigned to your network. If you don't have an ASN already, you can
-    /// use a private ASN (in the 64512 - 65534 range)
+    /// For device’s that use Border Gateway Protocal (BGP), you can also provide the 
+    /// device's Border Gateway Protocol (BGP) Autonomous System Number (ASN). You can 
+    /// use an existing ASN assigned to your network. If you don't have an ASN already, 
+    /// you can use a private ASN (in the 64512 - 65534 range).
+    /// 
+    /// Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the 
+    /// exception of 7224, which is reserved in US East, and 9059, which is reserved in 
+    /// EU West
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateCustomerGatewayRequest
@@ -117,7 +121,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the BgpAsn property.
         /// The customer gateway's Border Gateway Protocol
-        /// (BGP) Autonomous System Number (ASN).
+        /// (BGP) Autonomous System Number (ASN) for devices 
+        /// that support BGP.
         /// </summary>
         [XmlElementAttribute(ElementName = "BgpAsn")]
         public Decimal BgpAsn

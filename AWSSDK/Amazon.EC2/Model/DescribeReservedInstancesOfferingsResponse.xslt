@@ -10,6 +10,9 @@
             </xsl:element>
             <xsl:element name="DescribeReservedInstancesOfferingsResult">
                 <xsl:apply-templates select="ec2:reservedInstancesOfferingsSet"/>
+                <xsl:element name="NextToken">
+                  <xsl:value-of select="ec2:nextToken"/>
+                </xsl:element>
             </xsl:element>
         </xsl:element>
     </xsl:template>
@@ -44,11 +47,14 @@
                 <xsl:element name="CurrencyCode">
                     <xsl:value-of select="ec2:currencyCode"/>
                 </xsl:element>
-              <xsl:element name="OfferingType">
-                <xsl:value-of select="ec2:offeringType"/>
-              </xsl:element>
-
-              <xsl:apply-templates select="ec2:recurringCharges"/>
+                <xsl:element name="OfferingType">
+                  <xsl:value-of select="ec2:offeringType"/>
+                </xsl:element>
+                <xsl:apply-templates select="ec2:recurringCharges"/>
+                <xsl:element name="IsMarketplace">
+                  <xsl:value-of select="ec2:isMarketplace"/>
+                </xsl:element>
+                <xsl:apply-templates select="ec2:pricingDetailsSet"/>
             </xsl:element>
         </xsl:for-each>
     </xsl:template>
@@ -65,5 +71,18 @@
         </xsl:element>
       </xsl:for-each>
     </xsl:template>
+
+  <xsl:template match="ec2:pricingDetailsSet">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="PricingDetails">
+        <xsl:element name="Price">
+          <xsl:value-of select="ec2:price"/>
+        </xsl:element>
+        <xsl:element name="Count">
+          <xsl:value-of select="ec2:count"/>
+        </xsl:element>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
   
 </xsl:stylesheet>

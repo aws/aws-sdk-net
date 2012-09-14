@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     ///<summary>
-    ///VPN Connection
+    /// VPN Connection
     ///</summary>
     [XmlRootAttribute(IsNullable = false)]
     public class VpnConnection
@@ -39,6 +39,8 @@ namespace Amazon.EC2.Model
         private string vpnGatewayIdField;
         private List<Tag> tagField;
         private List<VpnTunnelTelemetry> vgwTelemetryField;
+        private bool? staticRoutesOnlyField;
+        private List<VpnStaticRoute> routesField;
 
         /// <summary>
         /// Gets and sets the VpnConnectionId property.
@@ -316,6 +318,77 @@ namespace Amazon.EC2.Model
         public bool IsSetVgwTelemetry()
         {
             return (VgwTelemetry.Count > 0);
+        }
+
+        /// <summary>
+        /// Gets and sets the StaticRoutesOnly option for the VPN connection.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "StaticRoutesOnly")]
+        public bool StaticRoutesOnly
+        {
+            get { return this.staticRoutesOnlyField.GetValueOrDefault(); }
+            set { this.staticRoutesOnlyField = value; }
+        }
+
+        /// <summary>
+        /// Sets the StaticRoutesOnly option for the VPN connection.
+        /// </summary>
+        /// <param name="staticRoutesOnly">Static routes only value</param>
+        /// <returns>This instance</returns>
+        public VpnConnection WithStaticRoutesOnly(bool staticRoutesOnly)
+        {
+            this.staticRoutesOnlyField = staticRoutesOnly;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the StaticRoutesOnly property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetStaticRoutesOnly()
+        {
+            return this.staticRoutesOnlyField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the set of static routes associated with a VPN connection.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Routes")]
+        public List<VpnStaticRoute> Routes
+        {
+            get
+            {
+                if (this.routesField == null)
+                {
+                    this.routesField = new List<VpnStaticRoute>();
+                }
+                return this.routesField;
+            }
+            set { this.routesField = value; }
+        }
+
+        /// <summary>
+        /// Sets the set of static routes associated with a VPN connection.
+        /// </summary>
+        /// <param name="list">Set of static routes</param>
+        /// <returns>This instance</returns>
+        public VpnConnection WithRoutes(params VpnStaticRoute[] list)
+        {
+            foreach (VpnStaticRoute item in list)
+            {
+                this.Routes.Add(item);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the Routes property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetRoutes()
+        {
+            return (this.Routes.Count > 0);
         }
     }
 }

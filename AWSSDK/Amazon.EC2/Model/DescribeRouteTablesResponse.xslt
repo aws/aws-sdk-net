@@ -26,6 +26,8 @@
 
         <xsl:apply-templates select="ec2:routeSet" />
         <xsl:apply-templates select="ec2:associationSet" />
+        <xsl:apply-templates select="ec2:propagatingVpnGatewaySet" />
+        <xsl:apply-templates select="ec2:propagatedRouteSet" />
         <xsl:apply-templates select="ec2:tagSet" />
 
       </xsl:element>
@@ -33,19 +35,28 @@
   </xsl:template>
 
   <xsl:template match="ec2:routeSet">
-    <xsl:for-each select="ec2:item">
-      <xsl:element name="Routes">
-        <xsl:element name="DestinationCidrBlock">
-          <xsl:value-of select="ec2:destinationCidrBlock" />
-        </xsl:element>
-        <xsl:element name="GatewayId">
-          <xsl:value-of select="ec2:gatewayId" />
-        </xsl:element>
-        <xsl:element name="State">
-          <xsl:value-of select="ec2:state" />
-        </xsl:element>
-      </xsl:element>
-    </xsl:for-each>
+    <xsl:element name="Routes">
+      <xsl:for-each select="ec2:item">
+          <xsl:element name="DestinationCidrBlock">
+            <xsl:value-of select="ec2:destinationCidrBlock" />
+          </xsl:element>
+          <xsl:element name="GatewayId">
+            <xsl:value-of select="ec2:gatewayId" />
+          </xsl:element>
+          <xsl:element name="State">
+            <xsl:value-of select="ec2:state" />
+          </xsl:element>
+          <xsl:element name="InstanceId">
+            <xsl:value-of select="ec2:instanceId" />
+          </xsl:element>
+          <xsl:element name="InstanceOwnerId">
+            <xsl:value-of select="ec2:instanceOwnerId" />
+          </xsl:element>
+          <xsl:element name="NetworkInterfaceId">
+            <xsl:value-of select="ec2:networkInterfaceId" />
+          </xsl:element>
+      </xsl:for-each>
+    </xsl:element>
   </xsl:template>
 
   <xsl:template match="ec2:associationSet">
@@ -81,6 +92,33 @@
         </xsl:element>
         <xsl:element name="Value">
           <xsl:value-of select="ec2:value" />
+        </xsl:element>
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="ec2:propagatingVpnGatewaySet">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="PropagatingVpnGateway">
+        <xsl:value-of select="ec2:propagatingVpnGateway" />
+      </xsl:element>
+    </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="ec2:propagatedRouteSet">
+    <xsl:for-each select="ec2:item">
+      <xsl:element name="PropagatedRoute">
+        <xsl:element name="DestinationCidrBlock">
+          <xsl:value-of select="ec2:destinationCidrBlock" />
+        </xsl:element>
+        <xsl:element name="GatewayId">
+          <xsl:value-of select="ec2:gatewayId" />
+        </xsl:element>
+        <xsl:element name="Status">
+          <xsl:value-of select="ec2:status" />
+        </xsl:element>
+        <xsl:element name="SourceId">
+          <xsl:value-of select="ec2:sourceId" />
         </xsl:element>
       </xsl:element>
     </xsl:for-each>

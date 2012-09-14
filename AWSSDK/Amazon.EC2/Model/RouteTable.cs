@@ -36,6 +36,8 @@ namespace Amazon.EC2.Model
         private List<Route> routesField;
         private List<RouteTableAssociation> associationsField;
         private List<Tag> tagField;
+        private List<string> propagatingVpnGatewaysField;
+        private List<PropagatedRoute> propagatedRoutesField; 
 
         /// <summary>
         /// Gets and sets the RouteTableId property.
@@ -224,5 +226,84 @@ namespace Amazon.EC2.Model
             return (Tag.Count > 0);
         }
 
+        /// <summary>
+        /// DOCS_TODO
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PropagatingVpnGateway")]
+        public List<string> PropagatingVpnGateways
+        {
+            get
+            {
+                if (this.propagatingVpnGatewaysField == null)
+                {
+                    this.propagatingVpnGatewaysField = new List<string>();
+                }
+                return this.propagatingVpnGatewaysField;
+            }
+            set { this.propagatingVpnGatewaysField = value; }
+        }
+
+        /// <summary>
+        /// DOCS_TODO
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns>this instance</returns>
+        public RouteTable WithPropagatingVpnGateways(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                this.PropagatingVpnGateways.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PropagatingVpnGateways property is set.
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetPropagatingVpnGateways()
+        {
+            return (this.PropagatingVpnGateways.Count > 0);
+        }
+
+        /// <summary>
+        /// DOCS_TODO
+        /// </summary>
+        [XmlElementAttribute(ElementName = "PropagatedRoute")]
+        public List<PropagatedRoute> PropagatedRoutes
+        {
+            get
+            {
+                if (this.propagatedRoutesField == null)
+                {
+                    this.propagatedRoutesField = new List<PropagatedRoute>();
+                }
+                return this.propagatedRoutesField;
+            }
+            set { this.propagatedRoutesField = value; }
+        }
+
+        /// <summary>
+        /// DOCS_TODO
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns>this instance</returns>
+        public RouteTable WithPropagatedRoutes(params PropagatedRoute[] list)
+        {
+            foreach (PropagatedRoute item in list)
+            {
+                this.PropagatedRoutes.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if the PropagatedRoutes property is set
+        /// </summary>
+        /// <returns>True if the property is set</returns>
+        public bool IsSetPropagatedRoutes()
+        {
+            return (this.PropagatedRoutes.Count > 0);
+        }
     }
 }

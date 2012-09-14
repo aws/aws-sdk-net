@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
  * Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -27,60 +27,31 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describe Reserved Instances Offerings Result
+    /// CreateVpnConnectionRoute Response
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeReservedInstancesOfferingsResult
-    {    
-        private List<ReservedInstancesOffering> reservedInstancesOfferingField;
-        private string nextTokenField;
+    public class CreateVpnConnectionRouteResponse
+    {
+        private ResponseMetadata responseMetadataField;
 
         /// <summary>
-        /// Gets and sets the ReservedInstancesOffering property.
-        /// list of reserved instances offering
+        /// Gets and sets the ResponseMetadata property.
+        /// Response Metadata
         /// </summary>
-        [XmlElementAttribute(ElementName = "ReservedInstancesOffering")]
-        public List<ReservedInstancesOffering> ReservedInstancesOffering
+        [XmlElementAttribute(ElementName = "ResponseMetadata")]
+        public ResponseMetadata ResponseMetadata
         {
-            get
-            {
-                if (this.reservedInstancesOfferingField == null)
-                {
-                    this.reservedInstancesOfferingField = new List<ReservedInstancesOffering>();
-                }
-                return this.reservedInstancesOfferingField;
-            }
-            set { this.reservedInstancesOfferingField = value; }
+            get { return this.responseMetadataField; }
+            set { this.responseMetadataField = value; }
         }
 
         /// <summary>
-        /// Checks if ReservedInstancesOffering property is set
+        /// Checks if ResponseMetadata property is set
         /// </summary>
-        /// <returns>true if ReservedInstancesOffering property is set</returns>
-        public bool IsSetReservedInstancesOffering()
+        /// <returns>true if ResponseMetadata property is set</returns>
+        public bool IsSetResponseMetadata()
         {
-            return (ReservedInstancesOffering.Count > 0);
-        }
-
-        /// <summary>
-        /// Gets and sets the NextToken property.
-        /// The string marking the next set of results returned. Displays empty
-        /// if there are no more results to be returned.
-        /// </summary>
-        [XmlElementAttribute(ElementName = "NextToken")]
-        public string NextToken
-        {
-            get { return this.nextTokenField; }
-            set { this.nextTokenField = value; }
-        }
-
-        /// <summary>
-        /// Checks if NextToken property is set
-        /// </summary>
-        /// <returns>true if NextToken property is set</returns>
-        public bool IsSetNextToken()
-        {
-            return this.nextTokenField != null;
+            return this.responseMetadataField != null;
         }
 
         /// <summary>

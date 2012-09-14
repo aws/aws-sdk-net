@@ -2109,6 +2109,9 @@
     <Compile Include="Amazon.EC2\Model\CancelledSpotInstanceRequest.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\CancelReservedInstancesListingRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\CancelReservedInstancesListingResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\CancelReservedInstancesListingResult.cs" />
     <Compile Include="Amazon.EC2\Model\CancelSpotInstanceRequestsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2205,6 +2208,9 @@
     <Compile Include="Amazon.EC2\Model\CreatePlacementGroupResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateReservedInstancesListingRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateReservedInstancesListingResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateReservedInstancesListingResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateRouteRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2292,6 +2298,8 @@
     <Compile Include="Amazon.EC2\Model\CreateVpnConnectionResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\CreateVpnConnectionRouteRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\CreateVpnConnectionRouteResponse.cs" />
     <Compile Include="Amazon.EC2\Model\CreateVpnGatewayRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2417,6 +2425,8 @@
     <Compile Include="Amazon.EC2\Model\DeleteVpnConnectionResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\DeleteVpnConnectionRouteRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DeleteVpnConnectionRouteResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DeleteVpnGatewayRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2591,6 +2601,10 @@
     <Compile Include="Amazon.EC2\Model\DescribeRegionsResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesListingsRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesListingsResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesListingsResult.cs" />
+    <Compile Include="Amazon.EC2\Model\ReservedInstancesListing.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2761,6 +2775,8 @@
     <Compile Include="Amazon.EC2\Model\DhcpOptions.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\DisableVGWRoutePropagationRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DisableVGWRoutePropagationResponse.cs" />
     <Compile Include="Amazon.EC2\Model\DisassociateAddressRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2796,6 +2812,8 @@
     </Compile>
     <Compile Include="Amazon.EC2\Model\EnableVolumeIORequest.cs" />
     <Compile Include="Amazon.EC2\Model\EnableVolumeIOResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\EnableVGWRoutePropagationRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\EnableVGWRoutePropagationResponse.cs" />
     <Compile Include="Amazon.EC2\Model\Error.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2885,6 +2903,7 @@
     <Compile Include="Amazon.EC2\Model\InstanceBlockDeviceMappingParameter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\InstanceCounts.cs" />
     <Compile Include="Amazon.EC2\Model\InstanceEbsBlockDevice.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -3012,7 +3031,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.EC2\Model\PrivateIpAddress.cs" />
+    <Compile Include="Amazon.EC2\Model\PriceSchedule.cs" />
+    <Compile Include="Amazon.EC2\Model\PricingSchedule.cs" />
+    <Compile Include="Amazon.EC2\Model\PricingDetails.cs" />
     <Compile Include="Amazon.EC2\Model\ProductCode.cs" />
+    <Compile Include="Amazon.EC2\Model\PropagatedRoute.cs" />
     <Compile Include="Amazon.EC2\Model\PurchaseReservedInstancesOfferingRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -3093,6 +3116,7 @@
     <Compile Include="Amazon.EC2\Model\Reservation.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\ReservedInstanceLimitPrice.cs" />
     <Compile Include="Amazon.EC2\Model\ReservedInstances.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -3258,6 +3282,7 @@
     <Compile Include="Amazon.EC2\Model\VpnGateway.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\VpnStaticRoute.cs" />
     <Compile Include="Amazon.EC2\Model\VpnTunnelTelemetry.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7934,6 +7959,15 @@
     <EmbeddedResource Include="Amazon.EC2\Model\StopInstancesResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\TerminateInstancesResponse.xslt" />
     <EmbeddedResource Include="Amazon.EC2\Model\UnmonitorInstancesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CancelExportTaskResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateInstanceExportTaskResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeExportTasksResponse.xslt" />
+    <EmbeddedResource Include="Amazon.S3\Model\GetBucketTaggingResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateReservedInstancesListingResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\AssignPrivateIpAddressesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\CancelReservedInstancesListingResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\UnassignPrivateIpAddressesResponse.xslt" />
+    <EmbeddedResource Include="Amazon.EC2\Model\DescribeReservedInstancesListingsResponse.xslt" />
     <EmbeddedResource Include="Amazon.SimpleNotificationService\Model\ResponseTransformer.xslt" />
   </ItemGroup>
   <ItemGroup>
@@ -7961,21 +7995,19 @@
     <EmbeddedResource Include="endpoints.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Amazon.EC2\Model\CancelExportTaskResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\CreateInstanceExportTaskResponse.xslt" />
-    <EmbeddedResource Include="Amazon.EC2\Model\DescribeExportTasksResponse.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Amazon.EC2\Model\AssignPrivateIpAddressesResponse.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Amazon.EC2\Model\UnassignPrivateIpAddressesResponse.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Amazon.S3\Model\GetBucketTaggingResponse.xslt" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Amazon.S3\Model\GetCORSConfigurationResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\CreateVpnConnectionRouteResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\DeleteVpnConnectionRouteResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\EnableVGWRoutePropagationResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\DisableVGWRoutePropagationResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
