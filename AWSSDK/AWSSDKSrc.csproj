@@ -313,6 +313,9 @@
     <Compile Include="Amazon.AutoScaling\Model\DescribeTagsResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeTerminationPolicyTypesRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeTerminationPolicyTypesResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeTerminationPolicyTypesResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DisableMetricsCollectionRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -526,6 +529,9 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeTagsResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeTerminationPolicyTypesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeTerminationPolicyTypesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeTerminationPolicyTypesResultUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DisableMetricsCollectionRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>

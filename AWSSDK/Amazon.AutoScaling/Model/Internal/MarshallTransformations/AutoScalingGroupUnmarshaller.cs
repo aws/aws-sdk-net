@@ -150,6 +150,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         autoScalingGroup.Tags.Add(TagDescriptionUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
+                    } 
+                    if (context.TestExpression("TerminationPolicies/member", targetDepth))
+                    {
+                        autoScalingGroup.TerminationPolicies.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

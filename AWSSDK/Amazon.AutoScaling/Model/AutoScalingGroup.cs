@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         private List<EnabledMetric> enabledMetrics = new List<EnabledMetric>();
         private string status;
         private List<TagDescription> tags = new List<TagDescription>();
+        private List<string> terminationPolicies = new List<string>();
 
         /// <summary>
         /// Specifies the name of the group.
@@ -783,6 +784,46 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetTags()
         {
             return this.tags.Count > 0;       
+        }
+        public List<string> TerminationPolicies
+        {
+            get { return this.terminationPolicies; }
+            set { this.terminationPolicies = value; }
+        }
+        /// <summary>
+        /// Adds elements to the TerminationPolicies collection
+        /// </summary>
+        /// <param name="terminationPolicies">The values to add to the TerminationPolicies collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithTerminationPolicies(params string[] terminationPolicies)
+        {
+            foreach (string element in terminationPolicies)
+            {
+                this.terminationPolicies.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the TerminationPolicies collection
+        /// </summary>
+        /// <param name="terminationPolicies">The values to add to the TerminationPolicies collection </param>
+        /// <returns>this instance</returns>
+        public AutoScalingGroup WithTerminationPolicies(IEnumerable<string> terminationPolicies)
+        {
+            foreach (string element in terminationPolicies)
+            {
+                this.terminationPolicies.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if TerminationPolicies property is set
+        internal bool IsSetTerminationPolicies()
+        {
+            return this.terminationPolicies.Count > 0;       
         }
     }
 }

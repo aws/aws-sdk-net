@@ -18,6 +18,8 @@ using System.Collections.Generic;
 using System.Security;
 using System.Text;
 using System.Globalization;
+using System.Text.RegularExpressions;
+
 
 using Amazon.Util;
 using Amazon.Runtime;
@@ -29,6 +31,7 @@ namespace Amazon.Runtime.Internal.Auth
 {
     internal class AWS4Signer : AbstractAWSSigner
     {
+        private static readonly Regex COMPRESS_WHITESPACE_REGEX = new Regex("\\s+");
         private const string SCHEME = "AWS4";
         private const string ALGORITHM = "HMAC-SHA256";
         private const string TERMINATOR = "aws4_request";
@@ -368,11 +371,20 @@ namespace Amazon.Runtime.Internal.Auth
             {
                 builder.Append(entry.Key.ToLower());
                 builder.Append(":");
-                builder.Append(entry.Value);
+                builder.Append(compressSpaces(entry.Value));
                 builder.Append("\n");
             }
 
             return builder.ToString();
+        }
+
+        static string compressSpaces(string data)
+        {
+            if (data == null || !data.Contains(" "))
+                return data;
+
+            var compressed = COMPRESS_WHITESPACE_REGEX.Replace(data, " ");
+            return compressed;
         }
 
         /// <summary>

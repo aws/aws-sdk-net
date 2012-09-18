@@ -86,6 +86,17 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("VPCZoneIdentifier", StringUtils.FromString(updateAutoScalingGroupRequest.VPCZoneIdentifier));
             }
+            if (updateAutoScalingGroupRequest != null)
+            {
+                List<string> terminationPoliciesList = updateAutoScalingGroupRequest.TerminationPolicies;
+
+                int terminationPoliciesListIndex = 1;
+                foreach (string terminationPoliciesListValue in terminationPoliciesList)
+                { 
+                    request.Parameters.Add("TerminationPolicies.member." + terminationPoliciesListIndex, StringUtils.FromString(terminationPoliciesListValue));
+                    terminationPoliciesListIndex++;
+                }
+            }
 
             return request;
         }

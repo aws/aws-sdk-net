@@ -140,13 +140,16 @@ namespace Amazon.DynamoDB.DataModel
         }
         public static ItemStorageConfig GetConfig(Type type)
         {
-            ItemStorageConfig config;
-            if (!Cache.TryGetValue(type, out config))
+            lock (Cache)
             {
-                config = CreateStorageConfig(type);
-                Cache[type] = config;
+                ItemStorageConfig config;
+                if (!Cache.TryGetValue(type, out config))
+                {
+                    config = CreateStorageConfig(type);
+                    Cache[type] = config;
+                }
+                return config;
             }
-            return config;
         }
 
         private static string GetAccurateCase(ItemStorageConfig config, string value)

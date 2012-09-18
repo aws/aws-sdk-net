@@ -44,6 +44,7 @@ namespace Amazon.AutoScaling.Model
         private int? healthCheckGracePeriod;
         private string placementGroup;
         private string vPCZoneIdentifier;
+        private List<string> terminationPolicies = new List<string>();
         private List<Tag> tags = new List<Tag>();
 
         /// <summary>
@@ -490,6 +491,46 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetVPCZoneIdentifier()
         {
             return this.vPCZoneIdentifier != null;       
+        }
+        public List<string> TerminationPolicies
+        {
+            get { return this.terminationPolicies; }
+            set { this.terminationPolicies = value; }
+        }
+        /// <summary>
+        /// Adds elements to the TerminationPolicies collection
+        /// </summary>
+        /// <param name="terminationPolicies">The values to add to the TerminationPolicies collection </param>
+        /// <returns>this instance</returns>
+        public CreateAutoScalingGroupRequest WithTerminationPolicies(params string[] terminationPolicies)
+        {
+            foreach (string element in terminationPolicies)
+            {
+                this.terminationPolicies.Add(element);
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// Adds elements to the TerminationPolicies collection
+        /// </summary>
+        /// <param name="terminationPolicies">The values to add to the TerminationPolicies collection </param>
+        /// <returns>this instance</returns>
+        public CreateAutoScalingGroupRequest WithTerminationPolicies(IEnumerable<string> terminationPolicies)
+        {
+            foreach (string element in terminationPolicies)
+            {
+                this.terminationPolicies.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if TerminationPolicies property is set
+        internal bool IsSetTerminationPolicies()
+        {
+            return this.terminationPolicies.Count > 0;       
         }
 
         /// <summary>

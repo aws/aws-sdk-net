@@ -60,7 +60,7 @@ namespace Amazon.AutoScaling
         ///
         /// </summary>
         public AmazonAutoScalingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
@@ -80,7 +80,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAutoScalingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
@@ -100,7 +100,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// <param name="config">The AmazonAutoScaling Configuration Object</param>
         public AmazonAutoScalingClient(AmazonAutoScalingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with AWS Credentials
@@ -128,7 +128,7 @@ namespace Amazon.AutoScaling
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
         public AmazonAutoScalingClient(AWSCredentials credentials, AmazonAutoScalingConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -164,10 +164,48 @@ namespace Amazon.AutoScaling
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
         public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonAutoScalingConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
-        
+
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonAutoScalingConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonAutoScalingConfig(){RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonAutoScalingClient Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
+        public AmazonAutoScalingClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonAutoScalingConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
 
         #endregion
    
@@ -814,6 +852,81 @@ namespace Amazon.AutoScaling
         public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations()
         {
             return DescribeNotificationConfigurations(new DescribeNotificationConfigurationsRequest());
+        }
+        
+
+        #endregion
+    
+        #region DescribeTerminationPolicyTypes
+
+        /// <summary>
+        /// </summary>
+        /// 
+        /// <param name="describeTerminationPolicyTypesRequest">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes
+        ///          service method on AmazonAutoScaling.</param>
+        /// 
+        /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AmazonAutoScaling.</returns>
+        /// 
+        public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeTerminationPolicyTypes(describeTerminationPolicyTypesRequest, null, null, true);
+            return EndDescribeTerminationPolicyTypes(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTerminationPolicyTypes operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeTerminationPolicyTypes"/>
+        /// </summary>
+        /// 
+        /// <param name="describeTerminationPolicyTypesRequest">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes
+        ///          operation on AmazonAutoScaling.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeTerminationPolicyTypes operation.</returns>
+        public IAsyncResult BeginDescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeTerminationPolicyTypes(describeTerminationPolicyTypesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeTerminationPolicyTypes operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeTerminationPolicyTypes"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTerminationPolicyTypes.</param>
+        /// 
+        /// <returns>Returns a DescribeTerminationPolicyTypesResult from AmazonAutoScaling.</returns>
+        public DescribeTerminationPolicyTypesResponse EndDescribeTerminationPolicyTypes(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeTerminationPolicyTypesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeTerminationPolicyTypesRequestMarshaller().Marshall(describeTerminationPolicyTypesRequest);
+            var unmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AmazonAutoScaling.</returns>
+        /// 
+        public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes()
+        {
+            return DescribeTerminationPolicyTypes(new DescribeTerminationPolicyTypesRequest());
         }
         
 

@@ -455,6 +455,54 @@ namespace Amazon.AutoScaling
         
     
 
+        #region DescribeTerminationPolicyTypes
+
+        /// <summary>
+        /// </summary>
+        /// 
+        /// <param name="describeTerminationPolicyTypesRequest">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes
+        ///          service method on AmazonAutoScaling.</param>
+        /// 
+        /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AmazonAutoScaling.</returns>
+        /// 
+        DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTerminationPolicyTypes operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeTerminationPolicyTypes"/>
+        /// </summary>
+        /// 
+        /// <param name="describeTerminationPolicyTypesRequest">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes
+        ///          operation on AmazonAutoScaling.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeTerminationPolicyTypes operation.</returns>
+        IAsyncResult BeginDescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeTerminationPolicyTypes operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeTerminationPolicyTypes"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTerminationPolicyTypes.</param>
+        /// 
+        /// <returns>Returns a DescribeTerminationPolicyTypesResult from AmazonAutoScaling.</returns>
+        DescribeTerminationPolicyTypesResponse EndDescribeTerminationPolicyTypes(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AmazonAutoScaling.</returns>
+        /// 
+        DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes();
+        
+        #endregion
+        
+    
+
         #region DescribeTags
 
         /// <summary>

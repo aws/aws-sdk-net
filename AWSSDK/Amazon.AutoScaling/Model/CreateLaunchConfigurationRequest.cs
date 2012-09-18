@@ -471,8 +471,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you
         /// specify exceeds the current Spot market price. For more information on launching Spot Instances, go to <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/US-SpotInstances.html"> Using Auto Scaling to Launch Spot Instances</a> in
-        /// the <i>Auto Scaling Developer Guide</i>.
+        /// href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"> Using Auto Scaling to Launch Spot
+        /// Instances</a> in the <i>Auto Scaling Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
