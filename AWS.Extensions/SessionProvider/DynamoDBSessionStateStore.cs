@@ -76,16 +76,16 @@ namespace Amazon.SessionProvider
     ///         <description>Secret key used.  This can be set at either the provider or in the appSettings.</description>
     ///     </item>
     ///     <item>
+    ///         <term>Region</term>
+    ///         <description>Required string attribute.  The region to use DynamoDB in.  The default is us-east-1.  Possible values are us-east-1, us-west-1, us-west-2, eu-west-1, ap-northeast-1, ap-southeast-1.</description>
+    ///     </item>
+    ///     <item>
     ///         <term>Application</term>
     ///         <description>Optional string attribute.  Application is used to partition the session data in the table so it can be used for more then one application.</description>
     ///     </item>
     ///     <item>
     ///         <term>Table</term>
     ///         <description>Optional string attribute.  The table used to store session data.  The default is ASP.NET_SessionState.</description>
-    ///     </item>
-    ///     <item>
-    ///         <term>Region</term>
-    ///         <description>Optional string attribute.  The region to use DynamoDB in.  The default is us-east-1.  Possible values are us-east-1, us-west-1, us-west-2, eu-west-1, ap-northeast-1, ap-southeast-1.</description>
     ///     </item>
     ///     <item>
     ///         <term>ReadCapacityUnits</term>

@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.IO;
 
@@ -60,7 +61,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public static string FromBool(bool value)
         {
-            return value.ToString().ToLower();
+            return value.ToString(CultureInfo.InvariantCulture).ToLower();
         }
 
         public static string FromDateTime(DateTime value)
@@ -70,7 +71,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public static string FromDouble(double value)
         {
-            return value.ToString();
+            return value.ToString(CultureInfo.InvariantCulture);
         }
     }
 }

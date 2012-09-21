@@ -357,7 +357,7 @@ namespace Amazon.Runtime.Internal.Auth
                 headersToSign[i] = headersToSign[i].ToLower();
             }
 
-            SortedDictionary<string, string> sortedHeaderMap = new SortedDictionary<string, string>();
+            SortedDictionary<string, string> sortedHeaderMap = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var entry in allHeaders)
             {
                 if (headersToSign.Contains(entry.Key.ToLower()))

@@ -198,7 +198,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(Byte data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("d");
+            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -237,7 +237,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(SByte data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("d");
+            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -277,7 +277,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(UInt16 data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("d");
+            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -315,7 +315,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(Int16 data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("d");
+            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -354,7 +354,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(UInt32 data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("d");
+            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -392,7 +392,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(Int32 data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("d");
+            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -431,7 +431,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(UInt64 data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("d");
+            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -469,7 +469,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(Int64 data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("d");
+            ret.Value = data.ToString("d", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -506,7 +506,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(Single data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("r");
+            ret.Value = data.ToString("r", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -543,7 +543,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(Double data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("r");
+            ret.Value = data.ToString("r", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -580,7 +580,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(Decimal data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString("g");
+            ret.Value = data.ToString("g", CultureInfo.InvariantCulture);
             ret.Type = DynamoDBEntryType.Numeric;
             return ret;
         }
@@ -617,7 +617,7 @@ namespace Amazon.DynamoDB.DocumentModel
         public static implicit operator Primitive(Char data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString();
+            ret.Value = data.ToString(CultureInfo.InvariantCulture);
             return ret;
         }
         /// <summary>
