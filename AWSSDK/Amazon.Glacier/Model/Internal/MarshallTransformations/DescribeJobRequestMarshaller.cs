@@ -46,15 +46,15 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}"; 
             if(describeJobRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", describeJobRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(describeJobRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(describeJobRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", describeJobRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(describeJobRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             if(describeJobRequest.IsSetJobId())
-                uriResourcePath = uriResourcePath.Replace("{jobId}", describeJobRequest.JobId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromString(describeJobRequest.JobId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{jobId}", "" ); 
             

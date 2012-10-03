@@ -44,25 +44,25 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "POST";
             if(completeMultipartUploadRequest.IsSetArchiveSize())
-                request.Headers.Add("x-amz-archive-size", completeMultipartUploadRequest.ArchiveSize.ToString());
+                request.Headers.Add("x-amz-archive-size", StringUtils.FromString(completeMultipartUploadRequest.ArchiveSize));
 
             
             if(completeMultipartUploadRequest.IsSetChecksum())
-                request.Headers.Add("x-amz-sha256-tree-hash", completeMultipartUploadRequest.Checksum.ToString());
+                request.Headers.Add("x-amz-sha256-tree-hash", StringUtils.FromString(completeMultipartUploadRequest.Checksum));
 
             
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
             if(completeMultipartUploadRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", completeMultipartUploadRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(completeMultipartUploadRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(completeMultipartUploadRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", completeMultipartUploadRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(completeMultipartUploadRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             if(completeMultipartUploadRequest.IsSetUploadId())
-                uriResourcePath = uriResourcePath.Replace("{uploadId}", completeMultipartUploadRequest.UploadId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{uploadId}", StringUtils.FromString(completeMultipartUploadRequest.UploadId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{uploadId}", "" ); 
             

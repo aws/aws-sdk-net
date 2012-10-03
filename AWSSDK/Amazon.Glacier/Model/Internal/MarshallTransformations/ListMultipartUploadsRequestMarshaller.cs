@@ -46,19 +46,19 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads?marker={marker};limit={limit}"; 
             if(listMultipartUploadsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", listMultipartUploadsRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(listMultipartUploadsRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(listMultipartUploadsRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", listMultipartUploadsRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(listMultipartUploadsRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             if(listMultipartUploadsRequest.IsSetUploadIdMarker())
-                uriResourcePath = uriResourcePath.Replace("{marker}", listMultipartUploadsRequest.UploadIdMarker.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{marker}", StringUtils.FromString(listMultipartUploadsRequest.UploadIdMarker) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{marker}", "" ); 
             if(listMultipartUploadsRequest.IsSetLimit())
-                uriResourcePath = uriResourcePath.Replace("{limit}", listMultipartUploadsRequest.Limit.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{limit}", StringUtils.FromInt(listMultipartUploadsRequest.Limit) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{limit}", "" ); 
             

@@ -46,15 +46,15 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
             if(abortMultipartUploadRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", abortMultipartUploadRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(abortMultipartUploadRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(abortMultipartUploadRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", abortMultipartUploadRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(abortMultipartUploadRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             if(abortMultipartUploadRequest.IsSetUploadId())
-                uriResourcePath = uriResourcePath.Replace("{uploadId}", abortMultipartUploadRequest.UploadId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{uploadId}", StringUtils.FromString(abortMultipartUploadRequest.UploadId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{uploadId}", "" ); 
             

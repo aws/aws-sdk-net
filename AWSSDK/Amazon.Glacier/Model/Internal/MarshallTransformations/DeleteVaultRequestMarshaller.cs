@@ -46,11 +46,11 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}"; 
             if(deleteVaultRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", deleteVaultRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(deleteVaultRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(deleteVaultRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", deleteVaultRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(deleteVaultRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             

@@ -44,21 +44,21 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "POST";
             if(initiateMultipartUploadRequest.IsSetArchiveDescription())
-                request.Headers.Add("x-amz-archive-description", initiateMultipartUploadRequest.ArchiveDescription.ToString());
+                request.Headers.Add("x-amz-archive-description", StringUtils.FromString(initiateMultipartUploadRequest.ArchiveDescription));
 
             
             if(initiateMultipartUploadRequest.IsSetPartSize())
-                request.Headers.Add("x-amz-part-size", initiateMultipartUploadRequest.PartSize.ToString());
+                request.Headers.Add("x-amz-part-size", StringUtils.FromLong(initiateMultipartUploadRequest.PartSize));
 
             
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads"; 
             if(initiateMultipartUploadRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", initiateMultipartUploadRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(initiateMultipartUploadRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(initiateMultipartUploadRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", initiateMultipartUploadRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(initiateMultipartUploadRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             

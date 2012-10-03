@@ -46,27 +46,27 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs?marker={marker};limit={limit};completed={completed};statuscode={statuscode}"; 
             if(listJobsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", listJobsRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(listJobsRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(listJobsRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", listJobsRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(listJobsRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             if(listJobsRequest.IsSetLimit())
-                uriResourcePath = uriResourcePath.Replace("{limit}", listJobsRequest.Limit.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{limit}", StringUtils.FromInt(listJobsRequest.Limit) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{limit}", "" ); 
             if(listJobsRequest.IsSetMarker())
-                uriResourcePath = uriResourcePath.Replace("{marker}", listJobsRequest.Marker.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{marker}", StringUtils.FromString(listJobsRequest.Marker) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{marker}", "" ); 
             if(listJobsRequest.IsSetStatuscode())
-                uriResourcePath = uriResourcePath.Replace("{statuscode}", listJobsRequest.Statuscode.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{statuscode}", StringUtils.FromString(listJobsRequest.Statuscode) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{statuscode}", "" ); 
             if(listJobsRequest.IsSetCompleted())
-                uriResourcePath = uriResourcePath.Replace("{completed}", listJobsRequest.Completed.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{completed}", StringUtils.FromBool(listJobsRequest.Completed) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{completed}", "" ); 
             

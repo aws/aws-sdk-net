@@ -46,23 +46,23 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}?marker={marker};limit={limit}"; 
             if(listPartsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", listPartsRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(listPartsRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(listPartsRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", listPartsRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(listPartsRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             if(listPartsRequest.IsSetUploadId())
-                uriResourcePath = uriResourcePath.Replace("{uploadId}", listPartsRequest.UploadId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{uploadId}", StringUtils.FromString(listPartsRequest.UploadId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{uploadId}", "" ); 
             if(listPartsRequest.IsSetMarker())
-                uriResourcePath = uriResourcePath.Replace("{marker}", listPartsRequest.Marker.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{marker}", StringUtils.FromString(listPartsRequest.Marker) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{marker}", "" ); 
             if(listPartsRequest.IsSetLimit())
-                uriResourcePath = uriResourcePath.Replace("{limit}", listPartsRequest.Limit.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{limit}", StringUtils.FromInt(listPartsRequest.Limit) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{limit}", "" ); 
             

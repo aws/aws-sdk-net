@@ -46,11 +46,11 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
             if(getVaultNotificationsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", getVaultNotificationsRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(getVaultNotificationsRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(getVaultNotificationsRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", getVaultNotificationsRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(getVaultNotificationsRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             

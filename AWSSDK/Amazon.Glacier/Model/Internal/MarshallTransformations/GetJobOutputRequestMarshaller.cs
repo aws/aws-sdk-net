@@ -44,21 +44,21 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
             if(getJobOutputRequest.IsSetRange())
-                request.Headers.Add("Range", getJobOutputRequest.Range.ToString());
+                request.Headers.Add("Range", StringUtils.FromString(getJobOutputRequest.Range));
 
             
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output"; 
             if(getJobOutputRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", getJobOutputRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(getJobOutputRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(getJobOutputRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", getJobOutputRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(getJobOutputRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             if(getJobOutputRequest.IsSetJobId())
-                uriResourcePath = uriResourcePath.Replace("{jobId}", getJobOutputRequest.JobId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromString(getJobOutputRequest.JobId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{jobId}", "" ); 
             

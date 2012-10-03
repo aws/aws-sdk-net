@@ -46,15 +46,15 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
               
             string uriResourcePath = "/{accountId}/vaults?marker={marker};limit={limit}"; 
             if(listVaultsRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", listVaultsRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(listVaultsRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             if(listVaultsRequest.IsSetMarker())
-                uriResourcePath = uriResourcePath.Replace("{marker}", listVaultsRequest.Marker.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{marker}", StringUtils.FromString(listVaultsRequest.Marker) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{marker}", "" ); 
             if(listVaultsRequest.IsSetLimit())
-                uriResourcePath = uriResourcePath.Replace("{limit}", listVaultsRequest.Limit.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{limit}", StringUtils.FromInt(listVaultsRequest.Limit) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{limit}", "" ); 
             

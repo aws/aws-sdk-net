@@ -44,21 +44,21 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "POST";
             if(uploadArchiveRequest.IsSetArchiveDescription())
-                request.Headers.Add("x-amz-archive-description", uploadArchiveRequest.ArchiveDescription.ToString());
+                request.Headers.Add("x-amz-archive-description", StringUtils.FromString(uploadArchiveRequest.ArchiveDescription));
 
             
             if(uploadArchiveRequest.IsSetChecksum())
-                request.Headers.Add("x-amz-sha256-tree-hash", uploadArchiveRequest.Checksum.ToString());
+                request.Headers.Add("x-amz-sha256-tree-hash", StringUtils.FromString(uploadArchiveRequest.Checksum));
 
             
               
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/archives"; 
             if(uploadArchiveRequest.IsSetVaultName())
-                uriResourcePath = uriResourcePath.Replace("{vaultName}", uploadArchiveRequest.VaultName.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(uploadArchiveRequest.VaultName) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{vaultName}", "" ); 
             if(uploadArchiveRequest.IsSetAccountId())
-                uriResourcePath = uriResourcePath.Replace("{accountId}", uploadArchiveRequest.AccountId.ToString() ); 
+                uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(uploadArchiveRequest.AccountId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{accountId}", "" ); 
             
