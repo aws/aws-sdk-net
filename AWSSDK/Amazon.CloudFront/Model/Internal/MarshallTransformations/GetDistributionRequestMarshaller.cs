@@ -37,9 +37,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetDistributionRequest getDistributionRequest)
         {
             IRequest request = new DefaultRequest(getDistributionRequest, "AmazonCloudFront");
+
+
+
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "2012-05-05/distribution/{Id}"; 
+            string uriResourcePath = "2012-07-01/distribution/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", getDistributionRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 
@@ -47,19 +50,25 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
                 uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
         
-                foreach (string s in queryString.Split('&')) 
+                foreach (string s in queryString.Split('&', ';')) 
                 {
                     string[] nameValuePair = s.Split('=');
                     if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
                     {
                         request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
                     }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
+                    }
                 }
             }
             
             request.ResourcePath = uriResourcePath;
             
-                    
+        
+            request.UseQueryString = true;
+        
             
             return request;
         }

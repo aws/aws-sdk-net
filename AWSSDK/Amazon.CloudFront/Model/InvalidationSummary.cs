@@ -27,6 +27,7 @@ namespace Amazon.CloudFront.Model
     {
         
         private string id;
+        private DateTime? createTime;
         private string status;
 
         /// <summary>
@@ -55,6 +56,29 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetId()
         {
             return this.id != null;       
+        }
+        public DateTime CreateTime
+        {
+            get { return this.createTime ?? default(DateTime); }
+            set { this.createTime = value; }
+        }
+
+        /// <summary>
+        /// Sets the CreateTime property
+        /// </summary>
+        /// <param name="createTime">The value to set for the CreateTime property </param>
+        /// <returns>this instance</returns>
+        public InvalidationSummary WithCreateTime(DateTime createTime)
+        {
+            this.createTime = createTime;
+            return this;
+        }
+            
+
+        // Check to see if CreateTime property is set
+        internal bool IsSetCreateTime()
+        {
+            return this.createTime.HasValue;       
         }
 
         /// <summary>

@@ -1073,8 +1073,7 @@ namespace Amazon.S3.Transfer
             TransferAsyncResult result = new TransferAsyncResult(callback, state);
 
             Executer exe = new Executer(result, command);
-            Thread thread = new Thread(new ThreadStart(exe.Execute));
-            thread.Start();
+            ThreadPool.QueueUserWorkItem(s => exe.Execute());
 
             return result;
         }

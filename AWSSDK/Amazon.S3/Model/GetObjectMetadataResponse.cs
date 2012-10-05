@@ -38,6 +38,7 @@ namespace Amazon.S3.Model
         private string versionId;
         private ServerSideEncryptionMethod serverSideEncryptionMethod;
         private Expiration expiration;
+        private string websiteRedirectLocation;
 
         /// <summary>
         /// Gets and sets the lastModified property.
@@ -110,6 +111,17 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the WebsiteRedirectLocation property.
+        /// If this is set then when a GET request is made from the S3 website endpoint a 301 HTTP status code
+        /// will be returned indicating a redirect with this value as the redirect location.
+        /// </summary>
+        public string WebsiteRedirectLocation
+        {
+            get { return this.websiteRedirectLocation; }
+            set { this.websiteRedirectLocation = value; }
+        }
+
+        /// <summary>
         /// Gets and sets the Headers property.
         /// </summary>
         public override System.Net.WebHeaderCollection Headers
@@ -150,6 +162,11 @@ namespace Amazon.S3.Model
                 if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzExpirationHeader)))
                 {
                     this.Expiration = new Expiration(hdr);
+                }
+
+                if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzWebsiteRedirectLocationHeader)))
+                {
+                    this.WebsiteRedirectLocation = hdr;
                 }
 
                 ServerSideEncryptionMethod = ServerSideEncryptionMethod.None;

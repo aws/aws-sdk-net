@@ -37,11 +37,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest)
         {
             IRequest request = new DefaultRequest(updateCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
+
+
+
             request.HttpMethod = "PUT";
+        if(updateCloudFrontOriginAccessIdentityRequest.IfMatch != null)
             request.Headers.Add("If-Match", updateCloudFrontOriginAccessIdentityRequest.IfMatch);
+
             
               
-            string uriResourcePath = "2012-05-05/origin-access-identity/cloudfront/{Id}/config"; 
+            string uriResourcePath = "2012-07-01/origin-access-identity/cloudfront/{Id}/config"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", updateCloudFrontOriginAccessIdentityRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 
@@ -49,12 +54,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
                 uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
         
-                foreach (string s in queryString.Split('&')) 
+                foreach (string s in queryString.Split('&', ';')) 
                 {
                     string[] nameValuePair = s.Split('=');
                     if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
                     {
                         request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                    }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
                     }
                 }
             }
@@ -71,14 +80,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = updateCloudFrontOriginAccessIdentityRequest.CloudFrontOriginAccessIdentityConfig;
             if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig != null) 
             {
-                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2012-05-05/");
+                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2012-07-01/");
                 if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.IsSetCallerReference()) 
                 {
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2012-05-05/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.CallerReference.ToString());
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2012-07-01/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.CallerReference.ToString());
                   }
                 if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.IsSetComment()) 
                 {
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2012-05-05/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.Comment.ToString());
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2012-07-01/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.Comment.ToString());
                   }
                 xmlWriter.WriteEndElement();
             }
@@ -94,7 +103,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-                    
+        
             
             return request;
         }

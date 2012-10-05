@@ -42,6 +42,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         forwardedValues.QueryString = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("Cookies", targetDepth))
+                    {
+                        forwardedValues.Cookies = CookiePreferenceUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

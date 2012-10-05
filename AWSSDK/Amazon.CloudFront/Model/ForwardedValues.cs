@@ -27,6 +27,7 @@ namespace Amazon.CloudFront.Model
     {
         
         private bool? queryString;
+        private CookiePreference cookies = new CookiePreference() { Forward = "none" };
 
         /// <summary>
         /// Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify
@@ -55,6 +56,34 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetQueryString()
         {
             return this.queryString.HasValue;       
+        }
+
+        /// <summary>
+        /// A complex type that specifies how CloudFront handles cookies.
+        ///  
+        /// </summary>
+        public CookiePreference Cookies
+        {
+            get { return this.cookies; }
+            set { this.cookies = value; }
+        }
+
+        /// <summary>
+        /// Sets the Cookies property
+        /// </summary>
+        /// <param name="cookies">The value to set for the Cookies property </param>
+        /// <returns>this instance</returns>
+        public ForwardedValues WithCookies(CookiePreference cookies)
+        {
+            this.cookies = cookies;
+            return this;
+        }
+            
+
+        // Check to see if Cookies property is set
+        internal bool IsSetCookies()
+        {
+            return this.cookies != null;       
         }
     }
 }

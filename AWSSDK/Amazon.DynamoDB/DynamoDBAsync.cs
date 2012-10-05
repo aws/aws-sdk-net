@@ -95,7 +95,7 @@ namespace Amazon.DynamoDB
         public static IAsyncResult BeginOperation(AsyncCall call, AsyncCallback callback, object state)
         {
             DynamoDBAsyncResult result = new DynamoDBAsyncResult(callback, state);
-            new Thread(() => Execute(call, result)).Start();
+            ThreadPool.QueueUserWorkItem(s => Execute(call, result));
             return result;
         }
 

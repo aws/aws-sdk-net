@@ -104,7 +104,7 @@ namespace Amazon.Glacier.Transfer.Internal
                 CompleteMultipartUploadResult completeMultipartUploadResult = this.manager.GlacierClient.CompleteMultipartUpload(compRequest).CompleteMultipartUploadResult;
 
                 string archiveId = completeMultipartUploadResult.ArchiveId;
-                this.UploadResult = new UploadResult(archiveId);
+                this.UploadResult = new UploadResult(archiveId, totalFileChecksum);
             }
             catch (Exception)
             {

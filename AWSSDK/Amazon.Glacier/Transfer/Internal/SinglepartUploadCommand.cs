@@ -53,7 +53,7 @@ namespace Amazon.Glacier.Transfer.Internal
                 UploadArchiveResult uploadArchiveResult =
                     this.manager.GlacierClient.UploadArchive(uploadRequest).UploadArchiveResult;
                 string archiveId = uploadArchiveResult.ArchiveId;
-                this.UploadResult = new UploadResult(archiveId);
+                this.UploadResult = new UploadResult(archiveId, checksum);
             }
             finally
             {

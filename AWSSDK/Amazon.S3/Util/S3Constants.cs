@@ -58,6 +58,7 @@ namespace Amazon.S3.Util
         internal const string AmzSecurityTokenHeader = "x-amz-security-token";
         internal const string AmzServerSideEncryptionHeader = "x-amz-server-side-encryption";
         internal const string AmzExpirationHeader = "x-amz-expiration";
+        internal const string AmzWebsiteRedirectLocationHeader = "x-amz-website-redirect-location";
 
         internal const string 
             AmzGrantHeaderRead        = "x-amz-grant-read",

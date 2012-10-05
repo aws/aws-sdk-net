@@ -85,6 +85,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("PriceClass", targetDepth))
+                    {
+                        distributionConfig.PriceClass = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("Enabled", targetDepth))
                     {
                         distributionConfig.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);

@@ -20,13 +20,13 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
      /// <summary>
-     ///   InvalidationSummary Unmarshaller
+     ///   StreamingLoggingConfig Unmarshaller
      /// </summary>
-    internal class InvalidationSummaryUnmarshaller : IUnmarshaller<InvalidationSummary, XmlUnmarshallerContext>, IUnmarshaller<InvalidationSummary, JsonUnmarshallerContext> 
+    internal class StreamingLoggingConfigUnmarshaller : IUnmarshaller<StreamingLoggingConfig, XmlUnmarshallerContext>, IUnmarshaller<StreamingLoggingConfig, JsonUnmarshallerContext> 
     {
-        public InvalidationSummary Unmarshall(XmlUnmarshallerContext context) 
+        public StreamingLoggingConfig Unmarshall(XmlUnmarshallerContext context) 
         {
-            InvalidationSummary invalidationSummary = new InvalidationSummary();
+            StreamingLoggingConfig streamingLoggingConfig = new StreamingLoggingConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,47 +37,47 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 { 
-                    if (context.TestExpression("Id", targetDepth))
+                    if (context.TestExpression("Enabled", targetDepth))
                     {
-                        invalidationSummary.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        streamingLoggingConfig.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
-                    if (context.TestExpression("CreateTime", targetDepth))
+                    if (context.TestExpression("Bucket", targetDepth))
                     {
-                        invalidationSummary.CreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                        streamingLoggingConfig.Bucket = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
-                    if (context.TestExpression("Status", targetDepth))
+                    if (context.TestExpression("Prefix", targetDepth))
                     {
-                        invalidationSummary.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        streamingLoggingConfig.Prefix = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return invalidationSummary;
+                    return streamingLoggingConfig;
                 }
             }
                         
 
 
-            return invalidationSummary;
+            return streamingLoggingConfig;
         }
 
-        public InvalidationSummary Unmarshall(JsonUnmarshallerContext context) 
+        public StreamingLoggingConfig Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
         }
 
-        private static InvalidationSummaryUnmarshaller instance;
+        private static StreamingLoggingConfigUnmarshaller instance;
 
-        public static InvalidationSummaryUnmarshaller GetInstance() 
+        public static StreamingLoggingConfigUnmarshaller GetInstance() 
         {
             if (instance == null) 
-               instance = new InvalidationSummaryUnmarshaller();
+               instance = new StreamingLoggingConfigUnmarshaller();
 
             return instance;
         }

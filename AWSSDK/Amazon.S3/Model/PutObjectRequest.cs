@@ -55,6 +55,7 @@ namespace Amazon.S3.Model
         private S3StorageClass storageClass;
         private bool autoCloseStream = true;
         private ServerSideEncryptionMethod encryption;
+        private string websiteRedirectLocation;
 
         #endregion
 
@@ -660,6 +661,42 @@ namespace Amazon.S3.Model
         {
             this.ServerSideEncryptionMethod = encryption;
             return this;
+        }
+
+        #endregion
+
+        #region Website Redirect Location
+        /// <summary>
+        /// Gets and sets the WebsiteRedirectLocation property.
+        /// If this is set then when a GET request is made from the S3 website endpoint a 301 HTTP status code
+        /// will be returned indicating a redirect with this value as the redirect location.
+        /// </summary>
+        public string WebsiteRedirectLocation
+        {
+            get { return this.websiteRedirectLocation; }
+            set { this.websiteRedirectLocation = value; }
+        }
+
+        /// <summary>
+        /// Sets the WebsiteRedirectLocation property for this request.
+        /// If this is set then when a GET request is made from the S3 website endpoint a 301 HTTP status code
+        /// will be returned indicating a redirect with this value as the redirect location.
+        /// </summary>
+        /// <param name="websiteRedirectLocation">The value that WebsiteRedirectLocation is set to</param>
+        /// <returns>the request with the WebsiteRedirectLocation set</returns>
+        public PutObjectRequest WithWebsiteRedirectLocation(string websiteRedirectLocation)
+        {
+            this.websiteRedirectLocation = websiteRedirectLocation;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if WebsiteRedirectLocation property is set.
+        /// </summary>
+        /// <returns>true if WebsiteRedirectLocation property is set.</returns>
+        internal bool IsSetWebsiteRedirectLocation()
+        {
+            return !System.String.IsNullOrEmpty(this.websiteRedirectLocation);
         }
 
         #endregion

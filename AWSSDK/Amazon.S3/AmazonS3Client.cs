@@ -2112,7 +2112,8 @@ namespace Amazon.S3
             // Either:
             // 1. A file is being transferred - so a filename or a stream needs to be provided
             // 2. The content body needs to be set
-            if (!request.IsSetFilePath() &&
+            if (!request.IsSetWebsiteRedirectLocation() &&
+                !request.IsSetFilePath() &&
                 !request.IsSetInputStream() &&
                 !request.IsSetContentBody())
             {
@@ -4733,6 +4734,10 @@ namespace Amazon.S3
             {
                 webHeaders[S3Constants.AmzServerSideEncryptionHeader] = request.ServerSideEncryptionMethod.ToString();
             }
+            if (request.IsSetWebsiteRedirectLocation())
+            {
+                webHeaders[S3Constants.AmzWebsiteRedirectLocationHeader] = request.WebsiteRedirectLocation;
+            }
 
             // Finally, add the S3 specific parameters and headers
             request.RequestDestinationBucket = request.BucketName;
@@ -5003,6 +5008,10 @@ namespace Amazon.S3
             {
                 webHeaders[S3Constants.AmzServerSideEncryptionHeader] = request.ServerSideEncryptionMethod.ToString();
             }
+            if (request.IsSetWebsiteRedirectLocation())
+            {
+                webHeaders[S3Constants.AmzWebsiteRedirectLocationHeader] = request.WebsiteRedirectLocation;
+            }
 
             request.RequestDestinationBucket = request.DestinationBucket;
         }
@@ -5103,6 +5112,10 @@ namespace Amazon.S3
             if (request.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
             {
                 webHeaders[S3Constants.AmzServerSideEncryptionHeader] = request.ServerSideEncryptionMethod.ToString();
+            }
+            if (request.IsSetWebsiteRedirectLocation())
+            {
+                webHeaders[S3Constants.AmzWebsiteRedirectLocationHeader] = request.WebsiteRedirectLocation;
             }
 
             // Finally, add the S3 specific parameters and headers

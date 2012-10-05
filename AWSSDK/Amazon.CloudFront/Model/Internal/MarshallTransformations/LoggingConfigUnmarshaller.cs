@@ -43,6 +43,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("IncludeCookies", targetDepth))
+                    {
+                        loggingConfig.IncludeCookies = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("Bucket", targetDepth))
                     {
                         loggingConfig.Bucket = StringUnmarshaller.GetInstance().Unmarshall(context);

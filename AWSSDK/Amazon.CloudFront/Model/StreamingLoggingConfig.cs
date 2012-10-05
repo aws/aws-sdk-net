@@ -21,21 +21,20 @@ using System.IO;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that controls whether access logs are written for the distribution. </para>
+    /// <para> A complex type that controls whether access logs are written for this streaming distribution. </para>
     /// </summary>
-    public class LoggingConfig  
+    public class StreamingLoggingConfig  
     {
         
         private bool? enabled;
-        private bool? includeCookies = false;
         private string bucket;
         private string prefix;
 
         /// <summary>
         /// Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a
-        /// distribution or if you want to disable logging for an existing distribution, specify false for Enabled, and specify empty Bucket and Prefix
-        /// elements. If you specify false for Enabled but you specify values for Bucket, prefix and IncludeCookies, the values are automatically
-        /// deleted.
+        /// streaming distribution or if you want to disable logging for an existing streaming distribution, specify false for Enabled, and specify
+        /// empty Bucket and Prefix elements. If you specify false for Enabled but you specify values for Bucket and Prefix, the values are
+        /// automatically deleted.
         ///  
         /// </summary>
         public bool Enabled
@@ -49,7 +48,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
-        public LoggingConfig WithEnabled(bool enabled)
+        public StreamingLoggingConfig WithEnabled(bool enabled)
         {
             this.enabled = enabled;
             return this;
@@ -60,37 +59,6 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetEnabled()
         {
             return this.enabled.HasValue;       
-        }
-
-        /// <summary>
-        /// Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies. If you choose to include cookies
-        /// in logs, CloudFront logs all cookies regardless of how you configure the cache behaviors for this distribution. If you do not want to
-        /// include cookies when you create a distribution or if you want to disable include cookies for an existing distribution, specify false for
-        /// IncludeCookies.
-        ///  
-        /// </summary>
-        public bool IncludeCookies
-        {
-            get { return this.includeCookies ?? default(bool); }
-            set { this.includeCookies = value; }
-        }
-
-        /// <summary>
-        /// Sets the IncludeCookies property
-        /// </summary>
-        /// <param name="includeCookies">The value to set for the IncludeCookies property </param>
-        /// <returns>this instance</returns>
-        public LoggingConfig WithIncludeCookies(bool includeCookies)
-        {
-            this.includeCookies = includeCookies;
-            return this;
-        }
-            
-
-        // Check to see if IncludeCookies property is set
-        internal bool IsSetIncludeCookies()
-        {
-            return this.includeCookies.HasValue;       
         }
 
         /// <summary>
@@ -108,7 +76,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="bucket">The value to set for the Bucket property </param>
         /// <returns>this instance</returns>
-        public LoggingConfig WithBucket(string bucket)
+        public StreamingLoggingConfig WithBucket(string bucket)
         {
             this.bucket = bucket;
             return this;
@@ -122,8 +90,9 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// An optional string that you want CloudFront to prefix to the access log filenames for this distribution, for example, myprefix/. If you want
-        /// to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
+        /// An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, myprefix/.
+        /// If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging
+        /// element.
         ///  
         /// </summary>
         public string Prefix
@@ -137,7 +106,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="prefix">The value to set for the Prefix property </param>
         /// <returns>this instance</returns>
-        public LoggingConfig WithPrefix(string prefix)
+        public StreamingLoggingConfig WithPrefix(string prefix)
         {
             this.prefix = prefix;
             return this;

@@ -1059,6 +1059,8 @@
     <Compile Include="Amazon.CloudFront\Model\CloudFrontOriginAccessIdentityList.cs" />
     <Compile Include="Amazon.CloudFront\Model\CloudFrontOriginAccessIdentitySummary.cs" />
     <Compile Include="Amazon.CloudFront\Model\CNAMEAlreadyExistsException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\CookieNames.cs" />
+    <Compile Include="Amazon.CloudFront\Model\CookiePreference.cs" />
     <Compile Include="Amazon.CloudFront\Model\CreateCloudFrontOriginAccessIdentityRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\CreateCloudFrontOriginAccessIdentityResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\CreateCloudFrontOriginAccessIdentityResult.cs" />
@@ -1117,6 +1119,8 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CloudFrontOriginAccessIdentityListUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CloudFrontOriginAccessIdentitySummaryUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CloudFrontOriginAccessIdentityUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CookieNamesUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CookiePreferenceUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateCloudFrontOriginAccessIdentityRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateCloudFrontOriginAccessIdentityResultUnmarshaller.cs" />
@@ -1191,6 +1195,7 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\StreamingDistributionListUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\StreamingDistributionSummaryUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\StreamingDistributionUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\StreamingLoggingConfigUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\TrustedSignersUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateCloudFrontOriginAccessIdentityRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.cs" />
@@ -1207,6 +1212,7 @@
     <Compile Include="Amazon.CloudFront\Model\InvalidationList.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidationSummary.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidDefaultRootObjectException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidForwardCookiesException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidIfMatchVersionException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginAccessIdentityException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginException.cs" />
@@ -1244,8 +1250,10 @@
     <Compile Include="Amazon.CloudFront\Model\StreamingDistributionList.cs" />
     <Compile Include="Amazon.CloudFront\Model\StreamingDistributionNotDisabledException.cs" />
     <Compile Include="Amazon.CloudFront\Model\StreamingDistributionSummary.cs" />
+    <Compile Include="Amazon.CloudFront\Model\StreamingLoggingConfig.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyCacheBehaviorsException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyCloudFrontOriginAccessIdentitiesException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\TooManyCookieNamesInWhiteListException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyDistributionCNAMEsException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyDistributionsException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyInvalidationsInProgressException.cs" />

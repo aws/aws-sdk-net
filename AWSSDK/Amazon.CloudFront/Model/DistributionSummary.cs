@@ -35,6 +35,7 @@ namespace Amazon.CloudFront.Model
         private DefaultCacheBehavior defaultCacheBehavior;
         private CacheBehaviors cacheBehaviors;
         private string comment;
+        private string priceClass;
         private bool? enabled;
 
         /// <summary>
@@ -289,6 +290,29 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetComment()
         {
             return this.comment != null;       
+        }
+        public string PriceClass
+        {
+            get { return this.priceClass; }
+            set { this.priceClass = value; }
+        }
+
+        /// <summary>
+        /// Sets the PriceClass property
+        /// </summary>
+        /// <param name="priceClass">The value to set for the PriceClass property </param>
+        /// <returns>this instance</returns>
+        public DistributionSummary WithPriceClass(string priceClass)
+        {
+            this.priceClass = priceClass;
+            return this;
+        }
+            
+
+        // Check to see if PriceClass property is set
+        internal bool IsSetPriceClass()
+        {
+            return this.priceClass != null;       
         }
 
         /// <summary>

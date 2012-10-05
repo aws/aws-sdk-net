@@ -34,6 +34,7 @@ namespace Amazon.CloudFront.Model
         private CacheBehaviors cacheBehaviors;
         private string comment;
         private LoggingConfig logging;
+        private string priceClass = "PriceClass_All";
         private bool? enabled;
 
         /// <summary>
@@ -269,6 +270,43 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetLogging()
         {
             return this.logging != null;       
+        }
+
+        /// <summary>
+        /// A complex type that contains information about price class for this distribution.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>PriceClass_100, PriceClass_200, PriceClass_All</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string PriceClass
+        {
+            get { return this.priceClass; }
+            set { this.priceClass = value; }
+        }
+
+        /// <summary>
+        /// Sets the PriceClass property
+        /// </summary>
+        /// <param name="priceClass">The value to set for the PriceClass property </param>
+        /// <returns>this instance</returns>
+        public DistributionConfig WithPriceClass(string priceClass)
+        {
+            this.priceClass = priceClass;
+            return this;
+        }
+            
+
+        // Check to see if PriceClass property is set
+        internal bool IsSetPriceClass()
+        {
+            return this.priceClass != null;       
         }
 
         /// <summary>

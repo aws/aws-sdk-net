@@ -63,13 +63,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     } 
                     if (context.TestExpression("Logging", targetDepth))
                     {
-                        streamingDistributionConfig.Logging = LoggingConfigUnmarshaller.GetInstance().Unmarshall(context);
+                        streamingDistributionConfig.Logging = StreamingLoggingConfigUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
                     if (context.TestExpression("TrustedSigners", targetDepth))
                     {
                         streamingDistributionConfig.TrustedSigners = TrustedSignersUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("PriceClass", targetDepth))
+                    {
+                        streamingDistributionConfig.PriceClass = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 

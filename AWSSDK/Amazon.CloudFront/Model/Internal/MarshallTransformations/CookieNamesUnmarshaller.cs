@@ -20,13 +20,13 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
      /// <summary>
-     ///   InvalidationSummary Unmarshaller
+     ///   CookieNames Unmarshaller
      /// </summary>
-    internal class InvalidationSummaryUnmarshaller : IUnmarshaller<InvalidationSummary, XmlUnmarshallerContext>, IUnmarshaller<InvalidationSummary, JsonUnmarshallerContext> 
+    internal class CookieNamesUnmarshaller : IUnmarshaller<CookieNames, XmlUnmarshallerContext>, IUnmarshaller<CookieNames, JsonUnmarshallerContext> 
     {
-        public InvalidationSummary Unmarshall(XmlUnmarshallerContext context) 
+        public CookieNames Unmarshall(XmlUnmarshallerContext context) 
         {
-            InvalidationSummary invalidationSummary = new InvalidationSummary();
+            CookieNames cookieNames = new CookieNames();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,47 +37,41 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 { 
-                    if (context.TestExpression("Id", targetDepth))
+                    if (context.TestExpression("Quantity", targetDepth))
                     {
-                        invalidationSummary.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        cookieNames.Quantity = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
-                    if (context.TestExpression("CreateTime", targetDepth))
+                    if (context.TestExpression("Items/Name", targetDepth))
                     {
-                        invalidationSummary.CreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        invalidationSummary.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        cookieNames.Items.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return invalidationSummary;
+                    return cookieNames;
                 }
             }
                         
 
 
-            return invalidationSummary;
+            return cookieNames;
         }
 
-        public InvalidationSummary Unmarshall(JsonUnmarshallerContext context) 
+        public CookieNames Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
         }
 
-        private static InvalidationSummaryUnmarshaller instance;
+        private static CookieNamesUnmarshaller instance;
 
-        public static InvalidationSummaryUnmarshaller GetInstance() 
+        public static CookieNamesUnmarshaller GetInstance() 
         {
             if (instance == null) 
-               instance = new InvalidationSummaryUnmarshaller();
+               instance = new CookieNamesUnmarshaller();
 
             return instance;
         }

@@ -63,7 +63,7 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// A complex type that specifies how CloudFront handles query strings.
+        /// A complex type that specifies how CloudFront handles query strings and cookies.
         ///  
         /// </summary>
         public ForwardedValues ForwardedValues

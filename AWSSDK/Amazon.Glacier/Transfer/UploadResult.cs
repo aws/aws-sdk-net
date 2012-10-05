@@ -31,14 +31,17 @@ namespace Amazon.Glacier.Transfer
     public class UploadResult
     {
         private string archiveId;
+        private string checkSum;
 
         /// <summary>
         /// Constructs a new UploadResult object with the specified archive ID.
         /// </summary>
         /// <param name="archiveId">The ID of the uploaded archive.</param>
-        public UploadResult(String archiveId)
+        /// <param name="checkSum">The check sum computed for the file uploaded.</param>
+        internal UploadResult(string archiveId, string checkSum)
         {
             this.archiveId = archiveId;
+            this.checkSum = checkSum;
         }
 
         /// <summary>
@@ -49,6 +52,14 @@ namespace Amazon.Glacier.Transfer
             get
             {
                 return archiveId;
+            }
+        }
+
+        public string Checksum
+        {
+            get
+            {
+                return this.checkSum;
             }
         }
     }

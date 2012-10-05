@@ -37,9 +37,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateInvalidationRequest createInvalidationRequest)
         {
             IRequest request = new DefaultRequest(createInvalidationRequest, "AmazonCloudFront");
+
+
+
             request.HttpMethod = "POST";
               
-            string uriResourcePath = "2012-05-05/distribution/{DistributionId}/invalidation"; 
+            string uriResourcePath = "2012-07-01/distribution/{DistributionId}/invalidation"; 
             uriResourcePath = uriResourcePath.Replace("{DistributionId}", createInvalidationRequest.DistributionId ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 
@@ -47,12 +50,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
                 uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
         
-                foreach (string s in queryString.Split('&')) 
+                foreach (string s in queryString.Split('&', ';')) 
                 {
                     string[] nameValuePair = s.Split('=');
                     if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
                     {
                         request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                    }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
                     }
                 }
             }
@@ -69,16 +76,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             InvalidationBatch invalidationBatchInvalidationBatch = createInvalidationRequest.InvalidationBatch;
             if (invalidationBatchInvalidationBatch != null) 
             {
-                xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2012-05-05/");
+                xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2012-07-01/");
                 if (invalidationBatchInvalidationBatch != null) 
                 {
                     Paths pathsPaths = invalidationBatchInvalidationBatch.Paths;
                     if (pathsPaths != null) 
                     {
-                        xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2012-05-05/");
+                        xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2012-07-01/");
                         if (pathsPaths.IsSetQuantity()) 
                         {
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2012-05-05/", pathsPaths.Quantity.ToString());
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2012-07-01/", pathsPaths.Quantity.ToString());
                           }
 
                         if (pathsPaths != null) 
@@ -87,10 +94,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             if (pathsPathsitemsList != null && pathsPathsitemsList.Count > 0) 
                             {
                                 int pathsPathsitemsListIndex = 1;
-                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2012-05-05/");
+                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2012-07-01/");
                                 foreach (string pathsPathsitemsListValue in pathsPathsitemsList) 
                                 {
-                                    xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2012-05-05/");
+                                    xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2012-07-01/");
                                     xmlWriter.WriteValue(pathsPathsitemsListValue);
                                 xmlWriter.WriteEndElement();
 
@@ -105,7 +112,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
                 if (invalidationBatchInvalidationBatch.IsSetCallerReference()) 
                 {
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2012-05-05/", invalidationBatchInvalidationBatch.CallerReference.ToString());
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2012-07-01/", invalidationBatchInvalidationBatch.CallerReference.ToString());
                   }
                 xmlWriter.WriteEndElement();
             }
@@ -121,7 +128,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-                    
+        
             
             return request;
         }

@@ -30,8 +30,9 @@ namespace Amazon.CloudFront.Model
         private S3Origin s3Origin;
         private Aliases aliases;
         private string comment;
-        private LoggingConfig logging;
+        private StreamingLoggingConfig logging;
         private TrustedSigners trustedSigners;
+        private string priceClass = "PriceClass_All";
         private bool? enabled;
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.CloudFront.Model
         /// A complex type that controls whether access logs are written for the streaming distribution.
         ///  
         /// </summary>
-        public LoggingConfig Logging
+        public StreamingLoggingConfig Logging
         {
             get { return this.logging; }
             set { this.logging = value; }
@@ -166,7 +167,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="logging">The value to set for the Logging property </param>
         /// <returns>this instance</returns>
-        public StreamingDistributionConfig WithLogging(LoggingConfig logging)
+        public StreamingDistributionConfig WithLogging(StreamingLoggingConfig logging)
         {
             this.logging = logging;
             return this;
@@ -211,6 +212,43 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetTrustedSigners()
         {
             return this.trustedSigners != null;       
+        }
+
+        /// <summary>
+        /// A complex type that contains information about price class for this streaming distribution.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>PriceClass_100, PriceClass_200, PriceClass_All</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string PriceClass
+        {
+            get { return this.priceClass; }
+            set { this.priceClass = value; }
+        }
+
+        /// <summary>
+        /// Sets the PriceClass property
+        /// </summary>
+        /// <param name="priceClass">The value to set for the PriceClass property </param>
+        /// <returns>this instance</returns>
+        public StreamingDistributionConfig WithPriceClass(string priceClass)
+        {
+            this.priceClass = priceClass;
+            return this;
+        }
+            
+
+        // Check to see if PriceClass property is set
+        internal bool IsSetPriceClass()
+        {
+            return this.priceClass != null;       
         }
 
         /// <summary>

@@ -20,13 +20,13 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
      /// <summary>
-     ///   InvalidationSummary Unmarshaller
+     ///   CookiePreference Unmarshaller
      /// </summary>
-    internal class InvalidationSummaryUnmarshaller : IUnmarshaller<InvalidationSummary, XmlUnmarshallerContext>, IUnmarshaller<InvalidationSummary, JsonUnmarshallerContext> 
+    internal class CookiePreferenceUnmarshaller : IUnmarshaller<CookiePreference, XmlUnmarshallerContext>, IUnmarshaller<CookiePreference, JsonUnmarshallerContext> 
     {
-        public InvalidationSummary Unmarshall(XmlUnmarshallerContext context) 
+        public CookiePreference Unmarshall(XmlUnmarshallerContext context) 
         {
-            InvalidationSummary invalidationSummary = new InvalidationSummary();
+            CookiePreference cookiePreference = new CookiePreference();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,47 +37,41 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 { 
-                    if (context.TestExpression("Id", targetDepth))
+                    if (context.TestExpression("Forward", targetDepth))
                     {
-                        invalidationSummary.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        cookiePreference.Forward = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
-                    if (context.TestExpression("CreateTime", targetDepth))
+                    if (context.TestExpression("WhitelistedNames", targetDepth))
                     {
-                        invalidationSummary.CreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        invalidationSummary.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        cookiePreference.WhitelistedNames = CookieNamesUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return invalidationSummary;
+                    return cookiePreference;
                 }
             }
                         
 
 
-            return invalidationSummary;
+            return cookiePreference;
         }
 
-        public InvalidationSummary Unmarshall(JsonUnmarshallerContext context) 
+        public CookiePreference Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
         }
 
-        private static InvalidationSummaryUnmarshaller instance;
+        private static CookiePreferenceUnmarshaller instance;
 
-        public static InvalidationSummaryUnmarshaller GetInstance() 
+        public static CookiePreferenceUnmarshaller GetInstance() 
         {
             if (instance == null) 
-               instance = new InvalidationSummaryUnmarshaller();
+               instance = new CookiePreferenceUnmarshaller();
 
             return instance;
         }
