@@ -40,7 +40,7 @@ namespace Amazon.CloudFront
         {
             get
             {
-                return "";
+                return "cloudfront";
             }
         }
 
