@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The SendMessage action delivers a message to the specified queue.
+    /// Delivers a message to the specified queue.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class SendMessageRequest
@@ -37,7 +37,6 @@ namespace Amazon.SQS.Model
         private int? delaySecondsField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -48,7 +47,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -68,14 +67,15 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the MessageBody property.
-        /// The message to send. The maximum allowed message size is 8 KB.
+        /// The message body to send. The maximum allowed message size is 8 KB.
+        /// </summary>
+        /// <remarks>
         /// The following list shows the characters (in Unicode) allowed in your message, according to the W3C XML specification
         /// (for more information, go to http://www.w3.org/TR/REC-xml/#charsets). If you send any characters not included in the
         /// list, your request will be rejected.
         ///
         /// #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "MessageBody")]
         public string MessageBody
         {
@@ -84,14 +84,9 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the MessageBody property
+        /// Sets the message body to send. The maximum allowed message size is 8 KB.
         /// </summary>
-        /// <param name="messageBody">The message to send. The maximum allowed message size is 8 KB.
-        /// The following list shows the characters (in Unicode) allowed in your message, according to the W3C XML specification
-        /// (for more information, go to http://www.w3.org/TR/REC-xml/#charsets). If you send any characters not included in the
-        /// list, your request will be rejected.
-        ///
-        /// #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]</param>
+        /// <param name="messageBody">The message body to send.</param>
         /// <returns>this instance</returns>
         public SendMessageRequest WithMessageBody(string messageBody)
         {
@@ -109,7 +104,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the DelaySeconds property.
         /// The number of seconds to delay the message from being available for processing.
         /// </summary>
         public int DelaySeconds
@@ -119,7 +113,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the DelaySeconds property
+        /// Sets the number of seconds to delay the message from being available for processing.
         /// </summary>
         /// <param name="delaySeconds">The number of seconds to delay the message from being available for processing.</param>
         /// <returns>this instance</returns>

@@ -28,7 +28,7 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// An element containing the information about the message.
+    /// An individual message.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class Message
@@ -40,7 +40,6 @@ namespace Amazon.SQS.Model
         private List<Attribute> attributeField;
 
         /// <summary>
-        /// Gets and sets the MessageId property.
         /// Unique ID associated with the message.
         /// </summary>
         [XmlElementAttribute(ElementName = "MessageId")]
@@ -51,7 +50,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the MessageId property
+        /// Sets the unique ID associated with the message.
         /// </summary>
         /// <param name="messageId">Unique ID associated with the message.</param>
         /// <returns>this instance</returns>
@@ -71,7 +70,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the ReceiptHandle property.
         /// A string associated with a specific instance of receiving the message.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReceiptHandle")]
@@ -82,7 +80,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the ReceiptHandle property
+        /// Sets the string associated with a specific instance of receiving the message.
         /// </summary>
         /// <param name="receiptHandle">A string associated with a specific instance of receiving the message.</param>
         /// <returns>this instance</returns>
@@ -102,7 +100,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the MD5OfBody property.
         /// An MD5 digest of the non-URL-encoded message body string.
         /// </summary>
         [XmlElementAttribute(ElementName = "MD5OfBody")]
@@ -113,7 +110,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the MD5OfBody property
+        /// Sets the MD5 digest of the non-URL-encoded message body string.
         /// </summary>
         /// <param name="MD5OfBody">An MD5 digest of the non-URL-encoded message body string.</param>
         /// <returns>this instance</returns>
@@ -133,7 +130,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Body property.
         /// The message's contents (not URL encoded).
         /// </summary>
         [XmlElementAttribute(ElementName = "Body")]
@@ -144,7 +140,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Body property
+        /// Sets the message's contents (not URL encoded).
         /// </summary>
         /// <param name="body">The message's contents (not URL encoded).</param>
         /// <returns>this instance</returns>
@@ -164,7 +160,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -182,7 +177,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the name and value pair of an attribute associated with the queue.
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>

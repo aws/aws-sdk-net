@@ -26,9 +26,16 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DeleteBucketWebsiteRequest contains the parameters used for the DeleteBucketWebsiteRequest operation.
-    /// <br />Required Parameters: BucketName
+    /// Removes the website configuration for a bucket.
     /// </summary>
+    /// <remarks>
+    /// This operation requires the S3:DeleteBucketWebsite permission. By default, only the bucket owner 
+    /// can delete the website configuration attached to a bucket. However, bucket owners can grant other 
+    /// users permission to delete the website configuration by writing a bucket policy granting them the 
+    /// S3:DeleteBucketWebsite permission.
+    /// For more information about hosting websites, go to <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html"/> 
+    /// in the Amazon S3 Developer Guide.
+    /// </remarks>
     public class DeleteBucketWebsiteRequest : S3Request
     {
         string _bucketName;
@@ -36,7 +43,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket on which website configuration is to be removed.
         /// </summary>
         public string BucketName
         {
@@ -45,10 +52,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket where the website configuration will be deleted.
+        /// Sets the name of the bucket on which website configuration is to be removed.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public DeleteBucketWebsiteRequest WithBucketName(string bucketName)
         {

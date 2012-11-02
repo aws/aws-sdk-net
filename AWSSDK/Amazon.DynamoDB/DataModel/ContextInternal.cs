@@ -240,7 +240,7 @@ namespace Amazon.DynamoDB.DataModel
                 {
                     if (ShouldSave(entry, true))
                     {
-                        object value = FromDynamoDBEntry(propertyStorage.MemberType, entry, propertyStorage.Converter); // TODO: send entire propertyStorage into method, and store the collectionAdd MethodInfo in it
+                        object value = FromDynamoDBEntry(propertyStorage, entry); // TODO: send entire propertyStorage into method, and store the collectionAdd MethodInfo in it
 
                         if (!TrySetValue(instance, propertyStorage.Member, value))
                         {
@@ -289,7 +289,7 @@ namespace Amazon.DynamoDB.DataModel
                 object value;
                 if (TryGetValue(toStore, propertyStorage.Member, out value))
                 {
-                    DynamoDBEntry dbe = ToDynamoDBEntry(propertyStorage.MemberType, value, propertyStorage.Converter);
+                    DynamoDBEntry dbe = ToDynamoDBEntry(propertyStorage, value);
 
                     if (ShouldSave(dbe, ignoreNullValues))
                     {
@@ -310,12 +310,14 @@ namespace Amazon.DynamoDB.DataModel
         }
 
         // DynamoDBEntry <--> Object
-        private static object FromDynamoDBEntry(Type targetType, DynamoDBEntry value, IPropertyConverter converter)
+        private static object FromDynamoDBEntry(PropertyStorage propertyStorage, DynamoDBEntry value)
         {
+            var converter = propertyStorage.Converter;
             if (converter != null)
                 return converter.FromEntry(value);
 
             object output;
+            var targetType = propertyStorage.MemberType;
 
             Primitive primitive = value as Primitive;
             if (primitive != null && TryFromPrimitive(targetType, primitive, out output))
@@ -325,20 +327,24 @@ namespace Amazon.DynamoDB.DataModel
             if (primitiveList != null && TryFromPrimitiveList(targetType, primitiveList, out output))
                 return output;
 
-            throw new InvalidOperationException("Unable to convert to type " + targetType.FullName);
+            throw new InvalidOperationException(
+                string.Format("Unable to convert attribute \"{0}\" to property \"{1}\" of type \"{2}\"",
+                propertyStorage.AttributeName, propertyStorage.PropertyName, propertyStorage.MemberType.FullName));
         }
-        private static DynamoDBEntry ToDynamoDBEntry(Type type, object value, IPropertyConverter converter)
+        private static DynamoDBEntry ToDynamoDBEntry(PropertyStorage propertyStorage, object value)
         {
-            return ToDynamoDBEntry(type, value, converter, false);
+            return ToDynamoDBEntry(propertyStorage, value, false);
         }
-        private static DynamoDBEntry ToDynamoDBEntry(Type type, object value, IPropertyConverter converter, bool canReturnPrimitiveInsteadOfList)
+        private static DynamoDBEntry ToDynamoDBEntry(PropertyStorage propertyStorage, object value, bool canReturnPrimitiveInsteadOfList)
         {
             if (value == null)
                 return null;
 
+            var converter = propertyStorage.Converter;
             if (converter != null)
                 return converter.ToEntry(value);
 
+            var type = propertyStorage.MemberType;
             Primitive primitive;
             if (TryToPrimitive(type, value, out primitive))
                 return primitive;
@@ -347,7 +353,9 @@ namespace Amazon.DynamoDB.DataModel
             if (TryToPrimitiveList(type, value, canReturnPrimitiveInsteadOfList, out primitiveList))
                 return primitiveList;
 
-            throw new InvalidOperationException("Unable to convert value of type " + value.GetType().FullName + ", type is not primitive or primitive collection and does not define a converter");
+            throw new InvalidOperationException(string.Format("Unable to convert field \"{0}\" of type \"{1}\", type is not primitive or primitive collection and does not define a converter",
+                propertyStorage.PropertyName, value.GetType().FullName));
+
         }
 
         // PrimitiveList <--> List
@@ -559,7 +567,7 @@ namespace Amazon.DynamoDB.DataModel
                 List<AttributeValue> attributeValues = new List<AttributeValue>();
                 foreach (var value in condition.Values)
                 {
-                    var entry = ToDynamoDBEntry(propertyStorage.MemberType, value, propertyStorage.Converter, true);
+                    var entry = ToDynamoDBEntry(propertyStorage, value, true);
                     if (entry == null)
                         throw new InvalidOperationException(
                             string.Format("Unable to convert value corresponding to property [{0}] to DynamoDB representation", condition.PropertyName));
@@ -584,7 +592,7 @@ namespace Amazon.DynamoDB.DataModel
                 List<AttributeValue> attributeValues = new List<AttributeValue>();
                 foreach (var value in values)
                 {
-                    var entry = ToDynamoDBEntry(propertyStorage.MemberType, value, propertyStorage.Converter);
+                    var entry = ToDynamoDBEntry(propertyStorage, value);
 
                     AttributeValue nativeValue = entry.ConvertToAttributeValue();
                     if (nativeValue != null)
@@ -607,7 +615,7 @@ namespace Amazon.DynamoDB.DataModel
         {
             PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(propertyName);
 
-            var entry = ToDynamoDBEntry(propertyStorage.MemberType, value, propertyStorage.Converter);
+            var entry = ToDynamoDBEntry(propertyStorage, value);
 
             return entry;
         }

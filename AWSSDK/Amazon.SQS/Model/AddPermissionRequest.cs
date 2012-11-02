@@ -27,8 +27,11 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Adds the specified permission(s) to a queue for the specified principal(s). This allows for sharing access to the queue.
+    /// Adds the specified permission(s) to a queue for the specified principal(s).
     /// </summary>
+    /// <remarks>
+    /// This allows for sharing access to the queue.
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class AddPermissionRequest
     {    
@@ -38,7 +41,6 @@ namespace Amazon.SQS.Model
         private List<string> actionNameField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -49,7 +51,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -69,9 +71,10 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Label property.
-        /// The unique identification of the permission you're setting. Maximum 80 characters; alphanumeric characters, hyphens (-),
-        /// and underscores (_) are allowed.
+        /// The unique identification of the permission you're setting.
+        /// <remarks>
+        /// Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+        /// </remarks>
         /// </summary>
         [XmlElementAttribute(ElementName = "Label")]
         public string Label
@@ -81,10 +84,12 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Label property
+        /// Sets the unique identification of the permission you're setting.
+        /// <remarks>
+        /// Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+        /// </remarks>
         /// </summary>
-        /// <param name="label">The unique identification of the permission you're setting. Maximum 80 characters; alphanumeric characters, hyphens (-),
-        /// and underscores (_) are allowed.</param>
+        /// <param name="label">The unique identification of the permission you're setting.</param>
         /// <returns>this instance</returns>
         public AddPermissionRequest WithLabel(string label)
         {
@@ -102,10 +107,11 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the AWSAccountId property.
-        /// The AWS account number of the principal who will be given permission. The principal must have an AWS account, but does
-        /// not need to be signed up for Amazon SQS.
+        /// The AWS account number of the principal who will be given permission.
         /// </summary>
+        /// <remarks>
+        /// The principal must have an AWS account, but does not need to be signed up for Amazon SQS.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "AWSAccountId")]
         public List<string> AWSAccountId
         {
@@ -121,10 +127,12 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the AWSAccountId property
+        /// Set the AWS account number of the principal who will be given permission.
         /// </summary>
-        /// <param name="list">The AWS account number of the principal who will be given permission. The principal must have an AWS account, but does
-        /// not need to be signed up for Amazon SQS.</param>
+        /// <remarks>
+        /// The principal must have an AWS account, but does not need to be signed up for Amazon SQS.
+        /// </remarks>
+        /// <param name="list">The AWS account number of the principal who will be given permission.</param>
         /// <returns>this instance</returns>
         public AddPermissionRequest WithAWSAccountId(params string[] list)
         {
@@ -145,12 +153,12 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the ActionName property.
-        /// The action you want to allow for the specified principal. For more information about these actions, see Understanding
-        /// Permissions in the Amazon SQS Developer Guide.
-        ///
+        /// The action you want to allow for the specified principal.
         /// Valid values are: * | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes
         /// </summary>
+        /// <remarks>
+        /// For more information about these actions, see Understanding Permissions in the Amazon SQS Developer Guide.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ActionName")]
         public List<string> ActionName
         {
@@ -166,12 +174,13 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the ActionName property
+        /// Sets the action you want to allow for the specified principal.
+        /// Valid values are: * | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes
         /// </summary>
-        /// <param name="list">The action you want to allow for the specified principal. For more information about these actions, see Understanding
-        /// Permissions in the Amazon SQS Developer Guide.
-        ///
-        /// Valid values are: * | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes</param>
+        /// <remarks>
+        /// For more information about these actions, see Understanding Permissions in the Amazon SQS Developer Guide.
+        /// </remarks>
+        /// <param name="list">The action you want to allow for the specified principal.</param>
         /// <returns>this instance</returns>
         public AddPermissionRequest WithActionName(params string[] list)
         {

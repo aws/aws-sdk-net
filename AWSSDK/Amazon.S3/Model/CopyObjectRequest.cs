@@ -29,13 +29,8 @@ using Amazon.S3.Util;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The CopyObjectRequest contains the parameters used for the CopyObject operation.
-    /// For more information about the optional parameters, refer: 
-    /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTObjectCOPY.html"/>
-    /// <br />Required Parameters: SourceBucket, SourceKey, DestinationBucket 
-    /// <br />Optional Parameters: DestinationKey, ETagToMatch, ETagToNotMatch, ModifiedSinceDate,
-    /// UnmodifiedSinceDate, Directive, Metadata, CannedACL, Timeout, SourceVersionId,
-    /// StorageClass
+    /// Copies an existing S3 object to another, possibly new, S3 object. The source object
+    /// may be copied to another object in the same or a different bucket.
     /// </summary>
     public class CopyObjectRequest : S3PutWithACLRequest
     {
@@ -65,7 +60,7 @@ namespace Amazon.S3.Model
         #region SourceBucket
 
         /// <summary>
-        /// Gets and sets the SourceBucket property.
+        /// The name of the bucket containing the object to copy.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceBucket")]
         public string SourceBucket
@@ -75,12 +70,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the SourceBucket property for this request.
-        /// This is the S3Bucket that contains the S3 Object you
-        /// want to copy.
+        /// Sets the name of the bucket containing the object to copy.
         /// </summary>
-        /// <param name="srcBucket">The value that SourceBucket is set to</param>
-        /// <returns>the response with the SourceBucket set</returns>
+        /// <param name="srcBucket">Name of the bucket containing the object to copy</param>
+        /// <returns>the request with the SourceBucket set</returns>
         public CopyObjectRequest WithSourceBucket(string srcBucket)
         {
             this.srcBucket = srcBucket;
@@ -100,7 +93,7 @@ namespace Amazon.S3.Model
 
         #region SourceKey
         /// <summary>
-        /// Gets and sets the SourceKey property.
+        /// The key of the object to copy.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceKey")]
         public string SourceKey
@@ -110,11 +103,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the SourceKey property for this request.
-        /// This is the S3Object you want to copy.
+        /// Sets the key of the object to copy.
         /// </summary>
-        /// <param name="srcKey">The value that SourceKey is set to</param>
-        /// <returns>the response with the SourceKey set</returns>
+        /// <param name="srcKey">Key of the S3 object to copy</param>
+        /// <returns>the request with the SourceKey set</returns>
         public CopyObjectRequest WithSourceKey(string srcKey)
         {
             this.srcKey = srcKey;
@@ -134,7 +126,7 @@ namespace Amazon.S3.Model
 
         #region DestinationBucket
         /// <summary>
-        /// Gets and sets the DestinationBucket property.
+        /// The name of the bucket to contain the copy of the source object.
         /// </summary>
         [XmlElementAttribute(ElementName = "DestinationBucket")]
         public string DestinationBucket
@@ -144,11 +136,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the DestinationBucket property for this request.
-        /// This is the S3 Bucket where the copied S3 Object is put.
+        /// Sets the name of the bucket to contain the copy of the source object.
         /// </summary>
-        /// <param name="dstBucket">The value that DestinationBucket is set to</param>
-        /// <returns>the response with the DestinationBucket set</returns>
+        /// <param name="dstBucket">Name of the bucket to contain the copy</param>
+        /// <returns>the request with the DestinationBucket set</returns>
         public CopyObjectRequest WithDestinationBucket(string dstBucket)
         {
             this.dstBucket = dstBucket;
@@ -167,7 +158,7 @@ namespace Amazon.S3.Model
 
         #region DestinationKey
         /// <summary>
-        /// Gets and sets the DestinationKey property.
+        /// The key to be given to the copy of the source object.
         /// </summary>
         [XmlElementAttribute(ElementName = "DestinationKey")]
         public string DestinationKey
@@ -177,10 +168,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the DestinationKey property for this request.
-        /// This is the key for the new S3 Object that is copied.
+        /// Sets the key to be given to the copy of the source object.
         /// </summary>
-        /// <param name="dstKey">The value that DestinationKey is set to</param>
+        /// <param name="dstKey">Key of the copy of the source object</param>
         /// <returns>the response with the Destinationkey set</returns>
         public CopyObjectRequest WithDestinationKey(string dstKey)
         {
@@ -202,7 +192,7 @@ namespace Amazon.S3.Model
         #region ContentType
 
         /// <summary>
-        /// Gets and sets the ContentType property.
+        /// Content type to be assigned to the copy of the object.
         /// </summary>
         /// <remarks>
         /// This property defaults to "binary/octet-stream",
@@ -218,15 +208,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ContentType property for this request.
+        /// Sets the content type to be assigned to the copy of the object.
         /// </summary>
-        /// <param name="contentType">the value the ContentType to be set to</param>
-        /// <returns>The request with the ContentType set</returns>
         /// <remarks>
         /// This property defaults to "binary/octet-stream",
         /// but if you require something else you can set this property.
         /// This property is passed on to S3 only if the metadata
         /// directive is REPLACE.
+        /// <param name="contentType">Content type to be set</param>
+        /// <returns>The request with the ContentType set</returns>
         /// </remarks>
         public CopyObjectRequest WithContentType(string contentType)
         {
@@ -248,8 +238,15 @@ namespace Amazon.S3.Model
         #region ETagToMatch
 
         /// <summary>
-        /// Gets and sets the ETagToMatch property.
+        /// ETag to be matched as a pre-condition for copying the source object
+        /// otherwise returns a PreconditionFailed.
         /// </summary>
+        /// <remarks>
+        /// Copies the object if its entity tag (ETag) matches 
+        /// the specified tag; otherwise return a 412 (precondition failed).
+        /// Constraints: This property can be used with IfUnmodifiedSince,
+        /// but cannot be used with other conditional copy properties.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ETagToMatch")]
         public string ETagToMatch
         {
@@ -258,13 +255,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ETagToMatch property for this request.
-        /// Copies the object if its entity tag (ETag) matches
+        /// Sets an ETag to be matched as a pre-condition for copying the source object,
+        /// otherwise returns a PreconditionFailed.
+        /// </summary>
+        /// <remarks>
+        /// Copies the object if its entity tag (ETag) matches 
         /// the specified tag; otherwise return a 412 (precondition failed).
         /// Constraints: This property can be used with IfUnmodifiedSince,
         /// but cannot be used with other conditional copy properties.
-        /// </summary>
-        /// <param name="etagToMatch">The value that ETagToMatch is set to</param>
+        /// </remarks>
+        /// <param name="etagToMatch">The ETag value to be matched</param>
         /// <returns>this instance</returns>
         public CopyObjectRequest WithETagToMatch(string etagToMatch)
         {
@@ -275,6 +275,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Checks if ETagToMatch property is set.
         /// </summary>
+        /// <remarks>
+        /// Copies the object if its entity tag (ETag) is different
+        /// than the specified Etag; otherwise returns a 412 (failed condition).
+        /// Constraints: This header can be used with IfModifiedSince, but cannot
+        /// be used with other conditional copy properties.
+        /// </remarks>
         /// <returns>true if ETagToMatch property is set.</returns>
         internal bool IsSetETagToMatch()
         {
@@ -285,7 +291,8 @@ namespace Amazon.S3.Model
 
         #region ETagToNotMatch
         /// <summary>
-        /// Gets and sets the ETagToNotMatch property.
+        /// ETag that must not be matched as a pre-condition for copying the source object,
+        /// otherwise returns a PreconditionFailed.
         /// </summary>
         [XmlElementAttribute(ElementName = "ETagToNotMatch")]
         public string ETagToNotMatch
@@ -295,12 +302,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ETagToNotMatch property for this request.
+        /// Sets an ETag that must not be matched as a pre-condition for copying the source object,
+        /// otherwise returns a PreconditionFailed.
+        /// </summary>
+        /// <remarks>
         /// Copies the object if its entity tag (ETag) is different
         /// than the specified Etag; otherwise returns a 412 (failed condition).
         /// Constraints: This header can be used with IfModifiedSince, but cannot
         /// be used with other conditional copy properties.
-        /// </summary>
+        /// </remarks>
         /// <param name="etagToNotMatch">The value that ETagToNotMatch is set to</param>
         /// <returns>this instance</returns>
         public CopyObjectRequest WithETagToNotMatch(string etagToNotMatch)
@@ -322,8 +332,14 @@ namespace Amazon.S3.Model
 
         #region ModifiedSinceDate
         /// <summary>
-        /// Gets and sets the ModifiedSinceDate property.
+        /// Copies the object if it has been modified since the specified time, otherwise returns a PreconditionFailed.
         /// </summary>
+        /// <remarks>
+        /// Copies the object if it has been modified since the
+        /// specified time; otherwise returns a 412 (failed condition).
+        /// Constraints: This property can be used with ETagToNotMatch,
+        /// but cannot be used with other conditional copy properties.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ModifiedSinceDate")]
         public DateTime ModifiedSinceDate
         {
@@ -332,13 +348,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ModifiedSinceDate property for this request.
+        /// Copies the object if it has been modified since the specified time, otherwise returns a PreconditionFailed.
+        /// </summary>
+        /// <remarks>
         /// Copies the object if it has been modified since the
         /// specified time; otherwise returns a 412 (failed condition).
         /// Constraints: This property can be used with ETagToNotMatch,
         /// but cannot be used with other conditional copy properties.
-        /// </summary>
-        /// <param name="modifiedSinceDate">The value that ModifiedSinceDate is set to</param>
+        /// </remarks>
+        /// <param name="modifiedSinceDate">The date/time to check the modification timestamp against</param>
         /// <returns>this instance</returns>
         public CopyObjectRequest WithModifiedSinceDate(DateTime modifiedSinceDate)
         {
@@ -360,8 +378,14 @@ namespace Amazon.S3.Model
         #region UnmodifiedSinceDate
 
         /// <summary>
-        /// Gets and sets the UnmodifiedSinceDate property.
+        /// Copies the object if it has not been modified since the specified time, otherwise returns a PreconditionFailed.
         /// </summary>
+        /// <remarks>
+        /// Copies the object if it hasn't been modified since the
+        /// specified time; otherwise returns a 412 (precondition failed).
+        /// Constraints: This property can be used with ETagToMatch,
+        /// but cannot be used with other conditional copy properties.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "UnmodifiedSinceDate")]
         public DateTime UnmodifiedSinceDate
         {
@@ -370,13 +394,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the UnmodifiedSinceDate property for this request.
+        /// Copies the object if it has not been modified since the specified time, otherwise returns a PreconditionFailed.
+        /// </summary>
+        /// <remarks>
         /// Copies the object if it hasn't been modified since the
         /// specified time; otherwise returns a 412 (precondition failed).
         /// Constraints: This property can be used with ETagToMatch,
         /// but cannot be used with other conditional copy properties.
-        /// </summary>
-        /// <param name="unmodifiedSinceDate">The value that UnmodifiedSinceDate is set to</param>
+        /// </remarks>
+        /// <param name="unmodifiedSinceDate">The date/time to check the modification timestamp against</param>
         /// <returns>this instance</returns>
         public CopyObjectRequest WithUnmodifiedSinceDate(DateTime unmodifiedSinceDate)
         {
@@ -398,15 +424,16 @@ namespace Amazon.S3.Model
         #region Directive
 
         /// <summary>
-        /// Gets and sets the Directive property. Default is COPY.
+        /// <para>
+        /// Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.
+        /// </para>
+        /// <para>
+        /// Valid values: COPY | REPLACE. Default: COPY.
+        /// </para>
         /// </summary>
         /// <remarks>
-        /// Specifies whether the metadata is copied from
-        /// the source object or replaced with metadata
-        /// provided in the request. If COPY, the metadata remains
-        /// unchanged, otherwise, all original metadata is
-        /// replaced by the metadata you specify.
-        /// You cannot copy an object to itself unless the Directive
+        /// If Directive is set to COPY, the metadata remains unchanged, otherwise, all original metadata is
+        /// replaced by the metadata you specify. You cannot copy an object to itself unless the Directive 
         /// property is specified and its value set to REPLACE.
         /// </remarks>
         [XmlElementAttribute(ElementName = "Directive")]
@@ -417,20 +444,20 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Directive property for this request. The
-        /// default value for the directive is COPY.
+        /// <para>
+        /// Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.
+        /// </para>
+        /// <para>
+        /// Valid values: COPY | REPLACE. Default: COPY.
+        /// </para>
         /// </summary>
-        /// <param name="directive">The value that Directive is set to</param>
-        /// <returns>the response with the Directive set</returns>
         /// <remarks>
-        /// Specifies whether the metadata is copied from
-        /// the source object or replaced with metadata
-        /// provided in the request. If COPY, the metadata remains
-        /// unchanged, otherwise, all original metadata is
-        /// replaced by the metadata you specify.
-        /// You cannot copy an object to itself unless the Directive
+        /// If Directive is set to COPY, the metadata remains unchanged, otherwise, all original metadata is
+        /// replaced by the metadata you specify. You cannot copy an object to itself unless the Directive 
         /// property is specified and its value set to REPLACE.
         /// </remarks>
+        /// <param name="directive">Metadata directive</param>
+        /// <returns>the request with the Directive set</returns>
         public CopyObjectRequest WithDirective(S3MetadataDirective directive)
         {
             this.directive = directive;
@@ -442,13 +469,11 @@ namespace Amazon.S3.Model
         #region Metadata
 
         /// <summary>
-        /// Adds a key/value pair to the Metadata property for this request.
-        /// The S3 Object that you copy will have this metadata associated
-        /// with it.
+        /// Specifies a metadata name-value pair to set for the object. If MetadataDirective is set to COPY, all metadata is ignored.
         /// </summary>
         /// <param name="key">The key to associate with the object</param>
         /// <param name="value">The value for the key</param>
-        /// <returns>The response with Metadata set.</returns>
+        /// <returns>The request with Metadata set.</returns>
         public CopyObjectRequest WithMetaData(string key, string value)
         {
             if (key == null || value == null)
@@ -467,11 +492,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds a set of key-value pairs to the request
+        /// Specifies a set of metadata name-value pairs to set for the object. If MetadataDirective is set to COPY, all metadata is ignored.
         /// </summary>
-        /// <param name="metaInfo">The set of key-value pairs that will eventually be
-        /// associated with the S3 Object</param>
-        /// <returns></returns>
+        /// <param name="metaInfo">The set of key-value pairs that will be associated with the S3 Object</param>
+        /// <returns>The request with Metadata set.</returns>
         public CopyObjectRequest WithMetaData(NameValueCollection metaInfo)
         {
             if (metaInfo == null || metaInfo.Count == 0)
@@ -499,8 +523,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Removes a key from the Metadata list if it was
-        /// added previously
+        /// Removes a key from the Metadata list if it was added previously
         /// </summary>
         /// <param name="key">The key to remove</param>
         public void RemoveMetaData(string key)
@@ -518,7 +541,7 @@ namespace Amazon.S3.Model
         #region CannedACL
 
         /// <summary>
-        /// Gets and sets the CannedACL property.
+        /// An S3 canned access control list to apply to the new copy of the object.
         /// </summary>
         public S3CannedACL CannedACL
         {
@@ -527,9 +550,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the CannedACL property for this request.
-        /// If set the S3 Object will have this CannedACL
-        /// permission.
+        /// An S3 canned access control list to apply to the new copy of the object.
         /// </summary>
         /// <param name="acl">The Canned ACL to be set on the object</param>
         /// <returns>The request with the CannedACL set</returns>
@@ -549,7 +570,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Resets the S3CannedACL
+        /// Resets the S3CannedACL to 'none' (S3CannedACL.NoACL).
         /// </summary>
         public void RemoveCannedACL()
         {
@@ -561,12 +582,18 @@ namespace Amazon.S3.Model
         #region Timeout
 
         /// <summary>
-        /// Gets and sets of the Timeout property (in milliseconds).
-        /// The value of this property is assigned to the
-        /// Timeout property of the HTTPWebRequest object used
-        /// for S3 COPY requests.
+        /// Custom timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <remarks>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// <para>
+        /// You should only set a custom timeout if you are certain that
+        /// the file will not be transferred within the default intervals
+        /// for an HttpWebRequest.
+        /// </para>
+        /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
         public int Timeout
@@ -582,13 +609,19 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Timeout property (in milliseconds).
-        /// Please set the timeout only if you are certain that
-        /// the file will not be transferred within the default intervals
-        /// for an HttpWebRequest.
+        /// Custom timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
         /// <param name="timeout">Timeout property</param>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <remarks>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// <para>
+        /// You should only set a custom timeout if you are certain that
+        /// the file will not be transferred within the default intervals
+        /// for an HttpWebRequest.
+        /// </para>
+        /// </remarks>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
@@ -608,10 +641,7 @@ namespace Amazon.S3.Model
         #region ReadWriteTimeout
 
         /// <summary>
-        /// Gets and sets of the ReadWriteTimeout property (in milliseconds).
-        /// The value of this property is assigned to the
-        /// ReadWriteTimeout property of the HTTPWebRequest object
-        /// used for S3 COPY requests.
+        /// Custom read-write timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
@@ -628,9 +658,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ReadWriteTimeout property (in milliseconds). 
-        /// The value of this property is assigned to the
-        /// ReadWriteTimeout property of the HttpWebRequest.
+        /// Custom read-write timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
         /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
@@ -652,7 +680,7 @@ namespace Amazon.S3.Model
         #region SourceVersionId
 
         /// <summary>
-        /// Gets and sets the SourceVersionId property.
+        /// Specifies a particular version of the source object to copy. By default the latest version is copied.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceVersionId")]
         public string SourceVersionId
@@ -662,10 +690,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the SourceVersionId property for this request.
-        /// This is the SourceVersionId for the S3 Object you want to Get.
+        /// Specifies a particular version of the source object to copy. By default the latest version is copied.
         /// </summary>
-        /// <param name="srcVersionId">The value that SourceVersionId is set to</param>
+        /// <param name="srcVersionId">Id of the version of the source object to be copied</param>
         /// <returns>this instance</returns>
         public CopyObjectRequest WithSourceVersionId(string srcVersionId)
         {
@@ -687,13 +714,14 @@ namespace Amazon.S3.Model
         #region StorageClass
 
         /// <summary>
-        /// Gets and sets the StorageClass property.
-        /// Default: The S3StorageClass of the source object.
+        /// S3 storage class for the copy of the source object. By default the new object uses the same storage class as the source object.
+        /// </summary>
+        /// <remarks>
         /// Set this property only if you want to change the storage 
         /// class of the destination object. Please refer
         /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
         /// information on S3 Storage Classes.
-        /// </summary>
+        /// </remarks>
         public S3StorageClass StorageClass
         {
             get { return this.storageClass; }
@@ -708,14 +736,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the StorageClass property for the destination object.
-        /// Default: The S3StorageClass of the source object.
+        /// S3 storage class for the copy of the source object. By default the new object uses the same storage class as the source object.
+        /// </summary>
+        /// <remarks>
         /// Set this property only if you want to change the storage 
         /// class of the destination object. Please refer
         /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
         /// information on S3 Storage Classes.
-        /// </summary>
-        /// <param name="sClass">The Storage Class to be set on the object</param>
+        /// </remarks>
+        /// <param name="sClass">The storage class to be set on the new object</param>
         /// <returns>The request with the StorageClass set</returns>
         public CopyObjectRequest WithStorageClass(S3StorageClass sClass)
         {
@@ -728,10 +757,12 @@ namespace Amazon.S3.Model
         #region Grants
 
         /// <summary>
-        /// Adds Custom Access Control Lists to this request.
+        /// Adds a set of Custom Access Control Lists to be applied to the new object.
+        /// </summary>
+        /// <remarks>
         /// Please refer to <see cref="T:Amazon.S3.Model.S3Grant"/> for information on
         /// S3 Grants.
-        /// </summary>
+        /// </remarks>
         /// <param name="grants">One or more S3 Grants.</param>
         /// <returns>The request with the Grants set.</returns>
         public CopyObjectRequest WithGrants(params S3Grant[] grants)
@@ -745,9 +776,12 @@ namespace Amazon.S3.Model
         #region ServerSideEncryption
 
         /// <summary>
-        /// Gets and sets the ServerSideEncryptionMethod property.
-        /// Specifies the encryption used on the server to
-        /// store the content.
+        /// <para>
+        /// Specifies the encryption to be used on the server for the new object.
+        /// </para>
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -756,17 +790,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ServerSideEncryptionMethod property for this request.
-        /// Specifies the encryption used on the server to
-        /// store the content.
-        /// Default is None.
+        /// <para>
+        /// Specifies the encryption to be used on the server for the new object.
+        /// </para>
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
-        /// <param name="encryption">
-        /// The value of the ServerSideEncryptionMethod to set.
-        /// </param>
-        /// <returns>
-        /// The response with the ServerSideEncryptionMethod set.
-        /// </returns>
+        /// <param name="encryption">ServerSideEncryptionMethod for the new object</param>
+        /// <returns>The response with the ServerSideEncryptionMethod set.</returns>
         public CopyObjectRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
         {
             this.ServerSideEncryptionMethod = encryption;
@@ -777,9 +809,9 @@ namespace Amazon.S3.Model
 
         #region Website Redirect Location
         /// <summary>
-        /// Gets and sets the WebsiteRedirectLocation property.
-        /// If this is set then when a GET request is made from the S3 website endpoint a 301 HTTP status code
-        /// will be returned indicating a redirect with this value as the redirect location.
+        /// Sets the WebsiteRedirectLocation property on the new object so that when a GET request 
+        /// is made from the S3 website endpoint a 301 HTTP status code will be returned indicating 
+        /// a redirect with the specified value as the redirect location.
         /// </summary>
         public string WebsiteRedirectLocation
         {
@@ -788,11 +820,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the WebsiteRedirectLocation property for this request.
-        /// If this is set then when a GET request is made from the S3 website endpoint a 301 HTTP status code
-        /// will be returned indicating a redirect with this value as the redirect location.
+        /// Sets the WebsiteRedirectLocation property on the new object so that when a GET request 
+        /// is made from the S3 website endpoint a 301 HTTP status code will be returned indicating 
+        /// a redirect with the specified value as the redirect location.
         /// </summary>
-        /// <param name="websiteRedirectLocation">The value that WebsiteRedirectLocation is set to</param>
+        /// <param name="websiteRedirectLocation">The redirect value to be returned on a GET request</param>
         /// <returns>the request with the WebsiteRedirectLocation set</returns>
         public CopyObjectRequest WithWebsiteRedirectLocation(string websiteRedirectLocation)
         {

@@ -29,8 +29,7 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Encloses a receipt handle and an entry id for each message in
-    /// <c>ChangeMessageVisibilityBatchRequest</c>.
+    /// A receipt handle and an entry id for each message.
     /// </summary>
     public class ChangeMessageVisibilityBatchRequestEntry
     {
@@ -39,10 +38,12 @@ namespace Amazon.SQS.Model
         private int? visibilityTimeoutField;
 
         /// <summary>
-        /// Gets and sets the Id property.  An identifier for this particular receipt handle. This is used to communicate
-        /// the result. Note that the <c>Id</c>s of a batch request need to be
-        /// unique within the request.
+        /// An identifier for this particular receipt handle.
+        /// This value is used to identify the message in the result.
         /// </summary>
+        /// <remarks>
+        /// The <c>Id</c>s of a batch request need to be unique within the request.
+        /// </remarks>
         public string Id
         {
             get { return this.idField; }
@@ -51,7 +52,7 @@ namespace Amazon.SQS.Model
 
 
         /// <summary>
-        /// Sets the Id property
+        /// Sets an identifier for this particular receipt handle.
         /// </summary>
         /// <param name="id">An identifier for this particular receipt handle.</param>
         /// <returns>this instance</returns>
@@ -71,8 +72,11 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the ReceiptHandle property.
+        /// The receipt handle associated with the message whose visibility timeout you want to change.
         /// </summary>
+        /// <remarks>
+        /// This parameter is returned by the ReceiveMessage action.
+        /// </remarks>
         public string ReceiptHandle
         {
             get { return this.receiptHandleField; }
@@ -80,7 +84,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the ReceiptHandle property
+        /// Sets the receipt handle associated with the message whose visibility timeout you want to change.
         /// </summary>
         /// <param name="receiptHandle">A receipt handle.</param>
         /// <returns>this instance</returns>
@@ -100,7 +104,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the VisibilityTimeout property.  The new value (in seconds) for the message's visibility timeout.
+        /// The new value (in seconds) for the message's visibility timeout.
         /// </summary>
         public int VisibilityTimeout
         {

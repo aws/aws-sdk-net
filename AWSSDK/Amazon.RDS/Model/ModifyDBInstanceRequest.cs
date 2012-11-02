@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private string engineVersion;
         private bool? allowMajorVersionUpgrade;
         private bool? autoMinorVersionUpgrade;
+        private int? iops;
         private string optionGroupName;
 
         /// <summary>
@@ -488,6 +489,37 @@ namespace Amazon.RDS.Model
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this.autoMinorVersionUpgrade.HasValue;       
+        }
+
+        /// <summary>
+        /// The new Provisioned IOPS (I/O operations per second) value for the RDS instance. This change does not result in an outage and is applied
+        /// during the next maintenance window unless the <c>ApplyImmediately</c> parameter is specified as <c>true</c> for this request. Default: Uses
+        /// existing setting Constraints: Value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater
+        /// than the existing value are rounded up so that they are 10% greater than the current value.
+        ///  
+        /// </summary>
+        public int Iops
+        {
+            get { return this.iops ?? default(int); }
+            set { this.iops = value; }
+        }
+
+        /// <summary>
+        /// Sets the Iops property
+        /// </summary>
+        /// <param name="iops">The value to set for the Iops property </param>
+        /// <returns>this instance</returns>
+        public ModifyDBInstanceRequest WithIops(int iops)
+        {
+            this.iops = iops;
+            return this;
+        }
+            
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this.iops.HasValue;       
         }
 
         /// <summary>

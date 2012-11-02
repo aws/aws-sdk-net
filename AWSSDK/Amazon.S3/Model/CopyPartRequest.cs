@@ -30,11 +30,7 @@ using Amazon.S3.Util;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The CopyPartRequest contains the parameters used for the CopyPart operation.
-    /// <br />Required Parameters: SourceBucket, SourceKey, DestinationBucket, DestinationKey,
-    /// UploadID, PartNumber
-    /// <br />Optional Parameters: ETagsToMatch, ETagsToNotMatch, ModifiedSinceDate,
-    /// UnmodifiedSinceDate, Timeout, SourceVersionId, FirstByte, LastByte
+    /// Uploads a part by copying data from an existing object as data source. 
     /// </summary>
     public class CopyPartRequest : S3Request
     {
@@ -62,7 +58,7 @@ namespace Amazon.S3.Model
         #region SourceBucket
 
         /// <summary>
-        /// Gets and sets the SourceBucket property.
+        /// The name of the bucket containing the object to copy.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceBucket")]
         public string SourceBucket
@@ -72,11 +68,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the SourceBucket property for this request.
-        /// This is the S3Bucket that contains the S3 Object you
-        /// want to copy.
+        /// Sets the name of the bucket containing the object to copy.
         /// </summary>
-        /// <param name="srcBucket">The value that SourceBucket is set to</param>
+        /// <param name="srcBucket">Name of the bucket containing the object to copy</param>
         /// <returns>the request with the SourceBucket set</returns>
         public CopyPartRequest WithSourceBucket(string srcBucket)
         {
@@ -97,7 +91,7 @@ namespace Amazon.S3.Model
 
         #region SourceKey
         /// <summary>
-        /// Gets and sets the SourceKey property.
+        /// The key of the object to copy.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceKey")]
         public string SourceKey
@@ -107,10 +101,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the SourceKey property for this request.
-        /// This is the S3Object you want to copy.
+        /// Sets the key of the object to copy.
         /// </summary>
-        /// <param name="srcKey">The value that SourceKey is set to</param>
+        /// <param name="srcKey">Key of the S3 object to copy</param>
         /// <returns>the request with the SourceKey set</returns>
         public CopyPartRequest WithSourceKey(string srcKey)
         {
@@ -132,7 +125,7 @@ namespace Amazon.S3.Model
         #region SourceVersionId
 
         /// <summary>
-        /// Gets and sets the SourceVersionId property.
+        /// Specifies a particular version of the source object to copy. By default the latest version is copied.
         /// </summary>
         [XmlElementAttribute(ElementName = "SourceVersionId")]
         public string SourceVersionId
@@ -142,10 +135,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the SourceVersionId property for this request.
-        /// This is the SourceVersionId for the S3 Object you want to Get.
+        /// Specifies a particular version of the source object to copy. By default the latest version is copied.
         /// </summary>
-        /// <param name="srcVersionId">The value that SourceVersionId is set to</param>
+        /// <param name="srcVersionId">Id of the version of the source object to be copied</param>
         /// <returns>this instance</returns>
         public CopyPartRequest WithSourceVersionId(string srcVersionId)
         {
@@ -166,7 +158,7 @@ namespace Amazon.S3.Model
         
         #region DestinationBucket
         /// <summary>
-        /// Gets and sets the DestinationBucket property.
+        /// The name of the bucket to contain the copy of the source object.
         /// </summary>
         [XmlElementAttribute(ElementName = "DestinationBucket")]
         public string DestinationBucket
@@ -176,10 +168,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the DestinationBucket property for this request.
-        /// This is the S3 Bucket where the copied S3 Object is put.
+        /// Sets the name of the bucket to contain the copy of the source object.
         /// </summary>
-        /// <param name="dstBucket">The value that DestinationBucket is set to</param>
+        /// <param name="dstBucket">Name of the bucket to contain the copy</param>
         /// <returns>the request with the DestinationBucket set</returns>
         public CopyPartRequest WithDestinationBucket(string dstBucket)
         {
@@ -199,7 +190,7 @@ namespace Amazon.S3.Model
 
         #region DestinationKey
         /// <summary>
-        /// Gets and sets the DestinationKey property.
+        /// The key to be given to the copy of the source object.
         /// </summary>
         [XmlElementAttribute(ElementName = "DestinationKey")]
         public string DestinationKey
@@ -209,11 +200,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the DestinationKey property for this request.
-        /// This is the key for the new S3 Object that is copied.
+        /// Sets the key to be given to the copy of the source object.
         /// </summary>
-        /// <param name="dstKey">The value that DestinationKey is set to</param>
-        /// <returns>the request with the Destinationkey set</returns>
+        /// <param name="dstKey">Key of the copy of the source object</param>
+        /// <returns>the response with the Destinationkey set</returns>
         public CopyPartRequest WithDestinationKey(string dstKey)
         {
             this.dstKey = dstKey;
@@ -233,7 +223,7 @@ namespace Amazon.S3.Model
         
         #region UploadID
         /// <summary>
-        /// Gets and sets the UploadID property.
+        /// The ID identifying multipart upload for which we are copying a part.
         /// </summary>
         [XmlElementAttribute(ElementName = "UploadID")]
         public string UploadID
@@ -243,10 +233,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the UploadID property for this request.
-        /// This is the ID of the multipart upload for which we are copying a part.
+        /// Sets the ID identifying multipart upload for which we are copying a part.
         /// </summary>
-        /// <param name="uploadID">The value that UploadID is set to</param>
+        /// <param name="uploadID">Id of the multipart upload</param>
         /// <returns>the request with the UploadID set</returns>
         public CopyPartRequest WithUploadID(string uploadID)
         {
@@ -268,8 +257,15 @@ namespace Amazon.S3.Model
         #region ETagsToMatch
 
         /// <summary>
-        /// Gets and sets the ETagsToMatch property.
+        /// Collection of ETags to be matched as a pre-condition for copying the source object
+        /// otherwise returns a PreconditionFailed.
         /// </summary>
+        /// <remarks>
+        /// Copies the object if its entity tag (ETag) matches one of
+        /// the specified tags; otherwise return a 412 (precondition failed).
+        /// Constraints: This property can be used with IfUnmodifiedSince,
+        /// but cannot be used with other conditional copy properties.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ETagsToMatch")]
         public List<string> ETagToMatch
         {
@@ -285,11 +281,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds the Etags to the ETagsToMatch property for this request.
-        /// Copies the object if its entity tag (ETag) matches
-        /// one of the specified tag; otherwise return a 412 (precondition failed).
+        /// Adds the specified Etags to the ETagsToMatch property for this request.
         /// </summary>
-        /// <param name="etagsToMatch">The items to be added to the ETagsToMatch.</param>
+        /// <remarks>
+        /// Copies the object if its entity tag (ETag) matches one of
+        /// the specified tags; otherwise return a 412 (precondition failed).
+        /// Constraints: This property can be used with IfUnmodifiedSince,
+        /// but cannot be used with other conditional copy properties.
+        /// </remarks>
+        /// <param name="etagsToMatch">The items to be added to the ETagsToMatch collection.</param>
         /// <returns>this instance</returns>
         public CopyPartRequest WithETagsToMatch(params string[] etagsToMatch)
         {
@@ -301,11 +301,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds the Etags to the ETagsToMatch property for this request.
-        /// Copies the object if its entity tag (ETag) matches
-        /// one of the specified tag; otherwise return a 412 (precondition failed).
+        /// Adds the specified Etags to the ETagsToMatch property for this request.
         /// </summary>
-        /// <param name="etagsToMatch">The items to be added to the ETagsToMatch.</param>
+        /// <remarks>
+        /// Copies the object if its entity tag (ETag) matches one of
+        /// the specified tags; otherwise return a 412 (precondition failed).
+        /// Constraints: This property can be used with IfUnmodifiedSince,
+        /// but cannot be used with other conditional copy properties.
+        /// </remarks>
+        /// <param name="etagsToMatch">The items to be added to the ETagsToMatch collection.</param>
         /// <returns>this instance</returns>
         public CopyPartRequest WithETagsToMatch(IEnumerable<String> etagsToMatch)
         {
@@ -329,8 +333,15 @@ namespace Amazon.S3.Model
 
         #region ETagsToNotMatch
         /// <summary>
-        /// Gets and sets the ETagsToNotMatch property.
+        /// Collection of ETags that must not be matched as a pre-condition for copying the source object
+        /// otherwise returns a PreconditionFailed.
         /// </summary>
+        /// <remarks>
+        /// Copies the object if its entity tag (ETag) does not match any of the specified
+        /// tags; otherwise returns a 412 (failed condition).
+        /// Constraints: This header can be used with IfModifiedSince, but cannot
+        /// be used with other conditional copy properties.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ETagsToNotMatch")]
         public List<string> ETagsToNotMatch
         {
@@ -346,10 +357,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds the Etags to the ETagsToNotMatch property for this request.
-        /// Copies the object if its entity tag (ETag) is different
-        /// from all the specified Etags; otherwise returns a 412 (failed condition).
+        /// Adds the specified Etags to the ETagsToNotMatch property for this request.
         /// </summary>
+        /// <remarks>
+        /// Copies the object if its entity tag (ETag) does not match any of the specified
+        /// tags; otherwise returns a 412 (failed condition).
+        /// Constraints: This header can be used with IfModifiedSince, but cannot
+        /// be used with other conditional copy properties.
+        /// </remarks>
         /// <param name="etagsToNotMatch">The ETags to add to the ETagsToNotMatch property</param>
         /// <returns>this instance</returns>
         public CopyPartRequest WithETagsToNotMatch(params string[] etagsToNotMatch)
@@ -363,9 +378,13 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Adds the Etags to the ETagsToNotMatch property for this request.
-        /// Copies the object if its entity tag (ETag) is different
-        /// from all the specified Etags; otherwise returns a 412 (failed condition).
         /// </summary>
+        /// <remarks>
+        /// Copies the object if its entity tag (ETag) does not match any of the specified
+        /// tags; otherwise returns a 412 (failed condition).
+        /// Constraints: This header can be used with IfModifiedSince, but cannot
+        /// be used with other conditional copy properties.
+        /// </remarks>
         /// <param name="etagsToNotMatch">The ETags to add to the ETagsToNotMatch property</param>
         /// <returns>this instance</returns>
         public CopyPartRequest WithETagsToNotMatch(IEnumerable<String> etagsToNotMatch)
@@ -390,8 +409,14 @@ namespace Amazon.S3.Model
 
         #region ModifiedSinceDate
         /// <summary>
-        /// Gets and sets the ModifiedSinceDate property.
+        /// Copies the object if it has been modified since the specified time, otherwise returns a PreconditionFailed.
         /// </summary>
+        /// <remarks>
+        /// Copies the object if it has been modified since the
+        /// specified time; otherwise returns a 412 (failed condition).
+        /// Constraints: This property can be used with ETagToNotMatch,
+        /// but cannot be used with other conditional copy properties.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ModifiedSinceDate")]
         public DateTime ModifiedSinceDate
         {
@@ -400,11 +425,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ModifiedSinceDate property for this request.
+        /// Copies the object if it has been modified since the specified time, otherwise returns a PreconditionFailed.
+        /// </summary>
+        /// <remarks>
         /// Copies the object if it has been modified since the
         /// specified time; otherwise returns a 412 (failed condition).
-        /// </summary>
-        /// <param name="modifiedSinceDate">The value that ModifiedSinceDate is set to</param>
+        /// Constraints: This property can be used with ETagToNotMatch,
+        /// but cannot be used with other conditional copy properties.
+        /// </remarks>
+        /// <param name="modifiedSinceDate">The date/time to check the modification timestamp against</param>
         /// <returns>this instance</returns>
         public CopyPartRequest WithModifiedSinceDate(DateTime modifiedSinceDate)
         {
@@ -426,8 +455,14 @@ namespace Amazon.S3.Model
         #region UnmodifiedSinceDate
 
         /// <summary>
-        /// Gets and sets the UnmodifiedSinceDate property.
+        /// Copies the object if it has not been modified since the specified time, otherwise returns a PreconditionFailed.
         /// </summary>
+        /// <remarks>
+        /// Copies the object if it hasn't been modified since the
+        /// specified time; otherwise returns a 412 (precondition failed).
+        /// Constraints: This property can be used with ETagToMatch,
+        /// but cannot be used with other conditional copy properties.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "UnmodifiedSinceDate")]
         public DateTime UnmodifiedSinceDate
         {
@@ -436,11 +471,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the UnmodifiedSinceDate property for this request.
+        /// Copies the object if it has not been modified since the specified time, otherwise returns a PreconditionFailed.
+        /// </summary>
+        /// <remarks>
         /// Copies the object if it hasn't been modified since the
         /// specified time; otherwise returns a 412 (precondition failed).
-        /// </summary>
-        /// <param name="unmodifiedSinceDate">The value that UnmodifiedSinceDate is set to</param>
+        /// Constraints: This property can be used with ETagToMatch,
+        /// but cannot be used with other conditional copy properties.
+        /// </remarks>
+        /// <param name="unmodifiedSinceDate">The date/time to check the modification timestamp against</param>
         /// <returns>this instance</returns>
         public CopyPartRequest WithUnmodifiedSinceDate(DateTime unmodifiedSinceDate)
         {
@@ -462,13 +501,18 @@ namespace Amazon.S3.Model
         #region Timeout
 
         /// <summary>
-        /// Gets and sets of the Timeout property (in milliseconds).
-        /// The value of this property is assigned to the
-        /// Timeout property of the HTTPWebRequest object used
-        /// for S3 COPY requests.
+        /// Custom timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
-        /// <remarks>Attempting to set value less than or equal to 0 (and not Infinite)
-        /// will be silently ignored</remarks>
+        /// <remarks>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// <para>
+        /// You should only set a custom timeout if you are certain that
+        /// the file will not be transferred within the default intervals
+        /// for an HttpWebRequest.
+        /// </para>
+        /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
         public int Timeout
@@ -484,14 +528,19 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Timeout property (in milliseconds).
-        /// Please set the timeout only if you are certain that
-        /// the file will not be transferred within the default intervals
-        /// for an HttpWebRequest.
+        /// Custom timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
         /// <param name="timeout">Timeout property</param>
-        /// <remarks>Attempting to set value less than or equal to 0 (and not Infinite)
-        /// will be silently ignored</remarks>
+        /// <remarks>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// <para>
+        /// You should only set a custom timeout if you are certain that
+        /// the file will not be transferred within the default intervals
+        /// for an HttpWebRequest.
+        /// </para>
+        /// </remarks>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
@@ -511,10 +560,7 @@ namespace Amazon.S3.Model
         #region ReadWriteTimeout
 
         /// <summary>
-        /// Gets and sets of the ReadWriteTimeout property (in milliseconds).
-        /// The value of this property is assigned to the
-        /// ReadWriteTimeout property of the HTTPWebRequest object
-        /// used for S3 COPY requests.
+        /// Custom read-write timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
@@ -531,9 +577,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ReadWriteTimeout property (in milliseconds). 
-        /// The value of this property is assigned to the
-        /// ReadWriteTimeout property of the HttpWebRequest.
+        /// Custom read-write timeout value (in milliseconds) to set in the HttpWebRequest object used for the request.
         /// </summary>
         /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
         /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
@@ -555,11 +599,13 @@ namespace Amazon.S3.Model
         #region PartNumber
 
         /// <summary>
-        /// Gets and sets of the PartNumber property.
+        /// The number of the part to be copied.
+        /// </summary>
+        /// <remarks>
         /// Valid part numbers are from 1 to 10,000 inclusive and will uniquely identify the part 
         /// and determine the relative ordering within the destination object.  If a part already
         /// exists with the PartNumber it will be overwritten.
-        /// </summary>
+        /// </remarks>
         public int PartNumber
         {
             get { return this.partNumber.GetValueOrDefault(); }
@@ -567,11 +613,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets of the PartNumber property.
+        /// Sets the number of the part to be copied.
+        /// </summary>
+        /// <remarks>
         /// Valid part numbers are from 1 to 10,000 inclusive and will uniquely identify the part 
         /// and determine the relative ordering within the destination object.  If a part already
         /// exists with the PartNumber it will be overwritten.
-        /// </summary>
+        /// </remarks>
         /// <param name="partNumber">value to set the PartNumber property to</param>
         /// <returns>this instance</returns>
         public CopyPartRequest WithPartNumber(int partNumber)
@@ -594,10 +642,12 @@ namespace Amazon.S3.Model
         #region FirstByte
 
         /// <summary>
-        /// Gets and sets the firstByte property.  This property contains the location of the first 
-        /// byte in the range if only a portion of the source object is to be copied as the part.  
-        /// The LastByte property must also be set or this value will be ignored.
+        /// The location of the first byte in the range if only a portion of the 
+        /// source object is to be copied as the part. 
         /// </summary>
+        /// <remarks>
+        /// The LastByte property must also be set or this value will be ignored.
+        /// </remarks>
         public long FirstByte
         {
             get { return this.firstByte.GetValueOrDefault(); }
@@ -605,10 +655,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the firstByte property.  This property contains the location of the first 
-        /// byte in the range if only a portion of the source object is to be copied as the part.
-        /// The LastByte property must also be set or this value will be ignored.
+        /// Sets the location of the first byte in the range if only a portion of the 
+        /// source object is to be copied as the part. 
         /// </summary>
+        /// <remarks>
+        /// The LastByte property must also be set or this value will be ignored.
+        /// </remarks>
         /// <param name="firstByte">The value to set the FirstByte property too</param>
         /// <returns>this instance</returns>
         public CopyPartRequest WithFirstByte(long firstByte)
@@ -631,10 +683,12 @@ namespace Amazon.S3.Model
         #region LastByte
 
         /// <summary>
-        /// Gets and sets the lastByte property.  This property contains the location of the last 
-        /// byte in the range if only a portion of the source object is to be copied as the part.  
-        /// The FirstByte property must also be set or this value will be ignored.
+        /// The location of the last byte in the range if only a portion of the 
+        /// source object is to be copied as the part.  
         /// </summary>
+        /// <remarks>
+        /// The FirstByte property must also be set or this value will be ignored.
+        /// </remarks>
         public long LastByte
         {
             get { return this.lastByte.GetValueOrDefault(); }
@@ -642,10 +696,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the lastByte property.  This property contains the location of the last 
-        /// byte in the range if only a portion of the source object is to be copied as the part.  
-        /// The FirstByte property must also be set or this value will be ignored.
+        /// The location of the last byte in the range if only a portion of the 
+        /// source object is to be copied as the part.  
         /// </summary>
+        /// <remarks>
+        /// The FirstByte property must also be set or this value will be ignored.
+        /// </remarks>
         /// <param name="lastByte">The value to set the LastByte property to</param>
         /// <returns>this instance</returns>
         public CopyPartRequest WithLastByte(long lastByte)
@@ -668,10 +724,12 @@ namespace Amazon.S3.Model
         #region ServerSideEncryption
 
         /// <summary>
-        /// Gets and sets the ServerSideEncryptionMethod property.
-        /// Specifies the encryption used on the server to
-        /// store the content.
-        /// Default is None.
+        /// <para>
+        /// Specifies the encryption to be used on the server for the new object.
+        /// </para>
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -680,16 +738,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ServerSideEncryptionMethod property for this request.
-        /// Specifies the encryption used on the server to
-        /// store the content.
+        /// <para>
+        /// Specifies the encryption to be used on the server for the new object.
+        /// </para>
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
-        /// <param name="serverSideEncryption">
-        /// The value of the ServerSideEncryptionMethod to set.
-        /// </param>
-        /// <returns>
-        /// The response with the ServerSideEncryptionMethod set.
-        /// </returns>
+        /// <param name="serverSideEncryption">ServerSideEncryptionMethod for the new object</param>
+        /// <returns>The response with the ServerSideEncryptionMethod set.</returns>
         public CopyPartRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod serverSideEncryption)
         {
             this.serverSideEncryption = serverSideEncryption;

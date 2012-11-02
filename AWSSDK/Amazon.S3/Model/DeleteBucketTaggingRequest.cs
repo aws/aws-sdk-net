@@ -31,15 +31,18 @@ using System.Xml;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DeleteBucketTaggingRequest contains the parameters used for the DeleteBucketTagging operation.
-    /// <br />Required Parameters: BucketName
+    /// Removes a tag set from the specified bucket.
     /// </summary>
+    /// <remarks>
+    /// To use this operation, you must have permission to perform the s3:PutBucketTagging action. 
+    /// By default, the bucket owner has this permission and can grant this permission to others.
+    /// </remarks>
     public class DeleteBucketTaggingRequest : S3Request
     {
         private string bucketName;
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket on which the tag set is to be removed.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -49,9 +52,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
+        /// Sets the name of the bucket on which the tag set is to be removed.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public DeleteBucketTaggingRequest WithBucketName(string bucketName)
         {

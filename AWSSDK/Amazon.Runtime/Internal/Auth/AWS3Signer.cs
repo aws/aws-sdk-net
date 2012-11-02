@@ -125,9 +125,8 @@ namespace Amazon.Runtime.Internal.Auth
                     + GetCanonicalizedQueryString(request.Parameters) + "\n"
                     + GetCanonicalizedHeadersForStringToSign(request) + "\n"
                     + GetRequestPayload(request);
-                
-                HashAlgorithm mac = HashAlgorithm.Create("SHA-256");
-                bytesToSign = mac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
+
+                bytesToSign = CanonicalizationHash.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
             }
 
             string signature = ComputeHash(bytesToSign, awsSecretAccessKey, secureKey, algorithm);

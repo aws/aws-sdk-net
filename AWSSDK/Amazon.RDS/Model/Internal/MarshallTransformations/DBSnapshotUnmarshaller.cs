@@ -123,6 +123,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         dBSnapshot.SnapshotType = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("Iops", targetDepth))
+                    {
+                        dBSnapshot.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

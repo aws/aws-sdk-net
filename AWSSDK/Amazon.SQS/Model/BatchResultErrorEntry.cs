@@ -27,8 +27,7 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// This is used in the responses of batch API to give a detailed description
-    /// of the result of an operation on each entry in the request.
+    /// A detailed description of an individual entry in the result of a batch operation.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class BatchResultErrorEntry
@@ -39,7 +38,7 @@ namespace Amazon.SQS.Model
         private string senderFaultField;
 
         /// <summary>
-        /// Gets and sets the id of an entry in a batch request.
+        /// The Id of an entry in a batch request.
         /// </summary>
         public string Id
         {
@@ -57,7 +56,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Code property.  Code is an error code representing why the operation failed on this entry.
+        /// The error code representing why the operation failed on this entry.
         /// </summary>
         public string Code
         {
@@ -75,7 +74,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Message property.  A message explaining why the operation failed on this entry.
+        /// The message explaining why the operation failed on this entry.
         /// </summary>
         public string Message
         {
@@ -93,7 +92,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the SenderFault property.  SenderFault indicates whether the error happened due to the sender's fault.
+        /// Indicates whether the error happened due to the sender's fault.
         /// </summary>
         public string SenderFault
         {

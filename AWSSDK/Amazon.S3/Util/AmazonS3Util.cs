@@ -464,6 +464,12 @@ namespace Amazon.S3.Util
 
             HttpWebRequest httpRequest = WebRequest.Create(url) as HttpWebRequest;
             httpRequest.Method = "HEAD";
+            AmazonS3Client concreteClient = s3Client as AmazonS3Client;
+            if (concreteClient != null)
+            {
+                concreteClient.ConfigureProxy(httpRequest);
+            }
+
             try
             {
                 HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse;

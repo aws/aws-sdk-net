@@ -25,12 +25,22 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DeleteObjectRequest contains the parameters used for the DeleteObject operation.
-    /// <br />Required Parameters: BucketName, Key
-    /// <br />The MfaCodes property is required if the bucket containing this object has been
-    /// configured with the EnableMfaDelete property. For more information, please see:
-    /// <see cref="P:Amazon.S3.Model.S3BucketVersioningConfig.EnableMfaDelete"/>.
+    /// The DELETE operation removes the null version (if there is one) of an object and inserts a delete marker, which 
+    /// becomes the latest version of the object.
     /// </summary>
+    /// <remarks>
+    /// <para>
+    /// To remove a specific version, you must be the bucket owner and you must use the versionId subresource. 
+    /// Using this subresource permanently deletes the version.
+    /// </para>
+    /// <para>
+    /// If the object you want to delete is in a bucket where the bucket versioning configuration is MFA Delete enabled, 
+    /// you must include specify the MFA serial number and value in the request.
+    /// </para>
+    /// <para>
+    /// If there isn't a null version, Amazon S3 does not remove any objects.     
+    /// </para>
+    /// </remarks>
     public class DeleteObjectRequest : S3Request
     {
         #region Private Members
@@ -44,7 +54,7 @@ namespace Amazon.S3.Model
 
         #region BucketName
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket containing the object to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -54,11 +64,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket that contains the S3 Object
-        /// you want to delete.
+        /// Sets the name of the bucket containing the object to delete.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public DeleteObjectRequest WithBucketName(string bucketName)
         {
@@ -78,7 +86,7 @@ namespace Amazon.S3.Model
 
         #region Key
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key identifying the object to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
@@ -88,10 +96,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
-        /// This is the Key for the S3 Object you want to delete.
+        /// Sets the key identifying the object to delete.
         /// </summary>
-        /// <param name="key">The value that Key is set to</param>
+        /// <param name="key">Object key</param>
         /// <returns>the request with the Key set</returns>
         public DeleteObjectRequest WithKey(string key)
         {
@@ -113,7 +120,7 @@ namespace Amazon.S3.Model
         #region VersionId
 
         /// <summary>
-        /// Gets and sets the VersionId property.
+        /// The identifier for the specific version of the object to be deleted, if required.
         /// </summary>
         [XmlElementAttribute(ElementName = "VersionId")]
         public string VersionId
@@ -123,10 +130,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the VersionId property for this request.
-        /// This is the VersionId for the S3 Object you want to Delete.
+        /// Sets the identifier for the specific version of the object to be deleted, if required.
         /// </summary>
-        /// <param name="versionId">The value that VersionId is set to</param>
+        /// <param name="versionId">Version ID</param>
         /// <returns>this instance</returns>
         public DeleteObjectRequest WithVersionId(string versionId)
         {
@@ -148,16 +154,15 @@ namespace Amazon.S3.Model
         #region MfaCodes
 
         /// <summary>
-        /// Gets and Sets the MfaCodes property.
-        /// The MfaCodes Tuple associates the Serial Number
-        /// and the current Token/Code displayed on the
-        /// Multi-Factor Authentication device associated with
-        /// your AWS Account. This is a required property for this
-        /// request if:<br />
+        /// The MfaCodes Tuple associates the Serial Number and the current Token/Code displayed on the
+        /// Multi-Factor Authentication device associated with your AWS Account. 
+        /// </summary>
+        /// <remarks>
+        /// This is a required property for this request if:<br />
         /// 1. EnableMfaDelete was configured on the bucket
         /// containing this object's version.<br />
         /// 2. You are deleting an object's version
-        /// </summary>
+        /// </remarks>
         [XmlIgnore]
         public Tuple<string, string> MfaCodes
         {
@@ -173,16 +178,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the MfaCodes property.
-        /// The MfaCodes Tuple associates the Serial Number
-        /// and the current Token/Code displayed on the
-        /// Multi-Factor Authentication device associated with
-        /// your AWS Account. This is a required property for this
-        /// request if:<br />
+        /// The MfaCodes Tuple associates the Serial Number and the current Token/Code displayed on the
+        /// Multi-Factor Authentication device associated with your AWS Account. 
+        /// </summary>
+        /// <remarks>
+        /// This is a required property for this request if:<br />
         /// 1. EnableMfaDelete was configured on the bucket
         /// containing this object's version.<br />
         /// 2. You are deleting an object's version
-        /// </summary>
+        /// </remarks>
         /// <param name="serial">Serial number of the authentication device</param>
         /// <param name="token">Token displayed on the authentication device</param>
         /// <returns>this instance</returns>
@@ -204,6 +208,5 @@ namespace Amazon.S3.Model
         }
 
         #endregion
-
     }
 }

@@ -35,16 +35,21 @@ namespace Amazon.S3
         #region GetPreSignedURL
 
         /// <summary>
-        /// The GetPreSignedURL operations creates a signed http request.
-        /// Query string authentication is useful for giving HTTP or browser
-        /// access to resources that would normally require authentication.
-        /// When using query string authentication, you create a query,
+        /// Create a signed URL allowing access to a resource that would 
+        /// usually require authentication.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// When using query string authentication you create a query,
         /// specify an expiration time for the query, sign it with your
         /// signature, place the data in an HTTP request, and distribute
         /// the request to a user or embed the request in a web page.
+        /// </para>
+        /// <para>
         /// A PreSigned URL can be generated for GET, PUT and HEAD
         /// operations on your bucket, keys, and versions.
-        /// </summary>
+        /// </para>
+        /// </remarks>
         /// <param name="request">The GetPreSignedUrlRequest that defines the
         /// parameters of the operation.</param>
         /// <returns>A string that is the signed http request.</returns>
@@ -55,9 +60,9 @@ namespace Amazon.S3
         #endregion
 
         #region ListBuckets
+
         /// <summary>
-        /// The ListBuckets operation returns a list of all of the buckets
-        /// owned by the authenticated sender of the request.
+        /// Return a list of all of the buckets owned by the authenticated sender of the request.
         /// </summary>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
@@ -66,8 +71,8 @@ namespace Amazon.S3
         ListBucketsResponse ListBuckets();
 
         /// <summary>
-        /// The ListBuckets operation returns a list of all of the buckets
-        /// owned by the authenticated sender of the request.
+        /// Initiates the asynchronous execution of the ListBuckets operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListBuckets"/>
         /// </summary>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
@@ -76,13 +81,16 @@ namespace Amazon.S3
         IAsyncResult BeginListBuckets(AsyncCallback callback, object state);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListBuckets operation. 
-        /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
+        /// Initiates the asynchronous execution of the ListBuckets operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListBuckets"/>
         /// </summary>
         /// <param name="request">The ListBucketsRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <param name="state">
+        /// A user-defined state object that is passed to the callback procedure. Retrieve this object from 
+        /// within the callback procedure using the AsyncState property.
+        /// </param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
@@ -92,6 +100,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the ListBuckets operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListBuckets"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBuckets.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -101,8 +110,7 @@ namespace Amazon.S3
         ListBucketsResponse EndListBuckets(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The ListBuckets operation returns a list of all of the buckets
-        /// owned by the authenticated sender of the request.
+        /// Return a list of all of the buckets owned by the authenticated sender of the request.
         /// </summary>
         /// <param name="request">The ListBucketsRequest that defines the parameters
         /// of this operation</param>
@@ -117,8 +125,8 @@ namespace Amazon.S3
         #region GetBucketLocation
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketLocation operation. 
-        /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
+        /// Initiates the asynchronous execution of the GetBucketLocation operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketLocation"/>
         /// </summary>
         /// <param name="request">The GetBucketLocationRequest that defines the parameters of
         /// the operation.</param>
@@ -133,6 +141,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetBucketLocation operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketLocation"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLocation.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -142,11 +151,12 @@ namespace Amazon.S3
         GetBucketLocationResponse EndGetBucketLocation(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The GetBucketLocation operation takes in a bucket's name and lists the location
-        /// of the bucket. This information can be used to determine the bucket's geographical
-        /// location.
-        /// To determine the location of a bucket, you must be the bucket owner.
+        /// Returns the location of a specified bucket. 
         /// </summary>
+        /// <remarks>
+        /// The information returned can be used to determine the bucket's geographical location.
+        /// To determine the location of a bucket, you must be the bucket owner.
+        /// </remarks>
         /// <param name="request">The GetBucketLocationRequest that defines the parameters of the operation.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
@@ -159,8 +169,8 @@ namespace Amazon.S3
         #region GetBucketLogging
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketLogging operation. 
-        /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
+        /// Initiates the asynchronous execution of the GetBucketLogging operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketLogging"/>
         /// </summary>
         /// <param name="request">The GetBucketLoggingRequest that defines the parameters of
         /// the operation.</param>
@@ -175,6 +185,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetBucketLogging operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketLogging"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketLogging.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -184,10 +195,11 @@ namespace Amazon.S3
         GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The GetBucketLogging operating gets the logging status for the bucket specified.
-        /// For more information about S3Bucket Logging
-        /// see <see href="http://docs.amazonwebservices.com/AmazonS3/latest/ServerLogs.html" />
+        /// Gets the logging status for the specified bucket.
         /// </summary>
+        /// <remarks>
+        /// For more information about S3Bucket Logging see <see href="http://docs.amazonwebservices.com/AmazonS3/latest/ServerLogs.html" />
+        /// </remarks>
         /// <param name="request">The GetBucketLoggingRequest that defines
         /// the parameters of the operation.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -201,7 +213,7 @@ namespace Amazon.S3
         #region EnableBucketLogging
 
         /// <summary>
-        /// Initiates the asynchronous execution of the EnableBucketLogging operation. 
+        /// Initiates the asynchronous execution of the EnableBucketLogging operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
         /// </summary>
         /// <param name="request">The EnableBucketLoggingRequest that defines the parameters of
@@ -217,6 +229,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the EnableBucketLogging operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.EnableBucketLogging"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableBucketLogging.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -226,23 +239,18 @@ namespace Amazon.S3
         EnableBucketLoggingResponse EndEnableBucketLogging(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The EnableBucketLogging operation will turn on bucket logging for the bucket
-        /// specified in the request.
-        ///
+        /// Turn on bucket logging for a specified bucket.
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// An Amazon S3 bucket can be configured to create access log records for the
         /// requests made against it. An access log record contains details about the
         /// request such as the request type, the resource with which the request worked,
         /// and the time and date that the request was processed. Server access logs are
         /// useful for many applications, because they give bucket owners insight into
         /// the nature of requests made by clients not under their control.
-        /// </summary>
-        /// <param name="request">The EnableBucketLoggingRequest that defines the parameters of
-        /// the operation.</param>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>Returns a EnableBucketLoggingResponse from S3.</returns>
-        /// <remarks>
+        /// </para>
+        /// <para>
         /// Changes to the logging status for a bucket are visible in the configuration API immediately,
         /// but they take time to actually affect the delivery of log files. For example, if you enable
         /// logging for a bucket, some requests made in the following hour might be logged, while others
@@ -250,7 +258,14 @@ namespace Amazon.S3
         /// logs for the next hour might continue to be delivered to bucket A, while others might be delivered
         /// to the new target bucket B. In all cases, the new settings will eventually take effect without any
         /// further action on your part.
+        /// </para>
         /// </remarks>
+        /// <param name="request">The EnableBucketLoggingRequest that defines the parameters of
+        /// the operation.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a EnableBucketLoggingResponse from S3.</returns>
         EnableBucketLoggingResponse EnableBucketLogging(EnableBucketLoggingRequest request);
 
         #endregion
@@ -258,7 +273,7 @@ namespace Amazon.S3
         #region DisableBucketLogging
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DisableBucketLogging operation. 
+        /// Initiates the asynchronous execution of the DisableBucketLogging operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.DisableBucketLogging"/>
         /// </summary>
         /// <param name="request">The DisableBucketLoggingRequest that defines the parameters of
@@ -274,6 +289,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the DisableBucketLogging operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DisableBucketLogging"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableBucketLogging.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -283,16 +299,16 @@ namespace Amazon.S3
         DisableBucketLoggingResponse EndDisableBucketLogging(IAsyncResult asyncResult);
         
         /// <summary>
-        /// The DisableBucketLogging will turn off bucket logging for the bucket specified
-        /// in the request.
-        ///
+        /// Turn off logging for a specified bucket.
+        /// </summary>
+        /// <remarks>
         /// An Amazon S3 bucket can be configured to create access log records for the
         /// requests made against it. An access log record contains details about the
         /// request such as the request type, the resource with which the request worked,
         /// and the time and date that the request was processed. Server access logs are
         /// useful for many applications, because they give bucket owners insight into
         /// the nature of requests made by clients not under their control.
-        /// </summary>
+        /// </remarks>
         /// <param name="request">
         /// The DisableBucketLoggingRequest that defines the parameters of the operation.
         /// </param>
@@ -307,7 +323,7 @@ namespace Amazon.S3
         #region GetBucketVersioning
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketVersioning operation. 
+        /// Initiates the asynchronous execution of the GetBucketVersioning operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketVersioning"/>
         /// </summary>
         /// <param name="request">The GetBucketVersioningRequest that defines the parameters of
@@ -323,6 +339,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetBucketVersioning operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketVersioning"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketVersioning.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -332,8 +349,7 @@ namespace Amazon.S3
         GetBucketVersioningResponse EndGetBucketVersioning(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The GetBucketVersioning operation takes in a bucket's name and get the versioning
-        /// status of the bucket.
+        /// Returns the versioning status of a bucket.
         /// </summary>
         /// <param name="request">The GetBucketVersioningRequest that defines the parameters of the operation.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -348,7 +364,7 @@ namespace Amazon.S3
         #region SetBucketVersioning
 
         /// <summary>
-        /// Initiates the asynchronous execution of the SetBucketVersioning operation. 
+        /// Initiates the asynchronous execution of the SetBucketVersioning operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.SetBucketVersioning"/>
         /// </summary>
         /// <param name="request">The SetBucketVersioningRequest that defines the parameters of
@@ -364,6 +380,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the SetBucketVersioning operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.SetBucketVersioning"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetBucketVersioning.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -373,12 +390,11 @@ namespace Amazon.S3
         SetBucketVersioningResponse EndSetBucketVersioning(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The SetBucketVersioning operation takes in a bucket's name and the versioning
-        /// status you want to set on the bucket.
-        /// <para>Valid values for the Versioning Status are Enabled and Suspended.
-        /// Once Versioning has been "Enabled" on a bucket, it can be "Suspended"
-        /// but cannot be switched "Off".</para>
+        /// Enable or suspend versioning on a bucket.
         /// </summary>
+        /// <remarks>
+        /// Once versioning has been "Enabled" on a bucket, it can be "Suspended" but cannot be switched "Off".
+        /// </remarks>
         /// <param name="request">The SetBucketVersioningRequest that defines the parameters of the operation.</param>
         /// <exception cref="T:System.ArgumentException">
         /// If SetBucketVersioningRequest.VersioningStatus has the value S3BucketVersioningStatus.Off
@@ -387,7 +403,6 @@ namespace Amazon.S3
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a SetBucketVersioningResponse from S3.</returns>
-        /// <seealso cref="T:Amazon.S3.Model.S3BucketVersioningConfig"/>
         SetBucketVersioningResponse SetBucketVersioning(SetBucketVersioningRequest request);
 
         #endregion
@@ -395,7 +410,7 @@ namespace Amazon.S3
         #region GetBucketPolicy
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetBucketPolicy operation. 
+        /// Initiates the asynchronous execution of the GetBucketPolicy operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketPolicy"/>
         /// </summary>
         /// <param name="request">The GetBucketPolicyRequest that defines the parameters of
@@ -411,6 +426,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetBucketPolicy operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketPolicy"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketPolicy.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -420,9 +436,11 @@ namespace Amazon.S3
         GetBucketPolicyResponse EndGetBucketPolicy(IAsyncResult asyncResult);
 
         /// <summary>
+        /// Retrieves the policy for a specified bucket. 
+        /// </summary>
+        /// <remarks>
         /// <para>
-        /// Retrieves the policy for the specified bucket. Only the owner of the
-        /// bucket can retrieve the policy. If no policy has been set for the bucket,
+        /// Only the owner of the bucket can retrieve the policy. If no policy has been set for the bucket,
         /// then an error will be thrown.
         /// </para>
         /// <para>
@@ -431,10 +449,9 @@ namespace Amazon.S3
         /// can be specified per-bucket.
         /// </para>
         /// <para>
-        /// For more information on forming bucket polices, 
-        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// For more information on forming bucket polices, see: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The GetBucketPolicyRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a GetBucketPolicyResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -447,7 +464,7 @@ namespace Amazon.S3
         #region PutBucketPolicy
 
         /// <summary>
-        /// Initiates the asynchronous execution of the PutBucketPolicy operation. 
+        /// Initiates the asynchronous execution of the PutBucketPolicy operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.PutBucketPolicy"/>
         /// </summary>
         /// <param name="request">The PutBucketPolicyRequest that defines the parameters of
@@ -463,6 +480,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the PutBucketPolicy operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutBucketPolicy"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketPolicy.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -472,6 +490,9 @@ namespace Amazon.S3
         PutBucketPolicyResponse EndPutBucketPolicy(IAsyncResult asyncResult);
 
         /// <summary>
+        /// Set the policy associated with a specified bucket.
+        /// </summary>
+        /// <remarks>
         /// <para>
         /// Sets the policy associated with the specified bucket. Only the owner of
         /// the bucket can set a bucket policy. If a policy already exists for the
@@ -483,10 +504,9 @@ namespace Amazon.S3
         /// may be specified per-bucket.
         /// </para>
         /// <para>
-        /// For more information on forming bucket polices, 
-        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// For more information on forming bucket polices, see: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The PutBucketPolicyRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a PutBucketPolicyResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -499,7 +519,7 @@ namespace Amazon.S3
         #region DeleteBucketPolicy
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteBucketPolicy operation. 
+        /// Initiates the asynchronous execution of the DeleteBucketPolicy operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteBucketPolicy"/>
         /// </summary>
         /// <param name="request">The DeleteBucketPolicyRequest that defines the parameters of
@@ -515,6 +535,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteBucketPolicy operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteBucketPolicy"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketPolicy.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -524,12 +545,11 @@ namespace Amazon.S3
         DeleteBucketPolicyResponse EndDeleteBucketPolicy(IAsyncResult asyncResult);
 
         /// <summary>
+        /// Deletes the policy associated with the specified bucket.
+        /// </summary>
+        /// <remarks>
         /// <para>
-        /// Deletes the policy associated with the specified bucket. Only the owner
-        /// of the bucket can delete the bucket policy.
-        /// </para>
-        /// <para>
-        /// If you delete a policy that does not exist, Amazon S3 will return a
+        ///  Only the owner of the bucket can delete the bucket policy. If you delete a policy that does not exist, Amazon S3 will return a
         /// success (not an error message).
         /// </para>
         /// <para>
@@ -538,10 +558,9 @@ namespace Amazon.S3
         /// may be specified per-bucket.
         /// </para>
         /// <para>
-        /// For more information on forming bucket polices, 
-        /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
+        /// For more information on forming bucket polices, see: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The DeleteBucketPolicyRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a DeleteBucketPolicyResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -554,7 +573,7 @@ namespace Amazon.S3
         #region SetNotificationConfiguration
 
         /// <summary>
-        /// Initiates the asynchronous execution of the SetNotificationConfiguration operation. 
+        /// Initiates the asynchronous execution of the SetNotificationConfiguration operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.SetNotificationConfiguration"/>
         /// </summary>
         /// <param name="request">The SetNotificationConfigurationRequest that defines the parameters of
@@ -570,6 +589,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the SetNotificationConfiguration operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.SetNotificationConfiguration"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetNotificationConfiguration.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -579,6 +599,9 @@ namespace Amazon.S3
         SetNotificationConfigurationResponse EndSetNotificationConfiguration(IAsyncResult asyncResult);
 
         /// <summary>
+        /// Set or change the configuration of notifications for the specified bucket.
+        /// </summary>
+        /// <remarks>
         /// <para>
         /// The notification configuration of a bucket provides near realtime notifications
         /// of events the user is interested in, using SNS as the delivery service.
@@ -594,7 +617,7 @@ namespace Amazon.S3
         /// S3 is eventually consistent. It may take time for the notification status
         /// of a bucket to be propagated throughout the system.
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The SetNotificationConfigurationRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a SetNotificationConfigurationResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -607,7 +630,7 @@ namespace Amazon.S3
         #region GetNotificationConfiguration
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetNotificationConfiguration operation. 
+        /// Initiates the asynchronous execution of the GetNotificationConfiguration operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.GetNotificationConfiguration"/>
         /// </summary>
         /// <param name="request">The GetNotificationConfigurationRequest that defines the parameters of
@@ -623,6 +646,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetNotificationConfiguration operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetNotificationConfiguration"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNotificationConfiguration.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -632,11 +656,11 @@ namespace Amazon.S3
         GetNotificationConfigurationResponse EndGetNotificationConfiguration(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>
-        /// Retrieves the notification configuration for the specified bucket. Only the owner of the
-        /// bucket can retrieve the notification configuration.
-        /// </para>
+        /// Retrieve the notification configuration for the specified bucket.
         /// </summary>
+        /// <remarks>
+        /// Only the owner of the bucket can retrieve the notification configuration.
+        /// </remarks>
         /// <param name="request">The GetNotificationConfigurationRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a GetNotificationConfigurationResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -649,7 +673,7 @@ namespace Amazon.S3
         #region ListObjects
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListObjects operation. 
+        /// Initiates the asynchronous execution of the ListObjects operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.ListObjects"/>
         /// </summary>
         /// <param name="request">The ListObjectsRequest that defines the parameters of
@@ -665,6 +689,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the ListObjects operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListObjects"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjects.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -674,11 +699,27 @@ namespace Amazon.S3
         ListObjectsResponse EndListObjects(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The ListObjects operation lists the objects/keys in a bucket ordered
-        /// lexicographically (from a-Z). The list can be filtered via the Marker
-        /// property of the ListObjectsRequest.
-        /// In order to List Objects, you must have READ access to the bucket.
+        /// Return the set of objects/keys in the specified bucket, ordered lexicographically (from a-Z).
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// Since buckets can contain a virtually unlimited number of objects, the complete
+        /// results of a list query can be extremely large. To manage large result sets,
+        /// Amazon S3 uses pagination to split them into multiple responses. Callers should
+        /// always check the <see cref="P:Amazon.S3.Model.ListObjectsResponse.IsTruncated" />
+        /// to see if the returned listing is complete, or if callers need to make additional 
+        /// calls to get more results. The marker parameter allows callers to specify where to 
+        /// start the object listing.
+        /// </para>
+        /// <para>
+        /// List performance is not substantially affected by the total number of keys in your
+        /// bucket, nor by the presence or absence of any additional query parameters.
+        /// The list can be filtered via the Marker property of the ListObjectsRequest.
+        /// </para>
+        /// <para>
+        /// In order to List Objects, you must have READ access to the bucket.
+        /// </para>
+        /// </remarks>
         /// <param name="request">
         /// The ListObjectsRequest that defines the parameters of the operation.
         /// </param>
@@ -687,17 +728,6 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a ListObjectsResponse from S3 with a list of S3Objects,
         /// headers and request parameters used to filter the list.</returns>
-        /// <remarks>
-        /// Since buckets can contain a virtually unlimited number of objects, the complete
-        /// results of a list query can be extremely large. To manage large result sets,
-        /// Amazon S3 uses pagination to split them into multiple responses. Callers should
-        /// always check the <see cref="P:Amazon.S3.Model.ListObjectsResponse.IsTruncated" />
-        /// to see if the returned listing
-        /// is complete, or if callers need to make additional calls to get more results.
-        /// The marker parameter allows callers to specify where to start the object listing.
-        /// List performance is not substantially affected by the total number of keys in your
-        /// bucket, nor by the presence or absence of any additional query parameters.
-        /// </remarks>
         ListObjectsResponse ListObjects(ListObjectsRequest request);
 
         #endregion
@@ -705,7 +735,7 @@ namespace Amazon.S3
         #region ListVersions
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListVersions operation. 
+        /// Initiates the asynchronous execution of the ListVersions operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.ListVersions"/>
         /// </summary>
         /// <param name="request">The ListVersionsRequest that defines the parameters of
@@ -721,6 +751,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the ListVersions operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListVersions"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVersions.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -730,25 +761,10 @@ namespace Amazon.S3
         ListVersionsResponse EndListVersions(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The ListVersions operation returns a list of object versions in the bucket
-        /// specified ordered first by key and then by version. Keys are sorted lexicographically
-        /// (i.e. alphabetically from a-Z); versions are sorted from most to least recent.
-        /// Both versions with data and delete markers are included in the results.
-        /// <para>
-        /// In order to List Versions, you must have READ access to the bucket.
-        /// When the list is not filtered by a specific key, only the metadata
-        /// associated with the latest version of objects in the bucket is returned.
-        /// The use of KeyMarker and VersionIdMarker allow you to filter results.</para>
+        /// Returns the set of versions of objects in the specified bucket.
         /// </summary>
-        /// <param name="request">
-        /// The ListVersionsRequest that defines the parameters of the operation.
-        /// </param>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>Returns a ListVersionsResponse from S3 that contains a list of
-        /// versions along with metadata and the original request parameters.</returns>
         /// <remarks>
+        /// <para>
         /// Since buckets can contain a virtually unlimited number of objects, the complete
         /// results of a list query can be extremely large. To manage large result sets,
         /// Amazon S3 uses pagination to split them into multiple responses. Callers should
@@ -757,12 +773,32 @@ namespace Amazon.S3
         /// is complete, or if callers need to make additional calls to get more results.
         /// The KeyMarker and VersionIdMarker parameters of the ListVersionsRequest object
         /// allow callers to specify where to start the version listing. In order to enable
-        /// versioning on a bucket, please refer to the
-        /// <see cref="M:Amazon.S3.AmazonS3Client.SetBucketVersioning">SetBucketVersioning</see>
+        /// versioning on a bucket, please refer to the <see cref="M:Amazon.S3.AmazonS3Client.SetBucketVersioning">SetBucketVersioning</see>
         /// operation's details.
-        /// <br />List performance is not substantially affected by the total number of keys in your
+        /// </para>
+        /// <para>
+        /// List performance is not substantially affected by the total number of keys in your
         /// bucket, nor by the presence or absence of any additional query parameters.
+        /// The ListVersions operation returns a list of object versions in the bucket
+        /// specified ordered first by key and then by version. Keys are sorted lexicographically
+        /// (i.e. alphabetically from a-Z); versions are sorted from most to least recent.
+        /// Both versions with data and delete markers are included in the results.
+        /// </para>
+        /// <para>
+        /// In order to List Versions, you must have READ access to the bucket.
+        /// When the list is not filtered by a specific key, only the metadata
+        /// associated with the latest version of objects in the bucket is returned.
+        /// The use of KeyMarker and VersionIdMarker allow you to filter results.
+        /// </para>
         /// </remarks>
+        /// <param name="request">
+        /// The ListVersionsRequest that defines the parameters of the operation.
+        /// </param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a ListVersionsResponse from S3 that contains a list of
+        /// versions along with metadata and the original request parameters.</returns>
         ListVersionsResponse ListVersions(ListVersionsRequest request);
 
         #endregion
@@ -770,7 +806,7 @@ namespace Amazon.S3
         #region GetACL
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetACL operation. 
+        /// Initiates the asynchronous execution of the GetACL operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.GetACL"/>
         /// </summary>
         /// <param name="request">The GetACLRequest that defines the parameters of
@@ -786,6 +822,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetACL operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetACL"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetACL.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -795,11 +832,13 @@ namespace Amazon.S3
         GetACLResponse EndGetACL(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The GetACL operation gets the S3AccessControlList for a given bucket or object.
+        /// Returns the S3AccessControlList for the specified bucket or object.
+        /// </summary>
+        /// <remarks>
         /// Each bucket and object in Amazon S3 has an ACL that defines its access control
         /// policy, which is a list of grants. A grant consists of one grantee and one permission.
         /// ACLs only grant permissions; they do not deny them.
-        /// </summary>
+        /// </remarks>
         /// <param name="request">
         /// The GetACLRequest that defines the parameters of the operation.
         /// </param>
@@ -815,7 +854,7 @@ namespace Amazon.S3
         #region SetACL
 
         /// <summary>
-        /// Initiates the asynchronous execution of the SetACL operation. 
+        /// Initiates the asynchronous execution of the SetACL operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.SetACL"/>
         /// </summary>
         /// <param name="request">The SetACLRequest that defines the parameters of
@@ -831,6 +870,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the SetACL operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.SetACL"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetACL.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -840,13 +880,17 @@ namespace Amazon.S3
         SetACLResponse EndSetACL(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The SetACL operation gets the S3AccessControlList for a given bucket or object.
+        /// Sets an S3AccessControlList on the specified bucket or object.
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// Each bucket and object in Amazon S3 has an ACL that defines its access control
         /// policy, which is a list of grants. A grant consists of one grantee and one permission.
         /// ACLs only grant permissions; they do not deny them.
-        /// </summary>
-        /// <remarks>
+        /// </para>
+        /// <para>
         /// Often used ACLs are defined in the S3CannedACL enumeration.
+        /// </para>
         /// </remarks>
         /// <param name="request">
         /// The SetACLRequest that defines the parameters of the operation.
@@ -863,7 +907,7 @@ namespace Amazon.S3
         #region PutBucket
 
         /// <summary>
-        /// Initiates the asynchronous execution of the PutBucket operation. 
+        /// Initiates the asynchronous execution of the PutBucket operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.PutBucket"/>
         /// </summary>
         /// <param name="request">The PutBucketRequest that defines the parameters of
@@ -879,6 +923,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the PutBucket operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutBucket"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucket.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -888,22 +933,18 @@ namespace Amazon.S3
         PutBucketResponse EndPutBucket(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The PutBucket operation creates a new S3 Bucket.
+        /// Create a new S3 bucket.
+        /// <seealso cref="T:Amazon.S3.Model.S3Region"/>
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// Depending on your latency and legal requirements, you can specify a location
         /// constraint that will affect where your data physically resides.
-        /// </summary>
-        /// <param name="request">
-        /// The PutBucketRequest that defines the parameters of the operation.
-        /// </param>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>Returns a PutBucketResponse from S3.</returns>
-        /// <remarks>
         /// Every object stored in Amazon S3 is contained in a bucket. Buckets
         /// partition the namespace of objects stored in Amazon S3 at the top level.
         /// Within a bucket, you can use any names for your objects, but bucket names
         /// must be unique across all of Amazon S3.
+        /// </para>
         /// <para>
         /// Buckets are similar to Internet domain names. Just as Amazon is the only owner
         /// of the domain name Amazon.com, only one person or organization can own a bucket
@@ -912,7 +953,9 @@ namespace Amazon.S3
         /// of s3.amazonaws.com. Objects stored in Amazon S3 are addressable using the REST API
         /// under the domain bucketname.s3.amazonaws.com. For example, the object homepage.html
         /// stored in the Amazon S3 bucket mybucket can be addressed as
-        /// http://mybucket.s3.amazonaws.com/homepage.html.</para>
+        /// http://mybucket.s3.amazonaws.com/homepage.html.
+        /// </para>
+        /// <para>
         /// To conform with DNS requirements, the following constraints apply:
         /// <list type="bullet">
         /// <item>Bucket names should not contain underscores (_)</item>
@@ -923,11 +966,20 @@ namespace Amazon.S3
         ///   (e.g., "my-.bucket.com" and "my.-bucket" are invalid)</item>
         /// <item>Bucket names cannot contain uppercase characters</item>
         /// </list>
+        /// </para>
+        /// <para>
         /// There is no limit to the number of objects that can be stored in a bucket and no
         /// variation in performance when using many buckets or just a few. You can store all
         /// of your objects in a single bucket or organize them across several buckets.
+        /// </para>
         /// </remarks>
-        /// <seealso cref="T:Amazon.S3.Model.S3Region"/>
+        /// <param name="request">
+        /// The PutBucketRequest that defines the parameters of the operation.
+        /// </param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a PutBucketResponse from S3.</returns>
         PutBucketResponse PutBucket(PutBucketRequest request);
 
         #endregion
@@ -935,7 +987,7 @@ namespace Amazon.S3
         #region DeleteBucket
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteBucket operation. 
+        /// Initiates the asynchronous execution of the DeleteBucket operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteBucket"/>
         /// </summary>
         /// <param name="request">The DeleteBucketRequest that defines the parameters of
@@ -951,6 +1003,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteBucket operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteBucket"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucket.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -960,10 +1013,12 @@ namespace Amazon.S3
         DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The DeleteBucket operation deletes the bucket named in the request.
+        /// Deletes an S3 bucket.
+        /// </summary>
+        /// <remarks>
         /// All objects in the bucket must be deleted before the bucket itself can be deleted.
         /// Only the owner of a bucket can delete it, regardless of the bucket's access control policy.
-        /// </summary>
+        /// </remarks>
         /// <param name="request">
         /// The DeleteBucketRequest that defines the parameters of the operation.
         /// </param>
@@ -973,13 +1028,12 @@ namespace Amazon.S3
         /// <returns>Returns a DeleteBucketResponse from S3.</returns>
         DeleteBucketResponse DeleteBucket(DeleteBucketRequest request);
 
-
         #endregion
 
         #region GetObject
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetObject operation. 
+        /// Initiates the asynchronous execution of the GetObject operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.GetObject"/>
         /// </summary>
         /// <param name="request">The GetObjectRequest that defines the parameters of
@@ -995,6 +1049,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetObject operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetObject"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObject.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1004,21 +1059,19 @@ namespace Amazon.S3
         GetObjectResponse EndGetObject(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The GetObject operation fetches the most recent version of an S3 object
-        /// from the specified S3 bucket. You must have READ access to the object.
+        /// Fetches the most recent version of an S3 object.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// You must have READ access to the object.
+        /// </para>
+        /// <para>
         /// If READ access is granted to an anonymous user, an object can be retrieved
         /// without an authorization header. Providing a version-id for the object will
         /// fetch the specific version from S3 instead of the most recent one.
-        /// </summary>
-        /// <param name="request">
-        /// The GetObjectRequest that defines the parameters of the operation.
-        /// </param>
-        /// <exception cref="T:System.ArgumentNullException"></exception>
-        /// <exception cref="T:System.Net.WebException"></exception>
-        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        /// <returns>Returns a GetObjectResponse from S3.</returns>
-        /// <remarks>
-        /// Please wrap the response you get from calling GetObject in a using clause.
+        /// </para>
+        /// <para>
+        /// You should wrap the response you get from calling GetObject in a using clause.
         /// This ensures that all underlying IO resources allocated for the response
         /// are disposed once the response has been processed. This is one way to
         /// call GetObject:
@@ -1031,7 +1084,15 @@ namespace Amazon.S3
         /// </code>
         /// To see what resources are cleaned up at the end of the using block, please
         /// see <see cref="M:Amazon.S3.Model.S3Response.Dispose"/>
+        /// </para>
         /// </remarks>
+        /// <param name="request">
+        /// The GetObjectRequest that defines the parameters of the operation.
+        /// </param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a GetObjectResponse from S3.</returns>
         GetObjectResponse GetObject(GetObjectRequest request);
 
         #endregion
@@ -1039,7 +1100,7 @@ namespace Amazon.S3
         #region GetObjectMetadata
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetObjectMetadata operation. 
+        /// Initiates the asynchronous execution of the GetObjectMetadata operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.GetObjectMetadata"/>
         /// </summary>
         /// <param name="request">The GetObjectMetadataRequest that defines the parameters of
@@ -1055,6 +1116,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetObjectMetadata operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetObjectMetadata"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectMetadata.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1064,11 +1126,13 @@ namespace Amazon.S3
         GetObjectMetadataResponse EndGetObjectMetadata(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The GetObjectMetadata operation is used to retrieve information about a specific object
-        /// or object size, without actually fetching the object itself. This is useful if you're
-        /// only interested in the object metadata, and don't want to waste bandwidth on the object data.
-        /// The response is identical to the GetObject response, except that there is no response body.
+        /// Returns information about a specified object.
         /// </summary>
+        /// <remarks>
+        /// Retrieves information about a specific object or object size, without actually fetching the object itself. 
+        /// This is useful if you're only interested in the object metadata, and don't want to waste bandwidth on the object data.
+        /// The response is identical to the GetObject response, except that there is no response body.
+        /// </remarks>
         /// <param name="request">
         /// The GetObjectMetadataRequest that defines the parameters of the operation.
         /// </param>
@@ -1083,7 +1147,7 @@ namespace Amazon.S3
         #region PutObject
 
         /// <summary>
-        /// Initiates the asynchronous execution of the PutObject operation. 
+        /// Initiates the asynchronous execution of the PutObject operation.
         /// <seealso cref="M:Amazon.S3.AmazonS3.PutObject"/>
         /// </summary>
         /// <param name="request">The PutObjectRequest that defines the parameters of
@@ -1099,6 +1163,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the PutObject operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutObject"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObject.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1108,17 +1173,22 @@ namespace Amazon.S3
         PutObjectResponse EndPutObject(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The PutObject operation adds an object to an S3 Bucket.
+        /// Adds an object to an S3 bucket.
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// The response indicates that the object has been successfully stored.
         /// Amazon S3 never stores partial objects: if you receive a successful
         /// response, then you can be confident that the entire object was stored.
-        ///
+        /// </para>
+        /// <para>
         /// To ensure data is not corrupted over the network, use the Content-MD5
         /// header. When you use the Content-MD5 header, Amazon S3 checks the object
         /// against the provided MD5 value. If they do not match, Amazon S3 returns an error.
         /// Additionally, you can calculate the MD5 while putting an object to
         /// Amazon S3 and compare the returned Etag to the calculated MD5 value.
-        ///
+        /// </para>
+        /// <para>
         /// If an object already exists in a bucket, the new object will overwrite
         /// it because Amazon S3 stores the last write request. However, Amazon S3
         /// is a distributed system. If Amazon S3 receives multiple write requests
@@ -1126,12 +1196,15 @@ namespace Amazon.S3
         /// stored, even though only one wins in the end. Amazon S3 does not provide
         /// object locking; if you need this, make sure to build it into your application
         /// layer.
-        ///
+        /// </para>
+        /// <para>
         /// If you specify a location constraint when creating a bucket, all objects
         /// added to the bucket are stored in the bucket's location.
-        ///
+        /// </para>
+        /// <para>
         /// You must have WRITE access to the bucket to add an object.
-        /// </summary>
+        /// </para>
+        /// </remarks>
         /// <param name="request">
         /// The PutObjectRequest that defines the parameters of the operation.
         /// </param>
@@ -1164,6 +1237,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteObject operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteObject"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObject.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1173,12 +1247,18 @@ namespace Amazon.S3
         DeleteObjectResponse EndDeleteObject(IAsyncResult asyncResult);
 
         /// <summary>
+        /// Removes the specified object from Amazon S3.
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// The DeleteObject operation removes the specified object from Amazon S3.
         /// Once deleted, there is no method to restore or undelete an object.
-        ///
+        /// </para>
+        /// <para>
         /// If you delete an object that does not exist, Amazon S3 will return a
         /// success (not an error message).
-        /// </summary>
+        /// </para>
+        /// </remarks>
         /// <param name="request">
         /// The DeleteObjectRequest that defines the parameters of the operation.
         /// </param>
@@ -1208,9 +1288,13 @@ namespace Amazon.S3
         IAsyncResult BeginDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state);
 
         /// <summary>
+        /// <para>
         /// Finishes the asynchronous execution of the DeleteObjects operation.
-        /// 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteObjects"/>
+        /// </para>
+        /// <para>
         /// DeleteObjectsException will be thrown if any of the deletes fail.
+        /// </para>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjects.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1223,11 +1307,17 @@ namespace Amazon.S3
         DeleteObjectsResponse EndDeleteObjects(IAsyncResult asyncResult);
 
         /// <summary>
+        /// Removes the specified objects from Amazon S3.
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// The DeleteObjects operation removes the specified object from Amazon S3.
         /// Once deleted, there is no method to restore or undelete the objects.
-        ///
+        /// </para>
+        /// <para>
         /// DeleteObjectsException will be thrown if any of the deletes fail.
-        /// </summary>
+        /// </para>
+        /// </remarks>
         /// <param name="request">
         /// The DeleteObjectsRequest that defines the parameters of the operation.
         /// </param>
@@ -1261,6 +1351,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the CopyObject operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.CopyObject"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyObject.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1270,16 +1361,30 @@ namespace Amazon.S3
         CopyObjectResponse EndCopyObject(IAsyncResult asyncResult);
 
         /// <summary>
-        /// The copy operation creates a copy of an object that is already stored in Amazon S3.
+        /// Creates a copy of an object that is already stored in Amazon S3.
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// When copying an object, you can preserve all metadata (default) or specify new metadata.
         /// However, the ACL is not preserved and is set to private for the user making the request.
         /// To override the default ACL setting, specify a new ACL when generating a copy request.
+        /// </para>
+        /// <para>
         /// If versioning has been enabled on the source bucket, and you want to copy a specific
         /// version of an object, please use
         /// <see cref="P:Amazon.S3.Model.CopyObjectRequest.SourceVersionId" /> to specify the
         /// version. By default, the most recent version of an object is copied to the
         /// destination bucket.
-        /// </summary>
+        /// </para>
+        /// <para>
+        /// If Versioning has been enabled on the target bucket, S3 generates a
+        /// unique version ID for the object being copied. This version ID is different
+        /// from the version ID of the source object. Additionally, S3 returns the version
+        /// ID of the copied object in the x-amz-version-id response header in the response.
+        /// If you do not enable Versioning or suspend it on the target bucket, the version ID
+        /// S3 generates is always the string literal - "null".
+        /// </para>
+        /// </remarks>
         /// <param name="request">
         /// The CopyObjectRequest that defines the parameters of the operation.
         /// </param>
@@ -1288,14 +1393,6 @@ namespace Amazon.S3
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Returns a CopyObjectResponse from S3.</returns>
         /// <seealso cref="T:Amazon.S3.Model.S3AccessControlList"/>
-        /// <remarks>
-        /// If Versioning has been enabled on the target bucket, S3 generates a
-        /// unique version ID for the object being copied. This version ID is different
-        /// from the version ID of the source object. Additionally, S3 returns the version
-        /// ID of the copied object in the x-amz-version-id response header in the response.
-        /// If you do not enable Versioning or suspend it on the target bucket, the version ID
-        /// S3 generates is always the string literal - "null".
-        /// </remarks>
         CopyObjectResponse CopyObject(CopyObjectRequest request);
 
         #endregion
@@ -1319,6 +1416,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the InitiateMultipartUpload operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.InitiateMultipartUpload"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateMultipartUpload.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1328,13 +1426,13 @@ namespace Amazon.S3
         InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult);
 
         /// <summary>
-        /// This method initiates a multipart upload and returns an InitiateMultipartUploadResponse 
-        /// which contains an upload ID. This upload ID associates all the
-        /// parts in the specific upload. You specify this upload ID in each of 
-        /// your subsequent Upload Part requests. You also include
-        /// this upload ID in the final request to either complete, or abort
-        /// the multipart upload request.
+        /// Initiates a multipart upload and returns an InitiateMultipartUploadResponse which contains an upload ID.
         /// </summary>
+        /// <remarks>
+        /// The upload ID associates all the parts in the specific upload. You specify this upload ID in each of 
+        /// your subsequent Upload Part requests. You also include this upload ID in the final request to either 
+        /// complete, or abort the multipart upload request.
+        /// </remarks>
         /// <param name="request">
         /// The CopyObjectRequest that defines the parameters of the operation.
         /// </param>
@@ -1362,6 +1460,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the UploadPart operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.UploadPart"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadPart.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1371,8 +1470,12 @@ namespace Amazon.S3
         UploadPartResponse EndUploadPart(IAsyncResult asyncResult);
 
         /// <summary>
-        /// This method uploads a part in a multipart upload.  You must initiate a 
-        /// multipart upload before you can upload any part.
+        /// Uploads a single part in a multipart upload.  
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// You must initiate a multipart upload before you can upload any part.
+        /// </para>
         /// <para>
         /// Your UploadPart request must include an upload ID and a part number. 
         /// The upload ID is the ID returned by Amazon S3 in response to your 
@@ -1397,7 +1500,7 @@ namespace Amazon.S3
         /// the part numbers. The CompleteMultipartUpload request requires you to
         /// send all the part numbers and the corresponding ETag values.
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">
         /// The UploadPartRequest that defines the parameters of the operation.
         /// </param>
@@ -1425,6 +1528,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the CopyPart operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.UploadPart"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyPart.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1434,8 +1538,12 @@ namespace Amazon.S3
         CopyPartResponse EndCopyPart(IAsyncResult asyncResult);
 
         /// <summary>
-        /// This method creates a part in a multipart upload from an existing Amazon S3 Object.  
+        /// Creates a part in a multipart upload from an existing Amazon S3 Object.  
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// You must initiate a multipart upload before you can copy a part.
+        /// </para>
         /// <para>
         /// Your CopyPart request must include an upload ID and a part number. 
         /// The upload ID is the ID returned by Amazon S3 in response to your 
@@ -1453,7 +1561,7 @@ namespace Amazon.S3
         /// the part numbers. The CompleteMultipartUpload request requires you to
         /// send all the part numbers and the corresponding ETag values.
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">
         /// The CopyPartRequest that defines the parameters of the operation.
         /// </param>
@@ -1481,6 +1589,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the ListParts operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListParts"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParts.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1490,22 +1599,25 @@ namespace Amazon.S3
         ListPartsResponse EndListParts(IAsyncResult asyncResult);
 
         /// <summary>
-        /// This method lists the parts that have been uploaded 
-        /// for a particular multipart upload.
+        /// Lists the parts that have been uploaded for a particular multipart upload.
+        /// </summary>
+        /// <remarks>
         /// <para>
         /// This method must include the upload ID, returned by 
         /// the InitiateMultipartUpload request. This request 
         /// returns a maximum of 1000 uploaded parts by default. You can
         /// restrict the number of parts returned by specifying the 
-        /// MaxParts property on the ListPartsRequest. If your multipart
-        /// upload consists of more parts than allowed in the 
+        /// MaxParts property on the ListPartsRequest. 
+        /// </para>
+        /// <para>
+        /// If your multipart upload consists of more parts than allowed in the 
         /// ListParts response, the response returns a IsTruncated
         /// field with value true, and a NextPartNumberMarker property. 
         /// In subsequent ListParts request you can include the 
         /// PartNumberMarker property and set its value to the
         /// NextPartNumberMarker property value from the previous response.
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">
         /// The ListPartsRequest that defines the parameters of the operation.
         /// </param>
@@ -1533,6 +1645,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the AbortMultipartUpload operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.AbortMultipartUpload"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortMultipartUpload.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1542,14 +1655,16 @@ namespace Amazon.S3
         AbortMultipartUploadResponse EndAbortMultipartUpload(IAsyncResult asyncResult);
 
         /// <summary>
-        /// This method aborts a multipart upload. After a multipart upload is 
-        /// aborted, no additional parts can be uploaded using that upload ID. 
-        /// The storage consumed by any previously uploaded parts will be freed.
+        /// Aborts a multipart upload. 
+        /// </summary>
+        /// <remarks>
+        /// After a multipart upload is aborted, no additional parts can be uploaded using 
+        /// that upload ID. The storage consumed by any previously uploaded parts will be freed.
         /// However, if any part uploads are currently in progress, those part 
         /// uploads may or may not succeed. As a result, it may be necessary to 
         /// abort a given multipart upload multiple times in order to completely free
         /// all storage consumed by all parts.
-        /// </summary>
+        /// </remarks>
         /// <param name="request">
         /// The AbortMultipartUploadRequest that defines the parameters of the operation.
         /// </param>
@@ -1577,6 +1692,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the CompleteMultipartUpload operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.CompleteMultipartUpload"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteMultipartUpload.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1586,8 +1702,9 @@ namespace Amazon.S3
         CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult);
 
         /// <summary>
-        /// This operation completes a multipart upload by assembling 
-        /// previously uploaded parts.
+        /// Completes a multipart upload by assembling previously uploaded parts.
+        /// </summary>
+        /// <remarks>
         /// <para>
         /// You first upload all parts using the UploadPart method. 
         /// After successfully uploading all relevant parts of an upload, 
@@ -1603,7 +1720,7 @@ namespace Amazon.S3
         /// Processing of a CompleteMultipartUpload request may take 
         /// several minutes to complete.
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">
         /// The CompleteMultipartUploadRequest that defines the parameters of the operation.
         /// </param>
@@ -1631,6 +1748,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the ListMultipartUploads operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.ListMultipartUploads"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultipartUploads.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1640,10 +1758,14 @@ namespace Amazon.S3
         ListMultipartUploadsResponse EndListMultipartUploads(IAsyncResult asyncResult);
 
         /// <summary>
-        /// This operation lists in-progress multipart uploads. An in-progress 
-        /// multipart upload is a multipart upload that has been initiated, 
-        /// using the InitiateMultipartUpload request, but has not yet been 
-        /// completed or aborted.
+        /// Lists in-progress multipart uploads.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// An in-progress multipart upload is a multipart upload that has been initiated, 
+        /// using the InitiateMultipartUpload request, but has not yet been completed or 
+        /// aborted.
+        /// </para>
         /// <para>
         /// This operation returns at most 1,000 multipart uploads in the 
         /// response by default. The number of multipart uploads can be further 
@@ -1653,7 +1775,7 @@ namespace Amazon.S3
         /// To list the additional multipart uploads use the KeyMarker and 
         /// UploadIdMarker properties on the request parameters.
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">
         /// The ListMultipartUploadsRequest that defines the parameters of the operation.
         /// </param>
@@ -1679,9 +1801,9 @@ namespace Amazon.S3
         /// this value is also needed when invoking EndPutBucketWebsite.</returns>
         IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state);
 
-
         /// <summary>
         /// Finishes the asynchronous execution of the PutBucketWebsite operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutBucketWebsite"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketWebsite.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1691,22 +1813,26 @@ namespace Amazon.S3
         PutBucketWebsiteResponse EndPutBucketWebsite(IAsyncResult asyncResult);
 
         /// <summary>
-        /// This operation enables/configures an S3 Website using the corresponding bucket as the content source. 
+        /// Enables or configures an S3-based website using the corresponding bucket as the content source. 
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// The website will have one default domain name associated with it, which is the bucket name.
         /// If you attempt to configure an S3 website for a bucket whose name is not compatible with DNS, 
         /// Amazon S3 returns an InvalidBucketName error. For more information on bucket names and DNS, 
         /// refer to Bucket Restrictions and Limitations.
-        /// 
+        /// </para>
+        /// <para>
         /// To visit the S3 bucket as a website a new endpoint is created in the following pattern 
-        /// http://&lt;bucketName&gt;.s3-website-&lt;region&gt;.amazonaws.com/.  This is a sample url for a bucket
+        /// http://[bucketName].s3-website-[region].amazonaws.com/. This is a sample url for a bucket
         /// called example-bucket in the us-east-1 region. http://example-bucket.s3-website-us-east-1.amazonaws.com/
-        /// </summary>
+        /// </para>
+        /// </remarks>
         /// <param name="request">
         /// The PutBucketWebsiteRequest that defines the parameters of the operation.
         /// </param>
         /// <returns>Returns a PutBucketWebsiteResponse from S3.</returns>
         PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request);
-
 
         #endregion
 
@@ -1729,6 +1855,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetBucketWebsite operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketWebsite"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketWebsite.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1738,9 +1865,12 @@ namespace Amazon.S3
         GetBucketWebsiteResponse EndGetBucketWebsite(IAsyncResult asyncResult);
 
         /// <summary>
-        /// This operation retrieves the website configuration for a bucket. The contents of this response 
-        /// is identical to the content submitted by the user during the PutBucketWebsite operation if it has ever been configured. 
+        /// Retrieves the website configuration for a bucket.
         /// </summary>
+        /// <remarks>
+        /// The contents of this response is identical to the content submitted by the user during the PutBucketWebsite 
+        /// operation if it has ever been configured. 
+        /// </remarks>
         /// <param name="request">
         /// The GetBucketWebsiteRequest that defines the parameters of the operation.
         /// </param>
@@ -1768,6 +1898,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteBucketWebsite operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteBucketWebsite"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketWebsite.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1777,14 +1908,13 @@ namespace Amazon.S3
         DeleteBucketWebsiteResponse EndDeleteBucketWebsite(IAsyncResult asyncResult);
 
         /// <summary>
-        /// This operation removes the website configuration for a bucket. 
+        /// Removes the website configuration for a bucket. 
         /// </summary>
         /// <param name="request">
         /// The DeleteBucketWebsiteRequest that defines the parameters of the operation.
         /// </param>
         /// <returns>Returns a DeleteBucketWebsiteResponse from S3.</returns>
         DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request);
-
 
         #endregion
 
@@ -1807,6 +1937,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the PutLifecycleConfiguration operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutLifecycleConfiguration"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLifecycleConfiguration.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1816,8 +1947,10 @@ namespace Amazon.S3
         PutLifecycleConfigurationResponse EndPutLifecycleConfiguration(IAsyncResult asyncResult);
 
         /// <summary>
+        /// Sets the lifecycle configuration that should be applied to a bucket.
+        /// </summary>
+        /// <remarks>
         /// <para>
-        /// Sets the lifecycle configuration that should be applied for the bucket.
         /// If a configuration already exists for the specified bucket, the new
         /// configuration will replace the existing configuration.
         /// </para>
@@ -1830,7 +1963,7 @@ namespace Amazon.S3
         /// For more information on lifecycle configurations, 
         /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The PutLifecycleConfigurationRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a PutLifecycleConfigurationResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1859,6 +1992,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetLifecycleConfiguration operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetLifecycleConfiguration"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLifecycleConfiguration.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1868,8 +2002,10 @@ namespace Amazon.S3
         GetLifecycleConfigurationResponse EndGetLifecycleConfiguration(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>
         /// Retrieves the lifecycle configuration for the specified bucket.
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// If no configuration has been set for the bucket, the Configuration
         /// property of the response will be null.
         /// </para>
@@ -1882,7 +2018,7 @@ namespace Amazon.S3
         /// For more information on lifecycle configurations, 
         /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The GetLifecycleConfigurationRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a GetLifecycleConfigurationResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1911,6 +2047,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteLifecycleConfiguration operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteLifecycleConfiguration"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLifecycleConfiguration.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1920,9 +2057,9 @@ namespace Amazon.S3
         DeleteLifecycleConfigurationResponse EndDeleteLifecycleConfiguration(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>
         /// Deletes the lifecycle configuration for the specified bucket.
-        /// </para>
+        /// </summary>
+        /// <remarks>
         /// <para>
         /// If you delete a configuration that does not exist, Amazon S3 will return a
         /// success (not an error message).
@@ -1936,7 +2073,7 @@ namespace Amazon.S3
         /// For more information on lifecycle configurations, 
         /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The DeleteLifecycleConfigurationRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a DeleteLifecycleConfigurationResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1965,6 +2102,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the PutBucketTagging operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutBucketTagging"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketTagging.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -1973,12 +2111,13 @@ namespace Amazon.S3
         /// <returns>Returns a PutBucketTaggingResponse from S3.</returns>
         PutBucketTaggingResponse EndPutBucketTagging(IAsyncResult asyncResult);
 
-
         /// <summary>
-        /// Puts the tagging that should be applied for the bucket.
+        /// Add a set of tags to a bucket.
+        /// </summary>
+        /// <remarks>
         /// If tagging already exists for the specified bucket, the new
         /// tagging will replace the existing configuration.
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The PutBucketTaggingRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a PutBucketTaggingResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -2007,6 +2146,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetBucketTagging operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetBucketTagging"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketTagging.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -2016,9 +2156,11 @@ namespace Amazon.S3
         GetBucketTaggingResponse EndGetBucketTagging(IAsyncResult asyncResult);
 
         /// <summary>
-        /// Retrieves the tagging for the specified bucket.
-        /// If no configuration has been set for the bucket, an AmazonS3Exception will be thrown.
+        /// Retrieves the tags that have been applied to a bucket.
         /// </summary>
+        /// <remarks>
+        /// If no tags have been set for the bucket, an AmazonS3Exception will be thrown.
+        /// </remarks>
         /// <param name="request">The GetBucketTaggingRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a GetBucketTaggingResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -2047,6 +2189,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteBucketTagging operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteBucketTagging"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketTagging.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -2056,14 +2199,12 @@ namespace Amazon.S3
         DeleteBucketTaggingResponse EndDeleteBucketTagging(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>
-        /// Deletes the tagging for the specified bucket.
-        /// </para>
-        /// <para>
+        /// Deletes the tags set on a bucket.
+        /// </summary>
+        /// <remarks>
         /// If you delete a tagging that does not exist yet, Amazon S3 will return a
         /// success (not an error message).
-        /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The DeleteBucketTaggingRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a DeleteBucketTaggingResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -2092,6 +2233,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the PutCORSConfiguration operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.PutCORSConfiguration"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutCORSConfiguration.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -2101,8 +2243,13 @@ namespace Amazon.S3
         PutCORSConfigurationResponse EndPutCORSConfiguration(IAsyncResult asyncResult);
 
         /// <summary>
+        /// Applies a CORS (cross-origin resource sharing) configuration to a bucket.
+        /// </summary>
+        /// <remarks>
         /// <para>
-        /// Sets the CORS configuration that should be applied for the bucket.
+        /// You set this configuration on a bucket so that the bucket can service cross-origin requests.
+        /// </para>
+        /// <para>
         /// If a configuration already exists for the specified bucket, the new
         /// configuration will replace the existing configuration.
         /// </para>
@@ -2110,7 +2257,7 @@ namespace Amazon.S3
         /// For more information on CORS configurations, 
         /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The PutCORSConfigurationRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a PutCORSConfigurationResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -2139,6 +2286,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetCORSConfiguration operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.GetCORSConfiguration"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCORSConfiguration.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -2148,8 +2296,10 @@ namespace Amazon.S3
         GetCORSConfigurationResponse EndGetCORSConfiguration(IAsyncResult asyncResult);
 
         /// <summary>
+        /// Retrieves the CORS (cross-origin resource sharing) configuration for a bucket.
+        /// </summary>
+        /// <remarks>
         /// <para>
-        /// Retrieves the CORS configuration for the specified bucket.
         /// If no configuration has been set for the bucket, the Configuration
         /// property of the response will be null.
         /// </para>
@@ -2157,7 +2307,7 @@ namespace Amazon.S3
         /// For more information on CORS configurations, 
         /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The GetCORSConfigurationRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a GetCORSConfigurationResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -2186,6 +2336,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteCORSConfiguration operation.
+        /// <seealso cref="M:Amazon.S3.AmazonS3.DeleteCORSConfiguration"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCORSConfiguration.</param>
         /// <exception cref="T:System.ArgumentNullException"></exception>
@@ -2195,9 +2346,9 @@ namespace Amazon.S3
         DeleteCORSConfigurationResponse EndDeleteCORSConfiguration(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>
-        /// Deletes the CORS configuration for the specified bucket.
-        /// </para>
+        /// Deletes the CORS (cross-origin resource sharing) configuration for a bucket.
+        /// </summary>
+        /// <remarks>
         /// <para>
         /// If you delete a configuration that does not exist, Amazon S3 will return a
         /// success (not an error message).
@@ -2206,7 +2357,7 @@ namespace Amazon.S3
         /// For more information on CORS configurations, 
         /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/"/>
         /// </para>
-        /// </summary>
+        /// </remarks>
         /// <param name="request">The DeleteCORSConfigurationRequest that defines the parameters of the operation.</param>
         /// <returns>Returns a DeleteCORSConfigurationResponse from S3.</returns>
         /// <exception cref="T:System.ArgumentNullException"></exception>

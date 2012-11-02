@@ -29,7 +29,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The GetCORSConfigurationRequest contains the parameters used for the GetCORSConfiguration operation.
+    /// Queries the cross origin resource sharing (CORS) configuration for a bucket.
     /// </summary>
     public class GetCORSConfigurationRequest : S3Request
     {
@@ -42,7 +42,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to be queried.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -52,10 +52,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket for which the CORSConfiguration is retrieved.
+        /// Sets the name of the bucket to be queried.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public GetCORSConfigurationRequest WithBucketName(string bucketName)
         {

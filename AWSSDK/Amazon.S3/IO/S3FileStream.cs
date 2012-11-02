@@ -299,14 +299,29 @@ namespace Amazon.S3.IO
                         this.bucketExist = true;
                     }
 
-                    buffer.Seek(0, SeekOrigin.Begin);
-                    file.S3Client.PutObject((PutObjectRequest)new PutObjectRequest()
+                    var request = (PutObjectRequest)new PutObjectRequest()
                         .WithBucketName(file.BucketName)
                         .WithKey(S3Helper.EncodeKey(file.ObjectKey))
                         .WithAutoCloseStream(false)
                         .WithInputStream(buffer)
-                        .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler));
+                        .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
 
+                    try
+                    {
+                        buffer.Seek(0, SeekOrigin.Begin);
+                        file.S3Client.PutObject(request);
+                    }
+                    catch (AmazonS3Exception e)
+                    {
+                        if (!string.Equals(e.ErrorCode, "NoSuchBucket"))
+                            throw;
+
+                        // Bucket no longer exists so create and retry put
+                        file.Directory.Create();
+
+                        buffer.Seek(0, SeekOrigin.Begin);
+                        file.S3Client.PutObject(request);
+                    }
                     this.lastFlushMarker = this.lastWriteCounter;
                 }
                 finally

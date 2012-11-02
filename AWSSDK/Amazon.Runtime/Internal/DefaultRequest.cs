@@ -190,8 +190,8 @@ namespace Amazon.Runtime.Internal
                 {
                     long position = this.ContentStream.Position;
 
-                    HashAlgorithm ha = HashAlgorithm.Create("SHA-256");
-                    byte[] payloadHashBytes = ha.ComputeHash(this.ContentStream);
+                    var hash = new SHA256CryptoServiceProvider();
+                    byte[] payloadHashBytes = hash.ComputeHash(this.ContentStream);
                     this.contentStreamHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
 
                     this.ContentStream.Seek(position, SeekOrigin.Begin);

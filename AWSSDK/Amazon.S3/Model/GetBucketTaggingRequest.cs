@@ -31,15 +31,14 @@ using System.Xml;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The GetBucketTaggingRequest contains the parameters used for the GetBucketTagging operation.
-    /// <br />Required Parameters: BucketName
+    /// Queries the tag set for a bucket.
     /// </summary>
     public class GetBucketTaggingRequest : S3Request
     {
         private string bucketName;
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to be queried.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -49,9 +48,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
+        /// Sets the name of the bucket to be queried.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public GetBucketTaggingRequest WithBucketName(string bucketName)
         {

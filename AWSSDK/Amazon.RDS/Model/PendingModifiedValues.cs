@@ -33,6 +33,7 @@ namespace Amazon.RDS.Model
         private int? backupRetentionPeriod;
         private bool? multiAZ;
         private string engineVersion;
+        private int? iops;
 
         /// <summary>
         /// Contains the new <c>DBInstanceClass</c> for the DB Instance that will be applied or is in progress.
@@ -228,6 +229,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngineVersion()
         {
             return this.engineVersion != null;       
+        }
+
+        /// <summary>
+        /// Specifies the new Provisioned IOPS value for the DB Instance that will be applied or is being applied.
+        ///  
+        /// </summary>
+        public int Iops
+        {
+            get { return this.iops ?? default(int); }
+            set { this.iops = value; }
+        }
+
+        /// <summary>
+        /// Sets the Iops property
+        /// </summary>
+        /// <param name="iops">The value to set for the Iops property </param>
+        /// <returns>this instance</returns>
+        public PendingModifiedValues WithIops(int iops)
+        {
+            this.iops = iops;
+            return this;
+        }
+            
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this.iops.HasValue;       
         }
     }
 }

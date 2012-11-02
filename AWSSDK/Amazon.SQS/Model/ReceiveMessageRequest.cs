@@ -28,11 +28,13 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Retrieves one or more messages from the specified queue, including the message body and message ID of each message.
+    /// </summary>
+    /// <remarks>
     /// Messages returned by this action stay in the queue until you delete them. However, once a message is returned to a
     /// ReceiveMessage request, it is not returned on subsequent ReceiveMessage requests for the duration of the
     /// VisibilityTimeout. If you do not specify a VisibilityTimeout in the request, the overall visibility timeout for the
     /// queue is used for the returned messages.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class ReceiveMessageRequest
     {    
@@ -42,7 +44,6 @@ namespace Amazon.SQS.Model
         private List<string> attributeNameField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -53,7 +54,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -73,11 +74,12 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the MaxNumberOfMessages property.
-        /// Maximum number of messages to return. SQS never returns more messages than this value but might return fewer.
-        /// Not necessarily all the messages in the queue are returned (for more information, see the preceding note about
-        /// machine sampling). Values can be from 1 to 10. Default is 1.
+        /// Maximum number of messages to return.
+        /// Values can be from 1 to 10. Default is 1.
         /// </summary>
+        /// <remarks>
+        /// SQS never returns more messages than this value but might return fewer. Not necessarily all the messages in the queue are returned.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "MaxNumberOfMessages")]
         public Decimal MaxNumberOfMessages
         {
@@ -86,11 +88,9 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the MaxNumberOfMessages property
+        /// Sets maximum number of messages to return.
         /// </summary>
-        /// <param name="maxNumberOfMessages">Maximum number of messages to return. SQS never returns more messages than this value but might return fewer.
-        /// Not necessarily all the messages in the queue are returned (for more information, see the preceding note about
-        /// machine sampling). Values can be from 1 to 10. Default is 1.</param>
+        /// <param name="maxNumberOfMessages">Maximum number of messages to return.</param>
         /// <returns>this instance</returns>
         public ReceiveMessageRequest WithMaxNumberOfMessages(Decimal maxNumberOfMessages)
         {
@@ -108,7 +108,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the VisibilityTimeout property.
         /// The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved
         /// by a ReceiveMessage request.
         /// </summary>
@@ -120,7 +119,8 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the VisibilityTimeout property
+        /// Sets the duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved
+        /// by a ReceiveMessage request.
         /// </summary>
         /// <param name="visibilityTimeout">The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved
         /// by a ReceiveMessage request.</param>
@@ -141,9 +141,8 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the AttributeName property.
-        /// The attribute you want to get. Valid values: All | SenderId | SentTimestamp | ApproximateReceiveCount |
-        /// ApproximateFirstReceiveTimestamp
+        /// The attribute you want to get.
+        /// Valid values: All | SenderId | SentTimestamp | ApproximateReceiveCount | ApproximateFirstReceiveTimestamp
         /// </summary>
         [XmlElementAttribute(ElementName = "AttributeName")]
         public List<string> AttributeName
@@ -160,7 +159,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the AttributeName property
+        /// Sets the attribute you want to get.
         /// </summary>
         /// <param name="list">The attribute you want to get. Valid values: All | SenderId | SentTimestamp | ApproximateReceiveCount |
         /// ApproximateFirstReceiveTimestamp</param>

@@ -128,6 +128,8 @@ namespace Amazon.S3.IO
 
         /// <summary>
         /// Checks with S3 to see if the directory exists and if so returns true.
+        /// 
+        /// Due to Amazon S3's eventual consistency model this property can return false for newly created buckets.
         /// </summary>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
@@ -173,16 +175,16 @@ namespace Amazon.S3.IO
                 }
                 else
                 {
-                    var request = new GetObjectMetadataRequest()
+                    var request = new ListObjectsRequest()
                     {
-                        BucketName = bucket,
-                        Key = S3Helper.EncodeKey(key)
+                        BucketName = this.bucket,
+                        Prefix = S3Helper.EncodeKey(key),
+                        MaxKeys = 1
                     };
                     request.WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
 
-                    // If the object doesn't exist then a "NoSuchKey" will be thrown
-                    s3Client.GetObjectMetadata(request);
-                    return true;
+                    var response = s3Client.ListObjects(request);
+                    return response.S3Objects.Count > 0;
                 }
             }
             catch (AmazonS3Exception e)

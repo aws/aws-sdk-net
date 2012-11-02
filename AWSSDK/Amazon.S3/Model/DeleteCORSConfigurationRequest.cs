@@ -29,8 +29,12 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DeleteCORSConfigurationRequest contains the parameters used for the DeleteCORSConfiguration operation.
+    /// Deletes the cross origin resource sharing (CORS) configuration on a bucket.
     /// </summary>
+    /// <remarks>
+    /// To use this operation, you must have permission to perform the s3:PutCORSConfiguration action. 
+    /// The bucket owner has this permission by default and can grant this permission to others.
+    /// </remarks>
     public class DeleteCORSConfigurationRequest : S3Request
     {
         #region Private Members
@@ -42,7 +46,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket on which the CORS configuration is to be removed.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -52,9 +56,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
+        /// Sets the name of the bucket on which the CORS configuration is to be removed.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public DeleteCORSConfigurationRequest WithBucketName(string bucketName)
         {

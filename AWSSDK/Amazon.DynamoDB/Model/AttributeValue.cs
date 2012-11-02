@@ -23,10 +23,10 @@ namespace Amazon.DynamoDB.Model
     /// <summary>
     /// <para>AttributeValue can be <c>String</c> ,
     /// <c>Number</c> ,
-    /// <c>Blob</c> ,
+    /// <c>Binary</c> ,
     /// <c>StringSet</c> ,
     /// <c>NumberSet</c> ,
-    /// <c>BlobSet</c> .</para>
+    /// <c>BinarySet</c> .</para>
     /// </summary>
     public class AttributeValue  
     {
@@ -97,7 +97,7 @@ namespace Amazon.DynamoDB.Model
         }
 
         /// <summary>
-        /// Blobs are binary data passed from a ByteBuffer.
+        /// Binary attributes are sequences of unsigned bytes.
         ///  
         /// </summary>
         public MemoryStream B
@@ -215,7 +215,7 @@ namespace Amazon.DynamoDB.Model
         }
 
         /// <summary>
-        /// A set of Blobs.
+        /// A set of binary attributes.
         ///  
         /// </summary>
         public List<MemoryStream> BS

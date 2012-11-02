@@ -28,7 +28,7 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Encloses a receipt handle and an identifier for it.
+    /// A receipt handle and an identifier for it.
     /// </summary>
     public class DeleteMessageBatchRequestEntry
     {
@@ -36,10 +36,12 @@ namespace Amazon.SQS.Model
         private string receiptHandleField;
 
         /// <summary>
-        /// Gets and sets the Id property.  An identifier for this particular receipt handle. This is used to
-        /// communicate the result. Note that the <c>Id</c>s of a batch request
-        /// need to be unique within the request.
+        /// An identifier for this particular receipt handle.
+        /// This value is used to identify the message in the result.
         /// </summary>
+        /// <remarks>
+        /// The <c>Id</c>s of a batch request need to be unique within the request.
+        /// </remarks>
         public string Id
         {
             get { return this.idField; }
@@ -47,7 +49,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Id property
+        /// Sets an identifier for this particular receipt handle.
         /// </summary>
         /// <param name="id">An identifier for this particular receipt handle.</param>
         /// <returns>this instance</returns>
@@ -67,7 +69,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the ReceiptHandle property.  The receipt handle associated with the message you want to delete.
+        /// The receipt handle associated with the message you want to delete.
         /// </summary>
         public string ReceiptHandle
         {
@@ -76,7 +78,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the ReceiptHandle property
+        /// Sets The receipt handle associated with the message you want to delete.
         /// </summary>
         /// <param name="receiptHandle">The receipt handle associated with the message you want to delete.</param>
         /// <returns>this instance</returns>

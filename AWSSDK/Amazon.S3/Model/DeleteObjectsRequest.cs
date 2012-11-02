@@ -28,12 +28,14 @@ using System.Xml;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DeleteObjectsRequest contains the parameters used for the DeleteObjects operation.
-    /// <br />Required Parameters: BucketName, Keys
-    /// <br />The MfaCodes property is required if the bucket containing this object has been
-    /// configured with the EnableMfaDelete property. For more information, please see:
-    /// <see cref="P:Amazon.S3.Model.S3BucketVersioningConfig.EnableMfaDelete"/>.
+    /// Deletes one or more objects from an S3 bucket.
     /// </summary>
+    /// <remarks>
+    /// When performing a multi-object delete operation on an MFA Delete enabled bucket, that attempts to delete any versioned objects, 
+    /// you must include an MFA token. If you do not provide one, the entire request will fail, even if there are non versioned objects 
+    /// you are attempting to delete. If you provide an invalid token, whether there are versioned keys in the request or not, the entire 
+    /// multi-object delete request will fail.
+    /// </remarks>
     public class DeleteObjectsRequest : S3Request
     {
         #region Private Members
@@ -48,7 +50,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket containing the objects to be deleted.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -58,11 +60,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket that contains the S3 Objects
-        /// you want to delete.
+        /// Sets the name of the bucket containing the objects to be deleted.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public DeleteObjectsRequest WithBucketName(string bucketName)
         {
@@ -83,13 +83,14 @@ namespace Amazon.S3.Model
         #region Quiet
 
         /// <summary>
-        /// Gets and Sets the property that governs whether
-        /// the response includes successful deletes as well as errors
-        /// following the DeleteObjects call against S3.
-        /// 
-        /// By default this property is false and successful deletes
-        /// are returned in the response.
+        /// Toggles between Quiet and Verbose mode for the operation.
+        /// If set to true (Quiet mode), the response includes only those keys for objects on which
+        /// the delete operation failed.
         /// </summary>
+        /// <remarks>
+        /// By default this property is false and keys for both successful deletes
+        /// and failures are returned in the response.
+        /// </remarks>
         public bool Quiet
         {
             get { return this.quiet; }
@@ -97,11 +98,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Quiet property. If this property is set,
-        /// the response includes successful deletes as well as errors
-        /// following the DeleteObjects call against S3.
+        /// Toggles between Quiet and Verbose mode for the operation.
+        /// If set to true (Quiet mode), the response includes only those keys for objects on which
+        /// the delete operation failed.
         /// </summary>
-        /// <param name="quiet">Quiet property</param>
+        /// <remarks>
+        /// By default this property is false and keys for both successful deletes
+        /// and failures are returned in the response.
+        /// </remarks>
+        /// <param name="quiet">True for Quiet mode, false for Verbose mode</param>
         /// <returns>This instance</returns>
         public DeleteObjectsRequest WithQuiet(bool quiet)
         {
@@ -114,8 +119,7 @@ namespace Amazon.S3.Model
         #region Keys
 
         /// <summary>
-        /// List of KeyVersion objects representing
-        /// the S3 objects that should be deleted.
+        /// A collection of KeyVersion objects representing the S3 objects that should be deleted.
         /// </summary>
         public List<KeyVersion> Keys
         {
@@ -129,9 +133,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Add a key to be deleted.
+        /// Add a key to the set of keys of objects to be deleted.
         /// </summary>
-        /// <param name="key">Key of the object to be deleted</param>
+        /// <param name="key">Object key</param>
         public void AddKey(string key)
         {
             AddKey(new KeyVersion(key));
@@ -148,12 +152,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Add a KeyVersion object representing the S3 object
-        /// to be deleted.
+        /// Add a KeyVersion object representing the S3 object to be deleted.
         /// </summary>
-        /// <param name="keyVersion">
-        /// KeyVersion representation of object to be deleted.
-        /// </param>
+        /// <param name="keyVersion">KeyVersion representation of object to be deleted.</param>
         public void AddKey(KeyVersion keyVersion)
         {
             if (this.keys == null)
@@ -164,12 +165,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Add a number of KeyVersion objects representing the S3 objects
-        /// to be deleted.
+        /// Add one or more KeyVersion objects representing the S3 objects to be deleted.
         /// </summary>
-        /// <param name="keys">
-        /// KeyVersion representations of objects to be deleted.
-        /// </param>
+        /// <param name="keys">KeyVersion representations of objects to be deleted.</param>
         public void AddKeys(params KeyVersion[] keys)
         {
             foreach (var key in keys)
@@ -179,12 +177,9 @@ namespace Amazon.S3.Model
         }
         
         /// <summary>
-        /// Adds the elements from the array to the collection of KeyVersions
-        /// for this request.
+        /// Add one or more KeyVersion objects representing the S3 objects to be deleted.
         /// </summary>
-        /// <param name="keys">
-        /// KeyVersions that will be added to this request.
-        /// </param>
+        /// <param name="keys">KeyVersions that will be added to this request.</param>
         /// <returns></returns>
         public DeleteObjectsRequest WithKeys(params KeyVersion[] keys)
         {
@@ -197,15 +192,14 @@ namespace Amazon.S3.Model
         #region MfaCodes
 
         /// <summary>
-        /// Gets and Sets the MfaCodes property.
-        /// The MfaCodes Tuple associates the Serial Number
-        /// and the current Token/Code displayed on the
-        /// Multi-Factor Authentication device associated with
-        /// your AWS Account. This is a required property for this
-        /// request if:<br />
-        /// Permanently deleting a versioned object and
-        /// versioning is configured with MFA Delete enabled.<br />
+        /// The MfaCodes Tuple associates the Serial Number and the current Token/Code displayed on the
+        /// Multi-Factor Authentication device associated with your AWS Account. 
         /// </summary>
+        /// <remarks>
+        /// This is a required property for this request if:<br />
+        /// 1. EnableMfaDelete was configured on the bucket containing this object's version.<br />
+        /// 2. You are deleting an object's version
+        /// </remarks>
         [XmlIgnore]
         public Tuple<string, string> MfaCodes
         {
@@ -221,15 +215,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the MfaCodes property.
-        /// The MfaCodes Tuple associates the Serial Number
-        /// and the current Token/Code displayed on the
-        /// Multi-Factor Authentication device associated with
-        /// your AWS Account. This is a required property for this
-        /// request if:<br />
-        /// Permanently deleting a versioned object and
-        /// versioning is configured with MFA Delete enabled.<br />
+        /// The MfaCodes Tuple associates the Serial Number and the current Token/Code displayed on the
+        /// Multi-Factor Authentication device associated with your AWS Account. 
         /// </summary>
+        /// <remarks>
+        /// This is a required property for this request if:<br />
+        /// 1. EnableMfaDelete was configured on the bucket containing this object's version.<br />
+        /// 2. You are deleting an object's version
+        /// </remarks>
         /// <param name="serial">Serial number of the authentication device</param>
         /// <param name="token">Token displayed on the authentication device</param>
         /// <returns>this instance</returns>

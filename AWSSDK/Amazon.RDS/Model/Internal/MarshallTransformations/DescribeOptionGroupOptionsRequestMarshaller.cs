@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeOptionGroupOptionsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeOptionGroupOptions");
-            request.Parameters.Add("Version", "2012-07-31");
+            request.Parameters.Add("Version", "2012-09-17");
             if (describeOptionGroupOptionsRequest != null && describeOptionGroupOptionsRequest.IsSetEngineName())
             {
                 request.Parameters.Add("EngineName", StringUtils.FromString(describeOptionGroupOptionsRequest.EngineName));

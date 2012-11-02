@@ -25,8 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The GetBucketVersioningRequest contains the parameters used for the GetBucketVersioning operation.
-    /// <br />Required Parameters: BucketName
+    /// Queries the versioning configuration for a bucket.
     /// </summary>
     public class GetBucketVersioningRequest : S3Request
     {
@@ -39,7 +38,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to be queried.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -49,10 +48,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket the request will get the location for.
+        /// Sets the name of the bucket to be queried.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
         public GetBucketVersioningRequest WithBucketName(string bucketName)
         {

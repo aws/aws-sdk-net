@@ -27,10 +27,12 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The ListQueues action returns a list of your queues. The maximum number of queues that can be returned is 1000.
+    /// Returns a list of your queues. The maximum number of queues that can be returned is 1000.
+    /// </summary>
+    /// <remarks>
     /// If you specify a value for the optional QueueNamePrefix parameter, only queues with a name beginning with the
     /// specified value are returned.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class ListQueuesRequest
     {    
@@ -38,8 +40,7 @@ namespace Amazon.SQS.Model
         private List<Attribute> attributeField;
 
         /// <summary>
-        /// Gets and sets the QueueNamePrefix property.
-        /// String to use for filtering the list results. Only those queues whose name begins with the specified string are returned.
+        /// Prefix to use for filtering the list results. Only those queues whose name begins with the prefix are returned.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueNamePrefix")]
         public string QueueNamePrefix
@@ -49,9 +50,9 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueNamePrefix property
+        /// Sets the prefix to use for filtering the list results. Only those queues whose name begins with the prefix are returned.
         /// </summary>
-        /// <param name="queueNamePrefix">String to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</param>
+        /// <param name="queueNamePrefix">Prefix to use for filtering the list results.</param>
         /// <returns>this instance</returns>
         public ListQueuesRequest WithQueueNamePrefix(string queueNamePrefix)
         {
@@ -69,7 +70,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -87,7 +87,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the name and value pair of an attribute associated with the queue.
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>

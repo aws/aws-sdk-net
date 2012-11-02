@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The DeleteMessage action unconditionally removes the specified message from the specified queue. Even if the message
+    /// Unconditionally removes the specified message from the specified queue. Even if the message
     /// is locked by another reader due to the visibility timeout setting, it is still deleted from the queue.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
@@ -38,7 +38,6 @@ namespace Amazon.SQS.Model
         private List<Attribute> attributeField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -49,7 +48,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -69,7 +68,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the ReceiptHandle property.
         /// The receipt handle associated with the message you want to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "ReceiptHandle")]
@@ -80,7 +78,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the ReceiptHandle property
+        /// Sets the receipt handle associated with the message you want to delete.
         /// </summary>
         /// <param name="receiptHandle">The receipt handle associated with the message you want to delete.</param>
         /// <returns>this instance</returns>
@@ -100,7 +98,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -118,7 +115,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the name and value pair of an attribute associated with the queue.
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>

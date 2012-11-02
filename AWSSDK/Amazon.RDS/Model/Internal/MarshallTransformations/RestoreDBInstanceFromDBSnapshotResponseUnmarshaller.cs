@@ -104,6 +104,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 return new OptionGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ProvisionedIopsNotAvailableInAZFault"))
+            {
+                return new ProvisionedIopsNotAvailableInAZException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("DBSnapshotNotFound"))
             {
                 return new DBSnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

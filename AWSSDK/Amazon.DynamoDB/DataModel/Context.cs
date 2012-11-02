@@ -98,7 +98,7 @@ namespace Amazon.DynamoDB.DataModel
     /// Context object for using the DataModel mode of DynamoDB.
     /// Used to interact with the service, save/load objects, etc.
     /// </summary>
-    public partial class DynamoDBContext
+    public partial class DynamoDBContext : IDynamoDBContext
     {
         #region Private members
 
@@ -952,6 +952,7 @@ namespace Amazon.DynamoDB.DataModel
         /// a batch-get operation against DynamoDB.
         /// </summary>
         /// <typeparam name="T">Type of objects to get</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchGet object</returns>
         public BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig)
         {
@@ -989,21 +990,47 @@ namespace Amazon.DynamoDB.DataModel
 
         #region Batch Write
 
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write</typeparam>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
         public BatchWrite<T> CreateBatchWrite<T>()
         {
             return CreateBatchWrite<T>(null);
         }
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
         public BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
             return new BatchWrite<T>(this, config);
         }
 
+        /// <summary>
+        /// Creates a MultiTableBatchWrite object, composed of multiple
+        /// individual BatchWrite objects.
+        /// </summary>
+        /// <param name="batches">Individual BatchWrite objects</param>
+        /// <returns>Composite MultiTableBatchWrite object</returns>
         public MultiTableBatchWrite CreateMultiTableBatchWrite(params BatchWrite[] batches)
         {
             return new MultiTableBatchWrite(batches);
         }
 
+        /// <summary>
+        /// Issues a batch-write request with multiple batches.
+        /// </summary>
+        /// <param name="batches">
+        /// Configured BatchWrite objects
+        /// </param>
         public void ExecuteBatchWrite(params BatchWrite[] batches)
         {
             MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);

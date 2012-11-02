@@ -25,9 +25,12 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DeleteBucketRequest contains the parameters used for the DeleteBucket operation.
-    /// <br />Required Parameters: BucketName
+    /// Deletes the specified bucket.
     /// </summary>
+    /// <remarks>
+    /// All objects (including all object versions and Delete Markers) in the bucket must be 
+    /// deleted before the bucket itself can be deleted.
+    /// </remarks>
     public class DeleteBucketRequest : S3Request
     {
         #region Private Members
@@ -39,7 +42,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to be deleted.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -49,10 +52,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket that you want to delete.
+        /// Sets the name of the bucket to be deleted.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public DeleteBucketRequest WithBucketName(string bucketName)
         {

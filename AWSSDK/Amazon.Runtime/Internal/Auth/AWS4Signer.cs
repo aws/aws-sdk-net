@@ -82,8 +82,7 @@ namespace Amazon.Runtime.Internal.Auth
             StringBuilder stringToSign = new StringBuilder();
             stringToSign.AppendFormat("{0}-{1}\n{2}\n{3}\n", SCHEME, ALGORITHM, dateTime, scope);
 
-            HashAlgorithm ha = HashAlgorithm.Create("SHA-256");
-            byte[] canonicalRequestHashBytes = ha.ComputeHash(Encoding.UTF8.GetBytes(canonicalRequest));
+            byte[] canonicalRequestHashBytes = CanonicalizationHash.ComputeHash(Encoding.UTF8.GetBytes(canonicalRequest));
             stringToSign.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
 
             KeyedHashAlgorithm kha = KeyedHashAlgorithm.Create(signingAlgorithm);
@@ -154,8 +153,7 @@ namespace Amazon.Runtime.Internal.Auth
             StringBuilder stringToSign = new StringBuilder();
             stringToSign.AppendFormat("{0}-{1}\n{2}\n{3}\n", SCHEME, ALGORITHM, dateTime, scope);
 
-            HashAlgorithm ha = HashAlgorithm.Create("SHA-256");
-            byte[] canonicalRequestHashBytes = ha.ComputeHash(Encoding.UTF8.GetBytes(canonicalRequest));
+            byte[] canonicalRequestHashBytes = CanonicalizationHash.ComputeHash(Encoding.UTF8.GetBytes(canonicalRequest));
             stringToSign.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
 
             KeyedHashAlgorithm kha = KeyedHashAlgorithm.Create(signingAlgorithm);
@@ -304,8 +302,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
             else
             {
-                HashAlgorithm ha = HashAlgorithm.Create("SHA-256");
-                byte[] payloadHashBytes = ha.ComputeHash(Encoding.UTF8.GetBytes(requestBody));
+                byte[] payloadHashBytes = CanonicalizationHash.ComputeHash(Encoding.UTF8.GetBytes(requestBody));
                 canonicalRequest.Append(AWSSDKUtils.ToHex(payloadHashBytes, true));
             }
 

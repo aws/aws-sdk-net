@@ -37,8 +37,7 @@ namespace Amazon.SQS.Model
         private string requestIdField;
 
         /// <summary>
-        /// Gets and sets the Error property.
-        /// Error
+        /// List of errors.
         /// </summary>
         [XmlElementAttribute(ElementName = "Error")]
         public List<Error> Error
@@ -64,7 +63,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the RequestId property.
         /// A unique ID for tracking the request.
         /// </summary>
         [XmlElementAttribute(ElementName = "RequestId")]

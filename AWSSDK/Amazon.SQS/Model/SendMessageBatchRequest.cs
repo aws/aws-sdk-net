@@ -28,17 +28,18 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// This is a batch version of <c>SendMessage</c>. It takes
-    /// multiple messages and adds each of them to the queue. The result of each 
-    /// add operation is reported individually in the response.
+    /// Sends multiple messages to a queue.
     /// </summary>
+    /// <remarks>
+    /// This operation takes multiple messages and adds each of them to the queue.
+    /// The result of each add operation is reported individually in the response.
+    /// </remarks>
     public class SendMessageBatchRequest
     {
         private string queueUrlField;
         private List<SendMessageBatchRequestEntry> sendMessageBatchRequestEntryField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -49,7 +50,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -69,7 +70,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Entries property.  A list of <c>SendMessageBatchRequestEntries</c>.
+        /// A list of messages to send.
         /// </summary>
         public List<SendMessageBatchRequestEntry> Entries
         {
@@ -85,9 +86,9 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Entries property
+        /// Sets the list of messages to send.
         /// </summary>
-        /// <param name="list">A list of <c>SendMessageBatchRequestEntry</c> that will be added to the <c>Entries</c> property.</param>
+        /// <param name="list">A list of messages that will be added to the <c>Entries</c> property.</param>
         /// <returns>this instance</returns>
         public SendMessageBatchRequest WithEntries(params SendMessageBatchRequestEntry[] list)
         {

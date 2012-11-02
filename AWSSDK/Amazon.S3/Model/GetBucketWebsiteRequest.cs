@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The GetBucketWebsiteRequest contains the parameters used for the GetBucketWebsiteRequest operation.
-    /// <br />Required Parameters: BucketName
+    /// Queries the website configuration settings for a bucket.
     /// </summary>
     public class GetBucketWebsiteRequest : S3Request
     {
@@ -36,7 +35,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to be queried.
         /// </summary>
         public string BucketName
         {
@@ -45,10 +44,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket whose website configuration will be fetched.
+        /// Sets the name of the bucket to be queried.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public GetBucketWebsiteRequest WithBucketName(string bucketName)
         {

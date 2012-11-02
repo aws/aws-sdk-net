@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createOptionGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateOptionGroup");
-            request.Parameters.Add("Version", "2012-07-31");
+            request.Parameters.Add("Version", "2012-09-17");
             if (createOptionGroupRequest != null && createOptionGroupRequest.IsSetOptionGroupName())
             {
                 request.Parameters.Add("OptionGroupName", StringUtils.FromString(createOptionGroupRequest.OptionGroupName));

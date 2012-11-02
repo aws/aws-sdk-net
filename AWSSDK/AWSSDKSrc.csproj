@@ -1617,6 +1617,7 @@
     <Compile Include="Amazon.DynamoDB\DataModel\EntityUtils.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DynamoDB\DataModel\IDynamoDBContext.cs" />
     <Compile Include="Amazon.DynamoDB\DataModel\InternalModel.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6187,6 +6188,9 @@
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PendingModifiedValuesUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PromoteReadReplicaRequestMarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PromoteReadReplicaResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PromoteReadReplicaResultUnmarshaller.cs" />
     <Compile Include="Amazon.RDS\Model\Internal\MarshallTransformations\PurchaseReservedDBInstancesOfferingRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6340,6 +6344,10 @@
     <Compile Include="Amazon.RDS\Model\PointInTimeRestoreNotEnabledException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\PromoteReadReplicaRequest.cs" />
+    <Compile Include="Amazon.RDS\Model\PromoteReadReplicaResponse.cs" />
+    <Compile Include="Amazon.RDS\Model\PromoteReadReplicaResult.cs" />
+    <Compile Include="Amazon.RDS\Model\ProvisionedIopsNotAvailableInAZException.cs" />
     <Compile Include="Amazon.RDS\Model\PurchaseReservedDBInstancesOfferingRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7756,6 +7764,7 @@
     <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemObjectGenerator.cs" />
     <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemObjectParser.cs" />
     <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemReader.cs" />
+    <Compile Include="ThirdParty\Ionic.Zlib\Crc32.cs" />
     <Compile Include="ThirdParty\Json\IJsonWrapper.cs" />
     <Compile Include="ThirdParty\Json\JsonData.cs" />
     <Compile Include="ThirdParty\Json\JsonException.cs" />

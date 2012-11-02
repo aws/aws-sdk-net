@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         private string engineVersion;
         private string licenseModel;
         private string snapshotType;
+        private int? iops;
 
         /// <summary>
         /// Specifies the identifier for the DB Snapshot.
@@ -437,6 +438,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetSnapshotType()
         {
             return this.snapshotType != null;       
+        }
+
+        /// <summary>
+        /// Specifies the Provisioned IOPS (I/O operations per second) value of the DB Instance at the time of the snapshot.
+        ///  
+        /// </summary>
+        public int Iops
+        {
+            get { return this.iops ?? default(int); }
+            set { this.iops = value; }
+        }
+
+        /// <summary>
+        /// Sets the Iops property
+        /// </summary>
+        /// <param name="iops">The value to set for the Iops property </param>
+        /// <returns>this instance</returns>
+        public DBSnapshot WithIops(int iops)
+        {
+            this.iops = iops;
+            return this;
+        }
+            
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this.iops.HasValue;       
         }
     }
 }

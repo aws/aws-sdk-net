@@ -25,12 +25,22 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DeleteObjectsRequest contains the parameters used for the DeleteObjects operation.
-    /// <br />Required Parameters: BucketName, Keys
-    /// <br />The MfaCodes property is required if the bucket containing this object has been
-    /// configured with the EnableMfaDelete property. For more information, please see:
-    /// <see cref="P:Amazon.S3.Model.S3BucketVersioningConfig.EnableMfaDelete"/>.
+    /// Deletes the lifecycle configuration from the specified bucket. 
     /// </summary>
+    /// <remarks>
+    /// <para>
+    /// Amazon S3 removes all the lifecycle configuration rules in the lifecycle subresource associated with the bucket. 
+    /// Your objects never expire, and Amazon S3 no longer automatically deletes any objects on the basis of rules contained 
+    /// in the deleted lifecycle configuration.
+    /// </para>
+    /// <para>
+    /// To use this operation, you must have permission to perform the s3:PutLifecycleConfiguration action. By default, the 
+    /// bucket owner has this permission and the bucket owner can grant this permission to others.
+    /// </para>
+    /// <para>
+    /// There is usually some time lag before lifecycle configuration deletion is fully propagated to all the Amazon S3 systems.
+    /// </para>
+    /// </remarks>
     public class DeleteLifecycleConfigurationRequest : S3Request
     {
         #region Private Members
@@ -42,7 +52,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket on which the lifecycle configuration is to be deleted.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -52,11 +62,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket that contains the S3 Objects
-        /// you want to delete.
+        /// Sets the name of the bucket on which the lifecycle configuration is to be deleted.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public DeleteLifecycleConfigurationRequest WithBucketName(string bucketName)
         {

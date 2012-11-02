@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(removeTagsFromResourceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RemoveTagsFromResource");
-            request.Parameters.Add("Version", "2012-07-31");
+            request.Parameters.Add("Version", "2012-09-17");
             if (removeTagsFromResourceRequest != null && removeTagsFromResourceRequest.IsSetResourceName())
             {
                 request.Parameters.Add("ResourceName", StringUtils.FromString(removeTagsFromResourceRequest.ResourceName));

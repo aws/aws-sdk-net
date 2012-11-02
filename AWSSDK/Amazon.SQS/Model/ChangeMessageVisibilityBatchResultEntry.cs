@@ -35,8 +35,7 @@ namespace Amazon.SQS.Model
         private string idField;
 
         /// <summary>
-        /// Gets and sets the Id property.  Represents a message whose visibility timeout has been changed
-        /// successfully.
+        /// Id of the message whose visibility timeout has been changed successfully.
         /// </summary>
         public string Id
         {

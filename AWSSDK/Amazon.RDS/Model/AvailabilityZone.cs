@@ -32,6 +32,7 @@ namespace Amazon.RDS.Model
     {
         
         private string name;
+        private bool? provisionedIopsCapable;
 
         /// <summary>
         /// The name of the availability zone.
@@ -59,6 +60,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetName()
         {
             return this.name != null;       
+        }
+        public bool ProvisionedIopsCapable
+        {
+            get { return this.provisionedIopsCapable ?? default(bool); }
+            set { this.provisionedIopsCapable = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProvisionedIopsCapable property
+        /// </summary>
+        /// <param name="provisionedIopsCapable">The value to set for the ProvisionedIopsCapable property </param>
+        /// <returns>this instance</returns>
+        public AvailabilityZone WithProvisionedIopsCapable(bool provisionedIopsCapable)
+        {
+            this.provisionedIopsCapable = provisionedIopsCapable;
+            return this;
+        }
+            
+
+        // Check to see if ProvisionedIopsCapable property is set
+        internal bool IsSetProvisionedIopsCapable()
+        {
+            return this.provisionedIopsCapable.HasValue;       
         }
     }
 }

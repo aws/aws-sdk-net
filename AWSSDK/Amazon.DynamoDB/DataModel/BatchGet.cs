@@ -59,6 +59,11 @@ namespace Amazon.DynamoDB.DataModel
         /// </summary>
         public List<object> Results { get { return UntypedResults; } }
 
+        /// <summary>
+        /// If set to true, a consistent read is issued. Otherwise eventually-consistent is used.
+        /// </summary>
+        public bool ConsistentRead { get; set; }
+
         #endregion
 
 
@@ -203,7 +208,8 @@ namespace Amazon.DynamoDB.DataModel
 
             DocumentBatchGet docBatch = new DocumentBatchGet(table)
             {
-                AttributesToGet = storageConfig.AttributesToGet
+                AttributesToGet = storageConfig.AttributesToGet,
+                ConsistentRead = this.ConsistentRead
             };
             docBatch.Keys.AddRange(keys);
 

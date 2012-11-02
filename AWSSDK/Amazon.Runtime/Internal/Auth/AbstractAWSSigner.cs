@@ -81,6 +81,26 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
+        private static HashAlgorithm _hashAlgorithm = null;
+        protected static HashAlgorithm CanonicalizationHash
+        {
+            get
+            {
+                if (null == _hashAlgorithm)
+                {
+                    try
+                    {
+                        _hashAlgorithm = HashAlgorithm.Create("SHA-256");
+                    }
+                    catch (Exception) // Managed Hash Provider is not FIPS compliant.
+                    {
+                        _hashAlgorithm = new SHA256CryptoServiceProvider();
+                    }
+                }
+                return _hashAlgorithm;
+            }
+        }
+
         public abstract void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey, SecureString secureKey);
     }
 }

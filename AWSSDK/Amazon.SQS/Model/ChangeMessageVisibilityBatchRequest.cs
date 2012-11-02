@@ -28,18 +28,18 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// This is a batch version of <c>ChangeMessageVisibility</c>. It takes
-    /// multiple receipt handles and performs the operation on each of the them. The
-    /// result of the operation on each message is reported individually in the
-    /// response.
+    /// Extends the read lock timeout of multiple messages in a queue.
     /// </summary>
+    /// <remarks>
+    /// This operation takes multiple receipt handles and extends the lock timeout for each of the them.
+    /// The result of the operation on each message is reported individually in the response.
+    /// </remarks>
     public class ChangeMessageVisibilityBatchRequest
     {
         private string queueUrlField;
         private List<ChangeMessageVisibilityBatchRequestEntry> changeMessageVisibilityBatchRequestEntryField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -50,7 +50,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -70,8 +70,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Entries property.  A list of receipt handles of the messages for which the visibility timeout
-        /// must be changed.
+        /// A list of receipt handles of the messages for which the visibility timeout must be changed.
         /// </summary>
         public List<ChangeMessageVisibilityBatchRequestEntry> Entries
         {
@@ -87,7 +86,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Entries property
+        /// Sets the list of receipt handles of the messages for which the visibility timeout must be changed.
         /// </summary>
         /// <param name="list">A list of <c>ChangeMessageVisibilityBatchRequestEntry</c> that will be added to the <c>Entries</c> property.</param>
         /// <returns>this instance</returns>

@@ -29,8 +29,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// CORSConfiguration is a container for the collection of CORS
-    /// rules for a specific S3 bucket.
+    /// A collection of up to 100 cross-origin resource sharing (CORS) rules.
     /// </summary>
     [XmlTypeAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/")]
     [XmlRootAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/", IsNullable = false)]
@@ -39,7 +38,7 @@ namespace Amazon.S3.Model
         private List<CORSRule> rules;
 
         /// <summary>
-        /// Gets and sets the list of CORS rules for this configuration.
+        /// The collection of rules in this configuration.
         /// </summary>
         public List<CORSRule> Rules
         {
@@ -53,7 +52,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Rules property.
+        /// Sets the collecton of rules in this configuration.
         /// </summary>
         /// <param name="args">Rules property</param>
         /// <returns>this instance</returns>

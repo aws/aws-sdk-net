@@ -105,6 +105,8 @@ namespace Amazon.SQS
 
         #endregion
 
+        #region Constructors
+
         /// <summary>
         /// Constructs AmazonSQSClient with the credentials loaded from the application's
         /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
@@ -247,100 +249,104 @@ namespace Amazon.SQS
             this.ownCredentials = ownCredentials;
         }
 
+        #endregion
+
         #region Public API
 
         /// <summary>
-        /// Create Queue 
+        /// Creates a new queue, or returns the URL of an existing one.
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// When you request CreateQueue, you provide a name for the queue. To successfully
+        /// create a new queue, you must provide a name that is unique within the scope of
+        /// your own queues. If you provide the name of an existing queue, a new queue isn't
+        /// created and an error isn't returned. Instead, the request succeeds and the queue
+        /// URL for the existing queue is returned.
+        /// </para>
+        /// <para>
+        /// Exception: if you provide a value for DefaultVisibilityTimeout that is different
+        /// from the value for the existing queue, you receive an error.
+        /// </para>
+        /// </remarks>
         /// <param name="request">Create Queue  request</param>
         /// <returns>Create Queue  Response from the service</returns>
-        /// <remarks>
-        /// The CreateQueue action creates a new queue, or returns the URL of an existing one.
-        /// When you request CreateQueue, you provide a name for the queue. To successfully create
-        /// a new queue, you must provide a name that is unique within the scope of your own queues.
-        /// If you provide the name of an existing queue, a new queue isn't created and an error
-        /// isn't returned. Instead, the request succeeds and the queue URL for the existing queue is
-        /// returned. Exception: if you provide a value for DefaultVisibilityTimeout that is different
-        /// from the value for the existing queue, you receive an error.
-        /// </remarks>
         public CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
             return Invoke<CreateQueueResponse>(ConvertCreateQueue(request));
         }
 
         /// <summary>
-        /// List Queues 
+        /// Returns a list of your queues. The maximum number of queues that can be returned is 1000.
         /// </summary>
+        /// <remarks>
+        /// If you specify a value for the optional QueueNamePrefix parameter, only queues with a name beginning with the
+        /// specified value are returned.
+        /// </remarks>
         /// <param name="request">List Queues  request</param>
         /// <returns>List Queues  Response from the service</returns>
-        /// <remarks>
-        /// The ListQueues action returns a list of your queues.
-        /// </remarks>
         public ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
             return Invoke<ListQueuesResponse>(ConvertListQueues(request));
         }
 
         /// <summary>
-        /// Add Permission 
+        /// Adds the specified permission(s) to a queue for the specified principal(s).
         /// </summary>
+        /// <remarks>
+        /// This allows for sharing access to the queue.
+        /// </remarks>
         /// <param name="request">Add Permission  request</param>
         /// <returns>Add Permission  Response from the service</returns>
-        /// <remarks>
-        /// Adds the specified permission(s) to a queue for the specified principal(s). This allows for sharing access to the queue.
-        /// </remarks>
         public AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
             return Invoke<AddPermissionResponse>(ConvertAddPermission(request));
         }
 
         /// <summary>
-        /// Change Message Visibility 
+        /// Extends the read lock timeout of a single message in a queue.
         /// </summary>
         /// <param name="request">Change Message Visibility  request</param>
         /// <returns>Change Message Visibility  Response from the service</returns>
-        /// <remarks>
-        /// The ChangeMessageVisibility action extends the read lock timeout of the specified message from the specified queue to the specified value.
-        /// </remarks>
         public ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request)
         {
             return Invoke<ChangeMessageVisibilityResponse>(ConvertChangeMessageVisibility(request));
         }
 
         /// <summary>
-        /// This is a batch version of ChangeMessageVisibility. It takes
-        /// multiple receipt handles and performs the operation on each of the them. The
-        /// result of the operation on each message is reported individually in the
-        /// response.
+        /// Extends the read lock timeout of multiple messages in a queue.
         /// </summary>
+        /// <remarks>
+        /// This operation takes multiple receipt handles and extends the lock timeout for each of the them.
+        /// The result of the operation on each message is reported individually in the response.
+        /// </remarks>
         /// <param name="request">Change Message Visibility Batch request</param>
         /// <returns>Change Message Visibility Response from the service</returns>
-        /// <remarks>
-        /// The ChangeMessageVisibilityBatch action extends the read lock timeout of the specified message from the specified queue to the specified value.
-        /// </remarks>
         public ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
         {
             return Invoke<ChangeMessageVisibilityBatchResponse>(ConvertChangeMessageVisibilityBatch(request));
         }
 
         /// <summary>
-        /// Delete Message 
+        /// Unconditionally removes the specified message from the specified queue.
         /// </summary>
+        /// <remarks>
+        /// Even if the message is locked by another reader due to the visibility timeout setting, it is still deleted from the queue.
+        /// </remarks>
         /// <param name="request">Delete Message  request</param>
         /// <returns>Delete Message  Response from the service</returns>
-        /// <remarks>
-        /// The DeleteMessage action unconditionally removes the specified message from the specified queue. Even if the message is locked by another reader due to the visibility timeout setting, it is still deleted from the queue.
-        /// </remarks>
         public DeleteMessageResponse DeleteMessage(DeleteMessageRequest request)
         {
             return Invoke<DeleteMessageResponse>(ConvertDeleteMessage(request));
         }
 
         /// <summary>
-        /// This is a batch version of <c>DeleteMessage</c>. It takes multiple
-        /// receipt handles and deletes each one of the messages. The result of the delete
-        /// operation on each message is reported individually in the response.
+        /// Removes multiple messages from the specified queue.
         /// </summary>
+        /// <remarks>
+        /// This operation takes multiple receipt handles and deletes each one of the messages.
+        /// The result of the delete operation on each message is reported individually in the response.
+        /// </remarks>
         /// <param name="request">DeleteMessageBatch request</param>
         /// <returns>DeleteMessageBatch Response from the service</returns>
         public DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request)
@@ -349,23 +355,35 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Delete Queue 
+        /// <para>
+        /// Deletes the queue specified by the queue URL, regardless of whether the queue is empty.
+        /// </para>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If the specified queue does not exist, SQS returns a successful response. Use DeleteQueue with care; once you
+        /// delete your queue, any messages in the queue are no longer available.
+        /// </para>
+        /// <para>
+        /// When you delete a queue, the deletion process takes up to 60 seconds. Requests you send involving that queue
+        /// during the 60 seconds might succeed. For example, a SendMessage request might succeed, but after the 60 seconds,
+        /// the queue and that message you sent no longer exist. Also, when you delete a queue, you must wait at least 60 seconds
+        /// before creating a queue with the same name.
+        /// </para>
+        /// <para>
+        /// We reserve the right to delete queues that have had no activity for more than 30 days.
+        /// </para>
+        /// </remarks>
         /// <param name="request">Delete Queue  request</param>
         /// <returns>Delete Queue  Response from the service</returns>
-        /// <remarks>
-        /// This action unconditionally deletes the queue specified by the queue URL. Use this operation WITH CARE!  The queue is deleted even if it is NOT empty.
-        /// </remarks>
         public DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
             return Invoke<DeleteQueueResponse>(ConvertDeleteQueue(request));
         }
 
         /// <summary>
-        /// Get Queue Attributes 
+        /// Gets one or all attributes of a queue.
         /// </summary>
-        /// <param name="request">Get Queue Attributes  request</param>
-        /// <returns>Get Queue Attributes  Response from the service</returns>
         /// <remarks>
         /// Gets one or all attributes of a queue. The following table lists the valid values for attributes to be returned.
         /// <list type="definition">
@@ -419,13 +437,15 @@ namespace Amazon.SQS
         ///     </item>
         /// </list>
         /// </remarks>
+        /// <param name="request">Get Queue Attributes  request</param>
+        /// <returns>Get Queue Attributes  Response from the service</returns>
         public GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request)
         {
             return Invoke<GetQueueAttributesResponse>(ConvertGetQueueAttributes(request));
         }
 
         /// <summary>
-        /// The <c>GetQueueUrl</c> action returns the URL of an existing queue.
+        /// Returns the URL of an existing queue.
         /// </summary>
         /// <param name="request">GetQueueUrl  request</param>
         /// <returns>GetQueueUrl Response from the service</returns>
@@ -435,54 +455,48 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Remove Permission 
+        /// Removes the permission with the specified statement id from the queue.
         /// </summary>
         /// <param name="request">Remove Permission  request</param>
         /// <returns>Remove Permission  Response from the service</returns>
-        /// <remarks>
-        /// Removes the permission with the specified statement id from the queue.
-        /// </remarks>
         public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
             return Invoke<RemovePermissionResponse>(ConvertRemovePermission(request));
         }
 
         /// <summary>
-        /// Receive Message 
+        /// Retrieves one or more messages from the specified queue, including the message body and message ID of each message.
         /// </summary>
+        /// <remarks>
+        /// Messages returned by this action stay in the queue until you delete them. However, once a message is returned to a
+        /// ReceiveMessage request, it is not returned on subsequent ReceiveMessage requests for the duration of the
+        /// VisibilityTimeout. If you do not specify a VisibilityTimeout in the request, the overall visibility timeout for the
+        /// queue is used for the returned messages.
+        /// </remarks>
         /// <param name="request">Receive Message  request</param>
         /// <returns>Receive Message  Response from the service</returns>
-        /// <remarks>
-        /// Retrieves one or more messages from the specified queue.  For each message returned, the response includes
-        /// the message body; MD5 digest of the message body; receipt handle, which is the identifier you must provide
-        /// when deleting the message; and message ID of each message. Messages returned by this action stay in the queue
-        /// until you delete them. However, once a message is returned to a ReceiveMessage request, it is not returned
-        /// on subsequent ReceiveMessage requests for the duration of the VisibilityTimeout. If you do not specify a
-        /// VisibilityTimeout in the request, the overall visibility timeout for the queue is used for the returned messages.
-        /// </remarks>
         public ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request)
         {
             return Invoke<ReceiveMessageResponse>(ConvertReceiveMessage(request));
         }
 
         /// <summary>
-        /// Send Message 
+        /// Delivers a message to the specified queue.
         /// </summary>
         /// <param name="request">Send Message  request</param>
         /// <returns>Send Message  Response from the service</returns>
-        /// <remarks>
-        /// The SendMessage action delivers a message to the specified queue.
-        /// </remarks>
         public SendMessageResponse SendMessage(SendMessageRequest request)
         {
             return Invoke<SendMessageResponse>(ConvertSendMessage(request));
         }
 
         /// <summary>
-        /// This is a batch version of <c>SendMessage</c>. It takes
-        /// multiple messages and adds each of them to the queue. The result of each 
-        /// add operation is reported individually in the response.
+        /// Sends multiple messages to a queue.
         /// </summary>
+        /// <remarks>
+        /// This operation takes multiple messages and adds each of them to the queue.
+        /// The result of each add operation is reported individually in the response.
+        /// </remarks>
         /// <param name="request">SendMessageBatch  request</param>
         /// <returns>SendMessageBatch Response from the service</returns>
         public SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request)
@@ -491,13 +505,10 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Set Queue Attributes 
+        /// Sets an attribute of a queue. Currently, you can set only one attribute per request.
         /// </summary>
         /// <param name="request">Set Queue Attributes  request</param>
         /// <returns>Set Queue Attributes  Response from the service</returns>
-        /// <remarks>
-        /// Sets an attribute of a queue. Currently, you can set only the VisibilityTimeout attribute for a queue.
-        /// </remarks>
         public SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request)
         {
             return Invoke<SetQueueAttributesResponse>(ConvertSetQueueAttributes(request));

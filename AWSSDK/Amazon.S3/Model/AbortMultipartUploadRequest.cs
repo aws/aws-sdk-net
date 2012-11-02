@@ -26,9 +26,15 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The AbortMultipartUploadRequest contains the parameters used for the AbortMultipartUpload method.
-    /// <br />Required Parameters: BucketName, Key, UploadId
+    /// Aborts a multipart upload.
     /// </summary>
+    /// <remarks>
+    /// After a multipart upload is aborted, no additional parts can be uploaded using that upload ID. 
+    /// The storage consumed by any previously uploaded parts will be freed. However, if any part uploads 
+    /// are currently in progress, those part uploads might or might not succeed. As a result, it might be 
+    /// necessary to abort a given multipart upload multiple times in order to completely free all storage 
+    /// consumed by all parts.
+    /// </remarks>
     public class AbortMultipartUploadRequest : S3Request
     {
 
@@ -39,7 +45,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket containing the S3 object that was being uploaded in parts.
         /// </summary>
         public string BucketName
         {
@@ -48,9 +54,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
+        /// Sets the name of the bucket containing the S3 object that was being uploaded in parts.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">S3 bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public AbortMultipartUploadRequest WithBucketName(string bucketName)
         {
@@ -71,7 +77,7 @@ namespace Amazon.S3.Model
 
         #region Key
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key of the S3 object that was being uploaded.
         /// </summary>
         public string Key
         {
@@ -80,10 +86,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
-        /// This is the Key for the S3 Object.
+        /// Sets the key of the S3 object that was being uploaded.
         /// </summary>
-        /// <param name="key">The value that Key is set to</param>
+        /// <param name="key">S3 object key</param>
         /// <returns>the request with the Key set</returns>
         public AbortMultipartUploadRequest WithKey(string key)
         {
@@ -104,8 +109,7 @@ namespace Amazon.S3.Model
 
         #region UploadId
         /// <summary>
-        /// Gets and sets the UploadId property.
-        /// This is the upload id for the multipart upload in process.
+        /// The upload id for the in-progress multipart upload that should be aborted.
         /// </summary>
         public string UploadId
         {
@@ -114,10 +118,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the UploadId property for this request.
-        /// This is the upload id for the multipart upload in process.
+        /// Sets the upload id for the in-progress multipart upload that should be aborted.
         /// </summary>
-        /// <param name="uploadId">The value that UploadId is set to</param>
+        /// <param name="uploadId">Id of the multipart upload</param>
         /// <returns>the request with the UploadId set</returns>
         public AbortMultipartUploadRequest WithUploadId(string uploadId)
         {

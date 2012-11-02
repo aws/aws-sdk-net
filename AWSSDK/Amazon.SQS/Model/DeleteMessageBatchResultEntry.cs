@@ -36,7 +36,7 @@ namespace Amazon.SQS.Model
         private string idField;
 
         /// <summary>
-        /// Gets and sets the Id property.  Represents a successfully deleted message.
+        /// Id of a successfully deleted message.
         /// </summary>
         public string Id
         {

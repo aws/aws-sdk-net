@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private string engineVersion;
         private bool? autoMinorVersionUpgrade;
         private string licenseModel;
+        private int? iops;
         private string optionGroupName;
         private string characterSetName;
 
@@ -145,8 +146,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The compute and memory capacity of the DB Instance. To determine the instance classes that are available for a particular DB engine, use the
-        /// <a>DescribeOrderableDBInstanceOptions</a> action. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
+        /// The compute and memory capacity of the DB Instance. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
         /// |db.m2.2xlarge | db.m2.4xlarge</c> <note>Amazon RDS does not support db.t1.micro instances in a virtual private cloud (VPC).</note>
         ///  
         /// </summary>
@@ -526,8 +526,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft SQL Server, must be set to false. You cannot set the AvailabilityZone
-        /// parameter if the MultiAZ parameter is set to true.
+        /// Specifies if the DB Instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the MultiAZ parameter is set to
+        /// true.
         ///  
         /// </summary>
         public bool MultiAZ
@@ -638,6 +638,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetLicenseModel()
         {
             return this.licenseModel != null;       
+        }
+
+        /// <summary>
+        /// The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB Instance. Constraints: Must be an
+        /// integer greater than 1000.
+        ///  
+        /// </summary>
+        public int Iops
+        {
+            get { return this.iops ?? default(int); }
+            set { this.iops = value; }
+        }
+
+        /// <summary>
+        /// Sets the Iops property
+        /// </summary>
+        /// <param name="iops">The value to set for the Iops property </param>
+        /// <returns>this instance</returns>
+        public CreateDBInstanceRequest WithIops(int iops)
+        {
+            this.iops = iops;
+            return this;
+        }
+            
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this.iops.HasValue;       
         }
 
         /// <summary>

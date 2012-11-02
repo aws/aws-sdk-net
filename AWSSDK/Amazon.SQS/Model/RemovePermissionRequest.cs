@@ -36,7 +36,6 @@ namespace Amazon.SQS.Model
         private string labelField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -47,7 +46,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -67,7 +66,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Label property.
         /// The identfication of the permission you want to remove. This is the label you added in AddPermission.
         /// </summary>
         [XmlElementAttribute(ElementName = "Label")]
@@ -78,7 +76,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Label property
+        /// Sets the identfication of the permission you want to remove. This is the label you added in AddPermission.
         /// </summary>
         /// <param name="label">The identfication of the permission you want to remove. This is the label you added in AddPermission.</param>
         /// <returns>this instance</returns>

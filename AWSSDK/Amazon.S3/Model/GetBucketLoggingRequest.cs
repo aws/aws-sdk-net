@@ -25,8 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The GetBucketLoggingRequest contains the parameters used for the GetBucketLogging operation.
-    /// <br />Required Parameters: BucketName
+    /// Querues the logging status of a bucket.
     /// </summary>
     public class GetBucketLoggingRequest : S3Request
     {
@@ -39,7 +38,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to query.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -49,10 +48,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// The logging config returned will be for this S3 Bucket.
+        /// Sets the name of the bucket to query.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
         public GetBucketLoggingRequest WithBucketName(string bucketName)
         {

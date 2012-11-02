@@ -37,7 +37,6 @@ namespace Amazon.SQS.Model
         private List<string> attributeNameField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -48,7 +47,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -68,10 +67,11 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the AttributeName property.
-        /// The attribute you want to get. Values can be:
-        /// All | ApproximateNumberOfMessages | ApproximateNumberOfMessagesNotVisible | VisibilityTimeout | CreatedTimestamp | LastModifiedTimestamp | Policy
+        /// The attribute you want to get.
         /// </summary>
+        /// <remarks>
+        /// Values can be: All | ApproximateNumberOfMessages | ApproximateNumberOfMessagesNotVisible | VisibilityTimeout | CreatedTimestamp | LastModifiedTimestamp | Policy
+        /// </remarks>
         [XmlElementAttribute(ElementName = "AttributeName")]
         public List<string> AttributeName
         {
@@ -87,10 +87,12 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the AttributeName property
+        /// Sets the attribute you want to get.
         /// </summary>
-        /// <param name="list">The attribute you want to get. Values can be:
-        /// All | ApproximateNumberOfMessages | ApproximateNumberOfMessagesNotVisible | VisibilityTimeout | CreatedTimestamp | LastModifiedTimestamp | Policy</param>
+        /// <remarks>
+        /// Values can be: All | ApproximateNumberOfMessages | ApproximateNumberOfMessagesNotVisible | VisibilityTimeout | CreatedTimestamp | LastModifiedTimestamp | Policy
+        /// </remarks>
+        /// <param name="list">The attribute you want to get.</param>
         /// <returns>this instance</returns>
         public GetQueueAttributesRequest WithAttributeName(params string[] list)
         {

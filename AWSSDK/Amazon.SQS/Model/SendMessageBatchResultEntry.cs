@@ -37,7 +37,7 @@ namespace Amazon.SQS.Model
         private string md5OfMessageBody;
 
         /// <summary>
-        /// Gets and sets the Id property.  An identifier for the message in this batch.
+        /// User-supplied Id of the sent message.
         /// </summary>
         public string Id
         {
@@ -55,7 +55,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the MessageId property.  An identifier for the message.
+        /// An identifier for the message.
         /// </summary>
         public string MessageId
         {
@@ -73,11 +73,14 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the MD5OfMessageBody property.  An MD5 digest of the non-URL-encoded message body string. This can be used to
-        /// verify that SQS received the message correctly. SQS first URL decodes the
-        /// message before creating the MD5 digest. For information about MD5, go to
-        /// <a href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+        /// An MD5 digest of the non-URL-encoded message body string.
         /// </summary>
+        /// <remarks>
+        /// This can be used to verify that SQS received the message correctly.
+        /// SQS first URL decodes the message before creating the MD5 digest.
+        /// For information about MD5, go to
+        /// <a href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+        /// </remarks>
         public string MD5OfMessageBody
         {
             get { return this.md5OfMessageBody; }

@@ -37,7 +37,6 @@ namespace Amazon.SQS.Model
         private string valueField;
 
         /// <summary>
-        /// Gets and sets the Name property.
         /// Name of the attribute.
         /// </summary>
         [XmlElementAttribute(ElementName = "Name")]
@@ -48,7 +47,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Name property
+        /// Sets the name of the attribute.
         /// </summary>
         /// <param name="name">Name of the attribute.</param>
         /// <returns>this instance</returns>
@@ -68,7 +67,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Value property.
         /// Values of the attribute.
         /// </summary>
         [XmlElementAttribute(ElementName = "Value")]
@@ -79,7 +77,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Value property
+        /// Sets Values of the attribute.
         /// </summary>
         /// <param name="value">Values of the attribute.</param>
         /// <returns>this instance</returns>

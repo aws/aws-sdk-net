@@ -27,6 +27,8 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
+
+
 namespace Amazon.Runtime
 {
     /// <summary>
@@ -454,6 +456,8 @@ namespace Amazon.Runtime
                         var context = unmarshaller.CreateContext(httpResponse, config.LogResponse || config.ReadEntireResponse, asyncResult);
 
                         AmazonWebServiceResponse response = unmarshaller.Unmarshall(context);
+                        context.ValidateCRC32IfAvailable();
+
                         response.ContentLength = httpResponse.ContentLength;
                         asyncResult.FinalResponse = response;
 

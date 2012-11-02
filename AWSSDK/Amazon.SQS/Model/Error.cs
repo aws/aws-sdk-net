@@ -38,7 +38,6 @@ namespace Amazon.SQS.Model
         private Object detailField;
 
         /// <summary>
-        /// Gets and sets the Type property.
         /// The error type.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
@@ -49,7 +48,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the error type.
         /// </summary>
         /// <param name="type">The error type.</param>
         /// <returns>this instance</returns>
@@ -69,7 +68,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Code property.
         /// The specific error code.
         /// </summary>
         [XmlElementAttribute(ElementName = "Code")]
@@ -80,7 +78,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Code property
+        /// Sets the specific error code.
         /// </summary>
         /// <param name="code">The specific error code.</param>
         /// <returns>this instance</returns>
@@ -100,8 +98,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Message property.
-        /// A summary of the error.
+        /// Summary of the error.
         /// </summary>
         [XmlElementAttribute(ElementName = "Message")]
         public string Message
@@ -111,7 +108,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Message property
+        /// Sets the summary of the error.
         /// </summary>
         /// <param name="message">A summary of the error.</param>
         /// <returns>this instance</returns>
@@ -131,7 +128,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Detail property.
         /// Details associated with the error.
         /// </summary>
         [XmlElementAttribute(ElementName = "Detail")]
@@ -142,7 +138,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Detail property
+        /// Sets the details associated with the error.
         /// </summary>
         /// <param name="detail">Details associated with the error.</param>
         /// <returns>this instance</returns>

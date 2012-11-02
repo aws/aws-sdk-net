@@ -26,8 +26,7 @@ using System.Collections.Generic;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// DeleteError is a container for information about a failed
-    /// delete operation against a specific S3 object.
+    /// Contains information about a failed delete operation against a specific S3 object.
     /// </summary>
     public class DeleteError
     {
@@ -37,7 +36,7 @@ namespace Amazon.S3.Model
         private string message;
 
         /// <summary>
-        /// Gets and sets the key identifying the S3 object.
+        /// The key of the S3 object.
         /// </summary>
         public string Key
         {
@@ -46,7 +45,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the version identifying the S3 object.
+        /// The version of the S3 object.
         /// </summary>
         public string VersionId
         {
@@ -55,7 +54,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the failure code for this delete error.
+        /// The failure code for the delete error.
         /// </summary>
         public string Code
         {
@@ -64,7 +63,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the failure message for this delete error.
+        /// The failure message for the delete error.
         /// </summary>
         public string Message
         {

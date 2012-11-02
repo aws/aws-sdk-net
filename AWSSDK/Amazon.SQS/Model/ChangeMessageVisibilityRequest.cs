@@ -27,8 +27,7 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The ChangeMessageVisibility action extends the read lock timeout of the specified message
-    /// from the specified queue to the specified value.
+    /// Extends the read lock timeout of a single message in a queue.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class ChangeMessageVisibilityRequest
@@ -39,7 +38,6 @@ namespace Amazon.SQS.Model
         private List<Attribute> attributeField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -50,7 +48,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -70,10 +68,11 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the ReceiptHandle property.
         /// The receipt handle associated with the message whose visibility timeout you want to change.
-        /// This parameter is returned by the ReceiveMessage action.
         /// </summary>
+        /// <remarks>
+        /// This parameter is returned by the ReceiveMessage action.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ReceiptHandle")]
         public string ReceiptHandle
         {
@@ -82,7 +81,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the ReceiptHandle property
+        /// Sets the receipt handle associated with the message whose visibility timeout you want to change.
         /// </summary>
         /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout you want to change.
         /// This parameter is returned by the ReceiveMessage action.</param>
@@ -103,8 +102,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the VisibilityTimeout property.
-        /// The new value for the message's visibility timeout (in seconds).
+        /// The new value (in seconds) for the message's visibility timeout.
         /// </summary>
         [XmlElementAttribute(ElementName = "VisibilityTimeout")]
         public Decimal VisibilityTimeout
@@ -114,7 +112,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the VisibilityTimeout property
+        /// Sets the new value (in seconds) for the message's visibility timeout.
         /// </summary>
         /// <param name="visibilityTimeout">The new value for the message's visibility timeout (in seconds).</param>
         /// <returns>this instance</returns>
@@ -134,7 +132,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -152,7 +149,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the name and value pair of an attribute associated with the queue.
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>

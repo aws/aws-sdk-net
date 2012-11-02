@@ -25,8 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DisableBucketLoggingRequest contains the parameters used for the DisableBucketLogging operation.
-    /// <br />Required Parameters: BucketName
+    /// Disables logging on the specified bucket.
     /// </summary>
     public class DisableBucketLoggingRequest : EnableBucketLoggingRequest
     {

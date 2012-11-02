@@ -25,11 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The GetACLRequest contains the parameters used for the GetACL operation.
-    /// The BucketName is always required, the Key is optional and is to be set
-    /// if you want the ACL for an object instead of a bucket.
-    /// <br />Required Parameters: BucketName
-    /// <br />Optional Parameters: Key, VersionId
+    /// Returns the access control list (ACL) for a bucket or object.
     /// </summary>
     public class GetACLRequest : S3Request
     {
@@ -44,7 +40,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to be queried or containing the object to be queried.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -54,12 +50,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is either the S3 Bucket whose ACL you want to get, 
-        /// or the S3 Bucket that has the S3 Object whose ACL 
-        /// you want to get.
+        /// Sets the name of the bucket to be queried or containing the object to be queried.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
         public GetACLRequest WithBucketName(string bucketName)
         {
@@ -81,8 +74,11 @@ namespace Amazon.S3.Model
         #region Key
 
         /// <summary>
-        /// Gets and sets the Key property.
+        /// Optional, the key of the S3 object to be queried.
         /// </summary>
+        /// <remarks>
+        /// If not set, the ACLs returned are those of the bucket.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
         {
@@ -91,11 +87,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
-        /// This is the Key for the S3 Object whose ACL you 
-        /// want to get.
+        /// Sets the key of the S3 object to be queried (optional).
         /// </summary>
-        /// <param name="key">The value that Key is set to</param>
+        /// <remarks>
+        /// If not set, the ACLs returned are those of the bucket.
+        /// </remarks>
+        /// <param name="key">S3 object key</param>
         /// <returns>this instance</returns>
         public GetACLRequest WithKey(string key)
         {
@@ -117,11 +114,11 @@ namespace Amazon.S3.Model
         #region VersionId
 
         /// <summary>
-        /// Gets and sets the VersionId property.
-        /// This is the Version Id of the S3 Object for 
-        /// which the ACL will be retrieved. This property
-        /// is ignored if the ACL is requested for a Bucket.
+        /// The id of a specific version of the S3 object to query.
         /// </summary>
+        /// <remarks>
+        /// This field is ignored if the query is for bucket ACLs.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "VersionId")]
         public string VersionId
         {
@@ -130,12 +127,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the VersionId property for this request.
-        /// This is the Version Id of the S3 Object for 
-        /// which the ACL will be retrieved. This property
-        /// is ignored if the ACL is requested for a Bucket.
+        /// Sets the id of a specific version of the S3 object to query.
         /// </summary>
-        /// <param name="versionId">The value that VersionId is set to</param>
+        /// <remarks>
+        /// This field is ignored if the query is for bucket ACLs.
+        /// </remarks>
+        /// <param name="versionId">The id of the S3 object version</param>
         /// <returns>this instance</returns>
         public GetACLRequest WithVersionId(string versionId)
         {

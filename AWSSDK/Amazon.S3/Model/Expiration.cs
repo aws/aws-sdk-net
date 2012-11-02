@@ -27,7 +27,7 @@ using System.Text.RegularExpressions;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Expiration defines the expiration policy for a given object
+    /// Defines the expiration policy for a given object.
     /// </summary>
     public class Expiration
     {
@@ -35,7 +35,7 @@ namespace Amazon.S3.Model
         private string ruleId;
 
         /// <summary>
-        /// Gets and sets the expiry date property
+        /// The date and time for expiry.
         /// </summary>
         public DateTime ExpiryDate
         {
@@ -44,7 +44,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the rule id property
+        /// Id of the configuration rule for this expiry.
         /// </summary>
         public string RuleId
         {

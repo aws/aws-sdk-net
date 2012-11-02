@@ -38,7 +38,6 @@ namespace Amazon.SQS.Model
         private List<Attribute> attributeField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -49,7 +48,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -69,7 +68,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -87,7 +85,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the name and value pair of an attribute associated with the queue.
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>

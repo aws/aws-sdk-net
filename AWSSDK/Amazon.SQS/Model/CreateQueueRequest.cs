@@ -31,15 +31,21 @@ using Attribute = Amazon.SQS.Model.Attribute;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The CreateQueue action creates a new queue, or returns the URL of an existing one.
+    /// Creates a new queue, or returns the URL of an existing one.
+    /// </summary>
+    /// <remarks>
+    /// <para>
     /// When you request CreateQueue, you provide a name for the queue. To successfully
     /// create a new queue, you must provide a name that is unique within the scope of
     /// your own queues. If you provide the name of an existing queue, a new queue isn't
     /// created and an error isn't returned. Instead, the request succeeds and the queue
-    /// URL for the existing queue is returned. Exception: if you provide a value for
-    /// DefaultVisibilityTimeout that is different from the value for the existing queue,
-    /// you receive an error.
-    /// </summary>
+    /// URL for the existing queue is returned.
+    /// </para>
+    /// <para>
+    /// Exception: if you provide a value for DefaultVisibilityTimeout that is different
+    /// from the value for the existing queue, you receive an error.
+    /// </para>
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class CreateQueueRequest
     {    
@@ -47,9 +53,11 @@ namespace Amazon.SQS.Model
         private List<Attribute> attributeField;
 
         /// <summary>
-        /// Gets and sets the QueueName property.
-        /// The name to use for the queue created. Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+        /// The name to use for the queue created.
         /// </summary>
+        /// <remarks>
+        /// Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "QueueName")]
         public string QueueName
         {
@@ -58,9 +66,12 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueName property
+        /// Sets the name to use for the queue created.
         /// </summary>
-        /// <param name="queueName">The name to use for the queue created. Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.</param>
+        /// <remarks>
+        /// Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+        /// </remarks>
+        /// <param name="queueName">The name to use for the queue created.</param>
         /// <returns>this instance</returns>
         public CreateQueueRequest WithQueueName(string queueName)
         {
@@ -78,9 +89,11 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the DefaultVisibilityTimeout property.
-        /// The visibility timeout (in seconds) to use for this queue. Values can be 0 to 43200 (maximum 12 hours). Default is 30 seconds.
+        /// The visibility timeout (in seconds) to use for this queue.
         /// </summary>
+        /// <remarks>
+        /// Values can be 0 to 43200 (maximum 12 hours). Default is 30 seconds.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "DefaultVisibilityTimeout")]
         public Decimal DefaultVisibilityTimeout
         {
@@ -95,9 +108,12 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the DefaultVisibilityTimeout property
+        /// Sets the visibility timeout (in seconds) to use for this queue.
         /// </summary>
-        /// <param name="defaultVisibilityTimeout">The visibility timeout (in seconds) to use for this queue. Values can be 0 to 43200 (maximum 12 hours). Default is 30 seconds.</param>
+        /// <remarks>
+        /// Values can be 0 to 43200 (maximum 12 hours). Default is 30 seconds.
+        /// </remarks>
+        /// <param name="defaultVisibilityTimeout">The visibility timeout (in seconds) to use for this queue.</param>
         /// <returns>this instance</returns>
         public CreateQueueRequest WithDefaultVisibilityTimeout(Decimal defaultVisibilityTimeout)
         {
@@ -116,7 +132,6 @@ namespace Amazon.SQS.Model
 
 
         /// <summary>
-        /// Gets and sets the DelaySeconds property.
         /// The default number of seconds for which the message has to be delayed.
         /// </summary>
         [XmlElementAttribute(ElementName = "DelaySeconds")]
@@ -133,7 +148,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the DelaySeconds property
+        /// Sets the default number of seconds for which the message has to be delayed.
         /// </summary>
         /// <param name="delaySeconds">The default number of seconds for which the message has to be delayed.</param>
         /// <returns>this instance</returns>
@@ -153,7 +168,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -171,7 +185,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the name and value pair of an attribute associated with the queue.
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>

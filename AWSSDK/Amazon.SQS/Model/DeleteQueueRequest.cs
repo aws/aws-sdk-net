@@ -27,17 +27,25 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The DeleteQueue action deletes the queue specified by the queue URL, regardless of whether the queue is empty.
+    /// <para>
+    /// Deletes the queue specified by the queue URL, regardless of whether the queue is empty.
+    /// </para>
+    /// </summary>
+    /// <remarks>
+    /// <para>
     /// If the specified queue does not exist, SQS returns a successful response. Use DeleteQueue with care; once you
     /// delete your queue, any messages in the queue are no longer available.
-    ///
+    /// </para>
+    /// <para>
     /// When you delete a queue, the deletion process takes up to 60 seconds. Requests you send involving that queue
     /// during the 60 seconds might succeed. For example, a SendMessage request might succeed, but after the 60 seconds,
     /// the queue and that message you sent no longer exist. Also, when you delete a queue, you must wait at least 60 seconds
     /// before creating a queue with the same name.
-    ///
+    /// </para>
+    /// <para>
     /// We reserve the right to delete queues that have had no activity for more than 30 days.
-    /// </summary>
+    /// </para>
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
     public class DeleteQueueRequest
     {    
@@ -45,7 +53,6 @@ namespace Amazon.SQS.Model
         private List<Attribute> attributeField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -56,7 +63,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -76,7 +83,6 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Attribute property.
         /// Name and value pair of an attribute associated with the queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "Attribute")]
@@ -94,7 +100,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Attribute property
+        /// Sets the name and value pair of an attribute associated with the queue.
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>

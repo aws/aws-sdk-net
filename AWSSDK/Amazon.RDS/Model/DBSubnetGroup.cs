@@ -153,7 +153,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Contains a list of <a>Subnets</a> elements.
+        /// Contains a list of <a>Subnet</a> elements.
         ///  
         /// </summary>
         public List<Subnet> Subnets

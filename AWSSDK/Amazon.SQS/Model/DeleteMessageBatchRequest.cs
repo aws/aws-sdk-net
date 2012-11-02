@@ -28,17 +28,18 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// This is a batch version of <c>DeleteMessage</c>. It takes multiple
-    /// receipt handles and deletes each one of the messages. The result of the delete
-    /// operation on each message is reported individually in the response.
+    /// Removes multiple messages from the specified queue.
     /// </summary>
+    /// <remarks>
+    /// This operation takes multiple receipt handles and deletes each one of the messages.
+    /// The result of the delete operation on each message is reported individually in the response.
+    /// </remarks>
     public class DeleteMessageBatchRequest
     {
         private string queueUrlField;
         private List<DeleteMessageBatchRequestEntry> deleteMessageBatchRequestEntryField;
 
         /// <summary>
-        /// Gets and sets the QueueUrl property.
         /// The URL associated with the Amazon SQS queue.
         /// </summary>
         [XmlElementAttribute(ElementName = "QueueUrl")]
@@ -49,7 +50,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueUrl property
+        /// Sets the URL associated with the Amazon SQS queue.
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
@@ -69,7 +70,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the Entries property.  A list of receipt handles for the messages to be deleted.
+        /// A list of receipt handles for the messages to be deleted.
         /// </summary>
         public List<DeleteMessageBatchRequestEntry> Entries
         {
@@ -85,7 +86,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the Entries property
+        /// Sets the list of receipt handles for the messages to be deleted.
         /// </summary>
         /// <param name="list">A list of <c>DeleteMessageBatchRequestEntry</c> that will be added to the <c>Entries</c> property.</param>
         /// <returns>this instance</returns>

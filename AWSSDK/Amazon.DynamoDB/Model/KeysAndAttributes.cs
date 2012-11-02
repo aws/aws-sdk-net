@@ -27,6 +27,7 @@ namespace Amazon.DynamoDB.Model
         
         private List<Key> keys = new List<Key>();
         private List<string> attributesToGet = new List<string>();
+        private bool? consistentRead;
         public List<Key> Keys
         {
             get { return this.keys; }
@@ -121,6 +122,34 @@ namespace Amazon.DynamoDB.Model
         internal bool IsSetAttributesToGet()
         {
             return this.attributesToGet.Count > 0;       
+        }
+
+        /// <summary>
+        /// If set to <c>true</c>, then a consistent read is issued. Otherwise eventually-consistent is used.
+        ///  
+        /// </summary>
+        public bool ConsistentRead
+        {
+            get { return this.consistentRead ?? default(bool); }
+            set { this.consistentRead = value; }
+        }
+
+        /// <summary>
+        /// Sets the ConsistentRead property
+        /// </summary>
+        /// <param name="consistentRead">The value to set for the ConsistentRead property </param>
+        /// <returns>this instance</returns>
+        public KeysAndAttributes WithConsistentRead(bool consistentRead)
+        {
+            this.consistentRead = consistentRead;
+            return this;
+        }
+            
+
+        // Check to see if ConsistentRead property is set
+        internal bool IsSetConsistentRead()
+        {
+            return this.consistentRead.HasValue;       
         }
     }
 }

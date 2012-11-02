@@ -249,6 +249,11 @@ namespace Amazon.DynamoDB.Model.Internal.MarshallTransformations
 
                                 writer.WriteArrayEnd();
                             }
+                            if (requestItemsListValue != null && requestItemsListValue.IsSetConsistentRead()) 
+                            {
+                                writer.WritePropertyName("ConsistentRead");
+                                writer.Write(requestItemsListValue.ConsistentRead);
+                            }
                             writer.WriteObjectEnd();
                         }
                         writer.WriteObjectEnd();

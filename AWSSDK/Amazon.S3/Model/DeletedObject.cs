@@ -27,8 +27,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// DeletedObject is a container for information about a successful
-    /// delete operation against a specific S3 object.
+    /// Contains information about a successful delete operation against a specific S3 object.
     /// </summary>
     public class DeletedObject
     {
@@ -38,7 +37,7 @@ namespace Amazon.S3.Model
         private string deleteMarkerVersionId;
 
         /// <summary>
-        /// Gets and set the key of the deleted S3 object.
+        /// The key of the deleted S3 object.
         /// </summary>
         public string Key
         {
@@ -47,7 +46,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the version of the deleted S3 object.
+        /// The version of the deleted S3 object.
         /// </summary>
         public string VersionId
         {
@@ -56,9 +55,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the IsDeleteMarker property.
-        /// Specifies whether the object deleted was (true) or 
-        /// was not (false) a Delete Marker.
+        /// Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a 
+        /// delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete 
+        /// marker was created.
         /// </summary>
         [XmlElement("DeleteMarker")]
         public bool IsDeleteMarker
@@ -68,10 +67,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the DeleteMarkerVersionId property.
-        /// Specifies the VersionId for the DeleteMarker that
-        /// was created when doing a non-versioned object
-        /// was deleted in a versioned bucket.
+        /// The version ID of the delete marker created as a result of the DELETE operation. If you delete a 
+        /// specific object version, the value returned by this header is the version ID of the object version 
+        /// deleted.
         /// </summary>
         public string DeleteMarkerVersionId
         {

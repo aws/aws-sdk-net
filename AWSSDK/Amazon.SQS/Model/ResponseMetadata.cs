@@ -36,7 +36,6 @@ namespace Amazon.SQS.Model
         private string requestIdField;
 
         /// <summary>
-        /// Gets and sets the RequestId property.
         /// A unique ID for tracking the request.
         /// </summary>
         [XmlElementAttribute(ElementName = "RequestId")]
@@ -47,7 +46,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the RequestId property
+        /// Sets a unique ID for tracking the request.
         /// </summary>
         /// <param name="requestId">A unique ID for tracking the request.</param>
         /// <returns>this instance</returns>

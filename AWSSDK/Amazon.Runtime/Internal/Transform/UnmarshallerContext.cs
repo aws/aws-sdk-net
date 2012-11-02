@@ -20,6 +20,8 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
+using ThirdParty.Ionic.Zlib;
+
 namespace Amazon.Runtime.Internal.Transform
 {
     /// <summary>
@@ -28,11 +30,37 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class UnmarshallerContext
     {
+        protected CrcCalculatorStream crcStream;
+        protected int crc32Result;
+
         protected string responseContents;
 
         public string ResponseBody
         {
             get { return responseContents; }
+        }
+
+        internal void ValidateCRC32IfAvailable()
+        {
+            if (this.crcStream != null)
+            {
+                if (this.crcStream.Crc32 != this.crc32Result)
+                {
+                    throw new IOException("CRC value returned with response does not match the computed CRC value for the returned response body.");
+                }
+            }
+        }
+
+        protected void SetupCRCStream(NameValueCollection headers, Stream responseStream, long contentLength)
+        {
+            this.crcStream = null;
+
+            UInt32 parsed;
+            if (UInt32.TryParse(headers["x-amz-crc32"], out parsed))
+            {
+                this.crc32Result = (int)parsed;
+                this.crcStream = new CrcCalculatorStream(responseStream, contentLength);
+            }
         }
     }
 

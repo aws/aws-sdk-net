@@ -63,11 +63,21 @@ namespace Amazon.Runtime.Internal.Transform
         /// <param name="httpStatusCode">Status code of the response</param>
         /// <param name="headers">Headers associated with the request.</param>
         public JsonUnmarshallerContext(Stream responseStream, int httpStatusCode, NameValueCollection headers)
-        {
-            this.jsonStream = new StreamReader(responseStream);
+        {            
             this.headers = headers ?? new NameValueCollection();
             this.responseContents = null;
             this.httpStatusCode = httpStatusCode;
+
+            long contentLength;
+            if (long.TryParse(headers["Content-Length"], out contentLength))
+            {
+                base.SetupCRCStream(headers, responseStream, contentLength);
+            }
+
+            if(this.crcStream != null)
+                this.jsonStream = new StreamReader(this.crcStream);
+            else
+                this.jsonStream = new StreamReader(responseStream);
         }
         /// <summary>
         /// Wrap the jsonstring for unmarshalling.

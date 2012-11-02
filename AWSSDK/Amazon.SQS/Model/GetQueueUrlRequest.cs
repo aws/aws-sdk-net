@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The <c>GetQueueUrl</c> action returns the URL of an existing queue.
+    /// Returns the URL of an existing queue.
     /// </summary>
     public class GetQueueUrlRequest
     {
@@ -35,7 +35,7 @@ namespace Amazon.SQS.Model
         public string queueOwnerAWSAccountIdField;
 
         /// <summary>
-        /// Gets and sets the QueueName property.  The name of the queue whose URL must be fetched.
+        /// The name of the queue whose URL must be fetched.
         /// </summary>
         public string QueueName
         {
@@ -44,7 +44,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueName property
+        /// Sets the name of the queue whose URL must be fetched.
         /// </summary>
         /// <param name="queueNameField">The name of the queue whose URL must be fetched.</param>
         /// <returns>this instance</returns>
@@ -64,7 +64,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the QueueOwnerAWSAccountId property.  The AWS account number of the queue's owner.
+        /// The AWS account number of the queue's owner.
         /// </summary>
         public string QueueOwnerAWSAccountId
         {
@@ -73,7 +73,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Sets the QueueOwnerAWSAccountId property
+        /// Sets the AWS account number of the queue's owner.
         /// </summary>
         /// <param name="id">The AWS account number of the queue's owner.</param>
         /// <returns>this instance</returns>

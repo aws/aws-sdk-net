@@ -29,7 +29,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// A single CORS rule instance
+    /// A set of origins and methods (cross-origin access that you want to allow).
     /// </summary>
     public class CORSRule
     {
@@ -41,8 +41,11 @@ namespace Amazon.S3.Model
         private List<string> allowedHeaders;
 
         /// <summary>
-        /// An identifier for the current rule
+        /// An optional unique identifier for the rule.
         /// </summary>
+        /// <remarks>
+        /// The ID value can be up to 255 characters long. The IDs help you find a rule in the configuration.
+        /// </remarks>
         [XmlElement(ElementName = "ID")]
         public string Id
         {
@@ -51,9 +54,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Id property.
+        /// Sets an optional unique identifier for the rule.
         /// </summary>
-        /// <param name="id">Id property</param>
+        /// <remarks>
+        /// The ID value can be up to 255 characters long. The IDs help you find a rule in the configuration.
+        /// </remarks>
+        /// <param name="id">Rule identifier</param>
         /// <returns>this instance</returns>
         public CORSRule WithId(string id)
         {
@@ -70,11 +76,13 @@ namespace Amazon.S3.Model
             return this.id != null;
         }
 
-
         /// <summary>
-        /// Methods enabled for this rule.
-        /// Accepted methods are GET, PUT, HEAD, DELETE and POST.
+        /// The set of methods enabled for this rule.
         /// </summary>
+        /// <remarks>
+        /// Accepted methods are GET, PUT, HEAD, DELETE and POST.
+        /// Each CORSRule must contain at least one AllowedMethod and one AllowedOrigin element.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "AllowedMethod")]
         public List<string> AllowedMethods
         {
@@ -90,8 +98,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the AllowedMethods property.
+        /// Sets the methods allowed for this rule.
         /// </summary>
+        /// <remarks>
+        /// Accepted methods are GET, PUT, HEAD, DELETE and POST.
+        /// Each CORSRule must contain at least one AllowedMethod and one AllowedOrigin element.
+        /// </remarks>
         /// <param name="args">AllowedMethods property</param>
         /// <returns>this instance</returns>
         public CORSRule WithAllowedMethods(params string[] args)
@@ -114,9 +126,14 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Allowed origins for this rule.
-        /// A single origin of "*" can be used to indicate all domains.
+        /// One or more response headers that you want customers to be able to access from their applications 
+        /// (for example, from a JavaScript XMLHttpRequest object).
         /// </summary>
+        /// <remarks>
+        /// Each CORSRule must have at least one AllowedOrigin element. The string value can include at 
+        /// most one '*' wildcard character, for example, http://*.example.com". You can also specify only 
+        /// "*" to allow cross-origin access for all domains/origins.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "AllowedOrigin")]
         public List<string> AllowedOrigins
         {
@@ -132,8 +149,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the AllowedOrigins property.
+        /// Sets one or more response headers that you want customers to be able to access from their applications 
+        /// (for example, from a JavaScript XMLHttpRequest object).
         /// </summary>
+        /// <remarks>
+        /// Each CORSRule must have at least one AllowedOrigin element. The string value can include at 
+        /// most one '*' wildcard character, for example, http://*.example.com". You can also specify only 
+        /// "*" to allow cross-origin access for all domains/origins.
+        /// </remarks>
         /// <param name="args">AllowedOrigins property</param>
         /// <returns>this instance</returns>
         public CORSRule WithAllowedOrigins(params string[] args)
@@ -156,8 +179,11 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Maximum age to set the client's caching behavior.
+        /// The time in seconds that your browser is to cache the preflight response for the specified resource.
         /// </summary>
+        /// <remarks>
+        /// A CORSRule can have at most one MaxAgeSeconds element.
+        /// </remarks>
         public int MaxAgeSeconds
         {
             get { return this.maxAgeSeconds.GetValueOrDefault(); }
@@ -165,8 +191,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the MaxAgeSeconds property.
+        /// Sets the time in seconds that your browser is to cache the preflight response for the specified resource.
         /// </summary>
+        /// <remarks>
+        /// A CORSRule can have at most one MaxAgeSeconds element.
+        /// </remarks>
         /// <param name="maxAgeSeconds">MaxAgeSeconds property</param>
         /// <returns>this instance</returns>
         public CORSRule WithMaxAgeSeconds(int maxAgeSeconds)
@@ -186,8 +215,12 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Enable the browser to read these headers.
+        /// One or more headers in the response that you want customers to be able to access from their 
+        /// applications (for example, from a JavaScript XMLHttpRequest object).
         /// </summary>
+        /// <remarks>
+        /// You add one ExposeHeader in the rule for each header.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ExposeHeader")]
         public List<string> ExposeHeaders
         {
@@ -203,8 +236,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ExposeHeaders property.
+        /// Sets one or more headers in the response that you want customers to be able to access from their 
+        /// applications (for example, from a JavaScript XMLHttpRequest object).
         /// </summary>
+        /// <remarks>
+        /// You add one ExposeHeader in the rule for each header.
+        /// </remarks>
         /// <param name="args">ExposeHeaders property</param>
         /// <returns>this instance</returns>
         public CORSRule WithExposeHeaders(params string[] args)
@@ -227,9 +264,14 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Used in response to a preflight request to indicate which HTTP headers can
-        /// be used when making the actual request
+        /// Specifies which headers are allowed in a pre-flight OPTIONS request through the 
+        /// Access-Control-Request-Headers header. 
         /// </summary>
+        /// <remarks>
+        /// Each header name specified in the Access-Control-Request-Headers must have a corresponding 
+        /// entry in the rule. Only the headers that were requested will be sent back. 
+        /// This element can contain at most one * wildcard character.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "AllowedHeader")]
         public List<string> AllowedHeaders
         {
@@ -245,8 +287,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the AllowedHeaders property.
+        /// Specifies which headers are allowed in a pre-flight OPTIONS request through the 
+        /// Access-Control-Request-Headers header. 
         /// </summary>
+        /// <remarks>
+        /// Each header name specified in the Access-Control-Request-Headers must have a corresponding 
+        /// entry in the rule. Only the headers that were requested will be sent back. 
+        /// This element can contain at most one * wildcard character.
+        /// </remarks>
         /// <param name="args">AllowedHeaders property</param>
         /// <returns>this instance</returns>
         public CORSRule WithAllowedHeaders(params string[] args)

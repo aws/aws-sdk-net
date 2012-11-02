@@ -234,6 +234,12 @@
         <Hostname>autoscaling.us-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>elasticbeanstalk</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>elasticbeanstalk.us-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>iam</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -268,7 +274,7 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>glacier.us-west-1.amazonaws.com</Hostname>
-      </Endpoint>    
+      </Endpoint>
     </Region>
     <Region>
       <Name>us-west-2</Name>
@@ -355,6 +361,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>autoscaling.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticbeanstalk</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>elasticbeanstalk.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>iam</ServiceName>
@@ -654,12 +666,6 @@
     <Region>
       <Name>ap-southeast-1</Name>
       <Endpoint>
-        <ServiceName>elasticbeanstalk</ServiceName>
-        <Http>false</Http>
-        <Https>true</Https>
-        <Hostname>elasticbeanstalk.ap-southeast-1.amazonaws.com</Hostname>
-      </Endpoint>
-      <Endpoint>
         <ServiceName>cloudformation</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -742,6 +748,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>autoscaling.ap-southeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticbeanstalk</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>elasticbeanstalk.ap-southeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>iam</ServiceName>
@@ -900,16 +912,40 @@
         <Hostname>ec2.us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>sns</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>sns.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>sqs</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>sqs.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>s3</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>s3-us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>autoscaling</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>autoscaling.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>iam</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>iam.us-gov.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticloadbalancing</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>elasticloadbalancing.us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
     </Region>
   </Regions>
@@ -965,7 +1001,7 @@
     </Service>
     <Service>
       <Name>ec2</Name>
-      <FullName>Amazon Elastic Compute Cloud </FullName>
+      <FullName>Amazon Elastic Compute Cloud</FullName>
       <RegionName>us-east-1</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
@@ -1045,6 +1081,7 @@
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>sa-east-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>sqs</Name>
@@ -1056,6 +1093,7 @@
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>sa-east-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>s3</Name>
@@ -1079,6 +1117,7 @@
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>sa-east-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>elasticbeanstalk</Name>
@@ -1143,6 +1182,12 @@
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>sa-east-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
+    </Service>
+    <Service>
+      <Name>swf</Name>
+      <FullName>Amazon Simple Workflow Service</FullName>
+      <RegionName>us-east-1</RegionName>
     </Service>
     <Service>
       <Name>glacier</Name>
@@ -1152,11 +1197,6 @@
       <RegionName>us-west-2</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>ap-northeast-1</RegionName>
-    </Service>
-    <Service>
-      <Name>swf</Name>
-      <FullName>Amazon Simple Workflow Service</FullName>
-      <RegionName>us-east-1</RegionName>
     </Service>
   </Services>
 </XML>

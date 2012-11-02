@@ -25,8 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The EnableBucketLoggingRequest contains the parameters used for the EnableBucketLogging operation.
-    /// <br />Required Parameters: BucketName, LoggingConfig
+    /// Enables logging on the specified bucket.
     /// </summary>
     public class EnableBucketLoggingRequest : S3Request
     {
@@ -40,7 +39,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket on which logging is to be configured.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -50,10 +49,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket that you want to enable logging.
+        /// Sets the name of the bucket on which logging is to be configured.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public EnableBucketLoggingRequest WithBucketName(string bucketName)
         {
@@ -75,7 +73,7 @@ namespace Amazon.S3.Model
         #region LoggingConfig
 
         /// <summary>
-        /// Gets and sets the LoggingConfig property.
+        /// The logging configuration to apply to the bucket.
         /// </summary>
         [XmlElementAttribute(ElementName = "LoggingConfig")]
         public S3BucketLoggingConfig LoggingConfig
@@ -92,10 +90,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the LoggingConfig property for this request.
-        /// This config declares all of the logging configuration properties.
+        /// Sets the logging configuration to apply to the bucket.
         /// </summary>
-        /// <param name="loggingConfig">The value that LoggingConfig is set to</param>
+        /// <param name="loggingConfig">Logging configuration settings</param>
         /// <returns>the request with the LoggingConfig set</returns>
         public EnableBucketLoggingRequest WithLoggingConfig(S3BucketLoggingConfig loggingConfig)
         {

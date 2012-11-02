@@ -47,6 +47,11 @@ namespace Amazon.DynamoDB.DocumentModel
         /// </summary>
         public List<string> AttributesToGet { get; set; }
 
+        /// <summary>
+        /// If set to true, a consistent read is issued. Otherwise eventually-consistent is used.
+        /// </summary>
+        public bool ConsistentRead { get; set; }
+
         #endregion
 
 
@@ -338,7 +343,8 @@ namespace Amazon.DynamoDB.DocumentModel
                         new KeysAndAttributes
                         {
                             Keys = batch.Keys,
-                            AttributesToGet = batch.AttributesToGet
+                            AttributesToGet = batch.AttributesToGet,
+                            ConsistentRead = batch.ConsistentRead
                         });
                 }
             }
