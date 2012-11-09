@@ -34,17 +34,6 @@ namespace Amazon.StorageGateway
         }
 
         /// <summary>
-        /// Gets the ServiceVersion property.
-        /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2012-03-12";
-            }
-        }
-
-        /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
         internal override string RegionEndpointServiceName
@@ -52,6 +41,17 @@ namespace Amazon.StorageGateway
             get
             {
                 return "storagegateway";
+            }
+        }
+
+        /// <summary>
+        /// Gets the ServiceVersion property.
+        /// </summary>
+        public override string ServiceVersion
+        {
+            get
+            {
+                return "2012-06-30";
             }
         }
     }

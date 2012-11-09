@@ -9,7 +9,7 @@ namespace Amazon.S3.Model
         private List<S3Grant> _grants;
 
         /// <summary>
-        /// Gets the Access Control List for thie request. 
+        /// Gets the access control lists (ACLs) for this request. 
         /// Please refer to <see cref="T:Amazon.S3.Model.S3Grant"/> for information on
         /// S3 Grants.
         /// </summary>

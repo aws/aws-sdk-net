@@ -26,9 +26,9 @@ using System.Text;
 
 namespace Amazon.SimpleNotificationService.Model
 {
-    ///<summary>
-    ///A wrapper type for the attributes of an SNS subscription.
-    ///</summary>
+    /// <summary>
+    /// The attributes of an SNS subscription.
+    /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class Subscription
     {    
@@ -39,7 +39,6 @@ namespace Amazon.SimpleNotificationService.Model
         private string topicArnField;
 
         /// <summary>
-        /// Gets and sets the SubscriptionArn property.
         /// The subscription's ARN.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubscriptionArn")]
@@ -50,7 +49,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the SubscriptionArn property
+        /// Sets the subscription's ARN.
         /// </summary>
         /// <param name="subscriptionArn">The subscription's ARN.</param>
         /// <returns>this instance</returns>
@@ -70,7 +69,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Owner property.
         /// The subscription's owner.
         /// </summary>
         [XmlElementAttribute(ElementName = "Owner")]
@@ -81,7 +79,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Owner property
+        /// Sets the subscription's owner.
         /// </summary>
         /// <param name="owner">The subscription's owner.</param>
         /// <returns>this instance</returns>
@@ -101,7 +99,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Protocol property.
         /// The subscription's protocol.
         /// </summary>
         [XmlElementAttribute(ElementName = "Protocol")]
@@ -112,7 +109,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Protocol property
+        /// Sets the subscription's protocol.
         /// </summary>
         /// <param name="protocol">The subscription's protocol.</param>
         /// <returns>this instance</returns>
@@ -132,7 +129,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Endpoint property.
         /// The subscription's endpoint (format depends on the protocol).
         /// </summary>
         [XmlElementAttribute(ElementName = "Endpoint")]
@@ -143,9 +139,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Endpoint property
+        /// Sets the subscription's endpoint (format depends on the protocol).
         /// </summary>
-        /// <param name="endpoint">The subscription's endpoint (format depends on the protocol).</param>
+        /// <param name="endpoint">The subscription's endpoint.</param>
         /// <returns>this instance</returns>
         public Subscription WithEndpoint(string endpoint)
         {
@@ -163,7 +159,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
         /// The ARN of the subscription's topic.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
@@ -174,7 +169,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the ARN of the subscription's topic.
         /// </summary>
         /// <param name="topicArn">The ARN of the subscription's topic.</param>
         /// <returns>this instance</returns>

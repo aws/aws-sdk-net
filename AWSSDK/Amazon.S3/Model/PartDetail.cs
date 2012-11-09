@@ -26,8 +26,8 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// PartDetails is a container for elements related to a particular part. A response can contain
-    /// zero or more Part elements.
+    /// A container for elements related to a particular part in a multipart operation. 
+    /// A response can contain zero or more Part elements.
     /// </summary>
     public class PartDetail
     {
@@ -37,7 +37,7 @@ namespace Amazon.S3.Model
         private long size;
 
         /// <summary>
-        /// Gets and sets the part number identifying the part.
+        /// The part number identifying the part.
         /// </summary>
         public int PartNumber
         {
@@ -46,7 +46,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the date and time at which the part was uploaded.
+        /// The date and time at which the part was uploaded.
         /// </summary>
         public DateTime LastModified
         {
@@ -55,7 +55,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the entity tag returned when the part was uploaded.
+        /// The entity tag returned when the part was uploaded.
         /// </summary>
         public string ETag
         {
@@ -64,7 +64,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the size of the uploaded part data.
+        /// The size of the uploaded part data.
         /// </summary>
         public long Size
         {

@@ -30,7 +30,7 @@ using Amazon.S3.Util;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Uploads a part by copying data from an existing object as data source. 
+    /// The parameters to upload a part by copying data from an existing object as data source. 
     /// </summary>
     public class CopyPartRequest : S3Request
     {

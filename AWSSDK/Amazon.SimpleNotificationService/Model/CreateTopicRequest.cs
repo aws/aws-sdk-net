@@ -27,18 +27,21 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The CreateTopic action creates a topic to which notifications can be published. Users can create
-    /// at most 25 topics. This action is idempotent, so if the requester
+    /// Creates a topic to which notifications can be published. Users can create
+    /// at most 25 topics.
+    /// </summary>
+    /// <remarks>
+    /// This action is idempotent, so if the requester
     /// already owns a topic with the specified name, that topic's ARN will be
     /// returned without creating a new topic.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class CreateTopicRequest
     {    
         private string nameField;
 
         /// <summary>
-        /// Gets and sets the Name property.
+        /// Name of the toipic.
         /// </summary>
         [XmlElementAttribute(ElementName = "Name")]
         public string Name
@@ -48,7 +51,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Name property
+        /// Sets the name of the toipic.
         /// </summary>
         /// <param name="name">Name property</param>
         /// <returns>this instance</returns>

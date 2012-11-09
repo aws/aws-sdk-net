@@ -31,6 +31,7 @@
           UpdateGatewaySoftwareNowResponse response = new UpdateGatewaySoftwareNowResponse();
           
           context.Read();
+      
           response.UpdateGatewaySoftwareNowResult = UpdateGatewaySoftwareNowResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

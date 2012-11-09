@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.StorageGateway.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.StorageGateway.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public UpdateSnapshotScheduleResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          UpdateSnapshotScheduleResult updateSnapshotScheduleResult = new UpdateSnapshotScheduleResult();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            UpdateSnapshotScheduleResult updateSnapshotScheduleResult = new UpdateSnapshotScheduleResult();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("VolumeARN", targetDepth)) 
               {
@@ -48,22 +49,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return updateSnapshotScheduleResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return updateSnapshotScheduleResult; 
-            } 
-          } 
-          return updateSnapshotScheduleResult; 
+          
+          
+            return updateSnapshotScheduleResult; 
         } 
         
         private static UpdateSnapshotScheduleResultUnmarshaller instance; 
         public static UpdateSnapshotScheduleResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new UpdateSnapshotScheduleResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new UpdateSnapshotScheduleResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

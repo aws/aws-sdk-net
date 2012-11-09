@@ -336,7 +336,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// State of instance group.
+        /// State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.
         ///  
         /// <para>
         /// <b>Constraints:</b>

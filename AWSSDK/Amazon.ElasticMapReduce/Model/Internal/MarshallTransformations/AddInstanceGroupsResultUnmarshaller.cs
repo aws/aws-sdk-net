@@ -22,13 +22,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   AddInstanceGroupsResult Unmarshaller
      /// </summary>
-    internal class AddInstanceGroupsResultUnmarshaller : IUnmarshaller<AddInstanceGroupsResult, XmlUnmarshallerContext> 
+    internal class AddInstanceGroupsResultUnmarshaller : IUnmarshaller<AddInstanceGroupsResult, XmlUnmarshallerContext>, IUnmarshaller<AddInstanceGroupsResult, JsonUnmarshallerContext> 
     {
         public AddInstanceGroupsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             AddInstanceGroupsResult addInstanceGroupsResult = new AddInstanceGroupsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
 
             return addInstanceGroupsResult;
+        }
+
+        public AddInstanceGroupsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static AddInstanceGroupsResultUnmarshaller instance;

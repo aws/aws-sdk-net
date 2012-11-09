@@ -31,6 +31,7 @@
           ListVolumesResponse response = new ListVolumesResponse();
           
           context.Read();
+      
           response.ListVolumesResult = ListVolumesResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

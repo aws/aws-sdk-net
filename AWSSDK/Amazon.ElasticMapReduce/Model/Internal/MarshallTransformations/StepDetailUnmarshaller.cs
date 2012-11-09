@@ -22,13 +22,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   StepDetail Unmarshaller
      /// </summary>
-    internal class StepDetailUnmarshaller : IUnmarshaller<StepDetail, XmlUnmarshallerContext> 
+    internal class StepDetailUnmarshaller : IUnmarshaller<StepDetail, XmlUnmarshallerContext>, IUnmarshaller<StepDetail, JsonUnmarshallerContext> 
     {
         public StepDetail Unmarshall(XmlUnmarshallerContext context) 
         {
             StepDetail stepDetail = new StepDetail();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
 
             return stepDetail;
+        }
+
+        public StepDetail Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static StepDetailUnmarshaller instance;

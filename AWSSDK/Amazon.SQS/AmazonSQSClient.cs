@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-10-01
+ *  API Version: 2012-11-05
  */
 
 using System;
@@ -35,6 +35,7 @@ using Attribute = Amazon.SQS.Model.Attribute;
 
 using Amazon.Util;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.SQS
 {
@@ -465,7 +466,26 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Retrieves one or more messages from the specified queue, including the message body and message ID of each message.
+        /// <para>
+        /// Retrieves one or more messages from the specified queue, including the message
+        /// body and message ID of each message. Messages returned by this action stay in
+        /// the queue until you delete them. However, once a message is returned to a
+        /// ReceiveMessage request, it is not returned on subsequent ReceiveMessage requests
+        /// for the duration of the VisibilityTimeout. If you do not specify a
+        /// VisibilityTimeout in the request, the overall visibility timeout for the queue
+        /// is used for the returned messages.
+        /// </para>
+        /// <para>
+        /// If a message is available in the queue, the call will return immediately. Otherwise,
+        /// it will wait up to WaitTimeSeconds for a message to arrive. If you do not specify
+        /// WaitTimeSeconds in the request, the queue attribute by the same name is used to
+        /// determine how long to wait.
+        /// </para>
+        /// <para>
+        /// You could ask for additional information about each message through the attributes.
+        /// Attributes that can be requested are [SenderId, ApproximateFirstReceiveTimestamp,
+        /// ApproximateReceiveCount, SentTimestamp].
+        /// </para>
         /// </summary>
         /// <remarks>
         /// Messages returned by this action stay in the queue until you delete them. However, once a message is returned to a
@@ -505,7 +525,11 @@ namespace Amazon.SQS
         }
 
         /// <summary>
-        /// Sets an attribute of a queue. Currently, you can set only one attribute per request.
+        /// <para>
+        /// Sets the value of one or more queue attributes. Currently, you can set only one attribute per request. Valid attributes that
+        /// can be set are [VisibilityTimeout, Policy, MaximumMessageSize,
+        /// MessageRetentionPeriod, WaitTimeSeconds].
+        /// </para>
         /// </summary>
         /// <param name="request">Set Queue Attributes  request</param>
         /// <returns>Set Queue Attributes  Response from the service</returns>
@@ -522,7 +546,7 @@ namespace Amazon.SQS
          * Configure HttpClient with set of defaults as well as configuration
          * from AmazonSQSConfig instance
          */
-        private static HttpWebRequest ConfigureWebRequest(int contentLength, string queueUrl, AmazonSQSConfig config)
+        private static HttpWebRequest ConfigureWebRequest(int contentLength, string queueUrl, AmazonSQSConfig config, IDictionary<string, string> headers)
         {
             HttpWebRequest request = WebRequest.Create(queueUrl) as HttpWebRequest;
             if (request != null)
@@ -551,6 +575,8 @@ namespace Amazon.SQS
                 request.ServicePoint.UseNagleAlgorithm = false;
             }
 
+            Amazon.Runtime.AmazonWebServiceClient.AddHeaders(request, headers);
+
             return request;
         }
 
@@ -577,7 +603,8 @@ namespace Amazon.SQS
             HttpStatusCode statusCode = default(HttpStatusCode);
 
             /* Add required request parameters */
-            AddRequiredParameters(parameters, queueUrl);
+            IDictionary<string, string> headers = new Dictionary<string, string>();
+            AddRequiredParameters(headers, parameters, queueUrl);
 
             string queryString = AWSSDKUtils.GetParametersAsString(parameters);
 
@@ -588,7 +615,7 @@ namespace Amazon.SQS
             do
             {
                 string responseBody = null;
-                HttpWebRequest request = ConfigureWebRequest(requestData.Length, queueUrl, config);
+                HttpWebRequest request = ConfigureWebRequest(requestData.Length, queueUrl, config, headers);
                 /* Submit the request and read response body */
                 try
                 {
@@ -768,7 +795,7 @@ namespace Amazon.SQS
         /**
          * Add authentication related and version parameters
          */
-        private void AddRequiredParameters(IDictionary<string, string> parameters, string queueUrl)
+        private void AddRequiredParameters(IDictionary<string, string> headers, IDictionary<string, string> parameters, string queueUrl)
         {
             using (ImmutableCredentials immutableCredentials = this.credentials.GetCredentials())
             {
@@ -781,24 +808,14 @@ namespace Amazon.SQS
                 parameters["SignatureMethod"] = config.SignatureMethod;
                 parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
                 parameters["Version"] = config.ServiceVersion;
-                if (!config.SignatureVersion.Equals("2"))
+                if (!config.SignatureVersion.Equals("4"))
                 {
                     throw new AmazonSQSException("Invalid Signature Version specified");
                 }
-                string toSign = AWSSDKUtils.CalculateStringToSignV2(parameters, queueUrl);
 
-                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(config.SignatureMethod.ToUpper());
-                string auth;
-
-                if (immutableCredentials.UseSecureStringForSecretKey)
-                {
-                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.SecureSecretKey, algorithm);
-                }
-                else
-                {
-                    auth = AWSSDKUtils.HMACSign(toSign, immutableCredentials.ClearSecretKey, algorithm);
-                }
-                parameters["Signature"] = auth;
+                string region = this.config.AuthenticationRegion ?? AWSSDKUtils.DetermineRegion(queueUrl);
+                string authorizationHeader = AWS4Signer.CalculateSignature(headers, parameters, queueUrl, "POST", "sqs", region, immutableCredentials);
+                headers.Add("Authorization", authorizationHeader);
             }
         }
 
@@ -1091,6 +1108,10 @@ namespace Amazon.SQS
             if (request.IsSetVisibilityTimeout())
             {
                 parameters["VisibilityTimeout"] = request.VisibilityTimeout.ToString();
+            }
+            if (request.IsSetWaitTimeSeconds())
+            {
+                parameters["WaitTimeSeconds"] = request.WaitTimeSeconds.ToString();
             }
             List<string> receiveMessageRequestAttributeNameList = request.AttributeName;
             int receiveMessageRequestAttributeNameListIndex = 1;

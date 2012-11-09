@@ -27,17 +27,19 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The ListSubscriptions action returns a list of the requester's subscriptions. Each call returns a limited list
-    /// of subscriptions. If there are more subscriptions, a NextToken is also returned. Use the NextToken parameter in a
-    /// new ListSubscriptions call to get further results.
+    /// Returns a list of the requester's subscriptions.
     /// </summary>
+    /// <remarks>
+    /// Each call returns a limited list of subscriptions. If there are more subscriptions,
+    /// a NextToken is also returned. Use the NextToken parameter in a new ListSubscriptions
+    /// call to get further results.
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class ListSubscriptionsRequest
     {    
         private string nextTokenField;
 
         /// <summary>
-        /// Gets and sets the NextToken property.
         /// Token returned by the previous ListSubscriptions request.
         /// </summary>
         [XmlElementAttribute(ElementName = "NextToken")]

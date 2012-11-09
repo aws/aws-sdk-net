@@ -25,15 +25,14 @@ using System.Collections.Generic;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// LifecycleConfiguration is a container for the collection of expiration
-    /// rules for a specific S3 bucket.
+    /// A collection of expiration rules for an S3 bucket.
     /// </summary>
     public class LifecycleConfiguration
     {
         private List<LifecycleRule> rules;
 
         /// <summary>
-        /// Gets and sets the list of lifecycle rules for this configuration.
+        /// The list of lifecycle rules for this configuration.
         /// </summary>
         public List<LifecycleRule> Rules
         {

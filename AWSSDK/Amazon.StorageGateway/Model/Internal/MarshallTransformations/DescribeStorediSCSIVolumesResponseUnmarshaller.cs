@@ -31,6 +31,7 @@
           DescribeStorediSCSIVolumesResponse response = new DescribeStorediSCSIVolumesResponse();
           
           context.Read();
+      
           response.DescribeStorediSCSIVolumesResult = DescribeStorediSCSIVolumesResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

@@ -25,9 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The ListObjectsRequest contains the parameters used for the ListObjects operation.
-    /// <br />Required Parameters: BucketName
-    /// <br />Optional Parameters: Prefix, Marker, MaxKeys, Delimiter
+    /// The parameters to list the object keys in a bucket.
     /// </summary>
     [XmlTypeAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/")]
     [XmlRootAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/", IsNullable = false)]
@@ -46,8 +44,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
-        /// This is the name of the S3 Bucket to list keys from.
+        /// The name of the bucket containing the objects whose keys are to be listed.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -57,10 +54,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the name of the S3 Bucket to list keys from.
+        /// Sets the name of the bucket containing the objects whose keys are to be listed.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
         public ListObjectsRequest WithBucketName(string bucketName)
         {
@@ -82,8 +78,9 @@ namespace Amazon.S3.Model
         #region Prefix
 
         /// <summary>
-        /// Gets and sets the Prefix property.
-        /// All keys matched will have this prefix.
+        /// Limits the response to keys which begin with the indicated prefix. You can 
+        /// use prefixes to separate a bucket into different sets of keys in a way similar 
+        /// to how a file system uses folders.
         /// </summary>
         [XmlElementAttribute(ElementName = "Prefix")]
         public string Prefix
@@ -93,10 +90,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Prefix property for this request.
-        /// All keys matched will have this prefix.
+        /// Limits the response to keys which begin with the indicated prefix. You can 
+        /// use prefixes to separate a bucket into different sets of keys in a way similar 
+        /// to how a file system uses folders.
         /// </summary>
-        /// <param name="prefix">The value that Prefix is set to</param>
+        /// <param name="prefix">The prefix value</param>
         /// <returns>this instance</returns>
         public ListObjectsRequest WithPrefix(string prefix)
         {
@@ -118,8 +116,10 @@ namespace Amazon.S3.Model
         #region Marker
 
         /// <summary>
-        /// Gets and sets the Marker property.
-        /// All keys returned will be lexiographically after the marker.
+        /// Indicates where in the bucket to begin listing. The list will only 
+        /// include keys that occur lexicographically after marker. This is 
+        /// convenient for pagination: to get the next page of results use the 
+        /// last key of the current page as the marker.
         /// </summary>
         [XmlElementAttribute(ElementName = "Marker")]
         public string Marker
@@ -129,10 +129,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Marker property for this request.
-        /// All keys returned will be lexiographically after the marker.
+        /// Indicates where in the bucket to begin listing. The list will only 
+        /// include keys that occur lexicographically after marker. This is 
+        /// convenient for pagination: to get the next page of results use the 
+        /// last key of the current page as the marker.
         /// </summary>
-        /// <param name="marker">the value that Marker is set to</param>
+        /// <param name="marker">The marker value</param>
         /// <returns>this instance</returns>
         public ListObjectsRequest WithMarker(string marker)
         {
@@ -154,8 +156,8 @@ namespace Amazon.S3.Model
         #region MaxKeys
 
         /// <summary>
-        /// Gets and sets the MaxKeys property.
-        /// Limits the result set of keys to MaxKeys.
+        /// The maximum number of keys you'd like to see in the response body. The 
+        /// server might return fewer than this many keys, but will not return more.
         /// </summary>
         [XmlElementAttribute(ElementName = "MaxKeys")]
         public int MaxKeys
@@ -165,10 +167,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the MaxKeys property for this request.
-        /// Limits the result set of keys to MaxKeys.
+        /// The maximum number of keys you'd like to see in the response body. The 
+        /// server might return fewer than this many keys, but will not return more.
         /// </summary>
-        /// <param name="maxKeys">the value that MaxKeys is set to</param>
+        /// <param name="maxKeys">The maximum keys value</param>
         /// <returns>this instance</returns>
         public ListObjectsRequest WithMaxKeys(int maxKeys)
         {
@@ -190,14 +192,11 @@ namespace Amazon.S3.Model
         #region Delimiter
 
         /// <summary>
-        /// Gets and sets the Delimiter property.
         /// Causes keys that contain the same string between the prefix and the 
         /// first occurrence of the delimiter to be rolled up into a single result 
-        /// element in the CommonPrefixes collection.
+        /// element in the CommonPrefixes collection. These rolled-up keys are not 
+        /// returned elsewhere in the response.
         /// </summary>
-        /// <remarks>
-        /// These rolled-up keys are not returned elsewhere in the response.
-        /// </remarks>
         [XmlElementAttribute(ElementName = "Delimiter")]
         public string Delimiter
         {
@@ -206,13 +205,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Delimiter property for this request.
         /// Causes keys that contain the same string between the prefix and the 
         /// first occurrence of the delimiter to be rolled up into a single result 
-        /// element in the CommonPrefixes collection. 
-        /// These rolled-up keys are not returned elsewhere in the response.
+        /// element in the CommonPrefixes collection. These rolled-up keys are not 
+        /// returned elsewhere in the response.
         /// </summary>
-        /// <param name="delimiter">the value that Delimiter is set to.</param>
+        /// <param name="delimiter">The delimiter value</param>
         /// <returns>this instance</returns>
         public ListObjectsRequest WithDelimiter(string delimiter)
         {

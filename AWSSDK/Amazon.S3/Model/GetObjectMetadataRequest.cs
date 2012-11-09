@@ -26,11 +26,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The GetObjectMetadataRequest contains the parameters used for the GetObjectMetadata operation.
-    /// For more information about the optional parameters, 
-    /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTObjectGET.html"/>
-    /// <br />Required Parameters: BucketName, Key
-    /// <br />Optional Parameters: ModifiedSinceDate, UnmodifiedSinceDate, ETagToMatch, ETagToNotMatch
+    /// The parameters to request metadata for an object.
     /// </summary>
     public class GetObjectMetadataRequest : S3Request
     {
@@ -49,7 +45,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket that contains the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -59,11 +55,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket that contains the S3 Object with
-        /// the metadata you want.
+        /// Sets the name of the bucket that contains the object.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
         public GetObjectMetadataRequest WithBucketName(string bucketName)
         {
@@ -85,7 +79,7 @@ namespace Amazon.S3.Model
         #region Key
 
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key of the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
@@ -95,8 +89,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
-        /// This is the Key for the S3 Object's metadata you want.
+        /// Sets the key of the object.
         /// </summary>
         /// <param name="key">The value that Key is set to</param>
         /// <returns>this instance</returns>
@@ -120,7 +113,8 @@ namespace Amazon.S3.Model
         #region ModifiedSinceDate
 
         /// <summary>
-        /// Gets and sets the ModifiedSinceDate property.
+        /// Returns metadata for the object only if it has been modified since the specified time, 
+        /// otherwise returns a PreconditionFailed.
         /// </summary>
         [XmlElementAttribute(ElementName = "ModifiedSinceDate")]
         public DateTime ModifiedSinceDate
@@ -130,12 +124,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ModifiedSinceDate property for this request.
-        /// When this is set the S3 object metadata is returned 
-        /// only if it has been modified since the specified time, 
-        /// otherwise returns a 304 (not modified).
+        /// Returns metadata for the object only if it has been modified since the specified time, 
+        /// otherwise returns a PreconditionFailed signal.
         /// </summary>
-        /// <param name="modifiedSinceDate">The value that ModifiedSinceDate is set to</param>
+        /// <remarks>
+        /// When this is set the S3 object metadata is returned only if it has been modified since the specified time, 
+        /// otherwise returns a 304 (not modified).
+        /// </remarks>
+        /// <param name="modifiedSinceDate">Date and time to be tested</param>
         /// <returns>this instance</returns>
         public GetObjectMetadataRequest WithModifiedSinceDate(DateTime modifiedSinceDate)
         {
@@ -157,7 +153,8 @@ namespace Amazon.S3.Model
         #region UnmodifiedSinceDate
 
         /// <summary>
-        /// Gets and sets the UnmodifiedSinceDate property.
+        /// Returns metadata for the object only if it has not been modified since the specified time,
+        /// otherwise returns a PreconditionFailed signal.
         /// </summary>
         [XmlElementAttribute(ElementName = "UnmodifiedSinceDate")]
         public DateTime UnmodifiedSinceDate
@@ -167,12 +164,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the UnmodifiedSinceDate property for this request.
-        /// When this is set the S3 object metadata is returned only 
-        /// if it has not been modified since the specified time, 
-        /// otherwise return a 412 (precondition failed).
+        /// Returns metadata for the object only if it has not been modified since the specified time,
+        /// otherwise returns a PreconditionFailed signal.
         /// </summary>
-        /// <param name="unmodifiedSinceDate">The value that UnmodifiedSinceDate is set to</param>
+        /// <remarks>
+        /// When this is set the S3 object metadata is returned only if it has not been modified since the specified time, 
+        /// otherwise return a 412 (precondition failed).
+        /// </remarks>
+        /// <param name="unmodifiedSinceDate">The date and time to test against</param>
         /// <returns>this instance</returns>
         public GetObjectMetadataRequest WithUnmodifiedSinceDate(DateTime unmodifiedSinceDate)
         {
@@ -194,7 +193,8 @@ namespace Amazon.S3.Model
         #region ETagToMatch
 
         /// <summary>
-        /// Gets and sets the ETagToMatch property.
+        /// ETag to be matched as a pre-condition for returning the object metadata,
+        /// otherwise a PreconditionFailed signal is returned.
         /// </summary>
         [XmlElementAttribute(ElementName = "ETagToMatch")]
         public string ETagToMatch
@@ -204,12 +204,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ETagToMatch property for this request.
-        /// When this is set the S3 object metadatais returned 
+        /// ETag to be matched as a pre-condition for returning the object metadata,
+        /// otherwise a PreconditionFailed signal is returned.
+        /// </summary>
+        /// When this is set the S3 object metadata is returned 
         /// only if its entity tag (ETag) is the same as the one 
         /// specified, otherwise return a 412 (precondition failed).
-        /// </summary>
-        /// <param name="etagToMatch">The value that ETagToMatch is set to</param>
+        /// <param name="etagToMatch">The value of the ETag to test</param>
         /// <returns>this instance</returns>
         public GetObjectMetadataRequest WithETagToMatch(string etagToMatch)
         {
@@ -231,7 +232,8 @@ namespace Amazon.S3.Model
         #region ETagToNotMatch
 
         /// <summary>
-        /// Gets and sets the ETagToNotMatch property.
+        /// ETag that should not be matched as a pre-condition for returning the object metadata,
+        /// otherwise a PreconditionFailed signal is returned.
         /// </summary>
         [XmlElementAttribute(ElementName = "ETagToNotMatch")]
         public string ETagToNotMatch
@@ -241,12 +243,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ETagToNotMatch property for this request.
-        /// When this is set the S3 object metadata is returned 
-        /// only if its entity tag (ETag) is different from the one 
-        /// specified, otherwise return a 304 (not modified).
+        /// Sets the ETag that should not be matched as a pre-condition for returning the object metadata,
+        /// otherwise a PreconditionFailed signal is returned.
         /// </summary>
-        /// <param name="etagToNotMatch">The value that ETagToNotMatch is set to</param>
+        /// When this is set the S3 object metadata is returned only if its entity tag (ETag) is different from the one 
+        /// specified, otherwise return a 304 (not modified).
+        /// <param name="etagToNotMatch">The value of the ETag to test</param>
         /// <returns>this instance</returns>
         public GetObjectMetadataRequest WithETagToNotMatch(string etagToNotMatch)
         {
@@ -268,8 +270,7 @@ namespace Amazon.S3.Model
         #region VersionId
 
         /// <summary>
-        /// Gets and sets the VersionId property.
-        /// This is the VersionId for the S3 Object you want to Get Metatdata for.
+        /// Version ID for the object; if set then metadata for the specific object version is returned.
         /// </summary>
         [XmlElementAttribute(ElementName = "VersionId")]
         public string VersionId
@@ -279,10 +280,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the VersionId property for this request.
-        /// This is the VersionId for the S3 Object you want to Get Metatdata for.
+        /// Sets a version ID for the object; metadata for the specific object version is returned.
         /// </summary>
-        /// <param name="versionId">The value that VersionId is set to</param>
+        /// <param name="versionId">The id of the object version</param>
         /// <returns>this instance</returns>
         public GetObjectMetadataRequest WithVersionId(string versionId)
         {

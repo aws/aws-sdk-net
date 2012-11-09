@@ -29,7 +29,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Deletes the cross origin resource sharing (CORS) configuration on a bucket.
+    /// The parameters to request deletion of the cross origin resource sharing (CORS) configuration on a bucket.
     /// </summary>
     /// <remarks>
     /// To use this operation, you must have permission to perform the s3:PutCORSConfiguration action. 

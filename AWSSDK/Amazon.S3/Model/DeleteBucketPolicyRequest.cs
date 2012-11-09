@@ -28,7 +28,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Delete the policy on a specified bucket.
+    /// The parameters to request deletion of the policy on a bucket.
     /// </summary>
     public class DeleteBucketPolicyRequest : S3Request
     {

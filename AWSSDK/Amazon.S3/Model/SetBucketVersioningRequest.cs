@@ -28,16 +28,14 @@ using Amazon.S3.Util;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The SetBucketVersioningRequest contains the parameters used for the 
-    /// SetBucketVersioning operation.
-    /// <br />Required Parameters: BucketName, VersioningConfig
-    /// <br /> MfaCodes property is required if VersioningConfig.EnableMfaDelete = true
-    /// <para>If you want to enable the use of a multi-factor authentication device
+    /// The parameters to control versioning on a bucket.
+    /// </summary>
+    /// <remarks>
+    /// If you want to enable the use of a multi-factor authentication device
     /// on this bucket, please set the EnableMfaDelete property of VersioningConfig.
     /// If EnableMfaDelete is set to true, the MfaCodes property needs to be set with the
     /// Serial number and Current Token displayed on the MFA device.
-    /// </para>
-    /// </summary>
+    /// </remarks>
     public class SetBucketVersioningRequest : S3Request
     {
         #region Private Members
@@ -51,7 +49,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to be updated.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -61,8 +59,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// The Versioning Status of this S3 Bucket is modified by the request.
+        /// Sets the name of the bucket to be updated.
         /// </summary>
         /// <param name="bucketName">The value that BucketName is set to</param>
         /// <returns>this instance</returns>
@@ -86,12 +83,14 @@ namespace Amazon.S3.Model
         #region VersioningConfig
 
         /// <summary>
-        /// Gets and sets the VersioningConfig property.
+        /// The versioning configuration to apply to the bucket.
+        /// </summary>
+        /// <remarks>
         /// Once Versioning has been "Enabled" on a bucket, it can be "Suspended" 
         /// but cannot be switched "Off". If EnableMfaDelete is set,
         /// the MfaCodes property needs to contain the Serial of and current Token
         /// displayed on the MFA device.
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "VersioningConfig")]
         public S3BucketVersioningConfig VersioningConfig
         {
@@ -123,10 +122,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the VersioningConfig property for this request.
-        /// The request modifies the Versioning Status of the S3 Bucket to this value.
+        /// Sets the versioning configuration to apply to the bucket.
         /// </summary>
-        /// <param name="config">The value that VersioningConfig is set to</param>
+        /// <remarks>
+        /// Once Versioning has been "Enabled" on a bucket, it can be "Suspended" 
+        /// but cannot be switched "Off". If EnableMfaDelete is set,
+        /// the MfaCodes property needs to contain the Serial of and current Token
+        /// displayed on the MFA device.
+        /// </remarks>
+        /// <param name="config">The versioning configuration to apply</param>
         /// <returns>this instance</returns>
         public SetBucketVersioningRequest WithVersioningConfig(S3BucketVersioningConfig config)
         {
@@ -148,7 +152,6 @@ namespace Amazon.S3.Model
         #region MfaCodes
 
         /// <summary>
-        /// Gets and Sets the MfaCodes property.
         /// The MfaCodes Tuple associates the Serial Number
         /// and the current Token/Code displayed on the
         /// Multi-Factor Authentication device associated with
@@ -169,7 +172,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the MfaCodes property.
         /// The MfaCodes Tuple associates the Serial Number
         /// and the current Token/Code displayed on the
         /// Multi-Factor Authentication device associated with

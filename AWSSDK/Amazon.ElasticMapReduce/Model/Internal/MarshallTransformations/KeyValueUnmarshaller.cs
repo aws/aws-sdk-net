@@ -22,13 +22,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   KeyValue Unmarshaller
      /// </summary>
-    internal class KeyValueUnmarshaller : IUnmarshaller<KeyValue, XmlUnmarshallerContext> 
+    internal class KeyValueUnmarshaller : IUnmarshaller<KeyValue, XmlUnmarshallerContext>, IUnmarshaller<KeyValue, JsonUnmarshallerContext> 
     {
         public KeyValue Unmarshall(XmlUnmarshallerContext context) 
         {
             KeyValue keyValue = new KeyValue();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
 
             return keyValue;
+        }
+
+        public KeyValue Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static KeyValueUnmarshaller instance;

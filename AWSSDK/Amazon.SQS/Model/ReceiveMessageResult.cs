@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-10-01
+ *  API Version: 2012-11-05
  */
 
 using System;
@@ -29,7 +29,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// A list of messages associated with the ReceiveMessageRequest.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
     public class ReceiveMessageResult
     {    
         private List<Message> messageField;

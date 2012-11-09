@@ -31,6 +31,7 @@
           DescribeWorkingStorageResponse response = new DescribeWorkingStorageResponse();
           
           context.Read();
+      
           response.DescribeWorkingStorageResult = DescribeWorkingStorageResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

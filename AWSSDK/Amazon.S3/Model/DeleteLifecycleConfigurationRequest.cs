@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Deletes the lifecycle configuration from the specified bucket. 
+    /// The parameters to request deletion of the lifecycle configuration on a bucket. 
     /// </summary>
     /// <remarks>
     /// <para>

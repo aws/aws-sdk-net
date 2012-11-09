@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Aborts a multipart upload.
+    /// The parameters to request an abort of a multipart upload.
     /// </summary>
     /// <remarks>
     /// After a multipart upload is aborted, no additional parts can be uploaded using that upload ID. 

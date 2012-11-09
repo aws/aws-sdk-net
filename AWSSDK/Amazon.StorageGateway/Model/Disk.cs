@@ -162,7 +162,7 @@ namespace Amazon.StorageGateway.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>STORED iSCSI VOLUME, WORKING STORAGE, AVAILABLE</description>
+        ///         <description>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -193,7 +193,7 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// The iSCSI Qualified Name (IQN) that is defined for the disk. This field is not included in the response if the local disk is not defined as
-        /// an iSCSI target.
+        /// an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.
         ///  
         /// </summary>
         public string DiskAllocationResource

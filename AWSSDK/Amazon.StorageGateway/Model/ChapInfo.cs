@@ -70,7 +70,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The secret key that the initiator (e.g. Windows client) must provide to participate in mutual CHAP with the target. Length: 12 to 16.
+        /// The secret key that the initiator (e.g. Windows client) must provide to participate in mutual CHAP with the target.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -107,8 +107,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The iSCSI initiator that connects to the target. Length: Minimum length of 1. Maximum length of 255. <i>Valid Values</i>: The target name
-        /// can contain lowercase letters, numbers, periods (.), and hyphens (-).
+        /// The iSCSI initiator that connects to the target.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -149,7 +148,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client). Length: 12 to 16.
+        /// The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).
         ///  
         /// <para>
         /// <b>Constraints:</b>

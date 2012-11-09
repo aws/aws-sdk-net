@@ -28,11 +28,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DeleteObjectsRequest contains the parameters used for the DeleteObjects operation.
-    /// <br />Required Parameters: BucketName, Keys
-    /// <br />The MfaCodes property is required if the bucket containing this object has been
-    /// configured with the EnableMfaDelete property. For more information, please see:
-    /// <see cref="P:Amazon.S3.Model.S3BucketVersioningConfig.EnableMfaDelete"/>.
+    /// The parameters to set a lifecycle configuration on a bucket.
     /// </summary>
     public class PutLifecycleConfigurationRequest : S3Request
     {
@@ -46,7 +42,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to have the lifecycle configuration applied.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -56,11 +52,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket that contains the S3 Objects
-        /// you want to delete.
+        /// Sets the name of the bucket to have the lifecycle configuration applied.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public PutLifecycleConfigurationRequest WithBucketName(string bucketName)
         {
@@ -81,12 +75,7 @@ namespace Amazon.S3.Model
         #region Configuration
 
         /// <summary>
-        /// Gets and Sets the property that governs whether
-        /// the response includes successful deletes as well as errors
-        /// following the DeleteObjects call against S3.
-        /// 
-        /// By default this property is false and successful deletes
-        /// are returned in the response.
+        /// The lifecycle configuration to be applied.
         /// </summary>
         public LifecycleConfiguration Configuration
         {
@@ -95,11 +84,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Quiet property. If this property is set,
-        /// the response includes successful deletes as well as errors
-        /// following the DeleteObjects call against S3.
+        /// The lifecycle configuration to be applied.
         /// </summary>
-        /// <param name="configuration">Configuration property</param>
+        /// <param name="configuration">Lifecycle configuration</param>
         /// <returns>This instance</returns>
         public PutLifecycleConfigurationRequest WithConfiguration(LifecycleConfiguration configuration)
         {

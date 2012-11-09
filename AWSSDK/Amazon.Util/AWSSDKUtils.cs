@@ -44,7 +44,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.5.6.0";
+        internal const string SDKVersionNumber = "1.5.7.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -359,10 +359,16 @@ namespace Amazon.Util
             if(url.EndsWith("/"))
                 url = url.Substring(0, url.Length - 1);
 
-            if (!url.EndsWith(".amazonaws.com"))
+            if (!url.Contains(".amazonaws.com"))
                 return DefaultRegion;
 
             string serviceAndRegion = url.Substring(0, url.IndexOf(".amazonaws.com"));
+
+            int queueIndex = serviceAndRegion.IndexOf("queue");
+            if (queueIndex == 0)
+                return DefaultRegion;
+            if (queueIndex > 0)
+                return serviceAndRegion.Substring(0, queueIndex - 1);
 
             char separator;
             if (serviceAndRegion.StartsWith("s3"))

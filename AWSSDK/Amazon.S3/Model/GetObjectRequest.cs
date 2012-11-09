@@ -26,13 +26,14 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The GetObjectRequest contains the parameters used for the GetObject operation.
-    /// For more information about the optional parameters,
-    /// refer: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTObjectGET.html"/>
-    /// <br />Required Parameters: BucketName, Key
-    /// <br />Optional Parameters: VersionId, ModifiedSinceDate, UnmodifiedSinceDate, 
-    /// ETagToMatch, ETagToNotMatch, ByteRange
+    /// The parameters to fetch an object from a bucket.
     /// </summary>
+    /// <remarks>
+    /// For more information about the optional parameters, refer to: 
+    /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTObjectGET.html"/>
+    /// <br />Required Parameters: BucketName, Key
+    /// <br />Optional Parameters: VersionId, ModifiedSinceDate, UnmodifiedSinceDate, ETagToMatch, ETagToNotMatch, ByteRange
+    /// </remarks>
     public class GetObjectRequest : S3Request
     {
         #region Private Members
@@ -54,7 +55,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket containing the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -64,11 +65,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket that contains the S3 Object you
-        /// want to get.
+        /// Sets the name of the bucket containing the object.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
         public GetObjectRequest WithBucketName(string bucketName)
         {
@@ -90,7 +89,7 @@ namespace Amazon.S3.Model
         #region Key
 
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key of the object to be fetched.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
@@ -100,10 +99,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
-        /// This is the Key for the S3 Object you want to Get.
+        /// Sets the key of the object to be fetched.
         /// </summary>
-        /// <param name="key">The value that Key is set to</param>
+        /// <param name="key">The object key</param>
         /// <returns>this instance</returns>
         public GetObjectRequest WithKey(string key)
         {
@@ -125,7 +123,8 @@ namespace Amazon.S3.Model
         #region VersionId
 
         /// <summary>
-        /// Gets and sets the VersionId property.
+        /// Version of the object to fetch. If not set, the latest version of
+        /// the object is returned.
         /// </summary>
         [XmlElementAttribute(ElementName = "VersionId")]
         public string VersionId
@@ -135,10 +134,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the VersionId property for this request.
-        /// This is the VersionId for the S3 Object you want to Get.
+        /// Sets the version of the object to fetch. If not set, the latest version of
+        /// the object is returned.
         /// </summary>
-        /// <param name="versionId">The value that VersionId is set to</param>
+        /// <param name="versionId">Object version id</param>
         /// <returns>this instance</returns>
         public GetObjectRequest WithVersionId(string versionId)
         {
@@ -160,7 +159,8 @@ namespace Amazon.S3.Model
         #region ModifiedSinceDate
 
         /// <summary>
-        /// Gets and sets the ModifiedSinceDate property.
+        /// Returns the object only if it has been modified since the specified time, 
+        /// otherwise returns a PreconditionFailed.
         /// </summary>
         [XmlElementAttribute(ElementName = "ModifiedSinceDate")]
         public DateTime ModifiedSinceDate
@@ -170,12 +170,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ModifiedSinceDate property for this request.
-        /// When this is set the S3 object is returned only if it
-        /// has been modified since the specified time, otherwise
-        /// returns a 304 (not modified).
+        /// Returns the object only if it has been modified since the specified time, 
+        /// otherwise returns a PreconditionFailed.
         /// </summary>
-        /// <param name="modifiedSinceDate">The value that ModifiedSinceDate is set to</param>
+        /// <remarks>
+        /// When this is set the S3 object is returned only if it has been modified since the specified time, otherwise
+        /// returns a 304 (not modified).
+        /// </remarks>
+        /// <param name="modifiedSinceDate">Date and time to test</param>
         /// <returns>this instance</returns>
         public GetObjectRequest WithModifiedSinceDate(DateTime modifiedSinceDate)
         {
@@ -197,7 +199,8 @@ namespace Amazon.S3.Model
         #region UnmodifiedSinceDate
 
         /// <summary>
-        /// Gets and sets the UnmodifiedSinceDate property.
+        /// Returns the object only if it has not been modified since the specified time, 
+        /// otherwise returns a PreconditionFailed.
         /// </summary>
         [XmlElementAttribute(ElementName = "UnmodifiedSinceDate")]
         public DateTime UnmodifiedSinceDate
@@ -207,12 +210,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the UnmodifiedSinceDate property for this request.
-        /// When this is set the S3 object is returned only if it
-        /// has not been modified since the specified time, otherwise
-        /// return a 412 (precondition failed).
+        /// Returns the object only if it has been modified since the specified time, 
+        /// otherwise returns a PreconditionFailed.
         /// </summary>
-        /// <param name="unmodifiedSinceDate">The value that UnmodifiedSinceDate is set to</param>
+        /// <remarks>
+        /// When this is set the S3 object is returned only if it has not been modified since the specified time, otherwise
+        /// return a 412 (precondition failed).
+        /// </remarks>
+        /// <param name="unmodifiedSinceDate">The date and time to test</param>
         /// <returns>this instance</returns>
         public GetObjectRequest WithUnmodifiedSinceDate(DateTime unmodifiedSinceDate)
         {
@@ -234,7 +239,8 @@ namespace Amazon.S3.Model
         #region ETagToMatch
 
         /// <summary>
-        /// Gets and sets the ETagToMatch property.
+        /// ETag to be matched as a pre-condition for returning the object,
+        /// otherwise a PreconditionFailed signal is returned.
         /// </summary>
         [XmlElementAttribute(ElementName = "ETagToMatch")]
         public string ETagToMatch
@@ -244,12 +250,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ETagToMatch property for this request.
-        /// When this is set the S3 object is returned only if
-        /// its entity tag (ETag) is the same as the one specified,
-        /// otherwise return a 412 (precondition failed).
+        /// Sets an ETag to be matched as a pre-condition for returning the object,
+        /// otherwise a PreconditionFailed signal is returned.
         /// </summary>
-        /// <param name="etagToMatch">The value that ETagToMatch is set to</param>
+        /// <remarks>
+        /// When this is set the S3 object is returned only if its entity tag (ETag) is the same as the one specified,
+        /// otherwise return a 412 (precondition failed).
+        /// </remarks>
+        /// <param name="etagToMatch">The ETag to match</param>
         /// <returns>this instance</returns>
         public GetObjectRequest WithETagToMatch(string etagToMatch)
         {
@@ -271,7 +279,8 @@ namespace Amazon.S3.Model
         #region ETagToNotMatch
 
         /// <summary>
-        /// Gets and sets the ETagToNotMatch property.
+        /// ETag that should not be matched as a pre-condition for returning the object,
+        /// otherwise a PreconditionFailed signal is returned.
         /// </summary>
         [XmlElementAttribute(ElementName = "ETagToNotMatch")]
         public string ETagToNotMatch
@@ -281,12 +290,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ETagToNotMatch property for this request.
+        /// Sets an ETag that should not be matched as a pre-condition for returning the object,
+        /// otherwise a PreconditionFailed signal is returned.
+        /// </summary>
+        /// <remarks>
         /// When this is set the S3 object is returned only if
         /// its entity tag (ETag) is different from the one
         /// specified, otherwise return a 304 (not modified).
-        /// </summary>
-        /// <param name="etagToNotMatch">The value that ETagToNotMatch is set to</param>
+        /// </remarks>
+        /// <param name="etagToNotMatch">The ETag to test</param>
         /// <returns>this instance</returns>
         public GetObjectRequest WithETagToNotMatch(string etagToNotMatch)
         {
@@ -308,7 +320,7 @@ namespace Amazon.S3.Model
         #region ByteRange
 
         /// <summary>
-        /// Gets and sets the ByteRangeLong property.
+        /// Byte range of the object to return. When this is set the request downloads the specified range of an object.
         /// </summary>
         [XmlElementAttribute(ElementName = "ByteRange")]
         public Tuple<long, long> ByteRangeLong
@@ -318,12 +330,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ByteRangeLong property with the start and end index
-        /// specified.
-        /// When this is set the request downloads the specified range of an object.
+        /// Sets a byte range of the object to return. When this is set the request downloads the specified range of an object.
         /// </summary>
-        /// <param name="startIndex">Specifies the index to start at</param>
-        /// <param name="endIndex">Specifies the index to end at</param>
+        /// <param name="startIndex">The index to start at</param>
+        /// <param name="endIndex">The index to end at</param>
         /// <returns>this instance</returns>
         public GetObjectRequest WithByteRangeLong(long startIndex, long endIndex)
         {
@@ -348,7 +358,7 @@ namespace Amazon.S3.Model
         }
         
         /// <summary>
-        /// Gets the ByteRange property.
+        /// Returns the byte range to retrieve, if set.
         /// </summary>
         public Tuple<int, int> ByteRange
         {
@@ -364,12 +374,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ByteRange property with the start and end index
-        /// specified.
-        /// When this is set the request downloads the specified range of an object.
+        /// Sets a byte range of the object to return. When this is set the request downloads the specified range of an object.
         /// </summary>
-        /// <param name="startIndex">Specifies the index to start at</param>
-        /// <param name="endIndex">Specifies the index to end at</param>
+        /// <param name="startIndex">The index to start at</param>
+        /// <param name="endIndex">The index to end at</param>
         /// <returns>this instance</returns>
         public GetObjectRequest WithByteRange(int startIndex, int endIndex)
         {
@@ -407,12 +415,21 @@ namespace Amazon.S3.Model
         #region Timeout
 
         /// <summary>
-        /// Gets and sets of the Timeout property (in milliseconds).
-        /// The value of this property is assigned to the
-        /// Timeout property of the HTTPWebRequest object used
-        /// for S3 GET Object requests.
+        /// Overrides the default HttpWebRequest timeout value.
         /// </summary>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the Timeout property of the HTTPWebRequest object used
+        /// for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// Please specify a timeout value only if you are certain that the file will not be retrieved within the default intervals
+        /// specified for an HttpWebRequest.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
         public int Timeout
         {
@@ -427,15 +444,22 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Timeout property (in milliseconds). 
-        /// The value of this property is assigned to the
-        /// Timeout property of the HttpWebRequest
-        /// Please specify a timeout value only if you are certain that
-        /// the file will not be retrieved within the default intervals
-        /// specified for an HttpWebRequest.
+        /// Overrides the default HttpWebRequest timeout value.
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the Timeout property of the HTTPWebRequest object used
+        /// for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// Please specify a timeout value only if you are certain that the file will not be retrieved within the default intervals
+        /// specified for an HttpWebRequest.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
         /// <param name="timeout">Timeout property</param>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
@@ -455,12 +479,18 @@ namespace Amazon.S3.Model
         #region ReadWriteTimeout
 
         /// <summary>
-        /// Gets and sets of the ReadWriteTimeout property (in milliseconds).
-        /// The value of this property is assigned to the
+        /// Overrides the default HttpWebRequest ReadWriteTimeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the
         /// ReadWriteTimeout property of the HTTPWebRequest object
         /// used for S3 GET Object requests.
-        /// </summary>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         public int ReadWriteTimeout
         {
@@ -475,12 +505,19 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ReadWriteTimeout property (in milliseconds). 
-        /// The value of this property is assigned to the
-        /// ReadWriteTimeout property of the HttpWebRequest.
+        /// Overrides the default HttpWebRequest ReadWriteTimeout value.
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property (in milliseconds) is assigned to the
+        /// ReadWriteTimeout property of the HTTPWebRequest object
+        /// used for S3 GET Object requests.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
         /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         public GetObjectRequest WithReadWriteTimeout(int readWriteTimeout)
@@ -498,9 +535,8 @@ namespace Amazon.S3.Model
 
         #region Response Headers
 
-
         /// <summary>
-        /// Gets and sets the response headers to be returned back with the response of the object.
+        /// A set of response headers that should be returned with the object.
         /// </summary>
         public ResponseHeaderOverrides ResponseHeaderOverrides
         {
@@ -519,9 +555,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ResponseHeaderOverrides property and returns back this instance for method chaining.
+        /// A set of response headers that should be returned with the object.
         /// </summary>
-        /// <param name="responseHeaderOverrides">The response headers</param>
+        /// <param name="responseHeaderOverrides">Response headers to return</param>
         /// <returns>this instance</returns>
         public GetObjectRequest WithResponseHeaderOverrides(ResponseHeaderOverrides responseHeaderOverrides)
         {

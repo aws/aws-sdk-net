@@ -27,9 +27,8 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// This class contains the values of the response headers that will be set on the 
-    /// response from a GetObject request.  These values override any headers that were set
-    /// when the object was uploaded to S3.
+    /// Container for values of the response headers that will be set on a response from a GetObject request. 
+    /// These values override any headers that were set when the object was uploaded to S3.
     /// </summary>
     public class ResponseHeaderOverrides
     {
@@ -49,8 +48,12 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Gets or sets the ContentType.
+        /// A standard MIME type describing the format of the object data.
         /// </summary>
+        /// <remarks>
+        /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
+        /// </remarks>
         public string ContentType
         {
             get { return this._contentType; }
@@ -58,8 +61,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ContentType property and returns back this instance for method chaining.
+        /// Sets a standard MIME type describing the format of the object data.
         /// </summary>
+        /// <remarks>
+        /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
+        /// </remarks>
         /// <param name="contentType">The content type for the returned object.</param>
         /// <returns>this instance</returns>
         public ResponseHeaderOverrides WithContentType(string contentType)
@@ -69,7 +76,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets or sets the ContentLanguage.
+        /// ContentLanguage header value.
         /// </summary>
         public string ContentLanguage
         {
@@ -78,7 +85,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ContentLanguage property and returns back this instance for method chaining.
+        /// Sets the ContentLanguage header value.
         /// </summary>
         /// <param name="contentLanguage">The content language for the returned object.</param>
         /// <returns>this instance</returns>
@@ -89,7 +96,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets or sets the Expires.
+        /// Expiry header value.
         /// </summary>
         public string Expires
         {
@@ -98,7 +105,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Expires property and returns back this instance for method chaining.
+        /// Sets the Expires header value.
         /// </summary>
         /// <param name="expires">The expires for the returned object.</param>
         /// <returns>this instance</returns>
@@ -109,7 +116,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets or sets the CacheControl.
+        /// CacheControl header value.
         /// </summary>
         public string CacheControl
         {
@@ -118,7 +125,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the CacheControl property and returns back this instance for method chaining.
+        /// Sets the CacheControl header value.
         /// </summary>
         /// <param name="cacheControl">The cache control for the returned object.</param>
         /// <returns>this instance</returns>
@@ -129,7 +136,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets or sets the ContentDisposition.
+        /// The ContentDisposition header value.
         /// </summary>
         public string ContentDisposition
         {
@@ -138,7 +145,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ContentDisposition property and returns back this instance for method chaining.
+        /// Sets the ContentDisposition header value.
         /// </summary>
         /// <param name="contentDisposition">The content disposition for the returned object.</param>
         /// <returns>this instance</returns>
@@ -149,7 +156,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets or sets the ContentEncoding.
+        /// The ContentEncoding header value.
         /// </summary>
         public string ContentEncoding
         {
@@ -158,7 +165,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ContentEncoding property and returns back this instance for method chaining.
+        /// Sets the ContentEncoding header value.
         /// </summary>
         /// <param name="contentEncoding">The content encoding for the returned object.</param>
         /// <returns>this instance</returns>

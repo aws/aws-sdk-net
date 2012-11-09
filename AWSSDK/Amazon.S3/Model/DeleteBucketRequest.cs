@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Deletes the specified bucket.
+    /// The parameters to request deletion of a bucket.
     /// </summary>
     /// <remarks>
     /// All objects (including all object versions and Delete Markers) in the bucket must be 

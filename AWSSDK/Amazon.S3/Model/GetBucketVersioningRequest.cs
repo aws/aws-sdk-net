@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Queries the versioning configuration for a bucket.
+    /// The parameters to request the versioning configuration for a bucket.
     /// </summary>
     public class GetBucketVersioningRequest : S3Request
     {

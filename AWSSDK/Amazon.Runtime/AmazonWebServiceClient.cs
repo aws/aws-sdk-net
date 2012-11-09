@@ -766,7 +766,7 @@ namespace Amazon.Runtime
         // As per MSDN documentation (http://msdn.microsoft.com/en-us/library/system.net.webheadercollection%28v=VS.80%29.aspx)
         // some headers are restricted, cannot be set through the request.Headers property and must be
         // set through properties on the HttpWebRequest
-        private void AddHeaders(HttpWebRequest request, IDictionary<string, string> headersToAdd)
+        internal static void AddHeaders(HttpWebRequest request, IDictionary<string, string> headersToAdd)
         {
             var headers = request.Headers;
             foreach (var kvp in headersToAdd)

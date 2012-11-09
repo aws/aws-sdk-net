@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns the access control list (ACL) for a bucket or object.
+    /// The parameters to request the access control list (ACL) for a bucket or object.
     /// </summary>
     public class GetACLRequest : S3Request
     {

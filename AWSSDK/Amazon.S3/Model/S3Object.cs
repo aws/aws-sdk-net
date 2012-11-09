@@ -32,7 +32,6 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Represents an S3 Object. Contains all attributes that an S3 Object has.
-    ///
     /// For more information about S3 Objects refer:
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/UsingObjects.html"/>
     /// </summary>
@@ -81,7 +80,7 @@ namespace Amazon.S3.Model
         #region Key
 
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key of the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
@@ -91,7 +90,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if Key property is set.
+        /// Checks if the Key property is set.
         /// </summary>
         /// <returns>true if Key property is set.</returns>
         internal bool IsSetKey()
@@ -104,9 +103,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
-        /// This is the name of the S3 Bucket in which the
-        /// key is stored.
+        /// The name of the bucket containing the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -116,7 +113,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if BucketName property is set.
+        /// Checks if the BucketName property is set.
         /// </summary>
         /// <returns>true if BucketName property is set.</returns>
         internal bool IsSetBucketName()
@@ -129,9 +126,10 @@ namespace Amazon.S3.Model
         #region LastModified
 
         /// <summary>
-        /// Gets and sets the LastModified property.
-        /// Date retrieved from S3 is in ISO8601 format.
-        /// GMT formatted date is passed back to the user.
+        /// The date and time the object was last modified.
+        /// <remarks>
+        /// The date retrieved from S3 is in ISO8601 format. A GMT formatted date is passed back to the user.
+        /// </remarks>
         /// </summary>
         [XmlElementAttribute(ElementName = "LastModified")]
         public string LastModified
@@ -154,7 +152,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if LastModified property is set.
+        /// Checks if the LastModified property is set.
         /// </summary>
         /// <returns>true if LastModified property is set.</returns>
         internal bool IsSetLastModified()
@@ -167,7 +165,7 @@ namespace Amazon.S3.Model
         #region ETag
 
         /// <summary>
-        /// Gets and sets the ETag property.
+        /// Any ETag set on the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "ETag")]
         public string ETag
@@ -177,7 +175,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if ETag property is set.
+        /// Checks if the ETag property is set.
         /// </summary>
         /// <returns>true if ETag property is set.</returns>
         internal bool IsSetETag()
@@ -190,7 +188,7 @@ namespace Amazon.S3.Model
         #region Size
 
         /// <summary>
-        /// Gets and sets the Size property.
+        /// The size of the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "Size")]
         public long Size
@@ -204,7 +202,7 @@ namespace Amazon.S3.Model
         #region Owner
 
         /// <summary>
-        /// Gets and sets the Owner property.
+        /// The owner of the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "Owner")]
         public Owner Owner
@@ -214,7 +212,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if Owner property is set.
+        /// Checks if the Owner property is set.
         /// </summary>
         /// <returns>true if Owner property is set.</returns>
         internal bool IsSetOwner()
@@ -227,7 +225,7 @@ namespace Amazon.S3.Model
         #region StorageClass
 
         /// <summary>
-        /// Gets and sets the StorageClass property.
+        /// The storage class of the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "StorageClass")]
         public string StorageClass
@@ -237,7 +235,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if StorageClass property is set.
+        /// Checks if the StorageClass property is set.
         /// </summary>
         /// <returns>true if StorageClass property is set.</returns>
         internal bool IsSetStorageClass()

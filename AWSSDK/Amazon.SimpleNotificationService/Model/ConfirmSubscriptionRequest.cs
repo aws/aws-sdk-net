@@ -27,13 +27,15 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The ConfirmSubscription action verifies an endpoint owner's intent to
-    /// receive messages by validating the token sent to the endpoint by an
-    /// earlier Subscribe action. If the token is valid, the action creates
-    /// a new subscription and returns its Amazon Resource Name (ARN). This
-    /// call requires an AWS signature only when the AuthenticateOnUnsubscribe
-    /// flag is set to "true".
+    /// Verifies an endpoint owner's intent to receive messages by validating the token
+    /// sent to the endpoint by an earlier Subscribe action.
+    /// If the token is valid, the action creates a new subscription and returns its
+    /// Amazon Resource Name (ARN).
     /// </summary>
+    /// <remarks>
+    /// This call requires an AWS signature only when the AuthenticateOnUnsubscribe
+    /// flag is set to "true".
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class ConfirmSubscriptionRequest
     {    
@@ -42,7 +44,6 @@ namespace Amazon.SimpleNotificationService.Model
         private string authenticateOnUnsubscribeField;
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
         /// The ARN of the topic for which you wish to confirm a subscription.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
@@ -53,7 +54,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the ARN of the topic for which you wish to confirm a subscription.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to confirm a subscription.</param>
         /// <returns>this instance</returns>
@@ -73,7 +74,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Token property.
         /// Short-lived token sent to an endpoint during the Subscribe action.
         /// </summary>
         [XmlElementAttribute(ElementName = "Token")]
@@ -84,7 +84,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Token property
+        /// Sets a short-lived token sent to an endpoint during the Subscribe action.
         /// </summary>
         /// <param name="token">Short-lived token sent to an endpoint during the Subscribe action.</param>
         /// <returns>this instance</returns>
@@ -104,10 +104,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the AuthenticateOnUnsubscribe property.
-        /// Indicates that you want to disable unauthenticated unsubsciption of the subscription.
+        /// Value that indicates that you want to disable unauthenticated unsubsciption of the subscription.
         /// If parameter is present in the request, the request has an AWS signature, and the value
-        /// of this parameter is true, only the topic owner and the subscription owner will be
+        /// of this parameter is "true", only the topic owner and the subscription owner will be
         /// permitted to unsubscribe the endopint, and the Unsubscribe action will require AWS
         /// authentication.
         /// </summary>
@@ -119,13 +118,11 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the AuthenticateOnUnsubscribe property
+        /// Sets the value that indicates that you want to disable unauthenticated unsubsciption of the subscription.
         /// </summary>
-        /// <param name="authenticateOnUnsubscribe">Indicates that you want to disable unauthenticated unsubsciption of the subscription.
-        /// If parameter is present in the request, the request has an AWS signature, and the value
-        /// of this parameter is true, only the topic owner and the subscription owner will be
-        /// permitted to unsubscribe the endopint, and the Unsubscribe action will require AWS
-        /// authentication.</param>
+        /// <param name="authenticateOnUnsubscribe">
+        /// Value that indicates that you want to disable unauthenticated unsubsciption of the subscription.
+        /// </param>
         /// <returns>this instance</returns>
         public ConfirmSubscriptionRequest WithAuthenticateOnUnsubscribe(string authenticateOnUnsubscribe)
         {

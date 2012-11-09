@@ -33,8 +33,7 @@ namespace Amazon.StorageGateway.Model
         private bool? chapEnabled;
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the volume target. <i>Valid Values</i>: 50 to 800 lowercase letters, numbers, periods (.), and hyphens
-        /// (-).
+        /// The Amazon Resource Name (ARN) of the volume target.
         ///  
         /// <para>
         /// <b>Constraints:</b>

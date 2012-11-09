@@ -22,13 +22,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   HadoopJarStepConfig Unmarshaller
      /// </summary>
-    internal class HadoopJarStepConfigUnmarshaller : IUnmarshaller<HadoopJarStepConfig, XmlUnmarshallerContext> 
+    internal class HadoopJarStepConfigUnmarshaller : IUnmarshaller<HadoopJarStepConfig, XmlUnmarshallerContext>, IUnmarshaller<HadoopJarStepConfig, JsonUnmarshallerContext> 
     {
         public HadoopJarStepConfig Unmarshall(XmlUnmarshallerContext context) 
         {
             HadoopJarStepConfig hadoopJarStepConfig = new HadoopJarStepConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -70,6 +71,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
 
             return hadoopJarStepConfig;
+        }
+
+        public HadoopJarStepConfig Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static HadoopJarStepConfigUnmarshaller instance;

@@ -34,17 +34,6 @@ namespace Amazon.ElasticMapReduce
         }
 
         /// <summary>
-        /// Gets the ServiceVersion property.
-        /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2009-03-31";
-            }
-        }
-
-        /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
         internal override string RegionEndpointServiceName
@@ -52,6 +41,17 @@ namespace Amazon.ElasticMapReduce
             get
             {
                 return "elasticmapreduce";
+            }
+        }
+
+        /// <summary>
+        /// Gets the ServiceVersion property.
+        /// </summary>
+        public override string ServiceVersion
+        {
+            get
+            {
+                return "2009-03-31";
             }
         }
     }

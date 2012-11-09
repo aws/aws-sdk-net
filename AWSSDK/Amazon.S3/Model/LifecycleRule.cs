@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// LifecycleRule defines a lifecylce rule
+    /// Values defining a lifecycle rule.
     /// </summary>
     public class LifecycleRule
     {
@@ -35,7 +35,7 @@ namespace Amazon.S3.Model
         private LifecycleRuleStatus status;
 
         /// <summary>
-        /// Gets and sets the ID property of the rule
+        /// Unique identifier for the rule.
         /// </summary>
         [XmlElement(ElementName="ID")]
         public string Id
@@ -45,7 +45,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the prefix property of the rule
+        /// The prefix property for the rule. Identifies one or more objects in a bucket to which
+        /// the rule applies.
         /// </summary>
         public string Prefix
         {
@@ -54,7 +55,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the expiration property of the rule
+        /// Defines the length of time, in days, before objects expire.
         /// </summary>
         public LifecycleRuleExpiration Expiration
         {
@@ -63,7 +64,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the status property of the rule
+        /// If Enabled, the rule is currently being applied. If Disabled, the rule is not currently being applied.
         /// </summary>
         public LifecycleRuleStatus Status
         {

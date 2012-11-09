@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The AddPermission action adds a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions.
+    /// Adds a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class AddPermissionRequest
@@ -38,7 +38,6 @@ namespace Amazon.SimpleNotificationService.Model
         private List<string> actionNamesField;
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
         /// The ARN of the topic whose access control policy you wish to modify.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
@@ -49,7 +48,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the ARN of the topic whose access control policy you wish to modify.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic whose access control policy you wish to modify.</param>
         /// <returns>this instance</returns>
@@ -69,7 +68,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Label property.
         /// A unique identifier for the new policy statement.
         /// </summary>
         [XmlElementAttribute(ElementName = "Label")]
@@ -80,7 +78,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Label property
+        /// Sets the unique identifier for the new policy statement.
         /// </summary>
         /// <param name="label">A unique identifier for the new policy statement.</param>
         /// <returns>this instance</returns>
@@ -100,11 +98,11 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the AWSAccountIds property.
-        /// The AWS account IDs of the users (principals) who will be given access to the specified
-        /// actions. The users must have AWS accounts, but do not need to be signed up
-        /// for this service.
+        /// The AWS account IDs of the users (principals) who will be given access to the specified actions.
         /// </summary>
+        /// <remarks>
+        /// The users must have AWS accounts, but do not need to be signed up for this service.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "AWSAccountIds")]
         public List<string> AWSAccountIds
         {
@@ -120,11 +118,10 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the AWSAccountIds property
+        /// Sets the AWS account IDs of the users (principals) who will be given access to the specified actions.
         /// </summary>
         /// <param name="list">The AWS account IDs of the users (principals) who will be given access to the specified
-        /// actions. The users must have AWS accounts, but do not need to be signed up
-        /// for this service.</param>
+        /// actions.</param>
         /// <returns>this instance</returns>
         public AddPermissionRequest WithAWSAccountIds(params string[] list)
         {
@@ -145,11 +142,12 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the ActionNames property.
         /// The action you want to allow for the specified principal(s).
+        /// </summary>
+        /// <remarks>
 		/// Valid values: any Amazon SNS action name. Go to the 
 		/// <a href="http://docs.amazonwebservices.com/sns/latest/api/API_Operations.html">Amazon SNS API docs</a> for a list of action names.
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ActionNames")]
         public List<string> ActionNames
         {
@@ -165,7 +163,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the ActionNames property
+        /// Sets the action you want to allow for the specified principal(s).
         /// </summary>
         /// <param name="list">The action you want to allow for the specified principal(s).</param>
         /// <returns>this instance</returns>

@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Removes the website configuration for a bucket.
+    /// The parameters to request removal of the website configuration for a bucket.
     /// </summary>
     /// <remarks>
     /// This operation requires the S3:DeleteBucketWebsite permission. By default, only the bucket owner 

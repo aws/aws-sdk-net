@@ -28,8 +28,7 @@ using System.Xml;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The PutBucketWebsiteRequest contains the parameters used for the PutBucketWebsiteRequest operation.
-    /// <br />Required Parameters: BucketName, WebsiteConfiguration.IndexDocumentSuffix
+    /// The parameters to set a website configuration on a bucket.
     /// </summary>
     public class PutBucketWebsiteRequest : S3Request
     {
@@ -39,7 +38,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to apply the configuration to.
         /// </summary>
         public string BucketName
         {
@@ -48,10 +47,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket where the website configuration will be put.
+        /// Sets the name of the bucket to apply the configuration to.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public PutBucketWebsiteRequest WithBucketName(string bucketName)
         {
@@ -72,11 +70,9 @@ namespace Amazon.S3.Model
 
         #region WebsiteConfiguration
 
-
         /// <summary>
-        /// Gets and sets the WebsiteConfiguration property.
-        /// 
-        /// This is where the index document suffix and custom error page are defined.
+        /// The website configuration to apply. The configuration defines the index
+        /// document suffix and custom error page.
         /// </summary>
         public WebsiteConfiguration WebsiteConfiguration
         {
@@ -95,9 +91,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the WithWebsiteConfiguration property for this request.
+        /// The website configuration to apply. The configuration defines the index
+        /// document suffix and custom error page.
         /// </summary>
-        /// <param name="config">The value that WithWebsiteConfiguration is set to</param>
+        /// <param name="config">The configuration details</param>
         /// <returns>the request with the WebsiteConfiguration set</returns>
         public PutBucketWebsiteRequest WithWebsiteConfiguration(WebsiteConfiguration config)
         {

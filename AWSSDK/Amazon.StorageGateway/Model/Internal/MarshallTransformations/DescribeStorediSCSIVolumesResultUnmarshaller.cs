@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.StorageGateway.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.StorageGateway.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
     { 
@@ -30,18 +31,18 @@
         }
         
         public DescribeStorediSCSIVolumesResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          DescribeStorediSCSIVolumesResult describeStorediSCSIVolumesResult = new DescribeStorediSCSIVolumesResult();
+        {
+            DescribeStorediSCSIVolumesResult describeStorediSCSIVolumesResult = new DescribeStorediSCSIVolumesResult();
           describeStorediSCSIVolumesResult.StorediSCSIVolumes = null; 
-                        
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                                  
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("StorediSCSIVolumes", targetDepth)) 
               {
@@ -61,22 +62,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return describeStorediSCSIVolumesResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return describeStorediSCSIVolumesResult; 
-            } 
-          } 
-          return describeStorediSCSIVolumesResult; 
+          
+          
+            return describeStorediSCSIVolumesResult; 
         } 
         
         private static DescribeStorediSCSIVolumesResultUnmarshaller instance; 
         public static DescribeStorediSCSIVolumesResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new DescribeStorediSCSIVolumesResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new DescribeStorediSCSIVolumesResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

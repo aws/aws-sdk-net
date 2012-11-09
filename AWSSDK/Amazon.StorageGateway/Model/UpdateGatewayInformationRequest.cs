@@ -75,7 +75,7 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// A unique identifier for your gateway. This name becomes part of the gateway Amazon Resources Name (ARN) which is what you use as an input to
-        /// other operations. Length: Minimum length of 2. Maximum length of 255.
+        /// other operations.
         ///  
         /// <para>
         /// <b>Constraints:</b>

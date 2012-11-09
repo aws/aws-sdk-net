@@ -38,9 +38,9 @@ namespace Amazon.SimpleNotificationService.Model
         private Object detailField;
 
         /// <summary>
-        /// Gets and sets the Type property.
-        /// The error type. There are two types of error codes: client and server.
-        /// these error codes are prefixed with Client. For example: Client.AuthFailure.
+        /// The error type.
+        /// There are two types of error codes: client and server.
+        /// Error codes are prefixed with Client. For example: Client.AuthFailure.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
@@ -50,10 +50,11 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Type property
+        /// Sets the error type.
+        /// There are two types of error codes: client and server.
+        /// Error codes are prefixed with Client. For example: Client.AuthFailure.
         /// </summary>
-        /// <param name="type">The error type. There are two types of error codes: client and server.
-        /// these error codes are prefixed with Client. For example: Client.AuthFailure.</param>
+        /// <param name="type">The error type.</param>
         /// <returns>this instance</returns>
         public Error WithType(string type)
         {
@@ -71,9 +72,11 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Code property.
-        /// The specific error code. See the Load Balancing developer documentation for more details.
+        /// The specific error code.
         /// </summary>
+        /// <remarks>
+        /// See the Load Balancing developer documentation for more details.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Code")]
         public string Code
         {
@@ -82,7 +85,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Code property
+        /// Sets the specific error code.
         /// </summary>
         /// <param name="code">The specific error code. See the Load Balancing developer documentation for more details.</param>
         /// <returns>this instance</returns>
@@ -102,7 +105,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Message property.
         /// A summary of the error.
         /// </summary>
         [XmlElementAttribute(ElementName = "Message")]
@@ -113,7 +115,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Message property
+        /// Sets the summary of the error.
         /// </summary>
         /// <param name="message">A summary of the error.</param>
         /// <returns>this instance</returns>
@@ -133,7 +135,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Detail property.
         /// Details associated with the error.
         /// </summary>
         [XmlElementAttribute(ElementName = "Detail")]
@@ -144,7 +145,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Detail property
+        /// Sets the details associated with the error.
         /// </summary>
         /// <param name="detail">Details associated with the error.</param>
         /// <returns>this instance</returns>

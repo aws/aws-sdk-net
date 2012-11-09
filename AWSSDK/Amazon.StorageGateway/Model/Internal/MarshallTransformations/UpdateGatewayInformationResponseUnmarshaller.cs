@@ -31,6 +31,7 @@
           UpdateGatewayInformationResponse response = new UpdateGatewayInformationResponse();
           
           context.Read();
+      
           response.UpdateGatewayInformationResult = UpdateGatewayInformationResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

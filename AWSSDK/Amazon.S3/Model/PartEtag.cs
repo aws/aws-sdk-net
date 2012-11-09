@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// A container object for holding the part number and etag used when completing a
-    /// multipart upload.
+    /// A container holding the part number and etag used when completing a multipart upload.
     /// </summary>
     public class PartETag : IComparable<PartETag>
     {
@@ -76,7 +75,7 @@ namespace Amazon.S3.Model
         #region PartNumber
 
         /// <summary>
-        /// Gets and sets the PartNumber property.
+        /// The part number identifying the part.
         /// </summary>
         public int PartNumber
         {
@@ -85,9 +84,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the PartNumber property for this request.
+        /// Sets the part number identifying the part.
         /// </summary>
-        /// <param name="partNumber">The value that PartNumber is set to</param>
+        /// <param name="partNumber">The part number</param>
         /// <returns>the request with the PartNumber set</returns>
         public PartETag WithPartNumber(int partNumber)
         {
@@ -100,7 +99,7 @@ namespace Amazon.S3.Model
         #region eTag
 
         /// <summary>
-        /// Gets and sets the ETag property.
+        /// The entity tag associated with the part.
         /// </summary>
         public string ETag
         {
@@ -109,9 +108,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ETag property for this request.
+        /// Sets the entity tag associated with the part.
         /// </summary>
-        /// <param name="eTag">The value that ETag is set to</param>
+        /// <param name="eTag">The value of the entity tag</param>
         /// <returns>the request with the ETag set</returns>
         public PartETag WithETag(string eTag)
         {

@@ -28,7 +28,7 @@ using System.Xml;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Deletes one or more objects from an S3 bucket.
+    /// The parameters to request deletion of one or more objects from a bucket.
     /// </summary>
     /// <remarks>
     /// When performing a multi-object delete operation on an MFA Delete enabled bucket, that attempts to delete any versioned objects, 

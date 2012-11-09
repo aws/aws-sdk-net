@@ -48,6 +48,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<StepConfig> steps = new List<StepConfig>();
         private List<BootstrapActionConfig> bootstrapActions = new List<BootstrapActionConfig>();
         private List<string> supportedProducts = new List<string>();
+        private bool? visibleToAllUsers;
 
         /// <summary>
         /// The name of the job flow.
@@ -173,7 +174,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. The following values ane valid:
+        /// The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. The following values are valid:
         /// <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0" (AMI
         /// 1.0, Hadoop 0.18)</li> </ul> If this value is not specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18). If the AMI supports
         /// multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
@@ -339,8 +340,11 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// A list of strings used by third-party software to tag the job flow. Currently the only valid value is "karmasphere-enterprise-utility",
-        /// which tags the job flow for management by <a href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+        /// A list of strings that indicates third-party software to use with the job flow. For more information, go to <a
+        /// href="http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third Party Applications
+        /// with Amazon EMR</a>. Currently supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job flow for management by <a
+        /// href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li> <li>"mapr-m3" - launch the job flow using MapR M3
+        /// Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
         ///  
         /// </summary>
         public List<string> SupportedProducts
@@ -382,6 +386,36 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetSupportedProducts()
         {
             return this.supportedProducts.Count > 0;       
+        }
+
+        /// <summary>
+        /// Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this value is set to <c>true</c>, all
+        /// IAM users of that AWS account can view and (if they have the proper policy permissions set) manage the job flow. If it is set to
+        /// <c>false</c>, only the IAM user that created the job flow can view and manage it.
+        ///  
+        /// </summary>
+        public bool VisibleToAllUsers
+        {
+            get { return this.visibleToAllUsers ?? default(bool); }
+            set { this.visibleToAllUsers = value; }
+        }
+
+        /// <summary>
+        /// Sets the VisibleToAllUsers property
+        /// </summary>
+        /// <param name="visibleToAllUsers">The value to set for the VisibleToAllUsers property </param>
+        /// <returns>this instance</returns>
+        public RunJobFlowRequest WithVisibleToAllUsers(bool visibleToAllUsers)
+        {
+            this.visibleToAllUsers = visibleToAllUsers;
+            return this;
+        }
+            
+
+        // Check to see if VisibleToAllUsers property is set
+        internal bool IsSetVisibleToAllUsers()
+        {
+            return this.visibleToAllUsers.HasValue;       
         }
     }
 }

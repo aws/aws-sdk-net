@@ -28,7 +28,7 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Encapsulates the metadata and result of the SetSubscriptionAttributes action.
+    /// Sets an attribute of the topic to a new value.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class SetSubscriptionAttributesRequest
@@ -38,9 +38,7 @@ namespace Amazon.SimpleNotificationService.Model
         private string attributeValueField;
 
         /// <summary>
-        /// Gets and sets the SubscriptionArn property.
-        /// The Amazon Reference Name (ARN) of the subscription the client wishes
-        /// to set the attribute value of.
+        /// The Amazon Reference Name (ARN) of the subscription you want to set the attribute value of.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubscriptionArn")]
         public string SubscriptionArn
@@ -50,10 +48,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the SubscriptionArn property
+        /// Sets the Amazon Reference Name (ARN) of the subscription you want to set the attribute value of.
         /// </summary>
-        /// <param name="subscriptionArn">The Amazon Reference Name (ARN) of the subscription the client wishes
-        /// to set the attribute value of.</param>
+        /// <param name="subscriptionArn">The Amazon Reference Name (ARN) of the subscription.</param>
         /// <returns>this instance</returns>
         public SetSubscriptionAttributesRequest WithSubscriptionArn(string subscriptionArn)
         {
@@ -71,7 +68,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the AttributeName property.
         /// The name of the attribute the client wishes to set.
         /// Only a subset of a subscription's attributes can be set.
         /// </summary>
@@ -83,10 +79,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the AttributeName property
+        /// Sets the name of the attribute you want to set.
         /// </summary>
-        /// <param name="attributeName">The name of the attribute the client wishes to set.
-        /// Only a subset of a subscription's attributes can be set.</param>
+        /// <param name="attributeName">The name of the attribute you want to set.</param>
         /// <returns>this instance</returns>
         public SetSubscriptionAttributesRequest WithAttributeName(string attributeName)
         {
@@ -104,8 +99,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the AttributeValue property.
-        /// The value of the attribute the client wishes to set.
+        /// The value of the attribute you want to set.
         /// </summary>
         [XmlElementAttribute(ElementName = "AttributeValue")]
         public string AttributeValue
@@ -115,9 +109,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the AttributeValue property
+        /// Sets the value of the attribute you want to set.
         /// </summary>
-        /// <param name="attributeValue">The value of the attribute the client wishes to set.</param>
+        /// <param name="attributeValue">The value of the attribute you want to set.</param>
         /// <returns>this instance</returns>
         public SetSubscriptionAttributesRequest WithAttributeValue(string attributeValue)
         {

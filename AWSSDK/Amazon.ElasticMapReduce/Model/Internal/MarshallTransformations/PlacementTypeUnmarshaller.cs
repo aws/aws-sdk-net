@@ -22,13 +22,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PlacementType Unmarshaller
      /// </summary>
-    internal class PlacementTypeUnmarshaller : IUnmarshaller<PlacementType, XmlUnmarshallerContext> 
+    internal class PlacementTypeUnmarshaller : IUnmarshaller<PlacementType, XmlUnmarshallerContext>, IUnmarshaller<PlacementType, JsonUnmarshallerContext> 
     {
         public PlacementType Unmarshall(XmlUnmarshallerContext context) 
         {
             PlacementType placementType = new PlacementType();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
 
             return placementType;
+        }
+
+        public PlacementType Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static PlacementTypeUnmarshaller instance;

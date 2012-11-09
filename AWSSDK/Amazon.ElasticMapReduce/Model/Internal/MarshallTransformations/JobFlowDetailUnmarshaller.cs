@@ -22,13 +22,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   JobFlowDetail Unmarshaller
      /// </summary>
-    internal class JobFlowDetailUnmarshaller : IUnmarshaller<JobFlowDetail, XmlUnmarshallerContext> 
+    internal class JobFlowDetailUnmarshaller : IUnmarshaller<JobFlowDetail, XmlUnmarshallerContext>, IUnmarshaller<JobFlowDetail, JsonUnmarshallerContext> 
     {
         public JobFlowDetail Unmarshall(XmlUnmarshallerContext context) 
         {
             JobFlowDetail jobFlowDetail = new JobFlowDetail();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -89,6 +90,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                         jobFlowDetail.SupportedProducts.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
+                    } 
+                    if (context.TestExpression("VisibleToAllUsers", targetDepth))
+                    {
+                        jobFlowDetail.VisibleToAllUsers = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -100,6 +107,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
 
             return jobFlowDetail;
+        }
+
+        public JobFlowDetail Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static JobFlowDetailUnmarshaller instance;

@@ -27,10 +27,13 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The ListSubscriptionsByTopic action returns a list of the subscriptions to a specific topic. Each call returns
-    /// a limited list of subscriptions. If there are more subscriptions, a NextToken is also returned. Use the NextToken
-    /// parameter in a new ListSubscriptionsByTopic call to get further results.
+    /// Returns a list of the subscriptions to a specific topic.
     /// </summary>
+    /// <remarks>
+    /// Each call returns a limited list of subscriptions. If there are more subscriptions,
+    /// a NextToken is also returned. Use the NextToken parameter in a new ListSubscriptionsByTopic
+    /// call to get further results.
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class ListSubscriptionsByTopicRequest
     {    
@@ -38,7 +41,6 @@ namespace Amazon.SimpleNotificationService.Model
         private string nextTokenField;
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
         /// The ARN of the topic for which you wish to find subscriptions.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
@@ -49,7 +51,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the ARN of the topic for which you wish to find subscriptions.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
         /// <returns>this instance</returns>
@@ -69,7 +71,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the NextToken property.
         /// Token returned by the previous ListSubscriptionsByTopic request.
         /// </summary>
         [XmlElementAttribute(ElementName = "NextToken")]
@@ -80,7 +81,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the NextToken property
+        /// Sets the token returned by the previous ListSubscriptionsByTopic request.
         /// </summary>
         /// <param name="nextToken">Token returned by the previous ListSubscriptionsByTopic request.</param>
         /// <returns>this instance</returns>

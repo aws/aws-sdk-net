@@ -30,11 +30,11 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one
-        /// target-initiator pair. CHAP credential information is provided in a JSON object with the following fields: <ul> <li> <b>InitiatorName</b>:
-        /// The iSCSI initiator that connects to the target. </li> <li> <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (e.g.
-        /// Windows client) must provide to participate in mutual CHAP with the target. </li> <li> <b>SecretToAuthenticateTarget</b>: The secret key
-        /// that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client). </li> <li> <b>TargetARN</b>: The Amazon
-        /// Resource Name (ARN) of the storage volume. </li> </ul>
+        /// target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object
+        /// with the following fields: <ul> <li> <b>InitiatorName</b>: The iSCSI initiator that connects to the target. </li> <li>
+        /// <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (e.g. Windows client) must provide to participate in mutual CHAP
+        /// with the target. </li> <li> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP
+        /// with the initiator (e.g. Windows client). </li> <li> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume. </li> </ul>
         ///  
         /// </summary>
         public List<ChapInfo> ChapCredentials

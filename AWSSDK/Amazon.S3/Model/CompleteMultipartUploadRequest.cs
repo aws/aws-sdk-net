@@ -28,7 +28,7 @@ using System.Xml;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Completes a multipart upload by assembling previously uploaded parts.
+    /// The parameters to request completion of a multipart upload by assembling previously uploaded parts.
     /// </summary>
     public class CompleteMultipartUploadRequest : S3Request
     {

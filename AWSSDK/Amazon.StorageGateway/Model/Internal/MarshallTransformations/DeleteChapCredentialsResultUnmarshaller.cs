@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.StorageGateway.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.StorageGateway.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public DeleteChapCredentialsResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          DeleteChapCredentialsResult deleteChapCredentialsResult = new DeleteChapCredentialsResult();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            DeleteChapCredentialsResult deleteChapCredentialsResult = new DeleteChapCredentialsResult();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("TargetARN", targetDepth)) 
               {
@@ -54,22 +55,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return deleteChapCredentialsResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return deleteChapCredentialsResult; 
-            } 
-          } 
-          return deleteChapCredentialsResult; 
+          
+          
+            return deleteChapCredentialsResult; 
         } 
         
         private static DeleteChapCredentialsResultUnmarshaller instance; 
         public static DeleteChapCredentialsResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new DeleteChapCredentialsResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new DeleteChapCredentialsResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

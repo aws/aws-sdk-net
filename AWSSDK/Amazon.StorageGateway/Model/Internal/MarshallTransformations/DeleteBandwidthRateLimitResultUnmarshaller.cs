@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.StorageGateway.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.StorageGateway.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public DeleteBandwidthRateLimitResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          DeleteBandwidthRateLimitResult deleteBandwidthRateLimitResult = new DeleteBandwidthRateLimitResult();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            DeleteBandwidthRateLimitResult deleteBandwidthRateLimitResult = new DeleteBandwidthRateLimitResult();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("GatewayARN", targetDepth)) 
               {
@@ -48,22 +49,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return deleteBandwidthRateLimitResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return deleteBandwidthRateLimitResult; 
-            } 
-          } 
-          return deleteBandwidthRateLimitResult; 
+          
+          
+            return deleteBandwidthRateLimitResult; 
         } 
         
         private static DeleteBandwidthRateLimitResultUnmarshaller instance; 
         public static DeleteBandwidthRateLimitResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new DeleteBandwidthRateLimitResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new DeleteBandwidthRateLimitResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

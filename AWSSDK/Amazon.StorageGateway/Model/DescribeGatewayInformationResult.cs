@@ -40,6 +40,7 @@ namespace Amazon.StorageGateway.Model
         private string gatewayTimezone;
         private string gatewayState;
         private List<NetworkInterface> gatewayNetworkInterfaces = new List<NetworkInterface>();
+        private string gatewayType;
         private string nextUpdateAvailabilityDate;
 
         /// <summary>
@@ -234,6 +235,43 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayNetworkInterfaces()
         {
             return this.gatewayNetworkInterfaces.Count > 0;       
+        }
+
+        /// <summary>
+        /// TBD
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>STORED, CACHED</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string GatewayType
+        {
+            get { return this.gatewayType; }
+            set { this.gatewayType = value; }
+        }
+
+        /// <summary>
+        /// Sets the GatewayType property
+        /// </summary>
+        /// <param name="gatewayType">The value to set for the GatewayType property </param>
+        /// <returns>this instance</returns>
+        public DescribeGatewayInformationResult WithGatewayType(string gatewayType)
+        {
+            this.gatewayType = gatewayType;
+            return this;
+        }
+            
+
+        // Check to see if GatewayType property is set
+        internal bool IsSetGatewayType()
+        {
+            return this.gatewayType != null;       
         }
 
         /// <summary>

@@ -35,10 +35,11 @@ namespace Amazon.SimpleNotificationService.Model
         private string requestIdField;
 
         /// <summary>
-        /// Gets and sets the RequestId property.
-        /// The Id associated with the request. Be sure to reference
-        /// this Id when contacting AWS support.
+        /// The Id associated with the request.
         /// </summary>
+        /// <remarks>
+        /// Be sure to reference this Id when contacting AWS support.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "RequestId")]
         public string RequestId
         {

@@ -31,6 +31,7 @@
           DeleteGatewayResponse response = new DeleteGatewayResponse();
           
           context.Read();
+      
           response.DeleteGatewayResult = DeleteGatewayResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

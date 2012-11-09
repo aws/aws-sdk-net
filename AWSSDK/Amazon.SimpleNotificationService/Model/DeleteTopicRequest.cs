@@ -28,18 +28,19 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Deletes a topic and all its subscriptions.
-    /// Deleting a topic might
-    /// prevent some messages previously sent to the topic from being delivered to
-    /// subscribers. This operation is idempotent, so deleting a topic that does not
-    /// exist will not result in an error.
+    /// Deleting a topic might prevent some messages previously sent to the topic from being delivered to
+    /// subscribers.
     /// </summary>
+    /// <remarks>
+    /// This operation is idempotent, so deleting a topic that does not
+    /// exist will not result in an error.
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class DeleteTopicRequest
     {    
         private string topicArnField;
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
         /// The Amazon Reference Name (ARN) of the topic the client wants to delete.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
@@ -50,7 +51,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the Amazon Reference Name (ARN) of the topic the client wants to delete.
         /// </summary>
         /// <param name="topicArn">The Amazon Reference Name (ARN) of the topic the client wants to delete.</param>
         /// <returns>this instance</returns>

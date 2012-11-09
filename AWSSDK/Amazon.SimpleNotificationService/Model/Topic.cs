@@ -26,17 +26,17 @@ using System.Text;
 
 namespace Amazon.SimpleNotificationService.Model
 {
-    ///<summary>
-    ///A wrapper type for the topic's Amazon Resource Name (ARN).
-    ///To retrieve a topic's attributes, use GetTopicAttributes.
-    ///</summary>
+    /// <summary>
+    /// Contains a specific topic's Amazon Resource Name (ARN).
+    /// To retrieve a topic's attributes, use GetTopicAttributes.
+    /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class Topic
     {    
         private string topicArnField;
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
+        /// The ARN of the topic.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
         public string TopicArn
@@ -46,7 +46,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the ARN of the topic.
         /// </summary>
         /// <param name="topicArn">TopicArn property</param>
         /// <returns>this instance</returns>

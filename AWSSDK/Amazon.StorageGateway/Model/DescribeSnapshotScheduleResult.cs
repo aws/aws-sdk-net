@@ -78,7 +78,8 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The hour of the day at which the snapshot schedule begins, from 0 to 23.
+        /// The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+        /// day is in the time zone of the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -115,7 +116,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The number of hours between snapshots. <i>Valid Values</i>: <c>1</c>, <c>2</c>, <c>4</c>, <c>8</c>, <c>12</c>, <c>24</c>.
+        /// The number of hours between snapshots.
         ///  
         /// <para>
         /// <b>Constraints:</b>

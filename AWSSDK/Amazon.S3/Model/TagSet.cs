@@ -20,25 +20,21 @@
  *
  */
 
-using System;
-using System.Security;
 using System.Text;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-using System.IO;
-using System.Xml;
 
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Collection of Tags
+    /// A collection of tags
     /// </summary>
     public class TagSet
     {
         private List<Tag> tags;
 
         /// <summary>
-        /// Gets and sets the Tags property.
+        /// The collection of tags.
         /// </summary>
         [XmlElementAttribute(ElementName = "TagSet")]
         public List<Tag> Tags
@@ -58,9 +54,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Tags property.
+        /// Sets the collection of tags.
         /// </summary>
-        /// <param name="args">Tags property</param>
+        /// <param name="args">Tags collection</param>
         /// <returns>this instance</returns>
         public TagSet WithTags(params Tag[] args)
         {

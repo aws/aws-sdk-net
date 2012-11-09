@@ -26,7 +26,9 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The UploadPartRequest contains the parameters used for the UploadPart method. 
+    /// The parameters to request upload of a part in a multipart upload operation.
+    /// </summary>
+    /// <remarks>
     /// <para>
     /// If PartSize is not specified then the rest of the content from the file
     /// or stream will be sent to Amazon S3.
@@ -35,8 +37,7 @@ namespace Amazon.S3.Model
     /// You must set either the FilePath or InputStream.  If FilePath is set then the FilePosition
     /// property must be set.
     /// </para>
-    /// <br />Required Parameters: BucketName, Key, UploadId, PartNumber
-    /// </summary>
+    /// </remarks>
     public class UploadPartRequest : S3Request
     {
         private string bucketName;
@@ -54,7 +55,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket containing the object to receive the part.
         /// </summary>
         public string BucketName
         {
@@ -63,11 +64,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket where the S3 Object you are
-        /// creating gets put.
+        /// Sets the name of the bucket containing the object to receive the part.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public UploadPartRequest WithBucketName(string bucketName)
         {
@@ -88,7 +87,7 @@ namespace Amazon.S3.Model
 
         #region Key
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key of the object.
         /// </summary>
         public string Key
         {
@@ -97,10 +96,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
-        /// This is the Key for the S3 Object you create.
+        /// Sets the key of the object.
         /// </summary>
-        /// <param name="key">The value that Key is set to</param>
+        /// <param name="key">Object key</param>
         /// <returns>the request with the Key set</returns>
         public UploadPartRequest WithKey(string key)
         {
@@ -109,7 +107,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if Key property is set.
+        /// Checks if the Key property is set.
         /// </summary>
         /// <returns>true if Key property is set.</returns>
         internal bool IsSetKey()
@@ -121,8 +119,7 @@ namespace Amazon.S3.Model
 
         #region UploadId
         /// <summary>
-        /// Gets and sets the UploadId property.
-        /// This is the upload id for the multipart upload in process.
+        /// The upload id for the multipart upload in progress.
         /// </summary>
         public string UploadId
         {
@@ -131,10 +128,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the UploadId property for this request.
-        /// This is the upload id for the multipart upload in process.
+        /// Sets the upload id for the multipart upload in progress.
         /// </summary>
-        /// <param name="uploadId">The value that UploadId is set to</param>
+        /// <param name="uploadId">The ID of the in-progress upload</param>
         /// <returns>the request with the UploadId set</returns>
         public UploadPartRequest WithUploadId(string uploadId)
         {
@@ -143,7 +139,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if UploadId property is set.
+        /// Checks if the UploadId property is set.
         /// </summary>
         /// <returns>true if UploadId property is set.</returns>
         internal bool IsSetUploadId()
@@ -155,7 +151,7 @@ namespace Amazon.S3.Model
 
         #region PartNumber
         /// <summary>
-        /// Gets and sets the PartNumber property.
+        /// The identifier of the part to be uploaded.
         /// </summary>
         public int PartNumber
         {
@@ -164,9 +160,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the PartNumber property for this request.
+        /// Sets the identifier of the part to be uploaded.
         /// </summary>
-        /// <param name="partNumber">The value that PartNumber is set to</param>
+        /// <param name="partNumber">Part ideentifier</param>
         /// <returns>the request with the PartNumber set</returns>
         public UploadPartRequest WithPartNumber(int partNumber)
         {
@@ -187,7 +183,7 @@ namespace Amazon.S3.Model
 
         #region PartSize
         /// <summary>
-        /// Gets and sets the PartSize property.
+        /// The size of the part to be uploaded.
         /// </summary>
         public long PartSize
         {
@@ -196,9 +192,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the PartSize property for this request.
+        /// Sets the size of the part to be uploaded.
         /// </summary>
-        /// <param name="partSize">The value that PartSize is set to</param>
+        /// <param name="partSize">The size of the part</param>
         /// <returns>the request with the PartSize set</returns>
         public UploadPartRequest WithPartSize(long partSize)
         {
@@ -219,7 +215,7 @@ namespace Amazon.S3.Model
 
         #region MD5Digest
         /// <summary>
-        /// Gets and sets the MD5Digest property.
+        /// An MD5 digest for the part.
         /// </summary>
         public string MD5Digest
         {
@@ -228,9 +224,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the MD5Digest property for this request.
+        /// Sets an MD5 digest for the part.
         /// </summary>
-        /// <param name="md5Digest">The value that Md5Digest is set to</param>
+        /// <param name="md5Digest">Digest value</param>
         /// <returns>the request with the Md5Digest set</returns>
         public UploadPartRequest WithMD5Digest(string md5Digest)
         {
@@ -239,7 +235,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if Md5Digest property is set.
+        /// Checks if the MD5Digest property is set.
         /// </summary>
         /// <returns>true if Md5Digest property is set.</returns>
         internal bool IsSetMD5Digest()
@@ -251,10 +247,13 @@ namespace Amazon.S3.Model
 
         #region GenerateMD5Digest
         /// <summary>
-        /// Gets and Sets the property that governs whether
-        /// a md5Digest is generated for the part being
-        /// PUT into S3.
+        /// If set true, an MD5 digest is automatically computed for the part.
         /// </summary>
+        /// <remarks>
+        /// This is a computationally expensive operation,
+        /// and will add to the total time it will take to upload
+        /// data to S3. Please use this option judicially.
+        /// </remarks>
         public bool GenerateMD5Digest
         {
             get { return this.fGenerateMD5Digest; }
@@ -262,16 +261,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the GenerateMD5Digest property. If this property is set,
-        /// the MD5 md5Digest of the part to be uploaded is generated
-        /// prior to the data being sent to S3.
+        /// If set true, an MD5 digest is automatically computed for the part.
         /// </summary>
-        /// <param name="fGenerateMD5Digest">GenerateMD5Digest property</param>
-        /// <returns>this instance</returns>
-        /// <remarks>This is a computationally expensive operation,
+        /// <remarks>
+        /// This is a computationally expensive operation,
         /// and will add to the total time it will take to upload
         /// data to S3. Please use this option judicially.
         /// </remarks>
+        /// <param name="fGenerateMD5Digest">True to automatically compute an MD5 digest for the part</param>
+        /// <returns>this instance</returns>
         public UploadPartRequest WithGenerateChecksum(bool fGenerateMD5Digest)
         {
             this.fGenerateMD5Digest = fGenerateMD5Digest;
@@ -282,7 +280,7 @@ namespace Amazon.S3.Model
 
         #region FilePath
         /// <summary>
-        /// Gets and sets the FilePath property.
+        /// Full path and name of a file from which the content for the part is retrieved.
         /// </summary>
         public string FilePath
         {
@@ -291,9 +289,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the FilePath property for this request.
+        /// Sets the full path and name of a file from which the content for the part is retrieved.
         /// </summary>
-        /// <param name="filePath">The value that FilePath is set to</param>
+        /// <param name="filePath">Full path and name of the file</param>
         /// <returns>the request with the FilePath set</returns>
         public UploadPartRequest WithFilePath(string filePath)
         {
@@ -302,7 +300,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if FilePath property is set.
+        /// Checks if the FilePath property is set.
         /// </summary>
         /// <returns>true if FilePath property is set.</returns>
         internal bool IsSetFilePath()
@@ -314,8 +312,8 @@ namespace Amazon.S3.Model
 
         #region FilePosition
         /// <summary>
-        /// Gets and sets the FilePosition property.  This field is required when
-        /// a file path is specified.  It is ignored when using the InputStream property.
+        /// Position in the file specified by FilePath from which to retrieve the content of the part. 
+        /// This field is required when a file path is specified. It is ignored when using the InputStream property.
         /// </summary>
         public long FilePosition
         {
@@ -324,7 +322,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the FilePosition property for this request.
+        /// Sets the position in the file specified by FilePath from which to retrieve the content of the part. 
+        /// This field is required when a file path is specified. It is ignored when using the InputStream property.
         /// </summary>
         /// <param name="filePosition">The value that FilePosition is set to</param>
         /// <returns>the request with the FilePosition set</returns>
@@ -335,7 +334,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if FilePosition property is set.
+        /// Checks if the FilePosition property is set.
         /// </summary>
         /// <returns>true if FilePosition property is set.</returns>
         internal bool IsSetFilePosition()
@@ -348,12 +347,23 @@ namespace Amazon.S3.Model
         #region Timeout
 
         /// <summary>
-        /// Gets and sets of the Timeout property (in milliseconds).
-        /// The value of this property is assigned to the
-        /// Timeout property of the HTTPWebRequest object
-        /// used for S3 PUT Object requests.
+        /// Custom Timeout property (in milliseconds).
         /// </summary>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <remarks>
+        /// <para>
+        /// The value of this property is assigned to the
+        /// Timeout property of the HTTPWebRequest object used
+        /// for S3 PUT Object requests.
+        /// </para>
+        /// <para>
+        /// Please set the timeout only if you are certain that
+        /// the file will not be transferred within the default intervals
+        /// for an HttpWebRequest.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
         public int Timeout
@@ -369,14 +379,23 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Timeout property (in milliseconds).
+        /// Custom Timeout property (in milliseconds).
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property is assigned to the
+        /// Timeout property of the HTTPWebRequest object used
+        /// for S3 PUT Object requests.
+        /// </para>
+        /// <para>
         /// Please set the timeout only if you are certain that
         /// the file will not be transferred within the default intervals
         /// for an HttpWebRequest.
-        /// </summary>
-        /// <param name="timeout">Timeout property</param>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
-        /// <returns>this instance</returns>
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
         public UploadPartRequest WithTimeout(int timeout)
@@ -395,12 +414,18 @@ namespace Amazon.S3.Model
         #region ReadWriteTimeout
 
         /// <summary>
-        /// Gets and sets of the ReadWriteTimeout property (in milliseconds).
+        /// Custom ReadWriteTimeout property (in milliseconds).
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// The value of this property is assigned to the
         /// ReadWriteTimeout property of the HTTPWebRequest object
         /// used for S3 PUT Object requests.
-        /// </summary>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         public int ReadWriteTimeout
         {
@@ -415,13 +440,18 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ReadWriteTimeout property (in milliseconds). 
-        /// The value of this property is assigned to the
-        /// ReadWriteTimeout property of the HttpWebRequest.
+        /// Custom ReadWriteTimeout property (in milliseconds).
         /// </summary>
-        /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
-        /// <returns>this instance</returns>
+        /// <remarks>
+        /// <para>
+        /// The value of this property is assigned to the
+        /// ReadWriteTimeout property of the HTTPWebRequest object
+        /// used for S3 PUT Object requests.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         public UploadPartRequest WithReadWriteTimeout(int readWriteTimeout)
         {
@@ -435,7 +465,6 @@ namespace Amazon.S3.Model
         }
 
         #endregion
-
 
         /// <summary>
         /// The event for Put Object progress notifications. All

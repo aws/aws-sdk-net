@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.StorageGateway.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.StorageGateway.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public Disk Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          Disk disk = new Disk();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            Disk disk = new Disk();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("DiskId", targetDepth)) 
               {
@@ -78,22 +79,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return disk; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return disk; 
-            } 
-          } 
-          return disk; 
+          
+          
+            return disk; 
         } 
         
         private static DiskUnmarshaller instance; 
         public static DiskUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new DiskUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new DiskUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

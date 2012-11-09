@@ -27,17 +27,19 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// NotificationConfigurationList represents a notification configuration for a bucket
-    /// in S3. A configuration is a collection of topic configurations which contain the event
+    /// The notification configuration for a bucket in S3. 
+    /// </summary>
+    /// <remarks>
+    /// A configuration is a collection of topic configurations which contain the event
     /// and topic arn.  Currently only one event type is being supported with the possiblity of 
     /// more event types in the future.
-    /// </summary>
+    /// </remarks>
     public class NotificationConfigurationList
     {
         private List<TopicConfiguration> topicConfigurations = new List<TopicConfiguration>();
 
         /// <summary>
-        /// Gets and sets the TopicConfigurations property.
+        /// The topic configurations included in this notification configuration. 
         /// </summary>
         public List<TopicConfiguration> TopicConfigurations
         {
@@ -45,9 +47,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds the arguments to the TopicConfigurations property.
+        /// Adds new topic configurations to the set belonging to this notification configuration.
         /// </summary>
-        /// <param name="args">TopicConfigurations added to the TopicConfigurations property</param>
+        /// <param name="args">Topic configurations to add</param>
         /// <returns>this instance</returns>
         public NotificationConfigurationList WithTopicConfigurations(params TopicConfiguration[] args)
         {

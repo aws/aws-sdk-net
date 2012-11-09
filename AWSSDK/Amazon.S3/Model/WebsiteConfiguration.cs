@@ -1,13 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/*******************************************************************************
+ *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
+ *  this file except in compliance with the License. A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ *  or in the "license" file accompanying this file.
+ *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ *  specific language governing permissions and limitations under the License.
+ * *****************************************************************************
+ *    __  _    _  ___
+ *   (  )( \/\/ )/ __)
+ *   /__\ \    / \__ \
+ *  (_)(_) \/\/  (___/
+ *
+ *  AWS SDK for .NET
+ *  API Version: 2006-03-01
+ *
+ */
+
 using System.IO;
-using System.Text;
 using System.Xml;
 
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Properties that define the website configuration for a S3 bucket.
+    /// Defines the website configuration for a S3 bucket.
     /// </summary>
     public class WebsiteConfiguration
     {
@@ -17,15 +36,17 @@ namespace Amazon.S3.Model
         #region IndexDocumentSuffix
 
         /// <summary>
-        /// Gets and sets the IndexDocumentSuffix property.
-        /// 
+        /// <para>
         /// This value is a suffix that is appended to a request that is for a "directory" 
         /// on the website endpoint (e.g. if the suffix is index.html and
         /// you make a request to samplebucket/images/ the data that
         /// is returned will be for the object with the key name
         /// images/index.html)
+        /// </para>
+        /// <para>
         /// The suffix must not be empty and must not include a slash
         /// character.
+        /// </para>
         /// </summary>
         public string IndexDocumentSuffix
         {
@@ -34,17 +55,19 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the IndexDocumentSuffix property for this request.
-        /// 
+        /// <para>
         /// This value is a suffix that is appended to a request that is for a "directory" 
         /// on the website endpoint (e.g. if the suffix is index.html and
         /// you make a request to samplebucket/images/ the data that
         /// is returned will be for the object with the key name
         /// images/index.html)
+        /// </para>
+        /// <para>
         /// The suffix must not be empty and must not include a slash
         /// character.
+        /// </para>
         /// </summary>
-        /// <param name="indexDocumentSuffix">The value that IndexDocumentSuffix is set to</param>
+        /// <param name="indexDocumentSuffix">Index document suffix</param>
         /// <returns>the WebsiteConfiguration with the IndexDocumentSuffix set</returns>
         public WebsiteConfiguration WithIndexDocumentSuffix(string indexDocumentSuffix)
         {
@@ -53,7 +76,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if IndexDocumentSuffix property is set.
+        /// Checks if the IndexDocumentSuffix property is set.
         /// </summary>
         /// <returns>true if IndexDocumentSuffix property is set.</returns>
         internal bool IsSetIndexDocumentSuffix()
@@ -67,9 +90,7 @@ namespace Amazon.S3.Model
         #region ErrorDocument
 
         /// <summary>
-        /// Gets and sets the ErrorDocument property.
-        /// 
-        /// The object key name to use when a 4XX class error occurs
+        /// The ErrorDocument value, an object key name to use when a 4XX class error occurs.
         /// </summary>
         public string ErrorDocument
         {
@@ -78,11 +99,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ErrorDocument property for this request.
-        /// 
-        /// The object key name to use when a 4XX class error occurs
+        /// The ErrorDocument value, an object key name to use when a 4XX class error occurs.
         /// </summary>
-        /// <param name="errorDocument">The value that ErrorDocument is set to</param>
+        /// <param name="errorDocument">Error document key</param>
         /// <returns>the WebsiteConfiguration with the ErrorDocument set</returns>
         public WebsiteConfiguration WithErrorDocument(string errorDocument)
         {
@@ -91,7 +110,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if ErrorDocument property is set.
+        /// Checks if the ErrorDocument property is set.
         /// </summary>
         /// <returns>true if ErrorDocument property is set.</returns>
         internal bool IsSetErrorDocument()

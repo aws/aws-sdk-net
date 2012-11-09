@@ -27,8 +27,7 @@ namespace Amazon.S3.Model
     #region Tuple
 
     /// <summary>
-    /// Creates a Key Value pair relating the key and value of type
-    /// T and U respectively
+    /// A key-value pair relating the key and value of type T and U respectively
     /// </summary>
     /// <typeparam name="T">The type of the key</typeparam>
     /// <typeparam name="U">The type of the value</typeparam>

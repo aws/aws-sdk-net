@@ -38,7 +38,7 @@ namespace Amazon.S3.Model
         private DateTime initiated;
 
         /// <summary>
-        /// Gets and sets the Key of the object for which the multipart upload was initiated.
+        /// The key of the object for which the multipart upload was initiated.
         /// </summary>
         public string Key
         {
@@ -47,7 +47,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Upload ID that identifies the multipart upload.
+        /// Identifies the multipart upload.
         /// </summary>
         public string UploadId
         {
@@ -56,7 +56,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Owner property.
+        /// The owner of the object.
         /// </summary>
         public Owner Owner
         {
@@ -65,7 +65,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Initiator property.
+        /// The owner of the upload.
         /// </summary>
         public Owner Initiator
         {
@@ -75,8 +75,7 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Gets and sets the class of storage that will be used to store the object when multipart
-        /// upload is complete.
+        /// The class of storage that will be used to store the object when multipart upload is complete.
         /// </summary>
         public string StorageClass
         {
@@ -85,7 +84,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the date and time at which the multipart upload was initiated.
+        /// The date and time at which the multipart upload was initiated.
         /// </summary>
         public DateTime Initiated
         {

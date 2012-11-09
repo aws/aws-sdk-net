@@ -31,6 +31,45 @@ namespace Amazon.ElasticMapReduce
     {
         
 
+        #region SetVisibleToAllUsers
+
+        /// <summary>
+        /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specifed job flows. This action
+        /// works on running job flows. You can also set the visibility of a job flow when you launch it using the <c>VisibleToAllUsers</c> parameter of
+        /// RunJobFlow. The SetVisibleToAllUsers action can be called only by an IAM user who created the job flow or the AWS account that owns the job
+        /// flow.</para>
+        /// </summary>
+        /// 
+        /// <param name="setVisibleToAllUsersRequest">Container for the necessary parameters to execute the SetVisibleToAllUsers service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <exception cref="InternalServerErrorException"/>
+        SetVisibleToAllUsersResponse SetVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetVisibleToAllUsers operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.SetVisibleToAllUsers"/>
+        /// </summary>
+        /// 
+        /// <param name="setVisibleToAllUsersRequest">Container for the necessary parameters to execute the SetVisibleToAllUsers operation on
+        ///          AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginSetVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetVisibleToAllUsers operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.SetVisibleToAllUsers"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetVisibleToAllUsers.</param>
+        SetVisibleToAllUsersResponse EndSetVisibleToAllUsers(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region AddInstanceGroups
 
         /// <summary>
@@ -124,7 +163,9 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// <para> TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2
         /// instances on which the job flow is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified
-        /// when the job flow was created. </para>
+        /// when the job flow was created. </para> <para> The call to TerminateJobFlows is asynchronous. Depending on the configuration of the job flow,
+        /// it may take up to 5-20 minutes for the job flow to completely terminate and release allocated resources, such as Amazon EC2 instances.
+        /// </para>
         /// </summary>
         /// 
         /// <param name="terminateJobFlowsRequest">Container for the necessary parameters to execute the TerminateJobFlows service method on

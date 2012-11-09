@@ -27,17 +27,19 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The ListTopics action returns a list of the requester's topics. Each call returns a limited list of topics. If
-    /// there are more topics, a NextToken is also returned. Use the NextToken parameter in a new ListTopics call to get
-    /// further results.
+    /// Returns a list of the requester's topics.
     /// </summary>
+    /// <remarks>
+    /// Each call returns a limited list of topics. If there are more topics,
+    /// a NextToken is also returned. Use the NextToken parameter in a new
+    /// ListTopics call to get further results.
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class ListTopicsRequest
     {    
         private string nextTokenField;
 
         /// <summary>
-        /// Gets and sets the NextToken property.
         /// Token returned by the previous ListTopics request.
         /// </summary>
         [XmlElementAttribute(ElementName = "NextToken")]

@@ -73,8 +73,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The iSCSI initiator that connects to the target. Length: 1 to 255 characters. <i>Valid Values</i>: lowercase letters, numbers, periods (.),
-        /// and hyphens (-).
+        /// The iSCSI initiator that connects to the target.
         ///  
         /// <para>
         /// <b>Constraints:</b>

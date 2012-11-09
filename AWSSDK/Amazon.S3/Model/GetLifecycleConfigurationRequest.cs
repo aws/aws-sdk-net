@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Queries the lifecycle configuration settings for a bucket.
+    /// The parameters to request the lifecycle configuration settings for a bucket.
     /// </summary>
     public class GetLifecycleConfigurationRequest : S3Request
     {

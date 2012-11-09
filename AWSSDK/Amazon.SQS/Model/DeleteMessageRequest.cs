@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-10-01
+ *  API Version: 2012-11-05
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// Unconditionally removes the specified message from the specified queue. Even if the message
     /// is locked by another reader due to the visibility timeout setting, it is still deleted from the queue.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
     public class DeleteMessageRequest
     {    
         private string queueUrlField;

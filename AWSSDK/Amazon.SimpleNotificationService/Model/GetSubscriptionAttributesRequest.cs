@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The GetSubscriptionAttribtues action returns all of the properties of a subscription customers have created. Subscription
+    /// Returns all of the properties of a subscription customers have created. Subscription
     /// properties returned might differ based on the authorization of the user.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
@@ -36,7 +36,6 @@ namespace Amazon.SimpleNotificationService.Model
         private string subscriptionArnField;
 
         /// <summary>
-        /// Gets and sets the SubscriptionArn property.
         /// The ARN of the subscription whose properties you want to get.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubscriptionArn")]
@@ -47,7 +46,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the SubscriptionArn property
+        /// Sets the ARN of the subscription whose properties you want to get.
         /// </summary>
         /// <param name="subscriptionARN">The ARN of the subscription whose properties you want to get.</param>
         /// <returns>this instance</returns>

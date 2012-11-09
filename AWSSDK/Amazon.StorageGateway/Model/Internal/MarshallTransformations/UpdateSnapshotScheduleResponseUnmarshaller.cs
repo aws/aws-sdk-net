@@ -31,6 +31,7 @@
           UpdateSnapshotScheduleResponse response = new UpdateSnapshotScheduleResponse();
           
           context.Read();
+      
           response.UpdateSnapshotScheduleResult = UpdateSnapshotScheduleResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

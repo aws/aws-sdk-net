@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Queries the region that contains the specified bucket.
+    /// The parameters to request the region that contains a bucket.
     /// </summary>
     /// <remarks>
     /// A bucket's region can be set using the LocationConstraint parameter on bucket creation.

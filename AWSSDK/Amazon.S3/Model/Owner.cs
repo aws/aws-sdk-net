@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Represents an Owner of an S3 Bucket.
+    /// The owner of an S3 bucket.
     /// </summary>
     public class Owner
     {
@@ -39,7 +39,7 @@ namespace Amazon.S3.Model
         #region Id
 
         /// <summary>
-        /// Gets and sets the Id property.
+        /// The unique identifier of the owner.
         /// </summary>
         [XmlElementAttribute(ElementName = "Id")]
         public string Id
@@ -49,9 +49,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Id property.
+        /// Sets the unique identifier of the owner.
         /// </summary>
-        /// <param name="id">Id property</param>
+        /// <param name="id">Owner's unique identifier</param>
         /// <returns>this instance</returns>
         public Owner WithId(string id)
         {
@@ -64,7 +64,7 @@ namespace Amazon.S3.Model
         #region DisplayName
 
         /// <summary>
-        /// Gets and sets the DisplayName property.
+        /// The display name of the owner.
         /// </summary>
         [XmlElementAttribute(ElementName = "DisplayName")]
         public string DisplayName
@@ -74,9 +74,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the DisplayName property.
+        /// Sets the display name of the owner.
         /// </summary>
-        /// <param name="displayName">DisplayName property</param>
+        /// <param name="displayName">Owner's display name</param>
         /// <returns>this instance</returns>
         public Owner WithDisplayName(string displayName)
         {

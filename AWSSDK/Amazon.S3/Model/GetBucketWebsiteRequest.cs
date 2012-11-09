@@ -26,7 +26,7 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Queries the website configuration settings for a bucket.
+    /// The parameters to request the website configuration settings for a bucket.
     /// </summary>
     public class GetBucketWebsiteRequest : S3Request
     {

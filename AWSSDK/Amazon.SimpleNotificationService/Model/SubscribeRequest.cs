@@ -27,11 +27,12 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The Subscribe action prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a
-    /// subscription, the endpoint owner must call the ConfirmSubscription
-    /// action with the token from the confirmation message. Confirmation tokens are
-    /// valid for twenty-four hours.
+    /// Prepares to subscribe an endpoint by sending the endpoint a confirmation message.
     /// </summary>
+    /// <remarks>
+    /// To actually create a subscription, the endpoint owner must call the ConfirmSubscription
+    /// action with the token from the confirmation message. Confirmation tokens are valid for three days.
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class SubscribeRequest
     {    
@@ -40,7 +41,6 @@ namespace Amazon.SimpleNotificationService.Model
         private string endpointField;
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
         /// The ARN of topic you want to subscribe to.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
@@ -51,7 +51,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the ARN of topic you want to subscribe to.
         /// </summary>
         /// <param name="topicArn">The ARN of topic you want to subscribe to.</param>
         /// <returns>this instance</returns>
@@ -71,8 +71,10 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Protocol property.
-        /// The protocol you want to use. Supported protocols include:
+        /// The protocol you want to use.
+        /// </summary>
+        /// <remarks>
+        /// Supported protocols include:
         /// <ul>
         /// <li>http -- delivery of JSON-encoded message via HTTP POST</li>
         /// <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
@@ -81,7 +83,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <li>sms -- delivery of message via SMS</li>
         /// <li>sqs -- delivery of JSON-encoded message to an Amazon SQS queue</li>
         /// </ul>
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Protocol")]
         public string Protocol
         {
@@ -90,17 +92,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Protocol property
+        /// Sets the protocol you want to use.
         /// </summary>
-        /// <param name="protocol">The protocol you want to use. Supported protocols include:
-        /// <ul>
-        /// <li>http -- delivery of JSON-encoded message via HTTP POST</li>
-        /// <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
-        /// <li>email -- delivery of message via SMTP</li>
-        /// <li>email-json -- delivery of JSON-encoded message via SMTP</li>
-        /// <li>sms -- delivery of message via SMS</li>
-        /// <li>sqs -- delivery of JSON-encoded message to an Amazon SQS queue</li>
-        /// </ul></param>
+        /// <param name="protocol">The protocol you want to use.</param>
         /// <returns>this instance</returns>
         public SubscribeRequest WithProtocol(string protocol)
         {
@@ -118,8 +112,10 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Endpoint property.
-        /// The endpoint that you want to receive notifications. Endpoints vary by protocol:
+        /// The endpoint that you want to receive notifications.
+        /// </summary>
+        /// <remarks>
+        /// Endpoints vary by protocol:
         /// <ul>
         /// <li>For the http protocol, the endpoint is an URL beginning with "http://"</li>
         /// <li>For the https protocol, the endpoint is a URL beginning with "https://"</li>
@@ -128,7 +124,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <li>For the sms protocol, the endpoint is a phone number of an SMS-enabled device</li>
         /// <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS queue</li>
         /// </ul>
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Endpoint")]
         public string Endpoint
         {
@@ -137,17 +133,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Endpoint property
+        /// Sets the endpoint that you want to receive notifications.
         /// </summary>
-        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol:
-        /// <ul>
-        /// <li>For the http protocol, the endpoint is an URL beginning with "http://"</li>
-        /// <li>For the https protocol, the endpoint is a URL beginning with "https://"</li>
-        /// <li>For the email protocol, the endpoint is an e-mail address</li>
-        /// <li>For the email-json protocol, the endpoint is an e-mail address</li>
-        /// <li>For the sms protocol, the endpoint is a phone number of an SMS-enabled device</li>
-        /// <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS queue</li>
-        /// </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications.</param>
         /// <returns>this instance</returns>
         public SubscribeRequest WithEndpoint(string endpoint)
         {

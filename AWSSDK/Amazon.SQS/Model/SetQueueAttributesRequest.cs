@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-10-01
+ *  API Version: 2012-11-05
  */
 
 using System;
@@ -29,9 +29,13 @@ using Amazon.SQS.Util;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Sets an attribute of a queue. Currently, you can set only one attribute per request.
+    /// <para>
+    /// Sets the value of one or more queue attributes. Currently, you can set only one attribute per request. Valid attributes that
+    /// can be set are [VisibilityTimeout, Policy, MaximumMessageSize,
+    /// MessageRetentionPeriod, WaitTimeSeconds].
+    /// </para>
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
     public class SetQueueAttributesRequest
     {    
         private string queueUrlField;

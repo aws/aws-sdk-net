@@ -29,7 +29,7 @@ using Amazon.S3.Util;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Copies an existing S3 object to another, possibly new, S3 object. The source object
+    /// The parameters to request a copy an existing S3 object to another, possibly new, S3 object. The source object
     /// may be copied to another object in the same or a different bucket.
     /// </summary>
     public class CopyObjectRequest : S3PutWithACLRequest
@@ -192,11 +192,11 @@ namespace Amazon.S3.Model
         #region ContentType
 
         /// <summary>
-        /// Content type to be assigned to the copy of the object.
+        /// A standard MIME type describing the format of the object data.
         /// </summary>
         /// <remarks>
-        /// This property defaults to "binary/octet-stream",
-        /// but if you require something else you can set this property.
+        /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
         /// This property is passed on to S3 only if the metadata
         /// directive is REPLACE.
         /// </remarks>
@@ -208,16 +208,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the content type to be assigned to the copy of the object.
+        /// Sets a standard MIME type describing the format of the object data.
         /// </summary>
         /// <remarks>
-        /// This property defaults to "binary/octet-stream",
-        /// but if you require something else you can set this property.
+        /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
+        /// </remarks>
         /// This property is passed on to S3 only if the metadata
         /// directive is REPLACE.
         /// <param name="contentType">Content type to be set</param>
         /// <returns>The request with the ContentType set</returns>
-        /// </remarks>
         public CopyObjectRequest WithContentType(string contentType)
         {
             this.contentType = contentType;

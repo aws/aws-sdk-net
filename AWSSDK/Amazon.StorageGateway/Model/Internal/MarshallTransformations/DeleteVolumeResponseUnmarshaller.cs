@@ -31,6 +31,7 @@
           DeleteVolumeResponse response = new DeleteVolumeResponse();
           
           context.Read();
+      
           response.DeleteVolumeResult = DeleteVolumeResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

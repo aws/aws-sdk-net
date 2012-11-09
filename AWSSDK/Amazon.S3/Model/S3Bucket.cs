@@ -30,9 +30,7 @@ using Amazon.S3.Util;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Represents an S3 Bucket. 
-    /// Contains a Bucket Name which is the name of the S3 Bucket. 
-    /// And a Creation Date which is the date that the S3 Bucket was created.
+    /// Represents an S3 bucket, contains the name of the S3 bucket and the date that the bucket was created.
     /// </summary>
     [Serializable()]
     public class S3Bucket
@@ -47,7 +45,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -70,8 +68,7 @@ namespace Amazon.S3.Model
         #region CreationDate
 
         /// <summary>
-        /// Gets and sets the CreationDate property.
-        /// The date conforms to the ISO8601 date format.
+        /// The date and time the bucket was created. The date conforms to the ISO8601 date format.
         /// </summary>
         [XmlElementAttribute(ElementName = "CreationDate")]
         public string CreationDate

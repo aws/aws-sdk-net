@@ -29,10 +29,12 @@ using Amazon.S3.Util;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Represents an S3 Bucket Versioning Configuration.
-    /// Contains the buckets VersioningStatus - Off, Enabled, Suspended.
-    /// Whether an MFADelete has been enabled for the bucket.
+    /// An S3 bucket versioning configuration.
     /// </summary>
+    /// <remarks>
+    /// Contains the bucket's versioning status (Off, Enabled, Suspended) and whether an MFADelete 
+    /// has been enabled for the bucket.
+    /// </remarks>
     [Serializable()]
     public class S3BucketVersioningConfig
     {
@@ -69,8 +71,8 @@ namespace Amazon.S3.Model
         #region Status
 
         /// <summary>
-        /// Gets and sets the Status property.
-        /// Accepted Values are Off, Enabled, Suspended
+        /// Versioning status for the bucket.
+        /// Accepted values: Off, Enabled, Suspended.
         /// </summary>
         [XmlElementAttribute(ElementName = "Status")]
         public string Status
@@ -92,9 +94,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Status property.
+        /// Sets the versioning status for the bucket.
         /// </summary>
-        /// <param name="status">The value for the Status property</param>
+        /// <param name="status">Versioning status; accepted values are: Off, Enabled, Suspended</param>
         /// <returns>The Versioning Configuration object with status modified
         /// </returns>
         public S3BucketVersioningConfig WithStatus(string status)
@@ -117,12 +119,13 @@ namespace Amazon.S3.Model
         #region EnableMfaDelete
 
         /// <summary>
-        /// Gets and Sets the EnableMfaDelete property. 
-        /// Specifies whether MFA Delete is enabled on this S3 Bucket. 
+        /// Specifies whether MFA Delete is enabled on this S3 Bucket.
+        /// </summary>
+        /// <remarks>
         /// If this property is set, please ensure that the 
         /// SetBucketVersioningRequest's MfaCodes property is set with 
         /// the Serial of and Token on the MFA device.
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "EnableMfaDelete")]
         public bool? EnableMfaDelete
         {
@@ -131,13 +134,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the EnableMfaDelete property. If this property is set, 
-        /// please ensure that the SetBucketVersioningRequest's MfaCodes
-        /// property is set with the Serial of and Token on the MFA device.
+        /// Specifies whether MFA Delete is enabled on this S3 Bucket.
         /// </summary>
-        /// <param name="fEnabled">Whether MfaDelete will be enabled on the S3 Bucket</param>
-        /// <returns>The S3 Versioning Configuration object with EnableMfaDelete modified
-        /// </returns>
+        /// <remarks>
+        /// If this property is set, please ensure that the 
+        /// SetBucketVersioningRequest's MfaCodes property is set with 
+        /// the Serial of and Token on the MFA device.
+        /// </remarks>
+        /// <param name="fEnabled">True to enable MfaDelete on the S3 Bucket</param>
+        /// <returns>The S3 Versioning Configuration object with EnableMfaDelete modified</returns>
         public S3BucketVersioningConfig WithEnableMfaDelete(bool fEnabled)
         {
             enableMfaDelete = fEnabled;

@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The GetTopicAttribtues action returns all of the properties of a topic customers have created. Topic
+    /// Returns all of the properties of a topic customers have created. Topic
     /// properties returned might differ based on the authorization of the user.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
@@ -36,7 +36,6 @@ namespace Amazon.SimpleNotificationService.Model
         private string topicArnField;
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
         /// The ARN of the topic whose properties you want to get.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
@@ -47,7 +46,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the ARN of the topic whose properties you want to get.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic whose properties you want to get.</param>
         /// <returns>this instance</returns>

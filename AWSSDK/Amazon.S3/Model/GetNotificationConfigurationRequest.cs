@@ -28,7 +28,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Queries the notification configuration settings for a bucket.
+    /// The parameters to request the notification configuration settings for a bucket.
     /// </summary>
     public class GetNotificationConfigurationRequest : S3Request
     {

@@ -31,6 +31,7 @@
           DeleteBandwidthRateLimitResponse response = new DeleteBandwidthRateLimitResponse();
           
           context.Read();
+      
           response.DeleteBandwidthRateLimitResult = DeleteBandwidthRateLimitResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

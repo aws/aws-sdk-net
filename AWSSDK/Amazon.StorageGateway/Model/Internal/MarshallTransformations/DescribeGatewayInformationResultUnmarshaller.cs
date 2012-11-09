@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.StorageGateway.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.StorageGateway.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
     { 
@@ -30,18 +31,18 @@
         }
         
         public DescribeGatewayInformationResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          DescribeGatewayInformationResult describeGatewayInformationResult = new DescribeGatewayInformationResult();
+        {
+            DescribeGatewayInformationResult describeGatewayInformationResult = new DescribeGatewayInformationResult();
           describeGatewayInformationResult.GatewayNetworkInterfaces = null; 
-                        
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                                  
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("GatewayARN", targetDepth)) 
               {
@@ -85,28 +86,36 @@
                 continue; 
               }
    
+              if (context.TestExpression("GatewayType", targetDepth)) 
+              {
+                describeGatewayInformationResult.GatewayType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue; 
+              }
+   
               if (context.TestExpression("NextUpdateAvailabilityDate", targetDepth)) 
               {
                 describeGatewayInformationResult.NextUpdateAvailabilityDate = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return describeGatewayInformationResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return describeGatewayInformationResult; 
-            } 
-          } 
-          return describeGatewayInformationResult; 
+          
+          
+            return describeGatewayInformationResult; 
         } 
         
         private static DescribeGatewayInformationResultUnmarshaller instance; 
         public static DescribeGatewayInformationResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new DescribeGatewayInformationResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new DescribeGatewayInformationResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

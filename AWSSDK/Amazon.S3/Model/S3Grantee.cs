@@ -27,11 +27,14 @@ namespace Amazon.S3.Model
 {
 
     /// <summary>
+    /// <para>
     /// A S3Grantee represents an Owner/User/Group that can be given permissions
     /// on a bucket or object.
-    ///
+    /// </para>
+    /// <para>
     /// For more information about Grantees or ACLs see:
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/index.html?RESTAuthentication.html"/>
+    /// </para>
     /// </summary>
     public class S3Grantee
     {
@@ -137,7 +140,7 @@ namespace Amazon.S3.Model
         #region CanonicalUser
 
         /// <summary>
-        /// Gets and Sets the CanonicalUser property.
+        /// The canonical user details.
         /// </summary>
         [XmlElementAttribute(ElementName = "CanonicalUser")]
         public Tuple<string, string> CanonicalUser
@@ -154,10 +157,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the CanonicalUser property.
+        /// Sets the canonical user details.
         /// </summary>
-        /// <param name="displayName">DisplayName of Canonical User</param>
-        /// <param name="id">ID of Canonical User</param>
+        /// <param name="displayName">Display name of the canonical user</param>
+        /// <param name="id">The ID of the canonical user</param>
         /// <returns>this instance</returns>
         public S3Grantee WithCanonicalUser(string id, string displayName)
         {
@@ -181,7 +184,7 @@ namespace Amazon.S3.Model
         #region EmailAddress
 
         /// <summary>
-        /// Gets and sets the EmailAddress property.
+        /// The email address associated with the grantee.
         /// </summary>
         [XmlElementAttribute(ElementName = "EmailAddress")]
         public string EmailAddress
@@ -191,7 +194,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the EmailAddress property.
+        /// Sets the email address associated with the grantee.
         /// </summary>
         /// <param name="emailAddress">EmailAddress property</param>
         /// <returns>this instance</returns>
@@ -215,7 +218,7 @@ namespace Amazon.S3.Model
         #region URI
 
         /// <summary>
-        /// Gets and sets the URI property.
+        /// The URI property of the grantee.
         /// </summary>
         [XmlElementAttribute(ElementName = "URI")]
         public string URI
@@ -225,7 +228,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the URI property.
+        /// Sets the URI property of the grantee.
         /// </summary>
         /// <param name="uri">URI property</param>
         /// <returns>this instance</returns>

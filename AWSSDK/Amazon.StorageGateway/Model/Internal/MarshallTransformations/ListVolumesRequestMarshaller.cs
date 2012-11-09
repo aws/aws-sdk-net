@@ -32,14 +32,42 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
     /// </summary>       
     internal class ListVolumesRequestMarshaller : IMarshaller<IRequest, ListVolumesRequest> 
     {
+        
+
         public IRequest Marshall(ListVolumesRequest listVolumesRequest) 
         {
 
             IRequest request = new DefaultRequest(listVolumesRequest, "AmazonStorageGateway");
-            string target = "StorageGateway_20120430.ListVolumes";
+            string target = "StorageGateway_20120630.ListVolumes";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
+            
+              
+            string uriResourcePath = ""; 
+            
+            if (uriResourcePath.Contains("?")) 
+            {
+                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+        
+                foreach (string s in queryString.Split('&', ';')) 
+                {
+                    string[] nameValuePair = s.Split('=');
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
+                    {
+                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                    }
+                    else
+                    {
+                        request.Parameters.Add(nameValuePair[0], null);
+                    }
+                }
+            }
+            
+            request.ResourcePath = uriResourcePath;
+            
+             
             using (StringWriter stringWriter = new StringWriter())
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -65,8 +93,10 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-                return request;
             }
+        
+
+            return request;
         }
     }
 }

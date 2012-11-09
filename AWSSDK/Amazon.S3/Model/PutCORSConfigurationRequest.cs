@@ -29,7 +29,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The PutCORSConfigurationRequest contains the parameters used for the PutCORSConfigurationRequest operation.
+    /// The parameters to set a cross origin resource sharing (CORS) configuration on a bucket.
     /// </summary>
     public class PutCORSConfigurationRequest : S3Request
     {
@@ -37,7 +37,7 @@ namespace Amazon.S3.Model
         private string bucketName;
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to have the CORS configuration applied.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -47,9 +47,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
+        /// Sets the name of the bucket to have the CORS configuration applied.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public PutCORSConfigurationRequest WithBucketName(string bucketName)
         {
@@ -68,7 +68,7 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Gets and sets the Configuration property.
+        /// The CORS configuration to apply.
         /// </summary>
         [XmlElementAttribute(ElementName = "CORSConfiguration")]
         public CORSConfiguration Configuration
@@ -78,9 +78,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Configuration property.
+        /// Sets the CORS configuration to apply.
         /// </summary>
-        /// <param name="configuration">Configuration property</param>
+        /// <param name="configuration">CORS configuration</param>
         /// <returns>this instance</returns>
         public PutCORSConfigurationRequest WithConfiguration(CORSConfiguration configuration)
         {

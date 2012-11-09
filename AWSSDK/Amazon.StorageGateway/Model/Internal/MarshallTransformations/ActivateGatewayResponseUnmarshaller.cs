@@ -31,6 +31,7 @@
           ActivateGatewayResponse response = new ActivateGatewayResponse();
           
           context.Read();
+      
           response.ActivateGatewayResult = ActivateGatewayResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce
         ///
         /// </summary>
         public AmazonElasticMapReduceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
@@ -77,8 +77,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticMapReduceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig() { RegionEndpoint = region }, true, AuthenticationTypes.User) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
@@ -98,7 +97,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// <param name="config">The AmazonElasticMapReduce Configuration Object</param>
         public AmazonElasticMapReduceClient(AmazonElasticMapReduceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with AWS Credentials
@@ -115,7 +114,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticMapReduceClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonElasticMapReduceConfig() { RegionEndpoint = region })
+            : this(credentials, new AmazonElasticMapReduceConfig(){RegionEndpoint=region})
         {
         }
 
@@ -126,7 +125,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(AWSCredentials credentials, AmazonElasticMapReduceConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -147,7 +146,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonElasticMapReduceConfig() { RegionEndpoint = region })
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonElasticMapReduceConfig() {RegionEndpoint=region})
         {
         }
 
@@ -162,13 +161,113 @@ namespace Amazon.ElasticMapReduce
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonElasticMapReduceConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
-        
+
+        /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElasticMapReduceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElasticMapReduceConfig(){RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonElasticMapReduceClient Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
+        public AmazonElasticMapReduceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonElasticMapReduceConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
 
         #endregion
    
+        #region SetVisibleToAllUsers
+
+        /// <summary>
+        /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specifed job flows. This action
+        /// works on running job flows. You can also set the visibility of a job flow when you launch it using the <c>VisibleToAllUsers</c> parameter of
+        /// RunJobFlow. The SetVisibleToAllUsers action can be called only by an IAM user who created the job flow or the AWS account that owns the job
+        /// flow.</para>
+        /// </summary>
+        /// 
+        /// <param name="setVisibleToAllUsersRequest">Container for the necessary parameters to execute the SetVisibleToAllUsers service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <exception cref="InternalServerErrorException"/>
+        public SetVisibleToAllUsersResponse SetVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest)
+        {
+            IAsyncResult asyncResult = invokeSetVisibleToAllUsers(setVisibleToAllUsersRequest, null, null, true);
+            return EndSetVisibleToAllUsers(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetVisibleToAllUsers operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.SetVisibleToAllUsers"/>
+        /// </summary>
+        /// 
+        /// <param name="setVisibleToAllUsersRequest">Container for the necessary parameters to execute the SetVisibleToAllUsers operation on
+        ///          AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginSetVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest, AsyncCallback callback, object state)
+        {
+            return invokeSetVisibleToAllUsers(setVisibleToAllUsersRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetVisibleToAllUsers operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.SetVisibleToAllUsers"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetVisibleToAllUsers.</param>
+        public SetVisibleToAllUsersResponse EndSetVisibleToAllUsers(IAsyncResult asyncResult)
+        {
+            return endOperation<SetVisibleToAllUsersResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeSetVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new SetVisibleToAllUsersRequestMarshaller().Marshall(setVisibleToAllUsersRequest);
+            var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region AddInstanceGroups
 
         /// <summary>
@@ -308,7 +407,9 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// <para> TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2
         /// instances on which the job flow is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified
-        /// when the job flow was created. </para>
+        /// when the job flow was created. </para> <para> The call to TerminateJobFlows is asynchronous. Depending on the configuration of the job flow,
+        /// it may take up to 5-20 minutes for the job flow to completely terminate and release allocated resources, such as Amazon EC2 instances.
+        /// </para>
         /// </summary>
         /// 
         /// <param name="terminateJobFlowsRequest">Container for the necessary parameters to execute the TerminateJobFlows service method on

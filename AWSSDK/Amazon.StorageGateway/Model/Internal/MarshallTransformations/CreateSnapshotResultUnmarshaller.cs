@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.StorageGateway.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.StorageGateway.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public CreateSnapshotResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          CreateSnapshotResult createSnapshotResult = new CreateSnapshotResult();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            CreateSnapshotResult createSnapshotResult = new CreateSnapshotResult();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("VolumeARN", targetDepth)) 
               {
@@ -54,22 +55,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return createSnapshotResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return createSnapshotResult; 
-            } 
-          } 
-          return createSnapshotResult; 
+          
+          
+            return createSnapshotResult; 
         } 
         
         private static CreateSnapshotResultUnmarshaller instance; 
         public static CreateSnapshotResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new CreateSnapshotResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new CreateSnapshotResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

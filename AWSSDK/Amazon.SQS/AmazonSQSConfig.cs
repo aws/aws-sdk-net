@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-10-01
+ *  API Version: 2012-11-05
  */
 
 using Amazon.Util;
@@ -28,11 +28,12 @@ namespace Amazon.SQS
     /// </summary>
     public class AmazonSQSConfig
     {
-        private string serviceVersion = "2011-10-01";
+        private string serviceVersion = "2012-11-05";
+        private string authRegion = null;
         private RegionEndpoint regionEndpoint;
         private string serviceURL = "https://queue.amazonaws.com";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;
-        private string signatureVersion = "2";
+        private string signatureVersion = "4";
         private string signatureMethod = "HmacSHA256";
         private string proxyHost;
         private int proxyPort = -1;
@@ -158,6 +159,18 @@ namespace Amazon.SQS
         internal string RegionEndpointServiceName
         {
             get { return "sqs"; }
+        }
+
+        /// <summary>
+        /// Gets and sets the AuthenticationRegion property.
+        /// Used in AWS4 request signing, this is an optional property; 
+        /// change it only if the region cannot be determined from the 
+        /// service endpoint.
+        /// </summary>
+        public string AuthenticationRegion
+        {
+            get { return this.authRegion; }
+            set { this.authRegion = value; }
         }
 
         /// <summary>

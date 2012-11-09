@@ -27,11 +27,14 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The Publish action sends a message to all of a topic's subscribed endpoints. When a
-    /// messageId is returned, the message has been saved and Amazon SNS will attempt to deliver it
-    /// to the topic's subscribers shortly. The format of the outgoing message to each
-    /// subscribed endpoint depends on the notification protocol selected.
+    /// Sends a message to all of a topic's subscribed endpoints.
     /// </summary>
+    /// <remarks>
+    /// When a messageId is returned, the message has been saved and Amazon SNS will
+    /// attempt to deliver it to the topic's subscribers shortly.
+    /// The format of the outgoing message to each subscribed endpoint depends on the
+    /// notification protocol selected.
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class PublishRequest
     {    
@@ -41,8 +44,7 @@ namespace Amazon.SimpleNotificationService.Model
         private string subjectField;
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
-        /// The topic you want to publish to.
+        /// The ARN of the topic you want to publish to.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
         public string TopicArn
@@ -52,7 +54,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the ARN of the topic you want to publish to.
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to.</param>
         /// <returns>this instance</returns>
@@ -72,7 +74,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Message property.
         /// The message you want to send to the topic.
         /// </summary>
         [XmlElementAttribute(ElementName = "Message")]
@@ -83,7 +84,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Message property
+        /// Sets the message you want to send to the topic.
         /// </summary>
         /// <param name="message">The message you want to send to the topic.</param>
         /// <returns>this instance</returns>
@@ -103,14 +104,15 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the MessageStructure property.
-        /// Optional parameter. It will have one valid value: "json".
+        /// The structure of the message.
+        /// Optional parameter. It can have only one valid value: "json".
+        /// </summary>
+        /// <remarks>
         /// <para>
-        /// If this option, Message is present and set to "json", the value of Message must:
-        /// be a syntactically valid JSON object. It must contain at least a top level JSON
-        /// key of "default" with a value that is a string. For any other top level key that
-        /// matches one of our transport protocols (e.g. "http"), then the corresponding value
-        /// (if it is a string) will be used for the message published for that protocol
+        /// If this field is set to "json", the value of Message must be a syntactically valid JSON object.
+        /// It must contain at least a top level JSON key of "default" with a value that is a string.
+        /// For any other top level key that matches one of our transport protocols (e.g. "http"),
+        /// the corresponding value (if it is a string) will be used for the message published for that protocol.
         /// </para>
         /// <para>
         /// Constraints: Keys in the JSON object that correspond to supported transport
@@ -125,7 +127,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// value in the message will cause the Publish call to return an error (no partial
         /// delivery).
         /// </para>
-        /// </summary>
+        /// </remarks>
         public string MessageStructure
         {
             get { return this.messageStructureField; }
@@ -133,10 +135,10 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the MessageStructure property
+        /// Sets the structure of the message.
         /// Valid values: "json"
         /// </summary>
-        /// <param name="messageStructure">Identifies the structure of the message.</param>
+        /// <param name="messageStructure">The structure of the message.</param>
         /// <returns>this instance</returns>
         public PublishRequest WithMessageStructure(string messageStructure)
         {
@@ -154,11 +156,14 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Subject property.
-        /// Optional parameter to be used as the "Subject" line of when the message is
-        /// delivered to e-mail endpoints. This field will also be included, if present,
-        /// in the standard JSON messages delivered to other endpoints.
+        /// Subject of the message.
         /// </summary>
+        /// <remarks>
+        /// Subject is optional parameter and used as the "Subject" line of when
+        /// the message is delivered to e-mail endpoints.
+        /// The subject will also be included, if present, in the standard JSON messages
+        /// delivered to other endpoints.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Subject")]
         public string Subject
         {
@@ -167,11 +172,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Subject property
+        /// Sets the subject of the message.
         /// </summary>
-        /// <param name="subject">Optional parameter to be used as the "Subject" line of when the message is
-        /// delivered to e-mail endpoints. This field will also be included, if present,
-        /// in the standard JSON messages delivered to other endpoints.</param>
+        /// <param name="subject">Subject of the message.</param>
         /// <returns>this instance</returns>
         public PublishRequest WithSubject(string subject)
         {

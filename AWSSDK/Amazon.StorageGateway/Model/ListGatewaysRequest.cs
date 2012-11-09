@@ -38,8 +38,7 @@ namespace Amazon.StorageGateway.Model
         private int? limit;
 
         /// <summary>
-        /// An opaque string that indicates the position at which to begin the returned list of gateways. <i>Valid Values</i>: A marker obtained from
-        /// the response of a previous List Gateways request.
+        /// An opaque string that indicates the position at which to begin the returned list of gateways.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -76,7 +75,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Specifies that the list of gateways returned be limited to the specified number of items. Valid Values: a number from 1 to 100.
+        /// Specifies that the list of gateways returned be limited to the specified number of items.
         ///  
         /// <para>
         /// <b>Constraints:</b>

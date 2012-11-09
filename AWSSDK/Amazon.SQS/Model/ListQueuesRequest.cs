@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-10-01
+ *  API Version: 2012-11-05
  */
 
 using System;
@@ -33,7 +33,7 @@ namespace Amazon.SQS.Model
     /// If you specify a value for the optional QueueNamePrefix parameter, only queues with a name beginning with the
     /// specified value are returned.
     /// </remarks>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
     public class ListQueuesRequest
     {    
         private string queueNamePrefixField;

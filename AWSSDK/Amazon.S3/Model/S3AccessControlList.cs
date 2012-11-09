@@ -27,34 +27,38 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// AccessControlList represents an ACL for S3.
-    /// An AccessControlList is represented by an Owner,
-    /// and a List of Grants, where each Grant is a Grantee
-    /// and a Permission.
+    /// Represents an access control list (ACL) for S3. An AccessControlList is represented by an Owner,
+    /// and a List of Grants, where each Grant is a Grantee and a Permission.
+    /// </summary>
+    /// <remarks>
     /// <para>
     /// Each bucket and object in Amazon S3 has an ACL that defines its access control policy.
     /// When a request is made, Amazon S3 authenticates the request using its standard
     /// authentication procedure and then checks the ACL to verify the sender was granted access
     /// to the bucket or object. If the sender is approved, the request proceeds.
     /// Otherwise, Amazon S3 returns an error.
-    /// </para><para>
+    /// </para>
+    /// <para>
     /// An ACL is a list of grants. A grant consists of one grantee and one permission.
     /// ACLs only grant permissions; they do not deny them.
-    /// </para><para>
+    /// </para>
+    /// <para>
     /// For convenience, some commonly used Access Control Lists are defined in
     /// S3CannedACL.
-    /// </para><para>
+    /// </para>
+    /// <para>
     /// Note: Bucket and object ACLs are completely independent; an object does not inherit the ACL
     /// from its bucket. For example, if you create a bucket and grant write access to another user,
     /// you will not be able to access the user's objects unless the user explicitly grants access.
     /// This also applies if you grant anonymous write access to a bucket. Only the user "anonymous"
     /// will be able to access objects the user created unless permission is explicitly granted to
     /// the bucket owner.
-    /// </para><para>
+    /// </para>
+    /// <para>
     /// Important: We highly recommend that you do not grant the anonymous group write access to your
     /// buckets as you will have no control over the objects others can store and their associated charges.
     /// For more information, see Grantees and Permissions</para>
-    /// </summary>
+    /// </remarks>
     [XmlTypeAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/")]
     [XmlRootAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/", IsNullable = false)]
     public class S3AccessControlList
@@ -154,19 +158,22 @@ namespace Amazon.S3.Model
         #region Owner
 
         /// <summary>
-        /// Gets and sets the Owner property.
+        /// The owner of the bucket or object.
         /// </summary>
         /// <remarks>
+        /// <para>
         /// Every bucket and object in Amazon S3 has an owner, the user that
         /// created the bucket or object. The owner of a bucket or object cannot
         /// be changed. However, if the object is overwritten by another user
         /// (deleted and rewritten), the new object will have a new owner.
-        ///
+        /// </para>
+        /// <para>
         /// Note: Even the owner is subject to the ACL. For example, if an owner
         /// does not have Permission.READ access to an object, the owner cannot read
         /// that object. However, the owner of an object always has write access to the
         /// access control policy (Permission.WriteAcp) and can change the ACL to
         /// read the object.
+        /// </para>
         /// </remarks>
         [XmlElementAttribute(ElementName = "Owner")]
         public Owner Owner
@@ -176,7 +183,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Owner property.
+        /// Sets the owner of the bucket or object.
         /// </summary>
         /// <param name="owner">Owner property</param>
         /// <returns>this instance</returns>
@@ -200,7 +207,7 @@ namespace Amazon.S3.Model
         #region Grants
 
         /// <summary>
-        /// Gets and sets the Grants property.
+        /// A collection of grants.
         /// </summary>
         [XmlElementAttribute(ElementName = "Grants")]
         public List<S3Grant> Grants
@@ -220,7 +227,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Grants property.
+        /// Sets a collection of grants.
         /// </summary>
         /// <param name="args">Grants property</param>
         /// <returns>this instance</returns>

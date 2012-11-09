@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.StorageGateway.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.StorageGateway.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
     { 
@@ -30,18 +31,18 @@
         }
         
         public ListVolumesResult Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          ListVolumesResult listVolumesResult = new ListVolumesResult();
+        {
+            ListVolumesResult listVolumesResult = new ListVolumesResult();
           listVolumesResult.VolumeInfos = null; 
-                        
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                                  
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("GatewayARN", targetDepth)) 
               {
@@ -73,22 +74,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return listVolumesResult; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return listVolumesResult; 
-            } 
-          } 
-          return listVolumesResult; 
+          
+          
+            return listVolumesResult; 
         } 
         
         private static ListVolumesResultUnmarshaller instance; 
         public static ListVolumesResultUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new ListVolumesResultUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new ListVolumesResultUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

@@ -30,8 +30,7 @@ using Amazon.Auth.AccessControlPolicy;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The PutBucketPolicyRequest contains the parameters used for the PutBucketPolicy operation.
-    /// <br />Required Parameters: BucketName, Policy
+    /// The parameters to set or update policy on a bucket.
     /// </summary>
     public class PutBucketPolicyRequest : S3Request
     {
@@ -45,7 +44,7 @@ namespace Amazon.S3.Model
         #region Properties
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -61,10 +60,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket the request will get the location for.
+        /// Sets the name of the bucket.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
         public PutBucketPolicyRequest WithBucketName(string bucketName)
         {
@@ -83,7 +81,8 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Gets and sets the Policy property.
+        /// The policy to be set on the bucket.
+        /// This is the JSON string representing the policy that will be applied to the S3 Bucket.
         /// </summary>
         public String Policy
         {
@@ -98,7 +97,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Policy property for this request.
+        /// Sets the policy to be set on the bucket.
         /// This is the JSON string representing the policy that will be applied to the S3 Bucket.
         /// </summary>
         /// <param name="policy">The JSON string for the policy</param>

@@ -32,7 +32,8 @@ namespace Amazon.StorageGateway.Model
     /// StartGateway, DescribeGatewayInformation, and ListGateways. For more information, see ActivateGateway. Your applications cannot read from or
     /// write to the gateway's storage volumes, and there are no snapshots taken.</para> <para><b>NOTE:</b>When you make a shutdown request, you
     /// will get a 200 OK success response immediately. However, it might take some time for the gateway to shut down. You can call the
-    /// DescribeGatewayInformation API to check the status. For more information, see ActivateGateway.</para>
+    /// DescribeGatewayInformation API to check the status. For more information, see ActivateGateway.</para> <para>If do not intend to use the
+    /// gateway again, you must delete the gateway (using DeleteGateway) to no longer pay software charges associated with the gateway.</para>
     /// </summary>
     /// <seealso cref="Amazon.StorageGateway.AmazonStorageGateway.ShutdownGateway"/>
     public class ShutdownGatewayRequest : AmazonWebServiceRequest

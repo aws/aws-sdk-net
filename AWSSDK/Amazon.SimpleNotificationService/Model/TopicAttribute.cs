@@ -26,9 +26,9 @@ using System.Text;
 
 namespace Amazon.SimpleNotificationService.Model
 {
-    ///<summary>
-    ///A tuple associating a topic attribute's key and value.
-    ///</summary>
+    /// <summary>
+    /// Key and value of topic attribute.
+    /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class TopicAttribute
     {    
@@ -36,7 +36,6 @@ namespace Amazon.SimpleNotificationService.Model
         private string valueField;
 
         /// <summary>
-        /// Gets and sets the Key property.
         /// The key in the key/value pair.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
@@ -47,7 +46,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Key property
+        /// Sets the key in the key/value pair.
         /// </summary>
         /// <param name="key">The key in the key/value pair.</param>
         /// <returns>this instance</returns>
@@ -67,7 +66,6 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Value property.
         /// The value in the key/value pair.
         /// </summary>
         [XmlElementAttribute(ElementName = "Value")]
@@ -78,7 +76,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Value property
+        /// Sets the value in the key/value pair.
         /// </summary>
         /// <param name="value">The value in the key/value pair.</param>
         /// <returns>this instance</returns>

@@ -58,7 +58,7 @@ namespace Amazon.S3.Model
         #region Headers
 
         /// <summary>
-        /// Gets the Headers property.
+        /// The collection of headers for the request.
         /// </summary>
         internal WebHeaderCollection Headers
         {
@@ -73,7 +73,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if Headers property is set
+        /// Checks if the Headers property is set
         /// </summary>
         /// <returns>true if Headers property is set</returns>
         internal bool IsSetHeaders()
@@ -83,7 +83,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds all of the key/value pairs from collection into our request header.
+        /// Adds all of the specified key/value pairs into the request headers collection.
         /// </summary>
         /// <param name="collection">A collection of key/value headers</param>
         public void AddHeaders(NameValueCollection collection)
@@ -94,7 +94,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Adds the header to the collection of headers for the request.
         /// </summary>
-        /// <param name="key">The name of the header for example Content-Disposition.</param>
+        /// <param name="key">The name of the header, for example Content-Disposition.</param>
         /// <param name="value">The value to be set for the header.</param>
         public void AddHeader(string key, string value)
         {
@@ -105,7 +105,7 @@ namespace Amazon.S3.Model
 
         #region InputStream
         /// <summary>
-        /// Gets and sets the InputStream property.
+        /// Input stream for the request; content for the request will be read from the stream.
         /// </summary>
         [XmlElementAttribute(ElementName = "InputStream")]
         public Stream InputStream
@@ -115,7 +115,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the InputStream property.
+        /// Sets an input stream for the request; content for the request will be read from the stream.
         /// </summary>
         /// <param name="inputStream">InputStream property</param>
         /// <returns>this instance</returns>

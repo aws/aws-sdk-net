@@ -25,7 +25,8 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DELETE operation removes the null version (if there is one) of an object and inserts a delete marker, which 
+    /// The parameters to request deletion of an object in a bucket. 
+    /// The operation removes the null version (if there is one) of an object and inserts a delete marker, which 
     /// becomes the latest version of the object.
     /// </summary>
     /// <remarks>

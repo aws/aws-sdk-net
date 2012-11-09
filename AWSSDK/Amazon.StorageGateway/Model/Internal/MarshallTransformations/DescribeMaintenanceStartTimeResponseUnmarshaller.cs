@@ -31,6 +31,7 @@
           DescribeMaintenanceStartTimeResponse response = new DescribeMaintenanceStartTimeResponse();
           
           context.Read();
+      
           response.DescribeMaintenanceStartTimeResult = DescribeMaintenanceStartTimeResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

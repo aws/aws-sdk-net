@@ -23,8 +23,7 @@
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The ListBucketsRequest contains the parameters used for the ListBuckets operation.
-    /// No parameters are needed for this request.
+    /// The parameters to list the available buckets for the user.
     /// </summary>
     public class ListBucketsRequest : S3Request
     {

@@ -25,9 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The ListVersionsRequest contains the parameters used for the ListVersions operation.
-    /// <br />Required Parameters: BucketName
-    /// <br />Optional Parameters: Prefix, KeyMarker, VersionIdMarker, MaxKeys, Delimiter
+    /// The parameters to list object versions in a bucket.
     /// </summary>
     [XmlTypeAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/")]
     [XmlRootAttribute(Namespace = "http://s3.amazonaws.com/doc/2006-03-01/", IsNullable = false)]
@@ -47,8 +45,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
-        /// This is the name of the S3 Bucket to list keys from.
+        /// The name of the bucket containing the objects.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -58,10 +55,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the name of the S3 Bucket to list keys from.
-        /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// Sets the name of the bucket containing the objects.
+       /// </summary>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
         public ListVersionsRequest WithBucketName(string bucketName)
         {
@@ -83,9 +79,14 @@ namespace Amazon.S3.Model
         #region Prefix
 
         /// <summary>
-        /// Gets and sets the Prefix property.
-        /// All keys matched will have this prefix.
+        /// Selects only those keys that begin with the specified prefix. 
         /// </summary>
+        /// <remarks>
+        /// Prefixes can be used to separate a bucket into different groupings of keys. 
+        /// You can think of using prefix to make groups in the same way you'd use 
+        /// a folder in a file system.) You can use prefix with delimiter to roll 
+        /// up numerous objects into a single result under CommonPrefixes.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Prefix")]
         public string Prefix
         {
@@ -94,10 +95,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Prefix property for this request.
-        /// All keys matched will have this prefix.
+        /// Selects only those keys that begin with the specified prefix. 
         /// </summary>
-        /// <param name="prefix">The value that Prefix is set to</param>
+        /// <remarks>
+        /// Prefixes can be used to separate a bucket into different groupings of keys. 
+        /// You can think of using prefix to make groups in the same way you'd use 
+        /// a folder in a file system.) You can use prefix with delimiter to roll 
+        /// up numerous objects into a single result under CommonPrefixes.
+        /// </remarks>
+        /// <param name="prefix">The prefix value</param>
         /// <returns>this instance</returns>
         public ListVersionsRequest WithPrefix(string prefix)
         {
@@ -119,9 +125,7 @@ namespace Amazon.S3.Model
         #region KeyMarker
 
         /// <summary>
-        /// Gets and sets the KeyMarker property.
-        /// Specifies the key in the bucket you want to start
-        /// listing from.
+        /// Specifies the key in the bucket that you want to start listing from.
         /// </summary>
         [XmlElementAttribute(ElementName = "KeyMarker")]
         public string KeyMarker
@@ -131,11 +135,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the KeyMarker property for this request.
-        /// Specifies the key in the bucket you want to start
-        /// listing from.
+        /// Specifies the key in the bucket that you want to start listing from.
         /// </summary>
-        /// <param name="marker">the value that KeyMarker is set to</param>
+        /// <param name="marker">The key marker value</param>
         /// <returns>this instance</returns>
         public ListVersionsRequest WithKeyMarker(string marker)
         {
@@ -157,9 +159,7 @@ namespace Amazon.S3.Model
         #region VersionIdMarker
 
         /// <summary>
-        /// Gets and sets the VersionIdMarker property.
-        /// Specifies the object-version in the bucket you want to start
-        /// listing from.
+        /// Specifies the object version you want to start listing from.
         /// </summary>
         [XmlElementAttribute(ElementName = "VersionIdMarker")]
         public string VersionIdMarker
@@ -169,11 +169,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the VersionIdMarker property for this request.
-        /// Specifies the objert-version in the bucket you want to start
-        /// listing from.
+        /// Specifies the object version you want to start listing from.
         /// </summary>
-        /// <param name="marker">the value that VersionIdMarker is set to</param>
+        /// <param name="marker">The version id marker</param>
         /// <returns>this instance</returns>
         public ListVersionsRequest WithVersionIdMarker(string marker)
         {
@@ -195,9 +193,16 @@ namespace Amazon.S3.Model
         #region MaxKeys
 
         /// <summary>
-        /// Gets and sets the MaxKeys property.
-        /// Limits the result set of keys to MaxKeys.
+        /// Sets the maximum number of keys returned in the response body.
+        /// Default: 1000. 
         /// </summary>
+        /// <remarks>
+        /// The response might contain fewer keys, but will never contain more. 
+        /// If additional keys satisfy the search criteria, but were not returned 
+        /// because max-keys was exceeded, the response object's IsTruncated
+        /// property will be set to True.To return the additional keys, use the
+        /// key-marker and version-id-marker properties on a subsequent request.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "MaxKeys")]
         public int MaxKeys
         {
@@ -206,10 +211,17 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the MaxKeys property for this request.
-        /// Limits the result set of keys to MaxKeys.
+        /// Sets the maximum number of keys returned in the response body.
+        /// Default: 1000. 
         /// </summary>
-        /// <param name="maxKeys">the value that MaxKeys is set to</param>
+        /// <remarks>
+        /// The response might contain fewer keys, but will never contain more. 
+        /// If additional keys satisfy the search criteria, but were not returned 
+        /// because max-keys was exceeded, the response object's IsTruncated
+        /// property will be set to True.To return the additional keys, use the
+        /// key-marker and version-id-marker properties on a subsequent request.
+        /// </remarks>
+        /// <param name="maxKeys">The maximum keys to return</param>
         /// <returns>this instance</returns>
         public ListVersionsRequest WithMaxKeys(int maxKeys)
         {
@@ -231,13 +243,14 @@ namespace Amazon.S3.Model
         #region Delimiter
 
         /// <summary>
-        /// Gets and sets the Delimiter property.
-        /// Causes keys that contain the same string between the prefix and the 
-        /// first occurrence of the delimiter to be rolled up into a single result 
-        /// element in the CommonPrefixes collection.
+        /// A character to group keys by. 
         /// </summary>
         /// <remarks>
-        /// These rolled-up keys are not returned elsewhere in the response.
+        /// All keys that contain the same string between 
+        /// the prefix and the first occurrence of the delimiter are grouped under a 
+        /// single result element in CommonPrefixes. These groups are counted as one result 
+        /// against the max-keys limitation. These keys are not returned elsewhere in the 
+        /// response. 
         /// </remarks>
         [XmlElementAttribute(ElementName = "Delimiter")]
         public string Delimiter
@@ -247,13 +260,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Delimiter property for this request.
-        /// Causes keys that contain the same string between the prefix and the 
-        /// first occurrence of the delimiter to be rolled up into a single result 
-        /// element in the CommonPrefixes collection. 
-        /// These rolled-up keys are not returned elsewhere in the response.
+        /// A character to group keys by. 
         /// </summary>
-        /// <param name="delimiter">the value that Delimiter is set to.</param>
+        /// <remarks>
+        /// All keys that contain the same string between 
+        /// the prefix and the first occurrence of the delimiter are grouped under a 
+        /// single result element in CommonPrefixes. These groups are counted as one result 
+        /// against the max-keys limitation. These keys are not returned elsewhere in the 
+        /// response. 
+        /// </remarks>
+        /// <param name="delimiter">The delimiter value</param>
         /// <returns>this instance</returns>
         public ListVersionsRequest WithDelimiter(string delimiter)
         {

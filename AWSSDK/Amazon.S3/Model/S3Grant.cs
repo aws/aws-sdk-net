@@ -43,11 +43,14 @@ namespace Amazon.S3.Model
     }
 
     /// <summary>
-    /// Represents a grant for an bucket/object ACL. A grant contains
+    /// <para>
+    /// Represents a grant for a bucket or object ACL. A grant contains
     /// a S3Grantee and a S3Permission for that S3Grantee.
-    ///
+    /// </para>
+    /// <para>
     /// For more information on Grants/ACLs refer:
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/index.html?RESTAuthentication.html"/>
+    /// </para>
     /// </summary>
     public class S3Grant
     {
@@ -64,7 +67,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Grantee property.
+        /// The grantee details.
         /// </summary>
         [XmlElementAttribute(ElementName = "Grantee")]
         public S3Grantee Grantee
@@ -74,7 +77,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the S3Grantee property.
+        /// Sets the grantee details.
         /// </summary>
         /// <param name="grantee">S3Grantee property</param>
         /// <returns>this instance</returns>
@@ -94,7 +97,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Permission property.
+        /// An S3 permission.
         /// </summary>
         [XmlElementAttribute(ElementName = "Permission")]
         public S3Permission Permission
@@ -104,7 +107,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the S3Permission property.
+        /// Sets an S3 permission.
         /// </summary>
         /// <param name="permission">S3Permission property</param>
         /// <returns>this instance</returns>

@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Security;
 using System.Text;
 using System.Globalization;
@@ -101,7 +102,8 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Calculates the AWS4 signature using the supplied request parameters and AWS account credentials.
         /// </summary>
-        /// <param name="parameters">Request header parameters to be included in the signature</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="parameters">Request AWS Query parameters to be included in the signature</param>
         /// <param name="serviceURL">Service endpoint URL</param>
         /// <param name="authenticationServiceName">
         /// The short-form name of the target service for inclusion in the signature; only needed if this 
@@ -115,7 +117,8 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="credentials">User credentials</param>
         /// <returns>The signature string to be added as header 'Authorization' on the eventual request</returns>
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
-        public static string CalculateSignature(IDictionary<string, string> parameters,
+        public static string CalculateSignature(IDictionary<string, string> headers,
+                                                IDictionary<string, string> parameters,
                                                 string serviceURL,
                                                 string httpMethod,
                                                 string authenticationServiceName,
@@ -135,17 +138,16 @@ namespace Amazon.Runtime.Internal.Auth
                 region = AWSSDKUtils.DetermineRegion(serviceURL).ToLower();
             string service = authenticationServiceName.Trim().ToLower();
 
-            if (!parameters.ContainsKey("Host"))
-                parameters.Add("Host", serviceURL);
-            parameters.Add("X-Amz-Date", dateTime);
+            headers.Add("Host", new Uri(serviceURL).Host);
+            headers.Add("X-Amz-Date", dateTime);
 
             string scope = string.Format("{0}/{1}/{2}/{3}", dateStamp, region, service, TERMINATOR);
 
-            List<string> headersToSign = GetHeadersForSigning(parameters);
+            List<string> headersToSign = GetHeadersForSigning(headers);
             string canonicalRequest = GetCanonicalRequest(headersToSign,
                                                           new Uri(serviceURL),
                                                           "",
-                                                          parameters,
+                                                          headers,
                                                           AWSSDKUtils.GetParametersAsString(parameters),
                                                           null, // No support for binary request body yet here.
                                                           httpMethod);

@@ -31,6 +31,7 @@
           UpdateBandwidthRateLimitResponse response = new UpdateBandwidthRateLimitResponse();
           
           context.Read();
+      
           response.UpdateBandwidthRateLimitResult = UpdateBandwidthRateLimitResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

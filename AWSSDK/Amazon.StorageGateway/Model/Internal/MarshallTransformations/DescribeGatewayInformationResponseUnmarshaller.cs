@@ -31,6 +31,7 @@
           DescribeGatewayInformationResponse response = new DescribeGatewayInformationResponse();
           
           context.Read();
+      
           response.DescribeGatewayInformationResult = DescribeGatewayInformationResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

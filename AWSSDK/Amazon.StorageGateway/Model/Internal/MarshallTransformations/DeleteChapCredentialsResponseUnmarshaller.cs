@@ -31,6 +31,7 @@
           DeleteChapCredentialsResponse response = new DeleteChapCredentialsResponse();
           
           context.Read();
+      
           response.DeleteChapCredentialsResult = DeleteChapCredentialsResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

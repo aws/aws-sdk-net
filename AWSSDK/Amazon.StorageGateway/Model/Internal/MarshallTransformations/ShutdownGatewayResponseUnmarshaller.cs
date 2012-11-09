@@ -31,6 +31,7 @@
           ShutdownGatewayResponse response = new ShutdownGatewayResponse();
           
           context.Read();
+      
           response.ShutdownGatewayResult = ShutdownGatewayResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

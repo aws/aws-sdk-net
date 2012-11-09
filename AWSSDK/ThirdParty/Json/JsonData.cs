@@ -244,6 +244,16 @@ namespace ThirdParty.Json.LitJson
 
 
         #region Public Indexers
+
+        public IEnumerable<string> PropertyNames
+        {
+            get
+            {
+                EnsureDictionary();
+                return inst_object.Keys;
+            }
+        }
+
         public JsonData this[string prop_name] {
             get {
                 EnsureDictionary ();

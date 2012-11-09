@@ -26,7 +26,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the UpdateSnapshotSchedule operation.
     /// <para>This operation updates a snapshot schedule configured for a gateway volume.</para> <para>The default snapshot schedule for volume is
-    /// once every 24 hours, starting at the creation time of the volume. You can use this API to change the snaphot schedule configured for the
+    /// once every 24 hours, starting at the creation time of the volume. You can use this API to change the shapshot schedule configured for the
     /// volume.</para> <para>In the request you must identify the gateway volume whose snapshot schedule you want to update, and the schedule
     /// information, including when you want the snapshot to begin on a day and the frequency (in hours) of snapshots.</para>
     /// </summary>
@@ -76,8 +76,8 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The hour of the day at which the snapshot schedule begins. Length: 2 <i>Valid Values</i>: An integer between 0 and 23, representing the hour
-        /// of day.
+        /// The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+        /// day is in the time zone of the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -114,8 +114,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Frequency of snapshots. Specify the number of hours between snapshots. <i>Valid Values</i>: <c>1</c>, <c>2</c>, <c>4</c>, <c>8</c>,
-        /// <c>12</c>, <c>24</c>.
+        /// Frequency of snapshots. Specify the number of hours between snapshots.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -152,7 +151,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Optional description of the snapshot that overwrites the existing description. Length: up to 255 characters.
+        /// Optional description of the snapshot that overwrites the existing description.
         ///  
         /// <para>
         /// <b>Constraints:</b>

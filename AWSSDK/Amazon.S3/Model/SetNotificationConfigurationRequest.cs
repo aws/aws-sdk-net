@@ -28,9 +28,8 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The SetNotificationConfigurationRequest contains the parameters used for the SetNotificationConfiguration operation.
+    /// The parameters used to configure notifications on a bucket.
     /// If the NotificationConfiguration is null or empty then the current configuration will be cleared.
-    /// <br />Required Parameters: BucketName
     /// </summary>
     public class SetNotificationConfigurationRequest : S3Request
     {
@@ -44,7 +43,7 @@ namespace Amazon.S3.Model
         #region Properties
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to be configured.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -60,10 +59,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket the request will get the location for.
+        /// Sets the name of the bucket to be configured.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
         public SetNotificationConfigurationRequest WithBucketName(string bucketName)
         {
@@ -81,7 +79,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the NotificationConfiguration property.
+        /// The notification configuration to apply.
         /// </summary>
         public NotificationConfigurationList NotificationConfiguration
         {
@@ -96,9 +94,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the NotificationConfiguration property for this request.
+        /// Sets the notification configuration to apply.
         /// </summary>
-        /// <param name="notificationConfig">The value that NotificationConfiguration is set to</param>
+        /// <param name="notificationConfig">Configuration to set</param>
         /// <returns>this instance</returns>
         public SetNotificationConfigurationRequest WithNotificationConfiguration(NotificationConfigurationList notificationConfig)
         {

@@ -27,8 +27,7 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// KeyVersion is a container for a key and optionally a version
-    /// of an S3 object.
+    /// Specifies an object key and optional object version.
     /// </summary>
     public class KeyVersion
     {
@@ -36,7 +35,7 @@ namespace Amazon.S3.Model
         private string versionId;
 
         /// <summary>
-        /// Gets and sets the key identifying the object.
+        /// The object key.
         /// </summary>
         public string Key
         {
@@ -45,7 +44,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the version of an object.
+        /// The object version id.
         /// </summary>
         public string VersionId
         {

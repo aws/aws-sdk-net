@@ -31,7 +31,7 @@ using System.Xml;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Queries the tag set for a bucket.
+    /// The parameters to request the tag set for a bucket.
     /// </summary>
     public class GetBucketTaggingRequest : S3Request
     {

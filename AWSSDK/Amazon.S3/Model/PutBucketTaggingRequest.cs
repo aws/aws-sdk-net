@@ -31,8 +31,7 @@ using System.Xml;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The PutBucketTaggingRequest contains the parameters used for the PutBucketTagging operation.
-    /// <br />Required Parameters: BucketName, TagSets
+    /// The parameters to apply one or more tag sets to a bucket.
     /// </summary>
     public class PutBucketTaggingRequest : S3Request
     {
@@ -40,7 +39,7 @@ namespace Amazon.S3.Model
         private string bucketName;
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to apply the tag sets to.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -50,9 +49,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
+        /// Sets the name of the bucket to apply the tag sets to.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public PutBucketTaggingRequest WithBucketName(string bucketName)
         {
@@ -71,7 +70,7 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Gets and sets the TagSets property.
+        /// The tag sets to apply to the bucket.
         /// </summary>
         [XmlElementAttribute(ElementName = "TagSets")]
         public List<TagSet> TagSets
@@ -91,7 +90,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the TagSets property.
+        /// Sets the tag sets to apply to the bucket.
         /// </summary>
         /// <param name="args">TagSets property</param>
         /// <returns>this instance</returns>

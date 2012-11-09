@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.StorageGateway.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.StorageGateway.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
     { 
@@ -30,17 +31,17 @@
         }
         
         public VolumeiSCSIAttributes Unmarshall(JsonUnmarshallerContext context) 
-        { 
-          VolumeiSCSIAttributes volumeiSCSIAttributes = new VolumeiSCSIAttributes();
-          
-          int originalDepth = context.CurrentDepth;
-          int targetDepth = originalDepth + 1;
-          while (context.Read())
-          {
-            if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+        {
+            VolumeiSCSIAttributes volumeiSCSIAttributes = new VolumeiSCSIAttributes();
+                    
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
             {
-              context.Read();
-              context.Read();
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
                
               if (context.TestExpression("TargetARN", targetDepth)) 
               {
@@ -72,22 +73,24 @@
                 continue; 
               }
    
+                } 
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
+                { 
+                    return volumeiSCSIAttributes; 
+                } 
             } 
-            else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-            { 
-              return volumeiSCSIAttributes; 
-            } 
-          } 
-          return volumeiSCSIAttributes; 
+          
+          
+            return volumeiSCSIAttributes; 
         } 
         
         private static VolumeiSCSIAttributesUnmarshaller instance; 
         public static VolumeiSCSIAttributesUnmarshaller GetInstance() 
         { 
-          if (instance == null) 
-            instance = new VolumeiSCSIAttributesUnmarshaller(); 
-          return instance;
+            if (instance == null) 
+                instance = new VolumeiSCSIAttributesUnmarshaller(); 
+            return instance;
         } 
-      } 
     } 
+} 
   

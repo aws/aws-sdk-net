@@ -25,13 +25,8 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The SetACLRequest contains the parameters used for the SetACL operation.
-    /// The BucketName is always required, the Key is optional and is to be set
-    /// if you want the ACL for an object instead of a bucket.
-    ///
-    /// You can either set ACLs using CannedACLs or by providing an S3AccessControlList.
-    /// <br />Required Parameters: BucketName
-    /// <br />Optional Parameters: Key, CannedACL, ACL
+    /// The parameters to set an access control list (ACL) on a bucket or S3 object.
+    /// You can use either CannedACLs or provide an S3AccessControlList for custom ACLs.
     /// </summary>
     public class SetACLRequest : S3Request
     {
@@ -48,7 +43,8 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket.
+        /// If an object key is not specified, the ACLs are applied to the bucket.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -58,12 +54,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is either the S3 Bucket whose ACL you want to set,
-        /// or the S3 Bucket that has the S3 Object whose ACL
-        /// you want to set.
+        /// The name of the bucket.
+        /// If an object key is not specified, the ACLs are applied to the bucket.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public SetACLRequest WithBucketName(string bucketName)
         {
@@ -85,7 +79,8 @@ namespace Amazon.S3.Model
         #region Key
 
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key of an S3 object.
+        /// If not specified, the ACLs are applied to the bucket.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
@@ -95,11 +90,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
-        /// This is the Key for the S3 Object whose ACL you
-        /// want to set.
+        /// Sets the key of an S3 object.
+        /// If not specified, the ACLs are applied to the bucket.
         /// </summary>
-        /// <param name="key">The value that Key is set to</param>
+        /// <param name="key">The object key</param>
         /// <returns>the request with the Key set</returns>
         public SetACLRequest WithKey(string key)
         {
@@ -121,7 +115,7 @@ namespace Amazon.S3.Model
         #region CannedACL
 
         /// <summary>
-        /// Gets and sets the CannedACL property.
+        /// Canned ACL to apply to the bucket or object.
         /// </summary>
         public S3CannedACL CannedACL
         {
@@ -130,11 +124,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the CannedACL property for this request.
-        /// The S3 Object or S3 Bucket will be set to this
-        /// CannedACL.
+        /// Sets a canned ACL to apply to the bucket or object.
         /// </summary>
-        /// <param name="acl">The Canned ACL to be set on the object</param>
+        /// <param name="acl">The Canned ACL to be set</param>
         /// <returns>The request with the CannedACL set</returns>
         public SetACLRequest WithCannedACL(S3CannedACL acl)
         {
@@ -165,7 +157,7 @@ namespace Amazon.S3.Model
         #region ACL
 
         /// <summary>
-        /// Gets and sets the ACL property.
+        /// Custom ACLs to be applied to the bucket or object.
         /// </summary>
         [XmlElementAttribute(ElementName = "ACL")]
         public S3AccessControlList ACL
@@ -175,11 +167,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ACL property for this request.
-        /// The S3 Object or S3 Bucket will be set to this
-        /// S3AccessControlList.
+        /// Sets the custom ACLs to be applied to the bucket or object.
         /// </summary>
-        /// <param name="acl">The Canned ACL to be set on the object</param>
+        /// <param name="acl">The custom ACLs to be</param>
         /// <returns>The request with the ACL set</returns>
         public SetACLRequest WithACL(S3AccessControlList acl)
         {
@@ -201,10 +191,9 @@ namespace Amazon.S3.Model
         #region VersionId
 
         /// <summary>
-        /// Gets and sets the VersionId property.
-        /// This is the Version Id of the S3 Object for 
-        /// which the ACL will be set. This property
-        /// is ignored if the ACL is to be set on a Bucket.
+        /// If set and an object key has been specified, the ACLs are applied
+        /// to the specific version of the object.
+        /// This property is ignored if the ACL is to be set on a Bucket.
         /// </summary>
         [XmlElementAttribute(ElementName = "VersionId")]
         public string VersionId
@@ -214,12 +203,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the VersionId property for this request.
-        /// This is the Version Id of the S3 Object for 
-        /// which the ACL will be set. This property
-        /// is ignored if the ACL is to be set on a Bucket.
+        /// If set and an object key has been specified, the ACLs are applied
+        /// to the specific version of the object.
+        /// This property is ignored if the ACL is to be set on a Bucket.
         /// </summary>
-        /// <param name="versionId">The value that VersionId is set to</param>
+        /// <param name="versionId">The object version identifier</param>
         /// <returns>this instance</returns>
         public SetACLRequest WithVersionId(string versionId)
         {

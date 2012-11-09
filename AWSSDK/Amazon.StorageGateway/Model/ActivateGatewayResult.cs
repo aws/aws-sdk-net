@@ -21,7 +21,9 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the GatewayARN of the activated gateway.</para>
+    /// <para>AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your
+    /// account, gateway name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based
+    /// authorization.</para>
     /// </summary>
     public class ActivateGatewayResult  
     {

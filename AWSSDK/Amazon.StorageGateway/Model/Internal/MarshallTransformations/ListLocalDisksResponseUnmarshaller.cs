@@ -31,6 +31,7 @@
           ListLocalDisksResponse response = new ListLocalDisksResponse();
           
           context.Read();
+      
           response.ListLocalDisksResult = ListLocalDisksResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

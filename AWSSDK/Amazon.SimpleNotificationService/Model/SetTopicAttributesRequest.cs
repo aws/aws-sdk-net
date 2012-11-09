@@ -27,7 +27,7 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Allows a topic owner to set a topic's attributes.
+    /// Sets an attribute of a topic to a new value.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class SetTopicAttributesRequest
@@ -37,9 +37,7 @@ namespace Amazon.SimpleNotificationService.Model
         private string attributeValueField;
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
-        /// The Amazon Reference Name (ARN) of the topic the client wishes
-        /// to set the attribute value of.
+        /// The Amazon Reference Name (ARN) of the topic you want to set the attribute value of.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
         public string TopicArn
@@ -49,9 +47,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the Amazon Reference Name (ARN) of the topic you want to set the attribute value of.
         /// </summary>
-        /// <param name="topicArn">The Amazon Reference Name (ARN) of the topic the client wishes
+        /// <param name="topicArn">The Amazon Reference Name (ARN) of the topic you want
         /// to set the attribute value of.</param>
         /// <returns>this instance</returns>
         public SetTopicAttributesRequest WithTopicArn(string topicArn)
@@ -70,8 +68,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the AttributeName property.
-        /// The name of the attribute the client wishes to set.
+        /// The name of the attribute you want to set.
         /// Only a subset of a topic's attributes can be set.
         /// </summary>
         [XmlElementAttribute(ElementName = "AttributeName")]
@@ -82,10 +79,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the AttributeName property
+        /// Sets the name of the attribute you want to set.
         /// </summary>
-        /// <param name="attributeName">The name of the attribute the client wishes to set.
-        /// Only a subset of a topic's attributes can be set.</param>
+        /// <param name="attributeName">The name of the attribute you want to set.</param>
         /// <returns>this instance</returns>
         public SetTopicAttributesRequest WithAttributeName(string attributeName)
         {
@@ -103,8 +99,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the AttributeValue property.
-        /// The value of the attribute the client wishes to set.
+        /// The value of the attribute you want to set.
         /// </summary>
         [XmlElementAttribute(ElementName = "AttributeValue")]
         public string AttributeValue
@@ -114,9 +109,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the AttributeValue property
+        /// Sets the value of the attribute you want to set.
         /// </summary>
-        /// <param name="attributeValue">The value of the attribute the client wishes to set.</param>
+        /// <param name="attributeValue">The value of the attribute you want to set.</param>
         /// <returns>this instance</returns>
         public SetTopicAttributesRequest WithAttributeValue(string attributeValue)
         {

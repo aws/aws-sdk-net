@@ -31,6 +31,7 @@
           DescribeSnapshotScheduleResponse response = new DescribeSnapshotScheduleResponse();
           
           context.Read();
+      
           response.DescribeSnapshotScheduleResult = DescribeSnapshotScheduleResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

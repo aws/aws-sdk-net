@@ -113,7 +113,8 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume.
+        /// An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then
+        /// <c>VolumeInfos</c> is an empty array "[]".
         ///  
         /// </summary>
         public List<VolumeInfo> VolumeInfos

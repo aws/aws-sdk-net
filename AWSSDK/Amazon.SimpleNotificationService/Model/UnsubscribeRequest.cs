@@ -27,21 +27,23 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The Unsubscribe action deletes a subscription. If the subscription requires authentication for
-    /// deletion, only the owner of the subscription or the its topic's owner
-    /// can unsubscribe, and an AWS signature is required. If the
-    /// Unsubscribe call does not require authentication and the requester is not
+    /// Deletes a subscription.
+    /// </summary>
+    /// <remarks>
+    /// If the subscription requires authentication for deletion, only the owner
+    /// of the subscription or the its topic's owner can unsubscribe, and an AWS
+    /// signature is required.
+    /// If the Unsubscribe call does not require authentication and the requester is not
     /// the subscription owner, a final cancellation message is delivered to the
     /// endpoint, so that the endpoint owner can easily resubscribe to the topic if
     /// the Unsubscribe request was unintended.
-    /// </summary>
+    /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class UnsubscribeRequest
     {    
         private string subscriptionArnField;
 
         /// <summary>
-        /// Gets and sets the SubscriptionArn property.
         /// The ARN of the subscription to be deleted.
         /// </summary>
         [XmlElementAttribute(ElementName = "SubscriptionArn")]
@@ -52,7 +54,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the SubscriptionArn property
+        /// Sets the ARN of the subscription to be deleted.
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to be deleted.</param>
         /// <returns>this instance</returns>

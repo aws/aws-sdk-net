@@ -27,11 +27,11 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The InitiateMultipartUploadRequest contains the parameters used for the InitiateMultipartUpload method.
-    /// <br />Required Parameters: BucketName, Key
+    /// The parameters to start a multi-part upload to S3.
     /// </summary>
     public class InitiateMultipartUploadRequest : S3PutWithACLRequest
     {
+        #region Private members
 
         private string bucketName;
         private string key;
@@ -42,10 +42,12 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionMethod encryption;
         private string websiteRedirectLocation;
 
+        #endregion
+
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket where the new object will be created, or existing object updated.
         /// </summary>
         public string BucketName
         {
@@ -54,11 +56,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket where the S3 Object you are
-        /// creating gets put.
+        /// Sets the name of the bucket where the new object will be created, or existing object updated.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>The request with the BucketName set</returns>
         public InitiateMultipartUploadRequest WithBucketName(string bucketName)
         {
@@ -79,7 +79,7 @@ namespace Amazon.S3.Model
 
         #region Key
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key of the object to create or update.
         /// </summary>
         public string Key
         {
@@ -88,10 +88,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
-        /// This is the Key for the S3 Object you create.
+        /// Sets the key of the object to create or update.
         /// </summary>
-        /// <param name="key">The value that Key is set to</param>
+        /// <param name="key">The object key</param>
         /// <returns>the request with the Key set</returns>
         public InitiateMultipartUploadRequest WithKey(string key)
         {
@@ -113,11 +112,8 @@ namespace Amazon.S3.Model
         #region CannedACL
 
         /// <summary>
-        /// Gets and sets the CannedACL property.
-        /// If set, the S3 Object will have this CannedACL
-        /// permission. Please refer to 
-        /// <see cref="T:Amazon.S3.Model.S3CannedACL"/> for
-        /// information on S3 Canned ACLs.
+        /// A canned access control list (ACL) to apply to the object.
+        /// Please refer to <see cref="T:Amazon.S3.Model.S3CannedACL"/> for information on S3 Canned ACLs.
         /// </summary>
         public S3CannedACL CannedACL
         {
@@ -126,11 +122,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the CannedACL property for this request.
-        /// If set, the S3 Object will have this CannedACL
-        /// permission. Please refer to 
-        /// <see cref="T:Amazon.S3.Model.S3CannedACL"/> for
-        /// information on S3 Canned ACLs.
+        /// Sets a canned access control list (ACL) to apply to the object.
+        /// Please refer to <see cref="T:Amazon.S3.Model.S3CannedACL"/> for information on S3 Canned ACLs.
         /// </summary>
         /// <param name="acl">The Canned ACL to be set on the object</param>
         /// <returns>The request with the CannedACL set</returns>
@@ -150,7 +143,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Resets the CannedACL
+        /// Resets any existng canned ACL setting to 'none'.
         /// </summary>
         public void RemoveCannedACL()
         {
@@ -161,8 +154,12 @@ namespace Amazon.S3.Model
 
         #region ContentType
         /// <summary>
-        /// Gets and sets the ContentType property.
+        /// A standard MIME type describing the format of the object data.
         /// </summary>
+        /// <remarks>
+        /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
+        /// </remarks>
         public string ContentType
         {
             get { return this.contentType; }
@@ -170,11 +167,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ContentType property for this request.
-        /// This property defaults to "binary/octet-stream",
-        /// but if you require something else you can set this property.
+        /// Sets a standard MIME type describing the format of the object data.
         /// </summary>
-        /// <param name="contentType">the value the ContentType to be set to</param>
+        /// <remarks>
+        /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
+        /// </remarks>
+        /// <param name="contentType">The content type</param>
         /// <returns>The request with the ContentType set</returns>
         public InitiateMultipartUploadRequest WithContentType(string contentType)
         {
@@ -221,7 +220,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds a set of key-value pairs to the request
+        /// Adds a set of key-value pairs to the request.
+        /// The S3 Object that you create will have this metadata associated
+        /// with it.
         /// </summary>
         /// <param name="metaInfo">The set of key-value pairs that will eventually be
         /// associated with the S3 Object</param>
@@ -253,8 +254,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Removes a key from the Metadata list if it was
-        /// added previously
+        /// Removes a key from the Metadata list if it was added previously.
         /// </summary>
         /// <param name="key">The key to remove</param>
         public void RemoveMetaData(string key)
@@ -272,13 +272,15 @@ namespace Amazon.S3.Model
         #region StorageClass
 
         /// <summary>
-        /// Gets and sets the StorageClass property.
+        /// StorageClass property for the object.
+        /// </summary>
+        /// <remarks>
         /// Default: S3StorageClass.Standard. Set this property
         /// only if you want reduced redundancy for this object.
         /// Please refer to 
         /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
         /// information on S3 Storage Classes.
-        /// </summary>
+        /// </remarks>
         public S3StorageClass StorageClass
         {
             get { return this.storageClass; }
@@ -293,13 +295,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the StorageClass property for this request.
+        /// Sets the StorageClass property for the object.
+        /// </summary>
+        /// <remarks>
         /// Default: S3StorageClass.Standard. Set this property
         /// only if you want reduced redundancy for this object.
         /// Please refer to 
         /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
         /// information on S3 Storage Classes.
-        /// </summary>
+        /// </remarks>
         /// <param name="sClass">The Storage Class to be set on the object</param>
         /// <returns>The request with the StorageClass set</returns>
         public InitiateMultipartUploadRequest WithStorageClass(S3StorageClass sClass)
@@ -313,12 +317,12 @@ namespace Amazon.S3.Model
         #region Grants
 
         /// <summary>
-        /// Adds Custom Access Control Lists to this request.
+        /// Adds custom Access Control Lists (ACLs) to the object.
         /// Please refer to <see cref="T:Amazon.S3.Model.S3Grant"/> for information on
         /// S3 Grants.
         /// </summary>
-        /// <param name="grants">One or more S3 Grants.</param>
-        /// <returns>The request with the Grants set.</returns>
+        /// <param name="grants">One or more S3 Grants</param>
+        /// <returns>The request with the Grants set</returns>
         public InitiateMultipartUploadRequest WithGrants(params S3Grant[] grants)
         {
             this.Grants.AddRange(grants);
@@ -330,9 +334,12 @@ namespace Amazon.S3.Model
         #region ServerSideEncryption
 
         /// <summary>
-        /// Gets and sets the ServerSideEncryptionMethod property.
-        /// Specifies the encryption used on the server to
-        /// store the content.
+        /// <para>
+        /// Specifies the encryption to be used on the server for the new object.
+        /// </para>
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -341,16 +348,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ServerSideEncryptionMethod property for this request.
-        /// Specifies the encryption used on the server to
-        /// store the content.
+        /// <para>
+        /// Specifies the encryption to be used on the server for the new object.
+        /// </para>
+        /// <para>
+        /// Default: None
+        /// </para>
         /// </summary>
-        /// <param name="encryption">
-        /// The value of the ServerSideEncryptionMethod to set.
-        /// </param>
-        /// <returns>
-        /// The response with the ServerSideEncryptionMethod set.
-        /// </returns>
+        /// <param name="encryption">ServerSideEncryptionMethod for the new object</param>
+        /// <returns>The response with the ServerSideEncryptionMethod set.</returns>
         public InitiateMultipartUploadRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
         {
             this.ServerSideEncryptionMethod = encryption;
@@ -361,9 +367,9 @@ namespace Amazon.S3.Model
 
         #region Website Redirect Location
         /// <summary>
-        /// Gets and sets the WebsiteRedirectLocation property.
-        /// If this is set then when a GET request is made from the S3 website endpoint a 301 HTTP status code
-        /// will be returned indicating a redirect with this value as the redirect location.
+        /// Sets the WebsiteRedirectLocation property on the new object so that when a GET request 
+        /// is made from the S3 website endpoint a 301 HTTP status code will be returned indicating 
+        /// a redirect with the specified value as the redirect location.
         /// </summary>
         public string WebsiteRedirectLocation
         {
@@ -372,11 +378,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the WebsiteRedirectLocation property for this request.
-        /// If this is set then when a GET request is made from the S3 website endpoint a 301 HTTP status code
-        /// will be returned indicating a redirect with this value as the redirect location.
+        /// Sets the WebsiteRedirectLocation property on the new object so that when a GET request 
+        /// is made from the S3 website endpoint a 301 HTTP status code will be returned indicating 
+        /// a redirect with the specified value as the redirect location.
         /// </summary>
-        /// <param name="websiteRedirectLocation">The value that WebsiteRedirectLocation is set to</param>
+        /// <param name="websiteRedirectLocation">The redirect value to be returned on a GET request</param>
         /// <returns>the request with the WebsiteRedirectLocation set</returns>
         public InitiateMultipartUploadRequest WithWebsiteRedirectLocation(string websiteRedirectLocation)
         {

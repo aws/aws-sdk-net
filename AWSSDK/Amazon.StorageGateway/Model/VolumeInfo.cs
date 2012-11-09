@@ -76,7 +76,7 @@ namespace Amazon.StorageGateway.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>STORED iSCSI</description>
+        ///         <description>STORED iSCSI, CACHED iSCSI</description>
         ///     </item>
         /// </list>
         /// </para>

@@ -36,9 +36,7 @@ namespace Amazon.SimpleNotificationService.Model
         private string labelField;
 
         /// <summary>
-        /// Gets and sets the TopicArn property.
-        /// The Amazon Reference Name (ARN) of the topic whose access control policy the
-        /// client wishes to modify.
+        /// The Amazon Reference Name (ARN) of the topic whose access control policy you want to modify.
         /// </summary>
         [XmlElementAttribute(ElementName = "TopicArn")]
         public string TopicArn
@@ -48,10 +46,9 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the TopicArn property
+        /// Sets the Amazon Reference Name (ARN) of the topic whose access control policy you want to modify.
         /// </summary>
-        /// <param name="topicArn">The Amazon Reference Name (ARN) of the topic whose access control policy the
-        /// client wishes to modify.</param>
+        /// <param name="topicArn">The Amazon Reference Name (ARN) of a topic .</param>
         /// <returns>this instance</returns>
         public RemovePermissionRequest WithTopicArn(string topicArn)
         {
@@ -69,8 +66,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the Label property.
-        /// The unique label of the statement the client wishes to remove.
+        /// The unique label of the statement you want to remove.
         /// </summary>
         [XmlElementAttribute(ElementName = "Label")]
         public string Label
@@ -80,7 +76,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Sets the Label property
+        /// Sets the unique label of the statement you want to remove.
         /// </summary>
         /// <param name="label">The unique label of the statement the client wishes to remove.</param>
         /// <returns>this instance</returns>

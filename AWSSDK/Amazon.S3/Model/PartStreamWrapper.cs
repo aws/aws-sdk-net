@@ -29,8 +29,8 @@ using System.Threading;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// This class is used to wrap a stream for a particular segment of a stream.  It 
-    /// makes that segment look like you are reading from beginning to end of the stream.
+    /// Wrapper for a stream for a particular segment of a stream.  This wrapper  
+    /// makes the segment appear as though reads are from from beginning to end of the stream.
     /// </summary>
     internal class PartStreamWrapper : Stream
     {

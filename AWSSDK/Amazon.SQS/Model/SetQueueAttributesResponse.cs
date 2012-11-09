@@ -16,7 +16,7 @@
  *  (_)(_) \/\/  (___/
  *
  *  AWS SDK for .NET
- *  API Version: 2011-10-01
+ *  API Version: 2012-11-05
  */
 
 using System;
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Returns a list of messages and metadata about the request.
     /// </summary>
-    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2011-10-01/", IsNullable = false)]
+    [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
     public class SetQueueAttributesResponse
     {    
         private ResponseMetadata responseMetadataField;

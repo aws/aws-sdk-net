@@ -26,8 +26,7 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The ListPartsRequest contains the parameters used for the ListParts method.
-    /// <br />Required Parameters: BucketName, Key, UploadId
+    /// The parameters to lists the parts that have been uploaded for a specific multipart upload. 
     /// </summary>
     public class ListPartsRequest : S3Request
     {
@@ -40,7 +39,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket receiving the multipart upload.
         /// </summary>
         public string BucketName
         {
@@ -49,9 +48,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
+        /// Sets the name of the bucket receiving the multipart upload.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public ListPartsRequest WithBucketName(string bucketName)
         {
@@ -73,7 +72,7 @@ namespace Amazon.S3.Model
         #region Key
 
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The object key for which the multipart upload was initiated.
         /// </summary>
         public string Key
         {
@@ -82,9 +81,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
+        /// Sets object key for which the multipart upload was initiated.
         /// </summary>
-        /// <param name="key">The value that Key is set to</param>
+        /// <param name="key">The object key</param>
         /// <returns>the request with the Key set</returns>
         public ListPartsRequest WithKey(string key)
         {
@@ -105,8 +104,7 @@ namespace Amazon.S3.Model
 
         #region UploadId
         /// <summary>
-        /// Gets and sets the UploadId property.
-        /// This is the upload id for the multipart upload in process.
+        /// The upload ID identifying the multipart upload whose parts are being listed.
         /// </summary>
         public string UploadId
         {
@@ -115,10 +113,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the UploadId property for this request.
-        /// This is the upload id for the multipart upload in process.
+        /// Sets the upload ID identifying the multipart upload whose parts are being listed.
         /// </summary>
-        /// <param name="uploadId">The value that Key is set to</param>
+        /// <param name="uploadId">The upload id</param>
         /// <returns>the request with the Key set</returns>
         public ListPartsRequest WithUploadId(string uploadId)
         {
@@ -140,7 +137,7 @@ namespace Amazon.S3.Model
         #region MaxParts
 
         /// <summary>
-        /// Gets and sets the MaxParts property.
+        /// The maximum number of parts to return in the response.
         /// </summary>
         public int MaxParts
         {
@@ -149,9 +146,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the MaxParts property for this request.
+        /// Sets the maximum number of parts to return in the response.
         /// </summary>
-        /// <param name="maxParts">The value that MaxParts is set to</param>
+        /// <param name="maxParts">Maximum parts to return</param>
         /// <returns>the request with the MaxParts set</returns>
         public ListPartsRequest WithMaxParts(int maxParts)
         {
@@ -173,11 +170,8 @@ namespace Amazon.S3.Model
         #region PartNumberMarker
 
         /// <summary>
-        /// Gets and sets the PartNumberMarker property.
-        /// <para>
-        /// Specifies the part after which listing should begin. Only parts with higher
-        /// part numbers will be listed.
-        /// </para>
+        /// Specifies the part after which listing should begin. 
+        /// Only parts with higher part numbers will be listed.
         /// </summary>
         public string PartNumberMarker
         {
@@ -186,9 +180,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
+        /// Specifies the part after which listing should begin. 
+        /// Only parts with higher part numbers will be listed.
         /// </summary>
-        /// <param name="partNumberMarker">The value that PartNumberMarker is set to</param>
+        /// <param name="partNumberMarker">The part number to start listing from</param>
         /// <returns>the request with the PartNumberMarker set</returns>
         public ListPartsRequest WithPartNumberMarker(string partNumberMarker)
         {

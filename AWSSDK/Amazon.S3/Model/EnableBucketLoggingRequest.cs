@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Enables logging on the specified bucket.
+    /// The parameters to request logging be enabled on a bucket.
     /// </summary>
     public class EnableBucketLoggingRequest : S3Request
     {

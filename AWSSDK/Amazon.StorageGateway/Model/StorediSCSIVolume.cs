@@ -38,8 +38,7 @@ namespace Amazon.StorageGateway.Model
         private VolumeiSCSIAttributes volumeiSCSIAttributes;
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the storage volume. <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and hyphens
-        /// (-).
+        /// The Amazon Resource Name (ARN) of the storage volume.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -120,7 +119,7 @@ namespace Amazon.StorageGateway.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>STORED iSCSI</description>
+        ///         <description>STORED iSCSI, CACHED iSCSI</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -157,7 +156,7 @@ namespace Amazon.StorageGateway.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED</description>
+        ///         <description>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -216,7 +215,7 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field
-        /// does not appear in the response if the stored volume is not restoring or boostrapping.
+        /// does not appear in the response if the stored volume is not restoring or bootstrapping.
         ///  
         /// </summary>
         public double VolumeProgress

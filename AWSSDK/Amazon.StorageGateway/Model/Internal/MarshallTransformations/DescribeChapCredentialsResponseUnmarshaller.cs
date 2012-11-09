@@ -31,6 +31,7 @@
           DescribeChapCredentialsResponse response = new DescribeChapCredentialsResponse();
           
           context.Read();
+      
           response.DescribeChapCredentialsResult = DescribeChapCredentialsResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

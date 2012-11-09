@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Querues the logging status of a bucket.
+    /// The parameters to request the logging status of a bucket.
     /// </summary>
     public class GetBucketLoggingRequest : S3Request
     {

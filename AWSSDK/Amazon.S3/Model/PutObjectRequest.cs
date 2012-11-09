@@ -24,18 +24,10 @@ using System;
 using System.Xml.Serialization;
 using System.Collections.Specialized;
 
-using Amazon.S3.Util;
-
 namespace Amazon.S3.Model
 {
-
-
     /// <summary>
-    /// The PutObjectRequest contains the parameters used for the PutObject operation.
-    /// <br />Must set only 1 of ContentBody, InputStream, or FilePath
-    /// <br />Required Parameters: BucketName, Key
-    /// <br />Optional Parameters: CannedACL, ACL, MD5Digest, GenerateMD5Digest,
-    /// ContentType, Metadata, Timeout
+    /// The parameters to add or update an object in a bucket.
     /// </summary>
     public class PutObjectRequest : S3PutWithACLRequest
     {
@@ -101,7 +93,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to contain the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -111,11 +103,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket where the S3 Object you are
-        /// creating gets put.
+        /// Sets the name of the bucket to contain the object.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public PutObjectRequest WithBucketName(string bucketName)
         {
@@ -136,7 +126,7 @@ namespace Amazon.S3.Model
 
         #region Key
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key of the object to be created (or updated).
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
@@ -146,10 +136,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
-        /// This is the Key for the S3 Object you create.
+        /// Sets key of the object to be created (or updated).
         /// </summary>
-        /// <param name="key">The value that Key is set to</param>
+        /// <param name="key">The object key</param>
         /// <returns>the request with the Key set</returns>
         public PutObjectRequest WithKey(string key)
         {
@@ -170,7 +159,8 @@ namespace Amazon.S3.Model
 
         #region FilePath
         /// <summary>
-        /// Gets and sets the FilePath property.
+        /// The full path and name to a file to be uploaded.
+        /// If this is set the request will upload the specified file to S3. 
         /// </summary>
         [XmlElementAttribute(ElementName = "FilePath")]
         public string FilePath
@@ -180,12 +170,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the FilePath property for this request.
-        /// If this is set the request will upload the
-        /// specified file to S3. Provide FilePath as an
-        /// absolute path.
+        /// Sets the full path and name to a file to be uploaded.
+        /// If this is set the request will upload the specified file to S3. 
         /// </summary>
-        /// <param name="filePath">The value that FilePath is set to</param>
+        /// <param name="filePath">Full path and name of a file</param>
         /// <returns>the request with the FilePath set</returns>
         public PutObjectRequest WithFilePath(string filePath)
         {
@@ -207,10 +195,8 @@ namespace Amazon.S3.Model
         #region CannedACL
 
         /// <summary>
-        /// Gets and sets the CannedACL property.
-        /// If set, the S3 Object will have this CannedACL
-        /// permission. Please refer to 
-        /// <see cref="T:Amazon.S3.Model.S3CannedACL"/> for
+        /// A canned access control list (CACL) to apply to the object.
+        /// Please refer to <see cref="T:Amazon.S3.Model.S3CannedACL"/> for
         /// information on S3 Canned ACLs.
         /// </summary>
         public S3CannedACL CannedACL
@@ -220,10 +206,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the CannedACL property for this request.
-        /// If set, the S3 Object will have this CannedACL
-        /// permission. Please refer to 
-        /// <see cref="T:Amazon.S3.Model.S3CannedACL"/> for
+        /// A canned access control list (CACL) to apply to the object.
+        /// Please refer to <see cref="T:Amazon.S3.Model.S3CannedACL"/> for
         /// information on S3 Canned ACLs.
         /// </summary>
         /// <param name="acl">The Canned ACL to be set on the object</param>
@@ -244,7 +228,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Resets the CannedACL
+        /// Resets any previous CannedACL set in this object.
         /// </summary>
         public void RemoveCannedACL()
         {
@@ -255,16 +239,25 @@ namespace Amazon.S3.Model
 
         #region MD5Digest
         /// <summary>
-        /// Gets and sets the MD5 Digest property.
+        /// An MD5 digest for the content.
+        /// </summary>
         /// <remarks>
+        /// <para>
         /// The base64 encoded 128-bit MD5 digest of the message
         /// (without the headers) according to RFC 1864. This header
         /// can be used as a message integrity check to verify that
         /// the data is the same data that was originally sent.
+        /// </para>
+        /// <para>
+        /// If supplied, after the file has been uploaded to S3,
+        /// S3 checks to ensure that the MD5 hash of the uploaded file
+        /// matches the hash supplied.
+        /// </para>
+        /// <para>
         /// Although it is optional, we recommend using the
         /// Content-MD5 mechanism as an end-to-end integrity check.
+        /// </para>
         /// </remarks>
-        /// </summary>
         [XmlElementAttribute(ElementName = "MD5Digest")]
         public string MD5Digest
         {
@@ -273,12 +266,26 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the MD5Digest property. This is the MD5 Hash of the file.
+        /// Sets an MD5 digest for the content. 
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The base64 encoded 128-bit MD5 digest of the message
+        /// (without the headers) according to RFC 1864. This header
+        /// can be used as a message integrity check to verify that
+        /// the data is the same data that was originally sent.
+        /// </para>
+        /// <para>
         /// If supplied, after the file has been uploaded to S3,
         /// S3 checks to ensure that the MD5 hash of the uploaded file
         /// matches the hash supplied.
-        /// </summary>
-        /// <param name="digest">MD5Digest property</param>
+        /// </para>
+        /// <para>
+        /// Although it is optional, we recommend using the
+        /// Content-MD5 mechanism as an end-to-end integrity check.
+        /// </para>
+        /// </remarks>
+        /// <param name="digest">Computed MD5 digest value</param>
         /// <returns>this instance</returns>
         public PutObjectRequest WithMD5Digest(string digest)
         {
@@ -299,10 +306,12 @@ namespace Amazon.S3.Model
 
         #region GenerateMD5Digest
         /// <summary>
-        /// Gets and Sets the property that governs whether
-        /// a md5Digest is generated for the object being
-        /// PUT into S3.
+        /// If set, an MD5 digest is automatically computed for the content being uploaded.
         /// </summary>
+        /// <remarks>
+        /// This is a computationally expensive operation, and will add to the total time it will take to upload
+        /// data to S3. Please use this option judicially.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "GenerateMD5Digest")]
         public bool GenerateMD5Digest
         {
@@ -311,14 +320,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the GenerateMD5Digest property. If this property is set,
-        /// the MD5 md5Digest of the data to be uploaded is generated
-        /// prior to the data being sent to S3.
+        /// If set, an MD5 digest is automatically computed for the content being uploaded.
         /// </summary>
-        /// <param name="fGenerateMD5Digest">GenerateMD5Digest property</param>
+        /// <param name="fGenerateMD5Digest">True to auto-generate a digest</param>
         /// <returns>this instance</returns>
-        /// <remarks>This is a computationally expensive operation,
-        /// and will add to the total time it will take to upload
+        /// <remarks>
+        /// This is a computationally expensive operation, and will add to the total time it will take to upload
         /// data to S3. Please use this option judicially.
         /// </remarks>
         public PutObjectRequest WithGenerateChecksum(bool fGenerateMD5Digest)
@@ -331,8 +338,12 @@ namespace Amazon.S3.Model
 
         #region ContentType
         /// <summary>
-        /// Gets and sets the ContentType property.
+        /// A standard MIME type describing the format of the object data.
         /// </summary>
+        /// <remarks>
+        /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ContentType")]
         public string ContentType
         {
@@ -341,11 +352,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ContentType property for this request.
-        /// This property defaults to "binary/octet-stream",
-        /// but if you require something else you can set this property.
+        /// Sets a standard MIME type describing the format of the object data.
         /// </summary>
-        /// <param name="contentType">the value the ContentType to be set to</param>
+        /// <remarks>
+        /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
+        /// </remarks>
+        /// <param name="contentType">The content type</param>
         /// <returns>The request with the ContentType set</returns>
         public PutObjectRequest WithContentType(string contentType)
         {
@@ -366,7 +379,8 @@ namespace Amazon.S3.Model
 
         #region ContentBody
         /// <summary>
-        /// Gets and sets the ContentBody property.
+        /// Text content to be uploaded. Use this property if you want to upload plaintext to S3. 
+        /// The content type will be set to 'text/plain'.
         /// </summary>
         [XmlElementAttribute(ElementName = "ContentBody")]
         public string ContentBody
@@ -383,11 +397,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ContentBody property for this request.
-        /// Use this property if you want to upload plaintext to
-        /// S3. The ContentBody is the data for your S3 Object.
+        /// Text content to be uploaded. Use this property if you want to upload plaintext to S3. 
+        /// The content type will be set to 'text/plain'.
         /// </summary>
-        /// <param name="contentBody">the value the ContentBody to be set to</param>
+        /// <param name="contentBody">The content to upload</param>
         /// <returns>The request with the ContentBody set</returns>
         public PutObjectRequest WithContentBody(string contentBody)
         {
@@ -410,9 +423,7 @@ namespace Amazon.S3.Model
         #region Metadata
 
         /// <summary>
-        /// Adds a key/value pair to the Metadata property for this request.
-        /// The S3 Object that you create will have this metadata associated
-        /// with it.
+        /// Adds a key/value metadata pair to the object when uploaded.
         /// </summary>
         /// <param name="key">The key to associate with the object</param>
         /// <param name="value">The value for the key</param>
@@ -435,7 +446,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds a set of key-value pairs to the request
+        /// Adds a set of key-value metadata pairs to the object when uploaded.
         /// </summary>
         /// <param name="metaInfo">The set of key-value pairs that will eventually be
         /// associated with the S3 Object</param>
@@ -468,7 +479,7 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Removes a key from the Metadata list if it was
-        /// added previously
+        /// added previously to this object.
         /// </summary>
         /// <param name="key">The key to remove</param>
         public void RemoveMetaData(string key)
@@ -491,12 +502,23 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets of the Timeout property (in milliseconds).
+        /// Custom Timeout property (in milliseconds).
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// The value of this property is assigned to the
         /// Timeout property of the HTTPWebRequest object used
         /// for S3 PUT Object requests.
-        /// </summary>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// </para>
+        /// <para>
+        /// Please set the timeout only if you are certain that
+        /// the file will not be transferred within the default intervals
+        /// for an HttpWebRequest.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
         public int Timeout
@@ -512,13 +534,24 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Timeout property (in milliseconds).
+        /// Sets a custom Timeout property (in milliseconds).
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The value of this property is assigned to the
+        /// Timeout property of the HTTPWebRequest object used
+        /// for S3 PUT Object requests.
+        /// </para>
+        /// <para>
         /// Please set the timeout only if you are certain that
         /// the file will not be transferred within the default intervals
         /// for an HttpWebRequest.
-        /// </summary>
-        /// <param name="timeout">Timeout property</param>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
+        /// <param name="timeout">Timeout value</param>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
@@ -533,12 +566,18 @@ namespace Amazon.S3.Model
         #region ReadWriteTimeout
 
         /// <summary>
-        /// Gets and sets of the ReadWriteTimeout property (in milliseconds).
+        /// Custom ReadWriteTimeout property (in milliseconds).
+        /// </summary>
+        /// <remarks>
+        /// <para>
         /// The value of this property is assigned to the
         /// ReadWriteTimeout property of the HTTPWebRequest object
         /// used for S3 PUT Object requests.
-        /// </summary>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         public int ReadWriteTimeout
         {
@@ -553,12 +592,19 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ReadWriteTimeout property (in milliseconds). 
-        /// The value of this property is assigned to the
-        /// ReadWriteTimeout property of the HttpWebRequest.
+        /// Sets a custom ReadWriteTimeout property (in milliseconds). 
         /// </summary>
-        /// <param name="readWriteTimeout">ReadWriteTimeout property</param>
-        /// <remarks>A value less than or equal to 0 will be silently ignored</remarks>
+        /// <remarks>
+        /// <para>
+        /// The value of this property is assigned to the
+        /// ReadWriteTimeout property of the HTTPWebRequest object
+        /// used for S3 PUT Object requests.
+        /// </para>
+        /// <para>
+        /// A value less than or equal to 0 will be silently ignored
+        /// </para>
+        /// </remarks>
+        /// <param name="readWriteTimeout">ReadWriteTimeout value</param>
         /// <returns>this instance</returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         public PutObjectRequest WithReadWriteTimeout(int readWriteTimeout)
@@ -578,13 +624,14 @@ namespace Amazon.S3.Model
         #region StorageClass
 
         /// <summary>
-        /// Gets and sets the StorageClass property.
-        /// Default: S3StorageClass.Standard. Set this property
-        /// only if you want reduced redundancy for this object.
-        /// Please refer to 
-        /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
-        /// information on S3 Storage Classes.
+        /// StorageClass value to apply to the S3 object.
+        /// Default: S3StorageClass.Standard. 
         /// </summary>
+        /// <remarks>
+        /// Set this property only if you want reduced redundancy for this object.
+        /// Please refer to <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
+        /// information on S3 Storage Classes.
+        /// </remarks>
         public S3StorageClass StorageClass
         {
             get { return this.storageClass; }
@@ -599,13 +646,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the StorageClass property for this request.
-        /// Default: S3StorageClass.Standard. Set this property
-        /// only if you want reduced redundancy for this object.
-        /// Please refer to 
-        /// <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
-        /// information on S3 Storage Classes.
+        /// Sets a StorageClass for the S3 object.
+        /// Default: S3StorageClass.Standard. 
         /// </summary>
+        /// <remarks>
+        /// Set this property only if you want reduced redundancy for this object.
+        /// Please refer to <see cref="T:Amazon.S3.Model.S3StorageClass"/> for
+        /// information on S3 Storage Classes.
+        /// </remarks>
         /// <param name="sClass">The Storage Class to be set on the object</param>
         /// <returns>The request with the StorageClass set</returns>
         public PutObjectRequest WithStorageClass(S3StorageClass sClass)
@@ -619,7 +667,7 @@ namespace Amazon.S3.Model
         #region Grants
 
         /// <summary>
-        /// Adds Custom Access Control Lists to this request.
+        /// Adds custom access control lists (ACLs) to the object.
         /// Please refer to <see cref="T:Amazon.S3.Model.S3Grant"/> for information on
         /// S3 Grants.
         /// </summary>
@@ -636,9 +684,7 @@ namespace Amazon.S3.Model
         #region ServerSideEncryption
 
         /// <summary>
-        /// Gets and sets the ServerSideEncryptionMethod property.
-        /// Specifies the encryption used on the server to
-        /// store the content.
+        /// Specifies the encryption used on the server to store the content.
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -647,16 +693,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ServerSideEncryptionMethod property for this request.
-        /// Specifies the encryption used on the server to
-        /// store the content.
+        /// Specifies the encryption used on the server to store the content.
         /// </summary>
-        /// <param name="encryption">
-        /// The value of the ServerSideEncryptionMethod to set.
-        /// </param>
-        /// <returns>
-        /// The response with the ServerSideEncryptionMethod set.
-        /// </returns>
+        /// <param name="encryption">Encryption method to use</param>
+        /// <returns>The response with the ServerSideEncryptionMethod set.</returns>
         public PutObjectRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
         {
             this.ServerSideEncryptionMethod = encryption;
@@ -667,7 +707,6 @@ namespace Amazon.S3.Model
 
         #region Website Redirect Location
         /// <summary>
-        /// Gets and sets the WebsiteRedirectLocation property.
         /// If this is set then when a GET request is made from the S3 website endpoint a 301 HTTP status code
         /// will be returned indicating a redirect with this value as the redirect location.
         /// </summary>
@@ -678,11 +717,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the WebsiteRedirectLocation property for this request.
         /// If this is set then when a GET request is made from the S3 website endpoint a 301 HTTP status code
         /// will be returned indicating a redirect with this value as the redirect location.
         /// </summary>
-        /// <param name="websiteRedirectLocation">The value that WebsiteRedirectLocation is set to</param>
+        /// <param name="websiteRedirectLocation">The redirect location to be returned on a GET request to this object</param>
         /// <returns>the request with the WebsiteRedirectLocation set</returns>
         public PutObjectRequest WithWebsiteRedirectLocation(string websiteRedirectLocation)
         {
@@ -732,9 +770,9 @@ namespace Amazon.S3.Model
 
         #region AutoCloseStream
         /// <summary>
-        /// Gets and sets the AutoCloseStream property. If this value is set to true
-        /// then the stream used with this request will be closed when all the content 
-        /// is read from the stream.  The property is defaulted to true.
+        /// If this value is set to true then the stream used with this request will be closed when all the content 
+        /// is read from the stream.  
+        /// Default: true.
         /// </summary>
         public bool AutoCloseStream
         {
@@ -743,9 +781,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the AutoCloseStream property for this request. If this value is set to true
-        /// then the stream used with this request will be closed when all the content 
-        /// is read from the stream.  The property is defaulted to true.
+        /// If this value is set to true then the stream used with this request will be closed when all the content 
+        /// is read from the stream.  
+        /// Default: true.
         /// </summary>
         /// <param name="autoCloseStream">the value the AutoCloseStream to be set to</param>
         /// <returns>The request with the AutoCloseStream set</returns>

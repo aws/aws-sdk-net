@@ -21,17 +21,12 @@
  */
 
 using System;
-using System.Security;
-using System.Text;
 using System.Xml.Serialization;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
 
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Tag consisting of a Key and Value
+    /// A tag, consisting of a Key and Value
     /// </summary>
     public class Tag
     {
@@ -45,7 +40,7 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key identifying the tag.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
@@ -55,9 +50,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property.
+        /// Sets the key identifying the tag.
         /// </summary>
-        /// <param name="key">Key property</param>
+        /// <param name="key">Tag key</param>
         /// <returns>this instance</returns>
         public Tag WithKey(string key)
         {
@@ -66,7 +61,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if Key property is set.
+        /// Checks if the Key property is set.
         /// </summary>
         /// <returns>true if Key property is set.</returns>
         internal bool IsSetKey()
@@ -76,7 +71,7 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// Gets and sets the Value property.
+        /// The value of the tag.
         /// </summary>
         [XmlElementAttribute(ElementName = "Value")]
         public string Value
@@ -86,9 +81,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Value property.
+        /// Sets the value of the tag.
         /// </summary>
-        /// <param name="value">Value property</param>
+        /// <param name="value">Tag value</param>
         /// <returns>this instance</returns>
         public Tag WithValue(string value)
         {
@@ -97,7 +92,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Checks if Value property is set.
+        /// Checks if the Value property is set.
         /// </summary>
         /// <returns>true if Value property is set.</returns>
         internal bool IsSetValue()

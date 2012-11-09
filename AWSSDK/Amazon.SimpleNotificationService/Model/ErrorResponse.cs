@@ -28,7 +28,7 @@ using System.Text;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Returns any errors in the request.
+    /// Errors in the request.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
     public class ErrorResponse
@@ -37,8 +37,7 @@ namespace Amazon.SimpleNotificationService.Model
         private string requestIdField;
 
         /// <summary>
-        /// Gets and sets the Error property.
-        /// Error associated with the request.
+        /// Errors associated with the request.
         /// </summary>
         [XmlElementAttribute(ElementName = "Error")]
         public List<Error> Error
@@ -64,8 +63,8 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the RequestId property.
-        /// The ID associated with the request. Be sure to reference this ID when contacting AWS support.
+        /// The ID associated with the request.
+        /// Be sure to reference this ID when contacting AWS support.
         /// </summary>
         [XmlElementAttribute(ElementName = "RequestId")]
         public string RequestId

@@ -77,7 +77,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The average upload bandwidth rate limit in bits per second. Constraint: Minimum value of 51200.
+        /// The average upload bandwidth rate limit in bits per second.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -114,7 +114,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The average download bandwidth rate limit in bits per second. Constraint: Minimum value of 102400.
+        /// The average download bandwidth rate limit in bits per second.
         ///  
         /// <para>
         /// <b>Constraints:</b>

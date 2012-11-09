@@ -29,7 +29,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Queries the cross origin resource sharing (CORS) configuration for a bucket.
+    /// The parameters to request the cross origin resource sharing (CORS) configuration for a bucket.
     /// </summary>
     public class GetCORSConfigurationRequest : S3Request
     {

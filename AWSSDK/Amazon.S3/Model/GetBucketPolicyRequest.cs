@@ -29,7 +29,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Queries the policy set on a bucket.
+    /// The parameters to request the policy set on a bucket.
     /// </summary>
     public class GetBucketPolicyRequest : S3Request
     {

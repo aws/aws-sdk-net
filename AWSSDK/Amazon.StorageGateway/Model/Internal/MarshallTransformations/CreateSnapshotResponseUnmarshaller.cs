@@ -31,6 +31,7 @@
           CreateSnapshotResponse response = new CreateSnapshotResponse();
           
           context.Read();
+      
           response.CreateSnapshotResult = CreateSnapshotResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

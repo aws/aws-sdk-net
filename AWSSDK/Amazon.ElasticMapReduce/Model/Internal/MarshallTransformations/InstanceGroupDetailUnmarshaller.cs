@@ -22,13 +22,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
      /// <summary>
      ///   InstanceGroupDetail Unmarshaller
      /// </summary>
-    internal class InstanceGroupDetailUnmarshaller : IUnmarshaller<InstanceGroupDetail, XmlUnmarshallerContext> 
+    internal class InstanceGroupDetailUnmarshaller : IUnmarshaller<InstanceGroupDetail, XmlUnmarshallerContext>, IUnmarshaller<InstanceGroupDetail, JsonUnmarshallerContext> 
     {
         public InstanceGroupDetail Unmarshall(XmlUnmarshallerContext context) 
         {
             InstanceGroupDetail instanceGroupDetail = new InstanceGroupDetail();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -130,6 +131,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
 
             return instanceGroupDetail;
+        }
+
+        public InstanceGroupDetail Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static InstanceGroupDetailUnmarshaller instance;

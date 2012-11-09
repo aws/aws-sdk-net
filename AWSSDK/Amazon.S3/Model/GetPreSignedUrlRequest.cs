@@ -26,12 +26,13 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The GetPreSignedUrlRequest contains the parameters used to create
-    /// a pre signed URL. For more information, refer: 
-    /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/S3_QSAuth.html"/>
+    /// The parameters to create a pre-signed URL to a bucket or object. 
+    /// </summary>
+    /// <remarks>
+    /// For more information, refer to: <see href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/S3_QSAuth.html"/>.
     /// <br />Required Parameters: BucketName, Expires
     /// <br />Optional Parameters: Key, VersionId, Verb: default is GET
-    /// </summary>
+    /// </remarks>
     public class GetPreSignedUrlRequest : S3Request
     {
         #region Private Members
@@ -51,7 +52,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to create a pre-signed url to, or containing the object.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -61,11 +62,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket that contains the S3 Object
-        /// you want to create a pre signed URL for.
+        /// Sets the name of the bucket for which a pre-signed url is requested, or containing the object
+        /// with key Key.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
         public GetPreSignedUrlRequest WithBucketName(string bucketName)
         {
@@ -87,7 +87,7 @@ namespace Amazon.S3.Model
         #region Key
 
         /// <summary>
-        /// Gets and sets the Key property.
+        /// The key to the object for which a pre-signed url should be created.
         /// </summary>
         [XmlElementAttribute(ElementName = "Key")]
         public string Key
@@ -97,11 +97,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Key property for this request.
-        /// This is the Key for the S3 Object you want to create a 
-        /// pre signed URL for.
+        /// Sets the key to the object for which a pre-signed url should be created.
         /// </summary>
-        /// <param name="key">The value that Key is set to</param>
+        /// <param name="key">The object key</param>
         /// <returns>this instance</returns>
         public GetPreSignedUrlRequest WithKey(string key)
         {
@@ -122,8 +120,12 @@ namespace Amazon.S3.Model
 
         #region ContentType
         /// <summary>
-        /// Gets and sets the ContentType property.
+        /// A standard MIME type describing the format of the object data.
         /// </summary>
+        /// <remarks>
+        /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "ContentType")]
         public string ContentType
         {
@@ -132,11 +134,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ContentType property for this request.
-        /// This property defaults to "binary/octet-stream",
-        /// but if you require something else you can set this property.
+        /// A standard MIME type describing the format of the object data.
         /// </summary>
-        /// <param name="contentType">the value the ContentType to be set to</param>
+        /// <remarks>
+        /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
+        /// </remarks>
+        /// <param name="contentType">The content type required</param>
         /// <returns>The request with the ContentType set</returns>
         public GetPreSignedUrlRequest WithContentType(string contentType)
         {
@@ -157,7 +161,7 @@ namespace Amazon.S3.Model
 
         #region Expires
         /// <summary>
-        /// Gets and sets the Expires property.
+        /// The expiry date and time for the pre-signed url.
         /// </summary>
         [XmlElementAttribute(ElementName = "Expires")]
         public DateTime Expires
@@ -167,11 +171,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Expires property for this request.
-        /// The time when the signature expires, specified as a DateTime 
-        /// Object. 
+        /// Sets the expiry date and time for the pre-signed url.
         /// </summary>
-        /// <param name="expires">The value that Expires is set to</param>
+        /// <param name="expires">Expiry date</param>
         /// <returns>this instance</returns>
         public GetPreSignedUrlRequest WithExpires(DateTime expires)
         {
@@ -193,8 +195,11 @@ namespace Amazon.S3.Model
         #region Protocol
 
         /// <summary>
-        /// Gets and sets the Protocol property.
+        /// The requested protocol (http/https) for the pre-signed url.
         /// </summary>
+        /// <remarks>
+        /// Defaults to https.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Protocol")]
         public Protocol Protocol
         {
@@ -203,12 +208,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Protocol property for this request.
-        /// Specifies whether the pre signed URL will use 
-        /// http or https. Defaults to https unless otherwise 
-        /// set.
+        /// Sets the requested protocol (http/https) for the pre-signed url.
         /// </summary>
-        /// <param name="protocol">The value that Protocol is set to</param>
+        /// <remarks>
+        /// Defaults to https.
+        /// </remarks>
+        /// <param name="protocol">Protocol type for the url</param>
         /// <returns>the response with the Protocol set</returns>
         public GetPreSignedUrlRequest WithProtocol(Protocol protocol)
         {
@@ -220,11 +225,12 @@ namespace Amazon.S3.Model
 
         #region Verb
         /// <summary>
-        /// Gets and sets the Verb property.
-        /// Specifies the verb used in the pre-signed URL.
+        /// The verb for the pre-signed url. 
+        /// </summary>
+        /// <remarks>
         /// Accepted verbs are GET, PUT and HEAD.
         /// Default is GET.
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "Verb")]
         public HttpVerb Verb
         {
@@ -233,12 +239,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Verb property for this request.
-        /// Specifies which verb to use in the pre-signed URL.
-        /// Accepted verbs are GET, PUT and HEAD.
-        /// Default value is GET.
+        /// Sets the verb for the pre-signed url. 
         /// </summary>
-        /// <param name="verb">The value that Verb is set to</param>
+        /// <remarks>
+        /// Accepted verbs are GET, PUT and HEAD.
+        /// Default is GET.
+        /// </remarks>
+        /// <param name="verb">Requested verb</param>
         /// <returns>the response with the Verb set</returns>
         public GetPreSignedUrlRequest WithVerb(HttpVerb verb)
         {
@@ -250,12 +257,15 @@ namespace Amazon.S3.Model
         #region VersionId
 
         /// <summary>
-        /// Gets and sets the VersionId property.
+        /// Version id for the object that the pre-signed url will reference. If not set,
+        /// the url will reference the latest version of the object.
+        /// </summary>
+        /// <remarks>
         /// This is the VersionId for the S3 Object you want to get
         /// a PreSigned URL for. The VersionId property will be ignored
         /// for PreSigned "PUT" requests and for requests that don't specify
         /// the Key property.
-        /// </summary>
+        /// </remarks>
         [XmlElementAttribute(ElementName = "VersionId")]
         public string VersionId
         {
@@ -264,13 +274,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the VersionId property for this request.
+        /// Sets the version id for the object that the pre-signed url will reference. If not set,
+        /// the url will reference the latest version of the object.
+        /// </summary>
+        /// <remarks>
         /// This is the VersionId for the S3 Object you want to get
         /// a PreSigned URL for. The VersionId property will be ignored
         /// for PreSigned "PUT" requests and for requests that don't specify
         /// the Key property.
-        /// </summary>
-        /// <param name="versionId">The value that VersionId is set to</param>
+        /// </remarks>
+        /// <param name="versionId">The object version id</param>
         /// <returns>this instance</returns>
         public GetPreSignedUrlRequest WithVersionId(string versionId)
         {
@@ -292,16 +305,17 @@ namespace Amazon.S3.Model
         #region ServerSideEncryption
 
         /// <summary>
-        /// Gets and sets the ServerSideEncryptionMethod property.
-        /// Specifies the encryption used on the server to
-        /// store the content.
-        /// Default is None.
-        /// 
-        /// Note: if specifying encryption (not None), the
-        /// corresponding request must include header
-        /// "x-amz-server-side-encryption" with the value of
-        /// the encryption.
+        /// Specifies the encryption used on the server to store the content.
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// Default is None.
+        /// </para>
+        /// <para>
+        /// If specifying encryption (not None), the corresponding request must include header
+        /// "x-amz-server-side-encryption" with the value of the encryption.
+        /// </para>
+        /// </remarks>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
             get { return this.encryption; }
@@ -309,21 +323,19 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ServerSideEncryptionMethod property for this request.
-        /// Specifies the encryption used on the server to
-        /// store the content.
-        /// 
-        /// Note: if specifying encryption (not None), the
-        /// corresponding request must include header
-        /// "x-amz-server-side-encryption" with the value of
-        /// the encryption.
+        /// Specifies the encryption used on the server to store the content.
         /// </summary>
-        /// <param name="encryption">
-        /// The value of the ServerSideEncryptionMethod to set.
-        /// </param>
-        /// <returns>
-        /// The response with the ServerSideEncryptionMethod set.
-        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// Default is None.
+        /// </para>
+        /// <para>
+        /// If specifying encryption (not None), the corresponding request must include header
+        /// "x-amz-server-side-encryption" with the value of the encryption.
+        /// </para>
+        /// </remarks>
+        /// <param name="encryption">The value of the ServerSideEncryptionMethod to set.</param>
+        /// <returns>The response with the ServerSideEncryptionMethod set.</returns>
         public GetPreSignedUrlRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
         {
             this.ServerSideEncryptionMethod = encryption;
@@ -334,9 +346,8 @@ namespace Amazon.S3.Model
 
         #region Response Headers
 
-
         /// <summary>
-        /// Gets and sets the response headers to be returned back with the response of the object.
+        /// A set of response headers that should be returned with the pre-signed url creation response.
         /// </summary>
         public ResponseHeaderOverrides ResponseHeaderOverrides
         {
@@ -355,9 +366,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the ResponseHeaderOverrides property and returns back this instance for method chaining.
+        /// A set of response headers that should be returned with the pre-signed url creation response.
         /// </summary>
-        /// <param name="responseHeaderOverrides">The response headers</param>
+        /// <param name="responseHeaderOverrides">Requested response headers</param>
         /// <returns>this instance</returns>
         public GetPreSignedUrlRequest WithResponseHeaderOverrides(ResponseHeaderOverrides responseHeaderOverrides)
         {

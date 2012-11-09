@@ -236,6 +236,10 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     supportedProductsListIndex++;
                 }
             }
+            if (runJobFlowRequest != null && runJobFlowRequest.IsSetVisibleToAllUsers())
+            {
+                request.Parameters.Add("VisibleToAllUsers", StringUtils.FromBool(runJobFlowRequest.VisibleToAllUsers));
+            }
 
             return request;
         }

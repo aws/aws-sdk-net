@@ -75,7 +75,8 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The maintenance start time hour of day. Length: 2 <i>Valid Values</i>: An integer between 0 and 23 representing the hour of day.
+        /// The hour component of the maintenance start time represented as <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The hour of
+        /// the day is in the time zone of the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -112,7 +113,8 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The maintenance start time minute of hour.. Length: 2 <i>Valid Values</i>: An integer between 0 and 59 representing the minute of hour.
+        /// The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
+        /// hour is in the time zone of the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -149,8 +151,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The maintenance start time day of the week. Length: 1 Valid Values An integer between 0 and 6, where 0 represents Sunday and 6 represents
-        /// Saturday.
+        /// The maintenance start time day of the week.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -26,7 +26,8 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the UpdateChapCredentials operation.
     /// <para>This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a
-    /// gateway does not have CHAP enabled; however, for added security, you might use it.</para>
+    /// gateway does not have CHAP enabled; however, for added security, you might use it.</para> <para><b>IMPORTANT:</b> When you update CHAP
+    /// credentials, all existing connections on the target are closed and initiators must reconnect with the new credentials. </para>
     /// </summary>
     /// <seealso cref="Amazon.StorageGateway.AmazonStorageGateway.UpdateChapCredentials"/>
     public class UpdateChapCredentialsRequest : AmazonWebServiceRequest
@@ -75,8 +76,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The secret key that the initiator (e.g. Windows client) must provide to participate in mutual CHAP with the target. Length: Minimum length
-        /// of 12. Maximum length of 16.
+        /// The secret key that the initiator (e.g. Windows client) must provide to participate in mutual CHAP with the target.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -113,8 +113,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The iSCSI initiator that connects to the target. Length: Minimum length of 1. Maximum length of 255. <i>Valid Values</i>: The initiator name
-        /// can contain lowercase letters, numbers, periods (.), and hyphens (-).
+        /// The iSCSI initiator that connects to the target.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -155,8 +154,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client). Length: Minimum length
-        /// of 12. Maximum length of 16.
+        /// The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).
         ///  
         /// <para>
         /// <b>Constraints:</b>

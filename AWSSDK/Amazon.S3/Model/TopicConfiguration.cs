@@ -20,10 +20,6 @@
  *
  */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -36,7 +32,7 @@ namespace Amazon.S3.Model
         private string topic;
 
         /// <summary>
-        /// Gets and sets the Event property.
+        /// The event for which notifications should be sent.
         /// </summary>
         public string Event
         {
@@ -51,7 +47,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Event property.
+        /// Sets the event for which notifications should be sent.
         /// </summary>
         /// <param name="evnt">Event property</param>
         /// <returns>this instance</returns>
@@ -62,7 +58,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Topic property.
+        /// The topic for the notification.
         /// </summary>
         public string Topic
         {
@@ -77,7 +73,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Topic property.
+        /// Sets the topic for the notification.
         /// </summary>
         /// <param name="topic">Topic property</param>
         /// <returns>this instance</returns>

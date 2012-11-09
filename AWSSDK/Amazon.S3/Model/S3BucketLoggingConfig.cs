@@ -24,17 +24,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-using Amazon.S3.Util;
-
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// BucketLoggingConfig represents a configuration for the S3 bucket
-    /// logging operatons. This includes a target bucket name which is where
+    /// A configuration for S3 bucket logging operatons. 
+    /// </summary>
+    /// <remarks>
+    /// This includes a target bucket name which is where
     /// the logs will be stored, a target prefix which is the prefix assigned
     /// to all log files, and a List of grants which will set the AccessControl
     /// for the logs.
-    /// </summary>
+    /// </remarks>
     public class S3BucketLoggingConfig
     {
         #region Private Members        
@@ -142,7 +142,7 @@ namespace Amazon.S3.Model
         #region Grants
 
         /// <summary>
-        /// Gets and sets the Grants property.
+        /// A collection of grants.
         /// </summary>
         [XmlElementAttribute(ElementName = "Grants")]
         public List<S3Grant> Grants
@@ -159,7 +159,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Grants property.
+        /// Sets the collection of grants.
         /// </summary>
         /// <param name="args">Grants property</param>
         /// <returns>this instance</returns>
@@ -186,7 +186,7 @@ namespace Amazon.S3.Model
         #region TargetBucketName
 
         /// <summary>
-        /// Gets and sets the TargetBucketName property.
+        /// The name of the bucket to which the logging applies.
         /// </summary>
         [XmlElementAttribute(ElementName = "TargetBucketName")]
         public string TargetBucketName
@@ -196,9 +196,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the TargetBucketName property.
+        /// Sets the name of the bucket to which the logging applies.
         /// </summary>
-        /// <param name="targetBucketName">TargetBucketName property</param>
+        /// <param name="targetBucketName">Target bucket name</param>
         /// <returns>this instance</returns>
         public S3BucketLoggingConfig WithTargetBucketName(string targetBucketName)
         {
@@ -220,8 +220,8 @@ namespace Amazon.S3.Model
         #region TargetPrefix
 
         /// <summary>
-        /// Gets and sets the TargetPrefix property.
-        /// The default value for the TargetPrefix is the empty string
+        /// The prefix for the keys that the log files are being stored under.
+        /// Default: empty string.
         /// </summary>
         [XmlElementAttribute(ElementName = "TargetPrefix")]
         public string TargetPrefix
@@ -231,11 +231,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the TargetPrefix property.
-        /// If no value is set for the property, the default value 
-        /// for the TargetPrefix is the empty string
+        /// The prefix for the keys that the log files are being stored under.
+        /// Default: empty string.
         /// </summary>
-        /// <param name="targetPrefix">TargetPrefix property</param>
+        /// <param name="targetPrefix">Target prefix</param>
         /// <returns>this instance</returns>
         public S3BucketLoggingConfig WithTargetPrefix(string targetPrefix)
         {

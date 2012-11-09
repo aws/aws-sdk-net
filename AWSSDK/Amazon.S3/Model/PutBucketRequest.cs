@@ -25,10 +25,7 @@ using System.Xml.Serialization;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The PutBucketRequest contains the parameters used for the PutBucket operation.
-    /// The BucketRegion parameter is used if you wish to specify the bucket locality.
-    /// <br />Required Parameters: BucketName
-    /// <br />Optional Parameters: BucketRegion, Default - S3Region.US
+    /// The parameters to request creation of a new bucket.
     /// </summary>
     public class PutBucketRequest : S3PutWithACLRequest
     {
@@ -45,7 +42,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket to be created.
         /// </summary>
         [XmlElementAttribute(ElementName = "BucketName")]
         public string BucketName
@@ -55,10 +52,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
-        /// This is the S3 Bucket that will be created by this request.
+        /// Sets the name of the bucket to be created.
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public PutBucketRequest WithBucketName(string bucketName)
         {
@@ -80,12 +76,14 @@ namespace Amazon.S3.Model
         #region BucketRegion
 
         /// <summary>
-        /// Gets and sets the BucketRegion property.
-        /// Refer <see cref="T:Amazon.S3.Model.S3Region"/>
-        /// for a list of possible values.
+        /// The region locality for the bucket.
         /// Default: S3Region.US
-        /// <see cref="T:Amazon.S3.Model.S3Region" />
         /// </summary>
+        /// <remarks>
+        /// When set, this will determine where your data will
+        /// reside in S3. Refer <see cref="T:Amazon.S3.Model.S3Region"/>
+        /// for a list of possible values.
+        /// </remarks>
         [XmlElementAttribute(ElementName = "BucketRegion")]
         public S3Region BucketRegion
         {
@@ -102,11 +100,14 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Sets the BucketRegion property for this request.
+        /// Default: S3Region.US
+        /// </summary>
+        /// <remarks>
         /// When set, this will determine where your data will
         /// reside in S3. Refer <see cref="T:Amazon.S3.Model.S3Region"/>
         /// for a list of possible values.
-        /// </summary>
-        /// <param name="bucketRegion">The value that BucketRegion is set to</param>
+        /// </remarks>
+        /// <param name="bucketRegion">The region locality to use for the new bucket</param>
         /// <returns>the request with the BucketRegion set</returns>
         public PutBucketRequest WithBucketRegion(S3Region bucketRegion)
         {
@@ -115,9 +116,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Alternative to setting bucket region by using the region's name.
-        /// When set, this will determine where your data will
-        /// reside in S3.
+        /// The bucket region locality expressed using the name of the region.
+        /// When set, this will determine where your data will reside in S3.
         /// Valid values: us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
         /// </summary>
         public string BucketRegionName
@@ -130,12 +130,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Alternative to setting bucket region by using the region's name.
-        /// When set, this will determine where your data will
-        /// reside in S3.
+        /// Sets the bucket region locality using the name of the region.
+        /// When set, this will determine where your data will reside in S3.
         /// Valid values: us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
         /// </summary>
-        /// <param name="bucketRegionName">The value that BucketRegionName is set to</param>
+        /// <param name="bucketRegionName">The name of the region to contain the bucket</param>
         /// <returns>the request with the BucketRegionName set</returns>
         public PutBucketRequest WithBucketRegionName(string bucketRegionName)
         {
@@ -144,8 +143,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets UseClientRegion property.
-        /// If set to true the bucket will be created in the region the AmazonS3 client is configured.  This is default to false.
+        /// If set to true the bucket will be created in the same region as the configuration of the AmazonS3 client.
+        /// Default: false.
         /// </summary>
         public bool UseClientRegion
         {
@@ -156,6 +155,9 @@ namespace Amazon.S3.Model
             }
         }
 
+        /// <summary>
+        /// If set to true the bucket will be created in the same region as the configuration of the AmazonS3 client.
+        /// </summary>
         public PutBucketRequest WithUseClientRegion(bool useClientRegion)
         {
             this.useClientRegion = useClientRegion;
@@ -167,13 +169,13 @@ namespace Amazon.S3.Model
         #region Grants
 
         /// <summary>
-        /// Adds Custom Access Control Lists to this request.
+        /// Adds Custom Access Control Lists to the new bucket.
         /// Please refer to <see cref="T:Amazon.S3.Model.S3Grant"/> for information on
         /// S3 Grants.
+        /// <remarks>You can use either a canned ACL or specify access permissions explicitly. You cannot do both.</remarks>
         /// </summary>
         /// <param name="grants">One or more S3 Grants.</param>
         /// <returns>The request with the Grants set.</returns>
-        /// <remarks>You can use either a canned ACL or specify access permissions explicitly. You cannot do both.</remarks>
         public PutBucketRequest WithGrants(params S3Grant[] grants)
         {
             this.Grants.AddRange(grants);
@@ -185,8 +187,9 @@ namespace Amazon.S3.Model
         #region CannedACL
 
         /// <summary>
-        /// Gets and sets the CannedACL property.
+        /// Applies a canned access control list (ACL) to the new bucket.
         /// </summary>
+        /// <remarks>You can use either a canned ACL or specify access permissions explicitly. You cannot do both.</remarks>
         public S3CannedACL CannedACL
         {
             get { return this.cannedACL; }
@@ -194,11 +197,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds a canned ACL to this request.
+        /// Applies a canned access control list (ACL) to the new bucket.
         /// </summary>
+        /// <remarks>You can use either a canned ACL or specify access permissions explicitly. You cannot do both.</remarks>
         /// <param name="acl">The canned ACL to apply; you can specify only one canned ACL in your request</param>
         /// <returns>The request with the Grants set.</returns>
-        /// <remarks>You can use either a canned ACL or specify access permissions explicitly. You cannot do both.</remarks>
         public PutBucketRequest WithCannedACL(S3CannedACL acl)
         {
             this.cannedACL = acl;
@@ -215,7 +218,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Resets the S3CannedACL
+        /// Resets the S3CannedACL previously set in this object.
         /// </summary>
         public void RemoveCannedACL()
         {

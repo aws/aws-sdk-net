@@ -31,7 +31,7 @@ using System.Xml;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Removes a tag set from the specified bucket.
+    /// The parameters to request deletion of a tag set from a bucket.
     /// </summary>
     /// <remarks>
     /// To use this operation, you must have permission to perform the s3:PutBucketTagging action. 

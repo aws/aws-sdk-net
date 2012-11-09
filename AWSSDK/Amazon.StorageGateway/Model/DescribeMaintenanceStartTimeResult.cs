@@ -79,7 +79,8 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// A number between 0 and 23 that represents the hour of day. The hour of day is in the time zone of the gateway.
+        /// The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in
+        /// the time zone of the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -116,7 +117,8 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// A number between 0 and 59 that represents the minute of hour. The minute of hour is in the time zone of the gateway.
+        /// The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour
+        /// is in the time zone of the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>

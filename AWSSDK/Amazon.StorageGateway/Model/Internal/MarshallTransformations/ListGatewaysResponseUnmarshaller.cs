@@ -31,6 +31,7 @@
           ListGatewaysResponse response = new ListGatewaysResponse();
           
           context.Read();
+      
           response.ListGatewaysResult = ListGatewaysResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   

@@ -115,8 +115,7 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Specifies that the list of volumes returned be limited to the specified number of items. Constraint: Minimum value of 1. Maximum value of
-        /// 100.
+        /// Specifies that the list of volumes returned be limited to the specified number of items.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -23,14 +23,14 @@
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// LifecycleRuleExpiration defines the length of time before objects expire
+    /// Defines the length of time before objects expire
     /// </summary>
     public class LifecycleRuleExpiration
     {
         private int days;
 
         /// <summary>
-        /// Gets and sets the number of days before expiry
+        /// The number of days before expiry.
         /// </summary>
         public int Days
         {

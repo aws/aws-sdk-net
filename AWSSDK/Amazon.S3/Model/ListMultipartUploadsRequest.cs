@@ -26,8 +26,9 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The ListMultipartUploadsRequest contains the parameters used for the ListMultipartUploads method.
-    /// <br />Required Parameters: BucketName
+    /// The parameters to request a list of in-progress multipart uploads. An in-progress multipart upload 
+    /// is a multipart upload that has been initiated, using the Initiate Multipart Upload request, but has 
+    /// not yet been completed or aborted. 
     /// </summary>
     public class ListMultipartUploadsRequest : S3Request
     {
@@ -41,7 +42,7 @@ namespace Amazon.S3.Model
         #region BucketName
 
         /// <summary>
-        /// Gets and sets the BucketName property.
+        /// The name of the bucket receiving the multipart upload(s)
         /// </summary>
         public string BucketName
         {
@@ -50,9 +51,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the BucketName property for this request.
+        /// Sets the name of the bucket receiving the multipart upload(s)
         /// </summary>
-        /// <param name="bucketName">The value that BucketName is set to</param>
+        /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
         public ListMultipartUploadsRequest WithBucketName(string bucketName)
         {
@@ -74,11 +75,8 @@ namespace Amazon.S3.Model
         #region MaxUploads
 
         /// <summary>
-        /// Gets and sets the MaxUploads property.
-        /// <para>
-        /// Sets the maximum number of multipart uploads to return in the response 
-        /// body
-        /// </para>
+        /// The maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 
+        /// 1,000 is the maximum number of uploads that can be returned in a response.
         /// </summary>
         public int MaxUploads
         {
@@ -87,9 +85,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the MaxUploads property for this request.
+        /// Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 
+        /// 1,000 is the maximum number of uploads that can be returned in a response.
         /// </summary>
-        /// <param name="maxUploads">The value that MaxUploads is set to</param>
+        /// <param name="maxUploads">Maximum uploads to return</param>
         /// <returns>the request with the MaxUploads set</returns>
         public ListMultipartUploadsRequest WithMaxUploads(int maxUploads)
         {
@@ -111,11 +110,9 @@ namespace Amazon.S3.Model
         #region KeyMarker
 
         /// <summary>
-        /// Gets and sets the KeyMarker property.
-        /// <para>
-        /// Together with UploadIdMarker, specifies the multipart upload after
-        /// which listing should begin.
-        /// </para>
+        /// Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.
+        /// </summary>
+        /// <remarks>
         /// <para>
         /// If UploadIdMarker is not specified, only the keys lexicographically
         /// greater than the specified key-marker will be included in the list.
@@ -126,7 +123,7 @@ namespace Amazon.S3.Model
         /// uploads have upload IDs lexicographically greater than the specified
         /// UploadIdMarker.
         /// </para>
-        /// </summary>
+        /// </remarks>
         public string KeyMarker
         {
             get { return this.keyMarker; }
@@ -134,9 +131,21 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the KeyMarker property for this request.
+        /// Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.
         /// </summary>
-        /// <param name="keyMarker">The value that KeyMarker is set to</param>
+        /// <remarks>
+        /// <para>
+        /// If UploadIdMarker is not specified, only the keys lexicographically
+        /// greater than the specified key-marker will be included in the list.
+        /// </para>
+        /// <para>
+        /// If UploadIdMarker is specified, any multipart uploads for a key
+        /// equal to the key-marker may also be included, provided those multipart
+        /// uploads have upload IDs lexicographically greater than the specified
+        /// UploadIdMarker.
+        /// </para>
+        /// </remarks>
+        /// <param name="keyMarker">The key marker</param>
         /// <returns>the request with the KeyMarker set</returns>
         public ListMultipartUploadsRequest WithKeyMarker(string keyMarker)
         {
@@ -158,15 +167,13 @@ namespace Amazon.S3.Model
         #region UploadIdMarker
 
         /// <summary>
-        /// Gets and sets the UploadIdMarker property.
-        /// <para>
-        /// Together with KeyMarker, specifies the multipart upload after which
-        /// listing should begin. If KeyMarker is not specified, the
-        /// UploadIdMarker parameter is ignored. Otherwise, any multipart
-        /// uploads for a key equal to the KeyMarker may be included in the list
-        /// only if they have an upload ID lexicographically greater than the specified
-        /// </para>
+        /// Together with key-marker, specifies the multipart upload after which listing should begin. 
         /// </summary>
+        /// <remarks>
+        /// If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any 
+        /// multipart uploads for a key equal to the key-marker might be included in the list only if 
+        /// they have an upload ID lexicographically greater than the specified upload-id-marker. 
+        /// </remarks>
         public string UploadIdMarker
         {
             get { return this.uploadIdMarker; }
@@ -174,9 +181,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the UploadIdMarker property for this request.
+        /// Together with key-marker, specifies the multipart upload after which listing should begin. 
         /// </summary>
-        /// <param name="uploadIdMarker">The value that UploadIdMarker is set to</param>
+        /// <remarks>
+        /// If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any 
+        /// multipart uploads for a key equal to the key-marker might be included in the list only if 
+        /// they have an upload ID lexicographically greater than the specified upload-id-marker. 
+        /// </remarks>
+        /// <param name="uploadIdMarker">The upload id marker value</param>
         /// <returns>the request with the UploadIdMarker set</returns>
         public ListMultipartUploadsRequest WithUploadIdMarker(string uploadIdMarker)
         {
@@ -198,8 +210,10 @@ namespace Amazon.S3.Model
         #region Prefix
 
         /// <summary>
-        /// Gets and sets the Prefix property.
-        /// All keys matched will have this prefix.
+        /// Lists in-progress uploads only for those keys that begin with the specified prefix. 
+        /// You can use prefixes to separate a bucket into different grouping of keys. (You 
+        /// can think of using prefix to make groups in the same way you'd use a folder in a 
+        /// file system.) 
         /// </summary>
         public string Prefix
         {
@@ -208,10 +222,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Prefix property for this request.
-        /// All keys matched will have this prefix.
+        /// Lists in-progress uploads only for those keys that begin with the specified prefix. 
+        /// You can use prefixes to separate a bucket into different grouping of keys. (You 
+        /// can think of using prefix to make groups in the same way you'd use a folder in a 
+        /// file system.) 
         /// </summary>
-        /// <param name="prefix">The value that Prefix is set to</param>
+        /// <param name="prefix">The prefix value</param>
         /// <returns>this instance</returns>
         public ListMultipartUploadsRequest WithPrefix(string prefix)
         {
@@ -233,13 +249,16 @@ namespace Amazon.S3.Model
         #region Delimiter
 
         /// <summary>
-        /// Gets and sets the Delimiter property.
-        /// Causes keys that contain the same string between the prefix and the 
-        /// first occurrence of the delimiter to be rolled up into a single result 
-        /// element in the CommonPrefixes collection.
+        /// Character you use to group keys. 
         /// </summary>
         /// <remarks>
-        /// These rolled-up keys are not returned elsewhere in the response.
+        /// All keys that contain the same string between the prefix, 
+        /// if specified, and the first occurrence of the delimiter 
+        /// after the prefix are grouped under a single result element, 
+        /// CommonPrefixes. If you don't specify the prefix parameter, 
+        /// then the substring starts at the beginning of the key. The 
+        /// keys that are grouped under CommonPrefixes result element 
+        /// are not returned elsewhere in the response.
         /// </remarks>
         public string Delimiter
         {
@@ -248,13 +267,18 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the Delimiter property for this request.
-        /// Causes keys that contain the same string between the prefix and the 
-        /// first occurrence of the delimiter to be rolled up into a single result 
-        /// element in the CommonPrefixes collection. 
-        /// These rolled-up keys are not returned elsewhere in the response.
+        /// Character you use to group keys. 
         /// </summary>
-        /// <param name="delimiter">the value that Delimiter is set to.</param>
+        /// <remarks>
+        /// All keys that contain the same string between the prefix, 
+        /// if specified, and the first occurrence of the delimiter 
+        /// after the prefix are grouped under a single result element, 
+        /// CommonPrefixes. If you don't specify the prefix parameter, 
+        /// then the substring starts at the beginning of the key. The 
+        /// keys that are grouped under CommonPrefixes result element 
+        /// are not returned elsewhere in the response.
+        /// </remarks>
+        /// <param name="delimiter">The delimiter value</param>
         /// <returns>this instance</returns>
         public ListMultipartUploadsRequest WithDelimiter(string delimiter)
         {

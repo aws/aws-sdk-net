@@ -31,9 +31,9 @@ using Amazon.S3.Util;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Represents an S3 Bucket Object Version. An S3 Object version is an S3 object
-    /// that also has a VersionId, whether this is the Latest version of the object 
-    /// and if its a DeleteMarker or not.
+    /// Represents a version of an object in an S3 Bucket. An S3 object version is an S3 object
+    /// that also has a version identifier, an indication of whether this is the latest version of the object 
+    /// and whether it's a DeleteMarker or not.
     /// </summary>
     public class S3ObjectVersion : S3Object
     {
@@ -78,7 +78,7 @@ namespace Amazon.S3.Model
         #region VersionId
 
         /// <summary>
-        /// Gets and sets the VersionId property.
+        /// The identifier of the object version.
         /// </summary>
         [XmlElementAttribute(ElementName = "VersionId")]
         public string VersionId
@@ -92,9 +92,7 @@ namespace Amazon.S3.Model
         #region IsLatest
 
         /// <summary>
-        /// Gets and Sets the IsLatest property. 
-        /// Specifies whether the object is (true) or 
-        /// is not (false) the latest version of an object. 
+        /// If true, the version is the latest version of an object.
         /// </summary>
         [XmlElementAttribute(ElementName = "IsLatest")]
         public bool IsLatest
@@ -108,9 +106,7 @@ namespace Amazon.S3.Model
         #region IsDeleteMarker
 
         /// <summary>
-        /// Gets and Sets the IsDeleteMarker property. 
-        /// Specifies whether the object is (true) or 
-        /// is not (false) the latest version of an object. 
+        /// If true, the object is a delete marker for a deleted object.
         /// </summary>
         [XmlElementAttribute(ElementName = "IsDeleteMarker")]
         public bool IsDeleteMarker

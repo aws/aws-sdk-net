@@ -31,6 +31,7 @@
           CreateStorediSCSIVolumeResponse response = new CreateStorediSCSIVolumeResponse();
           
           context.Read();
+      
           response.CreateStorediSCSIVolumeResult = CreateStorediSCSIVolumeResultUnmarshaller.GetInstance().Unmarshall(context); 
            
           return response; 
@@ -62,7 +63,7 @@
           } 
           return instance;
         } 
-   
+  
       } 
     } 
   
