@@ -81,6 +81,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
+        [ThreadStatic]
         private static HashAlgorithm _hashAlgorithm = null;
         protected static HashAlgorithm CanonicalizationHash
         {
