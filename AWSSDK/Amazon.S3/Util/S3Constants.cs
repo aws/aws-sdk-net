@@ -59,12 +59,14 @@ namespace Amazon.S3.Util
         internal const string AmzServerSideEncryptionHeader = "x-amz-server-side-encryption";
         internal const string AmzExpirationHeader = "x-amz-expiration";
         internal const string AmzWebsiteRedirectLocationHeader = "x-amz-website-redirect-location";
+        internal const string AmzRestoreHeader = "x-amz-restore";
 
         internal const string 
             AmzGrantHeaderRead        = "x-amz-grant-read",
             AmzGrantHeaderWrite       = "x-amz-grant-write",
             AmzGrantHeaderReadAcp     = "x-amz-grant-read-acp",
             AmzGrantHeaderWriteAcp    = "x-amz-grant-write-acp",
+            AmzGrantHeaderRestoreObject = "x-amz-grant-restore-object",
             AmzGrantHeaderFullControl = "x-amz-grant-full-control";
 
         // Accepted HTTP Verbs
@@ -88,6 +90,7 @@ namespace Amazon.S3.Util
                                                 "us-west-1",
                                                 "us-west-2",
                                                 "ap-southeast-1",
+                                                "ap-southeast-2",
                                                 "ap-northeast-1",
                                                 "sa-east-1"};
 
@@ -113,7 +116,7 @@ namespace Amazon.S3.Util
         internal const string VersioningEnabled = "Enabled";
 
         internal static readonly string[] StorageClasses = {"STANDARD",
-                                                "REDUCED_REDUNDANCY"};
+                                                "REDUCED_REDUNDANCY","GLACIER"};
 
         // Error Codes
         internal const string NoSuchBucketPolicy = "NoSuchBucketPolicy";

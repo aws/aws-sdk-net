@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.Glacier.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.Glacier.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
     { 
@@ -123,6 +124,18 @@
               if (context.TestExpression("SHA256TreeHash", targetDepth)) 
               {
                 describeJobResult.SHA256TreeHash = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue; 
+              }
+   
+              if (context.TestExpression("ArchiveSHA256TreeHash", targetDepth)) 
+              {
+                describeJobResult.ArchiveSHA256TreeHash = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue; 
+              }
+   
+              if (context.TestExpression("RetrievalByteRange", targetDepth)) 
+              {
+                describeJobResult.RetrievalByteRange = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue; 
               }
    

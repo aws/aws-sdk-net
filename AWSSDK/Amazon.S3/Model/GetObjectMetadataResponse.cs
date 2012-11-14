@@ -39,6 +39,9 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionMethod serverSideEncryptionMethod;
         private Expiration expiration;
         private string websiteRedirectLocation;
+        
+        private DateTime? restoreExpiration;
+        private bool restoreInProgress;
 
         /// <summary>
         /// Gets and sets the lastModified property.
@@ -122,6 +125,27 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the RestoreExpiration property.
+        /// RestoreExpiration will be set for objects that have been restored from Amazon Glacier.  
+        /// It indiciates for those objects how long the restored object will exist.
+        /// </summary>
+        public DateTime? RestoreExpiration
+        {
+            get { return this.restoreExpiration; }
+            set { this.restoreExpiration = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the RestoreInProgress
+        /// Will be true when the object is in the process of being restored from Amazon Glacier.
+        /// </summary>
+        public bool RestoreInProgress
+        {
+            get { return this.restoreInProgress; }
+            set { this.restoreInProgress = value; }
+        }
+
+        /// <summary>
         /// Gets and sets the Headers property.
         /// </summary>
         public override System.Net.WebHeaderCollection Headers
@@ -173,6 +197,11 @@ namespace Amazon.S3.Model
                 if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzServerSideEncryptionHeader)))
                 {
                     this.ServerSideEncryptionMethod = (ServerSideEncryptionMethod)Enum.Parse(typeof(ServerSideEncryptionMethod), hdr);
+                }
+
+                if (!string.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzRestoreHeader)))
+                {
+                    AmazonS3Util.ParseAmzRestoreHeader(hdr, out this.restoreInProgress, out this.restoreExpiration);
                 }
             }
         }

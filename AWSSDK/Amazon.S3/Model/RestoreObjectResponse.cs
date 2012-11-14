@@ -20,35 +20,16 @@
  *
  */
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Defines the length of time before objects expire
+    /// The RestoreObjectResponse contains any headers returned by S3.
     /// </summary>
-    public class LifecycleRuleExpiration
+    public class RestoreObjectResponse : S3Response
     {
-        private int days;
-        private DateTime date;
-
-        /// <summary>
-        /// The number of days before expiry.
-        /// Required if the Date property is not set.
-        /// </summary>
-        public int Days
-        {
-            get { return this.days; }
-            set { this.days = value; }
-        }
-
-        /// <summary>
-        /// Gets and sets the date till expiry.
-        /// Required if the Days property is not set.
-        /// </summary>
-        public DateTime Date
-        {
-            get { return this.date; }
-            set { this.date = value; }
-    }
     }
 }

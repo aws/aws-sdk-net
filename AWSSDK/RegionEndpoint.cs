@@ -81,6 +81,11 @@ namespace Amazon
         public static readonly RegionEndpoint APSoutheast1 = new RegionEndpoint("ap-southeast-1", "Asia Pacific (Singapore)");
 
         /// <summary>
+        /// The Asia Pacific (Sydney) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSoutheast2 = new RegionEndpoint("ap-southeast-2", "Asia Pacific (Sydney)");
+
+        /// <summary>
         /// The South America (Sao Paulo)endpoint.
         /// </summary>
         public static readonly RegionEndpoint SAEast1 = new RegionEndpoint("sa-east-1", "South America (Sao Paulo)");
@@ -101,6 +106,7 @@ namespace Amazon
             hashBySystemName.Add(EUWest1.SystemName, EUWest1);
             hashBySystemName.Add(APNortheast1.SystemName, APNortheast1);
             hashBySystemName.Add(APSoutheast1.SystemName, APSoutheast1);
+            hashBySystemName.Add(APSoutheast2.SystemName, APSoutheast2);
             hashBySystemName.Add(SAEast1.SystemName, SAEast1);
             hashBySystemName.Add(USGovCloudWest1.SystemName, USGovCloudWest1);
         }

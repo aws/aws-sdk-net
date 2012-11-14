@@ -32,6 +32,7 @@
           <xsl:value-of select="ec2:state"/>
         </xsl:element>
         <xsl:apply-templates select="ec2:fault"/>
+        <xsl:apply-templates select="ec2:status"/>
         <xsl:element name="ValidFrom">
           <xsl:value-of select="ec2:validFrom"/>
         </xsl:element>
@@ -66,6 +67,20 @@
     <xsl:element name="Fault">
       <xsl:element name="Code">
         <xsl:value-of select="ec2:code" />
+      </xsl:element>
+      <xsl:element name="Message">
+        <xsl:value-of select="ec2:message" />
+      </xsl:element>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="ec2:status">
+    <xsl:element name="Status">
+      <xsl:element name="Code">
+        <xsl:value-of select="ec2:code" />
+      </xsl:element>
+      <xsl:element name="UpdateTime">
+        <xsl:value-of select="ec2:updateTime" />
       </xsl:element>
       <xsl:element name="Message">
         <xsl:value-of select="ec2:message" />

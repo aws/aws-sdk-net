@@ -2366,5 +2366,46 @@ namespace Amazon.S3
         DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request);
 
         #endregion
+
+        #region
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreObject operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.RestoreObject"/>
+        /// </summary>
+        /// <param name="request">The RestoreObjectRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndRestoreObject.</returns>
+        IAsyncResult BeginRestoreObject(RestoreObjectRequest request, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RestoreObject operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreObject.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a RestoreObjectResponse from S3.</returns>
+        RestoreObjectResponse EndRestoreObject(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>
+        /// This operation begins a restore object request for an object that has been 
+        /// stored in Amazon Glacier.  The object will stay active in Amazon S3 for the number
+        /// of days set on the RestoreObjectRequest object.
+        /// </para>
+        /// </summary>
+        /// <param name="request">The RestoreObjectRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a RestoreObjectResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        RestoreObjectResponse RestoreObject(RestoreObjectRequest request);
+        #endregion
     }
 }

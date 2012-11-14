@@ -135,6 +135,10 @@ namespace Amazon.S3.Model
         /// </summary>
         APS1,
         /// <summary>
+        /// Specifies that the S3 Bucket should use the AP-SOUTHEAST-2 locality.
+        /// </summary>
+        APS2,
+        /// <summary>
         /// Specifies that the S3 Bucket should use the AP-NORTHEAST-1 locality.
         /// </summary>
         APN1,
@@ -187,7 +191,13 @@ namespace Amazon.S3.Model
         /// Provides READ, WRITE, READ_ACP, and WRITE_ACP permissions.
         /// It does not convey additional rights and is provided only for convenience.
         /// </summary>
-        FULL_CONTROL
+        FULL_CONTROL,
+
+        /// <summary>
+        /// Gives permission to restore an object that is currently stored in Amazon Glacier
+        /// for archival storage.
+        /// </summary>
+        RESTORE_OBJECT
     }
 
     /// <summary>
@@ -270,7 +280,13 @@ namespace Amazon.S3.Model
         /// that doesn’t require the higher level of durability that S3
         /// provides with the STANDARD storage class.
         /// </summary>
-        ReducedRedundancy
+        ReducedRedundancy,
+        /// <summary>
+        /// The GLACIER storage is for object that are stored in Amazon Glacier.
+        /// This storage class is for objects that are for archival purpose and 
+        /// get operations are rare.
+        /// </summary>
+        Glacier
     }
 
     /// <summary>

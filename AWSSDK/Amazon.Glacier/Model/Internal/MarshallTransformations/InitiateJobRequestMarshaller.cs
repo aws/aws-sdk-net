@@ -106,6 +106,11 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("SNSTopic");
                     writer.Write(initiateJobRequest.JobParameters.SNSTopic);
                 }
+                if (initiateJobRequest.JobParameters != null && initiateJobRequest.JobParameters.IsSetRetrievalByteRange()) 
+                {
+                    writer.WritePropertyName("RetrievalByteRange");
+                    writer.Write(initiateJobRequest.JobParameters.RetrievalByteRange);
+                }
 
                 writer.WriteObjectEnd();
                 

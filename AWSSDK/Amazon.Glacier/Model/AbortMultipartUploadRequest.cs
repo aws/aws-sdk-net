@@ -28,7 +28,7 @@ namespace Amazon.Glacier.Model
     /// <para>This operation aborts a multipart upload identified by the upload ID.</para> <para>After the Abort Multipart Upload request succeeds,
     /// you cannot upload any more parts to the multipart upload or complete the multipart upload. Aborting a completed upload fails. However,
     /// aborting an already-aborted upload will succeed, for a short time. For more information about uploading a part and completing a multipart
-    /// upload, see UploadPart and CompleteMultipartUpload.</para> <para>This operation is idempotent.</para> <para>An AWS account has full
+    /// upload, see UploadMultipartPart and CompleteMultipartUpload.</para> <para>This operation is idempotent.</para> <para>An AWS account has full
     /// permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by
     /// default. You must grant them explicit permission to perform specific actions. For more information, see Access Control Using AWS Identity
     /// and Access Management (IAM).</para> <para> For conceptual information and underlying REST API, go to Working with Archives in Amazon Glacier

@@ -33,6 +33,7 @@ namespace Amazon.S3.Model
         private string prefix;
         private LifecycleRuleExpiration expiration;
         private LifecycleRuleStatus status;
+        private LifecycleTransition transition;
 
         /// <summary>
         /// Unique identifier for the rule.
@@ -71,6 +72,15 @@ namespace Amazon.S3.Model
             get { return this.status; }
             set { this.status = value; }
         }
+
+        /// <summary>
+        /// Gets and sets the transition property of the rule
+        /// </summary>
+        public LifecycleTransition Transition
+        {
+            get { return this.transition; }
+            set { this.transition = value; }
+    }
     }
 
     /// <summary>

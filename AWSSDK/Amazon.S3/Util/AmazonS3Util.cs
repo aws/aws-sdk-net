@@ -23,6 +23,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Security.Cryptography;
@@ -732,5 +733,58 @@ namespace Amazon.S3.Util
             copyRequest.WebsiteRedirectLocation = getMetaResponse.WebsiteRedirectLocation;
             copyRequest.ServerSideEncryptionMethod = getMetaResponse.ServerSideEncryptionMethod;
         }
+
+        internal static void ParseAmzRestoreHeader(string header, out bool restoreInProgress, out DateTime? restoreExpiration)
+        {
+            const string ONGOING_REQUEST = "ongoing-request";
+            const string EXPIRY_DATE = "expiry-date";
+
+            restoreExpiration = null;
+            restoreInProgress = false;
+
+            if (header == null)
+                return;
+
+            int pos = header.IndexOf(ONGOING_REQUEST);
+            if (pos != -1)
+            {
+                int startPos = header.IndexOf('"', pos) + 1;
+                int endPos = header.IndexOf('"', startPos + 1);
+
+                string value = header.Substring(startPos, endPos - startPos);
+                Boolean.TryParse(value, out restoreInProgress);
+    }
+            pos = header.IndexOf(EXPIRY_DATE);
+            if (pos != -1)
+            {
+                int startPos = header.IndexOf('"', pos) + 1;
+                int endPos = header.IndexOf('"', startPos + 1);
+
+                string value = header.Substring(startPos, endPos - startPos);
+                DateTime parseDate;
+                if (DateTime.TryParseExact(value, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parseDate))
+                    restoreExpiration = parseDate;
+            }
+        }
+
+        /// <summary>
+        /// Converts the string representing a storage class that would come back from a ListObjects request
+        /// to the S3StorageClass enumeration.
+        /// </summary>
+        /// <param name="value">Amazon S3 string values for storage class</param>
+        /// <returns>The converted S3StorageClass enumeration</returns>
+        public static S3StorageClass ConvertToS3StorageClass(string value)
+        {
+            switch(value)
+            {
+                case "REDUCED_REDUNDANCY":
+                    return S3StorageClass.ReducedRedundancy;
+                case "GLACIER":
+                    return S3StorageClass.Glacier;
+                default:
+                    return S3StorageClass.Standard;                
+            }
+        }
+
     }
 }

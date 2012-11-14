@@ -4217,6 +4217,76 @@ namespace Amazon.S3
 
         #endregion
 
+        #region RestoreObject
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreObject operation. 
+        /// <seealso cref="M:Amazon.S3.AmazonS3.RestoreObject"/>
+        /// </summary>
+        /// <param name="request">The RestoreObjectRequest that defines
+        /// the parameters of the operation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; 
+        /// this value is also needed when invoking EndRestoreObject.</returns>
+        public IAsyncResult BeginRestoreObject(RestoreObjectRequest request, AsyncCallback callback, object state)
+        {
+            return invokeRestoreObject(request, callback, state, false);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RestoreObject operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreObject.</param>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        /// <returns>Returns a RestoreObjectResponse from S3.</returns>
+        public RestoreObjectResponse EndRestoreObject(IAsyncResult asyncResult)
+        {
+            return endOperation<RestoreObjectResponse>(asyncResult);
+        }
+
+        /// <summary>
+        /// <para>
+        /// This operation begins a restore object request for an object that has been 
+        /// stored in Amazon Glacier.  The object will stay active in Amazon S3 for the number
+        /// of days set on the RestoreObjectRequest object.
+        /// </para>
+        /// </summary>
+        /// <param name="request">The RestoreObjectRequest that defines the parameters of the operation.</param>
+        /// <returns>Returns a RestoreObjectResponse from S3.</returns>
+        /// <exception cref="T:System.ArgumentNullException"></exception>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
+        public RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
+        {
+            IAsyncResult asyncResult = invokeRestoreObject(request, null, null, true);
+            return EndRestoreObject(asyncResult);
+        }
+
+        IAsyncResult invokeRestoreObject(RestoreObjectRequest request, AsyncCallback callback, object state, bool synchronized)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The RestoreObjectRequest is null!");
+            }
+            if (!request.IsSetBucketName())
+            {
+                throw new ArgumentNullException(S3Constants.RequestParam, "The S3 BucketName specified is null or empty!");
+            }
+
+            ConvertRestoreObject(request);
+            S3AsyncResult asyncResult = new S3AsyncResult(request, state, callback, synchronized);
+            invoke<RestoreObjectResponse>(asyncResult);
+            return asyncResult;
+        }
+
+        #endregion
+
         #region Private ConvertXXX Methods
 
         /**
@@ -4749,6 +4819,9 @@ namespace Amazon.S3
                         break;
                     case S3Permission.WRITE_ACP:
                         request.Headers[S3Constants.AmzGrantHeaderWriteAcp]= protoHeaders[permission];
+                        break;
+                    case S3Permission.RESTORE_OBJECT:
+                        request.Headers[S3Constants.AmzGrantHeaderRestoreObject] = protoHeaders[permission];
                         break;
                     case S3Permission.FULL_CONTROL:
                         request.Headers[S3Constants.AmzGrantHeaderFullControl] = protoHeaders[permission];
@@ -5560,6 +5633,32 @@ namespace Amazon.S3
             string queryStr = "?lifecycle";
             parameters[S3QueryParameter.Query] = queryStr;
             parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            request.RequestDestinationBucket = request.BucketName;
+        }
+
+        /**
+         *  Convert PutLifecycleConfigurationRequest to key/value pairs.
+         */
+        private void ConvertRestoreObject(RestoreObjectRequest request)
+        {
+            Map parameters = request.parameters;
+            WebHeaderCollection webHeaders = request.Headers;
+
+            parameters[S3QueryParameter.Verb] = S3Constants.PostVerb;
+            parameters[S3QueryParameter.Action] = "RestoreObject";
+            parameters[S3QueryParameter.Key] = request.Key;
+
+            string queryStr = "?restore";
+            parameters[S3QueryParameter.Query] = queryStr;
+            parameters[S3QueryParameter.QueryToSign] = queryStr;
+
+            string content = request.ContentXML;
+            parameters[S3QueryParameter.ContentBody] = content;
+            parameters[S3QueryParameter.ContentType] = "application/xml";
+
+            string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+            webHeaders[AWSSDKUtils.ContentMD5Header] = checksum;
 
             request.RequestDestinationBucket = request.BucketName;
         }

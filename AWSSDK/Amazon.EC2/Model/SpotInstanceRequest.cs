@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private string typeField;
         private string stateField;
         private SpotInstanceStateFault faultField;
+        private SpotInstanceStatusMessage statusField;
         private string validFromField;
         private string validUntilField;
         private string launchGroupField;
@@ -207,6 +208,40 @@ namespace Amazon.EC2.Model
         {
             return this.faultField != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the Status property.
+        /// Status details for the Spot Instance request, if any.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "Status")]
+        public SpotInstanceStatusMessage Status
+        {
+            get { return this.statusField; }
+            set { this.statusField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Status property
+        /// </summary>
+        /// <param name="status">Status details for the Spot Instance request, if any.</param>
+        /// <returns>this instance</returns>
+        public SpotInstanceRequest WithStatus(SpotInstanceStatusMessage status)
+        {
+            this.statusField = status;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Status property is set
+        /// </summary>
+        /// <returns>true if Status property is set</returns>
+        public bool IsSetStatus()
+        {
+            return this.statusField != null;
+        }
+
+
 
         /// <summary>
         /// Gets and sets the ValidFrom property.

@@ -637,13 +637,9 @@ namespace Amazon.S3.Model
             get { return this.storageClass; }
             set
             {
-                if (value >= S3StorageClass.Standard &&
-                    value <= S3StorageClass.ReducedRedundancy)
-                {
                     this.storageClass = value;
                 }
             }
-        }
 
         /// <summary>
         /// Sets a StorageClass for the S3 object.

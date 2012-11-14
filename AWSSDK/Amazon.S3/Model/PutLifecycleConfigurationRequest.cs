@@ -110,9 +110,6 @@ namespace Amazon.S3.Model
                         writer.WriteStartElement("LifecycleConfiguration");
                         foreach (var rule in configuration.Rules)
                         {
-                            if (rule.Expiration == null)
-                                throw new InvalidOperationException("Expiration cannot be null");
-
                             writer.WriteStartElement("Rule");
 
                             if (!string.IsNullOrEmpty(rule.Id))
@@ -122,9 +119,28 @@ namespace Amazon.S3.Model
                             writer.WriteElementString("Prefix", rule.Prefix);
                             writer.WriteElementString("Status", rule.Status.ToString());
 
+                            if (rule.Transition != null)
+                            {
+                                writer.WriteStartElement("Transition");
+
+                                if (rule.Transition.Date != DateTime.MinValue)
+                                    writer.WriteElementString("Date", rule.Transition.Date.ToUniversalTime().Date.ToString(Amazon.Util.AWSSDKUtils.ISO8601DateFormat));
+                                else
+                                    writer.WriteElementString("Days", rule.Transition.Days.ToString());
+
+                                writer.WriteElementString("StorageClass", rule.Transition.StorageClass.ToString().ToUpper());
+                                writer.WriteEndElement();
+                            }
+
+                            if (rule.Expiration != null)
+                            {
                             writer.WriteStartElement("Expiration");
+                                if (rule.Expiration.Date != DateTime.MinValue)
+                                    writer.WriteElementString("Date", rule.Expiration.Date.ToUniversalTime().Date.ToString(Amazon.Util.AWSSDKUtils.ISO8601DateFormat));
+                                else
                             writer.WriteElementString("Days", rule.Expiration.Days.ToString());
                             writer.WriteEndElement();
+                            }
 
                             writer.WriteEndElement();
                         }

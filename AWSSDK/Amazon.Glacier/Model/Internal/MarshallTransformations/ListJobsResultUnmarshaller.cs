@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */ 
     using System;
-    using System.Collections.Generic; 
-    using Amazon.Glacier.Model; 
-    using Amazon.Runtime.Internal.Transform; 
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.Glacier.Model;
+    using Amazon.Runtime.Internal.Transform;
 
     namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
     { 

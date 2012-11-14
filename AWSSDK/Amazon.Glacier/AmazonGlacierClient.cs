@@ -70,7 +70,7 @@ namespace Amazon.Glacier
         ///
         /// </summary>
         public AmazonGlacierClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlacierConfig(), true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlacierConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonGlacierClient with the credentials loaded from the application's
@@ -90,7 +90,7 @@ namespace Amazon.Glacier
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGlacierClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlacierConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlacierConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonGlacierClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.Glacier
         /// </summary>
         /// <param name="config">The AmazonGlacier Configuration Object</param>
         public AmazonGlacierClient(AmazonGlacierConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonGlacierClient with AWS Credentials
@@ -138,7 +138,7 @@ namespace Amazon.Glacier
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonGlacierClient Configuration Object</param>
         public AmazonGlacierClient(AWSCredentials credentials, AmazonGlacierConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User)
+            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -174,10 +174,48 @@ namespace Amazon.Glacier
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
         /// <param name="clientConfig">The AmazonGlacierClient Configuration Object</param>
         public AmazonGlacierClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonGlacierConfig clientConfig)
-            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
-        
+
+        /// <summary>
+        /// Constructs AmazonGlacierClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonGlacierClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonGlacierConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonGlacierClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonGlacierClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonGlacierConfig(){RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonGlacierClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonGlacierClient Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonGlacierClient Configuration Object</param>
+        public AmazonGlacierClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonGlacierConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
 
         #endregion
    

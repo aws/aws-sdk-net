@@ -23,8 +23,7 @@
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The DeleteObjectsResponse contains a list of successful
-    /// and failed deletes, as well as any headers returned by S3.
+    /// The PutLifecycleConfigurationResponse contains any headers returned by S3.
     /// </summary>
     public class PutLifecycleConfigurationResponse : S3Response
     {

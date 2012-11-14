@@ -3218,6 +3218,7 @@
     <Compile Include="Amazon.EC2\Model\SpotInstanceStateFault.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\SpotInstanceStatusMessage.cs" />
     <Compile Include="Amazon.EC2\Model\SpotPriceHistory.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6618,6 +6619,7 @@
     </Compile>
     <Compile Include="Amazon.S3\Model\LifecycleRule.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleExpiration.cs" />
+    <Compile Include="Amazon.S3\Model\LifecycleTransition.cs" />
     <Compile Include="Amazon.S3\Model\ListMultipartUploadsRequest.cs" />
     <Compile Include="Amazon.S3\Model\ListMultipartUploadsResponse.cs" />
     <Compile Include="Amazon.S3\Model\ListPartsRequest.cs" />
@@ -6630,6 +6632,8 @@
     <Compile Include="Amazon.S3\Model\PartEtag.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketTaggingRequest.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketTaggingResponse.cs" />
+    <Compile Include="Amazon.S3\Model\RestoreObjectRequest.cs" />
+    <Compile Include="Amazon.S3\Model\RestoreObjectResponse.cs" />
     <Compile Include="Amazon.S3\Model\Tag.cs" />
     <Compile Include="Amazon.S3\Model\TagSet.cs" />
     <Compile Include="Amazon.S3\Model\PutCORSConfigurationRequest.cs" />
