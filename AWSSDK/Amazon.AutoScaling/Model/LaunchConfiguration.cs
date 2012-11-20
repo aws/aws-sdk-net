@@ -40,6 +40,7 @@ namespace Amazon.AutoScaling.Model
         private string spotPrice;
         private string iamInstanceProfile;
         private DateTime? createdTime;
+        private bool? ebsOptimized;
 
         /// <summary>
         /// Specifies the name of the launch configuration.
@@ -592,6 +593,34 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetCreatedTime()
         {
             return this.createdTime.HasValue;       
+        }
+
+        /// <summary>
+        /// Specifies whether (<i>true</i>) or not (<i>false</i>) the instance is optimized for EBS I/O.
+        ///  
+        /// </summary>
+        public bool EbsOptimized
+        {
+            get { return this.ebsOptimized ?? default(bool); }
+            set { this.ebsOptimized = value; }
+        }
+
+        /// <summary>
+        /// Sets the EbsOptimized property
+        /// </summary>
+        /// <param name="ebsOptimized">The value to set for the EbsOptimized property </param>
+        /// <returns>this instance</returns>
+        public LaunchConfiguration WithEbsOptimized(bool ebsOptimized)
+        {
+            this.ebsOptimized = ebsOptimized;
+            return this;
+        }
+            
+
+        // Check to see if EbsOptimized property is set
+        internal bool IsSetEbsOptimized()
+        {
+            return this.ebsOptimized.HasValue;       
         }
     }
 }

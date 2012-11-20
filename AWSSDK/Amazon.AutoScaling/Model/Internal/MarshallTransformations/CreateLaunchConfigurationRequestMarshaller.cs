@@ -121,6 +121,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("IamInstanceProfile", StringUtils.FromString(createLaunchConfigurationRequest.IamInstanceProfile));
             }
+            if (createLaunchConfigurationRequest != null && createLaunchConfigurationRequest.IsSetEbsOptimized())
+            {
+                request.Parameters.Add("EbsOptimized", StringUtils.FromBool(createLaunchConfigurationRequest.EbsOptimized));
+            }
 
             return request;
         }

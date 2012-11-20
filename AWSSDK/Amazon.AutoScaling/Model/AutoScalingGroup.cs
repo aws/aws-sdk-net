@@ -785,6 +785,11 @@ namespace Amazon.AutoScaling.Model
         {
             return this.tags.Count > 0;       
         }
+
+        /// <summary>
+        /// A standalone termination policy or a list of termination policies for this Auto Scaling group.
+        ///  
+        /// </summary>
         public List<string> TerminationPolicies
         {
             get { return this.terminationPolicies; }

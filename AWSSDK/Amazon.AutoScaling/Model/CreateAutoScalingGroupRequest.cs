@@ -242,7 +242,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of Availability Zones for the Auto Scaling group.
+        /// A list of Availability Zones for the Auto Scaling group. This is required unless you have specified the subnets.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -452,7 +452,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A comma-separated list of subnet identifiers of Amazon Virtual Private Clouds (Amazon VPCs). When you specify subnets and Availability Zones
+        /// A comma-separated list of subnet identifiers of Amazon Virtual Private Clouds (Amazon VPCs). If you specify subnets and Availability Zones
         /// with this call, ensure that the subnets' Availability Zones match the Availability Zones specified.
         ///  
         /// <para>
@@ -492,6 +492,14 @@ namespace Amazon.AutoScaling.Model
         {
             return this.vPCZoneIdentifier != null;       
         }
+
+        /// <summary>
+        /// A standalone termination policy or a list of termination policies used to select the instance to terminate. The policies are executed in the
+        /// order that they are listed. For more information on configuring a termination policy for your Auto Scaling group, go to <a
+        /// href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance Termination Policy for Your
+        /// Auto Scaling Group</a> in the the <i>Auto Scaling Developer Guide</i>.
+        ///  
+        /// </summary>
         public List<string> TerminationPolicies
         {
             get { return this.terminationPolicies; }
@@ -535,7 +543,7 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// The tag to be created or updated. Each tag should be defined by its resource type, resource ID, key, value, and a propagate flag. Valid
-        /// values are: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or <i>false</i>. Value and propagate are optional parameters.
+        /// values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or <i>false</i>. Value and propagate are optional parameters.
         ///  
         /// </summary>
         public List<Tag> Tags

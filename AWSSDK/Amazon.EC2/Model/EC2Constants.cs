@@ -66,20 +66,38 @@ namespace Amazon.EC2.Model
     /// </summary>
     public sealed class InstanceType
     {
+        // Standard instances
         public const string M1Small = "m1.small";
         public const string M1Medium = "m1.medium";
         public const string M1Large = "m1.large";
         public const string M1Xlarge = "m1.xlarge";
+        public const string M3Xlarge = "m3.xlarge";
+        public const string M32xlarge = "m3.2xlarge";
+
+        // Micro instances
+        public const string T1micro = "t1.micro";
+
+        // High-memory instances
         public const string M2Xlarge = "m2.xlarge";
         public const string M22xlarge = "m2.2xlarge";
         public const string M24xlarge = "m2.4xlarge";
+
+        // High-CPU instances
         public const string C1Medium = "c1.medium";
         public const string C1Xlarge = "c1.xlarge";
+
+        // Cluster compute instances
         public const string Cc14xlarge = "cc1.4xlarge";
-        public const string T1micro = "t1.micro";
+        public const string Cc28xlarge = "cc2.8xlarge";
+
+        // Cluster GPU instances
+        public const string Cg14xlarge = "cg1.4xlarge";
+
+        // High IO instances
+        public const string Hi14xlarge = "hi1.4xlarge";
 
         private InstanceType()
-        { 
+        {
         }
     }
 }

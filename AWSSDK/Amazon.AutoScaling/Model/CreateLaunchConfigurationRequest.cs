@@ -47,6 +47,7 @@ namespace Amazon.AutoScaling.Model
         private InstanceMonitoring instanceMonitoring;
         private string spotPrice;
         private string iamInstanceProfile;
+        private bool? ebsOptimized;
 
         /// <summary>
         /// The name of the launch configuration to create.
@@ -550,6 +551,38 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetIamInstanceProfile()
         {
             return this.iamInstanceProfile != null;       
+        }
+
+        /// <summary>
+        /// Whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration
+        /// stack to provide optimal EBS I/O performance. This optimization is not available with all instance types. Additional usage charges apply
+        /// when using an EBS Optimized instance. For information about EBS-Optimized instances, go to <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/instance-types.html#EBSOptimized">EBS-Optimized Instances</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i>.
+        ///  
+        /// </summary>
+        public bool EbsOptimized
+        {
+            get { return this.ebsOptimized ?? default(bool); }
+            set { this.ebsOptimized = value; }
+        }
+
+        /// <summary>
+        /// Sets the EbsOptimized property
+        /// </summary>
+        /// <param name="ebsOptimized">The value to set for the EbsOptimized property </param>
+        /// <returns>this instance</returns>
+        public CreateLaunchConfigurationRequest WithEbsOptimized(bool ebsOptimized)
+        {
+            this.ebsOptimized = ebsOptimized;
+            return this;
+        }
+            
+
+        // Check to see if EbsOptimized property is set
+        internal bool IsSetEbsOptimized()
+        {
+            return this.ebsOptimized.HasValue;       
         }
     }
 }

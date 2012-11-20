@@ -120,6 +120,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         launchConfiguration.CreatedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("EbsOptimized", targetDepth))
+                    {
+                        launchConfiguration.EbsOptimized = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

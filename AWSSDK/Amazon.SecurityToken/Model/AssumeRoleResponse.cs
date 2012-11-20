@@ -19,31 +19,31 @@ using System.Text;
 
 using Amazon.Runtime;
 
-namespace Amazon.AutoScaling.Model
+namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAutoScalingNotificationTypesResult response and response metadata.
+    /// Returns information about the  AssumeRoleResult response and response metadata.
     /// </summary>
-    public class DescribeAutoScalingNotificationTypesResponse : AmazonWebServiceResponse
+    public class AssumeRoleResponse : AmazonWebServiceResponse
     {
-        private DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypesResult;
+        private AssumeRoleResult assumeRoleResult;
 
         /// <summary>
-        /// Gets and sets the DescribeAutoScalingNotificationTypesResult property.
-        /// The AutoScalingNotificationTypes data type.
+        /// Gets and sets the AssumeRoleResult property.
+        /// Contains the result of a successful invocation of the AssumeRole action.
         /// </summary>
-        public DescribeAutoScalingNotificationTypesResult DescribeAutoScalingNotificationTypesResult
+        public AssumeRoleResult AssumeRoleResult
         {
             get 
             {
-                if(this.describeAutoScalingNotificationTypesResult == null)
+                if(this.assumeRoleResult == null)
                 {
-                    this.describeAutoScalingNotificationTypesResult = new DescribeAutoScalingNotificationTypesResult();
+                    this.assumeRoleResult = new AssumeRoleResult();
                 }
 
-                return this.describeAutoScalingNotificationTypesResult; 
+                return this.assumeRoleResult; 
             }
-            set { this.describeAutoScalingNotificationTypesResult = value; }
+            set { this.assumeRoleResult = value; }
         }
     }
 }

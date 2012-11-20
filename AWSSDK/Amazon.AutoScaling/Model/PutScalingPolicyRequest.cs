@@ -194,7 +194,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.
+        /// The amount of time, in seconds, after a scaling activity completes and before the next scaling acitvity can start.
         ///  
         /// </summary>
         public int Cooldown

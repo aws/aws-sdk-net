@@ -20,12 +20,19 @@ using System.IO;
 
 namespace Amazon.AutoScaling.Model
 {
-    /// <summary>Describe Termination Policy Types Result
+    /// <summary>
+    /// <para>The <c>TerminationPolicyTypes</c> data type.</para>
     /// </summary>
     public class DescribeTerminationPolicyTypesResult  
     {
         
         private List<string> terminationPolicyTypes = new List<string>();
+
+        /// <summary>
+        /// Termination policies supported by Auto Scaling. They are: <c>OldestInstance</c>, <c>OldestLaunchConfiguration</c>, <c>NewestInstance</c>,
+        /// <c>ClosestToNextInstanceHour</c>, <c>Default</c>
+        ///  
+        /// </summary>
         public List<string> TerminationPolicyTypes
         {
             get { return this.terminationPolicyTypes; }

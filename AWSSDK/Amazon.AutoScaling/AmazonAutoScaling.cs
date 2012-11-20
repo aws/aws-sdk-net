@@ -458,6 +458,7 @@ namespace Amazon.AutoScaling
         #region DescribeTerminationPolicyTypes
 
         /// <summary>
+        /// <para> Returns a list of all termination policies supported by Auto Scaling. </para>
         /// </summary>
         /// 
         /// <param name="describeTerminationPolicyTypesRequest">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes
@@ -493,6 +494,7 @@ namespace Amazon.AutoScaling
         DescribeTerminationPolicyTypesResponse EndDescribeTerminationPolicyTypes(IAsyncResult asyncResult);
 
         /// <summary>
+        /// <para> Returns a list of all termination policies supported by Auto Scaling. </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AmazonAutoScaling.</returns>
@@ -560,6 +562,40 @@ namespace Amazon.AutoScaling
         
     
 
+        #region DeleteTags
+
+        /// <summary>
+        /// <para>Removes the specified tags or a set of tags from a set of resources.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags service method on
+        ///          AmazonAutoScaling.</param>
+        /// 
+        DeleteTagsResponse DeleteTags(DeleteTagsRequest deleteTagsRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteTags"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags operation on AmazonAutoScaling.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDeleteTags(DeleteTagsRequest deleteTagsRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteTags operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteTags"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
+        DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region ExecutePolicy
 
         /// <summary>
@@ -591,40 +627,6 @@ namespace Amazon.AutoScaling
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecutePolicy.</param>
         ExecutePolicyResponse EndExecutePolicy(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region DeleteTags
-
-        /// <summary>
-        /// <para>Removes the specified tags or a set of tags from a set of resources.</para>
-        /// </summary>
-        /// 
-        /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags service method on
-        ///          AmazonAutoScaling.</param>
-        /// 
-        DeleteTagsResponse DeleteTags(DeleteTagsRequest deleteTagsRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteTags operation.
-        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteTags"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags operation on AmazonAutoScaling.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteTags(DeleteTagsRequest deleteTagsRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteTags operation.
-        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteTags"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
-        DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult);
         
         #endregion
         

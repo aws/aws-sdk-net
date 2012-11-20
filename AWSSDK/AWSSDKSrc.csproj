@@ -6638,6 +6638,14 @@
     <Compile Include="Amazon.S3\Model\TagSet.cs" />
     <Compile Include="Amazon.S3\Model\PutCORSConfigurationRequest.cs" />
     <Compile Include="Amazon.S3\Model\PutCORSConfigurationResponse.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\AssumedRoleUser.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\AssumeRoleRequest.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\AssumeRoleResponse.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\AssumeRoleResult.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumedRoleUserUnmarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleRequestMarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleResultUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddCacheRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddCacheResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddCacheResult.cs" />

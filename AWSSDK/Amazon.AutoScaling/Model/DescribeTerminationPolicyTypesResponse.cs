@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// Gets and sets the DescribeTerminationPolicyTypesResult property.
-        /// 
+        /// The TerminationPolicyTypes data type.
         /// </summary>
         public DescribeTerminationPolicyTypesResult DescribeTerminationPolicyTypesResult
         {

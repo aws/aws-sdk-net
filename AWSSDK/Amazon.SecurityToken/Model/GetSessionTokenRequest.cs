@@ -27,9 +27,10 @@ namespace Amazon.SecurityToken.Model
     /// Container for the parameters to the GetSessionToken operation.
     /// <para>The GetSessionToken action returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an Access
     /// Key ID, a Secret Access Key, and a security token. These credentials are valid for the specified duration only. The session duration for IAM
-    /// users can be between one and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to one hour.
-    /// Providing the MFA device serial number and the token code is optional.</para> <para>For more information about using GetSessionToken to
-    /// create temporary credentials, go to Creating Temporary Credentials to Enable Access for IAM Users in <i>Using IAM</i> .</para>
+    /// users can be between 15 minutes and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to a
+    /// maximum of one hour. Providing the AWS Multi-Factor Authentication (MFA) device serial number and the token code is optional.</para>
+    /// <para>For more information about using GetSessionToken to create temporary credentials, go to Creating Temporary Credentials to Enable
+    /// Access for IAM Users in <i>Using IAM</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.SecurityToken.AmazonSecurityTokenService.GetSessionToken"/>
     public class GetSessionTokenRequest : AmazonWebServiceRequest
@@ -39,16 +40,16 @@ namespace Amazon.SecurityToken.Model
         private string tokenCode;
 
         /// <summary>
-        /// The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions range from 3600s (one hour)
+        /// The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions range from 900s (15 minutes)
         /// to 129600s (36 hours), with 43200s (12 hours) as the default. Sessions for AWS account owners are restricted to a maximum of 3600s (one
-        /// hour).
+        /// hour). If the duration is longer than one hour, the session for AWS account owners defaults to one hour.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Range</term>
-        ///         <description>3600 - 129600</description>
+        ///         <description>900 - 129600</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -69,28 +70,23 @@ namespace Amazon.SecurityToken.Model
             this.durationSeconds = durationSeconds;
             return this;
         }
+            
 
-        /// <summary>
-        /// Check to see if DurationSeconds property is set
-        /// </summary>
-        /// <returns>True if the property is set</returns>
+        // Check to see if DurationSeconds property is set
         internal bool IsSetDurationSeconds()
         {
             return this.durationSeconds.HasValue;       
         }
 
         /// <summary>
-        /// Gets and sets the identification number of the MFA device for the user. 
-        /// </summary>
-        /// <remarks>
-        /// If the IAM user has a policy requiring MFA authentication (or is in a group requiring MFA authentication) 
-        /// to access resources, provide the device value here.
-        /// 
-        /// The value is in the Security Credentials tab of the user's details pane in the IAM console. If the IAM user has an 
-        /// active MFA device, the details pane displays a Multi-Factor Authentication Device value. The value is either for a 
-        /// virtual device, such as arn:aws:iam::123456789012:mfa/user, or it is the device serial number for a hardware device 
-        /// (usually the number from the back of the device), such as GAHT12345678.
-        /// 
+        /// The identification number of the MFA device for the user. If the IAM user has a policy requiring MFA authentication (or is in a group
+        /// requiring MFA authentication) to access resources, provide the device value here.The value is in the <b>Security Credentials</b> tab of the
+        /// user's details pane in the IAM console. If the IAM user has an active MFA device, the details pane displays a <b>Multi-Factor Authentication
+        /// Device</b> value. The value is either for a virtual device, such as <c>arn:aws:iam::123456789012:mfa/user</c>, or it is the device serial
+        /// number for a hardware device (usually the number from the back of the device), such as <c>GAHT12345678</c>. For more information, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html" target="_blank">Using Multi-Factor Authentication (MFA)
+        /// Devices with AWS</a> in <i>Using IAM</i>.
+        ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
@@ -98,9 +94,13 @@ namespace Amazon.SecurityToken.Model
         ///         <term>Length</term>
         ///         <description>9 - 256</description>
         ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\w+=/:,.@-]*</description>
+        ///     </item>
         /// </list>
         /// </para>
-        /// </remarks>
+        /// </summary>
         public string SerialNumber
         {
             get { return this.serialNumber; }
@@ -118,24 +118,21 @@ namespace Amazon.SecurityToken.Model
             return this;
         }
             
-        /// <summary>
-        /// Check to see if SerialNumber property is set
-        /// </summary>
-        /// <returns>True if the property is set</returns>
+
+        // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
             return this.serialNumber != null;       
         }
 
         /// <summary>
-        /// Gets and sets the value provided by the MFA device.
-        /// </summary>
-        /// <remarks>
-        /// If the user has an access policy requiring an MFA code (or is in a group requiring an MFA code), provide the 
-        /// value here to get permission to resources as specified in the access policy. If MFA authentication is required, 
-        /// and the user does not provide a code when requesting a set of temporary security credentials, the user will receive 
-        /// an "access denied" response when requesting resources that require MFA authentication.
-        /// 
+        /// The value provided by the MFA device. If the user has an access policy requiring an MFA code (or is in a group requiring an MFA code),
+        /// provide the value here to get permission to resources as specified in the access policy. If MFA authentication is required, and the user
+        /// does not provide a code when requesting a set of temporary security credentials, the user will receive an "access denied" response when
+        /// requesting resources that require MFA authentication. For more information, see <a
+        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html" target="_blank">Using Multi-Factor Authentication (MFA)
+        /// Devices with AWS</a> in <i>Using IAM</i>.
+        ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
@@ -143,9 +140,13 @@ namespace Amazon.SecurityToken.Model
         ///         <term>Length</term>
         ///         <description>6 - 6</description>
         ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\d]*</description>
+        ///     </item>
         /// </list>
         /// </para>
-        /// </remarks>
+        /// </summary>
         public string TokenCode
         {
             get { return this.tokenCode; }
@@ -163,10 +164,8 @@ namespace Amazon.SecurityToken.Model
             return this;
         }
             
-        /// <summary>
-        /// Check to see if TokenCode property is set
-        /// </summary>
-        /// <returns>True if the property is set</returns>
+
+        // Check to see if TokenCode property is set
         internal bool IsSetTokenCode()
         {
             return this.tokenCode != null;       

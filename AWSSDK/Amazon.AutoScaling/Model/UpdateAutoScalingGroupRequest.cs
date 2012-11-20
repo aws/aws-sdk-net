@@ -455,6 +455,14 @@ namespace Amazon.AutoScaling.Model
         {
             return this.vPCZoneIdentifier != null;       
         }
+
+        /// <summary>
+        /// A standalone termination policy or a list of termination policies used to select the instance to terminate. The policies are executed in the
+        /// order that they are listed. For more information on creating a termination policy for your Auto Scaling group, go to <a
+        /// href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance Termination Policy for Your
+        /// Auto Scaling Group</a> in the the <i>Auto Scaling Developer Guide</i>.
+        ///  
+        /// </summary>
         public List<string> TerminationPolicies
         {
             get { return this.terminationPolicies; }

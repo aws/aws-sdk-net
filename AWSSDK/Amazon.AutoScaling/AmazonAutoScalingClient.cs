@@ -860,6 +860,7 @@ namespace Amazon.AutoScaling
         #region DescribeTerminationPolicyTypes
 
         /// <summary>
+        /// <para> Returns a list of all termination policies supported by Auto Scaling. </para>
         /// </summary>
         /// 
         /// <param name="describeTerminationPolicyTypesRequest">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes
@@ -920,6 +921,7 @@ namespace Amazon.AutoScaling
         
 
         /// <summary>
+        /// <para> Returns a list of all termination policies supported by Auto Scaling. </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AmazonAutoScaling.</returns>
@@ -1016,6 +1018,63 @@ namespace Amazon.AutoScaling
 
         #endregion
     
+        #region DeleteTags
+
+        /// <summary>
+        /// <para>Removes the specified tags or a set of tags from a set of resources.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags service method on
+        ///          AmazonAutoScaling.</param>
+        /// 
+        public DeleteTagsResponse DeleteTags(DeleteTagsRequest deleteTagsRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteTags(deleteTagsRequest, null, null, true);
+            return EndDeleteTags(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteTags"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags operation on AmazonAutoScaling.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeleteTags(DeleteTagsRequest deleteTagsRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteTags(deleteTagsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteTags operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteTags"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
+        public DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteTagsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteTags(DeleteTagsRequest deleteTagsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteTagsRequestMarshaller().Marshall(deleteTagsRequest);
+            var unmarshaller = DeleteTagsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region ExecutePolicy
 
         /// <summary>
@@ -1066,63 +1125,6 @@ namespace Amazon.AutoScaling
         {
             IRequest irequest = new ExecutePolicyRequestMarshaller().Marshall(executePolicyRequest);
             var unmarshaller = ExecutePolicyResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
-        
-
-        #endregion
-    
-        #region DeleteTags
-
-        /// <summary>
-        /// <para>Removes the specified tags or a set of tags from a set of resources.</para>
-        /// </summary>
-        /// 
-        /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags service method on
-        ///          AmazonAutoScaling.</param>
-        /// 
-        public DeleteTagsResponse DeleteTags(DeleteTagsRequest deleteTagsRequest)
-        {
-            IAsyncResult asyncResult = invokeDeleteTags(deleteTagsRequest, null, null, true);
-            return EndDeleteTags(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteTags operation.
-        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteTags"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags operation on AmazonAutoScaling.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginDeleteTags(DeleteTagsRequest deleteTagsRequest, AsyncCallback callback, object state)
-        {
-            return invokeDeleteTags(deleteTagsRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteTags operation.
-        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DeleteTags"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
-        public DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
-        {
-            return endOperation<DeleteTagsResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeDeleteTags(DeleteTagsRequest deleteTagsRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new DeleteTagsRequestMarshaller().Marshall(deleteTagsRequest);
-            var unmarshaller = DeleteTagsResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
