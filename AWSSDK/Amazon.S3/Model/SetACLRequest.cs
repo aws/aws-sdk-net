@@ -141,7 +141,7 @@ namespace Amazon.S3.Model
         internal bool IsSetCannedACL()
         {
             return (cannedACL > S3CannedACL.NoACL &&
-                cannedACL <= S3CannedACL.BucketOwnerFullControl);
+                cannedACL <= S3CannedACL.LogDeliveryWrite);
         }
 
         /// <summary>

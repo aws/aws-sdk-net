@@ -98,6 +98,9 @@ namespace Amazon.S3.Transfer.Internal
 
             foreach (S3Object s3o in objs)
             {
+                if (s3o.Key.EndsWith("/"))
+                    continue;
+
                 this._currentFile = s3o.Key.Substring(listRequest.Prefix.Length);
 
                 TransferUtilityDownloadRequest downloadRequest = new TransferUtilityDownloadRequest();

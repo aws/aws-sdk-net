@@ -77,7 +77,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The LogDelivery group gets WRITE and READ_ACP permissions on the bucket.
         /// </summary>
-        LogDeliveryWrite,
+        LogDeliveryWrite
     }
 
     internal enum S3QueryParameter
