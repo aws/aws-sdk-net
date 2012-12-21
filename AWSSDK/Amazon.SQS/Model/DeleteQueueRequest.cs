@@ -47,7 +47,7 @@ namespace Amazon.SQS.Model
     /// </para>
     /// </remarks>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
-    public class DeleteQueueRequest
+    public class DeleteQueueRequest : SQSRequest
     {    
         private string queueUrlField;
         private List<Attribute> attributeField;

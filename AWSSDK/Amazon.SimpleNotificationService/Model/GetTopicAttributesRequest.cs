@@ -31,7 +31,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// properties returned might differ based on the authorization of the user.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class GetTopicAttributesRequest
+    public class GetTopicAttributesRequest : SNSRequest
     {    
         private string topicArnField;
 

@@ -31,7 +31,7 @@ namespace Amazon.SimpleDB.Model
     /// attributes, and the size of attribute names and values.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sdb.amazonaws.com/doc/2009-04-15/", IsNullable = false)]
-    public class DomainMetadataRequest
+    public class DomainMetadataRequest : SDBRequest
     {
         private string domainNameField;
 

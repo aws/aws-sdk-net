@@ -1589,6 +1589,435 @@
     <Compile Include="Amazon.CloudWatch\Model\SetAlarmStateRequest.cs" />
     <Compile Include="Amazon.CloudWatch\Model\SetAlarmStateResponse.cs" />
     <Compile Include="Amazon.CloudWatch\Model\StatisticSet.cs" />
+    <Compile Include="Amazon.DataPipeline\AmazonDataPipeline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\AmazonDataPipelineClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\AmazonDataPipelineConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\AmazonDataPipelineException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ActivatePipelineRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ActivatePipelineResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ActivatePipelineResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\CreatePipelineRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\CreatePipelineResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\CreatePipelineResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\DeletePipelineRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\DeletePipelineResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\DescribeObjectsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\DescribeObjectsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\DescribeObjectsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\DescribePipelinesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\DescribePipelinesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\DescribePipelinesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\EvaluateExpressionRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\EvaluateExpressionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\EvaluateExpressionResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Field.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\GetPipelineDefinitionRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\GetPipelineDefinitionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\GetPipelineDefinitionResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\InstanceIdentity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\InternalServiceErrorException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ActivatePipelineRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ActivatePipelineResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ActivatePipelineResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\CreatePipelineRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\CreatePipelineResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\CreatePipelineResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\DeletePipelineRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\DeletePipelineResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\DescribeObjectsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\DescribeObjectsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\DescribeObjectsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\DescribePipelinesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\DescribePipelinesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\DescribePipelinesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\EvaluateExpressionRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\EvaluateExpressionResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\EvaluateExpressionResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\FieldUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\GetPipelineDefinitionRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\GetPipelineDefinitionResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\GetPipelineDefinitionResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ListPipelinesRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ListPipelinesResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ListPipelinesResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\PipelineDescriptionUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\PipelineIdNameUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\PipelineObjectUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\PollForTaskRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\PollForTaskResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\PollForTaskResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\PutPipelineDefinitionRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\PutPipelineDefinitionResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\PutPipelineDefinitionResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\QueryObjectsRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\QueryObjectsResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\QueryObjectsResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ReportTaskProgressRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ReportTaskProgressResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ReportTaskProgressResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ReportTaskRunnerHeartbeatRequestMarshaller.cs" />
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ReportTaskRunnerHeartbeatResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ReportTaskRunnerHeartbeatResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\SetStatusRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\SetStatusResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\SetTaskStatusRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\SetTaskStatusResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\SetTaskStatusResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\TaskObjectUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ValidatePipelineDefinitionRequestMarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ValidatePipelineDefinitionResponseUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ValidatePipelineDefinitionResultUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\ValidationErrorUnmarshaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\InvalidRequestException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ListPipelinesRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ListPipelinesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ListPipelinesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Operator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PipelineDeletedException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PipelineDescription.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PipelineIdName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PipelineNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PipelineObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PollForTaskRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PollForTaskResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PollForTaskResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PutPipelineDefinitionRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PutPipelineDefinitionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\PutPipelineDefinitionResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\Query.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\QueryObjectsRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\QueryObjectsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\QueryObjectsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ReportTaskProgressRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ReportTaskProgressResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ReportTaskProgressResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ReportTaskRunnerHeartbeatRequest.cs" />
+    <Compile Include="Amazon.DataPipeline\Model\ReportTaskRunnerHeartbeatResponse.cs" />
+    <Compile Include="Amazon.DataPipeline\Model\ReportTaskRunnerHeartbeatResult.cs" />
+    <Compile Include="Amazon.DataPipeline\Model\Selector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\SetStatusRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\SetStatusResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\SetTaskStatusRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\SetTaskStatusResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\SetTaskStatusResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\TaskNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\TaskObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ValidatePipelineDefinitionRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ValidatePipelineDefinitionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ValidatePipelineDefinitionResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DataPipeline\Model\ValidationError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DirectConnect\AmazonDirectConnect.cs" />
+    <Compile Include="Amazon.DirectConnect\AmazonDirectConnectClient.cs" />
+    <Compile Include="Amazon.DirectConnect\AmazonDirectConnectConfig.cs" />
+    <Compile Include="Amazon.DirectConnect\AmazonDirectConnectException.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Connection.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\ConnectionCost.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\ConnectionOrderStep.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\CreateConnectionRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\CreateConnectionResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\CreateConnectionResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\CreatePrivateVirtualInterfaceRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\CreatePrivateVirtualInterfaceResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\CreatePrivateVirtualInterfaceResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\CreatePublicVirtualInterfaceRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\CreatePublicVirtualInterfaceResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\CreatePublicVirtualInterfaceResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DeleteConnectionRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DeleteConnectionResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DeleteConnectionResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DeleteVirtualInterfaceRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DeleteVirtualInterfaceResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DeleteVirtualInterfaceResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeConnectionDetailRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeConnectionDetailResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeConnectionDetailResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeConnectionsRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeConnectionsResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeConnectionsResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeOfferingDetailRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeOfferingDetailResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeOfferingDetailResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeOfferingsRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeOfferingsResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeOfferingsResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeVirtualGatewaysRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeVirtualGatewaysResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeVirtualGatewaysResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeVirtualInterfacesRequest.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeVirtualInterfacesResponse.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DescribeVirtualInterfacesResult.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DirectConnectClientException.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\DirectConnectServerException.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\ConnectionCostUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\ConnectionOrderStepUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\ConnectionUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\CreateConnectionRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\CreateConnectionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\CreateConnectionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\CreatePrivateVirtualInterfaceRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\CreatePrivateVirtualInterfaceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\CreatePrivateVirtualInterfaceResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\CreatePublicVirtualInterfaceRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\CreatePublicVirtualInterfaceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\CreatePublicVirtualInterfaceResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DeleteConnectionRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DeleteConnectionResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DeleteConnectionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DeleteVirtualInterfaceRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DeleteVirtualInterfaceResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DeleteVirtualInterfaceResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeConnectionDetailRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeConnectionDetailResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeConnectionDetailResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeConnectionsRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeConnectionsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeConnectionsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeOfferingDetailRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeOfferingDetailResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeOfferingDetailResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeOfferingsRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeOfferingsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeOfferingsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeVirtualGatewaysRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeVirtualGatewaysResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeVirtualGatewaysResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeVirtualInterfacesRequestMarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeVirtualInterfacesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\DescribeVirtualInterfacesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\OfferingOrderStepUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\OfferingUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\RouteFilterPrefixUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\VirtualGatewayUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Internal\MarshallTransformations\VirtualInterfaceUnmarshaller.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\NewPrivateVirtualInterface.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\NewPublicVirtualInterface.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\Offering.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\OfferingOrderStep.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\RouteFilterPrefix.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\VirtualGateway.cs" />
+    <Compile Include="Amazon.DirectConnect\Model\VirtualInterface.cs" />
     <Compile Include="Amazon.DynamoDB\AmazonDynamoDB.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2151,6 +2580,9 @@
     <Compile Include="Amazon.EC2\Model\ConversionTaskType.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\CopySnapshotRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\CopySnapshotResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\CopySnapshotResult.cs" />
     <Compile Include="Amazon.EC2\Model\CreateCustomerGatewayRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6524,6 +6956,7 @@
     <Compile Include="Amazon.Runtime\ClientConfig.cs" />
     <Compile Include="Amazon.Runtime\Enumerations.cs" />
     <Compile Include="Amazon.Runtime\ExceptionHandler.cs" />
+    <Compile Include="Amazon.Runtime\Internal\AmazonWebServiceRequest.cs" />
     <Compile Include="Amazon.Runtime\Internal\AsyncResult.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\AbstractAWSSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\AWS3Signer.cs" />
@@ -6536,6 +6969,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Internal\IRequest.cs" />
+    <Compile Include="Amazon.Runtime\Internal\IRequestEvents.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\ErrorResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\IMarshaller.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\IResponseUnmarshaller.cs" />
@@ -6559,6 +6993,7 @@
     </Compile>
     <Compile Include="Amazon.S3\AmazonS3Config.cs" />
     <Compile Include="Amazon.S3\AmazonS3Exception.cs" />
+    <Compile Include="Amazon.S3\Internal\IS3RequestEvents.cs" />
     <Compile Include="Amazon.S3\IO\S3DirectoryInfo.cs" />
     <Compile Include="Amazon.S3\IO\S3FileInfo.cs" />
     <Compile Include="Amazon.S3\IO\S3FileStream.cs" />
@@ -6646,6 +7081,9 @@
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleRequestMarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleResponseUnmarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleResultUnmarshaller.cs" />
+    <Compile Include="Amazon.SimpleDB\Model\SDBRequest.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\SNSRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\SQSRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddCacheRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddCacheResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddCacheResult.cs" />
@@ -8089,7 +8527,9 @@
     <EmbeddedResource Include="Amazon.CloudFront_2012_03_15\Model\SetStreamingDistributionConfigResponse.xslt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="endpoints.xml" />
+    <EmbeddedResource Include="endpoints.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.S3\Model\GetCORSConfigurationResponse.xslt" />
@@ -8105,6 +8545,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Amazon.EC2\Model\DisableVGWRoutePropagationResponse.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Amazon.EC2\Model\CopySnapshotResponse.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

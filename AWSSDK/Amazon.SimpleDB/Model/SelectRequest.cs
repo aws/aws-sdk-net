@@ -46,7 +46,7 @@ namespace Amazon.SimpleDB.Model
     /// the returned response.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sdb.amazonaws.com/doc/2009-04-15/", IsNullable = false)]
-    public class SelectRequest
+    public class SelectRequest : SDBRequest
     {
         private string selectExpressionField;
         private string nextTokenField;

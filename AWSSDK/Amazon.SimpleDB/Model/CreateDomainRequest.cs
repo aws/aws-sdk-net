@@ -33,7 +33,7 @@ namespace Amazon.SimpleDB.Model
     /// per account. If you require additional domains, go to http://aws.amazon.com/contact-us/simpledb-limit-request/.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sdb.amazonaws.com/doc/2009-04-15/", IsNullable = false)]
-    public class CreateDomainRequest
+    public class CreateDomainRequest : SDBRequest
     {
         private string domainNameField;
 

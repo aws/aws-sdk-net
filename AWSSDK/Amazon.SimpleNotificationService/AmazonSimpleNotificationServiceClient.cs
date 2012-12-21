@@ -36,6 +36,9 @@ using Amazon.Util;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using ErrorResponse = Amazon.SimpleNotificationService.Model.ErrorResponse;
 
 namespace Amazon.SimpleNotificationService
 {
@@ -252,7 +255,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Confirm Subscription  Response from the service</returns>
         public ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request)
         {
-            return Invoke<ConfirmSubscriptionResponse>(ConvertConfirmSubscription(request));
+            return Invoke<ConfirmSubscriptionResponse>(request, ConvertConfirmSubscription(request));
         }
 
         /// <summary>
@@ -263,7 +266,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Get Topic Attributes  Response from the service</returns>
         public GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request)
         {
-            return Invoke<GetTopicAttributesResponse>(ConvertGetTopicAttributes(request));
+            return Invoke<GetTopicAttributesResponse>(request, ConvertGetTopicAttributes(request));
         }
 
         /// <summary>
@@ -277,7 +280,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Subscribe  Response from the service</returns>
         public SubscribeResponse Subscribe(SubscribeRequest request)
         {
-            return Invoke<SubscribeResponse>(ConvertSubscribe(request));
+            return Invoke<SubscribeResponse>(request, ConvertSubscribe(request));
         }
 
         /// <summary>
@@ -287,7 +290,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Set Topic Attributes  Response from the service</returns>
         public SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request)
         {
-            return Invoke<SetTopicAttributesResponse>(ConvertSetTopicAttributes(request));
+            return Invoke<SetTopicAttributesResponse>(request, ConvertSetTopicAttributes(request));
         }
 
         /// <summary>
@@ -298,7 +301,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Get Subscription Attributes  Response from the service</returns>
         public GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
         {
-            return Invoke<GetSubscriptionAttributesResponse>(ConvertGetSubscriptionAttributes(request));
+            return Invoke<GetSubscriptionAttributesResponse>(request, ConvertGetSubscriptionAttributes(request));
         }
 
         /// <summary>
@@ -308,7 +311,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Set Subscription Attributes  Response from the service</returns>
         public SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
         {
-            return Invoke<SetSubscriptionAttributesResponse>(ConvertSetSubscriptionAttributes(request));
+            return Invoke<SetSubscriptionAttributesResponse>(request, ConvertSetSubscriptionAttributes(request));
         }
 
         /// <summary>
@@ -324,7 +327,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Delete Topic  Response from the service</returns>
         public DeleteTopicResponse DeleteTopic(DeleteTopicRequest request)
         {
-            return Invoke<DeleteTopicResponse>(ConvertDeleteTopic(request));
+            return Invoke<DeleteTopicResponse>(request, ConvertDeleteTopic(request));
         }
 
         /// <summary>
@@ -334,7 +337,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Remove Permission  Response from the service</returns>
         public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            return Invoke<RemovePermissionResponse>(ConvertRemovePermission(request));
+            return Invoke<RemovePermissionResponse>(request, ConvertRemovePermission(request));
         }
 
         /// <summary>
@@ -349,7 +352,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>List Subscriptions  Response from the service</returns>
         public ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
         {
-            return Invoke<ListSubscriptionsResponse>(ConvertListSubscriptions(request));
+            return Invoke<ListSubscriptionsResponse>(request, ConvertListSubscriptions(request));
         }
 
         /// <summary>
@@ -359,7 +362,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Add Permission  Response from the service</returns>
         public AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
-            return Invoke<AddPermissionResponse>(ConvertAddPermission(request));
+            return Invoke<AddPermissionResponse>(request, ConvertAddPermission(request));
         }
 
         /// <summary>
@@ -375,7 +378,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Create Topic  Response from the service</returns>
         public CreateTopicResponse CreateTopic(CreateTopicRequest request)
         {
-            return Invoke<CreateTopicResponse>(ConvertCreateTopic(request));
+            return Invoke<CreateTopicResponse>(request, ConvertCreateTopic(request));
         }
 
         /// <summary>
@@ -390,7 +393,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>List Topics  Response from the service</returns>
         public ListTopicsResponse ListTopics(ListTopicsRequest request)
         {
-            return Invoke<ListTopicsResponse>(ConvertListTopics(request));
+            return Invoke<ListTopicsResponse>(request, ConvertListTopics(request));
         }
 
         /// <summary>
@@ -409,7 +412,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Unsubscribe  Response from the service</returns>
         public UnsubscribeResponse Unsubscribe(UnsubscribeRequest request)
         {
-            return Invoke<UnsubscribeResponse>(ConvertUnsubscribe(request));
+            return Invoke<UnsubscribeResponse>(request, ConvertUnsubscribe(request));
         }
 
         /// <summary>
@@ -424,7 +427,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>List Subscriptions By Topic  Response from the service</returns>
         public ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request)
         {
-            return Invoke<ListSubscriptionsByTopicResponse>(ConvertListSubscriptionsByTopic(request));
+            return Invoke<ListSubscriptionsByTopicResponse>(request, ConvertListSubscriptionsByTopic(request));
         }
 
         /// <summary>
@@ -440,7 +443,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>Publish  Response from the service</returns>
         public PublishResponse Publish(PublishRequest request)
         {
-            return Invoke<PublishResponse>(ConvertPublish(request));
+            return Invoke<PublishResponse>(request, ConvertPublish(request));
         }
 
         #endregion
@@ -451,7 +454,7 @@ namespace Amazon.SimpleNotificationService
          * Configure HttpClient with set of defaults as well as configuration
          * from AmazonSimpleNotificationServiceConfig instance
          */
-        private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonSimpleNotificationServiceConfig config)
+        private static HttpWebRequest ConfigureWebRequest(int contentLength, AmazonSimpleNotificationServiceConfig config, IDictionary<string, string> headers)
         {
             string url;
             if (config.RegionEndpoint != null)
@@ -476,7 +479,7 @@ namespace Amazon.SimpleNotificationService
                     }
                     request.Proxy = proxy;
                 }
-                request.UserAgent = config.UserAgent;
+                request.UserAgent = headers[AWSSDKUtils.UserAgentHeader];
                 request.Method = "POST";
                 request.Timeout = 50000;
                 request.ContentType = AWSSDKUtils.UrlEncodedContent;
@@ -492,7 +495,7 @@ namespace Amazon.SimpleNotificationService
         /**
          * Invoke request and return response
          */
-        private T Invoke<T>(IDictionary<string, string> parameters)
+        private T Invoke<T>(SNSRequest snsRequest, IDictionary<string, string> parameters)
         {
             string actionName = parameters["Action"];
             T response = default(T);
@@ -511,7 +514,11 @@ namespace Amazon.SimpleNotificationService
             do
             {
                 string responseBody = null;
-                HttpWebRequest request = ConfigureWebRequest(requestData.Length, config);
+                IDictionary<string, string> headers = new Dictionary<string, string>();
+                headers[AWSSDKUtils.UserAgentHeader] = config.UserAgent;
+                ProcessRequestHandlers(snsRequest, headers);
+                HttpWebRequest request = ConfigureWebRequest(requestData.Length, config, headers);
+
                 /* Submit the request and read response body */
                 try
                 {
@@ -624,6 +631,15 @@ namespace Amazon.SimpleNotificationService
             } while (shouldRetry);
 
             return response;
+        }
+
+        protected virtual void ProcessRequestHandlers(IRequestEvents request, IDictionary<string, string> headers)
+        {
+            if (request == null) throw new ArgumentNullException("request");
+
+            HeadersRequestEventArgs args = HeadersRequestEventArgs.Create(headers);
+
+            request.FireBeforeRequestEvent(this, args);
         }
 
         /**

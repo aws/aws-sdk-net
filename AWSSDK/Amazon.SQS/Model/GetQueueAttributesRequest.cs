@@ -31,7 +31,7 @@ namespace Amazon.SQS.Model
     /// Gets one or all attributes of a queue.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
-    public class GetQueueAttributesRequest
+    public class GetQueueAttributesRequest : SQSRequest
     {    
         private string queueUrlField;
         private List<string> attributeNameField;

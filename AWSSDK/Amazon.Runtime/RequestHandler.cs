@@ -102,5 +102,20 @@ namespace Amazon.Runtime
         #endregion
     }
 
+    public class HeadersRequestEventArgs : RequestEventArgs
+    {
+        protected HeadersRequestEventArgs() { }
+        public IDictionary<string, string> Headers { get; protected set; }
+
+        internal static HeadersRequestEventArgs Create(IDictionary<string, string> headers)
+        {
+            HeadersRequestEventArgs args = new HeadersRequestEventArgs
+            {
+                Headers = headers
+            };
+            return args;
+        }
+    }
+
     public delegate void RequestEventHandler(object sender, RequestEventArgs args);
 }

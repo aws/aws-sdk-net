@@ -34,7 +34,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// action with the token from the confirmation message. Confirmation tokens are valid for three days.
     /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class SubscribeRequest
+    public class SubscribeRequest : SNSRequest
     {    
         private string topicArnField;
         private string protocolField;

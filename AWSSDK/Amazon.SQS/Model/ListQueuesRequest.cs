@@ -34,7 +34,7 @@ namespace Amazon.SQS.Model
     /// specified value are returned.
     /// </remarks>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
-    public class ListQueuesRequest
+    public class ListQueuesRequest : SQSRequest
     {    
         private string queueNamePrefixField;
         private List<Attribute> attributeField;

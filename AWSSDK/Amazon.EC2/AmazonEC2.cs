@@ -2329,5 +2329,14 @@ namespace Amazon.EC2
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Reserved Instances Listing response from the service</returns>
         DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request);
+
+        /// <summary>
+        /// Copies a snapshot from a source region to the current region.
+        /// </summary>
+        /// <param name="request">Copy Snapshot request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Copy Snapshot response from the service</returns>
+        CopySnapshotResponse CopySnapshot(CopySnapshotRequest request);
     }
 }

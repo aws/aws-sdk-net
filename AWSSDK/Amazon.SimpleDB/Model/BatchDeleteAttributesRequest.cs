@@ -51,7 +51,7 @@ namespace Amazon.SimpleDB.Model
     /// * 10 GB of total user data storage per domain
     /// * 25 item limit per BatchDeleteAttributes operation
     /// </summary>    
-    public class BatchDeleteAttributesRequest
+    public class BatchDeleteAttributesRequest : SDBRequest
     {
         private string domainNameField;
         private List<DeleteableItem> itemField;

@@ -36,7 +36,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// exist will not result in an error.
     /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class DeleteTopicRequest
+    public class DeleteTopicRequest : SNSRequest
     {    
         private string topicArnField;
 

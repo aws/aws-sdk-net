@@ -39,7 +39,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// the Unsubscribe request was unintended.
     /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class UnsubscribeRequest
+    public class UnsubscribeRequest : SNSRequest
     {    
         private string subscriptionArnField;
 

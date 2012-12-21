@@ -59,7 +59,7 @@ namespace Amazon.SimpleDB.Model
     /// * 25 item limit per BatchPutAttributes operation
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sdb.amazonaws.com/doc/2009-04-15/", IsNullable = false)]
-    public class BatchPutAttributesRequest
+    public class BatchPutAttributesRequest : SDBRequest
     {
         private string domainNameField;
         private List<ReplaceableItem> itemField;

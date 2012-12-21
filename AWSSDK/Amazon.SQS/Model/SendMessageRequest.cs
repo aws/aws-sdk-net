@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// Delivers a message to the specified queue.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
-    public class SendMessageRequest
+    public class SendMessageRequest : SQSRequest
     {    
         private string queueUrlField;
         private string messageBodyField;
@@ -67,7 +67,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// The message body to send. The maximum allowed message size is 8 KB.
+        /// The message body to send. The maximum allowed message size is 64 KB.
         /// </summary>
         /// <remarks>
         /// The following list shows the characters (in Unicode) allowed in your message, according to the W3C XML specification

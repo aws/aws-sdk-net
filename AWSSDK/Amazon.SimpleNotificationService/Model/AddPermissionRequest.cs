@@ -30,7 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// Adds a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class AddPermissionRequest
+    public class AddPermissionRequest : SNSRequest
     {    
         private string topicArnField;
         private string labelField;

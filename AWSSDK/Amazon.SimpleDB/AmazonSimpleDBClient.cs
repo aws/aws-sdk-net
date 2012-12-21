@@ -39,6 +39,7 @@ using Amazon.SimpleDB.Util;
 using Attribute = Amazon.SimpleDB.Model.Attribute;
 using Amazon.Util;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleDB
 {
@@ -282,7 +283,7 @@ namespace Amazon.SimpleDB
         IAsyncResult invokeCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IDictionary<string, string> parameters = ConvertCreateDomain(request);
-            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized);
+            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized, request);
             invoke<CreateDomainResponse>(result);
             return result;
         }
@@ -358,7 +359,7 @@ namespace Amazon.SimpleDB
         IAsyncResult invokeListDomains(ListDomainsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IDictionary<string, string> parameters = ConvertListDomains(request);
-            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized);
+            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized, request);
             invoke<ListDomainsResponse>(result);
             return result;
         }
@@ -436,7 +437,7 @@ namespace Amazon.SimpleDB
         IAsyncResult invokeDomainMetadata(DomainMetadataRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IDictionary<string, string> parameters = ConvertDomainMetadata(request);
-            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized);
+            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized, request);
             invoke<DomainMetadataResponse>(result);
             return result;
         }
@@ -510,7 +511,7 @@ namespace Amazon.SimpleDB
         IAsyncResult invokeDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IDictionary<string, string> parameters = ConvertDeleteDomain(request);
-            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized);
+            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized, request);
             invoke<DeleteDomainResponse>(result);
             return result;
         }
@@ -596,7 +597,7 @@ namespace Amazon.SimpleDB
         IAsyncResult invokePutAttributes(PutAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IDictionary<string, string> parameters = ConvertPutAttributes(request);
-            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized);
+            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized, request);
             invoke<PutAttributesResponse>(result);
             return result;
         }
@@ -722,7 +723,7 @@ namespace Amazon.SimpleDB
         IAsyncResult invokeBatchPutAttributes(BatchPutAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IDictionary<string, string> parameters = ConvertBatchPutAttributes(request);
-            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized);
+            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized, request);
             invoke<BatchPutAttributesResponse>(result);
             return result;
         }
@@ -829,7 +830,7 @@ namespace Amazon.SimpleDB
         IAsyncResult invokeGetAttributes(GetAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IDictionary<string, string> parameters = ConvertGetAttributes(request);
-            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized);
+            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized, request);
             invoke<GetAttributesResponse>(result);
             return result;
         }
@@ -919,7 +920,7 @@ namespace Amazon.SimpleDB
         IAsyncResult invokeDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IDictionary<string, string> parameters = ConvertDeleteAttributes(request);
-            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized);
+            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized, request);
             invoke<DeleteAttributesResponse>(result);
             return result;
         }
@@ -1037,7 +1038,7 @@ namespace Amazon.SimpleDB
         IAsyncResult invokeBatchDeleteAttributes(BatchDeleteAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IDictionary<string, string> parameters = ConvertBatchDeleteAttributes(request);
-            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized);
+            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized, request);
             invoke<BatchDeleteAttributesResponse>(result);
             return result;
         }
@@ -1135,7 +1136,7 @@ namespace Amazon.SimpleDB
         IAsyncResult invokeSelect(SelectRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IDictionary<string, string> parameters = ConvertSelect(request);
-            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized);
+            SDBAsyncResult result = new SDBAsyncResult(parameters, callback, state, synchronized, request);
             invoke<SelectResponse>(result);
             return result;
         }
@@ -1171,6 +1172,8 @@ namespace Amazon.SimpleDB
 
         void invoke<T>(SDBAsyncResult sdbAsyncResult) where T : new()
         {
+            
+
             string actionName = sdbAsyncResult.Parameters["Action"];
             /* Add required request parameters */
             addRequiredParameters(sdbAsyncResult.Parameters);
@@ -1178,8 +1181,13 @@ namespace Amazon.SimpleDB
             string queryString = AWSSDKUtils.GetParametersAsString(sdbAsyncResult.Parameters);
 
             byte[] requestData = Encoding.UTF8.GetBytes(queryString);
+            IDictionary<string, string> headers = new Dictionary<string, string>();
+            headers[AWSSDKUtils.UserAgentHeader] = config.UserAgent;
+            ProcessRequestHandlers(sdbAsyncResult.RequestEvents, headers);
 
-            HttpWebRequest request = configureWebRequest(requestData.Length, config, sdbAsyncResult.CompletedSynchronously);
+            HttpWebRequest request = configureWebRequest(requestData.Length, config, sdbAsyncResult.CompletedSynchronously, headers);
+
+            
             sdbAsyncResult.RequestState = new RequestState(request, requestData);
 
             if (sdbAsyncResult.CompletedSynchronously)
@@ -1198,6 +1206,15 @@ namespace Amazon.SimpleDB
                     sdbAsyncResult.SetCompletedSynchronously(true);
                 }
             }
+        }
+
+        protected virtual void ProcessRequestHandlers(IRequestEvents request, IDictionary<string, string> headers)
+        {
+            if (request == null) throw new ArgumentNullException("request");
+
+            HeadersRequestEventArgs args = HeadersRequestEventArgs.Create(headers);
+
+            request.FireBeforeRequestEvent(this, args);
         }
 
         void getRequestStreamCallback<T>(IAsyncResult result) where T : new()
@@ -1401,7 +1418,7 @@ namespace Amazon.SimpleDB
           * Configure HttpClient with set of defaults as well as configuration
           * from AmazonSimpleDBConfig instance
           */
-        private static HttpWebRequest configureWebRequest(int contentLength, AmazonSimpleDBConfig config, bool completedSynchronously)
+        private static HttpWebRequest configureWebRequest(int contentLength, AmazonSimpleDBConfig config, bool completedSynchronously, IDictionary<string, string> headers)
         {
             string url;
             if (config.RegionEndpoint != null)
@@ -1426,7 +1443,7 @@ namespace Amazon.SimpleDB
                     }
                     request.Proxy = proxy;
                 }
-                request.UserAgent = config.UserAgent + " " + (completedSynchronously ? "SDBSync" : "SDBAsync");
+                request.UserAgent = headers[AWSSDKUtils.UserAgentHeader] + " " + (completedSynchronously ? "SDBSync" : "SDBAsync");
                 request.Method = "POST";
                 request.Timeout = 50000;
                 request.ContentType = AWSSDKUtils.UrlEncodedContent;
@@ -1640,14 +1657,16 @@ namespace Amazon.SimpleDB
             Exception _exception;
             object _finalSDBResponse;
             object _lockObj;
+            IRequestEvents _requestEvents;
 
 
-            internal SDBAsyncResult(IDictionary<string, string> parameters, AsyncCallback callback, object state, bool completeSynchronized)
+            internal SDBAsyncResult(IDictionary<string, string> parameters, AsyncCallback callback, object state, bool completeSynchronized, IRequestEvents requestEvents)
             {
                 this._parameters = parameters;
                 this._callback = callback;
                 this._state = state;
                 this._completedSynchronously = completeSynchronized;
+                this._requestEvents = requestEvents;
 
                 this._lockObj = new object();
             }
@@ -1656,6 +1675,11 @@ namespace Amazon.SimpleDB
             internal string ActionName
             {
                 get { return this._parameters["Action"]; }
+            }
+
+            internal IRequestEvents RequestEvents
+            {
+                get { return this._requestEvents; }
             }
 
             internal IDictionary<string, string> Parameters

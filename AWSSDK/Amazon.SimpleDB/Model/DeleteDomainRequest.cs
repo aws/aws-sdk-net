@@ -32,7 +32,7 @@ namespace Amazon.SimpleDB.Model
     /// does not exist or running the function multiple times using the same domain name will not result in an error response.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sdb.amazonaws.com/doc/2009-04-15/", IsNullable = false)]
-    public class DeleteDomainRequest
+    public class DeleteDomainRequest : SDBRequest
     {
         private string domainNameField;
 

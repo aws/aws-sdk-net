@@ -3011,6 +3011,18 @@ namespace Amazon.EC2
             return Invoke<DescribeReservedInstancesListingsResponse>(ConvertDescribeReservedInstancesListings(request));
         }
 
+        /// <summary>
+        /// Copies a snapshot from a source region to the current region.
+        /// </summary>
+        /// <param name="request">Copy Snapshot request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>Copy Snapshot response from the service</returns>
+        public CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
+        {
+            return Invoke<CopySnapshotResponse>(ConvertCopySnapshot(request));
+        }
+
         #endregion
 
         #region Private API
@@ -7846,6 +7858,29 @@ namespace Amazon.EC2
                 }
 
                 filterListIndex++;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert CopySnapshotRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCopySnapshot(CopySnapshotRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "CopySnapshot";
+            if (request.IsSetSourceRegion())
+            {
+                parameters["SourceRegion"] = request.SourceRegion;
+            }
+            if (request.IsSetSourceSnapshotId())
+            {
+                parameters["SourceSnapshotId"] = request.SourceSnapshotId;
+            }
+            if (request.IsSetDescription())
+            {
+                parameters["Description"] = request.Description;
             }
 
             return parameters;

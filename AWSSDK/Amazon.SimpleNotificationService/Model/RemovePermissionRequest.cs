@@ -30,7 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// Removes a statement from a topic's access control policy.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class RemovePermissionRequest
+    public class RemovePermissionRequest : SNSRequest
     {    
         private string topicArnField;
         private string labelField;

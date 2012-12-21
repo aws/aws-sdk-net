@@ -29,7 +29,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Returns the URL of an existing queue.
     /// </summary>
-    public class GetQueueUrlRequest
+    public class GetQueueUrlRequest : SQSRequest
     {
         public string queueNameField;
         public string queueOwnerAWSAccountIdField;

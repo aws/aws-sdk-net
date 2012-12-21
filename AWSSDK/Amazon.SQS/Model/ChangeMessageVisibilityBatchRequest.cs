@@ -34,7 +34,7 @@ namespace Amazon.SQS.Model
     /// This operation takes multiple receipt handles and extends the lock timeout for each of the them.
     /// The result of the operation on each message is reported individually in the response.
     /// </remarks>
-    public class ChangeMessageVisibilityBatchRequest
+    public class ChangeMessageVisibilityBatchRequest : SQSRequest
     {
         private string queueUrlField;
         private List<ChangeMessageVisibilityBatchRequestEntry> changeMessageVisibilityBatchRequestEntryField;

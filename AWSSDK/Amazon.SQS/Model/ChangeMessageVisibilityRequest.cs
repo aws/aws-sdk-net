@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// Extends the read lock timeout of a single message in a queue.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
-    public class ChangeMessageVisibilityRequest
+    public class ChangeMessageVisibilityRequest : SQSRequest
     {    
         private string queueUrlField;
         private string receiptHandleField;

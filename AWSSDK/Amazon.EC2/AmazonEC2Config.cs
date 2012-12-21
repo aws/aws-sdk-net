@@ -27,7 +27,7 @@ namespace Amazon.EC2
     /// </summary>
     public class AmazonEC2Config
     {
-        private string serviceVersion = "2012-10-01";
+        private string serviceVersion = "2012-12-01";
         private RegionEndpoint regionEndpoint;
         private string serviceURL = "https://ec2.amazonaws.com";
         private string userAgent = Amazon.Util.AWSSDKUtils.SDKUserAgent;

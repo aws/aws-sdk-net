@@ -37,7 +37,7 @@ namespace Amazon.SimpleDB.Model
     /// If you do not specify any attribute names, all the attributes for the item are returned.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sdb.amazonaws.com/doc/2009-04-15/", IsNullable = false)]
-    public class GetAttributesRequest
+    public class GetAttributesRequest : SDBRequest
     {
         private string domainNameField;
         private string itemNameField;

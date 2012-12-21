@@ -37,7 +37,7 @@ namespace Amazon.S3.Model
     /// Base class for all S3 operation requests.
     /// Provides a header collection which can is used to store the request headers.
     /// </summary>
-    public class S3Request
+    public class S3Request : Amazon.S3.Internal.IS3RequestEvents
     {
         #region Private Members
 
@@ -146,10 +146,20 @@ namespace Amazon.S3.Model
             return this;
         }
 
+        S3Request Amazon.S3.Internal.IS3RequestEvents.WithBeforeRequestHandler(RequestEventHandler handler)
+        {
+            return ((S3Request)this).WithBeforeRequestHandler(handler);
+        }
+
         internal void FireBeforeRequestEvent(object sender, RequestEventArgs args)
         {
             if (BeforeRequestEvent != null)
                 BeforeRequestEvent(sender, args);
+        }
+
+        void Amazon.S3.Internal.IS3RequestEvents.FireBeforeRequestEvent(object sender, RequestEventArgs args)
+        {
+            ((S3Request)this).FireBeforeRequestEvent(sender, args);
         }
 
         #endregion

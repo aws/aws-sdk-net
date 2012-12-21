@@ -16,12 +16,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace Amazon.Runtime
 {
     /// <summary>
     /// Base class for request used by some of the services.
     /// </summary>
-    public abstract class AmazonWebServiceRequest
+    public abstract partial class AmazonWebServiceRequest
     {
         internal event RequestEventHandler BeforeRequestEvent;
         internal EventHandler<StreamTransferProgressArgs> StreamUploadProgressCallback;

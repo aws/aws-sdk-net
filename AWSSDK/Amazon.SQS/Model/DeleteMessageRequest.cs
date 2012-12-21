@@ -31,7 +31,7 @@ namespace Amazon.SQS.Model
     /// is locked by another reader due to the visibility timeout setting, it is still deleted from the queue.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
-    public class DeleteMessageRequest
+    public class DeleteMessageRequest : SQSRequest
     {    
         private string queueUrlField;
         private string receiptHandleField;

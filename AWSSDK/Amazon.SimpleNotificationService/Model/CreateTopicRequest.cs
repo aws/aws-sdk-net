@@ -36,7 +36,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// returned without creating a new topic.
     /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class CreateTopicRequest
+    public class CreateTopicRequest : SNSRequest
     {    
         private string nameField;
 

@@ -30,7 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// Sets an attribute of a topic to a new value.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class SetTopicAttributesRequest
+    public class SetTopicAttributesRequest : SNSRequest
     {    
         private string topicArnField;
         private string attributeNameField;

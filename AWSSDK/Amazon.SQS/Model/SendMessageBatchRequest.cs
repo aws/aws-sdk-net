@@ -34,7 +34,7 @@ namespace Amazon.SQS.Model
     /// This operation takes multiple messages and adds each of them to the queue.
     /// The result of each add operation is reported individually in the response.
     /// </remarks>
-    public class SendMessageBatchRequest
+    public class SendMessageBatchRequest : SQSRequest
     {
         private string queueUrlField;
         private List<SendMessageBatchRequestEntry> sendMessageBatchRequestEntryField;

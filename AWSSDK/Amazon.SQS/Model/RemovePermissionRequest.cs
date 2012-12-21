@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// Removes the permission with the specified statement id from the queue.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
-    public class RemovePermissionRequest
+    public class RemovePermissionRequest : SQSRequest
     {    
         private string queueUrlField;
         private string labelField;

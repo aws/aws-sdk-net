@@ -32,7 +32,7 @@ namespace Amazon.SimpleDB.Model
     /// with the NextToken returns up to MaxNumberOfDomains more domain names each time.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sdb.amazonaws.com/doc/2009-04-15/", IsNullable = false)]
-    public class ListDomainsRequest
+    public class ListDomainsRequest : SDBRequest
     {
         private Decimal? maxNumberOfDomainsField;
         private string nextTokenField;

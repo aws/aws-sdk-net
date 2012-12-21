@@ -37,7 +37,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// flag is set to "true".
     /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class ConfirmSubscriptionRequest
+    public class ConfirmSubscriptionRequest : SNSRequest
     {    
         private string topicArnField;
         private string tokenField;

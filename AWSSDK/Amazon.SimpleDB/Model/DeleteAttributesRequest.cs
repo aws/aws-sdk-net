@@ -31,7 +31,7 @@ namespace Amazon.SimpleDB.Model
     /// item is deleted.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sdb.amazonaws.com/doc/2009-04-15/", IsNullable = false)]
-    public class DeleteAttributesRequest
+    public class DeleteAttributesRequest : SDBRequest
     {
         private string domainNameField;
         private string itemNameField;

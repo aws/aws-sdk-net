@@ -51,7 +51,7 @@ namespace Amazon.SimpleDB.Model
     /// * 10 GB of total user data storage per domain
     /// </summary>
     [XmlRootAttribute(Namespace = "http://sdb.amazonaws.com/doc/2009-04-15/", IsNullable = false)]
-    public class PutAttributesRequest
+    public class PutAttributesRequest : SDBRequest
     {
         private string domainNameField;
         private string itemNameField;

@@ -538,6 +538,12 @@ namespace Amazon.Runtime
                         _currentState.Dispose();
                     }
                     _currentState = GenerateNewCredentials();
+
+                    // Check if the new credentials are already expired
+                    if (ShouldUpdate)
+                    {
+                        throw new AmazonClientException("The retrieved credentials have already expired");
+                    }
                 }
 
                 return _currentState.Credentials.Copy();

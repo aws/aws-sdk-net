@@ -33,7 +33,7 @@ namespace Amazon.SQS.Model
     /// This allows for sharing access to the queue.
     /// </remarks>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
-    public class AddPermissionRequest
+    public class AddPermissionRequest : SQSRequest
     {    
         private string queueUrlField;
         private string labelField;

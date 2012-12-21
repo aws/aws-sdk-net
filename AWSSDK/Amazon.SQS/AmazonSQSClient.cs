@@ -35,7 +35,10 @@ using Attribute = Amazon.SQS.Model.Attribute;
 
 using Amazon.Util;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
+
+using ErrorResponse = Amazon.SQS.Model.ErrorResponse;
 
 namespace Amazon.SQS
 {
@@ -274,7 +277,7 @@ namespace Amazon.SQS
         /// <returns>Create Queue  Response from the service</returns>
         public CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
-            return Invoke<CreateQueueResponse>(ConvertCreateQueue(request));
+            return Invoke<CreateQueueResponse>(request, ConvertCreateQueue(request));
         }
 
         /// <summary>
@@ -288,7 +291,7 @@ namespace Amazon.SQS
         /// <returns>List Queues  Response from the service</returns>
         public ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
-            return Invoke<ListQueuesResponse>(ConvertListQueues(request));
+            return Invoke<ListQueuesResponse>(request, ConvertListQueues(request));
         }
 
         /// <summary>
@@ -301,7 +304,7 @@ namespace Amazon.SQS
         /// <returns>Add Permission  Response from the service</returns>
         public AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
-            return Invoke<AddPermissionResponse>(ConvertAddPermission(request));
+            return Invoke<AddPermissionResponse>(request, ConvertAddPermission(request));
         }
 
         /// <summary>
@@ -311,7 +314,7 @@ namespace Amazon.SQS
         /// <returns>Change Message Visibility  Response from the service</returns>
         public ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request)
         {
-            return Invoke<ChangeMessageVisibilityResponse>(ConvertChangeMessageVisibility(request));
+            return Invoke<ChangeMessageVisibilityResponse>(request, ConvertChangeMessageVisibility(request));
         }
 
         /// <summary>
@@ -325,7 +328,7 @@ namespace Amazon.SQS
         /// <returns>Change Message Visibility Response from the service</returns>
         public ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
         {
-            return Invoke<ChangeMessageVisibilityBatchResponse>(ConvertChangeMessageVisibilityBatch(request));
+            return Invoke<ChangeMessageVisibilityBatchResponse>(request, ConvertChangeMessageVisibilityBatch(request));
         }
 
         /// <summary>
@@ -338,7 +341,7 @@ namespace Amazon.SQS
         /// <returns>Delete Message  Response from the service</returns>
         public DeleteMessageResponse DeleteMessage(DeleteMessageRequest request)
         {
-            return Invoke<DeleteMessageResponse>(ConvertDeleteMessage(request));
+            return Invoke<DeleteMessageResponse>(request, ConvertDeleteMessage(request));
         }
 
         /// <summary>
@@ -352,7 +355,7 @@ namespace Amazon.SQS
         /// <returns>DeleteMessageBatch Response from the service</returns>
         public DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request)
         {
-            return Invoke<DeleteMessageBatchResponse>(ConvertDeleteMessageBatch(request));
+            return Invoke<DeleteMessageBatchResponse>(request, ConvertDeleteMessageBatch(request));
         }
 
         /// <summary>
@@ -379,7 +382,7 @@ namespace Amazon.SQS
         /// <returns>Delete Queue  Response from the service</returns>
         public DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
-            return Invoke<DeleteQueueResponse>(ConvertDeleteQueue(request));
+            return Invoke<DeleteQueueResponse>(request, ConvertDeleteQueue(request));
         }
 
         /// <summary>
@@ -442,7 +445,7 @@ namespace Amazon.SQS
         /// <returns>Get Queue Attributes  Response from the service</returns>
         public GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request)
         {
-            return Invoke<GetQueueAttributesResponse>(ConvertGetQueueAttributes(request));
+            return Invoke<GetQueueAttributesResponse>(request, ConvertGetQueueAttributes(request));
         }
 
         /// <summary>
@@ -452,7 +455,7 @@ namespace Amazon.SQS
         /// <returns>GetQueueUrl Response from the service</returns>
         public GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request)
         {
-            return Invoke<GetQueueUrlResponse>(ConvertGetQueueUrl(request));
+            return Invoke<GetQueueUrlResponse>(request, ConvertGetQueueUrl(request));
         }
 
         /// <summary>
@@ -462,7 +465,7 @@ namespace Amazon.SQS
         /// <returns>Remove Permission  Response from the service</returns>
         public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            return Invoke<RemovePermissionResponse>(ConvertRemovePermission(request));
+            return Invoke<RemovePermissionResponse>(request, ConvertRemovePermission(request));
         }
 
         /// <summary>
@@ -497,7 +500,7 @@ namespace Amazon.SQS
         /// <returns>Receive Message  Response from the service</returns>
         public ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request)
         {
-            return Invoke<ReceiveMessageResponse>(ConvertReceiveMessage(request));
+            return Invoke<ReceiveMessageResponse>(request, ConvertReceiveMessage(request));
         }
 
         /// <summary>
@@ -507,7 +510,7 @@ namespace Amazon.SQS
         /// <returns>Send Message  Response from the service</returns>
         public SendMessageResponse SendMessage(SendMessageRequest request)
         {
-            return Invoke<SendMessageResponse>(ConvertSendMessage(request));
+            return Invoke<SendMessageResponse>(request, ConvertSendMessage(request));
         }
 
         /// <summary>
@@ -521,7 +524,7 @@ namespace Amazon.SQS
         /// <returns>SendMessageBatch Response from the service</returns>
         public SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request)
         {
-            return Invoke<SendMessageBatchResponse>(ConvertSendMessageBatch(request));
+            return Invoke<SendMessageBatchResponse>(request, ConvertSendMessageBatch(request));
         }
 
         /// <summary>
@@ -535,7 +538,7 @@ namespace Amazon.SQS
         /// <returns>Set Queue Attributes  Response from the service</returns>
         public SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request)
         {
-            return Invoke<SetQueueAttributesResponse>(ConvertSetQueueAttributes(request));
+            return Invoke<SetQueueAttributesResponse>(request, ConvertSetQueueAttributes(request));
         }
 
         #endregion
@@ -565,7 +568,6 @@ namespace Amazon.SQS
                     }
                     request.Proxy = proxy;
                 }
-                request.UserAgent = config.UserAgent;
                 request.Method = "POST";
                 request.Timeout = 50000;
                 request.ContentType = AWSSDKUtils.UrlEncodedContent;
@@ -583,7 +585,7 @@ namespace Amazon.SQS
         /**
          * Invoke request and return response
          */
-        private T Invoke<T>(IDictionary<string, string> parameters)
+        private T Invoke<T>(SQSRequest sqsRequest, IDictionary<string, string> parameters)
         {
             string actionName = parameters["Action"];
             T response = default(T);
@@ -604,6 +606,8 @@ namespace Amazon.SQS
 
             /* Add required request parameters */
             IDictionary<string, string> headers = new Dictionary<string, string>();
+            headers[AWSSDKUtils.UserAgentHeader] = config.UserAgent;
+            ProcessRequestHandlers(sqsRequest, headers);
             AddRequiredParameters(headers, parameters, queueUrl);
 
             string queryString = AWSSDKUtils.GetParametersAsString(parameters);
@@ -614,8 +618,9 @@ namespace Amazon.SQS
             int maxRetries = config.IsSetMaxErrorRetry() ? config.MaxErrorRetry : AWSSDKUtils.DefaultMaxRetry;
             do
             {
-                string responseBody = null;
+                string responseBody = null;                
                 HttpWebRequest request = ConfigureWebRequest(requestData.Length, queueUrl, config, headers);
+                
                 /* Submit the request and read response body */
                 try
                 {
@@ -724,6 +729,15 @@ namespace Amazon.SQS
             } while (shouldRetry);
 
             return response;
+        }
+
+        protected virtual void ProcessRequestHandlers(IRequestEvents request, IDictionary<string, string> headers)
+        {
+            if (request == null) throw new ArgumentNullException("request");
+
+            HeadersRequestEventArgs args = HeadersRequestEventArgs.Create(headers);
+
+            request.FireBeforeRequestEvent(this, args);
         }
 
         /**

@@ -34,7 +34,7 @@ namespace Amazon.SQS.Model
     /// This operation takes multiple receipt handles and deletes each one of the messages.
     /// The result of the delete operation on each message is reported individually in the response.
     /// </remarks>
-    public class DeleteMessageBatchRequest
+    public class DeleteMessageBatchRequest : SQSRequest
     {
         private string queueUrlField;
         private List<DeleteMessageBatchRequestEntry> deleteMessageBatchRequestEntryField;

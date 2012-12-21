@@ -24,6 +24,7 @@ using Amazon.AutoScaling;
 using Amazon.CloudFormation;
 using Amazon.CloudFront;
 using Amazon.CloudWatch;
+using Amazon.DirectConnect;
 using Amazon.DynamoDB;
 using Amazon.EC2;
 using Amazon.ElastiCache;
@@ -3027,6 +3028,164 @@ namespace Amazon
         {
             return new AmazonSimpleWorkflowClient(credentials, config);
         }
+
+        /// <summary>
+        /// Create a client for the Amazon DirectConnect Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon DirectConnect client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDirectConnect CreateAmazonDirectConnectClient()
+        {
+            return new AmazonDirectConnectClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DirectConnect Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon DirectConnect client</returns>
+        public static AmazonDirectConnect CreateAmazonDirectConnectClient(AmazonDirectConnectConfig config)
+        {
+            return new AmazonDirectConnectClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DirectConnect service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon DirectConnect client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDirectConnect CreateAmazonDirectConnectClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonDirectConnectClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DirectConnect service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon DirectConnect client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDirectConnect CreateAmazonDirectConnectClient(
+            string awsAccessKey,
+            string awsSecretAccessKey,
+            AmazonDirectConnectConfig config
+            )
+        {
+            return new AmazonDirectConnectClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DirectConnect Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DirectConnect client</returns>
+        public static AmazonDirectConnect CreateAmazonDirectConnectClient(RegionEndpoint region)
+        {
+            return new AmazonDirectConnectClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DirectConnect Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DirectConnect client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDirectConnect CreateAmazonDirectConnectClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonDirectConnectClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DirectConnect Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon DirectConnect client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDirectConnect CreateAmazonDirectConnectClient(AWSCredentials credentials)
+        {
+            return new AmazonDirectConnectClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DirectConnect Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon DirectConnect client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDirectConnect CreateAmazonDirectConnectClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonDirectConnectClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon DirectConnect Service with AWSCredentials and an AmazonDirectConnect Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon DirectConnect client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static AmazonDirectConnect CreateAmazonDirectConnectClient(AWSCredentials credentials, AmazonDirectConnectConfig config)
+        {
+            return new AmazonDirectConnectClient(credentials, config);
+        }
+
 
         /// <summary>
         /// Create a client for the Amazon DynamoDB Service with the credentials loaded from the application's

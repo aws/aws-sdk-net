@@ -44,7 +44,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.5.9.2";
+        internal const string SDKVersionNumber = "1.5.10.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -52,7 +52,6 @@ namespace Amazon.Util
         internal const string ContentLengthHeader = "Content-Length";
         internal const string ContentMD5Header = "Content-MD5";
         internal const string ETagHeader = "ETag";
-        internal const string UserAgentHeader = "User-Agent";
         internal const string RequestIdHeader = "x-amzn-RequestId";
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -68,6 +67,13 @@ namespace Amazon.Util
         #endregion
 
         #region Public Constants
+
+
+        /// <summary>
+        /// The user agent string header
+        /// </summary>
+        public const string UserAgentHeader = "User-Agent";
+
 
         /// <summary>
         /// The Set of accepted and valid Url characters per RFC3986. 

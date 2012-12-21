@@ -36,7 +36,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// notification protocol selected.
     /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class PublishRequest
+    public class PublishRequest : SNSRequest
     {    
         private string topicArnField;
         private string messageField;

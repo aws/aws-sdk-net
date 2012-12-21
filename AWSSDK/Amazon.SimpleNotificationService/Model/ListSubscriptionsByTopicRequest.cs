@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// call to get further results.
     /// </remarks>
     [XmlRootAttribute(Namespace = "http://sns.amazonaws.com/doc/2010-03-31/", IsNullable = false)]
-    public class ListSubscriptionsByTopicRequest
+    public class ListSubscriptionsByTopicRequest : SNSRequest
     {    
         private string topicArnField;
         private string nextTokenField;
