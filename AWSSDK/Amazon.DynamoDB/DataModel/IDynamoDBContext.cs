@@ -485,9 +485,10 @@ namespace Amazon.DynamoDB.DataModel
         /// For all operations except QueryOperator.Between, values should be one value.
         /// For QueryOperator.Betwee, values should be two values.
         /// </param>
+        /// <param name="backwardsOrder">Indicates whether the results should be sorted backwards or not.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>Lazy-loaded collection of results.</returns>
-        IEnumerable<T> Query<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig);
+        IEnumerable<T> Query<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, bool backwardsOrder, DynamoDBOperationConfig operationConfig);
 
 
         /// <summary>

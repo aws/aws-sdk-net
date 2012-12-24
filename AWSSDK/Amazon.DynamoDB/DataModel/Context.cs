@@ -796,7 +796,7 @@ namespace Amazon.DynamoDB.DataModel
         /// <returns>Lazy-loaded collection of results.</returns>
         public IEnumerable<T> Query<T>(object hashKeyValue)
         {
-            return QueryHelper<T>(hashKeyValue, QueryOperator.Equal, null, null);
+            return QueryHelper<T>(hashKeyValue, QueryOperator.Equal, null, false, null);
         }
 
         /// <summary>
@@ -809,7 +809,7 @@ namespace Amazon.DynamoDB.DataModel
         /// <returns>Lazy-loaded collection of results.</returns>
         public IEnumerable<T> Query<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
         {
-            return QueryHelper<T>(hashKeyValue, QueryOperator.Equal, null, operationConfig);
+            return QueryHelper<T>(hashKeyValue, QueryOperator.Equal, null, false, operationConfig);
         }
 
         /// <summary>
@@ -830,7 +830,7 @@ namespace Amazon.DynamoDB.DataModel
             if (values == null || values.Length == 0)
                 throw new ArgumentOutOfRangeException("values");
 
-            return QueryHelper<T>(hashKeyValue, op, values, null);
+            return QueryHelper<T>(hashKeyValue, op, values, false, null);
         }
 
         /// <summary>
@@ -845,17 +845,18 @@ namespace Amazon.DynamoDB.DataModel
         /// For all operations except QueryOperator.Between, values should be one value.
         /// For QueryOperator.Betwee, values should be two values.
         /// </param>
+        /// <param name="backwardsOrder">Indicates whether the results should be sorted backwards or not.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>Lazy-loaded collection of results.</returns>
-        public IEnumerable<T> Query<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
+        public IEnumerable<T> Query<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, bool backwardsOrder, DynamoDBOperationConfig operationConfig)
         {
             if (values == null)
                 throw new ArgumentNullException("values");
 
-            return QueryHelper<T>(hashKeyValue, op, values, operationConfig);
+            return QueryHelper<T>(hashKeyValue, op, values, backwardsOrder, operationConfig);
         }
 
-        private IEnumerable<T> QueryHelper<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
+        private IEnumerable<T> QueryHelper<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, bool backwardsOrder, DynamoDBOperationConfig operationConfig)
         {
             ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
             RangeFilter filter = ComposeRangeFilter(op, values, storageConfig);
@@ -865,7 +866,7 @@ namespace Amazon.DynamoDB.DataModel
 
             DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
             Table table = GetTargetTable(storageConfig, currentConfig);
-            Search query = table.Query(new QueryOperationConfig { HashKey = hashKeyEntry, Filter = filter, ConsistentRead = currentConfig.ConsistentRead.Value });
+            Search query = table.Query(new QueryOperationConfig { HashKey = hashKeyEntry, Filter = filter, ConsistentRead = currentConfig.ConsistentRead.Value, BackwardSearch = backwardsOrder });
             query.AttributesToGet = storageConfig.AttributesToGet;
 
             return FromSearch<T>(query);
