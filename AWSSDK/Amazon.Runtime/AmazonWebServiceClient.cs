@@ -825,7 +825,7 @@ namespace Amazon.Runtime
         private enum ClientProtocol { QueryStringProtocol, RestProtocol, Unknown }
         private static ClientProtocol DetermineProtocol(AbstractAWSSigner signer)
         {
-            if (signer is AWS3Signer || signer is AWS4Signer)
+            if (signer is AWS3Signer || signer is AWS4Signer || signer is CloudFrontSigner)
                 return ClientProtocol.RestProtocol;
             if (signer is QueryStringSigner)
                 return ClientProtocol.QueryStringProtocol;
