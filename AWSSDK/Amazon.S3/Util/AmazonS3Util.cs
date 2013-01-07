@@ -72,7 +72,7 @@ namespace Amazon.S3.Util
             extensionToMime[".dir"] = "application/x-director";
             extensionToMime[".dms"] = "application/octet-stream";
             extensionToMime[".doc"] = "application/msword";
-            extensionToMime[".docx"] = "application/msword";
+            extensionToMime[".docx"] = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
             extensionToMime[".dot"] = "application/msword";
             extensionToMime[".drw"] = "application/drafting";
             extensionToMime[".dvi"] = "application/x-dvi";
@@ -141,6 +141,7 @@ namespace Amazon.S3.Util
             extensionToMime[".ppm"] = "image/x-portable-pixmap";
             extensionToMime[".pps"] = "application/mspowerpoint";
             extensionToMime[".ppt"] = "application/mspowerpoint";
+            extensionToMime[".pptx"] = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
             extensionToMime[".ppz"] = "application/mspowerpoint";
             extensionToMime[".pre"] = "application/x-freelance";
             extensionToMime[".prt"] = "application/pro_eng";
@@ -202,6 +203,7 @@ namespace Amazon.S3.Util
             extensionToMime[".xll"] = "application/vnd.ms-excel";
             extensionToMime[".xlm"] = "application/vnd.ms-excel";
             extensionToMime[".xls"] = "application/vnd.ms-excel";
+            extensionToMime[".xlsx"] = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
             extensionToMime[".xlw"] = "application/vnd.ms-excel";
             extensionToMime[".xml"] = "text/xml";
             extensionToMime[".xpm"] = "image/x-xpixmap";
