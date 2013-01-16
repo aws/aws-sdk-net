@@ -4778,6 +4778,10 @@ namespace Amazon.S3
             }
 
             request.RequestDestinationBucket = request.BucketName;
+
+            // Add the Timeout parameter
+            parameters[S3QueryParameter.RequestTimeout] = request.Timeout.ToString();
+            parameters[S3QueryParameter.RequestReadWriteTimeout] = request.ReadWriteTimeout.ToString();
         }
 
         /**
